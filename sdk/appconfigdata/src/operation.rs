@@ -5,7 +5,7 @@
 /// [`get_latest_configuration`](crate::client::Client::get_latest_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetLatestConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLatestConfiguration {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLatestConfiguration {
 /// [`start_configuration_session`](crate::client::Client::start_configuration_session).
 ///
 /// See [`crate::client::fluent_builders::StartConfigurationSession`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartConfigurationSession {
     _private: (),
 }

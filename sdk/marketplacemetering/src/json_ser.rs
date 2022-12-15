@@ -2,11 +2,12 @@
 pub fn serialize_structure_crate_input_batch_meter_usage_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchMeterUsageInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.usage_records {
         let mut array_2 = object.key("UsageRecords").start_array();
         for item_3 in var_1 {
             {
+                #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_usage_record(
                     &mut object_4,
@@ -26,7 +27,7 @@ pub fn serialize_structure_crate_input_batch_meter_usage_input(
 pub fn serialize_structure_crate_input_meter_usage_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::MeterUsageInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_6) = &input.product_code {
         object.key("ProductCode").string(var_6.as_str());
     }
@@ -51,6 +52,7 @@ pub fn serialize_structure_crate_input_meter_usage_input(
         let mut array_12 = object.key("UsageAllocations").start_array();
         for item_13 in var_11 {
             {
+                #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_usage_allocation(
                     &mut object_14,
@@ -67,7 +69,7 @@ pub fn serialize_structure_crate_input_meter_usage_input(
 pub fn serialize_structure_crate_input_register_usage_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RegisterUsageInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.product_code {
         object.key("ProductCode").string(var_15.as_str());
     }
@@ -86,7 +88,7 @@ pub fn serialize_structure_crate_input_register_usage_input(
 pub fn serialize_structure_crate_input_resolve_customer_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ResolveCustomerInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_18) = &input.registration_token {
         object.key("RegistrationToken").string(var_18.as_str());
     }
@@ -96,7 +98,7 @@ pub fn serialize_structure_crate_input_resolve_customer_input(
 pub fn serialize_structure_crate_model_usage_record(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UsageRecord,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_19) = &input.timestamp {
         object
             .key("Timestamp")
@@ -118,6 +120,7 @@ pub fn serialize_structure_crate_model_usage_record(
         let mut array_24 = object.key("UsageAllocations").start_array();
         for item_25 in var_23 {
             {
+                #[allow(unused_mut)]
                 let mut object_26 = array_24.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_usage_allocation(
                     &mut object_26,
@@ -134,7 +137,7 @@ pub fn serialize_structure_crate_model_usage_record(
 pub fn serialize_structure_crate_model_usage_allocation(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UsageAllocation,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_27) = &input.allocated_usage_quantity {
         object.key("AllocatedUsageQuantity").number(
             #[allow(clippy::useless_conversion)]
@@ -145,6 +148,7 @@ pub fn serialize_structure_crate_model_usage_allocation(
         let mut array_29 = object.key("Tags").start_array();
         for item_30 in var_28 {
             {
+                #[allow(unused_mut)]
                 let mut object_31 = array_29.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_31, item_30)?;
                 object_31.finish();
@@ -158,7 +162,7 @@ pub fn serialize_structure_crate_model_usage_allocation(
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.key {
         object.key("Key").string(var_32.as_str());
     }

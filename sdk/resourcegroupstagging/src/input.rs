@@ -5,14 +5,16 @@ use std::fmt::Write;
 pub mod describe_report_creation_input {
 
     /// A builder for [`DescribeReportCreationInput`](crate::input::DescribeReportCreationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeReportCreationInput`](crate::input::DescribeReportCreationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeReportCreationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeReportCreationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeReportCreationInput {})
         }
     }
@@ -30,13 +32,13 @@ impl DescribeReportCreationInput {
             crate::operation::DescribeReportCreation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeReportCreationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -44,8 +46,10 @@ impl DescribeReportCreationInput {
             fn update_http_builder(
                 input: &crate::input::DescribeReportCreationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -129,7 +133,7 @@ impl DescribeReportCreationInput {
 pub mod get_compliance_summary_input {
 
     /// A builder for [`GetComplianceSummaryInput`](crate::input::GetComplianceSummaryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_id_filters: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) region_filters: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -275,8 +279,10 @@ pub mod get_compliance_summary_input {
         /// Consumes the builder and constructs a [`GetComplianceSummaryInput`](crate::input::GetComplianceSummaryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetComplianceSummaryInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetComplianceSummaryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetComplianceSummaryInput {
                 target_id_filters: self.target_id_filters,
                 region_filters: self.region_filters,
@@ -302,13 +308,13 @@ impl GetComplianceSummaryInput {
             crate::operation::GetComplianceSummary,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetComplianceSummaryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -316,8 +322,10 @@ impl GetComplianceSummaryInput {
             fn update_http_builder(
                 input: &crate::input::GetComplianceSummaryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -408,7 +416,7 @@ impl GetComplianceSummaryInput {
 pub mod get_resources_input {
 
     /// A builder for [`GetResourcesInput`](crate::input::GetResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
         pub(crate) tag_filters: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -577,7 +585,7 @@ pub mod get_resources_input {
         /// Consumes the builder and constructs a [`GetResourcesInput`](crate::input::GetResourcesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetResourcesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetResourcesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetResourcesInput {
                 pagination_token: self.pagination_token,
@@ -605,13 +613,13 @@ impl GetResourcesInput {
             crate::operation::GetResources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -619,8 +627,10 @@ impl GetResourcesInput {
             fn update_http_builder(
                 input: &crate::input::GetResourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -709,7 +719,7 @@ impl GetResourcesInput {
 pub mod get_tag_keys_input {
 
     /// A builder for [`GetTagKeysInput`](crate::input::GetTagKeysInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
     }
@@ -730,7 +740,8 @@ pub mod get_tag_keys_input {
         /// Consumes the builder and constructs a [`GetTagKeysInput`](crate::input::GetTagKeysInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetTagKeysInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetTagKeysInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetTagKeysInput {
                 pagination_token: self.pagination_token,
             })
@@ -750,13 +761,13 @@ impl GetTagKeysInput {
             crate::operation::GetTagKeys,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetTagKeysInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -764,8 +775,10 @@ impl GetTagKeysInput {
             fn update_http_builder(
                 input: &crate::input::GetTagKeysInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -854,7 +867,7 @@ impl GetTagKeysInput {
 pub mod get_tag_values_input {
 
     /// A builder for [`GetTagValuesInput`](crate::input::GetTagValuesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -886,7 +899,7 @@ pub mod get_tag_values_input {
         /// Consumes the builder and constructs a [`GetTagValuesInput`](crate::input::GetTagValuesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetTagValuesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetTagValuesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetTagValuesInput {
                 pagination_token: self.pagination_token,
@@ -908,13 +921,13 @@ impl GetTagValuesInput {
             crate::operation::GetTagValues,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetTagValuesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -922,8 +935,10 @@ impl GetTagValuesInput {
             fn update_http_builder(
                 input: &crate::input::GetTagValuesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1012,7 +1027,7 @@ impl GetTagValuesInput {
 pub mod start_report_creation_input {
 
     /// A builder for [`StartReportCreationInput`](crate::input::StartReportCreationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
     }
@@ -1034,8 +1049,10 @@ pub mod start_report_creation_input {
         /// Consumes the builder and constructs a [`StartReportCreationInput`](crate::input::StartReportCreationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartReportCreationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartReportCreationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartReportCreationInput {
                 s3_bucket: self.s3_bucket,
             })
@@ -1055,13 +1072,13 @@ impl StartReportCreationInput {
             crate::operation::StartReportCreation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartReportCreationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1069,8 +1086,10 @@ impl StartReportCreationInput {
             fn update_http_builder(
                 input: &crate::input::StartReportCreationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1159,7 +1178,7 @@ impl StartReportCreationInput {
 pub mod tag_resources_input {
 
     /// A builder for [`TagResourcesInput`](crate::input::TagResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<
@@ -1216,7 +1235,7 @@ pub mod tag_resources_input {
         /// Consumes the builder and constructs a [`TagResourcesInput`](crate::input::TagResourcesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourcesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourcesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourcesInput {
                 resource_arn_list: self.resource_arn_list,
@@ -1238,13 +1257,13 @@ impl TagResourcesInput {
             crate::operation::TagResources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1252,8 +1271,10 @@ impl TagResourcesInput {
             fn update_http_builder(
                 input: &crate::input::TagResourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1342,7 +1363,7 @@ impl TagResourcesInput {
 pub mod untag_resources_input {
 
     /// A builder for [`UntagResourcesInput`](crate::input::UntagResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1391,7 +1412,7 @@ pub mod untag_resources_input {
         /// Consumes the builder and constructs a [`UntagResourcesInput`](crate::input::UntagResourcesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourcesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourcesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourcesInput {
                 resource_arn_list: self.resource_arn_list,
@@ -1413,13 +1434,13 @@ impl UntagResourcesInput {
             crate::operation::UntagResources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1427,8 +1448,10 @@ impl UntagResourcesInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1515,7 +1538,7 @@ impl UntagResourcesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourcesInput {
     /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -1536,18 +1559,10 @@ impl UntagResourcesInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourcesInput");
-        formatter.field("resource_arn_list", &self.resource_arn_list);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourcesInput {
     /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -1572,18 +1587,10 @@ impl TagResourcesInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourcesInput");
-        formatter.field("resource_arn_list", &self.resource_arn_list);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartReportCreationInput {
     /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
     /// <p> <code>awsexamplebucket</code> </p>
@@ -1599,17 +1606,10 @@ impl StartReportCreationInput {
         self.s3_bucket.as_deref()
     }
 }
-impl std::fmt::Debug for StartReportCreationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartReportCreationInput");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTagValuesInput {
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     #[doc(hidden)]
@@ -1628,18 +1628,10 @@ impl GetTagValuesInput {
         self.key.as_deref()
     }
 }
-impl std::fmt::Debug for GetTagValuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTagValuesInput");
-        formatter.field("pagination_token", &self.pagination_token);
-        formatter.field("key", &self.key);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTagKeysInput {
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     #[doc(hidden)]
@@ -1651,17 +1643,10 @@ impl GetTagKeysInput {
         self.pagination_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetTagKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTagKeysInput");
-        formatter.field("pagination_token", &self.pagination_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourcesInput {
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     #[doc(hidden)]
@@ -1766,30 +1751,10 @@ impl GetResourcesInput {
         self.resource_arn_list.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourcesInput");
-        formatter.field("pagination_token", &self.pagination_token);
-        formatter.field("tag_filters", &self.tag_filters);
-        formatter.field("resources_per_page", &self.resources_per_page);
-        formatter.field("tags_per_page", &self.tags_per_page);
-        formatter.field("resource_type_filters", &self.resource_type_filters);
-        formatter.field(
-            "include_compliance_details",
-            &self.include_compliance_details,
-        );
-        formatter.field(
-            "exclude_compliant_resources",
-            &self.exclude_compliant_resources,
-        );
-        formatter.field("resource_arn_list", &self.resource_arn_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetComplianceSummaryInput {
     /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources with the specified target IDs.</p>
     #[doc(hidden)]
@@ -1857,27 +1822,8 @@ impl GetComplianceSummaryInput {
         self.pagination_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetComplianceSummaryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetComplianceSummaryInput");
-        formatter.field("target_id_filters", &self.target_id_filters);
-        formatter.field("region_filters", &self.region_filters);
-        formatter.field("resource_type_filters", &self.resource_type_filters);
-        formatter.field("tag_key_filters", &self.tag_key_filters);
-        formatter.field("group_by", &self.group_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("pagination_token", &self.pagination_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReportCreationInput {}
-impl std::fmt::Debug for DescribeReportCreationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReportCreationInput");
-        formatter.finish()
-    }
-}

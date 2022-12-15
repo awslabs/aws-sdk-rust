@@ -373,7 +373,7 @@ mod test {
             .resolve_endpoint(&Region::new(test_case.region))
             .expect("valid region");
         let mut test_uri = Uri::from_static("/");
-        endpoint.set_endpoint(&mut test_uri, None);
+        endpoint.set_endpoint(&mut test_uri, None).unwrap();
         assert_eq!(test_uri, Uri::from_static(test_case.uri));
         assert_eq!(
             endpoint.credential_scope().region(),

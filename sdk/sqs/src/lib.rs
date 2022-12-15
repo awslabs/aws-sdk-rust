@@ -7,6 +7,7 @@
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::type_complexity)]
+#![allow(clippy::needless_return)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
 //! <p>Welcome to the <i>Amazon SQS API Reference</i>.</p>
@@ -100,40 +101,56 @@ pub use error_meta::Error;
 #[doc(inline)]
 pub use config::Config;
 
-mod aws_endpoint;
 /// Client and fluent builders for calling the service.
 pub mod client;
+
 /// Configuration for the service.
 pub mod config;
-/// All error types that operations can return.
+
+/// All error types that operations can return. Documentation on these types is copied from the model.
 pub mod error;
+
 mod error_meta;
-/// Input structures for operations.
+
+/// Input structures for operations. Documentation on these types is copied from the model.
 pub mod input;
-/// Generated accessors for nested fields
-pub mod lens;
-pub mod middleware;
-/// Data structures used by operation inputs/outputs.
+
+/// Data structures used by operation inputs/outputs. Documentation on these types is copied from the model.
 pub mod model;
-mod no_credentials;
+
 /// All operations that this crate can perform.
 pub mod operation;
-mod operation_deser;
-mod operation_ser;
-/// Output structures for operations.
+
+/// Output structures for operations. Documentation on these types is copied from the model.
 pub mod output;
+
+/// Data primitives referenced by other data types.
+pub mod types;
+
+mod aws_endpoint;
+
+pub mod middleware;
+
+mod no_credentials;
+
+mod operation_deser;
+
+mod operation_ser;
+
 /// Paginators for the service
 pub mod paginator;
+
+/// Generated accessors for nested fields
+mod lens;
+
 mod query_ser;
-mod rest_xml_wrapped_errors;
+
 mod xml_deser;
+
+mod rest_xml_wrapped_errors;
+
 /// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-/// Re-exported types from supporting crates.
-pub mod types {
-    pub use aws_smithy_http::result::SdkError;
-    pub use aws_smithy_types::Blob;
-}
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("sqs", PKG_VERSION);
 pub use aws_smithy_http::endpoint::Endpoint;

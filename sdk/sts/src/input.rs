@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod assume_role_input {
 
     /// A builder for [`AssumeRoleInput`](crate::input::AssumeRoleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) role_session_name: std::option::Option<std::string::String>,
@@ -224,7 +224,8 @@ pub mod assume_role_input {
         /// Consumes the builder and constructs a [`AssumeRoleInput`](crate::input::AssumeRoleInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AssumeRoleInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::AssumeRoleInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::AssumeRoleInput {
                 role_arn: self.role_arn,
                 role_session_name: self.role_session_name,
@@ -254,13 +255,13 @@ impl AssumeRoleInput {
             crate::operation::AssumeRole,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssumeRoleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -268,8 +269,10 @@ impl AssumeRoleInput {
             fn update_http_builder(
                 input: &crate::input::AssumeRoleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -353,7 +356,7 @@ impl AssumeRoleInput {
 pub mod assume_role_with_saml_input {
 
     /// A builder for [`AssumeRoleWithSamlInput`](crate::input::AssumeRoleWithSamlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) principal_arn: std::option::Option<std::string::String>,
@@ -466,8 +469,10 @@ pub mod assume_role_with_saml_input {
         /// Consumes the builder and constructs a [`AssumeRoleWithSamlInput`](crate::input::AssumeRoleWithSamlInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AssumeRoleWithSamlInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AssumeRoleWithSamlInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AssumeRoleWithSamlInput {
                 role_arn: self.role_arn,
                 principal_arn: self.principal_arn,
@@ -492,13 +497,13 @@ impl AssumeRoleWithSamlInput {
             crate::operation::AssumeRoleWithSAML,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssumeRoleWithSamlInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -506,8 +511,10 @@ impl AssumeRoleWithSamlInput {
             fn update_http_builder(
                 input: &crate::input::AssumeRoleWithSamlInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -592,7 +599,7 @@ impl AssumeRoleWithSamlInput {
 pub mod assume_role_with_web_identity_input {
 
     /// A builder for [`AssumeRoleWithWebIdentityInput`](crate::input::AssumeRoleWithWebIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) role_session_name: std::option::Option<std::string::String>,
@@ -722,7 +729,7 @@ pub mod assume_role_with_web_identity_input {
             self,
         ) -> Result<
             crate::input::AssumeRoleWithWebIdentityInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssumeRoleWithWebIdentityInput {
                 role_arn: self.role_arn,
@@ -749,13 +756,13 @@ impl AssumeRoleWithWebIdentityInput {
             crate::operation::AssumeRoleWithWebIdentity,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssumeRoleWithWebIdentityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -763,8 +770,10 @@ impl AssumeRoleWithWebIdentityInput {
             fn update_http_builder(
                 input: &crate::input::AssumeRoleWithWebIdentityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -848,7 +857,7 @@ impl AssumeRoleWithWebIdentityInput {
 pub mod decode_authorization_message_input {
 
     /// A builder for [`DecodeAuthorizationMessageInput`](crate::input::DecodeAuthorizationMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encoded_message: std::option::Option<std::string::String>,
     }
@@ -871,7 +880,7 @@ pub mod decode_authorization_message_input {
             self,
         ) -> Result<
             crate::input::DecodeAuthorizationMessageInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DecodeAuthorizationMessageInput {
                 encoded_message: self.encoded_message,
@@ -892,13 +901,13 @@ impl DecodeAuthorizationMessageInput {
             crate::operation::DecodeAuthorizationMessage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DecodeAuthorizationMessageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -906,8 +915,10 @@ impl DecodeAuthorizationMessageInput {
             fn update_http_builder(
                 input: &crate::input::DecodeAuthorizationMessageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -993,7 +1004,7 @@ impl DecodeAuthorizationMessageInput {
 pub mod get_access_key_info_input {
 
     /// A builder for [`GetAccessKeyInfoInput`](crate::input::GetAccessKeyInfoInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
     }
@@ -1016,8 +1027,10 @@ pub mod get_access_key_info_input {
         /// Consumes the builder and constructs a [`GetAccessKeyInfoInput`](crate::input::GetAccessKeyInfoInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAccessKeyInfoInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetAccessKeyInfoInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetAccessKeyInfoInput {
                 access_key_id: self.access_key_id,
             })
@@ -1037,13 +1050,13 @@ impl GetAccessKeyInfoInput {
             crate::operation::GetAccessKeyInfo,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccessKeyInfoInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1051,8 +1064,10 @@ impl GetAccessKeyInfoInput {
             fn update_http_builder(
                 input: &crate::input::GetAccessKeyInfoInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1136,14 +1151,16 @@ impl GetAccessKeyInfoInput {
 pub mod get_caller_identity_input {
 
     /// A builder for [`GetCallerIdentityInput`](crate::input::GetCallerIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetCallerIdentityInput`](crate::input::GetCallerIdentityInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetCallerIdentityInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetCallerIdentityInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetCallerIdentityInput {})
         }
     }
@@ -1161,13 +1178,13 @@ impl GetCallerIdentityInput {
             crate::operation::GetCallerIdentity,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetCallerIdentityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1175,8 +1192,10 @@ impl GetCallerIdentityInput {
             fn update_http_builder(
                 input: &crate::input::GetCallerIdentityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1253,7 +1272,7 @@ impl GetCallerIdentityInput {
 pub mod get_federation_token_input {
 
     /// A builder for [`GetFederationTokenInput`](crate::input::GetFederationTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -1372,8 +1391,10 @@ pub mod get_federation_token_input {
         /// Consumes the builder and constructs a [`GetFederationTokenInput`](crate::input::GetFederationTokenInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetFederationTokenInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetFederationTokenInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetFederationTokenInput {
                 name: self.name,
                 policy: self.policy,
@@ -1397,13 +1418,13 @@ impl GetFederationTokenInput {
             crate::operation::GetFederationToken,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetFederationTokenInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1411,8 +1432,10 @@ impl GetFederationTokenInput {
             fn update_http_builder(
                 input: &crate::input::GetFederationTokenInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1496,7 +1519,7 @@ impl GetFederationTokenInput {
 pub mod get_session_token_input {
 
     /// A builder for [`GetSessionTokenInput`](crate::input::GetSessionTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_seconds: std::option::Option<i32>,
         pub(crate) serial_number: std::option::Option<std::string::String>,
@@ -1543,7 +1566,7 @@ pub mod get_session_token_input {
         /// Consumes the builder and constructs a [`GetSessionTokenInput`](crate::input::GetSessionTokenInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSessionTokenInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetSessionTokenInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetSessionTokenInput {
                 duration_seconds: self.duration_seconds,
@@ -1566,13 +1589,13 @@ impl GetSessionTokenInput {
             crate::operation::GetSessionToken,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetSessionTokenInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1580,8 +1603,10 @@ impl GetSessionTokenInput {
             fn update_http_builder(
                 input: &crate::input::GetSessionTokenInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1663,7 +1688,7 @@ impl GetSessionTokenInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSessionTokenInput {
     /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable durations for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account owners are restricted to a maximum of 3,600 seconds (one hour). If the duration is longer than one hour, the session for Amazon Web Services account owners defaults to one hour.</p>
     #[doc(hidden)]
@@ -1693,19 +1718,10 @@ impl GetSessionTokenInput {
         self.token_code.as_deref()
     }
 }
-impl std::fmt::Debug for GetSessionTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSessionTokenInput");
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.field("serial_number", &self.serial_number);
-        formatter.field("token_code", &self.token_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFederationTokenInput {
     /// <p>The name of the federated user. The name is used as an identifier for the temporary security credentials (such as <code>Bob</code>). For example, you can reference the federated user name in a resource-based policy, such as in an Amazon S3 bucket policy.</p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
@@ -1783,32 +1799,15 @@ impl GetFederationTokenInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for GetFederationTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFederationTokenInput");
-        formatter.field("name", &self.name);
-        formatter.field("policy", &self.policy);
-        formatter.field("policy_arns", &self.policy_arns);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCallerIdentityInput {}
-impl std::fmt::Debug for GetCallerIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCallerIdentityInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessKeyInfoInput {
     /// <p>The identifier of an access key.</p>
     /// <p>This parameter allows (through its regex pattern) a string of characters that can consist of any upper- or lowercase letter or digit.</p>
@@ -1822,17 +1821,10 @@ impl GetAccessKeyInfoInput {
         self.access_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessKeyInfoInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessKeyInfoInput");
-        formatter.field("access_key_id", &self.access_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecodeAuthorizationMessageInput {
     /// <p>The encoded message that was returned with the response.</p>
     #[doc(hidden)]
@@ -1844,17 +1836,10 @@ impl DecodeAuthorizationMessageInput {
         self.encoded_message.as_deref()
     }
 }
-impl std::fmt::Debug for DecodeAuthorizationMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecodeAuthorizationMessageInput");
-        formatter.field("encoded_message", &self.encoded_message);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssumeRoleWithWebIdentityInput {
     /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
     #[doc(hidden)]
@@ -1936,23 +1921,10 @@ impl AssumeRoleWithWebIdentityInput {
         self.duration_seconds
     }
 }
-impl std::fmt::Debug for AssumeRoleWithWebIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssumeRoleWithWebIdentityInput");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("role_session_name", &self.role_session_name);
-        formatter.field("web_identity_token", &self.web_identity_token);
-        formatter.field("provider_id", &self.provider_id);
-        formatter.field("policy_arns", &self.policy_arns);
-        formatter.field("policy", &self.policy);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssumeRoleWithSamlInput {
     /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
     #[doc(hidden)]
@@ -2023,22 +1995,10 @@ impl AssumeRoleWithSamlInput {
         self.duration_seconds
     }
 }
-impl std::fmt::Debug for AssumeRoleWithSamlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssumeRoleWithSamlInput");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("principal_arn", &self.principal_arn);
-        formatter.field("saml_assertion", &self.saml_assertion);
-        formatter.field("policy_arns", &self.policy_arns);
-        formatter.field("policy", &self.policy);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssumeRoleInput {
     /// <p>The Amazon Resource Name (ARN) of the role to assume.</p>
     #[doc(hidden)]
@@ -2172,22 +2132,5 @@ impl AssumeRoleInput {
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is reserved for Amazon Web Services internal use.</p>
     pub fn source_identity(&self) -> std::option::Option<&str> {
         self.source_identity.as_deref()
-    }
-}
-impl std::fmt::Debug for AssumeRoleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssumeRoleInput");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("role_session_name", &self.role_session_name);
-        formatter.field("policy_arns", &self.policy_arns);
-        formatter.field("policy", &self.policy);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.field("tags", &self.tags);
-        formatter.field("transitive_tag_keys", &self.transitive_tag_keys);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("serial_number", &self.serial_number);
-        formatter.field("token_code", &self.token_code);
-        formatter.field("source_identity", &self.source_identity);
-        formatter.finish()
     }
 }

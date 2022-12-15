@@ -5,7 +5,7 @@
 /// [`associate_approval_rule_template_with_repository`](crate::client::Client::associate_approval_rule_template_with_repository).
 ///
 /// See [`crate::client::fluent_builders::AssociateApprovalRuleTemplateWithRepository`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateApprovalRuleTemplateWithRepository {
     _private: (),
 }
@@ -46,7 +46,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`batch_associate_approval_rule_template_with_repositories`](crate::client::Client::batch_associate_approval_rule_template_with_repositories).
 ///
 /// See [`crate::client::fluent_builders::BatchAssociateApprovalRuleTemplateWithRepositories`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchAssociateApprovalRuleTemplateWithRepositories {
     _private: (),
 }
@@ -83,7 +83,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`batch_describe_merge_conflicts`](crate::client::Client::batch_describe_merge_conflicts).
 ///
 /// See [`crate::client::fluent_builders::BatchDescribeMergeConflicts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDescribeMergeConflicts {
     _private: (),
 }
@@ -117,7 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDescribeMergeConfli
 /// [`batch_disassociate_approval_rule_template_from_repositories`](crate::client::Client::batch_disassociate_approval_rule_template_from_repositories).
 ///
 /// See [`crate::client::fluent_builders::BatchDisassociateApprovalRuleTemplateFromRepositories`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositories {
     _private: (),
 }
@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`batch_get_commits`](crate::client::Client::batch_get_commits).
 ///
 /// See [`crate::client::fluent_builders::BatchGetCommits`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetCommits {
     _private: (),
 }
@@ -189,7 +189,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetCommits {
 /// [`batch_get_repositories`](crate::client::Client::batch_get_repositories).
 ///
 /// See [`crate::client::fluent_builders::BatchGetRepositories`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetRepositories {
     _private: (),
 }
@@ -223,7 +223,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetRepositories {
 /// [`create_approval_rule_template`](crate::client::Client::create_approval_rule_template).
 ///
 /// See [`crate::client::fluent_builders::CreateApprovalRuleTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateApprovalRuleTemplate {
     _private: (),
 }
@@ -257,7 +257,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApprovalRuleTempla
 /// [`create_branch`](crate::client::Client::create_branch).
 ///
 /// See [`crate::client::fluent_builders::CreateBranch`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBranch {
     _private: (),
 }
@@ -289,7 +289,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBranch {
 /// [`create_commit`](crate::client::Client::create_commit).
 ///
 /// See [`crate::client::fluent_builders::CreateCommit`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCommit {
     _private: (),
 }
@@ -321,7 +321,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCommit {
 /// [`create_pull_request`](crate::client::Client::create_pull_request).
 ///
 /// See [`crate::client::fluent_builders::CreatePullRequest`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePullRequest {
     _private: (),
 }
@@ -355,7 +355,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePullRequest {
 /// [`create_pull_request_approval_rule`](crate::client::Client::create_pull_request_approval_rule).
 ///
 /// See [`crate::client::fluent_builders::CreatePullRequestApprovalRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePullRequestApprovalRule {
     _private: (),
 }
@@ -389,7 +389,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePullRequestApprova
 /// [`create_repository`](crate::client::Client::create_repository).
 ///
 /// See [`crate::client::fluent_builders::CreateRepository`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRepository {
     _private: (),
 }
@@ -423,7 +423,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRepository {
 /// [`create_unreferenced_merge_commit`](crate::client::Client::create_unreferenced_merge_commit).
 ///
 /// See [`crate::client::fluent_builders::CreateUnreferencedMergeCommit`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateUnreferencedMergeCommit {
     _private: (),
 }
@@ -457,7 +457,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUnreferencedMergeC
 /// [`delete_approval_rule_template`](crate::client::Client::delete_approval_rule_template).
 ///
 /// See [`crate::client::fluent_builders::DeleteApprovalRuleTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteApprovalRuleTemplate {
     _private: (),
 }
@@ -491,7 +491,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApprovalRuleTempla
 /// [`delete_branch`](crate::client::Client::delete_branch).
 ///
 /// See [`crate::client::fluent_builders::DeleteBranch`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBranch {
     _private: (),
 }
@@ -523,7 +523,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBranch {
 /// [`delete_comment_content`](crate::client::Client::delete_comment_content).
 ///
 /// See [`crate::client::fluent_builders::DeleteCommentContent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCommentContent {
     _private: (),
 }
@@ -557,7 +557,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCommentContent {
 /// [`delete_file`](crate::client::Client::delete_file).
 ///
 /// See [`crate::client::fluent_builders::DeleteFile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFile {
     _private: (),
 }
@@ -589,7 +589,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFile {
 /// [`delete_pull_request_approval_rule`](crate::client::Client::delete_pull_request_approval_rule).
 ///
 /// See [`crate::client::fluent_builders::DeletePullRequestApprovalRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePullRequestApprovalRule {
     _private: (),
 }
@@ -623,7 +623,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePullRequestApprova
 /// [`delete_repository`](crate::client::Client::delete_repository).
 ///
 /// See [`crate::client::fluent_builders::DeleteRepository`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRepository {
     _private: (),
 }
@@ -657,7 +657,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRepository {
 /// [`describe_merge_conflicts`](crate::client::Client::describe_merge_conflicts).
 ///
 /// See [`crate::client::fluent_builders::DescribeMergeConflicts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMergeConflicts {
     _private: (),
 }
@@ -691,7 +691,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMergeConflicts {
 /// [`describe_pull_request_events`](crate::client::Client::describe_pull_request_events).
 ///
 /// See [`crate::client::fluent_builders::DescribePullRequestEvents`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePullRequestEvents {
     _private: (),
 }
@@ -725,7 +725,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePullRequestEvent
 /// [`disassociate_approval_rule_template_from_repository`](crate::client::Client::disassociate_approval_rule_template_from_repository).
 ///
 /// See [`crate::client::fluent_builders::DisassociateApprovalRuleTemplateFromRepository`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateApprovalRuleTemplateFromRepository {
     _private: (),
 }
@@ -764,7 +764,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`evaluate_pull_request_approval_rules`](crate::client::Client::evaluate_pull_request_approval_rules).
 ///
 /// See [`crate::client::fluent_builders::EvaluatePullRequestApprovalRules`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct EvaluatePullRequestApprovalRules {
     _private: (),
 }
@@ -798,7 +798,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EvaluatePullRequestAppro
 /// [`get_approval_rule_template`](crate::client::Client::get_approval_rule_template).
 ///
 /// See [`crate::client::fluent_builders::GetApprovalRuleTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetApprovalRuleTemplate {
     _private: (),
 }
@@ -832,7 +832,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApprovalRuleTemplate 
 /// [`get_blob`](crate::client::Client::get_blob).
 ///
 /// See [`crate::client::fluent_builders::GetBlob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBlob {
     _private: (),
 }
@@ -863,7 +863,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBlob {
 /// [`get_branch`](crate::client::Client::get_branch).
 ///
 /// See [`crate::client::fluent_builders::GetBranch`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBranch {
     _private: (),
 }
@@ -894,7 +894,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBranch {
 /// [`get_comment`](crate::client::Client::get_comment).
 ///
 /// See [`crate::client::fluent_builders::GetComment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetComment {
     _private: (),
 }
@@ -926,7 +926,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComment {
 /// [`get_comment_reactions`](crate::client::Client::get_comment_reactions).
 ///
 /// See [`crate::client::fluent_builders::GetCommentReactions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCommentReactions {
     _private: (),
 }
@@ -960,7 +960,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCommentReactions {
 /// [`get_comments_for_compared_commit`](crate::client::Client::get_comments_for_compared_commit).
 ///
 /// See [`crate::client::fluent_builders::GetCommentsForComparedCommit`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCommentsForComparedCommit {
     _private: (),
 }
@@ -994,7 +994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCommentsForComparedCo
 /// [`get_comments_for_pull_request`](crate::client::Client::get_comments_for_pull_request).
 ///
 /// See [`crate::client::fluent_builders::GetCommentsForPullRequest`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCommentsForPullRequest {
     _private: (),
 }
@@ -1028,7 +1028,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCommentsForPullReques
 /// [`get_commit`](crate::client::Client::get_commit).
 ///
 /// See [`crate::client::fluent_builders::GetCommit`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCommit {
     _private: (),
 }
@@ -1059,7 +1059,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCommit {
 /// [`get_differences`](crate::client::Client::get_differences).
 ///
 /// See [`crate::client::fluent_builders::GetDifferences`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDifferences {
     _private: (),
 }
@@ -1091,7 +1091,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDifferences {
 /// [`get_file`](crate::client::Client::get_file).
 ///
 /// See [`crate::client::fluent_builders::GetFile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFile {
     _private: (),
 }
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFile {
 /// [`get_folder`](crate::client::Client::get_folder).
 ///
 /// See [`crate::client::fluent_builders::GetFolder`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFolder {
     _private: (),
 }
@@ -1153,7 +1153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFolder {
 /// [`get_merge_commit`](crate::client::Client::get_merge_commit).
 ///
 /// See [`crate::client::fluent_builders::GetMergeCommit`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMergeCommit {
     _private: (),
 }
@@ -1185,7 +1185,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMergeCommit {
 /// [`get_merge_conflicts`](crate::client::Client::get_merge_conflicts).
 ///
 /// See [`crate::client::fluent_builders::GetMergeConflicts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMergeConflicts {
     _private: (),
 }
@@ -1219,7 +1219,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMergeConflicts {
 /// [`get_merge_options`](crate::client::Client::get_merge_options).
 ///
 /// See [`crate::client::fluent_builders::GetMergeOptions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMergeOptions {
     _private: (),
 }
@@ -1253,7 +1253,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMergeOptions {
 /// [`get_pull_request`](crate::client::Client::get_pull_request).
 ///
 /// See [`crate::client::fluent_builders::GetPullRequest`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPullRequest {
     _private: (),
 }
@@ -1285,7 +1285,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPullRequest {
 /// [`get_pull_request_approval_states`](crate::client::Client::get_pull_request_approval_states).
 ///
 /// See [`crate::client::fluent_builders::GetPullRequestApprovalStates`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPullRequestApprovalStates {
     _private: (),
 }
@@ -1319,7 +1319,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPullRequestApprovalSt
 /// [`get_pull_request_override_state`](crate::client::Client::get_pull_request_override_state).
 ///
 /// See [`crate::client::fluent_builders::GetPullRequestOverrideState`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPullRequestOverrideState {
     _private: (),
 }
@@ -1353,7 +1353,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPullRequestOverrideSt
 /// [`get_repository`](crate::client::Client::get_repository).
 ///
 /// See [`crate::client::fluent_builders::GetRepository`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRepository {
     _private: (),
 }
@@ -1385,7 +1385,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRepository {
 /// [`get_repository_triggers`](crate::client::Client::get_repository_triggers).
 ///
 /// See [`crate::client::fluent_builders::GetRepositoryTriggers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRepositoryTriggers {
     _private: (),
 }
@@ -1419,7 +1419,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRepositoryTriggers {
 /// [`list_approval_rule_templates`](crate::client::Client::list_approval_rule_templates).
 ///
 /// See [`crate::client::fluent_builders::ListApprovalRuleTemplates`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListApprovalRuleTemplates {
     _private: (),
 }
@@ -1453,7 +1453,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApprovalRuleTemplate
 /// [`list_associated_approval_rule_templates_for_repository`](crate::client::Client::list_associated_approval_rule_templates_for_repository).
 ///
 /// See [`crate::client::fluent_builders::ListAssociatedApprovalRuleTemplatesForRepository`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAssociatedApprovalRuleTemplatesForRepository {
     _private: (),
 }
@@ -1491,7 +1491,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`list_branches`](crate::client::Client::list_branches).
 ///
 /// See [`crate::client::fluent_builders::ListBranches`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBranches {
     _private: (),
 }
@@ -1523,7 +1523,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBranches {
 /// [`list_pull_requests`](crate::client::Client::list_pull_requests).
 ///
 /// See [`crate::client::fluent_builders::ListPullRequests`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPullRequests {
     _private: (),
 }
@@ -1557,7 +1557,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPullRequests {
 /// [`list_repositories`](crate::client::Client::list_repositories).
 ///
 /// See [`crate::client::fluent_builders::ListRepositories`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRepositories {
     _private: (),
 }
@@ -1591,7 +1591,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRepositories {
 /// [`list_repositories_for_approval_rule_template`](crate::client::Client::list_repositories_for_approval_rule_template).
 ///
 /// See [`crate::client::fluent_builders::ListRepositoriesForApprovalRuleTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRepositoriesForApprovalRuleTemplate {
     _private: (),
 }
@@ -1629,7 +1629,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRepositoriesForAppro
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -1663,7 +1663,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`merge_branches_by_fast_forward`](crate::client::Client::merge_branches_by_fast_forward).
 ///
 /// See [`crate::client::fluent_builders::MergeBranchesByFastForward`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct MergeBranchesByFastForward {
     _private: (),
 }
@@ -1697,7 +1697,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergeBranchesByFastForwa
 /// [`merge_branches_by_squash`](crate::client::Client::merge_branches_by_squash).
 ///
 /// See [`crate::client::fluent_builders::MergeBranchesBySquash`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct MergeBranchesBySquash {
     _private: (),
 }
@@ -1731,7 +1731,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergeBranchesBySquash {
 /// [`merge_branches_by_three_way`](crate::client::Client::merge_branches_by_three_way).
 ///
 /// See [`crate::client::fluent_builders::MergeBranchesByThreeWay`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct MergeBranchesByThreeWay {
     _private: (),
 }
@@ -1765,7 +1765,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergeBranchesByThreeWay 
 /// [`merge_pull_request_by_fast_forward`](crate::client::Client::merge_pull_request_by_fast_forward).
 ///
 /// See [`crate::client::fluent_builders::MergePullRequestByFastForward`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct MergePullRequestByFastForward {
     _private: (),
 }
@@ -1799,7 +1799,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergePullRequestByFastFo
 /// [`merge_pull_request_by_squash`](crate::client::Client::merge_pull_request_by_squash).
 ///
 /// See [`crate::client::fluent_builders::MergePullRequestBySquash`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct MergePullRequestBySquash {
     _private: (),
 }
@@ -1833,7 +1833,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergePullRequestBySquash
 /// [`merge_pull_request_by_three_way`](crate::client::Client::merge_pull_request_by_three_way).
 ///
 /// See [`crate::client::fluent_builders::MergePullRequestByThreeWay`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct MergePullRequestByThreeWay {
     _private: (),
 }
@@ -1867,7 +1867,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergePullRequestByThreeW
 /// [`override_pull_request_approval_rules`](crate::client::Client::override_pull_request_approval_rules).
 ///
 /// See [`crate::client::fluent_builders::OverridePullRequestApprovalRules`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct OverridePullRequestApprovalRules {
     _private: (),
 }
@@ -1901,7 +1901,7 @@ impl aws_smithy_http::response::ParseStrictResponse for OverridePullRequestAppro
 /// [`post_comment_for_compared_commit`](crate::client::Client::post_comment_for_compared_commit).
 ///
 /// See [`crate::client::fluent_builders::PostCommentForComparedCommit`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PostCommentForComparedCommit {
     _private: (),
 }
@@ -1935,7 +1935,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PostCommentForComparedCo
 /// [`post_comment_for_pull_request`](crate::client::Client::post_comment_for_pull_request).
 ///
 /// See [`crate::client::fluent_builders::PostCommentForPullRequest`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PostCommentForPullRequest {
     _private: (),
 }
@@ -1969,7 +1969,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PostCommentForPullReques
 /// [`post_comment_reply`](crate::client::Client::post_comment_reply).
 ///
 /// See [`crate::client::fluent_builders::PostCommentReply`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PostCommentReply {
     _private: (),
 }
@@ -2003,7 +2003,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PostCommentReply {
 /// [`put_comment_reaction`](crate::client::Client::put_comment_reaction).
 ///
 /// See [`crate::client::fluent_builders::PutCommentReaction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutCommentReaction {
     _private: (),
 }
@@ -2037,7 +2037,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutCommentReaction {
 /// [`put_file`](crate::client::Client::put_file).
 ///
 /// See [`crate::client::fluent_builders::PutFile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutFile {
     _private: (),
 }
@@ -2068,7 +2068,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutFile {
 /// [`put_repository_triggers`](crate::client::Client::put_repository_triggers).
 ///
 /// See [`crate::client::fluent_builders::PutRepositoryTriggers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRepositoryTriggers {
     _private: (),
 }
@@ -2102,7 +2102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRepositoryTriggers {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -2134,7 +2134,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`test_repository_triggers`](crate::client::Client::test_repository_triggers).
 ///
 /// See [`crate::client::fluent_builders::TestRepositoryTriggers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TestRepositoryTriggers {
     _private: (),
 }
@@ -2168,7 +2168,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestRepositoryTriggers {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -2200,7 +2200,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_approval_rule_template_content`](crate::client::Client::update_approval_rule_template_content).
 ///
 /// See [`crate::client::fluent_builders::UpdateApprovalRuleTemplateContent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateApprovalRuleTemplateContent {
     _private: (),
 }
@@ -2234,7 +2234,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApprovalRuleTempla
 /// [`update_approval_rule_template_description`](crate::client::Client::update_approval_rule_template_description).
 ///
 /// See [`crate::client::fluent_builders::UpdateApprovalRuleTemplateDescription`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateApprovalRuleTemplateDescription {
     _private: (),
 }
@@ -2270,7 +2270,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApprovalRuleTempla
 /// [`update_approval_rule_template_name`](crate::client::Client::update_approval_rule_template_name).
 ///
 /// See [`crate::client::fluent_builders::UpdateApprovalRuleTemplateName`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateApprovalRuleTemplateName {
     _private: (),
 }
@@ -2304,7 +2304,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApprovalRuleTempla
 /// [`update_comment`](crate::client::Client::update_comment).
 ///
 /// See [`crate::client::fluent_builders::UpdateComment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateComment {
     _private: (),
 }
@@ -2336,7 +2336,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateComment {
 /// [`update_default_branch`](crate::client::Client::update_default_branch).
 ///
 /// See [`crate::client::fluent_builders::UpdateDefaultBranch`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDefaultBranch {
     _private: (),
 }
@@ -2370,7 +2370,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDefaultBranch {
 /// [`update_pull_request_approval_rule_content`](crate::client::Client::update_pull_request_approval_rule_content).
 ///
 /// See [`crate::client::fluent_builders::UpdatePullRequestApprovalRuleContent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePullRequestApprovalRuleContent {
     _private: (),
 }
@@ -2406,7 +2406,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePullRequestApprova
 /// [`update_pull_request_approval_state`](crate::client::Client::update_pull_request_approval_state).
 ///
 /// See [`crate::client::fluent_builders::UpdatePullRequestApprovalState`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePullRequestApprovalState {
     _private: (),
 }
@@ -2440,7 +2440,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePullRequestApprova
 /// [`update_pull_request_description`](crate::client::Client::update_pull_request_description).
 ///
 /// See [`crate::client::fluent_builders::UpdatePullRequestDescription`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePullRequestDescription {
     _private: (),
 }
@@ -2474,7 +2474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePullRequestDescrip
 /// [`update_pull_request_status`](crate::client::Client::update_pull_request_status).
 ///
 /// See [`crate::client::fluent_builders::UpdatePullRequestStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePullRequestStatus {
     _private: (),
 }
@@ -2508,7 +2508,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePullRequestStatus 
 /// [`update_pull_request_title`](crate::client::Client::update_pull_request_title).
 ///
 /// See [`crate::client::fluent_builders::UpdatePullRequestTitle`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePullRequestTitle {
     _private: (),
 }
@@ -2542,7 +2542,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePullRequestTitle {
 /// [`update_repository_description`](crate::client::Client::update_repository_description).
 ///
 /// See [`crate::client::fluent_builders::UpdateRepositoryDescription`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRepositoryDescription {
     _private: (),
 }
@@ -2576,7 +2576,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRepositoryDescript
 /// [`update_repository_name`](crate::client::Client::update_repository_name).
 ///
 /// See [`crate::client::fluent_builders::UpdateRepositoryName`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRepositoryName {
     _private: (),
 }

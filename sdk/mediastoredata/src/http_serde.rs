@@ -2,20 +2,20 @@
 pub fn add_headers_get_object(
     input: &crate::input::GetObjectInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_1) = &input.range {
-        let formatted_2 = AsRef::<str>::as_ref(inner_1);
+        let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "range",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "range",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("Range", header_value);
         }
@@ -26,71 +26,71 @@ pub fn add_headers_get_object(
 pub fn add_headers_put_object(
     input: &crate::input::PutObjectInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_3) = &input.content_type {
-        let formatted_4 = AsRef::<str>::as_ref(inner_3);
+        let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "content_type",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "content_type",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("Content-Type", header_value);
         }
     }
     if let Some(inner_5) = &input.cache_control {
-        let formatted_6 = AsRef::<str>::as_ref(inner_5);
+        let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "cache_control",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "cache_control",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("Cache-Control", header_value);
         }
     }
     if let Some(inner_7) = &input.storage_class {
-        let formatted_8 = AsRef::<str>::as_ref(inner_7);
+        let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "storage_class",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "storage_class",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-storage-class", header_value);
         }
     }
     if let Some(inner_9) = &input.upload_availability {
-        let formatted_10 = AsRef::<str>::as_ref(inner_9);
+        let formatted_10 = inner_9.as_str();
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "upload_availability",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "upload_availability",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-upload-availability", header_value);
         }
@@ -98,7 +98,7 @@ pub fn add_headers_put_object(
     Ok(builder)
 }
 
-pub fn deser_header_describe_object_describe_object_output_cache_control(
+pub(crate) fn deser_header_describe_object_describe_object_output_cache_control(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -108,22 +108,23 @@ pub fn deser_header_describe_object_describe_object_output_cache_control(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_describe_object_describe_object_output_content_length(
+pub(crate) fn deser_header_describe_object_describe_object_output_content_length(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i64>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Content-Length").iter();
     let var_11 = aws_smithy_http::header::read_many_primitive::<i64>(headers)?;
     if var_11.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_11.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_11.len()
+        )))
     } else {
         let mut var_11 = var_11;
         Ok(var_11.pop())
     }
 }
 
-pub fn deser_header_describe_object_describe_object_output_content_type(
+pub(crate) fn deser_header_describe_object_describe_object_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -133,7 +134,7 @@ pub fn deser_header_describe_object_describe_object_output_content_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_describe_object_describe_object_output_e_tag(
+pub(crate) fn deser_header_describe_object_describe_object_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -143,7 +144,7 @@ pub fn deser_header_describe_object_describe_object_output_e_tag(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_describe_object_describe_object_output_last_modified(
+pub(crate) fn deser_header_describe_object_describe_object_output_last_modified(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<aws_smithy_types::DateTime>,
@@ -155,9 +156,10 @@ pub fn deser_header_describe_object_describe_object_output_last_modified(
         aws_smithy_types::date_time::Format::HttpDate,
     )?;
     if var_12.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_12.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_12.len()
+        )))
     } else {
         let mut var_12 = var_12;
         Ok(var_12.pop())
@@ -172,7 +174,7 @@ pub fn deser_payload_get_object_get_object_output_body(
     Ok(aws_smithy_http::byte_stream::ByteStream::new(body))
 }
 
-pub fn deser_header_get_object_get_object_output_cache_control(
+pub(crate) fn deser_header_get_object_get_object_output_cache_control(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -182,22 +184,23 @@ pub fn deser_header_get_object_get_object_output_cache_control(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_content_length(
+pub(crate) fn deser_header_get_object_get_object_output_content_length(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i64>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Content-Length").iter();
     let var_13 = aws_smithy_http::header::read_many_primitive::<i64>(headers)?;
     if var_13.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_13.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_13.len()
+        )))
     } else {
         let mut var_13 = var_13;
         Ok(var_13.pop())
     }
 }
 
-pub fn deser_header_get_object_get_object_output_content_range(
+pub(crate) fn deser_header_get_object_get_object_output_content_range(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -207,7 +210,7 @@ pub fn deser_header_get_object_get_object_output_content_range(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_content_type(
+pub(crate) fn deser_header_get_object_get_object_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -217,7 +220,7 @@ pub fn deser_header_get_object_get_object_output_content_type(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_e_tag(
+pub(crate) fn deser_header_get_object_get_object_output_e_tag(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -227,7 +230,7 @@ pub fn deser_header_get_object_get_object_output_e_tag(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_object_get_object_output_last_modified(
+pub(crate) fn deser_header_get_object_get_object_output_last_modified(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<aws_smithy_types::DateTime>,
@@ -239,9 +242,10 @@ pub fn deser_header_get_object_get_object_output_last_modified(
         aws_smithy_types::date_time::Format::HttpDate,
     )?;
     if var_14.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_14.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_14.len()
+        )))
     } else {
         let mut var_14 = var_14;
         Ok(var_14.pop())

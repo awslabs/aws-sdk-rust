@@ -5,7 +5,7 @@
 /// [`create_cluster`](crate::client::Client::create_cluster).
 ///
 /// See [`crate::client::fluent_builders::CreateCluster`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCluster {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCluster {
 /// [`create_parameter_group`](crate::client::Client::create_parameter_group).
 ///
 /// See [`crate::client::fluent_builders::CreateParameterGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateParameterGroup {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateParameterGroup {
 /// [`create_subnet_group`](crate::client::Client::create_subnet_group).
 ///
 /// See [`crate::client::fluent_builders::CreateSubnetGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSubnetGroup {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSubnetGroup {
 /// [`decrease_replication_factor`](crate::client::Client::decrease_replication_factor).
 ///
 /// See [`crate::client::fluent_builders::DecreaseReplicationFactor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DecreaseReplicationFactor {
     _private: (),
 }
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DecreaseReplicationFacto
 /// [`delete_cluster`](crate::client::Client::delete_cluster).
 ///
 /// See [`crate::client::fluent_builders::DeleteCluster`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCluster {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCluster {
 /// [`delete_parameter_group`](crate::client::Client::delete_parameter_group).
 ///
 /// See [`crate::client::fluent_builders::DeleteParameterGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteParameterGroup {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteParameterGroup {
 /// [`delete_subnet_group`](crate::client::Client::delete_subnet_group).
 ///
 /// See [`crate::client::fluent_builders::DeleteSubnetGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSubnetGroup {
     _private: (),
 }
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSubnetGroup {
 /// [`describe_clusters`](crate::client::Client::describe_clusters).
 ///
 /// See [`crate::client::fluent_builders::DescribeClusters`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeClusters {
     _private: (),
 }
@@ -273,7 +273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeClusters {
 /// [`describe_default_parameters`](crate::client::Client::describe_default_parameters).
 ///
 /// See [`crate::client::fluent_builders::DescribeDefaultParameters`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDefaultParameters {
     _private: (),
 }
@@ -307,7 +307,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDefaultParameter
 /// [`describe_events`](crate::client::Client::describe_events).
 ///
 /// See [`crate::client::fluent_builders::DescribeEvents`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEvents {
     _private: (),
 }
@@ -339,7 +339,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEvents {
 /// [`describe_parameter_groups`](crate::client::Client::describe_parameter_groups).
 ///
 /// See [`crate::client::fluent_builders::DescribeParameterGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeParameterGroups {
     _private: (),
 }
@@ -373,7 +373,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeParameterGroups 
 /// [`describe_parameters`](crate::client::Client::describe_parameters).
 ///
 /// See [`crate::client::fluent_builders::DescribeParameters`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeParameters {
     _private: (),
 }
@@ -407,7 +407,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeParameters {
 /// [`describe_subnet_groups`](crate::client::Client::describe_subnet_groups).
 ///
 /// See [`crate::client::fluent_builders::DescribeSubnetGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSubnetGroups {
     _private: (),
 }
@@ -441,7 +441,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSubnetGroups {
 /// [`increase_replication_factor`](crate::client::Client::increase_replication_factor).
 ///
 /// See [`crate::client::fluent_builders::IncreaseReplicationFactor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct IncreaseReplicationFactor {
     _private: (),
 }
@@ -475,7 +475,7 @@ impl aws_smithy_http::response::ParseStrictResponse for IncreaseReplicationFacto
 /// [`list_tags`](crate::client::Client::list_tags).
 ///
 /// See [`crate::client::fluent_builders::ListTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTags {
     _private: (),
 }
@@ -506,7 +506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTags {
 /// [`reboot_node`](crate::client::Client::reboot_node).
 ///
 /// See [`crate::client::fluent_builders::RebootNode`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RebootNode {
     _private: (),
 }
@@ -538,7 +538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RebootNode {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -570,7 +570,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -602,7 +602,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_cluster`](crate::client::Client::update_cluster).
 ///
 /// See [`crate::client::fluent_builders::UpdateCluster`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCluster {
     _private: (),
 }
@@ -634,7 +634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCluster {
 /// [`update_parameter_group`](crate::client::Client::update_parameter_group).
 ///
 /// See [`crate::client::fluent_builders::UpdateParameterGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateParameterGroup {
     _private: (),
 }
@@ -668,7 +668,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateParameterGroup {
 /// [`update_subnet_group`](crate::client::Client::update_subnet_group).
 ///
 /// See [`crate::client::fluent_builders::UpdateSubnetGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSubnetGroup {
     _private: (),
 }

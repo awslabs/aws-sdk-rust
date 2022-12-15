@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod abort_multipart_upload_input {
 
     /// A builder for [`AbortMultipartUploadInput`](crate::input::AbortMultipartUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -45,8 +45,10 @@ pub mod abort_multipart_upload_input {
         /// Consumes the builder and constructs a [`AbortMultipartUploadInput`](crate::input::AbortMultipartUploadInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AbortMultipartUploadInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AbortMultipartUploadInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AbortMultipartUploadInput {
                 account_id: self.account_id,
                 vault_name: self.vault_name,
@@ -68,7 +70,7 @@ impl AbortMultipartUploadInput {
             crate::operation::AbortMultipartUpload,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -77,48 +79,63 @@ impl AbortMultipartUploadInput {
             fn uri_base(
                 _input: &crate::input::AbortMultipartUploadInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.account_id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_2 = &_input.vault_name;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_3 = &_input.upload_id;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "upload_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let upload_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "upload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let upload_id = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if upload_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "upload_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "upload_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -134,8 +151,10 @@ impl AbortMultipartUploadInput {
             fn update_http_builder(
                 input: &crate::input::AbortMultipartUploadInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -209,7 +228,7 @@ impl AbortMultipartUploadInput {
 pub mod abort_vault_lock_input {
 
     /// A builder for [`AbortVaultLockInput`](crate::input::AbortVaultLockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -238,7 +257,7 @@ pub mod abort_vault_lock_input {
         /// Consumes the builder and constructs a [`AbortVaultLockInput`](crate::input::AbortVaultLockInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AbortVaultLockInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::AbortVaultLockInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::AbortVaultLockInput {
                 account_id: self.account_id,
@@ -260,7 +279,7 @@ impl AbortVaultLockInput {
             crate::operation::AbortVaultLock,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -269,34 +288,44 @@ impl AbortVaultLockInput {
             fn uri_base(
                 _input: &crate::input::AbortVaultLockInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.account_id;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_5 = &_input.vault_name;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -311,8 +340,10 @@ impl AbortVaultLockInput {
             fn update_http_builder(
                 input: &crate::input::AbortVaultLockInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -386,7 +417,7 @@ impl AbortVaultLockInput {
 pub mod add_tags_to_vault_input {
 
     /// A builder for [`AddTagsToVaultInput`](crate::input::AddTagsToVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -443,7 +474,7 @@ pub mod add_tags_to_vault_input {
         /// Consumes the builder and constructs a [`AddTagsToVaultInput`](crate::input::AddTagsToVaultInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AddTagsToVaultInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::AddTagsToVaultInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::AddTagsToVaultInput {
                 account_id: self.account_id,
@@ -466,7 +497,7 @@ impl AddTagsToVaultInput {
             crate::operation::AddTagsToVault,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -475,34 +506,44 @@ impl AddTagsToVaultInput {
             fn uri_base(
                 _input: &crate::input::AddTagsToVaultInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.account_id;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_7 = &_input.vault_name;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -516,7 +557,7 @@ impl AddTagsToVaultInput {
             fn uri_query(
                 _input: &crate::input::AddTagsToVaultInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "add");
                 Ok(())
@@ -525,8 +566,10 @@ impl AddTagsToVaultInput {
             fn update_http_builder(
                 input: &crate::input::AddTagsToVaultInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -615,7 +658,7 @@ impl AddTagsToVaultInput {
 pub mod complete_multipart_upload_input {
 
     /// A builder for [`CompleteMultipartUploadInput`](crate::input::CompleteMultipartUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -679,7 +722,7 @@ pub mod complete_multipart_upload_input {
             self,
         ) -> Result<
             crate::input::CompleteMultipartUploadInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CompleteMultipartUploadInput {
                 account_id: self.account_id,
@@ -704,7 +747,7 @@ impl CompleteMultipartUploadInput {
             crate::operation::CompleteMultipartUpload,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -713,48 +756,63 @@ impl CompleteMultipartUploadInput {
             fn uri_base(
                 _input: &crate::input::CompleteMultipartUploadInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_8 = &_input.account_id;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_9 = &_input.vault_name;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_9, false);
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_10 = &_input.upload_id;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "upload_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let upload_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "upload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let upload_id = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if upload_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "upload_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "upload_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -770,8 +828,10 @@ impl CompleteMultipartUploadInput {
             fn update_http_builder(
                 input: &crate::input::CompleteMultipartUploadInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -847,7 +907,7 @@ impl CompleteMultipartUploadInput {
 pub mod complete_vault_lock_input {
 
     /// A builder for [`CompleteVaultLockInput`](crate::input::CompleteVaultLockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -887,8 +947,10 @@ pub mod complete_vault_lock_input {
         /// Consumes the builder and constructs a [`CompleteVaultLockInput`](crate::input::CompleteVaultLockInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CompleteVaultLockInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CompleteVaultLockInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CompleteVaultLockInput {
                 account_id: self.account_id,
                 vault_name: self.vault_name,
@@ -910,7 +972,7 @@ impl CompleteVaultLockInput {
             crate::operation::CompleteVaultLock,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -919,48 +981,63 @@ impl CompleteVaultLockInput {
             fn uri_base(
                 _input: &crate::input::CompleteVaultLockInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.account_id;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_11,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_12 = &_input.vault_name;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_12, false);
+                let input_12 = input_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_12,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_13 = &_input.lock_id;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "lock_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let lock_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "lock_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let lock_id = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if lock_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "lock_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "lock_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -976,8 +1053,10 @@ impl CompleteVaultLockInput {
             fn update_http_builder(
                 input: &crate::input::CompleteVaultLockInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1051,7 +1130,7 @@ impl CompleteVaultLockInput {
 pub mod create_vault_input {
 
     /// A builder for [`CreateVaultInput`](crate::input::CreateVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1080,7 +1159,7 @@ pub mod create_vault_input {
         /// Consumes the builder and constructs a [`CreateVaultInput`](crate::input::CreateVaultInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateVaultInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateVaultInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateVaultInput {
                 account_id: self.account_id,
@@ -1102,7 +1181,7 @@ impl CreateVaultInput {
             crate::operation::CreateVault,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -1111,34 +1190,44 @@ impl CreateVaultInput {
             fn uri_base(
                 _input: &crate::input::CreateVaultInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.account_id;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let input_14 = input_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_14,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_15 = &_input.vault_name;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_15, false);
+                let input_15 = input_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_15,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1153,8 +1242,10 @@ impl CreateVaultInput {
             fn update_http_builder(
                 input: &crate::input::CreateVaultInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -1228,7 +1319,7 @@ impl CreateVaultInput {
 pub mod delete_archive_input {
 
     /// A builder for [`DeleteArchiveInput`](crate::input::DeleteArchiveInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1268,7 +1359,7 @@ pub mod delete_archive_input {
         /// Consumes the builder and constructs a [`DeleteArchiveInput`](crate::input::DeleteArchiveInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteArchiveInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteArchiveInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteArchiveInput {
                 account_id: self.account_id,
@@ -1291,7 +1382,7 @@ impl DeleteArchiveInput {
             crate::operation::DeleteArchive,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -1300,48 +1391,63 @@ impl DeleteArchiveInput {
             fn uri_base(
                 _input: &crate::input::DeleteArchiveInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_16 = &_input.account_id;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_17 = &_input.vault_name;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_17, false);
+                let input_17 = input_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_18 = &_input.archive_id;
-                let input_18 = input_18.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "archive_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let archive_id = aws_smithy_http::label::fmt_string(input_18, false);
+                let input_18 = input_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "archive_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let archive_id = aws_smithy_http::label::fmt_string(
+                    input_18,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if archive_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "archive_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "archive_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1357,8 +1463,10 @@ impl DeleteArchiveInput {
             fn update_http_builder(
                 input: &crate::input::DeleteArchiveInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1432,7 +1540,7 @@ impl DeleteArchiveInput {
 pub mod delete_vault_input {
 
     /// A builder for [`DeleteVaultInput`](crate::input::DeleteVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1461,7 +1569,7 @@ pub mod delete_vault_input {
         /// Consumes the builder and constructs a [`DeleteVaultInput`](crate::input::DeleteVaultInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteVaultInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteVaultInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteVaultInput {
                 account_id: self.account_id,
@@ -1483,7 +1591,7 @@ impl DeleteVaultInput {
             crate::operation::DeleteVault,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -1492,34 +1600,44 @@ impl DeleteVaultInput {
             fn uri_base(
                 _input: &crate::input::DeleteVaultInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_19 = &_input.account_id;
-                let input_19 = input_19.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_19, false);
+                let input_19 = input_19.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_19,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_20 = &_input.vault_name;
-                let input_20 = input_20.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_20, false);
+                let input_20 = input_20.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_20,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1534,8 +1652,10 @@ impl DeleteVaultInput {
             fn update_http_builder(
                 input: &crate::input::DeleteVaultInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1609,7 +1729,7 @@ impl DeleteVaultInput {
 pub mod delete_vault_access_policy_input {
 
     /// A builder for [`DeleteVaultAccessPolicyInput`](crate::input::DeleteVaultAccessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1640,7 +1760,7 @@ pub mod delete_vault_access_policy_input {
             self,
         ) -> Result<
             crate::input::DeleteVaultAccessPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteVaultAccessPolicyInput {
                 account_id: self.account_id,
@@ -1662,7 +1782,7 @@ impl DeleteVaultAccessPolicyInput {
             crate::operation::DeleteVaultAccessPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -1671,34 +1791,44 @@ impl DeleteVaultAccessPolicyInput {
             fn uri_base(
                 _input: &crate::input::DeleteVaultAccessPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_21 = &_input.account_id;
-                let input_21 = input_21.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let input_21 = input_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_21,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_22 = &_input.vault_name;
-                let input_22 = input_22.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_22, false);
+                let input_22 = input_22.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_22,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1713,8 +1843,10 @@ impl DeleteVaultAccessPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteVaultAccessPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1788,7 +1920,7 @@ impl DeleteVaultAccessPolicyInput {
 pub mod delete_vault_notifications_input {
 
     /// A builder for [`DeleteVaultNotificationsInput`](crate::input::DeleteVaultNotificationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1819,7 +1951,7 @@ pub mod delete_vault_notifications_input {
             self,
         ) -> Result<
             crate::input::DeleteVaultNotificationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteVaultNotificationsInput {
                 account_id: self.account_id,
@@ -1841,7 +1973,7 @@ impl DeleteVaultNotificationsInput {
             crate::operation::DeleteVaultNotifications,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -1850,34 +1982,44 @@ impl DeleteVaultNotificationsInput {
             fn uri_base(
                 _input: &crate::input::DeleteVaultNotificationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_23 = &_input.account_id;
-                let input_23 = input_23.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_23, false);
+                let input_23 = input_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_23,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_24 = &_input.vault_name;
-                let input_24 = input_24.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_24, false);
+                let input_24 = input_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_24,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1892,8 +2034,10 @@ impl DeleteVaultNotificationsInput {
             fn update_http_builder(
                 input: &crate::input::DeleteVaultNotificationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1967,7 +2111,7 @@ impl DeleteVaultNotificationsInput {
 pub mod describe_job_input {
 
     /// A builder for [`DescribeJobInput`](crate::input::DescribeJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -2007,7 +2151,7 @@ pub mod describe_job_input {
         /// Consumes the builder and constructs a [`DescribeJobInput`](crate::input::DescribeJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeJobInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeJobInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeJobInput {
                 account_id: self.account_id,
@@ -2030,7 +2174,7 @@ impl DescribeJobInput {
             crate::operation::DescribeJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -2039,48 +2183,63 @@ impl DescribeJobInput {
             fn uri_base(
                 _input: &crate::input::DescribeJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_25 = &_input.account_id;
-                let input_25 = input_25.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_25, false);
+                let input_25 = input_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_25,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_26 = &_input.vault_name;
-                let input_26 = input_26.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_26, false);
+                let input_26 = input_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_26,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_27 = &_input.job_id;
-                let input_27 = input_27.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_27, false);
+                let input_27 = input_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "job_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_27,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "job_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2096,8 +2255,10 @@ impl DescribeJobInput {
             fn update_http_builder(
                 input: &crate::input::DescribeJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2171,7 +2332,7 @@ impl DescribeJobInput {
 pub mod describe_vault_input {
 
     /// A builder for [`DescribeVaultInput`](crate::input::DescribeVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -2200,7 +2361,7 @@ pub mod describe_vault_input {
         /// Consumes the builder and constructs a [`DescribeVaultInput`](crate::input::DescribeVaultInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeVaultInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeVaultInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeVaultInput {
                 account_id: self.account_id,
@@ -2222,7 +2383,7 @@ impl DescribeVaultInput {
             crate::operation::DescribeVault,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -2231,34 +2392,44 @@ impl DescribeVaultInput {
             fn uri_base(
                 _input: &crate::input::DescribeVaultInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_28 = &_input.account_id;
-                let input_28 = input_28.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_28, false);
+                let input_28 = input_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_28,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_29 = &_input.vault_name;
-                let input_29 = input_29.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_29, false);
+                let input_29 = input_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_29,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2273,8 +2444,10 @@ impl DescribeVaultInput {
             fn update_http_builder(
                 input: &crate::input::DescribeVaultInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2348,7 +2521,7 @@ impl DescribeVaultInput {
 pub mod get_data_retrieval_policy_input {
 
     /// A builder for [`GetDataRetrievalPolicyInput`](crate::input::GetDataRetrievalPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
@@ -2366,8 +2539,10 @@ pub mod get_data_retrieval_policy_input {
         /// Consumes the builder and constructs a [`GetDataRetrievalPolicyInput`](crate::input::GetDataRetrievalPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDataRetrievalPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetDataRetrievalPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetDataRetrievalPolicyInput {
                 account_id: self.account_id,
             })
@@ -2387,7 +2562,7 @@ impl GetDataRetrievalPolicyInput {
             crate::operation::GetDataRetrievalPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -2396,20 +2571,25 @@ impl GetDataRetrievalPolicyInput {
             fn uri_base(
                 _input: &crate::input::GetDataRetrievalPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_30 = &_input.account_id;
-                let input_30 = input_30.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_30, false);
+                let input_30 = input_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_30,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2423,8 +2603,10 @@ impl GetDataRetrievalPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetDataRetrievalPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2498,7 +2680,7 @@ impl GetDataRetrievalPolicyInput {
 pub mod get_job_output_input {
 
     /// A builder for [`GetJobOutputInput`](crate::input::GetJobOutputInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -2563,7 +2745,7 @@ pub mod get_job_output_input {
         /// Consumes the builder and constructs a [`GetJobOutputInput`](crate::input::GetJobOutputInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetJobOutputInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetJobOutputInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetJobOutputInput {
                 account_id: self.account_id,
@@ -2587,7 +2769,7 @@ impl GetJobOutputInput {
             crate::operation::GetJobOutput,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -2596,48 +2778,63 @@ impl GetJobOutputInput {
             fn uri_base(
                 _input: &crate::input::GetJobOutputInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_31 = &_input.account_id;
-                let input_31 = input_31.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_31, false);
+                let input_31 = input_31.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_31,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_32 = &_input.vault_name;
-                let input_32 = input_32.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_32, false);
+                let input_32 = input_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_32,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_33 = &_input.job_id;
-                let input_33 = input_33.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_33, false);
+                let input_33 = input_33.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "job_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_33,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "job_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2653,8 +2850,10 @@ impl GetJobOutputInput {
             fn update_http_builder(
                 input: &crate::input::GetJobOutputInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_job_output(input, builder)?;
@@ -2729,7 +2928,7 @@ impl GetJobOutputInput {
 pub mod get_vault_access_policy_input {
 
     /// A builder for [`GetVaultAccessPolicyInput`](crate::input::GetVaultAccessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -2758,8 +2957,10 @@ pub mod get_vault_access_policy_input {
         /// Consumes the builder and constructs a [`GetVaultAccessPolicyInput`](crate::input::GetVaultAccessPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetVaultAccessPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetVaultAccessPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetVaultAccessPolicyInput {
                 account_id: self.account_id,
                 vault_name: self.vault_name,
@@ -2780,7 +2981,7 @@ impl GetVaultAccessPolicyInput {
             crate::operation::GetVaultAccessPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -2789,34 +2990,44 @@ impl GetVaultAccessPolicyInput {
             fn uri_base(
                 _input: &crate::input::GetVaultAccessPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_34 = &_input.account_id;
-                let input_34 = input_34.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_34, false);
+                let input_34 = input_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_34,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_35 = &_input.vault_name;
-                let input_35 = input_35.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_35, false);
+                let input_35 = input_35.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_35,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2831,8 +3042,10 @@ impl GetVaultAccessPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetVaultAccessPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2906,7 +3119,7 @@ impl GetVaultAccessPolicyInput {
 pub mod get_vault_lock_input {
 
     /// A builder for [`GetVaultLockInput`](crate::input::GetVaultLockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -2935,7 +3148,7 @@ pub mod get_vault_lock_input {
         /// Consumes the builder and constructs a [`GetVaultLockInput`](crate::input::GetVaultLockInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetVaultLockInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetVaultLockInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetVaultLockInput {
                 account_id: self.account_id,
@@ -2957,7 +3170,7 @@ impl GetVaultLockInput {
             crate::operation::GetVaultLock,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -2966,34 +3179,44 @@ impl GetVaultLockInput {
             fn uri_base(
                 _input: &crate::input::GetVaultLockInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_36 = &_input.account_id;
-                let input_36 = input_36.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_36, false);
+                let input_36 = input_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_36,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_37 = &_input.vault_name;
-                let input_37 = input_37.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_37, false);
+                let input_37 = input_37.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_37,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3008,8 +3231,10 @@ impl GetVaultLockInput {
             fn update_http_builder(
                 input: &crate::input::GetVaultLockInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3083,7 +3308,7 @@ impl GetVaultLockInput {
 pub mod get_vault_notifications_input {
 
     /// A builder for [`GetVaultNotificationsInput`](crate::input::GetVaultNotificationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -3112,8 +3337,10 @@ pub mod get_vault_notifications_input {
         /// Consumes the builder and constructs a [`GetVaultNotificationsInput`](crate::input::GetVaultNotificationsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetVaultNotificationsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetVaultNotificationsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetVaultNotificationsInput {
                 account_id: self.account_id,
                 vault_name: self.vault_name,
@@ -3134,7 +3361,7 @@ impl GetVaultNotificationsInput {
             crate::operation::GetVaultNotifications,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -3143,34 +3370,44 @@ impl GetVaultNotificationsInput {
             fn uri_base(
                 _input: &crate::input::GetVaultNotificationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_38 = &_input.account_id;
-                let input_38 = input_38.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let input_38 = input_38.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_38,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_39 = &_input.vault_name;
-                let input_39 = input_39.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_39, false);
+                let input_39 = input_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_39,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3185,8 +3422,10 @@ impl GetVaultNotificationsInput {
             fn update_http_builder(
                 input: &crate::input::GetVaultNotificationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3260,7 +3499,7 @@ impl GetVaultNotificationsInput {
 pub mod initiate_job_input {
 
     /// A builder for [`InitiateJobInput`](crate::input::InitiateJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -3303,7 +3542,7 @@ pub mod initiate_job_input {
         /// Consumes the builder and constructs a [`InitiateJobInput`](crate::input::InitiateJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::InitiateJobInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::InitiateJobInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::InitiateJobInput {
                 account_id: self.account_id,
@@ -3326,7 +3565,7 @@ impl InitiateJobInput {
             crate::operation::InitiateJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -3335,34 +3574,44 @@ impl InitiateJobInput {
             fn uri_base(
                 _input: &crate::input::InitiateJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_40 = &_input.account_id;
-                let input_40 = input_40.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_40, false);
+                let input_40 = input_40.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_40,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_41 = &_input.vault_name;
-                let input_41 = input_41.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_41, false);
+                let input_41 = input_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_41,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3377,8 +3626,10 @@ impl InitiateJobInput {
             fn update_http_builder(
                 input: &crate::input::InitiateJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3466,7 +3717,7 @@ impl InitiateJobInput {
 pub mod initiate_multipart_upload_input {
 
     /// A builder for [`InitiateMultipartUploadInput`](crate::input::InitiateMultipartUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -3524,7 +3775,7 @@ pub mod initiate_multipart_upload_input {
             self,
         ) -> Result<
             crate::input::InitiateMultipartUploadInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::InitiateMultipartUploadInput {
                 account_id: self.account_id,
@@ -3548,7 +3799,7 @@ impl InitiateMultipartUploadInput {
             crate::operation::InitiateMultipartUpload,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -3557,34 +3808,44 @@ impl InitiateMultipartUploadInput {
             fn uri_base(
                 _input: &crate::input::InitiateMultipartUploadInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_42 = &_input.account_id;
-                let input_42 = input_42.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_42, false);
+                let input_42 = input_42.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_42,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_43 = &_input.vault_name;
-                let input_43 = input_43.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_43, false);
+                let input_43 = input_43.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_43,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3599,8 +3860,10 @@ impl InitiateMultipartUploadInput {
             fn update_http_builder(
                 input: &crate::input::InitiateMultipartUploadInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -3676,7 +3939,7 @@ impl InitiateMultipartUploadInput {
 pub mod initiate_vault_lock_input {
 
     /// A builder for [`InitiateVaultLockInput`](crate::input::InitiateVaultLockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -3719,8 +3982,10 @@ pub mod initiate_vault_lock_input {
         /// Consumes the builder and constructs a [`InitiateVaultLockInput`](crate::input::InitiateVaultLockInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::InitiateVaultLockInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::InitiateVaultLockInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::InitiateVaultLockInput {
                 account_id: self.account_id,
                 vault_name: self.vault_name,
@@ -3742,7 +4007,7 @@ impl InitiateVaultLockInput {
             crate::operation::InitiateVaultLock,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -3751,34 +4016,44 @@ impl InitiateVaultLockInput {
             fn uri_base(
                 _input: &crate::input::InitiateVaultLockInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_44 = &_input.account_id;
-                let input_44 = input_44.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_44, false);
+                let input_44 = input_44.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_44,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_45 = &_input.vault_name;
-                let input_45 = input_45.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_45, false);
+                let input_45 = input_45.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_45,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3793,8 +4068,10 @@ impl InitiateVaultLockInput {
             fn update_http_builder(
                 input: &crate::input::InitiateVaultLockInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3882,7 +4159,7 @@ impl InitiateVaultLockInput {
 pub mod list_jobs_input {
 
     /// A builder for [`ListJobsInput`](crate::input::ListJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -3955,7 +4232,8 @@ pub mod list_jobs_input {
         /// Consumes the builder and constructs a [`ListJobsInput`](crate::input::ListJobsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListJobsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListJobsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListJobsInput {
                 account_id: self.account_id,
                 vault_name: self.vault_name,
@@ -3980,7 +4258,7 @@ impl ListJobsInput {
             crate::operation::ListJobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -3989,34 +4267,44 @@ impl ListJobsInput {
             fn uri_base(
                 _input: &crate::input::ListJobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_46 = &_input.account_id;
-                let input_46 = input_46.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_46, false);
+                let input_46 = input_46.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_46,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_47 = &_input.vault_name;
-                let input_47 = input_47.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_47, false);
+                let input_47 = input_47.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_47,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4030,22 +4318,30 @@ impl ListJobsInput {
             fn uri_query(
                 _input: &crate::input::ListJobsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_48) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
-                    );
+                    if *inner_48 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_49) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_49));
+                    {
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_49));
+                    }
                 }
                 if let Some(inner_50) = &_input.statuscode {
-                    query.push_kv("statuscode", &aws_smithy_http::query::fmt_string(&inner_50));
+                    {
+                        query.push_kv("statuscode", &aws_smithy_http::query::fmt_string(&inner_50));
+                    }
                 }
                 if let Some(inner_51) = &_input.completed {
-                    query.push_kv("completed", &aws_smithy_http::query::fmt_string(&inner_51));
+                    {
+                        query.push_kv("completed", &aws_smithy_http::query::fmt_string(&inner_51));
+                    }
                 }
                 Ok(())
             }
@@ -4053,8 +4349,10 @@ impl ListJobsInput {
             fn update_http_builder(
                 input: &crate::input::ListJobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4126,7 +4424,7 @@ impl ListJobsInput {
 pub mod list_multipart_uploads_input {
 
     /// A builder for [`ListMultipartUploadsInput`](crate::input::ListMultipartUploadsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -4177,8 +4475,10 @@ pub mod list_multipart_uploads_input {
         /// Consumes the builder and constructs a [`ListMultipartUploadsInput`](crate::input::ListMultipartUploadsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListMultipartUploadsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListMultipartUploadsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListMultipartUploadsInput {
                 account_id: self.account_id,
                 vault_name: self.vault_name,
@@ -4201,7 +4501,7 @@ impl ListMultipartUploadsInput {
             crate::operation::ListMultipartUploads,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -4210,34 +4510,44 @@ impl ListMultipartUploadsInput {
             fn uri_base(
                 _input: &crate::input::ListMultipartUploadsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_52 = &_input.account_id;
-                let input_52 = input_52.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_52, false);
+                let input_52 = input_52.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_52,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_53 = &_input.vault_name;
-                let input_53 = input_53.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_53, false);
+                let input_53 = input_53.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_53,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4251,16 +4561,20 @@ impl ListMultipartUploadsInput {
             fn uri_query(
                 _input: &crate::input::ListMultipartUploadsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_54) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
-                    );
+                    if *inner_54 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_55) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_55));
+                    {
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_55));
+                    }
                 }
                 Ok(())
             }
@@ -4268,8 +4582,10 @@ impl ListMultipartUploadsInput {
             fn update_http_builder(
                 input: &crate::input::ListMultipartUploadsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4344,7 +4660,7 @@ impl ListMultipartUploadsInput {
 pub mod list_parts_input {
 
     /// A builder for [`ListPartsInput`](crate::input::ListPartsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -4406,7 +4722,8 @@ pub mod list_parts_input {
         /// Consumes the builder and constructs a [`ListPartsInput`](crate::input::ListPartsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPartsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListPartsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListPartsInput {
                 account_id: self.account_id,
                 vault_name: self.vault_name,
@@ -4430,7 +4747,7 @@ impl ListPartsInput {
             crate::operation::ListParts,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -4439,48 +4756,63 @@ impl ListPartsInput {
             fn uri_base(
                 _input: &crate::input::ListPartsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_56 = &_input.account_id;
-                let input_56 = input_56.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_56, false);
+                let input_56 = input_56.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_56,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_57 = &_input.vault_name;
-                let input_57 = input_57.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_57, false);
+                let input_57 = input_57.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_57,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_58 = &_input.upload_id;
-                let input_58 = input_58.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "upload_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let upload_id = aws_smithy_http::label::fmt_string(input_58, false);
+                let input_58 = input_58.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "upload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let upload_id = aws_smithy_http::label::fmt_string(
+                    input_58,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if upload_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "upload_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "upload_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4495,16 +4827,20 @@ impl ListPartsInput {
             fn uri_query(
                 _input: &crate::input::ListPartsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_59) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_59));
+                    {
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_59));
+                    }
                 }
                 if let Some(inner_60) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_60).encode(),
-                    );
+                    if *inner_60 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_60).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4512,8 +4848,10 @@ impl ListPartsInput {
             fn update_http_builder(
                 input: &crate::input::ListPartsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4586,7 +4924,7 @@ impl ListPartsInput {
 pub mod list_provisioned_capacity_input {
 
     /// A builder for [`ListProvisionedCapacityInput`](crate::input::ListProvisionedCapacityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
@@ -4606,7 +4944,7 @@ pub mod list_provisioned_capacity_input {
             self,
         ) -> Result<
             crate::input::ListProvisionedCapacityInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListProvisionedCapacityInput {
                 account_id: self.account_id,
@@ -4627,7 +4965,7 @@ impl ListProvisionedCapacityInput {
             crate::operation::ListProvisionedCapacity,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -4636,20 +4974,25 @@ impl ListProvisionedCapacityInput {
             fn uri_base(
                 _input: &crate::input::ListProvisionedCapacityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_61 = &_input.account_id;
-                let input_61 = input_61.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_61, false);
+                let input_61 = input_61.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_61,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4663,8 +5006,10 @@ impl ListProvisionedCapacityInput {
             fn update_http_builder(
                 input: &crate::input::ListProvisionedCapacityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4738,7 +5083,7 @@ impl ListProvisionedCapacityInput {
 pub mod list_tags_for_vault_input {
 
     /// A builder for [`ListTagsForVaultInput`](crate::input::ListTagsForVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -4767,8 +5112,10 @@ pub mod list_tags_for_vault_input {
         /// Consumes the builder and constructs a [`ListTagsForVaultInput`](crate::input::ListTagsForVaultInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForVaultInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForVaultInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForVaultInput {
                 account_id: self.account_id,
                 vault_name: self.vault_name,
@@ -4789,7 +5136,7 @@ impl ListTagsForVaultInput {
             crate::operation::ListTagsForVault,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -4798,34 +5145,44 @@ impl ListTagsForVaultInput {
             fn uri_base(
                 _input: &crate::input::ListTagsForVaultInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_62 = &_input.account_id;
-                let input_62 = input_62.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_62, false);
+                let input_62 = input_62.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_62,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_63 = &_input.vault_name;
-                let input_63 = input_63.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_63, false);
+                let input_63 = input_63.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_63,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4840,8 +5197,10 @@ impl ListTagsForVaultInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForVaultInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4915,7 +5274,7 @@ impl ListTagsForVaultInput {
 pub mod list_vaults_input {
 
     /// A builder for [`ListVaultsInput`](crate::input::ListVaultsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -4955,7 +5314,8 @@ pub mod list_vaults_input {
         /// Consumes the builder and constructs a [`ListVaultsInput`](crate::input::ListVaultsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListVaultsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListVaultsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListVaultsInput {
                 account_id: self.account_id,
                 marker: self.marker,
@@ -4977,7 +5337,7 @@ impl ListVaultsInput {
             crate::operation::ListVaults,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -4986,20 +5346,25 @@ impl ListVaultsInput {
             fn uri_base(
                 _input: &crate::input::ListVaultsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_64 = &_input.account_id;
-                let input_64 = input_64.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_64, false);
+                let input_64 = input_64.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_64,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{accountId}/vaults", accountId = account_id)
                     .expect("formatting should succeed");
@@ -5008,16 +5373,20 @@ impl ListVaultsInput {
             fn uri_query(
                 _input: &crate::input::ListVaultsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_65) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_65));
+                    {
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_65));
+                    }
                 }
                 if let Some(inner_66) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_66).encode(),
-                    );
+                    if *inner_66 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_66).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -5025,8 +5394,10 @@ impl ListVaultsInput {
             fn update_http_builder(
                 input: &crate::input::ListVaultsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5101,7 +5472,7 @@ impl ListVaultsInput {
 pub mod purchase_provisioned_capacity_input {
 
     /// A builder for [`PurchaseProvisionedCapacityInput`](crate::input::PurchaseProvisionedCapacityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
@@ -5121,7 +5492,7 @@ pub mod purchase_provisioned_capacity_input {
             self,
         ) -> Result<
             crate::input::PurchaseProvisionedCapacityInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PurchaseProvisionedCapacityInput {
                 account_id: self.account_id,
@@ -5142,7 +5513,7 @@ impl PurchaseProvisionedCapacityInput {
             crate::operation::PurchaseProvisionedCapacity,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -5151,20 +5522,25 @@ impl PurchaseProvisionedCapacityInput {
             fn uri_base(
                 _input: &crate::input::PurchaseProvisionedCapacityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_67 = &_input.account_id;
-                let input_67 = input_67.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_67, false);
+                let input_67 = input_67.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_67,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5178,8 +5554,10 @@ impl PurchaseProvisionedCapacityInput {
             fn update_http_builder(
                 input: &crate::input::PurchaseProvisionedCapacityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5253,7 +5631,7 @@ impl PurchaseProvisionedCapacityInput {
 pub mod remove_tags_from_vault_input {
 
     /// A builder for [`RemoveTagsFromVaultInput`](crate::input::RemoveTagsFromVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -5302,8 +5680,10 @@ pub mod remove_tags_from_vault_input {
         /// Consumes the builder and constructs a [`RemoveTagsFromVaultInput`](crate::input::RemoveTagsFromVaultInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RemoveTagsFromVaultInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::RemoveTagsFromVaultInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::RemoveTagsFromVaultInput {
                 account_id: self.account_id,
                 vault_name: self.vault_name,
@@ -5325,7 +5705,7 @@ impl RemoveTagsFromVaultInput {
             crate::operation::RemoveTagsFromVault,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -5334,34 +5714,44 @@ impl RemoveTagsFromVaultInput {
             fn uri_base(
                 _input: &crate::input::RemoveTagsFromVaultInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_68 = &_input.account_id;
-                let input_68 = input_68.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_68, false);
+                let input_68 = input_68.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_68,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_69 = &_input.vault_name;
-                let input_69 = input_69.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_69, false);
+                let input_69 = input_69.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_69,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5375,7 +5765,7 @@ impl RemoveTagsFromVaultInput {
             fn uri_query(
                 _input: &crate::input::RemoveTagsFromVaultInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "remove");
                 Ok(())
@@ -5384,8 +5774,10 @@ impl RemoveTagsFromVaultInput {
             fn update_http_builder(
                 input: &crate::input::RemoveTagsFromVaultInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5476,7 +5868,7 @@ impl RemoveTagsFromVaultInput {
 pub mod set_data_retrieval_policy_input {
 
     /// A builder for [`SetDataRetrievalPolicyInput`](crate::input::SetDataRetrievalPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<crate::model::DataRetrievalPolicy>,
@@ -5508,8 +5900,10 @@ pub mod set_data_retrieval_policy_input {
         /// Consumes the builder and constructs a [`SetDataRetrievalPolicyInput`](crate::input::SetDataRetrievalPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SetDataRetrievalPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SetDataRetrievalPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SetDataRetrievalPolicyInput {
                 account_id: self.account_id,
                 policy: self.policy,
@@ -5530,7 +5924,7 @@ impl SetDataRetrievalPolicyInput {
             crate::operation::SetDataRetrievalPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -5539,20 +5933,25 @@ impl SetDataRetrievalPolicyInput {
             fn uri_base(
                 _input: &crate::input::SetDataRetrievalPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_70 = &_input.account_id;
-                let input_70 = input_70.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_70, false);
+                let input_70 = input_70.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_70,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5566,8 +5965,10 @@ impl SetDataRetrievalPolicyInput {
             fn update_http_builder(
                 input: &crate::input::SetDataRetrievalPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5657,7 +6058,7 @@ impl SetDataRetrievalPolicyInput {
 pub mod set_vault_access_policy_input {
 
     /// A builder for [`SetVaultAccessPolicyInput`](crate::input::SetVaultAccessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -5700,8 +6101,10 @@ pub mod set_vault_access_policy_input {
         /// Consumes the builder and constructs a [`SetVaultAccessPolicyInput`](crate::input::SetVaultAccessPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SetVaultAccessPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SetVaultAccessPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SetVaultAccessPolicyInput {
                 account_id: self.account_id,
                 vault_name: self.vault_name,
@@ -5723,7 +6126,7 @@ impl SetVaultAccessPolicyInput {
             crate::operation::SetVaultAccessPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -5732,34 +6135,44 @@ impl SetVaultAccessPolicyInput {
             fn uri_base(
                 _input: &crate::input::SetVaultAccessPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_71 = &_input.account_id;
-                let input_71 = input_71.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_71, false);
+                let input_71 = input_71.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_71,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_72 = &_input.vault_name;
-                let input_72 = input_72.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_72, false);
+                let input_72 = input_72.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_72,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5774,8 +6187,10 @@ impl SetVaultAccessPolicyInput {
             fn update_http_builder(
                 input: &crate::input::SetVaultAccessPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5863,7 +6278,7 @@ impl SetVaultAccessPolicyInput {
 pub mod set_vault_notifications_input {
 
     /// A builder for [`SetVaultNotificationsInput`](crate::input::SetVaultNotificationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -5910,8 +6325,10 @@ pub mod set_vault_notifications_input {
         /// Consumes the builder and constructs a [`SetVaultNotificationsInput`](crate::input::SetVaultNotificationsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SetVaultNotificationsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SetVaultNotificationsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SetVaultNotificationsInput {
                 account_id: self.account_id,
                 vault_name: self.vault_name,
@@ -5933,7 +6350,7 @@ impl SetVaultNotificationsInput {
             crate::operation::SetVaultNotifications,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -5942,34 +6359,44 @@ impl SetVaultNotificationsInput {
             fn uri_base(
                 _input: &crate::input::SetVaultNotificationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_73 = &_input.account_id;
-                let input_73 = input_73.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_73, false);
+                let input_73 = input_73.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_73,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_74 = &_input.vault_name;
-                let input_74 = input_74.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_74, false);
+                let input_74 = input_74.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_74,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5984,8 +6411,10 @@ impl SetVaultNotificationsInput {
             fn update_http_builder(
                 input: &crate::input::SetVaultNotificationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -6143,7 +6572,7 @@ pub mod upload_archive_input {
         /// Consumes the builder and constructs a [`UploadArchiveInput`](crate::input::UploadArchiveInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UploadArchiveInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UploadArchiveInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UploadArchiveInput {
                 vault_name: self.vault_name,
@@ -6168,7 +6597,7 @@ impl UploadArchiveInput {
             crate::operation::UploadArchive,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -6177,34 +6606,44 @@ impl UploadArchiveInput {
             fn uri_base(
                 _input: &crate::input::UploadArchiveInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_75 = &_input.account_id;
-                let input_75 = input_75.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_75, false);
+                let input_75 = input_75.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_75,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_76 = &_input.vault_name;
-                let input_76 = input_76.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_76, false);
+                let input_76 = input_76.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_76,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6219,8 +6658,10 @@ impl UploadArchiveInput {
             fn update_http_builder(
                 input: &crate::input::UploadArchiveInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_upload_archive(input, builder)?;
@@ -6265,7 +6706,7 @@ impl UploadArchiveInput {
         );
         crate::glacier_checksums::add_checksum_treehash(&mut request)
             .await
-            .map_err(|e| aws_smithy_http::operation::BuildError::Other(e.into()))?;
+            .map_err(aws_smithy_http::operation::error::BuildError::other)?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -6388,8 +6829,10 @@ pub mod upload_multipart_part_input {
         /// Consumes the builder and constructs a [`UploadMultipartPartInput`](crate::input::UploadMultipartPartInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UploadMultipartPartInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UploadMultipartPartInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UploadMultipartPartInput {
                 account_id: self.account_id,
                 vault_name: self.vault_name,
@@ -6414,7 +6857,7 @@ impl UploadMultipartPartInput {
             crate::operation::UploadMultipartPart,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
             self.account_id = Some("-".to_owned());
@@ -6423,48 +6866,63 @@ impl UploadMultipartPartInput {
             fn uri_base(
                 _input: &crate::input::UploadMultipartPartInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_77 = &_input.account_id;
-                let input_77 = input_77.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let account_id = aws_smithy_http::label::fmt_string(input_77, false);
+                let input_77 = input_77.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_77,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_78 = &_input.vault_name;
-                let input_78 = input_78.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_78, false);
+                let input_78 = input_78.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vault_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_78,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "vault_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "vault_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_79 = &_input.upload_id;
-                let input_79 = input_79.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "upload_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let upload_id = aws_smithy_http::label::fmt_string(input_79, false);
+                let input_79 = input_79.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "upload_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let upload_id = aws_smithy_http::label::fmt_string(
+                    input_79,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if upload_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "upload_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "upload_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6480,8 +6938,10 @@ impl UploadMultipartPartInput {
             fn update_http_builder(
                 input: &crate::input::UploadMultipartPartInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_upload_multipart_part(input, builder)?;
@@ -6527,7 +6987,7 @@ impl UploadMultipartPartInput {
         );
         crate::glacier_checksums::add_checksum_treehash(&mut request)
             .await
-            .map_err(|e| aws_smithy_http::operation::BuildError::Other(e.into()))?;
+            .map_err(aws_smithy_http::operation::error::BuildError::other)?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
@@ -6572,6 +7032,7 @@ impl UploadMultipartPartInput {
 
 /// <p>Provides options to upload a part of an archive in a multipart upload operation.</p>
 #[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct UploadMultipartPartInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
@@ -6617,21 +7078,10 @@ impl UploadMultipartPartInput {
         &self.body
     }
 }
-impl std::fmt::Debug for UploadMultipartPartInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UploadMultipartPartInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("upload_id", &self.upload_id);
-        formatter.field("checksum", &self.checksum);
-        formatter.field("range", &self.range);
-        formatter.field("body", &self.body);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options to add an archive to a vault.</p>
 #[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct UploadArchiveInput {
     /// <p>The name of the vault.</p>
     #[doc(hidden)]
@@ -6670,21 +7120,10 @@ impl UploadArchiveInput {
         &self.body
     }
 }
-impl std::fmt::Debug for UploadArchiveInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UploadArchiveInput");
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("archive_description", &self.archive_description);
-        formatter.field("checksum", &self.checksum);
-        formatter.field("body", &self.body);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options to configure notifications that will be sent when specific events happen to a vault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetVaultNotificationsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -6712,19 +7151,10 @@ impl SetVaultNotificationsInput {
         self.vault_notification_config.as_ref()
     }
 }
-impl std::fmt::Debug for SetVaultNotificationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetVaultNotificationsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("vault_notification_config", &self.vault_notification_config);
-        formatter.finish()
-    }
-}
 
 /// <p>SetVaultAccessPolicy input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetVaultAccessPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -6750,19 +7180,10 @@ impl SetVaultAccessPolicyInput {
         self.policy.as_ref()
     }
 }
-impl std::fmt::Debug for SetVaultAccessPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetVaultAccessPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 /// <p>SetDataRetrievalPolicy input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetDataRetrievalPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -6781,18 +7202,10 @@ impl SetDataRetrievalPolicyInput {
         self.policy.as_ref()
     }
 }
-impl std::fmt::Debug for SetDataRetrievalPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetDataRetrievalPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 /// <p>The input value for <code>RemoveTagsFromVaultInput</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -6818,19 +7231,10 @@ impl RemoveTagsFromVaultInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsFromVaultInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsFromVaultInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PurchaseProvisionedCapacityInput {
     /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
@@ -6842,17 +7246,10 @@ impl PurchaseProvisionedCapacityInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for PurchaseProvisionedCapacityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PurchaseProvisionedCapacityInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options to retrieve the vault list owned by the calling user's account. The list provides metadata information for each vault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVaultsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -6878,19 +7275,10 @@ impl ListVaultsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListVaultsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVaultsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("marker", &self.marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>The input value for <code>ListTagsForVaultInput</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -6909,18 +7297,10 @@ impl ListTagsForVaultInput {
         self.vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForVaultInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForVaultInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProvisionedCapacityInput {
     /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
@@ -6932,17 +7312,10 @@ impl ListProvisionedCapacityInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListProvisionedCapacityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProvisionedCapacityInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options for retrieving a list of parts of an archive that have been uploaded in a specific multipart upload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPartsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
@@ -6982,21 +7355,10 @@ impl ListPartsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListPartsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPartsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("upload_id", &self.upload_id);
-        formatter.field("marker", &self.marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options for retrieving list of in-progress multipart uploads for an Amazon Glacier vault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMultipartUploadsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
@@ -7029,20 +7391,10 @@ impl ListMultipartUploadsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListMultipartUploadsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMultipartUploadsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options for retrieving a job list for an Amazon S3 Glacier vault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
@@ -7089,22 +7441,10 @@ impl ListJobsInput {
         self.completed.as_deref()
     }
 }
-impl std::fmt::Debug for ListJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.field("statuscode", &self.statuscode);
-        formatter.field("completed", &self.completed);
-        formatter.finish()
-    }
-}
 
 /// <p>The input values for <code>InitiateVaultLock</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InitiateVaultLockInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -7130,19 +7470,10 @@ impl InitiateVaultLockInput {
         self.policy.as_ref()
     }
 }
-impl std::fmt::Debug for InitiateVaultLockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InitiateVaultLockInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options for initiating a multipart upload to an Amazon S3 Glacier vault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InitiateMultipartUploadInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
@@ -7177,20 +7508,10 @@ impl InitiateMultipartUploadInput {
         self.part_size.as_deref()
     }
 }
-impl std::fmt::Debug for InitiateMultipartUploadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InitiateMultipartUploadInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("archive_description", &self.archive_description);
-        formatter.field("part_size", &self.part_size);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options for initiating an Amazon S3 Glacier job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InitiateJobInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -7216,19 +7537,10 @@ impl InitiateJobInput {
         self.job_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for InitiateJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InitiateJobInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("job_parameters", &self.job_parameters);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options for retrieving the notification configuration set on an Amazon Glacier vault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVaultNotificationsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -7247,18 +7559,10 @@ impl GetVaultNotificationsInput {
         self.vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetVaultNotificationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVaultNotificationsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The input values for <code>GetVaultLock</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVaultLockInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -7277,18 +7581,10 @@ impl GetVaultLockInput {
         self.vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetVaultLockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVaultLockInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for GetVaultAccessPolicy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVaultAccessPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -7307,18 +7603,10 @@ impl GetVaultAccessPolicyInput {
         self.vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetVaultAccessPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVaultAccessPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options for downloading output of an Amazon S3 Glacier job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJobOutputInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -7365,20 +7653,10 @@ impl GetJobOutputInput {
         self.range.as_deref()
     }
 }
-impl std::fmt::Debug for GetJobOutputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJobOutputInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("range", &self.range);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for GetDataRetrievalPolicy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataRetrievalPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
@@ -7390,17 +7668,10 @@ impl GetDataRetrievalPolicyInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDataRetrievalPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDataRetrievalPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options for retrieving metadata for a specific vault in Amazon Glacier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
@@ -7419,18 +7690,10 @@ impl DescribeVaultInput {
         self.vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVaultInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVaultInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options for retrieving a job description.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
@@ -7456,19 +7719,10 @@ impl DescribeJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options for deleting a vault notification configuration from an Amazon Glacier vault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVaultNotificationsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
@@ -7487,18 +7741,10 @@ impl DeleteVaultNotificationsInput {
         self.vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVaultNotificationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVaultNotificationsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.finish()
-    }
-}
 
 /// <p>DeleteVaultAccessPolicy input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVaultAccessPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
@@ -7517,18 +7763,10 @@ impl DeleteVaultAccessPolicyInput {
         self.vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVaultAccessPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVaultAccessPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options for deleting a vault from Amazon S3 Glacier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -7547,18 +7785,10 @@ impl DeleteVaultInput {
         self.vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVaultInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVaultInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options for deleting an archive from an Amazon S3 Glacier vault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteArchiveInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -7584,19 +7814,10 @@ impl DeleteArchiveInput {
         self.archive_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteArchiveInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteArchiveInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("archive_id", &self.archive_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options to create a vault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -7615,18 +7836,10 @@ impl CreateVaultInput {
         self.vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVaultInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVaultInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The input values for <code>CompleteVaultLock</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteVaultLockInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -7652,19 +7865,10 @@ impl CompleteVaultLockInput {
         self.lock_id.as_deref()
     }
 }
-impl std::fmt::Debug for CompleteVaultLockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompleteVaultLockInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("lock_id", &self.lock_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options to complete a multipart upload operation. This informs Amazon Glacier that all the archive parts have been uploaded and Amazon S3 Glacier (Glacier) can now assemble the archive from the uploaded parts. After assembling and saving the archive to the vault, Glacier returns the URI path of the newly created archive resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteMultipartUploadInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -7704,21 +7908,10 @@ impl CompleteMultipartUploadInput {
         self.checksum.as_deref()
     }
 }
-impl std::fmt::Debug for CompleteMultipartUploadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompleteMultipartUploadInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("upload_id", &self.upload_id);
-        formatter.field("archive_size", &self.archive_size);
-        formatter.field("checksum", &self.checksum);
-        formatter.finish()
-    }
-}
 
 /// <p>The input values for <code>AddTagsToVault</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -7748,19 +7941,10 @@ impl AddTagsToVaultInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for AddTagsToVaultInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsToVaultInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>The input values for <code>AbortVaultLock</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbortVaultLockInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -7779,19 +7963,11 @@ impl AbortVaultLockInput {
         self.vault_name.as_deref()
     }
 }
-impl std::fmt::Debug for AbortVaultLockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbortVaultLockInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Provides options to abort a multipart upload identified by the upload ID.</p>
 /// <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort Multipart Upload</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbortMultipartUploadInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
@@ -7815,14 +7991,5 @@ impl AbortMultipartUploadInput {
     /// <p>The upload ID of the multipart upload to delete.</p>
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AbortMultipartUploadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbortMultipartUploadInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("vault_name", &self.vault_name);
-        formatter.field("upload_id", &self.upload_id);
-        formatter.finish()
     }
 }

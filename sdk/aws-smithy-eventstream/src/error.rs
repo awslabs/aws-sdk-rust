@@ -7,9 +7,8 @@ use aws_smithy_types::DateTime;
 use std::error::Error as StdError;
 use std::fmt;
 
-#[non_exhaustive]
 #[derive(Debug)]
-pub enum Error {
+pub(crate) enum ErrorKind {
     HeadersTooLong,
     HeaderValueTooLong,
     InvalidHeaderNameLength,
@@ -27,12 +26,45 @@ pub enum Error {
     Unmarshalling(String),
 }
 
+#[derive(Debug)]
+pub struct Error {
+    kind: ErrorKind,
+}
+
+impl Error {
+    // Used in tests to match on the underlying error kind
+    #[cfg(test)]
+    pub(crate) fn kind(&self) -> &ErrorKind {
+        &self.kind
+    }
+
+    /// Create an `Error` for failure to marshall a message from a Smithy shape
+    pub fn marshalling(message: impl Into<String>) -> Self {
+        Self {
+            kind: ErrorKind::Marshalling(message.into()),
+        }
+    }
+
+    /// Create an `Error` for failure to unmarshall a message into a Smithy shape
+    pub fn unmarshalling(message: impl Into<String>) -> Self {
+        Self {
+            kind: ErrorKind::Unmarshalling(message.into()),
+        }
+    }
+}
+
+impl From<ErrorKind> for Error {
+    fn from(kind: ErrorKind) -> Self {
+        Error { kind }
+    }
+}
+
 impl StdError for Error {}
 
 impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        use Error::*;
-        match self {
+        use ErrorKind::*;
+        match &self.kind {
             HeadersTooLong => write!(f, "headers too long to fit in event stream frame"),
             HeaderValueTooLong => write!(f, "header value too long to fit in event stream frame"),
             InvalidHeaderNameLength => write!(f, "invalid header name length"),

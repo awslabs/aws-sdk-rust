@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_register_device_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RegisterDeviceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.platform {
         object.key("Platform").string(var_1.as_str());
     }
@@ -15,12 +15,13 @@ pub fn serialize_structure_crate_input_register_device_input(
 pub fn serialize_structure_crate_input_set_cognito_events_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SetCognitoEventsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_3) = &input.events {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("Events").start_object();
         for (key_5, value_6) in var_3 {
             {
-                object_4.key(key_5).string(value_6.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
         object_4.finish();
@@ -31,13 +32,15 @@ pub fn serialize_structure_crate_input_set_cognito_events_input(
 pub fn serialize_structure_crate_input_set_identity_pool_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SetIdentityPoolConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_7) = &input.cognito_streams {
+        #[allow(unused_mut)]
         let mut object_8 = object.key("CognitoStreams").start_object();
         crate::json_ser::serialize_structure_crate_model_cognito_streams(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.push_sync {
+        #[allow(unused_mut)]
         let mut object_10 = object.key("PushSync").start_object();
         crate::json_ser::serialize_structure_crate_model_push_sync(&mut object_10, var_9)?;
         object_10.finish();
@@ -48,7 +51,7 @@ pub fn serialize_structure_crate_input_set_identity_pool_configuration_input(
 pub fn serialize_structure_crate_input_update_records_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRecordsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.device_id {
         object.key("DeviceId").string(var_11.as_str());
     }
@@ -56,6 +59,7 @@ pub fn serialize_structure_crate_input_update_records_input(
         let mut array_13 = object.key("RecordPatches").start_array();
         for item_14 in var_12 {
             {
+                #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_record_patch(
                     &mut object_15,
@@ -75,7 +79,7 @@ pub fn serialize_structure_crate_input_update_records_input(
 pub fn serialize_structure_crate_model_cognito_streams(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CognitoStreams,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_17) = &input.stream_name {
         object.key("StreamName").string(var_17.as_str());
     }
@@ -91,7 +95,7 @@ pub fn serialize_structure_crate_model_cognito_streams(
 pub fn serialize_structure_crate_model_push_sync(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PushSync,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_20) = &input.application_arns {
         let mut array_21 = object.key("ApplicationArns").start_array();
         for item_22 in var_20 {
@@ -110,7 +114,7 @@ pub fn serialize_structure_crate_model_push_sync(
 pub fn serialize_structure_crate_model_record_patch(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RecordPatch,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_24) = &input.op {
         object.key("Op").string(var_24.as_str());
     }

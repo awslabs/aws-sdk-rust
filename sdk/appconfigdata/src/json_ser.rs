@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_start_configuration_session_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartConfigurationSessionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.application_identifier {
         object.key("ApplicationIdentifier").string(var_1.as_str());
     }

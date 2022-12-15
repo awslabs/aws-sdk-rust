@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod get_ice_server_config_input {
 
     /// A builder for [`GetIceServerConfigInput`](crate::input::GetIceServerConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -56,8 +56,10 @@ pub mod get_ice_server_config_input {
         /// Consumes the builder and constructs a [`GetIceServerConfigInput`](crate::input::GetIceServerConfigInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetIceServerConfigInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetIceServerConfigInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetIceServerConfigInput {
                 channel_arn: self.channel_arn,
                 client_id: self.client_id,
@@ -80,13 +82,13 @@ impl GetIceServerConfigInput {
             crate::operation::GetIceServerConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetIceServerConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/get-ice-server-config").expect("formatting should succeed");
                 Ok(())
             }
@@ -94,8 +96,10 @@ impl GetIceServerConfigInput {
             fn update_http_builder(
                 input: &crate::input::GetIceServerConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -179,7 +183,7 @@ impl GetIceServerConfigInput {
 pub mod send_alexa_offer_to_master_input {
 
     /// A builder for [`SendAlexaOfferToMasterInput`](crate::input::SendAlexaOfferToMasterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) sender_client_id: std::option::Option<std::string::String>,
@@ -225,8 +229,10 @@ pub mod send_alexa_offer_to_master_input {
         /// Consumes the builder and constructs a [`SendAlexaOfferToMasterInput`](crate::input::SendAlexaOfferToMasterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendAlexaOfferToMasterInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SendAlexaOfferToMasterInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SendAlexaOfferToMasterInput {
                 channel_arn: self.channel_arn,
                 sender_client_id: self.sender_client_id,
@@ -248,13 +254,13 @@ impl SendAlexaOfferToMasterInput {
             crate::operation::SendAlexaOfferToMaster,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendAlexaOfferToMasterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/send-alexa-offer-to-master")
                     .expect("formatting should succeed");
                 Ok(())
@@ -263,8 +269,10 @@ impl SendAlexaOfferToMasterInput {
             fn update_http_builder(
                 input: &crate::input::SendAlexaOfferToMasterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -348,7 +356,7 @@ impl SendAlexaOfferToMasterInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendAlexaOfferToMasterInput {
     /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
     #[doc(hidden)]
@@ -374,19 +382,10 @@ impl SendAlexaOfferToMasterInput {
         self.message_payload.as_deref()
     }
 }
-impl std::fmt::Debug for SendAlexaOfferToMasterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendAlexaOfferToMasterInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("sender_client_id", &self.sender_client_id);
-        formatter.field("message_payload", &self.message_payload);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIceServerConfigInput {
     /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
     #[doc(hidden)]
@@ -417,15 +416,5 @@ impl GetIceServerConfigInput {
     /// <p>An optional user ID to be associated with the credentials.</p>
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
-    }
-}
-impl std::fmt::Debug for GetIceServerConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIceServerConfigInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("client_id", &self.client_id);
-        formatter.field("service", &self.service);
-        formatter.field("username", &self.username);
-        formatter.finish()
     }
 }

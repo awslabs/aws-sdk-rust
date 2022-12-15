@@ -27,7 +27,7 @@ pub fn parse_create_http_namespace_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHttpNamespaceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -49,7 +49,7 @@ pub fn parse_create_http_namespace_error(
                     .map_err(crate::error::CreateHttpNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -66,7 +66,7 @@ pub fn parse_create_http_namespace_error(
                     output = crate::json_deser::deser_structure_crate_error_namespace_already_exists_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHttpNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -83,7 +83,7 @@ pub fn parse_create_http_namespace_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHttpNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -100,7 +100,7 @@ pub fn parse_create_http_namespace_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHttpNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -162,7 +162,7 @@ pub fn parse_create_private_dns_namespace_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePrivateDnsNamespaceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -184,7 +184,7 @@ pub fn parse_create_private_dns_namespace_error(
                     .map_err(crate::error::CreatePrivateDnsNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -201,7 +201,7 @@ pub fn parse_create_private_dns_namespace_error(
                     output = crate::json_deser::deser_structure_crate_error_namespace_already_exists_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePrivateDnsNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -218,7 +218,7 @@ pub fn parse_create_private_dns_namespace_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePrivateDnsNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -235,7 +235,7 @@ pub fn parse_create_private_dns_namespace_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePrivateDnsNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -297,7 +297,7 @@ pub fn parse_create_public_dns_namespace_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePublicDnsNamespaceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -319,7 +319,7 @@ pub fn parse_create_public_dns_namespace_error(
                     .map_err(crate::error::CreatePublicDnsNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -336,7 +336,7 @@ pub fn parse_create_public_dns_namespace_error(
                     output = crate::json_deser::deser_structure_crate_error_namespace_already_exists_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePublicDnsNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -353,7 +353,7 @@ pub fn parse_create_public_dns_namespace_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePublicDnsNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -370,7 +370,7 @@ pub fn parse_create_public_dns_namespace_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePublicDnsNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -428,7 +428,7 @@ pub fn parse_create_service_error(
                     .map_err(crate::error::CreateServiceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -445,7 +445,7 @@ pub fn parse_create_service_error(
                     output = crate::json_deser::deser_structure_crate_error_namespace_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -462,7 +462,7 @@ pub fn parse_create_service_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -479,7 +479,7 @@ pub fn parse_create_service_error(
                     output = crate::json_deser::deser_structure_crate_error_service_already_exists_json_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -496,7 +496,7 @@ pub fn parse_create_service_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -548,7 +548,7 @@ pub fn parse_delete_namespace_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteNamespaceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -570,7 +570,7 @@ pub fn parse_delete_namespace_error(
                     .map_err(crate::error::DeleteNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -587,7 +587,7 @@ pub fn parse_delete_namespace_error(
                     output = crate::json_deser::deser_structure_crate_error_namespace_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -605,7 +605,7 @@ pub fn parse_delete_namespace_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteNamespaceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -661,7 +661,7 @@ pub fn parse_delete_service_error(
                     .map_err(crate::error::DeleteServiceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -679,7 +679,7 @@ pub fn parse_delete_service_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -698,7 +698,7 @@ pub fn parse_delete_service_error(
                         output = crate::json_deser::deser_structure_crate_error_service_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -749,7 +749,7 @@ pub fn parse_deregister_instance_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterInstanceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -768,7 +768,7 @@ pub fn parse_deregister_instance_error(
                         output = crate::json_deser::deser_structure_crate_error_instance_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterInstanceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -790,7 +790,7 @@ pub fn parse_deregister_instance_error(
                     .map_err(crate::error::DeregisterInstanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -808,7 +808,7 @@ pub fn parse_deregister_instance_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterInstanceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -827,7 +827,7 @@ pub fn parse_deregister_instance_error(
                         output = crate::json_deser::deser_structure_crate_error_service_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterInstanceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -887,7 +887,7 @@ pub fn parse_discover_instances_error(
                     .map_err(crate::error::DiscoverInstancesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -904,7 +904,7 @@ pub fn parse_discover_instances_error(
                     output = crate::json_deser::deser_structure_crate_error_namespace_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DiscoverInstancesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -921,7 +921,7 @@ pub fn parse_discover_instances_error(
                     output = crate::json_deser::deser_structure_crate_error_request_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::DiscoverInstancesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -939,7 +939,7 @@ pub fn parse_discover_instances_error(
                         output = crate::json_deser::deser_structure_crate_error_service_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DiscoverInstancesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -993,7 +993,7 @@ pub fn parse_get_instance_error(
                         output = crate::json_deser::deser_structure_crate_error_instance_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::GetInstanceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1015,7 +1015,7 @@ pub fn parse_get_instance_error(
                     .map_err(crate::error::GetInstanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1033,7 +1033,7 @@ pub fn parse_get_instance_error(
                         output = crate::json_deser::deser_structure_crate_error_service_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::GetInstanceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1093,7 +1093,7 @@ pub fn parse_get_instances_health_status_error(
                         output = crate::json_deser::deser_structure_crate_error_instance_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::GetInstancesHealthStatusError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1115,7 +1115,7 @@ pub fn parse_get_instances_health_status_error(
                     .map_err(crate::error::GetInstancesHealthStatusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1133,7 +1133,7 @@ pub fn parse_get_instances_health_status_error(
                         output = crate::json_deser::deser_structure_crate_error_service_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::GetInstancesHealthStatusError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1192,7 +1192,7 @@ pub fn parse_get_namespace_error(
                     .map_err(crate::error::GetNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1209,7 +1209,7 @@ pub fn parse_get_namespace_error(
                     output = crate::json_deser::deser_structure_crate_error_namespace_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::GetNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1264,7 +1264,7 @@ pub fn parse_get_operation_error(
                     .map_err(crate::error::GetOperationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1281,7 +1281,7 @@ pub fn parse_get_operation_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::GetOperationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1336,7 +1336,7 @@ pub fn parse_get_service_error(
                     .map_err(crate::error::GetServiceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1354,7 +1354,7 @@ pub fn parse_get_service_error(
                         output = crate::json_deser::deser_structure_crate_error_service_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1410,7 +1410,7 @@ pub fn parse_list_instances_error(
                     .map_err(crate::error::ListInstancesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1428,7 +1428,7 @@ pub fn parse_list_instances_error(
                         output = crate::json_deser::deser_structure_crate_error_service_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ListInstancesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1484,7 +1484,7 @@ pub fn parse_list_namespaces_error(
                     .map_err(crate::error::ListNamespacesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1539,7 +1539,7 @@ pub fn parse_list_operations_error(
                     .map_err(crate::error::ListOperationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1594,7 +1594,7 @@ pub fn parse_list_services_error(
                     .map_err(crate::error::ListServicesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1652,7 +1652,7 @@ pub fn parse_list_tags_for_resource_error(
                     .map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1669,7 +1669,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1725,7 +1725,7 @@ pub fn parse_register_instance_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterInstanceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1747,7 +1747,7 @@ pub fn parse_register_instance_error(
                     .map_err(crate::error::RegisterInstanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1765,7 +1765,7 @@ pub fn parse_register_instance_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterInstanceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1783,7 +1783,7 @@ pub fn parse_register_instance_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterInstanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1801,7 +1801,7 @@ pub fn parse_register_instance_error(
                         output = crate::json_deser::deser_structure_crate_error_service_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterInstanceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1858,7 +1858,7 @@ pub fn parse_tag_resource_error(
                     .map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1875,7 +1875,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1892,7 +1892,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1942,7 +1942,7 @@ pub fn parse_untag_resource_error(
                     .map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1959,7 +1959,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2009,7 +2009,7 @@ pub fn parse_update_http_namespace_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateHttpNamespaceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2031,7 +2031,7 @@ pub fn parse_update_http_namespace_error(
                     .map_err(crate::error::UpdateHttpNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2048,7 +2048,7 @@ pub fn parse_update_http_namespace_error(
                     output = crate::json_deser::deser_structure_crate_error_namespace_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateHttpNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2066,7 +2066,7 @@ pub fn parse_update_http_namespace_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateHttpNamespaceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2126,7 +2126,7 @@ pub fn parse_update_instance_custom_health_status_error(
                     output = crate::json_deser::deser_structure_crate_error_custom_health_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInstanceCustomHealthStatusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2144,7 +2144,7 @@ pub fn parse_update_instance_custom_health_status_error(
                         output = crate::json_deser::deser_structure_crate_error_instance_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInstanceCustomHealthStatusError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2166,7 +2166,7 @@ pub fn parse_update_instance_custom_health_status_error(
                     .map_err(crate::error::UpdateInstanceCustomHealthStatusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2184,7 +2184,7 @@ pub fn parse_update_instance_custom_health_status_error(
                         output = crate::json_deser::deser_structure_crate_error_service_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInstanceCustomHealthStatusError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2243,7 +2243,7 @@ pub fn parse_update_private_dns_namespace_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePrivateDnsNamespaceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2265,7 +2265,7 @@ pub fn parse_update_private_dns_namespace_error(
                     .map_err(crate::error::UpdatePrivateDnsNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2282,7 +2282,7 @@ pub fn parse_update_private_dns_namespace_error(
                     output = crate::json_deser::deser_structure_crate_error_namespace_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePrivateDnsNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2300,7 +2300,7 @@ pub fn parse_update_private_dns_namespace_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePrivateDnsNamespaceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2363,7 +2363,7 @@ pub fn parse_update_public_dns_namespace_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePublicDnsNamespaceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2385,7 +2385,7 @@ pub fn parse_update_public_dns_namespace_error(
                     .map_err(crate::error::UpdatePublicDnsNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2402,7 +2402,7 @@ pub fn parse_update_public_dns_namespace_error(
                     output = crate::json_deser::deser_structure_crate_error_namespace_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePublicDnsNamespaceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2420,7 +2420,7 @@ pub fn parse_update_public_dns_namespace_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePublicDnsNamespaceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2476,7 +2476,7 @@ pub fn parse_update_service_error(
                         output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2498,7 +2498,7 @@ pub fn parse_update_service_error(
                     .map_err(crate::error::UpdateServiceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2516,7 +2516,7 @@ pub fn parse_update_service_error(
                         output = crate::json_deser::deser_structure_crate_error_service_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp

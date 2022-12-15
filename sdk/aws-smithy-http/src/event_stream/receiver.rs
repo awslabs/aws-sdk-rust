@@ -16,6 +16,7 @@ use std::error::Error as StdError;
 use std::fmt;
 use std::marker::PhantomData;
 use std::mem;
+use tracing::trace;
 
 /// Wrapper around SegmentedBuf that tracks the state of the stream.
 #[derive(Debug)]
@@ -103,22 +104,25 @@ impl From<&mut SegmentedBuf<Bytes>> for RawMessage {
 }
 
 #[derive(Debug)]
-#[non_exhaustive]
-pub enum Error {
+enum ReceiverErrorKind {
     /// The stream ended before a complete message frame was received.
-    #[non_exhaustive]
     UnexpectedEndOfStream,
 }
 
-impl fmt::Display for Error {
+#[derive(Debug)]
+pub struct ReceiverError {
+    kind: ReceiverErrorKind,
+}
+
+impl fmt::Display for ReceiverError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        match self {
-            Self::UnexpectedEndOfStream => write!(f, "unexpected end of stream"),
+        match self.kind {
+            ReceiverErrorKind::UnexpectedEndOfStream => write!(f, "unexpected end of stream"),
         }
     }
 }
 
-impl StdError for Error {}
+impl StdError for ReceiverError {}
 
 /// Receives Smithy-modeled messages out of an Event Stream.
 #[derive(Debug)]
@@ -155,15 +159,11 @@ impl<T, E> Receiver<T, E> {
         match self.unmarshaller.unmarshall(&message) {
             Ok(unmarshalled) => match unmarshalled {
                 UnmarshalledMessage::Event(event) => Ok(Some(event)),
-                UnmarshalledMessage::Error(err) => Err(SdkError::ServiceError {
-                    err,
-                    raw: RawMessage::Decoded(message),
-                }),
+                UnmarshalledMessage::Error(err) => {
+                    Err(SdkError::service_error(err, RawMessage::Decoded(message)))
+                }
             },
-            Err(err) => Err(SdkError::ResponseError {
-                err: Box::new(err),
-                raw: RawMessage::Decoded(message),
-            }),
+            Err(err) => Err(SdkError::response_error(err, RawMessage::Decoded(message))),
         }
     }
 
@@ -174,7 +174,7 @@ impl<T, E> Receiver<T, E> {
                 .data()
                 .await
                 .transpose()
-                .map_err(|err| SdkError::DispatchFailure(ConnectorError::io(err)))?;
+                .map_err(|err| SdkError::dispatch_failure(ConnectorError::io(err)))?;
             let buffer = mem::replace(&mut self.buffer, RecvBuf::Empty);
             if let Some(chunk) = next_chunk {
                 self.buffer = buffer.with_partial(chunk);
@@ -191,11 +191,15 @@ impl<T, E> Receiver<T, E> {
                 if let DecodedFrame::Complete(message) = self
                     .decoder
                     .decode_frame(self.buffer.buffered())
-                    .map_err(|err| SdkError::ResponseError {
-                        err: Box::new(err),
-                        raw: RawMessage::Invalid(None), // the buffer has been consumed
+                    .map_err(|err| {
+                        SdkError::response_error(
+                            err,
+                            // the buffer has been consumed
+                            RawMessage::Invalid(None),
+                        )
                     })?
                 {
+                    trace!(message = ?message, "received complete event stream message");
                     return Ok(Some(message));
                 }
             }
@@ -203,10 +207,13 @@ impl<T, E> Receiver<T, E> {
             self.buffer_next_chunk().await?;
         }
         if self.buffer.has_data() {
-            return Err(SdkError::ResponseError {
-                err: Error::UnexpectedEndOfStream.into(),
-                raw: self.buffer.buffered().into(),
-            });
+            trace!(remaining_data = ?self.buffer, "data left over in the event stream response stream");
+            return Err(SdkError::response_error(
+                ReceiverError {
+                    kind: ReceiverErrorKind::UnexpectedEndOfStream,
+                },
+                self.buffer.buffered().into(),
+            ));
         }
         Ok(None)
     }

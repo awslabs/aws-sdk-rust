@@ -5,7 +5,7 @@
 /// [`describe_dimension_keys`](crate::client::Client::describe_dimension_keys).
 ///
 /// See [`crate::client::fluent_builders::DescribeDimensionKeys`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDimensionKeys {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDimensionKeys {
 /// [`get_dimension_key_details`](crate::client::Client::get_dimension_key_details).
 ///
 /// See [`crate::client::fluent_builders::GetDimensionKeyDetails`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDimensionKeyDetails {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDimensionKeyDetails {
 /// [`get_resource_metadata`](crate::client::Client::get_resource_metadata).
 ///
 /// See [`crate::client::fluent_builders::GetResourceMetadata`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResourceMetadata {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceMetadata {
 /// [`get_resource_metrics`](crate::client::Client::get_resource_metrics).
 ///
 /// See [`crate::client::fluent_builders::GetResourceMetrics`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResourceMetrics {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceMetrics {
 /// [`list_available_resource_dimensions`](crate::client::Client::list_available_resource_dimensions).
 ///
 /// See [`crate::client::fluent_builders::ListAvailableResourceDimensions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAvailableResourceDimensions {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAvailableResourceDim
 /// [`list_available_resource_metrics`](crate::client::Client::list_available_resource_metrics).
 ///
 /// See [`crate::client::fluent_builders::ListAvailableResourceMetrics`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAvailableResourceMetrics {
     _private: (),
 }

@@ -5,7 +5,7 @@
 /// [`invoke_endpoint`](crate::client::Client::invoke_endpoint).
 ///
 /// See [`crate::client::fluent_builders::InvokeEndpoint`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct InvokeEndpoint {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeEndpoint {
 /// [`invoke_endpoint_async`](crate::client::Client::invoke_endpoint_async).
 ///
 /// See [`crate::client::fluent_builders::InvokeEndpointAsync`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct InvokeEndpointAsync {
     _private: (),
 }

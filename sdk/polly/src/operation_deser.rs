@@ -23,7 +23,7 @@ pub fn parse_delete_lexicon_error(
                     output = crate::json_deser::deser_structure_crate_error_lexicon_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLexiconError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -40,7 +40,7 @@ pub fn parse_delete_lexicon_error(
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLexiconError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -86,7 +86,7 @@ pub fn parse_describe_voices_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVoicesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -103,7 +103,7 @@ pub fn parse_describe_voices_error(
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVoicesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -154,7 +154,7 @@ pub fn parse_get_lexicon_error(
                     output = crate::json_deser::deser_structure_crate_error_lexicon_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLexiconError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -171,7 +171,7 @@ pub fn parse_get_lexicon_error(
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLexiconError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -229,7 +229,7 @@ pub fn parse_get_speech_synthesis_task_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_task_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -246,7 +246,7 @@ pub fn parse_get_speech_synthesis_task_error(
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -264,7 +264,7 @@ pub fn parse_get_speech_synthesis_task_error(
                     output = crate::json_deser::deser_structure_crate_error_synthesis_task_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -318,7 +318,7 @@ pub fn parse_list_lexicons_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLexiconsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -335,7 +335,7 @@ pub fn parse_list_lexicons_error(
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLexiconsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -393,7 +393,7 @@ pub fn parse_list_speech_synthesis_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSpeechSynthesisTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -410,7 +410,7 @@ pub fn parse_list_speech_synthesis_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSpeechSynthesisTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -464,7 +464,7 @@ pub fn parse_put_lexicon_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_lexicon_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -482,7 +482,7 @@ pub fn parse_put_lexicon_error(
                     output = crate::json_deser::deser_structure_crate_error_lexicon_size_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -500,7 +500,7 @@ pub fn parse_put_lexicon_error(
                     output = crate::json_deser::deser_structure_crate_error_max_lexeme_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -518,7 +518,7 @@ pub fn parse_put_lexicon_error(
                     output = crate::json_deser::deser_structure_crate_error_max_lexicons_number_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -535,7 +535,7 @@ pub fn parse_put_lexicon_error(
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -553,7 +553,7 @@ pub fn parse_put_lexicon_error(
                     output = crate::json_deser::deser_structure_crate_error_unsupported_pls_alphabet_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -571,7 +571,7 @@ pub fn parse_put_lexicon_error(
                     output = crate::json_deser::deser_structure_crate_error_unsupported_pls_language_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLexiconError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -622,7 +622,7 @@ pub fn parse_start_speech_synthesis_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -636,7 +636,7 @@ pub fn parse_start_speech_synthesis_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -650,7 +650,7 @@ pub fn parse_start_speech_synthesis_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -664,7 +664,7 @@ pub fn parse_start_speech_synthesis_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -678,7 +678,7 @@ pub fn parse_start_speech_synthesis_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -692,7 +692,7 @@ pub fn parse_start_speech_synthesis_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -706,7 +706,7 @@ pub fn parse_start_speech_synthesis_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -720,7 +720,7 @@ pub fn parse_start_speech_synthesis_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -734,7 +734,7 @@ pub fn parse_start_speech_synthesis_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -748,7 +748,7 @@ pub fn parse_start_speech_synthesis_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -762,7 +762,7 @@ pub fn parse_start_speech_synthesis_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -776,7 +776,7 @@ pub fn parse_start_speech_synthesis_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -857,7 +857,7 @@ pub fn parse_synthesize_speech_error(
                     output = crate::json_deser::deser_structure_crate_error_engine_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -875,7 +875,7 @@ pub fn parse_synthesize_speech_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_sample_rate_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -892,7 +892,7 @@ pub fn parse_synthesize_speech_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_ssml_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -910,7 +910,7 @@ pub fn parse_synthesize_speech_error(
                     output = crate::json_deser::deser_structure_crate_error_language_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -927,7 +927,7 @@ pub fn parse_synthesize_speech_error(
                     output = crate::json_deser::deser_structure_crate_error_lexicon_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -945,7 +945,7 @@ pub fn parse_synthesize_speech_error(
                     output = crate::json_deser::deser_structure_crate_error_marks_not_supported_for_format_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -962,7 +962,7 @@ pub fn parse_synthesize_speech_error(
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -980,7 +980,7 @@ pub fn parse_synthesize_speech_error(
                             output = crate::json_deser::deser_structure_crate_error_ssml_marks_not_supported_for_text_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -999,7 +999,7 @@ pub fn parse_synthesize_speech_error(
                     output = crate::json_deser::deser_structure_crate_error_text_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SynthesizeSpeechError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

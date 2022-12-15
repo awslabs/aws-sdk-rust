@@ -2,11 +2,12 @@
 pub fn serialize_structure_crate_input_get_entitlements_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetEntitlementsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.product_code {
         object.key("ProductCode").string(var_1.as_str());
     }
     if let Some(var_2) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("Filter").start_object();
         for (key_4, value_5) in var_2 {
             {

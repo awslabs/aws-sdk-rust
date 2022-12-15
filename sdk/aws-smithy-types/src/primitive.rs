@@ -32,15 +32,16 @@
 //! ```
 use crate::primitive::private::Sealed;
 use std::error::Error;
-use std::fmt::{self, Debug, Display, Formatter};
+use std::fmt;
 use std::str::FromStr;
 
 /// An error during primitive parsing
 #[non_exhaustive]
-#[derive(Debug, Eq, PartialEq, Clone)]
+#[derive(Debug)]
 pub struct PrimitiveParseError(&'static str);
-impl Display for PrimitiveParseError {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+
+impl fmt::Display for PrimitiveParseError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "failed to parse input as {}", self.0)
     }
 }
@@ -113,8 +114,8 @@ enum Inner {
     F64(f64, ryu::Buffer),
 }
 
-impl Debug for Inner {
-    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+impl fmt::Debug for Inner {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Self::Bool(v) => write!(f, "Bool({})", v),
             Self::I8(v, _) => write!(f, "I8({})", v),
@@ -266,8 +267,8 @@ mod test {
         assert_eq!(Encoder::from(false).encode(), "false");
         let err = bool::parse_smithy_primitive("not a boolean").expect_err("should fail");
         assert_eq!(err.0, "bool");
-        assert_eq!(bool::parse_smithy_primitive("true"), Ok(true));
-        assert_eq!(bool::parse_smithy_primitive("false"), Ok(false));
+        assert!(bool::parse_smithy_primitive("true").unwrap());
+        assert!(!bool::parse_smithy_primitive("false").unwrap());
     }
 
     #[test]
@@ -283,7 +284,7 @@ mod test {
 
     #[test]
     fn float_parse() {
-        assert_eq!(f64::parse_smithy_primitive("1234.5"), Ok(1234.5));
+        assert_eq!(f64::parse_smithy_primitive("1234.5").unwrap(), 1234.5);
         assert!(f64::parse_smithy_primitive("NaN").unwrap().is_nan());
         assert_eq!(
             f64::parse_smithy_primitive("Infinity").unwrap(),
@@ -293,7 +294,7 @@ mod test {
             f64::parse_smithy_primitive("-Infinity").unwrap(),
             f64::NEG_INFINITY
         );
-        assert_eq!(f32::parse_smithy_primitive("1234.5"), Ok(1234.5));
+        assert_eq!(f32::parse_smithy_primitive("1234.5").unwrap(), 1234.5);
         assert!(f32::parse_smithy_primitive("NaN").unwrap().is_nan());
         assert_eq!(
             f32::parse_smithy_primitive("Infinity").unwrap(),

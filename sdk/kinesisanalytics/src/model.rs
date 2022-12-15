@@ -2,7 +2,7 @@
 
 /// <p>Describes updates to apply to an existing Amazon Kinesis Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationUpdate {
     /// <p>Describes application input configuration updates.</p>
     #[doc(hidden)]
@@ -48,28 +48,11 @@ impl ApplicationUpdate {
         self.cloud_watch_logging_option_updates.as_deref()
     }
 }
-impl std::fmt::Debug for ApplicationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationUpdate");
-        formatter.field("input_updates", &self.input_updates);
-        formatter.field("application_code_update", &self.application_code_update);
-        formatter.field("output_updates", &self.output_updates);
-        formatter.field(
-            "reference_data_source_updates",
-            &self.reference_data_source_updates,
-        );
-        formatter.field(
-            "cloud_watch_logging_option_updates",
-            &self.cloud_watch_logging_option_updates,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ApplicationUpdate`](crate::model::ApplicationUpdate).
 pub mod application_update {
 
     /// A builder for [`ApplicationUpdate`](crate::model::ApplicationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_updates: std::option::Option<std::vec::Vec<crate::model::InputUpdate>>,
         pub(crate) application_code_update: std::option::Option<std::string::String>,
@@ -196,7 +179,7 @@ impl ApplicationUpdate {
 
 /// <p>Describes CloudWatch logging option updates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLoggingOptionUpdate {
     /// <p>ID of the CloudWatch logging option to update</p>
     #[doc(hidden)]
@@ -222,23 +205,11 @@ impl CloudWatchLoggingOptionUpdate {
         self.role_arn_update.as_deref()
     }
 }
-impl std::fmt::Debug for CloudWatchLoggingOptionUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLoggingOptionUpdate");
-        formatter.field(
-            "cloud_watch_logging_option_id",
-            &self.cloud_watch_logging_option_id,
-        );
-        formatter.field("log_stream_arn_update", &self.log_stream_arn_update);
-        formatter.field("role_arn_update", &self.role_arn_update);
-        formatter.finish()
-    }
-}
 /// See [`CloudWatchLoggingOptionUpdate`](crate::model::CloudWatchLoggingOptionUpdate).
 pub mod cloud_watch_logging_option_update {
 
     /// A builder for [`CloudWatchLoggingOptionUpdate`](crate::model::CloudWatchLoggingOptionUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logging_option_id: std::option::Option<std::string::String>,
         pub(crate) log_stream_arn_update: std::option::Option<std::string::String>,
@@ -306,7 +277,7 @@ impl CloudWatchLoggingOptionUpdate {
 
 /// <p>When you update a reference data source configuration for an application, this object provides all the updated values (such as the source bucket name and object key name), the in-application table name that is created, and updated mapping information that maps the data in the Amazon S3 object to the in-application reference table that is created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferenceDataSourceUpdate {
     /// <p>ID of the reference data source being updated. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
     #[doc(hidden)]
@@ -342,24 +313,11 @@ impl ReferenceDataSourceUpdate {
         self.reference_schema_update.as_ref()
     }
 }
-impl std::fmt::Debug for ReferenceDataSourceUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferenceDataSourceUpdate");
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("table_name_update", &self.table_name_update);
-        formatter.field(
-            "s3_reference_data_source_update",
-            &self.s3_reference_data_source_update,
-        );
-        formatter.field("reference_schema_update", &self.reference_schema_update);
-        formatter.finish()
-    }
-}
 /// See [`ReferenceDataSourceUpdate`](crate::model::ReferenceDataSourceUpdate).
 pub mod reference_data_source_update {
 
     /// A builder for [`ReferenceDataSourceUpdate`](crate::model::ReferenceDataSourceUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference_id: std::option::Option<std::string::String>,
         pub(crate) table_name_update: std::option::Option<std::string::String>,
@@ -440,7 +398,7 @@ impl ReferenceDataSourceUpdate {
 
 /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceSchema {
     /// <p>Specifies the format of the records on the streaming source.</p>
     #[doc(hidden)]
@@ -466,20 +424,11 @@ impl SourceSchema {
         self.record_columns.as_deref()
     }
 }
-impl std::fmt::Debug for SourceSchema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceSchema");
-        formatter.field("record_format", &self.record_format);
-        formatter.field("record_encoding", &self.record_encoding);
-        formatter.field("record_columns", &self.record_columns);
-        formatter.finish()
-    }
-}
 /// See [`SourceSchema`](crate::model::SourceSchema).
 pub mod source_schema {
 
     /// A builder for [`SourceSchema`](crate::model::SourceSchema).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_format: std::option::Option<crate::model::RecordFormat>,
         pub(crate) record_encoding: std::option::Option<std::string::String>,
@@ -551,7 +500,7 @@ impl SourceSchema {
 /// <p>Describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.</p>
 /// <p>Also used to describe the format of the reference data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordColumn {
     /// <p>Name of the column created in the in-application input stream or reference table.</p>
     #[doc(hidden)]
@@ -577,20 +526,11 @@ impl RecordColumn {
         self.sql_type.as_deref()
     }
 }
-impl std::fmt::Debug for RecordColumn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordColumn");
-        formatter.field("name", &self.name);
-        formatter.field("mapping", &self.mapping);
-        formatter.field("sql_type", &self.sql_type);
-        formatter.finish()
-    }
-}
 /// See [`RecordColumn`](crate::model::RecordColumn).
 pub mod record_column {
 
     /// A builder for [`RecordColumn`](crate::model::RecordColumn).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) mapping: std::option::Option<std::string::String>,
@@ -646,7 +586,7 @@ impl RecordColumn {
 
 /// <p> Describes the record format and relevant mapping information that should be applied to schematize the records on the stream. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordFormat {
     /// <p>The type of record format.</p>
     #[doc(hidden)]
@@ -665,19 +605,11 @@ impl RecordFormat {
         self.mapping_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for RecordFormat {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordFormat");
-        formatter.field("record_format_type", &self.record_format_type);
-        formatter.field("mapping_parameters", &self.mapping_parameters);
-        formatter.finish()
-    }
-}
 /// See [`RecordFormat`](crate::model::RecordFormat).
 pub mod record_format {
 
     /// A builder for [`RecordFormat`](crate::model::RecordFormat).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_format_type: std::option::Option<crate::model::RecordFormatType>,
         pub(crate) mapping_parameters: std::option::Option<crate::model::MappingParameters>,
@@ -727,7 +659,7 @@ impl RecordFormat {
 
 /// <p>When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MappingParameters {
     /// <p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
     #[doc(hidden)]
@@ -750,19 +682,11 @@ impl MappingParameters {
         self.csv_mapping_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for MappingParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MappingParameters");
-        formatter.field("json_mapping_parameters", &self.json_mapping_parameters);
-        formatter.field("csv_mapping_parameters", &self.csv_mapping_parameters);
-        formatter.finish()
-    }
-}
 /// See [`MappingParameters`](crate::model::MappingParameters).
 pub mod mapping_parameters {
 
     /// A builder for [`MappingParameters`](crate::model::MappingParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) json_mapping_parameters:
             std::option::Option<crate::model::JsonMappingParameters>,
@@ -818,7 +742,7 @@ impl MappingParameters {
 /// <p> <code>"name1", "address1"</code> </p>
 /// <p> <code>"name2", "address2"</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CsvMappingParameters {
     /// <p>Row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row delimiter.</p>
     #[doc(hidden)]
@@ -837,19 +761,11 @@ impl CsvMappingParameters {
         self.record_column_delimiter.as_deref()
     }
 }
-impl std::fmt::Debug for CsvMappingParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CsvMappingParameters");
-        formatter.field("record_row_delimiter", &self.record_row_delimiter);
-        formatter.field("record_column_delimiter", &self.record_column_delimiter);
-        formatter.finish()
-    }
-}
 /// See [`CsvMappingParameters`](crate::model::CsvMappingParameters).
 pub mod csv_mapping_parameters {
 
     /// A builder for [`CsvMappingParameters`](crate::model::CsvMappingParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_row_delimiter: std::option::Option<std::string::String>,
         pub(crate) record_column_delimiter: std::option::Option<std::string::String>,
@@ -899,7 +815,7 @@ impl CsvMappingParameters {
 
 /// <p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JsonMappingParameters {
     /// <p>Path to the top-level parent that contains the records.</p>
     #[doc(hidden)]
@@ -911,18 +827,11 @@ impl JsonMappingParameters {
         self.record_row_path.as_deref()
     }
 }
-impl std::fmt::Debug for JsonMappingParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JsonMappingParameters");
-        formatter.field("record_row_path", &self.record_row_path);
-        formatter.finish()
-    }
-}
 /// See [`JsonMappingParameters`](crate::model::JsonMappingParameters).
 pub mod json_mapping_parameters {
 
     /// A builder for [`JsonMappingParameters`](crate::model::JsonMappingParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_row_path: std::option::Option<std::string::String>,
     }
@@ -955,6 +864,41 @@ impl JsonMappingParameters {
     }
 }
 
+/// When writing a match expression against `RecordFormatType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let recordformattype = unimplemented!();
+/// match recordformattype {
+///     RecordFormatType::Csv => { /* ... */ },
+///     RecordFormatType::Json => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `recordformattype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RecordFormatType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RecordFormatType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RecordFormatType::NewFeature` is defined.
+/// Specifically, when `recordformattype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RecordFormatType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -971,15 +915,15 @@ pub enum RecordFormatType {
     Csv,
     #[allow(missing_docs)] // documentation missing in model
     Json,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RecordFormatType {
     fn from(s: &str) -> Self {
         match s {
             "CSV" => RecordFormatType::Csv,
             "JSON" => RecordFormatType::Json,
-            other => RecordFormatType::Unknown(other.to_owned()),
+            other => RecordFormatType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -996,11 +940,11 @@ impl RecordFormatType {
         match self {
             RecordFormatType::Csv => "CSV",
             RecordFormatType::Json => "JSON",
-            RecordFormatType::Unknown(s) => s.as_ref(),
+            RecordFormatType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV", "JSON"]
     }
 }
@@ -1012,7 +956,7 @@ impl AsRef<str> for RecordFormatType {
 
 /// <p>Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ReferenceDataSourceUpdate {
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
     #[doc(hidden)]
@@ -1038,20 +982,11 @@ impl S3ReferenceDataSourceUpdate {
         self.reference_role_arn_update.as_deref()
     }
 }
-impl std::fmt::Debug for S3ReferenceDataSourceUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ReferenceDataSourceUpdate");
-        formatter.field("bucket_arn_update", &self.bucket_arn_update);
-        formatter.field("file_key_update", &self.file_key_update);
-        formatter.field("reference_role_arn_update", &self.reference_role_arn_update);
-        formatter.finish()
-    }
-}
 /// See [`S3ReferenceDataSourceUpdate`](crate::model::S3ReferenceDataSourceUpdate).
 pub mod s3_reference_data_source_update {
 
     /// A builder for [`S3ReferenceDataSourceUpdate`](crate::model::S3ReferenceDataSourceUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_arn_update: std::option::Option<std::string::String>,
         pub(crate) file_key_update: std::option::Option<std::string::String>,
@@ -1116,7 +1051,7 @@ impl S3ReferenceDataSourceUpdate {
 
 /// <p> Describes updates to the output configuration identified by the <code>OutputId</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputUpdate {
     /// <p>Identifies the specific output configuration that you want to update.</p>
     #[doc(hidden)]
@@ -1171,29 +1106,11 @@ impl OutputUpdate {
         self.destination_schema_update.as_ref()
     }
 }
-impl std::fmt::Debug for OutputUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputUpdate");
-        formatter.field("output_id", &self.output_id);
-        formatter.field("name_update", &self.name_update);
-        formatter.field(
-            "kinesis_streams_output_update",
-            &self.kinesis_streams_output_update,
-        );
-        formatter.field(
-            "kinesis_firehose_output_update",
-            &self.kinesis_firehose_output_update,
-        );
-        formatter.field("lambda_output_update", &self.lambda_output_update);
-        formatter.field("destination_schema_update", &self.destination_schema_update);
-        formatter.finish()
-    }
-}
 /// See [`OutputUpdate`](crate::model::OutputUpdate).
 pub mod output_update {
 
     /// A builder for [`OutputUpdate`](crate::model::OutputUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_id: std::option::Option<std::string::String>,
         pub(crate) name_update: std::option::Option<std::string::String>,
@@ -1305,7 +1222,7 @@ impl OutputUpdate {
 
 /// <p>Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationSchema {
     /// <p>Specifies the format of the records on the output stream.</p>
     #[doc(hidden)]
@@ -1317,18 +1234,11 @@ impl DestinationSchema {
         self.record_format_type.as_ref()
     }
 }
-impl std::fmt::Debug for DestinationSchema {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationSchema");
-        formatter.field("record_format_type", &self.record_format_type);
-        formatter.finish()
-    }
-}
 /// See [`DestinationSchema`](crate::model::DestinationSchema).
 pub mod destination_schema {
 
     /// A builder for [`DestinationSchema`](crate::model::DestinationSchema).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_format_type: std::option::Option<crate::model::RecordFormatType>,
     }
@@ -1363,7 +1273,7 @@ impl DestinationSchema {
 
 /// <p>When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an AWS Lambda function configured as the destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaOutputUpdate {
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a> </p>
@@ -1386,19 +1296,11 @@ impl LambdaOutputUpdate {
         self.role_arn_update.as_deref()
     }
 }
-impl std::fmt::Debug for LambdaOutputUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaOutputUpdate");
-        formatter.field("resource_arn_update", &self.resource_arn_update);
-        formatter.field("role_arn_update", &self.role_arn_update);
-        formatter.finish()
-    }
-}
 /// See [`LambdaOutputUpdate`](crate::model::LambdaOutputUpdate).
 pub mod lambda_output_update {
 
     /// A builder for [`LambdaOutputUpdate`](crate::model::LambdaOutputUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn_update: std::option::Option<std::string::String>,
         pub(crate) role_arn_update: std::option::Option<std::string::String>,
@@ -1452,7 +1354,7 @@ impl LambdaOutputUpdate {
 
 /// <p> When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an Amazon Kinesis Firehose delivery stream configured as the destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisFirehoseOutputUpdate {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream to write to.</p>
     #[doc(hidden)]
@@ -1471,19 +1373,11 @@ impl KinesisFirehoseOutputUpdate {
         self.role_arn_update.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisFirehoseOutputUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisFirehoseOutputUpdate");
-        formatter.field("resource_arn_update", &self.resource_arn_update);
-        formatter.field("role_arn_update", &self.role_arn_update);
-        formatter.finish()
-    }
-}
 /// See [`KinesisFirehoseOutputUpdate`](crate::model::KinesisFirehoseOutputUpdate).
 pub mod kinesis_firehose_output_update {
 
     /// A builder for [`KinesisFirehoseOutputUpdate`](crate::model::KinesisFirehoseOutputUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn_update: std::option::Option<std::string::String>,
         pub(crate) role_arn_update: std::option::Option<std::string::String>,
@@ -1533,7 +1427,7 @@ impl KinesisFirehoseOutputUpdate {
 
 /// <p> When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an Amazon Kinesis stream configured as the destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamsOutputUpdate {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream where you want to write the output.</p>
     #[doc(hidden)]
@@ -1552,19 +1446,11 @@ impl KinesisStreamsOutputUpdate {
         self.role_arn_update.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisStreamsOutputUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamsOutputUpdate");
-        formatter.field("resource_arn_update", &self.resource_arn_update);
-        formatter.field("role_arn_update", &self.role_arn_update);
-        formatter.finish()
-    }
-}
 /// See [`KinesisStreamsOutputUpdate`](crate::model::KinesisStreamsOutputUpdate).
 pub mod kinesis_streams_output_update {
 
     /// A builder for [`KinesisStreamsOutputUpdate`](crate::model::KinesisStreamsOutputUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn_update: std::option::Option<std::string::String>,
         pub(crate) role_arn_update: std::option::Option<std::string::String>,
@@ -1614,7 +1500,7 @@ impl KinesisStreamsOutputUpdate {
 
 /// <p>Describes updates to a specific input configuration (identified by the <code>InputId</code> of an application). </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputUpdate {
     /// <p>Input ID of the application input to be updated.</p>
     #[doc(hidden)]
@@ -1678,33 +1564,11 @@ impl InputUpdate {
         self.input_parallelism_update.as_ref()
     }
 }
-impl std::fmt::Debug for InputUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputUpdate");
-        formatter.field("input_id", &self.input_id);
-        formatter.field("name_prefix_update", &self.name_prefix_update);
-        formatter.field(
-            "input_processing_configuration_update",
-            &self.input_processing_configuration_update,
-        );
-        formatter.field(
-            "kinesis_streams_input_update",
-            &self.kinesis_streams_input_update,
-        );
-        formatter.field(
-            "kinesis_firehose_input_update",
-            &self.kinesis_firehose_input_update,
-        );
-        formatter.field("input_schema_update", &self.input_schema_update);
-        formatter.field("input_parallelism_update", &self.input_parallelism_update);
-        formatter.finish()
-    }
-}
 /// See [`InputUpdate`](crate::model::InputUpdate).
 pub mod input_update {
 
     /// A builder for [`InputUpdate`](crate::model::InputUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_id: std::option::Option<std::string::String>,
         pub(crate) name_prefix_update: std::option::Option<std::string::String>,
@@ -1842,7 +1706,7 @@ impl InputUpdate {
 
 /// <p>Provides updates to the parallelism count.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputParallelismUpdate {
     /// <p>Number of in-application streams to create for the specified streaming source.</p>
     #[doc(hidden)]
@@ -1854,18 +1718,11 @@ impl InputParallelismUpdate {
         self.count_update
     }
 }
-impl std::fmt::Debug for InputParallelismUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputParallelismUpdate");
-        formatter.field("count_update", &self.count_update);
-        formatter.finish()
-    }
-}
 /// See [`InputParallelismUpdate`](crate::model::InputParallelismUpdate).
 pub mod input_parallelism_update {
 
     /// A builder for [`InputParallelismUpdate`](crate::model::InputParallelismUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count_update: std::option::Option<i32>,
     }
@@ -1897,7 +1754,7 @@ impl InputParallelismUpdate {
 
 /// <p>Describes updates for the application's input schema.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputSchemaUpdate {
     /// <p>Specifies the format of the records on the streaming source.</p>
     #[doc(hidden)]
@@ -1923,20 +1780,11 @@ impl InputSchemaUpdate {
         self.record_column_updates.as_deref()
     }
 }
-impl std::fmt::Debug for InputSchemaUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputSchemaUpdate");
-        formatter.field("record_format_update", &self.record_format_update);
-        formatter.field("record_encoding_update", &self.record_encoding_update);
-        formatter.field("record_column_updates", &self.record_column_updates);
-        formatter.finish()
-    }
-}
 /// See [`InputSchemaUpdate`](crate::model::InputSchemaUpdate).
 pub mod input_schema_update {
 
     /// A builder for [`InputSchemaUpdate`](crate::model::InputSchemaUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_format_update: std::option::Option<crate::model::RecordFormat>,
         pub(crate) record_encoding_update: std::option::Option<std::string::String>,
@@ -2008,7 +1856,7 @@ impl InputSchemaUpdate {
 
 /// <p>When updating application input configuration, provides information about an Amazon Kinesis Firehose delivery stream as the streaming source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisFirehoseInputUpdate {
     /// <p>Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery stream to read.</p>
     #[doc(hidden)]
@@ -2027,19 +1875,11 @@ impl KinesisFirehoseInputUpdate {
         self.role_arn_update.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisFirehoseInputUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisFirehoseInputUpdate");
-        formatter.field("resource_arn_update", &self.resource_arn_update);
-        formatter.field("role_arn_update", &self.role_arn_update);
-        formatter.finish()
-    }
-}
 /// See [`KinesisFirehoseInputUpdate`](crate::model::KinesisFirehoseInputUpdate).
 pub mod kinesis_firehose_input_update {
 
     /// A builder for [`KinesisFirehoseInputUpdate`](crate::model::KinesisFirehoseInputUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn_update: std::option::Option<std::string::String>,
         pub(crate) role_arn_update: std::option::Option<std::string::String>,
@@ -2089,7 +1929,7 @@ impl KinesisFirehoseInputUpdate {
 
 /// <p>When updating application input configuration, provides information about an Amazon Kinesis stream as the streaming source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamsInputUpdate {
     /// <p>Amazon Resource Name (ARN) of the input Amazon Kinesis stream to read.</p>
     #[doc(hidden)]
@@ -2108,19 +1948,11 @@ impl KinesisStreamsInputUpdate {
         self.role_arn_update.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisStreamsInputUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamsInputUpdate");
-        formatter.field("resource_arn_update", &self.resource_arn_update);
-        formatter.field("role_arn_update", &self.role_arn_update);
-        formatter.finish()
-    }
-}
 /// See [`KinesisStreamsInputUpdate`](crate::model::KinesisStreamsInputUpdate).
 pub mod kinesis_streams_input_update {
 
     /// A builder for [`KinesisStreamsInputUpdate`](crate::model::KinesisStreamsInputUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn_update: std::option::Option<std::string::String>,
         pub(crate) role_arn_update: std::option::Option<std::string::String>,
@@ -2170,7 +2002,7 @@ impl KinesisStreamsInputUpdate {
 
 /// <p>Describes updates to an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputProcessingConfigurationUpdate {
     /// <p>Provides update information for an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
     #[doc(hidden)]
@@ -2185,21 +2017,11 @@ impl InputProcessingConfigurationUpdate {
         self.input_lambda_processor_update.as_ref()
     }
 }
-impl std::fmt::Debug for InputProcessingConfigurationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputProcessingConfigurationUpdate");
-        formatter.field(
-            "input_lambda_processor_update",
-            &self.input_lambda_processor_update,
-        );
-        formatter.finish()
-    }
-}
 /// See [`InputProcessingConfigurationUpdate`](crate::model::InputProcessingConfigurationUpdate).
 pub mod input_processing_configuration_update {
 
     /// A builder for [`InputProcessingConfigurationUpdate`](crate::model::InputProcessingConfigurationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_lambda_processor_update:
             std::option::Option<crate::model::InputLambdaProcessorUpdate>,
@@ -2238,7 +2060,7 @@ impl InputProcessingConfigurationUpdate {
 
 /// <p>Represents an update to the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a> that is used to preprocess the records in the stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputLambdaProcessorUpdate {
     /// <p>The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess the records in the stream.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a> </p>
@@ -2261,19 +2083,11 @@ impl InputLambdaProcessorUpdate {
         self.role_arn_update.as_deref()
     }
 }
-impl std::fmt::Debug for InputLambdaProcessorUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputLambdaProcessorUpdate");
-        formatter.field("resource_arn_update", &self.resource_arn_update);
-        formatter.field("role_arn_update", &self.role_arn_update);
-        formatter.finish()
-    }
-}
 /// See [`InputLambdaProcessorUpdate`](crate::model::InputLambdaProcessorUpdate).
 pub mod input_lambda_processor_update {
 
     /// A builder for [`InputLambdaProcessorUpdate`](crate::model::InputLambdaProcessorUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn_update: std::option::Option<std::string::String>,
         pub(crate) role_arn_update: std::option::Option<std::string::String>,
@@ -2327,7 +2141,7 @@ impl InputLambdaProcessorUpdate {
 
 /// <p>A key-value pair (the value is optional) that you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the key-value tag.</p>
     #[doc(hidden)]
@@ -2346,19 +2160,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2402,7 +2208,7 @@ impl Tag {
 
 /// <p>When you start your application, you provide this configuration, which identifies the input source and the point in the input source at which you want the application to start processing records.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputConfiguration {
     /// <p>Input source ID. You can get this ID by calling the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
     #[doc(hidden)]
@@ -2424,22 +2230,11 @@ impl InputConfiguration {
         self.input_starting_position_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for InputConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputConfiguration");
-        formatter.field("id", &self.id);
-        formatter.field(
-            "input_starting_position_configuration",
-            &self.input_starting_position_configuration,
-        );
-        formatter.finish()
-    }
-}
 /// See [`InputConfiguration`](crate::model::InputConfiguration).
 pub mod input_configuration {
 
     /// A builder for [`InputConfiguration`](crate::model::InputConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) input_starting_position_configuration:
@@ -2490,7 +2285,7 @@ impl InputConfiguration {
 
 /// <p>Describes the point at which the application reads from the streaming source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputStartingPositionConfiguration {
     /// <p>The starting position on the stream.</p>
     /// <ul>
@@ -2514,18 +2309,11 @@ impl InputStartingPositionConfiguration {
         self.input_starting_position.as_ref()
     }
 }
-impl std::fmt::Debug for InputStartingPositionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputStartingPositionConfiguration");
-        formatter.field("input_starting_position", &self.input_starting_position);
-        formatter.finish()
-    }
-}
 /// See [`InputStartingPositionConfiguration`](crate::model::InputStartingPositionConfiguration).
 pub mod input_starting_position_configuration {
 
     /// A builder for [`InputStartingPositionConfiguration`](crate::model::InputStartingPositionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_starting_position:
             std::option::Option<crate::model::InputStartingPosition>,
@@ -2572,6 +2360,42 @@ impl InputStartingPositionConfiguration {
     }
 }
 
+/// When writing a match expression against `InputStartingPosition`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let inputstartingposition = unimplemented!();
+/// match inputstartingposition {
+///     InputStartingPosition::LastStoppedPoint => { /* ... */ },
+///     InputStartingPosition::Now => { /* ... */ },
+///     InputStartingPosition::TrimHorizon => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `inputstartingposition` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InputStartingPosition::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InputStartingPosition::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InputStartingPosition::NewFeature` is defined.
+/// Specifically, when `inputstartingposition` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InputStartingPosition::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2590,8 +2414,8 @@ pub enum InputStartingPosition {
     Now,
     #[allow(missing_docs)] // documentation missing in model
     TrimHorizon,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InputStartingPosition {
     fn from(s: &str) -> Self {
@@ -2599,7 +2423,9 @@ impl std::convert::From<&str> for InputStartingPosition {
             "LAST_STOPPED_POINT" => InputStartingPosition::LastStoppedPoint,
             "NOW" => InputStartingPosition::Now,
             "TRIM_HORIZON" => InputStartingPosition::TrimHorizon,
-            other => InputStartingPosition::Unknown(other.to_owned()),
+            other => {
+                InputStartingPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2617,11 +2443,11 @@ impl InputStartingPosition {
             InputStartingPosition::LastStoppedPoint => "LAST_STOPPED_POINT",
             InputStartingPosition::Now => "NOW",
             InputStartingPosition::TrimHorizon => "TRIM_HORIZON",
-            InputStartingPosition::Unknown(s) => s.as_ref(),
+            InputStartingPosition::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LAST_STOPPED_POINT", "NOW", "TRIM_HORIZON"]
     }
 }
@@ -2636,7 +2462,7 @@ impl AsRef<str> for InputStartingPosition {
 /// </note>
 /// <p>Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>Name of the application.</p>
     #[doc(hidden)]
@@ -2662,20 +2488,11 @@ impl ApplicationSummary {
         self.application_status.as_ref()
     }
 }
-impl std::fmt::Debug for ApplicationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationSummary");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("application_arn", &self.application_arn);
-        formatter.field("application_status", &self.application_status);
-        formatter.finish()
-    }
-}
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
 pub mod application_summary {
 
     /// A builder for [`ApplicationSummary`](crate::model::ApplicationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -2738,6 +2555,45 @@ impl ApplicationSummary {
     }
 }
 
+/// When writing a match expression against `ApplicationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let applicationstatus = unimplemented!();
+/// match applicationstatus {
+///     ApplicationStatus::Deleting => { /* ... */ },
+///     ApplicationStatus::Ready => { /* ... */ },
+///     ApplicationStatus::Running => { /* ... */ },
+///     ApplicationStatus::Starting => { /* ... */ },
+///     ApplicationStatus::Stopping => { /* ... */ },
+///     ApplicationStatus::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `applicationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ApplicationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ApplicationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ApplicationStatus::NewFeature` is defined.
+/// Specifically, when `applicationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ApplicationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2762,8 +2618,8 @@ pub enum ApplicationStatus {
     Stopping,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ApplicationStatus {
     fn from(s: &str) -> Self {
@@ -2774,7 +2630,9 @@ impl std::convert::From<&str> for ApplicationStatus {
             "STARTING" => ApplicationStatus::Starting,
             "STOPPING" => ApplicationStatus::Stopping,
             "UPDATING" => ApplicationStatus::Updating,
-            other => ApplicationStatus::Unknown(other.to_owned()),
+            other => {
+                ApplicationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2795,11 +2653,11 @@ impl ApplicationStatus {
             ApplicationStatus::Starting => "STARTING",
             ApplicationStatus::Stopping => "STOPPING",
             ApplicationStatus::Updating => "UPDATING",
-            ApplicationStatus::Unknown(s) => s.as_ref(),
+            ApplicationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DELETING", "READY", "RUNNING", "STARTING", "STOPPING", "UPDATING",
         ]
@@ -2813,7 +2671,7 @@ impl AsRef<str> for ApplicationStatus {
 
 /// <p>Provides a description of a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputProcessingConfiguration {
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by your application code.</p>
     #[doc(hidden)]
@@ -2827,18 +2685,11 @@ impl InputProcessingConfiguration {
         self.input_lambda_processor.as_ref()
     }
 }
-impl std::fmt::Debug for InputProcessingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputProcessingConfiguration");
-        formatter.field("input_lambda_processor", &self.input_lambda_processor);
-        formatter.finish()
-    }
-}
 /// See [`InputProcessingConfiguration`](crate::model::InputProcessingConfiguration).
 pub mod input_processing_configuration {
 
     /// A builder for [`InputProcessingConfiguration`](crate::model::InputProcessingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_lambda_processor: std::option::Option<crate::model::InputLambdaProcessor>,
     }
@@ -2873,7 +2724,7 @@ impl InputProcessingConfiguration {
 
 /// <p>An object that contains the Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda function. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputLambdaProcessor {
     /// <p>The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that operates on records in the stream.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a> </p>
@@ -2896,19 +2747,11 @@ impl InputLambdaProcessor {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for InputLambdaProcessor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputLambdaProcessor");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`InputLambdaProcessor`](crate::model::InputLambdaProcessor).
 pub mod input_lambda_processor {
 
     /// A builder for [`InputLambdaProcessor`](crate::model::InputLambdaProcessor).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -2956,7 +2799,7 @@ impl InputLambdaProcessor {
 
 /// <p>Provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket, the ARN of the IAM role that is used to access the bucket, and the name of the Amazon S3 object that contains the data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Configuration {
     /// <p>IAM ARN of the role used to access the data.</p>
     #[doc(hidden)]
@@ -2982,20 +2825,11 @@ impl S3Configuration {
         self.file_key.as_deref()
     }
 }
-impl std::fmt::Debug for S3Configuration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Configuration");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("file_key", &self.file_key);
-        formatter.finish()
-    }
-}
 /// See [`S3Configuration`](crate::model::S3Configuration).
 pub mod s3_configuration {
 
     /// A builder for [`S3Configuration`](crate::model::S3Configuration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
@@ -3054,7 +2888,7 @@ impl S3Configuration {
 /// </note>
 /// <p>Provides a description of the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationDetail {
     /// <p>Name of the application.</p>
     #[doc(hidden)]
@@ -3149,35 +2983,11 @@ impl ApplicationDetail {
         self.application_version_id
     }
 }
-impl std::fmt::Debug for ApplicationDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationDetail");
-        formatter.field("application_name", &self.application_name);
-        formatter.field("application_description", &self.application_description);
-        formatter.field("application_arn", &self.application_arn);
-        formatter.field("application_status", &self.application_status);
-        formatter.field("create_timestamp", &self.create_timestamp);
-        formatter.field("last_update_timestamp", &self.last_update_timestamp);
-        formatter.field("input_descriptions", &self.input_descriptions);
-        formatter.field("output_descriptions", &self.output_descriptions);
-        formatter.field(
-            "reference_data_source_descriptions",
-            &self.reference_data_source_descriptions,
-        );
-        formatter.field(
-            "cloud_watch_logging_option_descriptions",
-            &self.cloud_watch_logging_option_descriptions,
-        );
-        formatter.field("application_code", &self.application_code);
-        formatter.field("application_version_id", &self.application_version_id);
-        formatter.finish()
-    }
-}
 /// See [`ApplicationDetail`](crate::model::ApplicationDetail).
 pub mod application_detail {
 
     /// A builder for [`ApplicationDetail`](crate::model::ApplicationDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) application_description: std::option::Option<std::string::String>,
@@ -3413,7 +3223,7 @@ impl ApplicationDetail {
 
 /// <p>Description of the CloudWatch logging option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLoggingOptionDescription {
     /// <p>ID of the CloudWatch logging option description.</p>
     #[doc(hidden)]
@@ -3439,23 +3249,11 @@ impl CloudWatchLoggingOptionDescription {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CloudWatchLoggingOptionDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLoggingOptionDescription");
-        formatter.field(
-            "cloud_watch_logging_option_id",
-            &self.cloud_watch_logging_option_id,
-        );
-        formatter.field("log_stream_arn", &self.log_stream_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`CloudWatchLoggingOptionDescription`](crate::model::CloudWatchLoggingOptionDescription).
 pub mod cloud_watch_logging_option_description {
 
     /// A builder for [`CloudWatchLoggingOptionDescription`](crate::model::CloudWatchLoggingOptionDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logging_option_id: std::option::Option<std::string::String>,
         pub(crate) log_stream_arn: std::option::Option<std::string::String>,
@@ -3520,7 +3318,7 @@ impl CloudWatchLoggingOptionDescription {
 
 /// <p>Describes the reference data source configured for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferenceDataSourceDescription {
     /// <p>ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference data source to your application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a> operation.</p>
     #[doc(hidden)]
@@ -3556,24 +3354,11 @@ impl ReferenceDataSourceDescription {
         self.reference_schema.as_ref()
     }
 }
-impl std::fmt::Debug for ReferenceDataSourceDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferenceDataSourceDescription");
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("table_name", &self.table_name);
-        formatter.field(
-            "s3_reference_data_source_description",
-            &self.s3_reference_data_source_description,
-        );
-        formatter.field("reference_schema", &self.reference_schema);
-        formatter.finish()
-    }
-}
 /// See [`ReferenceDataSourceDescription`](crate::model::ReferenceDataSourceDescription).
 pub mod reference_data_source_description {
 
     /// A builder for [`ReferenceDataSourceDescription`](crate::model::ReferenceDataSourceDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference_id: std::option::Option<std::string::String>,
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -3651,7 +3436,7 @@ impl ReferenceDataSourceDescription {
 
 /// <p>Provides the bucket name and object key name that stores the reference data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ReferenceDataSourceDescription {
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
     #[doc(hidden)]
@@ -3677,20 +3462,11 @@ impl S3ReferenceDataSourceDescription {
         self.reference_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for S3ReferenceDataSourceDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ReferenceDataSourceDescription");
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("file_key", &self.file_key);
-        formatter.field("reference_role_arn", &self.reference_role_arn);
-        formatter.finish()
-    }
-}
 /// See [`S3ReferenceDataSourceDescription`](crate::model::S3ReferenceDataSourceDescription).
 pub mod s3_reference_data_source_description {
 
     /// A builder for [`S3ReferenceDataSourceDescription`](crate::model::S3ReferenceDataSourceDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
         pub(crate) file_key: std::option::Option<std::string::String>,
@@ -3749,7 +3525,7 @@ impl S3ReferenceDataSourceDescription {
 
 /// <p>Describes the application output configuration, which includes the in-application stream name and the destination where the stream data is written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputDescription {
     /// <p>A unique identifier for the output configuration.</p>
     #[doc(hidden)]
@@ -3804,29 +3580,11 @@ impl OutputDescription {
         self.destination_schema.as_ref()
     }
 }
-impl std::fmt::Debug for OutputDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputDescription");
-        formatter.field("output_id", &self.output_id);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "kinesis_streams_output_description",
-            &self.kinesis_streams_output_description,
-        );
-        formatter.field(
-            "kinesis_firehose_output_description",
-            &self.kinesis_firehose_output_description,
-        );
-        formatter.field("lambda_output_description", &self.lambda_output_description);
-        formatter.field("destination_schema", &self.destination_schema);
-        formatter.finish()
-    }
-}
 /// See [`OutputDescription`](crate::model::OutputDescription).
 pub mod output_description {
 
     /// A builder for [`OutputDescription`](crate::model::OutputDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3942,7 +3700,7 @@ impl OutputDescription {
 
 /// <p>For an application output, describes the AWS Lambda function configured as its destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaOutputDescription {
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p>
     #[doc(hidden)]
@@ -3961,19 +3719,11 @@ impl LambdaOutputDescription {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for LambdaOutputDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaOutputDescription");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`LambdaOutputDescription`](crate::model::LambdaOutputDescription).
 pub mod lambda_output_description {
 
     /// A builder for [`LambdaOutputDescription`](crate::model::LambdaOutputDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -4017,7 +3767,7 @@ impl LambdaOutputDescription {
 
 /// <p> For an application output, describes the Amazon Kinesis Firehose delivery stream configured as its destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisFirehoseOutputDescription {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.</p>
     #[doc(hidden)]
@@ -4036,19 +3786,11 @@ impl KinesisFirehoseOutputDescription {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisFirehoseOutputDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisFirehoseOutputDescription");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`KinesisFirehoseOutputDescription`](crate::model::KinesisFirehoseOutputDescription).
 pub mod kinesis_firehose_output_description {
 
     /// A builder for [`KinesisFirehoseOutputDescription`](crate::model::KinesisFirehoseOutputDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -4092,7 +3834,7 @@ impl KinesisFirehoseOutputDescription {
 
 /// <p> For an application output, describes the Amazon Kinesis stream configured as its destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamsOutputDescription {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>
     #[doc(hidden)]
@@ -4111,19 +3853,11 @@ impl KinesisStreamsOutputDescription {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisStreamsOutputDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamsOutputDescription");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`KinesisStreamsOutputDescription`](crate::model::KinesisStreamsOutputDescription).
 pub mod kinesis_streams_output_description {
 
     /// A builder for [`KinesisStreamsOutputDescription`](crate::model::KinesisStreamsOutputDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -4167,7 +3901,7 @@ impl KinesisStreamsOutputDescription {
 
 /// <p>Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputDescription {
     /// <p>Input ID associated with the application input. This is the ID that Amazon Kinesis Analytics assigns to each input configuration you add to your application. </p>
     #[doc(hidden)]
@@ -4247,38 +3981,11 @@ impl InputDescription {
         self.input_starting_position_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for InputDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputDescription");
-        formatter.field("input_id", &self.input_id);
-        formatter.field("name_prefix", &self.name_prefix);
-        formatter.field("in_app_stream_names", &self.in_app_stream_names);
-        formatter.field(
-            "input_processing_configuration_description",
-            &self.input_processing_configuration_description,
-        );
-        formatter.field(
-            "kinesis_streams_input_description",
-            &self.kinesis_streams_input_description,
-        );
-        formatter.field(
-            "kinesis_firehose_input_description",
-            &self.kinesis_firehose_input_description,
-        );
-        formatter.field("input_schema", &self.input_schema);
-        formatter.field("input_parallelism", &self.input_parallelism);
-        formatter.field(
-            "input_starting_position_configuration",
-            &self.input_starting_position_configuration,
-        );
-        formatter.finish()
-    }
-}
 /// See [`InputDescription`](crate::model::InputDescription).
 pub mod input_description {
 
     /// A builder for [`InputDescription`](crate::model::InputDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_id: std::option::Option<std::string::String>,
         pub(crate) name_prefix: std::option::Option<std::string::String>,
@@ -4450,7 +4157,7 @@ impl InputDescription {
 
 /// <p>Describes the number of in-application streams to create for a given streaming source. For information about parallelism, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputParallelism {
     /// <p>Number of in-application streams to create. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>. </p>
     #[doc(hidden)]
@@ -4462,18 +4169,11 @@ impl InputParallelism {
         self.count
     }
 }
-impl std::fmt::Debug for InputParallelism {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputParallelism");
-        formatter.field("count", &self.count);
-        formatter.finish()
-    }
-}
 /// See [`InputParallelism`](crate::model::InputParallelism).
 pub mod input_parallelism {
 
     /// A builder for [`InputParallelism`](crate::model::InputParallelism).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
     }
@@ -4503,7 +4203,7 @@ impl InputParallelism {
 
 /// <p> Describes the Amazon Kinesis Firehose delivery stream that is configured as the streaming source in the application input configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisFirehoseInputDescription {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.</p>
     #[doc(hidden)]
@@ -4522,19 +4222,11 @@ impl KinesisFirehoseInputDescription {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisFirehoseInputDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisFirehoseInputDescription");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`KinesisFirehoseInputDescription`](crate::model::KinesisFirehoseInputDescription).
 pub mod kinesis_firehose_input_description {
 
     /// A builder for [`KinesisFirehoseInputDescription`](crate::model::KinesisFirehoseInputDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -4578,7 +4270,7 @@ impl KinesisFirehoseInputDescription {
 
 /// <p> Describes the Amazon Kinesis stream that is configured as the streaming source in the application input configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamsInputDescription {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>
     #[doc(hidden)]
@@ -4597,19 +4289,11 @@ impl KinesisStreamsInputDescription {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisStreamsInputDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamsInputDescription");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`KinesisStreamsInputDescription`](crate::model::KinesisStreamsInputDescription).
 pub mod kinesis_streams_input_description {
 
     /// A builder for [`KinesisStreamsInputDescription`](crate::model::KinesisStreamsInputDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -4653,7 +4337,7 @@ impl KinesisStreamsInputDescription {
 
 /// <p>Provides configuration information about an input processor. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputProcessingConfigurationDescription {
     /// <p>Provides configuration information about the associated <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessorDescription.html">InputLambdaProcessorDescription</a>.</p>
     #[doc(hidden)]
@@ -4668,21 +4352,11 @@ impl InputProcessingConfigurationDescription {
         self.input_lambda_processor_description.as_ref()
     }
 }
-impl std::fmt::Debug for InputProcessingConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputProcessingConfigurationDescription");
-        formatter.field(
-            "input_lambda_processor_description",
-            &self.input_lambda_processor_description,
-        );
-        formatter.finish()
-    }
-}
 /// See [`InputProcessingConfigurationDescription`](crate::model::InputProcessingConfigurationDescription).
 pub mod input_processing_configuration_description {
 
     /// A builder for [`InputProcessingConfigurationDescription`](crate::model::InputProcessingConfigurationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_lambda_processor_description:
             std::option::Option<crate::model::InputLambdaProcessorDescription>,
@@ -4721,7 +4395,7 @@ impl InputProcessingConfigurationDescription {
 
 /// <p>An object that contains the Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda expression.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputLambdaProcessorDescription {
     /// <p>The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess the records in the stream.</p>
     #[doc(hidden)]
@@ -4740,19 +4414,11 @@ impl InputLambdaProcessorDescription {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for InputLambdaProcessorDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputLambdaProcessorDescription");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`InputLambdaProcessorDescription`](crate::model::InputLambdaProcessorDescription).
 pub mod input_lambda_processor_description {
 
     /// A builder for [`InputLambdaProcessorDescription`](crate::model::InputLambdaProcessorDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -4796,7 +4462,7 @@ impl InputLambdaProcessorDescription {
 
 /// <p>Provides a description of CloudWatch logging options, including the log stream Amazon Resource Name (ARN) and the role ARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLoggingOption {
     /// <p>ARN of the CloudWatch log to receive application messages.</p>
     #[doc(hidden)]
@@ -4815,19 +4481,11 @@ impl CloudWatchLoggingOption {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CloudWatchLoggingOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLoggingOption");
-        formatter.field("log_stream_arn", &self.log_stream_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`CloudWatchLoggingOption`](crate::model::CloudWatchLoggingOption).
 pub mod cloud_watch_logging_option {
 
     /// A builder for [`CloudWatchLoggingOption`](crate::model::CloudWatchLoggingOption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_stream_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -4876,7 +4534,7 @@ impl CloudWatchLoggingOption {
 /// <p></p>
 /// <p>For limits on how many destinations an application can write and other limitations, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Output {
     /// <p>Name of the in-application stream.</p>
     #[doc(hidden)]
@@ -4920,22 +4578,11 @@ impl Output {
         self.destination_schema.as_ref()
     }
 }
-impl std::fmt::Debug for Output {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Output");
-        formatter.field("name", &self.name);
-        formatter.field("kinesis_streams_output", &self.kinesis_streams_output);
-        formatter.field("kinesis_firehose_output", &self.kinesis_firehose_output);
-        formatter.field("lambda_output", &self.lambda_output);
-        formatter.field("destination_schema", &self.destination_schema);
-        formatter.finish()
-    }
-}
 /// See [`Output`](crate::model::Output).
 pub mod output {
 
     /// A builder for [`Output`](crate::model::Output).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) kinesis_streams_output: std::option::Option<crate::model::KinesisStreamsOutput>,
@@ -5031,7 +4678,7 @@ impl Output {
 
 /// <p>When configuring application output, identifies an AWS Lambda function as the destination. You provide the function Amazon Resource Name (ARN) and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the function on your behalf. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaOutput {
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function to write to.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a> </p>
@@ -5054,19 +4701,11 @@ impl LambdaOutput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for LambdaOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaOutput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`LambdaOutput`](crate::model::LambdaOutput).
 pub mod lambda_output {
 
     /// A builder for [`LambdaOutput`](crate::model::LambdaOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -5114,7 +4753,7 @@ impl LambdaOutput {
 
 /// <p>When configuring application output, identifies an Amazon Kinesis Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to write to the stream on your behalf.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisFirehoseOutput {
     /// <p>ARN of the destination Amazon Kinesis Firehose delivery stream to write to.</p>
     #[doc(hidden)]
@@ -5133,19 +4772,11 @@ impl KinesisFirehoseOutput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisFirehoseOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisFirehoseOutput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`KinesisFirehoseOutput`](crate::model::KinesisFirehoseOutput).
 pub mod kinesis_firehose_output {
 
     /// A builder for [`KinesisFirehoseOutput`](crate::model::KinesisFirehoseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -5189,7 +4820,7 @@ impl KinesisFirehoseOutput {
 
 /// <p>When configuring application output, identifies an Amazon Kinesis stream as the destination. You provide the stream Amazon Resource Name (ARN) and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the stream on your behalf.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamsOutput {
     /// <p>ARN of the destination Amazon Kinesis stream to write to.</p>
     #[doc(hidden)]
@@ -5208,19 +4839,11 @@ impl KinesisStreamsOutput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisStreamsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamsOutput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`KinesisStreamsOutput`](crate::model::KinesisStreamsOutput).
 pub mod kinesis_streams_output {
 
     /// A builder for [`KinesisStreamsOutput`](crate::model::KinesisStreamsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -5264,7 +4887,7 @@ impl KinesisStreamsOutput {
 
 /// <p>When you configure the application input, you specify the streaming source, the in-application stream name that is created, and the mapping between the two. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Input {
     /// <p>Name prefix to use when creating an in-application stream. Suppose that you specify a prefix "MyInApplicationStream." Amazon Kinesis Analytics then creates one or more (as per the <code>InputParallelism</code> count you specified) in-application streams with names "MyInApplicationStream_001," "MyInApplicationStream_002," and so on. </p>
     #[doc(hidden)]
@@ -5326,26 +4949,11 @@ impl Input {
         self.input_schema.as_ref()
     }
 }
-impl std::fmt::Debug for Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Input");
-        formatter.field("name_prefix", &self.name_prefix);
-        formatter.field(
-            "input_processing_configuration",
-            &self.input_processing_configuration,
-        );
-        formatter.field("kinesis_streams_input", &self.kinesis_streams_input);
-        formatter.field("kinesis_firehose_input", &self.kinesis_firehose_input);
-        formatter.field("input_parallelism", &self.input_parallelism);
-        formatter.field("input_schema", &self.input_schema);
-        formatter.finish()
-    }
-}
 /// See [`Input`](crate::model::Input).
 pub mod input {
 
     /// A builder for [`Input`](crate::model::Input).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name_prefix: std::option::Option<std::string::String>,
         pub(crate) input_processing_configuration:
@@ -5466,7 +5074,7 @@ impl Input {
 
 /// <p> Identifies an Amazon Kinesis Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN) and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisFirehoseInput {
     /// <p>ARN of the input delivery stream.</p>
     #[doc(hidden)]
@@ -5485,19 +5093,11 @@ impl KinesisFirehoseInput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisFirehoseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisFirehoseInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`KinesisFirehoseInput`](crate::model::KinesisFirehoseInput).
 pub mod kinesis_firehose_input {
 
     /// A builder for [`KinesisFirehoseInput`](crate::model::KinesisFirehoseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -5541,7 +5141,7 @@ impl KinesisFirehoseInput {
 
 /// <p> Identifies an Amazon Kinesis stream as the streaming source. You provide the stream's Amazon Resource Name (ARN) and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamsInput {
     /// <p>ARN of the input Amazon Kinesis stream to read.</p>
     #[doc(hidden)]
@@ -5560,19 +5160,11 @@ impl KinesisStreamsInput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisStreamsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamsInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`KinesisStreamsInput`](crate::model::KinesisStreamsInput).
 pub mod kinesis_streams_input {
 
     /// A builder for [`KinesisStreamsInput`](crate::model::KinesisStreamsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -5616,7 +5208,7 @@ impl KinesisStreamsInput {
 
 /// <p>Describes the reference data source by providing the source information (S3 bucket name and object key name), the resulting in-application table name that is created, and the necessary schema to map the data elements in the Amazon S3 object to the in-application table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferenceDataSource {
     /// <p>Name of the in-application table to create.</p>
     #[doc(hidden)]
@@ -5644,20 +5236,11 @@ impl ReferenceDataSource {
         self.reference_schema.as_ref()
     }
 }
-impl std::fmt::Debug for ReferenceDataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferenceDataSource");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("s3_reference_data_source", &self.s3_reference_data_source);
-        formatter.field("reference_schema", &self.reference_schema);
-        formatter.finish()
-    }
-}
 /// See [`ReferenceDataSource`](crate::model::ReferenceDataSource).
 pub mod reference_data_source {
 
     /// A builder for [`ReferenceDataSource`](crate::model::ReferenceDataSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) s3_reference_data_source:
@@ -5724,7 +5307,7 @@ impl ReferenceDataSource {
 /// <p>Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf.</p>
 /// <p>An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation to trigger reloading of data into your application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ReferenceDataSource {
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
     #[doc(hidden)]
@@ -5750,20 +5333,11 @@ impl S3ReferenceDataSource {
         self.reference_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for S3ReferenceDataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ReferenceDataSource");
-        formatter.field("bucket_arn", &self.bucket_arn);
-        formatter.field("file_key", &self.file_key);
-        formatter.field("reference_role_arn", &self.reference_role_arn);
-        formatter.finish()
-    }
-}
 /// See [`S3ReferenceDataSource`](crate::model::S3ReferenceDataSource).
 pub mod s3_reference_data_source {
 
     /// A builder for [`S3ReferenceDataSource`](crate::model::S3ReferenceDataSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
         pub(crate) file_key: std::option::Option<std::string::String>,

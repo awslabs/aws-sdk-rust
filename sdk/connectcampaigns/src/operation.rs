@@ -5,7 +5,7 @@
 /// [`create_campaign`](crate::client::Client::create_campaign).
 ///
 /// See [`crate::client::fluent_builders::CreateCampaign`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCampaign {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCampaign {
 /// [`delete_campaign`](crate::client::Client::delete_campaign).
 ///
 /// See [`crate::client::fluent_builders::DeleteCampaign`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCampaign {
     _private: (),
 }
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCampaign {
 /// [`delete_connect_instance_config`](crate::client::Client::delete_connect_instance_config).
 ///
 /// See [`crate::client::fluent_builders::DeleteConnectInstanceConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConnectInstanceConfig {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnectInstanceCon
 /// [`delete_instance_onboarding_job`](crate::client::Client::delete_instance_onboarding_job).
 ///
 /// See [`crate::client::fluent_builders::DeleteInstanceOnboardingJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteInstanceOnboardingJob {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInstanceOnboarding
 /// [`describe_campaign`](crate::client::Client::describe_campaign).
 ///
 /// See [`crate::client::fluent_builders::DescribeCampaign`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCampaign {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCampaign {
 /// [`get_campaign_state`](crate::client::Client::get_campaign_state).
 ///
 /// See [`crate::client::fluent_builders::GetCampaignState`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCampaignState {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCampaignState {
 /// [`get_campaign_state_batch`](crate::client::Client::get_campaign_state_batch).
 ///
 /// See [`crate::client::fluent_builders::GetCampaignStateBatch`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCampaignStateBatch {
     _private: (),
 }
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCampaignStateBatch {
 /// [`get_connect_instance_config`](crate::client::Client::get_connect_instance_config).
 ///
 /// See [`crate::client::fluent_builders::GetConnectInstanceConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetConnectInstanceConfig {
     _private: (),
 }
@@ -273,7 +273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnectInstanceConfig
 /// [`get_instance_onboarding_job_status`](crate::client::Client::get_instance_onboarding_job_status).
 ///
 /// See [`crate::client::fluent_builders::GetInstanceOnboardingJobStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetInstanceOnboardingJobStatus {
     _private: (),
 }
@@ -307,7 +307,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInstanceOnboardingJob
 /// [`list_campaigns`](crate::client::Client::list_campaigns).
 ///
 /// See [`crate::client::fluent_builders::ListCampaigns`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCampaigns {
     _private: (),
 }
@@ -339,7 +339,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCampaigns {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -373,7 +373,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`pause_campaign`](crate::client::Client::pause_campaign).
 ///
 /// See [`crate::client::fluent_builders::PauseCampaign`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PauseCampaign {
     _private: (),
 }
@@ -405,7 +405,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PauseCampaign {
 /// [`put_dial_request_batch`](crate::client::Client::put_dial_request_batch).
 ///
 /// See [`crate::client::fluent_builders::PutDialRequestBatch`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutDialRequestBatch {
     _private: (),
 }
@@ -439,7 +439,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDialRequestBatch {
 /// [`resume_campaign`](crate::client::Client::resume_campaign).
 ///
 /// See [`crate::client::fluent_builders::ResumeCampaign`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ResumeCampaign {
     _private: (),
 }
@@ -471,7 +471,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResumeCampaign {
 /// [`start_campaign`](crate::client::Client::start_campaign).
 ///
 /// See [`crate::client::fluent_builders::StartCampaign`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartCampaign {
     _private: (),
 }
@@ -503,7 +503,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCampaign {
 /// [`start_instance_onboarding_job`](crate::client::Client::start_instance_onboarding_job).
 ///
 /// See [`crate::client::fluent_builders::StartInstanceOnboardingJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartInstanceOnboardingJob {
     _private: (),
 }
@@ -537,7 +537,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartInstanceOnboardingJ
 /// [`stop_campaign`](crate::client::Client::stop_campaign).
 ///
 /// See [`crate::client::fluent_builders::StopCampaign`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopCampaign {
     _private: (),
 }
@@ -569,7 +569,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopCampaign {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -601,7 +601,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -633,7 +633,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_campaign_dialer_config`](crate::client::Client::update_campaign_dialer_config).
 ///
 /// See [`crate::client::fluent_builders::UpdateCampaignDialerConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCampaignDialerConfig {
     _private: (),
 }
@@ -667,7 +667,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCampaignDialerConf
 /// [`update_campaign_name`](crate::client::Client::update_campaign_name).
 ///
 /// See [`crate::client::fluent_builders::UpdateCampaignName`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCampaignName {
     _private: (),
 }
@@ -701,7 +701,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCampaignName {
 /// [`update_campaign_outbound_call_config`](crate::client::Client::update_campaign_outbound_call_config).
 ///
 /// See [`crate::client::fluent_builders::UpdateCampaignOutboundCallConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCampaignOutboundCallConfig {
     _private: (),
 }

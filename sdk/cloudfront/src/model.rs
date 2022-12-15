@@ -2,7 +2,7 @@
 
 /// <p>A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how to track and manage content delivery.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingDistribution {
     /// <p>The identifier for the RTMP distribution. For example: <code>EGTXBD79EXAMPLE</code>.</p>
     #[doc(hidden)]
@@ -65,27 +65,11 @@ impl StreamingDistribution {
         self.streaming_distribution_config.as_ref()
     }
 }
-impl std::fmt::Debug for StreamingDistribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingDistribution");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("active_trusted_signers", &self.active_trusted_signers);
-        formatter.field(
-            "streaming_distribution_config",
-            &self.streaming_distribution_config,
-        );
-        formatter.finish()
-    }
-}
 /// See [`StreamingDistribution`](crate::model::StreamingDistribution).
 pub mod streaming_distribution {
 
     /// A builder for [`StreamingDistribution`](crate::model::StreamingDistribution).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -206,7 +190,7 @@ impl StreamingDistribution {
 
 /// <p>The RTMP distribution's configuration information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingDistributionConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p>
@@ -271,25 +255,11 @@ impl StreamingDistributionConfig {
         self.enabled
     }
 }
-impl std::fmt::Debug for StreamingDistributionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingDistributionConfig");
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("s3_origin", &self.s3_origin);
-        formatter.field("aliases", &self.aliases);
-        formatter.field("comment", &self.comment);
-        formatter.field("logging", &self.logging);
-        formatter.field("trusted_signers", &self.trusted_signers);
-        formatter.field("price_class", &self.price_class);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 /// See [`StreamingDistributionConfig`](crate::model::StreamingDistributionConfig).
 pub mod streaming_distribution_config {
 
     /// A builder for [`StreamingDistributionConfig`](crate::model::StreamingDistributionConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) caller_reference: std::option::Option<std::string::String>,
         pub(crate) s3_origin: std::option::Option<crate::model::S3Origin>,
@@ -419,6 +389,42 @@ impl StreamingDistributionConfig {
     }
 }
 
+/// When writing a match expression against `PriceClass`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let priceclass = unimplemented!();
+/// match priceclass {
+///     PriceClass::PriceClass100 => { /* ... */ },
+///     PriceClass::PriceClass200 => { /* ... */ },
+///     PriceClass::PriceClassAll => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `priceclass` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PriceClass::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PriceClass::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PriceClass::NewFeature` is defined.
+/// Specifically, when `priceclass` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PriceClass::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -437,8 +443,8 @@ pub enum PriceClass {
     PriceClass200,
     #[allow(missing_docs)] // documentation missing in model
     PriceClassAll,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PriceClass {
     fn from(s: &str) -> Self {
@@ -446,7 +452,7 @@ impl std::convert::From<&str> for PriceClass {
             "PriceClass_100" => PriceClass::PriceClass100,
             "PriceClass_200" => PriceClass::PriceClass200,
             "PriceClass_All" => PriceClass::PriceClassAll,
-            other => PriceClass::Unknown(other.to_owned()),
+            other => PriceClass::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -464,11 +470,11 @@ impl PriceClass {
             PriceClass::PriceClass100 => "PriceClass_100",
             PriceClass::PriceClass200 => "PriceClass_200",
             PriceClass::PriceClassAll => "PriceClass_All",
-            PriceClass::Unknown(s) => s.as_ref(),
+            PriceClass::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PriceClass_100", "PriceClass_200", "PriceClass_All"]
     }
 }
@@ -480,7 +486,7 @@ impl AsRef<str> for PriceClass {
 
 /// <p>A list of Amazon Web Services accounts whose public keys CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustedSigners {
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
     #[doc(hidden)]
@@ -506,20 +512,11 @@ impl TrustedSigners {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for TrustedSigners {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustedSigners");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`TrustedSigners`](crate::model::TrustedSigners).
 pub mod trusted_signers {
 
     /// A builder for [`TrustedSigners`](crate::model::TrustedSigners).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) quantity: std::option::Option<i32>,
@@ -584,7 +581,7 @@ impl TrustedSigners {
 
 /// <p>A complex type that controls whether access logs are written for this streaming distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingLoggingConfig {
     /// <p>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable logging when you create a streaming distribution or if you want to disable logging for an existing streaming distribution, specify <code>false</code> for <code>Enabled</code>, and specify <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted. </p>
     #[doc(hidden)]
@@ -610,20 +607,11 @@ impl StreamingLoggingConfig {
         self.prefix.as_deref()
     }
 }
-impl std::fmt::Debug for StreamingLoggingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingLoggingConfig");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
-    }
-}
 /// See [`StreamingLoggingConfig`](crate::model::StreamingLoggingConfig).
 pub mod streaming_logging_config {
 
     /// A builder for [`StreamingLoggingConfig`](crate::model::StreamingLoggingConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -679,7 +667,7 @@ impl StreamingLoggingConfig {
 
 /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Aliases {
     /// <p>The number of CNAME aliases, if any, that you want to associate with this distribution.</p>
     #[doc(hidden)]
@@ -698,19 +686,11 @@ impl Aliases {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for Aliases {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Aliases");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`Aliases`](crate::model::Aliases).
 pub mod aliases {
 
     /// A builder for [`Aliases`](crate::model::Aliases).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -763,7 +743,7 @@ impl Aliases {
 
 /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Origin {
     /// <p>The DNS name of the Amazon S3 origin. </p>
     #[doc(hidden)]
@@ -790,19 +770,11 @@ impl S3Origin {
         self.origin_access_identity.as_deref()
     }
 }
-impl std::fmt::Debug for S3Origin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Origin");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("origin_access_identity", &self.origin_access_identity);
-        formatter.finish()
-    }
-}
 /// See [`S3Origin`](crate::model::S3Origin).
 pub mod s3_origin {
 
     /// A builder for [`S3Origin`](crate::model::S3Origin).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) origin_access_identity: std::option::Option<std::string::String>,
@@ -857,7 +829,7 @@ impl S3Origin {
 
 /// <p>A list of Amazon Web Services accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActiveTrustedSigners {
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
     #[doc(hidden)]
@@ -883,20 +855,11 @@ impl ActiveTrustedSigners {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for ActiveTrustedSigners {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActiveTrustedSigners");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`ActiveTrustedSigners`](crate::model::ActiveTrustedSigners).
 pub mod active_trusted_signers {
 
     /// A builder for [`ActiveTrustedSigners`](crate::model::ActiveTrustedSigners).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) quantity: std::option::Option<i32>,
@@ -961,7 +924,7 @@ impl ActiveTrustedSigners {
 
 /// <p>A list of Amazon Web Services accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Signer {
     /// <p>An Amazon Web Services account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If the Amazon Web Services account that owns the key pairs is the same account that owns the CloudFront distribution, the value of this field is <code>self</code>.</p>
     #[doc(hidden)]
@@ -980,19 +943,11 @@ impl Signer {
         self.key_pair_ids.as_ref()
     }
 }
-impl std::fmt::Debug for Signer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Signer");
-        formatter.field("aws_account_number", &self.aws_account_number);
-        formatter.field("key_pair_ids", &self.key_pair_ids);
-        formatter.finish()
-    }
-}
 /// See [`Signer`](crate::model::Signer).
 pub mod signer {
 
     /// A builder for [`Signer`](crate::model::Signer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_number: std::option::Option<std::string::String>,
         pub(crate) key_pair_ids: std::option::Option<crate::model::KeyPairIds>,
@@ -1042,7 +997,7 @@ impl Signer {
 
 /// <p>A list of CloudFront key pair identifiers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyPairIds {
     /// <p>The number of key pair identifiers in the list.</p>
     #[doc(hidden)]
@@ -1061,19 +1016,11 @@ impl KeyPairIds {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for KeyPairIds {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyPairIds");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`KeyPairIds`](crate::model::KeyPairIds).
 pub mod key_pair_ids {
 
     /// A builder for [`KeyPairIds`](crate::model::KeyPairIds).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1129,7 +1076,7 @@ impl KeyPairIds {
 /// <p>After you create a response headers policy, you can use its ID to attach it to one or more cache behaviors in a CloudFront distribution. When it’s attached to a cache behavior, CloudFront adds the headers in the policy to HTTP responses that it sends for requests that match the cache behavior.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/adding-response-headers.html">Adding HTTP headers to CloudFront responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicy {
     /// <p>The identifier for the response headers policy.</p>
     #[doc(hidden)]
@@ -1160,23 +1107,11 @@ impl ResponseHeadersPolicy {
         self.response_headers_policy_config.as_ref()
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicy");
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field(
-            "response_headers_policy_config",
-            &self.response_headers_policy_config,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicy`](crate::model::ResponseHeadersPolicy).
 pub mod response_headers_policy {
 
     /// A builder for [`ResponseHeadersPolicy`](crate::model::ResponseHeadersPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1245,7 +1180,7 @@ impl ResponseHeadersPolicy {
 /// <p>A response headers policy configuration.</p>
 /// <p>A response headers policy configuration contains metadata about the response headers policy, and configurations for sets of HTTP response headers and their values. CloudFront adds the headers in the policy to HTTP responses that it sends for requests that match a cache behavior associated with the policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyConfig {
     /// <p>A comment to describe the response headers policy.</p>
     /// <p>The comment cannot be longer than 128 characters.</p>
@@ -1307,26 +1242,11 @@ impl ResponseHeadersPolicyConfig {
         self.custom_headers_config.as_ref()
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyConfig");
-        formatter.field("comment", &self.comment);
-        formatter.field("name", &self.name);
-        formatter.field("cors_config", &self.cors_config);
-        formatter.field("security_headers_config", &self.security_headers_config);
-        formatter.field(
-            "server_timing_headers_config",
-            &self.server_timing_headers_config,
-        );
-        formatter.field("custom_headers_config", &self.custom_headers_config);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicyConfig`](crate::model::ResponseHeadersPolicyConfig).
 pub mod response_headers_policy_config {
 
     /// A builder for [`ResponseHeadersPolicyConfig`](crate::model::ResponseHeadersPolicyConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1448,7 +1368,7 @@ impl ResponseHeadersPolicyConfig {
 
 /// <p>A list of HTTP response header names and their values. CloudFront includes these headers in HTTP responses that it sends for requests that match a cache behavior that’s associated with this response headers policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyCustomHeadersConfig {
     /// <p>The number of HTTP response headers in the list.</p>
     #[doc(hidden)]
@@ -1467,19 +1387,11 @@ impl ResponseHeadersPolicyCustomHeadersConfig {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicyCustomHeadersConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyCustomHeadersConfig");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicyCustomHeadersConfig`](crate::model::ResponseHeadersPolicyCustomHeadersConfig).
 pub mod response_headers_policy_custom_headers_config {
 
     /// A builder for [`ResponseHeadersPolicyCustomHeadersConfig`](crate::model::ResponseHeadersPolicyCustomHeadersConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items:
@@ -1535,7 +1447,7 @@ impl ResponseHeadersPolicyCustomHeadersConfig {
 
 /// <p>An HTTP response header name and its value. CloudFront includes this header in HTTP responses that it sends for requests that match a cache behavior that’s associated with this response headers policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyCustomHeader {
     /// <p>The HTTP response header name.</p>
     #[doc(hidden)]
@@ -1561,20 +1473,11 @@ impl ResponseHeadersPolicyCustomHeader {
         self.r#override
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicyCustomHeader {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyCustomHeader");
-        formatter.field("header", &self.header);
-        formatter.field("value", &self.value);
-        formatter.field("r#override", &self.r#override);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicyCustomHeader`](crate::model::ResponseHeadersPolicyCustomHeader).
 pub mod response_headers_policy_custom_header {
 
     /// A builder for [`ResponseHeadersPolicyCustomHeader`](crate::model::ResponseHeadersPolicyCustomHeader).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) header: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1631,7 +1534,7 @@ impl ResponseHeadersPolicyCustomHeader {
 /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront. CloudFront adds this header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
 /// <p>You can use the <code>Server-Timing</code> header to view metrics that can help you gain insights about the behavior and performance of CloudFront. For example, you can see which cache layer served a cache hit, or the first byte latency from the origin when there was a cache miss. You can use the metrics in the <code>Server-Timing</code> header to troubleshoot issues or test the efficiency of your CloudFront configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/understanding-response-headers-policies.html#server-timing-header">Server-Timing header</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyServerTimingHeadersConfig {
     /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
     #[doc(hidden)]
@@ -1650,19 +1553,11 @@ impl ResponseHeadersPolicyServerTimingHeadersConfig {
         self.sampling_rate
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicyServerTimingHeadersConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyServerTimingHeadersConfig");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("sampling_rate", &self.sampling_rate);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig).
 pub mod response_headers_policy_server_timing_headers_config {
 
     /// A builder for [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) sampling_rate: std::option::Option<f64>,
@@ -1707,7 +1602,7 @@ impl ResponseHeadersPolicyServerTimingHeadersConfig {
 
 /// <p>A configuration for a set of security-related HTTP response headers. CloudFront adds these headers to HTTP responses that it sends for requests that match a cache behavior associated with this response headers policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicySecurityHeadersConfig {
     /// <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header’s value.</p>
     /// <p>For more information about the <code>X-XSS-Protection</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
@@ -1781,23 +1676,11 @@ impl ResponseHeadersPolicySecurityHeadersConfig {
         self.strict_transport_security.as_ref()
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicySecurityHeadersConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicySecurityHeadersConfig");
-        formatter.field("xss_protection", &self.xss_protection);
-        formatter.field("frame_options", &self.frame_options);
-        formatter.field("referrer_policy", &self.referrer_policy);
-        formatter.field("content_security_policy", &self.content_security_policy);
-        formatter.field("content_type_options", &self.content_type_options);
-        formatter.field("strict_transport_security", &self.strict_transport_security);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicySecurityHeadersConfig`](crate::model::ResponseHeadersPolicySecurityHeadersConfig).
 pub mod response_headers_policy_security_headers_config {
 
     /// A builder for [`ResponseHeadersPolicySecurityHeadersConfig`](crate::model::ResponseHeadersPolicySecurityHeadersConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) xss_protection:
             std::option::Option<crate::model::ResponseHeadersPolicyXssProtection>,
@@ -1944,7 +1827,7 @@ impl ResponseHeadersPolicySecurityHeadersConfig {
 /// <p>Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header and the header’s value.</p>
 /// <p>For more information about the <code>Strict-Transport-Security</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyStrictTransportSecurity {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Strict-Transport-Security</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     #[doc(hidden)]
@@ -1977,24 +1860,11 @@ impl ResponseHeadersPolicyStrictTransportSecurity {
         self.access_control_max_age_sec
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicyStrictTransportSecurity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyStrictTransportSecurity");
-        formatter.field("r#override", &self.r#override);
-        formatter.field("include_subdomains", &self.include_subdomains);
-        formatter.field("preload", &self.preload);
-        formatter.field(
-            "access_control_max_age_sec",
-            &self.access_control_max_age_sec,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicyStrictTransportSecurity`](crate::model::ResponseHeadersPolicyStrictTransportSecurity).
 pub mod response_headers_policy_strict_transport_security {
 
     /// A builder for [`ResponseHeadersPolicyStrictTransportSecurity`](crate::model::ResponseHeadersPolicyStrictTransportSecurity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#override: std::option::Option<bool>,
         pub(crate) include_subdomains: std::option::Option<bool>,
@@ -2063,7 +1933,7 @@ impl ResponseHeadersPolicyStrictTransportSecurity {
 /// <p>Determines whether CloudFront includes the <code>X-Content-Type-Options</code> HTTP response header with its value set to <code>nosniff</code>.</p>
 /// <p>For more information about the <code>X-Content-Type-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyContentTypeOptions {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     #[doc(hidden)]
@@ -2075,18 +1945,11 @@ impl ResponseHeadersPolicyContentTypeOptions {
         self.r#override
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicyContentTypeOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyContentTypeOptions");
-        formatter.field("r#override", &self.r#override);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicyContentTypeOptions`](crate::model::ResponseHeadersPolicyContentTypeOptions).
 pub mod response_headers_policy_content_type_options {
 
     /// A builder for [`ResponseHeadersPolicyContentTypeOptions`](crate::model::ResponseHeadersPolicyContentTypeOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#override: std::option::Option<bool>,
     }
@@ -2119,7 +1982,7 @@ impl ResponseHeadersPolicyContentTypeOptions {
 /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
 /// <p>For more information about the <code>Content-Security-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyContentSecurityPolicy {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Content-Security-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     #[doc(hidden)]
@@ -2138,19 +2001,11 @@ impl ResponseHeadersPolicyContentSecurityPolicy {
         self.content_security_policy.as_deref()
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicyContentSecurityPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyContentSecurityPolicy");
-        formatter.field("r#override", &self.r#override);
-        formatter.field("content_security_policy", &self.content_security_policy);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicyContentSecurityPolicy`](crate::model::ResponseHeadersPolicyContentSecurityPolicy).
 pub mod response_headers_policy_content_security_policy {
 
     /// A builder for [`ResponseHeadersPolicyContentSecurityPolicy`](crate::model::ResponseHeadersPolicyContentSecurityPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#override: std::option::Option<bool>,
         pub(crate) content_security_policy: std::option::Option<std::string::String>,
@@ -2198,7 +2053,7 @@ impl ResponseHeadersPolicyContentSecurityPolicy {
 /// <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header’s value.</p>
 /// <p>For more information about the <code>Referrer-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyReferrerPolicy {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Referrer-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     #[doc(hidden)]
@@ -2239,19 +2094,11 @@ impl ResponseHeadersPolicyReferrerPolicy {
         self.referrer_policy.as_ref()
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicyReferrerPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyReferrerPolicy");
-        formatter.field("r#override", &self.r#override);
-        formatter.field("referrer_policy", &self.referrer_policy);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicyReferrerPolicy`](crate::model::ResponseHeadersPolicyReferrerPolicy).
 pub mod response_headers_policy_referrer_policy {
 
     /// A builder for [`ResponseHeadersPolicyReferrerPolicy`](crate::model::ResponseHeadersPolicyReferrerPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#override: std::option::Option<bool>,
         pub(crate) referrer_policy: std::option::Option<crate::model::ReferrerPolicyList>,
@@ -2318,6 +2165,47 @@ impl ResponseHeadersPolicyReferrerPolicy {
     }
 }
 
+/// When writing a match expression against `ReferrerPolicyList`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let referrerpolicylist = unimplemented!();
+/// match referrerpolicylist {
+///     ReferrerPolicyList::NoReferrer => { /* ... */ },
+///     ReferrerPolicyList::NoReferrerWhenDowngrade => { /* ... */ },
+///     ReferrerPolicyList::Origin => { /* ... */ },
+///     ReferrerPolicyList::OriginWhenCrossOrigin => { /* ... */ },
+///     ReferrerPolicyList::SameOrigin => { /* ... */ },
+///     ReferrerPolicyList::StrictOrigin => { /* ... */ },
+///     ReferrerPolicyList::StrictOriginWhenCrossOrigin => { /* ... */ },
+///     ReferrerPolicyList::UnsafeUrl => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `referrerpolicylist` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ReferrerPolicyList::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ReferrerPolicyList::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ReferrerPolicyList::NewFeature` is defined.
+/// Specifically, when `referrerpolicylist` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ReferrerPolicyList::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2346,8 +2234,8 @@ pub enum ReferrerPolicyList {
     StrictOriginWhenCrossOrigin,
     #[allow(missing_docs)] // documentation missing in model
     UnsafeUrl,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ReferrerPolicyList {
     fn from(s: &str) -> Self {
@@ -2360,7 +2248,9 @@ impl std::convert::From<&str> for ReferrerPolicyList {
             "strict-origin" => ReferrerPolicyList::StrictOrigin,
             "strict-origin-when-cross-origin" => ReferrerPolicyList::StrictOriginWhenCrossOrigin,
             "unsafe-url" => ReferrerPolicyList::UnsafeUrl,
-            other => ReferrerPolicyList::Unknown(other.to_owned()),
+            other => {
+                ReferrerPolicyList::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2383,11 +2273,11 @@ impl ReferrerPolicyList {
             ReferrerPolicyList::StrictOrigin => "strict-origin",
             ReferrerPolicyList::StrictOriginWhenCrossOrigin => "strict-origin-when-cross-origin",
             ReferrerPolicyList::UnsafeUrl => "unsafe-url",
-            ReferrerPolicyList::Unknown(s) => s.as_ref(),
+            ReferrerPolicyList::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "no-referrer",
             "no-referrer-when-downgrade",
@@ -2409,7 +2299,7 @@ impl AsRef<str> for ReferrerPolicyList {
 /// <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header’s value.</p>
 /// <p>For more information about the <code>X-Frame-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyFrameOptions {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     #[doc(hidden)]
@@ -2430,19 +2320,11 @@ impl ResponseHeadersPolicyFrameOptions {
         self.frame_option.as_ref()
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicyFrameOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyFrameOptions");
-        formatter.field("r#override", &self.r#override);
-        formatter.field("frame_option", &self.frame_option);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicyFrameOptions`](crate::model::ResponseHeadersPolicyFrameOptions).
 pub mod response_headers_policy_frame_options {
 
     /// A builder for [`ResponseHeadersPolicyFrameOptions`](crate::model::ResponseHeadersPolicyFrameOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#override: std::option::Option<bool>,
         pub(crate) frame_option: std::option::Option<crate::model::FrameOptionsList>,
@@ -2489,6 +2371,41 @@ impl ResponseHeadersPolicyFrameOptions {
     }
 }
 
+/// When writing a match expression against `FrameOptionsList`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let frameoptionslist = unimplemented!();
+/// match frameoptionslist {
+///     FrameOptionsList::Deny => { /* ... */ },
+///     FrameOptionsList::Sameorigin => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `frameoptionslist` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FrameOptionsList::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FrameOptionsList::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FrameOptionsList::NewFeature` is defined.
+/// Specifically, when `frameoptionslist` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FrameOptionsList::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2505,15 +2422,15 @@ pub enum FrameOptionsList {
     Deny,
     #[allow(missing_docs)] // documentation missing in model
     Sameorigin,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FrameOptionsList {
     fn from(s: &str) -> Self {
         match s {
             "DENY" => FrameOptionsList::Deny,
             "SAMEORIGIN" => FrameOptionsList::Sameorigin,
-            other => FrameOptionsList::Unknown(other.to_owned()),
+            other => FrameOptionsList::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2530,11 +2447,11 @@ impl FrameOptionsList {
         match self {
             FrameOptionsList::Deny => "DENY",
             FrameOptionsList::Sameorigin => "SAMEORIGIN",
-            FrameOptionsList::Unknown(s) => s.as_ref(),
+            FrameOptionsList::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DENY", "SAMEORIGIN"]
     }
 }
@@ -2547,7 +2464,7 @@ impl AsRef<str> for FrameOptionsList {
 /// <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header’s value.</p>
 /// <p>For more information about the <code>X-XSS-Protection</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyXssProtection {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-XSS-Protection</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     #[doc(hidden)]
@@ -2588,21 +2505,11 @@ impl ResponseHeadersPolicyXssProtection {
         self.report_uri.as_deref()
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicyXssProtection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyXssProtection");
-        formatter.field("r#override", &self.r#override);
-        formatter.field("protection", &self.protection);
-        formatter.field("mode_block", &self.mode_block);
-        formatter.field("report_uri", &self.report_uri);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicyXssProtection`](crate::model::ResponseHeadersPolicyXssProtection).
 pub mod response_headers_policy_xss_protection {
 
     /// A builder for [`ResponseHeadersPolicyXssProtection`](crate::model::ResponseHeadersPolicyXssProtection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#override: std::option::Option<bool>,
         pub(crate) protection: std::option::Option<bool>,
@@ -2679,7 +2586,7 @@ impl ResponseHeadersPolicyXssProtection {
 /// <p>A configuration for a set of HTTP response headers that are used for cross-origin resource sharing (CORS). CloudFront adds these headers to HTTP responses that it sends for CORS requests that match a cache behavior associated with this response headers policy.</p>
 /// <p>For more information about CORS, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS)</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyCorsConfig {
     /// <p>A list of origins (domain names) that CloudFront can use as the value for the <code>Access-Control-Allow-Origin</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Origin</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
@@ -2757,42 +2664,11 @@ impl ResponseHeadersPolicyCorsConfig {
         self.origin_override
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicyCorsConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyCorsConfig");
-        formatter.field(
-            "access_control_allow_origins",
-            &self.access_control_allow_origins,
-        );
-        formatter.field(
-            "access_control_allow_headers",
-            &self.access_control_allow_headers,
-        );
-        formatter.field(
-            "access_control_allow_methods",
-            &self.access_control_allow_methods,
-        );
-        formatter.field(
-            "access_control_allow_credentials",
-            &self.access_control_allow_credentials,
-        );
-        formatter.field(
-            "access_control_expose_headers",
-            &self.access_control_expose_headers,
-        );
-        formatter.field(
-            "access_control_max_age_sec",
-            &self.access_control_max_age_sec,
-        );
-        formatter.field("origin_override", &self.origin_override);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicyCorsConfig`](crate::model::ResponseHeadersPolicyCorsConfig).
 pub mod response_headers_policy_cors_config {
 
     /// A builder for [`ResponseHeadersPolicyCorsConfig`](crate::model::ResponseHeadersPolicyCorsConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_control_allow_origins:
             std::option::Option<crate::model::ResponseHeadersPolicyAccessControlAllowOrigins>,
@@ -2948,7 +2824,7 @@ impl ResponseHeadersPolicyCorsConfig {
 /// <p>A list of HTTP headers that CloudFront includes as values for the <code>Access-Control-Expose-Headers</code> HTTP response header.</p>
 /// <p>For more information about the <code>Access-Control-Expose-Headers</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlExposeHeaders {
     /// <p>The number of HTTP headers in the list.</p>
     #[doc(hidden)]
@@ -2967,19 +2843,11 @@ impl ResponseHeadersPolicyAccessControlExposeHeaders {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicyAccessControlExposeHeaders {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyAccessControlExposeHeaders");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicyAccessControlExposeHeaders`](crate::model::ResponseHeadersPolicyAccessControlExposeHeaders).
 pub mod response_headers_policy_access_control_expose_headers {
 
     /// A builder for [`ResponseHeadersPolicyAccessControlExposeHeaders`](crate::model::ResponseHeadersPolicyAccessControlExposeHeaders).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3034,7 +2902,7 @@ impl ResponseHeadersPolicyAccessControlExposeHeaders {
 /// <p>A list of HTTP methods that CloudFront includes as values for the <code>Access-Control-Allow-Methods</code> HTTP response header.</p>
 /// <p>For more information about the <code>Access-Control-Allow-Methods</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowMethods {
     /// <p>The number of HTTP methods in the list.</p>
     #[doc(hidden)]
@@ -3080,19 +2948,11 @@ impl ResponseHeadersPolicyAccessControlAllowMethods {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicyAccessControlAllowMethods {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyAccessControlAllowMethods");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::model::ResponseHeadersPolicyAccessControlAllowMethods).
 pub mod response_headers_policy_access_control_allow_methods {
 
     /// A builder for [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::model::ResponseHeadersPolicyAccessControlAllowMethods).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<
@@ -3173,6 +3033,47 @@ impl ResponseHeadersPolicyAccessControlAllowMethods {
     }
 }
 
+/// When writing a match expression against `ResponseHeadersPolicyAccessControlAllowMethodsValues`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let responseheaderspolicyaccesscontrolallowmethodsvalues = unimplemented!();
+/// match responseheaderspolicyaccesscontrolallowmethodsvalues {
+///     ResponseHeadersPolicyAccessControlAllowMethodsValues::All => { /* ... */ },
+///     ResponseHeadersPolicyAccessControlAllowMethodsValues::Delete => { /* ... */ },
+///     ResponseHeadersPolicyAccessControlAllowMethodsValues::Get => { /* ... */ },
+///     ResponseHeadersPolicyAccessControlAllowMethodsValues::Head => { /* ... */ },
+///     ResponseHeadersPolicyAccessControlAllowMethodsValues::Options => { /* ... */ },
+///     ResponseHeadersPolicyAccessControlAllowMethodsValues::Patch => { /* ... */ },
+///     ResponseHeadersPolicyAccessControlAllowMethodsValues::Post => { /* ... */ },
+///     ResponseHeadersPolicyAccessControlAllowMethodsValues::Put => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `responseheaderspolicyaccesscontrolallowmethodsvalues` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResponseHeadersPolicyAccessControlAllowMethodsValues::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResponseHeadersPolicyAccessControlAllowMethodsValues::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResponseHeadersPolicyAccessControlAllowMethodsValues::NewFeature` is defined.
+/// Specifically, when `responseheaderspolicyaccesscontrolallowmethodsvalues` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResponseHeadersPolicyAccessControlAllowMethodsValues::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3201,8 +3102,8 @@ pub enum ResponseHeadersPolicyAccessControlAllowMethodsValues {
     Post,
     #[allow(missing_docs)] // documentation missing in model
     Put,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResponseHeadersPolicyAccessControlAllowMethodsValues {
     fn from(s: &str) -> Self {
@@ -3215,9 +3116,9 @@ impl std::convert::From<&str> for ResponseHeadersPolicyAccessControlAllowMethods
             "PATCH" => ResponseHeadersPolicyAccessControlAllowMethodsValues::Patch,
             "POST" => ResponseHeadersPolicyAccessControlAllowMethodsValues::Post,
             "PUT" => ResponseHeadersPolicyAccessControlAllowMethodsValues::Put,
-            other => {
-                ResponseHeadersPolicyAccessControlAllowMethodsValues::Unknown(other.to_owned())
-            }
+            other => ResponseHeadersPolicyAccessControlAllowMethodsValues::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -3242,11 +3143,11 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsValues {
             ResponseHeadersPolicyAccessControlAllowMethodsValues::Patch => "PATCH",
             ResponseHeadersPolicyAccessControlAllowMethodsValues::Post => "POST",
             ResponseHeadersPolicyAccessControlAllowMethodsValues::Put => "PUT",
-            ResponseHeadersPolicyAccessControlAllowMethodsValues::Unknown(s) => s.as_ref(),
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALL", "DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT",
         ]
@@ -3261,7 +3162,7 @@ impl AsRef<str> for ResponseHeadersPolicyAccessControlAllowMethodsValues {
 /// <p>A list of HTTP header names that CloudFront includes as values for the <code>Access-Control-Allow-Headers</code> HTTP response header.</p>
 /// <p>For more information about the <code>Access-Control-Allow-Headers</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">Access-Control-Allow-Headers</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowHeaders {
     /// <p>The number of HTTP header names in the list.</p>
     #[doc(hidden)]
@@ -3280,19 +3181,11 @@ impl ResponseHeadersPolicyAccessControlAllowHeaders {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicyAccessControlAllowHeaders {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyAccessControlAllowHeaders");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicyAccessControlAllowHeaders`](crate::model::ResponseHeadersPolicyAccessControlAllowHeaders).
 pub mod response_headers_policy_access_control_allow_headers {
 
     /// A builder for [`ResponseHeadersPolicyAccessControlAllowHeaders`](crate::model::ResponseHeadersPolicyAccessControlAllowHeaders).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3347,7 +3240,7 @@ impl ResponseHeadersPolicyAccessControlAllowHeaders {
 /// <p>A list of origins (domain names) that CloudFront can use as the value for the <code>Access-Control-Allow-Origin</code> HTTP response header.</p>
 /// <p>For more information about the <code>Access-Control-Allow-Origin</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowOrigins {
     /// <p>The number of origins in the list.</p>
     #[doc(hidden)]
@@ -3366,19 +3259,11 @@ impl ResponseHeadersPolicyAccessControlAllowOrigins {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicyAccessControlAllowOrigins {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyAccessControlAllowOrigins");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicyAccessControlAllowOrigins`](crate::model::ResponseHeadersPolicyAccessControlAllowOrigins).
 pub mod response_headers_policy_access_control_allow_origins {
 
     /// A builder for [`ResponseHeadersPolicyAccessControlAllowOrigins`](crate::model::ResponseHeadersPolicyAccessControlAllowOrigins).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3432,7 +3317,7 @@ impl ResponseHeadersPolicyAccessControlAllowOrigins {
 
 /// <p>A real-time log configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RealtimeLogConfig {
     /// <p>The Amazon Resource Name (ARN) of this real-time log configuration.</p>
     #[doc(hidden)]
@@ -3474,22 +3359,11 @@ impl RealtimeLogConfig {
         self.fields.as_deref()
     }
 }
-impl std::fmt::Debug for RealtimeLogConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RealtimeLogConfig");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("sampling_rate", &self.sampling_rate);
-        formatter.field("end_points", &self.end_points);
-        formatter.field("fields", &self.fields);
-        formatter.finish()
-    }
-}
 /// See [`RealtimeLogConfig`](crate::model::RealtimeLogConfig).
 pub mod realtime_log_config {
 
     /// A builder for [`RealtimeLogConfig`](crate::model::RealtimeLogConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3589,7 +3463,7 @@ impl RealtimeLogConfig {
 
 /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data in a real-time log configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndPoint {
     /// <p>The type of data stream where you are sending real-time log data. The only valid value is <code>Kinesis</code>.</p>
     #[doc(hidden)]
@@ -3608,19 +3482,11 @@ impl EndPoint {
         self.kinesis_stream_config.as_ref()
     }
 }
-impl std::fmt::Debug for EndPoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndPoint");
-        formatter.field("stream_type", &self.stream_type);
-        formatter.field("kinesis_stream_config", &self.kinesis_stream_config);
-        formatter.finish()
-    }
-}
 /// See [`EndPoint`](crate::model::EndPoint).
 pub mod end_point {
 
     /// A builder for [`EndPoint`](crate::model::EndPoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_type: std::option::Option<std::string::String>,
         pub(crate) kinesis_stream_config: std::option::Option<crate::model::KinesisStreamConfig>,
@@ -3667,7 +3533,7 @@ impl EndPoint {
 
 /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisStreamConfig {
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFront can use to send real-time log data to your Kinesis data stream.</p>
     /// <p>For more information the IAM role, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time log configuration IAM role</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -3688,19 +3554,11 @@ impl KinesisStreamConfig {
         self.stream_arn.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisStreamConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisStreamConfig");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.finish()
-    }
-}
 /// See [`KinesisStreamConfig`](crate::model::KinesisStreamConfig).
 pub mod kinesis_stream_config {
 
     /// A builder for [`KinesisStreamConfig`](crate::model::KinesisStreamConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -3746,7 +3604,7 @@ impl KinesisStreamConfig {
 
 /// <p>A public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicKey {
     /// <p>The identifier of the public key.</p>
     #[doc(hidden)]
@@ -3772,20 +3630,11 @@ impl PublicKey {
         self.public_key_config.as_ref()
     }
 }
-impl std::fmt::Debug for PublicKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicKey");
-        formatter.field("id", &self.id);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("public_key_config", &self.public_key_config);
-        formatter.finish()
-    }
-}
 /// See [`PublicKey`](crate::model::PublicKey).
 pub mod public_key {
 
     /// A builder for [`PublicKey`](crate::model::PublicKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3847,7 +3696,7 @@ impl PublicKey {
 
 /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicKeyConfig {
     /// <p>A string included in the request to help make sure that the request can’t be replayed.</p>
     #[doc(hidden)]
@@ -3880,21 +3729,11 @@ impl PublicKeyConfig {
         self.comment.as_deref()
     }
 }
-impl std::fmt::Debug for PublicKeyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicKeyConfig");
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("name", &self.name);
-        formatter.field("encoded_key", &self.encoded_key);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
-    }
-}
 /// See [`PublicKeyConfig`](crate::model::PublicKeyConfig).
 pub mod public_key_config {
 
     /// A builder for [`PublicKeyConfig`](crate::model::PublicKeyConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) caller_reference: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3972,7 +3811,7 @@ impl PublicKeyConfig {
 /// </ul>
 /// <p>CloudFront sends a request when it can’t find an object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginRequestPolicy {
     /// <p>The unique identifier for the origin request policy.</p>
     #[doc(hidden)]
@@ -4000,23 +3839,11 @@ impl OriginRequestPolicy {
         self.origin_request_policy_config.as_ref()
     }
 }
-impl std::fmt::Debug for OriginRequestPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginRequestPolicy");
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field(
-            "origin_request_policy_config",
-            &self.origin_request_policy_config,
-        );
-        formatter.finish()
-    }
-}
 /// See [`OriginRequestPolicy`](crate::model::OriginRequestPolicy).
 pub mod origin_request_policy {
 
     /// A builder for [`OriginRequestPolicy`](crate::model::OriginRequestPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4089,7 +3916,7 @@ impl OriginRequestPolicy {
 /// </ul>
 /// <p>CloudFront sends a request when it can’t find an object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginRequestPolicyConfig {
     /// <p>A comment to describe the origin request policy. The comment cannot be longer than 128 characters.</p>
     #[doc(hidden)]
@@ -4136,22 +3963,11 @@ impl OriginRequestPolicyConfig {
         self.query_strings_config.as_ref()
     }
 }
-impl std::fmt::Debug for OriginRequestPolicyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginRequestPolicyConfig");
-        formatter.field("comment", &self.comment);
-        formatter.field("name", &self.name);
-        formatter.field("headers_config", &self.headers_config);
-        formatter.field("cookies_config", &self.cookies_config);
-        formatter.field("query_strings_config", &self.query_strings_config);
-        formatter.finish()
-    }
-}
 /// See [`OriginRequestPolicyConfig`](crate::model::OriginRequestPolicyConfig).
 pub mod origin_request_policy_config {
 
     /// A builder for [`OriginRequestPolicyConfig`](crate::model::OriginRequestPolicyConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4252,7 +4068,7 @@ impl OriginRequestPolicyConfig {
 
 /// <p>An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginRequestPolicyQueryStringsConfig {
     /// <p>Determines whether any URL query strings in viewer requests are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -4284,19 +4100,11 @@ impl OriginRequestPolicyQueryStringsConfig {
         self.query_strings.as_ref()
     }
 }
-impl std::fmt::Debug for OriginRequestPolicyQueryStringsConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginRequestPolicyQueryStringsConfig");
-        formatter.field("query_string_behavior", &self.query_string_behavior);
-        formatter.field("query_strings", &self.query_strings);
-        formatter.finish()
-    }
-}
 /// See [`OriginRequestPolicyQueryStringsConfig`](crate::model::OriginRequestPolicyQueryStringsConfig).
 pub mod origin_request_policy_query_strings_config {
 
     /// A builder for [`OriginRequestPolicyQueryStringsConfig`](crate::model::OriginRequestPolicyQueryStringsConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_string_behavior:
             std::option::Option<crate::model::OriginRequestPolicyQueryStringBehavior>,
@@ -4360,7 +4168,7 @@ impl OriginRequestPolicyQueryStringsConfig {
 
 /// <p>Contains a list of query string names.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryStringNames {
     /// <p>The number of query string names in the <code>Items</code> list.</p>
     #[doc(hidden)]
@@ -4379,19 +4187,11 @@ impl QueryStringNames {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for QueryStringNames {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryStringNames");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`QueryStringNames`](crate::model::QueryStringNames).
 pub mod query_string_names {
 
     /// A builder for [`QueryStringNames`](crate::model::QueryStringNames).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4442,6 +4242,42 @@ impl QueryStringNames {
     }
 }
 
+/// When writing a match expression against `OriginRequestPolicyQueryStringBehavior`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let originrequestpolicyquerystringbehavior = unimplemented!();
+/// match originrequestpolicyquerystringbehavior {
+///     OriginRequestPolicyQueryStringBehavior::All => { /* ... */ },
+///     OriginRequestPolicyQueryStringBehavior::None => { /* ... */ },
+///     OriginRequestPolicyQueryStringBehavior::Whitelist => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `originrequestpolicyquerystringbehavior` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OriginRequestPolicyQueryStringBehavior::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OriginRequestPolicyQueryStringBehavior::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OriginRequestPolicyQueryStringBehavior::NewFeature` is defined.
+/// Specifically, when `originrequestpolicyquerystringbehavior` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OriginRequestPolicyQueryStringBehavior::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4460,8 +4296,8 @@ pub enum OriginRequestPolicyQueryStringBehavior {
     None,
     #[allow(missing_docs)] // documentation missing in model
     Whitelist,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OriginRequestPolicyQueryStringBehavior {
     fn from(s: &str) -> Self {
@@ -4469,7 +4305,9 @@ impl std::convert::From<&str> for OriginRequestPolicyQueryStringBehavior {
             "all" => OriginRequestPolicyQueryStringBehavior::All,
             "none" => OriginRequestPolicyQueryStringBehavior::None,
             "whitelist" => OriginRequestPolicyQueryStringBehavior::Whitelist,
-            other => OriginRequestPolicyQueryStringBehavior::Unknown(other.to_owned()),
+            other => OriginRequestPolicyQueryStringBehavior::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -4487,11 +4325,11 @@ impl OriginRequestPolicyQueryStringBehavior {
             OriginRequestPolicyQueryStringBehavior::All => "all",
             OriginRequestPolicyQueryStringBehavior::None => "none",
             OriginRequestPolicyQueryStringBehavior::Whitelist => "whitelist",
-            OriginRequestPolicyQueryStringBehavior::Unknown(s) => s.as_ref(),
+            OriginRequestPolicyQueryStringBehavior::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["all", "none", "whitelist"]
     }
 }
@@ -4503,7 +4341,7 @@ impl AsRef<str> for OriginRequestPolicyQueryStringBehavior {
 
 /// <p>An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginRequestPolicyCookiesConfig {
     /// <p>Determines whether cookies in viewer requests are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -4534,19 +4372,11 @@ impl OriginRequestPolicyCookiesConfig {
         self.cookies.as_ref()
     }
 }
-impl std::fmt::Debug for OriginRequestPolicyCookiesConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginRequestPolicyCookiesConfig");
-        formatter.field("cookie_behavior", &self.cookie_behavior);
-        formatter.field("cookies", &self.cookies);
-        formatter.finish()
-    }
-}
 /// See [`OriginRequestPolicyCookiesConfig`](crate::model::OriginRequestPolicyCookiesConfig).
 pub mod origin_request_policy_cookies_config {
 
     /// A builder for [`OriginRequestPolicyCookiesConfig`](crate::model::OriginRequestPolicyCookiesConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cookie_behavior:
             std::option::Option<crate::model::OriginRequestPolicyCookieBehavior>,
@@ -4610,7 +4440,7 @@ impl OriginRequestPolicyCookiesConfig {
 
 /// <p>Contains a list of cookie names.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CookieNames {
     /// <p>The number of cookie names in the <code>Items</code> list.</p>
     #[doc(hidden)]
@@ -4629,19 +4459,11 @@ impl CookieNames {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for CookieNames {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CookieNames");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`CookieNames`](crate::model::CookieNames).
 pub mod cookie_names {
 
     /// A builder for [`CookieNames`](crate::model::CookieNames).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4692,6 +4514,42 @@ impl CookieNames {
     }
 }
 
+/// When writing a match expression against `OriginRequestPolicyCookieBehavior`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let originrequestpolicycookiebehavior = unimplemented!();
+/// match originrequestpolicycookiebehavior {
+///     OriginRequestPolicyCookieBehavior::All => { /* ... */ },
+///     OriginRequestPolicyCookieBehavior::None => { /* ... */ },
+///     OriginRequestPolicyCookieBehavior::Whitelist => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `originrequestpolicycookiebehavior` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OriginRequestPolicyCookieBehavior::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OriginRequestPolicyCookieBehavior::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OriginRequestPolicyCookieBehavior::NewFeature` is defined.
+/// Specifically, when `originrequestpolicycookiebehavior` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OriginRequestPolicyCookieBehavior::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4710,8 +4568,8 @@ pub enum OriginRequestPolicyCookieBehavior {
     None,
     #[allow(missing_docs)] // documentation missing in model
     Whitelist,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OriginRequestPolicyCookieBehavior {
     fn from(s: &str) -> Self {
@@ -4719,7 +4577,9 @@ impl std::convert::From<&str> for OriginRequestPolicyCookieBehavior {
             "all" => OriginRequestPolicyCookieBehavior::All,
             "none" => OriginRequestPolicyCookieBehavior::None,
             "whitelist" => OriginRequestPolicyCookieBehavior::Whitelist,
-            other => OriginRequestPolicyCookieBehavior::Unknown(other.to_owned()),
+            other => OriginRequestPolicyCookieBehavior::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -4737,11 +4597,11 @@ impl OriginRequestPolicyCookieBehavior {
             OriginRequestPolicyCookieBehavior::All => "all",
             OriginRequestPolicyCookieBehavior::None => "none",
             OriginRequestPolicyCookieBehavior::Whitelist => "whitelist",
-            OriginRequestPolicyCookieBehavior::Unknown(s) => s.as_ref(),
+            OriginRequestPolicyCookieBehavior::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["all", "none", "whitelist"]
     }
 }
@@ -4753,7 +4613,7 @@ impl AsRef<str> for OriginRequestPolicyCookieBehavior {
 
 /// <p>An object that determines whether any HTTP headers (and if so, which headers) are included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginRequestPolicyHeadersConfig {
     /// <p>Determines whether any HTTP headers are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -4786,19 +4646,11 @@ impl OriginRequestPolicyHeadersConfig {
         self.headers.as_ref()
     }
 }
-impl std::fmt::Debug for OriginRequestPolicyHeadersConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginRequestPolicyHeadersConfig");
-        formatter.field("header_behavior", &self.header_behavior);
-        formatter.field("headers", &self.headers);
-        formatter.finish()
-    }
-}
 /// See [`OriginRequestPolicyHeadersConfig`](crate::model::OriginRequestPolicyHeadersConfig).
 pub mod origin_request_policy_headers_config {
 
     /// A builder for [`OriginRequestPolicyHeadersConfig`](crate::model::OriginRequestPolicyHeadersConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) header_behavior:
             std::option::Option<crate::model::OriginRequestPolicyHeaderBehavior>,
@@ -4861,7 +4713,7 @@ impl OriginRequestPolicyHeadersConfig {
 
 /// <p>Contains a list of HTTP header names.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Headers {
     /// <p>The number of header names in the <code>Items</code> list.</p>
     #[doc(hidden)]
@@ -4880,19 +4732,11 @@ impl Headers {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for Headers {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Headers");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`Headers`](crate::model::Headers).
 pub mod headers {
 
     /// A builder for [`Headers`](crate::model::Headers).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4943,6 +4787,43 @@ impl Headers {
     }
 }
 
+/// When writing a match expression against `OriginRequestPolicyHeaderBehavior`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let originrequestpolicyheaderbehavior = unimplemented!();
+/// match originrequestpolicyheaderbehavior {
+///     OriginRequestPolicyHeaderBehavior::AllViewer => { /* ... */ },
+///     OriginRequestPolicyHeaderBehavior::AllViewerAndWhitelistCloudFront => { /* ... */ },
+///     OriginRequestPolicyHeaderBehavior::None => { /* ... */ },
+///     OriginRequestPolicyHeaderBehavior::Whitelist => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `originrequestpolicyheaderbehavior` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OriginRequestPolicyHeaderBehavior::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OriginRequestPolicyHeaderBehavior::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OriginRequestPolicyHeaderBehavior::NewFeature` is defined.
+/// Specifically, when `originrequestpolicyheaderbehavior` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OriginRequestPolicyHeaderBehavior::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4963,8 +4844,8 @@ pub enum OriginRequestPolicyHeaderBehavior {
     None,
     #[allow(missing_docs)] // documentation missing in model
     Whitelist,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OriginRequestPolicyHeaderBehavior {
     fn from(s: &str) -> Self {
@@ -4975,7 +4856,9 @@ impl std::convert::From<&str> for OriginRequestPolicyHeaderBehavior {
             }
             "none" => OriginRequestPolicyHeaderBehavior::None,
             "whitelist" => OriginRequestPolicyHeaderBehavior::Whitelist,
-            other => OriginRequestPolicyHeaderBehavior::Unknown(other.to_owned()),
+            other => OriginRequestPolicyHeaderBehavior::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -4996,11 +4879,11 @@ impl OriginRequestPolicyHeaderBehavior {
             }
             OriginRequestPolicyHeaderBehavior::None => "none",
             OriginRequestPolicyHeaderBehavior::Whitelist => "whitelist",
-            OriginRequestPolicyHeaderBehavior::Unknown(s) => s.as_ref(),
+            OriginRequestPolicyHeaderBehavior::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "allViewer",
             "allViewerAndWhitelistCloudFront",
@@ -5017,7 +4900,7 @@ impl AsRef<str> for OriginRequestPolicyHeaderBehavior {
 
 /// <p>A CloudFront origin access control, including its unique identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginAccessControl {
     /// <p>The unique identifier of the origin access control.</p>
     #[doc(hidden)]
@@ -5038,22 +4921,11 @@ impl OriginAccessControl {
         self.origin_access_control_config.as_ref()
     }
 }
-impl std::fmt::Debug for OriginAccessControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginAccessControl");
-        formatter.field("id", &self.id);
-        formatter.field(
-            "origin_access_control_config",
-            &self.origin_access_control_config,
-        );
-        formatter.finish()
-    }
-}
 /// See [`OriginAccessControl`](crate::model::OriginAccessControl).
 pub mod origin_access_control {
 
     /// A builder for [`OriginAccessControl`](crate::model::OriginAccessControl).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) origin_access_control_config:
@@ -5104,7 +4976,7 @@ impl OriginAccessControl {
 
 /// <p>A CloudFront origin access control configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginAccessControlConfig {
     /// <p>A name to identify the origin access control.</p>
     #[doc(hidden)]
@@ -5163,25 +5035,11 @@ impl OriginAccessControlConfig {
         self.origin_access_control_origin_type.as_ref()
     }
 }
-impl std::fmt::Debug for OriginAccessControlConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginAccessControlConfig");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("signing_protocol", &self.signing_protocol);
-        formatter.field("signing_behavior", &self.signing_behavior);
-        formatter.field(
-            "origin_access_control_origin_type",
-            &self.origin_access_control_origin_type,
-        );
-        formatter.finish()
-    }
-}
 /// See [`OriginAccessControlConfig`](crate::model::OriginAccessControlConfig).
 pub mod origin_access_control_config {
 
     /// A builder for [`OriginAccessControlConfig`](crate::model::OriginAccessControlConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5292,6 +5150,40 @@ impl OriginAccessControlConfig {
     }
 }
 
+/// When writing a match expression against `OriginAccessControlOriginTypes`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let originaccesscontrolorigintypes = unimplemented!();
+/// match originaccesscontrolorigintypes {
+///     OriginAccessControlOriginTypes::S3 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `originaccesscontrolorigintypes` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OriginAccessControlOriginTypes::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OriginAccessControlOriginTypes::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OriginAccessControlOriginTypes::NewFeature` is defined.
+/// Specifically, when `originaccesscontrolorigintypes` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OriginAccessControlOriginTypes::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5306,14 +5198,16 @@ impl OriginAccessControlConfig {
 pub enum OriginAccessControlOriginTypes {
     #[allow(missing_docs)] // documentation missing in model
     S3,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OriginAccessControlOriginTypes {
     fn from(s: &str) -> Self {
         match s {
             "s3" => OriginAccessControlOriginTypes::S3,
-            other => OriginAccessControlOriginTypes::Unknown(other.to_owned()),
+            other => OriginAccessControlOriginTypes::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -5329,11 +5223,11 @@ impl OriginAccessControlOriginTypes {
     pub fn as_str(&self) -> &str {
         match self {
             OriginAccessControlOriginTypes::S3 => "s3",
-            OriginAccessControlOriginTypes::Unknown(s) => s.as_ref(),
+            OriginAccessControlOriginTypes::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["s3"]
     }
 }
@@ -5343,6 +5237,42 @@ impl AsRef<str> for OriginAccessControlOriginTypes {
     }
 }
 
+/// When writing a match expression against `OriginAccessControlSigningBehaviors`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let originaccesscontrolsigningbehaviors = unimplemented!();
+/// match originaccesscontrolsigningbehaviors {
+///     OriginAccessControlSigningBehaviors::Always => { /* ... */ },
+///     OriginAccessControlSigningBehaviors::Never => { /* ... */ },
+///     OriginAccessControlSigningBehaviors::NoOverride => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `originaccesscontrolsigningbehaviors` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OriginAccessControlSigningBehaviors::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OriginAccessControlSigningBehaviors::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OriginAccessControlSigningBehaviors::NewFeature` is defined.
+/// Specifically, when `originaccesscontrolsigningbehaviors` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OriginAccessControlSigningBehaviors::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5361,8 +5291,8 @@ pub enum OriginAccessControlSigningBehaviors {
     Never,
     #[allow(missing_docs)] // documentation missing in model
     NoOverride,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OriginAccessControlSigningBehaviors {
     fn from(s: &str) -> Self {
@@ -5370,7 +5300,9 @@ impl std::convert::From<&str> for OriginAccessControlSigningBehaviors {
             "always" => OriginAccessControlSigningBehaviors::Always,
             "never" => OriginAccessControlSigningBehaviors::Never,
             "no-override" => OriginAccessControlSigningBehaviors::NoOverride,
-            other => OriginAccessControlSigningBehaviors::Unknown(other.to_owned()),
+            other => OriginAccessControlSigningBehaviors::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -5388,11 +5320,11 @@ impl OriginAccessControlSigningBehaviors {
             OriginAccessControlSigningBehaviors::Always => "always",
             OriginAccessControlSigningBehaviors::Never => "never",
             OriginAccessControlSigningBehaviors::NoOverride => "no-override",
-            OriginAccessControlSigningBehaviors::Unknown(s) => s.as_ref(),
+            OriginAccessControlSigningBehaviors::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["always", "never", "no-override"]
     }
 }
@@ -5402,6 +5334,40 @@ impl AsRef<str> for OriginAccessControlSigningBehaviors {
     }
 }
 
+/// When writing a match expression against `OriginAccessControlSigningProtocols`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let originaccesscontrolsigningprotocols = unimplemented!();
+/// match originaccesscontrolsigningprotocols {
+///     OriginAccessControlSigningProtocols::Sigv4 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `originaccesscontrolsigningprotocols` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OriginAccessControlSigningProtocols::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OriginAccessControlSigningProtocols::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OriginAccessControlSigningProtocols::NewFeature` is defined.
+/// Specifically, when `originaccesscontrolsigningprotocols` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OriginAccessControlSigningProtocols::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5416,14 +5382,16 @@ impl AsRef<str> for OriginAccessControlSigningBehaviors {
 pub enum OriginAccessControlSigningProtocols {
     #[allow(missing_docs)] // documentation missing in model
     Sigv4,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OriginAccessControlSigningProtocols {
     fn from(s: &str) -> Self {
         match s {
             "sigv4" => OriginAccessControlSigningProtocols::Sigv4,
-            other => OriginAccessControlSigningProtocols::Unknown(other.to_owned()),
+            other => OriginAccessControlSigningProtocols::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -5439,11 +5407,11 @@ impl OriginAccessControlSigningProtocols {
     pub fn as_str(&self) -> &str {
         match self {
             OriginAccessControlSigningProtocols::Sigv4 => "sigv4",
-            OriginAccessControlSigningProtocols::Unknown(s) => s.as_ref(),
+            OriginAccessControlSigningProtocols::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["sigv4"]
     }
 }
@@ -5456,7 +5424,7 @@ impl AsRef<str> for OriginAccessControlSigningProtocols {
 /// <p>A key group.</p>
 /// <p>A key group contains a list of public keys that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront signed URLs and signed cookies</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyGroup {
     /// <p>The identifier for the key group.</p>
     #[doc(hidden)]
@@ -5482,20 +5450,11 @@ impl KeyGroup {
         self.key_group_config.as_ref()
     }
 }
-impl std::fmt::Debug for KeyGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyGroup");
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("key_group_config", &self.key_group_config);
-        formatter.finish()
-    }
-}
 /// See [`KeyGroup`](crate::model::KeyGroup).
 pub mod key_group {
 
     /// A builder for [`KeyGroup`](crate::model::KeyGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -5558,7 +5517,7 @@ impl KeyGroup {
 /// <p>A key group configuration.</p>
 /// <p>A key group contains a list of public keys that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront signed URLs and signed cookies</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyGroupConfig {
     /// <p>A name to identify the key group.</p>
     #[doc(hidden)]
@@ -5584,20 +5543,11 @@ impl KeyGroupConfig {
         self.comment.as_deref()
     }
 }
-impl std::fmt::Debug for KeyGroupConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyGroupConfig");
-        formatter.field("name", &self.name);
-        formatter.field("items", &self.items);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
-    }
-}
 /// See [`KeyGroupConfig`](crate::model::KeyGroupConfig).
 pub mod key_group_config {
 
     /// A builder for [`KeyGroupConfig`](crate::model::KeyGroupConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5662,7 +5612,7 @@ impl KeyGroupConfig {
 
 /// <p>Contains configuration information and metadata about a CloudFront function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionSummary {
     /// <p>The name of the CloudFront function.</p>
     #[doc(hidden)]
@@ -5695,21 +5645,11 @@ impl FunctionSummary {
         self.function_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for FunctionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionSummary");
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("function_config", &self.function_config);
-        formatter.field("function_metadata", &self.function_metadata);
-        formatter.finish()
-    }
-}
 /// See [`FunctionSummary`](crate::model::FunctionSummary).
 pub mod function_summary {
 
     /// A builder for [`FunctionSummary`](crate::model::FunctionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
@@ -5783,7 +5723,7 @@ impl FunctionSummary {
 
 /// <p>Contains metadata about a CloudFront function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionMetadata {
     /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the function.</p>
     #[doc(hidden)]
@@ -5820,21 +5760,11 @@ impl FunctionMetadata {
         self.last_modified_time.as_ref()
     }
 }
-impl std::fmt::Debug for FunctionMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionMetadata");
-        formatter.field("function_arn", &self.function_arn);
-        formatter.field("stage", &self.stage);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
-    }
-}
 /// See [`FunctionMetadata`](crate::model::FunctionMetadata).
 pub mod function_metadata {
 
     /// A builder for [`FunctionMetadata`](crate::model::FunctionMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_arn: std::option::Option<std::string::String>,
         pub(crate) stage: std::option::Option<crate::model::FunctionStage>,
@@ -5913,6 +5843,41 @@ impl FunctionMetadata {
     }
 }
 
+/// When writing a match expression against `FunctionStage`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let functionstage = unimplemented!();
+/// match functionstage {
+///     FunctionStage::Development => { /* ... */ },
+///     FunctionStage::Live => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `functionstage` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FunctionStage::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FunctionStage::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FunctionStage::NewFeature` is defined.
+/// Specifically, when `functionstage` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FunctionStage::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5929,15 +5894,15 @@ pub enum FunctionStage {
     Development,
     #[allow(missing_docs)] // documentation missing in model
     Live,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FunctionStage {
     fn from(s: &str) -> Self {
         match s {
             "DEVELOPMENT" => FunctionStage::Development,
             "LIVE" => FunctionStage::Live,
-            other => FunctionStage::Unknown(other.to_owned()),
+            other => FunctionStage::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -5954,11 +5919,11 @@ impl FunctionStage {
         match self {
             FunctionStage::Development => "DEVELOPMENT",
             FunctionStage::Live => "LIVE",
-            FunctionStage::Unknown(s) => s.as_ref(),
+            FunctionStage::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEVELOPMENT", "LIVE"]
     }
 }
@@ -5970,7 +5935,7 @@ impl AsRef<str> for FunctionStage {
 
 /// <p>Contains configuration information about a CloudFront function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionConfig {
     /// <p>A comment to describe the function.</p>
     #[doc(hidden)]
@@ -5989,19 +5954,11 @@ impl FunctionConfig {
         self.runtime.as_ref()
     }
 }
-impl std::fmt::Debug for FunctionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionConfig");
-        formatter.field("comment", &self.comment);
-        formatter.field("runtime", &self.runtime);
-        formatter.finish()
-    }
-}
 /// See [`FunctionConfig`](crate::model::FunctionConfig).
 pub mod function_config {
 
     /// A builder for [`FunctionConfig`](crate::model::FunctionConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment: std::option::Option<std::string::String>,
         pub(crate) runtime: std::option::Option<crate::model::FunctionRuntime>,
@@ -6046,6 +6003,40 @@ impl FunctionConfig {
     }
 }
 
+/// When writing a match expression against `FunctionRuntime`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let functionruntime = unimplemented!();
+/// match functionruntime {
+///     FunctionRuntime::CloudfrontJs10 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `functionruntime` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FunctionRuntime::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FunctionRuntime::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FunctionRuntime::NewFeature` is defined.
+/// Specifically, when `functionruntime` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FunctionRuntime::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6060,14 +6051,14 @@ impl FunctionConfig {
 pub enum FunctionRuntime {
     #[allow(missing_docs)] // documentation missing in model
     CloudfrontJs10,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FunctionRuntime {
     fn from(s: &str) -> Self {
         match s {
             "cloudfront-js-1.0" => FunctionRuntime::CloudfrontJs10,
-            other => FunctionRuntime::Unknown(other.to_owned()),
+            other => FunctionRuntime::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -6083,11 +6074,11 @@ impl FunctionRuntime {
     pub fn as_str(&self) -> &str {
         match self {
             FunctionRuntime::CloudfrontJs10 => "cloudfront-js-1.0",
-            FunctionRuntime::Unknown(s) => s.as_ref(),
+            FunctionRuntime::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["cloudfront-js-1.0"]
     }
 }
@@ -6099,7 +6090,7 @@ impl AsRef<str> for FunctionRuntime {
 
 /// <p>A complex data type for field-level encryption profiles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfile {
     /// <p>The ID for a field-level encryption profile configuration which includes a set of profiles that specify certain selected data fields to be encrypted by specific public keys.</p>
     #[doc(hidden)]
@@ -6128,23 +6119,11 @@ impl FieldLevelEncryptionProfile {
         self.field_level_encryption_profile_config.as_ref()
     }
 }
-impl std::fmt::Debug for FieldLevelEncryptionProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionProfile");
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field(
-            "field_level_encryption_profile_config",
-            &self.field_level_encryption_profile_config,
-        );
-        formatter.finish()
-    }
-}
 /// See [`FieldLevelEncryptionProfile`](crate::model::FieldLevelEncryptionProfile).
 pub mod field_level_encryption_profile {
 
     /// A builder for [`FieldLevelEncryptionProfile`](crate::model::FieldLevelEncryptionProfile).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -6210,7 +6189,7 @@ impl FieldLevelEncryptionProfile {
 
 /// <p>A complex data type of profiles for the field-level encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfileConfig {
     /// <p>Profile name for the field-level encryption profile.</p>
     #[doc(hidden)]
@@ -6243,21 +6222,11 @@ impl FieldLevelEncryptionProfileConfig {
         self.encryption_entities.as_ref()
     }
 }
-impl std::fmt::Debug for FieldLevelEncryptionProfileConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionProfileConfig");
-        formatter.field("name", &self.name);
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("comment", &self.comment);
-        formatter.field("encryption_entities", &self.encryption_entities);
-        formatter.finish()
-    }
-}
 /// See [`FieldLevelEncryptionProfileConfig`](crate::model::FieldLevelEncryptionProfileConfig).
 pub mod field_level_encryption_profile_config {
 
     /// A builder for [`FieldLevelEncryptionProfileConfig`](crate::model::FieldLevelEncryptionProfileConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) caller_reference: std::option::Option<std::string::String>,
@@ -6331,7 +6300,7 @@ impl FieldLevelEncryptionProfileConfig {
 
 /// <p>Complex data type for field-level encryption profiles that includes all of the encryption entities. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionEntities {
     /// <p>Number of field pattern items in a field-level encryption content type-profile mapping. </p>
     #[doc(hidden)]
@@ -6350,19 +6319,11 @@ impl EncryptionEntities {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for EncryptionEntities {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionEntities");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`EncryptionEntities`](crate::model::EncryptionEntities).
 pub mod encryption_entities {
 
     /// A builder for [`EncryptionEntities`](crate::model::EncryptionEntities).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::EncryptionEntity>>,
@@ -6415,7 +6376,7 @@ impl EncryptionEntities {
 
 /// <p>Complex data type for field-level encryption profiles that includes the encryption key and field pattern specifications. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionEntity {
     /// <p>The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match the patterns. </p>
     #[doc(hidden)]
@@ -6441,20 +6402,11 @@ impl EncryptionEntity {
         self.field_patterns.as_ref()
     }
 }
-impl std::fmt::Debug for EncryptionEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionEntity");
-        formatter.field("public_key_id", &self.public_key_id);
-        formatter.field("provider_id", &self.provider_id);
-        formatter.field("field_patterns", &self.field_patterns);
-        formatter.finish()
-    }
-}
 /// See [`EncryptionEntity`](crate::model::EncryptionEntity).
 pub mod encryption_entity {
 
     /// A builder for [`EncryptionEntity`](crate::model::EncryptionEntity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_key_id: std::option::Option<std::string::String>,
         pub(crate) provider_id: std::option::Option<std::string::String>,
@@ -6516,7 +6468,7 @@ impl EncryptionEntity {
 
 /// <p>A complex data type that includes the field patterns to match for field-level encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldPatterns {
     /// <p>The number of field-level encryption field patterns.</p>
     #[doc(hidden)]
@@ -6535,19 +6487,11 @@ impl FieldPatterns {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for FieldPatterns {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldPatterns");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`FieldPatterns`](crate::model::FieldPatterns).
 pub mod field_patterns {
 
     /// A builder for [`FieldPatterns`](crate::model::FieldPatterns).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6600,7 +6544,7 @@ impl FieldPatterns {
 
 /// <p>A complex data type that includes the profile configurations and other options specified for field-level encryption. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryption {
     /// <p>The configuration ID for a field-level encryption configuration which includes a set of profiles that specify certain selected data fields to be encrypted by specific public keys.</p>
     #[doc(hidden)]
@@ -6629,23 +6573,11 @@ impl FieldLevelEncryption {
         self.field_level_encryption_config.as_ref()
     }
 }
-impl std::fmt::Debug for FieldLevelEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryption");
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field(
-            "field_level_encryption_config",
-            &self.field_level_encryption_config,
-        );
-        formatter.finish()
-    }
-}
 /// See [`FieldLevelEncryption`](crate::model::FieldLevelEncryption).
 pub mod field_level_encryption {
 
     /// A builder for [`FieldLevelEncryption`](crate::model::FieldLevelEncryption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -6711,7 +6643,7 @@ impl FieldLevelEncryption {
 
 /// <p>A complex data type that includes the profile configurations specified for field-level encryption. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionConfig {
     /// <p>A unique number that ensures the request can't be replayed.</p>
     #[doc(hidden)]
@@ -6748,24 +6680,11 @@ impl FieldLevelEncryptionConfig {
         self.content_type_profile_config.as_ref()
     }
 }
-impl std::fmt::Debug for FieldLevelEncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionConfig");
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("comment", &self.comment);
-        formatter.field("query_arg_profile_config", &self.query_arg_profile_config);
-        formatter.field(
-            "content_type_profile_config",
-            &self.content_type_profile_config,
-        );
-        formatter.finish()
-    }
-}
 /// See [`FieldLevelEncryptionConfig`](crate::model::FieldLevelEncryptionConfig).
 pub mod field_level_encryption_config {
 
     /// A builder for [`FieldLevelEncryptionConfig`](crate::model::FieldLevelEncryptionConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) caller_reference: std::option::Option<std::string::String>,
         pub(crate) comment: std::option::Option<std::string::String>,
@@ -6850,7 +6769,7 @@ impl FieldLevelEncryptionConfig {
 
 /// <p>The configuration for a field-level encryption content type-profile mapping. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContentTypeProfileConfig {
     /// <p>The setting in a field-level encryption content type-profile mapping that specifies what to do when an unknown content type is provided for the profile. If true, content is forwarded without being encrypted when the content type is unknown. If false (the default), an error is returned when the content type is unknown. </p>
     #[doc(hidden)]
@@ -6869,22 +6788,11 @@ impl ContentTypeProfileConfig {
         self.content_type_profiles.as_ref()
     }
 }
-impl std::fmt::Debug for ContentTypeProfileConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContentTypeProfileConfig");
-        formatter.field(
-            "forward_when_content_type_is_unknown",
-            &self.forward_when_content_type_is_unknown,
-        );
-        formatter.field("content_type_profiles", &self.content_type_profiles);
-        formatter.finish()
-    }
-}
 /// See [`ContentTypeProfileConfig`](crate::model::ContentTypeProfileConfig).
 pub mod content_type_profile_config {
 
     /// A builder for [`ContentTypeProfileConfig`](crate::model::ContentTypeProfileConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forward_when_content_type_is_unknown: std::option::Option<bool>,
         pub(crate) content_type_profiles: std::option::Option<crate::model::ContentTypeProfiles>,
@@ -6934,7 +6842,7 @@ impl ContentTypeProfileConfig {
 
 /// <p>Field-level encryption content type-profile. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContentTypeProfiles {
     /// <p>The number of field-level encryption content type-profile mappings. </p>
     #[doc(hidden)]
@@ -6953,19 +6861,11 @@ impl ContentTypeProfiles {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for ContentTypeProfiles {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContentTypeProfiles");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`ContentTypeProfiles`](crate::model::ContentTypeProfiles).
 pub mod content_type_profiles {
 
     /// A builder for [`ContentTypeProfiles`](crate::model::ContentTypeProfiles).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ContentTypeProfile>>,
@@ -7018,7 +6918,7 @@ impl ContentTypeProfiles {
 
 /// <p>A field-level encryption content type profile. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContentTypeProfile {
     /// <p>The format for a field-level encryption content type-profile mapping. </p>
     #[doc(hidden)]
@@ -7044,20 +6944,11 @@ impl ContentTypeProfile {
         self.content_type.as_deref()
     }
 }
-impl std::fmt::Debug for ContentTypeProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContentTypeProfile");
-        formatter.field("format", &self.format);
-        formatter.field("profile_id", &self.profile_id);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
-    }
-}
 /// See [`ContentTypeProfile`](crate::model::ContentTypeProfile).
 pub mod content_type_profile {
 
     /// A builder for [`ContentTypeProfile`](crate::model::ContentTypeProfile).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<crate::model::Format>,
         pub(crate) profile_id: std::option::Option<std::string::String>,
@@ -7111,6 +7002,40 @@ impl ContentTypeProfile {
     }
 }
 
+/// When writing a match expression against `Format`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let format = unimplemented!();
+/// match format {
+///     Format::UrlEncoded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `format` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Format::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Format::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Format::NewFeature` is defined.
+/// Specifically, when `format` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Format::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7125,14 +7050,14 @@ impl ContentTypeProfile {
 pub enum Format {
     #[allow(missing_docs)] // documentation missing in model
     UrlEncoded,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Format {
     fn from(s: &str) -> Self {
         match s {
             "URLEncoded" => Format::UrlEncoded,
-            other => Format::Unknown(other.to_owned()),
+            other => Format::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -7148,11 +7073,11 @@ impl Format {
     pub fn as_str(&self) -> &str {
         match self {
             Format::UrlEncoded => "URLEncoded",
-            Format::Unknown(s) => s.as_ref(),
+            Format::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["URLEncoded"]
     }
 }
@@ -7164,7 +7089,7 @@ impl AsRef<str> for Format {
 
 /// <p>Configuration for query argument-profile mapping for field-level encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryArgProfileConfig {
     /// <p>Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument, fle-profile, is unknown.</p>
     #[doc(hidden)]
@@ -7183,22 +7108,11 @@ impl QueryArgProfileConfig {
         self.query_arg_profiles.as_ref()
     }
 }
-impl std::fmt::Debug for QueryArgProfileConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryArgProfileConfig");
-        formatter.field(
-            "forward_when_query_arg_profile_is_unknown",
-            &self.forward_when_query_arg_profile_is_unknown,
-        );
-        formatter.field("query_arg_profiles", &self.query_arg_profiles);
-        formatter.finish()
-    }
-}
 /// See [`QueryArgProfileConfig`](crate::model::QueryArgProfileConfig).
 pub mod query_arg_profile_config {
 
     /// A builder for [`QueryArgProfileConfig`](crate::model::QueryArgProfileConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forward_when_query_arg_profile_is_unknown: std::option::Option<bool>,
         pub(crate) query_arg_profiles: std::option::Option<crate::model::QueryArgProfiles>,
@@ -7249,7 +7163,7 @@ impl QueryArgProfileConfig {
 
 /// <p>Query argument-profile mapping for field-level encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryArgProfiles {
     /// <p>Number of profiles for query argument-profile mapping for field-level encryption.</p>
     #[doc(hidden)]
@@ -7268,19 +7182,11 @@ impl QueryArgProfiles {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for QueryArgProfiles {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryArgProfiles");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`QueryArgProfiles`](crate::model::QueryArgProfiles).
 pub mod query_arg_profiles {
 
     /// A builder for [`QueryArgProfiles`](crate::model::QueryArgProfiles).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::QueryArgProfile>>,
@@ -7333,7 +7239,7 @@ impl QueryArgProfiles {
 
 /// <p>Query argument-profile mapping for field-level encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryArgProfile {
     /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
     #[doc(hidden)]
@@ -7352,19 +7258,11 @@ impl QueryArgProfile {
         self.profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for QueryArgProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryArgProfile");
-        formatter.field("query_arg", &self.query_arg);
-        formatter.field("profile_id", &self.profile_id);
-        formatter.finish()
-    }
-}
 /// See [`QueryArgProfile`](crate::model::QueryArgProfile).
 pub mod query_arg_profile {
 
     /// A builder for [`QueryArgProfile`](crate::model::QueryArgProfile).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_arg: std::option::Option<std::string::String>,
         pub(crate) profile_id: std::option::Option<std::string::String>,
@@ -7408,7 +7306,7 @@ impl QueryArgProfile {
 
 /// <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Distribution {
     /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>. </p>
     #[doc(hidden)]
@@ -7495,30 +7393,11 @@ impl Distribution {
         self.alias_icp_recordals.as_deref()
     }
 }
-impl std::fmt::Debug for Distribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Distribution");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field(
-            "in_progress_invalidation_batches",
-            &self.in_progress_invalidation_batches,
-        );
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("active_trusted_signers", &self.active_trusted_signers);
-        formatter.field("active_trusted_key_groups", &self.active_trusted_key_groups);
-        formatter.field("distribution_config", &self.distribution_config);
-        formatter.field("alias_icp_recordals", &self.alias_icp_recordals);
-        formatter.finish()
-    }
-}
 /// See [`Distribution`](crate::model::Distribution).
 pub mod distribution {
 
     /// A builder for [`Distribution`](crate::model::Distribution).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7696,7 +7575,7 @@ impl Distribution {
 /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions. The status is returned in the CloudFront response; you can't configure it yourself.</p>
 /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AliasIcpRecordal {
     /// <p>A domain name associated with a distribution. </p>
     #[doc(hidden)]
@@ -7727,19 +7606,11 @@ impl AliasIcpRecordal {
         self.icp_recordal_status.as_ref()
     }
 }
-impl std::fmt::Debug for AliasIcpRecordal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AliasIcpRecordal");
-        formatter.field("cname", &self.cname);
-        formatter.field("icp_recordal_status", &self.icp_recordal_status);
-        formatter.finish()
-    }
-}
 /// See [`AliasIcpRecordal`](crate::model::AliasIcpRecordal).
 pub mod alias_icp_recordal {
 
     /// A builder for [`AliasIcpRecordal`](crate::model::AliasIcpRecordal).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cname: std::option::Option<std::string::String>,
         pub(crate) icp_recordal_status: std::option::Option<crate::model::IcpRecordalStatus>,
@@ -7796,6 +7667,42 @@ impl AliasIcpRecordal {
     }
 }
 
+/// When writing a match expression against `IcpRecordalStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let icprecordalstatus = unimplemented!();
+/// match icprecordalstatus {
+///     IcpRecordalStatus::Approved => { /* ... */ },
+///     IcpRecordalStatus::Pending => { /* ... */ },
+///     IcpRecordalStatus::Suspended => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `icprecordalstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `IcpRecordalStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `IcpRecordalStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `IcpRecordalStatus::NewFeature` is defined.
+/// Specifically, when `icprecordalstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `IcpRecordalStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7814,8 +7721,8 @@ pub enum IcpRecordalStatus {
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     Suspended,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for IcpRecordalStatus {
     fn from(s: &str) -> Self {
@@ -7823,7 +7730,9 @@ impl std::convert::From<&str> for IcpRecordalStatus {
             "APPROVED" => IcpRecordalStatus::Approved,
             "PENDING" => IcpRecordalStatus::Pending,
             "SUSPENDED" => IcpRecordalStatus::Suspended,
-            other => IcpRecordalStatus::Unknown(other.to_owned()),
+            other => {
+                IcpRecordalStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -7841,11 +7750,11 @@ impl IcpRecordalStatus {
             IcpRecordalStatus::Approved => "APPROVED",
             IcpRecordalStatus::Pending => "PENDING",
             IcpRecordalStatus::Suspended => "SUSPENDED",
-            IcpRecordalStatus::Unknown(s) => s.as_ref(),
+            IcpRecordalStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPROVED", "PENDING", "SUSPENDED"]
     }
 }
@@ -8064,7 +7973,7 @@ impl std::fmt::Debug for DistributionConfig {
 pub mod distribution_config {
 
     /// A builder for [`DistributionConfig`](crate::model::DistributionConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) caller_reference: std::option::Option<std::string::String>,
         pub(crate) aliases: std::option::Option<crate::model::Aliases>,
@@ -8363,6 +8272,29 @@ pub mod distribution_config {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("caller_reference", &self.caller_reference);
+            formatter.field("aliases", &self.aliases);
+            formatter.field("default_root_object", &self.default_root_object);
+            formatter.field("origins", &self.origins);
+            formatter.field("origin_groups", &self.origin_groups);
+            formatter.field("default_cache_behavior", &self.default_cache_behavior);
+            formatter.field("cache_behaviors", &self.cache_behaviors);
+            formatter.field("custom_error_responses", &self.custom_error_responses);
+            formatter.field("comment", &"*** Sensitive Data Redacted ***");
+            formatter.field("logging", &self.logging);
+            formatter.field("price_class", &self.price_class);
+            formatter.field("enabled", &self.enabled);
+            formatter.field("viewer_certificate", &self.viewer_certificate);
+            formatter.field("restrictions", &self.restrictions);
+            formatter.field("web_acl_id", &self.web_acl_id);
+            formatter.field("http_version", &self.http_version);
+            formatter.field("is_ipv6_enabled", &self.is_ipv6_enabled);
+            formatter.finish()
+        }
+    }
 }
 impl DistributionConfig {
     /// Creates a new builder-style object to manufacture [`DistributionConfig`](crate::model::DistributionConfig).
@@ -8371,6 +8303,43 @@ impl DistributionConfig {
     }
 }
 
+/// When writing a match expression against `HttpVersion`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let httpversion = unimplemented!();
+/// match httpversion {
+///     HttpVersion::Http11 => { /* ... */ },
+///     HttpVersion::Http2 => { /* ... */ },
+///     HttpVersion::Http2and3 => { /* ... */ },
+///     HttpVersion::Http3 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `httpversion` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HttpVersion::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HttpVersion::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HttpVersion::NewFeature` is defined.
+/// Specifically, when `httpversion` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HttpVersion::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -8391,8 +8360,8 @@ pub enum HttpVersion {
     Http2and3,
     #[allow(missing_docs)] // documentation missing in model
     Http3,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HttpVersion {
     fn from(s: &str) -> Self {
@@ -8401,7 +8370,7 @@ impl std::convert::From<&str> for HttpVersion {
             "http2" => HttpVersion::Http2,
             "http2and3" => HttpVersion::Http2and3,
             "http3" => HttpVersion::Http3,
-            other => HttpVersion::Unknown(other.to_owned()),
+            other => HttpVersion::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -8420,11 +8389,11 @@ impl HttpVersion {
             HttpVersion::Http2 => "http2",
             HttpVersion::Http2and3 => "http2and3",
             HttpVersion::Http3 => "http3",
-            HttpVersion::Unknown(s) => s.as_ref(),
+            HttpVersion::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["http1.1", "http2", "http2and3", "http3"]
     }
 }
@@ -8436,7 +8405,7 @@ impl AsRef<str> for HttpVersion {
 
 /// <p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Restrictions {
     /// <p>A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.</p>
     #[doc(hidden)]
@@ -8448,18 +8417,11 @@ impl Restrictions {
         self.geo_restriction.as_ref()
     }
 }
-impl std::fmt::Debug for Restrictions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Restrictions");
-        formatter.field("geo_restriction", &self.geo_restriction);
-        formatter.finish()
-    }
-}
 /// See [`Restrictions`](crate::model::Restrictions).
 pub mod restrictions {
 
     /// A builder for [`Restrictions`](crate::model::Restrictions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geo_restriction: std::option::Option<crate::model::GeoRestriction>,
     }
@@ -8494,7 +8456,7 @@ impl Restrictions {
 
 /// <p>A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GeoRestriction {
     /// <p>The method that you want to use to restrict distribution of your content by country:</p>
     /// <ul>
@@ -8534,20 +8496,11 @@ impl GeoRestriction {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for GeoRestriction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GeoRestriction");
-        formatter.field("restriction_type", &self.restriction_type);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`GeoRestriction`](crate::model::GeoRestriction).
 pub mod geo_restriction {
 
     /// A builder for [`GeoRestriction`](crate::model::GeoRestriction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) restriction_type: std::option::Option<crate::model::GeoRestrictionType>,
         pub(crate) quantity: std::option::Option<i32>,
@@ -8627,6 +8580,42 @@ impl GeoRestriction {
     }
 }
 
+/// When writing a match expression against `GeoRestrictionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let georestrictiontype = unimplemented!();
+/// match georestrictiontype {
+///     GeoRestrictionType::Blacklist => { /* ... */ },
+///     GeoRestrictionType::None => { /* ... */ },
+///     GeoRestrictionType::Whitelist => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `georestrictiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `GeoRestrictionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `GeoRestrictionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `GeoRestrictionType::NewFeature` is defined.
+/// Specifically, when `georestrictiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `GeoRestrictionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -8645,8 +8634,8 @@ pub enum GeoRestrictionType {
     None,
     #[allow(missing_docs)] // documentation missing in model
     Whitelist,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for GeoRestrictionType {
     fn from(s: &str) -> Self {
@@ -8654,7 +8643,9 @@ impl std::convert::From<&str> for GeoRestrictionType {
             "blacklist" => GeoRestrictionType::Blacklist,
             "none" => GeoRestrictionType::None,
             "whitelist" => GeoRestrictionType::Whitelist,
-            other => GeoRestrictionType::Unknown(other.to_owned()),
+            other => {
+                GeoRestrictionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -8672,11 +8663,11 @@ impl GeoRestrictionType {
             GeoRestrictionType::Blacklist => "blacklist",
             GeoRestrictionType::None => "none",
             GeoRestrictionType::Whitelist => "whitelist",
-            GeoRestrictionType::Unknown(s) => s.as_ref(),
+            GeoRestrictionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["blacklist", "none", "whitelist"]
     }
 }
@@ -8705,7 +8696,7 @@ impl AsRef<str> for GeoRestrictionType {
 /// <p>All distributions support HTTPS connections from viewers. To require viewers to use HTTPS only, or to redirect them from HTTP to HTTPS, use <code>ViewerProtocolPolicy</code> in the <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>. To specify how CloudFront should use SSL/TLS to communicate with your custom origin, use <code>CustomOriginConfig</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https.html">Using HTTPS with CloudFront</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-alternate-domain-names.html"> Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ViewerCertificate {
     /// <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, set this field to <code>true</code>.</p>
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), set this field to <code>false</code> and specify values for the following fields:</p>
@@ -8831,27 +8822,11 @@ impl ViewerCertificate {
         self.certificate_source.as_ref()
     }
 }
-impl std::fmt::Debug for ViewerCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ViewerCertificate");
-        formatter.field(
-            "cloud_front_default_certificate",
-            &self.cloud_front_default_certificate,
-        );
-        formatter.field("iam_certificate_id", &self.iam_certificate_id);
-        formatter.field("acm_certificate_arn", &self.acm_certificate_arn);
-        formatter.field("ssl_support_method", &self.ssl_support_method);
-        formatter.field("minimum_protocol_version", &self.minimum_protocol_version);
-        formatter.field("certificate", &self.certificate);
-        formatter.field("certificate_source", &self.certificate_source);
-        formatter.finish()
-    }
-}
 /// See [`ViewerCertificate`](crate::model::ViewerCertificate).
 pub mod viewer_certificate {
 
     /// A builder for [`ViewerCertificate`](crate::model::ViewerCertificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_front_default_certificate: std::option::Option<bool>,
         pub(crate) iam_certificate_id: std::option::Option<std::string::String>,
@@ -9045,6 +9020,42 @@ impl ViewerCertificate {
     }
 }
 
+/// When writing a match expression against `CertificateSource`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let certificatesource = unimplemented!();
+/// match certificatesource {
+///     CertificateSource::Acm => { /* ... */ },
+///     CertificateSource::Cloudfront => { /* ... */ },
+///     CertificateSource::Iam => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `certificatesource` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CertificateSource::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CertificateSource::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CertificateSource::NewFeature` is defined.
+/// Specifically, when `certificatesource` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CertificateSource::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9063,8 +9074,8 @@ pub enum CertificateSource {
     Cloudfront,
     #[allow(missing_docs)] // documentation missing in model
     Iam,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CertificateSource {
     fn from(s: &str) -> Self {
@@ -9072,7 +9083,9 @@ impl std::convert::From<&str> for CertificateSource {
             "acm" => CertificateSource::Acm,
             "cloudfront" => CertificateSource::Cloudfront,
             "iam" => CertificateSource::Iam,
-            other => CertificateSource::Unknown(other.to_owned()),
+            other => {
+                CertificateSource::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -9090,11 +9103,11 @@ impl CertificateSource {
             CertificateSource::Acm => "acm",
             CertificateSource::Cloudfront => "cloudfront",
             CertificateSource::Iam => "iam",
-            CertificateSource::Unknown(s) => s.as_ref(),
+            CertificateSource::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["acm", "cloudfront", "iam"]
     }
 }
@@ -9104,6 +9117,46 @@ impl AsRef<str> for CertificateSource {
     }
 }
 
+/// When writing a match expression against `MinimumProtocolVersion`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let minimumprotocolversion = unimplemented!();
+/// match minimumprotocolversion {
+///     MinimumProtocolVersion::SsLv3 => { /* ... */ },
+///     MinimumProtocolVersion::TlSv1 => { /* ... */ },
+///     MinimumProtocolVersion::TlSv112016 => { /* ... */ },
+///     MinimumProtocolVersion::TlSv122018 => { /* ... */ },
+///     MinimumProtocolVersion::TlSv122019 => { /* ... */ },
+///     MinimumProtocolVersion::TlSv122021 => { /* ... */ },
+///     MinimumProtocolVersion::TlSv12016 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `minimumprotocolversion` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MinimumProtocolVersion::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MinimumProtocolVersion::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MinimumProtocolVersion::NewFeature` is defined.
+/// Specifically, when `minimumprotocolversion` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MinimumProtocolVersion::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9130,8 +9183,8 @@ pub enum MinimumProtocolVersion {
     TlSv122021,
     #[allow(missing_docs)] // documentation missing in model
     TlSv12016,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MinimumProtocolVersion {
     fn from(s: &str) -> Self {
@@ -9143,7 +9196,9 @@ impl std::convert::From<&str> for MinimumProtocolVersion {
             "TLSv1.2_2019" => MinimumProtocolVersion::TlSv122019,
             "TLSv1.2_2021" => MinimumProtocolVersion::TlSv122021,
             "TLSv1_2016" => MinimumProtocolVersion::TlSv12016,
-            other => MinimumProtocolVersion::Unknown(other.to_owned()),
+            other => {
+                MinimumProtocolVersion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -9165,11 +9220,11 @@ impl MinimumProtocolVersion {
             MinimumProtocolVersion::TlSv122019 => "TLSv1.2_2019",
             MinimumProtocolVersion::TlSv122021 => "TLSv1.2_2021",
             MinimumProtocolVersion::TlSv12016 => "TLSv1_2016",
-            MinimumProtocolVersion::Unknown(s) => s.as_ref(),
+            MinimumProtocolVersion::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "SSLv3",
             "TLSv1",
@@ -9187,6 +9242,42 @@ impl AsRef<str> for MinimumProtocolVersion {
     }
 }
 
+/// When writing a match expression against `SslSupportMethod`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sslsupportmethod = unimplemented!();
+/// match sslsupportmethod {
+///     SslSupportMethod::SniOnly => { /* ... */ },
+///     SslSupportMethod::StaticIp => { /* ... */ },
+///     SslSupportMethod::Vip => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sslsupportmethod` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SslSupportMethod::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SslSupportMethod::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SslSupportMethod::NewFeature` is defined.
+/// Specifically, when `sslsupportmethod` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SslSupportMethod::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9205,8 +9296,8 @@ pub enum SslSupportMethod {
     StaticIp,
     #[allow(missing_docs)] // documentation missing in model
     Vip,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SslSupportMethod {
     fn from(s: &str) -> Self {
@@ -9214,7 +9305,7 @@ impl std::convert::From<&str> for SslSupportMethod {
             "sni-only" => SslSupportMethod::SniOnly,
             "static-ip" => SslSupportMethod::StaticIp,
             "vip" => SslSupportMethod::Vip,
-            other => SslSupportMethod::Unknown(other.to_owned()),
+            other => SslSupportMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -9232,11 +9323,11 @@ impl SslSupportMethod {
             SslSupportMethod::SniOnly => "sni-only",
             SslSupportMethod::StaticIp => "static-ip",
             SslSupportMethod::Vip => "vip",
-            SslSupportMethod::Unknown(s) => s.as_ref(),
+            SslSupportMethod::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["sni-only", "static-ip", "vip"]
     }
 }
@@ -9248,7 +9339,7 @@ impl AsRef<str> for SslSupportMethod {
 
 /// <p>A complex type that controls whether access logs are written for the distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingConfig {
     /// <p>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable logging when you create a distribution or if you want to disable logging for an existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>, <code>prefix</code>, and <code>IncludeCookies</code>, the values are automatically deleted.</p>
     #[doc(hidden)]
@@ -9281,21 +9372,11 @@ impl LoggingConfig {
         self.prefix.as_deref()
     }
 }
-impl std::fmt::Debug for LoggingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingConfig");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("include_cookies", &self.include_cookies);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
-    }
-}
 /// See [`LoggingConfig`](crate::model::LoggingConfig).
 pub mod logging_config {
 
     /// A builder for [`LoggingConfig`](crate::model::LoggingConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) include_cookies: std::option::Option<bool>,
@@ -9368,7 +9449,7 @@ impl LoggingConfig {
 /// </ul>
 /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomErrorResponses {
     /// <p>The number of HTTP status codes for which you want to specify a custom error page and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
     #[doc(hidden)]
@@ -9387,19 +9468,11 @@ impl CustomErrorResponses {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for CustomErrorResponses {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomErrorResponses");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`CustomErrorResponses`](crate::model::CustomErrorResponses).
 pub mod custom_error_responses {
 
     /// A builder for [`CustomErrorResponses`](crate::model::CustomErrorResponses).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::CustomErrorResponse>>,
@@ -9457,7 +9530,7 @@ impl CustomErrorResponses {
 /// </ul>
 /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomErrorResponse {
     /// <p>The HTTP status code for which you want to specify a custom error page and/or a caching duration.</p>
     #[doc(hidden)]
@@ -9516,21 +9589,11 @@ impl CustomErrorResponse {
         self.error_caching_min_ttl
     }
 }
-impl std::fmt::Debug for CustomErrorResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomErrorResponse");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("response_page_path", &self.response_page_path);
-        formatter.field("response_code", &self.response_code);
-        formatter.field("error_caching_min_ttl", &self.error_caching_min_ttl);
-        formatter.finish()
-    }
-}
 /// See [`CustomErrorResponse`](crate::model::CustomErrorResponse).
 pub mod custom_error_response {
 
     /// A builder for [`CustomErrorResponse`](crate::model::CustomErrorResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<i32>,
         pub(crate) response_page_path: std::option::Option<std::string::String>,
@@ -9630,7 +9693,7 @@ impl CustomErrorResponse {
 
 /// <p>A complex type that contains zero or more <code>CacheBehavior</code> elements. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheBehaviors {
     /// <p>The number of cache behaviors for this distribution. </p>
     #[doc(hidden)]
@@ -9649,19 +9712,11 @@ impl CacheBehaviors {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for CacheBehaviors {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheBehaviors");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`CacheBehaviors`](crate::model::CacheBehaviors).
 pub mod cache_behaviors {
 
     /// A builder for [`CacheBehaviors`](crate::model::CacheBehaviors).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::CacheBehavior>>,
@@ -9720,7 +9775,7 @@ impl CacheBehaviors {
 /// <p>To add, change, or remove one or more cache behaviors, update the distribution configuration and specify all of the cache behaviors that you want to include in the updated distribution.</p>
 /// <p>For more information about cache behaviors, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheBehavior {
     /// <p>The pattern (for example, <code>images/*.jpg</code>) that specifies which requests to apply the behavior to. When CloudFront receives a viewer request, the requested path is compared with path patterns in the order in which cache behaviors are listed in the distribution.</p> <note>
     /// <p>You can optionally include a slash (<code>/</code>) at the beginning of the path pattern. For example, <code>/images/*.jpg</code>. CloudFront behavior is the same with or without the leading <code>/</code>.</p>
@@ -9936,42 +9991,11 @@ impl CacheBehavior {
         self.max_ttl
     }
 }
-impl std::fmt::Debug for CacheBehavior {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheBehavior");
-        formatter.field("path_pattern", &self.path_pattern);
-        formatter.field("target_origin_id", &self.target_origin_id);
-        formatter.field("trusted_signers", &self.trusted_signers);
-        formatter.field("trusted_key_groups", &self.trusted_key_groups);
-        formatter.field("viewer_protocol_policy", &self.viewer_protocol_policy);
-        formatter.field("allowed_methods", &self.allowed_methods);
-        formatter.field("smooth_streaming", &self.smooth_streaming);
-        formatter.field("compress", &self.compress);
-        formatter.field(
-            "lambda_function_associations",
-            &self.lambda_function_associations,
-        );
-        formatter.field("function_associations", &self.function_associations);
-        formatter.field("field_level_encryption_id", &self.field_level_encryption_id);
-        formatter.field("realtime_log_config_arn", &self.realtime_log_config_arn);
-        formatter.field("cache_policy_id", &self.cache_policy_id);
-        formatter.field("origin_request_policy_id", &self.origin_request_policy_id);
-        formatter.field(
-            "response_headers_policy_id",
-            &self.response_headers_policy_id,
-        );
-        formatter.field("forwarded_values", &self.forwarded_values);
-        formatter.field("min_ttl", &self.min_ttl);
-        formatter.field("default_ttl", &self.default_ttl);
-        formatter.field("max_ttl", &self.max_ttl);
-        formatter.finish()
-    }
-}
 /// See [`CacheBehavior`](crate::model::CacheBehavior).
 pub mod cache_behavior {
 
     /// A builder for [`CacheBehavior`](crate::model::CacheBehavior).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path_pattern: std::option::Option<std::string::String>,
         pub(crate) target_origin_id: std::option::Option<std::string::String>,
@@ -10337,7 +10361,7 @@ impl CacheBehavior {
 /// <p>If you want to send values to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 /// <p>A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForwardedValues {
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include query strings in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -10406,21 +10430,11 @@ impl ForwardedValues {
         self.query_string_cache_keys.as_ref()
     }
 }
-impl std::fmt::Debug for ForwardedValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForwardedValues");
-        formatter.field("query_string", &self.query_string);
-        formatter.field("cookies", &self.cookies);
-        formatter.field("headers", &self.headers);
-        formatter.field("query_string_cache_keys", &self.query_string_cache_keys);
-        formatter.finish()
-    }
-}
 /// See [`ForwardedValues`](crate::model::ForwardedValues).
 pub mod forwarded_values {
 
     /// A builder for [`ForwardedValues`](crate::model::ForwardedValues).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_string: std::option::Option<bool>,
         pub(crate) cookies: std::option::Option<crate::model::CookiePreference>,
@@ -10534,7 +10548,7 @@ impl ForwardedValues {
 /// <p>If you want to send query strings to the origin but not include them in the cache key, use <code>QueryStringsConfig</code> in an origin request policy. See <code>OriginRequestPolicy</code>.</p>
 /// <p>A complex type that contains information about the query string parameters that you want CloudFront to use for caching for a cache behavior. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryStringCacheKeys {
     /// <p>The number of <code>whitelisted</code> query string parameters for a cache behavior.</p>
     #[doc(hidden)]
@@ -10553,19 +10567,11 @@ impl QueryStringCacheKeys {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for QueryStringCacheKeys {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryStringCacheKeys");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`QueryStringCacheKeys`](crate::model::QueryStringCacheKeys).
 pub mod query_string_cache_keys {
 
     /// A builder for [`QueryStringCacheKeys`](crate::model::QueryStringCacheKeys).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10621,7 +10627,7 @@ impl QueryStringCacheKeys {
 /// <p>If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code> in an origin request policy. See <code>OriginRequestPolicy</code>.</p>
 /// <p>A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">Caching Content Based on Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CookiePreference {
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include cookies in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -10658,19 +10664,11 @@ impl CookiePreference {
         self.whitelisted_names.as_ref()
     }
 }
-impl std::fmt::Debug for CookiePreference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CookiePreference");
-        formatter.field("forward", &self.forward);
-        formatter.field("whitelisted_names", &self.whitelisted_names);
-        formatter.finish()
-    }
-}
 /// See [`CookiePreference`](crate::model::CookiePreference).
 pub mod cookie_preference {
 
     /// A builder for [`CookiePreference`](crate::model::CookiePreference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forward: std::option::Option<crate::model::ItemSelection>,
         pub(crate) whitelisted_names: std::option::Option<crate::model::CookieNames>,
@@ -10736,6 +10734,42 @@ impl CookiePreference {
     }
 }
 
+/// When writing a match expression against `ItemSelection`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let itemselection = unimplemented!();
+/// match itemselection {
+///     ItemSelection::All => { /* ... */ },
+///     ItemSelection::None => { /* ... */ },
+///     ItemSelection::Whitelist => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `itemselection` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ItemSelection::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ItemSelection::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ItemSelection::NewFeature` is defined.
+/// Specifically, when `itemselection` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ItemSelection::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -10754,8 +10788,8 @@ pub enum ItemSelection {
     None,
     #[allow(missing_docs)] // documentation missing in model
     Whitelist,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ItemSelection {
     fn from(s: &str) -> Self {
@@ -10763,7 +10797,7 @@ impl std::convert::From<&str> for ItemSelection {
             "all" => ItemSelection::All,
             "none" => ItemSelection::None,
             "whitelist" => ItemSelection::Whitelist,
-            other => ItemSelection::Unknown(other.to_owned()),
+            other => ItemSelection::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -10781,11 +10815,11 @@ impl ItemSelection {
             ItemSelection::All => "all",
             ItemSelection::None => "none",
             ItemSelection::Whitelist => "whitelist",
-            ItemSelection::Unknown(s) => s.as_ref(),
+            ItemSelection::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["all", "none", "whitelist"]
     }
 }
@@ -10797,7 +10831,7 @@ impl AsRef<str> for ItemSelection {
 
 /// <p>A list of CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionAssociations {
     /// <p>The number of CloudFront functions in the list.</p>
     #[doc(hidden)]
@@ -10816,19 +10850,11 @@ impl FunctionAssociations {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for FunctionAssociations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionAssociations");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`FunctionAssociations`](crate::model::FunctionAssociations).
 pub mod function_associations {
 
     /// A builder for [`FunctionAssociations`](crate::model::FunctionAssociations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::FunctionAssociation>>,
@@ -10881,7 +10907,7 @@ impl FunctionAssociations {
 
 /// <p>A CloudFront function that is associated with a cache behavior in a CloudFront distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionAssociation {
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
     #[doc(hidden)]
@@ -10900,19 +10926,11 @@ impl FunctionAssociation {
         self.event_type.as_ref()
     }
 }
-impl std::fmt::Debug for FunctionAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionAssociation");
-        formatter.field("function_arn", &self.function_arn);
-        formatter.field("event_type", &self.event_type);
-        formatter.finish()
-    }
-}
 /// See [`FunctionAssociation`](crate::model::FunctionAssociation).
 pub mod function_association {
 
     /// A builder for [`FunctionAssociation`](crate::model::FunctionAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_arn: std::option::Option<std::string::String>,
         pub(crate) event_type: std::option::Option<crate::model::EventType>,
@@ -10957,6 +10975,43 @@ impl FunctionAssociation {
     }
 }
 
+/// When writing a match expression against `EventType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let eventtype = unimplemented!();
+/// match eventtype {
+///     EventType::OriginRequest => { /* ... */ },
+///     EventType::OriginResponse => { /* ... */ },
+///     EventType::ViewerRequest => { /* ... */ },
+///     EventType::ViewerResponse => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `eventtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EventType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EventType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EventType::NewFeature` is defined.
+/// Specifically, when `eventtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EventType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -10977,8 +11032,8 @@ pub enum EventType {
     ViewerRequest,
     #[allow(missing_docs)] // documentation missing in model
     ViewerResponse,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EventType {
     fn from(s: &str) -> Self {
@@ -10987,7 +11042,7 @@ impl std::convert::From<&str> for EventType {
             "origin-response" => EventType::OriginResponse,
             "viewer-request" => EventType::ViewerRequest,
             "viewer-response" => EventType::ViewerResponse,
-            other => EventType::Unknown(other.to_owned()),
+            other => EventType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -11006,11 +11061,11 @@ impl EventType {
             EventType::OriginResponse => "origin-response",
             EventType::ViewerRequest => "viewer-request",
             EventType::ViewerResponse => "viewer-response",
-            EventType::Unknown(s) => s.as_ref(),
+            EventType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "origin-request",
             "origin-response",
@@ -11029,7 +11084,7 @@ impl AsRef<str> for EventType {
 /// <p>If you want to invoke one or more Lambda@Edge functions triggered by requests that match the <code>PathPattern</code> of the cache behavior, specify the applicable values for <code>Quantity</code> and <code>Items</code>. Note that there can be up to 4 <code>LambdaFunctionAssociation</code> items in this list (one for each possible value of <code>EventType</code>) and each <code>EventType</code> can be associated with only one function.</p>
 /// <p>If you don't want to invoke any Lambda@Edge functions for the requests that match <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit <code>Items</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionAssociations {
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
     #[doc(hidden)]
@@ -11048,19 +11103,11 @@ impl LambdaFunctionAssociations {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for LambdaFunctionAssociations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionAssociations");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`LambdaFunctionAssociations`](crate::model::LambdaFunctionAssociations).
 pub mod lambda_function_associations {
 
     /// A builder for [`LambdaFunctionAssociations`](crate::model::LambdaFunctionAssociations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items:
@@ -11114,7 +11161,7 @@ impl LambdaFunctionAssociations {
 
 /// <p>A complex type that contains a Lambda@Edge function association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaFunctionAssociation {
     /// <p>The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias or $LATEST.</p>
     #[doc(hidden)]
@@ -11152,20 +11199,11 @@ impl LambdaFunctionAssociation {
         self.include_body
     }
 }
-impl std::fmt::Debug for LambdaFunctionAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaFunctionAssociation");
-        formatter.field("lambda_function_arn", &self.lambda_function_arn);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("include_body", &self.include_body);
-        formatter.finish()
-    }
-}
 /// See [`LambdaFunctionAssociation`](crate::model::LambdaFunctionAssociation).
 pub mod lambda_function_association {
 
     /// A builder for [`LambdaFunctionAssociation`](crate::model::LambdaFunctionAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda_function_arn: std::option::Option<std::string::String>,
         pub(crate) event_type: std::option::Option<crate::model::EventType>,
@@ -11245,7 +11283,7 @@ impl LambdaFunctionAssociation {
 /// </ul>
 /// <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you might not want users to have permissions to delete objects from your origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllowedMethods {
     /// <p>The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests).</p>
     #[doc(hidden)]
@@ -11281,20 +11319,11 @@ impl AllowedMethods {
         self.cached_methods.as_ref()
     }
 }
-impl std::fmt::Debug for AllowedMethods {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllowedMethods");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.field("cached_methods", &self.cached_methods);
-        formatter.finish()
-    }
-}
 /// See [`AllowedMethods`](crate::model::AllowedMethods).
 pub mod allowed_methods {
 
     /// A builder for [`AllowedMethods`](crate::model::AllowedMethods).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Method>>,
@@ -11377,7 +11406,7 @@ impl AllowedMethods {
 /// </ul>
 /// <p>If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachedMethods {
     /// <p>The number of HTTP methods for which you want CloudFront to cache responses. Valid values are <code>2</code> (for caching responses to <code>GET</code> and <code>HEAD</code> requests) and <code>3</code> (for caching responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
     #[doc(hidden)]
@@ -11396,19 +11425,11 @@ impl CachedMethods {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for CachedMethods {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachedMethods");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`CachedMethods`](crate::model::CachedMethods).
 pub mod cached_methods {
 
     /// A builder for [`CachedMethods`](crate::model::CachedMethods).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Method>>,
@@ -11459,6 +11480,46 @@ impl CachedMethods {
     }
 }
 
+/// When writing a match expression against `Method`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let method = unimplemented!();
+/// match method {
+///     Method::Delete => { /* ... */ },
+///     Method::Get => { /* ... */ },
+///     Method::Head => { /* ... */ },
+///     Method::Options => { /* ... */ },
+///     Method::Patch => { /* ... */ },
+///     Method::Post => { /* ... */ },
+///     Method::Put => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `method` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Method::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Method::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Method::NewFeature` is defined.
+/// Specifically, when `method` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Method::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11485,8 +11546,8 @@ pub enum Method {
     Post,
     #[allow(missing_docs)] // documentation missing in model
     Put,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Method {
     fn from(s: &str) -> Self {
@@ -11498,7 +11559,7 @@ impl std::convert::From<&str> for Method {
             "PATCH" => Method::Patch,
             "POST" => Method::Post,
             "PUT" => Method::Put,
-            other => Method::Unknown(other.to_owned()),
+            other => Method::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -11520,11 +11581,11 @@ impl Method {
             Method::Patch => "PATCH",
             Method::Post => "POST",
             Method::Put => "PUT",
-            Method::Unknown(s) => s.as_ref(),
+            Method::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     }
 }
@@ -11534,6 +11595,42 @@ impl AsRef<str> for Method {
     }
 }
 
+/// When writing a match expression against `ViewerProtocolPolicy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let viewerprotocolpolicy = unimplemented!();
+/// match viewerprotocolpolicy {
+///     ViewerProtocolPolicy::AllowAll => { /* ... */ },
+///     ViewerProtocolPolicy::HttpsOnly => { /* ... */ },
+///     ViewerProtocolPolicy::RedirectToHttps => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `viewerprotocolpolicy` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ViewerProtocolPolicy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ViewerProtocolPolicy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ViewerProtocolPolicy::NewFeature` is defined.
+/// Specifically, when `viewerprotocolpolicy` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ViewerProtocolPolicy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11552,8 +11649,8 @@ pub enum ViewerProtocolPolicy {
     HttpsOnly,
     #[allow(missing_docs)] // documentation missing in model
     RedirectToHttps,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ViewerProtocolPolicy {
     fn from(s: &str) -> Self {
@@ -11561,7 +11658,9 @@ impl std::convert::From<&str> for ViewerProtocolPolicy {
             "allow-all" => ViewerProtocolPolicy::AllowAll,
             "https-only" => ViewerProtocolPolicy::HttpsOnly,
             "redirect-to-https" => ViewerProtocolPolicy::RedirectToHttps,
-            other => ViewerProtocolPolicy::Unknown(other.to_owned()),
+            other => {
+                ViewerProtocolPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -11579,11 +11678,11 @@ impl ViewerProtocolPolicy {
             ViewerProtocolPolicy::AllowAll => "allow-all",
             ViewerProtocolPolicy::HttpsOnly => "https-only",
             ViewerProtocolPolicy::RedirectToHttps => "redirect-to-https",
-            ViewerProtocolPolicy::Unknown(s) => s.as_ref(),
+            ViewerProtocolPolicy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["allow-all", "https-only", "redirect-to-https"]
     }
 }
@@ -11595,7 +11694,7 @@ impl AsRef<str> for ViewerProtocolPolicy {
 
 /// <p>A list of key groups whose public keys CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustedKeyGroups {
     /// <p>This field is <code>true</code> if any of the key groups in the list have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
     #[doc(hidden)]
@@ -11621,20 +11720,11 @@ impl TrustedKeyGroups {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for TrustedKeyGroups {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustedKeyGroups");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`TrustedKeyGroups`](crate::model::TrustedKeyGroups).
 pub mod trusted_key_groups {
 
     /// A builder for [`TrustedKeyGroups`](crate::model::TrustedKeyGroups).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) quantity: std::option::Option<i32>,
@@ -11699,7 +11789,7 @@ impl TrustedKeyGroups {
 
 /// <p>A complex type that describes the default cache behavior if you don’t specify a <code>CacheBehavior</code> element or if request URLs don’t match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultCacheBehavior {
     /// <p>The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they use the default cache behavior.</p>
     #[doc(hidden)]
@@ -11900,41 +11990,11 @@ impl DefaultCacheBehavior {
         self.max_ttl
     }
 }
-impl std::fmt::Debug for DefaultCacheBehavior {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultCacheBehavior");
-        formatter.field("target_origin_id", &self.target_origin_id);
-        formatter.field("trusted_signers", &self.trusted_signers);
-        formatter.field("trusted_key_groups", &self.trusted_key_groups);
-        formatter.field("viewer_protocol_policy", &self.viewer_protocol_policy);
-        formatter.field("allowed_methods", &self.allowed_methods);
-        formatter.field("smooth_streaming", &self.smooth_streaming);
-        formatter.field("compress", &self.compress);
-        formatter.field(
-            "lambda_function_associations",
-            &self.lambda_function_associations,
-        );
-        formatter.field("function_associations", &self.function_associations);
-        formatter.field("field_level_encryption_id", &self.field_level_encryption_id);
-        formatter.field("realtime_log_config_arn", &self.realtime_log_config_arn);
-        formatter.field("cache_policy_id", &self.cache_policy_id);
-        formatter.field("origin_request_policy_id", &self.origin_request_policy_id);
-        formatter.field(
-            "response_headers_policy_id",
-            &self.response_headers_policy_id,
-        );
-        formatter.field("forwarded_values", &self.forwarded_values);
-        formatter.field("min_ttl", &self.min_ttl);
-        formatter.field("default_ttl", &self.default_ttl);
-        formatter.field("max_ttl", &self.max_ttl);
-        formatter.finish()
-    }
-}
 /// See [`DefaultCacheBehavior`](crate::model::DefaultCacheBehavior).
 pub mod default_cache_behavior {
 
     /// A builder for [`DefaultCacheBehavior`](crate::model::DefaultCacheBehavior).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_origin_id: std::option::Option<std::string::String>,
         pub(crate) trusted_signers: std::option::Option<crate::model::TrustedSigners>,
@@ -12277,7 +12337,7 @@ impl DefaultCacheBehavior {
 
 /// <p>A complex data type for the origin groups specified for a distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginGroups {
     /// <p>The number of origin groups.</p>
     #[doc(hidden)]
@@ -12296,19 +12356,11 @@ impl OriginGroups {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for OriginGroups {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginGroups");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`OriginGroups`](crate::model::OriginGroups).
 pub mod origin_groups {
 
     /// A builder for [`OriginGroups`](crate::model::OriginGroups).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::OriginGroup>>,
@@ -12361,7 +12413,7 @@ impl OriginGroups {
 
 /// <p>An origin group includes two origins (a primary origin and a second origin to failover to) and a failover criteria that you specify. You create an origin group to support origin failover in CloudFront. When you create or update a distribution, you can specifiy the origin group instead of a single origin, and CloudFront will failover from the primary origin to the second origin under the failover conditions that you've chosen.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginGroup {
     /// <p>The origin group's ID.</p>
     #[doc(hidden)]
@@ -12389,20 +12441,11 @@ impl OriginGroup {
         self.members.as_ref()
     }
 }
-impl std::fmt::Debug for OriginGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginGroup");
-        formatter.field("id", &self.id);
-        formatter.field("failover_criteria", &self.failover_criteria);
-        formatter.field("members", &self.members);
-        formatter.finish()
-    }
-}
 /// See [`OriginGroup`](crate::model::OriginGroup).
 pub mod origin_group {
 
     /// A builder for [`OriginGroup`](crate::model::OriginGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) failover_criteria:
@@ -12468,7 +12511,7 @@ impl OriginGroup {
 
 /// <p>A complex data type for the origins included in an origin group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginGroupMembers {
     /// <p>The number of origins in an origin group.</p>
     #[doc(hidden)]
@@ -12487,19 +12530,11 @@ impl OriginGroupMembers {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for OriginGroupMembers {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginGroupMembers");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`OriginGroupMembers`](crate::model::OriginGroupMembers).
 pub mod origin_group_members {
 
     /// A builder for [`OriginGroupMembers`](crate::model::OriginGroupMembers).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::OriginGroupMember>>,
@@ -12552,7 +12587,7 @@ impl OriginGroupMembers {
 
 /// <p>An origin in an origin group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginGroupMember {
     /// <p>The ID for an origin in an origin group.</p>
     #[doc(hidden)]
@@ -12564,18 +12599,11 @@ impl OriginGroupMember {
         self.origin_id.as_deref()
     }
 }
-impl std::fmt::Debug for OriginGroupMember {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginGroupMember");
-        formatter.field("origin_id", &self.origin_id);
-        formatter.finish()
-    }
-}
 /// See [`OriginGroupMember`](crate::model::OriginGroupMember).
 pub mod origin_group_member {
 
     /// A builder for [`OriginGroupMember`](crate::model::OriginGroupMember).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origin_id: std::option::Option<std::string::String>,
     }
@@ -12607,7 +12635,7 @@ impl OriginGroupMember {
 
 /// <p>A complex data type that includes information about the failover criteria for an origin group, including the status codes for which CloudFront will failover from the primary origin to the second origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginGroupFailoverCriteria {
     /// <p>The status codes that, when returned from the primary origin, will trigger CloudFront to failover to the second origin.</p>
     #[doc(hidden)]
@@ -12619,18 +12647,11 @@ impl OriginGroupFailoverCriteria {
         self.status_codes.as_ref()
     }
 }
-impl std::fmt::Debug for OriginGroupFailoverCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginGroupFailoverCriteria");
-        formatter.field("status_codes", &self.status_codes);
-        formatter.finish()
-    }
-}
 /// See [`OriginGroupFailoverCriteria`](crate::model::OriginGroupFailoverCriteria).
 pub mod origin_group_failover_criteria {
 
     /// A builder for [`OriginGroupFailoverCriteria`](crate::model::OriginGroupFailoverCriteria).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_codes: std::option::Option<crate::model::StatusCodes>,
     }
@@ -12665,7 +12686,7 @@ impl OriginGroupFailoverCriteria {
 
 /// <p>A complex data type for the status codes that you specify that, when returned by a primary origin, trigger CloudFront to failover to a second origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatusCodes {
     /// <p>The number of status codes.</p>
     #[doc(hidden)]
@@ -12684,19 +12705,11 @@ impl StatusCodes {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for StatusCodes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatusCodes");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`StatusCodes`](crate::model::StatusCodes).
 pub mod status_codes {
 
     /// A builder for [`StatusCodes`](crate::model::StatusCodes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<i32>>,
@@ -12746,7 +12759,7 @@ impl StatusCodes {
 
 /// <p>Contains information about the origins for this distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Origins {
     /// <p>The number of origins for this distribution.</p>
     #[doc(hidden)]
@@ -12765,19 +12778,11 @@ impl Origins {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for Origins {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Origins");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`Origins`](crate::model::Origins).
 pub mod origins {
 
     /// A builder for [`Origins`](crate::model::Origins).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Origin>>,
@@ -12843,7 +12848,7 @@ impl Origins {
 /// </ul>
 /// <p>For the current maximum number of origins that you can specify per distribution, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html#limits-web-distributions">General Quotas on Web Distributions</a> in the <i>Amazon CloudFront Developer Guide</i> (quotas were formerly referred to as limits).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Origin {
     /// <p>A unique identifier for the origin. This value must be unique within the distribution.</p>
     /// <p>Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
@@ -12936,27 +12941,11 @@ impl Origin {
         self.origin_access_control_id.as_deref()
     }
 }
-impl std::fmt::Debug for Origin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Origin");
-        formatter.field("id", &self.id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("origin_path", &self.origin_path);
-        formatter.field("custom_headers", &self.custom_headers);
-        formatter.field("s3_origin_config", &self.s3_origin_config);
-        formatter.field("custom_origin_config", &self.custom_origin_config);
-        formatter.field("connection_attempts", &self.connection_attempts);
-        formatter.field("connection_timeout", &self.connection_timeout);
-        formatter.field("origin_shield", &self.origin_shield);
-        formatter.field("origin_access_control_id", &self.origin_access_control_id);
-        formatter.finish()
-    }
-}
 /// See [`Origin`](crate::model::Origin).
 pub mod origin {
 
     /// A builder for [`Origin`](crate::model::Origin).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -13130,7 +13119,7 @@ impl Origin {
 /// <p>CloudFront Origin Shield.</p>
 /// <p>Using Origin Shield can help reduce the load on your origin. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginShield {
     /// <p>A flag that specifies whether Origin Shield is enabled.</p>
     /// <p>When it’s enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When it’s disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional edge caches.</p>
@@ -13155,19 +13144,11 @@ impl OriginShield {
         self.origin_shield_region.as_deref()
     }
 }
-impl std::fmt::Debug for OriginShield {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginShield");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("origin_shield_region", &self.origin_shield_region);
-        formatter.finish()
-    }
-}
 /// See [`OriginShield`](crate::model::OriginShield).
 pub mod origin_shield {
 
     /// A builder for [`OriginShield`](crate::model::OriginShield).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) origin_shield_region: std::option::Option<std::string::String>,
@@ -13220,7 +13201,7 @@ impl OriginShield {
 
 /// <p>A custom origin. A custom origin is any origin that is <i>not</i> an Amazon S3 bucket, with one exception. An Amazon S3 bucket that is <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">configured with static website hosting</a> <i>is</i> a custom origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomOriginConfig {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
     #[doc(hidden)]
@@ -13285,23 +13266,11 @@ impl CustomOriginConfig {
         self.origin_keepalive_timeout
     }
 }
-impl std::fmt::Debug for CustomOriginConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomOriginConfig");
-        formatter.field("http_port", &self.http_port);
-        formatter.field("https_port", &self.https_port);
-        formatter.field("origin_protocol_policy", &self.origin_protocol_policy);
-        formatter.field("origin_ssl_protocols", &self.origin_ssl_protocols);
-        formatter.field("origin_read_timeout", &self.origin_read_timeout);
-        formatter.field("origin_keepalive_timeout", &self.origin_keepalive_timeout);
-        formatter.finish()
-    }
-}
 /// See [`CustomOriginConfig`](crate::model::CustomOriginConfig).
 pub mod custom_origin_config {
 
     /// A builder for [`CustomOriginConfig`](crate::model::CustomOriginConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_port: std::option::Option<i32>,
         pub(crate) https_port: std::option::Option<i32>,
@@ -13415,7 +13384,7 @@ impl CustomOriginConfig {
 
 /// <p>A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginSslProtocols {
     /// <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection with this origin. </p>
     #[doc(hidden)]
@@ -13434,19 +13403,11 @@ impl OriginSslProtocols {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for OriginSslProtocols {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginSslProtocols");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`OriginSslProtocols`](crate::model::OriginSslProtocols).
 pub mod origin_ssl_protocols {
 
     /// A builder for [`OriginSslProtocols`](crate::model::OriginSslProtocols).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::SslProtocol>>,
@@ -13497,6 +13458,43 @@ impl OriginSslProtocols {
     }
 }
 
+/// When writing a match expression against `SslProtocol`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sslprotocol = unimplemented!();
+/// match sslprotocol {
+///     SslProtocol::SsLv3 => { /* ... */ },
+///     SslProtocol::TlSv1 => { /* ... */ },
+///     SslProtocol::TlSv11 => { /* ... */ },
+///     SslProtocol::TlSv12 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sslprotocol` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SslProtocol::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SslProtocol::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SslProtocol::NewFeature` is defined.
+/// Specifically, when `sslprotocol` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SslProtocol::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -13517,8 +13515,8 @@ pub enum SslProtocol {
     TlSv11,
     #[allow(missing_docs)] // documentation missing in model
     TlSv12,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SslProtocol {
     fn from(s: &str) -> Self {
@@ -13527,7 +13525,7 @@ impl std::convert::From<&str> for SslProtocol {
             "TLSv1" => SslProtocol::TlSv1,
             "TLSv1.1" => SslProtocol::TlSv11,
             "TLSv1.2" => SslProtocol::TlSv12,
-            other => SslProtocol::Unknown(other.to_owned()),
+            other => SslProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -13546,11 +13544,11 @@ impl SslProtocol {
             SslProtocol::TlSv1 => "TLSv1",
             SslProtocol::TlSv11 => "TLSv1.1",
             SslProtocol::TlSv12 => "TLSv1.2",
-            SslProtocol::Unknown(s) => s.as_ref(),
+            SslProtocol::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2"]
     }
 }
@@ -13560,6 +13558,42 @@ impl AsRef<str> for SslProtocol {
     }
 }
 
+/// When writing a match expression against `OriginProtocolPolicy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let originprotocolpolicy = unimplemented!();
+/// match originprotocolpolicy {
+///     OriginProtocolPolicy::HttpOnly => { /* ... */ },
+///     OriginProtocolPolicy::HttpsOnly => { /* ... */ },
+///     OriginProtocolPolicy::MatchViewer => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `originprotocolpolicy` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OriginProtocolPolicy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OriginProtocolPolicy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OriginProtocolPolicy::NewFeature` is defined.
+/// Specifically, when `originprotocolpolicy` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OriginProtocolPolicy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -13578,8 +13612,8 @@ pub enum OriginProtocolPolicy {
     HttpsOnly,
     #[allow(missing_docs)] // documentation missing in model
     MatchViewer,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OriginProtocolPolicy {
     fn from(s: &str) -> Self {
@@ -13587,7 +13621,9 @@ impl std::convert::From<&str> for OriginProtocolPolicy {
             "http-only" => OriginProtocolPolicy::HttpOnly,
             "https-only" => OriginProtocolPolicy::HttpsOnly,
             "match-viewer" => OriginProtocolPolicy::MatchViewer,
-            other => OriginProtocolPolicy::Unknown(other.to_owned()),
+            other => {
+                OriginProtocolPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -13605,11 +13641,11 @@ impl OriginProtocolPolicy {
             OriginProtocolPolicy::HttpOnly => "http-only",
             OriginProtocolPolicy::HttpsOnly => "https-only",
             OriginProtocolPolicy::MatchViewer => "match-viewer",
-            OriginProtocolPolicy::Unknown(s) => s.as_ref(),
+            OriginProtocolPolicy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["http-only", "https-only", "match-viewer"]
     }
 }
@@ -13621,7 +13657,7 @@ impl AsRef<str> for OriginProtocolPolicy {
 
 /// <p>A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin or an S3 bucket that is configured as a website endpoint, use the <code>CustomOriginConfig</code> element instead.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3OriginConfig {
     /// <p>The CloudFront origin access identity to associate with the origin. Use an origin access identity to configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through CloudFront. The format of the value is:</p>
     /// <p>origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i> </p>
@@ -13645,18 +13681,11 @@ impl S3OriginConfig {
         self.origin_access_identity.as_deref()
     }
 }
-impl std::fmt::Debug for S3OriginConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3OriginConfig");
-        formatter.field("origin_access_identity", &self.origin_access_identity);
-        formatter.finish()
-    }
-}
 /// See [`S3OriginConfig`](crate::model::S3OriginConfig).
 pub mod s3_origin_config {
 
     /// A builder for [`S3OriginConfig`](crate::model::S3OriginConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origin_access_identity: std::option::Option<std::string::String>,
     }
@@ -13703,7 +13732,7 @@ impl S3OriginConfig {
 
 /// <p>A complex type that contains the list of Custom Headers for each origin. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomHeaders {
     /// <p>The number of custom headers, if any, for this distribution.</p>
     #[doc(hidden)]
@@ -13722,19 +13751,11 @@ impl CustomHeaders {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for CustomHeaders {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomHeaders");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`CustomHeaders`](crate::model::CustomHeaders).
 pub mod custom_headers {
 
     /// A builder for [`CustomHeaders`](crate::model::CustomHeaders).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::OriginCustomHeader>>,
@@ -13818,7 +13839,7 @@ impl std::fmt::Debug for OriginCustomHeader {
 pub mod origin_custom_header {
 
     /// A builder for [`OriginCustomHeader`](crate::model::OriginCustomHeader).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) header_name: std::option::Option<std::string::String>,
         pub(crate) header_value: std::option::Option<std::string::String>,
@@ -13852,6 +13873,14 @@ pub mod origin_custom_header {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("header_name", &self.header_name);
+            formatter.field("header_value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl OriginCustomHeader {
     /// Creates a new builder-style object to manufacture [`OriginCustomHeader`](crate::model::OriginCustomHeader).
@@ -13862,7 +13891,7 @@ impl OriginCustomHeader {
 
 /// <p>A list of key groups, and the public keys in each key group, that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActiveTrustedKeyGroups {
     /// <p>This field is <code>true</code> if any of the key groups have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
     #[doc(hidden)]
@@ -13888,20 +13917,11 @@ impl ActiveTrustedKeyGroups {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for ActiveTrustedKeyGroups {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActiveTrustedKeyGroups");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`ActiveTrustedKeyGroups`](crate::model::ActiveTrustedKeyGroups).
 pub mod active_trusted_key_groups {
 
     /// A builder for [`ActiveTrustedKeyGroups`](crate::model::ActiveTrustedKeyGroups).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) quantity: std::option::Option<i32>,
@@ -13966,7 +13986,7 @@ impl ActiveTrustedKeyGroups {
 
 /// <p>A list of identifiers for the public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KgKeyPairIds {
     /// <p>The identifier of the key group that contains the public keys.</p>
     #[doc(hidden)]
@@ -13985,19 +14005,11 @@ impl KgKeyPairIds {
         self.key_pair_ids.as_ref()
     }
 }
-impl std::fmt::Debug for KgKeyPairIds {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KgKeyPairIds");
-        formatter.field("key_group_id", &self.key_group_id);
-        formatter.field("key_pair_ids", &self.key_pair_ids);
-        formatter.finish()
-    }
-}
 /// See [`KgKeyPairIds`](crate::model::KgKeyPairIds).
 pub mod kg_key_pair_ids {
 
     /// A builder for [`KgKeyPairIds`](crate::model::KgKeyPairIds).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_group_id: std::option::Option<std::string::String>,
         pub(crate) key_pair_ids: std::option::Option<crate::model::KeyPairIds>,
@@ -14044,7 +14056,7 @@ impl KgKeyPairIds {
 
 /// <p>CloudFront origin access identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFrontOriginAccessIdentity {
     /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
     #[doc(hidden)]
@@ -14073,23 +14085,11 @@ impl CloudFrontOriginAccessIdentity {
         self.cloud_front_origin_access_identity_config.as_ref()
     }
 }
-impl std::fmt::Debug for CloudFrontOriginAccessIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFrontOriginAccessIdentity");
-        formatter.field("id", &self.id);
-        formatter.field("s3_canonical_user_id", &self.s3_canonical_user_id);
-        formatter.field(
-            "cloud_front_origin_access_identity_config",
-            &self.cloud_front_origin_access_identity_config,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CloudFrontOriginAccessIdentity`](crate::model::CloudFrontOriginAccessIdentity).
 pub mod cloud_front_origin_access_identity {
 
     /// A builder for [`CloudFrontOriginAccessIdentity`](crate::model::CloudFrontOriginAccessIdentity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) s3_canonical_user_id: std::option::Option<std::string::String>,
@@ -14156,7 +14156,7 @@ impl CloudFrontOriginAccessIdentity {
 
 /// <p>Origin access identity configuration. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFrontOriginAccessIdentityConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.</p>
@@ -14181,19 +14181,11 @@ impl CloudFrontOriginAccessIdentityConfig {
         self.comment.as_deref()
     }
 }
-impl std::fmt::Debug for CloudFrontOriginAccessIdentityConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFrontOriginAccessIdentityConfig");
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
-    }
-}
 /// See [`CloudFrontOriginAccessIdentityConfig`](crate::model::CloudFrontOriginAccessIdentityConfig).
 pub mod cloud_front_origin_access_identity_config {
 
     /// A builder for [`CloudFrontOriginAccessIdentityConfig`](crate::model::CloudFrontOriginAccessIdentityConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) caller_reference: std::option::Option<std::string::String>,
         pub(crate) comment: std::option::Option<std::string::String>,
@@ -14252,7 +14244,7 @@ impl CloudFrontOriginAccessIdentityConfig {
 /// </ul>
 /// <p>The headers, cookies, and query strings that are included in the cache key are automatically included in requests that CloudFront sends to the origin. CloudFront sends a request when it can’t find a valid object in its cache that matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>OriginRequestPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachePolicy {
     /// <p>The unique identifier for the cache policy.</p>
     #[doc(hidden)]
@@ -14278,20 +14270,11 @@ impl CachePolicy {
         self.cache_policy_config.as_ref()
     }
 }
-impl std::fmt::Debug for CachePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachePolicy");
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("cache_policy_config", &self.cache_policy_config);
-        formatter.finish()
-    }
-}
 /// See [`CachePolicy`](crate::model::CachePolicy).
 pub mod cache_policy {
 
     /// A builder for [`CachePolicy`](crate::model::CachePolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -14359,7 +14342,7 @@ impl CachePolicy {
 /// </ul>
 /// <p>The headers, cookies, and query strings that are included in the cache key are automatically included in requests that CloudFront sends to the origin. CloudFront sends a request when it can’t find a valid object in its cache that matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>OriginRequestPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachePolicyConfig {
     /// <p>A comment to describe the cache policy. The comment cannot be longer than 128 characters.</p>
     #[doc(hidden)]
@@ -14414,26 +14397,11 @@ impl CachePolicyConfig {
             .as_ref()
     }
 }
-impl std::fmt::Debug for CachePolicyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachePolicyConfig");
-        formatter.field("comment", &self.comment);
-        formatter.field("name", &self.name);
-        formatter.field("default_ttl", &self.default_ttl);
-        formatter.field("max_ttl", &self.max_ttl);
-        formatter.field("min_ttl", &self.min_ttl);
-        formatter.field(
-            "parameters_in_cache_key_and_forwarded_to_origin",
-            &self.parameters_in_cache_key_and_forwarded_to_origin,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CachePolicyConfig`](crate::model::CachePolicyConfig).
 pub mod cache_policy_config {
 
     /// A builder for [`CachePolicyConfig`](crate::model::CachePolicyConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -14538,7 +14506,7 @@ impl CachePolicyConfig {
 /// <p>This object determines the values that CloudFront includes in the cache key. These values can include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.</p>
 /// <p>The headers, cookies, and query strings that are included in the cache key are automatically included in requests that CloudFront sends to the origin. CloudFront sends a request when it can’t find an object in its cache that matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>OriginRequestPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParametersInCacheKeyAndForwardedToOrigin {
     /// <p>A flag that can affect whether the <code>Accept-Encoding</code> HTTP header is included in the cache key and included in requests that CloudFront sends to the origin.</p>
     /// <p>This field is related to the <code>EnableAcceptEncodingBrotli</code> field. If one or both of these fields is <code>true</code> <i>and</i> the viewer request includes the <code>Accept-Encoding</code> header, then CloudFront does the following:</p>
@@ -14616,28 +14584,11 @@ impl ParametersInCacheKeyAndForwardedToOrigin {
         self.query_strings_config.as_ref()
     }
 }
-impl std::fmt::Debug for ParametersInCacheKeyAndForwardedToOrigin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParametersInCacheKeyAndForwardedToOrigin");
-        formatter.field(
-            "enable_accept_encoding_gzip",
-            &self.enable_accept_encoding_gzip,
-        );
-        formatter.field(
-            "enable_accept_encoding_brotli",
-            &self.enable_accept_encoding_brotli,
-        );
-        formatter.field("headers_config", &self.headers_config);
-        formatter.field("cookies_config", &self.cookies_config);
-        formatter.field("query_strings_config", &self.query_strings_config);
-        formatter.finish()
-    }
-}
 /// See [`ParametersInCacheKeyAndForwardedToOrigin`](crate::model::ParametersInCacheKeyAndForwardedToOrigin).
 pub mod parameters_in_cache_key_and_forwarded_to_origin {
 
     /// A builder for [`ParametersInCacheKeyAndForwardedToOrigin`](crate::model::ParametersInCacheKeyAndForwardedToOrigin).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enable_accept_encoding_gzip: std::option::Option<bool>,
         pub(crate) enable_accept_encoding_brotli: std::option::Option<bool>,
@@ -14769,7 +14720,7 @@ impl ParametersInCacheKeyAndForwardedToOrigin {
 
 /// <p>An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the cache key and automatically included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachePolicyQueryStringsConfig {
     /// <p>Determines whether any URL query strings in viewer requests are included in the cache key and automatically included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -14802,19 +14753,11 @@ impl CachePolicyQueryStringsConfig {
         self.query_strings.as_ref()
     }
 }
-impl std::fmt::Debug for CachePolicyQueryStringsConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachePolicyQueryStringsConfig");
-        formatter.field("query_string_behavior", &self.query_string_behavior);
-        formatter.field("query_strings", &self.query_strings);
-        formatter.finish()
-    }
-}
 /// See [`CachePolicyQueryStringsConfig`](crate::model::CachePolicyQueryStringsConfig).
 pub mod cache_policy_query_strings_config {
 
     /// A builder for [`CachePolicyQueryStringsConfig`](crate::model::CachePolicyQueryStringsConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_string_behavior:
             std::option::Option<crate::model::CachePolicyQueryStringBehavior>,
@@ -14878,6 +14821,43 @@ impl CachePolicyQueryStringsConfig {
     }
 }
 
+/// When writing a match expression against `CachePolicyQueryStringBehavior`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let cachepolicyquerystringbehavior = unimplemented!();
+/// match cachepolicyquerystringbehavior {
+///     CachePolicyQueryStringBehavior::All => { /* ... */ },
+///     CachePolicyQueryStringBehavior::AllExcept => { /* ... */ },
+///     CachePolicyQueryStringBehavior::None => { /* ... */ },
+///     CachePolicyQueryStringBehavior::Whitelist => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `cachepolicyquerystringbehavior` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CachePolicyQueryStringBehavior::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CachePolicyQueryStringBehavior::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CachePolicyQueryStringBehavior::NewFeature` is defined.
+/// Specifically, when `cachepolicyquerystringbehavior` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CachePolicyQueryStringBehavior::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -14898,8 +14878,8 @@ pub enum CachePolicyQueryStringBehavior {
     None,
     #[allow(missing_docs)] // documentation missing in model
     Whitelist,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CachePolicyQueryStringBehavior {
     fn from(s: &str) -> Self {
@@ -14908,7 +14888,9 @@ impl std::convert::From<&str> for CachePolicyQueryStringBehavior {
             "allExcept" => CachePolicyQueryStringBehavior::AllExcept,
             "none" => CachePolicyQueryStringBehavior::None,
             "whitelist" => CachePolicyQueryStringBehavior::Whitelist,
-            other => CachePolicyQueryStringBehavior::Unknown(other.to_owned()),
+            other => CachePolicyQueryStringBehavior::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -14927,11 +14909,11 @@ impl CachePolicyQueryStringBehavior {
             CachePolicyQueryStringBehavior::AllExcept => "allExcept",
             CachePolicyQueryStringBehavior::None => "none",
             CachePolicyQueryStringBehavior::Whitelist => "whitelist",
-            CachePolicyQueryStringBehavior::Unknown(s) => s.as_ref(),
+            CachePolicyQueryStringBehavior::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["all", "allExcept", "none", "whitelist"]
     }
 }
@@ -14943,7 +14925,7 @@ impl AsRef<str> for CachePolicyQueryStringBehavior {
 
 /// <p>An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the cache key and automatically included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachePolicyCookiesConfig {
     /// <p>Determines whether any cookies in viewer requests are included in the cache key and automatically included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -14974,19 +14956,11 @@ impl CachePolicyCookiesConfig {
         self.cookies.as_ref()
     }
 }
-impl std::fmt::Debug for CachePolicyCookiesConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachePolicyCookiesConfig");
-        formatter.field("cookie_behavior", &self.cookie_behavior);
-        formatter.field("cookies", &self.cookies);
-        formatter.finish()
-    }
-}
 /// See [`CachePolicyCookiesConfig`](crate::model::CachePolicyCookiesConfig).
 pub mod cache_policy_cookies_config {
 
     /// A builder for [`CachePolicyCookiesConfig`](crate::model::CachePolicyCookiesConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cookie_behavior: std::option::Option<crate::model::CachePolicyCookieBehavior>,
         pub(crate) cookies: std::option::Option<crate::model::CookieNames>,
@@ -15046,6 +15020,43 @@ impl CachePolicyCookiesConfig {
     }
 }
 
+/// When writing a match expression against `CachePolicyCookieBehavior`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let cachepolicycookiebehavior = unimplemented!();
+/// match cachepolicycookiebehavior {
+///     CachePolicyCookieBehavior::All => { /* ... */ },
+///     CachePolicyCookieBehavior::AllExcept => { /* ... */ },
+///     CachePolicyCookieBehavior::None => { /* ... */ },
+///     CachePolicyCookieBehavior::Whitelist => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `cachepolicycookiebehavior` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CachePolicyCookieBehavior::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CachePolicyCookieBehavior::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CachePolicyCookieBehavior::NewFeature` is defined.
+/// Specifically, when `cachepolicycookiebehavior` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CachePolicyCookieBehavior::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -15066,8 +15077,8 @@ pub enum CachePolicyCookieBehavior {
     None,
     #[allow(missing_docs)] // documentation missing in model
     Whitelist,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CachePolicyCookieBehavior {
     fn from(s: &str) -> Self {
@@ -15076,7 +15087,9 @@ impl std::convert::From<&str> for CachePolicyCookieBehavior {
             "allExcept" => CachePolicyCookieBehavior::AllExcept,
             "none" => CachePolicyCookieBehavior::None,
             "whitelist" => CachePolicyCookieBehavior::Whitelist,
-            other => CachePolicyCookieBehavior::Unknown(other.to_owned()),
+            other => CachePolicyCookieBehavior::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -15095,11 +15108,11 @@ impl CachePolicyCookieBehavior {
             CachePolicyCookieBehavior::AllExcept => "allExcept",
             CachePolicyCookieBehavior::None => "none",
             CachePolicyCookieBehavior::Whitelist => "whitelist",
-            CachePolicyCookieBehavior::Unknown(s) => s.as_ref(),
+            CachePolicyCookieBehavior::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["all", "allExcept", "none", "whitelist"]
     }
 }
@@ -15111,7 +15124,7 @@ impl AsRef<str> for CachePolicyCookieBehavior {
 
 /// <p>An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and automatically included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachePolicyHeadersConfig {
     /// <p>Determines whether any HTTP headers are included in the cache key and automatically included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -15138,19 +15151,11 @@ impl CachePolicyHeadersConfig {
         self.headers.as_ref()
     }
 }
-impl std::fmt::Debug for CachePolicyHeadersConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachePolicyHeadersConfig");
-        formatter.field("header_behavior", &self.header_behavior);
-        formatter.field("headers", &self.headers);
-        formatter.finish()
-    }
-}
 /// See [`CachePolicyHeadersConfig`](crate::model::CachePolicyHeadersConfig).
 pub mod cache_policy_headers_config {
 
     /// A builder for [`CachePolicyHeadersConfig`](crate::model::CachePolicyHeadersConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) header_behavior: std::option::Option<crate::model::CachePolicyHeaderBehavior>,
         pub(crate) headers: std::option::Option<crate::model::Headers>,
@@ -15203,6 +15208,41 @@ impl CachePolicyHeadersConfig {
     }
 }
 
+/// When writing a match expression against `CachePolicyHeaderBehavior`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let cachepolicyheaderbehavior = unimplemented!();
+/// match cachepolicyheaderbehavior {
+///     CachePolicyHeaderBehavior::None => { /* ... */ },
+///     CachePolicyHeaderBehavior::Whitelist => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `cachepolicyheaderbehavior` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CachePolicyHeaderBehavior::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CachePolicyHeaderBehavior::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CachePolicyHeaderBehavior::NewFeature` is defined.
+/// Specifically, when `cachepolicyheaderbehavior` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CachePolicyHeaderBehavior::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -15219,15 +15259,17 @@ pub enum CachePolicyHeaderBehavior {
     None,
     #[allow(missing_docs)] // documentation missing in model
     Whitelist,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CachePolicyHeaderBehavior {
     fn from(s: &str) -> Self {
         match s {
             "none" => CachePolicyHeaderBehavior::None,
             "whitelist" => CachePolicyHeaderBehavior::Whitelist,
-            other => CachePolicyHeaderBehavior::Unknown(other.to_owned()),
+            other => CachePolicyHeaderBehavior::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -15244,11 +15286,11 @@ impl CachePolicyHeaderBehavior {
         match self {
             CachePolicyHeaderBehavior::None => "none",
             CachePolicyHeaderBehavior::Whitelist => "whitelist",
-            CachePolicyHeaderBehavior::Unknown(s) => s.as_ref(),
+            CachePolicyHeaderBehavior::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["none", "whitelist"]
     }
 }
@@ -15260,7 +15302,7 @@ impl AsRef<str> for CachePolicyHeaderBehavior {
 
 /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagKeys {
     /// <p> A complex type that contains <code>Tag</code> key elements.</p>
     #[doc(hidden)]
@@ -15272,18 +15314,11 @@ impl TagKeys {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for TagKeys {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagKeys");
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`TagKeys`](crate::model::TagKeys).
 pub mod tag_keys {
 
     /// A builder for [`TagKeys`](crate::model::TagKeys).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -15380,7 +15415,7 @@ impl std::fmt::Debug for TestResult {
 pub mod test_result {
 
     /// A builder for [`TestResult`](crate::model::TestResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) function_summary: std::option::Option<crate::model::FunctionSummary>,
         pub(crate) compute_utilization: std::option::Option<std::string::String>,
@@ -15471,6 +15506,20 @@ pub mod test_result {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("function_summary", &self.function_summary);
+            formatter.field("compute_utilization", &self.compute_utilization);
+            formatter.field(
+                "function_execution_logs",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("function_error_message", &"*** Sensitive Data Redacted ***");
+            formatter.field("function_output", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl TestResult {
     /// Creates a new builder-style object to manufacture [`TestResult`](crate::model::TestResult).
@@ -15481,7 +15530,7 @@ impl TestResult {
 
 /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tags {
     /// <p> A complex type that contains <code>Tag</code> elements.</p>
     #[doc(hidden)]
@@ -15493,18 +15542,11 @@ impl Tags {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for Tags {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tags");
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`Tags`](crate::model::Tags).
 pub mod tags {
 
     /// A builder for [`Tags`](crate::model::Tags).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -15543,7 +15585,7 @@ impl Tags {
 
 /// <p> A complex type that contains <code>Tag</code> key and <code>Tag</code> value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p> A string that contains <code>Tag</code> key.</p>
     /// <p>The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
@@ -15566,19 +15608,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -15626,7 +15660,7 @@ impl Tag {
 
 /// <p>A streaming distribution list. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingDistributionList {
     /// <p>The value you provided for the <code>Marker</code> request parameter. </p>
     #[doc(hidden)]
@@ -15673,23 +15707,11 @@ impl StreamingDistributionList {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for StreamingDistributionList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingDistributionList");
-        formatter.field("marker", &self.marker);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`StreamingDistributionList`](crate::model::StreamingDistributionList).
 pub mod streaming_distribution_list {
 
     /// A builder for [`StreamingDistributionList`](crate::model::StreamingDistributionList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -15791,7 +15813,7 @@ impl StreamingDistributionList {
 
 /// <p> A summary of the information for a CloudFront streaming distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingDistributionSummary {
     /// <p>The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.</p>
     #[doc(hidden)]
@@ -15875,28 +15897,11 @@ impl StreamingDistributionSummary {
         self.enabled
     }
 }
-impl std::fmt::Debug for StreamingDistributionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingDistributionSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("s3_origin", &self.s3_origin);
-        formatter.field("aliases", &self.aliases);
-        formatter.field("trusted_signers", &self.trusted_signers);
-        formatter.field("comment", &self.comment);
-        formatter.field("price_class", &self.price_class);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 /// See [`StreamingDistributionSummary`](crate::model::StreamingDistributionSummary).
 pub mod streaming_distribution_summary {
 
     /// A builder for [`StreamingDistributionSummary`](crate::model::StreamingDistributionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -16059,7 +16064,7 @@ impl StreamingDistributionSummary {
 
 /// <p>A list of response headers policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing response headers policies where you left off.</p>
     #[doc(hidden)]
@@ -16092,21 +16097,11 @@ impl ResponseHeadersPolicyList {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicyList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicyList`](crate::model::ResponseHeadersPolicyList).
 pub mod response_headers_policy_list {
 
     /// A builder for [`ResponseHeadersPolicyList`](crate::model::ResponseHeadersPolicyList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -16184,7 +16179,7 @@ impl ResponseHeadersPolicyList {
 
 /// <p>Contains a response headers policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicySummary {
     /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
     #[doc(hidden)]
@@ -16205,19 +16200,11 @@ impl ResponseHeadersPolicySummary {
         self.response_headers_policy.as_ref()
     }
 }
-impl std::fmt::Debug for ResponseHeadersPolicySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicySummary");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("response_headers_policy", &self.response_headers_policy);
-        formatter.finish()
-    }
-}
 /// See [`ResponseHeadersPolicySummary`](crate::model::ResponseHeadersPolicySummary).
 pub mod response_headers_policy_summary {
 
     /// A builder for [`ResponseHeadersPolicySummary`](crate::model::ResponseHeadersPolicySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ResponseHeadersPolicyType>,
         pub(crate) response_headers_policy:
@@ -16269,6 +16256,41 @@ impl ResponseHeadersPolicySummary {
     }
 }
 
+/// When writing a match expression against `ResponseHeadersPolicyType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let responseheaderspolicytype = unimplemented!();
+/// match responseheaderspolicytype {
+///     ResponseHeadersPolicyType::Custom => { /* ... */ },
+///     ResponseHeadersPolicyType::Managed => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `responseheaderspolicytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResponseHeadersPolicyType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResponseHeadersPolicyType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResponseHeadersPolicyType::NewFeature` is defined.
+/// Specifically, when `responseheaderspolicytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResponseHeadersPolicyType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -16285,15 +16307,17 @@ pub enum ResponseHeadersPolicyType {
     Custom,
     #[allow(missing_docs)] // documentation missing in model
     Managed,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResponseHeadersPolicyType {
     fn from(s: &str) -> Self {
         match s {
             "custom" => ResponseHeadersPolicyType::Custom,
             "managed" => ResponseHeadersPolicyType::Managed,
-            other => ResponseHeadersPolicyType::Unknown(other.to_owned()),
+            other => ResponseHeadersPolicyType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -16310,11 +16334,11 @@ impl ResponseHeadersPolicyType {
         match self {
             ResponseHeadersPolicyType::Custom => "custom",
             ResponseHeadersPolicyType::Managed => "managed",
-            ResponseHeadersPolicyType::Unknown(s) => s.as_ref(),
+            ResponseHeadersPolicyType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["custom", "managed"]
     }
 }
@@ -16326,7 +16350,7 @@ impl AsRef<str> for ResponseHeadersPolicyType {
 
 /// <p>A list of real-time log configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RealtimeLogConfigs {
     /// <p>The maximum number of real-time log configurations requested.</p>
     #[doc(hidden)]
@@ -16366,22 +16390,11 @@ impl RealtimeLogConfigs {
         self.next_marker.as_deref()
     }
 }
-impl std::fmt::Debug for RealtimeLogConfigs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RealtimeLogConfigs");
-        formatter.field("max_items", &self.max_items);
-        formatter.field("items", &self.items);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("marker", &self.marker);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.finish()
-    }
-}
 /// See [`RealtimeLogConfigs`](crate::model::RealtimeLogConfigs).
 pub mod realtime_log_configs {
 
     /// A builder for [`RealtimeLogConfigs`](crate::model::RealtimeLogConfigs).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_items: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::RealtimeLogConfig>>,
@@ -16470,7 +16483,7 @@ impl RealtimeLogConfigs {
 
 /// <p>A list of public keys that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicKeyList {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your public keys where you left off.</p>
     #[doc(hidden)]
@@ -16503,21 +16516,11 @@ impl PublicKeyList {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for PublicKeyList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicKeyList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`PublicKeyList`](crate::model::PublicKeyList).
 pub mod public_key_list {
 
     /// A builder for [`PublicKeyList`](crate::model::PublicKeyList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -16594,7 +16597,7 @@ impl PublicKeyList {
 
 /// <p>Contains information about a public key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicKeySummary {
     /// <p>The identifier of the public key.</p>
     #[doc(hidden)]
@@ -16634,22 +16637,11 @@ impl PublicKeySummary {
         self.comment.as_deref()
     }
 }
-impl std::fmt::Debug for PublicKeySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicKeySummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("encoded_key", &self.encoded_key);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
-    }
-}
 /// See [`PublicKeySummary`](crate::model::PublicKeySummary).
 pub mod public_key_summary {
 
     /// A builder for [`PublicKeySummary`](crate::model::PublicKeySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -16732,7 +16724,7 @@ impl PublicKeySummary {
 
 /// <p>A list of origin request policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginRequestPolicyList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing origin request policies where you left off.</p>
     #[doc(hidden)]
@@ -16765,21 +16757,11 @@ impl OriginRequestPolicyList {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for OriginRequestPolicyList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginRequestPolicyList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`OriginRequestPolicyList`](crate::model::OriginRequestPolicyList).
 pub mod origin_request_policy_list {
 
     /// A builder for [`OriginRequestPolicyList`](crate::model::OriginRequestPolicyList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -16857,7 +16839,7 @@ impl OriginRequestPolicyList {
 
 /// <p>Contains an origin request policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginRequestPolicySummary {
     /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
     #[doc(hidden)]
@@ -16876,19 +16858,11 @@ impl OriginRequestPolicySummary {
         self.origin_request_policy.as_ref()
     }
 }
-impl std::fmt::Debug for OriginRequestPolicySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginRequestPolicySummary");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("origin_request_policy", &self.origin_request_policy);
-        formatter.finish()
-    }
-}
 /// See [`OriginRequestPolicySummary`](crate::model::OriginRequestPolicySummary).
 pub mod origin_request_policy_summary {
 
     /// A builder for [`OriginRequestPolicySummary`](crate::model::OriginRequestPolicySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::OriginRequestPolicyType>,
         pub(crate) origin_request_policy: std::option::Option<crate::model::OriginRequestPolicy>,
@@ -16936,6 +16910,41 @@ impl OriginRequestPolicySummary {
     }
 }
 
+/// When writing a match expression against `OriginRequestPolicyType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let originrequestpolicytype = unimplemented!();
+/// match originrequestpolicytype {
+///     OriginRequestPolicyType::Custom => { /* ... */ },
+///     OriginRequestPolicyType::Managed => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `originrequestpolicytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OriginRequestPolicyType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OriginRequestPolicyType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OriginRequestPolicyType::NewFeature` is defined.
+/// Specifically, when `originrequestpolicytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OriginRequestPolicyType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -16952,15 +16961,17 @@ pub enum OriginRequestPolicyType {
     Custom,
     #[allow(missing_docs)] // documentation missing in model
     Managed,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OriginRequestPolicyType {
     fn from(s: &str) -> Self {
         match s {
             "custom" => OriginRequestPolicyType::Custom,
             "managed" => OriginRequestPolicyType::Managed,
-            other => OriginRequestPolicyType::Unknown(other.to_owned()),
+            other => OriginRequestPolicyType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -16977,11 +16988,11 @@ impl OriginRequestPolicyType {
         match self {
             OriginRequestPolicyType::Custom => "custom",
             OriginRequestPolicyType::Managed => "managed",
-            OriginRequestPolicyType::Unknown(s) => s.as_ref(),
+            OriginRequestPolicyType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["custom", "managed"]
     }
 }
@@ -16993,7 +17004,7 @@ impl AsRef<str> for OriginRequestPolicyType {
 
 /// <p>A list of CloudFront origin access controls.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginAccessControlList {
     /// <p>The value of the <code>Marker</code> field that was provided in the request.</p>
     #[doc(hidden)]
@@ -17040,23 +17051,11 @@ impl OriginAccessControlList {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for OriginAccessControlList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginAccessControlList");
-        formatter.field("marker", &self.marker);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`OriginAccessControlList`](crate::model::OriginAccessControlList).
 pub mod origin_access_control_list {
 
     /// A builder for [`OriginAccessControlList`](crate::model::OriginAccessControlList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -17158,7 +17157,7 @@ impl OriginAccessControlList {
 
 /// <p>A CloudFront origin access control.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginAccessControlSummary {
     /// <p>The unique identifier of the origin access control.</p>
     #[doc(hidden)]
@@ -17222,26 +17221,11 @@ impl OriginAccessControlSummary {
         self.origin_access_control_origin_type.as_ref()
     }
 }
-impl std::fmt::Debug for OriginAccessControlSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginAccessControlSummary");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field("signing_protocol", &self.signing_protocol);
-        formatter.field("signing_behavior", &self.signing_behavior);
-        formatter.field(
-            "origin_access_control_origin_type",
-            &self.origin_access_control_origin_type,
-        );
-        formatter.finish()
-    }
-}
 /// See [`OriginAccessControlSummary`](crate::model::OriginAccessControlSummary).
 pub mod origin_access_control_summary {
 
     /// A builder for [`OriginAccessControlSummary`](crate::model::OriginAccessControlSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -17364,7 +17348,7 @@ impl OriginAccessControlSummary {
 
 /// <p>A list of key groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyGroupList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing key groups.</p>
     #[doc(hidden)]
@@ -17397,21 +17381,11 @@ impl KeyGroupList {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for KeyGroupList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyGroupList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`KeyGroupList`](crate::model::KeyGroupList).
 pub mod key_group_list {
 
     /// A builder for [`KeyGroupList`](crate::model::KeyGroupList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -17488,7 +17462,7 @@ impl KeyGroupList {
 
 /// <p>Contains information about a key group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyGroupSummary {
     /// <p>A key group.</p>
     #[doc(hidden)]
@@ -17500,18 +17474,11 @@ impl KeyGroupSummary {
         self.key_group.as_ref()
     }
 }
-impl std::fmt::Debug for KeyGroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyGroupSummary");
-        formatter.field("key_group", &self.key_group);
-        formatter.finish()
-    }
-}
 /// See [`KeyGroupSummary`](crate::model::KeyGroupSummary).
 pub mod key_group_summary {
 
     /// A builder for [`KeyGroupSummary`](crate::model::KeyGroupSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_group: std::option::Option<crate::model::KeyGroup>,
     }
@@ -17543,7 +17510,7 @@ impl KeyGroupSummary {
 
 /// <p>The <code>InvalidationList</code> complex type describes the list of invalidation objects. For more information about invalidation, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating Objects (Web Distributions Only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidationList {
     /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
     #[doc(hidden)]
@@ -17590,23 +17557,11 @@ impl InvalidationList {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for InvalidationList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidationList");
-        formatter.field("marker", &self.marker);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`InvalidationList`](crate::model::InvalidationList).
 pub mod invalidation_list {
 
     /// A builder for [`InvalidationList`](crate::model::InvalidationList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -17707,7 +17662,7 @@ impl InvalidationList {
 
 /// <p>A summary of an invalidation request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidationSummary {
     /// <p>The unique ID for an invalidation request.</p>
     #[doc(hidden)]
@@ -17733,20 +17688,11 @@ impl InvalidationSummary {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for InvalidationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidationSummary");
-        formatter.field("id", &self.id);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`InvalidationSummary`](crate::model::InvalidationSummary).
 pub mod invalidation_summary {
 
     /// A builder for [`InvalidationSummary`](crate::model::InvalidationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -17805,7 +17751,7 @@ impl InvalidationSummary {
 
 /// <p>A list of CloudFront functions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing functions where you left off.</p>
     #[doc(hidden)]
@@ -17838,21 +17784,11 @@ impl FunctionList {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for FunctionList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`FunctionList`](crate::model::FunctionList).
 pub mod function_list {
 
     /// A builder for [`FunctionList`](crate::model::FunctionList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -17929,7 +17865,7 @@ impl FunctionList {
 
 /// <p>List of field-level encryption profiles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfileList {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your profiles where you left off.</p>
     #[doc(hidden)]
@@ -17964,21 +17900,11 @@ impl FieldLevelEncryptionProfileList {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for FieldLevelEncryptionProfileList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionProfileList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`FieldLevelEncryptionProfileList`](crate::model::FieldLevelEncryptionProfileList).
 pub mod field_level_encryption_profile_list {
 
     /// A builder for [`FieldLevelEncryptionProfileList`](crate::model::FieldLevelEncryptionProfileList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -18058,7 +17984,7 @@ impl FieldLevelEncryptionProfileList {
 
 /// <p>The field-level encryption profile summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfileSummary {
     /// <p>ID for the field-level encryption profile summary.</p>
     #[doc(hidden)]
@@ -18098,22 +18024,11 @@ impl FieldLevelEncryptionProfileSummary {
         self.comment.as_deref()
     }
 }
-impl std::fmt::Debug for FieldLevelEncryptionProfileSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionProfileSummary");
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("name", &self.name);
-        formatter.field("encryption_entities", &self.encryption_entities);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
-    }
-}
 /// See [`FieldLevelEncryptionProfileSummary`](crate::model::FieldLevelEncryptionProfileSummary).
 pub mod field_level_encryption_profile_summary {
 
     /// A builder for [`FieldLevelEncryptionProfileSummary`](crate::model::FieldLevelEncryptionProfileSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -18199,7 +18114,7 @@ impl FieldLevelEncryptionProfileSummary {
 
 /// <p>List of field-level encrpytion configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionList {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your configurations where you left off.</p>
     #[doc(hidden)]
@@ -18232,21 +18147,11 @@ impl FieldLevelEncryptionList {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for FieldLevelEncryptionList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`FieldLevelEncryptionList`](crate::model::FieldLevelEncryptionList).
 pub mod field_level_encryption_list {
 
     /// A builder for [`FieldLevelEncryptionList`](crate::model::FieldLevelEncryptionList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -18324,7 +18229,7 @@ impl FieldLevelEncryptionList {
 
 /// <p>A summary of a field-level encryption item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionSummary {
     /// <p>The unique ID of a field-level encryption item.</p>
     #[doc(hidden)]
@@ -18368,25 +18273,11 @@ impl FieldLevelEncryptionSummary {
         self.content_type_profile_config.as_ref()
     }
 }
-impl std::fmt::Debug for FieldLevelEncryptionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionSummary");
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("comment", &self.comment);
-        formatter.field("query_arg_profile_config", &self.query_arg_profile_config);
-        formatter.field(
-            "content_type_profile_config",
-            &self.content_type_profile_config,
-        );
-        formatter.finish()
-    }
-}
 /// See [`FieldLevelEncryptionSummary`](crate::model::FieldLevelEncryptionSummary).
 pub mod field_level_encryption_summary {
 
     /// A builder for [`FieldLevelEncryptionSummary`](crate::model::FieldLevelEncryptionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -18483,7 +18374,7 @@ impl FieldLevelEncryptionSummary {
 
 /// <p>A distribution list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributionList {
     /// <p>The value you provided for the <code>Marker</code> request parameter.</p>
     #[doc(hidden)]
@@ -18530,23 +18421,11 @@ impl DistributionList {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for DistributionList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributionList");
-        formatter.field("marker", &self.marker);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`DistributionList`](crate::model::DistributionList).
 pub mod distribution_list {
 
     /// A builder for [`DistributionList`](crate::model::DistributionList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -18647,7 +18526,7 @@ impl DistributionList {
 
 /// <p>A summary of the information about a CloudFront distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributionSummary {
     /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.</p>
     #[doc(hidden)]
@@ -18798,37 +18677,11 @@ impl DistributionSummary {
         self.alias_icp_recordals.as_deref()
     }
 }
-impl std::fmt::Debug for DistributionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributionSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("aliases", &self.aliases);
-        formatter.field("origins", &self.origins);
-        formatter.field("origin_groups", &self.origin_groups);
-        formatter.field("default_cache_behavior", &self.default_cache_behavior);
-        formatter.field("cache_behaviors", &self.cache_behaviors);
-        formatter.field("custom_error_responses", &self.custom_error_responses);
-        formatter.field("comment", &self.comment);
-        formatter.field("price_class", &self.price_class);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("viewer_certificate", &self.viewer_certificate);
-        formatter.field("restrictions", &self.restrictions);
-        formatter.field("web_acl_id", &self.web_acl_id);
-        formatter.field("http_version", &self.http_version);
-        formatter.field("is_ipv6_enabled", &self.is_ipv6_enabled);
-        formatter.field("alias_icp_recordals", &self.alias_icp_recordals);
-        formatter.finish()
-    }
-}
 /// See [`DistributionSummary`](crate::model::DistributionSummary).
 pub mod distribution_summary {
 
     /// A builder for [`DistributionSummary`](crate::model::DistributionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -19127,7 +18980,7 @@ impl DistributionSummary {
 
 /// <p>A list of distribution IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributionIdList {
     /// <p>The value provided in the <code>Marker</code> request field.</p>
     #[doc(hidden)]
@@ -19174,23 +19027,11 @@ impl DistributionIdList {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for DistributionIdList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributionIdList");
-        formatter.field("marker", &self.marker);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`DistributionIdList`](crate::model::DistributionIdList).
 pub mod distribution_id_list {
 
     /// A builder for [`DistributionIdList`](crate::model::DistributionIdList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -19291,7 +19132,7 @@ impl DistributionIdList {
 
 /// <p>A list of aliases (also called CNAMEs) and the CloudFront distributions and Amazon Web Services accounts that they are associated with. In the list, the distribution and account IDs are partially hidden, which allows you to identify the distributions and accounts that you own, but helps to protect the information of ones that you don’t own.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictingAliasesList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing conflicting aliases where you left off.</p>
     #[doc(hidden)]
@@ -19324,21 +19165,11 @@ impl ConflictingAliasesList {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for ConflictingAliasesList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictingAliasesList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`ConflictingAliasesList`](crate::model::ConflictingAliasesList).
 pub mod conflicting_aliases_list {
 
     /// A builder for [`ConflictingAliasesList`](crate::model::ConflictingAliasesList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -19415,7 +19246,7 @@ impl ConflictingAliasesList {
 
 /// <p>An alias (also called a CNAME) and the CloudFront distribution and Amazon Web Services account ID that it’s associated with. The distribution and account IDs are partially hidden, which allows you to identify the distributions and accounts that you own, but helps to protect the information of ones that you don’t own.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictingAlias {
     /// <p>An alias (also called a CNAME).</p>
     #[doc(hidden)]
@@ -19441,20 +19272,11 @@ impl ConflictingAlias {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for ConflictingAlias {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictingAlias");
-        formatter.field("alias", &self.alias);
-        formatter.field("distribution_id", &self.distribution_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 /// See [`ConflictingAlias`](crate::model::ConflictingAlias).
 pub mod conflicting_alias {
 
     /// A builder for [`ConflictingAlias`](crate::model::ConflictingAlias).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias: std::option::Option<std::string::String>,
         pub(crate) distribution_id: std::option::Option<std::string::String>,
@@ -19513,7 +19335,7 @@ impl ConflictingAlias {
 
 /// <p>Lists the origin access identities for CloudFront.Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/origin-access-identity/cloudfront</code> resource. The response includes a <code>CloudFrontOriginAccessIdentityList</code> element with zero or more <code>CloudFrontOriginAccessIdentitySummary</code> child elements. By default, your entire list of origin access identities is returned in one single page. If the list is long, you can paginate it using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFrontOriginAccessIdentityList {
     /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page). </p>
     #[doc(hidden)]
@@ -19563,23 +19385,11 @@ impl CloudFrontOriginAccessIdentityList {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for CloudFrontOriginAccessIdentityList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFrontOriginAccessIdentityList");
-        formatter.field("marker", &self.marker);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("is_truncated", &self.is_truncated);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`CloudFrontOriginAccessIdentityList`](crate::model::CloudFrontOriginAccessIdentityList).
 pub mod cloud_front_origin_access_identity_list {
 
     /// A builder for [`CloudFrontOriginAccessIdentityList`](crate::model::CloudFrontOriginAccessIdentityList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -19683,7 +19493,7 @@ impl CloudFrontOriginAccessIdentityList {
 
 /// <p>Summary of the information about a CloudFront origin access identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFrontOriginAccessIdentitySummary {
     /// <p>The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.</p>
     #[doc(hidden)]
@@ -19709,20 +19519,11 @@ impl CloudFrontOriginAccessIdentitySummary {
         self.comment.as_deref()
     }
 }
-impl std::fmt::Debug for CloudFrontOriginAccessIdentitySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFrontOriginAccessIdentitySummary");
-        formatter.field("id", &self.id);
-        formatter.field("s3_canonical_user_id", &self.s3_canonical_user_id);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
-    }
-}
 /// See [`CloudFrontOriginAccessIdentitySummary`](crate::model::CloudFrontOriginAccessIdentitySummary).
 pub mod cloud_front_origin_access_identity_summary {
 
     /// A builder for [`CloudFrontOriginAccessIdentitySummary`](crate::model::CloudFrontOriginAccessIdentitySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) s3_canonical_user_id: std::option::Option<std::string::String>,
@@ -19781,7 +19582,7 @@ impl CloudFrontOriginAccessIdentitySummary {
 
 /// <p>A list of cache policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachePolicyList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing cache policies where you left off.</p>
     #[doc(hidden)]
@@ -19814,21 +19615,11 @@ impl CachePolicyList {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for CachePolicyList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachePolicyList");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`CachePolicyList`](crate::model::CachePolicyList).
 pub mod cache_policy_list {
 
     /// A builder for [`CachePolicyList`](crate::model::CachePolicyList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -19905,7 +19696,7 @@ impl CachePolicyList {
 
 /// <p>Contains a cache policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachePolicySummary {
     /// <p>The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
     #[doc(hidden)]
@@ -19924,19 +19715,11 @@ impl CachePolicySummary {
         self.cache_policy.as_ref()
     }
 }
-impl std::fmt::Debug for CachePolicySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachePolicySummary");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("cache_policy", &self.cache_policy);
-        formatter.finish()
-    }
-}
 /// See [`CachePolicySummary`](crate::model::CachePolicySummary).
 pub mod cache_policy_summary {
 
     /// A builder for [`CachePolicySummary`](crate::model::CachePolicySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::CachePolicyType>,
         pub(crate) cache_policy: std::option::Option<crate::model::CachePolicy>,
@@ -19984,6 +19767,41 @@ impl CachePolicySummary {
     }
 }
 
+/// When writing a match expression against `CachePolicyType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let cachepolicytype = unimplemented!();
+/// match cachepolicytype {
+///     CachePolicyType::Custom => { /* ... */ },
+///     CachePolicyType::Managed => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `cachepolicytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CachePolicyType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CachePolicyType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CachePolicyType::NewFeature` is defined.
+/// Specifically, when `cachepolicytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CachePolicyType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -20000,15 +19818,15 @@ pub enum CachePolicyType {
     Custom,
     #[allow(missing_docs)] // documentation missing in model
     Managed,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CachePolicyType {
     fn from(s: &str) -> Self {
         match s {
             "custom" => CachePolicyType::Custom,
             "managed" => CachePolicyType::Managed,
-            other => CachePolicyType::Unknown(other.to_owned()),
+            other => CachePolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -20025,11 +19843,11 @@ impl CachePolicyType {
         match self {
             CachePolicyType::Custom => "custom",
             CachePolicyType::Managed => "managed",
-            CachePolicyType::Unknown(s) => s.as_ref(),
+            CachePolicyType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["custom", "managed"]
     }
 }
@@ -20041,7 +19859,7 @@ impl AsRef<str> for CachePolicyType {
 
 /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonitoringSubscription {
     /// <p>A subscription configuration for additional CloudWatch metrics.</p>
     #[doc(hidden)]
@@ -20056,21 +19874,11 @@ impl MonitoringSubscription {
         self.realtime_metrics_subscription_config.as_ref()
     }
 }
-impl std::fmt::Debug for MonitoringSubscription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonitoringSubscription");
-        formatter.field(
-            "realtime_metrics_subscription_config",
-            &self.realtime_metrics_subscription_config,
-        );
-        formatter.finish()
-    }
-}
 /// See [`MonitoringSubscription`](crate::model::MonitoringSubscription).
 pub mod monitoring_subscription {
 
     /// A builder for [`MonitoringSubscription`](crate::model::MonitoringSubscription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) realtime_metrics_subscription_config:
             std::option::Option<crate::model::RealtimeMetricsSubscriptionConfig>,
@@ -20109,7 +19917,7 @@ impl MonitoringSubscription {
 
 /// <p>A subscription configuration for additional CloudWatch metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RealtimeMetricsSubscriptionConfig {
     /// <p>A flag that indicates whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     #[doc(hidden)]
@@ -20124,21 +19932,11 @@ impl RealtimeMetricsSubscriptionConfig {
         self.realtime_metrics_subscription_status.as_ref()
     }
 }
-impl std::fmt::Debug for RealtimeMetricsSubscriptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RealtimeMetricsSubscriptionConfig");
-        formatter.field(
-            "realtime_metrics_subscription_status",
-            &self.realtime_metrics_subscription_status,
-        );
-        formatter.finish()
-    }
-}
 /// See [`RealtimeMetricsSubscriptionConfig`](crate::model::RealtimeMetricsSubscriptionConfig).
 pub mod realtime_metrics_subscription_config {
 
     /// A builder for [`RealtimeMetricsSubscriptionConfig`](crate::model::RealtimeMetricsSubscriptionConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) realtime_metrics_subscription_status:
             std::option::Option<crate::model::RealtimeMetricsSubscriptionStatus>,
@@ -20175,6 +19973,41 @@ impl RealtimeMetricsSubscriptionConfig {
     }
 }
 
+/// When writing a match expression against `RealtimeMetricsSubscriptionStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let realtimemetricssubscriptionstatus = unimplemented!();
+/// match realtimemetricssubscriptionstatus {
+///     RealtimeMetricsSubscriptionStatus::Disabled => { /* ... */ },
+///     RealtimeMetricsSubscriptionStatus::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `realtimemetricssubscriptionstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RealtimeMetricsSubscriptionStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RealtimeMetricsSubscriptionStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RealtimeMetricsSubscriptionStatus::NewFeature` is defined.
+/// Specifically, when `realtimemetricssubscriptionstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RealtimeMetricsSubscriptionStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -20191,15 +20024,17 @@ pub enum RealtimeMetricsSubscriptionStatus {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RealtimeMetricsSubscriptionStatus {
     fn from(s: &str) -> Self {
         match s {
             "Disabled" => RealtimeMetricsSubscriptionStatus::Disabled,
             "Enabled" => RealtimeMetricsSubscriptionStatus::Enabled,
-            other => RealtimeMetricsSubscriptionStatus::Unknown(other.to_owned()),
+            other => RealtimeMetricsSubscriptionStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -20216,11 +20051,11 @@ impl RealtimeMetricsSubscriptionStatus {
         match self {
             RealtimeMetricsSubscriptionStatus::Disabled => "Disabled",
             RealtimeMetricsSubscriptionStatus::Enabled => "Enabled",
-            RealtimeMetricsSubscriptionStatus::Unknown(s) => s.as_ref(),
+            RealtimeMetricsSubscriptionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -20232,7 +20067,7 @@ impl AsRef<str> for RealtimeMetricsSubscriptionStatus {
 
 /// <p>An invalidation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Invalidation {
     /// <p>The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.</p>
     #[doc(hidden)]
@@ -20265,21 +20100,11 @@ impl Invalidation {
         self.invalidation_batch.as_ref()
     }
 }
-impl std::fmt::Debug for Invalidation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Invalidation");
-        formatter.field("id", &self.id);
-        formatter.field("status", &self.status);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("invalidation_batch", &self.invalidation_batch);
-        formatter.finish()
-    }
-}
 /// See [`Invalidation`](crate::model::Invalidation).
 pub mod invalidation {
 
     /// A builder for [`Invalidation`](crate::model::Invalidation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
@@ -20353,7 +20178,7 @@ impl Invalidation {
 
 /// <p>An invalidation batch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidationBatch {
     /// <p>A complex type that contains information about the objects that you want to invalidate. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
     #[doc(hidden)]
@@ -20376,19 +20201,11 @@ impl InvalidationBatch {
         self.caller_reference.as_deref()
     }
 }
-impl std::fmt::Debug for InvalidationBatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidationBatch");
-        formatter.field("paths", &self.paths);
-        formatter.field("caller_reference", &self.caller_reference);
-        formatter.finish()
-    }
-}
 /// See [`InvalidationBatch`](crate::model::InvalidationBatch).
 pub mod invalidation_batch {
 
     /// A builder for [`InvalidationBatch`](crate::model::InvalidationBatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) paths: std::option::Option<crate::model::Paths>,
         pub(crate) caller_reference: std::option::Option<std::string::String>,
@@ -20439,7 +20256,7 @@ impl InvalidationBatch {
 
 /// <p>A complex type that contains information about the objects that you want to invalidate. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Paths {
     /// <p>The number of invalidation paths specified for the objects that you want to invalidate.</p>
     #[doc(hidden)]
@@ -20458,19 +20275,11 @@ impl Paths {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for Paths {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Paths");
-        formatter.field("quantity", &self.quantity);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 /// See [`Paths`](crate::model::Paths).
 pub mod paths {
 
     /// A builder for [`Paths`](crate::model::Paths).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantity: std::option::Option<i32>,
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20523,7 +20332,7 @@ impl Paths {
 
 /// <p>A streaming distribution Configuration and a list of tags to be associated with the streaming distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingDistributionConfigWithTags {
     /// <p>A streaming distribution Configuration.</p>
     #[doc(hidden)]
@@ -20545,22 +20354,11 @@ impl StreamingDistributionConfigWithTags {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for StreamingDistributionConfigWithTags {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingDistributionConfigWithTags");
-        formatter.field(
-            "streaming_distribution_config",
-            &self.streaming_distribution_config,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`StreamingDistributionConfigWithTags`](crate::model::StreamingDistributionConfigWithTags).
 pub mod streaming_distribution_config_with_tags {
 
     /// A builder for [`StreamingDistributionConfigWithTags`](crate::model::StreamingDistributionConfigWithTags).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streaming_distribution_config:
             std::option::Option<crate::model::StreamingDistributionConfig>,
@@ -20611,7 +20409,7 @@ impl StreamingDistributionConfigWithTags {
 
 /// <p>A distribution Configuration and a list of tags to be associated with the distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributionConfigWithTags {
     /// <p>A distribution configuration.</p>
     #[doc(hidden)]
@@ -20630,19 +20428,11 @@ impl DistributionConfigWithTags {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for DistributionConfigWithTags {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributionConfigWithTags");
-        formatter.field("distribution_config", &self.distribution_config);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`DistributionConfigWithTags`](crate::model::DistributionConfigWithTags).
 pub mod distribution_config_with_tags {
 
     /// A builder for [`DistributionConfigWithTags`](crate::model::DistributionConfigWithTags).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_config: std::option::Option<crate::model::DistributionConfig>,
         pub(crate) tags: std::option::Option<crate::model::Tags>,

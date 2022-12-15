@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod add_layer_version_permission_input {
 
     /// A builder for [`AddLayerVersionPermissionInput`](crate::input::AddLayerVersionPermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_name: std::option::Option<std::string::String>,
         pub(crate) version_number: std::option::Option<i64>,
@@ -94,7 +94,7 @@ pub mod add_layer_version_permission_input {
             self,
         ) -> Result<
             crate::input::AddLayerVersionPermissionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AddLayerVersionPermissionInput {
                 layer_name: self.layer_name,
@@ -121,36 +121,43 @@ impl AddLayerVersionPermissionInput {
             crate::operation::AddLayerVersionPermission,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AddLayerVersionPermissionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.layer_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "layer_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let layer_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "layer_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let layer_name = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if layer_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "layer_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "layer_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_2 = &_input.version_number;
                 let mut version_number_encoder =
                     aws_smithy_types::primitive::Encoder::from(*input_2);
                 let version_number = version_number_encoder.encode();
                 if version_number.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "version_number",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "version_number",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -164,10 +171,12 @@ impl AddLayerVersionPermissionInput {
             fn uri_query(
                 _input: &crate::input::AddLayerVersionPermissionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.revision_id {
-                    query.push_kv("RevisionId", &aws_smithy_http::query::fmt_string(&inner_3));
+                    {
+                        query.push_kv("RevisionId", &aws_smithy_http::query::fmt_string(&inner_3));
+                    }
                 }
                 Ok(())
             }
@@ -175,8 +184,10 @@ impl AddLayerVersionPermissionInput {
             fn update_http_builder(
                 input: &crate::input::AddLayerVersionPermissionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -263,7 +274,7 @@ impl AddLayerVersionPermissionInput {
 pub mod add_permission_input {
 
     /// A builder for [`AddPermissionInput`](crate::input::AddPermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) statement_id: std::option::Option<std::string::String>,
@@ -422,7 +433,7 @@ pub mod add_permission_input {
         /// Consumes the builder and constructs a [`AddPermissionInput`](crate::input::AddPermissionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AddPermissionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::AddPermissionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::AddPermissionInput {
                 function_name: self.function_name,
@@ -453,26 +464,31 @@ impl AddPermissionInput {
             crate::operation::AddPermission,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AddPermissionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.function_name;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -485,10 +501,12 @@ impl AddPermissionInput {
             fn uri_query(
                 _input: &crate::input::AddPermissionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_5) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_5));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_5));
+                    }
                 }
                 Ok(())
             }
@@ -496,8 +514,10 @@ impl AddPermissionInput {
             fn update_http_builder(
                 input: &crate::input::AddPermissionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -582,7 +602,7 @@ impl AddPermissionInput {
 pub mod create_alias_input {
 
     /// A builder for [`CreateAliasInput`](crate::input::CreateAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -667,7 +687,7 @@ pub mod create_alias_input {
         /// Consumes the builder and constructs a [`CreateAliasInput`](crate::input::CreateAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAliasInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateAliasInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateAliasInput {
                 function_name: self.function_name,
@@ -692,26 +712,31 @@ impl CreateAliasInput {
             crate::operation::CreateAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.function_name;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -725,8 +750,10 @@ impl CreateAliasInput {
             fn update_http_builder(
                 input: &crate::input::CreateAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -810,7 +837,7 @@ impl CreateAliasInput {
 pub mod create_code_signing_config_input {
 
     /// A builder for [`CreateCodeSigningConfigInput`](crate::input::CreateCodeSigningConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) allowed_publishers: std::option::Option<crate::model::AllowedPublishers>,
@@ -858,7 +885,7 @@ pub mod create_code_signing_config_input {
             self,
         ) -> Result<
             crate::input::CreateCodeSigningConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateCodeSigningConfigInput {
                 description: self.description,
@@ -881,13 +908,13 @@ impl CreateCodeSigningConfigInput {
             crate::operation::CreateCodeSigningConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateCodeSigningConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2020-04-22/code-signing-configs")
                     .expect("formatting should succeed");
                 Ok(())
@@ -896,8 +923,10 @@ impl CreateCodeSigningConfigInput {
             fn update_http_builder(
                 input: &crate::input::CreateCodeSigningConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -983,7 +1012,7 @@ impl CreateCodeSigningConfigInput {
 pub mod create_event_source_mapping_input {
 
     /// A builder for [`CreateEventSourceMappingInput`](crate::input::CreateEventSourceMappingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
         pub(crate) function_name: std::option::Option<std::string::String>,
@@ -1365,7 +1394,7 @@ pub mod create_event_source_mapping_input {
             self,
         ) -> Result<
             crate::input::CreateEventSourceMappingInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateEventSourceMappingInput {
                 event_source_arn: self.event_source_arn,
@@ -1407,13 +1436,13 @@ impl CreateEventSourceMappingInput {
             crate::operation::CreateEventSourceMapping,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateEventSourceMappingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2015-03-31/event-source-mappings")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1422,8 +1451,10 @@ impl CreateEventSourceMappingInput {
             fn update_http_builder(
                 input: &crate::input::CreateEventSourceMappingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1509,7 +1540,7 @@ impl CreateEventSourceMappingInput {
 pub mod create_function_input {
 
     /// A builder for [`CreateFunctionInput`](crate::input::CreateFunctionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) runtime: std::option::Option<crate::model::Runtime>,
@@ -1844,7 +1875,7 @@ pub mod create_function_input {
         /// Consumes the builder and constructs a [`CreateFunctionInput`](crate::input::CreateFunctionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateFunctionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateFunctionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateFunctionInput {
                 function_name: self.function_name,
@@ -1886,13 +1917,13 @@ impl CreateFunctionInput {
             crate::operation::CreateFunction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateFunctionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2015-03-31/functions").expect("formatting should succeed");
                 Ok(())
             }
@@ -1900,8 +1931,10 @@ impl CreateFunctionInput {
             fn update_http_builder(
                 input: &crate::input::CreateFunctionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1985,7 +2018,7 @@ impl CreateFunctionInput {
 pub mod create_function_url_config_input {
 
     /// A builder for [`CreateFunctionUrlConfigInput`](crate::input::CreateFunctionUrlConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -2058,7 +2091,7 @@ pub mod create_function_url_config_input {
             self,
         ) -> Result<
             crate::input::CreateFunctionUrlConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateFunctionUrlConfigInput {
                 function_name: self.function_name,
@@ -2082,26 +2115,31 @@ impl CreateFunctionUrlConfigInput {
             crate::operation::CreateFunctionUrlConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateFunctionUrlConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.function_name;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2114,10 +2152,12 @@ impl CreateFunctionUrlConfigInput {
             fn uri_query(
                 _input: &crate::input::CreateFunctionUrlConfigInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_8) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_8));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_8));
+                    }
                 }
                 Ok(())
             }
@@ -2125,8 +2165,10 @@ impl CreateFunctionUrlConfigInput {
             fn update_http_builder(
                 input: &crate::input::CreateFunctionUrlConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2213,7 +2255,7 @@ impl CreateFunctionUrlConfigInput {
 pub mod delete_alias_input {
 
     /// A builder for [`DeleteAliasInput`](crate::input::DeleteAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2259,7 +2301,7 @@ pub mod delete_alias_input {
         /// Consumes the builder and constructs a [`DeleteAliasInput`](crate::input::DeleteAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAliasInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteAliasInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteAliasInput {
                 function_name: self.function_name,
@@ -2281,40 +2323,50 @@ impl DeleteAliasInput {
             crate::operation::DeleteAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.function_name;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_9, false);
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_10 = &_input.name;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_10, false);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2329,8 +2381,10 @@ impl DeleteAliasInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2400,7 +2454,7 @@ impl DeleteAliasInput {
 pub mod delete_code_signing_config_input {
 
     /// A builder for [`DeleteCodeSigningConfigInput`](crate::input::DeleteCodeSigningConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_signing_config_arn: std::option::Option<std::string::String>,
     }
@@ -2423,7 +2477,7 @@ pub mod delete_code_signing_config_input {
             self,
         ) -> Result<
             crate::input::DeleteCodeSigningConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteCodeSigningConfigInput {
                 code_signing_config_arn: self.code_signing_config_arn,
@@ -2444,26 +2498,31 @@ impl DeleteCodeSigningConfigInput {
             crate::operation::DeleteCodeSigningConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteCodeSigningConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.code_signing_config_arn;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "code_signing_config_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let code_signing_config_arn = aws_smithy_http::label::fmt_string(input_11, false);
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "code_signing_config_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let code_signing_config_arn = aws_smithy_http::label::fmt_string(
+                    input_11,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if code_signing_config_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "code_signing_config_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "code_signing_config_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2477,8 +2536,10 @@ impl DeleteCodeSigningConfigInput {
             fn update_http_builder(
                 input: &crate::input::DeleteCodeSigningConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2548,7 +2609,7 @@ impl DeleteCodeSigningConfigInput {
 pub mod delete_event_source_mapping_input {
 
     /// A builder for [`DeleteEventSourceMappingInput`](crate::input::DeleteEventSourceMappingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uuid: std::option::Option<std::string::String>,
     }
@@ -2568,7 +2629,7 @@ pub mod delete_event_source_mapping_input {
             self,
         ) -> Result<
             crate::input::DeleteEventSourceMappingInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteEventSourceMappingInput { uuid: self.uuid })
         }
@@ -2587,26 +2648,31 @@ impl DeleteEventSourceMappingInput {
             crate::operation::DeleteEventSourceMapping,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteEventSourceMappingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_12 = &_input.uuid;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "uuid",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let uuid = aws_smithy_http::label::fmt_string(input_12, false);
+                let input_12 = input_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "uuid",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let uuid = aws_smithy_http::label::fmt_string(
+                    input_12,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if uuid.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "uuid",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "uuid",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2620,8 +2686,10 @@ impl DeleteEventSourceMappingInput {
             fn update_http_builder(
                 input: &crate::input::DeleteEventSourceMappingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2691,7 +2759,7 @@ impl DeleteEventSourceMappingInput {
 pub mod delete_function_input {
 
     /// A builder for [`DeleteFunctionInput`](crate::input::DeleteFunctionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -2737,7 +2805,7 @@ pub mod delete_function_input {
         /// Consumes the builder and constructs a [`DeleteFunctionInput`](crate::input::DeleteFunctionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteFunctionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteFunctionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteFunctionInput {
                 function_name: self.function_name,
@@ -2759,26 +2827,31 @@ impl DeleteFunctionInput {
             crate::operation::DeleteFunction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteFunctionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.function_name;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_13, false);
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2791,10 +2864,12 @@ impl DeleteFunctionInput {
             fn uri_query(
                 _input: &crate::input::DeleteFunctionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_14) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_14));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_14));
+                    }
                 }
                 Ok(())
             }
@@ -2802,8 +2877,10 @@ impl DeleteFunctionInput {
             fn update_http_builder(
                 input: &crate::input::DeleteFunctionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2874,7 +2951,7 @@ impl DeleteFunctionInput {
 pub mod delete_function_code_signing_config_input {
 
     /// A builder for [`DeleteFunctionCodeSigningConfigInput`](crate::input::DeleteFunctionCodeSigningConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
     }
@@ -2911,7 +2988,7 @@ pub mod delete_function_code_signing_config_input {
             self,
         ) -> Result<
             crate::input::DeleteFunctionCodeSigningConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteFunctionCodeSigningConfigInput {
                 function_name: self.function_name,
@@ -2932,26 +3009,31 @@ impl DeleteFunctionCodeSigningConfigInput {
             crate::operation::DeleteFunctionCodeSigningConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteFunctionCodeSigningConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_15 = &_input.function_name;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_15, false);
+                let input_15 = input_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_15,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2965,8 +3047,10 @@ impl DeleteFunctionCodeSigningConfigInput {
             fn update_http_builder(
                 input: &crate::input::DeleteFunctionCodeSigningConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -3036,7 +3120,7 @@ impl DeleteFunctionCodeSigningConfigInput {
 pub mod delete_function_concurrency_input {
 
     /// A builder for [`DeleteFunctionConcurrencyInput`](crate::input::DeleteFunctionConcurrencyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
     }
@@ -3073,7 +3157,7 @@ pub mod delete_function_concurrency_input {
             self,
         ) -> Result<
             crate::input::DeleteFunctionConcurrencyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteFunctionConcurrencyInput {
                 function_name: self.function_name,
@@ -3094,26 +3178,31 @@ impl DeleteFunctionConcurrencyInput {
             crate::operation::DeleteFunctionConcurrency,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteFunctionConcurrencyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_16 = &_input.function_name;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_16, false);
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3127,8 +3216,10 @@ impl DeleteFunctionConcurrencyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteFunctionConcurrencyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -3198,7 +3289,7 @@ impl DeleteFunctionConcurrencyInput {
 pub mod delete_function_event_invoke_config_input {
 
     /// A builder for [`DeleteFunctionEventInvokeConfigInput`](crate::input::DeleteFunctionEventInvokeConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -3246,7 +3337,7 @@ pub mod delete_function_event_invoke_config_input {
             self,
         ) -> Result<
             crate::input::DeleteFunctionEventInvokeConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteFunctionEventInvokeConfigInput {
                 function_name: self.function_name,
@@ -3268,26 +3359,31 @@ impl DeleteFunctionEventInvokeConfigInput {
             crate::operation::DeleteFunctionEventInvokeConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteFunctionEventInvokeConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_17 = &_input.function_name;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_17, false);
+                let input_17 = input_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3300,10 +3396,12 @@ impl DeleteFunctionEventInvokeConfigInput {
             fn uri_query(
                 _input: &crate::input::DeleteFunctionEventInvokeConfigInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_18));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_18));
+                    }
                 }
                 Ok(())
             }
@@ -3311,8 +3409,10 @@ impl DeleteFunctionEventInvokeConfigInput {
             fn update_http_builder(
                 input: &crate::input::DeleteFunctionEventInvokeConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3383,7 +3483,7 @@ impl DeleteFunctionEventInvokeConfigInput {
 pub mod delete_function_url_config_input {
 
     /// A builder for [`DeleteFunctionUrlConfigInput`](crate::input::DeleteFunctionUrlConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -3431,7 +3531,7 @@ pub mod delete_function_url_config_input {
             self,
         ) -> Result<
             crate::input::DeleteFunctionUrlConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteFunctionUrlConfigInput {
                 function_name: self.function_name,
@@ -3453,26 +3553,31 @@ impl DeleteFunctionUrlConfigInput {
             crate::operation::DeleteFunctionUrlConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteFunctionUrlConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_19 = &_input.function_name;
-                let input_19 = input_19.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_19, false);
+                let input_19 = input_19.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_19,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3485,10 +3590,12 @@ impl DeleteFunctionUrlConfigInput {
             fn uri_query(
                 _input: &crate::input::DeleteFunctionUrlConfigInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_20) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_20));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_20));
+                    }
                 }
                 Ok(())
             }
@@ -3496,8 +3603,10 @@ impl DeleteFunctionUrlConfigInput {
             fn update_http_builder(
                 input: &crate::input::DeleteFunctionUrlConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3568,7 +3677,7 @@ impl DeleteFunctionUrlConfigInput {
 pub mod delete_layer_version_input {
 
     /// A builder for [`DeleteLayerVersionInput`](crate::input::DeleteLayerVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_name: std::option::Option<std::string::String>,
         pub(crate) version_number: std::option::Option<i64>,
@@ -3597,8 +3706,10 @@ pub mod delete_layer_version_input {
         /// Consumes the builder and constructs a [`DeleteLayerVersionInput`](crate::input::DeleteLayerVersionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteLayerVersionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteLayerVersionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteLayerVersionInput {
                 layer_name: self.layer_name,
                 version_number: self.version_number.unwrap_or_default(),
@@ -3619,36 +3730,43 @@ impl DeleteLayerVersionInput {
             crate::operation::DeleteLayerVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteLayerVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_21 = &_input.layer_name;
-                let input_21 = input_21.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "layer_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let layer_name = aws_smithy_http::label::fmt_string(input_21, false);
+                let input_21 = input_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "layer_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let layer_name = aws_smithy_http::label::fmt_string(
+                    input_21,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if layer_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "layer_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "layer_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_22 = &_input.version_number;
                 let mut version_number_encoder =
                     aws_smithy_types::primitive::Encoder::from(*input_22);
                 let version_number = version_number_encoder.encode();
                 if version_number.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "version_number",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "version_number",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3663,8 +3781,10 @@ impl DeleteLayerVersionInput {
             fn update_http_builder(
                 input: &crate::input::DeleteLayerVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -3734,7 +3854,7 @@ impl DeleteLayerVersionInput {
 pub mod delete_provisioned_concurrency_config_input {
 
     /// A builder for [`DeleteProvisionedConcurrencyConfigInput`](crate::input::DeleteProvisionedConcurrencyConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -3782,7 +3902,7 @@ pub mod delete_provisioned_concurrency_config_input {
             self,
         ) -> Result<
             crate::input::DeleteProvisionedConcurrencyConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteProvisionedConcurrencyConfigInput {
                 function_name: self.function_name,
@@ -3804,26 +3924,31 @@ impl DeleteProvisionedConcurrencyConfigInput {
             crate::operation::DeleteProvisionedConcurrencyConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteProvisionedConcurrencyConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_23 = &_input.function_name;
-                let input_23 = input_23.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_23, false);
+                let input_23 = input_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_23,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3836,19 +3961,34 @@ impl DeleteProvisionedConcurrencyConfigInput {
             fn uri_query(
                 _input: &crate::input::DeleteProvisionedConcurrencyConfigInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_24) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_24));
+                let inner_24 = &_input.qualifier;
+                let inner_24 = inner_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "qualifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_24.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "qualifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_24));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DeleteProvisionedConcurrencyConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3919,14 +4059,16 @@ impl DeleteProvisionedConcurrencyConfigInput {
 pub mod get_account_settings_input {
 
     /// A builder for [`GetAccountSettingsInput`](crate::input::GetAccountSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetAccountSettingsInput`](crate::input::GetAccountSettingsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAccountSettingsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetAccountSettingsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetAccountSettingsInput {})
         }
     }
@@ -3944,13 +4086,13 @@ impl GetAccountSettingsInput {
             crate::operation::GetAccountSettings,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccountSettingsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2016-08-19/account-settings").expect("formatting should succeed");
                 Ok(())
             }
@@ -3958,8 +4100,10 @@ impl GetAccountSettingsInput {
             fn update_http_builder(
                 input: &crate::input::GetAccountSettingsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4029,7 +4173,7 @@ impl GetAccountSettingsInput {
 pub mod get_alias_input {
 
     /// A builder for [`GetAliasInput`](crate::input::GetAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4075,7 +4219,8 @@ pub mod get_alias_input {
         /// Consumes the builder and constructs a [`GetAliasInput`](crate::input::GetAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAliasInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetAliasInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetAliasInput {
                 function_name: self.function_name,
                 name: self.name,
@@ -4096,40 +4241,50 @@ impl GetAliasInput {
             crate::operation::GetAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_25 = &_input.function_name;
-                let input_25 = input_25.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_25, false);
+                let input_25 = input_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_25,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_26 = &_input.name;
-                let input_26 = input_26.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_26, false);
+                let input_26 = input_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_26,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4144,8 +4299,10 @@ impl GetAliasInput {
             fn update_http_builder(
                 input: &crate::input::GetAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4212,7 +4369,7 @@ impl GetAliasInput {
 pub mod get_code_signing_config_input {
 
     /// A builder for [`GetCodeSigningConfigInput`](crate::input::GetCodeSigningConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_signing_config_arn: std::option::Option<std::string::String>,
     }
@@ -4233,8 +4390,10 @@ pub mod get_code_signing_config_input {
         /// Consumes the builder and constructs a [`GetCodeSigningConfigInput`](crate::input::GetCodeSigningConfigInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetCodeSigningConfigInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetCodeSigningConfigInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetCodeSigningConfigInput {
                 code_signing_config_arn: self.code_signing_config_arn,
             })
@@ -4254,26 +4413,31 @@ impl GetCodeSigningConfigInput {
             crate::operation::GetCodeSigningConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetCodeSigningConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_27 = &_input.code_signing_config_arn;
-                let input_27 = input_27.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "code_signing_config_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let code_signing_config_arn = aws_smithy_http::label::fmt_string(input_27, false);
+                let input_27 = input_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "code_signing_config_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let code_signing_config_arn = aws_smithy_http::label::fmt_string(
+                    input_27,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if code_signing_config_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "code_signing_config_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "code_signing_config_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4287,8 +4451,10 @@ impl GetCodeSigningConfigInput {
             fn update_http_builder(
                 input: &crate::input::GetCodeSigningConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4358,7 +4524,7 @@ impl GetCodeSigningConfigInput {
 pub mod get_event_source_mapping_input {
 
     /// A builder for [`GetEventSourceMappingInput`](crate::input::GetEventSourceMappingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uuid: std::option::Option<std::string::String>,
     }
@@ -4376,8 +4542,10 @@ pub mod get_event_source_mapping_input {
         /// Consumes the builder and constructs a [`GetEventSourceMappingInput`](crate::input::GetEventSourceMappingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetEventSourceMappingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetEventSourceMappingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetEventSourceMappingInput { uuid: self.uuid })
         }
     }
@@ -4395,26 +4563,31 @@ impl GetEventSourceMappingInput {
             crate::operation::GetEventSourceMapping,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetEventSourceMappingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_28 = &_input.uuid;
-                let input_28 = input_28.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "uuid",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let uuid = aws_smithy_http::label::fmt_string(input_28, false);
+                let input_28 = input_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "uuid",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let uuid = aws_smithy_http::label::fmt_string(
+                    input_28,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if uuid.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "uuid",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "uuid",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4428,8 +4601,10 @@ impl GetEventSourceMappingInput {
             fn update_http_builder(
                 input: &crate::input::GetEventSourceMappingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4499,7 +4674,7 @@ impl GetEventSourceMappingInput {
 pub mod get_function_input {
 
     /// A builder for [`GetFunctionInput`](crate::input::GetFunctionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -4545,7 +4720,7 @@ pub mod get_function_input {
         /// Consumes the builder and constructs a [`GetFunctionInput`](crate::input::GetFunctionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetFunctionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetFunctionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetFunctionInput {
                 function_name: self.function_name,
@@ -4567,26 +4742,31 @@ impl GetFunctionInput {
             crate::operation::GetFunction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetFunctionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_29 = &_input.function_name;
-                let input_29 = input_29.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_29, false);
+                let input_29 = input_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_29,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4599,10 +4779,12 @@ impl GetFunctionInput {
             fn uri_query(
                 _input: &crate::input::GetFunctionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_30) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_30));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_30));
+                    }
                 }
                 Ok(())
             }
@@ -4610,8 +4792,10 @@ impl GetFunctionInput {
             fn update_http_builder(
                 input: &crate::input::GetFunctionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4682,7 +4866,7 @@ impl GetFunctionInput {
 pub mod get_function_code_signing_config_input {
 
     /// A builder for [`GetFunctionCodeSigningConfigInput`](crate::input::GetFunctionCodeSigningConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
     }
@@ -4719,7 +4903,7 @@ pub mod get_function_code_signing_config_input {
             self,
         ) -> Result<
             crate::input::GetFunctionCodeSigningConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetFunctionCodeSigningConfigInput {
                 function_name: self.function_name,
@@ -4740,26 +4924,31 @@ impl GetFunctionCodeSigningConfigInput {
             crate::operation::GetFunctionCodeSigningConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetFunctionCodeSigningConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_31 = &_input.function_name;
-                let input_31 = input_31.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_31, false);
+                let input_31 = input_31.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_31,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4773,8 +4962,10 @@ impl GetFunctionCodeSigningConfigInput {
             fn update_http_builder(
                 input: &crate::input::GetFunctionCodeSigningConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4844,7 +5035,7 @@ impl GetFunctionCodeSigningConfigInput {
 pub mod get_function_concurrency_input {
 
     /// A builder for [`GetFunctionConcurrencyInput`](crate::input::GetFunctionConcurrencyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
     }
@@ -4879,8 +5070,10 @@ pub mod get_function_concurrency_input {
         /// Consumes the builder and constructs a [`GetFunctionConcurrencyInput`](crate::input::GetFunctionConcurrencyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetFunctionConcurrencyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetFunctionConcurrencyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetFunctionConcurrencyInput {
                 function_name: self.function_name,
             })
@@ -4900,26 +5093,31 @@ impl GetFunctionConcurrencyInput {
             crate::operation::GetFunctionConcurrency,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetFunctionConcurrencyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_32 = &_input.function_name;
-                let input_32 = input_32.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_32, false);
+                let input_32 = input_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_32,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4933,8 +5131,10 @@ impl GetFunctionConcurrencyInput {
             fn update_http_builder(
                 input: &crate::input::GetFunctionConcurrencyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -5004,7 +5204,7 @@ impl GetFunctionConcurrencyInput {
 pub mod get_function_configuration_input {
 
     /// A builder for [`GetFunctionConfigurationInput`](crate::input::GetFunctionConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -5052,7 +5252,7 @@ pub mod get_function_configuration_input {
             self,
         ) -> Result<
             crate::input::GetFunctionConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetFunctionConfigurationInput {
                 function_name: self.function_name,
@@ -5074,26 +5274,31 @@ impl GetFunctionConfigurationInput {
             crate::operation::GetFunctionConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetFunctionConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_33 = &_input.function_name;
-                let input_33 = input_33.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_33, false);
+                let input_33 = input_33.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_33,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5106,10 +5311,12 @@ impl GetFunctionConfigurationInput {
             fn uri_query(
                 _input: &crate::input::GetFunctionConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_34) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_34));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_34));
+                    }
                 }
                 Ok(())
             }
@@ -5117,8 +5324,10 @@ impl GetFunctionConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::GetFunctionConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5189,7 +5398,7 @@ impl GetFunctionConfigurationInput {
 pub mod get_function_event_invoke_config_input {
 
     /// A builder for [`GetFunctionEventInvokeConfigInput`](crate::input::GetFunctionEventInvokeConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -5237,7 +5446,7 @@ pub mod get_function_event_invoke_config_input {
             self,
         ) -> Result<
             crate::input::GetFunctionEventInvokeConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetFunctionEventInvokeConfigInput {
                 function_name: self.function_name,
@@ -5259,26 +5468,31 @@ impl GetFunctionEventInvokeConfigInput {
             crate::operation::GetFunctionEventInvokeConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetFunctionEventInvokeConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_35 = &_input.function_name;
-                let input_35 = input_35.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_35, false);
+                let input_35 = input_35.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_35,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5291,10 +5505,12 @@ impl GetFunctionEventInvokeConfigInput {
             fn uri_query(
                 _input: &crate::input::GetFunctionEventInvokeConfigInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_36) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_36));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_36));
+                    }
                 }
                 Ok(())
             }
@@ -5302,8 +5518,10 @@ impl GetFunctionEventInvokeConfigInput {
             fn update_http_builder(
                 input: &crate::input::GetFunctionEventInvokeConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5374,7 +5592,7 @@ impl GetFunctionEventInvokeConfigInput {
 pub mod get_function_url_config_input {
 
     /// A builder for [`GetFunctionUrlConfigInput`](crate::input::GetFunctionUrlConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -5420,8 +5638,10 @@ pub mod get_function_url_config_input {
         /// Consumes the builder and constructs a [`GetFunctionUrlConfigInput`](crate::input::GetFunctionUrlConfigInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetFunctionUrlConfigInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetFunctionUrlConfigInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetFunctionUrlConfigInput {
                 function_name: self.function_name,
                 qualifier: self.qualifier,
@@ -5442,26 +5662,31 @@ impl GetFunctionUrlConfigInput {
             crate::operation::GetFunctionUrlConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetFunctionUrlConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_37 = &_input.function_name;
-                let input_37 = input_37.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_37, false);
+                let input_37 = input_37.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_37,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5474,10 +5699,12 @@ impl GetFunctionUrlConfigInput {
             fn uri_query(
                 _input: &crate::input::GetFunctionUrlConfigInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_38) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_38));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_38));
+                    }
                 }
                 Ok(())
             }
@@ -5485,8 +5712,10 @@ impl GetFunctionUrlConfigInput {
             fn update_http_builder(
                 input: &crate::input::GetFunctionUrlConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5557,7 +5786,7 @@ impl GetFunctionUrlConfigInput {
 pub mod get_layer_version_input {
 
     /// A builder for [`GetLayerVersionInput`](crate::input::GetLayerVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_name: std::option::Option<std::string::String>,
         pub(crate) version_number: std::option::Option<i64>,
@@ -5586,7 +5815,7 @@ pub mod get_layer_version_input {
         /// Consumes the builder and constructs a [`GetLayerVersionInput`](crate::input::GetLayerVersionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetLayerVersionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetLayerVersionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetLayerVersionInput {
                 layer_name: self.layer_name,
@@ -5608,36 +5837,43 @@ impl GetLayerVersionInput {
             crate::operation::GetLayerVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLayerVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_39 = &_input.layer_name;
-                let input_39 = input_39.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "layer_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let layer_name = aws_smithy_http::label::fmt_string(input_39, false);
+                let input_39 = input_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "layer_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let layer_name = aws_smithy_http::label::fmt_string(
+                    input_39,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if layer_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "layer_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "layer_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_40 = &_input.version_number;
                 let mut version_number_encoder =
                     aws_smithy_types::primitive::Encoder::from(*input_40);
                 let version_number = version_number_encoder.encode();
                 if version_number.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "version_number",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "version_number",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5652,8 +5888,10 @@ impl GetLayerVersionInput {
             fn update_http_builder(
                 input: &crate::input::GetLayerVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -5723,7 +5961,7 @@ impl GetLayerVersionInput {
 pub mod get_layer_version_by_arn_input {
 
     /// A builder for [`GetLayerVersionByArnInput`](crate::input::GetLayerVersionByArnInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -5741,8 +5979,10 @@ pub mod get_layer_version_by_arn_input {
         /// Consumes the builder and constructs a [`GetLayerVersionByArnInput`](crate::input::GetLayerVersionByArnInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetLayerVersionByArnInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetLayerVersionByArnInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetLayerVersionByArnInput { arn: self.arn })
         }
     }
@@ -5760,33 +6000,48 @@ impl GetLayerVersionByArnInput {
             crate::operation::GetLayerVersionByArn,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLayerVersionByArnInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2018-10-31/layers").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetLayerVersionByArnInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("find", "LayerVersion");
-                if let Some(inner_41) = &_input.arn {
-                    query.push_kv("Arn", &aws_smithy_http::query::fmt_string(&inner_41));
+                let inner_41 = &_input.arn;
+                let inner_41 = inner_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_41.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("Arn", &aws_smithy_http::query::fmt_string(&inner_41));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetLayerVersionByArnInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5857,7 +6112,7 @@ impl GetLayerVersionByArnInput {
 pub mod get_layer_version_policy_input {
 
     /// A builder for [`GetLayerVersionPolicyInput`](crate::input::GetLayerVersionPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_name: std::option::Option<std::string::String>,
         pub(crate) version_number: std::option::Option<i64>,
@@ -5886,8 +6141,10 @@ pub mod get_layer_version_policy_input {
         /// Consumes the builder and constructs a [`GetLayerVersionPolicyInput`](crate::input::GetLayerVersionPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetLayerVersionPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetLayerVersionPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetLayerVersionPolicyInput {
                 layer_name: self.layer_name,
                 version_number: self.version_number.unwrap_or_default(),
@@ -5908,36 +6165,43 @@ impl GetLayerVersionPolicyInput {
             crate::operation::GetLayerVersionPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLayerVersionPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_42 = &_input.layer_name;
-                let input_42 = input_42.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "layer_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let layer_name = aws_smithy_http::label::fmt_string(input_42, false);
+                let input_42 = input_42.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "layer_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let layer_name = aws_smithy_http::label::fmt_string(
+                    input_42,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if layer_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "layer_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "layer_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_43 = &_input.version_number;
                 let mut version_number_encoder =
                     aws_smithy_types::primitive::Encoder::from(*input_43);
                 let version_number = version_number_encoder.encode();
                 if version_number.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "version_number",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "version_number",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5952,8 +6216,10 @@ impl GetLayerVersionPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetLayerVersionPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -6023,7 +6289,7 @@ impl GetLayerVersionPolicyInput {
 pub mod get_policy_input {
 
     /// A builder for [`GetPolicyInput`](crate::input::GetPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -6069,7 +6335,8 @@ pub mod get_policy_input {
         /// Consumes the builder and constructs a [`GetPolicyInput`](crate::input::GetPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPolicyInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetPolicyInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetPolicyInput {
                 function_name: self.function_name,
                 qualifier: self.qualifier,
@@ -6090,26 +6357,31 @@ impl GetPolicyInput {
             crate::operation::GetPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_44 = &_input.function_name;
-                let input_44 = input_44.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_44, false);
+                let input_44 = input_44.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_44,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6122,10 +6394,12 @@ impl GetPolicyInput {
             fn uri_query(
                 _input: &crate::input::GetPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_45) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_45));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_45));
+                    }
                 }
                 Ok(())
             }
@@ -6133,8 +6407,10 @@ impl GetPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6203,7 +6479,7 @@ impl GetPolicyInput {
 pub mod get_provisioned_concurrency_config_input {
 
     /// A builder for [`GetProvisionedConcurrencyConfigInput`](crate::input::GetProvisionedConcurrencyConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -6251,7 +6527,7 @@ pub mod get_provisioned_concurrency_config_input {
             self,
         ) -> Result<
             crate::input::GetProvisionedConcurrencyConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetProvisionedConcurrencyConfigInput {
                 function_name: self.function_name,
@@ -6273,26 +6549,31 @@ impl GetProvisionedConcurrencyConfigInput {
             crate::operation::GetProvisionedConcurrencyConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetProvisionedConcurrencyConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_46 = &_input.function_name;
-                let input_46 = input_46.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_46, false);
+                let input_46 = input_46.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_46,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6305,19 +6586,34 @@ impl GetProvisionedConcurrencyConfigInput {
             fn uri_query(
                 _input: &crate::input::GetProvisionedConcurrencyConfigInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_47) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_47));
+                let inner_47 = &_input.qualifier;
+                let inner_47 = inner_47.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "qualifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_47.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "qualifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_47));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetProvisionedConcurrencyConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6388,7 +6684,7 @@ impl GetProvisionedConcurrencyConfigInput {
 pub mod invoke_input {
 
     /// A builder for [`InvokeInput`](crate::input::InvokeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) invocation_type: std::option::Option<crate::model::InvocationType>,
@@ -6496,7 +6792,8 @@ pub mod invoke_input {
         /// Consumes the builder and constructs a [`InvokeInput`](crate::input::InvokeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::InvokeInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::InvokeInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::InvokeInput {
                 function_name: self.function_name,
                 invocation_type: self.invocation_type,
@@ -6505,6 +6802,18 @@ pub mod invoke_input {
                 payload: self.payload,
                 qualifier: self.qualifier,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("function_name", &self.function_name);
+            formatter.field("invocation_type", &self.invocation_type);
+            formatter.field("log_type", &self.log_type);
+            formatter.field("client_context", &self.client_context);
+            formatter.field("payload", &"*** Sensitive Data Redacted ***");
+            formatter.field("qualifier", &self.qualifier);
+            formatter.finish()
         }
     }
 }
@@ -6521,26 +6830,31 @@ impl InvokeInput {
             crate::operation::Invoke,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::InvokeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_48 = &_input.function_name;
-                let input_48 = input_48.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_48, false);
+                let input_48 = input_48.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_48,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6553,10 +6867,12 @@ impl InvokeInput {
             fn uri_query(
                 _input: &crate::input::InvokeInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_49) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_49));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_49));
+                    }
                 }
                 Ok(())
             }
@@ -6564,8 +6880,10 @@ impl InvokeInput {
             fn update_http_builder(
                 input: &crate::input::InvokeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6697,7 +7015,7 @@ pub mod invoke_async_input {
         /// Consumes the builder and constructs a [`InvokeAsyncInput`](crate::input::InvokeAsyncInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::InvokeAsyncInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::InvokeAsyncInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::InvokeAsyncInput {
                 function_name: self.function_name,
@@ -6719,26 +7037,31 @@ impl InvokeAsyncInput {
             crate::operation::InvokeAsync,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::InvokeAsyncInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_50 = &_input.function_name;
-                let input_50 = input_50.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_50, false);
+                let input_50 = input_50.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_50,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6752,8 +7075,10 @@ impl InvokeAsyncInput {
             fn update_http_builder(
                 input: &crate::input::InvokeAsyncInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6838,7 +7163,7 @@ impl InvokeAsyncInput {
 pub mod list_aliases_input {
 
     /// A builder for [`ListAliasesInput`](crate::input::ListAliasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) function_version: std::option::Option<std::string::String>,
@@ -6909,7 +7234,7 @@ pub mod list_aliases_input {
         /// Consumes the builder and constructs a [`ListAliasesInput`](crate::input::ListAliasesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAliasesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListAliasesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListAliasesInput {
                 function_name: self.function_name,
@@ -6933,26 +7258,31 @@ impl ListAliasesInput {
             crate::operation::ListAliases,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAliasesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_51 = &_input.function_name;
-                let input_51 = input_51.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_51, false);
+                let input_51 = input_51.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_51,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6965,22 +7295,28 @@ impl ListAliasesInput {
             fn uri_query(
                 _input: &crate::input::ListAliasesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_52) = &_input.function_version {
-                    query.push_kv(
-                        "FunctionVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_52),
-                    );
+                    {
+                        query.push_kv(
+                            "FunctionVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_52),
+                        );
+                    }
                 }
                 if let Some(inner_53) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_53));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_53));
+                    }
                 }
                 if let Some(inner_54) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
-                    );
+                    if *inner_54 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -6988,8 +7324,10 @@ impl ListAliasesInput {
             fn update_http_builder(
                 input: &crate::input::ListAliasesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7060,7 +7398,7 @@ impl ListAliasesInput {
 pub mod list_code_signing_configs_input {
 
     /// A builder for [`ListCodeSigningConfigsInput`](crate::input::ListCodeSigningConfigsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -7089,8 +7427,10 @@ pub mod list_code_signing_configs_input {
         /// Consumes the builder and constructs a [`ListCodeSigningConfigsInput`](crate::input::ListCodeSigningConfigsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListCodeSigningConfigsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListCodeSigningConfigsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListCodeSigningConfigsInput {
                 marker: self.marker,
                 max_items: self.max_items,
@@ -7111,13 +7451,13 @@ impl ListCodeSigningConfigsInput {
             crate::operation::ListCodeSigningConfigs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListCodeSigningConfigsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2020-04-22/code-signing-configs")
                     .expect("formatting should succeed");
                 Ok(())
@@ -7125,16 +7465,20 @@ impl ListCodeSigningConfigsInput {
             fn uri_query(
                 _input: &crate::input::ListCodeSigningConfigsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_55) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_55));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_55));
+                    }
                 }
                 if let Some(inner_56) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_56).encode(),
-                    );
+                    if *inner_56 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_56).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7142,8 +7486,10 @@ impl ListCodeSigningConfigsInput {
             fn update_http_builder(
                 input: &crate::input::ListCodeSigningConfigsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7214,7 +7560,7 @@ impl ListCodeSigningConfigsInput {
 pub mod list_event_source_mappings_input {
 
     /// A builder for [`ListEventSourceMappingsInput`](crate::input::ListEventSourceMappingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
         pub(crate) function_name: std::option::Option<std::string::String>,
@@ -7301,7 +7647,7 @@ pub mod list_event_source_mappings_input {
             self,
         ) -> Result<
             crate::input::ListEventSourceMappingsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListEventSourceMappingsInput {
                 event_source_arn: self.event_source_arn,
@@ -7325,13 +7671,13 @@ impl ListEventSourceMappingsInput {
             crate::operation::ListEventSourceMappings,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListEventSourceMappingsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2015-03-31/event-source-mappings")
                     .expect("formatting should succeed");
                 Ok(())
@@ -7339,28 +7685,36 @@ impl ListEventSourceMappingsInput {
             fn uri_query(
                 _input: &crate::input::ListEventSourceMappingsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_57) = &_input.event_source_arn {
-                    query.push_kv(
-                        "EventSourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_57),
-                    );
+                    {
+                        query.push_kv(
+                            "EventSourceArn",
+                            &aws_smithy_http::query::fmt_string(&inner_57),
+                        );
+                    }
                 }
                 if let Some(inner_58) = &_input.function_name {
-                    query.push_kv(
-                        "FunctionName",
-                        &aws_smithy_http::query::fmt_string(&inner_58),
-                    );
+                    {
+                        query.push_kv(
+                            "FunctionName",
+                            &aws_smithy_http::query::fmt_string(&inner_58),
+                        );
+                    }
                 }
                 if let Some(inner_59) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_59));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_59));
+                    }
                 }
                 if let Some(inner_60) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_60).encode(),
-                    );
+                    if *inner_60 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_60).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7368,8 +7722,10 @@ impl ListEventSourceMappingsInput {
             fn update_http_builder(
                 input: &crate::input::ListEventSourceMappingsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7440,7 +7796,7 @@ impl ListEventSourceMappingsInput {
 pub mod list_function_event_invoke_configs_input {
 
     /// A builder for [`ListFunctionEventInvokeConfigsInput`](crate::input::ListFunctionEventInvokeConfigsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -7499,7 +7855,7 @@ pub mod list_function_event_invoke_configs_input {
             self,
         ) -> Result<
             crate::input::ListFunctionEventInvokeConfigsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListFunctionEventInvokeConfigsInput {
                 function_name: self.function_name,
@@ -7522,26 +7878,31 @@ impl ListFunctionEventInvokeConfigsInput {
             crate::operation::ListFunctionEventInvokeConfigs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListFunctionEventInvokeConfigsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_61 = &_input.function_name;
-                let input_61 = input_61.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_61, false);
+                let input_61 = input_61.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_61,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7554,16 +7915,20 @@ impl ListFunctionEventInvokeConfigsInput {
             fn uri_query(
                 _input: &crate::input::ListFunctionEventInvokeConfigsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_62) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_62));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_62));
+                    }
                 }
                 if let Some(inner_63) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_63).encode(),
-                    );
+                    if *inner_63 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_63).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7571,8 +7936,10 @@ impl ListFunctionEventInvokeConfigsInput {
             fn update_http_builder(
                 input: &crate::input::ListFunctionEventInvokeConfigsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7643,7 +8010,7 @@ impl ListFunctionEventInvokeConfigsInput {
 pub mod list_functions_input {
 
     /// A builder for [`ListFunctionsInput`](crate::input::ListFunctionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) master_region: std::option::Option<std::string::String>,
         pub(crate) function_version: std::option::Option<crate::model::FunctionVersion>,
@@ -7700,7 +8067,7 @@ pub mod list_functions_input {
         /// Consumes the builder and constructs a [`ListFunctionsInput`](crate::input::ListFunctionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListFunctionsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListFunctionsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListFunctionsInput {
                 master_region: self.master_region,
@@ -7724,41 +8091,49 @@ impl ListFunctionsInput {
             crate::operation::ListFunctions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListFunctionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2015-03-31/functions").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListFunctionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_64) = &_input.master_region {
-                    query.push_kv(
-                        "MasterRegion",
-                        &aws_smithy_http::query::fmt_string(&inner_64),
-                    );
+                    {
+                        query.push_kv(
+                            "MasterRegion",
+                            &aws_smithy_http::query::fmt_string(&inner_64),
+                        );
+                    }
                 }
                 if let Some(inner_65) = &_input.function_version {
-                    query.push_kv(
-                        "FunctionVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_65),
-                    );
+                    {
+                        query.push_kv(
+                            "FunctionVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_65),
+                        );
+                    }
                 }
                 if let Some(inner_66) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_66));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_66));
+                    }
                 }
                 if let Some(inner_67) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_67).encode(),
-                    );
+                    if *inner_67 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_67).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7766,8 +8141,10 @@ impl ListFunctionsInput {
             fn update_http_builder(
                 input: &crate::input::ListFunctionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7838,7 +8215,7 @@ impl ListFunctionsInput {
 pub mod list_functions_by_code_signing_config_input {
 
     /// A builder for [`ListFunctionsByCodeSigningConfigInput`](crate::input::ListFunctionsByCodeSigningConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_signing_config_arn: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -7883,7 +8260,7 @@ pub mod list_functions_by_code_signing_config_input {
             self,
         ) -> Result<
             crate::input::ListFunctionsByCodeSigningConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListFunctionsByCodeSigningConfigInput {
                 code_signing_config_arn: self.code_signing_config_arn,
@@ -7906,26 +8283,31 @@ impl ListFunctionsByCodeSigningConfigInput {
             crate::operation::ListFunctionsByCodeSigningConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListFunctionsByCodeSigningConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_68 = &_input.code_signing_config_arn;
-                let input_68 = input_68.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "code_signing_config_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let code_signing_config_arn = aws_smithy_http::label::fmt_string(input_68, false);
+                let input_68 = input_68.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "code_signing_config_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let code_signing_config_arn = aws_smithy_http::label::fmt_string(
+                    input_68,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if code_signing_config_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "code_signing_config_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "code_signing_config_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7938,16 +8320,20 @@ impl ListFunctionsByCodeSigningConfigInput {
             fn uri_query(
                 _input: &crate::input::ListFunctionsByCodeSigningConfigInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_69) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_69));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_69));
+                    }
                 }
                 if let Some(inner_70) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_70).encode(),
-                    );
+                    if *inner_70 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_70).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7955,8 +8341,10 @@ impl ListFunctionsByCodeSigningConfigInput {
             fn update_http_builder(
                 input: &crate::input::ListFunctionsByCodeSigningConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8027,7 +8415,7 @@ impl ListFunctionsByCodeSigningConfigInput {
 pub mod list_function_url_configs_input {
 
     /// A builder for [`ListFunctionUrlConfigsInput`](crate::input::ListFunctionUrlConfigsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -8084,8 +8472,10 @@ pub mod list_function_url_configs_input {
         /// Consumes the builder and constructs a [`ListFunctionUrlConfigsInput`](crate::input::ListFunctionUrlConfigsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListFunctionUrlConfigsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListFunctionUrlConfigsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListFunctionUrlConfigsInput {
                 function_name: self.function_name,
                 marker: self.marker,
@@ -8107,26 +8497,31 @@ impl ListFunctionUrlConfigsInput {
             crate::operation::ListFunctionUrlConfigs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListFunctionUrlConfigsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_71 = &_input.function_name;
-                let input_71 = input_71.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_71, false);
+                let input_71 = input_71.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_71,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -8139,16 +8534,20 @@ impl ListFunctionUrlConfigsInput {
             fn uri_query(
                 _input: &crate::input::ListFunctionUrlConfigsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_72) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_72));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_72));
+                    }
                 }
                 if let Some(inner_73) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
-                    );
+                    if *inner_73 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8156,8 +8555,10 @@ impl ListFunctionUrlConfigsInput {
             fn update_http_builder(
                 input: &crate::input::ListFunctionUrlConfigsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8228,7 +8629,7 @@ impl ListFunctionUrlConfigsInput {
 pub mod list_layers_input {
 
     /// A builder for [`ListLayersInput`](crate::input::ListLayersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compatible_runtime: std::option::Option<crate::model::Runtime>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -8285,7 +8686,8 @@ pub mod list_layers_input {
         /// Consumes the builder and constructs a [`ListLayersInput`](crate::input::ListLayersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListLayersInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListLayersInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListLayersInput {
                 compatible_runtime: self.compatible_runtime,
                 marker: self.marker,
@@ -8308,41 +8710,49 @@ impl ListLayersInput {
             crate::operation::ListLayers,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListLayersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2018-10-31/layers").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListLayersInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_74) = &_input.compatible_runtime {
-                    query.push_kv(
-                        "CompatibleRuntime",
-                        &aws_smithy_http::query::fmt_string(&inner_74),
-                    );
+                    {
+                        query.push_kv(
+                            "CompatibleRuntime",
+                            &aws_smithy_http::query::fmt_string(&inner_74),
+                        );
+                    }
                 }
                 if let Some(inner_75) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_75));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_75));
+                    }
                 }
                 if let Some(inner_76) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
-                    );
+                    if *inner_76 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_77) = &_input.compatible_architecture {
-                    query.push_kv(
-                        "CompatibleArchitecture",
-                        &aws_smithy_http::query::fmt_string(&inner_77),
-                    );
+                    {
+                        query.push_kv(
+                            "CompatibleArchitecture",
+                            &aws_smithy_http::query::fmt_string(&inner_77),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8350,8 +8760,10 @@ impl ListLayersInput {
             fn update_http_builder(
                 input: &crate::input::ListLayersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8422,7 +8834,7 @@ impl ListLayersInput {
 pub mod list_layer_versions_input {
 
     /// A builder for [`ListLayerVersionsInput`](crate::input::ListLayerVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compatible_runtime: std::option::Option<crate::model::Runtime>,
         pub(crate) layer_name: std::option::Option<std::string::String>,
@@ -8490,8 +8902,10 @@ pub mod list_layer_versions_input {
         /// Consumes the builder and constructs a [`ListLayerVersionsInput`](crate::input::ListLayerVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListLayerVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListLayerVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListLayerVersionsInput {
                 compatible_runtime: self.compatible_runtime,
                 layer_name: self.layer_name,
@@ -8515,26 +8929,31 @@ impl ListLayerVersionsInput {
             crate::operation::ListLayerVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListLayerVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_78 = &_input.layer_name;
-                let input_78 = input_78.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "layer_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let layer_name = aws_smithy_http::label::fmt_string(input_78, false);
+                let input_78 = input_78.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "layer_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let layer_name = aws_smithy_http::label::fmt_string(
+                    input_78,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if layer_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "layer_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "layer_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -8547,28 +8966,36 @@ impl ListLayerVersionsInput {
             fn uri_query(
                 _input: &crate::input::ListLayerVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_79) = &_input.compatible_runtime {
-                    query.push_kv(
-                        "CompatibleRuntime",
-                        &aws_smithy_http::query::fmt_string(&inner_79),
-                    );
+                    {
+                        query.push_kv(
+                            "CompatibleRuntime",
+                            &aws_smithy_http::query::fmt_string(&inner_79),
+                        );
+                    }
                 }
                 if let Some(inner_80) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_80));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_80));
+                    }
                 }
                 if let Some(inner_81) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_81).encode(),
-                    );
+                    if *inner_81 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_81).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_82) = &_input.compatible_architecture {
-                    query.push_kv(
-                        "CompatibleArchitecture",
-                        &aws_smithy_http::query::fmt_string(&inner_82),
-                    );
+                    {
+                        query.push_kv(
+                            "CompatibleArchitecture",
+                            &aws_smithy_http::query::fmt_string(&inner_82),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8576,8 +9003,10 @@ impl ListLayerVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListLayerVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8648,7 +9077,7 @@ impl ListLayerVersionsInput {
 pub mod list_provisioned_concurrency_configs_input {
 
     /// A builder for [`ListProvisionedConcurrencyConfigsInput`](crate::input::ListProvisionedConcurrencyConfigsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -8707,7 +9136,7 @@ pub mod list_provisioned_concurrency_configs_input {
             self,
         ) -> Result<
             crate::input::ListProvisionedConcurrencyConfigsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListProvisionedConcurrencyConfigsInput {
                 function_name: self.function_name,
@@ -8730,26 +9159,31 @@ impl ListProvisionedConcurrencyConfigsInput {
             crate::operation::ListProvisionedConcurrencyConfigs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListProvisionedConcurrencyConfigsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_83 = &_input.function_name;
-                let input_83 = input_83.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_83, false);
+                let input_83 = input_83.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_83,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -8762,17 +9196,21 @@ impl ListProvisionedConcurrencyConfigsInput {
             fn uri_query(
                 _input: &crate::input::ListProvisionedConcurrencyConfigsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("List", "ALL");
                 if let Some(inner_84) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_84));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_84));
+                    }
                 }
                 if let Some(inner_85) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_85).encode(),
-                    );
+                    if *inner_85 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_85).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8780,8 +9218,10 @@ impl ListProvisionedConcurrencyConfigsInput {
             fn update_http_builder(
                 input: &crate::input::ListProvisionedConcurrencyConfigsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8852,7 +9292,7 @@ impl ListProvisionedConcurrencyConfigsInput {
 pub mod list_tags_input {
 
     /// A builder for [`ListTagsInput`](crate::input::ListTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
     }
@@ -8870,7 +9310,8 @@ pub mod list_tags_input {
         /// Consumes the builder and constructs a [`ListTagsInput`](crate::input::ListTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListTagsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListTagsInput {
                 resource: self.resource,
             })
@@ -8890,26 +9331,31 @@ impl ListTagsInput {
             crate::operation::ListTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_86 = &_input.resource;
-                let input_86 = input_86.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource = aws_smithy_http::label::fmt_string(input_86, false);
+                let input_86 = input_86.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource = aws_smithy_http::label::fmt_string(
+                    input_86,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/2017-03-31/tags/{Resource}", Resource = resource)
                     .expect("formatting should succeed");
@@ -8919,8 +9365,10 @@ impl ListTagsInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -8987,7 +9435,7 @@ impl ListTagsInput {
 pub mod list_versions_by_function_input {
 
     /// A builder for [`ListVersionsByFunctionInput`](crate::input::ListVersionsByFunctionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -9044,8 +9492,10 @@ pub mod list_versions_by_function_input {
         /// Consumes the builder and constructs a [`ListVersionsByFunctionInput`](crate::input::ListVersionsByFunctionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListVersionsByFunctionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListVersionsByFunctionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListVersionsByFunctionInput {
                 function_name: self.function_name,
                 marker: self.marker,
@@ -9067,26 +9517,31 @@ impl ListVersionsByFunctionInput {
             crate::operation::ListVersionsByFunction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListVersionsByFunctionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_87 = &_input.function_name;
-                let input_87 = input_87.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_87, false);
+                let input_87 = input_87.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_87,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -9099,16 +9554,20 @@ impl ListVersionsByFunctionInput {
             fn uri_query(
                 _input: &crate::input::ListVersionsByFunctionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_88) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_88));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_88));
+                    }
                 }
                 if let Some(inner_89) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_89).encode(),
-                    );
+                    if *inner_89 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_89).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -9116,8 +9575,10 @@ impl ListVersionsByFunctionInput {
             fn update_http_builder(
                 input: &crate::input::ListVersionsByFunctionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -9188,7 +9649,7 @@ impl ListVersionsByFunctionInput {
 pub mod publish_layer_version_input {
 
     /// A builder for [`PublishLayerVersionInput`](crate::input::PublishLayerVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -9293,8 +9754,10 @@ pub mod publish_layer_version_input {
         /// Consumes the builder and constructs a [`PublishLayerVersionInput`](crate::input::PublishLayerVersionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PublishLayerVersionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PublishLayerVersionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PublishLayerVersionInput {
                 layer_name: self.layer_name,
                 description: self.description,
@@ -9319,26 +9782,31 @@ impl PublishLayerVersionInput {
             crate::operation::PublishLayerVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PublishLayerVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_90 = &_input.layer_name;
-                let input_90 = input_90.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "layer_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let layer_name = aws_smithy_http::label::fmt_string(input_90, false);
+                let input_90 = input_90.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "layer_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let layer_name = aws_smithy_http::label::fmt_string(
+                    input_90,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if layer_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "layer_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "layer_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -9352,8 +9820,10 @@ impl PublishLayerVersionInput {
             fn update_http_builder(
                 input: &crate::input::PublishLayerVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9437,7 +9907,7 @@ impl PublishLayerVersionInput {
 pub mod publish_version_input {
 
     /// A builder for [`PublishVersionInput`](crate::input::PublishVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) code_sha256: std::option::Option<std::string::String>,
@@ -9505,7 +9975,7 @@ pub mod publish_version_input {
         /// Consumes the builder and constructs a [`PublishVersionInput`](crate::input::PublishVersionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PublishVersionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PublishVersionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PublishVersionInput {
                 function_name: self.function_name,
@@ -9529,26 +9999,31 @@ impl PublishVersionInput {
             crate::operation::PublishVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PublishVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_91 = &_input.function_name;
-                let input_91 = input_91.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_91, false);
+                let input_91 = input_91.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_91,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -9562,8 +10037,10 @@ impl PublishVersionInput {
             fn update_http_builder(
                 input: &crate::input::PublishVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9647,7 +10124,7 @@ impl PublishVersionInput {
 pub mod put_function_code_signing_config_input {
 
     /// A builder for [`PutFunctionCodeSigningConfigInput`](crate::input::PutFunctionCodeSigningConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_signing_config_arn: std::option::Option<std::string::String>,
         pub(crate) function_name: std::option::Option<std::string::String>,
@@ -9698,7 +10175,7 @@ pub mod put_function_code_signing_config_input {
             self,
         ) -> Result<
             crate::input::PutFunctionCodeSigningConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutFunctionCodeSigningConfigInput {
                 code_signing_config_arn: self.code_signing_config_arn,
@@ -9720,26 +10197,31 @@ impl PutFunctionCodeSigningConfigInput {
             crate::operation::PutFunctionCodeSigningConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutFunctionCodeSigningConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_92 = &_input.function_name;
-                let input_92 = input_92.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_92, false);
+                let input_92 = input_92.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_92,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -9753,8 +10235,10 @@ impl PutFunctionCodeSigningConfigInput {
             fn update_http_builder(
                 input: &crate::input::PutFunctionCodeSigningConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -9837,7 +10321,7 @@ impl PutFunctionCodeSigningConfigInput {
 pub mod put_function_concurrency_input {
 
     /// A builder for [`PutFunctionConcurrencyInput`](crate::input::PutFunctionConcurrencyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) reserved_concurrent_executions: std::option::Option<i32>,
@@ -9886,8 +10370,10 @@ pub mod put_function_concurrency_input {
         /// Consumes the builder and constructs a [`PutFunctionConcurrencyInput`](crate::input::PutFunctionConcurrencyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutFunctionConcurrencyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutFunctionConcurrencyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutFunctionConcurrencyInput {
                 function_name: self.function_name,
                 reserved_concurrent_executions: self.reserved_concurrent_executions,
@@ -9908,26 +10394,31 @@ impl PutFunctionConcurrencyInput {
             crate::operation::PutFunctionConcurrency,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutFunctionConcurrencyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_93 = &_input.function_name;
-                let input_93 = input_93.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_93, false);
+                let input_93 = input_93.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_93,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -9941,8 +10432,10 @@ impl PutFunctionConcurrencyInput {
             fn update_http_builder(
                 input: &crate::input::PutFunctionConcurrencyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -10028,7 +10521,7 @@ impl PutFunctionConcurrencyInput {
 pub mod put_function_event_invoke_config_input {
 
     /// A builder for [`PutFunctionEventInvokeConfigInput`](crate::input::PutFunctionEventInvokeConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -10126,7 +10619,7 @@ pub mod put_function_event_invoke_config_input {
             self,
         ) -> Result<
             crate::input::PutFunctionEventInvokeConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutFunctionEventInvokeConfigInput {
                 function_name: self.function_name,
@@ -10151,26 +10644,31 @@ impl PutFunctionEventInvokeConfigInput {
             crate::operation::PutFunctionEventInvokeConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutFunctionEventInvokeConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_94 = &_input.function_name;
-                let input_94 = input_94.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_94, false);
+                let input_94 = input_94.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_94,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -10183,10 +10681,12 @@ impl PutFunctionEventInvokeConfigInput {
             fn uri_query(
                 _input: &crate::input::PutFunctionEventInvokeConfigInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_95) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_95));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_95));
+                    }
                 }
                 Ok(())
             }
@@ -10194,8 +10694,10 @@ impl PutFunctionEventInvokeConfigInput {
             fn update_http_builder(
                 input: &crate::input::PutFunctionEventInvokeConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10279,7 +10781,7 @@ impl PutFunctionEventInvokeConfigInput {
 pub mod put_provisioned_concurrency_config_input {
 
     /// A builder for [`PutProvisionedConcurrencyConfigInput`](crate::input::PutProvisionedConcurrencyConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -10341,7 +10843,7 @@ pub mod put_provisioned_concurrency_config_input {
             self,
         ) -> Result<
             crate::input::PutProvisionedConcurrencyConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutProvisionedConcurrencyConfigInput {
                 function_name: self.function_name,
@@ -10364,26 +10866,31 @@ impl PutProvisionedConcurrencyConfigInput {
             crate::operation::PutProvisionedConcurrencyConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutProvisionedConcurrencyConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_96 = &_input.function_name;
-                let input_96 = input_96.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_96, false);
+                let input_96 = input_96.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_96,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -10396,19 +10903,34 @@ impl PutProvisionedConcurrencyConfigInput {
             fn uri_query(
                 _input: &crate::input::PutProvisionedConcurrencyConfigInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_97) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_97));
+                let inner_97 = &_input.qualifier;
+                let inner_97 = inner_97.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "qualifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_97.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "qualifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_97));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::PutProvisionedConcurrencyConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10492,7 +11014,7 @@ impl PutProvisionedConcurrencyConfigInput {
 pub mod remove_layer_version_permission_input {
 
     /// A builder for [`RemoveLayerVersionPermissionInput`](crate::input::RemoveLayerVersionPermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_name: std::option::Option<std::string::String>,
         pub(crate) version_number: std::option::Option<i64>,
@@ -10545,7 +11067,7 @@ pub mod remove_layer_version_permission_input {
             self,
         ) -> Result<
             crate::input::RemoveLayerVersionPermissionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RemoveLayerVersionPermissionInput {
                 layer_name: self.layer_name,
@@ -10569,50 +11091,62 @@ impl RemoveLayerVersionPermissionInput {
             crate::operation::RemoveLayerVersionPermission,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RemoveLayerVersionPermissionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_98 = &_input.layer_name;
-                let input_98 = input_98.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "layer_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let layer_name = aws_smithy_http::label::fmt_string(input_98, false);
+                let input_98 = input_98.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "layer_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let layer_name = aws_smithy_http::label::fmt_string(
+                    input_98,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if layer_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "layer_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "layer_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_99 = &_input.version_number;
                 let mut version_number_encoder =
                     aws_smithy_types::primitive::Encoder::from(*input_99);
                 let version_number = version_number_encoder.encode();
                 if version_number.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "version_number",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "version_number",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_100 = &_input.statement_id;
-                let input_100 = input_100.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "statement_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let statement_id = aws_smithy_http::label::fmt_string(input_100, false);
+                let input_100 = input_100.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "statement_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let statement_id = aws_smithy_http::label::fmt_string(
+                    input_100,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if statement_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "statement_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "statement_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -10627,13 +11161,15 @@ impl RemoveLayerVersionPermissionInput {
             fn uri_query(
                 _input: &crate::input::RemoveLayerVersionPermissionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_101) = &_input.revision_id {
-                    query.push_kv(
-                        "RevisionId",
-                        &aws_smithy_http::query::fmt_string(&inner_101),
-                    );
+                    {
+                        query.push_kv(
+                            "RevisionId",
+                            &aws_smithy_http::query::fmt_string(&inner_101),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -10641,8 +11177,10 @@ impl RemoveLayerVersionPermissionInput {
             fn update_http_builder(
                 input: &crate::input::RemoveLayerVersionPermissionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10713,7 +11251,7 @@ impl RemoveLayerVersionPermissionInput {
 pub mod remove_permission_input {
 
     /// A builder for [`RemovePermissionInput`](crate::input::RemovePermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) statement_id: std::option::Option<std::string::String>,
@@ -10781,8 +11319,10 @@ pub mod remove_permission_input {
         /// Consumes the builder and constructs a [`RemovePermissionInput`](crate::input::RemovePermissionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RemovePermissionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::RemovePermissionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::RemovePermissionInput {
                 function_name: self.function_name,
                 statement_id: self.statement_id,
@@ -10805,40 +11345,50 @@ impl RemovePermissionInput {
             crate::operation::RemovePermission,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RemovePermissionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_102 = &_input.function_name;
-                let input_102 = input_102.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_102, false);
+                let input_102 = input_102.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_102,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_103 = &_input.statement_id;
-                let input_103 = input_103.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "statement_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let statement_id = aws_smithy_http::label::fmt_string(input_103, false);
+                let input_103 = input_103.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "statement_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let statement_id = aws_smithy_http::label::fmt_string(
+                    input_103,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if statement_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "statement_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "statement_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -10852,16 +11402,20 @@ impl RemovePermissionInput {
             fn uri_query(
                 _input: &crate::input::RemovePermissionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_104) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_104));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_104));
+                    }
                 }
                 if let Some(inner_105) = &_input.revision_id {
-                    query.push_kv(
-                        "RevisionId",
-                        &aws_smithy_http::query::fmt_string(&inner_105),
-                    );
+                    {
+                        query.push_kv(
+                            "RevisionId",
+                            &aws_smithy_http::query::fmt_string(&inner_105),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -10869,8 +11423,10 @@ impl RemovePermissionInput {
             fn update_http_builder(
                 input: &crate::input::RemovePermissionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10941,7 +11497,7 @@ impl RemovePermissionInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -10987,7 +11543,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource: self.resource,
@@ -11009,26 +11565,31 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_106 = &_input.resource;
-                let input_106 = input_106.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource = aws_smithy_http::label::fmt_string(input_106, false);
+                let input_106 = input_106.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource = aws_smithy_http::label::fmt_string(
+                    input_106,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/2017-03-31/tags/{Resource}", Resource = resource)
                     .expect("formatting should succeed");
@@ -11038,8 +11599,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -11123,7 +11686,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11161,7 +11724,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource: self.resource,
@@ -11183,26 +11746,31 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_107 = &_input.resource;
-                let input_107 = input_107.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource = aws_smithy_http::label::fmt_string(input_107, false);
+                let input_107 = input_107.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource = aws_smithy_http::label::fmt_string(
+                    input_107,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/2017-03-31/tags/{Resource}", Resource = resource)
                     .expect("formatting should succeed");
@@ -11211,12 +11779,17 @@ impl UntagResourceInput {
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_108) = &_input.tag_keys {
-                    for inner_109 in inner_108 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_109));
-                    }
+                let inner_108 = &_input.tag_keys;
+                let inner_108 = inner_108.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_109 in inner_108 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_109));
                 }
                 Ok(())
             }
@@ -11224,8 +11797,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -11296,7 +11871,7 @@ impl UntagResourceInput {
 pub mod update_alias_input {
 
     /// A builder for [`UpdateAliasInput`](crate::input::UpdateAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -11392,7 +11967,7 @@ pub mod update_alias_input {
         /// Consumes the builder and constructs a [`UpdateAliasInput`](crate::input::UpdateAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAliasInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateAliasInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateAliasInput {
                 function_name: self.function_name,
@@ -11418,40 +11993,50 @@ impl UpdateAliasInput {
             crate::operation::UpdateAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_110 = &_input.function_name;
-                let input_110 = input_110.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_110, false);
+                let input_110 = input_110.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_110,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_111 = &_input.name;
-                let input_111 = input_111.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_111, false);
+                let input_111 = input_111.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_111,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -11466,8 +12051,10 @@ impl UpdateAliasInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -11551,7 +12138,7 @@ impl UpdateAliasInput {
 pub mod update_code_signing_config_input {
 
     /// A builder for [`UpdateCodeSigningConfigInput`](crate::input::UpdateCodeSigningConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_signing_config_arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -11613,7 +12200,7 @@ pub mod update_code_signing_config_input {
             self,
         ) -> Result<
             crate::input::UpdateCodeSigningConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateCodeSigningConfigInput {
                 code_signing_config_arn: self.code_signing_config_arn,
@@ -11637,26 +12224,31 @@ impl UpdateCodeSigningConfigInput {
             crate::operation::UpdateCodeSigningConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateCodeSigningConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_112 = &_input.code_signing_config_arn;
-                let input_112 = input_112.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "code_signing_config_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let code_signing_config_arn = aws_smithy_http::label::fmt_string(input_112, false);
+                let input_112 = input_112.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "code_signing_config_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let code_signing_config_arn = aws_smithy_http::label::fmt_string(
+                    input_112,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if code_signing_config_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "code_signing_config_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "code_signing_config_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -11670,8 +12262,10 @@ impl UpdateCodeSigningConfigInput {
             fn update_http_builder(
                 input: &crate::input::UpdateCodeSigningConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -11757,7 +12351,7 @@ impl UpdateCodeSigningConfigInput {
 pub mod update_event_source_mapping_input {
 
     /// A builder for [`UpdateEventSourceMappingInput`](crate::input::UpdateEventSourceMappingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uuid: std::option::Option<std::string::String>,
         pub(crate) function_name: std::option::Option<std::string::String>,
@@ -12002,7 +12596,7 @@ pub mod update_event_source_mapping_input {
             self,
         ) -> Result<
             crate::input::UpdateEventSourceMappingInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateEventSourceMappingInput {
                 uuid: self.uuid,
@@ -12036,26 +12630,31 @@ impl UpdateEventSourceMappingInput {
             crate::operation::UpdateEventSourceMapping,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateEventSourceMappingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_113 = &_input.uuid;
-                let input_113 = input_113.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "uuid",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let uuid = aws_smithy_http::label::fmt_string(input_113, false);
+                let input_113 = input_113.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "uuid",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let uuid = aws_smithy_http::label::fmt_string(
+                    input_113,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if uuid.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "uuid",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "uuid",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -12069,8 +12668,10 @@ impl UpdateEventSourceMappingInput {
             fn update_http_builder(
                 input: &crate::input::UpdateEventSourceMappingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -12156,7 +12757,7 @@ impl UpdateEventSourceMappingInput {
 pub mod update_function_code_input {
 
     /// A builder for [`UpdateFunctionCodeInput`](crate::input::UpdateFunctionCodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) zip_file: std::option::Option<aws_smithy_types::Blob>,
@@ -12302,8 +12903,10 @@ pub mod update_function_code_input {
         /// Consumes the builder and constructs a [`UpdateFunctionCodeInput`](crate::input::UpdateFunctionCodeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateFunctionCodeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateFunctionCodeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateFunctionCodeInput {
                 function_name: self.function_name,
                 zip_file: self.zip_file,
@@ -12316,6 +12919,22 @@ pub mod update_function_code_input {
                 revision_id: self.revision_id,
                 architectures: self.architectures,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("function_name", &self.function_name);
+            formatter.field("zip_file", &"*** Sensitive Data Redacted ***");
+            formatter.field("s3_bucket", &self.s3_bucket);
+            formatter.field("s3_key", &self.s3_key);
+            formatter.field("s3_object_version", &self.s3_object_version);
+            formatter.field("image_uri", &self.image_uri);
+            formatter.field("publish", &self.publish);
+            formatter.field("dry_run", &self.dry_run);
+            formatter.field("revision_id", &self.revision_id);
+            formatter.field("architectures", &self.architectures);
+            formatter.finish()
         }
     }
 }
@@ -12332,26 +12951,31 @@ impl UpdateFunctionCodeInput {
             crate::operation::UpdateFunctionCode,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateFunctionCodeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_114 = &_input.function_name;
-                let input_114 = input_114.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_114, false);
+                let input_114 = input_114.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_114,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -12365,8 +12989,10 @@ impl UpdateFunctionCodeInput {
             fn update_http_builder(
                 input: &crate::input::UpdateFunctionCodeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -12450,7 +13076,7 @@ impl UpdateFunctionCodeInput {
 pub mod update_function_configuration_input {
 
     /// A builder for [`UpdateFunctionConfigurationInput`](crate::input::UpdateFunctionConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) role: std::option::Option<std::string::String>,
@@ -12700,7 +13326,7 @@ pub mod update_function_configuration_input {
             self,
         ) -> Result<
             crate::input::UpdateFunctionConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateFunctionConfigurationInput {
                 function_name: self.function_name,
@@ -12737,26 +13363,31 @@ impl UpdateFunctionConfigurationInput {
             crate::operation::UpdateFunctionConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateFunctionConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_115 = &_input.function_name;
-                let input_115 = input_115.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_115, false);
+                let input_115 = input_115.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_115,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -12770,8 +13401,10 @@ impl UpdateFunctionConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateFunctionConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -12854,7 +13487,7 @@ impl UpdateFunctionConfigurationInput {
 pub mod update_function_event_invoke_config_input {
 
     /// A builder for [`UpdateFunctionEventInvokeConfigInput`](crate::input::UpdateFunctionEventInvokeConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -12952,7 +13585,7 @@ pub mod update_function_event_invoke_config_input {
             self,
         ) -> Result<
             crate::input::UpdateFunctionEventInvokeConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateFunctionEventInvokeConfigInput {
                 function_name: self.function_name,
@@ -12977,26 +13610,31 @@ impl UpdateFunctionEventInvokeConfigInput {
             crate::operation::UpdateFunctionEventInvokeConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateFunctionEventInvokeConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_116 = &_input.function_name;
-                let input_116 = input_116.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_116, false);
+                let input_116 = input_116.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_116,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -13009,10 +13647,12 @@ impl UpdateFunctionEventInvokeConfigInput {
             fn uri_query(
                 _input: &crate::input::UpdateFunctionEventInvokeConfigInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_117) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_117));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_117));
+                    }
                 }
                 Ok(())
             }
@@ -13020,8 +13660,10 @@ impl UpdateFunctionEventInvokeConfigInput {
             fn update_http_builder(
                 input: &crate::input::UpdateFunctionEventInvokeConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -13105,7 +13747,7 @@ impl UpdateFunctionEventInvokeConfigInput {
 pub mod update_function_url_config_input {
 
     /// A builder for [`UpdateFunctionUrlConfigInput`](crate::input::UpdateFunctionUrlConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -13178,7 +13820,7 @@ pub mod update_function_url_config_input {
             self,
         ) -> Result<
             crate::input::UpdateFunctionUrlConfigInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateFunctionUrlConfigInput {
                 function_name: self.function_name,
@@ -13202,26 +13844,31 @@ impl UpdateFunctionUrlConfigInput {
             crate::operation::UpdateFunctionUrlConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateFunctionUrlConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_118 = &_input.function_name;
-                let input_118 = input_118.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let function_name = aws_smithy_http::label::fmt_string(input_118, false);
+                let input_118 = input_118.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "function_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let function_name = aws_smithy_http::label::fmt_string(
+                    input_118,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if function_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "function_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "function_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -13234,10 +13881,12 @@ impl UpdateFunctionUrlConfigInput {
             fn uri_query(
                 _input: &crate::input::UpdateFunctionUrlConfigInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_119) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_119));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_119));
+                    }
                 }
                 Ok(())
             }
@@ -13245,8 +13894,10 @@ impl UpdateFunctionUrlConfigInput {
             fn update_http_builder(
                 input: &crate::input::UpdateFunctionUrlConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -13331,7 +13982,7 @@ impl UpdateFunctionUrlConfigInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFunctionUrlConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -13378,20 +14029,10 @@ impl UpdateFunctionUrlConfigInput {
         self.cors.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFunctionUrlConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFunctionUrlConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.field("auth_type", &self.auth_type);
-        formatter.field("cors", &self.cors);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -13459,24 +14100,10 @@ impl UpdateFunctionEventInvokeConfigInput {
         self.destination_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFunctionEventInvokeConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFunctionEventInvokeConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.field("maximum_retry_attempts", &self.maximum_retry_attempts);
-        formatter.field(
-            "maximum_event_age_in_seconds",
-            &self.maximum_event_age_in_seconds,
-        );
-        formatter.field("destination_config", &self.destination_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFunctionConfigurationInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -13614,29 +14241,6 @@ impl UpdateFunctionConfigurationInput {
         self.ephemeral_storage.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFunctionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFunctionConfigurationInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("role", &self.role);
-        formatter.field("handler", &self.handler);
-        formatter.field("description", &self.description);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("memory_size", &self.memory_size);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("environment", &self.environment);
-        formatter.field("runtime", &self.runtime);
-        formatter.field("dead_letter_config", &self.dead_letter_config);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("tracing_config", &self.tracing_config);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("layers", &self.layers);
-        formatter.field("file_system_configs", &self.file_system_configs);
-        formatter.field("image_config", &self.image_config);
-        formatter.field("ephemeral_storage", &self.ephemeral_storage);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -13748,7 +14352,7 @@ impl std::fmt::Debug for UpdateFunctionCodeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
     #[doc(hidden)]
@@ -13895,45 +14499,10 @@ impl UpdateEventSourceMappingInput {
         self.function_response_types.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEventSourceMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEventSourceMappingInput");
-        formatter.field("uuid", &self.uuid);
-        formatter.field("function_name", &self.function_name);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("batch_size", &self.batch_size);
-        formatter.field("filter_criteria", &self.filter_criteria);
-        formatter.field(
-            "maximum_batching_window_in_seconds",
-            &self.maximum_batching_window_in_seconds,
-        );
-        formatter.field("destination_config", &self.destination_config);
-        formatter.field(
-            "maximum_record_age_in_seconds",
-            &self.maximum_record_age_in_seconds,
-        );
-        formatter.field(
-            "bisect_batch_on_function_error",
-            &self.bisect_batch_on_function_error,
-        );
-        formatter.field("maximum_retry_attempts", &self.maximum_retry_attempts);
-        formatter.field("parallelization_factor", &self.parallelization_factor);
-        formatter.field(
-            "source_access_configurations",
-            &self.source_access_configurations,
-        );
-        formatter.field(
-            "tumbling_window_in_seconds",
-            &self.tumbling_window_in_seconds,
-        );
-        formatter.field("function_response_types", &self.function_response_types);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     #[doc(hidden)]
@@ -13966,20 +14535,10 @@ impl UpdateCodeSigningConfigInput {
         self.code_signing_policies.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateCodeSigningConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCodeSigningConfigInput");
-        formatter.field("code_signing_config_arn", &self.code_signing_config_arn);
-        formatter.field("description", &self.description);
-        formatter.field("allowed_publishers", &self.allowed_publishers);
-        formatter.field("code_signing_policies", &self.code_signing_policies);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAliasInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14040,22 +14599,10 @@ impl UpdateAliasInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAliasInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("name", &self.name);
-        formatter.field("function_version", &self.function_version);
-        formatter.field("description", &self.description);
-        formatter.field("routing_config", &self.routing_config);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The function's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -14074,18 +14621,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource", &self.resource);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The function's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -14108,18 +14647,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource", &self.resource);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemovePermissionInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14166,20 +14697,10 @@ impl RemovePermissionInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemovePermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemovePermissionInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveLayerVersionPermissionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     #[doc(hidden)]
@@ -14212,20 +14733,10 @@ impl RemoveLayerVersionPermissionInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveLayerVersionPermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveLayerVersionPermissionInput");
-        formatter.field("layer_name", &self.layer_name);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutProvisionedConcurrencyConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14265,22 +14776,10 @@ impl PutProvisionedConcurrencyConfigInput {
         self.provisioned_concurrent_executions
     }
 }
-impl std::fmt::Debug for PutProvisionedConcurrencyConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutProvisionedConcurrencyConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.field(
-            "provisioned_concurrent_executions",
-            &self.provisioned_concurrent_executions,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14348,24 +14847,10 @@ impl PutFunctionEventInvokeConfigInput {
         self.destination_config.as_ref()
     }
 }
-impl std::fmt::Debug for PutFunctionEventInvokeConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutFunctionEventInvokeConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.field("maximum_retry_attempts", &self.maximum_retry_attempts);
-        formatter.field(
-            "maximum_event_age_in_seconds",
-            &self.maximum_event_age_in_seconds,
-        );
-        formatter.field("destination_config", &self.destination_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFunctionConcurrencyInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14398,21 +14883,10 @@ impl PutFunctionConcurrencyInput {
         self.reserved_concurrent_executions
     }
 }
-impl std::fmt::Debug for PutFunctionConcurrencyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutFunctionConcurrencyInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field(
-            "reserved_concurrent_executions",
-            &self.reserved_concurrent_executions,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFunctionCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     #[doc(hidden)]
@@ -14445,18 +14919,10 @@ impl PutFunctionCodeSigningConfigInput {
         self.function_name.as_deref()
     }
 }
-impl std::fmt::Debug for PutFunctionCodeSigningConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutFunctionCodeSigningConfigInput");
-        formatter.field("code_signing_config_arn", &self.code_signing_config_arn);
-        formatter.field("function_name", &self.function_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishVersionInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14503,20 +14969,10 @@ impl PublishVersionInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for PublishVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishVersionInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("code_sha256", &self.code_sha256);
-        formatter.field("description", &self.description);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishLayerVersionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     #[doc(hidden)]
@@ -14573,22 +15029,10 @@ impl PublishLayerVersionInput {
         self.compatible_architectures.as_deref()
     }
 }
-impl std::fmt::Debug for PublishLayerVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishLayerVersionInput");
-        formatter.field("layer_name", &self.layer_name);
-        formatter.field("description", &self.description);
-        formatter.field("content", &self.content);
-        formatter.field("compatible_runtimes", &self.compatible_runtimes);
-        formatter.field("license_info", &self.license_info);
-        formatter.field("compatible_architectures", &self.compatible_architectures);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVersionsByFunctionInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14628,19 +15072,10 @@ impl ListVersionsByFunctionInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListVersionsByFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVersionsByFunctionInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsInput {
     /// <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
     #[doc(hidden)]
@@ -14652,17 +15087,10 @@ impl ListTagsInput {
         self.resource.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsInput");
-        formatter.field("resource", &self.resource);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProvisionedConcurrencyConfigsInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14702,19 +15130,10 @@ impl ListProvisionedConcurrencyConfigsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListProvisionedConcurrencyConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProvisionedConcurrencyConfigsInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLayerVersionsInput {
     /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
     #[doc(hidden)]
@@ -14754,21 +15173,10 @@ impl ListLayerVersionsInput {
         self.compatible_architecture.as_ref()
     }
 }
-impl std::fmt::Debug for ListLayerVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLayerVersionsInput");
-        formatter.field("compatible_runtime", &self.compatible_runtime);
-        formatter.field("layer_name", &self.layer_name);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("compatible_architecture", &self.compatible_architecture);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLayersInput {
     /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
     #[doc(hidden)]
@@ -14801,20 +15209,10 @@ impl ListLayersInput {
         self.compatible_architecture.as_ref()
     }
 }
-impl std::fmt::Debug for ListLayersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLayersInput");
-        formatter.field("compatible_runtime", &self.compatible_runtime);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.field("compatible_architecture", &self.compatible_architecture);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFunctionUrlConfigsInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14854,19 +15252,10 @@ impl ListFunctionUrlConfigsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListFunctionUrlConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFunctionUrlConfigsInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFunctionsByCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     #[doc(hidden)]
@@ -14892,19 +15281,10 @@ impl ListFunctionsByCodeSigningConfigInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListFunctionsByCodeSigningConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFunctionsByCodeSigningConfigInput");
-        formatter.field("code_signing_config_arn", &self.code_signing_config_arn);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFunctionsInput {
     /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
     #[doc(hidden)]
@@ -14937,20 +15317,10 @@ impl ListFunctionsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListFunctionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFunctionsInput");
-        formatter.field("master_region", &self.master_region);
-        formatter.field("function_version", &self.function_version);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFunctionEventInvokeConfigsInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -14990,19 +15360,10 @@ impl ListFunctionEventInvokeConfigsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListFunctionEventInvokeConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFunctionEventInvokeConfigsInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventSourceMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     /// <ul>
@@ -15063,20 +15424,10 @@ impl ListEventSourceMappingsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListEventSourceMappingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventSourceMappingsInput");
-        formatter.field("event_source_arn", &self.event_source_arn);
-        formatter.field("function_name", &self.function_name);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCodeSigningConfigsInput {
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     #[doc(hidden)]
@@ -15095,18 +15446,10 @@ impl ListCodeSigningConfigsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListCodeSigningConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCodeSigningConfigsInput");
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAliasesInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15153,20 +15496,11 @@ impl ListAliasesInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListAliasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAliasesInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("function_version", &self.function_version);
-        formatter.field("marker", &self.marker);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated]
 #[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct InvokeAsyncInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15196,14 +15530,6 @@ impl InvokeAsyncInput {
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     pub fn invoke_args(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.invoke_args
-    }
-}
-impl std::fmt::Debug for InvokeAsyncInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvokeAsyncInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("invoke_args", &self.invoke_args);
-        formatter.finish()
     }
 }
 
@@ -15297,7 +15623,7 @@ impl std::fmt::Debug for InvokeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProvisionedConcurrencyConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15330,18 +15656,10 @@ impl GetProvisionedConcurrencyConfigInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetProvisionedConcurrencyConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProvisionedConcurrencyConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPolicyInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15374,18 +15692,10 @@ impl GetPolicyInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPolicyInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLayerVersionPolicyInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     #[doc(hidden)]
@@ -15404,18 +15714,10 @@ impl GetLayerVersionPolicyInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for GetLayerVersionPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLayerVersionPolicyInput");
-        formatter.field("layer_name", &self.layer_name);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLayerVersionByArnInput {
     /// <p>The ARN of the layer version.</p>
     #[doc(hidden)]
@@ -15427,17 +15729,10 @@ impl GetLayerVersionByArnInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetLayerVersionByArnInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLayerVersionByArnInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLayerVersionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     #[doc(hidden)]
@@ -15456,18 +15751,10 @@ impl GetLayerVersionInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for GetLayerVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLayerVersionInput");
-        formatter.field("layer_name", &self.layer_name);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFunctionUrlConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15500,18 +15787,10 @@ impl GetFunctionUrlConfigInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetFunctionUrlConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFunctionUrlConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15544,18 +15823,10 @@ impl GetFunctionEventInvokeConfigInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetFunctionEventInvokeConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFunctionEventInvokeConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFunctionConfigurationInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15588,18 +15859,10 @@ impl GetFunctionConfigurationInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetFunctionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFunctionConfigurationInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFunctionConcurrencyInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15625,17 +15888,10 @@ impl GetFunctionConcurrencyInput {
         self.function_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetFunctionConcurrencyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFunctionConcurrencyInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFunctionCodeSigningConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15661,17 +15917,10 @@ impl GetFunctionCodeSigningConfigInput {
         self.function_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetFunctionCodeSigningConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFunctionCodeSigningConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFunctionInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15704,18 +15953,10 @@ impl GetFunctionInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFunctionInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
     #[doc(hidden)]
@@ -15727,17 +15968,10 @@ impl GetEventSourceMappingInput {
         self.uuid.as_deref()
     }
 }
-impl std::fmt::Debug for GetEventSourceMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEventSourceMappingInput");
-        formatter.field("uuid", &self.uuid);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
     #[doc(hidden)]
@@ -15749,17 +15983,10 @@ impl GetCodeSigningConfigInput {
         self.code_signing_config_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetCodeSigningConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCodeSigningConfigInput");
-        formatter.field("code_signing_config_arn", &self.code_signing_config_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAliasInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15792,29 +16019,15 @@ impl GetAliasInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAliasInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountSettingsInput {}
-impl std::fmt::Debug for GetAccountSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountSettingsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProvisionedConcurrencyConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15847,18 +16060,10 @@ impl DeleteProvisionedConcurrencyConfigInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProvisionedConcurrencyConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProvisionedConcurrencyConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLayerVersionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     #[doc(hidden)]
@@ -15877,18 +16082,10 @@ impl DeleteLayerVersionInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for DeleteLayerVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLayerVersionInput");
-        formatter.field("layer_name", &self.layer_name);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFunctionUrlConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15921,18 +16118,10 @@ impl DeleteFunctionUrlConfigInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFunctionUrlConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFunctionUrlConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -15965,18 +16154,10 @@ impl DeleteFunctionEventInvokeConfigInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFunctionEventInvokeConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFunctionEventInvokeConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFunctionConcurrencyInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16002,17 +16183,10 @@ impl DeleteFunctionConcurrencyInput {
         self.function_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFunctionConcurrencyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFunctionConcurrencyInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFunctionCodeSigningConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16038,17 +16212,10 @@ impl DeleteFunctionCodeSigningConfigInput {
         self.function_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFunctionCodeSigningConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFunctionCodeSigningConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFunctionInput {
     /// <p>The name of the Lambda function or version.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16081,18 +16248,10 @@ impl DeleteFunctionInput {
         self.qualifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFunctionInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
     #[doc(hidden)]
@@ -16104,17 +16263,10 @@ impl DeleteEventSourceMappingInput {
         self.uuid.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEventSourceMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEventSourceMappingInput");
-        formatter.field("uuid", &self.uuid);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     #[doc(hidden)]
@@ -16126,17 +16278,10 @@ impl DeleteCodeSigningConfigInput {
         self.code_signing_config_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCodeSigningConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCodeSigningConfigInput");
-        formatter.field("code_signing_config_arn", &self.code_signing_config_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAliasInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16169,18 +16314,10 @@ impl DeleteAliasInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAliasInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFunctionUrlConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16227,20 +16364,10 @@ impl CreateFunctionUrlConfigInput {
         self.cors.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFunctionUrlConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFunctionUrlConfigInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.field("auth_type", &self.auth_type);
-        formatter.field("cors", &self.cors);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFunctionInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16417,38 +16544,10 @@ impl CreateFunctionInput {
         self.ephemeral_storage.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFunctionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFunctionInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("runtime", &self.runtime);
-        formatter.field("role", &self.role);
-        formatter.field("handler", &self.handler);
-        formatter.field("code", &self.code);
-        formatter.field("description", &self.description);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("memory_size", &self.memory_size);
-        formatter.field("publish", &self.publish);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("package_type", &self.package_type);
-        formatter.field("dead_letter_config", &self.dead_letter_config);
-        formatter.field("environment", &self.environment);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("tracing_config", &self.tracing_config);
-        formatter.field("tags", &self.tags);
-        formatter.field("layers", &self.layers);
-        formatter.field("file_system_configs", &self.file_system_configs);
-        formatter.field("image_config", &self.image_config);
-        formatter.field("code_signing_config_arn", &self.code_signing_config_arn);
-        formatter.field("architectures", &self.architectures);
-        formatter.field("ephemeral_storage", &self.ephemeral_storage);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEventSourceMappingInput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     /// <ul>
@@ -16664,61 +16763,10 @@ impl CreateEventSourceMappingInput {
         self.self_managed_kafka_event_source_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateEventSourceMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEventSourceMappingInput");
-        formatter.field("event_source_arn", &self.event_source_arn);
-        formatter.field("function_name", &self.function_name);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("batch_size", &self.batch_size);
-        formatter.field("filter_criteria", &self.filter_criteria);
-        formatter.field(
-            "maximum_batching_window_in_seconds",
-            &self.maximum_batching_window_in_seconds,
-        );
-        formatter.field("parallelization_factor", &self.parallelization_factor);
-        formatter.field("starting_position", &self.starting_position);
-        formatter.field(
-            "starting_position_timestamp",
-            &self.starting_position_timestamp,
-        );
-        formatter.field("destination_config", &self.destination_config);
-        formatter.field(
-            "maximum_record_age_in_seconds",
-            &self.maximum_record_age_in_seconds,
-        );
-        formatter.field(
-            "bisect_batch_on_function_error",
-            &self.bisect_batch_on_function_error,
-        );
-        formatter.field("maximum_retry_attempts", &self.maximum_retry_attempts);
-        formatter.field(
-            "tumbling_window_in_seconds",
-            &self.tumbling_window_in_seconds,
-        );
-        formatter.field("topics", &self.topics);
-        formatter.field("queues", &self.queues);
-        formatter.field(
-            "source_access_configurations",
-            &self.source_access_configurations,
-        );
-        formatter.field("self_managed_event_source", &self.self_managed_event_source);
-        formatter.field("function_response_types", &self.function_response_types);
-        formatter.field(
-            "amazon_managed_kafka_event_source_config",
-            &self.amazon_managed_kafka_event_source_config,
-        );
-        formatter.field(
-            "self_managed_kafka_event_source_config",
-            &self.self_managed_kafka_event_source_config,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCodeSigningConfigInput {
     /// <p>Descriptive name for this code signing configuration.</p>
     #[doc(hidden)]
@@ -16744,19 +16792,10 @@ impl CreateCodeSigningConfigInput {
         self.code_signing_policies.as_ref()
     }
 }
-impl std::fmt::Debug for CreateCodeSigningConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCodeSigningConfigInput");
-        formatter.field("description", &self.description);
-        formatter.field("allowed_publishers", &self.allowed_publishers);
-        formatter.field("code_signing_policies", &self.code_signing_policies);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAliasInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16810,21 +16849,10 @@ impl CreateAliasInput {
         self.routing_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAliasInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("name", &self.name);
-        formatter.field("function_version", &self.function_version);
-        formatter.field("description", &self.description);
-        formatter.field("routing_config", &self.routing_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddPermissionInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -16924,27 +16952,10 @@ impl AddPermissionInput {
         self.function_url_auth_type.as_ref()
     }
 }
-impl std::fmt::Debug for AddPermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddPermissionInput");
-        formatter.field("function_name", &self.function_name);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.field("action", &self.action);
-        formatter.field("principal", &self.principal);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("source_account", &self.source_account);
-        formatter.field("event_source_token", &self.event_source_token);
-        formatter.field("qualifier", &self.qualifier);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("principal_org_id", &self.principal_org_id);
-        formatter.field("function_url_auth_type", &self.function_url_auth_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddLayerVersionPermissionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     #[doc(hidden)]
@@ -16996,18 +17007,5 @@ impl AddLayerVersionPermissionInput {
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AddLayerVersionPermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddLayerVersionPermissionInput");
-        formatter.field("layer_name", &self.layer_name);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.field("action", &self.action);
-        formatter.field("principal", &self.principal);
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
     }
 }

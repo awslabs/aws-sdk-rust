@@ -2,7 +2,7 @@
 
 /// <p>Represents a Amazon Web Services Service Catalog AppRegistry attribute group that is rich metadata which describes an application and its components.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeGroup {
     /// <p>The globally unique attribute group identifier of the attribute group.</p>
     #[doc(hidden)]
@@ -60,24 +60,11 @@ impl AttributeGroup {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for AttributeGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeGroup");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`AttributeGroup`](crate::model::AttributeGroup).
 pub mod attribute_group {
 
     /// A builder for [`AttributeGroup`](crate::model::AttributeGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -204,7 +191,7 @@ impl AttributeGroup {
 
 /// <p>Represents a Amazon Web Services Service Catalog AppRegistry application that is the top-level node in a hierarchy of related cloud resource abstractions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Application {
     /// <p>The identifier of the application.</p>
     #[doc(hidden)]
@@ -262,24 +249,11 @@ impl Application {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for Application {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Application");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`Application`](crate::model::Application).
 pub mod application {
 
     /// A builder for [`Application`](crate::model::Application).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -404,6 +378,41 @@ impl Application {
     }
 }
 
+/// When writing a match expression against `SyncAction`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let syncaction = unimplemented!();
+/// match syncaction {
+///     SyncAction::NoAction => { /* ... */ },
+///     SyncAction::StartSync => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `syncaction` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SyncAction::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SyncAction::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SyncAction::NewFeature` is defined.
+/// Specifically, when `syncaction` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SyncAction::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -420,15 +429,15 @@ pub enum SyncAction {
     NoAction,
     #[allow(missing_docs)] // documentation missing in model
     StartSync,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SyncAction {
     fn from(s: &str) -> Self {
         match s {
             "NO_ACTION" => SyncAction::NoAction,
             "START_SYNC" => SyncAction::StartSync,
-            other => SyncAction::Unknown(other.to_owned()),
+            other => SyncAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -445,11 +454,11 @@ impl SyncAction {
         match self {
             SyncAction::NoAction => "NO_ACTION",
             SyncAction::StartSync => "START_SYNC",
-            SyncAction::Unknown(s) => s.as_ref(),
+            SyncAction::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NO_ACTION", "START_SYNC"]
     }
 }
@@ -459,6 +468,40 @@ impl AsRef<str> for SyncAction {
     }
 }
 
+/// When writing a match expression against `ResourceType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourcetype = unimplemented!();
+/// match resourcetype {
+///     ResourceType::CfnStack => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourcetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceType::NewFeature` is defined.
+/// Specifically, when `resourcetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -473,14 +516,14 @@ impl AsRef<str> for SyncAction {
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     CfnStack,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "CFN_STACK" => ResourceType::CfnStack,
-            other => ResourceType::Unknown(other.to_owned()),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -496,11 +539,11 @@ impl ResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::CfnStack => "CFN_STACK",
-            ResourceType::Unknown(s) => s.as_ref(),
+            ResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CFN_STACK"]
     }
 }
@@ -512,7 +555,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p> The details related to a specific AttributeGroup. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeGroupDetails {
     /// <p>The unique identifier of the attribute group.</p>
     #[doc(hidden)]
@@ -538,20 +581,11 @@ impl AttributeGroupDetails {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for AttributeGroupDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeGroupDetails");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 /// See [`AttributeGroupDetails`](crate::model::AttributeGroupDetails).
 pub mod attribute_group_details {
 
     /// A builder for [`AttributeGroupDetails`](crate::model::AttributeGroupDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -607,7 +641,7 @@ impl AttributeGroupDetails {
 
 /// <p>Summary of a Amazon Web Services Service Catalog AppRegistry attribute group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeGroupSummary {
     /// <p>The globally unique attribute group identifier of the attribute group.</p>
     #[doc(hidden)]
@@ -654,23 +688,11 @@ impl AttributeGroupSummary {
         self.last_update_time.as_ref()
     }
 }
-impl std::fmt::Debug for AttributeGroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeGroupSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
-    }
-}
 /// See [`AttributeGroupSummary`](crate::model::AttributeGroupSummary).
 pub mod attribute_group_summary {
 
     /// A builder for [`AttributeGroupSummary`](crate::model::AttributeGroupSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -768,7 +790,7 @@ impl AttributeGroupSummary {
 
 /// <p>The information about the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceInfo {
     /// <p>The name of the resource.</p>
     #[doc(hidden)]
@@ -787,19 +809,11 @@ impl ResourceInfo {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for ResourceInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInfo");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 /// See [`ResourceInfo`](crate::model::ResourceInfo).
 pub mod resource_info {
 
     /// A builder for [`ResourceInfo`](crate::model::ResourceInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -843,7 +857,7 @@ impl ResourceInfo {
 
 /// <p>Summary of a Amazon Web Services Service Catalog AppRegistry application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>The identifier of the application.</p>
     #[doc(hidden)]
@@ -890,23 +904,11 @@ impl ApplicationSummary {
         self.last_update_time.as_ref()
     }
 }
-impl std::fmt::Debug for ApplicationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationSummary");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
-    }
-}
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
 pub mod application_summary {
 
     /// A builder for [`ApplicationSummary`](crate::model::ApplicationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1004,7 +1006,7 @@ impl ApplicationSummary {
 
 /// <p> The information about the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resource {
     /// <p>The name of the resource.</p>
     #[doc(hidden)]
@@ -1037,21 +1039,11 @@ impl Resource {
         self.integrations.as_ref()
     }
 }
-impl std::fmt::Debug for Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Resource");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("association_time", &self.association_time);
-        formatter.field("integrations", &self.integrations);
-        formatter.finish()
-    }
-}
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
 
     /// A builder for [`Resource`](crate::model::Resource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1125,7 +1117,7 @@ impl Resource {
 
 /// <p>The service integration information about the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceIntegrations {
     /// <p>The information about the integration of Resource Groups.</p>
     #[doc(hidden)]
@@ -1137,18 +1129,11 @@ impl ResourceIntegrations {
         self.resource_group.as_ref()
     }
 }
-impl std::fmt::Debug for ResourceIntegrations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceIntegrations");
-        formatter.field("resource_group", &self.resource_group);
-        formatter.finish()
-    }
-}
 /// See [`ResourceIntegrations`](crate::model::ResourceIntegrations).
 pub mod resource_integrations {
 
     /// A builder for [`ResourceIntegrations`](crate::model::ResourceIntegrations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group: std::option::Option<crate::model::ResourceGroup>,
     }
@@ -1183,7 +1168,7 @@ impl ResourceIntegrations {
 
 /// <p>The information about the resource group integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceGroup {
     /// <p>The state of the propagation process for the resource group. The states includes:</p>
     /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p>
@@ -1221,20 +1206,11 @@ impl ResourceGroup {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for ResourceGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceGroup");
-        formatter.field("state", &self.state);
-        formatter.field("arn", &self.arn);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`ResourceGroup`](crate::model::ResourceGroup).
 pub mod resource_group {
 
     /// A builder for [`ResourceGroup`](crate::model::ResourceGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::ResourceGroupState>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1306,6 +1282,45 @@ impl ResourceGroup {
     }
 }
 
+/// When writing a match expression against `ResourceGroupState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourcegroupstate = unimplemented!();
+/// match resourcegroupstate {
+///     ResourceGroupState::CreateComplete => { /* ... */ },
+///     ResourceGroupState::CreateFailed => { /* ... */ },
+///     ResourceGroupState::Creating => { /* ... */ },
+///     ResourceGroupState::UpdateComplete => { /* ... */ },
+///     ResourceGroupState::UpdateFailed => { /* ... */ },
+///     ResourceGroupState::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourcegroupstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceGroupState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceGroupState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceGroupState::NewFeature` is defined.
+/// Specifically, when `resourcegroupstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceGroupState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1330,8 +1345,8 @@ pub enum ResourceGroupState {
     UpdateFailed,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceGroupState {
     fn from(s: &str) -> Self {
@@ -1342,7 +1357,9 @@ impl std::convert::From<&str> for ResourceGroupState {
             "UPDATE_COMPLETE" => ResourceGroupState::UpdateComplete,
             "UPDATE_FAILED" => ResourceGroupState::UpdateFailed,
             "UPDATING" => ResourceGroupState::Updating,
-            other => ResourceGroupState::Unknown(other.to_owned()),
+            other => {
+                ResourceGroupState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -1363,11 +1380,11 @@ impl ResourceGroupState {
             ResourceGroupState::UpdateComplete => "UPDATE_COMPLETE",
             ResourceGroupState::UpdateFailed => "UPDATE_FAILED",
             ResourceGroupState::Updating => "UPDATING",
-            ResourceGroupState::Unknown(s) => s.as_ref(),
+            ResourceGroupState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_COMPLETE",
             "CREATE_FAILED",
@@ -1386,7 +1403,7 @@ impl AsRef<str> for ResourceGroupState {
 
 /// <p> The information about the service integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Integrations {
     /// <p> The information about the resource group integration.</p>
     #[doc(hidden)]
@@ -1398,18 +1415,11 @@ impl Integrations {
         self.resource_group.as_ref()
     }
 }
-impl std::fmt::Debug for Integrations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Integrations");
-        formatter.field("resource_group", &self.resource_group);
-        formatter.finish()
-    }
-}
 /// See [`Integrations`](crate::model::Integrations).
 pub mod integrations {
 
     /// A builder for [`Integrations`](crate::model::Integrations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group: std::option::Option<crate::model::ResourceGroup>,
     }

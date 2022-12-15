@@ -9,6 +9,7 @@ use aws_smithy_types::date_time::{DateTimeFormatError, Format};
 use aws_smithy_types::primitive::Encoder;
 use aws_smithy_types::{DateTime, Number};
 use std::borrow::Cow;
+use std::fmt::Write;
 use urlencoding::encode;
 
 pub struct QueryWriter<'a> {
@@ -33,6 +34,7 @@ impl<'a> QueryWriter<'a> {
     }
 }
 
+#[must_use]
 pub struct QueryMapWriter<'a> {
     output: &'a mut String,
     prefix: Cow<'a, str>,
@@ -62,14 +64,18 @@ impl<'a> QueryMapWriter<'a> {
 
     pub fn entry(&mut self, key: &str) -> QueryValueWriter {
         let entry = if self.flatten { "" } else { ".entry" };
-        self.output.push_str(&format!(
+        write!(
+            &mut self.output,
             "&{}{}.{}.{}={}",
             self.prefix,
             entry,
             self.next_index,
             self.key_name,
             encode(key)
-        ));
+        )
+        // The `Write` implementation for `String` is infallible,
+        // see https://doc.rust-lang.org/src/alloc/string.rs.html#2815
+        .unwrap();
         let value_name = format!(
             "{}{}.{}.{}",
             self.prefix, entry, self.next_index, self.value_name
@@ -84,6 +90,7 @@ impl<'a> QueryMapWriter<'a> {
     }
 }
 
+#[must_use]
 pub struct QueryListWriter<'a> {
     output: &'a mut String,
     prefix: Cow<'a, str>,
@@ -127,10 +134,15 @@ impl<'a> QueryListWriter<'a> {
     }
 
     pub fn finish(self) {
-        // Calling this drops self
+        // https://github.com/awslabs/smithy/commit/715b1d94ab14764ad43496b016b0c2e85bcf1d1f
+        // If the list was empty, just serialize the parameter name
+        if self.next_index == 1 {
+            QueryValueWriter::new(self.output, self.prefix).write_param_name();
+        }
     }
 }
 
+#[must_use]
 pub struct QueryValueWriter<'a> {
     output: &'a mut String,
     prefix: Cow<'a, str>,
@@ -222,6 +234,15 @@ mod tests {
         let writer = QueryWriter::new(&mut out, "SomeAction", "1.0");
         writer.finish();
         assert_eq!("Action=SomeAction&Version=1.0", out);
+    }
+
+    #[test]
+    fn query_list_writer_empty_list() {
+        let mut out = String::new();
+        let mut writer = QueryWriter::new(&mut out, "SomeAction", "1.0");
+        writer.prefix("myList").start_list(false, None).finish();
+        writer.finish();
+        assert_eq!("Action=SomeAction&Version=1.0&myList=", out);
     }
 
     #[test]

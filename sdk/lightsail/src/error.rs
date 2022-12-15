@@ -2,7 +2,7 @@
 
 /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnauthenticatedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -31,19 +31,9 @@ impl UnauthenticatedException {
         self.tip.as_deref()
     }
 }
-impl std::fmt::Debug for UnauthenticatedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnauthenticatedException");
-        formatter.field("code", &self.code);
-        formatter.field("docs", &self.docs);
-        formatter.field("message", &self.message);
-        formatter.field("tip", &self.tip);
-        formatter.finish()
-    }
-}
 impl UnauthenticatedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -51,7 +41,9 @@ impl std::fmt::Display for UnauthenticatedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnauthenticatedException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -61,7 +53,7 @@ impl std::error::Error for UnauthenticatedException {}
 pub mod unauthenticated_exception {
 
     /// A builder for [`UnauthenticatedException`](crate::error::UnauthenticatedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) docs: std::option::Option<std::string::String>,
@@ -129,7 +121,7 @@ impl UnauthenticatedException {
 
 /// <p>A general service exception.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -158,19 +150,9 @@ impl ServiceException {
         self.tip.as_deref()
     }
 }
-impl std::fmt::Debug for ServiceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceException");
-        formatter.field("code", &self.code);
-        formatter.field("docs", &self.docs);
-        formatter.field("message", &self.message);
-        formatter.field("tip", &self.tip);
-        formatter.finish()
-    }
-}
 impl ServiceException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -178,7 +160,9 @@ impl std::fmt::Display for ServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -188,7 +172,7 @@ impl std::error::Error for ServiceException {}
 pub mod service_exception {
 
     /// A builder for [`ServiceException`](crate::error::ServiceException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) docs: std::option::Option<std::string::String>,
@@ -256,7 +240,7 @@ impl ServiceException {
 
 /// <p>Lightsail throws this exception when an operation fails to execute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationFailureException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -285,19 +269,9 @@ impl OperationFailureException {
         self.tip.as_deref()
     }
 }
-impl std::fmt::Debug for OperationFailureException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationFailureException");
-        formatter.field("code", &self.code);
-        formatter.field("docs", &self.docs);
-        formatter.field("message", &self.message);
-        formatter.field("tip", &self.tip);
-        formatter.finish()
-    }
-}
 impl OperationFailureException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -305,7 +279,9 @@ impl std::fmt::Display for OperationFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OperationFailureException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -315,7 +291,7 @@ impl std::error::Error for OperationFailureException {}
 pub mod operation_failure_exception {
 
     /// A builder for [`OperationFailureException`](crate::error::OperationFailureException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) docs: std::option::Option<std::string::String>,
@@ -383,7 +359,7 @@ impl OperationFailureException {
 
 /// <p>Lightsail throws this exception when it cannot find a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -412,19 +388,9 @@ impl NotFoundException {
         self.tip.as_deref()
     }
 }
-impl std::fmt::Debug for NotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundException");
-        formatter.field("code", &self.code);
-        formatter.field("docs", &self.docs);
-        formatter.field("message", &self.message);
-        formatter.field("tip", &self.tip);
-        formatter.finish()
-    }
-}
 impl NotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -432,7 +398,9 @@ impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -442,7 +410,7 @@ impl std::error::Error for NotFoundException {}
 pub mod not_found_exception {
 
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) docs: std::option::Option<std::string::String>,
@@ -512,7 +480,7 @@ impl NotFoundException {
 /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidInputException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -541,19 +509,9 @@ impl InvalidInputException {
         self.tip.as_deref()
     }
 }
-impl std::fmt::Debug for InvalidInputException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidInputException");
-        formatter.field("code", &self.code);
-        formatter.field("docs", &self.docs);
-        formatter.field("message", &self.message);
-        formatter.field("tip", &self.tip);
-        formatter.finish()
-    }
-}
 impl InvalidInputException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -561,7 +519,9 @@ impl std::fmt::Display for InvalidInputException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidInputException")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -571,7 +531,7 @@ impl std::error::Error for InvalidInputException {}
 pub mod invalid_input_exception {
 
     /// A builder for [`InvalidInputException`](crate::error::InvalidInputException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) docs: std::option::Option<std::string::String>,
@@ -639,7 +599,7 @@ impl InvalidInputException {
 
 /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountSetupInProgressException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -668,19 +628,9 @@ impl AccountSetupInProgressException {
         self.tip.as_deref()
     }
 }
-impl std::fmt::Debug for AccountSetupInProgressException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountSetupInProgressException");
-        formatter.field("code", &self.code);
-        formatter.field("docs", &self.docs);
-        formatter.field("message", &self.message);
-        formatter.field("tip", &self.tip);
-        formatter.finish()
-    }
-}
 impl AccountSetupInProgressException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -688,7 +638,9 @@ impl std::fmt::Display for AccountSetupInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccountSetupInProgressException")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -698,7 +650,7 @@ impl std::error::Error for AccountSetupInProgressException {}
 pub mod account_setup_in_progress_exception {
 
     /// A builder for [`AccountSetupInProgressException`](crate::error::AccountSetupInProgressException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) docs: std::option::Option<std::string::String>,
@@ -766,7 +718,7 @@ impl AccountSetupInProgressException {
 
 /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -795,19 +747,9 @@ impl AccessDeniedException {
         self.tip.as_deref()
     }
 }
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("code", &self.code);
-        formatter.field("docs", &self.docs);
-        formatter.field("message", &self.message);
-        formatter.field("tip", &self.tip);
-        formatter.finish()
-    }
-}
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -815,7 +757,9 @@ impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -825,7 +769,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
 
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) docs: std::option::Option<std::string::String>,
@@ -900,6 +844,14 @@ pub struct AllocateStaticIpError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AllocateStaticIpError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AllocateStaticIpErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AllocateStaticIp` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -920,8 +872,15 @@ pub enum AllocateStaticIpErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AllocateStaticIpError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -954,7 +913,7 @@ impl AllocateStaticIpError {
     /// Creates the `AllocateStaticIpError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AllocateStaticIpErrorKind::Unhandled(err.into()),
+            kind: AllocateStaticIpErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -963,7 +922,7 @@ impl AllocateStaticIpError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AllocateStaticIpErrorKind::Unhandled(err.into()),
+            kind: AllocateStaticIpErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1041,7 +1000,7 @@ impl std::error::Error for AllocateStaticIpError {
             AllocateStaticIpErrorKind::OperationFailureException(_inner) => Some(_inner),
             AllocateStaticIpErrorKind::ServiceException(_inner) => Some(_inner),
             AllocateStaticIpErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            AllocateStaticIpErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AllocateStaticIpErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1054,6 +1013,16 @@ pub struct AttachCertificateToDistributionError {
     pub kind: AttachCertificateToDistributionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AttachCertificateToDistributionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AttachCertificateToDistributionErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `AttachCertificateToDistribution` operation.
 #[non_exhaustive]
@@ -1073,8 +1042,15 @@ pub enum AttachCertificateToDistributionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachCertificateToDistributionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1117,7 +1093,9 @@ impl AttachCertificateToDistributionError {
     /// Creates the `AttachCertificateToDistributionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AttachCertificateToDistributionErrorKind::Unhandled(err.into()),
+            kind: AttachCertificateToDistributionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1126,7 +1104,9 @@ impl AttachCertificateToDistributionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AttachCertificateToDistributionErrorKind::Unhandled(err.into()),
+            kind: AttachCertificateToDistributionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1206,7 +1186,7 @@ impl std::error::Error for AttachCertificateToDistributionError {
             AttachCertificateToDistributionErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            AttachCertificateToDistributionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AttachCertificateToDistributionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1219,6 +1199,14 @@ pub struct AttachDiskError {
     pub kind: AttachDiskErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AttachDiskError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AttachDiskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `AttachDisk` operation.
 #[non_exhaustive]
@@ -1240,8 +1228,15 @@ pub enum AttachDiskErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachDiskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1274,7 +1269,7 @@ impl AttachDiskError {
     /// Creates the `AttachDiskError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AttachDiskErrorKind::Unhandled(err.into()),
+            kind: AttachDiskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1283,7 +1278,7 @@ impl AttachDiskError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AttachDiskErrorKind::Unhandled(err.into()),
+            kind: AttachDiskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1352,7 +1347,7 @@ impl std::error::Error for AttachDiskError {
             AttachDiskErrorKind::OperationFailureException(_inner) => Some(_inner),
             AttachDiskErrorKind::ServiceException(_inner) => Some(_inner),
             AttachDiskErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            AttachDiskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AttachDiskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1365,6 +1360,16 @@ pub struct AttachInstancesToLoadBalancerError {
     pub kind: AttachInstancesToLoadBalancerErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AttachInstancesToLoadBalancerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AttachInstancesToLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `AttachInstancesToLoadBalancer` operation.
 #[non_exhaustive]
@@ -1386,8 +1391,15 @@ pub enum AttachInstancesToLoadBalancerErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachInstancesToLoadBalancerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1429,7 +1441,9 @@ impl AttachInstancesToLoadBalancerError {
     /// Creates the `AttachInstancesToLoadBalancerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AttachInstancesToLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: AttachInstancesToLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1438,7 +1452,9 @@ impl AttachInstancesToLoadBalancerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AttachInstancesToLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: AttachInstancesToLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1528,7 +1544,7 @@ impl std::error::Error for AttachInstancesToLoadBalancerError {
             AttachInstancesToLoadBalancerErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            AttachInstancesToLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AttachInstancesToLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1541,6 +1557,16 @@ pub struct AttachLoadBalancerTlsCertificateError {
     pub kind: AttachLoadBalancerTlsCertificateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AttachLoadBalancerTlsCertificateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AttachLoadBalancerTlsCertificateErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `AttachLoadBalancerTlsCertificate` operation.
 #[non_exhaustive]
@@ -1562,8 +1588,15 @@ pub enum AttachLoadBalancerTlsCertificateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachLoadBalancerTlsCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1609,7 +1642,9 @@ impl AttachLoadBalancerTlsCertificateError {
     /// Creates the `AttachLoadBalancerTlsCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AttachLoadBalancerTlsCertificateErrorKind::Unhandled(err.into()),
+            kind: AttachLoadBalancerTlsCertificateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1618,7 +1653,9 @@ impl AttachLoadBalancerTlsCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AttachLoadBalancerTlsCertificateErrorKind::Unhandled(err.into()),
+            kind: AttachLoadBalancerTlsCertificateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1712,7 +1749,7 @@ impl std::error::Error for AttachLoadBalancerTlsCertificateError {
             AttachLoadBalancerTlsCertificateErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            AttachLoadBalancerTlsCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AttachLoadBalancerTlsCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1725,6 +1762,14 @@ pub struct AttachStaticIpError {
     pub kind: AttachStaticIpErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AttachStaticIpError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AttachStaticIpErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `AttachStaticIp` operation.
 #[non_exhaustive]
@@ -1746,8 +1791,15 @@ pub enum AttachStaticIpErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachStaticIpError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1780,7 +1832,7 @@ impl AttachStaticIpError {
     /// Creates the `AttachStaticIpError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AttachStaticIpErrorKind::Unhandled(err.into()),
+            kind: AttachStaticIpErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1789,7 +1841,7 @@ impl AttachStaticIpError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AttachStaticIpErrorKind::Unhandled(err.into()),
+            kind: AttachStaticIpErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1867,7 +1919,7 @@ impl std::error::Error for AttachStaticIpError {
             AttachStaticIpErrorKind::OperationFailureException(_inner) => Some(_inner),
             AttachStaticIpErrorKind::ServiceException(_inner) => Some(_inner),
             AttachStaticIpErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            AttachStaticIpErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AttachStaticIpErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1880,6 +1932,16 @@ pub struct CloseInstancePublicPortsError {
     pub kind: CloseInstancePublicPortsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CloseInstancePublicPortsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CloseInstancePublicPortsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CloseInstancePublicPorts` operation.
 #[non_exhaustive]
@@ -1901,8 +1963,15 @@ pub enum CloseInstancePublicPortsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CloseInstancePublicPortsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1937,7 +2006,9 @@ impl CloseInstancePublicPortsError {
     /// Creates the `CloseInstancePublicPortsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CloseInstancePublicPortsErrorKind::Unhandled(err.into()),
+            kind: CloseInstancePublicPortsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1946,7 +2017,9 @@ impl CloseInstancePublicPortsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CloseInstancePublicPortsErrorKind::Unhandled(err.into()),
+            kind: CloseInstancePublicPortsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2032,7 +2105,7 @@ impl std::error::Error for CloseInstancePublicPortsError {
             CloseInstancePublicPortsErrorKind::OperationFailureException(_inner) => Some(_inner),
             CloseInstancePublicPortsErrorKind::ServiceException(_inner) => Some(_inner),
             CloseInstancePublicPortsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CloseInstancePublicPortsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CloseInstancePublicPortsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2045,6 +2118,14 @@ pub struct CopySnapshotError {
     pub kind: CopySnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CopySnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CopySnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CopySnapshot` operation.
 #[non_exhaustive]
@@ -2066,8 +2147,15 @@ pub enum CopySnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CopySnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2100,7 +2188,7 @@ impl CopySnapshotError {
     /// Creates the `CopySnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CopySnapshotErrorKind::Unhandled(err.into()),
+            kind: CopySnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2109,7 +2197,7 @@ impl CopySnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CopySnapshotErrorKind::Unhandled(err.into()),
+            kind: CopySnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2181,7 +2269,7 @@ impl std::error::Error for CopySnapshotError {
             CopySnapshotErrorKind::OperationFailureException(_inner) => Some(_inner),
             CopySnapshotErrorKind::ServiceException(_inner) => Some(_inner),
             CopySnapshotErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CopySnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CopySnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2194,6 +2282,14 @@ pub struct CreateBucketError {
     pub kind: CreateBucketErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateBucketError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateBucketErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateBucket` operation.
 #[non_exhaustive]
@@ -2209,8 +2305,15 @@ pub enum CreateBucketErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBucketError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2240,7 +2343,7 @@ impl CreateBucketError {
     /// Creates the `CreateBucketError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateBucketErrorKind::Unhandled(err.into()),
+            kind: CreateBucketErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2249,7 +2352,7 @@ impl CreateBucketError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateBucketErrorKind::Unhandled(err.into()),
+            kind: CreateBucketErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2300,7 +2403,7 @@ impl std::error::Error for CreateBucketError {
             CreateBucketErrorKind::InvalidInputException(_inner) => Some(_inner),
             CreateBucketErrorKind::ServiceException(_inner) => Some(_inner),
             CreateBucketErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateBucketErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateBucketErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2313,6 +2416,14 @@ pub struct CreateBucketAccessKeyError {
     pub kind: CreateBucketAccessKeyErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateBucketAccessKeyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateBucketAccessKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateBucketAccessKey` operation.
 #[non_exhaustive]
@@ -2330,8 +2441,15 @@ pub enum CreateBucketAccessKeyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBucketAccessKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2362,7 +2480,9 @@ impl CreateBucketAccessKeyError {
     /// Creates the `CreateBucketAccessKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateBucketAccessKeyErrorKind::Unhandled(err.into()),
+            kind: CreateBucketAccessKeyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2371,7 +2491,9 @@ impl CreateBucketAccessKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateBucketAccessKeyErrorKind::Unhandled(err.into()),
+            kind: CreateBucketAccessKeyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2439,7 +2561,7 @@ impl std::error::Error for CreateBucketAccessKeyError {
             CreateBucketAccessKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateBucketAccessKeyErrorKind::ServiceException(_inner) => Some(_inner),
             CreateBucketAccessKeyErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateBucketAccessKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateBucketAccessKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2452,6 +2574,14 @@ pub struct CreateCertificateError {
     pub kind: CreateCertificateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateCertificateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateCertificateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateCertificate` operation.
 #[non_exhaustive]
@@ -2469,8 +2599,15 @@ pub enum CreateCertificateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2501,7 +2638,7 @@ impl CreateCertificateError {
     /// Creates the `CreateCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCertificateErrorKind::Unhandled(err.into()),
+            kind: CreateCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2510,7 +2647,7 @@ impl CreateCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCertificateErrorKind::Unhandled(err.into()),
+            kind: CreateCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2572,7 +2709,7 @@ impl std::error::Error for CreateCertificateError {
             CreateCertificateErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateCertificateErrorKind::ServiceException(_inner) => Some(_inner),
             CreateCertificateErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2585,6 +2722,16 @@ pub struct CreateCloudFormationStackError {
     pub kind: CreateCloudFormationStackErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateCloudFormationStackError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateCloudFormationStackErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateCloudFormationStack` operation.
 #[non_exhaustive]
@@ -2606,8 +2753,15 @@ pub enum CreateCloudFormationStackErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCloudFormationStackError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2642,7 +2796,9 @@ impl CreateCloudFormationStackError {
     /// Creates the `CreateCloudFormationStackError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCloudFormationStackErrorKind::Unhandled(err.into()),
+            kind: CreateCloudFormationStackErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2651,7 +2807,9 @@ impl CreateCloudFormationStackError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCloudFormationStackErrorKind::Unhandled(err.into()),
+            kind: CreateCloudFormationStackErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2737,7 +2895,7 @@ impl std::error::Error for CreateCloudFormationStackError {
             CreateCloudFormationStackErrorKind::OperationFailureException(_inner) => Some(_inner),
             CreateCloudFormationStackErrorKind::ServiceException(_inner) => Some(_inner),
             CreateCloudFormationStackErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateCloudFormationStackErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCloudFormationStackErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2750,6 +2908,14 @@ pub struct CreateContactMethodError {
     pub kind: CreateContactMethodErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateContactMethodError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateContactMethodErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateContactMethod` operation.
 #[non_exhaustive]
@@ -2769,8 +2935,15 @@ pub enum CreateContactMethodErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateContactMethodError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2802,7 +2975,7 @@ impl CreateContactMethodError {
     /// Creates the `CreateContactMethodError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateContactMethodErrorKind::Unhandled(err.into()),
+            kind: CreateContactMethodErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2811,7 +2984,7 @@ impl CreateContactMethodError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateContactMethodErrorKind::Unhandled(err.into()),
+            kind: CreateContactMethodErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2887,7 +3060,7 @@ impl std::error::Error for CreateContactMethodError {
             CreateContactMethodErrorKind::OperationFailureException(_inner) => Some(_inner),
             CreateContactMethodErrorKind::ServiceException(_inner) => Some(_inner),
             CreateContactMethodErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateContactMethodErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateContactMethodErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2900,6 +3073,14 @@ pub struct CreateContainerServiceError {
     pub kind: CreateContainerServiceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateContainerServiceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateContainerServiceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateContainerService` operation.
 #[non_exhaustive]
@@ -2917,8 +3098,15 @@ pub enum CreateContainerServiceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateContainerServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2949,7 +3137,9 @@ impl CreateContainerServiceError {
     /// Creates the `CreateContainerServiceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateContainerServiceErrorKind::Unhandled(err.into()),
+            kind: CreateContainerServiceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2958,7 +3148,9 @@ impl CreateContainerServiceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateContainerServiceErrorKind::Unhandled(err.into()),
+            kind: CreateContainerServiceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3026,7 +3218,7 @@ impl std::error::Error for CreateContainerServiceError {
             CreateContainerServiceErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateContainerServiceErrorKind::ServiceException(_inner) => Some(_inner),
             CreateContainerServiceErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateContainerServiceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateContainerServiceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3039,6 +3231,16 @@ pub struct CreateContainerServiceDeploymentError {
     pub kind: CreateContainerServiceDeploymentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateContainerServiceDeploymentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateContainerServiceDeploymentErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateContainerServiceDeployment` operation.
 #[non_exhaustive]
@@ -3056,8 +3258,15 @@ pub enum CreateContainerServiceDeploymentErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateContainerServiceDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3097,7 +3306,9 @@ impl CreateContainerServiceDeploymentError {
     /// Creates the `CreateContainerServiceDeploymentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateContainerServiceDeploymentErrorKind::Unhandled(err.into()),
+            kind: CreateContainerServiceDeploymentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3106,7 +3317,9 @@ impl CreateContainerServiceDeploymentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateContainerServiceDeploymentErrorKind::Unhandled(err.into()),
+            kind: CreateContainerServiceDeploymentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3180,7 +3393,7 @@ impl std::error::Error for CreateContainerServiceDeploymentError {
             CreateContainerServiceDeploymentErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            CreateContainerServiceDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateContainerServiceDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3193,6 +3406,16 @@ pub struct CreateContainerServiceRegistryLoginError {
     pub kind: CreateContainerServiceRegistryLoginErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateContainerServiceRegistryLoginError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateContainerServiceRegistryLoginErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateContainerServiceRegistryLogin` operation.
 #[non_exhaustive]
@@ -3210,8 +3433,15 @@ pub enum CreateContainerServiceRegistryLoginErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateContainerServiceRegistryLoginError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3253,7 +3483,9 @@ impl CreateContainerServiceRegistryLoginError {
     /// Creates the `CreateContainerServiceRegistryLoginError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateContainerServiceRegistryLoginErrorKind::Unhandled(err.into()),
+            kind: CreateContainerServiceRegistryLoginErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3262,7 +3494,9 @@ impl CreateContainerServiceRegistryLoginError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateContainerServiceRegistryLoginErrorKind::Unhandled(err.into()),
+            kind: CreateContainerServiceRegistryLoginErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3336,9 +3570,7 @@ impl std::error::Error for CreateContainerServiceRegistryLoginError {
             CreateContainerServiceRegistryLoginErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            CreateContainerServiceRegistryLoginErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            CreateContainerServiceRegistryLoginErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3351,6 +3583,14 @@ pub struct CreateDiskError {
     pub kind: CreateDiskErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDiskError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDiskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDisk` operation.
 #[non_exhaustive]
@@ -3372,8 +3612,15 @@ pub enum CreateDiskErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDiskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3406,7 +3653,7 @@ impl CreateDiskError {
     /// Creates the `CreateDiskError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDiskErrorKind::Unhandled(err.into()),
+            kind: CreateDiskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3415,7 +3662,7 @@ impl CreateDiskError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDiskErrorKind::Unhandled(err.into()),
+            kind: CreateDiskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3484,7 +3731,7 @@ impl std::error::Error for CreateDiskError {
             CreateDiskErrorKind::OperationFailureException(_inner) => Some(_inner),
             CreateDiskErrorKind::ServiceException(_inner) => Some(_inner),
             CreateDiskErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateDiskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDiskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3497,6 +3744,14 @@ pub struct CreateDiskFromSnapshotError {
     pub kind: CreateDiskFromSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDiskFromSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDiskFromSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDiskFromSnapshot` operation.
 #[non_exhaustive]
@@ -3518,8 +3773,15 @@ pub enum CreateDiskFromSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDiskFromSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3554,7 +3816,9 @@ impl CreateDiskFromSnapshotError {
     /// Creates the `CreateDiskFromSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDiskFromSnapshotErrorKind::Unhandled(err.into()),
+            kind: CreateDiskFromSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3563,7 +3827,9 @@ impl CreateDiskFromSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDiskFromSnapshotErrorKind::Unhandled(err.into()),
+            kind: CreateDiskFromSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3649,7 +3915,7 @@ impl std::error::Error for CreateDiskFromSnapshotError {
             CreateDiskFromSnapshotErrorKind::OperationFailureException(_inner) => Some(_inner),
             CreateDiskFromSnapshotErrorKind::ServiceException(_inner) => Some(_inner),
             CreateDiskFromSnapshotErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateDiskFromSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDiskFromSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3662,6 +3928,14 @@ pub struct CreateDiskSnapshotError {
     pub kind: CreateDiskSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDiskSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDiskSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDiskSnapshot` operation.
 #[non_exhaustive]
@@ -3683,8 +3957,15 @@ pub enum CreateDiskSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDiskSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3717,7 +3998,7 @@ impl CreateDiskSnapshotError {
     /// Creates the `CreateDiskSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDiskSnapshotErrorKind::Unhandled(err.into()),
+            kind: CreateDiskSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3726,7 +4007,7 @@ impl CreateDiskSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDiskSnapshotErrorKind::Unhandled(err.into()),
+            kind: CreateDiskSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3807,7 +4088,7 @@ impl std::error::Error for CreateDiskSnapshotError {
             CreateDiskSnapshotErrorKind::OperationFailureException(_inner) => Some(_inner),
             CreateDiskSnapshotErrorKind::ServiceException(_inner) => Some(_inner),
             CreateDiskSnapshotErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateDiskSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDiskSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3820,6 +4101,14 @@ pub struct CreateDistributionError {
     pub kind: CreateDistributionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDistributionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDistributionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDistribution` operation.
 #[non_exhaustive]
@@ -3839,8 +4128,15 @@ pub enum CreateDistributionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDistributionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3872,7 +4168,7 @@ impl CreateDistributionError {
     /// Creates the `CreateDistributionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDistributionErrorKind::Unhandled(err.into()),
+            kind: CreateDistributionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3881,7 +4177,7 @@ impl CreateDistributionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDistributionErrorKind::Unhandled(err.into()),
+            kind: CreateDistributionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3954,7 +4250,7 @@ impl std::error::Error for CreateDistributionError {
             CreateDistributionErrorKind::OperationFailureException(_inner) => Some(_inner),
             CreateDistributionErrorKind::ServiceException(_inner) => Some(_inner),
             CreateDistributionErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateDistributionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDistributionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3967,6 +4263,14 @@ pub struct CreateDomainError {
     pub kind: CreateDomainErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDomain` operation.
 #[non_exhaustive]
@@ -3988,8 +4292,15 @@ pub enum CreateDomainErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4022,7 +4333,7 @@ impl CreateDomainError {
     /// Creates the `CreateDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDomainErrorKind::Unhandled(err.into()),
+            kind: CreateDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4031,7 +4342,7 @@ impl CreateDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDomainErrorKind::Unhandled(err.into()),
+            kind: CreateDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4103,7 +4414,7 @@ impl std::error::Error for CreateDomainError {
             CreateDomainErrorKind::OperationFailureException(_inner) => Some(_inner),
             CreateDomainErrorKind::ServiceException(_inner) => Some(_inner),
             CreateDomainErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4116,6 +4427,14 @@ pub struct CreateDomainEntryError {
     pub kind: CreateDomainEntryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDomainEntryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDomainEntryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDomainEntry` operation.
 #[non_exhaustive]
@@ -4137,8 +4456,15 @@ pub enum CreateDomainEntryErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDomainEntryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4171,7 +4497,7 @@ impl CreateDomainEntryError {
     /// Creates the `CreateDomainEntryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDomainEntryErrorKind::Unhandled(err.into()),
+            kind: CreateDomainEntryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4180,7 +4506,7 @@ impl CreateDomainEntryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDomainEntryErrorKind::Unhandled(err.into()),
+            kind: CreateDomainEntryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4258,7 +4584,7 @@ impl std::error::Error for CreateDomainEntryError {
             CreateDomainEntryErrorKind::OperationFailureException(_inner) => Some(_inner),
             CreateDomainEntryErrorKind::ServiceException(_inner) => Some(_inner),
             CreateDomainEntryErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateDomainEntryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDomainEntryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4271,6 +4597,14 @@ pub struct CreateInstancesError {
     pub kind: CreateInstancesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateInstancesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateInstancesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateInstances` operation.
 #[non_exhaustive]
@@ -4292,8 +4626,15 @@ pub enum CreateInstancesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4326,7 +4667,7 @@ impl CreateInstancesError {
     /// Creates the `CreateInstancesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateInstancesErrorKind::Unhandled(err.into()),
+            kind: CreateInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4335,7 +4676,7 @@ impl CreateInstancesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateInstancesErrorKind::Unhandled(err.into()),
+            kind: CreateInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4413,7 +4754,7 @@ impl std::error::Error for CreateInstancesError {
             CreateInstancesErrorKind::OperationFailureException(_inner) => Some(_inner),
             CreateInstancesErrorKind::ServiceException(_inner) => Some(_inner),
             CreateInstancesErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateInstancesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4426,6 +4767,16 @@ pub struct CreateInstancesFromSnapshotError {
     pub kind: CreateInstancesFromSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateInstancesFromSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateInstancesFromSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateInstancesFromSnapshot` operation.
 #[non_exhaustive]
@@ -4447,8 +4798,15 @@ pub enum CreateInstancesFromSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateInstancesFromSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4485,7 +4843,9 @@ impl CreateInstancesFromSnapshotError {
     /// Creates the `CreateInstancesFromSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateInstancesFromSnapshotErrorKind::Unhandled(err.into()),
+            kind: CreateInstancesFromSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4494,7 +4854,9 @@ impl CreateInstancesFromSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateInstancesFromSnapshotErrorKind::Unhandled(err.into()),
+            kind: CreateInstancesFromSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4580,7 +4942,7 @@ impl std::error::Error for CreateInstancesFromSnapshotError {
             CreateInstancesFromSnapshotErrorKind::OperationFailureException(_inner) => Some(_inner),
             CreateInstancesFromSnapshotErrorKind::ServiceException(_inner) => Some(_inner),
             CreateInstancesFromSnapshotErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateInstancesFromSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateInstancesFromSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4593,6 +4955,14 @@ pub struct CreateInstanceSnapshotError {
     pub kind: CreateInstanceSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateInstanceSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateInstanceSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateInstanceSnapshot` operation.
 #[non_exhaustive]
@@ -4614,8 +4984,15 @@ pub enum CreateInstanceSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateInstanceSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4650,7 +5027,9 @@ impl CreateInstanceSnapshotError {
     /// Creates the `CreateInstanceSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateInstanceSnapshotErrorKind::Unhandled(err.into()),
+            kind: CreateInstanceSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4659,7 +5038,9 @@ impl CreateInstanceSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateInstanceSnapshotErrorKind::Unhandled(err.into()),
+            kind: CreateInstanceSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4745,7 +5126,7 @@ impl std::error::Error for CreateInstanceSnapshotError {
             CreateInstanceSnapshotErrorKind::OperationFailureException(_inner) => Some(_inner),
             CreateInstanceSnapshotErrorKind::ServiceException(_inner) => Some(_inner),
             CreateInstanceSnapshotErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateInstanceSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateInstanceSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4758,6 +5139,14 @@ pub struct CreateKeyPairError {
     pub kind: CreateKeyPairErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateKeyPairError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateKeyPair` operation.
 #[non_exhaustive]
@@ -4779,8 +5168,15 @@ pub enum CreateKeyPairErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateKeyPairError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4813,7 +5209,7 @@ impl CreateKeyPairError {
     /// Creates the `CreateKeyPairError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateKeyPairErrorKind::Unhandled(err.into()),
+            kind: CreateKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4822,7 +5218,7 @@ impl CreateKeyPairError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateKeyPairErrorKind::Unhandled(err.into()),
+            kind: CreateKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4894,7 +5290,7 @@ impl std::error::Error for CreateKeyPairError {
             CreateKeyPairErrorKind::OperationFailureException(_inner) => Some(_inner),
             CreateKeyPairErrorKind::ServiceException(_inner) => Some(_inner),
             CreateKeyPairErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateKeyPairErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateKeyPairErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4907,6 +5303,14 @@ pub struct CreateLoadBalancerError {
     pub kind: CreateLoadBalancerErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateLoadBalancerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateLoadBalancer` operation.
 #[non_exhaustive]
@@ -4928,8 +5332,15 @@ pub enum CreateLoadBalancerErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLoadBalancerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4962,7 +5373,7 @@ impl CreateLoadBalancerError {
     /// Creates the `CreateLoadBalancerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: CreateLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4971,7 +5382,7 @@ impl CreateLoadBalancerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: CreateLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5052,7 +5463,7 @@ impl std::error::Error for CreateLoadBalancerError {
             CreateLoadBalancerErrorKind::OperationFailureException(_inner) => Some(_inner),
             CreateLoadBalancerErrorKind::ServiceException(_inner) => Some(_inner),
             CreateLoadBalancerErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5065,6 +5476,16 @@ pub struct CreateLoadBalancerTlsCertificateError {
     pub kind: CreateLoadBalancerTlsCertificateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateLoadBalancerTlsCertificateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateLoadBalancerTlsCertificateErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateLoadBalancerTlsCertificate` operation.
 #[non_exhaustive]
@@ -5086,8 +5507,15 @@ pub enum CreateLoadBalancerTlsCertificateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLoadBalancerTlsCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5133,7 +5561,9 @@ impl CreateLoadBalancerTlsCertificateError {
     /// Creates the `CreateLoadBalancerTlsCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLoadBalancerTlsCertificateErrorKind::Unhandled(err.into()),
+            kind: CreateLoadBalancerTlsCertificateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5142,7 +5572,9 @@ impl CreateLoadBalancerTlsCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLoadBalancerTlsCertificateErrorKind::Unhandled(err.into()),
+            kind: CreateLoadBalancerTlsCertificateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5236,7 +5668,7 @@ impl std::error::Error for CreateLoadBalancerTlsCertificateError {
             CreateLoadBalancerTlsCertificateErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            CreateLoadBalancerTlsCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLoadBalancerTlsCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5249,6 +5681,16 @@ pub struct CreateRelationalDatabaseError {
     pub kind: CreateRelationalDatabaseErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateRelationalDatabaseError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateRelationalDatabase` operation.
 #[non_exhaustive]
@@ -5270,8 +5712,15 @@ pub enum CreateRelationalDatabaseErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRelationalDatabaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5306,7 +5755,9 @@ impl CreateRelationalDatabaseError {
     /// Creates the `CreateRelationalDatabaseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRelationalDatabaseErrorKind::Unhandled(err.into()),
+            kind: CreateRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5315,7 +5766,9 @@ impl CreateRelationalDatabaseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRelationalDatabaseErrorKind::Unhandled(err.into()),
+            kind: CreateRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5401,7 +5854,7 @@ impl std::error::Error for CreateRelationalDatabaseError {
             CreateRelationalDatabaseErrorKind::OperationFailureException(_inner) => Some(_inner),
             CreateRelationalDatabaseErrorKind::ServiceException(_inner) => Some(_inner),
             CreateRelationalDatabaseErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            CreateRelationalDatabaseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRelationalDatabaseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5414,6 +5867,16 @@ pub struct CreateRelationalDatabaseFromSnapshotError {
     pub kind: CreateRelationalDatabaseFromSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateRelationalDatabaseFromSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateRelationalDatabaseFromSnapshotErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateRelationalDatabaseFromSnapshot` operation.
 #[non_exhaustive]
@@ -5435,8 +5898,15 @@ pub enum CreateRelationalDatabaseFromSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRelationalDatabaseFromSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5486,7 +5956,9 @@ impl CreateRelationalDatabaseFromSnapshotError {
     /// Creates the `CreateRelationalDatabaseFromSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRelationalDatabaseFromSnapshotErrorKind::Unhandled(err.into()),
+            kind: CreateRelationalDatabaseFromSnapshotErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5495,7 +5967,9 @@ impl CreateRelationalDatabaseFromSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRelationalDatabaseFromSnapshotErrorKind::Unhandled(err.into()),
+            kind: CreateRelationalDatabaseFromSnapshotErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5591,9 +6065,7 @@ impl std::error::Error for CreateRelationalDatabaseFromSnapshotError {
             CreateRelationalDatabaseFromSnapshotErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            CreateRelationalDatabaseFromSnapshotErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            CreateRelationalDatabaseFromSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5606,6 +6078,16 @@ pub struct CreateRelationalDatabaseSnapshotError {
     pub kind: CreateRelationalDatabaseSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateRelationalDatabaseSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateRelationalDatabaseSnapshotErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateRelationalDatabaseSnapshot` operation.
 #[non_exhaustive]
@@ -5627,8 +6109,15 @@ pub enum CreateRelationalDatabaseSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRelationalDatabaseSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5674,7 +6163,9 @@ impl CreateRelationalDatabaseSnapshotError {
     /// Creates the `CreateRelationalDatabaseSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRelationalDatabaseSnapshotErrorKind::Unhandled(err.into()),
+            kind: CreateRelationalDatabaseSnapshotErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5683,7 +6174,9 @@ impl CreateRelationalDatabaseSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRelationalDatabaseSnapshotErrorKind::Unhandled(err.into()),
+            kind: CreateRelationalDatabaseSnapshotErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5777,7 +6270,7 @@ impl std::error::Error for CreateRelationalDatabaseSnapshotError {
             CreateRelationalDatabaseSnapshotErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            CreateRelationalDatabaseSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRelationalDatabaseSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5790,6 +6283,14 @@ pub struct DeleteAlarmError {
     pub kind: DeleteAlarmErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteAlarmError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteAlarmErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteAlarm` operation.
 #[non_exhaustive]
@@ -5809,8 +6310,15 @@ pub enum DeleteAlarmErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAlarmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5842,7 +6350,7 @@ impl DeleteAlarmError {
     /// Creates the `DeleteAlarmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAlarmErrorKind::Unhandled(err.into()),
+            kind: DeleteAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5851,7 +6359,7 @@ impl DeleteAlarmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAlarmErrorKind::Unhandled(err.into()),
+            kind: DeleteAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5915,7 +6423,7 @@ impl std::error::Error for DeleteAlarmError {
             DeleteAlarmErrorKind::OperationFailureException(_inner) => Some(_inner),
             DeleteAlarmErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteAlarmErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteAlarmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAlarmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5928,6 +6436,14 @@ pub struct DeleteAutoSnapshotError {
     pub kind: DeleteAutoSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteAutoSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteAutoSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteAutoSnapshot` operation.
 #[non_exhaustive]
@@ -5947,8 +6463,15 @@ pub enum DeleteAutoSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAutoSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5980,7 +6503,7 @@ impl DeleteAutoSnapshotError {
     /// Creates the `DeleteAutoSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAutoSnapshotErrorKind::Unhandled(err.into()),
+            kind: DeleteAutoSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5989,7 +6512,7 @@ impl DeleteAutoSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAutoSnapshotErrorKind::Unhandled(err.into()),
+            kind: DeleteAutoSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6062,7 +6585,7 @@ impl std::error::Error for DeleteAutoSnapshotError {
             DeleteAutoSnapshotErrorKind::OperationFailureException(_inner) => Some(_inner),
             DeleteAutoSnapshotErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteAutoSnapshotErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteAutoSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAutoSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6075,6 +6598,14 @@ pub struct DeleteBucketError {
     pub kind: DeleteBucketErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteBucketError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteBucketErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteBucket` operation.
 #[non_exhaustive]
@@ -6092,8 +6623,15 @@ pub enum DeleteBucketErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBucketError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6124,7 +6662,7 @@ impl DeleteBucketError {
     /// Creates the `DeleteBucketError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteBucketErrorKind::Unhandled(err.into()),
+            kind: DeleteBucketErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6133,7 +6671,7 @@ impl DeleteBucketError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteBucketErrorKind::Unhandled(err.into()),
+            kind: DeleteBucketErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6189,7 +6727,7 @@ impl std::error::Error for DeleteBucketError {
             DeleteBucketErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteBucketErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteBucketErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteBucketErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteBucketErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6202,6 +6740,14 @@ pub struct DeleteBucketAccessKeyError {
     pub kind: DeleteBucketAccessKeyErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteBucketAccessKeyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteBucketAccessKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteBucketAccessKey` operation.
 #[non_exhaustive]
@@ -6219,8 +6765,15 @@ pub enum DeleteBucketAccessKeyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBucketAccessKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6251,7 +6804,9 @@ impl DeleteBucketAccessKeyError {
     /// Creates the `DeleteBucketAccessKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteBucketAccessKeyErrorKind::Unhandled(err.into()),
+            kind: DeleteBucketAccessKeyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6260,7 +6815,9 @@ impl DeleteBucketAccessKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteBucketAccessKeyErrorKind::Unhandled(err.into()),
+            kind: DeleteBucketAccessKeyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6328,7 +6885,7 @@ impl std::error::Error for DeleteBucketAccessKeyError {
             DeleteBucketAccessKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteBucketAccessKeyErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteBucketAccessKeyErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteBucketAccessKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteBucketAccessKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6341,6 +6898,14 @@ pub struct DeleteCertificateError {
     pub kind: DeleteCertificateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteCertificateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteCertificateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteCertificate` operation.
 #[non_exhaustive]
@@ -6358,8 +6923,15 @@ pub enum DeleteCertificateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6390,7 +6962,7 @@ impl DeleteCertificateError {
     /// Creates the `DeleteCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCertificateErrorKind::Unhandled(err.into()),
+            kind: DeleteCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6399,7 +6971,7 @@ impl DeleteCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCertificateErrorKind::Unhandled(err.into()),
+            kind: DeleteCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6461,7 +7033,7 @@ impl std::error::Error for DeleteCertificateError {
             DeleteCertificateErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteCertificateErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteCertificateErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6474,6 +7046,14 @@ pub struct DeleteContactMethodError {
     pub kind: DeleteContactMethodErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteContactMethodError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteContactMethodErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteContactMethod` operation.
 #[non_exhaustive]
@@ -6493,8 +7073,15 @@ pub enum DeleteContactMethodErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteContactMethodError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6526,7 +7113,7 @@ impl DeleteContactMethodError {
     /// Creates the `DeleteContactMethodError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteContactMethodErrorKind::Unhandled(err.into()),
+            kind: DeleteContactMethodErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6535,7 +7122,7 @@ impl DeleteContactMethodError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteContactMethodErrorKind::Unhandled(err.into()),
+            kind: DeleteContactMethodErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6611,7 +7198,7 @@ impl std::error::Error for DeleteContactMethodError {
             DeleteContactMethodErrorKind::OperationFailureException(_inner) => Some(_inner),
             DeleteContactMethodErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteContactMethodErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteContactMethodErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteContactMethodErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6624,6 +7211,14 @@ pub struct DeleteContainerImageError {
     pub kind: DeleteContainerImageErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteContainerImageError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteContainerImageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteContainerImage` operation.
 #[non_exhaustive]
@@ -6641,8 +7236,15 @@ pub enum DeleteContainerImageErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteContainerImageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6673,7 +7275,9 @@ impl DeleteContainerImageError {
     /// Creates the `DeleteContainerImageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteContainerImageErrorKind::Unhandled(err.into()),
+            kind: DeleteContainerImageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6682,7 +7286,9 @@ impl DeleteContainerImageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteContainerImageErrorKind::Unhandled(err.into()),
+            kind: DeleteContainerImageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6750,7 +7356,7 @@ impl std::error::Error for DeleteContainerImageError {
             DeleteContainerImageErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteContainerImageErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteContainerImageErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteContainerImageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteContainerImageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6763,6 +7369,14 @@ pub struct DeleteContainerServiceError {
     pub kind: DeleteContainerServiceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteContainerServiceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteContainerServiceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteContainerService` operation.
 #[non_exhaustive]
@@ -6780,8 +7394,15 @@ pub enum DeleteContainerServiceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteContainerServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6812,7 +7433,9 @@ impl DeleteContainerServiceError {
     /// Creates the `DeleteContainerServiceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteContainerServiceErrorKind::Unhandled(err.into()),
+            kind: DeleteContainerServiceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6821,7 +7444,9 @@ impl DeleteContainerServiceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteContainerServiceErrorKind::Unhandled(err.into()),
+            kind: DeleteContainerServiceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6889,7 +7514,7 @@ impl std::error::Error for DeleteContainerServiceError {
             DeleteContainerServiceErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteContainerServiceErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteContainerServiceErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteContainerServiceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteContainerServiceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6902,6 +7527,14 @@ pub struct DeleteDiskError {
     pub kind: DeleteDiskErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDiskError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDiskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteDisk` operation.
 #[non_exhaustive]
@@ -6923,8 +7556,15 @@ pub enum DeleteDiskErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDiskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6957,7 +7597,7 @@ impl DeleteDiskError {
     /// Creates the `DeleteDiskError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDiskErrorKind::Unhandled(err.into()),
+            kind: DeleteDiskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6966,7 +7606,7 @@ impl DeleteDiskError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDiskErrorKind::Unhandled(err.into()),
+            kind: DeleteDiskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7035,7 +7675,7 @@ impl std::error::Error for DeleteDiskError {
             DeleteDiskErrorKind::OperationFailureException(_inner) => Some(_inner),
             DeleteDiskErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteDiskErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteDiskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDiskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7048,6 +7688,14 @@ pub struct DeleteDiskSnapshotError {
     pub kind: DeleteDiskSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDiskSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDiskSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteDiskSnapshot` operation.
 #[non_exhaustive]
@@ -7069,8 +7717,15 @@ pub enum DeleteDiskSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDiskSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7103,7 +7758,7 @@ impl DeleteDiskSnapshotError {
     /// Creates the `DeleteDiskSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDiskSnapshotErrorKind::Unhandled(err.into()),
+            kind: DeleteDiskSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7112,7 +7767,7 @@ impl DeleteDiskSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDiskSnapshotErrorKind::Unhandled(err.into()),
+            kind: DeleteDiskSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7193,7 +7848,7 @@ impl std::error::Error for DeleteDiskSnapshotError {
             DeleteDiskSnapshotErrorKind::OperationFailureException(_inner) => Some(_inner),
             DeleteDiskSnapshotErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteDiskSnapshotErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteDiskSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDiskSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7206,6 +7861,14 @@ pub struct DeleteDistributionError {
     pub kind: DeleteDistributionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDistributionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDistributionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteDistribution` operation.
 #[non_exhaustive]
@@ -7225,8 +7888,15 @@ pub enum DeleteDistributionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDistributionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7258,7 +7928,7 @@ impl DeleteDistributionError {
     /// Creates the `DeleteDistributionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDistributionErrorKind::Unhandled(err.into()),
+            kind: DeleteDistributionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7267,7 +7937,7 @@ impl DeleteDistributionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDistributionErrorKind::Unhandled(err.into()),
+            kind: DeleteDistributionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7340,7 +8010,7 @@ impl std::error::Error for DeleteDistributionError {
             DeleteDistributionErrorKind::OperationFailureException(_inner) => Some(_inner),
             DeleteDistributionErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteDistributionErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteDistributionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDistributionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7353,6 +8023,14 @@ pub struct DeleteDomainError {
     pub kind: DeleteDomainErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteDomain` operation.
 #[non_exhaustive]
@@ -7374,8 +8052,15 @@ pub enum DeleteDomainErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7408,7 +8093,7 @@ impl DeleteDomainError {
     /// Creates the `DeleteDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDomainErrorKind::Unhandled(err.into()),
+            kind: DeleteDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7417,7 +8102,7 @@ impl DeleteDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDomainErrorKind::Unhandled(err.into()),
+            kind: DeleteDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7489,7 +8174,7 @@ impl std::error::Error for DeleteDomainError {
             DeleteDomainErrorKind::OperationFailureException(_inner) => Some(_inner),
             DeleteDomainErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteDomainErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7502,6 +8187,14 @@ pub struct DeleteDomainEntryError {
     pub kind: DeleteDomainEntryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDomainEntryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDomainEntryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteDomainEntry` operation.
 #[non_exhaustive]
@@ -7523,8 +8216,15 @@ pub enum DeleteDomainEntryErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDomainEntryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7557,7 +8257,7 @@ impl DeleteDomainEntryError {
     /// Creates the `DeleteDomainEntryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDomainEntryErrorKind::Unhandled(err.into()),
+            kind: DeleteDomainEntryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7566,7 +8266,7 @@ impl DeleteDomainEntryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDomainEntryErrorKind::Unhandled(err.into()),
+            kind: DeleteDomainEntryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7644,7 +8344,7 @@ impl std::error::Error for DeleteDomainEntryError {
             DeleteDomainEntryErrorKind::OperationFailureException(_inner) => Some(_inner),
             DeleteDomainEntryErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteDomainEntryErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteDomainEntryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDomainEntryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7657,6 +8357,14 @@ pub struct DeleteInstanceError {
     pub kind: DeleteInstanceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteInstance` operation.
 #[non_exhaustive]
@@ -7678,8 +8386,15 @@ pub enum DeleteInstanceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7712,7 +8427,7 @@ impl DeleteInstanceError {
     /// Creates the `DeleteInstanceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteInstanceErrorKind::Unhandled(err.into()),
+            kind: DeleteInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7721,7 +8436,7 @@ impl DeleteInstanceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteInstanceErrorKind::Unhandled(err.into()),
+            kind: DeleteInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7799,7 +8514,7 @@ impl std::error::Error for DeleteInstanceError {
             DeleteInstanceErrorKind::OperationFailureException(_inner) => Some(_inner),
             DeleteInstanceErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteInstanceErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteInstanceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7812,6 +8527,14 @@ pub struct DeleteInstanceSnapshotError {
     pub kind: DeleteInstanceSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteInstanceSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteInstanceSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteInstanceSnapshot` operation.
 #[non_exhaustive]
@@ -7833,8 +8556,15 @@ pub enum DeleteInstanceSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteInstanceSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7869,7 +8599,9 @@ impl DeleteInstanceSnapshotError {
     /// Creates the `DeleteInstanceSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteInstanceSnapshotErrorKind::Unhandled(err.into()),
+            kind: DeleteInstanceSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7878,7 +8610,9 @@ impl DeleteInstanceSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteInstanceSnapshotErrorKind::Unhandled(err.into()),
+            kind: DeleteInstanceSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7964,7 +8698,7 @@ impl std::error::Error for DeleteInstanceSnapshotError {
             DeleteInstanceSnapshotErrorKind::OperationFailureException(_inner) => Some(_inner),
             DeleteInstanceSnapshotErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteInstanceSnapshotErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteInstanceSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteInstanceSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7977,6 +8711,14 @@ pub struct DeleteKeyPairError {
     pub kind: DeleteKeyPairErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteKeyPairError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteKeyPair` operation.
 #[non_exhaustive]
@@ -7998,8 +8740,15 @@ pub enum DeleteKeyPairErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteKeyPairError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8032,7 +8781,7 @@ impl DeleteKeyPairError {
     /// Creates the `DeleteKeyPairError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteKeyPairErrorKind::Unhandled(err.into()),
+            kind: DeleteKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8041,7 +8790,7 @@ impl DeleteKeyPairError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteKeyPairErrorKind::Unhandled(err.into()),
+            kind: DeleteKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8113,7 +8862,7 @@ impl std::error::Error for DeleteKeyPairError {
             DeleteKeyPairErrorKind::OperationFailureException(_inner) => Some(_inner),
             DeleteKeyPairErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteKeyPairErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteKeyPairErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteKeyPairErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8126,6 +8875,14 @@ pub struct DeleteKnownHostKeysError {
     pub kind: DeleteKnownHostKeysErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteKnownHostKeysError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteKnownHostKeysErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteKnownHostKeys` operation.
 #[non_exhaustive]
@@ -8147,8 +8904,15 @@ pub enum DeleteKnownHostKeysErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteKnownHostKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8181,7 +8945,7 @@ impl DeleteKnownHostKeysError {
     /// Creates the `DeleteKnownHostKeysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteKnownHostKeysErrorKind::Unhandled(err.into()),
+            kind: DeleteKnownHostKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8190,7 +8954,7 @@ impl DeleteKnownHostKeysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteKnownHostKeysErrorKind::Unhandled(err.into()),
+            kind: DeleteKnownHostKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8274,7 +9038,7 @@ impl std::error::Error for DeleteKnownHostKeysError {
             DeleteKnownHostKeysErrorKind::OperationFailureException(_inner) => Some(_inner),
             DeleteKnownHostKeysErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteKnownHostKeysErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteKnownHostKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteKnownHostKeysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8287,6 +9051,14 @@ pub struct DeleteLoadBalancerError {
     pub kind: DeleteLoadBalancerErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteLoadBalancerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteLoadBalancer` operation.
 #[non_exhaustive]
@@ -8308,8 +9080,15 @@ pub enum DeleteLoadBalancerErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLoadBalancerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8342,7 +9121,7 @@ impl DeleteLoadBalancerError {
     /// Creates the `DeleteLoadBalancerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: DeleteLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8351,7 +9130,7 @@ impl DeleteLoadBalancerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: DeleteLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8432,7 +9211,7 @@ impl std::error::Error for DeleteLoadBalancerError {
             DeleteLoadBalancerErrorKind::OperationFailureException(_inner) => Some(_inner),
             DeleteLoadBalancerErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteLoadBalancerErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8445,6 +9224,16 @@ pub struct DeleteLoadBalancerTlsCertificateError {
     pub kind: DeleteLoadBalancerTlsCertificateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteLoadBalancerTlsCertificateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteLoadBalancerTlsCertificateErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteLoadBalancerTlsCertificate` operation.
 #[non_exhaustive]
@@ -8466,8 +9255,15 @@ pub enum DeleteLoadBalancerTlsCertificateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLoadBalancerTlsCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8513,7 +9309,9 @@ impl DeleteLoadBalancerTlsCertificateError {
     /// Creates the `DeleteLoadBalancerTlsCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLoadBalancerTlsCertificateErrorKind::Unhandled(err.into()),
+            kind: DeleteLoadBalancerTlsCertificateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8522,7 +9320,9 @@ impl DeleteLoadBalancerTlsCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLoadBalancerTlsCertificateErrorKind::Unhandled(err.into()),
+            kind: DeleteLoadBalancerTlsCertificateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8616,7 +9416,7 @@ impl std::error::Error for DeleteLoadBalancerTlsCertificateError {
             DeleteLoadBalancerTlsCertificateErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            DeleteLoadBalancerTlsCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLoadBalancerTlsCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8629,6 +9429,16 @@ pub struct DeleteRelationalDatabaseError {
     pub kind: DeleteRelationalDatabaseErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteRelationalDatabaseError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteRelationalDatabase` operation.
 #[non_exhaustive]
@@ -8650,8 +9460,15 @@ pub enum DeleteRelationalDatabaseErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRelationalDatabaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8686,7 +9503,9 @@ impl DeleteRelationalDatabaseError {
     /// Creates the `DeleteRelationalDatabaseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRelationalDatabaseErrorKind::Unhandled(err.into()),
+            kind: DeleteRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8695,7 +9514,9 @@ impl DeleteRelationalDatabaseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRelationalDatabaseErrorKind::Unhandled(err.into()),
+            kind: DeleteRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8781,7 +9602,7 @@ impl std::error::Error for DeleteRelationalDatabaseError {
             DeleteRelationalDatabaseErrorKind::OperationFailureException(_inner) => Some(_inner),
             DeleteRelationalDatabaseErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteRelationalDatabaseErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DeleteRelationalDatabaseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRelationalDatabaseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8794,6 +9615,16 @@ pub struct DeleteRelationalDatabaseSnapshotError {
     pub kind: DeleteRelationalDatabaseSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteRelationalDatabaseSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteRelationalDatabaseSnapshotErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteRelationalDatabaseSnapshot` operation.
 #[non_exhaustive]
@@ -8815,8 +9646,15 @@ pub enum DeleteRelationalDatabaseSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRelationalDatabaseSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8862,7 +9700,9 @@ impl DeleteRelationalDatabaseSnapshotError {
     /// Creates the `DeleteRelationalDatabaseSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRelationalDatabaseSnapshotErrorKind::Unhandled(err.into()),
+            kind: DeleteRelationalDatabaseSnapshotErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8871,7 +9711,9 @@ impl DeleteRelationalDatabaseSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRelationalDatabaseSnapshotErrorKind::Unhandled(err.into()),
+            kind: DeleteRelationalDatabaseSnapshotErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8965,7 +9807,7 @@ impl std::error::Error for DeleteRelationalDatabaseSnapshotError {
             DeleteRelationalDatabaseSnapshotErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            DeleteRelationalDatabaseSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRelationalDatabaseSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8978,6 +9820,16 @@ pub struct DetachCertificateFromDistributionError {
     pub kind: DetachCertificateFromDistributionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DetachCertificateFromDistributionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DetachCertificateFromDistributionErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DetachCertificateFromDistribution` operation.
 #[non_exhaustive]
@@ -8997,8 +9849,15 @@ pub enum DetachCertificateFromDistributionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetachCertificateFromDistributionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9041,7 +9900,9 @@ impl DetachCertificateFromDistributionError {
     /// Creates the `DetachCertificateFromDistributionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetachCertificateFromDistributionErrorKind::Unhandled(err.into()),
+            kind: DetachCertificateFromDistributionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -9050,7 +9911,9 @@ impl DetachCertificateFromDistributionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetachCertificateFromDistributionErrorKind::Unhandled(err.into()),
+            kind: DetachCertificateFromDistributionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -9134,7 +9997,7 @@ impl std::error::Error for DetachCertificateFromDistributionError {
             DetachCertificateFromDistributionErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            DetachCertificateFromDistributionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetachCertificateFromDistributionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9147,6 +10010,14 @@ pub struct DetachDiskError {
     pub kind: DetachDiskErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DetachDiskError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DetachDiskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DetachDisk` operation.
 #[non_exhaustive]
@@ -9168,8 +10039,15 @@ pub enum DetachDiskErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetachDiskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9202,7 +10080,7 @@ impl DetachDiskError {
     /// Creates the `DetachDiskError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetachDiskErrorKind::Unhandled(err.into()),
+            kind: DetachDiskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9211,7 +10089,7 @@ impl DetachDiskError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetachDiskErrorKind::Unhandled(err.into()),
+            kind: DetachDiskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9280,7 +10158,7 @@ impl std::error::Error for DetachDiskError {
             DetachDiskErrorKind::OperationFailureException(_inner) => Some(_inner),
             DetachDiskErrorKind::ServiceException(_inner) => Some(_inner),
             DetachDiskErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DetachDiskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetachDiskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9293,6 +10171,16 @@ pub struct DetachInstancesFromLoadBalancerError {
     pub kind: DetachInstancesFromLoadBalancerErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DetachInstancesFromLoadBalancerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DetachInstancesFromLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DetachInstancesFromLoadBalancer` operation.
 #[non_exhaustive]
@@ -9314,8 +10202,15 @@ pub enum DetachInstancesFromLoadBalancerErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetachInstancesFromLoadBalancerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9361,7 +10256,9 @@ impl DetachInstancesFromLoadBalancerError {
     /// Creates the `DetachInstancesFromLoadBalancerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetachInstancesFromLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: DetachInstancesFromLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -9370,7 +10267,9 @@ impl DetachInstancesFromLoadBalancerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetachInstancesFromLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: DetachInstancesFromLoadBalancerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -9460,7 +10359,7 @@ impl std::error::Error for DetachInstancesFromLoadBalancerError {
             DetachInstancesFromLoadBalancerErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            DetachInstancesFromLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetachInstancesFromLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9473,6 +10372,14 @@ pub struct DetachStaticIpError {
     pub kind: DetachStaticIpErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DetachStaticIpError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DetachStaticIpErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DetachStaticIp` operation.
 #[non_exhaustive]
@@ -9494,8 +10401,15 @@ pub enum DetachStaticIpErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetachStaticIpError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9528,7 +10442,7 @@ impl DetachStaticIpError {
     /// Creates the `DetachStaticIpError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetachStaticIpErrorKind::Unhandled(err.into()),
+            kind: DetachStaticIpErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9537,7 +10451,7 @@ impl DetachStaticIpError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetachStaticIpErrorKind::Unhandled(err.into()),
+            kind: DetachStaticIpErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9615,7 +10529,7 @@ impl std::error::Error for DetachStaticIpError {
             DetachStaticIpErrorKind::OperationFailureException(_inner) => Some(_inner),
             DetachStaticIpErrorKind::ServiceException(_inner) => Some(_inner),
             DetachStaticIpErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DetachStaticIpErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetachStaticIpErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9628,6 +10542,14 @@ pub struct DisableAddOnError {
     pub kind: DisableAddOnErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DisableAddOnError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisableAddOnErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DisableAddOn` operation.
 #[non_exhaustive]
@@ -9647,8 +10569,15 @@ pub enum DisableAddOnErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableAddOnError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9680,7 +10609,7 @@ impl DisableAddOnError {
     /// Creates the `DisableAddOnError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisableAddOnErrorKind::Unhandled(err.into()),
+            kind: DisableAddOnErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9689,7 +10618,7 @@ impl DisableAddOnError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisableAddOnErrorKind::Unhandled(err.into()),
+            kind: DisableAddOnErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9753,7 +10682,7 @@ impl std::error::Error for DisableAddOnError {
             DisableAddOnErrorKind::OperationFailureException(_inner) => Some(_inner),
             DisableAddOnErrorKind::ServiceException(_inner) => Some(_inner),
             DisableAddOnErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DisableAddOnErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisableAddOnErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9766,6 +10695,14 @@ pub struct DownloadDefaultKeyPairError {
     pub kind: DownloadDefaultKeyPairErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DownloadDefaultKeyPairError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DownloadDefaultKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DownloadDefaultKeyPair` operation.
 #[non_exhaustive]
@@ -9787,8 +10724,15 @@ pub enum DownloadDefaultKeyPairErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DownloadDefaultKeyPairError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9823,7 +10767,9 @@ impl DownloadDefaultKeyPairError {
     /// Creates the `DownloadDefaultKeyPairError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DownloadDefaultKeyPairErrorKind::Unhandled(err.into()),
+            kind: DownloadDefaultKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9832,7 +10778,9 @@ impl DownloadDefaultKeyPairError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DownloadDefaultKeyPairErrorKind::Unhandled(err.into()),
+            kind: DownloadDefaultKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9918,7 +10866,7 @@ impl std::error::Error for DownloadDefaultKeyPairError {
             DownloadDefaultKeyPairErrorKind::OperationFailureException(_inner) => Some(_inner),
             DownloadDefaultKeyPairErrorKind::ServiceException(_inner) => Some(_inner),
             DownloadDefaultKeyPairErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            DownloadDefaultKeyPairErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DownloadDefaultKeyPairErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9931,6 +10879,14 @@ pub struct EnableAddOnError {
     pub kind: EnableAddOnErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for EnableAddOnError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: EnableAddOnErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `EnableAddOn` operation.
 #[non_exhaustive]
@@ -9950,8 +10906,15 @@ pub enum EnableAddOnErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableAddOnError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9983,7 +10946,7 @@ impl EnableAddOnError {
     /// Creates the `EnableAddOnError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnableAddOnErrorKind::Unhandled(err.into()),
+            kind: EnableAddOnErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9992,7 +10955,7 @@ impl EnableAddOnError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnableAddOnErrorKind::Unhandled(err.into()),
+            kind: EnableAddOnErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10056,7 +11019,7 @@ impl std::error::Error for EnableAddOnError {
             EnableAddOnErrorKind::OperationFailureException(_inner) => Some(_inner),
             EnableAddOnErrorKind::ServiceException(_inner) => Some(_inner),
             EnableAddOnErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            EnableAddOnErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EnableAddOnErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10069,6 +11032,14 @@ pub struct ExportSnapshotError {
     pub kind: ExportSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ExportSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ExportSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ExportSnapshot` operation.
 #[non_exhaustive]
@@ -10090,8 +11061,15 @@ pub enum ExportSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10124,7 +11102,7 @@ impl ExportSnapshotError {
     /// Creates the `ExportSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExportSnapshotErrorKind::Unhandled(err.into()),
+            kind: ExportSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10133,7 +11111,7 @@ impl ExportSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExportSnapshotErrorKind::Unhandled(err.into()),
+            kind: ExportSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10211,7 +11189,7 @@ impl std::error::Error for ExportSnapshotError {
             ExportSnapshotErrorKind::OperationFailureException(_inner) => Some(_inner),
             ExportSnapshotErrorKind::ServiceException(_inner) => Some(_inner),
             ExportSnapshotErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            ExportSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExportSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10224,6 +11202,14 @@ pub struct GetActiveNamesError {
     pub kind: GetActiveNamesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetActiveNamesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetActiveNamesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetActiveNames` operation.
 #[non_exhaustive]
@@ -10245,8 +11231,15 @@ pub enum GetActiveNamesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetActiveNamesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10279,7 +11272,7 @@ impl GetActiveNamesError {
     /// Creates the `GetActiveNamesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetActiveNamesErrorKind::Unhandled(err.into()),
+            kind: GetActiveNamesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10288,7 +11281,7 @@ impl GetActiveNamesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetActiveNamesErrorKind::Unhandled(err.into()),
+            kind: GetActiveNamesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10366,7 +11359,7 @@ impl std::error::Error for GetActiveNamesError {
             GetActiveNamesErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetActiveNamesErrorKind::ServiceException(_inner) => Some(_inner),
             GetActiveNamesErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetActiveNamesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetActiveNamesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10379,6 +11372,14 @@ pub struct GetAlarmsError {
     pub kind: GetAlarmsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetAlarmsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetAlarmsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetAlarms` operation.
 #[non_exhaustive]
@@ -10398,8 +11399,15 @@ pub enum GetAlarmsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAlarmsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10431,7 +11439,7 @@ impl GetAlarmsError {
     /// Creates the `GetAlarmsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAlarmsErrorKind::Unhandled(err.into()),
+            kind: GetAlarmsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10440,7 +11448,7 @@ impl GetAlarmsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAlarmsErrorKind::Unhandled(err.into()),
+            kind: GetAlarmsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10498,7 +11506,7 @@ impl std::error::Error for GetAlarmsError {
             GetAlarmsErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetAlarmsErrorKind::ServiceException(_inner) => Some(_inner),
             GetAlarmsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetAlarmsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAlarmsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10511,6 +11519,14 @@ pub struct GetAutoSnapshotsError {
     pub kind: GetAutoSnapshotsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetAutoSnapshotsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetAutoSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetAutoSnapshots` operation.
 #[non_exhaustive]
@@ -10530,8 +11546,15 @@ pub enum GetAutoSnapshotsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAutoSnapshotsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10563,7 +11586,7 @@ impl GetAutoSnapshotsError {
     /// Creates the `GetAutoSnapshotsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAutoSnapshotsErrorKind::Unhandled(err.into()),
+            kind: GetAutoSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10572,7 +11595,7 @@ impl GetAutoSnapshotsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAutoSnapshotsErrorKind::Unhandled(err.into()),
+            kind: GetAutoSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10642,7 +11665,7 @@ impl std::error::Error for GetAutoSnapshotsError {
             GetAutoSnapshotsErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetAutoSnapshotsErrorKind::ServiceException(_inner) => Some(_inner),
             GetAutoSnapshotsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetAutoSnapshotsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAutoSnapshotsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10655,6 +11678,14 @@ pub struct GetBlueprintsError {
     pub kind: GetBlueprintsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetBlueprintsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetBlueprintsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetBlueprints` operation.
 #[non_exhaustive]
@@ -10676,8 +11707,15 @@ pub enum GetBlueprintsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBlueprintsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10710,7 +11748,7 @@ impl GetBlueprintsError {
     /// Creates the `GetBlueprintsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBlueprintsErrorKind::Unhandled(err.into()),
+            kind: GetBlueprintsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10719,7 +11757,7 @@ impl GetBlueprintsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBlueprintsErrorKind::Unhandled(err.into()),
+            kind: GetBlueprintsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10791,7 +11829,7 @@ impl std::error::Error for GetBlueprintsError {
             GetBlueprintsErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetBlueprintsErrorKind::ServiceException(_inner) => Some(_inner),
             GetBlueprintsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetBlueprintsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBlueprintsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10804,6 +11842,14 @@ pub struct GetBucketAccessKeysError {
     pub kind: GetBucketAccessKeysErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetBucketAccessKeysError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetBucketAccessKeysErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetBucketAccessKeys` operation.
 #[non_exhaustive]
@@ -10821,8 +11867,15 @@ pub enum GetBucketAccessKeysErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBucketAccessKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10853,7 +11906,7 @@ impl GetBucketAccessKeysError {
     /// Creates the `GetBucketAccessKeysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBucketAccessKeysErrorKind::Unhandled(err.into()),
+            kind: GetBucketAccessKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10862,7 +11915,7 @@ impl GetBucketAccessKeysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBucketAccessKeysErrorKind::Unhandled(err.into()),
+            kind: GetBucketAccessKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10930,7 +11983,7 @@ impl std::error::Error for GetBucketAccessKeysError {
             GetBucketAccessKeysErrorKind::NotFoundException(_inner) => Some(_inner),
             GetBucketAccessKeysErrorKind::ServiceException(_inner) => Some(_inner),
             GetBucketAccessKeysErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetBucketAccessKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBucketAccessKeysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10943,6 +11996,14 @@ pub struct GetBucketBundlesError {
     pub kind: GetBucketBundlesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetBucketBundlesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetBucketBundlesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetBucketBundles` operation.
 #[non_exhaustive]
@@ -10958,8 +12019,15 @@ pub enum GetBucketBundlesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBucketBundlesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10989,7 +12057,7 @@ impl GetBucketBundlesError {
     /// Creates the `GetBucketBundlesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBucketBundlesErrorKind::Unhandled(err.into()),
+            kind: GetBucketBundlesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10998,7 +12066,7 @@ impl GetBucketBundlesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBucketBundlesErrorKind::Unhandled(err.into()),
+            kind: GetBucketBundlesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11055,7 +12123,7 @@ impl std::error::Error for GetBucketBundlesError {
             GetBucketBundlesErrorKind::InvalidInputException(_inner) => Some(_inner),
             GetBucketBundlesErrorKind::ServiceException(_inner) => Some(_inner),
             GetBucketBundlesErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetBucketBundlesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBucketBundlesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11068,6 +12136,14 @@ pub struct GetBucketMetricDataError {
     pub kind: GetBucketMetricDataErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetBucketMetricDataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetBucketMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetBucketMetricData` operation.
 #[non_exhaustive]
@@ -11085,8 +12161,15 @@ pub enum GetBucketMetricDataErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBucketMetricDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11117,7 +12200,7 @@ impl GetBucketMetricDataError {
     /// Creates the `GetBucketMetricDataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBucketMetricDataErrorKind::Unhandled(err.into()),
+            kind: GetBucketMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11126,7 +12209,7 @@ impl GetBucketMetricDataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBucketMetricDataErrorKind::Unhandled(err.into()),
+            kind: GetBucketMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11194,7 +12277,7 @@ impl std::error::Error for GetBucketMetricDataError {
             GetBucketMetricDataErrorKind::NotFoundException(_inner) => Some(_inner),
             GetBucketMetricDataErrorKind::ServiceException(_inner) => Some(_inner),
             GetBucketMetricDataErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetBucketMetricDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBucketMetricDataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11207,6 +12290,14 @@ pub struct GetBucketsError {
     pub kind: GetBucketsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetBucketsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetBucketsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetBuckets` operation.
 #[non_exhaustive]
@@ -11224,8 +12315,15 @@ pub enum GetBucketsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBucketsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11256,7 +12354,7 @@ impl GetBucketsError {
     /// Creates the `GetBucketsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBucketsErrorKind::Unhandled(err.into()),
+            kind: GetBucketsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11265,7 +12363,7 @@ impl GetBucketsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBucketsErrorKind::Unhandled(err.into()),
+            kind: GetBucketsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11318,7 +12416,7 @@ impl std::error::Error for GetBucketsError {
             GetBucketsErrorKind::NotFoundException(_inner) => Some(_inner),
             GetBucketsErrorKind::ServiceException(_inner) => Some(_inner),
             GetBucketsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetBucketsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBucketsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11331,6 +12429,14 @@ pub struct GetBundlesError {
     pub kind: GetBundlesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetBundlesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetBundlesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetBundles` operation.
 #[non_exhaustive]
@@ -11352,8 +12458,15 @@ pub enum GetBundlesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBundlesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11386,7 +12499,7 @@ impl GetBundlesError {
     /// Creates the `GetBundlesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBundlesErrorKind::Unhandled(err.into()),
+            kind: GetBundlesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11395,7 +12508,7 @@ impl GetBundlesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBundlesErrorKind::Unhandled(err.into()),
+            kind: GetBundlesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11464,7 +12577,7 @@ impl std::error::Error for GetBundlesError {
             GetBundlesErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetBundlesErrorKind::ServiceException(_inner) => Some(_inner),
             GetBundlesErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetBundlesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBundlesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11477,6 +12590,14 @@ pub struct GetCertificatesError {
     pub kind: GetCertificatesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetCertificatesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetCertificates` operation.
 #[non_exhaustive]
@@ -11494,8 +12615,15 @@ pub enum GetCertificatesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11526,7 +12654,7 @@ impl GetCertificatesError {
     /// Creates the `GetCertificatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCertificatesErrorKind::Unhandled(err.into()),
+            kind: GetCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11535,7 +12663,7 @@ impl GetCertificatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCertificatesErrorKind::Unhandled(err.into()),
+            kind: GetCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11597,7 +12725,7 @@ impl std::error::Error for GetCertificatesError {
             GetCertificatesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetCertificatesErrorKind::ServiceException(_inner) => Some(_inner),
             GetCertificatesErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetCertificatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCertificatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11610,6 +12738,16 @@ pub struct GetCloudFormationStackRecordsError {
     pub kind: GetCloudFormationStackRecordsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetCloudFormationStackRecordsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetCloudFormationStackRecordsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetCloudFormationStackRecords` operation.
 #[non_exhaustive]
@@ -11631,8 +12769,15 @@ pub enum GetCloudFormationStackRecordsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCloudFormationStackRecordsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11674,7 +12819,9 @@ impl GetCloudFormationStackRecordsError {
     /// Creates the `GetCloudFormationStackRecordsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCloudFormationStackRecordsErrorKind::Unhandled(err.into()),
+            kind: GetCloudFormationStackRecordsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11683,7 +12830,9 @@ impl GetCloudFormationStackRecordsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCloudFormationStackRecordsErrorKind::Unhandled(err.into()),
+            kind: GetCloudFormationStackRecordsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11773,7 +12922,7 @@ impl std::error::Error for GetCloudFormationStackRecordsError {
             GetCloudFormationStackRecordsErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            GetCloudFormationStackRecordsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCloudFormationStackRecordsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11786,6 +12935,14 @@ pub struct GetContactMethodsError {
     pub kind: GetContactMethodsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetContactMethodsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetContactMethodsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetContactMethods` operation.
 #[non_exhaustive]
@@ -11805,8 +12962,15 @@ pub enum GetContactMethodsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContactMethodsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11838,7 +13002,7 @@ impl GetContactMethodsError {
     /// Creates the `GetContactMethodsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetContactMethodsErrorKind::Unhandled(err.into()),
+            kind: GetContactMethodsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11847,7 +13011,7 @@ impl GetContactMethodsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetContactMethodsErrorKind::Unhandled(err.into()),
+            kind: GetContactMethodsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11917,7 +13081,7 @@ impl std::error::Error for GetContactMethodsError {
             GetContactMethodsErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetContactMethodsErrorKind::ServiceException(_inner) => Some(_inner),
             GetContactMethodsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetContactMethodsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetContactMethodsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11931,6 +13095,14 @@ pub struct GetContainerAPIMetadataError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetContainerAPIMetadataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetContainerAPIMetadataErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetContainerAPIMetadata` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11941,8 +13113,15 @@ pub enum GetContainerAPIMetadataErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContainerAPIMetadataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11971,7 +13150,9 @@ impl GetContainerAPIMetadataError {
     /// Creates the `GetContainerAPIMetadataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetContainerAPIMetadataErrorKind::Unhandled(err.into()),
+            kind: GetContainerAPIMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11980,7 +13161,9 @@ impl GetContainerAPIMetadataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetContainerAPIMetadataErrorKind::Unhandled(err.into()),
+            kind: GetContainerAPIMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12032,7 +13215,7 @@ impl std::error::Error for GetContainerAPIMetadataError {
             GetContainerAPIMetadataErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetContainerAPIMetadataErrorKind::ServiceException(_inner) => Some(_inner),
             GetContainerAPIMetadataErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetContainerAPIMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetContainerAPIMetadataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12045,6 +13228,14 @@ pub struct GetContainerImagesError {
     pub kind: GetContainerImagesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetContainerImagesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetContainerImagesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetContainerImages` operation.
 #[non_exhaustive]
@@ -12062,8 +13253,15 @@ pub enum GetContainerImagesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContainerImagesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12094,7 +13292,7 @@ impl GetContainerImagesError {
     /// Creates the `GetContainerImagesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetContainerImagesErrorKind::Unhandled(err.into()),
+            kind: GetContainerImagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12103,7 +13301,7 @@ impl GetContainerImagesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetContainerImagesErrorKind::Unhandled(err.into()),
+            kind: GetContainerImagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12168,7 +13366,7 @@ impl std::error::Error for GetContainerImagesError {
             GetContainerImagesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetContainerImagesErrorKind::ServiceException(_inner) => Some(_inner),
             GetContainerImagesErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetContainerImagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetContainerImagesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12181,6 +13379,14 @@ pub struct GetContainerLogError {
     pub kind: GetContainerLogErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetContainerLogError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetContainerLogErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetContainerLog` operation.
 #[non_exhaustive]
@@ -12198,8 +13404,15 @@ pub enum GetContainerLogErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContainerLogError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12230,7 +13443,7 @@ impl GetContainerLogError {
     /// Creates the `GetContainerLogError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetContainerLogErrorKind::Unhandled(err.into()),
+            kind: GetContainerLogErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12239,7 +13452,7 @@ impl GetContainerLogError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetContainerLogErrorKind::Unhandled(err.into()),
+            kind: GetContainerLogErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12301,7 +13514,7 @@ impl std::error::Error for GetContainerLogError {
             GetContainerLogErrorKind::NotFoundException(_inner) => Some(_inner),
             GetContainerLogErrorKind::ServiceException(_inner) => Some(_inner),
             GetContainerLogErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetContainerLogErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetContainerLogErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12314,6 +13527,16 @@ pub struct GetContainerServiceDeploymentsError {
     pub kind: GetContainerServiceDeploymentsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetContainerServiceDeploymentsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetContainerServiceDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetContainerServiceDeployments` operation.
 #[non_exhaustive]
@@ -12331,8 +13554,15 @@ pub enum GetContainerServiceDeploymentsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContainerServiceDeploymentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12368,7 +13598,9 @@ impl GetContainerServiceDeploymentsError {
     /// Creates the `GetContainerServiceDeploymentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetContainerServiceDeploymentsErrorKind::Unhandled(err.into()),
+            kind: GetContainerServiceDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12377,7 +13609,9 @@ impl GetContainerServiceDeploymentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetContainerServiceDeploymentsErrorKind::Unhandled(err.into()),
+            kind: GetContainerServiceDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12447,7 +13681,7 @@ impl std::error::Error for GetContainerServiceDeploymentsError {
             GetContainerServiceDeploymentsErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            GetContainerServiceDeploymentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetContainerServiceDeploymentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12460,6 +13694,16 @@ pub struct GetContainerServiceMetricDataError {
     pub kind: GetContainerServiceMetricDataErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetContainerServiceMetricDataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetContainerServiceMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetContainerServiceMetricData` operation.
 #[non_exhaustive]
@@ -12477,8 +13721,15 @@ pub enum GetContainerServiceMetricDataErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContainerServiceMetricDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12514,7 +13765,9 @@ impl GetContainerServiceMetricDataError {
     /// Creates the `GetContainerServiceMetricDataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetContainerServiceMetricDataErrorKind::Unhandled(err.into()),
+            kind: GetContainerServiceMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12523,7 +13776,9 @@ impl GetContainerServiceMetricDataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetContainerServiceMetricDataErrorKind::Unhandled(err.into()),
+            kind: GetContainerServiceMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12593,7 +13848,7 @@ impl std::error::Error for GetContainerServiceMetricDataError {
             GetContainerServiceMetricDataErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            GetContainerServiceMetricDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetContainerServiceMetricDataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12606,6 +13861,16 @@ pub struct GetContainerServicePowersError {
     pub kind: GetContainerServicePowersErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetContainerServicePowersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetContainerServicePowersErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetContainerServicePowers` operation.
 #[non_exhaustive]
@@ -12623,8 +13888,15 @@ pub enum GetContainerServicePowersErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContainerServicePowersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12655,7 +13927,9 @@ impl GetContainerServicePowersError {
     /// Creates the `GetContainerServicePowersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetContainerServicePowersErrorKind::Unhandled(err.into()),
+            kind: GetContainerServicePowersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12664,7 +13938,9 @@ impl GetContainerServicePowersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetContainerServicePowersErrorKind::Unhandled(err.into()),
+            kind: GetContainerServicePowersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12732,7 +14008,7 @@ impl std::error::Error for GetContainerServicePowersError {
             GetContainerServicePowersErrorKind::NotFoundException(_inner) => Some(_inner),
             GetContainerServicePowersErrorKind::ServiceException(_inner) => Some(_inner),
             GetContainerServicePowersErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetContainerServicePowersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetContainerServicePowersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12745,6 +14021,14 @@ pub struct GetContainerServicesError {
     pub kind: GetContainerServicesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetContainerServicesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetContainerServicesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetContainerServices` operation.
 #[non_exhaustive]
@@ -12762,8 +14046,15 @@ pub enum GetContainerServicesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContainerServicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12794,7 +14085,9 @@ impl GetContainerServicesError {
     /// Creates the `GetContainerServicesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetContainerServicesErrorKind::Unhandled(err.into()),
+            kind: GetContainerServicesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12803,7 +14096,9 @@ impl GetContainerServicesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetContainerServicesErrorKind::Unhandled(err.into()),
+            kind: GetContainerServicesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12871,7 +14166,7 @@ impl std::error::Error for GetContainerServicesError {
             GetContainerServicesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetContainerServicesErrorKind::ServiceException(_inner) => Some(_inner),
             GetContainerServicesErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetContainerServicesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetContainerServicesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12884,6 +14179,14 @@ pub struct GetDiskError {
     pub kind: GetDiskErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDiskError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDiskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetDisk` operation.
 #[non_exhaustive]
@@ -12905,8 +14208,15 @@ pub enum GetDiskErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDiskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12939,7 +14249,7 @@ impl GetDiskError {
     /// Creates the `GetDiskError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDiskErrorKind::Unhandled(err.into()),
+            kind: GetDiskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12948,7 +14258,7 @@ impl GetDiskError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDiskErrorKind::Unhandled(err.into()),
+            kind: GetDiskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13014,7 +14324,7 @@ impl std::error::Error for GetDiskError {
             GetDiskErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetDiskErrorKind::ServiceException(_inner) => Some(_inner),
             GetDiskErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetDiskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDiskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13027,6 +14337,14 @@ pub struct GetDisksError {
     pub kind: GetDisksErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDisksError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDisksErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetDisks` operation.
 #[non_exhaustive]
@@ -13048,8 +14366,15 @@ pub enum GetDisksErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDisksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13082,7 +14407,7 @@ impl GetDisksError {
     /// Creates the `GetDisksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDisksErrorKind::Unhandled(err.into()),
+            kind: GetDisksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13091,7 +14416,7 @@ impl GetDisksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDisksErrorKind::Unhandled(err.into()),
+            kind: GetDisksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13157,7 +14482,7 @@ impl std::error::Error for GetDisksError {
             GetDisksErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetDisksErrorKind::ServiceException(_inner) => Some(_inner),
             GetDisksErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetDisksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDisksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13170,6 +14495,14 @@ pub struct GetDiskSnapshotError {
     pub kind: GetDiskSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDiskSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDiskSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetDiskSnapshot` operation.
 #[non_exhaustive]
@@ -13191,8 +14524,15 @@ pub enum GetDiskSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDiskSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13225,7 +14565,7 @@ impl GetDiskSnapshotError {
     /// Creates the `GetDiskSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDiskSnapshotErrorKind::Unhandled(err.into()),
+            kind: GetDiskSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13234,7 +14574,7 @@ impl GetDiskSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDiskSnapshotErrorKind::Unhandled(err.into()),
+            kind: GetDiskSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13312,7 +14652,7 @@ impl std::error::Error for GetDiskSnapshotError {
             GetDiskSnapshotErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetDiskSnapshotErrorKind::ServiceException(_inner) => Some(_inner),
             GetDiskSnapshotErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetDiskSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDiskSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13325,6 +14665,14 @@ pub struct GetDiskSnapshotsError {
     pub kind: GetDiskSnapshotsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDiskSnapshotsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDiskSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetDiskSnapshots` operation.
 #[non_exhaustive]
@@ -13346,8 +14694,15 @@ pub enum GetDiskSnapshotsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDiskSnapshotsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13380,7 +14735,7 @@ impl GetDiskSnapshotsError {
     /// Creates the `GetDiskSnapshotsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDiskSnapshotsErrorKind::Unhandled(err.into()),
+            kind: GetDiskSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13389,7 +14744,7 @@ impl GetDiskSnapshotsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDiskSnapshotsErrorKind::Unhandled(err.into()),
+            kind: GetDiskSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13467,7 +14822,7 @@ impl std::error::Error for GetDiskSnapshotsError {
             GetDiskSnapshotsErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetDiskSnapshotsErrorKind::ServiceException(_inner) => Some(_inner),
             GetDiskSnapshotsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetDiskSnapshotsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDiskSnapshotsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13480,6 +14835,14 @@ pub struct GetDistributionBundlesError {
     pub kind: GetDistributionBundlesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDistributionBundlesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDistributionBundlesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetDistributionBundles` operation.
 #[non_exhaustive]
@@ -13499,8 +14862,15 @@ pub enum GetDistributionBundlesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDistributionBundlesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13532,7 +14902,9 @@ impl GetDistributionBundlesError {
     /// Creates the `GetDistributionBundlesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDistributionBundlesErrorKind::Unhandled(err.into()),
+            kind: GetDistributionBundlesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -13541,7 +14913,9 @@ impl GetDistributionBundlesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDistributionBundlesErrorKind::Unhandled(err.into()),
+            kind: GetDistributionBundlesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13617,7 +14991,7 @@ impl std::error::Error for GetDistributionBundlesError {
             GetDistributionBundlesErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetDistributionBundlesErrorKind::ServiceException(_inner) => Some(_inner),
             GetDistributionBundlesErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetDistributionBundlesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDistributionBundlesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13630,6 +15004,16 @@ pub struct GetDistributionLatestCacheResetError {
     pub kind: GetDistributionLatestCacheResetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDistributionLatestCacheResetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDistributionLatestCacheResetErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetDistributionLatestCacheReset` operation.
 #[non_exhaustive]
@@ -13649,8 +15033,15 @@ pub enum GetDistributionLatestCacheResetErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDistributionLatestCacheResetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13693,7 +15084,9 @@ impl GetDistributionLatestCacheResetError {
     /// Creates the `GetDistributionLatestCacheResetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDistributionLatestCacheResetErrorKind::Unhandled(err.into()),
+            kind: GetDistributionLatestCacheResetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -13702,7 +15095,9 @@ impl GetDistributionLatestCacheResetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDistributionLatestCacheResetErrorKind::Unhandled(err.into()),
+            kind: GetDistributionLatestCacheResetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -13782,7 +15177,7 @@ impl std::error::Error for GetDistributionLatestCacheResetError {
             GetDistributionLatestCacheResetErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            GetDistributionLatestCacheResetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDistributionLatestCacheResetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13795,6 +15190,16 @@ pub struct GetDistributionMetricDataError {
     pub kind: GetDistributionMetricDataErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDistributionMetricDataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDistributionMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetDistributionMetricData` operation.
 #[non_exhaustive]
@@ -13814,8 +15219,15 @@ pub enum GetDistributionMetricDataErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDistributionMetricDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13847,7 +15259,9 @@ impl GetDistributionMetricDataError {
     /// Creates the `GetDistributionMetricDataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDistributionMetricDataErrorKind::Unhandled(err.into()),
+            kind: GetDistributionMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -13856,7 +15270,9 @@ impl GetDistributionMetricDataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDistributionMetricDataErrorKind::Unhandled(err.into()),
+            kind: GetDistributionMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13932,7 +15348,7 @@ impl std::error::Error for GetDistributionMetricDataError {
             GetDistributionMetricDataErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetDistributionMetricDataErrorKind::ServiceException(_inner) => Some(_inner),
             GetDistributionMetricDataErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetDistributionMetricDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDistributionMetricDataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13945,6 +15361,14 @@ pub struct GetDistributionsError {
     pub kind: GetDistributionsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDistributionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDistributionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetDistributions` operation.
 #[non_exhaustive]
@@ -13964,8 +15388,15 @@ pub enum GetDistributionsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDistributionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13997,7 +15428,7 @@ impl GetDistributionsError {
     /// Creates the `GetDistributionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDistributionsErrorKind::Unhandled(err.into()),
+            kind: GetDistributionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14006,7 +15437,7 @@ impl GetDistributionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDistributionsErrorKind::Unhandled(err.into()),
+            kind: GetDistributionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14076,7 +15507,7 @@ impl std::error::Error for GetDistributionsError {
             GetDistributionsErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetDistributionsErrorKind::ServiceException(_inner) => Some(_inner),
             GetDistributionsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetDistributionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDistributionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14089,6 +15520,14 @@ pub struct GetDomainError {
     pub kind: GetDomainErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetDomain` operation.
 #[non_exhaustive]
@@ -14110,8 +15549,15 @@ pub enum GetDomainErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14144,7 +15590,7 @@ impl GetDomainError {
     /// Creates the `GetDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDomainErrorKind::Unhandled(err.into()),
+            kind: GetDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14153,7 +15599,7 @@ impl GetDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDomainErrorKind::Unhandled(err.into()),
+            kind: GetDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14219,7 +15665,7 @@ impl std::error::Error for GetDomainError {
             GetDomainErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetDomainErrorKind::ServiceException(_inner) => Some(_inner),
             GetDomainErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14232,6 +15678,14 @@ pub struct GetDomainsError {
     pub kind: GetDomainsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDomainsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDomainsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetDomains` operation.
 #[non_exhaustive]
@@ -14253,8 +15707,15 @@ pub enum GetDomainsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDomainsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14287,7 +15748,7 @@ impl GetDomainsError {
     /// Creates the `GetDomainsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDomainsErrorKind::Unhandled(err.into()),
+            kind: GetDomainsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14296,7 +15757,7 @@ impl GetDomainsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDomainsErrorKind::Unhandled(err.into()),
+            kind: GetDomainsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14365,7 +15826,7 @@ impl std::error::Error for GetDomainsError {
             GetDomainsErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetDomainsErrorKind::ServiceException(_inner) => Some(_inner),
             GetDomainsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetDomainsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDomainsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14378,6 +15839,16 @@ pub struct GetExportSnapshotRecordsError {
     pub kind: GetExportSnapshotRecordsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetExportSnapshotRecordsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetExportSnapshotRecordsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetExportSnapshotRecords` operation.
 #[non_exhaustive]
@@ -14399,8 +15870,15 @@ pub enum GetExportSnapshotRecordsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetExportSnapshotRecordsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14435,7 +15913,9 @@ impl GetExportSnapshotRecordsError {
     /// Creates the `GetExportSnapshotRecordsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetExportSnapshotRecordsErrorKind::Unhandled(err.into()),
+            kind: GetExportSnapshotRecordsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -14444,7 +15924,9 @@ impl GetExportSnapshotRecordsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetExportSnapshotRecordsErrorKind::Unhandled(err.into()),
+            kind: GetExportSnapshotRecordsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -14530,7 +16012,7 @@ impl std::error::Error for GetExportSnapshotRecordsError {
             GetExportSnapshotRecordsErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetExportSnapshotRecordsErrorKind::ServiceException(_inner) => Some(_inner),
             GetExportSnapshotRecordsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetExportSnapshotRecordsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetExportSnapshotRecordsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14543,6 +16025,14 @@ pub struct GetInstanceError {
     pub kind: GetInstanceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetInstance` operation.
 #[non_exhaustive]
@@ -14564,8 +16054,15 @@ pub enum GetInstanceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14598,7 +16095,7 @@ impl GetInstanceError {
     /// Creates the `GetInstanceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInstanceErrorKind::Unhandled(err.into()),
+            kind: GetInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14607,7 +16104,7 @@ impl GetInstanceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInstanceErrorKind::Unhandled(err.into()),
+            kind: GetInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14679,7 +16176,7 @@ impl std::error::Error for GetInstanceError {
             GetInstanceErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetInstanceErrorKind::ServiceException(_inner) => Some(_inner),
             GetInstanceErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInstanceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14692,6 +16189,16 @@ pub struct GetInstanceAccessDetailsError {
     pub kind: GetInstanceAccessDetailsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetInstanceAccessDetailsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetInstanceAccessDetailsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetInstanceAccessDetails` operation.
 #[non_exhaustive]
@@ -14713,8 +16220,15 @@ pub enum GetInstanceAccessDetailsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInstanceAccessDetailsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14749,7 +16263,9 @@ impl GetInstanceAccessDetailsError {
     /// Creates the `GetInstanceAccessDetailsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInstanceAccessDetailsErrorKind::Unhandled(err.into()),
+            kind: GetInstanceAccessDetailsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -14758,7 +16274,9 @@ impl GetInstanceAccessDetailsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInstanceAccessDetailsErrorKind::Unhandled(err.into()),
+            kind: GetInstanceAccessDetailsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -14844,7 +16362,7 @@ impl std::error::Error for GetInstanceAccessDetailsError {
             GetInstanceAccessDetailsErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetInstanceAccessDetailsErrorKind::ServiceException(_inner) => Some(_inner),
             GetInstanceAccessDetailsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetInstanceAccessDetailsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInstanceAccessDetailsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14857,6 +16375,14 @@ pub struct GetInstanceMetricDataError {
     pub kind: GetInstanceMetricDataErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetInstanceMetricDataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetInstanceMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetInstanceMetricData` operation.
 #[non_exhaustive]
@@ -14878,8 +16404,15 @@ pub enum GetInstanceMetricDataErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInstanceMetricDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14914,7 +16447,9 @@ impl GetInstanceMetricDataError {
     /// Creates the `GetInstanceMetricDataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInstanceMetricDataErrorKind::Unhandled(err.into()),
+            kind: GetInstanceMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -14923,7 +16458,9 @@ impl GetInstanceMetricDataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInstanceMetricDataErrorKind::Unhandled(err.into()),
+            kind: GetInstanceMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -15007,7 +16544,7 @@ impl std::error::Error for GetInstanceMetricDataError {
             GetInstanceMetricDataErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetInstanceMetricDataErrorKind::ServiceException(_inner) => Some(_inner),
             GetInstanceMetricDataErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetInstanceMetricDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInstanceMetricDataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15020,6 +16557,14 @@ pub struct GetInstancePortStatesError {
     pub kind: GetInstancePortStatesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetInstancePortStatesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetInstancePortStatesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetInstancePortStates` operation.
 #[non_exhaustive]
@@ -15041,8 +16586,15 @@ pub enum GetInstancePortStatesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInstancePortStatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15077,7 +16629,9 @@ impl GetInstancePortStatesError {
     /// Creates the `GetInstancePortStatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInstancePortStatesErrorKind::Unhandled(err.into()),
+            kind: GetInstancePortStatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -15086,7 +16640,9 @@ impl GetInstancePortStatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInstancePortStatesErrorKind::Unhandled(err.into()),
+            kind: GetInstancePortStatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -15170,7 +16726,7 @@ impl std::error::Error for GetInstancePortStatesError {
             GetInstancePortStatesErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetInstancePortStatesErrorKind::ServiceException(_inner) => Some(_inner),
             GetInstancePortStatesErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetInstancePortStatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInstancePortStatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15183,6 +16739,14 @@ pub struct GetInstancesError {
     pub kind: GetInstancesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetInstancesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetInstancesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetInstances` operation.
 #[non_exhaustive]
@@ -15204,8 +16768,15 @@ pub enum GetInstancesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15238,7 +16809,7 @@ impl GetInstancesError {
     /// Creates the `GetInstancesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInstancesErrorKind::Unhandled(err.into()),
+            kind: GetInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15247,7 +16818,7 @@ impl GetInstancesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInstancesErrorKind::Unhandled(err.into()),
+            kind: GetInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15319,7 +16890,7 @@ impl std::error::Error for GetInstancesError {
             GetInstancesErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetInstancesErrorKind::ServiceException(_inner) => Some(_inner),
             GetInstancesErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInstancesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15332,6 +16903,14 @@ pub struct GetInstanceSnapshotError {
     pub kind: GetInstanceSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetInstanceSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetInstanceSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetInstanceSnapshot` operation.
 #[non_exhaustive]
@@ -15353,8 +16932,15 @@ pub enum GetInstanceSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInstanceSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15387,7 +16973,7 @@ impl GetInstanceSnapshotError {
     /// Creates the `GetInstanceSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInstanceSnapshotErrorKind::Unhandled(err.into()),
+            kind: GetInstanceSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15396,7 +16982,7 @@ impl GetInstanceSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInstanceSnapshotErrorKind::Unhandled(err.into()),
+            kind: GetInstanceSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15480,7 +17066,7 @@ impl std::error::Error for GetInstanceSnapshotError {
             GetInstanceSnapshotErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetInstanceSnapshotErrorKind::ServiceException(_inner) => Some(_inner),
             GetInstanceSnapshotErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetInstanceSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInstanceSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15493,6 +17079,14 @@ pub struct GetInstanceSnapshotsError {
     pub kind: GetInstanceSnapshotsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetInstanceSnapshotsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetInstanceSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetInstanceSnapshots` operation.
 #[non_exhaustive]
@@ -15514,8 +17108,15 @@ pub enum GetInstanceSnapshotsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInstanceSnapshotsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15548,7 +17149,9 @@ impl GetInstanceSnapshotsError {
     /// Creates the `GetInstanceSnapshotsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInstanceSnapshotsErrorKind::Unhandled(err.into()),
+            kind: GetInstanceSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -15557,7 +17160,9 @@ impl GetInstanceSnapshotsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInstanceSnapshotsErrorKind::Unhandled(err.into()),
+            kind: GetInstanceSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -15641,7 +17246,7 @@ impl std::error::Error for GetInstanceSnapshotsError {
             GetInstanceSnapshotsErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetInstanceSnapshotsErrorKind::ServiceException(_inner) => Some(_inner),
             GetInstanceSnapshotsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetInstanceSnapshotsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInstanceSnapshotsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15654,6 +17259,14 @@ pub struct GetInstanceStateError {
     pub kind: GetInstanceStateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetInstanceStateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetInstanceStateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetInstanceState` operation.
 #[non_exhaustive]
@@ -15675,8 +17288,15 @@ pub enum GetInstanceStateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInstanceStateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15709,7 +17329,7 @@ impl GetInstanceStateError {
     /// Creates the `GetInstanceStateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInstanceStateErrorKind::Unhandled(err.into()),
+            kind: GetInstanceStateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15718,7 +17338,7 @@ impl GetInstanceStateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInstanceStateErrorKind::Unhandled(err.into()),
+            kind: GetInstanceStateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15796,7 +17416,7 @@ impl std::error::Error for GetInstanceStateError {
             GetInstanceStateErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetInstanceStateErrorKind::ServiceException(_inner) => Some(_inner),
             GetInstanceStateErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetInstanceStateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInstanceStateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15809,6 +17429,14 @@ pub struct GetKeyPairError {
     pub kind: GetKeyPairErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetKeyPairError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetKeyPair` operation.
 #[non_exhaustive]
@@ -15830,8 +17458,15 @@ pub enum GetKeyPairErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetKeyPairError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15864,7 +17499,7 @@ impl GetKeyPairError {
     /// Creates the `GetKeyPairError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetKeyPairErrorKind::Unhandled(err.into()),
+            kind: GetKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15873,7 +17508,7 @@ impl GetKeyPairError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetKeyPairErrorKind::Unhandled(err.into()),
+            kind: GetKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15942,7 +17577,7 @@ impl std::error::Error for GetKeyPairError {
             GetKeyPairErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetKeyPairErrorKind::ServiceException(_inner) => Some(_inner),
             GetKeyPairErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetKeyPairErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetKeyPairErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15955,6 +17590,14 @@ pub struct GetKeyPairsError {
     pub kind: GetKeyPairsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetKeyPairsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetKeyPairsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetKeyPairs` operation.
 #[non_exhaustive]
@@ -15976,8 +17619,15 @@ pub enum GetKeyPairsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetKeyPairsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16010,7 +17660,7 @@ impl GetKeyPairsError {
     /// Creates the `GetKeyPairsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetKeyPairsErrorKind::Unhandled(err.into()),
+            kind: GetKeyPairsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -16019,7 +17669,7 @@ impl GetKeyPairsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetKeyPairsErrorKind::Unhandled(err.into()),
+            kind: GetKeyPairsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -16091,7 +17741,7 @@ impl std::error::Error for GetKeyPairsError {
             GetKeyPairsErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetKeyPairsErrorKind::ServiceException(_inner) => Some(_inner),
             GetKeyPairsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetKeyPairsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetKeyPairsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16104,6 +17754,14 @@ pub struct GetLoadBalancerError {
     pub kind: GetLoadBalancerErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetLoadBalancerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetLoadBalancer` operation.
 #[non_exhaustive]
@@ -16125,8 +17783,15 @@ pub enum GetLoadBalancerErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLoadBalancerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16159,7 +17824,7 @@ impl GetLoadBalancerError {
     /// Creates the `GetLoadBalancerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: GetLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -16168,7 +17833,7 @@ impl GetLoadBalancerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: GetLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -16246,7 +17911,7 @@ impl std::error::Error for GetLoadBalancerError {
             GetLoadBalancerErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetLoadBalancerErrorKind::ServiceException(_inner) => Some(_inner),
             GetLoadBalancerErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16259,6 +17924,16 @@ pub struct GetLoadBalancerMetricDataError {
     pub kind: GetLoadBalancerMetricDataErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetLoadBalancerMetricDataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetLoadBalancerMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetLoadBalancerMetricData` operation.
 #[non_exhaustive]
@@ -16280,8 +17955,15 @@ pub enum GetLoadBalancerMetricDataErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLoadBalancerMetricDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16316,7 +17998,9 @@ impl GetLoadBalancerMetricDataError {
     /// Creates the `GetLoadBalancerMetricDataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLoadBalancerMetricDataErrorKind::Unhandled(err.into()),
+            kind: GetLoadBalancerMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -16325,7 +18009,9 @@ impl GetLoadBalancerMetricDataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLoadBalancerMetricDataErrorKind::Unhandled(err.into()),
+            kind: GetLoadBalancerMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -16411,7 +18097,7 @@ impl std::error::Error for GetLoadBalancerMetricDataError {
             GetLoadBalancerMetricDataErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetLoadBalancerMetricDataErrorKind::ServiceException(_inner) => Some(_inner),
             GetLoadBalancerMetricDataErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetLoadBalancerMetricDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLoadBalancerMetricDataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16424,6 +18110,14 @@ pub struct GetLoadBalancersError {
     pub kind: GetLoadBalancersErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetLoadBalancersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetLoadBalancers` operation.
 #[non_exhaustive]
@@ -16445,8 +18139,15 @@ pub enum GetLoadBalancersErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLoadBalancersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16479,7 +18180,7 @@ impl GetLoadBalancersError {
     /// Creates the `GetLoadBalancersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLoadBalancersErrorKind::Unhandled(err.into()),
+            kind: GetLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -16488,7 +18189,7 @@ impl GetLoadBalancersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLoadBalancersErrorKind::Unhandled(err.into()),
+            kind: GetLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -16566,7 +18267,7 @@ impl std::error::Error for GetLoadBalancersError {
             GetLoadBalancersErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetLoadBalancersErrorKind::ServiceException(_inner) => Some(_inner),
             GetLoadBalancersErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetLoadBalancersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLoadBalancersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16579,6 +18280,16 @@ pub struct GetLoadBalancerTlsCertificatesError {
     pub kind: GetLoadBalancerTlsCertificatesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetLoadBalancerTlsCertificatesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetLoadBalancerTlsCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetLoadBalancerTlsCertificates` operation.
 #[non_exhaustive]
@@ -16600,8 +18311,15 @@ pub enum GetLoadBalancerTlsCertificatesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLoadBalancerTlsCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16643,7 +18361,9 @@ impl GetLoadBalancerTlsCertificatesError {
     /// Creates the `GetLoadBalancerTlsCertificatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLoadBalancerTlsCertificatesErrorKind::Unhandled(err.into()),
+            kind: GetLoadBalancerTlsCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -16652,7 +18372,9 @@ impl GetLoadBalancerTlsCertificatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLoadBalancerTlsCertificatesErrorKind::Unhandled(err.into()),
+            kind: GetLoadBalancerTlsCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -16742,7 +18464,7 @@ impl std::error::Error for GetLoadBalancerTlsCertificatesError {
             GetLoadBalancerTlsCertificatesErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            GetLoadBalancerTlsCertificatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLoadBalancerTlsCertificatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16755,6 +18477,16 @@ pub struct GetLoadBalancerTlsPoliciesError {
     pub kind: GetLoadBalancerTlsPoliciesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetLoadBalancerTlsPoliciesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetLoadBalancerTlsPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetLoadBalancerTlsPolicies` operation.
 #[non_exhaustive]
@@ -16772,8 +18504,15 @@ pub enum GetLoadBalancerTlsPoliciesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLoadBalancerTlsPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16806,7 +18545,9 @@ impl GetLoadBalancerTlsPoliciesError {
     /// Creates the `GetLoadBalancerTlsPoliciesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLoadBalancerTlsPoliciesErrorKind::Unhandled(err.into()),
+            kind: GetLoadBalancerTlsPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -16815,7 +18556,9 @@ impl GetLoadBalancerTlsPoliciesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLoadBalancerTlsPoliciesErrorKind::Unhandled(err.into()),
+            kind: GetLoadBalancerTlsPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -16885,7 +18628,7 @@ impl std::error::Error for GetLoadBalancerTlsPoliciesError {
             GetLoadBalancerTlsPoliciesErrorKind::InvalidInputException(_inner) => Some(_inner),
             GetLoadBalancerTlsPoliciesErrorKind::ServiceException(_inner) => Some(_inner),
             GetLoadBalancerTlsPoliciesErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetLoadBalancerTlsPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLoadBalancerTlsPoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16898,6 +18641,14 @@ pub struct GetOperationError {
     pub kind: GetOperationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetOperationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetOperationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetOperation` operation.
 #[non_exhaustive]
@@ -16919,8 +18670,15 @@ pub enum GetOperationErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetOperationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16953,7 +18711,7 @@ impl GetOperationError {
     /// Creates the `GetOperationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetOperationErrorKind::Unhandled(err.into()),
+            kind: GetOperationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -16962,7 +18720,7 @@ impl GetOperationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetOperationErrorKind::Unhandled(err.into()),
+            kind: GetOperationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -17034,7 +18792,7 @@ impl std::error::Error for GetOperationError {
             GetOperationErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetOperationErrorKind::ServiceException(_inner) => Some(_inner),
             GetOperationErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetOperationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetOperationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17047,6 +18805,14 @@ pub struct GetOperationsError {
     pub kind: GetOperationsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetOperationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetOperationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetOperations` operation.
 #[non_exhaustive]
@@ -17068,8 +18834,15 @@ pub enum GetOperationsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetOperationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17102,7 +18875,7 @@ impl GetOperationsError {
     /// Creates the `GetOperationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetOperationsErrorKind::Unhandled(err.into()),
+            kind: GetOperationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -17111,7 +18884,7 @@ impl GetOperationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetOperationsErrorKind::Unhandled(err.into()),
+            kind: GetOperationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -17183,7 +18956,7 @@ impl std::error::Error for GetOperationsError {
             GetOperationsErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetOperationsErrorKind::ServiceException(_inner) => Some(_inner),
             GetOperationsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetOperationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetOperationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17196,6 +18969,16 @@ pub struct GetOperationsForResourceError {
     pub kind: GetOperationsForResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetOperationsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetOperationsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetOperationsForResource` operation.
 #[non_exhaustive]
@@ -17217,8 +19000,15 @@ pub enum GetOperationsForResourceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetOperationsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17253,7 +19043,9 @@ impl GetOperationsForResourceError {
     /// Creates the `GetOperationsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetOperationsForResourceErrorKind::Unhandled(err.into()),
+            kind: GetOperationsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -17262,7 +19054,9 @@ impl GetOperationsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetOperationsForResourceErrorKind::Unhandled(err.into()),
+            kind: GetOperationsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -17348,7 +19142,7 @@ impl std::error::Error for GetOperationsForResourceError {
             GetOperationsForResourceErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetOperationsForResourceErrorKind::ServiceException(_inner) => Some(_inner),
             GetOperationsForResourceErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetOperationsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetOperationsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17361,6 +19155,14 @@ pub struct GetRegionsError {
     pub kind: GetRegionsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRegionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRegionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRegions` operation.
 #[non_exhaustive]
@@ -17382,8 +19184,15 @@ pub enum GetRegionsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRegionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17416,7 +19225,7 @@ impl GetRegionsError {
     /// Creates the `GetRegionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRegionsErrorKind::Unhandled(err.into()),
+            kind: GetRegionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -17425,7 +19234,7 @@ impl GetRegionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRegionsErrorKind::Unhandled(err.into()),
+            kind: GetRegionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -17494,7 +19303,7 @@ impl std::error::Error for GetRegionsError {
             GetRegionsErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetRegionsErrorKind::ServiceException(_inner) => Some(_inner),
             GetRegionsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetRegionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRegionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17507,6 +19316,14 @@ pub struct GetRelationalDatabaseError {
     pub kind: GetRelationalDatabaseErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRelationalDatabaseError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRelationalDatabase` operation.
 #[non_exhaustive]
@@ -17528,8 +19345,15 @@ pub enum GetRelationalDatabaseErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRelationalDatabaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17564,7 +19388,9 @@ impl GetRelationalDatabaseError {
     /// Creates the `GetRelationalDatabaseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRelationalDatabaseErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -17573,7 +19399,9 @@ impl GetRelationalDatabaseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRelationalDatabaseErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -17657,7 +19485,7 @@ impl std::error::Error for GetRelationalDatabaseError {
             GetRelationalDatabaseErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetRelationalDatabaseErrorKind::ServiceException(_inner) => Some(_inner),
             GetRelationalDatabaseErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetRelationalDatabaseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRelationalDatabaseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17670,6 +19498,16 @@ pub struct GetRelationalDatabaseBlueprintsError {
     pub kind: GetRelationalDatabaseBlueprintsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRelationalDatabaseBlueprintsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRelationalDatabaseBlueprintsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRelationalDatabaseBlueprints` operation.
 #[non_exhaustive]
@@ -17691,8 +19529,15 @@ pub enum GetRelationalDatabaseBlueprintsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRelationalDatabaseBlueprintsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17738,7 +19583,9 @@ impl GetRelationalDatabaseBlueprintsError {
     /// Creates the `GetRelationalDatabaseBlueprintsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRelationalDatabaseBlueprintsErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseBlueprintsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -17747,7 +19594,9 @@ impl GetRelationalDatabaseBlueprintsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRelationalDatabaseBlueprintsErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseBlueprintsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -17837,7 +19686,7 @@ impl std::error::Error for GetRelationalDatabaseBlueprintsError {
             GetRelationalDatabaseBlueprintsErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            GetRelationalDatabaseBlueprintsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRelationalDatabaseBlueprintsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17850,6 +19699,16 @@ pub struct GetRelationalDatabaseBundlesError {
     pub kind: GetRelationalDatabaseBundlesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRelationalDatabaseBundlesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRelationalDatabaseBundlesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRelationalDatabaseBundles` operation.
 #[non_exhaustive]
@@ -17871,8 +19730,15 @@ pub enum GetRelationalDatabaseBundlesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRelationalDatabaseBundlesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17911,7 +19777,9 @@ impl GetRelationalDatabaseBundlesError {
     /// Creates the `GetRelationalDatabaseBundlesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRelationalDatabaseBundlesErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseBundlesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -17920,7 +19788,9 @@ impl GetRelationalDatabaseBundlesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRelationalDatabaseBundlesErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseBundlesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -18008,7 +19878,7 @@ impl std::error::Error for GetRelationalDatabaseBundlesError {
             }
             GetRelationalDatabaseBundlesErrorKind::ServiceException(_inner) => Some(_inner),
             GetRelationalDatabaseBundlesErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetRelationalDatabaseBundlesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRelationalDatabaseBundlesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18021,6 +19891,16 @@ pub struct GetRelationalDatabaseEventsError {
     pub kind: GetRelationalDatabaseEventsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRelationalDatabaseEventsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRelationalDatabaseEventsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRelationalDatabaseEvents` operation.
 #[non_exhaustive]
@@ -18042,8 +19922,15 @@ pub enum GetRelationalDatabaseEventsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRelationalDatabaseEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18080,7 +19967,9 @@ impl GetRelationalDatabaseEventsError {
     /// Creates the `GetRelationalDatabaseEventsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRelationalDatabaseEventsErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseEventsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -18089,7 +19978,9 @@ impl GetRelationalDatabaseEventsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRelationalDatabaseEventsErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseEventsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -18175,7 +20066,7 @@ impl std::error::Error for GetRelationalDatabaseEventsError {
             GetRelationalDatabaseEventsErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetRelationalDatabaseEventsErrorKind::ServiceException(_inner) => Some(_inner),
             GetRelationalDatabaseEventsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetRelationalDatabaseEventsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRelationalDatabaseEventsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18188,6 +20079,16 @@ pub struct GetRelationalDatabaseLogEventsError {
     pub kind: GetRelationalDatabaseLogEventsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRelationalDatabaseLogEventsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRelationalDatabaseLogEventsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRelationalDatabaseLogEvents` operation.
 #[non_exhaustive]
@@ -18209,8 +20110,15 @@ pub enum GetRelationalDatabaseLogEventsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRelationalDatabaseLogEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18252,7 +20160,9 @@ impl GetRelationalDatabaseLogEventsError {
     /// Creates the `GetRelationalDatabaseLogEventsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRelationalDatabaseLogEventsErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseLogEventsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -18261,7 +20171,9 @@ impl GetRelationalDatabaseLogEventsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRelationalDatabaseLogEventsErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseLogEventsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -18351,7 +20263,7 @@ impl std::error::Error for GetRelationalDatabaseLogEventsError {
             GetRelationalDatabaseLogEventsErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            GetRelationalDatabaseLogEventsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRelationalDatabaseLogEventsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18364,6 +20276,16 @@ pub struct GetRelationalDatabaseLogStreamsError {
     pub kind: GetRelationalDatabaseLogStreamsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRelationalDatabaseLogStreamsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRelationalDatabaseLogStreamsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRelationalDatabaseLogStreams` operation.
 #[non_exhaustive]
@@ -18385,8 +20307,15 @@ pub enum GetRelationalDatabaseLogStreamsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRelationalDatabaseLogStreamsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18432,7 +20361,9 @@ impl GetRelationalDatabaseLogStreamsError {
     /// Creates the `GetRelationalDatabaseLogStreamsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRelationalDatabaseLogStreamsErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseLogStreamsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -18441,7 +20372,9 @@ impl GetRelationalDatabaseLogStreamsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRelationalDatabaseLogStreamsErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseLogStreamsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -18531,7 +20464,7 @@ impl std::error::Error for GetRelationalDatabaseLogStreamsError {
             GetRelationalDatabaseLogStreamsErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            GetRelationalDatabaseLogStreamsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRelationalDatabaseLogStreamsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18544,6 +20477,18 @@ pub struct GetRelationalDatabaseMasterUserPasswordError {
     pub kind: GetRelationalDatabaseMasterUserPasswordErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for GetRelationalDatabaseMasterUserPasswordError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRelationalDatabaseMasterUserPasswordErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRelationalDatabaseMasterUserPassword` operation.
 #[non_exhaustive]
@@ -18565,8 +20510,15 @@ pub enum GetRelationalDatabaseMasterUserPasswordErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRelationalDatabaseMasterUserPasswordError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18616,7 +20568,9 @@ impl GetRelationalDatabaseMasterUserPasswordError {
     /// Creates the `GetRelationalDatabaseMasterUserPasswordError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRelationalDatabaseMasterUserPasswordErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseMasterUserPasswordErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -18625,7 +20579,9 @@ impl GetRelationalDatabaseMasterUserPasswordError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRelationalDatabaseMasterUserPasswordErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseMasterUserPasswordErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -18723,9 +20679,7 @@ impl std::error::Error for GetRelationalDatabaseMasterUserPasswordError {
             GetRelationalDatabaseMasterUserPasswordErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            GetRelationalDatabaseMasterUserPasswordErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            GetRelationalDatabaseMasterUserPasswordErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18738,6 +20692,16 @@ pub struct GetRelationalDatabaseMetricDataError {
     pub kind: GetRelationalDatabaseMetricDataErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRelationalDatabaseMetricDataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRelationalDatabaseMetricDataErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRelationalDatabaseMetricData` operation.
 #[non_exhaustive]
@@ -18759,8 +20723,15 @@ pub enum GetRelationalDatabaseMetricDataErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRelationalDatabaseMetricDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18806,7 +20777,9 @@ impl GetRelationalDatabaseMetricDataError {
     /// Creates the `GetRelationalDatabaseMetricDataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRelationalDatabaseMetricDataErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseMetricDataErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -18815,7 +20788,9 @@ impl GetRelationalDatabaseMetricDataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRelationalDatabaseMetricDataErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseMetricDataErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -18905,7 +20880,7 @@ impl std::error::Error for GetRelationalDatabaseMetricDataError {
             GetRelationalDatabaseMetricDataErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            GetRelationalDatabaseMetricDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRelationalDatabaseMetricDataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18918,6 +20893,16 @@ pub struct GetRelationalDatabaseParametersError {
     pub kind: GetRelationalDatabaseParametersErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRelationalDatabaseParametersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRelationalDatabaseParametersErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRelationalDatabaseParameters` operation.
 #[non_exhaustive]
@@ -18939,8 +20924,15 @@ pub enum GetRelationalDatabaseParametersErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRelationalDatabaseParametersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18986,7 +20978,9 @@ impl GetRelationalDatabaseParametersError {
     /// Creates the `GetRelationalDatabaseParametersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRelationalDatabaseParametersErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseParametersErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -18995,7 +20989,9 @@ impl GetRelationalDatabaseParametersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRelationalDatabaseParametersErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseParametersErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -19085,7 +21081,7 @@ impl std::error::Error for GetRelationalDatabaseParametersError {
             GetRelationalDatabaseParametersErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            GetRelationalDatabaseParametersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRelationalDatabaseParametersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19098,6 +21094,14 @@ pub struct GetRelationalDatabasesError {
     pub kind: GetRelationalDatabasesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRelationalDatabasesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRelationalDatabasesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRelationalDatabases` operation.
 #[non_exhaustive]
@@ -19119,8 +21123,15 @@ pub enum GetRelationalDatabasesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRelationalDatabasesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19155,7 +21166,9 @@ impl GetRelationalDatabasesError {
     /// Creates the `GetRelationalDatabasesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRelationalDatabasesErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabasesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -19164,7 +21177,9 @@ impl GetRelationalDatabasesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRelationalDatabasesErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabasesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -19250,7 +21265,7 @@ impl std::error::Error for GetRelationalDatabasesError {
             GetRelationalDatabasesErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetRelationalDatabasesErrorKind::ServiceException(_inner) => Some(_inner),
             GetRelationalDatabasesErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetRelationalDatabasesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRelationalDatabasesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19263,6 +21278,16 @@ pub struct GetRelationalDatabaseSnapshotError {
     pub kind: GetRelationalDatabaseSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRelationalDatabaseSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRelationalDatabaseSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRelationalDatabaseSnapshot` operation.
 #[non_exhaustive]
@@ -19284,8 +21309,15 @@ pub enum GetRelationalDatabaseSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRelationalDatabaseSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19327,7 +21359,9 @@ impl GetRelationalDatabaseSnapshotError {
     /// Creates the `GetRelationalDatabaseSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRelationalDatabaseSnapshotErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -19336,7 +21370,9 @@ impl GetRelationalDatabaseSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRelationalDatabaseSnapshotErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -19426,7 +21462,7 @@ impl std::error::Error for GetRelationalDatabaseSnapshotError {
             GetRelationalDatabaseSnapshotErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            GetRelationalDatabaseSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRelationalDatabaseSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19439,6 +21475,16 @@ pub struct GetRelationalDatabaseSnapshotsError {
     pub kind: GetRelationalDatabaseSnapshotsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRelationalDatabaseSnapshotsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRelationalDatabaseSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRelationalDatabaseSnapshots` operation.
 #[non_exhaustive]
@@ -19460,8 +21506,15 @@ pub enum GetRelationalDatabaseSnapshotsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRelationalDatabaseSnapshotsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19503,7 +21556,9 @@ impl GetRelationalDatabaseSnapshotsError {
     /// Creates the `GetRelationalDatabaseSnapshotsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRelationalDatabaseSnapshotsErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -19512,7 +21567,9 @@ impl GetRelationalDatabaseSnapshotsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRelationalDatabaseSnapshotsErrorKind::Unhandled(err.into()),
+            kind: GetRelationalDatabaseSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -19602,7 +21659,7 @@ impl std::error::Error for GetRelationalDatabaseSnapshotsError {
             GetRelationalDatabaseSnapshotsErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            GetRelationalDatabaseSnapshotsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRelationalDatabaseSnapshotsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19615,6 +21672,14 @@ pub struct GetStaticIpError {
     pub kind: GetStaticIpErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetStaticIpError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetStaticIpErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetStaticIp` operation.
 #[non_exhaustive]
@@ -19636,8 +21701,15 @@ pub enum GetStaticIpErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetStaticIpError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19670,7 +21742,7 @@ impl GetStaticIpError {
     /// Creates the `GetStaticIpError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetStaticIpErrorKind::Unhandled(err.into()),
+            kind: GetStaticIpErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -19679,7 +21751,7 @@ impl GetStaticIpError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetStaticIpErrorKind::Unhandled(err.into()),
+            kind: GetStaticIpErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -19751,7 +21823,7 @@ impl std::error::Error for GetStaticIpError {
             GetStaticIpErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetStaticIpErrorKind::ServiceException(_inner) => Some(_inner),
             GetStaticIpErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetStaticIpErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetStaticIpErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19764,6 +21836,14 @@ pub struct GetStaticIpsError {
     pub kind: GetStaticIpsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetStaticIpsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetStaticIpsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetStaticIps` operation.
 #[non_exhaustive]
@@ -19785,8 +21865,15 @@ pub enum GetStaticIpsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetStaticIpsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19819,7 +21906,7 @@ impl GetStaticIpsError {
     /// Creates the `GetStaticIpsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetStaticIpsErrorKind::Unhandled(err.into()),
+            kind: GetStaticIpsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -19828,7 +21915,7 @@ impl GetStaticIpsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetStaticIpsErrorKind::Unhandled(err.into()),
+            kind: GetStaticIpsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -19900,7 +21987,7 @@ impl std::error::Error for GetStaticIpsError {
             GetStaticIpsErrorKind::OperationFailureException(_inner) => Some(_inner),
             GetStaticIpsErrorKind::ServiceException(_inner) => Some(_inner),
             GetStaticIpsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            GetStaticIpsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetStaticIpsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19913,6 +22000,14 @@ pub struct ImportKeyPairError {
     pub kind: ImportKeyPairErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ImportKeyPairError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ImportKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ImportKeyPair` operation.
 #[non_exhaustive]
@@ -19934,8 +22029,15 @@ pub enum ImportKeyPairErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportKeyPairError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19968,7 +22070,7 @@ impl ImportKeyPairError {
     /// Creates the `ImportKeyPairError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportKeyPairErrorKind::Unhandled(err.into()),
+            kind: ImportKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -19977,7 +22079,7 @@ impl ImportKeyPairError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportKeyPairErrorKind::Unhandled(err.into()),
+            kind: ImportKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -20049,7 +22151,7 @@ impl std::error::Error for ImportKeyPairError {
             ImportKeyPairErrorKind::OperationFailureException(_inner) => Some(_inner),
             ImportKeyPairErrorKind::ServiceException(_inner) => Some(_inner),
             ImportKeyPairErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            ImportKeyPairErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportKeyPairErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20062,6 +22164,14 @@ pub struct IsVpcPeeredError {
     pub kind: IsVpcPeeredErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for IsVpcPeeredError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: IsVpcPeeredErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `IsVpcPeered` operation.
 #[non_exhaustive]
@@ -20083,8 +22193,15 @@ pub enum IsVpcPeeredErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for IsVpcPeeredError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20117,7 +22234,7 @@ impl IsVpcPeeredError {
     /// Creates the `IsVpcPeeredError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: IsVpcPeeredErrorKind::Unhandled(err.into()),
+            kind: IsVpcPeeredErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -20126,7 +22243,7 @@ impl IsVpcPeeredError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: IsVpcPeeredErrorKind::Unhandled(err.into()),
+            kind: IsVpcPeeredErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -20198,7 +22315,7 @@ impl std::error::Error for IsVpcPeeredError {
             IsVpcPeeredErrorKind::OperationFailureException(_inner) => Some(_inner),
             IsVpcPeeredErrorKind::ServiceException(_inner) => Some(_inner),
             IsVpcPeeredErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            IsVpcPeeredErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            IsVpcPeeredErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20211,6 +22328,14 @@ pub struct OpenInstancePublicPortsError {
     pub kind: OpenInstancePublicPortsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for OpenInstancePublicPortsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: OpenInstancePublicPortsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `OpenInstancePublicPorts` operation.
 #[non_exhaustive]
@@ -20232,8 +22357,15 @@ pub enum OpenInstancePublicPortsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for OpenInstancePublicPortsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20268,7 +22400,9 @@ impl OpenInstancePublicPortsError {
     /// Creates the `OpenInstancePublicPortsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: OpenInstancePublicPortsErrorKind::Unhandled(err.into()),
+            kind: OpenInstancePublicPortsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -20277,7 +22411,9 @@ impl OpenInstancePublicPortsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: OpenInstancePublicPortsErrorKind::Unhandled(err.into()),
+            kind: OpenInstancePublicPortsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -20363,7 +22499,7 @@ impl std::error::Error for OpenInstancePublicPortsError {
             OpenInstancePublicPortsErrorKind::OperationFailureException(_inner) => Some(_inner),
             OpenInstancePublicPortsErrorKind::ServiceException(_inner) => Some(_inner),
             OpenInstancePublicPortsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            OpenInstancePublicPortsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            OpenInstancePublicPortsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20376,6 +22512,14 @@ pub struct PeerVpcError {
     pub kind: PeerVpcErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PeerVpcError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PeerVpcErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PeerVpc` operation.
 #[non_exhaustive]
@@ -20397,8 +22541,15 @@ pub enum PeerVpcErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PeerVpcError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20431,7 +22582,7 @@ impl PeerVpcError {
     /// Creates the `PeerVpcError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PeerVpcErrorKind::Unhandled(err.into()),
+            kind: PeerVpcErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -20440,7 +22591,7 @@ impl PeerVpcError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PeerVpcErrorKind::Unhandled(err.into()),
+            kind: PeerVpcErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -20506,7 +22657,7 @@ impl std::error::Error for PeerVpcError {
             PeerVpcErrorKind::OperationFailureException(_inner) => Some(_inner),
             PeerVpcErrorKind::ServiceException(_inner) => Some(_inner),
             PeerVpcErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            PeerVpcErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PeerVpcErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20519,6 +22670,14 @@ pub struct PutAlarmError {
     pub kind: PutAlarmErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutAlarmError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutAlarmErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutAlarm` operation.
 #[non_exhaustive]
@@ -20538,8 +22697,15 @@ pub enum PutAlarmErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAlarmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20571,7 +22737,7 @@ impl PutAlarmError {
     /// Creates the `PutAlarmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutAlarmErrorKind::Unhandled(err.into()),
+            kind: PutAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -20580,7 +22746,7 @@ impl PutAlarmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutAlarmErrorKind::Unhandled(err.into()),
+            kind: PutAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -20638,7 +22804,7 @@ impl std::error::Error for PutAlarmError {
             PutAlarmErrorKind::OperationFailureException(_inner) => Some(_inner),
             PutAlarmErrorKind::ServiceException(_inner) => Some(_inner),
             PutAlarmErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            PutAlarmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutAlarmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20651,6 +22817,14 @@ pub struct PutInstancePublicPortsError {
     pub kind: PutInstancePublicPortsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutInstancePublicPortsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutInstancePublicPortsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutInstancePublicPorts` operation.
 #[non_exhaustive]
@@ -20672,8 +22846,15 @@ pub enum PutInstancePublicPortsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutInstancePublicPortsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20708,7 +22889,9 @@ impl PutInstancePublicPortsError {
     /// Creates the `PutInstancePublicPortsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutInstancePublicPortsErrorKind::Unhandled(err.into()),
+            kind: PutInstancePublicPortsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -20717,7 +22900,9 @@ impl PutInstancePublicPortsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutInstancePublicPortsErrorKind::Unhandled(err.into()),
+            kind: PutInstancePublicPortsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -20803,7 +22988,7 @@ impl std::error::Error for PutInstancePublicPortsError {
             PutInstancePublicPortsErrorKind::OperationFailureException(_inner) => Some(_inner),
             PutInstancePublicPortsErrorKind::ServiceException(_inner) => Some(_inner),
             PutInstancePublicPortsErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            PutInstancePublicPortsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutInstancePublicPortsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20816,6 +23001,14 @@ pub struct RebootInstanceError {
     pub kind: RebootInstanceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RebootInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RebootInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RebootInstance` operation.
 #[non_exhaustive]
@@ -20837,8 +23030,15 @@ pub enum RebootInstanceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RebootInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20871,7 +23071,7 @@ impl RebootInstanceError {
     /// Creates the `RebootInstanceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RebootInstanceErrorKind::Unhandled(err.into()),
+            kind: RebootInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -20880,7 +23080,7 @@ impl RebootInstanceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RebootInstanceErrorKind::Unhandled(err.into()),
+            kind: RebootInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -20958,7 +23158,7 @@ impl std::error::Error for RebootInstanceError {
             RebootInstanceErrorKind::OperationFailureException(_inner) => Some(_inner),
             RebootInstanceErrorKind::ServiceException(_inner) => Some(_inner),
             RebootInstanceErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            RebootInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RebootInstanceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20971,6 +23171,16 @@ pub struct RebootRelationalDatabaseError {
     pub kind: RebootRelationalDatabaseErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RebootRelationalDatabaseError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RebootRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RebootRelationalDatabase` operation.
 #[non_exhaustive]
@@ -20992,8 +23202,15 @@ pub enum RebootRelationalDatabaseErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RebootRelationalDatabaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21028,7 +23245,9 @@ impl RebootRelationalDatabaseError {
     /// Creates the `RebootRelationalDatabaseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RebootRelationalDatabaseErrorKind::Unhandled(err.into()),
+            kind: RebootRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -21037,7 +23256,9 @@ impl RebootRelationalDatabaseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RebootRelationalDatabaseErrorKind::Unhandled(err.into()),
+            kind: RebootRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -21123,7 +23344,7 @@ impl std::error::Error for RebootRelationalDatabaseError {
             RebootRelationalDatabaseErrorKind::OperationFailureException(_inner) => Some(_inner),
             RebootRelationalDatabaseErrorKind::ServiceException(_inner) => Some(_inner),
             RebootRelationalDatabaseErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            RebootRelationalDatabaseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RebootRelationalDatabaseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -21136,6 +23357,14 @@ pub struct RegisterContainerImageError {
     pub kind: RegisterContainerImageErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RegisterContainerImageError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterContainerImageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RegisterContainerImage` operation.
 #[non_exhaustive]
@@ -21153,8 +23382,15 @@ pub enum RegisterContainerImageErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterContainerImageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21185,7 +23421,9 @@ impl RegisterContainerImageError {
     /// Creates the `RegisterContainerImageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterContainerImageErrorKind::Unhandled(err.into()),
+            kind: RegisterContainerImageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -21194,7 +23432,9 @@ impl RegisterContainerImageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterContainerImageErrorKind::Unhandled(err.into()),
+            kind: RegisterContainerImageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -21262,7 +23502,7 @@ impl std::error::Error for RegisterContainerImageError {
             RegisterContainerImageErrorKind::NotFoundException(_inner) => Some(_inner),
             RegisterContainerImageErrorKind::ServiceException(_inner) => Some(_inner),
             RegisterContainerImageErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            RegisterContainerImageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterContainerImageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -21275,6 +23515,14 @@ pub struct ReleaseStaticIpError {
     pub kind: ReleaseStaticIpErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ReleaseStaticIpError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ReleaseStaticIpErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ReleaseStaticIp` operation.
 #[non_exhaustive]
@@ -21296,8 +23544,15 @@ pub enum ReleaseStaticIpErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ReleaseStaticIpError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21330,7 +23585,7 @@ impl ReleaseStaticIpError {
     /// Creates the `ReleaseStaticIpError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ReleaseStaticIpErrorKind::Unhandled(err.into()),
+            kind: ReleaseStaticIpErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -21339,7 +23594,7 @@ impl ReleaseStaticIpError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ReleaseStaticIpErrorKind::Unhandled(err.into()),
+            kind: ReleaseStaticIpErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -21417,7 +23672,7 @@ impl std::error::Error for ReleaseStaticIpError {
             ReleaseStaticIpErrorKind::OperationFailureException(_inner) => Some(_inner),
             ReleaseStaticIpErrorKind::ServiceException(_inner) => Some(_inner),
             ReleaseStaticIpErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            ReleaseStaticIpErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ReleaseStaticIpErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -21430,6 +23685,14 @@ pub struct ResetDistributionCacheError {
     pub kind: ResetDistributionCacheErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ResetDistributionCacheError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ResetDistributionCacheErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ResetDistributionCache` operation.
 #[non_exhaustive]
@@ -21449,8 +23712,15 @@ pub enum ResetDistributionCacheErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ResetDistributionCacheError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21482,7 +23752,9 @@ impl ResetDistributionCacheError {
     /// Creates the `ResetDistributionCacheError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ResetDistributionCacheErrorKind::Unhandled(err.into()),
+            kind: ResetDistributionCacheErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -21491,7 +23763,9 @@ impl ResetDistributionCacheError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ResetDistributionCacheErrorKind::Unhandled(err.into()),
+            kind: ResetDistributionCacheErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -21567,7 +23841,7 @@ impl std::error::Error for ResetDistributionCacheError {
             ResetDistributionCacheErrorKind::OperationFailureException(_inner) => Some(_inner),
             ResetDistributionCacheErrorKind::ServiceException(_inner) => Some(_inner),
             ResetDistributionCacheErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            ResetDistributionCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ResetDistributionCacheErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -21580,6 +23854,16 @@ pub struct SendContactMethodVerificationError {
     pub kind: SendContactMethodVerificationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SendContactMethodVerificationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SendContactMethodVerificationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `SendContactMethodVerification` operation.
 #[non_exhaustive]
@@ -21599,8 +23883,15 @@ pub enum SendContactMethodVerificationErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendContactMethodVerificationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21639,7 +23930,9 @@ impl SendContactMethodVerificationError {
     /// Creates the `SendContactMethodVerificationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SendContactMethodVerificationErrorKind::Unhandled(err.into()),
+            kind: SendContactMethodVerificationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -21648,7 +23941,9 @@ impl SendContactMethodVerificationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SendContactMethodVerificationErrorKind::Unhandled(err.into()),
+            kind: SendContactMethodVerificationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -21728,7 +24023,7 @@ impl std::error::Error for SendContactMethodVerificationError {
             SendContactMethodVerificationErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            SendContactMethodVerificationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SendContactMethodVerificationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -21741,6 +24036,14 @@ pub struct SetIpAddressTypeError {
     pub kind: SetIpAddressTypeErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SetIpAddressTypeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SetIpAddressTypeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `SetIpAddressType` operation.
 #[non_exhaustive]
@@ -21762,8 +24065,15 @@ pub enum SetIpAddressTypeErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetIpAddressTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21796,7 +24106,7 @@ impl SetIpAddressTypeError {
     /// Creates the `SetIpAddressTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetIpAddressTypeErrorKind::Unhandled(err.into()),
+            kind: SetIpAddressTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -21805,7 +24115,7 @@ impl SetIpAddressTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetIpAddressTypeErrorKind::Unhandled(err.into()),
+            kind: SetIpAddressTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -21883,7 +24193,7 @@ impl std::error::Error for SetIpAddressTypeError {
             SetIpAddressTypeErrorKind::OperationFailureException(_inner) => Some(_inner),
             SetIpAddressTypeErrorKind::ServiceException(_inner) => Some(_inner),
             SetIpAddressTypeErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            SetIpAddressTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetIpAddressTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -21896,6 +24206,16 @@ pub struct SetResourceAccessForBucketError {
     pub kind: SetResourceAccessForBucketErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SetResourceAccessForBucketError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SetResourceAccessForBucketErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `SetResourceAccessForBucket` operation.
 #[non_exhaustive]
@@ -21913,8 +24233,15 @@ pub enum SetResourceAccessForBucketErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetResourceAccessForBucketError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21945,7 +24272,9 @@ impl SetResourceAccessForBucketError {
     /// Creates the `SetResourceAccessForBucketError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetResourceAccessForBucketErrorKind::Unhandled(err.into()),
+            kind: SetResourceAccessForBucketErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -21954,7 +24283,9 @@ impl SetResourceAccessForBucketError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetResourceAccessForBucketErrorKind::Unhandled(err.into()),
+            kind: SetResourceAccessForBucketErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -22022,7 +24353,7 @@ impl std::error::Error for SetResourceAccessForBucketError {
             SetResourceAccessForBucketErrorKind::NotFoundException(_inner) => Some(_inner),
             SetResourceAccessForBucketErrorKind::ServiceException(_inner) => Some(_inner),
             SetResourceAccessForBucketErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            SetResourceAccessForBucketErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetResourceAccessForBucketErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22035,6 +24366,14 @@ pub struct StartInstanceError {
     pub kind: StartInstanceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartInstance` operation.
 #[non_exhaustive]
@@ -22056,8 +24395,15 @@ pub enum StartInstanceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22090,7 +24436,7 @@ impl StartInstanceError {
     /// Creates the `StartInstanceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartInstanceErrorKind::Unhandled(err.into()),
+            kind: StartInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -22099,7 +24445,7 @@ impl StartInstanceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartInstanceErrorKind::Unhandled(err.into()),
+            kind: StartInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -22171,7 +24517,7 @@ impl std::error::Error for StartInstanceError {
             StartInstanceErrorKind::OperationFailureException(_inner) => Some(_inner),
             StartInstanceErrorKind::ServiceException(_inner) => Some(_inner),
             StartInstanceErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            StartInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartInstanceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22184,6 +24530,14 @@ pub struct StartRelationalDatabaseError {
     pub kind: StartRelationalDatabaseErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartRelationalDatabaseError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartRelationalDatabase` operation.
 #[non_exhaustive]
@@ -22205,8 +24559,15 @@ pub enum StartRelationalDatabaseErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartRelationalDatabaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22241,7 +24602,9 @@ impl StartRelationalDatabaseError {
     /// Creates the `StartRelationalDatabaseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartRelationalDatabaseErrorKind::Unhandled(err.into()),
+            kind: StartRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -22250,7 +24613,9 @@ impl StartRelationalDatabaseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartRelationalDatabaseErrorKind::Unhandled(err.into()),
+            kind: StartRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -22336,7 +24701,7 @@ impl std::error::Error for StartRelationalDatabaseError {
             StartRelationalDatabaseErrorKind::OperationFailureException(_inner) => Some(_inner),
             StartRelationalDatabaseErrorKind::ServiceException(_inner) => Some(_inner),
             StartRelationalDatabaseErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            StartRelationalDatabaseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartRelationalDatabaseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22349,6 +24714,14 @@ pub struct StopInstanceError {
     pub kind: StopInstanceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StopInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StopInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StopInstance` operation.
 #[non_exhaustive]
@@ -22370,8 +24743,15 @@ pub enum StopInstanceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22404,7 +24784,7 @@ impl StopInstanceError {
     /// Creates the `StopInstanceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopInstanceErrorKind::Unhandled(err.into()),
+            kind: StopInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -22413,7 +24793,7 @@ impl StopInstanceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopInstanceErrorKind::Unhandled(err.into()),
+            kind: StopInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -22485,7 +24865,7 @@ impl std::error::Error for StopInstanceError {
             StopInstanceErrorKind::OperationFailureException(_inner) => Some(_inner),
             StopInstanceErrorKind::ServiceException(_inner) => Some(_inner),
             StopInstanceErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            StopInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopInstanceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22498,6 +24878,14 @@ pub struct StopRelationalDatabaseError {
     pub kind: StopRelationalDatabaseErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StopRelationalDatabaseError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StopRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StopRelationalDatabase` operation.
 #[non_exhaustive]
@@ -22519,8 +24907,15 @@ pub enum StopRelationalDatabaseErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopRelationalDatabaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22555,7 +24950,9 @@ impl StopRelationalDatabaseError {
     /// Creates the `StopRelationalDatabaseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopRelationalDatabaseErrorKind::Unhandled(err.into()),
+            kind: StopRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -22564,7 +24961,9 @@ impl StopRelationalDatabaseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopRelationalDatabaseErrorKind::Unhandled(err.into()),
+            kind: StopRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -22650,7 +25049,7 @@ impl std::error::Error for StopRelationalDatabaseError {
             StopRelationalDatabaseErrorKind::OperationFailureException(_inner) => Some(_inner),
             StopRelationalDatabaseErrorKind::ServiceException(_inner) => Some(_inner),
             StopRelationalDatabaseErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            StopRelationalDatabaseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopRelationalDatabaseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22663,6 +25062,14 @@ pub struct TagResourceError {
     pub kind: TagResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `TagResource` operation.
 #[non_exhaustive]
@@ -22684,8 +25091,15 @@ pub enum TagResourceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22718,7 +25132,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -22727,7 +25141,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -22799,7 +25213,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::OperationFailureException(_inner) => Some(_inner),
             TagResourceErrorKind::ServiceException(_inner) => Some(_inner),
             TagResourceErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22812,6 +25226,14 @@ pub struct TestAlarmError {
     pub kind: TestAlarmErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for TestAlarmError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TestAlarmErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `TestAlarm` operation.
 #[non_exhaustive]
@@ -22831,8 +25253,15 @@ pub enum TestAlarmErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TestAlarmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22864,7 +25293,7 @@ impl TestAlarmError {
     /// Creates the `TestAlarmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TestAlarmErrorKind::Unhandled(err.into()),
+            kind: TestAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -22873,7 +25302,7 @@ impl TestAlarmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TestAlarmErrorKind::Unhandled(err.into()),
+            kind: TestAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -22931,7 +25360,7 @@ impl std::error::Error for TestAlarmError {
             TestAlarmErrorKind::OperationFailureException(_inner) => Some(_inner),
             TestAlarmErrorKind::ServiceException(_inner) => Some(_inner),
             TestAlarmErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            TestAlarmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TestAlarmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22944,6 +25373,14 @@ pub struct UnpeerVpcError {
     pub kind: UnpeerVpcErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UnpeerVpcError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UnpeerVpcErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UnpeerVpc` operation.
 #[non_exhaustive]
@@ -22965,8 +25402,15 @@ pub enum UnpeerVpcErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UnpeerVpcError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22999,7 +25443,7 @@ impl UnpeerVpcError {
     /// Creates the `UnpeerVpcError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UnpeerVpcErrorKind::Unhandled(err.into()),
+            kind: UnpeerVpcErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -23008,7 +25452,7 @@ impl UnpeerVpcError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UnpeerVpcErrorKind::Unhandled(err.into()),
+            kind: UnpeerVpcErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -23074,7 +25518,7 @@ impl std::error::Error for UnpeerVpcError {
             UnpeerVpcErrorKind::OperationFailureException(_inner) => Some(_inner),
             UnpeerVpcErrorKind::ServiceException(_inner) => Some(_inner),
             UnpeerVpcErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            UnpeerVpcErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UnpeerVpcErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -23087,6 +25531,14 @@ pub struct UntagResourceError {
     pub kind: UntagResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UntagResource` operation.
 #[non_exhaustive]
@@ -23108,8 +25560,15 @@ pub enum UntagResourceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23142,7 +25601,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -23151,7 +25610,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -23223,7 +25682,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::OperationFailureException(_inner) => Some(_inner),
             UntagResourceErrorKind::ServiceException(_inner) => Some(_inner),
             UntagResourceErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -23236,6 +25695,14 @@ pub struct UpdateBucketError {
     pub kind: UpdateBucketErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateBucketError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateBucketErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateBucket` operation.
 #[non_exhaustive]
@@ -23253,8 +25720,15 @@ pub enum UpdateBucketErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateBucketError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23285,7 +25759,7 @@ impl UpdateBucketError {
     /// Creates the `UpdateBucketError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateBucketErrorKind::Unhandled(err.into()),
+            kind: UpdateBucketErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -23294,7 +25768,7 @@ impl UpdateBucketError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateBucketErrorKind::Unhandled(err.into()),
+            kind: UpdateBucketErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -23350,7 +25824,7 @@ impl std::error::Error for UpdateBucketError {
             UpdateBucketErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateBucketErrorKind::ServiceException(_inner) => Some(_inner),
             UpdateBucketErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            UpdateBucketErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateBucketErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -23363,6 +25837,14 @@ pub struct UpdateBucketBundleError {
     pub kind: UpdateBucketBundleErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateBucketBundleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateBucketBundleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateBucketBundle` operation.
 #[non_exhaustive]
@@ -23380,8 +25862,15 @@ pub enum UpdateBucketBundleErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateBucketBundleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23412,7 +25901,7 @@ impl UpdateBucketBundleError {
     /// Creates the `UpdateBucketBundleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateBucketBundleErrorKind::Unhandled(err.into()),
+            kind: UpdateBucketBundleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -23421,7 +25910,7 @@ impl UpdateBucketBundleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateBucketBundleErrorKind::Unhandled(err.into()),
+            kind: UpdateBucketBundleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -23486,7 +25975,7 @@ impl std::error::Error for UpdateBucketBundleError {
             UpdateBucketBundleErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateBucketBundleErrorKind::ServiceException(_inner) => Some(_inner),
             UpdateBucketBundleErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            UpdateBucketBundleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateBucketBundleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -23499,6 +25988,14 @@ pub struct UpdateContainerServiceError {
     pub kind: UpdateContainerServiceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateContainerServiceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateContainerServiceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateContainerService` operation.
 #[non_exhaustive]
@@ -23516,8 +26013,15 @@ pub enum UpdateContainerServiceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateContainerServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23548,7 +26052,9 @@ impl UpdateContainerServiceError {
     /// Creates the `UpdateContainerServiceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateContainerServiceErrorKind::Unhandled(err.into()),
+            kind: UpdateContainerServiceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -23557,7 +26063,9 @@ impl UpdateContainerServiceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateContainerServiceErrorKind::Unhandled(err.into()),
+            kind: UpdateContainerServiceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -23625,7 +26133,7 @@ impl std::error::Error for UpdateContainerServiceError {
             UpdateContainerServiceErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateContainerServiceErrorKind::ServiceException(_inner) => Some(_inner),
             UpdateContainerServiceErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            UpdateContainerServiceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateContainerServiceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -23638,6 +26146,14 @@ pub struct UpdateDistributionError {
     pub kind: UpdateDistributionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateDistributionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateDistributionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateDistribution` operation.
 #[non_exhaustive]
@@ -23657,8 +26173,15 @@ pub enum UpdateDistributionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDistributionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23690,7 +26213,7 @@ impl UpdateDistributionError {
     /// Creates the `UpdateDistributionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDistributionErrorKind::Unhandled(err.into()),
+            kind: UpdateDistributionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -23699,7 +26222,7 @@ impl UpdateDistributionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDistributionErrorKind::Unhandled(err.into()),
+            kind: UpdateDistributionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -23772,7 +26295,7 @@ impl std::error::Error for UpdateDistributionError {
             UpdateDistributionErrorKind::OperationFailureException(_inner) => Some(_inner),
             UpdateDistributionErrorKind::ServiceException(_inner) => Some(_inner),
             UpdateDistributionErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            UpdateDistributionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDistributionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -23785,6 +26308,16 @@ pub struct UpdateDistributionBundleError {
     pub kind: UpdateDistributionBundleErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateDistributionBundleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateDistributionBundleErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateDistributionBundle` operation.
 #[non_exhaustive]
@@ -23804,8 +26337,15 @@ pub enum UpdateDistributionBundleErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDistributionBundleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23837,7 +26377,9 @@ impl UpdateDistributionBundleError {
     /// Creates the `UpdateDistributionBundleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDistributionBundleErrorKind::Unhandled(err.into()),
+            kind: UpdateDistributionBundleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -23846,7 +26388,9 @@ impl UpdateDistributionBundleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDistributionBundleErrorKind::Unhandled(err.into()),
+            kind: UpdateDistributionBundleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -23922,7 +26466,7 @@ impl std::error::Error for UpdateDistributionBundleError {
             UpdateDistributionBundleErrorKind::OperationFailureException(_inner) => Some(_inner),
             UpdateDistributionBundleErrorKind::ServiceException(_inner) => Some(_inner),
             UpdateDistributionBundleErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            UpdateDistributionBundleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDistributionBundleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -23935,6 +26479,14 @@ pub struct UpdateDomainEntryError {
     pub kind: UpdateDomainEntryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateDomainEntryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateDomainEntryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateDomainEntry` operation.
 #[non_exhaustive]
@@ -23956,8 +26508,15 @@ pub enum UpdateDomainEntryErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDomainEntryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23990,7 +26549,7 @@ impl UpdateDomainEntryError {
     /// Creates the `UpdateDomainEntryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDomainEntryErrorKind::Unhandled(err.into()),
+            kind: UpdateDomainEntryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -23999,7 +26558,7 @@ impl UpdateDomainEntryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDomainEntryErrorKind::Unhandled(err.into()),
+            kind: UpdateDomainEntryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -24077,7 +26636,7 @@ impl std::error::Error for UpdateDomainEntryError {
             UpdateDomainEntryErrorKind::OperationFailureException(_inner) => Some(_inner),
             UpdateDomainEntryErrorKind::ServiceException(_inner) => Some(_inner),
             UpdateDomainEntryErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            UpdateDomainEntryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDomainEntryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -24090,6 +26649,16 @@ pub struct UpdateInstanceMetadataOptionsError {
     pub kind: UpdateInstanceMetadataOptionsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateInstanceMetadataOptionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateInstanceMetadataOptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateInstanceMetadataOptions` operation.
 #[non_exhaustive]
@@ -24111,8 +26680,15 @@ pub enum UpdateInstanceMetadataOptionsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateInstanceMetadataOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24154,7 +26730,9 @@ impl UpdateInstanceMetadataOptionsError {
     /// Creates the `UpdateInstanceMetadataOptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateInstanceMetadataOptionsErrorKind::Unhandled(err.into()),
+            kind: UpdateInstanceMetadataOptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -24163,7 +26741,9 @@ impl UpdateInstanceMetadataOptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateInstanceMetadataOptionsErrorKind::Unhandled(err.into()),
+            kind: UpdateInstanceMetadataOptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -24253,7 +26833,7 @@ impl std::error::Error for UpdateInstanceMetadataOptionsError {
             UpdateInstanceMetadataOptionsErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            UpdateInstanceMetadataOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateInstanceMetadataOptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -24266,6 +26846,16 @@ pub struct UpdateLoadBalancerAttributeError {
     pub kind: UpdateLoadBalancerAttributeErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateLoadBalancerAttributeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateLoadBalancerAttributeErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateLoadBalancerAttribute` operation.
 #[non_exhaustive]
@@ -24287,8 +26877,15 @@ pub enum UpdateLoadBalancerAttributeErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLoadBalancerAttributeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24325,7 +26922,9 @@ impl UpdateLoadBalancerAttributeError {
     /// Creates the `UpdateLoadBalancerAttributeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateLoadBalancerAttributeErrorKind::Unhandled(err.into()),
+            kind: UpdateLoadBalancerAttributeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -24334,7 +26933,9 @@ impl UpdateLoadBalancerAttributeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateLoadBalancerAttributeErrorKind::Unhandled(err.into()),
+            kind: UpdateLoadBalancerAttributeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -24420,7 +27021,7 @@ impl std::error::Error for UpdateLoadBalancerAttributeError {
             UpdateLoadBalancerAttributeErrorKind::OperationFailureException(_inner) => Some(_inner),
             UpdateLoadBalancerAttributeErrorKind::ServiceException(_inner) => Some(_inner),
             UpdateLoadBalancerAttributeErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            UpdateLoadBalancerAttributeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateLoadBalancerAttributeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -24433,6 +27034,16 @@ pub struct UpdateRelationalDatabaseError {
     pub kind: UpdateRelationalDatabaseErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateRelationalDatabaseError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateRelationalDatabase` operation.
 #[non_exhaustive]
@@ -24454,8 +27065,15 @@ pub enum UpdateRelationalDatabaseErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRelationalDatabaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24490,7 +27108,9 @@ impl UpdateRelationalDatabaseError {
     /// Creates the `UpdateRelationalDatabaseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRelationalDatabaseErrorKind::Unhandled(err.into()),
+            kind: UpdateRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -24499,7 +27119,9 @@ impl UpdateRelationalDatabaseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRelationalDatabaseErrorKind::Unhandled(err.into()),
+            kind: UpdateRelationalDatabaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -24585,7 +27207,7 @@ impl std::error::Error for UpdateRelationalDatabaseError {
             UpdateRelationalDatabaseErrorKind::OperationFailureException(_inner) => Some(_inner),
             UpdateRelationalDatabaseErrorKind::ServiceException(_inner) => Some(_inner),
             UpdateRelationalDatabaseErrorKind::UnauthenticatedException(_inner) => Some(_inner),
-            UpdateRelationalDatabaseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRelationalDatabaseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -24598,6 +27220,16 @@ pub struct UpdateRelationalDatabaseParametersError {
     pub kind: UpdateRelationalDatabaseParametersErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateRelationalDatabaseParametersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateRelationalDatabaseParametersErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateRelationalDatabaseParameters` operation.
 #[non_exhaustive]
@@ -24619,8 +27251,15 @@ pub enum UpdateRelationalDatabaseParametersErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRelationalDatabaseParametersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24666,7 +27305,9 @@ impl UpdateRelationalDatabaseParametersError {
     /// Creates the `UpdateRelationalDatabaseParametersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRelationalDatabaseParametersErrorKind::Unhandled(err.into()),
+            kind: UpdateRelationalDatabaseParametersErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -24675,7 +27316,9 @@ impl UpdateRelationalDatabaseParametersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRelationalDatabaseParametersErrorKind::Unhandled(err.into()),
+            kind: UpdateRelationalDatabaseParametersErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -24769,7 +27412,35 @@ impl std::error::Error for UpdateRelationalDatabaseParametersError {
             UpdateRelationalDatabaseParametersErrorKind::UnauthenticatedException(_inner) => {
                 Some(_inner)
             }
-            UpdateRelationalDatabaseParametersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRelationalDatabaseParametersErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

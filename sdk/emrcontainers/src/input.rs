@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod cancel_job_run_input {
 
     /// A builder for [`CancelJobRunInput`](crate::input::CancelJobRunInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) virtual_cluster_id: std::option::Option<std::string::String>,
@@ -37,7 +37,7 @@ pub mod cancel_job_run_input {
         /// Consumes the builder and constructs a [`CancelJobRunInput`](crate::input::CancelJobRunInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelJobRunInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CancelJobRunInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CancelJobRunInput {
                 id: self.id,
@@ -59,40 +59,50 @@ impl CancelJobRunInput {
             crate::operation::CancelJobRun,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CancelJobRunInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.virtual_cluster_id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_cluster_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_cluster_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if virtual_cluster_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_cluster_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_cluster_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_2 = &_input.id;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -107,8 +117,10 @@ impl CancelJobRunInput {
             fn update_http_builder(
                 input: &crate::input::CancelJobRunInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -178,7 +190,7 @@ impl CancelJobRunInput {
 pub mod create_managed_endpoint_input {
 
     /// A builder for [`CreateManagedEndpointInput`](crate::input::CreateManagedEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) virtual_cluster_id: std::option::Option<std::string::String>,
@@ -326,8 +338,10 @@ pub mod create_managed_endpoint_input {
         /// Consumes the builder and constructs a [`CreateManagedEndpointInput`](crate::input::CreateManagedEndpointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateManagedEndpointInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateManagedEndpointInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateManagedEndpointInput {
                 name: self.name,
                 virtual_cluster_id: self.virtual_cluster_id,
@@ -355,7 +369,7 @@ impl CreateManagedEndpointInput {
             crate::operation::CreateManagedEndpoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -364,20 +378,25 @@ impl CreateManagedEndpointInput {
             fn uri_base(
                 _input: &crate::input::CreateManagedEndpointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.virtual_cluster_id;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_cluster_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_cluster_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if virtual_cluster_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_cluster_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_cluster_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -391,8 +410,10 @@ impl CreateManagedEndpointInput {
             fn update_http_builder(
                 input: &crate::input::CreateManagedEndpointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -478,7 +499,7 @@ impl CreateManagedEndpointInput {
 pub mod create_virtual_cluster_input {
 
     /// A builder for [`CreateVirtualClusterInput`](crate::input::CreateVirtualClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) container_provider: std::option::Option<crate::model::ContainerProvider>,
@@ -549,8 +570,10 @@ pub mod create_virtual_cluster_input {
         /// Consumes the builder and constructs a [`CreateVirtualClusterInput`](crate::input::CreateVirtualClusterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateVirtualClusterInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateVirtualClusterInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateVirtualClusterInput {
                 name: self.name,
                 container_provider: self.container_provider,
@@ -573,7 +596,7 @@ impl CreateVirtualClusterInput {
             crate::operation::CreateVirtualCluster,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -582,7 +605,7 @@ impl CreateVirtualClusterInput {
             fn uri_base(
                 _input: &crate::input::CreateVirtualClusterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/virtualclusters").expect("formatting should succeed");
                 Ok(())
             }
@@ -590,8 +613,10 @@ impl CreateVirtualClusterInput {
             fn update_http_builder(
                 input: &crate::input::CreateVirtualClusterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -677,7 +702,7 @@ impl CreateVirtualClusterInput {
 pub mod delete_managed_endpoint_input {
 
     /// A builder for [`DeleteManagedEndpointInput`](crate::input::DeleteManagedEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) virtual_cluster_id: std::option::Option<std::string::String>,
@@ -709,8 +734,10 @@ pub mod delete_managed_endpoint_input {
         /// Consumes the builder and constructs a [`DeleteManagedEndpointInput`](crate::input::DeleteManagedEndpointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteManagedEndpointInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteManagedEndpointInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteManagedEndpointInput {
                 id: self.id,
                 virtual_cluster_id: self.virtual_cluster_id,
@@ -731,40 +758,50 @@ impl DeleteManagedEndpointInput {
             crate::operation::DeleteManagedEndpoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteManagedEndpointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.virtual_cluster_id;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_cluster_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_cluster_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if virtual_cluster_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_cluster_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_cluster_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_5 = &_input.id;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -779,8 +816,10 @@ impl DeleteManagedEndpointInput {
             fn update_http_builder(
                 input: &crate::input::DeleteManagedEndpointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -850,7 +889,7 @@ impl DeleteManagedEndpointInput {
 pub mod delete_virtual_cluster_input {
 
     /// A builder for [`DeleteVirtualClusterInput`](crate::input::DeleteVirtualClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -868,8 +907,10 @@ pub mod delete_virtual_cluster_input {
         /// Consumes the builder and constructs a [`DeleteVirtualClusterInput`](crate::input::DeleteVirtualClusterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteVirtualClusterInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteVirtualClusterInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteVirtualClusterInput { id: self.id })
         }
     }
@@ -887,26 +928,31 @@ impl DeleteVirtualClusterInput {
             crate::operation::DeleteVirtualCluster,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteVirtualClusterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.id;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/virtualclusters/{id}", id = id)
                     .expect("formatting should succeed");
@@ -916,8 +962,10 @@ impl DeleteVirtualClusterInput {
             fn update_http_builder(
                 input: &crate::input::DeleteVirtualClusterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -987,7 +1035,7 @@ impl DeleteVirtualClusterInput {
 pub mod describe_job_run_input {
 
     /// A builder for [`DescribeJobRunInput`](crate::input::DescribeJobRunInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) virtual_cluster_id: std::option::Option<std::string::String>,
@@ -1019,7 +1067,7 @@ pub mod describe_job_run_input {
         /// Consumes the builder and constructs a [`DescribeJobRunInput`](crate::input::DescribeJobRunInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeJobRunInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeJobRunInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeJobRunInput {
                 id: self.id,
@@ -1041,40 +1089,50 @@ impl DescribeJobRunInput {
             crate::operation::DescribeJobRun,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeJobRunInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.virtual_cluster_id;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_cluster_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_cluster_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if virtual_cluster_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_cluster_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_cluster_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_8 = &_input.id;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_8, false);
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1089,8 +1147,10 @@ impl DescribeJobRunInput {
             fn update_http_builder(
                 input: &crate::input::DescribeJobRunInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1160,7 +1220,7 @@ impl DescribeJobRunInput {
 pub mod describe_managed_endpoint_input {
 
     /// A builder for [`DescribeManagedEndpointInput`](crate::input::DescribeManagedEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) virtual_cluster_id: std::option::Option<std::string::String>,
@@ -1194,7 +1254,7 @@ pub mod describe_managed_endpoint_input {
             self,
         ) -> Result<
             crate::input::DescribeManagedEndpointInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeManagedEndpointInput {
                 id: self.id,
@@ -1216,40 +1276,50 @@ impl DescribeManagedEndpointInput {
             crate::operation::DescribeManagedEndpoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeManagedEndpointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.virtual_cluster_id;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_cluster_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_cluster_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if virtual_cluster_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_cluster_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_cluster_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_10 = &_input.id;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_10, false);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1264,8 +1334,10 @@ impl DescribeManagedEndpointInput {
             fn update_http_builder(
                 input: &crate::input::DescribeManagedEndpointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1335,7 +1407,7 @@ impl DescribeManagedEndpointInput {
 pub mod describe_virtual_cluster_input {
 
     /// A builder for [`DescribeVirtualClusterInput`](crate::input::DescribeVirtualClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1353,8 +1425,10 @@ pub mod describe_virtual_cluster_input {
         /// Consumes the builder and constructs a [`DescribeVirtualClusterInput`](crate::input::DescribeVirtualClusterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeVirtualClusterInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeVirtualClusterInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeVirtualClusterInput { id: self.id })
         }
     }
@@ -1372,26 +1446,31 @@ impl DescribeVirtualClusterInput {
             crate::operation::DescribeVirtualCluster,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeVirtualClusterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.id;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_11, false);
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_11,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/virtualclusters/{id}", id = id)
                     .expect("formatting should succeed");
@@ -1401,8 +1480,10 @@ impl DescribeVirtualClusterInput {
             fn update_http_builder(
                 input: &crate::input::DescribeVirtualClusterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1472,7 +1553,7 @@ impl DescribeVirtualClusterInput {
 pub mod list_job_runs_input {
 
     /// A builder for [`ListJobRunsInput`](crate::input::ListJobRunsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_cluster_id: std::option::Option<std::string::String>,
         pub(crate) created_before: std::option::Option<aws_smithy_types::DateTime>,
@@ -1574,7 +1655,7 @@ pub mod list_job_runs_input {
         /// Consumes the builder and constructs a [`ListJobRunsInput`](crate::input::ListJobRunsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListJobRunsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListJobRunsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListJobRunsInput {
                 virtual_cluster_id: self.virtual_cluster_id,
@@ -1601,26 +1682,31 @@ impl ListJobRunsInput {
             crate::operation::ListJobRuns,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListJobRunsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_12 = &_input.virtual_cluster_id;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_cluster_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_12, false);
+                let input_12 = input_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_cluster_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(
+                    input_12,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if virtual_cluster_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_cluster_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_cluster_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1633,42 +1719,54 @@ impl ListJobRunsInput {
             fn uri_query(
                 _input: &crate::input::ListJobRunsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_13) = &_input.created_before {
-                    query.push_kv(
-                        "createdBefore",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_13,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "createdBefore",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_13,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_14) = &_input.created_after {
-                    query.push_kv(
-                        "createdAfter",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_14,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "createdAfter",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_14,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_15) = &_input.name {
-                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_15));
+                    {
+                        query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_15));
+                    }
                 }
                 if let Some(inner_16) = &_input.states {
-                    for inner_17 in inner_16 {
-                        query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_17));
+                    {
+                        for inner_17 in inner_16 {
+                            query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_17));
+                        }
                     }
                 }
                 if let Some(inner_18) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
-                    );
+                    if *inner_18 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_19) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
+                    }
                 }
                 Ok(())
             }
@@ -1676,8 +1774,10 @@ impl ListJobRunsInput {
             fn update_http_builder(
                 input: &crate::input::ListJobRunsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1748,7 +1848,7 @@ impl ListJobRunsInput {
 pub mod list_managed_endpoints_input {
 
     /// A builder for [`ListManagedEndpointsInput`](crate::input::ListManagedEndpointsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_cluster_id: std::option::Option<std::string::String>,
         pub(crate) created_before: std::option::Option<aws_smithy_types::DateTime>,
@@ -1859,8 +1959,10 @@ pub mod list_managed_endpoints_input {
         /// Consumes the builder and constructs a [`ListManagedEndpointsInput`](crate::input::ListManagedEndpointsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListManagedEndpointsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListManagedEndpointsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListManagedEndpointsInput {
                 virtual_cluster_id: self.virtual_cluster_id,
                 created_before: self.created_before,
@@ -1886,26 +1988,31 @@ impl ListManagedEndpointsInput {
             crate::operation::ListManagedEndpoints,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListManagedEndpointsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_20 = &_input.virtual_cluster_id;
-                let input_20 = input_20.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_cluster_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_20, false);
+                let input_20 = input_20.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_cluster_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(
+                    input_20,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if virtual_cluster_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_cluster_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_cluster_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1918,44 +2025,56 @@ impl ListManagedEndpointsInput {
             fn uri_query(
                 _input: &crate::input::ListManagedEndpointsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_21) = &_input.created_before {
-                    query.push_kv(
-                        "createdBefore",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_21,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "createdBefore",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_21,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_22) = &_input.created_after {
-                    query.push_kv(
-                        "createdAfter",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_22,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "createdAfter",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_22,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_23) = &_input.types {
-                    for inner_24 in inner_23 {
-                        query.push_kv("types", &aws_smithy_http::query::fmt_string(&inner_24));
+                    {
+                        for inner_24 in inner_23 {
+                            query.push_kv("types", &aws_smithy_http::query::fmt_string(&inner_24));
+                        }
                     }
                 }
                 if let Some(inner_25) = &_input.states {
-                    for inner_26 in inner_25 {
-                        query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_26));
+                    {
+                        for inner_26 in inner_25 {
+                            query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_26));
+                        }
                     }
                 }
                 if let Some(inner_27) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_27).encode(),
-                    );
+                    if *inner_27 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_27).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_28) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_28));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_28));
+                    }
                 }
                 Ok(())
             }
@@ -1963,8 +2082,10 @@ impl ListManagedEndpointsInput {
             fn update_http_builder(
                 input: &crate::input::ListManagedEndpointsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2035,7 +2156,7 @@ impl ListManagedEndpointsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2053,8 +2174,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -2074,26 +2197,31 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_29 = &_input.resource_arn;
-                let input_29 = input_29.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_29, false);
+                let input_29 = input_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_29,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -2103,8 +2231,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2174,7 +2304,7 @@ impl ListTagsForResourceInput {
 pub mod list_virtual_clusters_input {
 
     /// A builder for [`ListVirtualClustersInput`](crate::input::ListVirtualClustersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_provider_id: std::option::Option<std::string::String>,
         pub(crate) container_provider_type:
@@ -2283,8 +2413,10 @@ pub mod list_virtual_clusters_input {
         /// Consumes the builder and constructs a [`ListVirtualClustersInput`](crate::input::ListVirtualClustersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListVirtualClustersInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListVirtualClustersInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListVirtualClustersInput {
                 container_provider_id: self.container_provider_id,
                 container_provider_type: self.container_provider_type,
@@ -2310,64 +2442,78 @@ impl ListVirtualClustersInput {
             crate::operation::ListVirtualClusters,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListVirtualClustersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/virtualclusters").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListVirtualClustersInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_30) = &_input.container_provider_id {
-                    query.push_kv(
-                        "containerProviderId",
-                        &aws_smithy_http::query::fmt_string(&inner_30),
-                    );
+                    {
+                        query.push_kv(
+                            "containerProviderId",
+                            &aws_smithy_http::query::fmt_string(&inner_30),
+                        );
+                    }
                 }
                 if let Some(inner_31) = &_input.container_provider_type {
-                    query.push_kv(
-                        "containerProviderType",
-                        &aws_smithy_http::query::fmt_string(&inner_31),
-                    );
+                    {
+                        query.push_kv(
+                            "containerProviderType",
+                            &aws_smithy_http::query::fmt_string(&inner_31),
+                        );
+                    }
                 }
                 if let Some(inner_32) = &_input.created_after {
-                    query.push_kv(
-                        "createdAfter",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_32,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "createdAfter",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_32,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_33) = &_input.created_before {
-                    query.push_kv(
-                        "createdBefore",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_33,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "createdBefore",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_33,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_34) = &_input.states {
-                    for inner_35 in inner_34 {
-                        query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_35));
+                    {
+                        for inner_35 in inner_34 {
+                            query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_35));
+                        }
                     }
                 }
                 if let Some(inner_36) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_36).encode(),
-                    );
+                    if *inner_36 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_36).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_37) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                    }
                 }
                 Ok(())
             }
@@ -2375,8 +2521,10 @@ impl ListVirtualClustersInput {
             fn update_http_builder(
                 input: &crate::input::ListVirtualClustersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2447,7 +2595,7 @@ impl ListVirtualClustersInput {
 pub mod start_job_run_input {
 
     /// A builder for [`StartJobRunInput`](crate::input::StartJobRunInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) virtual_cluster_id: std::option::Option<std::string::String>,
@@ -2578,7 +2726,7 @@ pub mod start_job_run_input {
         /// Consumes the builder and constructs a [`StartJobRunInput`](crate::input::StartJobRunInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartJobRunInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::StartJobRunInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::StartJobRunInput {
                 name: self.name,
@@ -2606,7 +2754,7 @@ impl StartJobRunInput {
             crate::operation::StartJobRun,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -2615,20 +2763,25 @@ impl StartJobRunInput {
             fn uri_base(
                 _input: &crate::input::StartJobRunInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_38 = &_input.virtual_cluster_id;
-                let input_38 = input_38.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_cluster_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let input_38 = input_38.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_cluster_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(
+                    input_38,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if virtual_cluster_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_cluster_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_cluster_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2642,8 +2795,10 @@ impl StartJobRunInput {
             fn update_http_builder(
                 input: &crate::input::StartJobRunInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2727,7 +2882,7 @@ impl StartJobRunInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -2773,7 +2928,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2795,26 +2950,31 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_39 = &_input.resource_arn;
-                let input_39 = input_39.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_39, false);
+                let input_39 = input_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_39,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -2824,8 +2984,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2909,7 +3071,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2947,7 +3109,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2969,26 +3131,31 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_40 = &_input.resource_arn;
-                let input_40 = input_40.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_40, false);
+                let input_40 = input_40.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_40,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -2997,12 +3164,17 @@ impl UntagResourceInput {
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_41) = &_input.tag_keys {
-                    for inner_42 in inner_41 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_42));
-                    }
+                let inner_41 = &_input.tag_keys;
+                let inner_41 = inner_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_42 in inner_41 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_42));
                 }
                 Ok(())
             }
@@ -3010,8 +3182,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3080,7 +3254,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of resources.</p>
     #[doc(hidden)]
@@ -3099,18 +3273,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of resources.</p>
     #[doc(hidden)]
@@ -3133,18 +3299,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartJobRunInput {
     /// <p>The name of the job run.</p>
     #[doc(hidden)]
@@ -3211,24 +3369,10 @@ impl StartJobRunInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for StartJobRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartJobRunInput");
-        formatter.field("name", &self.name);
-        formatter.field("virtual_cluster_id", &self.virtual_cluster_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("release_label", &self.release_label);
-        formatter.field("job_driver", &self.job_driver);
-        formatter.field("configuration_overrides", &self.configuration_overrides);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVirtualClustersInput {
     /// <p>The container provider ID of the virtual cluster.</p>
     #[doc(hidden)]
@@ -3284,23 +3428,10 @@ impl ListVirtualClustersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListVirtualClustersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVirtualClustersInput");
-        formatter.field("container_provider_id", &self.container_provider_id);
-        formatter.field("container_provider_type", &self.container_provider_type);
-        formatter.field("created_after", &self.created_after);
-        formatter.field("created_before", &self.created_before);
-        formatter.field("states", &self.states);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of tagged resources.</p>
     #[doc(hidden)]
@@ -3312,17 +3443,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListManagedEndpointsInput {
     /// <p>The ID of the virtual cluster.</p>
     #[doc(hidden)]
@@ -3376,23 +3500,10 @@ impl ListManagedEndpointsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListManagedEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListManagedEndpointsInput");
-        formatter.field("virtual_cluster_id", &self.virtual_cluster_id);
-        formatter.field("created_before", &self.created_before);
-        formatter.field("created_after", &self.created_after);
-        formatter.field("types", &self.types);
-        formatter.field("states", &self.states);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobRunsInput {
     /// <p>The ID of the virtual cluster for which to list the job run. </p>
     #[doc(hidden)]
@@ -3446,23 +3557,10 @@ impl ListJobRunsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListJobRunsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobRunsInput");
-        formatter.field("virtual_cluster_id", &self.virtual_cluster_id);
-        formatter.field("created_before", &self.created_before);
-        formatter.field("created_after", &self.created_after);
-        formatter.field("name", &self.name);
-        formatter.field("states", &self.states);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVirtualClusterInput {
     /// <p>The ID of the virtual cluster that will be described.</p>
     #[doc(hidden)]
@@ -3474,17 +3572,10 @@ impl DescribeVirtualClusterInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVirtualClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVirtualClusterInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeManagedEndpointInput {
     /// <p>This output displays ID of the managed endpoint.</p>
     #[doc(hidden)]
@@ -3503,18 +3594,10 @@ impl DescribeManagedEndpointInput {
         self.virtual_cluster_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeManagedEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeManagedEndpointInput");
-        formatter.field("id", &self.id);
-        formatter.field("virtual_cluster_id", &self.virtual_cluster_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobRunInput {
     /// <p>The ID of the job run request. </p>
     #[doc(hidden)]
@@ -3533,18 +3616,10 @@ impl DescribeJobRunInput {
         self.virtual_cluster_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeJobRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobRunInput");
-        formatter.field("id", &self.id);
-        formatter.field("virtual_cluster_id", &self.virtual_cluster_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVirtualClusterInput {
     /// <p>The ID of the virtual cluster that will be deleted.</p>
     #[doc(hidden)]
@@ -3556,17 +3631,10 @@ impl DeleteVirtualClusterInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVirtualClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVirtualClusterInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteManagedEndpointInput {
     /// <p>The ID of the managed endpoint.</p>
     #[doc(hidden)]
@@ -3585,18 +3653,10 @@ impl DeleteManagedEndpointInput {
         self.virtual_cluster_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteManagedEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteManagedEndpointInput");
-        formatter.field("id", &self.id);
-        formatter.field("virtual_cluster_id", &self.virtual_cluster_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVirtualClusterInput {
     /// <p>The specified name of the virtual cluster.</p>
     #[doc(hidden)]
@@ -3633,20 +3693,10 @@ impl CreateVirtualClusterInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateVirtualClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVirtualClusterInput");
-        formatter.field("name", &self.name);
-        formatter.field("container_provider", &self.container_provider);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateManagedEndpointInput {
     /// <p>The name of the managed endpoint.</p>
     #[doc(hidden)]
@@ -3726,25 +3776,10 @@ impl CreateManagedEndpointInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateManagedEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateManagedEndpointInput");
-        formatter.field("name", &self.name);
-        formatter.field("virtual_cluster_id", &self.virtual_cluster_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("release_label", &self.release_label);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("configuration_overrides", &self.configuration_overrides);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelJobRunInput {
     /// <p>The ID of the job run to cancel.</p>
     #[doc(hidden)]
@@ -3761,13 +3796,5 @@ impl CancelJobRunInput {
     /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
     pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
         self.virtual_cluster_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelJobRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelJobRunInput");
-        formatter.field("id", &self.id);
-        formatter.field("virtual_cluster_id", &self.virtual_cluster_id);
-        formatter.finish()
     }
 }

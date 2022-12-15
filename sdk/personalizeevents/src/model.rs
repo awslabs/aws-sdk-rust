@@ -2,7 +2,7 @@
 
 /// <p>Represents user metadata added to a Users dataset using the <code>PutUsers</code> API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing Users Incrementally</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct User {
     /// <p>The ID associated with the user.</p>
     #[doc(hidden)]
@@ -23,19 +23,11 @@ impl User {
         self.properties.as_deref()
     }
 }
-impl std::fmt::Debug for User {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("User");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
-    }
-}
 /// See [`User`](crate::model::User).
 pub mod user {
 
     /// A builder for [`User`](crate::model::User).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) properties: std::option::Option<std::string::String>,
@@ -81,7 +73,7 @@ impl User {
 
 /// <p>Represents item metadata added to an Items dataset using the <code>PutItems</code> API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing Items Incrementally</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Item {
     /// <p>The ID associated with the item.</p>
     #[doc(hidden)]
@@ -102,19 +94,11 @@ impl Item {
         self.properties.as_deref()
     }
 }
-impl std::fmt::Debug for Item {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Item");
-        formatter.field("item_id", &self.item_id);
-        formatter.field("properties", &self.properties);
-        formatter.finish()
-    }
-}
 /// See [`Item`](crate::model::Item).
 pub mod item {
 
     /// A builder for [`Item`](crate::model::Item).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item_id: std::option::Option<std::string::String>,
         pub(crate) properties: std::option::Option<std::string::String>,
@@ -160,7 +144,7 @@ impl Item {
 
 /// <p>Represents user interaction event information sent using the <code>PutEvents</code> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p>An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID for the event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinquish unique events. Any subsequent events after the first with the same event ID are not used in model training.</p>
     #[doc(hidden)]
@@ -227,25 +211,11 @@ impl Event {
         self.impression.as_deref()
     }
 }
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("event_value", &self.event_value);
-        formatter.field("item_id", &self.item_id);
-        formatter.field("properties", &self.properties);
-        formatter.field("sent_at", &self.sent_at);
-        formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("impression", &self.impression);
-        formatter.finish()
-    }
-}
 /// See [`Event`](crate::model::Event).
 pub mod event {
 
     /// A builder for [`Event`](crate::model::Event).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_id: std::option::Option<std::string::String>,
         pub(crate) event_type: std::option::Option<std::string::String>,

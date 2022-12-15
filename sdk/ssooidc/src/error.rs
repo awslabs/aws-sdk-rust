@@ -2,7 +2,7 @@
 
 /// <p>Indicates that the client is not currently authorized to make the request. This can happen when a <code>clientId</code> is not issued for a public client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnauthorizedClientException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -24,18 +24,9 @@ impl UnauthorizedClientException {
         self.error_description.as_deref()
     }
 }
-impl std::fmt::Debug for UnauthorizedClientException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnauthorizedClientException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl UnauthorizedClientException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -43,7 +34,9 @@ impl std::fmt::Display for UnauthorizedClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnauthorizedClientException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -53,7 +46,7 @@ impl std::error::Error for UnauthorizedClientException {}
 pub mod unauthorized_client_exception {
 
     /// A builder for [`UnauthorizedClientException`](crate::error::UnauthorizedClientException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) error_description: std::option::Option<std::string::String>,
@@ -112,7 +105,7 @@ impl UnauthorizedClientException {
 
 /// <p>Indicates that the client is making the request too frequently and is more than the service can handle. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlowDownException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -134,18 +127,9 @@ impl SlowDownException {
         self.error_description.as_deref()
     }
 }
-impl std::fmt::Debug for SlowDownException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlowDownException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SlowDownException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -153,7 +137,9 @@ impl std::fmt::Display for SlowDownException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SlowDownException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -163,7 +149,7 @@ impl std::error::Error for SlowDownException {}
 pub mod slow_down_exception {
 
     /// A builder for [`SlowDownException`](crate::error::SlowDownException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) error_description: std::option::Option<std::string::String>,
@@ -222,7 +208,7 @@ impl SlowDownException {
 
 /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter might be missing or out of range.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -244,18 +230,9 @@ impl InvalidRequestException {
         self.error_description.as_deref()
     }
 }
-impl std::fmt::Debug for InvalidRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRequestException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -263,7 +240,9 @@ impl std::fmt::Display for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRequestException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -273,7 +252,7 @@ impl std::error::Error for InvalidRequestException {}
 pub mod invalid_request_exception {
 
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) error_description: std::option::Option<std::string::String>,
@@ -332,7 +311,7 @@ impl InvalidRequestException {
 
 /// <p>Indicates that the <code>clientId</code> or <code>clientSecret</code> in the request is invalid. For example, this can occur when a client sends an incorrect <code>clientId</code> or an expired <code>clientSecret</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidClientException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -354,18 +333,9 @@ impl InvalidClientException {
         self.error_description.as_deref()
     }
 }
-impl std::fmt::Debug for InvalidClientException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidClientException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidClientException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -373,7 +343,9 @@ impl std::fmt::Display for InvalidClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidClientException")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -383,7 +355,7 @@ impl std::error::Error for InvalidClientException {}
 pub mod invalid_client_exception {
 
     /// A builder for [`InvalidClientException`](crate::error::InvalidClientException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) error_description: std::option::Option<std::string::String>,
@@ -442,7 +414,7 @@ impl InvalidClientException {
 
 /// <p>Indicates that an error from the service occurred while trying to process a request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -464,18 +436,9 @@ impl InternalServerException {
         self.error_description.as_deref()
     }
 }
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InternalServerException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -483,7 +446,9 @@ impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -493,7 +458,7 @@ impl std::error::Error for InternalServerException {}
 pub mod internal_server_exception {
 
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) error_description: std::option::Option<std::string::String>,
@@ -552,7 +517,7 @@ impl InternalServerException {
 
 /// <p>Indicates that the scope provided in the request is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidScopeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -574,18 +539,9 @@ impl InvalidScopeException {
         self.error_description.as_deref()
     }
 }
-impl std::fmt::Debug for InvalidScopeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidScopeException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidScopeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -593,7 +549,9 @@ impl std::fmt::Display for InvalidScopeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidScopeException")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -603,7 +561,7 @@ impl std::error::Error for InvalidScopeException {}
 pub mod invalid_scope_exception {
 
     /// A builder for [`InvalidScopeException`](crate::error::InvalidScopeException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) error_description: std::option::Option<std::string::String>,
@@ -662,7 +620,7 @@ impl InvalidScopeException {
 
 /// <p>Indicates that the client information sent in the request during registration is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidClientMetadataException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -684,18 +642,9 @@ impl InvalidClientMetadataException {
         self.error_description.as_deref()
     }
 }
-impl std::fmt::Debug for InvalidClientMetadataException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidClientMetadataException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidClientMetadataException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -703,7 +652,9 @@ impl std::fmt::Display for InvalidClientMetadataException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidClientMetadataException")?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -713,7 +664,7 @@ impl std::error::Error for InvalidClientMetadataException {}
 pub mod invalid_client_metadata_exception {
 
     /// A builder for [`InvalidClientMetadataException`](crate::error::InvalidClientMetadataException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) error_description: std::option::Option<std::string::String>,
@@ -772,7 +723,7 @@ impl InvalidClientMetadataException {
 
 /// <p>Indicates that the grant type in the request is not supported by the service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedGrantTypeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -794,18 +745,9 @@ impl UnsupportedGrantTypeException {
         self.error_description.as_deref()
     }
 }
-impl std::fmt::Debug for UnsupportedGrantTypeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedGrantTypeException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl UnsupportedGrantTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -813,7 +755,9 @@ impl std::fmt::Display for UnsupportedGrantTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedGrantTypeException")?;
         if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+            {
+                write!(f, ": {}", inner_8)?;
+            }
         }
         Ok(())
     }
@@ -823,7 +767,7 @@ impl std::error::Error for UnsupportedGrantTypeException {}
 pub mod unsupported_grant_type_exception {
 
     /// A builder for [`UnsupportedGrantTypeException`](crate::error::UnsupportedGrantTypeException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) error_description: std::option::Option<std::string::String>,
@@ -882,7 +826,7 @@ impl UnsupportedGrantTypeException {
 
 /// <p>Indicates that a request contains an invalid grant. This can occur if a client makes a <code>CreateToken</code> request with an invalid grant type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidGrantException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -904,18 +848,9 @@ impl InvalidGrantException {
         self.error_description.as_deref()
     }
 }
-impl std::fmt::Debug for InvalidGrantException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidGrantException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidGrantException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -923,7 +858,9 @@ impl std::fmt::Display for InvalidGrantException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidGrantException")?;
         if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+            {
+                write!(f, ": {}", inner_9)?;
+            }
         }
         Ok(())
     }
@@ -933,7 +870,7 @@ impl std::error::Error for InvalidGrantException {}
 pub mod invalid_grant_exception {
 
     /// A builder for [`InvalidGrantException`](crate::error::InvalidGrantException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) error_description: std::option::Option<std::string::String>,
@@ -992,7 +929,7 @@ impl InvalidGrantException {
 
 /// <p>Indicates that the token issued by the service is expired and is no longer valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExpiredTokenException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1014,18 +951,9 @@ impl ExpiredTokenException {
         self.error_description.as_deref()
     }
 }
-impl std::fmt::Debug for ExpiredTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExpiredTokenException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ExpiredTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1033,7 +961,9 @@ impl std::fmt::Display for ExpiredTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredTokenException")?;
         if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+            {
+                write!(f, ": {}", inner_10)?;
+            }
         }
         Ok(())
     }
@@ -1043,7 +973,7 @@ impl std::error::Error for ExpiredTokenException {}
 pub mod expired_token_exception {
 
     /// A builder for [`ExpiredTokenException`](crate::error::ExpiredTokenException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) error_description: std::option::Option<std::string::String>,
@@ -1102,7 +1032,7 @@ impl ExpiredTokenException {
 
 /// <p>Indicates that a request to authorize a client with an access user session token is pending.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorizationPendingException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1124,18 +1054,9 @@ impl AuthorizationPendingException {
         self.error_description.as_deref()
     }
 }
-impl std::fmt::Debug for AuthorizationPendingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorizationPendingException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl AuthorizationPendingException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1143,7 +1064,9 @@ impl std::fmt::Display for AuthorizationPendingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationPendingException")?;
         if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+            {
+                write!(f, ": {}", inner_11)?;
+            }
         }
         Ok(())
     }
@@ -1153,7 +1076,7 @@ impl std::error::Error for AuthorizationPendingException {}
 pub mod authorization_pending_exception {
 
     /// A builder for [`AuthorizationPendingException`](crate::error::AuthorizationPendingException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) error_description: std::option::Option<std::string::String>,
@@ -1212,7 +1135,7 @@ impl AuthorizationPendingException {
 
 /// <p>You do not have sufficient access to perform this action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1234,18 +1157,9 @@ impl AccessDeniedException {
         self.error_description.as_deref()
     }
 }
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("error", &self.error);
-        formatter.field("error_description", &self.error_description);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1253,7 +1167,9 @@ impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+            {
+                write!(f, ": {}", inner_12)?;
+            }
         }
         Ok(())
     }
@@ -1263,7 +1179,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
 
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) error_description: std::option::Option<std::string::String>,
@@ -1329,6 +1245,14 @@ pub struct CreateTokenError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateTokenError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateTokenErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateToken` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1355,8 +1279,15 @@ pub enum CreateTokenErrorKind {
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// <p>Indicates that the grant type in the request is not supported by the service.</p>
     UnsupportedGrantTypeException(crate::error::UnsupportedGrantTypeException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1393,7 +1324,7 @@ impl CreateTokenError {
     /// Creates the `CreateTokenError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTokenErrorKind::Unhandled(err.into()),
+            kind: CreateTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1402,7 +1333,7 @@ impl CreateTokenError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTokenErrorKind::Unhandled(err.into()),
+            kind: CreateTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1494,7 +1425,7 @@ impl std::error::Error for CreateTokenError {
             CreateTokenErrorKind::SlowDownException(_inner) => Some(_inner),
             CreateTokenErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
             CreateTokenErrorKind::UnsupportedGrantTypeException(_inner) => Some(_inner),
-            CreateTokenErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTokenErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1508,6 +1439,14 @@ pub struct RegisterClientError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RegisterClientError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterClientErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RegisterClient` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1520,8 +1459,15 @@ pub enum RegisterClientErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Indicates that the scope provided in the request is invalid.</p>
     InvalidScopeException(crate::error::InvalidScopeException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterClientError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1551,7 +1497,7 @@ impl RegisterClientError {
     /// Creates the `RegisterClientError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterClientErrorKind::Unhandled(err.into()),
+            kind: RegisterClientErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1560,7 +1506,7 @@ impl RegisterClientError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterClientErrorKind::Unhandled(err.into()),
+            kind: RegisterClientErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1620,7 +1566,7 @@ impl std::error::Error for RegisterClientError {
             RegisterClientErrorKind::InvalidClientMetadataException(_inner) => Some(_inner),
             RegisterClientErrorKind::InvalidRequestException(_inner) => Some(_inner),
             RegisterClientErrorKind::InvalidScopeException(_inner) => Some(_inner),
-            RegisterClientErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterClientErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1633,6 +1579,16 @@ pub struct StartDeviceAuthorizationError {
     pub kind: StartDeviceAuthorizationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartDeviceAuthorizationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartDeviceAuthorizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartDeviceAuthorization` operation.
 #[non_exhaustive]
@@ -1648,8 +1604,15 @@ pub enum StartDeviceAuthorizationErrorKind {
     SlowDownException(crate::error::SlowDownException),
     /// <p>Indicates that the client is not currently authorized to make the request. This can happen when a <code>clientId</code> is not issued for a public client.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartDeviceAuthorizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1680,7 +1643,9 @@ impl StartDeviceAuthorizationError {
     /// Creates the `StartDeviceAuthorizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartDeviceAuthorizationErrorKind::Unhandled(err.into()),
+            kind: StartDeviceAuthorizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1689,7 +1654,9 @@ impl StartDeviceAuthorizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartDeviceAuthorizationErrorKind::Unhandled(err.into()),
+            kind: StartDeviceAuthorizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1757,7 +1724,35 @@ impl std::error::Error for StartDeviceAuthorizationError {
             StartDeviceAuthorizationErrorKind::InvalidRequestException(_inner) => Some(_inner),
             StartDeviceAuthorizationErrorKind::SlowDownException(_inner) => Some(_inner),
             StartDeviceAuthorizationErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            StartDeviceAuthorizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartDeviceAuthorizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

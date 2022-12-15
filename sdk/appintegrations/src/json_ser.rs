@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_data_integration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateDataIntegrationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("ClientToken").string(var_1.as_str());
     }
@@ -16,6 +16,7 @@ pub fn serialize_structure_crate_input_create_data_integration_input(
         object.key("Name").string(var_4.as_str());
     }
     if let Some(var_5) = &input.schedule_config {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("ScheduleConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_schedule_configuration(
             &mut object_6,
@@ -27,10 +28,11 @@ pub fn serialize_structure_crate_input_create_data_integration_input(
         object.key("SourceURI").string(var_7.as_str());
     }
     if let Some(var_8) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_9 = object.key("Tags").start_object();
         for (key_10, value_11) in var_8 {
             {
-                object_9.key(key_10).string(value_11.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
         object_9.finish();
@@ -41,7 +43,7 @@ pub fn serialize_structure_crate_input_create_data_integration_input(
 pub fn serialize_structure_crate_input_create_event_integration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateEventIntegrationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_12) = &input.client_token {
         object.key("ClientToken").string(var_12.as_str());
     }
@@ -52,6 +54,7 @@ pub fn serialize_structure_crate_input_create_event_integration_input(
         object.key("EventBridgeBus").string(var_14.as_str());
     }
     if let Some(var_15) = &input.event_filter {
+        #[allow(unused_mut)]
         let mut object_16 = object.key("EventFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_event_filter(&mut object_16, var_15)?;
         object_16.finish();
@@ -60,10 +63,11 @@ pub fn serialize_structure_crate_input_create_event_integration_input(
         object.key("Name").string(var_17.as_str());
     }
     if let Some(var_18) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_19 = object.key("Tags").start_object();
         for (key_20, value_21) in var_18 {
             {
-                object_19.key(key_20).string(value_21.as_str());
+                object_19.key(key_20.as_str()).string(value_21.as_str());
             }
         }
         object_19.finish();
@@ -74,12 +78,13 @@ pub fn serialize_structure_crate_input_create_event_integration_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_22) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_23 = object.key("tags").start_object();
         for (key_24, value_25) in var_22 {
             {
-                object_23.key(key_24).string(value_25.as_str());
+                object_23.key(key_24.as_str()).string(value_25.as_str());
             }
         }
         object_23.finish();
@@ -90,7 +95,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_data_integration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateDataIntegrationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_26) = &input.description {
         object.key("Description").string(var_26.as_str());
     }
@@ -103,7 +108,7 @@ pub fn serialize_structure_crate_input_update_data_integration_input(
 pub fn serialize_structure_crate_input_update_event_integration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateEventIntegrationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.description {
         object.key("Description").string(var_28.as_str());
     }
@@ -113,7 +118,7 @@ pub fn serialize_structure_crate_input_update_event_integration_input(
 pub fn serialize_structure_crate_model_schedule_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ScheduleConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_29) = &input.first_execution_from {
         object.key("FirstExecutionFrom").string(var_29.as_str());
     }
@@ -129,7 +134,7 @@ pub fn serialize_structure_crate_model_schedule_configuration(
 pub fn serialize_structure_crate_model_event_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EventFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.source {
         object.key("Source").string(var_32.as_str());
     }

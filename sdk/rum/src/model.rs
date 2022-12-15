@@ -4,7 +4,7 @@
 /// <p>For example, you could specify <code>Browser</code> as the <code>Name</code> and specify <code>Chrome,Firefox</code> as the <code>Values</code> to return events generated only from those browsers.</p>
 /// <p>Specifying <code>Invert</code> as the <code>Name</code> works as a "not equal to" filter. For example, specify <code>Invert</code> as the <code>Name</code> and specify <code>Chrome</code> as the value to return all events except events from user sessions with the Chrome browser.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryFilter {
     /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify. </p>
     /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code> </p>
@@ -25,19 +25,11 @@ impl QueryFilter {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for QueryFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`QueryFilter`](crate::model::QueryFilter).
 pub mod query_filter {
 
     /// A builder for [`QueryFilter`](crate::model::QueryFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -92,7 +84,7 @@ impl QueryFilter {
 
 /// <p>A structure that defines the time range that you want to retrieve results from.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeRange {
     /// <p>The beginning of the time range to retrieve performance events from.</p>
     #[doc(hidden)]
@@ -111,19 +103,11 @@ impl TimeRange {
         self.before
     }
 }
-impl std::fmt::Debug for TimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeRange");
-        formatter.field("after", &self.after);
-        formatter.field("before", &self.before);
-        formatter.finish()
-    }
-}
 /// See [`TimeRange`](crate::model::TimeRange).
 pub mod time_range {
 
     /// A builder for [`TimeRange`](crate::model::TimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) after: std::option::Option<i64>,
         pub(crate) before: std::option::Option<i64>,
@@ -167,7 +151,7 @@ impl TimeRange {
 
 /// <p>This structure contains much of the configuration data for the app monitor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppMonitorConfiguration {
     /// <p>The ID of the Amazon Cognito identity pool that is used to authorize the sending of data to RUM.</p>
     #[doc(hidden)]
@@ -253,26 +237,11 @@ impl AppMonitorConfiguration {
         self.enable_x_ray
     }
 }
-impl std::fmt::Debug for AppMonitorConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppMonitorConfiguration");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("excluded_pages", &self.excluded_pages);
-        formatter.field("included_pages", &self.included_pages);
-        formatter.field("favorite_pages", &self.favorite_pages);
-        formatter.field("session_sample_rate", &self.session_sample_rate);
-        formatter.field("guest_role_arn", &self.guest_role_arn);
-        formatter.field("allow_cookies", &self.allow_cookies);
-        formatter.field("telemetries", &self.telemetries);
-        formatter.field("enable_x_ray", &self.enable_x_ray);
-        formatter.finish()
-    }
-}
 /// See [`AppMonitorConfiguration`](crate::model::AppMonitorConfiguration).
 pub mod app_monitor_configuration {
 
     /// A builder for [`AppMonitorConfiguration`](crate::model::AppMonitorConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) excluded_pages: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -458,6 +427,42 @@ impl AppMonitorConfiguration {
     }
 }
 
+/// When writing a match expression against `Telemetry`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let telemetry = unimplemented!();
+/// match telemetry {
+///     Telemetry::Errors => { /* ... */ },
+///     Telemetry::Http => { /* ... */ },
+///     Telemetry::Performance => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `telemetry` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Telemetry::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Telemetry::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Telemetry::NewFeature` is defined.
+/// Specifically, when `telemetry` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Telemetry::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -476,8 +481,8 @@ pub enum Telemetry {
     Http,
     /// Includes navigation, paint, resource and web vital event plugins
     Performance,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Telemetry {
     fn from(s: &str) -> Self {
@@ -485,7 +490,7 @@ impl std::convert::From<&str> for Telemetry {
             "errors" => Telemetry::Errors,
             "http" => Telemetry::Http,
             "performance" => Telemetry::Performance,
-            other => Telemetry::Unknown(other.to_owned()),
+            other => Telemetry::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -503,11 +508,11 @@ impl Telemetry {
             Telemetry::Errors => "errors",
             Telemetry::Http => "http",
             Telemetry::Performance => "performance",
-            Telemetry::Unknown(s) => s.as_ref(),
+            Telemetry::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["errors", "http", "performance"]
     }
 }
@@ -519,7 +524,7 @@ impl AsRef<str> for Telemetry {
 
 /// <p>A structure that includes some data about app monitors and their settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppMonitorSummary {
     /// <p>The name of this app monitor.</p>
     #[doc(hidden)]
@@ -559,22 +564,11 @@ impl AppMonitorSummary {
         self.state.as_ref()
     }
 }
-impl std::fmt::Debug for AppMonitorSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppMonitorSummary");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("created", &self.created);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("state", &self.state);
-        formatter.finish()
-    }
-}
 /// See [`AppMonitorSummary`](crate::model::AppMonitorSummary).
 pub mod app_monitor_summary {
 
     /// A builder for [`AppMonitorSummary`](crate::model::AppMonitorSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -655,6 +649,42 @@ impl AppMonitorSummary {
     }
 }
 
+/// When writing a match expression against `StateEnum`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let stateenum = unimplemented!();
+/// match stateenum {
+///     StateEnum::Active => { /* ... */ },
+///     StateEnum::Created => { /* ... */ },
+///     StateEnum::Deleting => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `stateenum` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StateEnum::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StateEnum::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StateEnum::NewFeature` is defined.
+/// Specifically, when `stateenum` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StateEnum::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -673,8 +703,8 @@ pub enum StateEnum {
     Created,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StateEnum {
     fn from(s: &str) -> Self {
@@ -682,7 +712,7 @@ impl std::convert::From<&str> for StateEnum {
             "ACTIVE" => StateEnum::Active,
             "CREATED" => StateEnum::Created,
             "DELETING" => StateEnum::Deleting,
-            other => StateEnum::Unknown(other.to_owned()),
+            other => StateEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -700,11 +730,11 @@ impl StateEnum {
             StateEnum::Active => "ACTIVE",
             StateEnum::Created => "CREATED",
             StateEnum::Deleting => "DELETING",
-            StateEnum::Unknown(s) => s.as_ref(),
+            StateEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATED", "DELETING"]
     }
 }
@@ -716,7 +746,7 @@ impl AsRef<str> for StateEnum {
 
 /// <p>A RUM app monitor collects telemetry data from your application and sends that data to RUM. The data includes performance and reliability information such as page load time, client-side errors, and user behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppMonitor {
     /// <p>The name of the app monitor.</p>
     #[doc(hidden)]
@@ -790,26 +820,11 @@ impl AppMonitor {
         self.data_storage.as_ref()
     }
 }
-impl std::fmt::Debug for AppMonitor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppMonitor");
-        formatter.field("name", &self.name);
-        formatter.field("domain", &self.domain);
-        formatter.field("id", &self.id);
-        formatter.field("created", &self.created);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("tags", &self.tags);
-        formatter.field("state", &self.state);
-        formatter.field("app_monitor_configuration", &self.app_monitor_configuration);
-        formatter.field("data_storage", &self.data_storage);
-        formatter.finish()
-    }
-}
 /// See [`AppMonitor`](crate::model::AppMonitor).
 pub mod app_monitor {
 
     /// A builder for [`AppMonitor`](crate::model::AppMonitor).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -967,7 +982,7 @@ impl AppMonitor {
 
 /// <p>A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM collects using CloudWatch Logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataStorage {
     /// <p>A structure that contains the information about whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs. If it does, this structure also contains the name of the log group.</p>
     #[doc(hidden)]
@@ -979,18 +994,11 @@ impl DataStorage {
         self.cw_log.as_ref()
     }
 }
-impl std::fmt::Debug for DataStorage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataStorage");
-        formatter.field("cw_log", &self.cw_log);
-        formatter.finish()
-    }
-}
 /// See [`DataStorage`](crate::model::DataStorage).
 pub mod data_storage {
 
     /// A builder for [`DataStorage`](crate::model::DataStorage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cw_log: std::option::Option<crate::model::CwLog>,
     }
@@ -1022,7 +1030,7 @@ impl DataStorage {
 
 /// <p>A structure that contains the information about whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs. If it does, this structure also contains the name of the log group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CwLog {
     /// <p>Indicated whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs.</p>
     #[doc(hidden)]
@@ -1041,19 +1049,11 @@ impl CwLog {
         self.cw_log_group.as_deref()
     }
 }
-impl std::fmt::Debug for CwLog {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CwLog");
-        formatter.field("cw_log_enabled", &self.cw_log_enabled);
-        formatter.field("cw_log_group", &self.cw_log_group);
-        formatter.finish()
-    }
-}
 /// See [`CwLog`](crate::model::CwLog).
 pub mod cw_log {
 
     /// A builder for [`CwLog`](crate::model::CwLog).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cw_log_enabled: std::option::Option<bool>,
         pub(crate) cw_log_group: std::option::Option<std::string::String>,
@@ -1097,7 +1097,7 @@ impl CwLog {
 
 /// <p>A structure that contains the information for one performance event that RUM collects from a user session with your application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RumEvent {
     /// <p>A unique ID for this event.</p>
     #[doc(hidden)]
@@ -1137,22 +1137,11 @@ impl RumEvent {
         self.details.as_deref()
     }
 }
-impl std::fmt::Debug for RumEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RumEvent");
-        formatter.field("id", &self.id);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 /// See [`RumEvent`](crate::model::RumEvent).
 pub mod rum_event {
 
     /// A builder for [`RumEvent`](crate::model::RumEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1235,7 +1224,7 @@ impl RumEvent {
 
 /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserDetails {
     /// <p>The ID of the user for this user session. This ID is generated by RUM and does not include any personally identifiable information about the user.</p>
     #[doc(hidden)]
@@ -1254,19 +1243,11 @@ impl UserDetails {
         self.session_id.as_deref()
     }
 }
-impl std::fmt::Debug for UserDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserDetails");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("session_id", &self.session_id);
-        formatter.finish()
-    }
-}
 /// See [`UserDetails`](crate::model::UserDetails).
 pub mod user_details {
 
     /// A builder for [`UserDetails`](crate::model::UserDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) session_id: std::option::Option<std::string::String>,
@@ -1310,7 +1291,7 @@ impl UserDetails {
 
 /// <p>A structure that contains information about the RUM app monitor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppMonitorDetails {
     /// <p>The name of the app monitor.</p>
     #[doc(hidden)]
@@ -1336,20 +1317,11 @@ impl AppMonitorDetails {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for AppMonitorDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppMonitorDetails");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`AppMonitorDetails`](crate::model::AppMonitorDetails).
 pub mod app_monitor_details {
 
     /// A builder for [`AppMonitorDetails`](crate::model::AppMonitorDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,

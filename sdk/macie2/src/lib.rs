@@ -7,6 +7,7 @@
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::type_complexity)]
+#![allow(clippy::needless_return)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
 //! <p>Amazon Macie is a fully managed data security and data privacy service that uses machine learning and pattern matching to discover and protect your sensitive data in AWS. Macie automates the discovery of sensitive data, such as PII and intellectual property, to provide you with insight into the data that your organization stores in AWS. Macie also provides an inventory of your Amazon S3 buckets, which it continually monitors for you. If Macie detects sensitive data or potential data access issues, it generates detailed findings for you to review and act upon as necessary.</p>
@@ -29,41 +30,58 @@ pub use error_meta::Error;
 #[doc(inline)]
 pub use config::Config;
 
-mod aws_endpoint;
 /// Client and fluent builders for calling the service.
 pub mod client;
+
 /// Configuration for the service.
 pub mod config;
-/// All error types that operations can return.
+
+/// All error types that operations can return. Documentation on these types is copied from the model.
 pub mod error;
+
 mod error_meta;
-mod idempotency_token;
-/// Input structures for operations.
+
+/// Input structures for operations. Documentation on these types is copied from the model.
 pub mod input;
-mod json_deser;
-mod json_errors;
-mod json_ser;
-/// Generated accessors for nested fields
-pub mod lens;
-pub mod middleware;
-/// Data structures used by operation inputs/outputs.
+
+/// Data structures used by operation inputs/outputs. Documentation on these types is copied from the model.
 pub mod model;
-mod no_credentials;
+
 /// All operations that this crate can perform.
 pub mod operation;
-mod operation_deser;
-mod operation_ser;
-/// Output structures for operations.
+
+/// Output structures for operations. Documentation on these types is copied from the model.
 pub mod output;
+
+/// Data primitives referenced by other data types.
+pub mod types;
+
+mod aws_endpoint;
+
+mod idempotency_token;
+
+pub mod middleware;
+
+mod no_credentials;
+
+mod operation_deser;
+
+mod operation_ser;
+
 /// Paginators for the service
 pub mod paginator;
+
+mod json_deser;
+
+mod json_ser;
+
+/// Generated accessors for nested fields
+mod lens;
+
+mod json_errors;
+
 /// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-/// Re-exported types from supporting crates.
-pub mod types {
-    pub use aws_smithy_http::result::SdkError;
-    pub use aws_smithy_types::DateTime;
-}
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("macie2", PKG_VERSION);
 pub use aws_smithy_http::endpoint::Endpoint;

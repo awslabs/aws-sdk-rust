@@ -5,7 +5,7 @@
 /// [`get_clip`](crate::client::Client::get_clip).
 ///
 /// See [`crate::client::fluent_builders::GetClip`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetClip {
     _private: (),
 }
@@ -43,7 +43,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetClip {
 /// [`get_dash_streaming_session_url`](crate::client::Client::get_dash_streaming_session_url).
 ///
 /// See [`crate::client::fluent_builders::GetDASHStreamingSessionURL`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDASHStreamingSessionURL {
     _private: (),
 }
@@ -77,7 +77,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDASHStreamingSessionU
 /// [`get_hls_streaming_session_url`](crate::client::Client::get_hls_streaming_session_url).
 ///
 /// See [`crate::client::fluent_builders::GetHLSStreamingSessionURL`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetHLSStreamingSessionURL {
     _private: (),
 }
@@ -111,7 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHLSStreamingSessionUR
 /// [`get_images`](crate::client::Client::get_images).
 ///
 /// See [`crate::client::fluent_builders::GetImages`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetImages {
     _private: (),
 }
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImages {
 /// [`get_media_for_fragment_list`](crate::client::Client::get_media_for_fragment_list).
 ///
 /// See [`crate::client::fluent_builders::GetMediaForFragmentList`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMediaForFragmentList {
     _private: (),
 }
@@ -185,7 +185,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetMediaForFragmentList {
 /// [`list_fragments`](crate::client::Client::list_fragments).
 ///
 /// See [`crate::client::fluent_builders::ListFragments`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFragments {
     _private: (),
 }

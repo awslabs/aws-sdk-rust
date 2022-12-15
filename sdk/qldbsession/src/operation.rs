@@ -5,7 +5,7 @@
 /// [`send_command`](crate::client::Client::send_command).
 ///
 /// See [`crate::client::fluent_builders::SendCommand`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendCommand {
     _private: (),
 }

@@ -6,11 +6,11 @@
 //! Lazy, caching, credentials provider implementation
 
 use std::sync::Arc;
-use std::time::Duration;
+use std::time::{Duration, Instant};
 
 use aws_smithy_async::future::timeout::Timeout;
 use aws_smithy_async::rt::sleep::AsyncSleep;
-use tracing::{trace_span, Instrument};
+use tracing::{debug, info, info_span, Instrument};
 
 use aws_types::credentials::{future, CredentialsError, ProvideCredentials};
 use aws_types::os_shim_internal::TimeSource;
@@ -77,17 +77,18 @@ impl ProvideCredentials for LazyCachingCredentialsProvider {
         future::ProvideCredentials::new(async move {
             // Attempt to get cached credentials, or clear the cache if they're expired
             if let Some(credentials) = cache.yield_or_clear_if_expired(now).await {
-                tracing::debug!("loaded credentials from cache");
+                debug!("loaded credentials from cache");
                 Ok(credentials)
             } else {
                 // If we didn't get credentials from the cache, then we need to try and load.
                 // There may be other threads also loading simultaneously, but this is OK
                 // since the futures are not eagerly executed, and the cache will only run one
                 // of them.
-                let span = trace_span!("lazy_load_credentials");
                 let future = Timeout::new(loader.provide_credentials(), timeout_future);
-                cache
+                let start_time = Instant::now();
+                let result = cache
                     .get_or_load(|| {
+                        let span = info_span!("lazy_load_credentials");
                         async move {
                             let credentials = future.await.map_err(|_err| {
                                 CredentialsError::provider_timed_out(load_timeout)
@@ -102,7 +103,12 @@ impl ProvideCredentials for LazyCachingCredentialsProvider {
                         // is opened if the cache decides not to execute it.
                         .instrument(span)
                     })
-                    .await
+                    .await;
+                info!(
+                    "credentials cache miss occurred; retrieved new AWS credentials (took {:?})",
+                    start_time.elapsed()
+                );
+                result
             }
         })
     }

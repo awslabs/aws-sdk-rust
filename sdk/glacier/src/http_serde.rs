@@ -2,37 +2,37 @@
 pub fn add_headers_complete_multipart_upload(
     input: &crate::input::CompleteMultipartUploadInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_1) = &input.archive_size {
-        let formatted_2 = AsRef::<str>::as_ref(inner_1);
+        let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "archive_size",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "archive_size",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-archive-size", header_value);
         }
     }
     if let Some(inner_3) = &input.checksum {
-        let formatted_4 = AsRef::<str>::as_ref(inner_3);
+        let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "checksum",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "checksum",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-sha256-tree-hash", header_value);
         }
@@ -43,20 +43,20 @@ pub fn add_headers_complete_multipart_upload(
 pub fn add_headers_get_job_output(
     input: &crate::input::GetJobOutputInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_5) = &input.range {
-        let formatted_6 = AsRef::<str>::as_ref(inner_5);
+        let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "range",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "range",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("Range", header_value);
         }
@@ -67,37 +67,37 @@ pub fn add_headers_get_job_output(
 pub fn add_headers_initiate_multipart_upload(
     input: &crate::input::InitiateMultipartUploadInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_7) = &input.archive_description {
-        let formatted_8 = AsRef::<str>::as_ref(inner_7);
+        let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "archive_description",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "archive_description",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-archive-description", header_value);
         }
     }
     if let Some(inner_9) = &input.part_size {
-        let formatted_10 = AsRef::<str>::as_ref(inner_9);
+        let formatted_10 = inner_9.as_str();
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "part_size",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "part_size",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-part-size", header_value);
         }
@@ -108,37 +108,37 @@ pub fn add_headers_initiate_multipart_upload(
 pub fn add_headers_upload_archive(
     input: &crate::input::UploadArchiveInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_11) = &input.archive_description {
-        let formatted_12 = AsRef::<str>::as_ref(inner_11);
+        let formatted_12 = inner_11.as_str();
         if !formatted_12.is_empty() {
             let header_value = formatted_12;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "archive_description",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "archive_description",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-archive-description", header_value);
         }
     }
     if let Some(inner_13) = &input.checksum {
-        let formatted_14 = AsRef::<str>::as_ref(inner_13);
+        let formatted_14 = inner_13.as_str();
         if !formatted_14.is_empty() {
             let header_value = formatted_14;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "checksum",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "checksum",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-sha256-tree-hash", header_value);
         }
@@ -149,37 +149,37 @@ pub fn add_headers_upload_archive(
 pub fn add_headers_upload_multipart_part(
     input: &crate::input::UploadMultipartPartInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_15) = &input.checksum {
-        let formatted_16 = AsRef::<str>::as_ref(inner_15);
+        let formatted_16 = inner_15.as_str();
         if !formatted_16.is_empty() {
             let header_value = formatted_16;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "checksum",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "checksum",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-sha256-tree-hash", header_value);
         }
     }
     if let Some(inner_17) = &input.range {
-        let formatted_18 = AsRef::<str>::as_ref(inner_17);
+        let formatted_18 = inner_17.as_str();
         if !formatted_18.is_empty() {
             let header_value = formatted_18;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "range",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "range",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
                             &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("Content-Range", header_value);
         }
@@ -187,7 +187,7 @@ pub fn add_headers_upload_multipart_part(
     Ok(builder)
 }
 
-pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_archive_id(
+pub(crate) fn deser_header_complete_multipart_upload_complete_multipart_upload_output_archive_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -197,7 +197,7 @@ pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_a
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_checksum(
+pub(crate) fn deser_header_complete_multipart_upload_complete_multipart_upload_output_checksum(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -207,7 +207,7 @@ pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_c
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_location(
+pub(crate) fn deser_header_complete_multipart_upload_complete_multipart_upload_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -217,7 +217,7 @@ pub fn deser_header_complete_multipart_upload_complete_multipart_upload_output_l
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_create_vault_create_vault_output_location(
+pub(crate) fn deser_header_create_vault_create_vault_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -227,7 +227,7 @@ pub fn deser_header_create_vault_create_vault_output_location(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_job_output_get_job_output_output_accept_ranges(
+pub(crate) fn deser_header_get_job_output_get_job_output_output_accept_ranges(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -237,7 +237,7 @@ pub fn deser_header_get_job_output_get_job_output_output_accept_ranges(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_job_output_get_job_output_output_archive_description(
+pub(crate) fn deser_header_get_job_output_get_job_output_output_archive_description(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -256,7 +256,7 @@ pub fn deser_payload_get_job_output_get_job_output_output_body(
     Ok(aws_smithy_http::byte_stream::ByteStream::new(body))
 }
 
-pub fn deser_header_get_job_output_get_job_output_output_checksum(
+pub(crate) fn deser_header_get_job_output_get_job_output_output_checksum(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -266,7 +266,7 @@ pub fn deser_header_get_job_output_get_job_output_output_checksum(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_job_output_get_job_output_output_content_range(
+pub(crate) fn deser_header_get_job_output_get_job_output_output_content_range(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -276,7 +276,7 @@ pub fn deser_header_get_job_output_get_job_output_output_content_range(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_get_job_output_get_job_output_output_content_type(
+pub(crate) fn deser_header_get_job_output_get_job_output_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -314,7 +314,7 @@ pub fn deser_payload_get_vault_notifications_get_vault_notifications_output_vaul
         .transpose()
 }
 
-pub fn deser_header_initiate_job_initiate_job_output_job_id(
+pub(crate) fn deser_header_initiate_job_initiate_job_output_job_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -324,7 +324,7 @@ pub fn deser_header_initiate_job_initiate_job_output_job_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_initiate_job_initiate_job_output_job_output_path(
+pub(crate) fn deser_header_initiate_job_initiate_job_output_job_output_path(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -334,7 +334,7 @@ pub fn deser_header_initiate_job_initiate_job_output_job_output_path(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_initiate_job_initiate_job_output_location(
+pub(crate) fn deser_header_initiate_job_initiate_job_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -344,7 +344,7 @@ pub fn deser_header_initiate_job_initiate_job_output_location(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_initiate_multipart_upload_initiate_multipart_upload_output_location(
+pub(crate) fn deser_header_initiate_multipart_upload_initiate_multipart_upload_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -354,7 +354,7 @@ pub fn deser_header_initiate_multipart_upload_initiate_multipart_upload_output_l
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_initiate_multipart_upload_initiate_multipart_upload_output_upload_id(
+pub(crate) fn deser_header_initiate_multipart_upload_initiate_multipart_upload_output_upload_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -364,7 +364,7 @@ pub fn deser_header_initiate_multipart_upload_initiate_multipart_upload_output_u
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_initiate_vault_lock_initiate_vault_lock_output_lock_id(
+pub(crate) fn deser_header_initiate_vault_lock_initiate_vault_lock_output_lock_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -374,7 +374,7 @@ pub fn deser_header_initiate_vault_lock_initiate_vault_lock_output_lock_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_purchase_provisioned_capacity_purchase_provisioned_capacity_output_capacity_id(
+pub(crate) fn deser_header_purchase_provisioned_capacity_purchase_provisioned_capacity_output_capacity_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -384,7 +384,7 @@ pub fn deser_header_purchase_provisioned_capacity_purchase_provisioned_capacity_
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_archive_upload_archive_output_archive_id(
+pub(crate) fn deser_header_upload_archive_upload_archive_output_archive_id(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -394,7 +394,7 @@ pub fn deser_header_upload_archive_upload_archive_output_archive_id(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_archive_upload_archive_output_checksum(
+pub(crate) fn deser_header_upload_archive_upload_archive_output_checksum(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -404,7 +404,7 @@ pub fn deser_header_upload_archive_upload_archive_output_checksum(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_archive_upload_archive_output_location(
+pub(crate) fn deser_header_upload_archive_upload_archive_output_location(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -414,7 +414,7 @@ pub fn deser_header_upload_archive_upload_archive_output_location(
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn deser_header_upload_multipart_part_upload_multipart_part_output_checksum(
+pub(crate) fn deser_header_upload_multipart_part_upload_multipart_part_output_checksum(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,

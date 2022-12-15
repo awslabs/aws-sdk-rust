@@ -2,7 +2,7 @@
 
 /// <p>The response to an <code>UpdateXssMatchSets</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateXssMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl UpdateXssMatchSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateXssMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateXssMatchSetOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`UpdateXssMatchSetOutput`](crate::output::UpdateXssMatchSetOutput).
 pub mod update_xss_match_set_output {
 
     /// A builder for [`UpdateXssMatchSetOutput`](crate::output::UpdateXssMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -57,7 +50,7 @@ impl UpdateXssMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWebAclOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -69,18 +62,11 @@ impl UpdateWebAclOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateWebAclOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWebAclOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
 pub mod update_web_acl_output {
 
     /// A builder for [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -112,7 +98,7 @@ impl UpdateWebAclOutput {
 
 /// <p>The response to an <code>UpdateSqlInjectionMatchSets</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSqlInjectionMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -124,18 +110,11 @@ impl UpdateSqlInjectionMatchSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSqlInjectionMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSqlInjectionMatchSetOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`UpdateSqlInjectionMatchSetOutput`](crate::output::UpdateSqlInjectionMatchSetOutput).
 pub mod update_sql_injection_match_set_output {
 
     /// A builder for [`UpdateSqlInjectionMatchSetOutput`](crate::output::UpdateSqlInjectionMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -167,7 +146,7 @@ impl UpdateSqlInjectionMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSizeConstraintSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -179,18 +158,11 @@ impl UpdateSizeConstraintSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSizeConstraintSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSizeConstraintSetOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`UpdateSizeConstraintSetOutput`](crate::output::UpdateSizeConstraintSetOutput).
 pub mod update_size_constraint_set_output {
 
     /// A builder for [`UpdateSizeConstraintSetOutput`](crate::output::UpdateSizeConstraintSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -222,7 +194,7 @@ impl UpdateSizeConstraintSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRuleGroupOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -234,18 +206,11 @@ impl UpdateRuleGroupOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRuleGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRuleGroupOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
 pub mod update_rule_group_output {
 
     /// A builder for [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -277,7 +242,7 @@ impl UpdateRuleGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRuleOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -289,18 +254,11 @@ impl UpdateRuleOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRuleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRuleOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
 pub mod update_rule_output {
 
     /// A builder for [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -332,7 +290,7 @@ impl UpdateRuleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRegexPatternSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -344,18 +302,11 @@ impl UpdateRegexPatternSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRegexPatternSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRegexPatternSetOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
 pub mod update_regex_pattern_set_output {
 
     /// A builder for [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -387,7 +338,7 @@ impl UpdateRegexPatternSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRegexMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -399,18 +350,11 @@ impl UpdateRegexMatchSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRegexMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRegexMatchSetOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`UpdateRegexMatchSetOutput`](crate::output::UpdateRegexMatchSetOutput).
 pub mod update_regex_match_set_output {
 
     /// A builder for [`UpdateRegexMatchSetOutput`](crate::output::UpdateRegexMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -442,7 +386,7 @@ impl UpdateRegexMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRateBasedRuleOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -454,18 +398,11 @@ impl UpdateRateBasedRuleOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRateBasedRuleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRateBasedRuleOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`UpdateRateBasedRuleOutput`](crate::output::UpdateRateBasedRuleOutput).
 pub mod update_rate_based_rule_output {
 
     /// A builder for [`UpdateRateBasedRuleOutput`](crate::output::UpdateRateBasedRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -497,7 +434,7 @@ impl UpdateRateBasedRuleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIpSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -509,18 +446,11 @@ impl UpdateIpSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateIpSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIpSetOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
 pub mod update_ip_set_output {
 
     /// A builder for [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -552,7 +482,7 @@ impl UpdateIpSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGeoMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -564,18 +494,11 @@ impl UpdateGeoMatchSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGeoMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGeoMatchSetOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`UpdateGeoMatchSetOutput`](crate::output::UpdateGeoMatchSetOutput).
 pub mod update_geo_match_set_output {
 
     /// A builder for [`UpdateGeoMatchSetOutput`](crate::output::UpdateGeoMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -607,7 +530,7 @@ impl UpdateGeoMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateByteMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -619,18 +542,11 @@ impl UpdateByteMatchSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateByteMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateByteMatchSetOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`UpdateByteMatchSetOutput`](crate::output::UpdateByteMatchSetOutput).
 pub mod update_byte_match_set_output {
 
     /// A builder for [`UpdateByteMatchSetOutput`](crate::output::UpdateByteMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -662,19 +578,13 @@ impl UpdateByteMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -692,19 +602,13 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -722,19 +626,13 @@ impl TagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPermissionPolicyOutput {}
-impl std::fmt::Debug for PutPermissionPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPermissionPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
 pub mod put_permission_policy_output {
 
     /// A builder for [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
@@ -752,7 +650,7 @@ impl PutPermissionPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLoggingConfigurationOutput {
     /// <p>The <code>LoggingConfiguration</code> that you submitted in the request.</p>
     #[doc(hidden)]
@@ -766,18 +664,11 @@ impl PutLoggingConfigurationOutput {
         self.logging_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutLoggingConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLoggingConfigurationOutput");
-        formatter.field("logging_configuration", &self.logging_configuration);
-        formatter.finish()
-    }
-}
 /// See [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
 pub mod put_logging_configuration_output {
 
     /// A builder for [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     }
@@ -812,7 +703,7 @@ impl PutLoggingConfigurationOutput {
 
 /// <p>The response to a <code>ListXssMatchSets</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListXssMatchSetsOutput {
     /// <p>If you have more <code>XssMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>XssMatchSet</code> objects, submit another <code>ListXssMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
@@ -831,19 +722,11 @@ impl ListXssMatchSetsOutput {
         self.xss_match_sets.as_deref()
     }
 }
-impl std::fmt::Debug for ListXssMatchSetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListXssMatchSetsOutput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("xss_match_sets", &self.xss_match_sets);
-        formatter.finish()
-    }
-}
 /// See [`ListXssMatchSetsOutput`](crate::output::ListXssMatchSetsOutput).
 pub mod list_xss_match_sets_output {
 
     /// A builder for [`ListXssMatchSetsOutput`](crate::output::ListXssMatchSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) xss_match_sets:
@@ -897,7 +780,7 @@ impl ListXssMatchSetsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWebAcLsOutput {
     /// <p>If you have more <code>WebACL</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>WebACL</code> objects, submit another <code>ListWebACLs</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
@@ -916,19 +799,11 @@ impl ListWebAcLsOutput {
         self.web_ac_ls.as_deref()
     }
 }
-impl std::fmt::Debug for ListWebAcLsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWebAcLsOutput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("web_ac_ls", &self.web_ac_ls);
-        formatter.finish()
-    }
-}
 /// See [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
 pub mod list_web_ac_ls_output {
 
     /// A builder for [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) web_ac_ls: std::option::Option<std::vec::Vec<crate::model::WebAclSummary>>,
@@ -981,7 +856,7 @@ impl ListWebAcLsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p></p>
     #[doc(hidden)]
@@ -1000,19 +875,11 @@ impl ListTagsForResourceOutput {
         self.tag_info_for_resource.as_ref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("tag_info_for_resource", &self.tag_info_for_resource);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) tag_info_for_resource: std::option::Option<crate::model::TagInfoForResource>,
@@ -1059,7 +926,7 @@ impl ListTagsForResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSubscribedRuleGroupsOutput {
     /// <p>If you have more objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more objects, submit another <code>ListSubscribedRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
@@ -1078,19 +945,11 @@ impl ListSubscribedRuleGroupsOutput {
         self.rule_groups.as_deref()
     }
 }
-impl std::fmt::Debug for ListSubscribedRuleGroupsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSubscribedRuleGroupsOutput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("rule_groups", &self.rule_groups);
-        formatter.finish()
-    }
-}
 /// See [`ListSubscribedRuleGroupsOutput`](crate::output::ListSubscribedRuleGroupsOutput).
 pub mod list_subscribed_rule_groups_output {
 
     /// A builder for [`ListSubscribedRuleGroupsOutput`](crate::output::ListSubscribedRuleGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) rule_groups:
@@ -1144,7 +1003,7 @@ impl ListSubscribedRuleGroupsOutput {
 
 /// <p>The response to a <code>ListSqlInjectionMatchSets</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSqlInjectionMatchSetsOutput {
     /// <p>If you have more <code>SqlInjectionMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
@@ -1166,19 +1025,11 @@ impl ListSqlInjectionMatchSetsOutput {
         self.sql_injection_match_sets.as_deref()
     }
 }
-impl std::fmt::Debug for ListSqlInjectionMatchSetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSqlInjectionMatchSetsOutput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("sql_injection_match_sets", &self.sql_injection_match_sets);
-        formatter.finish()
-    }
-}
 /// See [`ListSqlInjectionMatchSetsOutput`](crate::output::ListSqlInjectionMatchSetsOutput).
 pub mod list_sql_injection_match_sets_output {
 
     /// A builder for [`ListSqlInjectionMatchSetsOutput`](crate::output::ListSqlInjectionMatchSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) sql_injection_match_sets:
@@ -1235,7 +1086,7 @@ impl ListSqlInjectionMatchSetsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSizeConstraintSetsOutput {
     /// <p>If you have more <code>SizeConstraintSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
@@ -1257,19 +1108,11 @@ impl ListSizeConstraintSetsOutput {
         self.size_constraint_sets.as_deref()
     }
 }
-impl std::fmt::Debug for ListSizeConstraintSetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSizeConstraintSetsOutput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("size_constraint_sets", &self.size_constraint_sets);
-        formatter.finish()
-    }
-}
 /// See [`ListSizeConstraintSetsOutput`](crate::output::ListSizeConstraintSetsOutput).
 pub mod list_size_constraint_sets_output {
 
     /// A builder for [`ListSizeConstraintSetsOutput`](crate::output::ListSizeConstraintSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) size_constraint_sets:
@@ -1326,7 +1169,7 @@ impl ListSizeConstraintSetsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRulesOutput {
     /// <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
@@ -1345,19 +1188,11 @@ impl ListRulesOutput {
         self.rules.as_deref()
     }
 }
-impl std::fmt::Debug for ListRulesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRulesOutput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("rules", &self.rules);
-        formatter.finish()
-    }
-}
 /// See [`ListRulesOutput`](crate::output::ListRulesOutput).
 pub mod list_rules_output {
 
     /// A builder for [`ListRulesOutput`](crate::output::ListRulesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
@@ -1410,7 +1245,7 @@ impl ListRulesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRuleGroupsOutput {
     /// <p>If you have more <code>RuleGroups</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RuleGroups</code>, submit another <code>ListRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
@@ -1429,19 +1264,11 @@ impl ListRuleGroupsOutput {
         self.rule_groups.as_deref()
     }
 }
-impl std::fmt::Debug for ListRuleGroupsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRuleGroupsOutput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("rule_groups", &self.rule_groups);
-        formatter.finish()
-    }
-}
 /// See [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
 pub mod list_rule_groups_output {
 
     /// A builder for [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) rule_groups: std::option::Option<std::vec::Vec<crate::model::RuleGroupSummary>>,
@@ -1494,7 +1321,7 @@ impl ListRuleGroupsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourcesForWebAclOutput {
     /// <p>An array of ARNs (Amazon Resource Names) of the resources associated with the specified web ACL. An array with zero elements is returned if there are no resources associated with the web ACL.</p>
     #[doc(hidden)]
@@ -1506,18 +1333,11 @@ impl ListResourcesForWebAclOutput {
         self.resource_arns.as_deref()
     }
 }
-impl std::fmt::Debug for ListResourcesForWebAclOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourcesForWebAclOutput");
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.finish()
-    }
-}
 /// See [`ListResourcesForWebAclOutput`](crate::output::ListResourcesForWebAclOutput).
 pub mod list_resources_for_web_acl_output {
 
     /// A builder for [`ListResourcesForWebAclOutput`](crate::output::ListResourcesForWebAclOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1558,7 +1378,7 @@ impl ListResourcesForWebAclOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRegexPatternSetsOutput {
     /// <p>If you have more <code>RegexPatternSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexPatternSet</code> objects, submit another <code>ListRegexPatternSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
@@ -1580,19 +1400,11 @@ impl ListRegexPatternSetsOutput {
         self.regex_pattern_sets.as_deref()
     }
 }
-impl std::fmt::Debug for ListRegexPatternSetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRegexPatternSetsOutput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("regex_pattern_sets", &self.regex_pattern_sets);
-        formatter.finish()
-    }
-}
 /// See [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
 pub mod list_regex_pattern_sets_output {
 
     /// A builder for [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) regex_pattern_sets:
@@ -1646,7 +1458,7 @@ impl ListRegexPatternSetsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRegexMatchSetsOutput {
     /// <p>If you have more <code>RegexMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexMatchSet</code> objects, submit another <code>ListRegexMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
@@ -1665,19 +1477,11 @@ impl ListRegexMatchSetsOutput {
         self.regex_match_sets.as_deref()
     }
 }
-impl std::fmt::Debug for ListRegexMatchSetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRegexMatchSetsOutput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("regex_match_sets", &self.regex_match_sets);
-        formatter.finish()
-    }
-}
 /// See [`ListRegexMatchSetsOutput`](crate::output::ListRegexMatchSetsOutput).
 pub mod list_regex_match_sets_output {
 
     /// A builder for [`ListRegexMatchSetsOutput`](crate::output::ListRegexMatchSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) regex_match_sets:
@@ -1731,7 +1535,7 @@ impl ListRegexMatchSetsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRateBasedRulesOutput {
     /// <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRateBasedRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
@@ -1750,19 +1554,11 @@ impl ListRateBasedRulesOutput {
         self.rules.as_deref()
     }
 }
-impl std::fmt::Debug for ListRateBasedRulesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRateBasedRulesOutput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("rules", &self.rules);
-        formatter.finish()
-    }
-}
 /// See [`ListRateBasedRulesOutput`](crate::output::ListRateBasedRulesOutput).
 pub mod list_rate_based_rules_output {
 
     /// A builder for [`ListRateBasedRulesOutput`](crate::output::ListRateBasedRulesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
@@ -1815,7 +1611,7 @@ impl ListRateBasedRulesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLoggingConfigurationsOutput {
     /// <p>An array of <code>LoggingConfiguration</code> objects.</p>
     #[doc(hidden)]
@@ -1837,19 +1633,11 @@ impl ListLoggingConfigurationsOutput {
         self.next_marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListLoggingConfigurationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLoggingConfigurationsOutput");
-        formatter.field("logging_configurations", &self.logging_configurations);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.finish()
-    }
-}
 /// See [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
 pub mod list_logging_configurations_output {
 
     /// A builder for [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configurations:
             std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
@@ -1903,7 +1691,7 @@ impl ListLoggingConfigurationsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIpSetsOutput {
     /// <p>To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
     #[doc(hidden)]
@@ -1922,19 +1710,11 @@ impl ListIpSetsOutput {
         self.ip_sets.as_deref()
     }
 }
-impl std::fmt::Debug for ListIpSetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIpSetsOutput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("ip_sets", &self.ip_sets);
-        formatter.finish()
-    }
-}
 /// See [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
 pub mod list_ip_sets_output {
 
     /// A builder for [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) ip_sets: std::option::Option<std::vec::Vec<crate::model::IpSetSummary>>,
@@ -1987,7 +1767,7 @@ impl ListIpSetsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGeoMatchSetsOutput {
     /// <p>If you have more <code>GeoMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>GeoMatchSet</code> objects, submit another <code>ListGeoMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
@@ -2006,19 +1786,11 @@ impl ListGeoMatchSetsOutput {
         self.geo_match_sets.as_deref()
     }
 }
-impl std::fmt::Debug for ListGeoMatchSetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGeoMatchSetsOutput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("geo_match_sets", &self.geo_match_sets);
-        formatter.finish()
-    }
-}
 /// See [`ListGeoMatchSetsOutput`](crate::output::ListGeoMatchSetsOutput).
 pub mod list_geo_match_sets_output {
 
     /// A builder for [`ListGeoMatchSetsOutput`](crate::output::ListGeoMatchSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) geo_match_sets:
@@ -2072,7 +1844,7 @@ impl ListGeoMatchSetsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListByteMatchSetsOutput {
     /// <p>If you have more <code>ByteMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ByteMatchSet</code> objects, submit another <code>ListByteMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
@@ -2091,19 +1863,11 @@ impl ListByteMatchSetsOutput {
         self.byte_match_sets.as_deref()
     }
 }
-impl std::fmt::Debug for ListByteMatchSetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListByteMatchSetsOutput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("byte_match_sets", &self.byte_match_sets);
-        formatter.finish()
-    }
-}
 /// See [`ListByteMatchSetsOutput`](crate::output::ListByteMatchSetsOutput).
 pub mod list_byte_match_sets_output {
 
     /// A builder for [`ListByteMatchSetsOutput`](crate::output::ListByteMatchSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) byte_match_sets:
@@ -2157,7 +1921,7 @@ impl ListByteMatchSetsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListActivatedRulesInRuleGroupOutput {
     /// <p>If you have more <code>ActivatedRules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ActivatedRules</code>, submit another <code>ListActivatedRulesInRuleGroup</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
@@ -2176,19 +1940,11 @@ impl ListActivatedRulesInRuleGroupOutput {
         self.activated_rules.as_deref()
     }
 }
-impl std::fmt::Debug for ListActivatedRulesInRuleGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListActivatedRulesInRuleGroupOutput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("activated_rules", &self.activated_rules);
-        formatter.finish()
-    }
-}
 /// See [`ListActivatedRulesInRuleGroupOutput`](crate::output::ListActivatedRulesInRuleGroupOutput).
 pub mod list_activated_rules_in_rule_group_output {
 
     /// A builder for [`ListActivatedRulesInRuleGroupOutput`](crate::output::ListActivatedRulesInRuleGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) activated_rules: std::option::Option<std::vec::Vec<crate::model::ActivatedRule>>,
@@ -2241,7 +1997,7 @@ impl ListActivatedRulesInRuleGroupOutput {
 
 /// <p>The response to a <code>GetXssMatchSet</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetXssMatchSetOutput {
     /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p>
     /// <ul>
@@ -2263,18 +2019,11 @@ impl GetXssMatchSetOutput {
         self.xss_match_set.as_ref()
     }
 }
-impl std::fmt::Debug for GetXssMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetXssMatchSetOutput");
-        formatter.field("xss_match_set", &self.xss_match_set);
-        formatter.finish()
-    }
-}
 /// See [`GetXssMatchSetOutput`](crate::output::GetXssMatchSetOutput).
 pub mod get_xss_match_set_output {
 
     /// A builder for [`GetXssMatchSetOutput`](crate::output::GetXssMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) xss_match_set: std::option::Option<crate::model::XssMatchSet>,
     }
@@ -2319,7 +2068,7 @@ impl GetXssMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWebAclForResourceOutput {
     /// <p>Information about the web ACL that you specified in the <code>GetWebACLForResource</code> request. If there is no associated resource, a null WebACLSummary is returned.</p>
     #[doc(hidden)]
@@ -2331,18 +2080,11 @@ impl GetWebAclForResourceOutput {
         self.web_acl_summary.as_ref()
     }
 }
-impl std::fmt::Debug for GetWebAclForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWebAclForResourceOutput");
-        formatter.field("web_acl_summary", &self.web_acl_summary);
-        formatter.finish()
-    }
-}
 /// See [`GetWebAclForResourceOutput`](crate::output::GetWebAclForResourceOutput).
 pub mod get_web_acl_for_resource_output {
 
     /// A builder for [`GetWebAclForResourceOutput`](crate::output::GetWebAclForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) web_acl_summary: std::option::Option<crate::model::WebAclSummary>,
     }
@@ -2377,7 +2119,7 @@ impl GetWebAclForResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWebAclOutput {
     /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p>
     /// <ul>
@@ -2401,18 +2143,11 @@ impl GetWebAclOutput {
         self.web_acl.as_ref()
     }
 }
-impl std::fmt::Debug for GetWebAclOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWebAclOutput");
-        formatter.field("web_acl", &self.web_acl);
-        formatter.finish()
-    }
-}
 /// See [`GetWebAclOutput`](crate::output::GetWebAclOutput).
 pub mod get_web_acl_output {
 
     /// A builder for [`GetWebAclOutput`](crate::output::GetWebAclOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) web_acl: std::option::Option<crate::model::WebAcl>,
     }
@@ -2456,7 +2191,7 @@ impl GetWebAclOutput {
 
 /// <p>The response to a <code>GetSqlInjectionMatchSet</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSqlInjectionMatchSetOutput {
     /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p>
     /// <ul>
@@ -2480,18 +2215,11 @@ impl GetSqlInjectionMatchSetOutput {
         self.sql_injection_match_set.as_ref()
     }
 }
-impl std::fmt::Debug for GetSqlInjectionMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSqlInjectionMatchSetOutput");
-        formatter.field("sql_injection_match_set", &self.sql_injection_match_set);
-        formatter.finish()
-    }
-}
 /// See [`GetSqlInjectionMatchSetOutput`](crate::output::GetSqlInjectionMatchSetOutput).
 pub mod get_sql_injection_match_set_output {
 
     /// A builder for [`GetSqlInjectionMatchSetOutput`](crate::output::GetSqlInjectionMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sql_injection_match_set: std::option::Option<crate::model::SqlInjectionMatchSet>,
     }
@@ -2539,7 +2267,7 @@ impl GetSqlInjectionMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSizeConstraintSetOutput {
     /// <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p>
     /// <ul>
@@ -2561,18 +2289,11 @@ impl GetSizeConstraintSetOutput {
         self.size_constraint_set.as_ref()
     }
 }
-impl std::fmt::Debug for GetSizeConstraintSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSizeConstraintSetOutput");
-        formatter.field("size_constraint_set", &self.size_constraint_set);
-        formatter.finish()
-    }
-}
 /// See [`GetSizeConstraintSetOutput`](crate::output::GetSizeConstraintSetOutput).
 pub mod get_size_constraint_set_output {
 
     /// A builder for [`GetSizeConstraintSetOutput`](crate::output::GetSizeConstraintSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_constraint_set: std::option::Option<crate::model::SizeConstraintSet>,
     }
@@ -2617,7 +2338,7 @@ impl GetSizeConstraintSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSampledRequestsOutput {
     /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
     #[doc(hidden)]
@@ -2643,20 +2364,11 @@ impl GetSampledRequestsOutput {
         self.time_window.as_ref()
     }
 }
-impl std::fmt::Debug for GetSampledRequestsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSampledRequestsOutput");
-        formatter.field("sampled_requests", &self.sampled_requests);
-        formatter.field("population_size", &self.population_size);
-        formatter.field("time_window", &self.time_window);
-        formatter.finish()
-    }
-}
 /// See [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
 pub mod get_sampled_requests_output {
 
     /// A builder for [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sampled_requests:
             std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>,
@@ -2725,7 +2437,7 @@ impl GetSampledRequestsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRuleGroupOutput {
     /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
     #[doc(hidden)]
@@ -2737,18 +2449,11 @@ impl GetRuleGroupOutput {
         self.rule_group.as_ref()
     }
 }
-impl std::fmt::Debug for GetRuleGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRuleGroupOutput");
-        formatter.field("rule_group", &self.rule_group);
-        formatter.finish()
-    }
-}
 /// See [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
 pub mod get_rule_group_output {
 
     /// A builder for [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group: std::option::Option<crate::model::RuleGroup>,
     }
@@ -2783,7 +2488,7 @@ impl GetRuleGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRuleOutput {
     /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p>
     /// <ul>
@@ -2803,18 +2508,11 @@ impl GetRuleOutput {
         self.rule.as_ref()
     }
 }
-impl std::fmt::Debug for GetRuleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRuleOutput");
-        formatter.field("rule", &self.rule);
-        formatter.finish()
-    }
-}
 /// See [`GetRuleOutput`](crate::output::GetRuleOutput).
 pub mod get_rule_output {
 
     /// A builder for [`GetRuleOutput`](crate::output::GetRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule: std::option::Option<crate::model::Rule>,
     }
@@ -2852,7 +2550,7 @@ impl GetRuleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRegexPatternSetOutput {
     /// <p>Information about the <code>RegexPatternSet</code> that you specified in the <code>GetRegexPatternSet</code> request, including the identifier of the pattern set and the regular expression patterns you want AWS WAF to search for. </p>
     #[doc(hidden)]
@@ -2864,18 +2562,11 @@ impl GetRegexPatternSetOutput {
         self.regex_pattern_set.as_ref()
     }
 }
-impl std::fmt::Debug for GetRegexPatternSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRegexPatternSetOutput");
-        formatter.field("regex_pattern_set", &self.regex_pattern_set);
-        formatter.finish()
-    }
-}
 /// See [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
 pub mod get_regex_pattern_set_output {
 
     /// A builder for [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_pattern_set: std::option::Option<crate::model::RegexPatternSet>,
     }
@@ -2910,7 +2601,7 @@ impl GetRegexPatternSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRegexMatchSetOutput {
     /// <p>Information about the <code>RegexMatchSet</code> that you specified in the <code>GetRegexMatchSet</code> request. For more information, see <code>RegexMatchTuple</code>.</p>
     #[doc(hidden)]
@@ -2922,18 +2613,11 @@ impl GetRegexMatchSetOutput {
         self.regex_match_set.as_ref()
     }
 }
-impl std::fmt::Debug for GetRegexMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRegexMatchSetOutput");
-        formatter.field("regex_match_set", &self.regex_match_set);
-        formatter.finish()
-    }
-}
 /// See [`GetRegexMatchSetOutput`](crate::output::GetRegexMatchSetOutput).
 pub mod get_regex_match_set_output {
 
     /// A builder for [`GetRegexMatchSetOutput`](crate::output::GetRegexMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_match_set: std::option::Option<crate::model::RegexMatchSet>,
     }
@@ -2968,7 +2652,7 @@ impl GetRegexMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRateBasedRuleManagedKeysOutput {
     /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
     #[doc(hidden)]
@@ -2987,19 +2671,11 @@ impl GetRateBasedRuleManagedKeysOutput {
         self.next_marker.as_deref()
     }
 }
-impl std::fmt::Debug for GetRateBasedRuleManagedKeysOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRateBasedRuleManagedKeysOutput");
-        formatter.field("managed_keys", &self.managed_keys);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.finish()
-    }
-}
 /// See [`GetRateBasedRuleManagedKeysOutput`](crate::output::GetRateBasedRuleManagedKeysOutput).
 pub mod get_rate_based_rule_managed_keys_output {
 
     /// A builder for [`GetRateBasedRuleManagedKeysOutput`](crate::output::GetRateBasedRuleManagedKeysOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) managed_keys: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -3052,7 +2728,7 @@ impl GetRateBasedRuleManagedKeysOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRateBasedRuleOutput {
     /// <p>Information about the <code>RateBasedRule</code> that you specified in the <code>GetRateBasedRule</code> request.</p>
     #[doc(hidden)]
@@ -3064,18 +2740,11 @@ impl GetRateBasedRuleOutput {
         self.rule.as_ref()
     }
 }
-impl std::fmt::Debug for GetRateBasedRuleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRateBasedRuleOutput");
-        formatter.field("rule", &self.rule);
-        formatter.finish()
-    }
-}
 /// See [`GetRateBasedRuleOutput`](crate::output::GetRateBasedRuleOutput).
 pub mod get_rate_based_rule_output {
 
     /// A builder for [`GetRateBasedRuleOutput`](crate::output::GetRateBasedRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule: std::option::Option<crate::model::RateBasedRule>,
     }
@@ -3105,7 +2774,7 @@ impl GetRateBasedRuleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPermissionPolicyOutput {
     /// <p>The IAM policy attached to the specified RuleGroup.</p>
     #[doc(hidden)]
@@ -3117,18 +2786,11 @@ impl GetPermissionPolicyOutput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for GetPermissionPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPermissionPolicyOutput");
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 /// See [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
 pub mod get_permission_policy_output {
 
     /// A builder for [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
@@ -3160,7 +2822,7 @@ impl GetPermissionPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLoggingConfigurationOutput {
     /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
     #[doc(hidden)]
@@ -3174,18 +2836,11 @@ impl GetLoggingConfigurationOutput {
         self.logging_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for GetLoggingConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLoggingConfigurationOutput");
-        formatter.field("logging_configuration", &self.logging_configuration);
-        formatter.finish()
-    }
-}
 /// See [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
 pub mod get_logging_configuration_output {
 
     /// A builder for [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     }
@@ -3220,7 +2875,7 @@ impl GetLoggingConfigurationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIpSetOutput {
     /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p>
     /// <ul>
@@ -3240,18 +2895,11 @@ impl GetIpSetOutput {
         self.ip_set.as_ref()
     }
 }
-impl std::fmt::Debug for GetIpSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIpSetOutput");
-        formatter.field("ip_set", &self.ip_set);
-        formatter.finish()
-    }
-}
 /// See [`GetIpSetOutput`](crate::output::GetIpSetOutput).
 pub mod get_ip_set_output {
 
     /// A builder for [`GetIpSetOutput`](crate::output::GetIpSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_set: std::option::Option<crate::model::IpSet>,
     }
@@ -3291,7 +2939,7 @@ impl GetIpSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGeoMatchSetOutput {
     /// <p>Information about the <code>GeoMatchSet</code> that you specified in the <code>GetGeoMatchSet</code> request. This includes the <code>Type</code>, which for a <code>GeoMatchContraint</code> is always <code>Country</code>, as well as the <code>Value</code>, which is the identifier for a specific country.</p>
     #[doc(hidden)]
@@ -3303,18 +2951,11 @@ impl GetGeoMatchSetOutput {
         self.geo_match_set.as_ref()
     }
 }
-impl std::fmt::Debug for GetGeoMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGeoMatchSetOutput");
-        formatter.field("geo_match_set", &self.geo_match_set);
-        formatter.finish()
-    }
-}
 /// See [`GetGeoMatchSetOutput`](crate::output::GetGeoMatchSetOutput).
 pub mod get_geo_match_set_output {
 
     /// A builder for [`GetGeoMatchSetOutput`](crate::output::GetGeoMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geo_match_set: std::option::Option<crate::model::GeoMatchSet>,
     }
@@ -3349,7 +2990,7 @@ impl GetGeoMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChangeTokenStatusOutput {
     /// <p>The status of the change token.</p>
     #[doc(hidden)]
@@ -3361,18 +3002,11 @@ impl GetChangeTokenStatusOutput {
         self.change_token_status.as_ref()
     }
 }
-impl std::fmt::Debug for GetChangeTokenStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChangeTokenStatusOutput");
-        formatter.field("change_token_status", &self.change_token_status);
-        formatter.finish()
-    }
-}
 /// See [`GetChangeTokenStatusOutput`](crate::output::GetChangeTokenStatusOutput).
 pub mod get_change_token_status_output {
 
     /// A builder for [`GetChangeTokenStatusOutput`](crate::output::GetChangeTokenStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token_status: std::option::Option<crate::model::ChangeTokenStatus>,
     }
@@ -3407,7 +3041,7 @@ impl GetChangeTokenStatusOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChangeTokenOutput {
     /// <p>The <code>ChangeToken</code> that you used in the request. Use this value in a <code>GetChangeTokenStatus</code> request to get the current status of the request. </p>
     #[doc(hidden)]
@@ -3419,18 +3053,11 @@ impl GetChangeTokenOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetChangeTokenOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChangeTokenOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`GetChangeTokenOutput`](crate::output::GetChangeTokenOutput).
 pub mod get_change_token_output {
 
     /// A builder for [`GetChangeTokenOutput`](crate::output::GetChangeTokenOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -3462,7 +3089,7 @@ impl GetChangeTokenOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetByteMatchSetOutput {
     /// <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p>
     /// <ul>
@@ -3484,18 +3111,11 @@ impl GetByteMatchSetOutput {
         self.byte_match_set.as_ref()
     }
 }
-impl std::fmt::Debug for GetByteMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetByteMatchSetOutput");
-        formatter.field("byte_match_set", &self.byte_match_set);
-        formatter.finish()
-    }
-}
 /// See [`GetByteMatchSetOutput`](crate::output::GetByteMatchSetOutput).
 pub mod get_byte_match_set_output {
 
     /// A builder for [`GetByteMatchSetOutput`](crate::output::GetByteMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byte_match_set: std::option::Option<crate::model::ByteMatchSet>,
     }
@@ -3540,19 +3160,13 @@ impl GetByteMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateWebAclOutput {}
-impl std::fmt::Debug for DisassociateWebAclOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateWebAclOutput");
-        formatter.finish()
-    }
-}
 /// See [`DisassociateWebAclOutput`](crate::output::DisassociateWebAclOutput).
 pub mod disassociate_web_acl_output {
 
     /// A builder for [`DisassociateWebAclOutput`](crate::output::DisassociateWebAclOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateWebAclOutput`](crate::output::DisassociateWebAclOutput).
@@ -3570,7 +3184,7 @@ impl DisassociateWebAclOutput {
 
 /// <p>The response to a request to delete an <code>XssMatchSet</code> from AWS WAF.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteXssMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -3582,18 +3196,11 @@ impl DeleteXssMatchSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteXssMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteXssMatchSetOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`DeleteXssMatchSetOutput`](crate::output::DeleteXssMatchSetOutput).
 pub mod delete_xss_match_set_output {
 
     /// A builder for [`DeleteXssMatchSetOutput`](crate::output::DeleteXssMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -3625,7 +3232,7 @@ impl DeleteXssMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWebAclOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -3637,18 +3244,11 @@ impl DeleteWebAclOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWebAclOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWebAclOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
 pub mod delete_web_acl_output {
 
     /// A builder for [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -3680,7 +3280,7 @@ impl DeleteWebAclOutput {
 
 /// <p>The response to a request to delete a <code>SqlInjectionMatchSet</code> from AWS WAF.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSqlInjectionMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -3692,18 +3292,11 @@ impl DeleteSqlInjectionMatchSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSqlInjectionMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSqlInjectionMatchSetOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`DeleteSqlInjectionMatchSetOutput`](crate::output::DeleteSqlInjectionMatchSetOutput).
 pub mod delete_sql_injection_match_set_output {
 
     /// A builder for [`DeleteSqlInjectionMatchSetOutput`](crate::output::DeleteSqlInjectionMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -3735,7 +3328,7 @@ impl DeleteSqlInjectionMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSizeConstraintSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -3747,18 +3340,11 @@ impl DeleteSizeConstraintSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSizeConstraintSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSizeConstraintSetOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`DeleteSizeConstraintSetOutput`](crate::output::DeleteSizeConstraintSetOutput).
 pub mod delete_size_constraint_set_output {
 
     /// A builder for [`DeleteSizeConstraintSetOutput`](crate::output::DeleteSizeConstraintSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -3790,7 +3376,7 @@ impl DeleteSizeConstraintSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRuleGroupOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -3802,18 +3388,11 @@ impl DeleteRuleGroupOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRuleGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRuleGroupOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
 pub mod delete_rule_group_output {
 
     /// A builder for [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -3845,7 +3424,7 @@ impl DeleteRuleGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRuleOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -3857,18 +3436,11 @@ impl DeleteRuleOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRuleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRuleOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
 pub mod delete_rule_output {
 
     /// A builder for [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -3900,7 +3472,7 @@ impl DeleteRuleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRegexPatternSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -3912,18 +3484,11 @@ impl DeleteRegexPatternSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRegexPatternSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRegexPatternSetOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
 pub mod delete_regex_pattern_set_output {
 
     /// A builder for [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -3955,7 +3520,7 @@ impl DeleteRegexPatternSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRegexMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -3967,18 +3532,11 @@ impl DeleteRegexMatchSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRegexMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRegexMatchSetOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`DeleteRegexMatchSetOutput`](crate::output::DeleteRegexMatchSetOutput).
 pub mod delete_regex_match_set_output {
 
     /// A builder for [`DeleteRegexMatchSetOutput`](crate::output::DeleteRegexMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -4010,7 +3568,7 @@ impl DeleteRegexMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRateBasedRuleOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -4022,18 +3580,11 @@ impl DeleteRateBasedRuleOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRateBasedRuleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRateBasedRuleOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`DeleteRateBasedRuleOutput`](crate::output::DeleteRateBasedRuleOutput).
 pub mod delete_rate_based_rule_output {
 
     /// A builder for [`DeleteRateBasedRuleOutput`](crate::output::DeleteRateBasedRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -4065,19 +3616,13 @@ impl DeleteRateBasedRuleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePermissionPolicyOutput {}
-impl std::fmt::Debug for DeletePermissionPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePermissionPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
 pub mod delete_permission_policy_output {
 
     /// A builder for [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
@@ -4095,19 +3640,13 @@ impl DeletePermissionPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoggingConfigurationOutput {}
-impl std::fmt::Debug for DeleteLoggingConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLoggingConfigurationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
 pub mod delete_logging_configuration_output {
 
     /// A builder for [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
@@ -4125,7 +3664,7 @@ impl DeleteLoggingConfigurationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIpSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -4137,18 +3676,11 @@ impl DeleteIpSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIpSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIpSetOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
 pub mod delete_ip_set_output {
 
     /// A builder for [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -4180,7 +3712,7 @@ impl DeleteIpSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGeoMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -4192,18 +3724,11 @@ impl DeleteGeoMatchSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGeoMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGeoMatchSetOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`DeleteGeoMatchSetOutput`](crate::output::DeleteGeoMatchSetOutput).
 pub mod delete_geo_match_set_output {
 
     /// A builder for [`DeleteGeoMatchSetOutput`](crate::output::DeleteGeoMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -4235,7 +3760,7 @@ impl DeleteGeoMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteByteMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
@@ -4247,18 +3772,11 @@ impl DeleteByteMatchSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteByteMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteByteMatchSetOutput");
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`DeleteByteMatchSetOutput`](crate::output::DeleteByteMatchSetOutput).
 pub mod delete_byte_match_set_output {
 
     /// A builder for [`DeleteByteMatchSetOutput`](crate::output::DeleteByteMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
@@ -4290,7 +3808,7 @@ impl DeleteByteMatchSetOutput {
 
 /// <p>The response to a <code>CreateXssMatchSet</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateXssMatchSetOutput {
     /// <p>An <code>XssMatchSet</code>.</p>
     #[doc(hidden)]
@@ -4309,19 +3827,11 @@ impl CreateXssMatchSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateXssMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateXssMatchSetOutput");
-        formatter.field("xss_match_set", &self.xss_match_set);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`CreateXssMatchSetOutput`](crate::output::CreateXssMatchSetOutput).
 pub mod create_xss_match_set_output {
 
     /// A builder for [`CreateXssMatchSetOutput`](crate::output::CreateXssMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) xss_match_set: std::option::Option<crate::model::XssMatchSet>,
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -4368,7 +3878,7 @@ impl CreateXssMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWebAclMigrationStackOutput {
     /// <p>The URL of the template created in Amazon S3. </p>
     #[doc(hidden)]
@@ -4380,18 +3890,11 @@ impl CreateWebAclMigrationStackOutput {
         self.s3_object_url.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWebAclMigrationStackOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWebAclMigrationStackOutput");
-        formatter.field("s3_object_url", &self.s3_object_url);
-        formatter.finish()
-    }
-}
 /// See [`CreateWebAclMigrationStackOutput`](crate::output::CreateWebAclMigrationStackOutput).
 pub mod create_web_acl_migration_stack_output {
 
     /// A builder for [`CreateWebAclMigrationStackOutput`](crate::output::CreateWebAclMigrationStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_object_url: std::option::Option<std::string::String>,
     }
@@ -4426,7 +3929,7 @@ impl CreateWebAclMigrationStackOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWebAclOutput {
     /// <p>The <code>WebACL</code> returned in the <code>CreateWebACL</code> response.</p>
     #[doc(hidden)]
@@ -4445,19 +3948,11 @@ impl CreateWebAclOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWebAclOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWebAclOutput");
-        formatter.field("web_acl", &self.web_acl);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
 pub mod create_web_acl_output {
 
     /// A builder for [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) web_acl: std::option::Option<crate::model::WebAcl>,
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -4501,7 +3996,7 @@ impl CreateWebAclOutput {
 
 /// <p>The response to a <code>CreateSqlInjectionMatchSet</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSqlInjectionMatchSetOutput {
     /// <p>A <code>SqlInjectionMatchSet</code>.</p>
     #[doc(hidden)]
@@ -4522,19 +4017,11 @@ impl CreateSqlInjectionMatchSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSqlInjectionMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSqlInjectionMatchSetOutput");
-        formatter.field("sql_injection_match_set", &self.sql_injection_match_set);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`CreateSqlInjectionMatchSetOutput`](crate::output::CreateSqlInjectionMatchSetOutput).
 pub mod create_sql_injection_match_set_output {
 
     /// A builder for [`CreateSqlInjectionMatchSetOutput`](crate::output::CreateSqlInjectionMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sql_injection_match_set: std::option::Option<crate::model::SqlInjectionMatchSet>,
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -4584,7 +4071,7 @@ impl CreateSqlInjectionMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSizeConstraintSetOutput {
     /// <p>A <code>SizeConstraintSet</code> that contains no <code>SizeConstraint</code> objects.</p>
     #[doc(hidden)]
@@ -4603,19 +4090,11 @@ impl CreateSizeConstraintSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSizeConstraintSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSizeConstraintSetOutput");
-        formatter.field("size_constraint_set", &self.size_constraint_set);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`CreateSizeConstraintSetOutput`](crate::output::CreateSizeConstraintSetOutput).
 pub mod create_size_constraint_set_output {
 
     /// A builder for [`CreateSizeConstraintSetOutput`](crate::output::CreateSizeConstraintSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_constraint_set: std::option::Option<crate::model::SizeConstraintSet>,
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -4662,7 +4141,7 @@ impl CreateSizeConstraintSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRuleGroupOutput {
     /// <p>An empty <code>RuleGroup</code>.</p>
     #[doc(hidden)]
@@ -4681,19 +4160,11 @@ impl CreateRuleGroupOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRuleGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRuleGroupOutput");
-        formatter.field("rule_group", &self.rule_group);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
 pub mod create_rule_group_output {
 
     /// A builder for [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group: std::option::Option<crate::model::RuleGroup>,
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -4740,7 +4211,7 @@ impl CreateRuleGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRuleOutput {
     /// <p>The <code>Rule</code> returned in the <code>CreateRule</code> response.</p>
     #[doc(hidden)]
@@ -4759,19 +4230,11 @@ impl CreateRuleOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRuleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRuleOutput");
-        formatter.field("rule", &self.rule);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`CreateRuleOutput`](crate::output::CreateRuleOutput).
 pub mod create_rule_output {
 
     /// A builder for [`CreateRuleOutput`](crate::output::CreateRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule: std::option::Option<crate::model::Rule>,
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -4815,7 +4278,7 @@ impl CreateRuleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRegexPatternSetOutput {
     /// <p>A <code>RegexPatternSet</code> that contains no objects.</p>
     #[doc(hidden)]
@@ -4834,19 +4297,11 @@ impl CreateRegexPatternSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRegexPatternSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRegexPatternSetOutput");
-        formatter.field("regex_pattern_set", &self.regex_pattern_set);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
 pub mod create_regex_pattern_set_output {
 
     /// A builder for [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_pattern_set: std::option::Option<crate::model::RegexPatternSet>,
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -4893,7 +4348,7 @@ impl CreateRegexPatternSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRegexMatchSetOutput {
     /// <p>A <code>RegexMatchSet</code> that contains no <code>RegexMatchTuple</code> objects.</p>
     #[doc(hidden)]
@@ -4912,19 +4367,11 @@ impl CreateRegexMatchSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRegexMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRegexMatchSetOutput");
-        formatter.field("regex_match_set", &self.regex_match_set);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`CreateRegexMatchSetOutput`](crate::output::CreateRegexMatchSetOutput).
 pub mod create_regex_match_set_output {
 
     /// A builder for [`CreateRegexMatchSetOutput`](crate::output::CreateRegexMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_match_set: std::option::Option<crate::model::RegexMatchSet>,
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -4971,7 +4418,7 @@ impl CreateRegexMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRateBasedRuleOutput {
     /// <p>The <code>RateBasedRule</code> that is returned in the <code>CreateRateBasedRule</code> response.</p>
     #[doc(hidden)]
@@ -4990,19 +4437,11 @@ impl CreateRateBasedRuleOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRateBasedRuleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRateBasedRuleOutput");
-        formatter.field("rule", &self.rule);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`CreateRateBasedRuleOutput`](crate::output::CreateRateBasedRuleOutput).
 pub mod create_rate_based_rule_output {
 
     /// A builder for [`CreateRateBasedRuleOutput`](crate::output::CreateRateBasedRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule: std::option::Option<crate::model::RateBasedRule>,
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -5046,7 +4485,7 @@ impl CreateRateBasedRuleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIpSetOutput {
     /// <p>The <code>IPSet</code> returned in the <code>CreateIPSet</code> response.</p>
     #[doc(hidden)]
@@ -5065,19 +4504,11 @@ impl CreateIpSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateIpSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIpSetOutput");
-        formatter.field("ip_set", &self.ip_set);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
 pub mod create_ip_set_output {
 
     /// A builder for [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_set: std::option::Option<crate::model::IpSet>,
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -5121,7 +4552,7 @@ impl CreateIpSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGeoMatchSetOutput {
     /// <p>The <code>GeoMatchSet</code> returned in the <code>CreateGeoMatchSet</code> response. The <code>GeoMatchSet</code> contains no <code>GeoMatchConstraints</code>.</p>
     #[doc(hidden)]
@@ -5140,19 +4571,11 @@ impl CreateGeoMatchSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGeoMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGeoMatchSetOutput");
-        formatter.field("geo_match_set", &self.geo_match_set);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`CreateGeoMatchSetOutput`](crate::output::CreateGeoMatchSetOutput).
 pub mod create_geo_match_set_output {
 
     /// A builder for [`CreateGeoMatchSetOutput`](crate::output::CreateGeoMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geo_match_set: std::option::Option<crate::model::GeoMatchSet>,
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -5199,7 +4622,7 @@ impl CreateGeoMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateByteMatchSetOutput {
     /// <p>A <code>ByteMatchSet</code> that contains no <code>ByteMatchTuple</code> objects.</p>
     #[doc(hidden)]
@@ -5218,19 +4641,11 @@ impl CreateByteMatchSetOutput {
         self.change_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateByteMatchSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateByteMatchSetOutput");
-        formatter.field("byte_match_set", &self.byte_match_set);
-        formatter.field("change_token", &self.change_token);
-        formatter.finish()
-    }
-}
 /// See [`CreateByteMatchSetOutput`](crate::output::CreateByteMatchSetOutput).
 pub mod create_byte_match_set_output {
 
     /// A builder for [`CreateByteMatchSetOutput`](crate::output::CreateByteMatchSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byte_match_set: std::option::Option<crate::model::ByteMatchSet>,
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -5277,19 +4692,13 @@ impl CreateByteMatchSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateWebAclOutput {}
-impl std::fmt::Debug for AssociateWebAclOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateWebAclOutput");
-        formatter.finish()
-    }
-}
 /// See [`AssociateWebAclOutput`](crate::output::AssociateWebAclOutput).
 pub mod associate_web_acl_output {
 
     /// A builder for [`AssociateWebAclOutput`](crate::output::AssociateWebAclOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateWebAclOutput`](crate::output::AssociateWebAclOutput).

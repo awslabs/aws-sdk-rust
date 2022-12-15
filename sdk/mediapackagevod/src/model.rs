@@ -2,7 +2,7 @@
 
 /// Configure egress access logging.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EgressAccessLogs {
     /// Customize the log group name.
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl EgressAccessLogs {
         self.log_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for EgressAccessLogs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EgressAccessLogs");
-        formatter.field("log_group_name", &self.log_group_name);
-        formatter.finish()
-    }
-}
 /// See [`EgressAccessLogs`](crate::model::EgressAccessLogs).
 pub mod egress_access_logs {
 
     /// A builder for [`EgressAccessLogs`](crate::model::EgressAccessLogs).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
     }
@@ -60,7 +53,7 @@ impl EgressAccessLogs {
 
 /// CDN Authorization credentials
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Authorization {
     /// The Amazon Resource Name (ARN) for the secret in AWS Secrets Manager that is used for CDN authorization.
     #[doc(hidden)]
@@ -79,19 +72,11 @@ impl Authorization {
         self.secrets_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for Authorization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Authorization");
-        formatter.field("cdn_identifier_secret", &self.cdn_identifier_secret);
-        formatter.field("secrets_role_arn", &self.secrets_role_arn);
-        formatter.finish()
-    }
-}
 /// See [`Authorization`](crate::model::Authorization).
 pub mod authorization {
 
     /// A builder for [`Authorization`](crate::model::Authorization).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cdn_identifier_secret: std::option::Option<std::string::String>,
         pub(crate) secrets_role_arn: std::option::Option<std::string::String>,
@@ -141,7 +126,7 @@ impl Authorization {
 
 /// A MediaPackage VOD PackagingGroup resource.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackagingGroup {
     /// The ARN of the PackagingGroup.
     #[doc(hidden)]
@@ -192,23 +177,11 @@ impl PackagingGroup {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for PackagingGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackagingGroup");
-        formatter.field("arn", &self.arn);
-        formatter.field("authorization", &self.authorization);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("egress_access_logs", &self.egress_access_logs);
-        formatter.field("id", &self.id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`PackagingGroup`](crate::model::PackagingGroup).
 pub mod packaging_group {
 
     /// A builder for [`PackagingGroup`](crate::model::PackagingGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) authorization: std::option::Option<crate::model::Authorization>,
@@ -323,7 +296,7 @@ impl PackagingGroup {
 
 /// A MediaPackage VOD PackagingConfiguration resource.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackagingConfiguration {
     /// The ARN of the PackagingConfiguration.
     #[doc(hidden)]
@@ -388,25 +361,11 @@ impl PackagingConfiguration {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for PackagingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackagingConfiguration");
-        formatter.field("arn", &self.arn);
-        formatter.field("cmaf_package", &self.cmaf_package);
-        formatter.field("dash_package", &self.dash_package);
-        formatter.field("hls_package", &self.hls_package);
-        formatter.field("id", &self.id);
-        formatter.field("mss_package", &self.mss_package);
-        formatter.field("packaging_group_id", &self.packaging_group_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`PackagingConfiguration`](crate::model::PackagingConfiguration).
 pub mod packaging_configuration {
 
     /// A builder for [`PackagingConfiguration`](crate::model::PackagingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) cmaf_package: std::option::Option<crate::model::CmafPackage>,
@@ -554,7 +513,7 @@ impl PackagingConfiguration {
 
 /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MssPackage {
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
     #[doc(hidden)]
@@ -580,20 +539,11 @@ impl MssPackage {
         self.segment_duration_seconds
     }
 }
-impl std::fmt::Debug for MssPackage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MssPackage");
-        formatter.field("encryption", &self.encryption);
-        formatter.field("mss_manifests", &self.mss_manifests);
-        formatter.field("segment_duration_seconds", &self.segment_duration_seconds);
-        formatter.finish()
-    }
-}
 /// See [`MssPackage`](crate::model::MssPackage).
 pub mod mss_package {
 
     /// A builder for [`MssPackage`](crate::model::MssPackage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption: std::option::Option<crate::model::MssEncryption>,
         pub(crate) mss_manifests: std::option::Option<std::vec::Vec<crate::model::MssManifest>>,
@@ -661,7 +611,7 @@ impl MssPackage {
 
 /// A Microsoft Smooth Streaming (MSS) manifest configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MssManifest {
     /// An optional string to include in the name of the manifest.
     #[doc(hidden)]
@@ -680,19 +630,11 @@ impl MssManifest {
         self.stream_selection.as_ref()
     }
 }
-impl std::fmt::Debug for MssManifest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MssManifest");
-        formatter.field("manifest_name", &self.manifest_name);
-        formatter.field("stream_selection", &self.stream_selection);
-        formatter.finish()
-    }
-}
 /// See [`MssManifest`](crate::model::MssManifest).
 pub mod mss_manifest {
 
     /// A builder for [`MssManifest`](crate::model::MssManifest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manifest_name: std::option::Option<std::string::String>,
         pub(crate) stream_selection: std::option::Option<crate::model::StreamSelection>,
@@ -742,7 +684,7 @@ impl MssManifest {
 
 /// A StreamSelection configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamSelection {
     /// The maximum video bitrate (bps) to include in output.
     #[doc(hidden)]
@@ -768,20 +710,11 @@ impl StreamSelection {
         self.stream_order.as_ref()
     }
 }
-impl std::fmt::Debug for StreamSelection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamSelection");
-        formatter.field("max_video_bits_per_second", &self.max_video_bits_per_second);
-        formatter.field("min_video_bits_per_second", &self.min_video_bits_per_second);
-        formatter.field("stream_order", &self.stream_order);
-        formatter.finish()
-    }
-}
 /// See [`StreamSelection`](crate::model::StreamSelection).
 pub mod stream_selection {
 
     /// A builder for [`StreamSelection`](crate::model::StreamSelection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_video_bits_per_second: std::option::Option<i32>,
         pub(crate) min_video_bits_per_second: std::option::Option<i32>,
@@ -838,6 +771,42 @@ impl StreamSelection {
     }
 }
 
+/// When writing a match expression against `StreamOrder`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let streamorder = unimplemented!();
+/// match streamorder {
+///     StreamOrder::Original => { /* ... */ },
+///     StreamOrder::VideoBitrateAscending => { /* ... */ },
+///     StreamOrder::VideoBitrateDescending => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `streamorder` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StreamOrder::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StreamOrder::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StreamOrder::NewFeature` is defined.
+/// Specifically, when `streamorder` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StreamOrder::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -856,8 +825,8 @@ pub enum StreamOrder {
     VideoBitrateAscending,
     #[allow(missing_docs)] // documentation missing in model
     VideoBitrateDescending,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StreamOrder {
     fn from(s: &str) -> Self {
@@ -865,7 +834,7 @@ impl std::convert::From<&str> for StreamOrder {
             "ORIGINAL" => StreamOrder::Original,
             "VIDEO_BITRATE_ASCENDING" => StreamOrder::VideoBitrateAscending,
             "VIDEO_BITRATE_DESCENDING" => StreamOrder::VideoBitrateDescending,
-            other => StreamOrder::Unknown(other.to_owned()),
+            other => StreamOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -883,11 +852,11 @@ impl StreamOrder {
             StreamOrder::Original => "ORIGINAL",
             StreamOrder::VideoBitrateAscending => "VIDEO_BITRATE_ASCENDING",
             StreamOrder::VideoBitrateDescending => "VIDEO_BITRATE_DESCENDING",
-            StreamOrder::Unknown(s) => s.as_ref(),
+            StreamOrder::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ORIGINAL",
             "VIDEO_BITRATE_ASCENDING",
@@ -903,7 +872,7 @@ impl AsRef<str> for StreamOrder {
 
 /// A Microsoft Smooth Streaming (MSS) encryption configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MssEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     #[doc(hidden)]
@@ -915,18 +884,11 @@ impl MssEncryption {
         self.speke_key_provider.as_ref()
     }
 }
-impl std::fmt::Debug for MssEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MssEncryption");
-        formatter.field("speke_key_provider", &self.speke_key_provider);
-        formatter.finish()
-    }
-}
 /// See [`MssEncryption`](crate::model::MssEncryption).
 pub mod mss_encryption {
 
     /// A builder for [`MssEncryption`](crate::model::MssEncryption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
     }
@@ -961,7 +923,7 @@ impl MssEncryption {
 
 /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SpekeKeyProvider {
     /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
     #[doc(hidden)]
@@ -987,20 +949,11 @@ impl SpekeKeyProvider {
         self.url.as_deref()
     }
 }
-impl std::fmt::Debug for SpekeKeyProvider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SpekeKeyProvider");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("system_ids", &self.system_ids);
-        formatter.field("url", &self.url);
-        formatter.finish()
-    }
-}
 /// See [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
 pub mod speke_key_provider {
 
     /// A builder for [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) system_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1065,7 +1018,7 @@ impl SpekeKeyProvider {
 
 /// An HTTP Live Streaming (HLS) packaging configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsPackage {
     /// An HTTP Live Streaming (HLS) encryption configuration.
     #[doc(hidden)]
@@ -1105,22 +1058,11 @@ impl HlsPackage {
         self.use_audio_rendition_group
     }
 }
-impl std::fmt::Debug for HlsPackage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsPackage");
-        formatter.field("encryption", &self.encryption);
-        formatter.field("hls_manifests", &self.hls_manifests);
-        formatter.field("include_dvb_subtitles", &self.include_dvb_subtitles);
-        formatter.field("segment_duration_seconds", &self.segment_duration_seconds);
-        formatter.field("use_audio_rendition_group", &self.use_audio_rendition_group);
-        formatter.finish()
-    }
-}
 /// See [`HlsPackage`](crate::model::HlsPackage).
 pub mod hls_package {
 
     /// A builder for [`HlsPackage`](crate::model::HlsPackage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption: std::option::Option<crate::model::HlsEncryption>,
         pub(crate) hls_manifests: std::option::Option<std::vec::Vec<crate::model::HlsManifest>>,
@@ -1212,7 +1154,7 @@ impl HlsPackage {
 
 /// An HTTP Live Streaming (HLS) manifest configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsManifest {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source.
     #[doc(hidden)]
@@ -1259,29 +1201,11 @@ impl HlsManifest {
         self.stream_selection.as_ref()
     }
 }
-impl std::fmt::Debug for HlsManifest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsManifest");
-        formatter.field("ad_markers", &self.ad_markers);
-        formatter.field(
-            "include_iframe_only_stream",
-            &self.include_iframe_only_stream,
-        );
-        formatter.field("manifest_name", &self.manifest_name);
-        formatter.field(
-            "program_date_time_interval_seconds",
-            &self.program_date_time_interval_seconds,
-        );
-        formatter.field("repeat_ext_x_key", &self.repeat_ext_x_key);
-        formatter.field("stream_selection", &self.stream_selection);
-        formatter.finish()
-    }
-}
 /// See [`HlsManifest`](crate::model::HlsManifest).
 pub mod hls_manifest {
 
     /// A builder for [`HlsManifest`](crate::model::HlsManifest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_markers: std::option::Option<crate::model::AdMarkers>,
         pub(crate) include_iframe_only_stream: std::option::Option<bool>,
@@ -1385,6 +1309,42 @@ impl HlsManifest {
     }
 }
 
+/// When writing a match expression against `AdMarkers`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let admarkers = unimplemented!();
+/// match admarkers {
+///     AdMarkers::None => { /* ... */ },
+///     AdMarkers::Passthrough => { /* ... */ },
+///     AdMarkers::Scte35Enhanced => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `admarkers` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AdMarkers::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AdMarkers::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AdMarkers::NewFeature` is defined.
+/// Specifically, when `admarkers` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AdMarkers::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1403,8 +1363,8 @@ pub enum AdMarkers {
     Passthrough,
     #[allow(missing_docs)] // documentation missing in model
     Scte35Enhanced,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AdMarkers {
     fn from(s: &str) -> Self {
@@ -1412,7 +1372,7 @@ impl std::convert::From<&str> for AdMarkers {
             "NONE" => AdMarkers::None,
             "PASSTHROUGH" => AdMarkers::Passthrough,
             "SCTE35_ENHANCED" => AdMarkers::Scte35Enhanced,
-            other => AdMarkers::Unknown(other.to_owned()),
+            other => AdMarkers::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1430,11 +1390,11 @@ impl AdMarkers {
             AdMarkers::None => "NONE",
             AdMarkers::Passthrough => "PASSTHROUGH",
             AdMarkers::Scte35Enhanced => "SCTE35_ENHANCED",
-            AdMarkers::Unknown(s) => s.as_ref(),
+            AdMarkers::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "PASSTHROUGH", "SCTE35_ENHANCED"]
     }
 }
@@ -1446,7 +1406,7 @@ impl AsRef<str> for AdMarkers {
 
 /// An HTTP Live Streaming (HLS) encryption configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsEncryption {
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
     #[doc(hidden)]
@@ -1472,23 +1432,11 @@ impl HlsEncryption {
         self.speke_key_provider.as_ref()
     }
 }
-impl std::fmt::Debug for HlsEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsEncryption");
-        formatter.field(
-            "constant_initialization_vector",
-            &self.constant_initialization_vector,
-        );
-        formatter.field("encryption_method", &self.encryption_method);
-        formatter.field("speke_key_provider", &self.speke_key_provider);
-        formatter.finish()
-    }
-}
 /// See [`HlsEncryption`](crate::model::HlsEncryption).
 pub mod hls_encryption {
 
     /// A builder for [`HlsEncryption`](crate::model::HlsEncryption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) constant_initialization_vector: std::option::Option<std::string::String>,
         pub(crate) encryption_method: std::option::Option<crate::model::EncryptionMethod>,
@@ -1554,6 +1502,41 @@ impl HlsEncryption {
     }
 }
 
+/// When writing a match expression against `EncryptionMethod`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let encryptionmethod = unimplemented!();
+/// match encryptionmethod {
+///     EncryptionMethod::Aes128 => { /* ... */ },
+///     EncryptionMethod::SampleAes => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `encryptionmethod` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EncryptionMethod::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EncryptionMethod::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EncryptionMethod::NewFeature` is defined.
+/// Specifically, when `encryptionmethod` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EncryptionMethod::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1570,15 +1553,15 @@ pub enum EncryptionMethod {
     Aes128,
     #[allow(missing_docs)] // documentation missing in model
     SampleAes,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EncryptionMethod {
     fn from(s: &str) -> Self {
         match s {
             "AES_128" => EncryptionMethod::Aes128,
             "SAMPLE_AES" => EncryptionMethod::SampleAes,
-            other => EncryptionMethod::Unknown(other.to_owned()),
+            other => EncryptionMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1595,11 +1578,11 @@ impl EncryptionMethod {
         match self {
             EncryptionMethod::Aes128 => "AES_128",
             EncryptionMethod::SampleAes => "SAMPLE_AES",
-            EncryptionMethod::Unknown(s) => s.as_ref(),
+            EncryptionMethod::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AES_128", "SAMPLE_AES"]
     }
 }
@@ -1611,7 +1594,7 @@ impl AsRef<str> for EncryptionMethod {
 
 /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashPackage {
     /// A list of DASH manifest configurations.
     #[doc(hidden)]
@@ -1660,26 +1643,11 @@ impl DashPackage {
         self.segment_template_format.as_ref()
     }
 }
-impl std::fmt::Debug for DashPackage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashPackage");
-        formatter.field("dash_manifests", &self.dash_manifests);
-        formatter.field("encryption", &self.encryption);
-        formatter.field(
-            "include_encoder_configuration_in_segments",
-            &self.include_encoder_configuration_in_segments,
-        );
-        formatter.field("period_triggers", &self.period_triggers);
-        formatter.field("segment_duration_seconds", &self.segment_duration_seconds);
-        formatter.field("segment_template_format", &self.segment_template_format);
-        formatter.finish()
-    }
-}
 /// See [`DashPackage`](crate::model::DashPackage).
 pub mod dash_package {
 
     /// A builder for [`DashPackage`](crate::model::DashPackage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dash_manifests: std::option::Option<std::vec::Vec<crate::model::DashManifest>>,
         pub(crate) encryption: std::option::Option<crate::model::DashEncryption>,
@@ -1803,6 +1771,42 @@ impl DashPackage {
     }
 }
 
+/// When writing a match expression against `SegmentTemplateFormat`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let segmenttemplateformat = unimplemented!();
+/// match segmenttemplateformat {
+///     SegmentTemplateFormat::NumberWithDuration => { /* ... */ },
+///     SegmentTemplateFormat::NumberWithTimeline => { /* ... */ },
+///     SegmentTemplateFormat::TimeWithTimeline => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `segmenttemplateformat` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SegmentTemplateFormat::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SegmentTemplateFormat::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SegmentTemplateFormat::NewFeature` is defined.
+/// Specifically, when `segmenttemplateformat` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SegmentTemplateFormat::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1821,8 +1825,8 @@ pub enum SegmentTemplateFormat {
     NumberWithTimeline,
     #[allow(missing_docs)] // documentation missing in model
     TimeWithTimeline,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SegmentTemplateFormat {
     fn from(s: &str) -> Self {
@@ -1830,7 +1834,9 @@ impl std::convert::From<&str> for SegmentTemplateFormat {
             "NUMBER_WITH_DURATION" => SegmentTemplateFormat::NumberWithDuration,
             "NUMBER_WITH_TIMELINE" => SegmentTemplateFormat::NumberWithTimeline,
             "TIME_WITH_TIMELINE" => SegmentTemplateFormat::TimeWithTimeline,
-            other => SegmentTemplateFormat::Unknown(other.to_owned()),
+            other => {
+                SegmentTemplateFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -1848,11 +1854,11 @@ impl SegmentTemplateFormat {
             SegmentTemplateFormat::NumberWithDuration => "NUMBER_WITH_DURATION",
             SegmentTemplateFormat::NumberWithTimeline => "NUMBER_WITH_TIMELINE",
             SegmentTemplateFormat::TimeWithTimeline => "TIME_WITH_TIMELINE",
-            SegmentTemplateFormat::Unknown(s) => s.as_ref(),
+            SegmentTemplateFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "NUMBER_WITH_DURATION",
             "NUMBER_WITH_TIMELINE",
@@ -1866,6 +1872,40 @@ impl AsRef<str> for SegmentTemplateFormat {
     }
 }
 
+/// When writing a match expression against `PeriodTriggersElement`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let periodtriggerselement = unimplemented!();
+/// match periodtriggerselement {
+///     PeriodTriggersElement::Ads => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `periodtriggerselement` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PeriodTriggersElement::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PeriodTriggersElement::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PeriodTriggersElement::NewFeature` is defined.
+/// Specifically, when `periodtriggerselement` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PeriodTriggersElement::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1880,14 +1920,16 @@ impl AsRef<str> for SegmentTemplateFormat {
 pub enum PeriodTriggersElement {
     #[allow(missing_docs)] // documentation missing in model
     Ads,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PeriodTriggersElement {
     fn from(s: &str) -> Self {
         match s {
             "ADS" => PeriodTriggersElement::Ads,
-            other => PeriodTriggersElement::Unknown(other.to_owned()),
+            other => {
+                PeriodTriggersElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -1903,11 +1945,11 @@ impl PeriodTriggersElement {
     pub fn as_str(&self) -> &str {
         match self {
             PeriodTriggersElement::Ads => "ADS",
-            PeriodTriggersElement::Unknown(s) => s.as_ref(),
+            PeriodTriggersElement::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADS"]
     }
 }
@@ -1919,7 +1961,7 @@ impl AsRef<str> for PeriodTriggersElement {
 
 /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     #[doc(hidden)]
@@ -1931,18 +1973,11 @@ impl DashEncryption {
         self.speke_key_provider.as_ref()
     }
 }
-impl std::fmt::Debug for DashEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashEncryption");
-        formatter.field("speke_key_provider", &self.speke_key_provider);
-        formatter.finish()
-    }
-}
 /// See [`DashEncryption`](crate::model::DashEncryption).
 pub mod dash_encryption {
 
     /// A builder for [`DashEncryption`](crate::model::DashEncryption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
     }
@@ -1977,7 +2012,7 @@ impl DashEncryption {
 
 /// A DASH manifest configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashManifest {
     /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
     #[doc(hidden)]
@@ -2024,23 +2059,11 @@ impl DashManifest {
         self.stream_selection.as_ref()
     }
 }
-impl std::fmt::Debug for DashManifest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashManifest");
-        formatter.field("manifest_layout", &self.manifest_layout);
-        formatter.field("manifest_name", &self.manifest_name);
-        formatter.field("min_buffer_time_seconds", &self.min_buffer_time_seconds);
-        formatter.field("profile", &self.profile);
-        formatter.field("scte_markers_source", &self.scte_markers_source);
-        formatter.field("stream_selection", &self.stream_selection);
-        formatter.finish()
-    }
-}
 /// See [`DashManifest`](crate::model::DashManifest).
 pub mod dash_manifest {
 
     /// A builder for [`DashManifest`](crate::model::DashManifest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manifest_layout: std::option::Option<crate::model::ManifestLayout>,
         pub(crate) manifest_name: std::option::Option<std::string::String>,
@@ -2142,6 +2165,41 @@ impl DashManifest {
     }
 }
 
+/// When writing a match expression against `ScteMarkersSource`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sctemarkerssource = unimplemented!();
+/// match sctemarkerssource {
+///     ScteMarkersSource::Manifest => { /* ... */ },
+///     ScteMarkersSource::Segments => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sctemarkerssource` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ScteMarkersSource::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ScteMarkersSource::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ScteMarkersSource::NewFeature` is defined.
+/// Specifically, when `sctemarkerssource` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ScteMarkersSource::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2158,15 +2216,17 @@ pub enum ScteMarkersSource {
     Manifest,
     #[allow(missing_docs)] // documentation missing in model
     Segments,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ScteMarkersSource {
     fn from(s: &str) -> Self {
         match s {
             "MANIFEST" => ScteMarkersSource::Manifest,
             "SEGMENTS" => ScteMarkersSource::Segments,
-            other => ScteMarkersSource::Unknown(other.to_owned()),
+            other => {
+                ScteMarkersSource::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2183,11 +2243,11 @@ impl ScteMarkersSource {
         match self {
             ScteMarkersSource::Manifest => "MANIFEST",
             ScteMarkersSource::Segments => "SEGMENTS",
-            ScteMarkersSource::Unknown(s) => s.as_ref(),
+            ScteMarkersSource::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MANIFEST", "SEGMENTS"]
     }
 }
@@ -2197,6 +2257,41 @@ impl AsRef<str> for ScteMarkersSource {
     }
 }
 
+/// When writing a match expression against `Profile`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let profile = unimplemented!();
+/// match profile {
+///     Profile::Hbbtv15 => { /* ... */ },
+///     Profile::None => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `profile` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Profile::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Profile::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Profile::NewFeature` is defined.
+/// Specifically, when `profile` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Profile::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2213,15 +2308,15 @@ pub enum Profile {
     Hbbtv15,
     #[allow(missing_docs)] // documentation missing in model
     None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Profile {
     fn from(s: &str) -> Self {
         match s {
             "HBBTV_1_5" => Profile::Hbbtv15,
             "NONE" => Profile::None,
-            other => Profile::Unknown(other.to_owned()),
+            other => Profile::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2238,11 +2333,11 @@ impl Profile {
         match self {
             Profile::Hbbtv15 => "HBBTV_1_5",
             Profile::None => "NONE",
-            Profile::Unknown(s) => s.as_ref(),
+            Profile::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HBBTV_1_5", "NONE"]
     }
 }
@@ -2252,6 +2347,41 @@ impl AsRef<str> for Profile {
     }
 }
 
+/// When writing a match expression against `ManifestLayout`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let manifestlayout = unimplemented!();
+/// match manifestlayout {
+///     ManifestLayout::Compact => { /* ... */ },
+///     ManifestLayout::Full => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `manifestlayout` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ManifestLayout::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ManifestLayout::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ManifestLayout::NewFeature` is defined.
+/// Specifically, when `manifestlayout` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ManifestLayout::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2268,15 +2398,15 @@ pub enum ManifestLayout {
     Compact,
     #[allow(missing_docs)] // documentation missing in model
     Full,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ManifestLayout {
     fn from(s: &str) -> Self {
         match s {
             "COMPACT" => ManifestLayout::Compact,
             "FULL" => ManifestLayout::Full,
-            other => ManifestLayout::Unknown(other.to_owned()),
+            other => ManifestLayout::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2293,11 +2423,11 @@ impl ManifestLayout {
         match self {
             ManifestLayout::Compact => "COMPACT",
             ManifestLayout::Full => "FULL",
-            ManifestLayout::Unknown(s) => s.as_ref(),
+            ManifestLayout::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPACT", "FULL"]
     }
 }
@@ -2309,7 +2439,7 @@ impl AsRef<str> for ManifestLayout {
 
 /// A CMAF packaging configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CmafPackage {
     /// A CMAF encryption configuration.
     #[doc(hidden)]
@@ -2342,24 +2472,11 @@ impl CmafPackage {
         self.segment_duration_seconds
     }
 }
-impl std::fmt::Debug for CmafPackage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CmafPackage");
-        formatter.field("encryption", &self.encryption);
-        formatter.field("hls_manifests", &self.hls_manifests);
-        formatter.field(
-            "include_encoder_configuration_in_segments",
-            &self.include_encoder_configuration_in_segments,
-        );
-        formatter.field("segment_duration_seconds", &self.segment_duration_seconds);
-        formatter.finish()
-    }
-}
 /// See [`CmafPackage`](crate::model::CmafPackage).
 pub mod cmaf_package {
 
     /// A builder for [`CmafPackage`](crate::model::CmafPackage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption: std::option::Option<crate::model::CmafEncryption>,
         pub(crate) hls_manifests: std::option::Option<std::vec::Vec<crate::model::HlsManifest>>,
@@ -2444,7 +2561,7 @@ impl CmafPackage {
 
 /// A CMAF encryption configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CmafEncryption {
     /// An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
     #[doc(hidden)]
@@ -2463,22 +2580,11 @@ impl CmafEncryption {
         self.speke_key_provider.as_ref()
     }
 }
-impl std::fmt::Debug for CmafEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CmafEncryption");
-        formatter.field(
-            "constant_initialization_vector",
-            &self.constant_initialization_vector,
-        );
-        formatter.field("speke_key_provider", &self.speke_key_provider);
-        formatter.finish()
-    }
-}
 /// See [`CmafEncryption`](crate::model::CmafEncryption).
 pub mod cmaf_encryption {
 
     /// A builder for [`CmafEncryption`](crate::model::CmafEncryption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) constant_initialization_vector: std::option::Option<std::string::String>,
         pub(crate) speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
@@ -2531,7 +2637,7 @@ impl CmafEncryption {
 
 /// A MediaPackage VOD Asset resource.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssetShallow {
     /// The ARN of the Asset.
     #[doc(hidden)]
@@ -2596,25 +2702,11 @@ impl AssetShallow {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for AssetShallow {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssetShallow");
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("id", &self.id);
-        formatter.field("packaging_group_id", &self.packaging_group_id);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("source_role_arn", &self.source_role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`AssetShallow`](crate::model::AssetShallow).
 pub mod asset_shallow {
 
     /// A builder for [`AssetShallow`](crate::model::AssetShallow).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<std::string::String>,
@@ -2753,7 +2845,7 @@ impl AssetShallow {
 
 /// The endpoint URL used to access an Asset using one PackagingConfiguration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EgressEndpoint {
     /// The ID of the PackagingConfiguration being applied to the Asset.
     #[doc(hidden)]
@@ -2779,23 +2871,11 @@ impl EgressEndpoint {
         self.url.as_deref()
     }
 }
-impl std::fmt::Debug for EgressEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EgressEndpoint");
-        formatter.field(
-            "packaging_configuration_id",
-            &self.packaging_configuration_id,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("url", &self.url);
-        formatter.finish()
-    }
-}
 /// See [`EgressEndpoint`](crate::model::EgressEndpoint).
 pub mod egress_endpoint {
 
     /// A builder for [`EgressEndpoint`](crate::model::EgressEndpoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) packaging_configuration_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,

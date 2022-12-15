@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_get_ice_server_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetIceServerConfigInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.channel_arn {
         object.key("ChannelARN").string(var_1.as_str());
     }
@@ -21,7 +21,7 @@ pub fn serialize_structure_crate_input_get_ice_server_config_input(
 pub fn serialize_structure_crate_input_send_alexa_offer_to_master_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SendAlexaOfferToMasterInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_5) = &input.channel_arn {
         object.key("ChannelARN").string(var_5.as_str());
     }

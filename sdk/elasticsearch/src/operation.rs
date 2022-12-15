@@ -5,7 +5,7 @@
 /// [`accept_inbound_cross_cluster_search_connection`](crate::client::Client::accept_inbound_cross_cluster_search_connection).
 ///
 /// See [`crate::client::fluent_builders::AcceptInboundCrossClusterSearchConnection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AcceptInboundCrossClusterSearchConnection {
     _private: (),
 }
@@ -44,7 +44,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptInboundCrossCluste
 /// [`add_tags`](crate::client::Client::add_tags).
 ///
 /// See [`crate::client::fluent_builders::AddTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddTags {
     _private: (),
 }
@@ -75,7 +75,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTags {
 /// [`associate_package`](crate::client::Client::associate_package).
 ///
 /// See [`crate::client::fluent_builders::AssociatePackage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociatePackage {
     _private: (),
 }
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociatePackage {
 /// [`cancel_elasticsearch_service_software_update`](crate::client::Client::cancel_elasticsearch_service_software_update).
 ///
 /// See [`crate::client::fluent_builders::CancelElasticsearchServiceSoftwareUpdate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelElasticsearchServiceSoftwareUpdate {
     _private: (),
 }
@@ -147,7 +147,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelElasticsearchServi
 /// [`create_elasticsearch_domain`](crate::client::Client::create_elasticsearch_domain).
 ///
 /// See [`crate::client::fluent_builders::CreateElasticsearchDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateElasticsearchDomain {
     _private: (),
 }
@@ -181,7 +181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateElasticsearchDomai
 /// [`create_outbound_cross_cluster_search_connection`](crate::client::Client::create_outbound_cross_cluster_search_connection).
 ///
 /// See [`crate::client::fluent_builders::CreateOutboundCrossClusterSearchConnection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateOutboundCrossClusterSearchConnection {
     _private: (),
 }
@@ -220,7 +220,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOutboundCrossClust
 /// [`create_package`](crate::client::Client::create_package).
 ///
 /// See [`crate::client::fluent_builders::CreatePackage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePackage {
     _private: (),
 }
@@ -252,7 +252,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePackage {
 /// [`delete_elasticsearch_domain`](crate::client::Client::delete_elasticsearch_domain).
 ///
 /// See [`crate::client::fluent_builders::DeleteElasticsearchDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteElasticsearchDomain {
     _private: (),
 }
@@ -286,7 +286,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteElasticsearchDomai
 /// [`delete_elasticsearch_service_role`](crate::client::Client::delete_elasticsearch_service_role).
 ///
 /// See [`crate::client::fluent_builders::DeleteElasticsearchServiceRole`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteElasticsearchServiceRole {
     _private: (),
 }
@@ -320,7 +320,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteElasticsearchServi
 /// [`delete_inbound_cross_cluster_search_connection`](crate::client::Client::delete_inbound_cross_cluster_search_connection).
 ///
 /// See [`crate::client::fluent_builders::DeleteInboundCrossClusterSearchConnection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteInboundCrossClusterSearchConnection {
     _private: (),
 }
@@ -359,7 +359,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInboundCrossCluste
 /// [`delete_outbound_cross_cluster_search_connection`](crate::client::Client::delete_outbound_cross_cluster_search_connection).
 ///
 /// See [`crate::client::fluent_builders::DeleteOutboundCrossClusterSearchConnection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteOutboundCrossClusterSearchConnection {
     _private: (),
 }
@@ -398,7 +398,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOutboundCrossClust
 /// [`delete_package`](crate::client::Client::delete_package).
 ///
 /// See [`crate::client::fluent_builders::DeletePackage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePackage {
     _private: (),
 }
@@ -430,7 +430,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePackage {
 /// [`describe_domain_auto_tunes`](crate::client::Client::describe_domain_auto_tunes).
 ///
 /// See [`crate::client::fluent_builders::DescribeDomainAutoTunes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDomainAutoTunes {
     _private: (),
 }
@@ -464,7 +464,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomainAutoTunes 
 /// [`describe_domain_change_progress`](crate::client::Client::describe_domain_change_progress).
 ///
 /// See [`crate::client::fluent_builders::DescribeDomainChangeProgress`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDomainChangeProgress {
     _private: (),
 }
@@ -498,7 +498,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomainChangeProg
 /// [`describe_elasticsearch_domain`](crate::client::Client::describe_elasticsearch_domain).
 ///
 /// See [`crate::client::fluent_builders::DescribeElasticsearchDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeElasticsearchDomain {
     _private: (),
 }
@@ -532,7 +532,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchDom
 /// [`describe_elasticsearch_domain_config`](crate::client::Client::describe_elasticsearch_domain_config).
 ///
 /// See [`crate::client::fluent_builders::DescribeElasticsearchDomainConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainConfig {
     _private: (),
 }
@@ -566,7 +566,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchDom
 /// [`describe_elasticsearch_domains`](crate::client::Client::describe_elasticsearch_domains).
 ///
 /// See [`crate::client::fluent_builders::DescribeElasticsearchDomains`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeElasticsearchDomains {
     _private: (),
 }
@@ -600,7 +600,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchDom
 /// [`describe_elasticsearch_instance_type_limits`](crate::client::Client::describe_elasticsearch_instance_type_limits).
 ///
 /// See [`crate::client::fluent_builders::DescribeElasticsearchInstanceTypeLimits`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeElasticsearchInstanceTypeLimits {
     _private: (),
 }
@@ -638,7 +638,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchIns
 /// [`describe_inbound_cross_cluster_search_connections`](crate::client::Client::describe_inbound_cross_cluster_search_connections).
 ///
 /// See [`crate::client::fluent_builders::DescribeInboundCrossClusterSearchConnections`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeInboundCrossClusterSearchConnections {
     _private: (),
 }
@@ -679,7 +679,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`describe_outbound_cross_cluster_search_connections`](crate::client::Client::describe_outbound_cross_cluster_search_connections).
 ///
 /// See [`crate::client::fluent_builders::DescribeOutboundCrossClusterSearchConnections`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeOutboundCrossClusterSearchConnections {
     _private: (),
 }
@@ -718,7 +718,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`describe_packages`](crate::client::Client::describe_packages).
 ///
 /// See [`crate::client::fluent_builders::DescribePackages`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePackages {
     _private: (),
 }
@@ -752,7 +752,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePackages {
 /// [`describe_reserved_elasticsearch_instance_offerings`](crate::client::Client::describe_reserved_elasticsearch_instance_offerings).
 ///
 /// See [`crate::client::fluent_builders::DescribeReservedElasticsearchInstanceOfferings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeReservedElasticsearchInstanceOfferings {
     _private: (),
 }
@@ -791,7 +791,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`describe_reserved_elasticsearch_instances`](crate::client::Client::describe_reserved_elasticsearch_instances).
 ///
 /// See [`crate::client::fluent_builders::DescribeReservedElasticsearchInstances`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeReservedElasticsearchInstances {
     _private: (),
 }
@@ -827,7 +827,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReservedElastics
 /// [`dissociate_package`](crate::client::Client::dissociate_package).
 ///
 /// See [`crate::client::fluent_builders::DissociatePackage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DissociatePackage {
     _private: (),
 }
@@ -861,7 +861,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DissociatePackage {
 /// [`get_compatible_elasticsearch_versions`](crate::client::Client::get_compatible_elasticsearch_versions).
 ///
 /// See [`crate::client::fluent_builders::GetCompatibleElasticsearchVersions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCompatibleElasticsearchVersions {
     _private: (),
 }
@@ -895,7 +895,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCompatibleElasticsear
 /// [`get_package_version_history`](crate::client::Client::get_package_version_history).
 ///
 /// See [`crate::client::fluent_builders::GetPackageVersionHistory`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPackageVersionHistory {
     _private: (),
 }
@@ -929,7 +929,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPackageVersionHistory
 /// [`get_upgrade_history`](crate::client::Client::get_upgrade_history).
 ///
 /// See [`crate::client::fluent_builders::GetUpgradeHistory`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetUpgradeHistory {
     _private: (),
 }
@@ -963,7 +963,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUpgradeHistory {
 /// [`get_upgrade_status`](crate::client::Client::get_upgrade_status).
 ///
 /// See [`crate::client::fluent_builders::GetUpgradeStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetUpgradeStatus {
     _private: (),
 }
@@ -997,7 +997,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUpgradeStatus {
 /// [`list_domain_names`](crate::client::Client::list_domain_names).
 ///
 /// See [`crate::client::fluent_builders::ListDomainNames`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDomainNames {
     _private: (),
 }
@@ -1031,7 +1031,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomainNames {
 /// [`list_domains_for_package`](crate::client::Client::list_domains_for_package).
 ///
 /// See [`crate::client::fluent_builders::ListDomainsForPackage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDomainsForPackage {
     _private: (),
 }
@@ -1065,7 +1065,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomainsForPackage {
 /// [`list_elasticsearch_instance_types`](crate::client::Client::list_elasticsearch_instance_types).
 ///
 /// See [`crate::client::fluent_builders::ListElasticsearchInstanceTypes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListElasticsearchInstanceTypes {
     _private: (),
 }
@@ -1099,7 +1099,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListElasticsearchInstanc
 /// [`list_elasticsearch_versions`](crate::client::Client::list_elasticsearch_versions).
 ///
 /// See [`crate::client::fluent_builders::ListElasticsearchVersions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListElasticsearchVersions {
     _private: (),
 }
@@ -1133,7 +1133,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListElasticsearchVersion
 /// [`list_packages_for_domain`](crate::client::Client::list_packages_for_domain).
 ///
 /// See [`crate::client::fluent_builders::ListPackagesForDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPackagesForDomain {
     _private: (),
 }
@@ -1167,7 +1167,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackagesForDomain {
 /// [`list_tags`](crate::client::Client::list_tags).
 ///
 /// See [`crate::client::fluent_builders::ListTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTags {
     _private: (),
 }
@@ -1198,7 +1198,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTags {
 /// [`purchase_reserved_elasticsearch_instance_offering`](crate::client::Client::purchase_reserved_elasticsearch_instance_offering).
 ///
 /// See [`crate::client::fluent_builders::PurchaseReservedElasticsearchInstanceOffering`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PurchaseReservedElasticsearchInstanceOffering {
     _private: (),
 }
@@ -1239,7 +1239,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`reject_inbound_cross_cluster_search_connection`](crate::client::Client::reject_inbound_cross_cluster_search_connection).
 ///
 /// See [`crate::client::fluent_builders::RejectInboundCrossClusterSearchConnection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RejectInboundCrossClusterSearchConnection {
     _private: (),
 }
@@ -1278,7 +1278,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectInboundCrossCluste
 /// [`remove_tags`](crate::client::Client::remove_tags).
 ///
 /// See [`crate::client::fluent_builders::RemoveTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveTags {
     _private: (),
 }
@@ -1310,7 +1310,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTags {
 /// [`start_elasticsearch_service_software_update`](crate::client::Client::start_elasticsearch_service_software_update).
 ///
 /// See [`crate::client::fluent_builders::StartElasticsearchServiceSoftwareUpdate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartElasticsearchServiceSoftwareUpdate {
     _private: (),
 }
@@ -1348,7 +1348,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartElasticsearchServic
 /// [`update_elasticsearch_domain_config`](crate::client::Client::update_elasticsearch_domain_config).
 ///
 /// See [`crate::client::fluent_builders::UpdateElasticsearchDomainConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateElasticsearchDomainConfig {
     _private: (),
 }
@@ -1382,7 +1382,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateElasticsearchDomai
 /// [`update_package`](crate::client::Client::update_package).
 ///
 /// See [`crate::client::fluent_builders::UpdatePackage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePackage {
     _private: (),
 }
@@ -1414,7 +1414,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePackage {
 /// [`upgrade_elasticsearch_domain`](crate::client::Client::upgrade_elasticsearch_domain).
 ///
 /// See [`crate::client::fluent_builders::UpgradeElasticsearchDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpgradeElasticsearchDomain {
     _private: (),
 }

@@ -5,7 +5,7 @@
 /// [`batch_get_traces`](crate::client::Client::batch_get_traces).
 ///
 /// See [`crate::client::fluent_builders::BatchGetTraces`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetTraces {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetTraces {
 /// [`create_group`](crate::client::Client::create_group).
 ///
 /// See [`crate::client::fluent_builders::CreateGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateGroup {
     _private: (),
 }
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGroup {
 /// [`create_sampling_rule`](crate::client::Client::create_sampling_rule).
 ///
 /// See [`crate::client::fluent_builders::CreateSamplingRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSamplingRule {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSamplingRule {
 /// [`delete_group`](crate::client::Client::delete_group).
 ///
 /// See [`crate::client::fluent_builders::DeleteGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteGroup {
     _private: (),
 }
@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGroup {
 /// [`delete_sampling_rule`](crate::client::Client::delete_sampling_rule).
 ///
 /// See [`crate::client::fluent_builders::DeleteSamplingRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSamplingRule {
     _private: (),
 }
@@ -169,7 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSamplingRule {
 /// [`get_encryption_config`](crate::client::Client::get_encryption_config).
 ///
 /// See [`crate::client::fluent_builders::GetEncryptionConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEncryptionConfig {
     _private: (),
 }
@@ -203,7 +203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEncryptionConfig {
 /// [`get_group`](crate::client::Client::get_group).
 ///
 /// See [`crate::client::fluent_builders::GetGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGroup {
     _private: (),
 }
@@ -234,7 +234,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroup {
 /// [`get_groups`](crate::client::Client::get_groups).
 ///
 /// See [`crate::client::fluent_builders::GetGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGroups {
     _private: (),
 }
@@ -265,7 +265,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroups {
 /// [`get_insight`](crate::client::Client::get_insight).
 ///
 /// See [`crate::client::fluent_builders::GetInsight`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetInsight {
     _private: (),
 }
@@ -297,7 +297,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsight {
 /// [`get_insight_events`](crate::client::Client::get_insight_events).
 ///
 /// See [`crate::client::fluent_builders::GetInsightEvents`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetInsightEvents {
     _private: (),
 }
@@ -331,7 +331,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsightEvents {
 /// [`get_insight_impact_graph`](crate::client::Client::get_insight_impact_graph).
 ///
 /// See [`crate::client::fluent_builders::GetInsightImpactGraph`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetInsightImpactGraph {
     _private: (),
 }
@@ -365,7 +365,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsightImpactGraph {
 /// [`get_insight_summaries`](crate::client::Client::get_insight_summaries).
 ///
 /// See [`crate::client::fluent_builders::GetInsightSummaries`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetInsightSummaries {
     _private: (),
 }
@@ -399,7 +399,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsightSummaries {
 /// [`get_sampling_rules`](crate::client::Client::get_sampling_rules).
 ///
 /// See [`crate::client::fluent_builders::GetSamplingRules`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSamplingRules {
     _private: (),
 }
@@ -433,7 +433,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSamplingRules {
 /// [`get_sampling_statistic_summaries`](crate::client::Client::get_sampling_statistic_summaries).
 ///
 /// See [`crate::client::fluent_builders::GetSamplingStatisticSummaries`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSamplingStatisticSummaries {
     _private: (),
 }
@@ -467,7 +467,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSamplingStatisticSumm
 /// [`get_sampling_targets`](crate::client::Client::get_sampling_targets).
 ///
 /// See [`crate::client::fluent_builders::GetSamplingTargets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSamplingTargets {
     _private: (),
 }
@@ -501,7 +501,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSamplingTargets {
 /// [`get_service_graph`](crate::client::Client::get_service_graph).
 ///
 /// See [`crate::client::fluent_builders::GetServiceGraph`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetServiceGraph {
     _private: (),
 }
@@ -535,7 +535,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceGraph {
 /// [`get_time_series_service_statistics`](crate::client::Client::get_time_series_service_statistics).
 ///
 /// See [`crate::client::fluent_builders::GetTimeSeriesServiceStatistics`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTimeSeriesServiceStatistics {
     _private: (),
 }
@@ -569,7 +569,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTimeSeriesServiceStat
 /// [`get_trace_graph`](crate::client::Client::get_trace_graph).
 ///
 /// See [`crate::client::fluent_builders::GetTraceGraph`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTraceGraph {
     _private: (),
 }
@@ -601,7 +601,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTraceGraph {
 /// [`get_trace_summaries`](crate::client::Client::get_trace_summaries).
 ///
 /// See [`crate::client::fluent_builders::GetTraceSummaries`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTraceSummaries {
     _private: (),
 }
@@ -635,7 +635,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTraceSummaries {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -669,7 +669,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`put_encryption_config`](crate::client::Client::put_encryption_config).
 ///
 /// See [`crate::client::fluent_builders::PutEncryptionConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutEncryptionConfig {
     _private: (),
 }
@@ -703,7 +703,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutEncryptionConfig {
 /// [`put_telemetry_records`](crate::client::Client::put_telemetry_records).
 ///
 /// See [`crate::client::fluent_builders::PutTelemetryRecords`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutTelemetryRecords {
     _private: (),
 }
@@ -737,7 +737,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutTelemetryRecords {
 /// [`put_trace_segments`](crate::client::Client::put_trace_segments).
 ///
 /// See [`crate::client::fluent_builders::PutTraceSegments`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutTraceSegments {
     _private: (),
 }
@@ -771,7 +771,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutTraceSegments {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -803,7 +803,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -835,7 +835,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_group`](crate::client::Client::update_group).
 ///
 /// See [`crate::client::fluent_builders::UpdateGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateGroup {
     _private: (),
 }
@@ -867,7 +867,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGroup {
 /// [`update_sampling_rule`](crate::client::Client::update_sampling_rule).
 ///
 /// See [`crate::client::fluent_builders::UpdateSamplingRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSamplingRule {
     _private: (),
 }

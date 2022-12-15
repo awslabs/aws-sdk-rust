@@ -2,7 +2,7 @@
 
 /// <p>UpdateVTLDeviceTypeOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVtlDeviceTypeOutput {
     /// <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl UpdateVtlDeviceTypeOutput {
         self.vtl_device_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateVtlDeviceTypeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVtlDeviceTypeOutput");
-        formatter.field("vtl_device_arn", &self.vtl_device_arn);
-        formatter.finish()
-    }
-}
 /// See [`UpdateVtlDeviceTypeOutput`](crate::output::UpdateVtlDeviceTypeOutput).
 pub mod update_vtl_device_type_output {
 
     /// A builder for [`UpdateVtlDeviceTypeOutput`](crate::output::UpdateVtlDeviceTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vtl_device_arn: std::option::Option<std::string::String>,
     }
@@ -60,7 +53,7 @@ impl UpdateVtlDeviceTypeOutput {
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the updated storage volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSnapshotScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     #[doc(hidden)]
@@ -72,18 +65,11 @@ impl UpdateSnapshotScheduleOutput {
         self.volume_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSnapshotScheduleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSnapshotScheduleOutput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.finish()
-    }
-}
 /// See [`UpdateSnapshotScheduleOutput`](crate::output::UpdateSnapshotScheduleOutput).
 pub mod update_snapshot_schedule_output {
 
     /// A builder for [`UpdateSnapshotScheduleOutput`](crate::output::UpdateSnapshotScheduleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
     }
@@ -115,7 +101,7 @@ impl UpdateSnapshotScheduleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSmbSecurityStrategyOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -127,18 +113,11 @@ impl UpdateSmbSecurityStrategyOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSmbSecurityStrategyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSmbSecurityStrategyOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`UpdateSmbSecurityStrategyOutput`](crate::output::UpdateSmbSecurityStrategyOutput).
 pub mod update_smb_security_strategy_output {
 
     /// A builder for [`UpdateSmbSecurityStrategyOutput`](crate::output::UpdateSmbSecurityStrategyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -170,7 +149,7 @@ impl UpdateSmbSecurityStrategyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSmbLocalGroupsOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -182,18 +161,11 @@ impl UpdateSmbLocalGroupsOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSmbLocalGroupsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSmbLocalGroupsOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`UpdateSmbLocalGroupsOutput`](crate::output::UpdateSmbLocalGroupsOutput).
 pub mod update_smb_local_groups_output {
 
     /// A builder for [`UpdateSmbLocalGroupsOutput`](crate::output::UpdateSmbLocalGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -225,7 +197,7 @@ impl UpdateSmbLocalGroupsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSmbFileShareVisibilityOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -237,18 +209,11 @@ impl UpdateSmbFileShareVisibilityOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSmbFileShareVisibilityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSmbFileShareVisibilityOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`UpdateSmbFileShareVisibilityOutput`](crate::output::UpdateSmbFileShareVisibilityOutput).
 pub mod update_smb_file_share_visibility_output {
 
     /// A builder for [`UpdateSmbFileShareVisibilityOutput`](crate::output::UpdateSmbFileShareVisibilityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -280,7 +245,7 @@ impl UpdateSmbFileShareVisibilityOutput {
 
 /// <p>UpdateSMBFileShareOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSmbFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated SMB file share.</p>
     #[doc(hidden)]
@@ -292,18 +257,11 @@ impl UpdateSmbFileShareOutput {
         self.file_share_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSmbFileShareOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSmbFileShareOutput");
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.finish()
-    }
-}
 /// See [`UpdateSmbFileShareOutput`](crate::output::UpdateSmbFileShareOutput).
 pub mod update_smb_file_share_output {
 
     /// A builder for [`UpdateSmbFileShareOutput`](crate::output::UpdateSmbFileShareOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
     }
@@ -338,7 +296,7 @@ impl UpdateSmbFileShareOutput {
 
 /// <p>UpdateNFSFileShareOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNfsFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated file share.</p>
     #[doc(hidden)]
@@ -350,18 +308,11 @@ impl UpdateNfsFileShareOutput {
         self.file_share_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateNfsFileShareOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNfsFileShareOutput");
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.finish()
-    }
-}
 /// See [`UpdateNfsFileShareOutput`](crate::output::UpdateNfsFileShareOutput).
 pub mod update_nfs_file_share_output {
 
     /// A builder for [`UpdateNfsFileShareOutput`](crate::output::UpdateNfsFileShareOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
     }
@@ -396,7 +347,7 @@ impl UpdateNfsFileShareOutput {
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway whose maintenance start time is updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMaintenanceStartTimeOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -408,18 +359,11 @@ impl UpdateMaintenanceStartTimeOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMaintenanceStartTimeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMaintenanceStartTimeOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`UpdateMaintenanceStartTimeOutput`](crate::output::UpdateMaintenanceStartTimeOutput).
 pub mod update_maintenance_start_time_output {
 
     /// A builder for [`UpdateMaintenanceStartTimeOutput`](crate::output::UpdateMaintenanceStartTimeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -451,7 +395,7 @@ impl UpdateMaintenanceStartTimeOutput {
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway that was updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGatewaySoftwareNowOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -463,18 +407,11 @@ impl UpdateGatewaySoftwareNowOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGatewaySoftwareNowOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGatewaySoftwareNowOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`UpdateGatewaySoftwareNowOutput`](crate::output::UpdateGatewaySoftwareNowOutput).
 pub mod update_gateway_software_now_output {
 
     /// A builder for [`UpdateGatewaySoftwareNowOutput`](crate::output::UpdateGatewaySoftwareNowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -506,7 +443,7 @@ impl UpdateGatewaySoftwareNowOutput {
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway that was updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -525,19 +462,11 @@ impl UpdateGatewayInformationOutput {
         self.gateway_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGatewayInformationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGatewayInformationOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("gateway_name", &self.gateway_name);
-        formatter.finish()
-    }
-}
 /// See [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput).
 pub mod update_gateway_information_output {
 
     /// A builder for [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) gateway_name: std::option::Option<std::string::String>,
@@ -581,7 +510,7 @@ impl UpdateGatewayInformationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFileSystemAssociationOutput {
     /// <p>The ARN of the updated file system association.</p>
     #[doc(hidden)]
@@ -593,21 +522,11 @@ impl UpdateFileSystemAssociationOutput {
         self.file_system_association_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFileSystemAssociationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFileSystemAssociationOutput");
-        formatter.field(
-            "file_system_association_arn",
-            &self.file_system_association_arn,
-        );
-        formatter.finish()
-    }
-}
 /// See [`UpdateFileSystemAssociationOutput`](crate::output::UpdateFileSystemAssociationOutput).
 pub mod update_file_system_association_output {
 
     /// A builder for [`UpdateFileSystemAssociationOutput`](crate::output::UpdateFileSystemAssociationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_association_arn: std::option::Option<std::string::String>,
     }
@@ -645,7 +564,7 @@ impl UpdateFileSystemAssociationOutput {
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateChapCredentialsOutput {
     /// <p>The Amazon Resource Name (ARN) of the target. This is the same target specified in the request.</p>
     #[doc(hidden)]
@@ -664,19 +583,11 @@ impl UpdateChapCredentialsOutput {
         self.initiator_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateChapCredentialsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateChapCredentialsOutput");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("initiator_name", &self.initiator_name);
-        formatter.finish()
-    }
-}
 /// See [`UpdateChapCredentialsOutput`](crate::output::UpdateChapCredentialsOutput).
 pub mod update_chap_credentials_output {
 
     /// A builder for [`UpdateChapCredentialsOutput`](crate::output::UpdateChapCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) initiator_name: std::option::Option<std::string::String>,
@@ -723,7 +634,7 @@ impl UpdateChapCredentialsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBandwidthRateLimitScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -735,18 +646,11 @@ impl UpdateBandwidthRateLimitScheduleOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBandwidthRateLimitScheduleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBandwidthRateLimitScheduleOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`UpdateBandwidthRateLimitScheduleOutput`](crate::output::UpdateBandwidthRateLimitScheduleOutput).
 pub mod update_bandwidth_rate_limit_schedule_output {
 
     /// A builder for [`UpdateBandwidthRateLimitScheduleOutput`](crate::output::UpdateBandwidthRateLimitScheduleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -778,7 +682,7 @@ impl UpdateBandwidthRateLimitScheduleOutput {
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway whose throttle information was updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBandwidthRateLimitOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -790,18 +694,11 @@ impl UpdateBandwidthRateLimitOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBandwidthRateLimitOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBandwidthRateLimitOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`UpdateBandwidthRateLimitOutput`](crate::output::UpdateBandwidthRateLimitOutput).
 pub mod update_bandwidth_rate_limit_output {
 
     /// A builder for [`UpdateBandwidthRateLimitOutput`](crate::output::UpdateBandwidthRateLimitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -833,7 +730,7 @@ impl UpdateBandwidthRateLimitOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAutomaticTapeCreationPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -845,18 +742,11 @@ impl UpdateAutomaticTapeCreationPolicyOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAutomaticTapeCreationPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAutomaticTapeCreationPolicyOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`UpdateAutomaticTapeCreationPolicyOutput`](crate::output::UpdateAutomaticTapeCreationPolicyOutput).
 pub mod update_automatic_tape_creation_policy_output {
 
     /// A builder for [`UpdateAutomaticTapeCreationPolicyOutput`](crate::output::UpdateAutomaticTapeCreationPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -888,7 +778,7 @@ impl UpdateAutomaticTapeCreationPolicyOutput {
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway that was restarted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -900,18 +790,11 @@ impl StartGatewayOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StartGatewayOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartGatewayOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`StartGatewayOutput`](crate::output::StartGatewayOutput).
 pub mod start_gateway_output {
 
     /// A builder for [`StartGatewayOutput`](crate::output::StartGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -943,7 +826,7 @@ impl StartGatewayOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartAvailabilityMonitorTestOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -955,18 +838,11 @@ impl StartAvailabilityMonitorTestOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StartAvailabilityMonitorTestOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartAvailabilityMonitorTestOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`StartAvailabilityMonitorTestOutput`](crate::output::StartAvailabilityMonitorTestOutput).
 pub mod start_availability_monitor_test_output {
 
     /// A builder for [`StartAvailabilityMonitorTestOutput`](crate::output::StartAvailabilityMonitorTestOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -998,7 +874,7 @@ impl StartAvailabilityMonitorTestOutput {
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway that was shut down.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ShutdownGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -1010,18 +886,11 @@ impl ShutdownGatewayOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ShutdownGatewayOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ShutdownGatewayOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`ShutdownGatewayOutput`](crate::output::ShutdownGatewayOutput).
 pub mod shutdown_gateway_output {
 
     /// A builder for [`ShutdownGatewayOutput`](crate::output::ShutdownGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -1053,7 +922,7 @@ impl ShutdownGatewayOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetSmbGuestPasswordOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -1065,18 +934,11 @@ impl SetSmbGuestPasswordOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for SetSmbGuestPasswordOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetSmbGuestPasswordOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`SetSmbGuestPasswordOutput`](crate::output::SetSmbGuestPasswordOutput).
 pub mod set_smb_guest_password_output {
 
     /// A builder for [`SetSmbGuestPasswordOutput`](crate::output::SetSmbGuestPasswordOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -1108,7 +970,7 @@ impl SetSmbGuestPasswordOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetLocalConsolePasswordOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -1120,18 +982,11 @@ impl SetLocalConsolePasswordOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for SetLocalConsolePasswordOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetLocalConsolePasswordOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`SetLocalConsolePasswordOutput`](crate::output::SetLocalConsolePasswordOutput).
 pub mod set_local_console_password_output {
 
     /// A builder for [`SetLocalConsolePasswordOutput`](crate::output::SetLocalConsolePasswordOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -1163,7 +1018,7 @@ impl SetLocalConsolePasswordOutput {
 
 /// <p>RetrieveTapeRecoveryPointOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetrieveTapeRecoveryPointOutput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery point was retrieved.</p>
     #[doc(hidden)]
@@ -1175,18 +1030,11 @@ impl RetrieveTapeRecoveryPointOutput {
         self.tape_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RetrieveTapeRecoveryPointOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetrieveTapeRecoveryPointOutput");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.finish()
-    }
-}
 /// See [`RetrieveTapeRecoveryPointOutput`](crate::output::RetrieveTapeRecoveryPointOutput).
 pub mod retrieve_tape_recovery_point_output {
 
     /// A builder for [`RetrieveTapeRecoveryPointOutput`](crate::output::RetrieveTapeRecoveryPointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
     }
@@ -1218,7 +1066,7 @@ impl RetrieveTapeRecoveryPointOutput {
 
 /// <p>RetrieveTapeArchiveOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetrieveTapeArchiveOutput {
     /// <p>The Amazon Resource Name (ARN) of the retrieved virtual tape.</p>
     #[doc(hidden)]
@@ -1230,18 +1078,11 @@ impl RetrieveTapeArchiveOutput {
         self.tape_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RetrieveTapeArchiveOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetrieveTapeArchiveOutput");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.finish()
-    }
-}
 /// See [`RetrieveTapeArchiveOutput`](crate::output::RetrieveTapeArchiveOutput).
 pub mod retrieve_tape_archive_output {
 
     /// A builder for [`RetrieveTapeArchiveOutput`](crate::output::RetrieveTapeArchiveOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
     }
@@ -1273,7 +1114,7 @@ impl RetrieveTapeArchiveOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetCacheOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -1285,18 +1126,11 @@ impl ResetCacheOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ResetCacheOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetCacheOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`ResetCacheOutput`](crate::output::ResetCacheOutput).
 pub mod reset_cache_output {
 
     /// A builder for [`ResetCacheOutput`](crate::output::ResetCacheOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -1328,7 +1162,7 @@ impl ResetCacheOutput {
 
 /// <p>RemoveTagsFromResourceOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource that the tags were removed from.</p>
     #[doc(hidden)]
@@ -1340,18 +1174,11 @@ impl RemoveTagsFromResourceOutput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsFromResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsFromResourceOutput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 /// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
 pub mod remove_tags_from_resource_output {
 
     /// A builder for [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1383,7 +1210,7 @@ impl RemoveTagsFromResourceOutput {
 
 /// <p>RefreshCacheOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RefreshCacheOutput {
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
     #[doc(hidden)]
@@ -1402,19 +1229,11 @@ impl RefreshCacheOutput {
         self.notification_id.as_deref()
     }
 }
-impl std::fmt::Debug for RefreshCacheOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RefreshCacheOutput");
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.field("notification_id", &self.notification_id);
-        formatter.finish()
-    }
-}
 /// See [`RefreshCacheOutput`](crate::output::RefreshCacheOutput).
 pub mod refresh_cache_output {
 
     /// A builder for [`RefreshCacheOutput`](crate::output::RefreshCacheOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
         pub(crate) notification_id: std::option::Option<std::string::String>,
@@ -1464,7 +1283,7 @@ impl RefreshCacheOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotifyWhenUploadedOutput {
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
     #[doc(hidden)]
@@ -1483,19 +1302,11 @@ impl NotifyWhenUploadedOutput {
         self.notification_id.as_deref()
     }
 }
-impl std::fmt::Debug for NotifyWhenUploadedOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotifyWhenUploadedOutput");
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.field("notification_id", &self.notification_id);
-        formatter.finish()
-    }
-}
 /// See [`NotifyWhenUploadedOutput`](crate::output::NotifyWhenUploadedOutput).
 pub mod notify_when_uploaded_output {
 
     /// A builder for [`NotifyWhenUploadedOutput`](crate::output::NotifyWhenUploadedOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
         pub(crate) notification_id: std::option::Option<std::string::String>,
@@ -1549,7 +1360,7 @@ impl NotifyWhenUploadedOutput {
 /// <li> <p> <code>ListVolumesOutput$VolumeInfos</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVolumesOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -1575,20 +1386,11 @@ impl ListVolumesOutput {
         self.volume_infos.as_deref()
     }
 }
-impl std::fmt::Debug for ListVolumesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVolumesOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("marker", &self.marker);
-        formatter.field("volume_infos", &self.volume_infos);
-        formatter.finish()
-    }
-}
 /// See [`ListVolumesOutput`](crate::output::ListVolumesOutput).
 pub mod list_volumes_output {
 
     /// A builder for [`ListVolumesOutput`](crate::output::ListVolumesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -1653,7 +1455,7 @@ impl ListVolumesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVolumeRecoveryPointsOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -1675,22 +1477,11 @@ impl ListVolumeRecoveryPointsOutput {
         self.volume_recovery_point_infos.as_deref()
     }
 }
-impl std::fmt::Debug for ListVolumeRecoveryPointsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVolumeRecoveryPointsOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field(
-            "volume_recovery_point_infos",
-            &self.volume_recovery_point_infos,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ListVolumeRecoveryPointsOutput`](crate::output::ListVolumeRecoveryPointsOutput).
 pub mod list_volume_recovery_points_output {
 
     /// A builder for [`ListVolumeRecoveryPointsOutput`](crate::output::ListVolumeRecoveryPointsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) volume_recovery_point_infos:
@@ -1747,7 +1538,7 @@ impl ListVolumeRecoveryPointsOutput {
 
 /// <p>ListVolumeInitiatorsOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVolumeInitiatorsOutput {
     /// <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
     #[doc(hidden)]
@@ -1759,18 +1550,11 @@ impl ListVolumeInitiatorsOutput {
         self.initiators.as_deref()
     }
 }
-impl std::fmt::Debug for ListVolumeInitiatorsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVolumeInitiatorsOutput");
-        formatter.field("initiators", &self.initiators);
-        formatter.finish()
-    }
-}
 /// See [`ListVolumeInitiatorsOutput`](crate::output::ListVolumeInitiatorsOutput).
 pub mod list_volume_initiators_output {
 
     /// A builder for [`ListVolumeInitiatorsOutput`](crate::output::ListVolumeInitiatorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initiators: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1815,7 +1599,7 @@ impl ListVolumeInitiatorsOutput {
 /// <li> <p> <code>ListTapesOutput$VolumeInfos</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTapesOutput {
     /// <p>An array of <code>TapeInfo</code> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array.</p>
     #[doc(hidden)]
@@ -1834,19 +1618,11 @@ impl ListTapesOutput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListTapesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTapesOutput");
-        formatter.field("tape_infos", &self.tape_infos);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 /// See [`ListTapesOutput`](crate::output::ListTapesOutput).
 pub mod list_tapes_output {
 
     /// A builder for [`ListTapesOutput`](crate::output::ListTapesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_infos: std::option::Option<std::vec::Vec<crate::model::TapeInfo>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -1899,7 +1675,7 @@ impl ListTapesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTapePoolsOutput {
     /// <p>An array of <code>PoolInfo</code> objects, where each object describes a single custom tape pool. If there are no custom tape pools, the <code>PoolInfos</code> is an empty array. </p>
     #[doc(hidden)]
@@ -1918,19 +1694,11 @@ impl ListTapePoolsOutput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListTapePoolsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTapePoolsOutput");
-        formatter.field("pool_infos", &self.pool_infos);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 /// See [`ListTapePoolsOutput`](crate::output::ListTapePoolsOutput).
 pub mod list_tape_pools_output {
 
     /// A builder for [`ListTapePoolsOutput`](crate::output::ListTapePoolsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_infos: std::option::Option<std::vec::Vec<crate::model::PoolInfo>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -1983,7 +1751,7 @@ impl ListTapePoolsOutput {
 
 /// <p>ListTagsForResourceOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
     #[doc(hidden)]
@@ -2009,20 +1777,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("marker", &self.marker);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2087,7 +1846,7 @@ impl ListTagsForResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLocalDisksOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -2112,19 +1871,11 @@ impl ListLocalDisksOutput {
         self.disks.as_deref()
     }
 }
-impl std::fmt::Debug for ListLocalDisksOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLocalDisksOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("disks", &self.disks);
-        formatter.finish()
-    }
-}
 /// See [`ListLocalDisksOutput`](crate::output::ListLocalDisksOutput).
 pub mod list_local_disks_output {
 
     /// A builder for [`ListLocalDisksOutput`](crate::output::ListLocalDisksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) disks: std::option::Option<std::vec::Vec<crate::model::Disk>>,
@@ -2183,7 +1934,7 @@ impl ListLocalDisksOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGatewaysOutput {
     /// <p>An array of <code>GatewayInfo</code> objects.</p>
     #[doc(hidden)]
@@ -2202,19 +1953,11 @@ impl ListGatewaysOutput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListGatewaysOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGatewaysOutput");
-        formatter.field("gateways", &self.gateways);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 /// See [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
 pub mod list_gateways_output {
 
     /// A builder for [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateways: std::option::Option<std::vec::Vec<crate::model::GatewayInfo>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2267,7 +2010,7 @@ impl ListGatewaysOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFileSystemAssociationsOutput {
     /// <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
     #[doc(hidden)]
@@ -2296,23 +2039,11 @@ impl ListFileSystemAssociationsOutput {
         self.file_system_association_summary_list.as_deref()
     }
 }
-impl std::fmt::Debug for ListFileSystemAssociationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFileSystemAssociationsOutput");
-        formatter.field("marker", &self.marker);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field(
-            "file_system_association_summary_list",
-            &self.file_system_association_summary_list,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ListFileSystemAssociationsOutput`](crate::output::ListFileSystemAssociationsOutput).
 pub mod list_file_system_associations_output {
 
     /// A builder for [`ListFileSystemAssociationsOutput`](crate::output::ListFileSystemAssociationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -2383,7 +2114,7 @@ impl ListFileSystemAssociationsOutput {
 
 /// <p>ListFileShareOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFileSharesOutput {
     /// <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
     #[doc(hidden)]
@@ -2409,20 +2140,11 @@ impl ListFileSharesOutput {
         self.file_share_info_list.as_deref()
     }
 }
-impl std::fmt::Debug for ListFileSharesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFileSharesOutput");
-        formatter.field("marker", &self.marker);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("file_share_info_list", &self.file_share_info_list);
-        formatter.finish()
-    }
-}
 /// See [`ListFileSharesOutput`](crate::output::ListFileSharesOutput).
 pub mod list_file_shares_output {
 
     /// A builder for [`ListFileSharesOutput`](crate::output::ListFileSharesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -2488,7 +2210,7 @@ impl ListFileSharesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAutomaticTapeCreationPoliciesOutput {
     /// <p>Gets a listing of information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
     #[doc(hidden)]
@@ -2503,21 +2225,11 @@ impl ListAutomaticTapeCreationPoliciesOutput {
         self.automatic_tape_creation_policy_infos.as_deref()
     }
 }
-impl std::fmt::Debug for ListAutomaticTapeCreationPoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAutomaticTapeCreationPoliciesOutput");
-        formatter.field(
-            "automatic_tape_creation_policy_infos",
-            &self.automatic_tape_creation_policy_infos,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ListAutomaticTapeCreationPoliciesOutput`](crate::output::ListAutomaticTapeCreationPoliciesOutput).
 pub mod list_automatic_tape_creation_policies_output {
 
     /// A builder for [`ListAutomaticTapeCreationPoliciesOutput`](crate::output::ListAutomaticTapeCreationPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_tape_creation_policy_infos:
             std::option::Option<std::vec::Vec<crate::model::AutomaticTapeCreationPolicyInfo>>,
@@ -2566,7 +2278,7 @@ impl ListAutomaticTapeCreationPoliciesOutput {
 
 /// <p>JoinDomainOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JoinDomainOutput {
     /// <p>The unique Amazon Resource Name (ARN) of the gateway that joined the domain.</p>
     #[doc(hidden)]
@@ -2605,19 +2317,11 @@ impl JoinDomainOutput {
         self.active_directory_status.as_ref()
     }
 }
-impl std::fmt::Debug for JoinDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JoinDomainOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("active_directory_status", &self.active_directory_status);
-        formatter.finish()
-    }
-}
 /// See [`JoinDomainOutput`](crate::output::JoinDomainOutput).
 pub mod join_domain_output {
 
     /// A builder for [`JoinDomainOutput`](crate::output::JoinDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) active_directory_status:
@@ -2686,7 +2390,7 @@ impl JoinDomainOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateFileSystemOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted file system association.</p>
     #[doc(hidden)]
@@ -2698,21 +2402,11 @@ impl DisassociateFileSystemOutput {
         self.file_system_association_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateFileSystemOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateFileSystemOutput");
-        formatter.field(
-            "file_system_association_arn",
-            &self.file_system_association_arn,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DisassociateFileSystemOutput`](crate::output::DisassociateFileSystemOutput).
 pub mod disassociate_file_system_output {
 
     /// A builder for [`DisassociateFileSystemOutput`](crate::output::DisassociateFileSystemOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_association_arn: std::option::Option<std::string::String>,
     }
@@ -2750,7 +2444,7 @@ impl DisassociateFileSystemOutput {
 
 /// <p>DisableGatewayOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableGatewayOutput {
     /// <p>The unique Amazon Resource Name (ARN) of the disabled gateway.</p>
     #[doc(hidden)]
@@ -2762,18 +2456,11 @@ impl DisableGatewayOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisableGatewayOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableGatewayOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`DisableGatewayOutput`](crate::output::DisableGatewayOutput).
 pub mod disable_gateway_output {
 
     /// A builder for [`DisableGatewayOutput`](crate::output::DisableGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -2805,7 +2492,7 @@ impl DisableGatewayOutput {
 
 /// <p>AttachVolumeOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
     #[doc(hidden)]
@@ -2817,18 +2504,11 @@ impl DetachVolumeOutput {
         self.volume_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DetachVolumeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachVolumeOutput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.finish()
-    }
-}
 /// See [`DetachVolumeOutput`](crate::output::DetachVolumeOutput).
 pub mod detach_volume_output {
 
     /// A builder for [`DetachVolumeOutput`](crate::output::DetachVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
     }
@@ -2860,7 +2540,7 @@ impl DetachVolumeOutput {
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkingStorageOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -2893,27 +2573,11 @@ impl DescribeWorkingStorageOutput {
         self.working_storage_allocated_in_bytes
     }
 }
-impl std::fmt::Debug for DescribeWorkingStorageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkingStorageOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("disk_ids", &self.disk_ids);
-        formatter.field(
-            "working_storage_used_in_bytes",
-            &self.working_storage_used_in_bytes,
-        );
-        formatter.field(
-            "working_storage_allocated_in_bytes",
-            &self.working_storage_allocated_in_bytes,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DescribeWorkingStorageOutput`](crate::output::DescribeWorkingStorageOutput).
 pub mod describe_working_storage_output {
 
     /// A builder for [`DescribeWorkingStorageOutput`](crate::output::DescribeWorkingStorageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) disk_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3000,7 +2664,7 @@ impl DescribeWorkingStorageOutput {
 
 /// <p>DescribeVTLDevicesOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVtlDevicesOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -3026,20 +2690,11 @@ impl DescribeVtlDevicesOutput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVtlDevicesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVtlDevicesOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("vtl_devices", &self.vtl_devices);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 /// See [`DescribeVtlDevicesOutput`](crate::output::DescribeVtlDevicesOutput).
 pub mod describe_vtl_devices_output {
 
     /// A builder for [`DescribeVtlDevicesOutput`](crate::output::DescribeVtlDevicesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) vtl_devices: std::option::Option<std::vec::Vec<crate::model::VtlDevice>>,
@@ -3104,7 +2759,7 @@ impl DescribeVtlDevicesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUploadBufferOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -3137,27 +2792,11 @@ impl DescribeUploadBufferOutput {
         self.upload_buffer_allocated_in_bytes
     }
 }
-impl std::fmt::Debug for DescribeUploadBufferOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUploadBufferOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("disk_ids", &self.disk_ids);
-        formatter.field(
-            "upload_buffer_used_in_bytes",
-            &self.upload_buffer_used_in_bytes,
-        );
-        formatter.field(
-            "upload_buffer_allocated_in_bytes",
-            &self.upload_buffer_allocated_in_bytes,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DescribeUploadBufferOutput`](crate::output::DescribeUploadBufferOutput).
 pub mod describe_upload_buffer_output {
 
     /// A builder for [`DescribeUploadBufferOutput`](crate::output::DescribeUploadBufferOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) disk_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3239,7 +2878,7 @@ impl DescribeUploadBufferOutput {
 
 /// <p>DescribeTapesOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTapesOutput {
     /// <p>An array of virtual tape descriptions.</p>
     #[doc(hidden)]
@@ -3260,19 +2899,11 @@ impl DescribeTapesOutput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTapesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTapesOutput");
-        formatter.field("tapes", &self.tapes);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 /// See [`DescribeTapesOutput`](crate::output::DescribeTapesOutput).
 pub mod describe_tapes_output {
 
     /// A builder for [`DescribeTapesOutput`](crate::output::DescribeTapesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tapes: std::option::Option<std::vec::Vec<crate::model::Tape>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -3327,7 +2958,7 @@ impl DescribeTapesOutput {
 
 /// <p>DescribeTapeRecoveryPointsOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTapeRecoveryPointsOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -3358,20 +2989,11 @@ impl DescribeTapeRecoveryPointsOutput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTapeRecoveryPointsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTapeRecoveryPointsOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("tape_recovery_point_infos", &self.tape_recovery_point_infos);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 /// See [`DescribeTapeRecoveryPointsOutput`](crate::output::DescribeTapeRecoveryPointsOutput).
 pub mod describe_tape_recovery_points_output {
 
     /// A builder for [`DescribeTapeRecoveryPointsOutput`](crate::output::DescribeTapeRecoveryPointsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) tape_recovery_point_infos:
@@ -3442,7 +3064,7 @@ impl DescribeTapeRecoveryPointsOutput {
 
 /// <p>DescribeTapeArchivesOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTapeArchivesOutput {
     /// <p>An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description, and tape barcode.</p>
     #[doc(hidden)]
@@ -3461,19 +3083,11 @@ impl DescribeTapeArchivesOutput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTapeArchivesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTapeArchivesOutput");
-        formatter.field("tape_archives", &self.tape_archives);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 /// See [`DescribeTapeArchivesOutput`](crate::output::DescribeTapeArchivesOutput).
 pub mod describe_tape_archives_output {
 
     /// A builder for [`DescribeTapeArchivesOutput`](crate::output::DescribeTapeArchivesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_archives: std::option::Option<std::vec::Vec<crate::model::TapeArchive>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -3526,7 +3140,7 @@ impl DescribeTapeArchivesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStorediScsiVolumesOutput {
     /// <p>Describes a single unit of output from <code>DescribeStorediSCSIVolumes</code>. The following fields are returned:</p>
     /// <ul>
@@ -3574,18 +3188,11 @@ impl DescribeStorediScsiVolumesOutput {
         self.storedi_scsi_volumes.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStorediScsiVolumesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStorediScsiVolumesOutput");
-        formatter.field("storedi_scsi_volumes", &self.storedi_scsi_volumes);
-        formatter.finish()
-    }
-}
 /// See [`DescribeStorediScsiVolumesOutput`](crate::output::DescribeStorediScsiVolumesOutput).
 pub mod describe_storedi_scsi_volumes_output {
 
     /// A builder for [`DescribeStorediScsiVolumesOutput`](crate::output::DescribeStorediScsiVolumesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storedi_scsi_volumes:
             std::option::Option<std::vec::Vec<crate::model::StorediScsiVolume>>,
@@ -3663,7 +3270,7 @@ impl DescribeStorediScsiVolumesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSnapshotScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume that was specified in the request.</p>
     #[doc(hidden)]
@@ -3710,23 +3317,11 @@ impl DescribeSnapshotScheduleOutput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSnapshotScheduleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSnapshotScheduleOutput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("start_at", &self.start_at);
-        formatter.field("recurrence_in_hours", &self.recurrence_in_hours);
-        formatter.field("description", &self.description);
-        formatter.field("timezone", &self.timezone);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`DescribeSnapshotScheduleOutput`](crate::output::DescribeSnapshotScheduleOutput).
 pub mod describe_snapshot_schedule_output {
 
     /// A builder for [`DescribeSnapshotScheduleOutput`](crate::output::DescribeSnapshotScheduleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
         pub(crate) start_at: std::option::Option<i32>,
@@ -3827,7 +3422,7 @@ impl DescribeSnapshotScheduleOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSmbSettingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -3913,24 +3508,11 @@ impl DescribeSmbSettingsOutput {
         self.smb_local_groups.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeSmbSettingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSmbSettingsOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("active_directory_status", &self.active_directory_status);
-        formatter.field("smb_guest_password_set", &self.smb_guest_password_set);
-        formatter.field("smb_security_strategy", &self.smb_security_strategy);
-        formatter.field("file_shares_visible", &self.file_shares_visible);
-        formatter.field("smb_local_groups", &self.smb_local_groups);
-        formatter.finish()
-    }
-}
 /// See [`DescribeSmbSettingsOutput`](crate::output::DescribeSmbSettingsOutput).
 pub mod describe_smb_settings_output {
 
     /// A builder for [`DescribeSmbSettingsOutput`](crate::output::DescribeSmbSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -4077,7 +3659,7 @@ impl DescribeSmbSettingsOutput {
 
 /// <p>DescribeSMBFileSharesOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSmbFileSharesOutput {
     /// <p>An array containing a description for each requested file share.</p>
     #[doc(hidden)]
@@ -4092,18 +3674,11 @@ impl DescribeSmbFileSharesOutput {
         self.smb_file_share_info_list.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSmbFileSharesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSmbFileSharesOutput");
-        formatter.field("smb_file_share_info_list", &self.smb_file_share_info_list);
-        formatter.finish()
-    }
-}
 /// See [`DescribeSmbFileSharesOutput`](crate::output::DescribeSmbFileSharesOutput).
 pub mod describe_smb_file_shares_output {
 
     /// A builder for [`DescribeSmbFileSharesOutput`](crate::output::DescribeSmbFileSharesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) smb_file_share_info_list:
             std::option::Option<std::vec::Vec<crate::model::SmbFileShareInfo>>,
@@ -4145,7 +3720,7 @@ impl DescribeSmbFileSharesOutput {
 
 /// <p>DescribeNFSFileSharesOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeNfsFileSharesOutput {
     /// <p>An array containing a description for each requested file share.</p>
     #[doc(hidden)]
@@ -4160,18 +3735,11 @@ impl DescribeNfsFileSharesOutput {
         self.nfs_file_share_info_list.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeNfsFileSharesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeNfsFileSharesOutput");
-        formatter.field("nfs_file_share_info_list", &self.nfs_file_share_info_list);
-        formatter.finish()
-    }
-}
 /// See [`DescribeNfsFileSharesOutput`](crate::output::DescribeNfsFileSharesOutput).
 pub mod describe_nfs_file_shares_output {
 
     /// A builder for [`DescribeNfsFileSharesOutput`](crate::output::DescribeNfsFileSharesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nfs_file_share_info_list:
             std::option::Option<std::vec::Vec<crate::model::NfsFileShareInfo>>,
@@ -4220,7 +3788,7 @@ impl DescribeNfsFileSharesOutput {
 /// <li> <p> <code>DescribeMaintenanceStartTimeOutput$Timezone</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMaintenanceStartTimeOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -4267,23 +3835,11 @@ impl DescribeMaintenanceStartTimeOutput {
         self.timezone.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMaintenanceStartTimeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMaintenanceStartTimeOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("hour_of_day", &self.hour_of_day);
-        formatter.field("minute_of_hour", &self.minute_of_hour);
-        formatter.field("day_of_week", &self.day_of_week);
-        formatter.field("day_of_month", &self.day_of_month);
-        formatter.field("timezone", &self.timezone);
-        formatter.finish()
-    }
-}
 /// See [`DescribeMaintenanceStartTimeOutput`](crate::output::DescribeMaintenanceStartTimeOutput).
 pub mod describe_maintenance_start_time_output {
 
     /// A builder for [`DescribeMaintenanceStartTimeOutput`](crate::output::DescribeMaintenanceStartTimeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) hour_of_day: std::option::Option<i32>,
@@ -4375,7 +3931,7 @@ impl DescribeMaintenanceStartTimeOutput {
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -4535,47 +4091,11 @@ impl DescribeGatewayInformationOutput {
         self.host_environment_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGatewayInformationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGatewayInformationOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("gateway_name", &self.gateway_name);
-        formatter.field("gateway_timezone", &self.gateway_timezone);
-        formatter.field("gateway_state", &self.gateway_state);
-        formatter.field(
-            "gateway_network_interfaces",
-            &self.gateway_network_interfaces,
-        );
-        formatter.field("gateway_type", &self.gateway_type);
-        formatter.field(
-            "next_update_availability_date",
-            &self.next_update_availability_date,
-        );
-        formatter.field("last_software_update", &self.last_software_update);
-        formatter.field("ec2_instance_id", &self.ec2_instance_id);
-        formatter.field("ec2_instance_region", &self.ec2_instance_region);
-        formatter.field("tags", &self.tags);
-        formatter.field("vpc_endpoint", &self.vpc_endpoint);
-        formatter.field("cloud_watch_log_group_arn", &self.cloud_watch_log_group_arn);
-        formatter.field("host_environment", &self.host_environment);
-        formatter.field("endpoint_type", &self.endpoint_type);
-        formatter.field("software_updates_end_date", &self.software_updates_end_date);
-        formatter.field("deprecation_date", &self.deprecation_date);
-        formatter.field("gateway_capacity", &self.gateway_capacity);
-        formatter.field(
-            "supported_gateway_capacities",
-            &self.supported_gateway_capacities,
-        );
-        formatter.field("host_environment_id", &self.host_environment_id);
-        formatter.finish()
-    }
-}
 /// See [`DescribeGatewayInformationOutput`](crate::output::DescribeGatewayInformationOutput).
 pub mod describe_gateway_information_output {
 
     /// A builder for [`DescribeGatewayInformationOutput`](crate::output::DescribeGatewayInformationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) gateway_id: std::option::Option<std::string::String>,
@@ -4923,7 +4443,7 @@ impl DescribeGatewayInformationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFileSystemAssociationsOutput {
     /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described. </p>
     #[doc(hidden)]
@@ -4938,21 +4458,11 @@ impl DescribeFileSystemAssociationsOutput {
         self.file_system_association_info_list.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFileSystemAssociationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFileSystemAssociationsOutput");
-        formatter.field(
-            "file_system_association_info_list",
-            &self.file_system_association_info_list,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DescribeFileSystemAssociationsOutput`](crate::output::DescribeFileSystemAssociationsOutput).
 pub mod describe_file_system_associations_output {
 
     /// A builder for [`DescribeFileSystemAssociationsOutput`](crate::output::DescribeFileSystemAssociationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_association_info_list:
             std::option::Option<std::vec::Vec<crate::model::FileSystemAssociationInfo>>,
@@ -4997,7 +4507,7 @@ impl DescribeFileSystemAssociationsOutput {
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChapCredentialsOutput {
     /// <p>An array of <code>ChapInfo</code> objects that represent CHAP credentials. Each object in the array contains CHAP credential information for one target-initiator pair. If no CHAP credentials are set, an empty array is returned. CHAP credential information is provided in a JSON object with the following fields:</p>
     /// <ul>
@@ -5021,18 +4531,11 @@ impl DescribeChapCredentialsOutput {
         self.chap_credentials.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeChapCredentialsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChapCredentialsOutput");
-        formatter.field("chap_credentials", &self.chap_credentials);
-        formatter.finish()
-    }
-}
 /// See [`DescribeChapCredentialsOutput`](crate::output::DescribeChapCredentialsOutput).
 pub mod describe_chap_credentials_output {
 
     /// A builder for [`DescribeChapCredentialsOutput`](crate::output::DescribeChapCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) chap_credentials: std::option::Option<std::vec::Vec<crate::model::ChapInfo>>,
     }
@@ -5085,7 +4588,7 @@ impl DescribeChapCredentialsOutput {
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCachediScsiVolumesOutput {
     /// <p>An array of objects where each object contains metadata about one cached volume.</p>
     #[doc(hidden)]
@@ -5097,18 +4600,11 @@ impl DescribeCachediScsiVolumesOutput {
         self.cachedi_scsi_volumes.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCachediScsiVolumesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCachediScsiVolumesOutput");
-        formatter.field("cachedi_scsi_volumes", &self.cachedi_scsi_volumes);
-        formatter.finish()
-    }
-}
 /// See [`DescribeCachediScsiVolumesOutput`](crate::output::DescribeCachediScsiVolumesOutput).
 pub mod describe_cachedi_scsi_volumes_output {
 
     /// A builder for [`DescribeCachediScsiVolumesOutput`](crate::output::DescribeCachediScsiVolumesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cachedi_scsi_volumes:
             std::option::Option<std::vec::Vec<crate::model::CachediScsiVolume>>,
@@ -5150,7 +4646,7 @@ impl DescribeCachediScsiVolumesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCacheOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -5204,24 +4700,11 @@ impl DescribeCacheOutput {
         self.cache_miss_percentage
     }
 }
-impl std::fmt::Debug for DescribeCacheOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCacheOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("disk_ids", &self.disk_ids);
-        formatter.field("cache_allocated_in_bytes", &self.cache_allocated_in_bytes);
-        formatter.field("cache_used_percentage", &self.cache_used_percentage);
-        formatter.field("cache_dirty_percentage", &self.cache_dirty_percentage);
-        formatter.field("cache_hit_percentage", &self.cache_hit_percentage);
-        formatter.field("cache_miss_percentage", &self.cache_miss_percentage);
-        formatter.finish()
-    }
-}
 /// See [`DescribeCacheOutput`](crate::output::DescribeCacheOutput).
 pub mod describe_cache_output {
 
     /// A builder for [`DescribeCacheOutput`](crate::output::DescribeCacheOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) disk_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5334,7 +4817,7 @@ impl DescribeCacheOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBandwidthRateLimitScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -5356,22 +4839,11 @@ impl DescribeBandwidthRateLimitScheduleOutput {
         self.bandwidth_rate_limit_intervals.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBandwidthRateLimitScheduleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBandwidthRateLimitScheduleOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field(
-            "bandwidth_rate_limit_intervals",
-            &self.bandwidth_rate_limit_intervals,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DescribeBandwidthRateLimitScheduleOutput`](crate::output::DescribeBandwidthRateLimitScheduleOutput).
 pub mod describe_bandwidth_rate_limit_schedule_output {
 
     /// A builder for [`DescribeBandwidthRateLimitScheduleOutput`](crate::output::DescribeBandwidthRateLimitScheduleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) bandwidth_rate_limit_intervals:
@@ -5428,7 +4900,7 @@ impl DescribeBandwidthRateLimitScheduleOutput {
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBandwidthRateLimitOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -5454,26 +4926,11 @@ impl DescribeBandwidthRateLimitOutput {
         self.average_download_rate_limit_in_bits_per_sec
     }
 }
-impl std::fmt::Debug for DescribeBandwidthRateLimitOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBandwidthRateLimitOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field(
-            "average_upload_rate_limit_in_bits_per_sec",
-            &self.average_upload_rate_limit_in_bits_per_sec,
-        );
-        formatter.field(
-            "average_download_rate_limit_in_bits_per_sec",
-            &self.average_download_rate_limit_in_bits_per_sec,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DescribeBandwidthRateLimitOutput`](crate::output::DescribeBandwidthRateLimitOutput).
 pub mod describe_bandwidth_rate_limit_output {
 
     /// A builder for [`DescribeBandwidthRateLimitOutput`](crate::output::DescribeBandwidthRateLimitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) average_upload_rate_limit_in_bits_per_sec: std::option::Option<i64>,
@@ -5537,7 +4994,7 @@ impl DescribeBandwidthRateLimitOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAvailabilityMonitorTestOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -5563,20 +5020,11 @@ impl DescribeAvailabilityMonitorTestOutput {
         self.start_time.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeAvailabilityMonitorTestOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAvailabilityMonitorTestOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("status", &self.status);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
-    }
-}
 /// See [`DescribeAvailabilityMonitorTestOutput`](crate::output::DescribeAvailabilityMonitorTestOutput).
 pub mod describe_availability_monitor_test_output {
 
     /// A builder for [`DescribeAvailabilityMonitorTestOutput`](crate::output::DescribeAvailabilityMonitorTestOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::AvailabilityMonitorTestStatus>,
@@ -5638,7 +5086,7 @@ impl DescribeAvailabilityMonitorTestOutput {
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the storage volume that was deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is the same ARN you provided in the request.</p>
     #[doc(hidden)]
@@ -5650,18 +5098,11 @@ impl DeleteVolumeOutput {
         self.volume_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVolumeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVolumeOutput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.finish()
-    }
-}
 /// See [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput).
 pub mod delete_volume_output {
 
     /// A builder for [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
     }
@@ -5693,7 +5134,7 @@ impl DeleteVolumeOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTapePoolOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool being deleted.</p>
     #[doc(hidden)]
@@ -5705,18 +5146,11 @@ impl DeleteTapePoolOutput {
         self.pool_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTapePoolOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTapePoolOutput");
-        formatter.field("pool_arn", &self.pool_arn);
-        formatter.finish()
-    }
-}
 /// See [`DeleteTapePoolOutput`](crate::output::DeleteTapePoolOutput).
 pub mod delete_tape_pool_output {
 
     /// A builder for [`DeleteTapePoolOutput`](crate::output::DeleteTapePoolOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_arn: std::option::Option<std::string::String>,
     }
@@ -5748,7 +5182,7 @@ impl DeleteTapePoolOutput {
 
 /// <p>DeleteTapeArchiveOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTapeArchiveOutput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape that was deleted from the virtual tape shelf (VTS).</p>
     #[doc(hidden)]
@@ -5760,18 +5194,11 @@ impl DeleteTapeArchiveOutput {
         self.tape_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTapeArchiveOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTapeArchiveOutput");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.finish()
-    }
-}
 /// See [`DeleteTapeArchiveOutput`](crate::output::DeleteTapeArchiveOutput).
 pub mod delete_tape_archive_output {
 
     /// A builder for [`DeleteTapeArchiveOutput`](crate::output::DeleteTapeArchiveOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
     }
@@ -5803,7 +5230,7 @@ impl DeleteTapeArchiveOutput {
 
 /// <p>DeleteTapeOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTapeOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted virtual tape.</p>
     #[doc(hidden)]
@@ -5815,18 +5242,11 @@ impl DeleteTapeOutput {
         self.tape_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTapeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTapeOutput");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.finish()
-    }
-}
 /// See [`DeleteTapeOutput`](crate::output::DeleteTapeOutput).
 pub mod delete_tape_output {
 
     /// A builder for [`DeleteTapeOutput`](crate::output::DeleteTapeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
     }
@@ -5858,7 +5278,7 @@ impl DeleteTapeOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSnapshotScheduleOutput {
     /// <p>The volume which snapshot schedule was deleted.</p>
     #[doc(hidden)]
@@ -5870,18 +5290,11 @@ impl DeleteSnapshotScheduleOutput {
         self.volume_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSnapshotScheduleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSnapshotScheduleOutput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.finish()
-    }
-}
 /// See [`DeleteSnapshotScheduleOutput`](crate::output::DeleteSnapshotScheduleOutput).
 pub mod delete_snapshot_schedule_output {
 
     /// A builder for [`DeleteSnapshotScheduleOutput`](crate::output::DeleteSnapshotScheduleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
     }
@@ -5913,7 +5326,7 @@ impl DeleteSnapshotScheduleOutput {
 
 /// <p>A JSON object containing the ID of the deleted gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -5925,18 +5338,11 @@ impl DeleteGatewayOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGatewayOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGatewayOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
 pub mod delete_gateway_output {
 
     /// A builder for [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -5968,7 +5374,7 @@ impl DeleteGatewayOutput {
 
 /// <p>DeleteFileShareOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted file share.</p>
     #[doc(hidden)]
@@ -5980,18 +5386,11 @@ impl DeleteFileShareOutput {
         self.file_share_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFileShareOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFileShareOutput");
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.finish()
-    }
-}
 /// See [`DeleteFileShareOutput`](crate::output::DeleteFileShareOutput).
 pub mod delete_file_share_output {
 
     /// A builder for [`DeleteFileShareOutput`](crate::output::DeleteFileShareOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
     }
@@ -6026,7 +5425,7 @@ impl DeleteFileShareOutput {
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChapCredentialsOutput {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
     #[doc(hidden)]
@@ -6045,19 +5444,11 @@ impl DeleteChapCredentialsOutput {
         self.initiator_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteChapCredentialsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteChapCredentialsOutput");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("initiator_name", &self.initiator_name);
-        formatter.finish()
-    }
-}
 /// See [`DeleteChapCredentialsOutput`](crate::output::DeleteChapCredentialsOutput).
 pub mod delete_chap_credentials_output {
 
     /// A builder for [`DeleteChapCredentialsOutput`](crate::output::DeleteChapCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) initiator_name: std::option::Option<std::string::String>,
@@ -6104,7 +5495,7 @@ impl DeleteChapCredentialsOutput {
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway whose bandwidth rate information was deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBandwidthRateLimitOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -6116,18 +5507,11 @@ impl DeleteBandwidthRateLimitOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBandwidthRateLimitOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBandwidthRateLimitOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`DeleteBandwidthRateLimitOutput`](crate::output::DeleteBandwidthRateLimitOutput).
 pub mod delete_bandwidth_rate_limit_output {
 
     /// A builder for [`DeleteBandwidthRateLimitOutput`](crate::output::DeleteBandwidthRateLimitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -6159,7 +5543,7 @@ impl DeleteBandwidthRateLimitOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAutomaticTapeCreationPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -6171,18 +5555,11 @@ impl DeleteAutomaticTapeCreationPolicyOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAutomaticTapeCreationPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAutomaticTapeCreationPolicyOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`DeleteAutomaticTapeCreationPolicyOutput`](crate::output::DeleteAutomaticTapeCreationPolicyOutput).
 pub mod delete_automatic_tape_creation_policy_output {
 
     /// A builder for [`DeleteAutomaticTapeCreationPolicyOutput`](crate::output::DeleteAutomaticTapeCreationPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -6214,7 +5591,7 @@ impl DeleteAutomaticTapeCreationPolicyOutput {
 
 /// <p>CreateTapeOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTapeWithBarcodeOutput {
     /// <p>A unique Amazon Resource Name (ARN) that represents the virtual tape that was created.</p>
     #[doc(hidden)]
@@ -6226,18 +5603,11 @@ impl CreateTapeWithBarcodeOutput {
         self.tape_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTapeWithBarcodeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTapeWithBarcodeOutput");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.finish()
-    }
-}
 /// See [`CreateTapeWithBarcodeOutput`](crate::output::CreateTapeWithBarcodeOutput).
 pub mod create_tape_with_barcode_output {
 
     /// A builder for [`CreateTapeWithBarcodeOutput`](crate::output::CreateTapeWithBarcodeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
     }
@@ -6269,7 +5639,7 @@ impl CreateTapeWithBarcodeOutput {
 
 /// <p>CreateTapeOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTapesOutput {
     /// <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that were created.</p>
     #[doc(hidden)]
@@ -6281,18 +5651,11 @@ impl CreateTapesOutput {
         self.tape_ar_ns.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTapesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTapesOutput");
-        formatter.field("tape_ar_ns", &self.tape_ar_ns);
-        formatter.finish()
-    }
-}
 /// See [`CreateTapesOutput`](crate::output::CreateTapesOutput).
 pub mod create_tapes_output {
 
     /// A builder for [`CreateTapesOutput`](crate::output::CreateTapesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -6333,7 +5696,7 @@ impl CreateTapesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTapePoolOutput {
     /// <p>The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the <code>ListTapePools</code> operation to return a list of tape pools for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -6345,18 +5708,11 @@ impl CreateTapePoolOutput {
         self.pool_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTapePoolOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTapePoolOutput");
-        formatter.field("pool_arn", &self.pool_arn);
-        formatter.finish()
-    }
-}
 /// See [`CreateTapePoolOutput`](crate::output::CreateTapePoolOutput).
 pub mod create_tape_pool_output {
 
     /// A builder for [`CreateTapePoolOutput`](crate::output::CreateTapePoolOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_arn: std::option::Option<std::string::String>,
     }
@@ -6388,7 +5744,7 @@ impl CreateTapePoolOutput {
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStorediScsiVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the configured volume.</p>
     #[doc(hidden)]
@@ -6414,20 +5770,11 @@ impl CreateStorediScsiVolumeOutput {
         self.target_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateStorediScsiVolumeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStorediScsiVolumeOutput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("volume_size_in_bytes", &self.volume_size_in_bytes);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.finish()
-    }
-}
 /// See [`CreateStorediScsiVolumeOutput`](crate::output::CreateStorediScsiVolumeOutput).
 pub mod create_storedi_scsi_volume_output {
 
     /// A builder for [`CreateStorediScsiVolumeOutput`](crate::output::CreateStorediScsiVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
         pub(crate) volume_size_in_bytes: std::option::Option<i64>,
@@ -6483,7 +5830,7 @@ impl CreateStorediScsiVolumeOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSnapshotFromVolumeRecoveryPointOutput {
     /// <p>The ID of the snapshot.</p>
     #[doc(hidden)]
@@ -6509,23 +5856,11 @@ impl CreateSnapshotFromVolumeRecoveryPointOutput {
         self.volume_recovery_point_time.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSnapshotFromVolumeRecoveryPointOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSnapshotFromVolumeRecoveryPointOutput");
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field(
-            "volume_recovery_point_time",
-            &self.volume_recovery_point_time,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CreateSnapshotFromVolumeRecoveryPointOutput`](crate::output::CreateSnapshotFromVolumeRecoveryPointOutput).
 pub mod create_snapshot_from_volume_recovery_point_output {
 
     /// A builder for [`CreateSnapshotFromVolumeRecoveryPointOutput`](crate::output::CreateSnapshotFromVolumeRecoveryPointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -6584,7 +5919,7 @@ impl CreateSnapshotFromVolumeRecoveryPointOutput {
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSnapshotOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume of which the snapshot was taken.</p>
     #[doc(hidden)]
@@ -6603,19 +5938,11 @@ impl CreateSnapshotOutput {
         self.snapshot_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSnapshotOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSnapshotOutput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
 pub mod create_snapshot_output {
 
     /// A builder for [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -6659,7 +5986,7 @@ impl CreateSnapshotOutput {
 
 /// <p>CreateSMBFileShareOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSmbFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
     #[doc(hidden)]
@@ -6671,18 +5998,11 @@ impl CreateSmbFileShareOutput {
         self.file_share_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSmbFileShareOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSmbFileShareOutput");
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.finish()
-    }
-}
 /// See [`CreateSmbFileShareOutput`](crate::output::CreateSmbFileShareOutput).
 pub mod create_smb_file_share_output {
 
     /// A builder for [`CreateSmbFileShareOutput`](crate::output::CreateSmbFileShareOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
     }
@@ -6717,7 +6037,7 @@ impl CreateSmbFileShareOutput {
 
 /// <p>CreateNFSFileShareOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateNfsFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
     #[doc(hidden)]
@@ -6729,18 +6049,11 @@ impl CreateNfsFileShareOutput {
         self.file_share_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateNfsFileShareOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateNfsFileShareOutput");
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.finish()
-    }
-}
 /// See [`CreateNfsFileShareOutput`](crate::output::CreateNfsFileShareOutput).
 pub mod create_nfs_file_share_output {
 
     /// A builder for [`CreateNfsFileShareOutput`](crate::output::CreateNfsFileShareOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
     }
@@ -6775,7 +6088,7 @@ impl CreateNfsFileShareOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCachediScsiVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the configured volume.</p>
     #[doc(hidden)]
@@ -6794,19 +6107,11 @@ impl CreateCachediScsiVolumeOutput {
         self.target_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCachediScsiVolumeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCachediScsiVolumeOutput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.finish()
-    }
-}
 /// See [`CreateCachediScsiVolumeOutput`](crate::output::CreateCachediScsiVolumeOutput).
 pub mod create_cachedi_scsi_volume_output {
 
     /// A builder for [`CreateCachediScsiVolumeOutput`](crate::output::CreateCachediScsiVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -6850,7 +6155,7 @@ impl CreateCachediScsiVolumeOutput {
 
 /// <p>CancelRetrievalOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelRetrievalOutput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape for which retrieval was canceled.</p>
     #[doc(hidden)]
@@ -6862,18 +6167,11 @@ impl CancelRetrievalOutput {
         self.tape_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CancelRetrievalOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelRetrievalOutput");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.finish()
-    }
-}
 /// See [`CancelRetrievalOutput`](crate::output::CancelRetrievalOutput).
 pub mod cancel_retrieval_output {
 
     /// A builder for [`CancelRetrievalOutput`](crate::output::CancelRetrievalOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
     }
@@ -6905,7 +6203,7 @@ impl CancelRetrievalOutput {
 
 /// <p>CancelArchivalOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelArchivalOutput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape for which archiving was canceled.</p>
     #[doc(hidden)]
@@ -6917,18 +6215,11 @@ impl CancelArchivalOutput {
         self.tape_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CancelArchivalOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelArchivalOutput");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.finish()
-    }
-}
 /// See [`CancelArchivalOutput`](crate::output::CancelArchivalOutput).
 pub mod cancel_archival_output {
 
     /// A builder for [`CancelArchivalOutput`](crate::output::CancelArchivalOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
     }
@@ -6960,7 +6251,7 @@ impl CancelArchivalOutput {
 
 /// <p>AttachVolumeOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume that was attached to the gateway.</p>
     #[doc(hidden)]
@@ -6979,19 +6270,11 @@ impl AttachVolumeOutput {
         self.target_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AttachVolumeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachVolumeOutput");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.finish()
-    }
-}
 /// See [`AttachVolumeOutput`](crate::output::AttachVolumeOutput).
 pub mod attach_volume_output {
 
     /// A builder for [`AttachVolumeOutput`](crate::output::AttachVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -7035,7 +6318,7 @@ impl AttachVolumeOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateFileSystemOutput {
     /// <p>The ARN of the newly created file system association.</p>
     #[doc(hidden)]
@@ -7047,21 +6330,11 @@ impl AssociateFileSystemOutput {
         self.file_system_association_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateFileSystemOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateFileSystemOutput");
-        formatter.field(
-            "file_system_association_arn",
-            &self.file_system_association_arn,
-        );
-        formatter.finish()
-    }
-}
 /// See [`AssociateFileSystemOutput`](crate::output::AssociateFileSystemOutput).
 pub mod associate_file_system_output {
 
     /// A builder for [`AssociateFileSystemOutput`](crate::output::AssociateFileSystemOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_association_arn: std::option::Option<std::string::String>,
     }
@@ -7099,7 +6372,7 @@ impl AssociateFileSystemOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssignTapePoolOutput {
     /// <p>The unique Amazon Resource Names (ARN) of the virtual tape that was added to the tape pool.</p>
     #[doc(hidden)]
@@ -7111,18 +6384,11 @@ impl AssignTapePoolOutput {
         self.tape_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AssignTapePoolOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssignTapePoolOutput");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.finish()
-    }
-}
 /// See [`AssignTapePoolOutput`](crate::output::AssignTapePoolOutput).
 pub mod assign_tape_pool_output {
 
     /// A builder for [`AssignTapePoolOutput`](crate::output::AssignTapePoolOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
     }
@@ -7154,7 +6420,7 @@ impl AssignTapePoolOutput {
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway for which working storage was configured.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddWorkingStorageOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -7166,18 +6432,11 @@ impl AddWorkingStorageOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AddWorkingStorageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddWorkingStorageOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`AddWorkingStorageOutput`](crate::output::AddWorkingStorageOutput).
 pub mod add_working_storage_output {
 
     /// A builder for [`AddWorkingStorageOutput`](crate::output::AddWorkingStorageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -7209,7 +6468,7 @@ impl AddWorkingStorageOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddUploadBufferOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -7221,18 +6480,11 @@ impl AddUploadBufferOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AddUploadBufferOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddUploadBufferOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`AddUploadBufferOutput`](crate::output::AddUploadBufferOutput).
 pub mod add_upload_buffer_output {
 
     /// A builder for [`AddUploadBufferOutput`](crate::output::AddUploadBufferOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -7264,7 +6516,7 @@ impl AddUploadBufferOutput {
 
 /// <p>AddTagsToResourceOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
     #[doc(hidden)]
@@ -7276,18 +6528,11 @@ impl AddTagsToResourceOutput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AddTagsToResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsToResourceOutput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 /// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
 pub mod add_tags_to_resource_output {
 
     /// A builder for [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -7319,7 +6564,7 @@ impl AddTagsToResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddCacheOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -7331,18 +6576,11 @@ impl AddCacheOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AddCacheOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddCacheOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`AddCacheOutput`](crate::output::AddCacheOutput).
 pub mod add_cache_output {
 
     /// A builder for [`AddCacheOutput`](crate::output::AddCacheOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -7376,7 +6614,7 @@ impl AddCacheOutput {
 /// <p>For gateways activated prior to September 02, 2015, the gateway ARN contains the gateway name rather than the gateway ID. Changing the name of the gateway has no effect on the gateway ARN.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivateGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -7388,18 +6626,11 @@ impl ActivateGatewayOutput {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ActivateGatewayOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivateGatewayOutput");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`ActivateGatewayOutput`](crate::output::ActivateGatewayOutput).
 pub mod activate_gateway_output {
 
     /// A builder for [`ActivateGatewayOutput`](crate::output::ActivateGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }

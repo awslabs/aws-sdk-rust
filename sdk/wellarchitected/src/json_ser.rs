@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_associate_lenses_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateLensesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.lens_aliases {
         let mut array_2 = object.key("LensAliases").start_array();
         for item_3 in var_1 {
@@ -18,7 +18,7 @@ pub fn serialize_structure_crate_input_associate_lenses_input(
 pub fn serialize_structure_crate_input_create_lens_share_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLensShareInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_4) = &input.client_request_token {
         object.key("ClientRequestToken").string(var_4.as_str());
     }
@@ -31,7 +31,7 @@ pub fn serialize_structure_crate_input_create_lens_share_input(
 pub fn serialize_structure_crate_input_create_lens_version_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLensVersionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_6) = &input.client_request_token {
         object.key("ClientRequestToken").string(var_6.as_str());
     }
@@ -47,7 +47,7 @@ pub fn serialize_structure_crate_input_create_lens_version_input(
 pub fn serialize_structure_crate_input_create_milestone_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateMilestoneInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_8) = &input.client_request_token {
         object.key("ClientRequestToken").string(var_8.as_str());
     }
@@ -60,7 +60,7 @@ pub fn serialize_structure_crate_input_create_milestone_input(
 pub fn serialize_structure_crate_input_create_workload_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateWorkloadInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_10) = &input.account_ids {
         let mut array_11 = object.key("AccountIds").start_array();
         for item_12 in var_10 {
@@ -131,10 +131,11 @@ pub fn serialize_structure_crate_input_create_workload_input(
         object.key("ReviewOwner").string(var_32.as_str());
     }
     if let Some(var_33) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_34 = object.key("Tags").start_object();
         for (key_35, value_36) in var_33 {
             {
-                object_34.key(key_35).string(value_36.as_str());
+                object_34.key(key_35.as_str()).string(value_36.as_str());
             }
         }
         object_34.finish();
@@ -148,7 +149,7 @@ pub fn serialize_structure_crate_input_create_workload_input(
 pub fn serialize_structure_crate_input_create_workload_share_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateWorkloadShareInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_38) = &input.client_request_token {
         object.key("ClientRequestToken").string(var_38.as_str());
     }
@@ -164,7 +165,7 @@ pub fn serialize_structure_crate_input_create_workload_share_input(
 pub fn serialize_structure_crate_input_disassociate_lenses_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateLensesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_41) = &input.lens_aliases {
         let mut array_42 = object.key("LensAliases").start_array();
         for item_43 in var_41 {
@@ -180,7 +181,7 @@ pub fn serialize_structure_crate_input_disassociate_lenses_input(
 pub fn serialize_structure_crate_input_import_lens_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ImportLensInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_44) = &input.client_request_token {
         object.key("ClientRequestToken").string(var_44.as_str());
     }
@@ -191,10 +192,11 @@ pub fn serialize_structure_crate_input_import_lens_input(
         object.key("LensAlias").string(var_46.as_str());
     }
     if let Some(var_47) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_48 = object.key("Tags").start_object();
         for (key_49, value_50) in var_47 {
             {
-                object_48.key(key_49).string(value_50.as_str());
+                object_48.key(key_49.as_str()).string(value_50.as_str());
             }
         }
         object_48.finish();
@@ -205,7 +207,7 @@ pub fn serialize_structure_crate_input_import_lens_input(
 pub fn serialize_structure_crate_input_list_milestones_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListMilestonesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.max_results != 0 {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -221,7 +223,7 @@ pub fn serialize_structure_crate_input_list_milestones_input(
 pub fn serialize_structure_crate_input_list_notifications_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListNotificationsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.max_results != 0 {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -240,7 +242,7 @@ pub fn serialize_structure_crate_input_list_notifications_input(
 pub fn serialize_structure_crate_input_list_workloads_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListWorkloadsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.max_results != 0 {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -259,12 +261,13 @@ pub fn serialize_structure_crate_input_list_workloads_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_56) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_57 = object.key("Tags").start_object();
         for (key_58, value_59) in var_56 {
             {
-                object_57.key(key_58).string(value_59.as_str());
+                object_57.key(key_58.as_str()).string(value_59.as_str());
             }
         }
         object_57.finish();
@@ -275,12 +278,14 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_answer_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAnswerInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_60) = &input.choice_updates {
+        #[allow(unused_mut)]
         let mut object_61 = object.key("ChoiceUpdates").start_object();
         for (key_62, value_63) in var_60 {
             {
-                let mut object_64 = object_61.key(key_62).start_object();
+                #[allow(unused_mut)]
+                let mut object_64 = object_61.key(key_62.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_choice_update(
                     &mut object_64,
                     value_63,
@@ -314,7 +319,7 @@ pub fn serialize_structure_crate_input_update_answer_input(
 pub fn serialize_structure_crate_input_update_global_settings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateGlobalSettingsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_70) = &input.organization_sharing_status {
         object
             .key("OrganizationSharingStatus")
@@ -326,15 +331,16 @@ pub fn serialize_structure_crate_input_update_global_settings_input(
 pub fn serialize_structure_crate_input_update_lens_review_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateLensReviewInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_71) = &input.lens_notes {
         object.key("LensNotes").string(var_71.as_str());
     }
     if let Some(var_72) = &input.pillar_notes {
+        #[allow(unused_mut)]
         let mut object_73 = object.key("PillarNotes").start_object();
         for (key_74, value_75) in var_72 {
             {
-                object_73.key(key_74).string(value_75.as_str());
+                object_73.key(key_74.as_str()).string(value_75.as_str());
             }
         }
         object_73.finish();
@@ -345,7 +351,7 @@ pub fn serialize_structure_crate_input_update_lens_review_input(
 pub fn serialize_structure_crate_input_update_share_invitation_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateShareInvitationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_76) = &input.share_invitation_action {
         object.key("ShareInvitationAction").string(var_76.as_str());
     }
@@ -355,7 +361,7 @@ pub fn serialize_structure_crate_input_update_share_invitation_input(
 pub fn serialize_structure_crate_input_update_workload_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateWorkloadInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_77) = &input.account_ids {
         let mut array_78 = object.key("AccountIds").start_array();
         for item_79 in var_77 {
@@ -430,7 +436,7 @@ pub fn serialize_structure_crate_input_update_workload_input(
 pub fn serialize_structure_crate_input_update_workload_share_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateWorkloadShareInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_98) = &input.permission_type {
         object.key("PermissionType").string(var_98.as_str());
     }
@@ -440,7 +446,7 @@ pub fn serialize_structure_crate_input_update_workload_share_input(
 pub fn serialize_structure_crate_input_upgrade_lens_review_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpgradeLensReviewInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_99) = &input.client_request_token {
         object.key("ClientRequestToken").string(var_99.as_str());
     }
@@ -453,7 +459,7 @@ pub fn serialize_structure_crate_input_upgrade_lens_review_input(
 pub fn serialize_structure_crate_model_choice_update(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ChoiceUpdate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_101) = &input.status {
         object.key("Status").string(var_101.as_str());
     }

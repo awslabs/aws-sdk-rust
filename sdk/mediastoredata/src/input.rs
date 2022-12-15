@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod delete_object_input {
 
     /// A builder for [`DeleteObjectInput`](crate::input::DeleteObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
     }
@@ -35,7 +35,7 @@ pub mod delete_object_input {
         /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::input::DeleteObjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteObjectInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteObjectInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteObjectInput { path: self.path })
         }
@@ -54,26 +54,31 @@ impl DeleteObjectInput {
             crate::operation::DeleteObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.path;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "path",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let path = aws_smithy_http::label::fmt_string(input_1, true);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "path",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let path = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if path.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "path",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "path",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Path}", Path = path).expect("formatting should succeed");
                 Ok(())
@@ -82,8 +87,10 @@ impl DeleteObjectInput {
             fn update_http_builder(
                 input: &crate::input::DeleteObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -153,7 +160,7 @@ impl DeleteObjectInput {
 pub mod describe_object_input {
 
     /// A builder for [`DescribeObjectInput`](crate::input::DescribeObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
     }
@@ -183,7 +190,7 @@ pub mod describe_object_input {
         /// Consumes the builder and constructs a [`DescribeObjectInput`](crate::input::DescribeObjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeObjectInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeObjectInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeObjectInput { path: self.path })
         }
@@ -202,26 +209,31 @@ impl DescribeObjectInput {
             crate::operation::DescribeObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.path;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "path",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let path = aws_smithy_http::label::fmt_string(input_2, true);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "path",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let path = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if path.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "path",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "path",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Path}", Path = path).expect("formatting should succeed");
                 Ok(())
@@ -230,8 +242,10 @@ impl DescribeObjectInput {
             fn update_http_builder(
                 input: &crate::input::DescribeObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("HEAD").uri(uri))
@@ -301,7 +315,7 @@ impl DescribeObjectInput {
 pub mod get_object_input {
 
     /// A builder for [`GetObjectInput`](crate::input::GetObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) range: std::option::Option<std::string::String>,
@@ -354,7 +368,8 @@ pub mod get_object_input {
         /// Consumes the builder and constructs a [`GetObjectInput`](crate::input::GetObjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetObjectInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetObjectInput {
                 path: self.path,
                 range: self.range,
@@ -375,26 +390,31 @@ impl GetObjectInput {
             crate::operation::GetObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.path;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "path",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let path = aws_smithy_http::label::fmt_string(input_3, true);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "path",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let path = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if path.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "path",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "path",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Path}", Path = path).expect("formatting should succeed");
                 Ok(())
@@ -403,8 +423,10 @@ impl GetObjectInput {
             fn update_http_builder(
                 input: &crate::input::GetObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_object(input, builder)?;
@@ -473,7 +495,7 @@ impl GetObjectInput {
 pub mod list_items_input {
 
     /// A builder for [`ListItemsInput`](crate::input::ListItemsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -529,7 +551,8 @@ pub mod list_items_input {
         /// Consumes the builder and constructs a [`ListItemsInput`](crate::input::ListItemsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListItemsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListItemsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListItemsInput {
                 path: self.path,
                 max_results: self.max_results,
@@ -551,32 +574,38 @@ impl ListItemsInput {
             crate::operation::ListItems,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListItemsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListItemsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_4) = &_input.path {
-                    query.push_kv("Path", &aws_smithy_http::query::fmt_string(&inner_4));
+                    {
+                        query.push_kv("Path", &aws_smithy_http::query::fmt_string(&inner_4));
+                    }
                 }
                 if let Some(inner_5) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_5).encode(),
-                    );
+                    if *inner_5 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_5).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_6) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_6));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_6));
+                    }
                 }
                 Ok(())
             }
@@ -584,8 +613,10 @@ impl ListItemsInput {
             fn update_http_builder(
                 input: &crate::input::ListItemsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -767,7 +798,8 @@ pub mod put_object_input {
         /// Consumes the builder and constructs a [`PutObjectInput`](crate::input::PutObjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutObjectInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::PutObjectInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::PutObjectInput {
                 body: self.body.unwrap_or_default(),
                 path: self.path,
@@ -792,26 +824,31 @@ impl PutObjectInput {
             crate::operation::PutObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.path;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "path",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let path = aws_smithy_http::label::fmt_string(input_7, true);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "path",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let path = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if path.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "path",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "path",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/{Path}", Path = path).expect("formatting should succeed");
                 Ok(())
@@ -820,8 +857,10 @@ impl PutObjectInput {
             fn update_http_builder(
                 input: &crate::input::PutObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_put_object(input, builder)?;
@@ -906,6 +945,7 @@ impl PutObjectInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct PutObjectInput {
     /// <p>The bytes to be stored. </p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
@@ -979,22 +1019,10 @@ impl PutObjectInput {
         self.upload_availability.as_ref()
     }
 }
-impl std::fmt::Debug for PutObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutObjectInput");
-        formatter.field("body", &self.body);
-        formatter.field("path", &self.path);
-        formatter.field("content_type", &self.content_type);
-        formatter.field("cache_control", &self.cache_control);
-        formatter.field("storage_class", &self.storage_class);
-        formatter.field("upload_availability", &self.upload_availability);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListItemsInput {
     /// <p>The path in the container from which to retrieve items. Format: <folder name>
     /// /
@@ -1036,19 +1064,10 @@ impl ListItemsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListItemsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListItemsInput");
-        formatter.field("path", &self.path);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectInput {
     /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
     /// /
@@ -1091,18 +1110,10 @@ impl GetObjectInput {
         self.range.as_deref()
     }
 }
-impl std::fmt::Debug for GetObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectInput");
-        formatter.field("path", &self.path);
-        formatter.field("range", &self.range);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeObjectInput {
     /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
     /// /
@@ -1126,17 +1137,10 @@ impl DescribeObjectInput {
         self.path.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeObjectInput");
-        formatter.field("path", &self.path);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteObjectInput {
     /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
     /// /
@@ -1158,12 +1162,5 @@ impl DeleteObjectInput {
     /// </folder></p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteObjectInput");
-        formatter.field("path", &self.path);
-        formatter.finish()
     }
 }

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_member_account_input {
 
     /// A builder for [`AssociateMemberAccountInput`](crate::input::AssociateMemberAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
     }
@@ -26,8 +26,10 @@ pub mod associate_member_account_input {
         /// Consumes the builder and constructs a [`AssociateMemberAccountInput`](crate::input::AssociateMemberAccountInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AssociateMemberAccountInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AssociateMemberAccountInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AssociateMemberAccountInput {
                 member_account_id: self.member_account_id,
             })
@@ -47,13 +49,13 @@ impl AssociateMemberAccountInput {
             crate::operation::AssociateMemberAccount,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateMemberAccountInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -61,8 +63,10 @@ impl AssociateMemberAccountInput {
             fn update_http_builder(
                 input: &crate::input::AssociateMemberAccountInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -153,7 +157,7 @@ impl AssociateMemberAccountInput {
 pub mod associate_s3_resources_input {
 
     /// A builder for [`AssociateS3ResourcesInput`](crate::input::AssociateS3ResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
         pub(crate) s3_resources:
@@ -195,8 +199,10 @@ pub mod associate_s3_resources_input {
         /// Consumes the builder and constructs a [`AssociateS3ResourcesInput`](crate::input::AssociateS3ResourcesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AssociateS3ResourcesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AssociateS3ResourcesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AssociateS3ResourcesInput {
                 member_account_id: self.member_account_id,
                 s3_resources: self.s3_resources,
@@ -217,13 +223,13 @@ impl AssociateS3ResourcesInput {
             crate::operation::AssociateS3Resources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateS3ResourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -231,8 +237,10 @@ impl AssociateS3ResourcesInput {
             fn update_http_builder(
                 input: &crate::input::AssociateS3ResourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -323,7 +331,7 @@ impl AssociateS3ResourcesInput {
 pub mod disassociate_member_account_input {
 
     /// A builder for [`DisassociateMemberAccountInput`](crate::input::DisassociateMemberAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
     }
@@ -346,7 +354,7 @@ pub mod disassociate_member_account_input {
             self,
         ) -> Result<
             crate::input::DisassociateMemberAccountInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateMemberAccountInput {
                 member_account_id: self.member_account_id,
@@ -367,13 +375,13 @@ impl DisassociateMemberAccountInput {
             crate::operation::DisassociateMemberAccount,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateMemberAccountInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -381,8 +389,10 @@ impl DisassociateMemberAccountInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateMemberAccountInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -473,7 +483,7 @@ impl DisassociateMemberAccountInput {
 pub mod disassociate_s3_resources_input {
 
     /// A builder for [`DisassociateS3ResourcesInput`](crate::input::DisassociateS3ResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
         pub(crate) associated_s3_resources:
@@ -517,7 +527,7 @@ pub mod disassociate_s3_resources_input {
             self,
         ) -> Result<
             crate::input::DisassociateS3ResourcesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateS3ResourcesInput {
                 member_account_id: self.member_account_id,
@@ -539,13 +549,13 @@ impl DisassociateS3ResourcesInput {
             crate::operation::DisassociateS3Resources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateS3ResourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -553,8 +563,10 @@ impl DisassociateS3ResourcesInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateS3ResourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -645,7 +657,7 @@ impl DisassociateS3ResourcesInput {
 pub mod list_member_accounts_input {
 
     /// A builder for [`ListMemberAccountsInput`](crate::input::ListMemberAccountsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -674,8 +686,10 @@ pub mod list_member_accounts_input {
         /// Consumes the builder and constructs a [`ListMemberAccountsInput`](crate::input::ListMemberAccountsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListMemberAccountsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListMemberAccountsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListMemberAccountsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -696,13 +710,13 @@ impl ListMemberAccountsInput {
             crate::operation::ListMemberAccounts,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListMemberAccountsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -710,8 +724,10 @@ impl ListMemberAccountsInput {
             fn update_http_builder(
                 input: &crate::input::ListMemberAccountsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -800,7 +816,7 @@ impl ListMemberAccountsInput {
 pub mod list_s3_resources_input {
 
     /// A builder for [`ListS3ResourcesInput`](crate::input::ListS3ResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -843,7 +859,7 @@ pub mod list_s3_resources_input {
         /// Consumes the builder and constructs a [`ListS3ResourcesInput`](crate::input::ListS3ResourcesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListS3ResourcesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListS3ResourcesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListS3ResourcesInput {
                 member_account_id: self.member_account_id,
@@ -866,13 +882,13 @@ impl ListS3ResourcesInput {
             crate::operation::ListS3Resources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListS3ResourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -880,8 +896,10 @@ impl ListS3ResourcesInput {
             fn update_http_builder(
                 input: &crate::input::ListS3ResourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -970,7 +988,7 @@ impl ListS3ResourcesInput {
 pub mod update_s3_resources_input {
 
     /// A builder for [`UpdateS3ResourcesInput`](crate::input::UpdateS3ResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
         pub(crate) s3_resources_update:
@@ -1015,8 +1033,10 @@ pub mod update_s3_resources_input {
         /// Consumes the builder and constructs a [`UpdateS3ResourcesInput`](crate::input::UpdateS3ResourcesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateS3ResourcesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateS3ResourcesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateS3ResourcesInput {
                 member_account_id: self.member_account_id,
                 s3_resources_update: self.s3_resources_update,
@@ -1037,13 +1057,13 @@ impl UpdateS3ResourcesInput {
             crate::operation::UpdateS3Resources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateS3ResourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1051,8 +1071,10 @@ impl UpdateS3ResourcesInput {
             fn update_http_builder(
                 input: &crate::input::UpdateS3ResourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1139,7 +1161,7 @@ impl UpdateS3ResourcesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateS3ResourcesInput {
     /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update.</p>
     #[doc(hidden)]
@@ -1161,18 +1183,10 @@ impl UpdateS3ResourcesInput {
         self.s3_resources_update.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateS3ResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateS3ResourcesInput");
-        formatter.field("member_account_id", &self.member_account_id);
-        formatter.field("s3_resources_update", &self.s3_resources_update);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListS3ResourcesInput {
     /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
     #[doc(hidden)]
@@ -1198,19 +1212,10 @@ impl ListS3ResourcesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListS3ResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListS3ResourcesInput");
-        formatter.field("member_account_id", &self.member_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMemberAccountsInput {
     /// <p>(Discontinued) Use this parameter when paginating results. Set the value of this parameter to null on your first call to the <code>ListMemberAccounts</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
     #[doc(hidden)]
@@ -1229,18 +1234,10 @@ impl ListMemberAccountsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMemberAccountsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMemberAccountsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateS3ResourcesInput {
     /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Macie Classic.</p>
     #[doc(hidden)]
@@ -1259,18 +1256,10 @@ impl DisassociateS3ResourcesInput {
         self.associated_s3_resources.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateS3ResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateS3ResourcesInput");
-        formatter.field("member_account_id", &self.member_account_id);
-        formatter.field("associated_s3_resources", &self.associated_s3_resources);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateMemberAccountInput {
     /// <p>(Discontinued) The ID of the member account that you want to remove from Amazon Macie Classic.</p>
     #[doc(hidden)]
@@ -1282,17 +1271,10 @@ impl DisassociateMemberAccountInput {
         self.member_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateMemberAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateMemberAccountInput");
-        formatter.field("member_account_id", &self.member_account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateS3ResourcesInput {
     /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.</p>
     #[doc(hidden)]
@@ -1311,18 +1293,10 @@ impl AssociateS3ResourcesInput {
         self.s3_resources.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateS3ResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateS3ResourcesInput");
-        formatter.field("member_account_id", &self.member_account_id);
-        formatter.field("s3_resources", &self.s3_resources);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateMemberAccountInput {
     /// <p>(Discontinued) The ID of the Amazon Web Services account that you want to associate with Amazon Macie Classic as a member account.</p>
     #[doc(hidden)]
@@ -1332,12 +1306,5 @@ impl AssociateMemberAccountInput {
     /// <p>(Discontinued) The ID of the Amazon Web Services account that you want to associate with Amazon Macie Classic as a member account.</p>
     pub fn member_account_id(&self) -> std::option::Option<&str> {
         self.member_account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateMemberAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateMemberAccountInput");
-        formatter.field("member_account_id", &self.member_account_id);
-        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>A provider representing an Amazon Cognito user pool and its client ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CognitoIdentityProvider {
     /// <p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
     #[doc(hidden)]
@@ -32,20 +32,11 @@ impl CognitoIdentityProvider {
         self.server_side_token_check
     }
 }
-impl std::fmt::Debug for CognitoIdentityProvider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CognitoIdentityProvider");
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("client_id", &self.client_id);
-        formatter.field("server_side_token_check", &self.server_side_token_check);
-        formatter.finish()
-    }
-}
 /// See [`CognitoIdentityProvider`](crate::model::CognitoIdentityProvider).
 pub mod cognito_identity_provider {
 
     /// A builder for [`CognitoIdentityProvider`](crate::model::CognitoIdentityProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider_name: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -108,7 +99,7 @@ impl CognitoIdentityProvider {
 
 /// <p>A role mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoleMapping {
     /// <p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>
     #[doc(hidden)]
@@ -142,20 +133,11 @@ impl RoleMapping {
         self.rules_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for RoleMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoleMapping");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("ambiguous_role_resolution", &self.ambiguous_role_resolution);
-        formatter.field("rules_configuration", &self.rules_configuration);
-        formatter.finish()
-    }
-}
 /// See [`RoleMapping`](crate::model::RoleMapping).
 pub mod role_mapping {
 
     /// A builder for [`RoleMapping`](crate::model::RoleMapping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RoleMappingType>,
         pub(crate) ambiguous_role_resolution:
@@ -228,7 +210,7 @@ impl RoleMapping {
 
 /// <p>A container for rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RulesConfigurationType {
     /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
@@ -242,18 +224,11 @@ impl RulesConfigurationType {
         self.rules.as_deref()
     }
 }
-impl std::fmt::Debug for RulesConfigurationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RulesConfigurationType");
-        formatter.field("rules", &self.rules);
-        formatter.finish()
-    }
-}
 /// See [`RulesConfigurationType`](crate::model::RulesConfigurationType).
 pub mod rules_configuration_type {
 
     /// A builder for [`RulesConfigurationType`](crate::model::RulesConfigurationType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::MappingRule>>,
     }
@@ -294,7 +269,7 @@ impl RulesConfigurationType {
 
 /// <p>A rule that maps a claim name, a claim value, and a match type to a role ARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MappingRule {
     /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
     #[doc(hidden)]
@@ -327,21 +302,11 @@ impl MappingRule {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for MappingRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MappingRule");
-        formatter.field("claim", &self.claim);
-        formatter.field("match_type", &self.match_type);
-        formatter.field("value", &self.value);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`MappingRule`](crate::model::MappingRule).
 pub mod mapping_rule {
 
     /// A builder for [`MappingRule`](crate::model::MappingRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) claim: std::option::Option<std::string::String>,
         pub(crate) match_type: std::option::Option<crate::model::MappingRuleMatchType>,
@@ -410,6 +375,43 @@ impl MappingRule {
     }
 }
 
+/// When writing a match expression against `MappingRuleMatchType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let mappingrulematchtype = unimplemented!();
+/// match mappingrulematchtype {
+///     MappingRuleMatchType::Contains => { /* ... */ },
+///     MappingRuleMatchType::Equals => { /* ... */ },
+///     MappingRuleMatchType::NotEqual => { /* ... */ },
+///     MappingRuleMatchType::StartsWith => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `mappingrulematchtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MappingRuleMatchType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MappingRuleMatchType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MappingRuleMatchType::NewFeature` is defined.
+/// Specifically, when `mappingrulematchtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MappingRuleMatchType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -430,8 +432,8 @@ pub enum MappingRuleMatchType {
     NotEqual,
     #[allow(missing_docs)] // documentation missing in model
     StartsWith,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MappingRuleMatchType {
     fn from(s: &str) -> Self {
@@ -440,7 +442,9 @@ impl std::convert::From<&str> for MappingRuleMatchType {
             "Equals" => MappingRuleMatchType::Equals,
             "NotEqual" => MappingRuleMatchType::NotEqual,
             "StartsWith" => MappingRuleMatchType::StartsWith,
-            other => MappingRuleMatchType::Unknown(other.to_owned()),
+            other => {
+                MappingRuleMatchType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -459,11 +463,11 @@ impl MappingRuleMatchType {
             MappingRuleMatchType::Equals => "Equals",
             MappingRuleMatchType::NotEqual => "NotEqual",
             MappingRuleMatchType::StartsWith => "StartsWith",
-            MappingRuleMatchType::Unknown(s) => s.as_ref(),
+            MappingRuleMatchType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Contains", "Equals", "NotEqual", "StartsWith"]
     }
 }
@@ -473,6 +477,41 @@ impl AsRef<str> for MappingRuleMatchType {
     }
 }
 
+/// When writing a match expression against `AmbiguousRoleResolutionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ambiguousroleresolutiontype = unimplemented!();
+/// match ambiguousroleresolutiontype {
+///     AmbiguousRoleResolutionType::AuthenticatedRole => { /* ... */ },
+///     AmbiguousRoleResolutionType::Deny => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ambiguousroleresolutiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AmbiguousRoleResolutionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AmbiguousRoleResolutionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AmbiguousRoleResolutionType::NewFeature` is defined.
+/// Specifically, when `ambiguousroleresolutiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AmbiguousRoleResolutionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -489,15 +528,17 @@ pub enum AmbiguousRoleResolutionType {
     AuthenticatedRole,
     #[allow(missing_docs)] // documentation missing in model
     Deny,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AmbiguousRoleResolutionType {
     fn from(s: &str) -> Self {
         match s {
             "AuthenticatedRole" => AmbiguousRoleResolutionType::AuthenticatedRole,
             "Deny" => AmbiguousRoleResolutionType::Deny,
-            other => AmbiguousRoleResolutionType::Unknown(other.to_owned()),
+            other => AmbiguousRoleResolutionType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -514,11 +555,11 @@ impl AmbiguousRoleResolutionType {
         match self {
             AmbiguousRoleResolutionType::AuthenticatedRole => "AuthenticatedRole",
             AmbiguousRoleResolutionType::Deny => "Deny",
-            AmbiguousRoleResolutionType::Unknown(s) => s.as_ref(),
+            AmbiguousRoleResolutionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AuthenticatedRole", "Deny"]
     }
 }
@@ -528,6 +569,41 @@ impl AsRef<str> for AmbiguousRoleResolutionType {
     }
 }
 
+/// When writing a match expression against `RoleMappingType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let rolemappingtype = unimplemented!();
+/// match rolemappingtype {
+///     RoleMappingType::Rules => { /* ... */ },
+///     RoleMappingType::Token => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `rolemappingtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RoleMappingType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RoleMappingType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RoleMappingType::NewFeature` is defined.
+/// Specifically, when `rolemappingtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RoleMappingType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -544,15 +620,15 @@ pub enum RoleMappingType {
     Rules,
     #[allow(missing_docs)] // documentation missing in model
     Token,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RoleMappingType {
     fn from(s: &str) -> Self {
         match s {
             "Rules" => RoleMappingType::Rules,
             "Token" => RoleMappingType::Token,
-            other => RoleMappingType::Unknown(other.to_owned()),
+            other => RoleMappingType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -569,11 +645,11 @@ impl RoleMappingType {
         match self {
             RoleMappingType::Rules => "Rules",
             RoleMappingType::Token => "Token",
-            RoleMappingType::Unknown(s) => s.as_ref(),
+            RoleMappingType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Rules", "Token"]
     }
 }
@@ -585,7 +661,7 @@ impl AsRef<str> for RoleMappingType {
 
 /// <p>A description of the identity pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentityPoolShortDescription {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -604,19 +680,11 @@ impl IdentityPoolShortDescription {
         self.identity_pool_name.as_deref()
     }
 }
-impl std::fmt::Debug for IdentityPoolShortDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentityPoolShortDescription");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("identity_pool_name", &self.identity_pool_name);
-        formatter.finish()
-    }
-}
 /// See [`IdentityPoolShortDescription`](crate::model::IdentityPoolShortDescription).
 pub mod identity_pool_short_description {
 
     /// A builder for [`IdentityPoolShortDescription`](crate::model::IdentityPoolShortDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) identity_pool_name: std::option::Option<std::string::String>,
@@ -666,7 +734,7 @@ impl IdentityPoolShortDescription {
 
 /// <p>A description of the identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentityDescription {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -699,21 +767,11 @@ impl IdentityDescription {
         self.last_modified_date.as_ref()
     }
 }
-impl std::fmt::Debug for IdentityDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentityDescription");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("logins", &self.logins);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.finish()
-    }
-}
 /// See [`IdentityDescription`](crate::model::IdentityDescription).
 pub mod identity_description {
 
     /// A builder for [`IdentityDescription`](crate::model::IdentityDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) logins: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -796,7 +854,7 @@ impl IdentityDescription {
 
 /// <p>Credentials for the provided identity ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Credentials {
     /// <p>The Access Key portion of the credentials.</p>
     #[doc(hidden)]
@@ -829,21 +887,11 @@ impl Credentials {
         self.expiration.as_ref()
     }
 }
-impl std::fmt::Debug for Credentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Credentials");
-        formatter.field("access_key_id", &self.access_key_id);
-        formatter.field("secret_key", &self.secret_key);
-        formatter.field("session_token", &self.session_token);
-        formatter.field("expiration", &self.expiration);
-        formatter.finish()
-    }
-}
 /// See [`Credentials`](crate::model::Credentials).
 pub mod credentials {
 
     /// A builder for [`Credentials`](crate::model::Credentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) secret_key: std::option::Option<std::string::String>,
@@ -920,7 +968,7 @@ impl Credentials {
 
 /// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnprocessedIdentityId {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
@@ -939,19 +987,11 @@ impl UnprocessedIdentityId {
         self.error_code.as_ref()
     }
 }
-impl std::fmt::Debug for UnprocessedIdentityId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessedIdentityId");
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.finish()
-    }
-}
 /// See [`UnprocessedIdentityId`](crate::model::UnprocessedIdentityId).
 pub mod unprocessed_identity_id {
 
     /// A builder for [`UnprocessedIdentityId`](crate::model::UnprocessedIdentityId).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
@@ -996,6 +1036,41 @@ impl UnprocessedIdentityId {
     }
 }
 
+/// When writing a match expression against `ErrorCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let errorcode = unimplemented!();
+/// match errorcode {
+///     ErrorCode::AccessDenied => { /* ... */ },
+///     ErrorCode::InternalServerError => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `errorcode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ErrorCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ErrorCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ErrorCode::NewFeature` is defined.
+/// Specifically, when `errorcode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1012,15 +1087,15 @@ pub enum ErrorCode {
     AccessDenied,
     #[allow(missing_docs)] // documentation missing in model
     InternalServerError,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "AccessDenied" => ErrorCode::AccessDenied,
             "InternalServerError" => ErrorCode::InternalServerError,
-            other => ErrorCode::Unknown(other.to_owned()),
+            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1037,11 +1112,11 @@ impl ErrorCode {
         match self {
             ErrorCode::AccessDenied => "AccessDenied",
             ErrorCode::InternalServerError => "InternalServerError",
-            ErrorCode::Unknown(s) => s.as_ref(),
+            ErrorCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AccessDenied", "InternalServerError"]
     }
 }

@@ -5,7 +5,7 @@
 /// [`create_workflow`](crate::client::Client::create_workflow).
 ///
 /// See [`crate::client::fluent_builders::CreateWorkflow`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorkflow {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkflow {
 /// [`create_workflow_step`](crate::client::Client::create_workflow_step).
 ///
 /// See [`crate::client::fluent_builders::CreateWorkflowStep`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorkflowStep {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkflowStep {
 /// [`create_workflow_step_group`](crate::client::Client::create_workflow_step_group).
 ///
 /// See [`crate::client::fluent_builders::CreateWorkflowStepGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorkflowStepGroup {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkflowStepGroup 
 /// [`delete_workflow`](crate::client::Client::delete_workflow).
 ///
 /// See [`crate::client::fluent_builders::DeleteWorkflow`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWorkflow {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkflow {
 /// [`delete_workflow_step`](crate::client::Client::delete_workflow_step).
 ///
 /// See [`crate::client::fluent_builders::DeleteWorkflowStep`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWorkflowStep {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkflowStep {
 /// [`delete_workflow_step_group`](crate::client::Client::delete_workflow_step_group).
 ///
 /// See [`crate::client::fluent_builders::DeleteWorkflowStepGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWorkflowStepGroup {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkflowStepGroup 
 /// [`get_template`](crate::client::Client::get_template).
 ///
 /// See [`crate::client::fluent_builders::GetTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTemplate {
     _private: (),
 }
@@ -237,7 +237,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTemplate {
 /// [`get_template_step`](crate::client::Client::get_template_step).
 ///
 /// See [`crate::client::fluent_builders::GetTemplateStep`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTemplateStep {
     _private: (),
 }
@@ -271,7 +271,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTemplateStep {
 /// [`get_template_step_group`](crate::client::Client::get_template_step_group).
 ///
 /// See [`crate::client::fluent_builders::GetTemplateStepGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTemplateStepGroup {
     _private: (),
 }
@@ -305,7 +305,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTemplateStepGroup {
 /// [`get_workflow`](crate::client::Client::get_workflow).
 ///
 /// See [`crate::client::fluent_builders::GetWorkflow`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWorkflow {
     _private: (),
 }
@@ -337,7 +337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkflow {
 /// [`get_workflow_step`](crate::client::Client::get_workflow_step).
 ///
 /// See [`crate::client::fluent_builders::GetWorkflowStep`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWorkflowStep {
     _private: (),
 }
@@ -371,7 +371,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkflowStep {
 /// [`get_workflow_step_group`](crate::client::Client::get_workflow_step_group).
 ///
 /// See [`crate::client::fluent_builders::GetWorkflowStepGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWorkflowStepGroup {
     _private: (),
 }
@@ -405,7 +405,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkflowStepGroup {
 /// [`list_plugins`](crate::client::Client::list_plugins).
 ///
 /// See [`crate::client::fluent_builders::ListPlugins`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPlugins {
     _private: (),
 }
@@ -437,7 +437,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPlugins {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -471,7 +471,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_templates`](crate::client::Client::list_templates).
 ///
 /// See [`crate::client::fluent_builders::ListTemplates`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTemplates {
     _private: (),
 }
@@ -503,7 +503,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTemplates {
 /// [`list_template_step_groups`](crate::client::Client::list_template_step_groups).
 ///
 /// See [`crate::client::fluent_builders::ListTemplateStepGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTemplateStepGroups {
     _private: (),
 }
@@ -537,7 +537,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTemplateStepGroups {
 /// [`list_template_steps`](crate::client::Client::list_template_steps).
 ///
 /// See [`crate::client::fluent_builders::ListTemplateSteps`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTemplateSteps {
     _private: (),
 }
@@ -571,7 +571,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTemplateSteps {
 /// [`list_workflows`](crate::client::Client::list_workflows).
 ///
 /// See [`crate::client::fluent_builders::ListWorkflows`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkflows {
     _private: (),
 }
@@ -603,7 +603,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkflows {
 /// [`list_workflow_step_groups`](crate::client::Client::list_workflow_step_groups).
 ///
 /// See [`crate::client::fluent_builders::ListWorkflowStepGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkflowStepGroups {
     _private: (),
 }
@@ -637,7 +637,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkflowStepGroups {
 /// [`list_workflow_steps`](crate::client::Client::list_workflow_steps).
 ///
 /// See [`crate::client::fluent_builders::ListWorkflowSteps`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkflowSteps {
     _private: (),
 }
@@ -671,7 +671,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkflowSteps {
 /// [`retry_workflow_step`](crate::client::Client::retry_workflow_step).
 ///
 /// See [`crate::client::fluent_builders::RetryWorkflowStep`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RetryWorkflowStep {
     _private: (),
 }
@@ -705,7 +705,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RetryWorkflowStep {
 /// [`start_workflow`](crate::client::Client::start_workflow).
 ///
 /// See [`crate::client::fluent_builders::StartWorkflow`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartWorkflow {
     _private: (),
 }
@@ -737,7 +737,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartWorkflow {
 /// [`stop_workflow`](crate::client::Client::stop_workflow).
 ///
 /// See [`crate::client::fluent_builders::StopWorkflow`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopWorkflow {
     _private: (),
 }
@@ -769,7 +769,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopWorkflow {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -801,7 +801,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -833,7 +833,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_workflow`](crate::client::Client::update_workflow).
 ///
 /// See [`crate::client::fluent_builders::UpdateWorkflow`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateWorkflow {
     _private: (),
 }
@@ -865,7 +865,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkflow {
 /// [`update_workflow_step`](crate::client::Client::update_workflow_step).
 ///
 /// See [`crate::client::fluent_builders::UpdateWorkflowStep`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateWorkflowStep {
     _private: (),
 }
@@ -899,7 +899,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkflowStep {
 /// [`update_workflow_step_group`](crate::client::Client::update_workflow_step_group).
 ///
 /// See [`crate::client::fluent_builders::UpdateWorkflowStepGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateWorkflowStepGroup {
     _private: (),
 }

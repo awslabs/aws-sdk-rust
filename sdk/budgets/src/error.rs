@@ -2,22 +2,15 @@
 
 /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -25,7 +18,9 @@ impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -35,7 +30,7 @@ impl std::error::Error for ThrottlingException {}
 pub mod throttling_exception {
 
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -67,22 +62,15 @@ impl ThrottlingException {
 
 /// <p>We can’t locate the resource that you specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotFoundException {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl NotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -90,7 +78,9 @@ impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -100,7 +90,7 @@ impl std::error::Error for NotFoundException {}
 pub mod not_found_exception {
 
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -132,22 +122,15 @@ impl NotFoundException {
 
 /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterException {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -155,7 +138,9 @@ impl std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -165,7 +150,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
 
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -197,22 +182,15 @@ impl InvalidParameterException {
 
 /// <p>An error on the server occurred during the processing of your request. Try again later.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalErrorException {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InternalErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalErrorException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InternalErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -220,7 +198,9 @@ impl std::fmt::Display for InternalErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalErrorException")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -230,7 +210,7 @@ impl std::error::Error for InternalErrorException {}
 pub mod internal_error_exception {
 
     /// A builder for [`InternalErrorException`](crate::error::InternalErrorException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -262,22 +242,15 @@ impl InternalErrorException {
 
 /// <p>The budget name already exists. Budget names must be unique within an account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateRecordException {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DuplicateRecordException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateRecordException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DuplicateRecordException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -285,7 +258,9 @@ impl std::fmt::Display for DuplicateRecordException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateRecordException")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -295,7 +270,7 @@ impl std::error::Error for DuplicateRecordException {}
 pub mod duplicate_record_exception {
 
     /// A builder for [`DuplicateRecordException`](crate::error::DuplicateRecordException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -327,22 +302,15 @@ impl DuplicateRecordException {
 
 /// <p>You are not authorized to use this operation with the given parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -350,7 +318,9 @@ impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -360,7 +330,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
 
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -392,22 +362,15 @@ impl AccessDeniedException {
 
 /// <p> The request was received and recognized by the server, but the server rejected that particular method for the requested resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceLockedException {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceLockedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceLockedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ResourceLockedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -415,7 +378,9 @@ impl std::fmt::Display for ResourceLockedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceLockedException")?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -425,7 +390,7 @@ impl std::error::Error for ResourceLockedException {}
 pub mod resource_locked_exception {
 
     /// A builder for [`ResourceLockedException`](crate::error::ResourceLockedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -457,22 +422,15 @@ impl ResourceLockedException {
 
 /// <p>The pagination token is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidNextTokenException {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidNextTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidNextTokenException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidNextTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -480,7 +438,9 @@ impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextTokenException")?;
         if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+            {
+                write!(f, ": {}", inner_8)?;
+            }
         }
         Ok(())
     }
@@ -490,7 +450,7 @@ impl std::error::Error for InvalidNextTokenException {}
 pub mod invalid_next_token_exception {
 
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -522,22 +482,15 @@ impl InvalidNextTokenException {
 
 /// <p>The pagination token expired.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExpiredNextTokenException {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ExpiredNextTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExpiredNextTokenException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ExpiredNextTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -545,7 +498,9 @@ impl std::fmt::Display for ExpiredNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredNextTokenException")?;
         if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+            {
+                write!(f, ": {}", inner_9)?;
+            }
         }
         Ok(())
     }
@@ -555,7 +510,7 @@ impl std::error::Error for ExpiredNextTokenException {}
 pub mod expired_next_token_exception {
 
     /// A builder for [`ExpiredNextTokenException`](crate::error::ExpiredNextTokenException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -587,22 +542,15 @@ impl ExpiredNextTokenException {
 
 /// <p>You've exceeded the notification or subscriber limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreationLimitExceededException {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CreationLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreationLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CreationLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -610,7 +558,9 @@ impl std::fmt::Display for CreationLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CreationLimitExceededException")?;
         if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+            {
+                write!(f, ": {}", inner_10)?;
+            }
         }
         Ok(())
     }
@@ -620,7 +570,7 @@ impl std::error::Error for CreationLimitExceededException {}
 pub mod creation_limit_exceeded_exception {
 
     /// A builder for [`CreationLimitExceededException`](crate::error::CreationLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -659,6 +609,14 @@ pub struct CreateBudgetError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateBudgetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateBudgetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateBudget` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -675,8 +633,15 @@ pub enum CreateBudgetErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBudgetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -708,7 +673,7 @@ impl CreateBudgetError {
     /// Creates the `CreateBudgetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateBudgetErrorKind::Unhandled(err.into()),
+            kind: CreateBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -717,7 +682,7 @@ impl CreateBudgetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateBudgetErrorKind::Unhandled(err.into()),
+            kind: CreateBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -784,7 +749,7 @@ impl std::error::Error for CreateBudgetError {
             CreateBudgetErrorKind::InternalErrorException(_inner) => Some(_inner),
             CreateBudgetErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CreateBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateBudgetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateBudgetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -797,6 +762,14 @@ pub struct CreateBudgetActionError {
     pub kind: CreateBudgetActionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateBudgetActionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateBudgetAction` operation.
 #[non_exhaustive]
@@ -816,8 +789,15 @@ pub enum CreateBudgetActionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBudgetActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -850,7 +830,7 @@ impl CreateBudgetActionError {
     /// Creates the `CreateBudgetActionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateBudgetActionErrorKind::Unhandled(err.into()),
+            kind: CreateBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -859,7 +839,7 @@ impl CreateBudgetActionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateBudgetActionErrorKind::Unhandled(err.into()),
+            kind: CreateBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -943,7 +923,7 @@ impl std::error::Error for CreateBudgetActionError {
             CreateBudgetActionErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CreateBudgetActionErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateBudgetActionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateBudgetActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateBudgetActionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -956,6 +936,14 @@ pub struct CreateNotificationError {
     pub kind: CreateNotificationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateNotificationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateNotificationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateNotification` operation.
 #[non_exhaustive]
@@ -975,8 +963,15 @@ pub enum CreateNotificationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateNotificationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1009,7 +1004,7 @@ impl CreateNotificationError {
     /// Creates the `CreateNotificationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateNotificationErrorKind::Unhandled(err.into()),
+            kind: CreateNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1018,7 +1013,7 @@ impl CreateNotificationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateNotificationErrorKind::Unhandled(err.into()),
+            kind: CreateNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1102,7 +1097,7 @@ impl std::error::Error for CreateNotificationError {
             CreateNotificationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CreateNotificationErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateNotificationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateNotificationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateNotificationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1115,6 +1110,14 @@ pub struct CreateSubscriberError {
     pub kind: CreateSubscriberErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateSubscriberError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateSubscriber` operation.
 #[non_exhaustive]
@@ -1134,8 +1137,15 @@ pub enum CreateSubscriberErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSubscriberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1168,7 +1178,7 @@ impl CreateSubscriberError {
     /// Creates the `CreateSubscriberError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSubscriberErrorKind::Unhandled(err.into()),
+            kind: CreateSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1177,7 +1187,7 @@ impl CreateSubscriberError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSubscriberErrorKind::Unhandled(err.into()),
+            kind: CreateSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1258,7 +1268,7 @@ impl std::error::Error for CreateSubscriberError {
             CreateSubscriberErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CreateSubscriberErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateSubscriberErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateSubscriberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSubscriberErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1271,6 +1281,14 @@ pub struct DeleteBudgetError {
     pub kind: DeleteBudgetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteBudgetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteBudgetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteBudget` operation.
 #[non_exhaustive]
@@ -1286,8 +1304,15 @@ pub enum DeleteBudgetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBudgetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1318,7 +1343,7 @@ impl DeleteBudgetError {
     /// Creates the `DeleteBudgetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteBudgetErrorKind::Unhandled(err.into()),
+            kind: DeleteBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1327,7 +1352,7 @@ impl DeleteBudgetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteBudgetErrorKind::Unhandled(err.into()),
+            kind: DeleteBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1383,7 +1408,7 @@ impl std::error::Error for DeleteBudgetError {
             DeleteBudgetErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteBudgetErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteBudgetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteBudgetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1396,6 +1421,14 @@ pub struct DeleteBudgetActionError {
     pub kind: DeleteBudgetActionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteBudgetActionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteBudgetAction` operation.
 #[non_exhaustive]
@@ -1413,8 +1446,15 @@ pub enum DeleteBudgetActionErrorKind {
     ResourceLockedException(crate::error::ResourceLockedException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBudgetActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1446,7 +1486,7 @@ impl DeleteBudgetActionError {
     /// Creates the `DeleteBudgetActionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteBudgetActionErrorKind::Unhandled(err.into()),
+            kind: DeleteBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1455,7 +1495,7 @@ impl DeleteBudgetActionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteBudgetActionErrorKind::Unhandled(err.into()),
+            kind: DeleteBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1531,7 +1571,7 @@ impl std::error::Error for DeleteBudgetActionError {
             DeleteBudgetActionErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteBudgetActionErrorKind::ResourceLockedException(_inner) => Some(_inner),
             DeleteBudgetActionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteBudgetActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteBudgetActionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1544,6 +1584,14 @@ pub struct DeleteNotificationError {
     pub kind: DeleteNotificationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteNotificationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteNotificationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteNotification` operation.
 #[non_exhaustive]
@@ -1559,8 +1607,15 @@ pub enum DeleteNotificationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteNotificationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1591,7 +1646,7 @@ impl DeleteNotificationError {
     /// Creates the `DeleteNotificationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteNotificationErrorKind::Unhandled(err.into()),
+            kind: DeleteNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1600,7 +1655,7 @@ impl DeleteNotificationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteNotificationErrorKind::Unhandled(err.into()),
+            kind: DeleteNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1668,7 +1723,7 @@ impl std::error::Error for DeleteNotificationError {
             DeleteNotificationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteNotificationErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteNotificationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteNotificationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteNotificationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1681,6 +1736,14 @@ pub struct DeleteSubscriberError {
     pub kind: DeleteSubscriberErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteSubscriberError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteSubscriber` operation.
 #[non_exhaustive]
@@ -1696,8 +1759,15 @@ pub enum DeleteSubscriberErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSubscriberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1728,7 +1798,7 @@ impl DeleteSubscriberError {
     /// Creates the `DeleteSubscriberError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSubscriberErrorKind::Unhandled(err.into()),
+            kind: DeleteSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1737,7 +1807,7 @@ impl DeleteSubscriberError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSubscriberErrorKind::Unhandled(err.into()),
+            kind: DeleteSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1802,7 +1872,7 @@ impl std::error::Error for DeleteSubscriberError {
             DeleteSubscriberErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteSubscriberErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteSubscriberErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteSubscriberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSubscriberErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1815,6 +1885,14 @@ pub struct DescribeBudgetError {
     pub kind: DescribeBudgetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeBudgetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeBudgetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeBudget` operation.
 #[non_exhaustive]
@@ -1830,8 +1908,15 @@ pub enum DescribeBudgetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBudgetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1862,7 +1947,7 @@ impl DescribeBudgetError {
     /// Creates the `DescribeBudgetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeBudgetErrorKind::Unhandled(err.into()),
+            kind: DescribeBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1871,7 +1956,7 @@ impl DescribeBudgetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeBudgetErrorKind::Unhandled(err.into()),
+            kind: DescribeBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1933,7 +2018,7 @@ impl std::error::Error for DescribeBudgetError {
             DescribeBudgetErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeBudgetErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeBudgetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeBudgetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1946,6 +2031,14 @@ pub struct DescribeBudgetActionError {
     pub kind: DescribeBudgetActionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeBudgetActionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeBudgetAction` operation.
 #[non_exhaustive]
@@ -1961,8 +2054,15 @@ pub enum DescribeBudgetActionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBudgetActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1993,7 +2093,9 @@ impl DescribeBudgetActionError {
     /// Creates the `DescribeBudgetActionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeBudgetActionErrorKind::Unhandled(err.into()),
+            kind: DescribeBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2002,7 +2104,9 @@ impl DescribeBudgetActionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeBudgetActionErrorKind::Unhandled(err.into()),
+            kind: DescribeBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2070,7 +2174,7 @@ impl std::error::Error for DescribeBudgetActionError {
             DescribeBudgetActionErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeBudgetActionErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeBudgetActionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeBudgetActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeBudgetActionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2083,6 +2187,16 @@ pub struct DescribeBudgetActionHistoriesError {
     pub kind: DescribeBudgetActionHistoriesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeBudgetActionHistoriesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeBudgetActionHistoriesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeBudgetActionHistories` operation.
 #[non_exhaustive]
@@ -2100,8 +2214,15 @@ pub enum DescribeBudgetActionHistoriesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBudgetActionHistoriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2140,7 +2261,9 @@ impl DescribeBudgetActionHistoriesError {
     /// Creates the `DescribeBudgetActionHistoriesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeBudgetActionHistoriesErrorKind::Unhandled(err.into()),
+            kind: DescribeBudgetActionHistoriesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2149,7 +2272,9 @@ impl DescribeBudgetActionHistoriesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeBudgetActionHistoriesErrorKind::Unhandled(err.into()),
+            kind: DescribeBudgetActionHistoriesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2229,7 +2354,7 @@ impl std::error::Error for DescribeBudgetActionHistoriesError {
             }
             DescribeBudgetActionHistoriesErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeBudgetActionHistoriesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeBudgetActionHistoriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeBudgetActionHistoriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2242,6 +2367,16 @@ pub struct DescribeBudgetActionsForAccountError {
     pub kind: DescribeBudgetActionsForAccountErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeBudgetActionsForAccountError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeBudgetActionsForAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeBudgetActionsForAccount` operation.
 #[non_exhaustive]
@@ -2257,8 +2392,15 @@ pub enum DescribeBudgetActionsForAccountErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBudgetActionsForAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2300,7 +2442,9 @@ impl DescribeBudgetActionsForAccountError {
     /// Creates the `DescribeBudgetActionsForAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeBudgetActionsForAccountErrorKind::Unhandled(err.into()),
+            kind: DescribeBudgetActionsForAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2309,7 +2453,9 @@ impl DescribeBudgetActionsForAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeBudgetActionsForAccountErrorKind::Unhandled(err.into()),
+            kind: DescribeBudgetActionsForAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2383,7 +2529,7 @@ impl std::error::Error for DescribeBudgetActionsForAccountError {
                 Some(_inner)
             }
             DescribeBudgetActionsForAccountErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeBudgetActionsForAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeBudgetActionsForAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2396,6 +2542,16 @@ pub struct DescribeBudgetActionsForBudgetError {
     pub kind: DescribeBudgetActionsForBudgetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeBudgetActionsForBudgetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeBudgetActionsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeBudgetActionsForBudget` operation.
 #[non_exhaustive]
@@ -2413,8 +2569,15 @@ pub enum DescribeBudgetActionsForBudgetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBudgetActionsForBudgetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2455,7 +2618,9 @@ impl DescribeBudgetActionsForBudgetError {
     /// Creates the `DescribeBudgetActionsForBudgetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeBudgetActionsForBudgetErrorKind::Unhandled(err.into()),
+            kind: DescribeBudgetActionsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2464,7 +2629,9 @@ impl DescribeBudgetActionsForBudgetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeBudgetActionsForBudgetErrorKind::Unhandled(err.into()),
+            kind: DescribeBudgetActionsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2544,7 +2711,7 @@ impl std::error::Error for DescribeBudgetActionsForBudgetError {
             }
             DescribeBudgetActionsForBudgetErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeBudgetActionsForBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeBudgetActionsForBudgetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeBudgetActionsForBudgetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2557,6 +2724,16 @@ pub struct DescribeBudgetNotificationsForAccountError {
     pub kind: DescribeBudgetNotificationsForAccountErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeBudgetNotificationsForAccountError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeBudgetNotificationsForAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeBudgetNotificationsForAccount` operation.
 #[non_exhaustive]
@@ -2576,8 +2753,15 @@ pub enum DescribeBudgetNotificationsForAccountErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBudgetNotificationsForAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2627,7 +2811,9 @@ impl DescribeBudgetNotificationsForAccountError {
     /// Creates the `DescribeBudgetNotificationsForAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeBudgetNotificationsForAccountErrorKind::Unhandled(err.into()),
+            kind: DescribeBudgetNotificationsForAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2636,7 +2822,9 @@ impl DescribeBudgetNotificationsForAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeBudgetNotificationsForAccountErrorKind::Unhandled(err.into()),
+            kind: DescribeBudgetNotificationsForAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2734,9 +2922,7 @@ impl std::error::Error for DescribeBudgetNotificationsForAccountError {
             DescribeBudgetNotificationsForAccountErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            DescribeBudgetNotificationsForAccountErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeBudgetNotificationsForAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2749,6 +2935,16 @@ pub struct DescribeBudgetPerformanceHistoryError {
     pub kind: DescribeBudgetPerformanceHistoryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeBudgetPerformanceHistoryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeBudgetPerformanceHistoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeBudgetPerformanceHistory` operation.
 #[non_exhaustive]
@@ -2768,8 +2964,15 @@ pub enum DescribeBudgetPerformanceHistoryErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBudgetPerformanceHistoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2815,7 +3018,9 @@ impl DescribeBudgetPerformanceHistoryError {
     /// Creates the `DescribeBudgetPerformanceHistoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeBudgetPerformanceHistoryErrorKind::Unhandled(err.into()),
+            kind: DescribeBudgetPerformanceHistoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2824,7 +3029,9 @@ impl DescribeBudgetPerformanceHistoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeBudgetPerformanceHistoryErrorKind::Unhandled(err.into()),
+            kind: DescribeBudgetPerformanceHistoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2918,7 +3125,7 @@ impl std::error::Error for DescribeBudgetPerformanceHistoryError {
             }
             DescribeBudgetPerformanceHistoryErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeBudgetPerformanceHistoryErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeBudgetPerformanceHistoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeBudgetPerformanceHistoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2931,6 +3138,14 @@ pub struct DescribeBudgetsError {
     pub kind: DescribeBudgetsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeBudgetsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeBudgetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeBudgets` operation.
 #[non_exhaustive]
@@ -2950,8 +3165,15 @@ pub enum DescribeBudgetsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBudgetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2984,7 +3206,7 @@ impl DescribeBudgetsError {
     /// Creates the `DescribeBudgetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeBudgetsErrorKind::Unhandled(err.into()),
+            kind: DescribeBudgetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2993,7 +3215,7 @@ impl DescribeBudgetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeBudgetsErrorKind::Unhandled(err.into()),
+            kind: DescribeBudgetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3071,7 +3293,7 @@ impl std::error::Error for DescribeBudgetsError {
             DescribeBudgetsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeBudgetsErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeBudgetsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeBudgetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeBudgetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3084,6 +3306,16 @@ pub struct DescribeNotificationsForBudgetError {
     pub kind: DescribeNotificationsForBudgetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeNotificationsForBudgetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeNotificationsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeNotificationsForBudget` operation.
 #[non_exhaustive]
@@ -3103,8 +3335,15 @@ pub enum DescribeNotificationsForBudgetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeNotificationsForBudgetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3148,7 +3387,9 @@ impl DescribeNotificationsForBudgetError {
     /// Creates the `DescribeNotificationsForBudgetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeNotificationsForBudgetErrorKind::Unhandled(err.into()),
+            kind: DescribeNotificationsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3157,7 +3398,9 @@ impl DescribeNotificationsForBudgetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeNotificationsForBudgetErrorKind::Unhandled(err.into()),
+            kind: DescribeNotificationsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3247,7 +3490,7 @@ impl std::error::Error for DescribeNotificationsForBudgetError {
             }
             DescribeNotificationsForBudgetErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeNotificationsForBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeNotificationsForBudgetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeNotificationsForBudgetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3260,6 +3503,16 @@ pub struct DescribeSubscribersForNotificationError {
     pub kind: DescribeSubscribersForNotificationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeSubscribersForNotificationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeSubscribersForNotificationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeSubscribersForNotification` operation.
 #[non_exhaustive]
@@ -3279,8 +3532,15 @@ pub enum DescribeSubscribersForNotificationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSubscribersForNotificationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3328,7 +3588,9 @@ impl DescribeSubscribersForNotificationError {
     /// Creates the `DescribeSubscribersForNotificationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSubscribersForNotificationErrorKind::Unhandled(err.into()),
+            kind: DescribeSubscribersForNotificationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3337,7 +3599,9 @@ impl DescribeSubscribersForNotificationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSubscribersForNotificationErrorKind::Unhandled(err.into()),
+            kind: DescribeSubscribersForNotificationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3433,7 +3697,7 @@ impl std::error::Error for DescribeSubscribersForNotificationError {
             DescribeSubscribersForNotificationErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            DescribeSubscribersForNotificationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSubscribersForNotificationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3446,6 +3710,14 @@ pub struct ExecuteBudgetActionError {
     pub kind: ExecuteBudgetActionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ExecuteBudgetActionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ExecuteBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ExecuteBudgetAction` operation.
 #[non_exhaustive]
@@ -3463,8 +3735,15 @@ pub enum ExecuteBudgetActionErrorKind {
     ResourceLockedException(crate::error::ResourceLockedException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExecuteBudgetActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3496,7 +3775,7 @@ impl ExecuteBudgetActionError {
     /// Creates the `ExecuteBudgetActionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExecuteBudgetActionErrorKind::Unhandled(err.into()),
+            kind: ExecuteBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3505,7 +3784,7 @@ impl ExecuteBudgetActionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExecuteBudgetActionErrorKind::Unhandled(err.into()),
+            kind: ExecuteBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3581,7 +3860,7 @@ impl std::error::Error for ExecuteBudgetActionError {
             ExecuteBudgetActionErrorKind::NotFoundException(_inner) => Some(_inner),
             ExecuteBudgetActionErrorKind::ResourceLockedException(_inner) => Some(_inner),
             ExecuteBudgetActionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ExecuteBudgetActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExecuteBudgetActionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3594,6 +3873,14 @@ pub struct UpdateBudgetError {
     pub kind: UpdateBudgetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateBudgetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateBudgetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateBudget` operation.
 #[non_exhaustive]
@@ -3609,8 +3896,15 @@ pub enum UpdateBudgetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateBudgetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3641,7 +3935,7 @@ impl UpdateBudgetError {
     /// Creates the `UpdateBudgetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateBudgetErrorKind::Unhandled(err.into()),
+            kind: UpdateBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3650,7 +3944,7 @@ impl UpdateBudgetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateBudgetErrorKind::Unhandled(err.into()),
+            kind: UpdateBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3706,7 +4000,7 @@ impl std::error::Error for UpdateBudgetError {
             UpdateBudgetErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateBudgetErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateBudgetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateBudgetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3719,6 +4013,14 @@ pub struct UpdateBudgetActionError {
     pub kind: UpdateBudgetActionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateBudgetActionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateBudgetAction` operation.
 #[non_exhaustive]
@@ -3736,8 +4038,15 @@ pub enum UpdateBudgetActionErrorKind {
     ResourceLockedException(crate::error::ResourceLockedException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateBudgetActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3769,7 +4078,7 @@ impl UpdateBudgetActionError {
     /// Creates the `UpdateBudgetActionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateBudgetActionErrorKind::Unhandled(err.into()),
+            kind: UpdateBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3778,7 +4087,7 @@ impl UpdateBudgetActionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateBudgetActionErrorKind::Unhandled(err.into()),
+            kind: UpdateBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3854,7 +4163,7 @@ impl std::error::Error for UpdateBudgetActionError {
             UpdateBudgetActionErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateBudgetActionErrorKind::ResourceLockedException(_inner) => Some(_inner),
             UpdateBudgetActionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateBudgetActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateBudgetActionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3867,6 +4176,14 @@ pub struct UpdateNotificationError {
     pub kind: UpdateNotificationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateNotificationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateNotificationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateNotification` operation.
 #[non_exhaustive]
@@ -3884,8 +4201,15 @@ pub enum UpdateNotificationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateNotificationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3917,7 +4241,7 @@ impl UpdateNotificationError {
     /// Creates the `UpdateNotificationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateNotificationErrorKind::Unhandled(err.into()),
+            kind: UpdateNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3926,7 +4250,7 @@ impl UpdateNotificationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateNotificationErrorKind::Unhandled(err.into()),
+            kind: UpdateNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4002,7 +4326,7 @@ impl std::error::Error for UpdateNotificationError {
             UpdateNotificationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateNotificationErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateNotificationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateNotificationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateNotificationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4015,6 +4339,14 @@ pub struct UpdateSubscriberError {
     pub kind: UpdateSubscriberErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateSubscriberError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateSubscriber` operation.
 #[non_exhaustive]
@@ -4032,8 +4364,15 @@ pub enum UpdateSubscriberErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSubscriberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4065,7 +4404,7 @@ impl UpdateSubscriberError {
     /// Creates the `UpdateSubscriberError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSubscriberErrorKind::Unhandled(err.into()),
+            kind: UpdateSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4074,7 +4413,7 @@ impl UpdateSubscriberError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSubscriberErrorKind::Unhandled(err.into()),
+            kind: UpdateSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4147,7 +4486,35 @@ impl std::error::Error for UpdateSubscriberError {
             UpdateSubscriberErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateSubscriberErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateSubscriberErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateSubscriberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSubscriberErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

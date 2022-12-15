@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_disable_control_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisableControlInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.control_identifier {
         object.key("controlIdentifier").string(var_1.as_str());
     }
@@ -15,7 +15,7 @@ pub fn serialize_structure_crate_input_disable_control_input(
 pub fn serialize_structure_crate_input_enable_control_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::EnableControlInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_3) = &input.control_identifier {
         object.key("controlIdentifier").string(var_3.as_str());
     }
@@ -28,7 +28,7 @@ pub fn serialize_structure_crate_input_enable_control_input(
 pub fn serialize_structure_crate_input_get_control_operation_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetControlOperationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_5) = &input.operation_identifier {
         object.key("operationIdentifier").string(var_5.as_str());
     }
@@ -38,7 +38,7 @@ pub fn serialize_structure_crate_input_get_control_operation_input(
 pub fn serialize_structure_crate_input_list_enabled_controls_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListEnabledControlsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_6) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]

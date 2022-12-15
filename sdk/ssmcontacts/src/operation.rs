@@ -5,7 +5,7 @@
 /// [`accept_page`](crate::client::Client::accept_page).
 ///
 /// See [`crate::client::fluent_builders::AcceptPage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AcceptPage {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptPage {
 /// [`activate_contact_channel`](crate::client::Client::activate_contact_channel).
 ///
 /// See [`crate::client::fluent_builders::ActivateContactChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ActivateContactChannel {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ActivateContactChannel {
 /// [`create_contact`](crate::client::Client::create_contact).
 ///
 /// See [`crate::client::fluent_builders::CreateContact`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateContact {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateContact {
 /// [`create_contact_channel`](crate::client::Client::create_contact_channel).
 ///
 /// See [`crate::client::fluent_builders::CreateContactChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateContactChannel {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateContactChannel {
 /// [`deactivate_contact_channel`](crate::client::Client::deactivate_contact_channel).
 ///
 /// See [`crate::client::fluent_builders::DeactivateContactChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeactivateContactChannel {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeactivateContactChannel
 /// [`delete_contact`](crate::client::Client::delete_contact).
 ///
 /// See [`crate::client::fluent_builders::DeleteContact`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteContact {
     _private: (),
 }
@@ -203,7 +203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteContact {
 /// [`delete_contact_channel`](crate::client::Client::delete_contact_channel).
 ///
 /// See [`crate::client::fluent_builders::DeleteContactChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteContactChannel {
     _private: (),
 }
@@ -237,7 +237,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteContactChannel {
 /// [`describe_engagement`](crate::client::Client::describe_engagement).
 ///
 /// See [`crate::client::fluent_builders::DescribeEngagement`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEngagement {
     _private: (),
 }
@@ -271,7 +271,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEngagement {
 /// [`describe_page`](crate::client::Client::describe_page).
 ///
 /// See [`crate::client::fluent_builders::DescribePage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePage {
     _private: (),
 }
@@ -303,7 +303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePage {
 /// [`get_contact`](crate::client::Client::get_contact).
 ///
 /// See [`crate::client::fluent_builders::GetContact`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetContact {
     _private: (),
 }
@@ -335,7 +335,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContact {
 /// [`get_contact_channel`](crate::client::Client::get_contact_channel).
 ///
 /// See [`crate::client::fluent_builders::GetContactChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetContactChannel {
     _private: (),
 }
@@ -369,7 +369,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContactChannel {
 /// [`get_contact_policy`](crate::client::Client::get_contact_policy).
 ///
 /// See [`crate::client::fluent_builders::GetContactPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetContactPolicy {
     _private: (),
 }
@@ -403,7 +403,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContactPolicy {
 /// [`list_contact_channels`](crate::client::Client::list_contact_channels).
 ///
 /// See [`crate::client::fluent_builders::ListContactChannels`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListContactChannels {
     _private: (),
 }
@@ -437,7 +437,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContactChannels {
 /// [`list_contacts`](crate::client::Client::list_contacts).
 ///
 /// See [`crate::client::fluent_builders::ListContacts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListContacts {
     _private: (),
 }
@@ -469,7 +469,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContacts {
 /// [`list_engagements`](crate::client::Client::list_engagements).
 ///
 /// See [`crate::client::fluent_builders::ListEngagements`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEngagements {
     _private: (),
 }
@@ -503,7 +503,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEngagements {
 /// [`list_page_receipts`](crate::client::Client::list_page_receipts).
 ///
 /// See [`crate::client::fluent_builders::ListPageReceipts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPageReceipts {
     _private: (),
 }
@@ -537,7 +537,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPageReceipts {
 /// [`list_pages_by_contact`](crate::client::Client::list_pages_by_contact).
 ///
 /// See [`crate::client::fluent_builders::ListPagesByContact`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPagesByContact {
     _private: (),
 }
@@ -571,7 +571,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPagesByContact {
 /// [`list_pages_by_engagement`](crate::client::Client::list_pages_by_engagement).
 ///
 /// See [`crate::client::fluent_builders::ListPagesByEngagement`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPagesByEngagement {
     _private: (),
 }
@@ -605,7 +605,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPagesByEngagement {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -639,7 +639,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`put_contact_policy`](crate::client::Client::put_contact_policy).
 ///
 /// See [`crate::client::fluent_builders::PutContactPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutContactPolicy {
     _private: (),
 }
@@ -673,7 +673,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutContactPolicy {
 /// [`send_activation_code`](crate::client::Client::send_activation_code).
 ///
 /// See [`crate::client::fluent_builders::SendActivationCode`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendActivationCode {
     _private: (),
 }
@@ -707,7 +707,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendActivationCode {
 /// [`start_engagement`](crate::client::Client::start_engagement).
 ///
 /// See [`crate::client::fluent_builders::StartEngagement`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartEngagement {
     _private: (),
 }
@@ -741,7 +741,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartEngagement {
 /// [`stop_engagement`](crate::client::Client::stop_engagement).
 ///
 /// See [`crate::client::fluent_builders::StopEngagement`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopEngagement {
     _private: (),
 }
@@ -773,7 +773,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopEngagement {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -805,7 +805,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -837,7 +837,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_contact`](crate::client::Client::update_contact).
 ///
 /// See [`crate::client::fluent_builders::UpdateContact`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateContact {
     _private: (),
 }
@@ -869,7 +869,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContact {
 /// [`update_contact_channel`](crate::client::Client::update_contact_channel).
 ///
 /// See [`crate::client::fluent_builders::UpdateContactChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateContactChannel {
     _private: (),
 }

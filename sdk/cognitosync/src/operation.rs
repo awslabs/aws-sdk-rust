@@ -5,7 +5,7 @@
 /// [`bulk_publish`](crate::client::Client::bulk_publish).
 ///
 /// See [`crate::client::fluent_builders::BulkPublish`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BulkPublish {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BulkPublish {
 /// [`delete_dataset`](crate::client::Client::delete_dataset).
 ///
 /// See [`crate::client::fluent_builders::DeleteDataset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDataset {
     _private: (),
 }
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataset {
 /// [`describe_dataset`](crate::client::Client::describe_dataset).
 ///
 /// See [`crate::client::fluent_builders::DescribeDataset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDataset {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDataset {
 /// [`describe_identity_pool_usage`](crate::client::Client::describe_identity_pool_usage).
 ///
 /// See [`crate::client::fluent_builders::DescribeIdentityPoolUsage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeIdentityPoolUsage {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIdentityPoolUsag
 /// [`describe_identity_usage`](crate::client::Client::describe_identity_usage).
 ///
 /// See [`crate::client::fluent_builders::DescribeIdentityUsage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeIdentityUsage {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIdentityUsage {
 /// [`get_bulk_publish_details`](crate::client::Client::get_bulk_publish_details).
 ///
 /// See [`crate::client::fluent_builders::GetBulkPublishDetails`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBulkPublishDetails {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBulkPublishDetails {
 /// [`get_cognito_events`](crate::client::Client::get_cognito_events).
 ///
 /// See [`crate::client::fluent_builders::GetCognitoEvents`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCognitoEvents {
     _private: (),
 }
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCognitoEvents {
 /// [`get_identity_pool_configuration`](crate::client::Client::get_identity_pool_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetIdentityPoolConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetIdentityPoolConfiguration {
     _private: (),
 }
@@ -273,7 +273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityPoolConfigura
 /// [`list_datasets`](crate::client::Client::list_datasets).
 ///
 /// See [`crate::client::fluent_builders::ListDatasets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDatasets {
     _private: (),
 }
@@ -305,7 +305,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatasets {
 /// [`list_identity_pool_usage`](crate::client::Client::list_identity_pool_usage).
 ///
 /// See [`crate::client::fluent_builders::ListIdentityPoolUsage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListIdentityPoolUsage {
     _private: (),
 }
@@ -339,7 +339,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIdentityPoolUsage {
 /// [`list_records`](crate::client::Client::list_records).
 ///
 /// See [`crate::client::fluent_builders::ListRecords`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRecords {
     _private: (),
 }
@@ -371,7 +371,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecords {
 /// [`register_device`](crate::client::Client::register_device).
 ///
 /// See [`crate::client::fluent_builders::RegisterDevice`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterDevice {
     _private: (),
 }
@@ -403,7 +403,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterDevice {
 /// [`set_cognito_events`](crate::client::Client::set_cognito_events).
 ///
 /// See [`crate::client::fluent_builders::SetCognitoEvents`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetCognitoEvents {
     _private: (),
 }
@@ -437,7 +437,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetCognitoEvents {
 /// [`set_identity_pool_configuration`](crate::client::Client::set_identity_pool_configuration).
 ///
 /// See [`crate::client::fluent_builders::SetIdentityPoolConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetIdentityPoolConfiguration {
     _private: (),
 }
@@ -471,7 +471,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetIdentityPoolConfigura
 /// [`subscribe_to_dataset`](crate::client::Client::subscribe_to_dataset).
 ///
 /// See [`crate::client::fluent_builders::SubscribeToDataset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SubscribeToDataset {
     _private: (),
 }
@@ -505,7 +505,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SubscribeToDataset {
 /// [`unsubscribe_from_dataset`](crate::client::Client::unsubscribe_from_dataset).
 ///
 /// See [`crate::client::fluent_builders::UnsubscribeFromDataset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UnsubscribeFromDataset {
     _private: (),
 }
@@ -539,7 +539,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnsubscribeFromDataset {
 /// [`update_records`](crate::client::Client::update_records).
 ///
 /// See [`crate::client::fluent_builders::UpdateRecords`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRecords {
     _private: (),
 }

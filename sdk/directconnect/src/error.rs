@@ -2,22 +2,15 @@
 
 /// <p>A server-side error occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectConnectServerException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DirectConnectServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectConnectServerException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DirectConnectServerException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -25,7 +18,9 @@ impl std::fmt::Display for DirectConnectServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DirectConnectServerException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -35,7 +30,7 @@ impl std::error::Error for DirectConnectServerException {}
 pub mod direct_connect_server_exception {
 
     /// A builder for [`DirectConnectServerException`](crate::error::DirectConnectServerException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -67,22 +62,15 @@ impl DirectConnectServerException {
 
 /// <p>One or more parameters are not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectConnectClientException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DirectConnectClientException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectConnectClientException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DirectConnectClientException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -90,7 +78,9 @@ impl std::fmt::Display for DirectConnectClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DirectConnectClientException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -100,7 +90,7 @@ impl std::error::Error for DirectConnectClientException {}
 pub mod direct_connect_client_exception {
 
     /// A builder for [`DirectConnectClientException`](crate::error::DirectConnectClientException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -132,22 +122,15 @@ impl DirectConnectClientException {
 
 /// <p>You have reached the limit on the number of tags that can be assigned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTagsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TooManyTagsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTagsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TooManyTagsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -155,7 +138,9 @@ impl std::fmt::Display for TooManyTagsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTagsException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -165,7 +150,7 @@ impl std::error::Error for TooManyTagsException {}
 pub mod too_many_tags_exception {
 
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -197,22 +182,15 @@ impl TooManyTagsException {
 
 /// <p>A tag key was specified more than once.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DuplicateTagKeysException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DuplicateTagKeysException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateTagKeysException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DuplicateTagKeysException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -220,7 +198,9 @@ impl std::fmt::Display for DuplicateTagKeysException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateTagKeysException")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -230,7 +210,7 @@ impl std::error::Error for DuplicateTagKeysException {}
 pub mod duplicate_tag_keys_exception {
 
     /// A builder for [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -269,6 +249,18 @@ pub struct AcceptDirectConnectGatewayAssociationProposalError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for AcceptDirectConnectGatewayAssociationProposalError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AcceptDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AcceptDirectConnectGatewayAssociationProposal` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -277,8 +269,15 @@ pub enum AcceptDirectConnectGatewayAssociationProposalErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AcceptDirectConnectGatewayAssociationProposalError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -317,7 +316,9 @@ impl AcceptDirectConnectGatewayAssociationProposalError {
     /// Creates the `AcceptDirectConnectGatewayAssociationProposalError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AcceptDirectConnectGatewayAssociationProposalErrorKind::Unhandled(err.into()),
+            kind: AcceptDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -326,7 +327,9 @@ impl AcceptDirectConnectGatewayAssociationProposalError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AcceptDirectConnectGatewayAssociationProposalErrorKind::Unhandled(err.into()),
+            kind: AcceptDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -375,7 +378,7 @@ impl std::error::Error for AcceptDirectConnectGatewayAssociationProposalError {
             Some(_inner)
             ,
             AcceptDirectConnectGatewayAssociationProposalErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -390,6 +393,16 @@ pub struct AllocateConnectionOnInterconnectError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AllocateConnectionOnInterconnectError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AllocateConnectionOnInterconnectErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AllocateConnectionOnInterconnect` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -398,8 +411,15 @@ pub enum AllocateConnectionOnInterconnectErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AllocateConnectionOnInterconnectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -434,7 +454,9 @@ impl AllocateConnectionOnInterconnectError {
     /// Creates the `AllocateConnectionOnInterconnectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AllocateConnectionOnInterconnectErrorKind::Unhandled(err.into()),
+            kind: AllocateConnectionOnInterconnectErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -443,7 +465,9 @@ impl AllocateConnectionOnInterconnectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AllocateConnectionOnInterconnectErrorKind::Unhandled(err.into()),
+            kind: AllocateConnectionOnInterconnectErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -491,7 +515,7 @@ impl std::error::Error for AllocateConnectionOnInterconnectError {
             AllocateConnectionOnInterconnectErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            AllocateConnectionOnInterconnectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AllocateConnectionOnInterconnectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -505,6 +529,16 @@ pub struct AllocateHostedConnectionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AllocateHostedConnectionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AllocateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AllocateHostedConnection` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -517,8 +551,15 @@ pub enum AllocateHostedConnectionErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AllocateHostedConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -552,7 +593,9 @@ impl AllocateHostedConnectionError {
     /// Creates the `AllocateHostedConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AllocateHostedConnectionErrorKind::Unhandled(err.into()),
+            kind: AllocateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -561,7 +604,9 @@ impl AllocateHostedConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AllocateHostedConnectionErrorKind::Unhandled(err.into()),
+            kind: AllocateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -621,7 +666,7 @@ impl std::error::Error for AllocateHostedConnectionError {
             AllocateHostedConnectionErrorKind::DirectConnectServerException(_inner) => Some(_inner),
             AllocateHostedConnectionErrorKind::DuplicateTagKeysException(_inner) => Some(_inner),
             AllocateHostedConnectionErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            AllocateHostedConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AllocateHostedConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -635,6 +680,16 @@ pub struct AllocatePrivateVirtualInterfaceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AllocatePrivateVirtualInterfaceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AllocatePrivateVirtualInterfaceErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AllocatePrivateVirtualInterface` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -647,8 +702,15 @@ pub enum AllocatePrivateVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AllocatePrivateVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -687,7 +749,9 @@ impl AllocatePrivateVirtualInterfaceError {
     /// Creates the `AllocatePrivateVirtualInterfaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AllocatePrivateVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: AllocatePrivateVirtualInterfaceErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -696,7 +760,9 @@ impl AllocatePrivateVirtualInterfaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AllocatePrivateVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: AllocatePrivateVirtualInterfaceErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -762,7 +828,7 @@ impl std::error::Error for AllocatePrivateVirtualInterfaceError {
                 Some(_inner)
             }
             AllocatePrivateVirtualInterfaceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            AllocatePrivateVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AllocatePrivateVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -776,6 +842,16 @@ pub struct AllocatePublicVirtualInterfaceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AllocatePublicVirtualInterfaceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AllocatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AllocatePublicVirtualInterface` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -788,8 +864,15 @@ pub enum AllocatePublicVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AllocatePublicVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -828,7 +911,9 @@ impl AllocatePublicVirtualInterfaceError {
     /// Creates the `AllocatePublicVirtualInterfaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AllocatePublicVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: AllocatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -837,7 +922,9 @@ impl AllocatePublicVirtualInterfaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AllocatePublicVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: AllocatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -903,7 +990,7 @@ impl std::error::Error for AllocatePublicVirtualInterfaceError {
                 Some(_inner)
             }
             AllocatePublicVirtualInterfaceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            AllocatePublicVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AllocatePublicVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -917,6 +1004,16 @@ pub struct AllocateTransitVirtualInterfaceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AllocateTransitVirtualInterfaceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AllocateTransitVirtualInterfaceErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AllocateTransitVirtualInterface` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -929,8 +1026,15 @@ pub enum AllocateTransitVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AllocateTransitVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -969,7 +1073,9 @@ impl AllocateTransitVirtualInterfaceError {
     /// Creates the `AllocateTransitVirtualInterfaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AllocateTransitVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: AllocateTransitVirtualInterfaceErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -978,7 +1084,9 @@ impl AllocateTransitVirtualInterfaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AllocateTransitVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: AllocateTransitVirtualInterfaceErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1044,7 +1152,7 @@ impl std::error::Error for AllocateTransitVirtualInterfaceError {
                 Some(_inner)
             }
             AllocateTransitVirtualInterfaceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            AllocateTransitVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AllocateTransitVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1058,6 +1166,16 @@ pub struct AssociateConnectionWithLagError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AssociateConnectionWithLagError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateConnectionWithLagErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AssociateConnectionWithLag` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1066,8 +1184,15 @@ pub enum AssociateConnectionWithLagErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateConnectionWithLagError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1099,7 +1224,9 @@ impl AssociateConnectionWithLagError {
     /// Creates the `AssociateConnectionWithLagError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateConnectionWithLagErrorKind::Unhandled(err.into()),
+            kind: AssociateConnectionWithLagErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1108,7 +1235,9 @@ impl AssociateConnectionWithLagError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateConnectionWithLagErrorKind::Unhandled(err.into()),
+            kind: AssociateConnectionWithLagErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1156,7 +1285,7 @@ impl std::error::Error for AssociateConnectionWithLagError {
             AssociateConnectionWithLagErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            AssociateConnectionWithLagErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateConnectionWithLagErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1170,6 +1299,16 @@ pub struct AssociateHostedConnectionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AssociateHostedConnectionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AssociateHostedConnection` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1178,8 +1317,15 @@ pub enum AssociateHostedConnectionErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateHostedConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1211,7 +1357,9 @@ impl AssociateHostedConnectionError {
     /// Creates the `AssociateHostedConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateHostedConnectionErrorKind::Unhandled(err.into()),
+            kind: AssociateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1220,7 +1368,9 @@ impl AssociateHostedConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateHostedConnectionErrorKind::Unhandled(err.into()),
+            kind: AssociateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1268,7 +1418,7 @@ impl std::error::Error for AssociateHostedConnectionError {
             AssociateHostedConnectionErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            AssociateHostedConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateHostedConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1282,6 +1432,14 @@ pub struct AssociateMacSecKeyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AssociateMacSecKeyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateMacSecKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AssociateMacSecKey` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1290,8 +1448,15 @@ pub enum AssociateMacSecKeyErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateMacSecKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1319,7 +1484,7 @@ impl AssociateMacSecKeyError {
     /// Creates the `AssociateMacSecKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateMacSecKeyErrorKind::Unhandled(err.into()),
+            kind: AssociateMacSecKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1328,7 +1493,7 @@ impl AssociateMacSecKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateMacSecKeyErrorKind::Unhandled(err.into()),
+            kind: AssociateMacSecKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1372,7 +1537,7 @@ impl std::error::Error for AssociateMacSecKeyError {
         match &self.kind {
             AssociateMacSecKeyErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             AssociateMacSecKeyErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            AssociateMacSecKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateMacSecKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1386,6 +1551,16 @@ pub struct AssociateVirtualInterfaceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AssociateVirtualInterfaceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AssociateVirtualInterface` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1394,8 +1569,15 @@ pub enum AssociateVirtualInterfaceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1427,7 +1609,9 @@ impl AssociateVirtualInterfaceError {
     /// Creates the `AssociateVirtualInterfaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: AssociateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1436,7 +1620,9 @@ impl AssociateVirtualInterfaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: AssociateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1484,7 +1670,7 @@ impl std::error::Error for AssociateVirtualInterfaceError {
             AssociateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            AssociateVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1498,6 +1684,14 @@ pub struct ConfirmConnectionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ConfirmConnectionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ConfirmConnectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ConfirmConnection` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1506,8 +1700,15 @@ pub enum ConfirmConnectionErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ConfirmConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1535,7 +1736,7 @@ impl ConfirmConnectionError {
     /// Creates the `ConfirmConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ConfirmConnectionErrorKind::Unhandled(err.into()),
+            kind: ConfirmConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1544,7 +1745,7 @@ impl ConfirmConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ConfirmConnectionErrorKind::Unhandled(err.into()),
+            kind: ConfirmConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1588,7 +1789,7 @@ impl std::error::Error for ConfirmConnectionError {
         match &self.kind {
             ConfirmConnectionErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             ConfirmConnectionErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            ConfirmConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ConfirmConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1602,6 +1803,16 @@ pub struct ConfirmCustomerAgreementError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ConfirmCustomerAgreementError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ConfirmCustomerAgreementErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ConfirmCustomerAgreement` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1610,8 +1821,15 @@ pub enum ConfirmCustomerAgreementErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ConfirmCustomerAgreementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1643,7 +1861,9 @@ impl ConfirmCustomerAgreementError {
     /// Creates the `ConfirmCustomerAgreementError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ConfirmCustomerAgreementErrorKind::Unhandled(err.into()),
+            kind: ConfirmCustomerAgreementErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1652,7 +1872,9 @@ impl ConfirmCustomerAgreementError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ConfirmCustomerAgreementErrorKind::Unhandled(err.into()),
+            kind: ConfirmCustomerAgreementErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1696,7 +1918,7 @@ impl std::error::Error for ConfirmCustomerAgreementError {
         match &self.kind {
             ConfirmCustomerAgreementErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             ConfirmCustomerAgreementErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            ConfirmCustomerAgreementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ConfirmCustomerAgreementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1710,6 +1932,16 @@ pub struct ConfirmPrivateVirtualInterfaceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ConfirmPrivateVirtualInterfaceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ConfirmPrivateVirtualInterface` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1718,8 +1950,15 @@ pub enum ConfirmPrivateVirtualInterfaceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ConfirmPrivateVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1754,7 +1993,9 @@ impl ConfirmPrivateVirtualInterfaceError {
     /// Creates the `ConfirmPrivateVirtualInterfaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1763,7 +2004,9 @@ impl ConfirmPrivateVirtualInterfaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1811,7 +2054,7 @@ impl std::error::Error for ConfirmPrivateVirtualInterfaceError {
             ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1825,6 +2068,16 @@ pub struct ConfirmPublicVirtualInterfaceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ConfirmPublicVirtualInterfaceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ConfirmPublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ConfirmPublicVirtualInterface` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1833,8 +2086,15 @@ pub enum ConfirmPublicVirtualInterfaceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ConfirmPublicVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1869,7 +2129,9 @@ impl ConfirmPublicVirtualInterfaceError {
     /// Creates the `ConfirmPublicVirtualInterfaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ConfirmPublicVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: ConfirmPublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1878,7 +2140,9 @@ impl ConfirmPublicVirtualInterfaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ConfirmPublicVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: ConfirmPublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1926,7 +2190,7 @@ impl std::error::Error for ConfirmPublicVirtualInterfaceError {
             ConfirmPublicVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            ConfirmPublicVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ConfirmPublicVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1940,6 +2204,16 @@ pub struct ConfirmTransitVirtualInterfaceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ConfirmTransitVirtualInterfaceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ConfirmTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ConfirmTransitVirtualInterface` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1948,8 +2222,15 @@ pub enum ConfirmTransitVirtualInterfaceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ConfirmTransitVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1984,7 +2265,9 @@ impl ConfirmTransitVirtualInterfaceError {
     /// Creates the `ConfirmTransitVirtualInterfaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ConfirmTransitVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: ConfirmTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1993,7 +2276,9 @@ impl ConfirmTransitVirtualInterfaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ConfirmTransitVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: ConfirmTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2041,7 +2326,7 @@ impl std::error::Error for ConfirmTransitVirtualInterfaceError {
             ConfirmTransitVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            ConfirmTransitVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ConfirmTransitVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2055,6 +2340,14 @@ pub struct CreateBGPPeerError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateBGPPeerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateBGPPeerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateBGPPeer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2063,8 +2356,15 @@ pub enum CreateBGPPeerErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBGPPeerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2092,7 +2392,7 @@ impl CreateBGPPeerError {
     /// Creates the `CreateBGPPeerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateBGPPeerErrorKind::Unhandled(err.into()),
+            kind: CreateBGPPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2101,7 +2401,7 @@ impl CreateBGPPeerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateBGPPeerErrorKind::Unhandled(err.into()),
+            kind: CreateBGPPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2145,7 +2445,7 @@ impl std::error::Error for CreateBGPPeerError {
         match &self.kind {
             CreateBGPPeerErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             CreateBGPPeerErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            CreateBGPPeerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateBGPPeerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2159,6 +2459,14 @@ pub struct CreateConnectionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateConnectionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateConnection` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2171,8 +2479,15 @@ pub enum CreateConnectionErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2202,7 +2517,7 @@ impl CreateConnectionError {
     /// Creates the `CreateConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateConnectionErrorKind::Unhandled(err.into()),
+            kind: CreateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2211,7 +2526,7 @@ impl CreateConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateConnectionErrorKind::Unhandled(err.into()),
+            kind: CreateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2271,7 +2586,7 @@ impl std::error::Error for CreateConnectionError {
             CreateConnectionErrorKind::DirectConnectServerException(_inner) => Some(_inner),
             CreateConnectionErrorKind::DuplicateTagKeysException(_inner) => Some(_inner),
             CreateConnectionErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2285,6 +2600,16 @@ pub struct CreateDirectConnectGatewayError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateDirectConnectGatewayError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateDirectConnectGateway` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2293,8 +2618,15 @@ pub enum CreateDirectConnectGatewayErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDirectConnectGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2326,7 +2658,9 @@ impl CreateDirectConnectGatewayError {
     /// Creates the `CreateDirectConnectGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDirectConnectGatewayErrorKind::Unhandled(err.into()),
+            kind: CreateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2335,7 +2669,9 @@ impl CreateDirectConnectGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDirectConnectGatewayErrorKind::Unhandled(err.into()),
+            kind: CreateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2383,7 +2719,7 @@ impl std::error::Error for CreateDirectConnectGatewayError {
             CreateDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            CreateDirectConnectGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDirectConnectGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2397,6 +2733,16 @@ pub struct CreateDirectConnectGatewayAssociationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateDirectConnectGatewayAssociationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDirectConnectGatewayAssociationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateDirectConnectGatewayAssociation` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2405,8 +2751,15 @@ pub enum CreateDirectConnectGatewayAssociationErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDirectConnectGatewayAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2441,7 +2794,9 @@ impl CreateDirectConnectGatewayAssociationError {
     /// Creates the `CreateDirectConnectGatewayAssociationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDirectConnectGatewayAssociationErrorKind::Unhandled(err.into()),
+            kind: CreateDirectConnectGatewayAssociationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2450,7 +2805,9 @@ impl CreateDirectConnectGatewayAssociationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDirectConnectGatewayAssociationErrorKind::Unhandled(err.into()),
+            kind: CreateDirectConnectGatewayAssociationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2498,9 +2855,7 @@ impl std::error::Error for CreateDirectConnectGatewayAssociationError {
             CreateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(
                 _inner,
             ) => Some(_inner),
-            CreateDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            CreateDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2514,6 +2869,18 @@ pub struct CreateDirectConnectGatewayAssociationProposalError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for CreateDirectConnectGatewayAssociationProposalError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateDirectConnectGatewayAssociationProposal` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2522,8 +2889,15 @@ pub enum CreateDirectConnectGatewayAssociationProposalErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDirectConnectGatewayAssociationProposalError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2562,7 +2936,9 @@ impl CreateDirectConnectGatewayAssociationProposalError {
     /// Creates the `CreateDirectConnectGatewayAssociationProposalError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDirectConnectGatewayAssociationProposalErrorKind::Unhandled(err.into()),
+            kind: CreateDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2571,7 +2947,9 @@ impl CreateDirectConnectGatewayAssociationProposalError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDirectConnectGatewayAssociationProposalErrorKind::Unhandled(err.into()),
+            kind: CreateDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2620,7 +2998,7 @@ impl std::error::Error for CreateDirectConnectGatewayAssociationProposalError {
             Some(_inner)
             ,
             CreateDirectConnectGatewayAssociationProposalErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -2635,6 +3013,14 @@ pub struct CreateInterconnectError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateInterconnectError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateInterconnect` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2647,8 +3033,15 @@ pub enum CreateInterconnectErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateInterconnectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2678,7 +3071,7 @@ impl CreateInterconnectError {
     /// Creates the `CreateInterconnectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateInterconnectErrorKind::Unhandled(err.into()),
+            kind: CreateInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2687,7 +3080,7 @@ impl CreateInterconnectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateInterconnectErrorKind::Unhandled(err.into()),
+            kind: CreateInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2747,7 +3140,7 @@ impl std::error::Error for CreateInterconnectError {
             CreateInterconnectErrorKind::DirectConnectServerException(_inner) => Some(_inner),
             CreateInterconnectErrorKind::DuplicateTagKeysException(_inner) => Some(_inner),
             CreateInterconnectErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateInterconnectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateInterconnectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2761,6 +3154,14 @@ pub struct CreateLagError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateLagError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateLagErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateLag` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2773,8 +3174,15 @@ pub enum CreateLagErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLagError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2804,7 +3212,7 @@ impl CreateLagError {
     /// Creates the `CreateLagError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLagErrorKind::Unhandled(err.into()),
+            kind: CreateLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2813,7 +3221,7 @@ impl CreateLagError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLagErrorKind::Unhandled(err.into()),
+            kind: CreateLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2867,7 +3275,7 @@ impl std::error::Error for CreateLagError {
             CreateLagErrorKind::DirectConnectServerException(_inner) => Some(_inner),
             CreateLagErrorKind::DuplicateTagKeysException(_inner) => Some(_inner),
             CreateLagErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateLagErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLagErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2881,6 +3289,16 @@ pub struct CreatePrivateVirtualInterfaceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreatePrivateVirtualInterfaceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreatePrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreatePrivateVirtualInterface` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2893,8 +3311,15 @@ pub enum CreatePrivateVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePrivateVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2933,7 +3358,9 @@ impl CreatePrivateVirtualInterfaceError {
     /// Creates the `CreatePrivateVirtualInterfaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePrivateVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: CreatePrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2942,7 +3369,9 @@ impl CreatePrivateVirtualInterfaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePrivateVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: CreatePrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3008,7 +3437,7 @@ impl std::error::Error for CreatePrivateVirtualInterfaceError {
                 Some(_inner)
             }
             CreatePrivateVirtualInterfaceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreatePrivateVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePrivateVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3022,6 +3451,16 @@ pub struct CreatePublicVirtualInterfaceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreatePublicVirtualInterfaceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreatePublicVirtualInterface` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3034,8 +3473,15 @@ pub enum CreatePublicVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePublicVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3071,7 +3517,9 @@ impl CreatePublicVirtualInterfaceError {
     /// Creates the `CreatePublicVirtualInterfaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePublicVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: CreatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3080,7 +3528,9 @@ impl CreatePublicVirtualInterfaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePublicVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: CreatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3146,7 +3596,7 @@ impl std::error::Error for CreatePublicVirtualInterfaceError {
                 Some(_inner)
             }
             CreatePublicVirtualInterfaceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreatePublicVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePublicVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3160,6 +3610,16 @@ pub struct CreateTransitVirtualInterfaceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateTransitVirtualInterfaceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateTransitVirtualInterface` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3172,8 +3632,15 @@ pub enum CreateTransitVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTransitVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3212,7 +3679,9 @@ impl CreateTransitVirtualInterfaceError {
     /// Creates the `CreateTransitVirtualInterfaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTransitVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: CreateTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3221,7 +3690,9 @@ impl CreateTransitVirtualInterfaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTransitVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: CreateTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3287,7 +3758,7 @@ impl std::error::Error for CreateTransitVirtualInterfaceError {
                 Some(_inner)
             }
             CreateTransitVirtualInterfaceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateTransitVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTransitVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3301,6 +3772,14 @@ pub struct DeleteBGPPeerError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteBGPPeerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteBGPPeerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteBGPPeer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3309,8 +3788,15 @@ pub enum DeleteBGPPeerErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBGPPeerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3338,7 +3824,7 @@ impl DeleteBGPPeerError {
     /// Creates the `DeleteBGPPeerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteBGPPeerErrorKind::Unhandled(err.into()),
+            kind: DeleteBGPPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3347,7 +3833,7 @@ impl DeleteBGPPeerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteBGPPeerErrorKind::Unhandled(err.into()),
+            kind: DeleteBGPPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3391,7 +3877,7 @@ impl std::error::Error for DeleteBGPPeerError {
         match &self.kind {
             DeleteBGPPeerErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DeleteBGPPeerErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DeleteBGPPeerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteBGPPeerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3405,6 +3891,14 @@ pub struct DeleteConnectionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteConnectionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteConnectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteConnection` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3413,8 +3907,15 @@ pub enum DeleteConnectionErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3442,7 +3943,7 @@ impl DeleteConnectionError {
     /// Creates the `DeleteConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteConnectionErrorKind::Unhandled(err.into()),
+            kind: DeleteConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3451,7 +3952,7 @@ impl DeleteConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteConnectionErrorKind::Unhandled(err.into()),
+            kind: DeleteConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3495,7 +3996,7 @@ impl std::error::Error for DeleteConnectionError {
         match &self.kind {
             DeleteConnectionErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DeleteConnectionErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DeleteConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3509,6 +4010,16 @@ pub struct DeleteDirectConnectGatewayError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDirectConnectGatewayError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDirectConnectGateway` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3517,8 +4028,15 @@ pub enum DeleteDirectConnectGatewayErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDirectConnectGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3550,7 +4068,9 @@ impl DeleteDirectConnectGatewayError {
     /// Creates the `DeleteDirectConnectGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDirectConnectGatewayErrorKind::Unhandled(err.into()),
+            kind: DeleteDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3559,7 +4079,9 @@ impl DeleteDirectConnectGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDirectConnectGatewayErrorKind::Unhandled(err.into()),
+            kind: DeleteDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3607,7 +4129,7 @@ impl std::error::Error for DeleteDirectConnectGatewayError {
             DeleteDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            DeleteDirectConnectGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDirectConnectGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3621,6 +4143,16 @@ pub struct DeleteDirectConnectGatewayAssociationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDirectConnectGatewayAssociationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDirectConnectGatewayAssociation` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3629,8 +4161,15 @@ pub enum DeleteDirectConnectGatewayAssociationErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDirectConnectGatewayAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3665,7 +4204,9 @@ impl DeleteDirectConnectGatewayAssociationError {
     /// Creates the `DeleteDirectConnectGatewayAssociationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(err.into()),
+            kind: DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3674,7 +4215,9 @@ impl DeleteDirectConnectGatewayAssociationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(err.into()),
+            kind: DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3722,9 +4265,7 @@ impl std::error::Error for DeleteDirectConnectGatewayAssociationError {
             DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(
                 _inner,
             ) => Some(_inner),
-            DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3738,6 +4279,18 @@ pub struct DeleteDirectConnectGatewayAssociationProposalError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for DeleteDirectConnectGatewayAssociationProposalError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDirectConnectGatewayAssociationProposal` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3746,8 +4299,15 @@ pub enum DeleteDirectConnectGatewayAssociationProposalErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDirectConnectGatewayAssociationProposalError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3786,7 +4346,9 @@ impl DeleteDirectConnectGatewayAssociationProposalError {
     /// Creates the `DeleteDirectConnectGatewayAssociationProposalError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDirectConnectGatewayAssociationProposalErrorKind::Unhandled(err.into()),
+            kind: DeleteDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3795,7 +4357,9 @@ impl DeleteDirectConnectGatewayAssociationProposalError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDirectConnectGatewayAssociationProposalErrorKind::Unhandled(err.into()),
+            kind: DeleteDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3844,7 +4408,7 @@ impl std::error::Error for DeleteDirectConnectGatewayAssociationProposalError {
             Some(_inner)
             ,
             DeleteDirectConnectGatewayAssociationProposalErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -3859,6 +4423,14 @@ pub struct DeleteInterconnectError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteInterconnectError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteInterconnect` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3867,8 +4439,15 @@ pub enum DeleteInterconnectErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteInterconnectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3896,7 +4475,7 @@ impl DeleteInterconnectError {
     /// Creates the `DeleteInterconnectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteInterconnectErrorKind::Unhandled(err.into()),
+            kind: DeleteInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3905,7 +4484,7 @@ impl DeleteInterconnectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteInterconnectErrorKind::Unhandled(err.into()),
+            kind: DeleteInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3949,7 +4528,7 @@ impl std::error::Error for DeleteInterconnectError {
         match &self.kind {
             DeleteInterconnectErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DeleteInterconnectErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DeleteInterconnectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteInterconnectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3963,6 +4542,14 @@ pub struct DeleteLagError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteLagError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteLagErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteLag` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3971,8 +4558,15 @@ pub enum DeleteLagErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLagError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4000,7 +4594,7 @@ impl DeleteLagError {
     /// Creates the `DeleteLagError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLagErrorKind::Unhandled(err.into()),
+            kind: DeleteLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4009,7 +4603,7 @@ impl DeleteLagError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLagErrorKind::Unhandled(err.into()),
+            kind: DeleteLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4053,7 +4647,7 @@ impl std::error::Error for DeleteLagError {
         match &self.kind {
             DeleteLagErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DeleteLagErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DeleteLagErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLagErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4067,6 +4661,14 @@ pub struct DeleteVirtualInterfaceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteVirtualInterfaceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteVirtualInterface` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4075,8 +4677,15 @@ pub enum DeleteVirtualInterfaceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4104,7 +4713,9 @@ impl DeleteVirtualInterfaceError {
     /// Creates the `DeleteVirtualInterfaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: DeleteVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4113,7 +4724,9 @@ impl DeleteVirtualInterfaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteVirtualInterfaceErrorKind::Unhandled(err.into()),
+            kind: DeleteVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4157,7 +4770,7 @@ impl std::error::Error for DeleteVirtualInterfaceError {
         match &self.kind {
             DeleteVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DeleteVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DeleteVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4171,6 +4784,14 @@ pub struct DescribeConnectionLoaError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeConnectionLoaError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeConnectionLoaErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeConnectionLoa` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4179,8 +4800,15 @@ pub enum DescribeConnectionLoaErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeConnectionLoaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4208,7 +4836,9 @@ impl DescribeConnectionLoaError {
     /// Creates the `DescribeConnectionLoaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeConnectionLoaErrorKind::Unhandled(err.into()),
+            kind: DescribeConnectionLoaErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4217,7 +4847,9 @@ impl DescribeConnectionLoaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeConnectionLoaErrorKind::Unhandled(err.into()),
+            kind: DescribeConnectionLoaErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4261,7 +4893,7 @@ impl std::error::Error for DescribeConnectionLoaError {
         match &self.kind {
             DescribeConnectionLoaErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DescribeConnectionLoaErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeConnectionLoaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeConnectionLoaErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4275,6 +4907,14 @@ pub struct DescribeConnectionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeConnectionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeConnections` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4283,8 +4923,15 @@ pub enum DescribeConnectionsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeConnectionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4312,7 +4959,7 @@ impl DescribeConnectionsError {
     /// Creates the `DescribeConnectionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeConnectionsErrorKind::Unhandled(err.into()),
+            kind: DescribeConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4321,7 +4968,7 @@ impl DescribeConnectionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeConnectionsErrorKind::Unhandled(err.into()),
+            kind: DescribeConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4365,7 +5012,7 @@ impl std::error::Error for DescribeConnectionsError {
         match &self.kind {
             DescribeConnectionsErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DescribeConnectionsErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeConnectionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeConnectionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4379,6 +5026,16 @@ pub struct DescribeConnectionsOnInterconnectError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeConnectionsOnInterconnectError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeConnectionsOnInterconnectErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeConnectionsOnInterconnect` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4387,8 +5044,15 @@ pub enum DescribeConnectionsOnInterconnectErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeConnectionsOnInterconnectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4423,7 +5087,9 @@ impl DescribeConnectionsOnInterconnectError {
     /// Creates the `DescribeConnectionsOnInterconnectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeConnectionsOnInterconnectErrorKind::Unhandled(err.into()),
+            kind: DescribeConnectionsOnInterconnectErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4432,7 +5098,9 @@ impl DescribeConnectionsOnInterconnectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeConnectionsOnInterconnectErrorKind::Unhandled(err.into()),
+            kind: DescribeConnectionsOnInterconnectErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4480,7 +5148,7 @@ impl std::error::Error for DescribeConnectionsOnInterconnectError {
             DescribeConnectionsOnInterconnectErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            DescribeConnectionsOnInterconnectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeConnectionsOnInterconnectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4494,6 +5162,16 @@ pub struct DescribeCustomerMetadataError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeCustomerMetadataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeCustomerMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeCustomerMetadata` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4502,8 +5180,15 @@ pub enum DescribeCustomerMetadataErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCustomerMetadataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4535,7 +5220,9 @@ impl DescribeCustomerMetadataError {
     /// Creates the `DescribeCustomerMetadataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCustomerMetadataErrorKind::Unhandled(err.into()),
+            kind: DescribeCustomerMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4544,7 +5231,9 @@ impl DescribeCustomerMetadataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCustomerMetadataErrorKind::Unhandled(err.into()),
+            kind: DescribeCustomerMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4588,7 +5277,7 @@ impl std::error::Error for DescribeCustomerMetadataError {
         match &self.kind {
             DescribeCustomerMetadataErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DescribeCustomerMetadataErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeCustomerMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCustomerMetadataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4602,6 +5291,18 @@ pub struct DescribeDirectConnectGatewayAssociationProposalsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeDirectConnectGatewayAssociationProposalsError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDirectConnectGatewayAssociationProposalsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDirectConnectGatewayAssociationProposals` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4610,8 +5311,15 @@ pub enum DescribeDirectConnectGatewayAssociationProposalsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDirectConnectGatewayAssociationProposalsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4650,7 +5358,9 @@ impl DescribeDirectConnectGatewayAssociationProposalsError {
     /// Creates the `DescribeDirectConnectGatewayAssociationProposalsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDirectConnectGatewayAssociationProposalsErrorKind::Unhandled(err.into()),
+            kind: DescribeDirectConnectGatewayAssociationProposalsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4659,7 +5369,9 @@ impl DescribeDirectConnectGatewayAssociationProposalsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDirectConnectGatewayAssociationProposalsErrorKind::Unhandled(err.into()),
+            kind: DescribeDirectConnectGatewayAssociationProposalsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4712,7 +5424,7 @@ impl std::error::Error for DescribeDirectConnectGatewayAssociationProposalsError
             Some(_inner)
             ,
             DescribeDirectConnectGatewayAssociationProposalsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -4727,6 +5439,18 @@ pub struct DescribeDirectConnectGatewayAssociationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeDirectConnectGatewayAssociationsError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDirectConnectGatewayAssociations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4735,8 +5459,15 @@ pub enum DescribeDirectConnectGatewayAssociationsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDirectConnectGatewayAssociationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4771,7 +5502,9 @@ impl DescribeDirectConnectGatewayAssociationsError {
     /// Creates the `DescribeDirectConnectGatewayAssociationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(err.into()),
+            kind: DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4780,7 +5513,9 @@ impl DescribeDirectConnectGatewayAssociationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(err.into()),
+            kind: DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4828,9 +5563,7 @@ impl std::error::Error for DescribeDirectConnectGatewayAssociationsError {
             DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectServerException(
                 _inner,
             ) => Some(_inner),
-            DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4844,6 +5577,18 @@ pub struct DescribeDirectConnectGatewayAttachmentsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeDirectConnectGatewayAttachmentsError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDirectConnectGatewayAttachments` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4852,8 +5597,15 @@ pub enum DescribeDirectConnectGatewayAttachmentsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDirectConnectGatewayAttachmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4888,7 +5640,9 @@ impl DescribeDirectConnectGatewayAttachmentsError {
     /// Creates the `DescribeDirectConnectGatewayAttachmentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(err.into()),
+            kind: DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4897,7 +5651,9 @@ impl DescribeDirectConnectGatewayAttachmentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(err.into()),
+            kind: DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4945,9 +5701,7 @@ impl std::error::Error for DescribeDirectConnectGatewayAttachmentsError {
             DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectServerException(
                 _inner,
             ) => Some(_inner),
-            DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4961,6 +5715,16 @@ pub struct DescribeDirectConnectGatewaysError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDirectConnectGatewaysError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDirectConnectGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDirectConnectGateways` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4969,8 +5733,15 @@ pub enum DescribeDirectConnectGatewaysErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDirectConnectGatewaysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5005,7 +5776,9 @@ impl DescribeDirectConnectGatewaysError {
     /// Creates the `DescribeDirectConnectGatewaysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDirectConnectGatewaysErrorKind::Unhandled(err.into()),
+            kind: DescribeDirectConnectGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5014,7 +5787,9 @@ impl DescribeDirectConnectGatewaysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDirectConnectGatewaysErrorKind::Unhandled(err.into()),
+            kind: DescribeDirectConnectGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5062,7 +5837,7 @@ impl std::error::Error for DescribeDirectConnectGatewaysError {
             DescribeDirectConnectGatewaysErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            DescribeDirectConnectGatewaysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDirectConnectGatewaysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5076,6 +5851,16 @@ pub struct DescribeHostedConnectionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeHostedConnectionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeHostedConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeHostedConnections` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5084,8 +5869,15 @@ pub enum DescribeHostedConnectionsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeHostedConnectionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5117,7 +5909,9 @@ impl DescribeHostedConnectionsError {
     /// Creates the `DescribeHostedConnectionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeHostedConnectionsErrorKind::Unhandled(err.into()),
+            kind: DescribeHostedConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5126,7 +5920,9 @@ impl DescribeHostedConnectionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeHostedConnectionsErrorKind::Unhandled(err.into()),
+            kind: DescribeHostedConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5174,7 +5970,7 @@ impl std::error::Error for DescribeHostedConnectionsError {
             DescribeHostedConnectionsErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            DescribeHostedConnectionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeHostedConnectionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5188,6 +5984,14 @@ pub struct DescribeInterconnectLoaError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeInterconnectLoaError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeInterconnectLoaErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeInterconnectLoa` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5196,8 +6000,15 @@ pub enum DescribeInterconnectLoaErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeInterconnectLoaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5225,7 +6036,9 @@ impl DescribeInterconnectLoaError {
     /// Creates the `DescribeInterconnectLoaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeInterconnectLoaErrorKind::Unhandled(err.into()),
+            kind: DescribeInterconnectLoaErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5234,7 +6047,9 @@ impl DescribeInterconnectLoaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeInterconnectLoaErrorKind::Unhandled(err.into()),
+            kind: DescribeInterconnectLoaErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5278,7 +6093,7 @@ impl std::error::Error for DescribeInterconnectLoaError {
         match &self.kind {
             DescribeInterconnectLoaErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DescribeInterconnectLoaErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeInterconnectLoaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeInterconnectLoaErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5292,6 +6107,14 @@ pub struct DescribeInterconnectsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeInterconnectsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeInterconnectsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeInterconnects` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5300,8 +6123,15 @@ pub enum DescribeInterconnectsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeInterconnectsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5329,7 +6159,9 @@ impl DescribeInterconnectsError {
     /// Creates the `DescribeInterconnectsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeInterconnectsErrorKind::Unhandled(err.into()),
+            kind: DescribeInterconnectsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5338,7 +6170,9 @@ impl DescribeInterconnectsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeInterconnectsErrorKind::Unhandled(err.into()),
+            kind: DescribeInterconnectsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5382,7 +6216,7 @@ impl std::error::Error for DescribeInterconnectsError {
         match &self.kind {
             DescribeInterconnectsErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DescribeInterconnectsErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeInterconnectsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeInterconnectsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5396,6 +6230,14 @@ pub struct DescribeLagsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeLagsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeLagsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeLags` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5404,8 +6246,15 @@ pub enum DescribeLagsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5433,7 +6282,7 @@ impl DescribeLagsError {
     /// Creates the `DescribeLagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLagsErrorKind::Unhandled(err.into()),
+            kind: DescribeLagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5442,7 +6291,7 @@ impl DescribeLagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLagsErrorKind::Unhandled(err.into()),
+            kind: DescribeLagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5486,7 +6335,7 @@ impl std::error::Error for DescribeLagsError {
         match &self.kind {
             DescribeLagsErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DescribeLagsErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeLagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5500,6 +6349,14 @@ pub struct DescribeLoaError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeLoaError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeLoaErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeLoa` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5508,8 +6365,15 @@ pub enum DescribeLoaErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLoaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5537,7 +6401,7 @@ impl DescribeLoaError {
     /// Creates the `DescribeLoaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLoaErrorKind::Unhandled(err.into()),
+            kind: DescribeLoaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5546,7 +6410,7 @@ impl DescribeLoaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLoaErrorKind::Unhandled(err.into()),
+            kind: DescribeLoaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5590,7 +6454,7 @@ impl std::error::Error for DescribeLoaError {
         match &self.kind {
             DescribeLoaErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DescribeLoaErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeLoaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLoaErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5604,6 +6468,14 @@ pub struct DescribeLocationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeLocationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeLocationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeLocations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5612,8 +6484,15 @@ pub enum DescribeLocationsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLocationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5641,7 +6520,7 @@ impl DescribeLocationsError {
     /// Creates the `DescribeLocationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLocationsErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5650,7 +6529,7 @@ impl DescribeLocationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLocationsErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5694,7 +6573,7 @@ impl std::error::Error for DescribeLocationsError {
         match &self.kind {
             DescribeLocationsErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DescribeLocationsErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeLocationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLocationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5708,6 +6587,16 @@ pub struct DescribeRouterConfigurationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeRouterConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeRouterConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeRouterConfiguration` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5716,8 +6605,15 @@ pub enum DescribeRouterConfigurationErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeRouterConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5749,7 +6645,9 @@ impl DescribeRouterConfigurationError {
     /// Creates the `DescribeRouterConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeRouterConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeRouterConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5758,7 +6656,9 @@ impl DescribeRouterConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeRouterConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeRouterConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5806,7 +6706,7 @@ impl std::error::Error for DescribeRouterConfigurationError {
             DescribeRouterConfigurationErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            DescribeRouterConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeRouterConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5820,6 +6720,14 @@ pub struct DescribeTagsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeTagsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeTags` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5828,8 +6736,15 @@ pub enum DescribeTagsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5857,7 +6772,7 @@ impl DescribeTagsError {
     /// Creates the `DescribeTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTagsErrorKind::Unhandled(err.into()),
+            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5866,7 +6781,7 @@ impl DescribeTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTagsErrorKind::Unhandled(err.into()),
+            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5910,7 +6825,7 @@ impl std::error::Error for DescribeTagsError {
         match &self.kind {
             DescribeTagsErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DescribeTagsErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5924,6 +6839,14 @@ pub struct DescribeVirtualGatewaysError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeVirtualGatewaysError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeVirtualGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeVirtualGateways` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5932,8 +6855,15 @@ pub enum DescribeVirtualGatewaysErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeVirtualGatewaysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5961,7 +6891,9 @@ impl DescribeVirtualGatewaysError {
     /// Creates the `DescribeVirtualGatewaysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeVirtualGatewaysErrorKind::Unhandled(err.into()),
+            kind: DescribeVirtualGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5970,7 +6902,9 @@ impl DescribeVirtualGatewaysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeVirtualGatewaysErrorKind::Unhandled(err.into()),
+            kind: DescribeVirtualGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6014,7 +6948,7 @@ impl std::error::Error for DescribeVirtualGatewaysError {
         match &self.kind {
             DescribeVirtualGatewaysErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DescribeVirtualGatewaysErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeVirtualGatewaysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeVirtualGatewaysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6028,6 +6962,16 @@ pub struct DescribeVirtualInterfacesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeVirtualInterfacesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeVirtualInterfacesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeVirtualInterfaces` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6036,8 +6980,15 @@ pub enum DescribeVirtualInterfacesErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeVirtualInterfacesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6069,7 +7020,9 @@ impl DescribeVirtualInterfacesError {
     /// Creates the `DescribeVirtualInterfacesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeVirtualInterfacesErrorKind::Unhandled(err.into()),
+            kind: DescribeVirtualInterfacesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6078,7 +7031,9 @@ impl DescribeVirtualInterfacesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeVirtualInterfacesErrorKind::Unhandled(err.into()),
+            kind: DescribeVirtualInterfacesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6126,7 +7081,7 @@ impl std::error::Error for DescribeVirtualInterfacesError {
             DescribeVirtualInterfacesErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            DescribeVirtualInterfacesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeVirtualInterfacesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6140,6 +7095,16 @@ pub struct DisassociateConnectionFromLagError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateConnectionFromLagError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateConnectionFromLagErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DisassociateConnectionFromLag` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6148,8 +7113,15 @@ pub enum DisassociateConnectionFromLagErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateConnectionFromLagError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6184,7 +7156,9 @@ impl DisassociateConnectionFromLagError {
     /// Creates the `DisassociateConnectionFromLagError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateConnectionFromLagErrorKind::Unhandled(err.into()),
+            kind: DisassociateConnectionFromLagErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6193,7 +7167,9 @@ impl DisassociateConnectionFromLagError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateConnectionFromLagErrorKind::Unhandled(err.into()),
+            kind: DisassociateConnectionFromLagErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6241,7 +7217,7 @@ impl std::error::Error for DisassociateConnectionFromLagError {
             DisassociateConnectionFromLagErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            DisassociateConnectionFromLagErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateConnectionFromLagErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6255,6 +7231,14 @@ pub struct DisassociateMacSecKeyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateMacSecKeyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateMacSecKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DisassociateMacSecKey` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6263,8 +7247,15 @@ pub enum DisassociateMacSecKeyErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateMacSecKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6292,7 +7283,9 @@ impl DisassociateMacSecKeyError {
     /// Creates the `DisassociateMacSecKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateMacSecKeyErrorKind::Unhandled(err.into()),
+            kind: DisassociateMacSecKeyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6301,7 +7294,9 @@ impl DisassociateMacSecKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateMacSecKeyErrorKind::Unhandled(err.into()),
+            kind: DisassociateMacSecKeyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6345,7 +7340,7 @@ impl std::error::Error for DisassociateMacSecKeyError {
         match &self.kind {
             DisassociateMacSecKeyErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             DisassociateMacSecKeyErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DisassociateMacSecKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateMacSecKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6359,6 +7354,16 @@ pub struct ListVirtualInterfaceTestHistoryError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListVirtualInterfaceTestHistoryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListVirtualInterfaceTestHistoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListVirtualInterfaceTestHistory` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6367,8 +7372,15 @@ pub enum ListVirtualInterfaceTestHistoryErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVirtualInterfaceTestHistoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6403,7 +7415,9 @@ impl ListVirtualInterfaceTestHistoryError {
     /// Creates the `ListVirtualInterfaceTestHistoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListVirtualInterfaceTestHistoryErrorKind::Unhandled(err.into()),
+            kind: ListVirtualInterfaceTestHistoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6412,7 +7426,9 @@ impl ListVirtualInterfaceTestHistoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListVirtualInterfaceTestHistoryErrorKind::Unhandled(err.into()),
+            kind: ListVirtualInterfaceTestHistoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6460,7 +7476,7 @@ impl std::error::Error for ListVirtualInterfaceTestHistoryError {
             ListVirtualInterfaceTestHistoryErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            ListVirtualInterfaceTestHistoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListVirtualInterfaceTestHistoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6474,6 +7490,14 @@ pub struct StartBgpFailoverTestError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for StartBgpFailoverTestError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartBgpFailoverTestErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `StartBgpFailoverTest` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6482,8 +7506,15 @@ pub enum StartBgpFailoverTestErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartBgpFailoverTestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6511,7 +7542,9 @@ impl StartBgpFailoverTestError {
     /// Creates the `StartBgpFailoverTestError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartBgpFailoverTestErrorKind::Unhandled(err.into()),
+            kind: StartBgpFailoverTestErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6520,7 +7553,9 @@ impl StartBgpFailoverTestError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartBgpFailoverTestErrorKind::Unhandled(err.into()),
+            kind: StartBgpFailoverTestErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6564,7 +7599,7 @@ impl std::error::Error for StartBgpFailoverTestError {
         match &self.kind {
             StartBgpFailoverTestErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             StartBgpFailoverTestErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            StartBgpFailoverTestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartBgpFailoverTestErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6578,6 +7613,14 @@ pub struct StopBgpFailoverTestError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for StopBgpFailoverTestError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StopBgpFailoverTestErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `StopBgpFailoverTest` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6586,8 +7629,15 @@ pub enum StopBgpFailoverTestErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopBgpFailoverTestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6615,7 +7665,7 @@ impl StopBgpFailoverTestError {
     /// Creates the `StopBgpFailoverTestError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopBgpFailoverTestErrorKind::Unhandled(err.into()),
+            kind: StopBgpFailoverTestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6624,7 +7674,7 @@ impl StopBgpFailoverTestError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopBgpFailoverTestErrorKind::Unhandled(err.into()),
+            kind: StopBgpFailoverTestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6668,7 +7718,7 @@ impl std::error::Error for StopBgpFailoverTestError {
         match &self.kind {
             StopBgpFailoverTestErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             StopBgpFailoverTestErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            StopBgpFailoverTestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopBgpFailoverTestErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6682,6 +7732,14 @@ pub struct TagResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `TagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6694,8 +7752,15 @@ pub enum TagResourceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6725,7 +7790,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6734,7 +7799,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6791,7 +7856,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::DirectConnectServerException(_inner) => Some(_inner),
             TagResourceErrorKind::DuplicateTagKeysException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6805,6 +7870,14 @@ pub struct UntagResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UntagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6813,8 +7886,15 @@ pub enum UntagResourceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6842,7 +7922,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6851,7 +7931,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6895,7 +7975,7 @@ impl std::error::Error for UntagResourceError {
         match &self.kind {
             UntagResourceErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             UntagResourceErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6909,6 +7989,14 @@ pub struct UpdateConnectionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateConnectionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateConnection` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6917,8 +8005,15 @@ pub enum UpdateConnectionErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6946,7 +8041,7 @@ impl UpdateConnectionError {
     /// Creates the `UpdateConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateConnectionErrorKind::Unhandled(err.into()),
+            kind: UpdateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6955,7 +8050,7 @@ impl UpdateConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateConnectionErrorKind::Unhandled(err.into()),
+            kind: UpdateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6999,7 +8094,7 @@ impl std::error::Error for UpdateConnectionError {
         match &self.kind {
             UpdateConnectionErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             UpdateConnectionErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            UpdateConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7013,6 +8108,16 @@ pub struct UpdateDirectConnectGatewayError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateDirectConnectGatewayError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateDirectConnectGateway` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7021,8 +8126,15 @@ pub enum UpdateDirectConnectGatewayErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDirectConnectGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7054,7 +8166,9 @@ impl UpdateDirectConnectGatewayError {
     /// Creates the `UpdateDirectConnectGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDirectConnectGatewayErrorKind::Unhandled(err.into()),
+            kind: UpdateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7063,7 +8177,9 @@ impl UpdateDirectConnectGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDirectConnectGatewayErrorKind::Unhandled(err.into()),
+            kind: UpdateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7111,7 +8227,7 @@ impl std::error::Error for UpdateDirectConnectGatewayError {
             UpdateDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            UpdateDirectConnectGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDirectConnectGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7125,6 +8241,16 @@ pub struct UpdateDirectConnectGatewayAssociationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateDirectConnectGatewayAssociationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateDirectConnectGatewayAssociation` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7133,8 +8259,15 @@ pub enum UpdateDirectConnectGatewayAssociationErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDirectConnectGatewayAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7169,7 +8302,9 @@ impl UpdateDirectConnectGatewayAssociationError {
     /// Creates the `UpdateDirectConnectGatewayAssociationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(err.into()),
+            kind: UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -7178,7 +8313,9 @@ impl UpdateDirectConnectGatewayAssociationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(err.into()),
+            kind: UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -7226,9 +8363,7 @@ impl std::error::Error for UpdateDirectConnectGatewayAssociationError {
             UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(
                 _inner,
             ) => Some(_inner),
-            UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7242,6 +8377,14 @@ pub struct UpdateLagError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateLagError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateLagErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateLag` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7250,8 +8393,15 @@ pub enum UpdateLagErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLagError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7279,7 +8429,7 @@ impl UpdateLagError {
     /// Creates the `UpdateLagError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateLagErrorKind::Unhandled(err.into()),
+            kind: UpdateLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7288,7 +8438,7 @@ impl UpdateLagError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateLagErrorKind::Unhandled(err.into()),
+            kind: UpdateLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7332,7 +8482,7 @@ impl std::error::Error for UpdateLagError {
         match &self.kind {
             UpdateLagErrorKind::DirectConnectClientException(_inner) => Some(_inner),
             UpdateLagErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            UpdateLagErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateLagErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7346,6 +8496,16 @@ pub struct UpdateVirtualInterfaceAttributesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateVirtualInterfaceAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateVirtualInterfaceAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateVirtualInterfaceAttributes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7354,8 +8514,15 @@ pub enum UpdateVirtualInterfaceAttributesErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateVirtualInterfaceAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7390,7 +8557,9 @@ impl UpdateVirtualInterfaceAttributesError {
     /// Creates the `UpdateVirtualInterfaceAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateVirtualInterfaceAttributesErrorKind::Unhandled(err.into()),
+            kind: UpdateVirtualInterfaceAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -7399,7 +8568,9 @@ impl UpdateVirtualInterfaceAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateVirtualInterfaceAttributesErrorKind::Unhandled(err.into()),
+            kind: UpdateVirtualInterfaceAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -7447,7 +8618,35 @@ impl std::error::Error for UpdateVirtualInterfaceAttributesError {
             UpdateVirtualInterfaceAttributesErrorKind::DirectConnectServerException(_inner) => {
                 Some(_inner)
             }
-            UpdateVirtualInterfaceAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateVirtualInterfaceAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

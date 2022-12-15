@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod build_suggesters_input {
 
     /// A builder for [`BuildSuggestersInput`](crate::input::BuildSuggestersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -23,7 +23,7 @@ pub mod build_suggesters_input {
         /// Consumes the builder and constructs a [`BuildSuggestersInput`](crate::input::BuildSuggestersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::BuildSuggestersInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::BuildSuggestersInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::BuildSuggestersInput {
                 domain_name: self.domain_name,
@@ -44,13 +44,13 @@ impl BuildSuggestersInput {
             crate::operation::BuildSuggesters,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BuildSuggestersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -58,8 +58,10 @@ impl BuildSuggestersInput {
             fn update_http_builder(
                 input: &crate::input::BuildSuggestersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -143,7 +145,7 @@ impl BuildSuggestersInput {
 pub mod create_domain_input {
 
     /// A builder for [`CreateDomainInput`](crate::input::CreateDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -161,7 +163,7 @@ pub mod create_domain_input {
         /// Consumes the builder and constructs a [`CreateDomainInput`](crate::input::CreateDomainInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDomainInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateDomainInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateDomainInput {
                 domain_name: self.domain_name,
@@ -182,13 +184,13 @@ impl CreateDomainInput {
             crate::operation::CreateDomain,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateDomainInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -196,8 +198,10 @@ impl CreateDomainInput {
             fn update_http_builder(
                 input: &crate::input::CreateDomainInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -281,7 +285,7 @@ impl CreateDomainInput {
 pub mod define_analysis_scheme_input {
 
     /// A builder for [`DefineAnalysisSchemeInput`](crate::input::DefineAnalysisSchemeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) analysis_scheme: std::option::Option<crate::model::AnalysisScheme>,
@@ -313,8 +317,10 @@ pub mod define_analysis_scheme_input {
         /// Consumes the builder and constructs a [`DefineAnalysisSchemeInput`](crate::input::DefineAnalysisSchemeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DefineAnalysisSchemeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DefineAnalysisSchemeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DefineAnalysisSchemeInput {
                 domain_name: self.domain_name,
                 analysis_scheme: self.analysis_scheme,
@@ -335,13 +341,13 @@ impl DefineAnalysisSchemeInput {
             crate::operation::DefineAnalysisScheme,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DefineAnalysisSchemeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -349,8 +355,10 @@ impl DefineAnalysisSchemeInput {
             fn update_http_builder(
                 input: &crate::input::DefineAnalysisSchemeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -436,7 +444,7 @@ impl DefineAnalysisSchemeInput {
 pub mod define_expression_input {
 
     /// A builder for [`DefineExpressionInput`](crate::input::DefineExpressionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) expression: std::option::Option<crate::model::Expression>,
@@ -468,8 +476,10 @@ pub mod define_expression_input {
         /// Consumes the builder and constructs a [`DefineExpressionInput`](crate::input::DefineExpressionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DefineExpressionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DefineExpressionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DefineExpressionInput {
                 domain_name: self.domain_name,
                 expression: self.expression,
@@ -490,13 +500,13 @@ impl DefineExpressionInput {
             crate::operation::DefineExpression,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DefineExpressionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -504,8 +514,10 @@ impl DefineExpressionInput {
             fn update_http_builder(
                 input: &crate::input::DefineExpressionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -589,7 +601,7 @@ impl DefineExpressionInput {
 pub mod define_index_field_input {
 
     /// A builder for [`DefineIndexFieldInput`](crate::input::DefineIndexFieldInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) index_field: std::option::Option<crate::model::IndexField>,
@@ -621,8 +633,10 @@ pub mod define_index_field_input {
         /// Consumes the builder and constructs a [`DefineIndexFieldInput`](crate::input::DefineIndexFieldInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DefineIndexFieldInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DefineIndexFieldInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DefineIndexFieldInput {
                 domain_name: self.domain_name,
                 index_field: self.index_field,
@@ -643,13 +657,13 @@ impl DefineIndexFieldInput {
             crate::operation::DefineIndexField,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DefineIndexFieldInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -657,8 +671,10 @@ impl DefineIndexFieldInput {
             fn update_http_builder(
                 input: &crate::input::DefineIndexFieldInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -742,7 +758,7 @@ impl DefineIndexFieldInput {
 pub mod define_suggester_input {
 
     /// A builder for [`DefineSuggesterInput`](crate::input::DefineSuggesterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) suggester: std::option::Option<crate::model::Suggester>,
@@ -774,7 +790,7 @@ pub mod define_suggester_input {
         /// Consumes the builder and constructs a [`DefineSuggesterInput`](crate::input::DefineSuggesterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DefineSuggesterInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DefineSuggesterInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DefineSuggesterInput {
                 domain_name: self.domain_name,
@@ -796,13 +812,13 @@ impl DefineSuggesterInput {
             crate::operation::DefineSuggester,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DefineSuggesterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -810,8 +826,10 @@ impl DefineSuggesterInput {
             fn update_http_builder(
                 input: &crate::input::DefineSuggesterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -895,7 +913,7 @@ impl DefineSuggesterInput {
 pub mod delete_analysis_scheme_input {
 
     /// A builder for [`DeleteAnalysisSchemeInput`](crate::input::DeleteAnalysisSchemeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) analysis_scheme_name: std::option::Option<std::string::String>,
@@ -927,8 +945,10 @@ pub mod delete_analysis_scheme_input {
         /// Consumes the builder and constructs a [`DeleteAnalysisSchemeInput`](crate::input::DeleteAnalysisSchemeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAnalysisSchemeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteAnalysisSchemeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteAnalysisSchemeInput {
                 domain_name: self.domain_name,
                 analysis_scheme_name: self.analysis_scheme_name,
@@ -949,13 +969,13 @@ impl DeleteAnalysisSchemeInput {
             crate::operation::DeleteAnalysisScheme,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAnalysisSchemeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -963,8 +983,10 @@ impl DeleteAnalysisSchemeInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAnalysisSchemeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1050,7 +1072,7 @@ impl DeleteAnalysisSchemeInput {
 pub mod delete_domain_input {
 
     /// A builder for [`DeleteDomainInput`](crate::input::DeleteDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -1068,7 +1090,7 @@ pub mod delete_domain_input {
         /// Consumes the builder and constructs a [`DeleteDomainInput`](crate::input::DeleteDomainInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDomainInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteDomainInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteDomainInput {
                 domain_name: self.domain_name,
@@ -1089,13 +1111,13 @@ impl DeleteDomainInput {
             crate::operation::DeleteDomain,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDomainInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1103,8 +1125,10 @@ impl DeleteDomainInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDomainInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1188,7 +1212,7 @@ impl DeleteDomainInput {
 pub mod delete_expression_input {
 
     /// A builder for [`DeleteExpressionInput`](crate::input::DeleteExpressionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) expression_name: std::option::Option<std::string::String>,
@@ -1220,8 +1244,10 @@ pub mod delete_expression_input {
         /// Consumes the builder and constructs a [`DeleteExpressionInput`](crate::input::DeleteExpressionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteExpressionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteExpressionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteExpressionInput {
                 domain_name: self.domain_name,
                 expression_name: self.expression_name,
@@ -1242,13 +1268,13 @@ impl DeleteExpressionInput {
             crate::operation::DeleteExpression,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteExpressionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1256,8 +1282,10 @@ impl DeleteExpressionInput {
             fn update_http_builder(
                 input: &crate::input::DeleteExpressionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1341,7 +1369,7 @@ impl DeleteExpressionInput {
 pub mod delete_index_field_input {
 
     /// A builder for [`DeleteIndexFieldInput`](crate::input::DeleteIndexFieldInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) index_field_name: std::option::Option<std::string::String>,
@@ -1373,8 +1401,10 @@ pub mod delete_index_field_input {
         /// Consumes the builder and constructs a [`DeleteIndexFieldInput`](crate::input::DeleteIndexFieldInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteIndexFieldInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteIndexFieldInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteIndexFieldInput {
                 domain_name: self.domain_name,
                 index_field_name: self.index_field_name,
@@ -1395,13 +1425,13 @@ impl DeleteIndexFieldInput {
             crate::operation::DeleteIndexField,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteIndexFieldInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1409,8 +1439,10 @@ impl DeleteIndexFieldInput {
             fn update_http_builder(
                 input: &crate::input::DeleteIndexFieldInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1494,7 +1526,7 @@ impl DeleteIndexFieldInput {
 pub mod delete_suggester_input {
 
     /// A builder for [`DeleteSuggesterInput`](crate::input::DeleteSuggesterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) suggester_name: std::option::Option<std::string::String>,
@@ -1526,7 +1558,7 @@ pub mod delete_suggester_input {
         /// Consumes the builder and constructs a [`DeleteSuggesterInput`](crate::input::DeleteSuggesterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteSuggesterInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteSuggesterInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteSuggesterInput {
                 domain_name: self.domain_name,
@@ -1548,13 +1580,13 @@ impl DeleteSuggesterInput {
             crate::operation::DeleteSuggester,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteSuggesterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1562,8 +1594,10 @@ impl DeleteSuggesterInput {
             fn update_http_builder(
                 input: &crate::input::DeleteSuggesterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1647,7 +1681,7 @@ impl DeleteSuggesterInput {
 pub mod describe_analysis_schemes_input {
 
     /// A builder for [`DescribeAnalysisSchemesInput`](crate::input::DescribeAnalysisSchemesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) analysis_scheme_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1698,7 +1732,7 @@ pub mod describe_analysis_schemes_input {
             self,
         ) -> Result<
             crate::input::DescribeAnalysisSchemesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeAnalysisSchemesInput {
                 domain_name: self.domain_name,
@@ -1721,13 +1755,13 @@ impl DescribeAnalysisSchemesInput {
             crate::operation::DescribeAnalysisSchemes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAnalysisSchemesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1735,8 +1769,10 @@ impl DescribeAnalysisSchemesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAnalysisSchemesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1822,7 +1858,7 @@ impl DescribeAnalysisSchemesInput {
 pub mod describe_availability_options_input {
 
     /// A builder for [`DescribeAvailabilityOptionsInput`](crate::input::DescribeAvailabilityOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) deployed: std::option::Option<bool>,
@@ -1853,7 +1889,7 @@ pub mod describe_availability_options_input {
             self,
         ) -> Result<
             crate::input::DescribeAvailabilityOptionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeAvailabilityOptionsInput {
                 domain_name: self.domain_name,
@@ -1875,13 +1911,13 @@ impl DescribeAvailabilityOptionsInput {
             crate::operation::DescribeAvailabilityOptions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAvailabilityOptionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1889,8 +1925,10 @@ impl DescribeAvailabilityOptionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAvailabilityOptionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1973,7 +2011,7 @@ impl DescribeAvailabilityOptionsInput {
 pub mod describe_domain_endpoint_options_input {
 
     /// A builder for [`DescribeDomainEndpointOptionsInput`](crate::input::DescribeDomainEndpointOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) deployed: std::option::Option<bool>,
@@ -2004,7 +2042,7 @@ pub mod describe_domain_endpoint_options_input {
             self,
         ) -> Result<
             crate::input::DescribeDomainEndpointOptionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeDomainEndpointOptionsInput {
                 domain_name: self.domain_name,
@@ -2026,13 +2064,13 @@ impl DescribeDomainEndpointOptionsInput {
             crate::operation::DescribeDomainEndpointOptions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDomainEndpointOptionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2040,8 +2078,10 @@ impl DescribeDomainEndpointOptionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDomainEndpointOptionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2124,7 +2164,7 @@ impl DescribeDomainEndpointOptionsInput {
 pub mod describe_domains_input {
 
     /// A builder for [`DescribeDomainsInput`](crate::input::DescribeDomainsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -2151,7 +2191,7 @@ pub mod describe_domains_input {
         /// Consumes the builder and constructs a [`DescribeDomainsInput`](crate::input::DescribeDomainsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDomainsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeDomainsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeDomainsInput {
                 domain_names: self.domain_names,
@@ -2172,13 +2212,13 @@ impl DescribeDomainsInput {
             crate::operation::DescribeDomains,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDomainsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2186,8 +2226,10 @@ impl DescribeDomainsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDomainsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2271,7 +2313,7 @@ impl DescribeDomainsInput {
 pub mod describe_expressions_input {
 
     /// A builder for [`DescribeExpressionsInput`](crate::input::DescribeExpressionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) expression_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2320,8 +2362,10 @@ pub mod describe_expressions_input {
         /// Consumes the builder and constructs a [`DescribeExpressionsInput`](crate::input::DescribeExpressionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeExpressionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeExpressionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeExpressionsInput {
                 domain_name: self.domain_name,
                 expression_names: self.expression_names,
@@ -2343,13 +2387,13 @@ impl DescribeExpressionsInput {
             crate::operation::DescribeExpressions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeExpressionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2357,8 +2401,10 @@ impl DescribeExpressionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeExpressionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2442,7 +2488,7 @@ impl DescribeExpressionsInput {
 pub mod describe_index_fields_input {
 
     /// A builder for [`DescribeIndexFieldsInput`](crate::input::DescribeIndexFieldsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) field_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2491,8 +2537,10 @@ pub mod describe_index_fields_input {
         /// Consumes the builder and constructs a [`DescribeIndexFieldsInput`](crate::input::DescribeIndexFieldsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeIndexFieldsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeIndexFieldsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeIndexFieldsInput {
                 domain_name: self.domain_name,
                 field_names: self.field_names,
@@ -2514,13 +2562,13 @@ impl DescribeIndexFieldsInput {
             crate::operation::DescribeIndexFields,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeIndexFieldsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2528,8 +2576,10 @@ impl DescribeIndexFieldsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeIndexFieldsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2613,7 +2663,7 @@ impl DescribeIndexFieldsInput {
 pub mod describe_scaling_parameters_input {
 
     /// A builder for [`DescribeScalingParametersInput`](crate::input::DescribeScalingParametersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -2633,7 +2683,7 @@ pub mod describe_scaling_parameters_input {
             self,
         ) -> Result<
             crate::input::DescribeScalingParametersInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeScalingParametersInput {
                 domain_name: self.domain_name,
@@ -2654,13 +2704,13 @@ impl DescribeScalingParametersInput {
             crate::operation::DescribeScalingParameters,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeScalingParametersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2668,8 +2718,10 @@ impl DescribeScalingParametersInput {
             fn update_http_builder(
                 input: &crate::input::DescribeScalingParametersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2755,7 +2807,7 @@ impl DescribeScalingParametersInput {
 pub mod describe_service_access_policies_input {
 
     /// A builder for [`DescribeServiceAccessPoliciesInput`](crate::input::DescribeServiceAccessPoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) deployed: std::option::Option<bool>,
@@ -2786,7 +2838,7 @@ pub mod describe_service_access_policies_input {
             self,
         ) -> Result<
             crate::input::DescribeServiceAccessPoliciesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeServiceAccessPoliciesInput {
                 domain_name: self.domain_name,
@@ -2808,13 +2860,13 @@ impl DescribeServiceAccessPoliciesInput {
             crate::operation::DescribeServiceAccessPolicies,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeServiceAccessPoliciesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2822,8 +2874,10 @@ impl DescribeServiceAccessPoliciesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeServiceAccessPoliciesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2906,7 +2960,7 @@ impl DescribeServiceAccessPoliciesInput {
 pub mod describe_suggesters_input {
 
     /// A builder for [`DescribeSuggestersInput`](crate::input::DescribeSuggestersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) suggester_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2955,8 +3009,10 @@ pub mod describe_suggesters_input {
         /// Consumes the builder and constructs a [`DescribeSuggestersInput`](crate::input::DescribeSuggestersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeSuggestersInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeSuggestersInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeSuggestersInput {
                 domain_name: self.domain_name,
                 suggester_names: self.suggester_names,
@@ -2978,13 +3034,13 @@ impl DescribeSuggestersInput {
             crate::operation::DescribeSuggesters,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeSuggestersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2992,8 +3048,10 @@ impl DescribeSuggestersInput {
             fn update_http_builder(
                 input: &crate::input::DescribeSuggestersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3077,7 +3135,7 @@ impl DescribeSuggestersInput {
 pub mod index_documents_input {
 
     /// A builder for [`IndexDocumentsInput`](crate::input::IndexDocumentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -3095,7 +3153,7 @@ pub mod index_documents_input {
         /// Consumes the builder and constructs a [`IndexDocumentsInput`](crate::input::IndexDocumentsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::IndexDocumentsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::IndexDocumentsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::IndexDocumentsInput {
                 domain_name: self.domain_name,
@@ -3116,13 +3174,13 @@ impl IndexDocumentsInput {
             crate::operation::IndexDocuments,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::IndexDocumentsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3130,8 +3188,10 @@ impl IndexDocumentsInput {
             fn update_http_builder(
                 input: &crate::input::IndexDocumentsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3215,13 +3275,13 @@ impl IndexDocumentsInput {
 pub mod list_domain_names_input {
 
     /// A builder for [`ListDomainNamesInput`](crate::input::ListDomainNamesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ListDomainNamesInput`](crate::input::ListDomainNamesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDomainNamesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListDomainNamesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListDomainNamesInput {})
         }
@@ -3240,13 +3300,13 @@ impl ListDomainNamesInput {
             crate::operation::ListDomainNames,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDomainNamesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3254,8 +3314,10 @@ impl ListDomainNamesInput {
             fn update_http_builder(
                 input: &crate::input::ListDomainNamesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3332,7 +3394,7 @@ impl ListDomainNamesInput {
 pub mod update_availability_options_input {
 
     /// A builder for [`UpdateAvailabilityOptionsInput`](crate::input::UpdateAvailabilityOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) multi_az: std::option::Option<bool>,
@@ -3363,7 +3425,7 @@ pub mod update_availability_options_input {
             self,
         ) -> Result<
             crate::input::UpdateAvailabilityOptionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateAvailabilityOptionsInput {
                 domain_name: self.domain_name,
@@ -3385,13 +3447,13 @@ impl UpdateAvailabilityOptionsInput {
             crate::operation::UpdateAvailabilityOptions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateAvailabilityOptionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3399,8 +3461,10 @@ impl UpdateAvailabilityOptionsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAvailabilityOptionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3486,7 +3550,7 @@ impl UpdateAvailabilityOptionsInput {
 pub mod update_domain_endpoint_options_input {
 
     /// A builder for [`UpdateDomainEndpointOptionsInput`](crate::input::UpdateDomainEndpointOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) domain_endpoint_options:
@@ -3524,7 +3588,7 @@ pub mod update_domain_endpoint_options_input {
             self,
         ) -> Result<
             crate::input::UpdateDomainEndpointOptionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateDomainEndpointOptionsInput {
                 domain_name: self.domain_name,
@@ -3546,13 +3610,13 @@ impl UpdateDomainEndpointOptionsInput {
             crate::operation::UpdateDomainEndpointOptions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateDomainEndpointOptionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3560,8 +3624,10 @@ impl UpdateDomainEndpointOptionsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDomainEndpointOptionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3644,7 +3710,7 @@ impl UpdateDomainEndpointOptionsInput {
 pub mod update_scaling_parameters_input {
 
     /// A builder for [`UpdateScalingParametersInput`](crate::input::UpdateScalingParametersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) scaling_parameters: std::option::Option<crate::model::ScalingParameters>,
@@ -3678,7 +3744,7 @@ pub mod update_scaling_parameters_input {
             self,
         ) -> Result<
             crate::input::UpdateScalingParametersInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateScalingParametersInput {
                 domain_name: self.domain_name,
@@ -3700,13 +3766,13 @@ impl UpdateScalingParametersInput {
             crate::operation::UpdateScalingParameters,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateScalingParametersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3714,8 +3780,10 @@ impl UpdateScalingParametersInput {
             fn update_http_builder(
                 input: &crate::input::UpdateScalingParametersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3801,7 +3869,7 @@ impl UpdateScalingParametersInput {
 pub mod update_service_access_policies_input {
 
     /// A builder for [`UpdateServiceAccessPoliciesInput`](crate::input::UpdateServiceAccessPoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) access_policies: std::option::Option<std::string::String>,
@@ -3835,7 +3903,7 @@ pub mod update_service_access_policies_input {
             self,
         ) -> Result<
             crate::input::UpdateServiceAccessPoliciesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateServiceAccessPoliciesInput {
                 domain_name: self.domain_name,
@@ -3857,13 +3925,13 @@ impl UpdateServiceAccessPoliciesInput {
             crate::operation::UpdateServiceAccessPolicies,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateServiceAccessPoliciesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3871,8 +3939,10 @@ impl UpdateServiceAccessPoliciesInput {
             fn update_http_builder(
                 input: &crate::input::UpdateServiceAccessPoliciesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3953,7 +4023,7 @@ impl UpdateServiceAccessPoliciesInput {
 
 /// <p>Container for the parameters to the <code><code>UpdateServiceAccessPolicies</code></code> operation. Specifies the name of the domain you want to update and the access rules you want to configure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServiceAccessPoliciesInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -3972,18 +4042,10 @@ impl UpdateServiceAccessPoliciesInput {
         self.access_policies.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateServiceAccessPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServiceAccessPoliciesInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("access_policies", &self.access_policies);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>UpdateScalingParameters</code></code> operation. Specifies the name of the domain you want to update and the scaling parameters you want to configure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateScalingParametersInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4002,18 +4064,10 @@ impl UpdateScalingParametersInput {
         self.scaling_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateScalingParametersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateScalingParametersInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("scaling_parameters", &self.scaling_parameters);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>UpdateDomainEndpointOptions</code></code> operation. Specifies the name of the domain you want to update and the domain endpoint options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainEndpointOptionsInput {
     /// <p>A string that represents the name of a domain.</p>
     #[doc(hidden)]
@@ -4034,18 +4088,10 @@ impl UpdateDomainEndpointOptionsInput {
         self.domain_endpoint_options.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDomainEndpointOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainEndpointOptionsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("domain_endpoint_options", &self.domain_endpoint_options);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>UpdateAvailabilityOptions</code></code> operation. Specifies the name of the domain you want to update and the Multi-AZ availability option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAvailabilityOptionsInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4064,29 +4110,15 @@ impl UpdateAvailabilityOptionsInput {
         self.multi_az
     }
 }
-impl std::fmt::Debug for UpdateAvailabilityOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAvailabilityOptionsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("multi_az", &self.multi_az);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainNamesInput {}
-impl std::fmt::Debug for ListDomainNamesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainNamesInput");
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>IndexDocuments</code></code> operation. Specifies the name of the domain you want to re-index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IndexDocumentsInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4098,17 +4130,10 @@ impl IndexDocumentsInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for IndexDocumentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IndexDocumentsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeSuggester</code></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular suggesters, specify the names of the suggesters you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSuggestersInput {
     /// <p>The name of the domain you want to describe.</p>
     #[doc(hidden)]
@@ -4134,19 +4159,10 @@ impl DescribeSuggestersInput {
         self.deployed
     }
 }
-impl std::fmt::Debug for DescribeSuggestersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSuggestersInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("suggester_names", &self.suggester_names);
-        formatter.field("deployed", &self.deployed);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeServiceAccessPolicies</code></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServiceAccessPoliciesInput {
     /// <p>The name of the domain you want to describe.</p>
     #[doc(hidden)]
@@ -4165,18 +4181,10 @@ impl DescribeServiceAccessPoliciesInput {
         self.deployed
     }
 }
-impl std::fmt::Debug for DescribeServiceAccessPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServiceAccessPoliciesInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("deployed", &self.deployed);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeScalingParameters</code></code> operation. Specifies the name of the domain you want to describe. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScalingParametersInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4188,17 +4196,10 @@ impl DescribeScalingParametersInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScalingParametersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScalingParametersInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeIndexFields</code></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular index fields, specify the names of the index fields you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIndexFieldsInput {
     /// <p>The name of the domain you want to describe.</p>
     #[doc(hidden)]
@@ -4224,19 +4225,10 @@ impl DescribeIndexFieldsInput {
         self.deployed
     }
 }
-impl std::fmt::Debug for DescribeIndexFieldsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIndexFieldsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("field_names", &self.field_names);
-        formatter.field("deployed", &self.deployed);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeDomains</code></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular expressions, specify the names of the expressions you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExpressionsInput {
     /// <p>The name of the domain you want to describe.</p>
     #[doc(hidden)]
@@ -4262,19 +4254,10 @@ impl DescribeExpressionsInput {
         self.deployed
     }
 }
-impl std::fmt::Debug for DescribeExpressionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeExpressionsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("expression_names", &self.expression_names);
-        formatter.field("deployed", &self.deployed);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeDomains</code></code> operation. By default shows the status of all domains. To restrict the response to particular domains, specify the names of the domains you want to describe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainsInput {
     /// <p>The names of the domains you want to include in the response.</p>
     #[doc(hidden)]
@@ -4286,17 +4269,10 @@ impl DescribeDomainsInput {
         self.domain_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainsInput");
-        formatter.field("domain_names", &self.domain_names);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeDomainEndpointOptions</code></code> operation. Specify the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainEndpointOptionsInput {
     /// <p>A string that represents the name of a domain.</p>
     #[doc(hidden)]
@@ -4315,18 +4291,10 @@ impl DescribeDomainEndpointOptionsInput {
         self.deployed
     }
 }
-impl std::fmt::Debug for DescribeDomainEndpointOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainEndpointOptionsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("deployed", &self.deployed);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeAvailabilityOptions</code></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAvailabilityOptionsInput {
     /// <p>The name of the domain you want to describe.</p>
     #[doc(hidden)]
@@ -4345,18 +4313,10 @@ impl DescribeAvailabilityOptionsInput {
         self.deployed
     }
 }
-impl std::fmt::Debug for DescribeAvailabilityOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAvailabilityOptionsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("deployed", &self.deployed);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DescribeAnalysisSchemes</code></code> operation. Specifies the name of the domain you want to describe. To limit the response to particular analysis schemes, specify the names of the analysis schemes you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAnalysisSchemesInput {
     /// <p>The name of the domain you want to describe.</p>
     #[doc(hidden)]
@@ -4382,19 +4342,10 @@ impl DescribeAnalysisSchemesInput {
         self.deployed
     }
 }
-impl std::fmt::Debug for DescribeAnalysisSchemesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAnalysisSchemesInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("analysis_scheme_names", &self.analysis_scheme_names);
-        formatter.field("deployed", &self.deployed);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DeleteSuggester</code></code> operation. Specifies the name of the domain you want to update and name of the suggester you want to delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSuggesterInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4413,18 +4364,10 @@ impl DeleteSuggesterInput {
         self.suggester_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSuggesterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSuggesterInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("suggester_name", &self.suggester_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DeleteIndexField</code></code> operation. Specifies the name of the domain you want to update and the name of the index field you want to delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIndexFieldInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4443,18 +4386,10 @@ impl DeleteIndexFieldInput {
         self.index_field_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIndexFieldInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIndexFieldInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("index_field_name", &self.index_field_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DeleteExpression</code></code> operation. Specifies the name of the domain you want to update and the name of the expression you want to delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteExpressionInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4473,18 +4408,10 @@ impl DeleteExpressionInput {
         self.expression_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteExpressionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteExpressionInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("expression_name", &self.expression_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DeleteDomain</code></code> operation. Specifies the name of the domain you want to delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainInput {
     /// <p>The name of the domain you want to permanently delete.</p>
     #[doc(hidden)]
@@ -4496,17 +4423,10 @@ impl DeleteDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DeleteAnalysisScheme</code></code> operation. Specifies the name of the domain you want to update and the analysis scheme you want to delete. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAnalysisSchemeInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4525,18 +4445,10 @@ impl DeleteAnalysisSchemeInput {
         self.analysis_scheme_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAnalysisSchemeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAnalysisSchemeInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("analysis_scheme_name", &self.analysis_scheme_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DefineSuggester</code></code> operation. Specifies the name of the domain you want to update and the suggester configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefineSuggesterInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4555,18 +4467,10 @@ impl DefineSuggesterInput {
         self.suggester.as_ref()
     }
 }
-impl std::fmt::Debug for DefineSuggesterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefineSuggesterInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("suggester", &self.suggester);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DefineIndexField</code></code> operation. Specifies the name of the domain you want to update and the index field configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefineIndexFieldInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4585,18 +4489,10 @@ impl DefineIndexFieldInput {
         self.index_field.as_ref()
     }
 }
-impl std::fmt::Debug for DefineIndexFieldInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefineIndexFieldInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("index_field", &self.index_field);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DefineExpression</code></code> operation. Specifies the name of the domain you want to update and the expression you want to configure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefineExpressionInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4615,18 +4511,10 @@ impl DefineExpressionInput {
         self.expression.as_ref()
     }
 }
-impl std::fmt::Debug for DefineExpressionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefineExpressionInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("expression", &self.expression);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>DefineAnalysisScheme</code></code> operation. Specifies the name of the domain you want to update and the analysis scheme configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefineAnalysisSchemeInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4645,18 +4533,10 @@ impl DefineAnalysisSchemeInput {
         self.analysis_scheme.as_ref()
     }
 }
-impl std::fmt::Debug for DefineAnalysisSchemeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefineAnalysisSchemeInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("analysis_scheme", &self.analysis_scheme);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>CreateDomain</code></code> operation. Specifies a name for the new search domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainInput {
     /// <p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>
     #[doc(hidden)]
@@ -4668,17 +4548,10 @@ impl CreateDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code><code>BuildSuggester</code></code> operation. Specifies the name of the domain you want to update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuildSuggestersInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
@@ -4688,12 +4561,5 @@ impl BuildSuggestersInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
-    }
-}
-impl std::fmt::Debug for BuildSuggestersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuildSuggestersInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
     }
 }

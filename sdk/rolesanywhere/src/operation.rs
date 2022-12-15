@@ -5,7 +5,7 @@
 /// [`create_profile`](crate::client::Client::create_profile).
 ///
 /// See [`crate::client::fluent_builders::CreateProfile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateProfile {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProfile {
 /// [`create_trust_anchor`](crate::client::Client::create_trust_anchor).
 ///
 /// See [`crate::client::fluent_builders::CreateTrustAnchor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTrustAnchor {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrustAnchor {
 /// [`delete_crl`](crate::client::Client::delete_crl).
 ///
 /// See [`crate::client::fluent_builders::DeleteCrl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCrl {
     _private: (),
 }
@@ -102,7 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCrl {
 /// [`delete_profile`](crate::client::Client::delete_profile).
 ///
 /// See [`crate::client::fluent_builders::DeleteProfile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteProfile {
     _private: (),
 }
@@ -134,7 +134,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProfile {
 /// [`delete_trust_anchor`](crate::client::Client::delete_trust_anchor).
 ///
 /// See [`crate::client::fluent_builders::DeleteTrustAnchor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTrustAnchor {
     _private: (),
 }
@@ -168,7 +168,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrustAnchor {
 /// [`disable_crl`](crate::client::Client::disable_crl).
 ///
 /// See [`crate::client::fluent_builders::DisableCrl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisableCrl {
     _private: (),
 }
@@ -200,7 +200,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableCrl {
 /// [`disable_profile`](crate::client::Client::disable_profile).
 ///
 /// See [`crate::client::fluent_builders::DisableProfile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisableProfile {
     _private: (),
 }
@@ -232,7 +232,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableProfile {
 /// [`disable_trust_anchor`](crate::client::Client::disable_trust_anchor).
 ///
 /// See [`crate::client::fluent_builders::DisableTrustAnchor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisableTrustAnchor {
     _private: (),
 }
@@ -266,7 +266,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableTrustAnchor {
 /// [`enable_crl`](crate::client::Client::enable_crl).
 ///
 /// See [`crate::client::fluent_builders::EnableCrl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct EnableCrl {
     _private: (),
 }
@@ -297,7 +297,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableCrl {
 /// [`enable_profile`](crate::client::Client::enable_profile).
 ///
 /// See [`crate::client::fluent_builders::EnableProfile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct EnableProfile {
     _private: (),
 }
@@ -329,7 +329,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableProfile {
 /// [`enable_trust_anchor`](crate::client::Client::enable_trust_anchor).
 ///
 /// See [`crate::client::fluent_builders::EnableTrustAnchor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct EnableTrustAnchor {
     _private: (),
 }
@@ -363,7 +363,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableTrustAnchor {
 /// [`get_crl`](crate::client::Client::get_crl).
 ///
 /// See [`crate::client::fluent_builders::GetCrl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCrl {
     _private: (),
 }
@@ -394,7 +394,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCrl {
 /// [`get_profile`](crate::client::Client::get_profile).
 ///
 /// See [`crate::client::fluent_builders::GetProfile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetProfile {
     _private: (),
 }
@@ -426,7 +426,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProfile {
 /// [`get_subject`](crate::client::Client::get_subject).
 ///
 /// See [`crate::client::fluent_builders::GetSubject`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSubject {
     _private: (),
 }
@@ -458,7 +458,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSubject {
 /// [`get_trust_anchor`](crate::client::Client::get_trust_anchor).
 ///
 /// See [`crate::client::fluent_builders::GetTrustAnchor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTrustAnchor {
     _private: (),
 }
@@ -490,7 +490,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrustAnchor {
 /// [`import_crl`](crate::client::Client::import_crl).
 ///
 /// See [`crate::client::fluent_builders::ImportCrl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportCrl {
     _private: (),
 }
@@ -521,7 +521,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportCrl {
 /// [`list_crls`](crate::client::Client::list_crls).
 ///
 /// See [`crate::client::fluent_builders::ListCrls`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCrls {
     _private: (),
 }
@@ -552,7 +552,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCrls {
 /// [`list_profiles`](crate::client::Client::list_profiles).
 ///
 /// See [`crate::client::fluent_builders::ListProfiles`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProfiles {
     _private: (),
 }
@@ -584,7 +584,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProfiles {
 /// [`list_subjects`](crate::client::Client::list_subjects).
 ///
 /// See [`crate::client::fluent_builders::ListSubjects`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSubjects {
     _private: (),
 }
@@ -616,7 +616,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSubjects {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -650,7 +650,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_trust_anchors`](crate::client::Client::list_trust_anchors).
 ///
 /// See [`crate::client::fluent_builders::ListTrustAnchors`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTrustAnchors {
     _private: (),
 }
@@ -684,7 +684,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrustAnchors {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -716,7 +716,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -748,7 +748,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_crl`](crate::client::Client::update_crl).
 ///
 /// See [`crate::client::fluent_builders::UpdateCrl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCrl {
     _private: (),
 }
@@ -779,7 +779,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCrl {
 /// [`update_profile`](crate::client::Client::update_profile).
 ///
 /// See [`crate::client::fluent_builders::UpdateProfile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateProfile {
     _private: (),
 }
@@ -811,7 +811,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProfile {
 /// [`update_trust_anchor`](crate::client::Client::update_trust_anchor).
 ///
 /// See [`crate::client::fluent_builders::UpdateTrustAnchor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTrustAnchor {
     _private: (),
 }

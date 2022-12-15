@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod get_routing_control_state_input {
 
     /// A builder for [`GetRoutingControlStateInput`](crate::input::GetRoutingControlStateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
     }
@@ -26,8 +26,10 @@ pub mod get_routing_control_state_input {
         /// Consumes the builder and constructs a [`GetRoutingControlStateInput`](crate::input::GetRoutingControlStateInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRoutingControlStateInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetRoutingControlStateInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetRoutingControlStateInput {
                 routing_control_arn: self.routing_control_arn,
             })
@@ -47,13 +49,13 @@ impl GetRoutingControlStateInput {
             crate::operation::GetRoutingControlState,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRoutingControlStateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -61,8 +63,10 @@ impl GetRoutingControlStateInput {
             fn update_http_builder(
                 input: &crate::input::GetRoutingControlStateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -153,7 +157,7 @@ impl GetRoutingControlStateInput {
 pub mod list_routing_controls_input {
 
     /// A builder for [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -196,8 +200,10 @@ pub mod list_routing_controls_input {
         /// Consumes the builder and constructs a [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRoutingControlsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListRoutingControlsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListRoutingControlsInput {
                 control_panel_arn: self.control_panel_arn,
                 next_token: self.next_token,
@@ -219,13 +225,13 @@ impl ListRoutingControlsInput {
             crate::operation::ListRoutingControls,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRoutingControlsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -233,8 +239,10 @@ impl ListRoutingControlsInput {
             fn update_http_builder(
                 input: &crate::input::ListRoutingControlsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -323,7 +331,7 @@ impl ListRoutingControlsInput {
 pub mod update_routing_control_state_input {
 
     /// A builder for [`UpdateRoutingControlStateInput`](crate::input::UpdateRoutingControlStateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
         pub(crate) routing_control_state: std::option::Option<crate::model::RoutingControlState>,
@@ -383,7 +391,7 @@ pub mod update_routing_control_state_input {
             self,
         ) -> Result<
             crate::input::UpdateRoutingControlStateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateRoutingControlStateInput {
                 routing_control_arn: self.routing_control_arn,
@@ -406,13 +414,13 @@ impl UpdateRoutingControlStateInput {
             crate::operation::UpdateRoutingControlState,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateRoutingControlStateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -420,8 +428,10 @@ impl UpdateRoutingControlStateInput {
             fn update_http_builder(
                 input: &crate::input::UpdateRoutingControlStateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -512,7 +522,7 @@ impl UpdateRoutingControlStateInput {
 pub mod update_routing_control_states_input {
 
     /// A builder for [`UpdateRoutingControlStatesInput`](crate::input::UpdateRoutingControlStatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_routing_control_state_entries:
             std::option::Option<std::vec::Vec<crate::model::UpdateRoutingControlStateEntry>>,
@@ -570,7 +580,7 @@ pub mod update_routing_control_states_input {
             self,
         ) -> Result<
             crate::input::UpdateRoutingControlStatesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateRoutingControlStatesInput {
                 update_routing_control_state_entries: self.update_routing_control_state_entries,
@@ -592,13 +602,13 @@ impl UpdateRoutingControlStatesInput {
             crate::operation::UpdateRoutingControlStates,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateRoutingControlStatesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -606,8 +616,10 @@ impl UpdateRoutingControlStatesInput {
             fn update_http_builder(
                 input: &crate::input::UpdateRoutingControlStatesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -693,7 +705,7 @@ impl UpdateRoutingControlStatesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRoutingControlStatesInput {
     /// <p>A set of routing control entries that you want to update.</p>
     #[doc(hidden)]
@@ -717,21 +729,10 @@ impl UpdateRoutingControlStatesInput {
         self.safety_rules_to_override.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRoutingControlStatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRoutingControlStatesInput");
-        formatter.field(
-            "update_routing_control_state_entries",
-            &self.update_routing_control_state_entries,
-        );
-        formatter.field("safety_rules_to_override", &self.safety_rules_to_override);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRoutingControlStateInput {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
     #[doc(hidden)]
@@ -759,19 +760,10 @@ impl UpdateRoutingControlStateInput {
         self.safety_rules_to_override.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRoutingControlStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRoutingControlStateInput");
-        formatter.field("routing_control_arn", &self.routing_control_arn);
-        formatter.field("routing_control_state", &self.routing_control_state);
-        formatter.field("safety_rules_to_override", &self.safety_rules_to_override);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRoutingControlsInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
     #[doc(hidden)]
@@ -797,19 +789,10 @@ impl ListRoutingControlsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRoutingControlsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRoutingControlsInput");
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRoutingControlStateInput {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
     #[doc(hidden)]
@@ -819,12 +802,5 @@ impl GetRoutingControlStateInput {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
     pub fn routing_control_arn(&self) -> std::option::Option<&str> {
         self.routing_control_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for GetRoutingControlStateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRoutingControlStateInput");
-        formatter.field("routing_control_arn", &self.routing_control_arn);
-        formatter.finish()
     }
 }

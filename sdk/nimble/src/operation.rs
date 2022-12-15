@@ -5,7 +5,7 @@
 /// [`accept_eulas`](crate::client::Client::accept_eulas).
 ///
 /// See [`crate::client::fluent_builders::AcceptEulas`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AcceptEulas {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptEulas {
 /// [`create_launch_profile`](crate::client::Client::create_launch_profile).
 ///
 /// See [`crate::client::fluent_builders::CreateLaunchProfile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLaunchProfile {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLaunchProfile {
 /// [`create_streaming_image`](crate::client::Client::create_streaming_image).
 ///
 /// See [`crate::client::fluent_builders::CreateStreamingImage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateStreamingImage {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStreamingImage {
 /// [`create_streaming_session`](crate::client::Client::create_streaming_session).
 ///
 /// See [`crate::client::fluent_builders::CreateStreamingSession`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateStreamingSession {
     _private: (),
 }
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStreamingSession {
 /// [`create_streaming_session_stream`](crate::client::Client::create_streaming_session_stream).
 ///
 /// See [`crate::client::fluent_builders::CreateStreamingSessionStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateStreamingSessionStream {
     _private: (),
 }
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStreamingSessionSt
 /// [`create_studio`](crate::client::Client::create_studio).
 ///
 /// See [`crate::client::fluent_builders::CreateStudio`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateStudio {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStudio {
 /// [`create_studio_component`](crate::client::Client::create_studio_component).
 ///
 /// See [`crate::client::fluent_builders::CreateStudioComponent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateStudioComponent {
     _private: (),
 }
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStudioComponent {
 /// [`delete_launch_profile`](crate::client::Client::delete_launch_profile).
 ///
 /// See [`crate::client::fluent_builders::DeleteLaunchProfile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLaunchProfile {
     _private: (),
 }
@@ -273,7 +273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLaunchProfile {
 /// [`delete_launch_profile_member`](crate::client::Client::delete_launch_profile_member).
 ///
 /// See [`crate::client::fluent_builders::DeleteLaunchProfileMember`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLaunchProfileMember {
     _private: (),
 }
@@ -307,7 +307,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLaunchProfileMembe
 /// [`delete_streaming_image`](crate::client::Client::delete_streaming_image).
 ///
 /// See [`crate::client::fluent_builders::DeleteStreamingImage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteStreamingImage {
     _private: (),
 }
@@ -341,7 +341,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStreamingImage {
 /// [`delete_streaming_session`](crate::client::Client::delete_streaming_session).
 ///
 /// See [`crate::client::fluent_builders::DeleteStreamingSession`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteStreamingSession {
     _private: (),
 }
@@ -375,7 +375,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStreamingSession {
 /// [`delete_studio`](crate::client::Client::delete_studio).
 ///
 /// See [`crate::client::fluent_builders::DeleteStudio`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteStudio {
     _private: (),
 }
@@ -407,7 +407,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStudio {
 /// [`delete_studio_component`](crate::client::Client::delete_studio_component).
 ///
 /// See [`crate::client::fluent_builders::DeleteStudioComponent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteStudioComponent {
     _private: (),
 }
@@ -441,7 +441,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStudioComponent {
 /// [`delete_studio_member`](crate::client::Client::delete_studio_member).
 ///
 /// See [`crate::client::fluent_builders::DeleteStudioMember`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteStudioMember {
     _private: (),
 }
@@ -475,7 +475,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStudioMember {
 /// [`get_eula`](crate::client::Client::get_eula).
 ///
 /// See [`crate::client::fluent_builders::GetEula`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEula {
     _private: (),
 }
@@ -506,7 +506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEula {
 /// [`get_launch_profile`](crate::client::Client::get_launch_profile).
 ///
 /// See [`crate::client::fluent_builders::GetLaunchProfile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLaunchProfile {
     _private: (),
 }
@@ -540,7 +540,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLaunchProfile {
 /// [`get_launch_profile_details`](crate::client::Client::get_launch_profile_details).
 ///
 /// See [`crate::client::fluent_builders::GetLaunchProfileDetails`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLaunchProfileDetails {
     _private: (),
 }
@@ -574,7 +574,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLaunchProfileDetails 
 /// [`get_launch_profile_initialization`](crate::client::Client::get_launch_profile_initialization).
 ///
 /// See [`crate::client::fluent_builders::GetLaunchProfileInitialization`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLaunchProfileInitialization {
     _private: (),
 }
@@ -608,7 +608,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLaunchProfileInitiali
 /// [`get_launch_profile_member`](crate::client::Client::get_launch_profile_member).
 ///
 /// See [`crate::client::fluent_builders::GetLaunchProfileMember`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLaunchProfileMember {
     _private: (),
 }
@@ -642,7 +642,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLaunchProfileMember {
 /// [`get_streaming_image`](crate::client::Client::get_streaming_image).
 ///
 /// See [`crate::client::fluent_builders::GetStreamingImage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetStreamingImage {
     _private: (),
 }
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamingImage {
 /// [`get_streaming_session`](crate::client::Client::get_streaming_session).
 ///
 /// See [`crate::client::fluent_builders::GetStreamingSession`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetStreamingSession {
     _private: (),
 }
@@ -710,7 +710,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamingSession {
 /// [`get_streaming_session_stream`](crate::client::Client::get_streaming_session_stream).
 ///
 /// See [`crate::client::fluent_builders::GetStreamingSessionStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetStreamingSessionStream {
     _private: (),
 }
@@ -744,7 +744,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamingSessionStrea
 /// [`get_studio`](crate::client::Client::get_studio).
 ///
 /// See [`crate::client::fluent_builders::GetStudio`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetStudio {
     _private: (),
 }
@@ -775,7 +775,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStudio {
 /// [`get_studio_component`](crate::client::Client::get_studio_component).
 ///
 /// See [`crate::client::fluent_builders::GetStudioComponent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetStudioComponent {
     _private: (),
 }
@@ -809,7 +809,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStudioComponent {
 /// [`get_studio_member`](crate::client::Client::get_studio_member).
 ///
 /// See [`crate::client::fluent_builders::GetStudioMember`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetStudioMember {
     _private: (),
 }
@@ -843,7 +843,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStudioMember {
 /// [`list_eula_acceptances`](crate::client::Client::list_eula_acceptances).
 ///
 /// See [`crate::client::fluent_builders::ListEulaAcceptances`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEulaAcceptances {
     _private: (),
 }
@@ -877,7 +877,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEulaAcceptances {
 /// [`list_eulas`](crate::client::Client::list_eulas).
 ///
 /// See [`crate::client::fluent_builders::ListEulas`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEulas {
     _private: (),
 }
@@ -908,7 +908,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEulas {
 /// [`list_launch_profile_members`](crate::client::Client::list_launch_profile_members).
 ///
 /// See [`crate::client::fluent_builders::ListLaunchProfileMembers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLaunchProfileMembers {
     _private: (),
 }
@@ -942,7 +942,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLaunchProfileMembers
 /// [`list_launch_profiles`](crate::client::Client::list_launch_profiles).
 ///
 /// See [`crate::client::fluent_builders::ListLaunchProfiles`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLaunchProfiles {
     _private: (),
 }
@@ -976,7 +976,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLaunchProfiles {
 /// [`list_streaming_images`](crate::client::Client::list_streaming_images).
 ///
 /// See [`crate::client::fluent_builders::ListStreamingImages`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListStreamingImages {
     _private: (),
 }
@@ -1010,7 +1010,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreamingImages {
 /// [`list_streaming_sessions`](crate::client::Client::list_streaming_sessions).
 ///
 /// See [`crate::client::fluent_builders::ListStreamingSessions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListStreamingSessions {
     _private: (),
 }
@@ -1044,7 +1044,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreamingSessions {
 /// [`list_studio_components`](crate::client::Client::list_studio_components).
 ///
 /// See [`crate::client::fluent_builders::ListStudioComponents`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListStudioComponents {
     _private: (),
 }
@@ -1078,7 +1078,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStudioComponents {
 /// [`list_studio_members`](crate::client::Client::list_studio_members).
 ///
 /// See [`crate::client::fluent_builders::ListStudioMembers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListStudioMembers {
     _private: (),
 }
@@ -1112,7 +1112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStudioMembers {
 /// [`list_studios`](crate::client::Client::list_studios).
 ///
 /// See [`crate::client::fluent_builders::ListStudios`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListStudios {
     _private: (),
 }
@@ -1144,7 +1144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStudios {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -1178,7 +1178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`put_launch_profile_members`](crate::client::Client::put_launch_profile_members).
 ///
 /// See [`crate::client::fluent_builders::PutLaunchProfileMembers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutLaunchProfileMembers {
     _private: (),
 }
@@ -1212,7 +1212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLaunchProfileMembers 
 /// [`put_studio_members`](crate::client::Client::put_studio_members).
 ///
 /// See [`crate::client::fluent_builders::PutStudioMembers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutStudioMembers {
     _private: (),
 }
@@ -1246,7 +1246,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutStudioMembers {
 /// [`start_streaming_session`](crate::client::Client::start_streaming_session).
 ///
 /// See [`crate::client::fluent_builders::StartStreamingSession`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartStreamingSession {
     _private: (),
 }
@@ -1280,7 +1280,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartStreamingSession {
 /// [`start_studio_sso_configuration_repair`](crate::client::Client::start_studio_sso_configuration_repair).
 ///
 /// See [`crate::client::fluent_builders::StartStudioSSOConfigurationRepair`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartStudioSSOConfigurationRepair {
     _private: (),
 }
@@ -1314,7 +1314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartStudioSSOConfigurat
 /// [`stop_streaming_session`](crate::client::Client::stop_streaming_session).
 ///
 /// See [`crate::client::fluent_builders::StopStreamingSession`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopStreamingSession {
     _private: (),
 }
@@ -1348,7 +1348,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopStreamingSession {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1380,7 +1380,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1412,7 +1412,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_launch_profile`](crate::client::Client::update_launch_profile).
 ///
 /// See [`crate::client::fluent_builders::UpdateLaunchProfile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLaunchProfile {
     _private: (),
 }
@@ -1446,7 +1446,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLaunchProfile {
 /// [`update_launch_profile_member`](crate::client::Client::update_launch_profile_member).
 ///
 /// See [`crate::client::fluent_builders::UpdateLaunchProfileMember`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLaunchProfileMember {
     _private: (),
 }
@@ -1480,7 +1480,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLaunchProfileMembe
 /// [`update_streaming_image`](crate::client::Client::update_streaming_image).
 ///
 /// See [`crate::client::fluent_builders::UpdateStreamingImage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateStreamingImage {
     _private: (),
 }
@@ -1514,7 +1514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStreamingImage {
 /// [`update_studio`](crate::client::Client::update_studio).
 ///
 /// See [`crate::client::fluent_builders::UpdateStudio`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateStudio {
     _private: (),
 }
@@ -1546,7 +1546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStudio {
 /// [`update_studio_component`](crate::client::Client::update_studio_component).
 ///
 /// See [`crate::client::fluent_builders::UpdateStudioComponent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateStudioComponent {
     _private: (),
 }

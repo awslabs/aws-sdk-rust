@@ -24,7 +24,7 @@ pub fn parse_generate_data_set_error(
                     output = crate::json_deser::deser_structure_crate_error_marketplace_commerce_analytics_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataSetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -83,7 +83,7 @@ pub fn parse_start_support_data_export_error(
                             output = crate::json_deser::deser_structure_crate_error_marketplace_commerce_analytics_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSupportDataExportError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp

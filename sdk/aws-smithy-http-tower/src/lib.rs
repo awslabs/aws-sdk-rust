@@ -42,10 +42,10 @@ impl<E> From<SendOperationError> for SdkError<E> {
     fn from(err: SendOperationError) -> Self {
         match err {
             SendOperationError::RequestDispatchError(e) => {
-                aws_smithy_http::result::SdkError::DispatchFailure(e)
+                aws_smithy_http::result::SdkError::dispatch_failure(e)
             }
             SendOperationError::RequestConstructionError(e) => {
-                aws_smithy_http::result::SdkError::ConstructionFailure(e)
+                aws_smithy_http::result::SdkError::construction_failure(e)
             }
         }
     }
@@ -76,6 +76,11 @@ mod tests {
         struct AddHeader;
         impl MapRequest for AddHeader {
             type Error = Infallible;
+
+            fn name(&self) -> &'static str {
+                "add_header"
+            }
+
             fn apply(&self, request: Request) -> Result<Request, Self::Error> {
                 request.augment(|mut req, _| {
                     req.headers_mut()

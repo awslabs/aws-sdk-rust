@@ -5,7 +5,7 @@
 /// [`batch_meter_usage`](crate::client::Client::batch_meter_usage).
 ///
 /// See [`crate::client::fluent_builders::BatchMeterUsage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchMeterUsage {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchMeterUsage {
 /// [`meter_usage`](crate::client::Client::meter_usage).
 ///
 /// See [`crate::client::fluent_builders::MeterUsage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct MeterUsage {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MeterUsage {
 /// [`register_usage`](crate::client::Client::register_usage).
 ///
 /// See [`crate::client::fluent_builders::RegisterUsage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterUsage {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterUsage {
 /// [`resolve_customer`](crate::client::Client::resolve_customer).
 ///
 /// See [`crate::client::fluent_builders::ResolveCustomer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ResolveCustomer {
     _private: (),
 }

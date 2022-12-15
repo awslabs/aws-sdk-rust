@@ -2,7 +2,7 @@
 
 /// <p>Verify OTP Message Response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerificationResponse {
     /// <p>Specifies whether the OTP is valid or not.</p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl VerificationResponse {
         self.valid
     }
 }
-impl std::fmt::Debug for VerificationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerificationResponse");
-        formatter.field("valid", &self.valid);
-        formatter.finish()
-    }
-}
 /// See [`VerificationResponse`](crate::model::VerificationResponse).
 pub mod verification_response {
 
     /// A builder for [`VerificationResponse`](crate::model::VerificationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) valid: std::option::Option<bool>,
     }
@@ -57,7 +50,7 @@ impl VerificationResponse {
 
 /// <p>Verify OTP message request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifyOtpMessageRequestParameters {
     /// <p>The destination identity to send OTP to.</p>
     #[doc(hidden)]
@@ -83,20 +76,11 @@ impl VerifyOtpMessageRequestParameters {
         self.reference_id.as_deref()
     }
 }
-impl std::fmt::Debug for VerifyOtpMessageRequestParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifyOtpMessageRequestParameters");
-        formatter.field("destination_identity", &self.destination_identity);
-        formatter.field("otp", &self.otp);
-        formatter.field("reference_id", &self.reference_id);
-        formatter.finish()
-    }
-}
 /// See [`VerifyOtpMessageRequestParameters`](crate::model::VerifyOtpMessageRequestParameters).
 pub mod verify_otp_message_request_parameters {
 
     /// A builder for [`VerifyOtpMessageRequestParameters`](crate::model::VerifyOtpMessageRequestParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_identity: std::option::Option<std::string::String>,
         pub(crate) otp: std::option::Option<std::string::String>,
@@ -155,7 +139,7 @@ impl VerifyOtpMessageRequestParameters {
 
 /// <p>Provides information about an API request or response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageBody {
     /// <p>The message that's returned from the API.</p>
     #[doc(hidden)]
@@ -174,19 +158,11 @@ impl MessageBody {
         self.request_id.as_deref()
     }
 }
-impl std::fmt::Debug for MessageBody {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageBody");
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
-    }
-}
 /// See [`MessageBody`](crate::model::MessageBody).
 pub mod message_body {
 
     /// A builder for [`MessageBody`](crate::model::MessageBody).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -230,7 +206,7 @@ impl MessageBody {
 
 /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VoiceTemplateRequest {
     /// <p>The text of the script to use in messages that are based on the message template, in plain text format.</p>
     #[doc(hidden)]
@@ -281,23 +257,11 @@ impl VoiceTemplateRequest {
         self.voice_id.as_deref()
     }
 }
-impl std::fmt::Debug for VoiceTemplateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VoiceTemplateRequest");
-        formatter.field("body", &self.body);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("voice_id", &self.voice_id);
-        formatter.finish()
-    }
-}
 /// See [`VoiceTemplateRequest`](crate::model::VoiceTemplateRequest).
 pub mod voice_template_request {
 
     /// A builder for [`VoiceTemplateRequest`](crate::model::VoiceTemplateRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<std::string::String>,
         pub(crate) default_substitutions: std::option::Option<std::string::String>,
@@ -415,7 +379,7 @@ impl VoiceTemplateRequest {
 
 /// <p>Provides information about the status and settings of the voice channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VoiceChannelResponse {
     /// <p>The unique identifier for the application that the voice channel applies to.</p>
     #[doc(hidden)]
@@ -490,27 +454,11 @@ impl VoiceChannelResponse {
         self.version
     }
 }
-impl std::fmt::Debug for VoiceChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VoiceChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`VoiceChannelResponse`](crate::model::VoiceChannelResponse).
 pub mod voice_channel_response {
 
     /// A builder for [`VoiceChannelResponse`](crate::model::VoiceChannelResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<std::string::String>,
@@ -662,7 +610,7 @@ impl VoiceChannelResponse {
 
 /// <p>Specifies the status and settings of the voice channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VoiceChannelRequest {
     /// <p>Specifies whether to enable the voice channel for the application.</p>
     #[doc(hidden)]
@@ -674,18 +622,11 @@ impl VoiceChannelRequest {
         self.enabled
     }
 }
-impl std::fmt::Debug for VoiceChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VoiceChannelRequest");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 /// See [`VoiceChannelRequest`](crate::model::VoiceChannelRequest).
 pub mod voice_channel_request {
 
     /// A builder for [`VoiceChannelRequest`](crate::model::VoiceChannelRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
     }
@@ -717,7 +658,7 @@ impl VoiceChannelRequest {
 
 /// <p>Specifies which version of a message template to use as the active version of the template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateActiveVersionRequest {
     /// <p>The version of the message template to use as the active version of the template. Valid values are: latest, for the most recent version of the template; or, the unique identifier for any existing version of the template. If you specify an identifier, the value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -731,18 +672,11 @@ impl TemplateActiveVersionRequest {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for TemplateActiveVersionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateActiveVersionRequest");
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`TemplateActiveVersionRequest`](crate::model::TemplateActiveVersionRequest).
 pub mod template_active_version_request {
 
     /// A builder for [`TemplateActiveVersionRequest`](crate::model::TemplateActiveVersionRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
     }
@@ -776,7 +710,7 @@ impl TemplateActiveVersionRequest {
 
 /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsTemplateRequest {
     /// <p>The message body to use in text messages that are based on the message template.</p>
     #[doc(hidden)]
@@ -820,22 +754,11 @@ impl SmsTemplateRequest {
         self.template_description.as_deref()
     }
 }
-impl std::fmt::Debug for SmsTemplateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsTemplateRequest");
-        formatter.field("body", &self.body);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("recommender_id", &self.recommender_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.finish()
-    }
-}
 /// See [`SmsTemplateRequest`](crate::model::SmsTemplateRequest).
 pub mod sms_template_request {
 
     /// A builder for [`SmsTemplateRequest`](crate::model::SmsTemplateRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<std::string::String>,
         pub(crate) default_substitutions: std::option::Option<std::string::String>,
@@ -941,7 +864,7 @@ impl SmsTemplateRequest {
 
 /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsChannelResponse {
     /// <p>The unique identifier for the application that the SMS channel applies to.</p>
     #[doc(hidden)]
@@ -1044,37 +967,11 @@ impl SmsChannelResponse {
         self.version
     }
 }
-impl std::fmt::Debug for SmsChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field(
-            "promotional_messages_per_second",
-            &self.promotional_messages_per_second,
-        );
-        formatter.field("sender_id", &self.sender_id);
-        formatter.field("short_code", &self.short_code);
-        formatter.field(
-            "transactional_messages_per_second",
-            &self.transactional_messages_per_second,
-        );
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`SmsChannelResponse`](crate::model::SmsChannelResponse).
 pub mod sms_channel_response {
 
     /// A builder for [`SmsChannelResponse`](crate::model::SmsChannelResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<std::string::String>,
@@ -1284,7 +1181,7 @@ impl SmsChannelResponse {
 
 /// <p>Specifies the status and settings of the SMS channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsChannelRequest {
     /// <p>Specifies whether to enable the SMS channel for the application.</p>
     #[doc(hidden)]
@@ -1310,20 +1207,11 @@ impl SmsChannelRequest {
         self.short_code.as_deref()
     }
 }
-impl std::fmt::Debug for SmsChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsChannelRequest");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("sender_id", &self.sender_id);
-        formatter.field("short_code", &self.short_code);
-        formatter.finish()
-    }
-}
 /// See [`SmsChannelRequest`](crate::model::SmsChannelRequest).
 pub mod sms_channel_request {
 
     /// A builder for [`SmsChannelRequest`](crate::model::SmsChannelRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) sender_id: std::option::Option<std::string::String>,
@@ -1379,7 +1267,7 @@ impl SmsChannelRequest {
 
 /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentResponse {
     /// <p>The unique identifier for the application that the segment is associated with.</p>
     #[doc(hidden)]
@@ -1480,29 +1368,11 @@ impl SegmentResponse {
         self.version
     }
 }
-impl std::fmt::Debug for SegmentResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("id", &self.id);
-        formatter.field("import_definition", &self.import_definition);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("name", &self.name);
-        formatter.field("segment_groups", &self.segment_groups);
-        formatter.field("segment_type", &self.segment_type);
-        formatter.field("tags", &self.tags);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`SegmentResponse`](crate::model::SegmentResponse).
 pub mod segment_response {
 
     /// A builder for [`SegmentResponse`](crate::model::SegmentResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1710,6 +1580,41 @@ impl SegmentResponse {
     }
 }
 
+/// When writing a match expression against `SegmentType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let segmenttype = unimplemented!();
+/// match segmenttype {
+///     SegmentType::Dimensional => { /* ... */ },
+///     SegmentType::Import => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `segmenttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SegmentType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SegmentType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SegmentType::NewFeature` is defined.
+/// Specifically, when `segmenttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SegmentType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1726,15 +1631,15 @@ pub enum SegmentType {
     Dimensional,
     #[allow(missing_docs)] // documentation missing in model
     Import,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SegmentType {
     fn from(s: &str) -> Self {
         match s {
             "DIMENSIONAL" => SegmentType::Dimensional,
             "IMPORT" => SegmentType::Import,
-            other => SegmentType::Unknown(other.to_owned()),
+            other => SegmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1751,11 +1656,11 @@ impl SegmentType {
         match self {
             SegmentType::Dimensional => "DIMENSIONAL",
             SegmentType::Import => "IMPORT",
-            SegmentType::Unknown(s) => s.as_ref(),
+            SegmentType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DIMENSIONAL", "IMPORT"]
     }
 }
@@ -1767,7 +1672,7 @@ impl AsRef<str> for SegmentType {
 
 /// <p>Specifies the settings that define the relationships between segment groups for a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentGroupList {
     /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
     #[doc(hidden)]
@@ -1786,19 +1691,11 @@ impl SegmentGroupList {
         self.include.as_ref()
     }
 }
-impl std::fmt::Debug for SegmentGroupList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentGroupList");
-        formatter.field("groups", &self.groups);
-        formatter.field("include", &self.include);
-        formatter.finish()
-    }
-}
 /// See [`SegmentGroupList`](crate::model::SegmentGroupList).
 pub mod segment_group_list {
 
     /// A builder for [`SegmentGroupList`](crate::model::SegmentGroupList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::SegmentGroup>>,
         pub(crate) include: std::option::Option<crate::model::Include>,
@@ -1849,6 +1746,42 @@ impl SegmentGroupList {
     }
 }
 
+/// When writing a match expression against `Include`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let include = unimplemented!();
+/// match include {
+///     Include::All => { /* ... */ },
+///     Include::Any => { /* ... */ },
+///     Include::None => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `include` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Include::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Include::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Include::NewFeature` is defined.
+/// Specifically, when `include` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Include::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1867,8 +1800,8 @@ pub enum Include {
     Any,
     #[allow(missing_docs)] // documentation missing in model
     None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Include {
     fn from(s: &str) -> Self {
@@ -1876,7 +1809,7 @@ impl std::convert::From<&str> for Include {
             "ALL" => Include::All,
             "ANY" => Include::Any,
             "NONE" => Include::None,
-            other => Include::Unknown(other.to_owned()),
+            other => Include::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1894,11 +1827,11 @@ impl Include {
             Include::All => "ALL",
             Include::Any => "ANY",
             Include::None => "NONE",
-            Include::Unknown(s) => s.as_ref(),
+            Include::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "ANY", "NONE"]
     }
 }
@@ -1910,7 +1843,7 @@ impl AsRef<str> for Include {
 
 /// <p>Specifies the base segments and dimensions for a segment, and the relationships between these base segments and dimensions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentGroup {
     /// <p>An array that defines the dimensions for the segment.</p>
     #[doc(hidden)]
@@ -1945,21 +1878,11 @@ impl SegmentGroup {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for SegmentGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentGroup");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("source_segments", &self.source_segments);
-        formatter.field("source_type", &self.source_type);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`SegmentGroup`](crate::model::SegmentGroup).
 pub mod segment_group {
 
     /// A builder for [`SegmentGroup`](crate::model::SegmentGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::SegmentDimensions>>,
         pub(crate) source_segments:
@@ -2049,6 +1972,42 @@ impl SegmentGroup {
     }
 }
 
+/// When writing a match expression against `Type`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let type = unimplemented!();
+/// match type {
+///     Type::All => { /* ... */ },
+///     Type::Any => { /* ... */ },
+///     Type::None => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `type` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Type::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Type::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Type::NewFeature` is defined.
+/// Specifically, when `type` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Type::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2067,8 +2026,8 @@ pub enum Type {
     Any,
     #[allow(missing_docs)] // documentation missing in model
     None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Type {
     fn from(s: &str) -> Self {
@@ -2076,7 +2035,7 @@ impl std::convert::From<&str> for Type {
             "ALL" => Type::All,
             "ANY" => Type::Any,
             "NONE" => Type::None,
-            other => Type::Unknown(other.to_owned()),
+            other => Type::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2094,11 +2053,11 @@ impl Type {
             Type::All => "ALL",
             Type::Any => "ANY",
             Type::None => "NONE",
-            Type::Unknown(s) => s.as_ref(),
+            Type::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "ANY", "NONE"]
     }
 }
@@ -2108,6 +2067,42 @@ impl AsRef<str> for Type {
     }
 }
 
+/// When writing a match expression against `SourceType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sourcetype = unimplemented!();
+/// match sourcetype {
+///     SourceType::All => { /* ... */ },
+///     SourceType::Any => { /* ... */ },
+///     SourceType::None => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sourcetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SourceType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SourceType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SourceType::NewFeature` is defined.
+/// Specifically, when `sourcetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SourceType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2126,8 +2121,8 @@ pub enum SourceType {
     Any,
     #[allow(missing_docs)] // documentation missing in model
     None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SourceType {
     fn from(s: &str) -> Self {
@@ -2135,7 +2130,7 @@ impl std::convert::From<&str> for SourceType {
             "ALL" => SourceType::All,
             "ANY" => SourceType::Any,
             "NONE" => SourceType::None,
-            other => SourceType::Unknown(other.to_owned()),
+            other => SourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2153,11 +2148,11 @@ impl SourceType {
             SourceType::All => "ALL",
             SourceType::Any => "ANY",
             SourceType::None => "NONE",
-            SourceType::Unknown(s) => s.as_ref(),
+            SourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "ANY", "NONE"]
     }
 }
@@ -2169,7 +2164,7 @@ impl AsRef<str> for SourceType {
 
 /// <p>Specifies the segment identifier and version of a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentReference {
     /// <p>The unique identifier for the segment.</p>
     #[doc(hidden)]
@@ -2188,19 +2183,11 @@ impl SegmentReference {
         self.version
     }
 }
-impl std::fmt::Debug for SegmentReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentReference");
-        formatter.field("id", &self.id);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`SegmentReference`](crate::model::SegmentReference).
 pub mod segment_reference {
 
     /// A builder for [`SegmentReference`](crate::model::SegmentReference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i32>,
@@ -2244,7 +2231,7 @@ impl SegmentReference {
 
 /// <p>Specifies the dimension settings for a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentDimensions {
     /// <p>One or more custom attributes to use as criteria for the segment.</p>
     #[doc(hidden)]
@@ -2309,23 +2296,11 @@ impl SegmentDimensions {
         self.user_attributes.as_ref()
     }
 }
-impl std::fmt::Debug for SegmentDimensions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentDimensions");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("behavior", &self.behavior);
-        formatter.field("demographic", &self.demographic);
-        formatter.field("location", &self.location);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("user_attributes", &self.user_attributes);
-        formatter.finish()
-    }
-}
 /// See [`SegmentDimensions`](crate::model::SegmentDimensions).
 pub mod segment_dimensions {
 
     /// A builder for [`SegmentDimensions`](crate::model::SegmentDimensions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeDimension>,
@@ -2477,7 +2452,7 @@ impl SegmentDimensions {
 
 /// <p>Specifies attribute-based criteria for including or excluding endpoints from a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeDimension {
     /// <p>The type of segment dimension to use. Valid values are: </p>
     /// <ul>
@@ -2516,19 +2491,11 @@ impl AttributeDimension {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for AttributeDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeDimension");
-        formatter.field("attribute_type", &self.attribute_type);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`AttributeDimension`](crate::model::AttributeDimension).
 pub mod attribute_dimension {
 
     /// A builder for [`AttributeDimension`](crate::model::AttributeDimension).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_type: std::option::Option<crate::model::AttributeType>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2602,6 +2569,46 @@ impl AttributeDimension {
     }
 }
 
+/// When writing a match expression against `AttributeType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let attributetype = unimplemented!();
+/// match attributetype {
+///     AttributeType::After => { /* ... */ },
+///     AttributeType::Before => { /* ... */ },
+///     AttributeType::Between => { /* ... */ },
+///     AttributeType::Contains => { /* ... */ },
+///     AttributeType::Exclusive => { /* ... */ },
+///     AttributeType::Inclusive => { /* ... */ },
+///     AttributeType::On => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `attributetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AttributeType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AttributeType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AttributeType::NewFeature` is defined.
+/// Specifically, when `attributetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AttributeType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2628,8 +2635,8 @@ pub enum AttributeType {
     Inclusive,
     #[allow(missing_docs)] // documentation missing in model
     On,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AttributeType {
     fn from(s: &str) -> Self {
@@ -2641,7 +2648,7 @@ impl std::convert::From<&str> for AttributeType {
             "EXCLUSIVE" => AttributeType::Exclusive,
             "INCLUSIVE" => AttributeType::Inclusive,
             "ON" => AttributeType::On,
-            other => AttributeType::Unknown(other.to_owned()),
+            other => AttributeType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2663,11 +2670,11 @@ impl AttributeType {
             AttributeType::Exclusive => "EXCLUSIVE",
             AttributeType::Inclusive => "INCLUSIVE",
             AttributeType::On => "ON",
-            AttributeType::Unknown(s) => s.as_ref(),
+            AttributeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AFTER",
             "BEFORE",
@@ -2687,7 +2694,7 @@ impl AsRef<str> for AttributeType {
 
 /// <p>Specifies metric-based criteria for including or excluding endpoints from a segment. These criteria derive from custom metrics that you define for endpoints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDimension {
     /// <p>The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.</p>
     #[doc(hidden)]
@@ -2706,19 +2713,11 @@ impl MetricDimension {
         self.value
     }
 }
-impl std::fmt::Debug for MetricDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDimension");
-        formatter.field("comparison_operator", &self.comparison_operator);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`MetricDimension`](crate::model::MetricDimension).
 pub mod metric_dimension {
 
     /// A builder for [`MetricDimension`](crate::model::MetricDimension).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comparison_operator: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<f64>,
@@ -2765,7 +2764,7 @@ impl MetricDimension {
 
 /// <p>Specifies geographical dimension settings for a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentLocation {
     /// <p>The country or region code, in ISO 3166-1 alpha-2 format, for the segment.</p>
     #[doc(hidden)]
@@ -2784,19 +2783,11 @@ impl SegmentLocation {
         self.gps_point.as_ref()
     }
 }
-impl std::fmt::Debug for SegmentLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentLocation");
-        formatter.field("country", &self.country);
-        formatter.field("gps_point", &self.gps_point);
-        formatter.finish()
-    }
-}
 /// See [`SegmentLocation`](crate::model::SegmentLocation).
 pub mod segment_location {
 
     /// A builder for [`SegmentLocation`](crate::model::SegmentLocation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) country: std::option::Option<crate::model::SetDimension>,
         pub(crate) gps_point: std::option::Option<crate::model::GpsPointDimension>,
@@ -2846,7 +2837,7 @@ impl SegmentLocation {
 
 /// <p>Specifies GPS-based criteria for including or excluding endpoints from a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GpsPointDimension {
     /// <p>The GPS coordinates to measure distance from.</p>
     #[doc(hidden)]
@@ -2865,19 +2856,11 @@ impl GpsPointDimension {
         self.range_in_kilometers
     }
 }
-impl std::fmt::Debug for GpsPointDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GpsPointDimension");
-        formatter.field("coordinates", &self.coordinates);
-        formatter.field("range_in_kilometers", &self.range_in_kilometers);
-        formatter.finish()
-    }
-}
 /// See [`GpsPointDimension`](crate::model::GpsPointDimension).
 pub mod gps_point_dimension {
 
     /// A builder for [`GpsPointDimension`](crate::model::GpsPointDimension).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) coordinates: std::option::Option<crate::model::GpsCoordinates>,
         pub(crate) range_in_kilometers: std::option::Option<f64>,
@@ -2924,7 +2907,7 @@ impl GpsPointDimension {
 
 /// <p>Specifies the GPS coordinates of a location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GpsCoordinates {
     /// <p>The latitude coordinate of the location.</p>
     #[doc(hidden)]
@@ -2943,19 +2926,11 @@ impl GpsCoordinates {
         self.longitude
     }
 }
-impl std::fmt::Debug for GpsCoordinates {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GpsCoordinates");
-        formatter.field("latitude", &self.latitude);
-        formatter.field("longitude", &self.longitude);
-        formatter.finish()
-    }
-}
 /// See [`GpsCoordinates`](crate::model::GpsCoordinates).
 pub mod gps_coordinates {
 
     /// A builder for [`GpsCoordinates`](crate::model::GpsCoordinates).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) latitude: std::option::Option<f64>,
         pub(crate) longitude: std::option::Option<f64>,
@@ -2999,7 +2974,7 @@ impl GpsCoordinates {
 
 /// <p>Specifies the dimension type and values for a segment dimension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetDimension {
     /// <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are included in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.</p>
     #[doc(hidden)]
@@ -3018,19 +2993,11 @@ impl SetDimension {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for SetDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetDimension");
-        formatter.field("dimension_type", &self.dimension_type);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`SetDimension`](crate::model::SetDimension).
 pub mod set_dimension {
 
     /// A builder for [`SetDimension`](crate::model::SetDimension).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimension_type: std::option::Option<crate::model::DimensionType>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3084,6 +3051,41 @@ impl SetDimension {
     }
 }
 
+/// When writing a match expression against `DimensionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dimensiontype = unimplemented!();
+/// match dimensiontype {
+///     DimensionType::Exclusive => { /* ... */ },
+///     DimensionType::Inclusive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dimensiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DimensionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DimensionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DimensionType::NewFeature` is defined.
+/// Specifically, when `dimensiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DimensionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3100,15 +3102,15 @@ pub enum DimensionType {
     Exclusive,
     #[allow(missing_docs)] // documentation missing in model
     Inclusive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DimensionType {
     fn from(s: &str) -> Self {
         match s {
             "EXCLUSIVE" => DimensionType::Exclusive,
             "INCLUSIVE" => DimensionType::Inclusive,
-            other => DimensionType::Unknown(other.to_owned()),
+            other => DimensionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3125,11 +3127,11 @@ impl DimensionType {
         match self {
             DimensionType::Exclusive => "EXCLUSIVE",
             DimensionType::Inclusive => "INCLUSIVE",
-            DimensionType::Unknown(s) => s.as_ref(),
+            DimensionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXCLUSIVE", "INCLUSIVE"]
     }
 }
@@ -3141,7 +3143,7 @@ impl AsRef<str> for DimensionType {
 
 /// <p>Specifies demographic-based dimension settings for including or excluding endpoints from a segment. These settings derive from characteristics of endpoint devices, such as platform, make, and model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentDemographics {
     /// <p>The app version criteria for the segment.</p>
     #[doc(hidden)]
@@ -3188,23 +3190,11 @@ impl SegmentDemographics {
         self.platform.as_ref()
     }
 }
-impl std::fmt::Debug for SegmentDemographics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentDemographics");
-        formatter.field("app_version", &self.app_version);
-        formatter.field("channel", &self.channel);
-        formatter.field("device_type", &self.device_type);
-        formatter.field("make", &self.make);
-        formatter.field("model", &self.model);
-        formatter.field("platform", &self.platform);
-        formatter.finish()
-    }
-}
 /// See [`SegmentDemographics`](crate::model::SegmentDemographics).
 pub mod segment_demographics {
 
     /// A builder for [`SegmentDemographics`](crate::model::SegmentDemographics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_version: std::option::Option<crate::model::SetDimension>,
         pub(crate) channel: std::option::Option<crate::model::SetDimension>,
@@ -3308,7 +3298,7 @@ impl SegmentDemographics {
 
 /// <p>Specifies dimension settings for including or excluding endpoints from a segment based on how recently an endpoint was active.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentBehaviors {
     /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
     #[doc(hidden)]
@@ -3320,18 +3310,11 @@ impl SegmentBehaviors {
         self.recency.as_ref()
     }
 }
-impl std::fmt::Debug for SegmentBehaviors {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentBehaviors");
-        formatter.field("recency", &self.recency);
-        formatter.finish()
-    }
-}
 /// See [`SegmentBehaviors`](crate::model::SegmentBehaviors).
 pub mod segment_behaviors {
 
     /// A builder for [`SegmentBehaviors`](crate::model::SegmentBehaviors).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recency: std::option::Option<crate::model::RecencyDimension>,
     }
@@ -3366,7 +3349,7 @@ impl SegmentBehaviors {
 
 /// <p>Specifies criteria for including or excluding endpoints from a segment based on how recently an endpoint was active.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecencyDimension {
     /// <p>The duration to use when determining whether an endpoint is active or inactive.</p>
     #[doc(hidden)]
@@ -3385,19 +3368,11 @@ impl RecencyDimension {
         self.recency_type.as_ref()
     }
 }
-impl std::fmt::Debug for RecencyDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecencyDimension");
-        formatter.field("duration", &self.duration);
-        formatter.field("recency_type", &self.recency_type);
-        formatter.finish()
-    }
-}
 /// See [`RecencyDimension`](crate::model::RecencyDimension).
 pub mod recency_dimension {
 
     /// A builder for [`RecencyDimension`](crate::model::RecencyDimension).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration: std::option::Option<crate::model::Duration>,
         pub(crate) recency_type: std::option::Option<crate::model::RecencyType>,
@@ -3442,6 +3417,41 @@ impl RecencyDimension {
     }
 }
 
+/// When writing a match expression against `RecencyType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let recencytype = unimplemented!();
+/// match recencytype {
+///     RecencyType::Active => { /* ... */ },
+///     RecencyType::Inactive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `recencytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RecencyType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RecencyType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RecencyType::NewFeature` is defined.
+/// Specifically, when `recencytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RecencyType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3458,15 +3468,15 @@ pub enum RecencyType {
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RecencyType {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => RecencyType::Active,
             "INACTIVE" => RecencyType::Inactive,
-            other => RecencyType::Unknown(other.to_owned()),
+            other => RecencyType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3483,11 +3493,11 @@ impl RecencyType {
         match self {
             RecencyType::Active => "ACTIVE",
             RecencyType::Inactive => "INACTIVE",
-            RecencyType::Unknown(s) => s.as_ref(),
+            RecencyType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -3497,6 +3507,43 @@ impl AsRef<str> for RecencyType {
     }
 }
 
+/// When writing a match expression against `Duration`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let duration = unimplemented!();
+/// match duration {
+///     Duration::Day14 => { /* ... */ },
+///     Duration::Day30 => { /* ... */ },
+///     Duration::Day7 => { /* ... */ },
+///     Duration::Hr24 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `duration` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Duration::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Duration::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Duration::NewFeature` is defined.
+/// Specifically, when `duration` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Duration::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3517,8 +3564,8 @@ pub enum Duration {
     Day7,
     #[allow(missing_docs)] // documentation missing in model
     Hr24,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Duration {
     fn from(s: &str) -> Self {
@@ -3527,7 +3574,7 @@ impl std::convert::From<&str> for Duration {
             "DAY_30" => Duration::Day30,
             "DAY_7" => Duration::Day7,
             "HR_24" => Duration::Hr24,
-            other => Duration::Unknown(other.to_owned()),
+            other => Duration::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3546,11 +3593,11 @@ impl Duration {
             Duration::Day30 => "DAY_30",
             Duration::Day7 => "DAY_7",
             Duration::Hr24 => "HR_24",
-            Duration::Unknown(s) => s.as_ref(),
+            Duration::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAY_14", "DAY_30", "DAY_7", "HR_24"]
     }
 }
@@ -3562,7 +3609,7 @@ impl AsRef<str> for Duration {
 
 /// <p>Provides information about the import job that created a segment. An import job is a job that creates a user segment by importing endpoint definitions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentImportResource {
     /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
     #[doc(hidden)]
@@ -3611,23 +3658,11 @@ impl SegmentImportResource {
         self.size
     }
 }
-impl std::fmt::Debug for SegmentImportResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentImportResource");
-        formatter.field("channel_counts", &self.channel_counts);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("format", &self.format);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("s3_url", &self.s3_url);
-        formatter.field("size", &self.size);
-        formatter.finish()
-    }
-}
 /// See [`SegmentImportResource`](crate::model::SegmentImportResource).
 pub mod segment_import_resource {
 
     /// A builder for [`SegmentImportResource`](crate::model::SegmentImportResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_counts:
             std::option::Option<std::collections::HashMap<std::string::String, i32>>,
@@ -3727,6 +3762,41 @@ impl SegmentImportResource {
     }
 }
 
+/// When writing a match expression against `Format`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let format = unimplemented!();
+/// match format {
+///     Format::Csv => { /* ... */ },
+///     Format::Json => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `format` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Format::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Format::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Format::NewFeature` is defined.
+/// Specifically, when `format` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Format::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3743,15 +3813,15 @@ pub enum Format {
     Csv,
     #[allow(missing_docs)] // documentation missing in model
     Json,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Format {
     fn from(s: &str) -> Self {
         match s {
             "CSV" => Format::Csv,
             "JSON" => Format::Json,
-            other => Format::Unknown(other.to_owned()),
+            other => Format::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3768,11 +3838,11 @@ impl Format {
         match self {
             Format::Csv => "CSV",
             Format::Json => "JSON",
-            Format::Unknown(s) => s.as_ref(),
+            Format::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV", "JSON"]
     }
 }
@@ -3784,7 +3854,7 @@ impl AsRef<str> for Format {
 
 /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WriteSegmentRequest {
     /// <p>The criteria that define the dimensions for the segment.</p>
     #[doc(hidden)]
@@ -3821,21 +3891,11 @@ impl WriteSegmentRequest {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for WriteSegmentRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WriteSegmentRequest");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("name", &self.name);
-        formatter.field("segment_groups", &self.segment_groups);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`WriteSegmentRequest`](crate::model::WriteSegmentRequest).
 pub mod write_segment_request {
 
     /// A builder for [`WriteSegmentRequest`](crate::model::WriteSegmentRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimensions: std::option::Option<crate::model::SegmentDimensions>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3926,7 +3986,7 @@ impl WriteSegmentRequest {
 
 /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommenderConfigurationResponse {
     /// <p>A map that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p>
     /// <p>This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
@@ -4031,47 +4091,11 @@ impl RecommenderConfigurationResponse {
         self.recommendations_per_message
     }
 }
-impl std::fmt::Debug for RecommenderConfigurationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommenderConfigurationResponse");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("description", &self.description);
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "recommendation_provider_id_type",
-            &self.recommendation_provider_id_type,
-        );
-        formatter.field(
-            "recommendation_provider_role_arn",
-            &self.recommendation_provider_role_arn,
-        );
-        formatter.field(
-            "recommendation_provider_uri",
-            &self.recommendation_provider_uri,
-        );
-        formatter.field(
-            "recommendation_transformer_uri",
-            &self.recommendation_transformer_uri,
-        );
-        formatter.field(
-            "recommendations_display_name",
-            &self.recommendations_display_name,
-        );
-        formatter.field(
-            "recommendations_per_message",
-            &self.recommendations_per_message,
-        );
-        formatter.finish()
-    }
-}
 /// See [`RecommenderConfigurationResponse`](crate::model::RecommenderConfigurationResponse).
 pub mod recommender_configuration_response {
 
     /// A builder for [`RecommenderConfigurationResponse`](crate::model::RecommenderConfigurationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -4300,7 +4324,7 @@ impl RecommenderConfigurationResponse {
 
 /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRecommenderConfigurationShape {
     /// <p>A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p>
     /// <p>In the map, the key is the name of a custom attribute and the value is a custom display name for that attribute. The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The following restrictions apply to these names:</p>
@@ -4396,44 +4420,11 @@ impl UpdateRecommenderConfigurationShape {
         self.recommendations_per_message
     }
 }
-impl std::fmt::Debug for UpdateRecommenderConfigurationShape {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRecommenderConfigurationShape");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "recommendation_provider_id_type",
-            &self.recommendation_provider_id_type,
-        );
-        formatter.field(
-            "recommendation_provider_role_arn",
-            &self.recommendation_provider_role_arn,
-        );
-        formatter.field(
-            "recommendation_provider_uri",
-            &self.recommendation_provider_uri,
-        );
-        formatter.field(
-            "recommendation_transformer_uri",
-            &self.recommendation_transformer_uri,
-        );
-        formatter.field(
-            "recommendations_display_name",
-            &self.recommendations_display_name,
-        );
-        formatter.field(
-            "recommendations_per_message",
-            &self.recommendations_per_message,
-        );
-        formatter.finish()
-    }
-}
 /// See [`UpdateRecommenderConfigurationShape`](crate::model::UpdateRecommenderConfigurationShape).
 pub mod update_recommender_configuration_shape {
 
     /// A builder for [`UpdateRecommenderConfigurationShape`](crate::model::UpdateRecommenderConfigurationShape).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -4632,7 +4623,7 @@ impl UpdateRecommenderConfigurationShape {
 
 /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PushNotificationTemplateRequest {
     /// <p>The message template to use for the ADM (Amazon Device Messaging) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
     #[doc(hidden)]
@@ -4710,26 +4701,11 @@ impl PushNotificationTemplateRequest {
         self.template_description.as_deref()
     }
 }
-impl std::fmt::Debug for PushNotificationTemplateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PushNotificationTemplateRequest");
-        formatter.field("adm", &self.adm);
-        formatter.field("apns", &self.apns);
-        formatter.field("baidu", &self.baidu);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("gcm", &self.gcm);
-        formatter.field("recommender_id", &self.recommender_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.finish()
-    }
-}
 /// See [`PushNotificationTemplateRequest`](crate::model::PushNotificationTemplateRequest).
 pub mod push_notification_template_request {
 
     /// A builder for [`PushNotificationTemplateRequest`](crate::model::PushNotificationTemplateRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adm: std::option::Option<crate::model::AndroidPushNotificationTemplate>,
         pub(crate) apns: std::option::Option<crate::model::ApnsPushNotificationTemplate>,
@@ -4902,7 +4878,7 @@ impl PushNotificationTemplateRequest {
 
 /// <p>Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AndroidPushNotificationTemplate {
     /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p>
     /// <ul>
@@ -4980,26 +4956,11 @@ impl AndroidPushNotificationTemplate {
         self.url.as_deref()
     }
 }
-impl std::fmt::Debug for AndroidPushNotificationTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AndroidPushNotificationTemplate");
-        formatter.field("action", &self.action);
-        formatter.field("body", &self.body);
-        formatter.field("image_icon_url", &self.image_icon_url);
-        formatter.field("image_url", &self.image_url);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("small_image_icon_url", &self.small_image_icon_url);
-        formatter.field("sound", &self.sound);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
-    }
-}
 /// See [`AndroidPushNotificationTemplate`](crate::model::AndroidPushNotificationTemplate).
 pub mod android_push_notification_template {
 
     /// A builder for [`AndroidPushNotificationTemplate`](crate::model::AndroidPushNotificationTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
         pub(crate) body: std::option::Option<std::string::String>,
@@ -5141,6 +5102,42 @@ impl AndroidPushNotificationTemplate {
     }
 }
 
+/// When writing a match expression against `Action`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let action = unimplemented!();
+/// match action {
+///     Action::DeepLink => { /* ... */ },
+///     Action::OpenApp => { /* ... */ },
+///     Action::Url => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `action` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Action::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Action::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Action::NewFeature` is defined.
+/// Specifically, when `action` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Action::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5159,8 +5156,8 @@ pub enum Action {
     OpenApp,
     #[allow(missing_docs)] // documentation missing in model
     Url,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Action {
     fn from(s: &str) -> Self {
@@ -5168,7 +5165,7 @@ impl std::convert::From<&str> for Action {
             "DEEP_LINK" => Action::DeepLink,
             "OPEN_APP" => Action::OpenApp,
             "URL" => Action::Url,
-            other => Action::Unknown(other.to_owned()),
+            other => Action::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -5186,11 +5183,11 @@ impl Action {
             Action::DeepLink => "DEEP_LINK",
             Action::OpenApp => "OPEN_APP",
             Action::Url => "URL",
-            Action::Unknown(s) => s.as_ref(),
+            Action::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEEP_LINK", "OPEN_APP", "URL"]
     }
 }
@@ -5202,7 +5199,7 @@ impl AsRef<str> for Action {
 
 /// <p>Specifies the default settings and content for a message template that can be used in messages that are sent through a push notification channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultPushNotificationTemplate {
     /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p>
     /// <ul>
@@ -5254,22 +5251,11 @@ impl DefaultPushNotificationTemplate {
         self.url.as_deref()
     }
 }
-impl std::fmt::Debug for DefaultPushNotificationTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultPushNotificationTemplate");
-        formatter.field("action", &self.action);
-        formatter.field("body", &self.body);
-        formatter.field("sound", &self.sound);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
-    }
-}
 /// See [`DefaultPushNotificationTemplate`](crate::model::DefaultPushNotificationTemplate).
 pub mod default_push_notification_template {
 
     /// A builder for [`DefaultPushNotificationTemplate`](crate::model::DefaultPushNotificationTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
         pub(crate) body: std::option::Option<std::string::String>,
@@ -5361,7 +5347,7 @@ impl DefaultPushNotificationTemplate {
 
 /// <p>Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the APNs (Apple Push Notification service) channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsPushNotificationTemplate {
     /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p>
     /// <ul>
@@ -5425,24 +5411,11 @@ impl ApnsPushNotificationTemplate {
         self.url.as_deref()
     }
 }
-impl std::fmt::Debug for ApnsPushNotificationTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsPushNotificationTemplate");
-        formatter.field("action", &self.action);
-        formatter.field("body", &self.body);
-        formatter.field("media_url", &self.media_url);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("sound", &self.sound);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
-    }
-}
 /// See [`ApnsPushNotificationTemplate`](crate::model::ApnsPushNotificationTemplate).
 pub mod apns_push_notification_template {
 
     /// A builder for [`ApnsPushNotificationTemplate`](crate::model::ApnsPushNotificationTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
         pub(crate) body: std::option::Option<std::string::String>,
@@ -5556,7 +5529,7 @@ impl ApnsPushNotificationTemplate {
 
 /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyResponse {
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
     #[doc(hidden)]
@@ -5744,38 +5717,11 @@ impl JourneyResponse {
         self.closed_days.as_ref()
     }
 }
-impl std::fmt::Debug for JourneyResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyResponse");
-        formatter.field("activities", &self.activities);
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("id", &self.id);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("limits", &self.limits);
-        formatter.field("local_time", &self.local_time);
-        formatter.field("name", &self.name);
-        formatter.field("quiet_time", &self.quiet_time);
-        formatter.field("refresh_frequency", &self.refresh_frequency);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("start_activity", &self.start_activity);
-        formatter.field("start_condition", &self.start_condition);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("wait_for_quiet_time", &self.wait_for_quiet_time);
-        formatter.field("refresh_on_segment_update", &self.refresh_on_segment_update);
-        formatter.field("journey_channel_settings", &self.journey_channel_settings);
-        formatter.field("sending_schedule", &self.sending_schedule);
-        formatter.field("open_hours", &self.open_hours);
-        formatter.field("closed_days", &self.closed_days);
-        formatter.finish()
-    }
-}
 /// See [`JourneyResponse`](crate::model::JourneyResponse).
 pub mod journey_response {
 
     /// A builder for [`JourneyResponse`](crate::model::JourneyResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activities: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::Activity>,
@@ -6147,7 +6093,7 @@ impl JourneyResponse {
 
 /// <p>The time when journey will stop sending messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClosedDays {
     /// <p>Rules for Email Channel.</p>
     #[doc(hidden)]
@@ -6187,22 +6133,11 @@ impl ClosedDays {
         self.custom.as_deref()
     }
 }
-impl std::fmt::Debug for ClosedDays {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClosedDays");
-        formatter.field("email", &self.email);
-        formatter.field("sms", &self.sms);
-        formatter.field("push", &self.push);
-        formatter.field("voice", &self.voice);
-        formatter.field("custom", &self.custom);
-        formatter.finish()
-    }
-}
 /// See [`ClosedDays`](crate::model::ClosedDays).
 pub mod closed_days {
 
     /// A builder for [`ClosedDays`](crate::model::ClosedDays).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
         pub(crate) sms: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
@@ -6327,7 +6262,7 @@ impl ClosedDays {
 
 /// <p>Closed Days Rule. Part of Journey sending schedule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClosedDaysRule {
     /// <p>Name of the rule.</p>
     #[doc(hidden)]
@@ -6353,20 +6288,11 @@ impl ClosedDaysRule {
         self.end_date_time.as_deref()
     }
 }
-impl std::fmt::Debug for ClosedDaysRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClosedDaysRule");
-        formatter.field("name", &self.name);
-        formatter.field("start_date_time", &self.start_date_time);
-        formatter.field("end_date_time", &self.end_date_time);
-        formatter.finish()
-    }
-}
 /// See [`ClosedDaysRule`](crate::model::ClosedDaysRule).
 pub mod closed_days_rule {
 
     /// A builder for [`ClosedDaysRule`](crate::model::ClosedDaysRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) start_date_time: std::option::Option<std::string::String>,
@@ -6428,7 +6354,7 @@ impl ClosedDaysRule {
 
 /// <p>The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenHours {
     /// <p>Rules for Email Channel.</p>
     #[doc(hidden)]
@@ -6528,22 +6454,11 @@ impl OpenHours {
         self.custom.as_ref()
     }
 }
-impl std::fmt::Debug for OpenHours {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenHours");
-        formatter.field("email", &self.email);
-        formatter.field("sms", &self.sms);
-        formatter.field("push", &self.push);
-        formatter.field("voice", &self.voice);
-        formatter.field("custom", &self.custom);
-        formatter.finish()
-    }
-}
 /// See [`OpenHours`](crate::model::OpenHours).
 pub mod open_hours {
 
     /// A builder for [`OpenHours`](crate::model::OpenHours).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email: std::option::Option<
             std::collections::HashMap<
@@ -6738,7 +6653,7 @@ impl OpenHours {
 
 /// <p>List of OpenHours Rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenHoursRule {
     /// <p>Local start time in ISO 8601 format.</p>
     #[doc(hidden)]
@@ -6757,19 +6672,11 @@ impl OpenHoursRule {
         self.end_time.as_deref()
     }
 }
-impl std::fmt::Debug for OpenHoursRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenHoursRule");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
-    }
-}
 /// See [`OpenHoursRule`](crate::model::OpenHoursRule).
 pub mod open_hours_rule {
 
     /// A builder for [`OpenHoursRule`](crate::model::OpenHoursRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<std::string::String>,
         pub(crate) end_time: std::option::Option<std::string::String>,
@@ -6811,6 +6718,46 @@ impl OpenHoursRule {
     }
 }
 
+/// When writing a match expression against `DayOfWeek`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dayofweek = unimplemented!();
+/// match dayofweek {
+///     DayOfWeek::Friday => { /* ... */ },
+///     DayOfWeek::Monday => { /* ... */ },
+///     DayOfWeek::Saturday => { /* ... */ },
+///     DayOfWeek::Sunday => { /* ... */ },
+///     DayOfWeek::Thursday => { /* ... */ },
+///     DayOfWeek::Tuesday => { /* ... */ },
+///     DayOfWeek::Wednesday => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dayofweek` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DayOfWeek::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DayOfWeek::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DayOfWeek::NewFeature` is defined.
+/// Specifically, when `dayofweek` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DayOfWeek::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6837,8 +6784,8 @@ pub enum DayOfWeek {
     Tuesday,
     #[allow(missing_docs)] // documentation missing in model
     Wednesday,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DayOfWeek {
     fn from(s: &str) -> Self {
@@ -6850,7 +6797,7 @@ impl std::convert::From<&str> for DayOfWeek {
             "THURSDAY" => DayOfWeek::Thursday,
             "TUESDAY" => DayOfWeek::Tuesday,
             "WEDNESDAY" => DayOfWeek::Wednesday,
-            other => DayOfWeek::Unknown(other.to_owned()),
+            other => DayOfWeek::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -6872,11 +6819,11 @@ impl DayOfWeek {
             DayOfWeek::Thursday => "THURSDAY",
             DayOfWeek::Tuesday => "TUESDAY",
             DayOfWeek::Wednesday => "WEDNESDAY",
-            DayOfWeek::Unknown(s) => s.as_ref(),
+            DayOfWeek::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FRIDAY",
             "MONDAY",
@@ -6896,7 +6843,7 @@ impl AsRef<str> for DayOfWeek {
 
 /// <p>The channel-specific configurations for the journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyChannelSettings {
     /// <p>Amazon Resource Name (ARN) of the Connect Campaign.</p>
     #[doc(hidden)]
@@ -6915,22 +6862,11 @@ impl JourneyChannelSettings {
         self.connect_campaign_execution_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for JourneyChannelSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyChannelSettings");
-        formatter.field("connect_campaign_arn", &self.connect_campaign_arn);
-        formatter.field(
-            "connect_campaign_execution_role_arn",
-            &self.connect_campaign_execution_role_arn,
-        );
-        formatter.finish()
-    }
-}
 /// See [`JourneyChannelSettings`](crate::model::JourneyChannelSettings).
 pub mod journey_channel_settings {
 
     /// A builder for [`JourneyChannelSettings`](crate::model::JourneyChannelSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_campaign_arn: std::option::Option<std::string::String>,
         pub(crate) connect_campaign_execution_role_arn: std::option::Option<std::string::String>,
@@ -6981,6 +6917,45 @@ impl JourneyChannelSettings {
     }
 }
 
+/// When writing a match expression against `State`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let state = unimplemented!();
+/// match state {
+///     State::Active => { /* ... */ },
+///     State::Cancelled => { /* ... */ },
+///     State::Closed => { /* ... */ },
+///     State::Completed => { /* ... */ },
+///     State::Draft => { /* ... */ },
+///     State::Paused => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `state` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `State::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `State::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `State::NewFeature` is defined.
+/// Specifically, when `state` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `State::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7005,8 +6980,8 @@ pub enum State {
     Draft,
     #[allow(missing_docs)] // documentation missing in model
     Paused,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for State {
     fn from(s: &str) -> Self {
@@ -7017,7 +6992,7 @@ impl std::convert::From<&str> for State {
             "COMPLETED" => State::Completed,
             "DRAFT" => State::Draft,
             "PAUSED" => State::Paused,
-            other => State::Unknown(other.to_owned()),
+            other => State::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -7038,11 +7013,11 @@ impl State {
             State::Completed => "COMPLETED",
             State::Draft => "DRAFT",
             State::Paused => "PAUSED",
-            State::Unknown(s) => s.as_ref(),
+            State::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CANCELLED",
@@ -7061,7 +7036,7 @@ impl AsRef<str> for State {
 
 /// <p>Specifies the conditions for the first activity in a journey. This activity and its conditions determine which users are participants in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartCondition {
     /// <p>The custom description of the condition.</p>
     #[doc(hidden)]
@@ -7087,20 +7062,11 @@ impl StartCondition {
         self.segment_start_condition.as_ref()
     }
 }
-impl std::fmt::Debug for StartCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartCondition");
-        formatter.field("description", &self.description);
-        formatter.field("event_start_condition", &self.event_start_condition);
-        formatter.field("segment_start_condition", &self.segment_start_condition);
-        formatter.finish()
-    }
-}
 /// See [`StartCondition`](crate::model::StartCondition).
 pub mod start_condition {
 
     /// A builder for [`StartCondition`](crate::model::StartCondition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) event_start_condition: std::option::Option<crate::model::EventStartCondition>,
@@ -7162,7 +7128,7 @@ impl StartCondition {
 
 /// <p>Specifies a segment to associate with an activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentCondition {
     /// <p>The unique identifier for the segment to associate with the activity.</p>
     #[doc(hidden)]
@@ -7174,18 +7140,11 @@ impl SegmentCondition {
         self.segment_id.as_deref()
     }
 }
-impl std::fmt::Debug for SegmentCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentCondition");
-        formatter.field("segment_id", &self.segment_id);
-        formatter.finish()
-    }
-}
 /// See [`SegmentCondition`](crate::model::SegmentCondition).
 pub mod segment_condition {
 
     /// A builder for [`SegmentCondition`](crate::model::SegmentCondition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segment_id: std::option::Option<std::string::String>,
     }
@@ -7217,7 +7176,7 @@ impl SegmentCondition {
 
 /// <p>Specifies the settings for an event that causes a journey activity to start.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventStartCondition {
     /// <p>Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.</p>
     #[doc(hidden)]
@@ -7236,19 +7195,11 @@ impl EventStartCondition {
         self.segment_id.as_deref()
     }
 }
-impl std::fmt::Debug for EventStartCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventStartCondition");
-        formatter.field("event_filter", &self.event_filter);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.finish()
-    }
-}
 /// See [`EventStartCondition`](crate::model::EventStartCondition).
 pub mod event_start_condition {
 
     /// A builder for [`EventStartCondition`](crate::model::EventStartCondition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_filter: std::option::Option<crate::model::EventFilter>,
         pub(crate) segment_id: std::option::Option<std::string::String>,
@@ -7295,7 +7246,7 @@ impl EventStartCondition {
 
 /// <p>Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventFilter {
     /// <p>The dimensions for the event filter to use for the campaign or the journey activity.</p>
     #[doc(hidden)]
@@ -7316,19 +7267,11 @@ impl EventFilter {
         self.filter_type.as_ref()
     }
 }
-impl std::fmt::Debug for EventFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventFilter");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("filter_type", &self.filter_type);
-        formatter.finish()
-    }
-}
 /// See [`EventFilter`](crate::model::EventFilter).
 pub mod event_filter {
 
     /// A builder for [`EventFilter`](crate::model::EventFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimensions: std::option::Option<crate::model::EventDimensions>,
         pub(crate) filter_type: std::option::Option<crate::model::FilterType>,
@@ -7378,6 +7321,41 @@ impl EventFilter {
     }
 }
 
+/// When writing a match expression against `FilterType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let filtertype = unimplemented!();
+/// match filtertype {
+///     FilterType::Endpoint => { /* ... */ },
+///     FilterType::System => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `filtertype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FilterType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FilterType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FilterType::NewFeature` is defined.
+/// Specifically, when `filtertype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FilterType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7394,15 +7372,15 @@ pub enum FilterType {
     Endpoint,
     #[allow(missing_docs)] // documentation missing in model
     System,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FilterType {
     fn from(s: &str) -> Self {
         match s {
             "ENDPOINT" => FilterType::Endpoint,
             "SYSTEM" => FilterType::System,
-            other => FilterType::Unknown(other.to_owned()),
+            other => FilterType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -7419,11 +7397,11 @@ impl FilterType {
         match self {
             FilterType::Endpoint => "ENDPOINT",
             FilterType::System => "SYSTEM",
-            FilterType::Unknown(s) => s.as_ref(),
+            FilterType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENDPOINT", "SYSTEM"]
     }
 }
@@ -7435,7 +7413,7 @@ impl AsRef<str> for FilterType {
 
 /// <p>Specifies the dimensions for an event filter that determines when a campaign is sent or a journey activity is performed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDimensions {
     /// <p>One or more custom attributes that your application reports to Amazon Pinpoint. You can use these attributes as selection criteria when you create an event filter.</p>
     #[doc(hidden)]
@@ -7473,20 +7451,11 @@ impl EventDimensions {
         self.metrics.as_ref()
     }
 }
-impl std::fmt::Debug for EventDimensions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDimensions");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("metrics", &self.metrics);
-        formatter.finish()
-    }
-}
 /// See [`EventDimensions`](crate::model::EventDimensions).
 pub mod event_dimensions {
 
     /// A builder for [`EventDimensions`](crate::model::EventDimensions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeDimension>,
@@ -7579,7 +7548,7 @@ impl EventDimensions {
 
 /// <p>Specifies the schedule settings for a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneySchedule {
     /// <p>The scheduled time, in ISO 8601 format, when the journey ended or will end.</p>
     #[doc(hidden)]
@@ -7605,20 +7574,11 @@ impl JourneySchedule {
         self.timezone.as_deref()
     }
 }
-impl std::fmt::Debug for JourneySchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneySchedule");
-        formatter.field("end_time", &self.end_time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("timezone", &self.timezone);
-        formatter.finish()
-    }
-}
 /// See [`JourneySchedule`](crate::model::JourneySchedule).
 pub mod journey_schedule {
 
     /// A builder for [`JourneySchedule`](crate::model::JourneySchedule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -7680,7 +7640,7 @@ impl JourneySchedule {
 
 /// <p>Specifies the start and end times that define a time range when messages aren't sent to endpoints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QuietTime {
     /// <p>The specific time when quiet time ends. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
     #[doc(hidden)]
@@ -7699,19 +7659,11 @@ impl QuietTime {
         self.start.as_deref()
     }
 }
-impl std::fmt::Debug for QuietTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QuietTime");
-        formatter.field("end", &self.end);
-        formatter.field("start", &self.start);
-        formatter.finish()
-    }
-}
 /// See [`QuietTime`](crate::model::QuietTime).
 pub mod quiet_time {
 
     /// A builder for [`QuietTime`](crate::model::QuietTime).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) end: std::option::Option<std::string::String>,
         pub(crate) start: std::option::Option<std::string::String>,
@@ -7755,7 +7707,7 @@ impl QuietTime {
 
 /// <p>Specifies limits on the messages that a journey can send and the number of times participants can enter a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyLimits {
     /// <p>The maximum number of messages that the journey can send to a single participant during a 24-hour period. The maximum value is 100.</p>
     #[doc(hidden)]
@@ -7788,21 +7740,11 @@ impl JourneyLimits {
         self.endpoint_reentry_interval.as_deref()
     }
 }
-impl std::fmt::Debug for JourneyLimits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyLimits");
-        formatter.field("daily_cap", &self.daily_cap);
-        formatter.field("endpoint_reentry_cap", &self.endpoint_reentry_cap);
-        formatter.field("messages_per_second", &self.messages_per_second);
-        formatter.field("endpoint_reentry_interval", &self.endpoint_reentry_interval);
-        formatter.finish()
-    }
-}
 /// See [`JourneyLimits`](crate::model::JourneyLimits).
 pub mod journey_limits {
 
     /// A builder for [`JourneyLimits`](crate::model::JourneyLimits).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) daily_cap: std::option::Option<i32>,
         pub(crate) endpoint_reentry_cap: std::option::Option<i32>,
@@ -7873,7 +7815,7 @@ impl JourneyLimits {
 
 /// <p>Specifies the configuration and other settings for an activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Activity {
     /// <p>The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.</p>
     #[doc(hidden)]
@@ -7959,28 +7901,11 @@ impl Activity {
         self.contact_center.as_ref()
     }
 }
-impl std::fmt::Debug for Activity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Activity");
-        formatter.field("custom", &self.custom);
-        formatter.field("conditional_split", &self.conditional_split);
-        formatter.field("description", &self.description);
-        formatter.field("email", &self.email);
-        formatter.field("holdout", &self.holdout);
-        formatter.field("multi_condition", &self.multi_condition);
-        formatter.field("push", &self.push);
-        formatter.field("random_split", &self.random_split);
-        formatter.field("sms", &self.sms);
-        formatter.field("wait", &self.wait);
-        formatter.field("contact_center", &self.contact_center);
-        formatter.finish()
-    }
-}
 /// See [`Activity`](crate::model::Activity).
 pub mod activity {
 
     /// A builder for [`Activity`](crate::model::Activity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom: std::option::Option<crate::model::CustomMessageActivity>,
         pub(crate) conditional_split: std::option::Option<crate::model::ConditionalSplitActivity>,
@@ -8163,7 +8088,7 @@ impl Activity {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContactCenterActivity {
     /// <p>The unique identifier for the next activity to perform after the this activity.</p>
     #[doc(hidden)]
@@ -8175,18 +8100,11 @@ impl ContactCenterActivity {
         self.next_activity.as_deref()
     }
 }
-impl std::fmt::Debug for ContactCenterActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContactCenterActivity");
-        formatter.field("next_activity", &self.next_activity);
-        formatter.finish()
-    }
-}
 /// See [`ContactCenterActivity`](crate::model::ContactCenterActivity).
 pub mod contact_center_activity {
 
     /// A builder for [`ContactCenterActivity`](crate::model::ContactCenterActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_activity: std::option::Option<std::string::String>,
     }
@@ -8221,7 +8139,7 @@ impl ContactCenterActivity {
 
 /// <p>Specifies the settings for a wait activity in a journey. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WaitActivity {
     /// <p>The unique identifier for the next activity to perform, after performing the wait activity.</p>
     #[doc(hidden)]
@@ -8240,19 +8158,11 @@ impl WaitActivity {
         self.wait_time.as_ref()
     }
 }
-impl std::fmt::Debug for WaitActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WaitActivity");
-        formatter.field("next_activity", &self.next_activity);
-        formatter.field("wait_time", &self.wait_time);
-        formatter.finish()
-    }
-}
 /// See [`WaitActivity`](crate::model::WaitActivity).
 pub mod wait_activity {
 
     /// A builder for [`WaitActivity`](crate::model::WaitActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_activity: std::option::Option<std::string::String>,
         pub(crate) wait_time: std::option::Option<crate::model::WaitTime>,
@@ -8299,7 +8209,7 @@ impl WaitActivity {
 
 /// <p>Specifies a duration or a date and time that indicates when Amazon Pinpoint determines whether an activity's conditions have been met or an activity moves participants to the next activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WaitTime {
     /// <p>The amount of time to wait, as a duration in ISO 8601 format, before determining whether the activity's conditions have been met or moving participants to the next activity in the journey.</p>
     #[doc(hidden)]
@@ -8318,19 +8228,11 @@ impl WaitTime {
         self.wait_until.as_deref()
     }
 }
-impl std::fmt::Debug for WaitTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WaitTime");
-        formatter.field("wait_for", &self.wait_for);
-        formatter.field("wait_until", &self.wait_until);
-        formatter.finish()
-    }
-}
 /// See [`WaitTime`](crate::model::WaitTime).
 pub mod wait_time {
 
     /// A builder for [`WaitTime`](crate::model::WaitTime).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wait_for: std::option::Option<std::string::String>,
         pub(crate) wait_until: std::option::Option<std::string::String>,
@@ -8374,7 +8276,7 @@ impl WaitTime {
 
 /// <p>Specifies the settings for an SMS activity in a journey. This type of activity sends a text message to participants.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsMessageActivity {
     /// <p>Specifies the sender ID and message type for an SMS message that's sent to participants in a journey.</p>
     #[doc(hidden)]
@@ -8411,21 +8313,11 @@ impl SmsMessageActivity {
         self.template_version.as_deref()
     }
 }
-impl std::fmt::Debug for SmsMessageActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsMessageActivity");
-        formatter.field("message_config", &self.message_config);
-        formatter.field("next_activity", &self.next_activity);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_version", &self.template_version);
-        formatter.finish()
-    }
-}
 /// See [`SmsMessageActivity`](crate::model::SmsMessageActivity).
 pub mod sms_message_activity {
 
     /// A builder for [`SmsMessageActivity`](crate::model::SmsMessageActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_config: std::option::Option<crate::model::JourneySmsMessage>,
         pub(crate) next_activity: std::option::Option<std::string::String>,
@@ -8509,7 +8401,7 @@ impl SmsMessageActivity {
 
 /// <p>Specifies the sender ID and message type for an SMS message that's sent to participants in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneySmsMessage {
     /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
     #[doc(hidden)]
@@ -8549,22 +8441,11 @@ impl JourneySmsMessage {
         self.template_id.as_deref()
     }
 }
-impl std::fmt::Debug for JourneySmsMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneySmsMessage");
-        formatter.field("message_type", &self.message_type);
-        formatter.field("origination_number", &self.origination_number);
-        formatter.field("sender_id", &self.sender_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.finish()
-    }
-}
 /// See [`JourneySmsMessage`](crate::model::JourneySmsMessage).
 pub mod journey_sms_message {
 
     /// A builder for [`JourneySmsMessage`](crate::model::JourneySmsMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_type: std::option::Option<crate::model::MessageType>,
         pub(crate) origination_number: std::option::Option<std::string::String>,
@@ -8648,6 +8529,41 @@ impl JourneySmsMessage {
     }
 }
 
+/// When writing a match expression against `MessageType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let messagetype = unimplemented!();
+/// match messagetype {
+///     MessageType::Promotional => { /* ... */ },
+///     MessageType::Transactional => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `messagetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MessageType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MessageType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MessageType::NewFeature` is defined.
+/// Specifically, when `messagetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MessageType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -8664,15 +8580,15 @@ pub enum MessageType {
     Promotional,
     #[allow(missing_docs)] // documentation missing in model
     Transactional,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MessageType {
     fn from(s: &str) -> Self {
         match s {
             "PROMOTIONAL" => MessageType::Promotional,
             "TRANSACTIONAL" => MessageType::Transactional,
-            other => MessageType::Unknown(other.to_owned()),
+            other => MessageType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -8689,11 +8605,11 @@ impl MessageType {
         match self {
             MessageType::Promotional => "PROMOTIONAL",
             MessageType::Transactional => "TRANSACTIONAL",
-            MessageType::Unknown(s) => s.as_ref(),
+            MessageType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PROMOTIONAL", "TRANSACTIONAL"]
     }
 }
@@ -8705,7 +8621,7 @@ impl AsRef<str> for MessageType {
 
 /// <p>Specifies the settings for a random split activity in a journey. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RandomSplitActivity {
     /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
     #[doc(hidden)]
@@ -8717,18 +8633,11 @@ impl RandomSplitActivity {
         self.branches.as_deref()
     }
 }
-impl std::fmt::Debug for RandomSplitActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RandomSplitActivity");
-        formatter.field("branches", &self.branches);
-        formatter.finish()
-    }
-}
 /// See [`RandomSplitActivity`](crate::model::RandomSplitActivity).
 pub mod random_split_activity {
 
     /// A builder for [`RandomSplitActivity`](crate::model::RandomSplitActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branches: std::option::Option<std::vec::Vec<crate::model::RandomSplitEntry>>,
     }
@@ -8769,7 +8678,7 @@ impl RandomSplitActivity {
 
 /// <p>Specifies the settings for a path in a random split activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RandomSplitEntry {
     /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
     #[doc(hidden)]
@@ -8790,19 +8699,11 @@ impl RandomSplitEntry {
         self.percentage
     }
 }
-impl std::fmt::Debug for RandomSplitEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RandomSplitEntry");
-        formatter.field("next_activity", &self.next_activity);
-        formatter.field("percentage", &self.percentage);
-        formatter.finish()
-    }
-}
 /// See [`RandomSplitEntry`](crate::model::RandomSplitEntry).
 pub mod random_split_entry {
 
     /// A builder for [`RandomSplitEntry`](crate::model::RandomSplitEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_activity: std::option::Option<std::string::String>,
         pub(crate) percentage: std::option::Option<i32>,
@@ -8851,7 +8752,7 @@ impl RandomSplitEntry {
 
 /// <p>Specifies the settings for a push notification activity in a journey. This type of activity sends a push notification to participants.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PushMessageActivity {
     /// <p>Specifies the time to live (TTL) value for push notifications that are sent to participants in a journey.</p>
     #[doc(hidden)]
@@ -8888,21 +8789,11 @@ impl PushMessageActivity {
         self.template_version.as_deref()
     }
 }
-impl std::fmt::Debug for PushMessageActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PushMessageActivity");
-        formatter.field("message_config", &self.message_config);
-        formatter.field("next_activity", &self.next_activity);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_version", &self.template_version);
-        formatter.finish()
-    }
-}
 /// See [`PushMessageActivity`](crate::model::PushMessageActivity).
 pub mod push_message_activity {
 
     /// A builder for [`PushMessageActivity`](crate::model::PushMessageActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_config: std::option::Option<crate::model::JourneyPushMessage>,
         pub(crate) next_activity: std::option::Option<std::string::String>,
@@ -8986,7 +8877,7 @@ impl PushMessageActivity {
 
 /// <p>Specifies the message configuration for a push notification that's sent to participants in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyPushMessage {
     /// <p>The number of seconds that the push notification service should keep the message, if the service is unable to deliver the notification the first time. This value is converted to an expiration value when it's sent to a push-notification service. If this value is 0, the service treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p>
     /// <p>This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.</p>
@@ -9000,18 +8891,11 @@ impl JourneyPushMessage {
         self.time_to_live.as_deref()
     }
 }
-impl std::fmt::Debug for JourneyPushMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyPushMessage");
-        formatter.field("time_to_live", &self.time_to_live);
-        formatter.finish()
-    }
-}
 /// See [`JourneyPushMessage`](crate::model::JourneyPushMessage).
 pub mod journey_push_message {
 
     /// A builder for [`JourneyPushMessage`](crate::model::JourneyPushMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_to_live: std::option::Option<std::string::String>,
     }
@@ -9047,7 +8931,7 @@ impl JourneyPushMessage {
 /// <p>To create multivariate split activities that send participants down different paths based on push notification events (such as Open or Received events), your mobile app has to specify the User ID and Endpoint ID values. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/integrate.html">Integrating Amazon Pinpoint with your application</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiConditionalSplitActivity {
     /// <p>The paths for the activity, including the conditions for entering each path and the activity to perform for each path.</p>
     #[doc(hidden)]
@@ -9073,20 +8957,11 @@ impl MultiConditionalSplitActivity {
         self.evaluation_wait_time.as_ref()
     }
 }
-impl std::fmt::Debug for MultiConditionalSplitActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiConditionalSplitActivity");
-        formatter.field("branches", &self.branches);
-        formatter.field("default_activity", &self.default_activity);
-        formatter.field("evaluation_wait_time", &self.evaluation_wait_time);
-        formatter.finish()
-    }
-}
 /// See [`MultiConditionalSplitActivity`](crate::model::MultiConditionalSplitActivity).
 pub mod multi_conditional_split_activity {
 
     /// A builder for [`MultiConditionalSplitActivity`](crate::model::MultiConditionalSplitActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branches:
             std::option::Option<std::vec::Vec<crate::model::MultiConditionalBranch>>,
@@ -9158,7 +9033,7 @@ impl MultiConditionalSplitActivity {
 
 /// <p>Specifies a condition to evaluate for an activity path in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiConditionalBranch {
     /// <p>The condition to evaluate for the activity path.</p>
     #[doc(hidden)]
@@ -9177,19 +9052,11 @@ impl MultiConditionalBranch {
         self.next_activity.as_deref()
     }
 }
-impl std::fmt::Debug for MultiConditionalBranch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultiConditionalBranch");
-        formatter.field("condition", &self.condition);
-        formatter.field("next_activity", &self.next_activity);
-        formatter.finish()
-    }
-}
 /// See [`MultiConditionalBranch`](crate::model::MultiConditionalBranch).
 pub mod multi_conditional_branch {
 
     /// A builder for [`MultiConditionalBranch`](crate::model::MultiConditionalBranch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) condition: std::option::Option<crate::model::SimpleCondition>,
         pub(crate) next_activity: std::option::Option<std::string::String>,
@@ -9239,7 +9106,7 @@ impl MultiConditionalBranch {
 
 /// <p>Specifies a condition to evaluate for an activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimpleCondition {
     /// <p>The dimension settings for the event that's associated with the activity.</p>
     #[doc(hidden)]
@@ -9265,20 +9132,11 @@ impl SimpleCondition {
         self.segment_dimensions.as_ref()
     }
 }
-impl std::fmt::Debug for SimpleCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimpleCondition");
-        formatter.field("event_condition", &self.event_condition);
-        formatter.field("segment_condition", &self.segment_condition);
-        formatter.field("segment_dimensions", &self.segment_dimensions);
-        formatter.finish()
-    }
-}
 /// See [`SimpleCondition`](crate::model::SimpleCondition).
 pub mod simple_condition {
 
     /// A builder for [`SimpleCondition`](crate::model::SimpleCondition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_condition: std::option::Option<crate::model::EventCondition>,
         pub(crate) segment_condition: std::option::Option<crate::model::SegmentCondition>,
@@ -9343,7 +9201,7 @@ impl SimpleCondition {
 
 /// <p>Specifies the conditions to evaluate for an event that applies to an activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventCondition {
     /// <p>The dimensions for the event filter to use for the activity.</p>
     #[doc(hidden)]
@@ -9362,19 +9220,11 @@ impl EventCondition {
         self.message_activity.as_deref()
     }
 }
-impl std::fmt::Debug for EventCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventCondition");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("message_activity", &self.message_activity);
-        formatter.finish()
-    }
-}
 /// See [`EventCondition`](crate::model::EventCondition).
 pub mod event_condition {
 
     /// A builder for [`EventCondition`](crate::model::EventCondition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimensions: std::option::Option<crate::model::EventDimensions>,
         pub(crate) message_activity: std::option::Option<std::string::String>,
@@ -9424,7 +9274,7 @@ impl EventCondition {
 
 /// <p>Specifies the settings for a holdout activity in a journey. This type of activity stops a journey for a specified percentage of participants.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HoldoutActivity {
     /// <p>The unique identifier for the next activity to perform, after performing the holdout activity.</p>
     #[doc(hidden)]
@@ -9445,19 +9295,11 @@ impl HoldoutActivity {
         self.percentage
     }
 }
-impl std::fmt::Debug for HoldoutActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HoldoutActivity");
-        formatter.field("next_activity", &self.next_activity);
-        formatter.field("percentage", &self.percentage);
-        formatter.finish()
-    }
-}
 /// See [`HoldoutActivity`](crate::model::HoldoutActivity).
 pub mod holdout_activity {
 
     /// A builder for [`HoldoutActivity`](crate::model::HoldoutActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_activity: std::option::Option<std::string::String>,
         pub(crate) percentage: std::option::Option<i32>,
@@ -9506,7 +9348,7 @@ impl HoldoutActivity {
 
 /// <p>Specifies the settings for an email activity in a journey. This type of activity sends an email message to participants.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailMessageActivity {
     /// <p>Specifies the sender address for an email message that's sent to participants in the journey.</p>
     #[doc(hidden)]
@@ -9543,21 +9385,11 @@ impl EmailMessageActivity {
         self.template_version.as_deref()
     }
 }
-impl std::fmt::Debug for EmailMessageActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailMessageActivity");
-        formatter.field("message_config", &self.message_config);
-        formatter.field("next_activity", &self.next_activity);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_version", &self.template_version);
-        formatter.finish()
-    }
-}
 /// See [`EmailMessageActivity`](crate::model::EmailMessageActivity).
 pub mod email_message_activity {
 
     /// A builder for [`EmailMessageActivity`](crate::model::EmailMessageActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_config: std::option::Option<crate::model::JourneyEmailMessage>,
         pub(crate) next_activity: std::option::Option<std::string::String>,
@@ -9641,7 +9473,7 @@ impl EmailMessageActivity {
 
 /// <p>Specifies the "From" address for an email message that's sent to participants in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyEmailMessage {
     /// <p>The verified email address to send the email message from. The default address is the FromAddress specified for the email channel for the application.</p>
     #[doc(hidden)]
@@ -9653,18 +9485,11 @@ impl JourneyEmailMessage {
         self.from_address.as_deref()
     }
 }
-impl std::fmt::Debug for JourneyEmailMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyEmailMessage");
-        formatter.field("from_address", &self.from_address);
-        formatter.finish()
-    }
-}
 /// See [`JourneyEmailMessage`](crate::model::JourneyEmailMessage).
 pub mod journey_email_message {
 
     /// A builder for [`JourneyEmailMessage`](crate::model::JourneyEmailMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_address: std::option::Option<std::string::String>,
     }
@@ -9698,7 +9523,7 @@ impl JourneyEmailMessage {
 /// <p>To create yes/no split activities that send participants down different paths based on push notification events (such as Open or Received events), your mobile app has to specify the User ID and Endpoint ID values. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/integrate.html">Integrating Amazon Pinpoint with your application</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConditionalSplitActivity {
     /// <p>The conditions that define the paths for the activity, and the relationship between the conditions.</p>
     #[doc(hidden)]
@@ -9731,21 +9556,11 @@ impl ConditionalSplitActivity {
         self.true_activity.as_deref()
     }
 }
-impl std::fmt::Debug for ConditionalSplitActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConditionalSplitActivity");
-        formatter.field("condition", &self.condition);
-        formatter.field("evaluation_wait_time", &self.evaluation_wait_time);
-        formatter.field("false_activity", &self.false_activity);
-        formatter.field("true_activity", &self.true_activity);
-        formatter.finish()
-    }
-}
 /// See [`ConditionalSplitActivity`](crate::model::ConditionalSplitActivity).
 pub mod conditional_split_activity {
 
     /// A builder for [`ConditionalSplitActivity`](crate::model::ConditionalSplitActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) condition: std::option::Option<crate::model::Condition>,
         pub(crate) evaluation_wait_time: std::option::Option<crate::model::WaitTime>,
@@ -9825,7 +9640,7 @@ impl ConditionalSplitActivity {
 
 /// <p>Specifies the conditions to evaluate for an activity in a journey, and how to evaluate those conditions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Condition {
     /// <p>The conditions to evaluate for the activity.</p>
     #[doc(hidden)]
@@ -9844,19 +9659,11 @@ impl Condition {
         self.operator.as_ref()
     }
 }
-impl std::fmt::Debug for Condition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Condition");
-        formatter.field("conditions", &self.conditions);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
-    }
-}
 /// See [`Condition`](crate::model::Condition).
 pub mod condition {
 
     /// A builder for [`Condition`](crate::model::Condition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conditions: std::option::Option<std::vec::Vec<crate::model::SimpleCondition>>,
         pub(crate) operator: std::option::Option<crate::model::Operator>,
@@ -9907,6 +9714,41 @@ impl Condition {
     }
 }
 
+/// When writing a match expression against `Operator`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let operator = unimplemented!();
+/// match operator {
+///     Operator::All => { /* ... */ },
+///     Operator::Any => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `operator` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Operator::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Operator::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Operator::NewFeature` is defined.
+/// Specifically, when `operator` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Operator::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9923,15 +9765,15 @@ pub enum Operator {
     All,
     #[allow(missing_docs)] // documentation missing in model
     Any,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Operator {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => Operator::All,
             "ANY" => Operator::Any,
-            other => Operator::Unknown(other.to_owned()),
+            other => Operator::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -9948,11 +9790,11 @@ impl Operator {
         match self {
             Operator::All => "ALL",
             Operator::Any => "ANY",
-            Operator::Unknown(s) => s.as_ref(),
+            Operator::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "ANY"]
     }
 }
@@ -9964,7 +9806,7 @@ impl AsRef<str> for Operator {
 
 /// <p>The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomMessageActivity {
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
     /// <ul>
@@ -10023,23 +9865,11 @@ impl CustomMessageActivity {
         self.template_version.as_deref()
     }
 }
-impl std::fmt::Debug for CustomMessageActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomMessageActivity");
-        formatter.field("delivery_uri", &self.delivery_uri);
-        formatter.field("endpoint_types", &self.endpoint_types);
-        formatter.field("message_config", &self.message_config);
-        formatter.field("next_activity", &self.next_activity);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_version", &self.template_version);
-        formatter.finish()
-    }
-}
 /// See [`CustomMessageActivity`](crate::model::CustomMessageActivity).
 pub mod custom_message_activity {
 
     /// A builder for [`CustomMessageActivity`](crate::model::CustomMessageActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_uri: std::option::Option<std::string::String>,
         pub(crate) endpoint_types:
@@ -10165,7 +9995,7 @@ impl CustomMessageActivity {
 
 /// <p>Specifies the message content for a custom channel message that's sent to participants in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyCustomMessage {
     /// <p>The message content that's passed to an AWS Lambda function or to a web hook.</p>
     #[doc(hidden)]
@@ -10177,18 +10007,11 @@ impl JourneyCustomMessage {
         self.data.as_deref()
     }
 }
-impl std::fmt::Debug for JourneyCustomMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyCustomMessage");
-        formatter.field("data", &self.data);
-        formatter.finish()
-    }
-}
 /// See [`JourneyCustomMessage`](crate::model::JourneyCustomMessage).
 pub mod journey_custom_message {
 
     /// A builder for [`JourneyCustomMessage`](crate::model::JourneyCustomMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data: std::option::Option<std::string::String>,
     }
@@ -10216,6 +10039,52 @@ impl JourneyCustomMessage {
     }
 }
 
+/// When writing a match expression against `EndpointTypesElement`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let endpointtypeselement = unimplemented!();
+/// match endpointtypeselement {
+///     EndpointTypesElement::Adm => { /* ... */ },
+///     EndpointTypesElement::Apns => { /* ... */ },
+///     EndpointTypesElement::ApnsSandbox => { /* ... */ },
+///     EndpointTypesElement::ApnsVoip => { /* ... */ },
+///     EndpointTypesElement::ApnsVoipSandbox => { /* ... */ },
+///     EndpointTypesElement::Baidu => { /* ... */ },
+///     EndpointTypesElement::Custom => { /* ... */ },
+///     EndpointTypesElement::Email => { /* ... */ },
+///     EndpointTypesElement::Gcm => { /* ... */ },
+///     EndpointTypesElement::InApp => { /* ... */ },
+///     EndpointTypesElement::Push => { /* ... */ },
+///     EndpointTypesElement::Sms => { /* ... */ },
+///     EndpointTypesElement::Voice => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `endpointtypeselement` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EndpointTypesElement::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EndpointTypesElement::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EndpointTypesElement::NewFeature` is defined.
+/// Specifically, when `endpointtypeselement` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EndpointTypesElement::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -10254,8 +10123,8 @@ pub enum EndpointTypesElement {
     Sms,
     #[allow(missing_docs)] // documentation missing in model
     Voice,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EndpointTypesElement {
     fn from(s: &str) -> Self {
@@ -10273,7 +10142,9 @@ impl std::convert::From<&str> for EndpointTypesElement {
             "PUSH" => EndpointTypesElement::Push,
             "SMS" => EndpointTypesElement::Sms,
             "VOICE" => EndpointTypesElement::Voice,
-            other => EndpointTypesElement::Unknown(other.to_owned()),
+            other => {
+                EndpointTypesElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -10301,11 +10172,11 @@ impl EndpointTypesElement {
             EndpointTypesElement::Push => "PUSH",
             EndpointTypesElement::Sms => "SMS",
             EndpointTypesElement::Voice => "VOICE",
-            EndpointTypesElement::Unknown(s) => s.as_ref(),
+            EndpointTypesElement::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADM",
             "APNS",
@@ -10331,7 +10202,7 @@ impl AsRef<str> for EndpointTypesElement {
 
 /// <p>Changes the status of a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyStateRequest {
     /// <p>The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p>
     /// <p>If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics data for those activities, until they are complete, and any activities that were complete when you cancelled the journey.</p>
@@ -10349,18 +10220,11 @@ impl JourneyStateRequest {
         self.state.as_ref()
     }
 }
-impl std::fmt::Debug for JourneyStateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyStateRequest");
-        formatter.field("state", &self.state);
-        formatter.finish()
-    }
-}
 /// See [`JourneyStateRequest`](crate::model::JourneyStateRequest).
 pub mod journey_state_request {
 
     /// A builder for [`JourneyStateRequest`](crate::model::JourneyStateRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::State>,
     }
@@ -10396,7 +10260,7 @@ impl JourneyStateRequest {
 
 /// <p>Specifies the configuration and other settings for a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WriteJourneyRequest {
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity. An activity identifier can contain a maximum of 100 characters. The characters must be alphanumeric characters.</p>
     #[doc(hidden)]
@@ -10557,35 +10421,11 @@ impl WriteJourneyRequest {
         self.closed_days.as_ref()
     }
 }
-impl std::fmt::Debug for WriteJourneyRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WriteJourneyRequest");
-        formatter.field("activities", &self.activities);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("limits", &self.limits);
-        formatter.field("local_time", &self.local_time);
-        formatter.field("name", &self.name);
-        formatter.field("quiet_time", &self.quiet_time);
-        formatter.field("refresh_frequency", &self.refresh_frequency);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("start_activity", &self.start_activity);
-        formatter.field("start_condition", &self.start_condition);
-        formatter.field("state", &self.state);
-        formatter.field("wait_for_quiet_time", &self.wait_for_quiet_time);
-        formatter.field("refresh_on_segment_update", &self.refresh_on_segment_update);
-        formatter.field("journey_channel_settings", &self.journey_channel_settings);
-        formatter.field("sending_schedule", &self.sending_schedule);
-        formatter.field("open_hours", &self.open_hours);
-        formatter.field("closed_days", &self.closed_days);
-        formatter.finish()
-    }
-}
 /// See [`WriteJourneyRequest`](crate::model::WriteJourneyRequest).
 pub mod write_journey_request {
 
     /// A builder for [`WriteJourneyRequest`](crate::model::WriteJourneyRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activities: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::Activity>,
@@ -10899,7 +10739,7 @@ impl WriteJourneyRequest {
 
 /// <p>InApp Template Request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppTemplateRequest {
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
     #[doc(hidden)]
@@ -10947,22 +10787,11 @@ impl InAppTemplateRequest {
         self.template_description.as_deref()
     }
 }
-impl std::fmt::Debug for InAppTemplateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppTemplateRequest");
-        formatter.field("content", &self.content);
-        formatter.field("custom_config", &self.custom_config);
-        formatter.field("layout", &self.layout);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.finish()
-    }
-}
 /// See [`InAppTemplateRequest`](crate::model::InAppTemplateRequest).
 pub mod in_app_template_request {
 
     /// A builder for [`InAppTemplateRequest`](crate::model::InAppTemplateRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
         pub(crate) custom_config: std::option::Option<
@@ -11086,6 +10915,45 @@ impl InAppTemplateRequest {
     }
 }
 
+/// When writing a match expression against `Layout`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let layout = unimplemented!();
+/// match layout {
+///     Layout::BottomBanner => { /* ... */ },
+///     Layout::Carousel => { /* ... */ },
+///     Layout::MiddleBanner => { /* ... */ },
+///     Layout::MobileFeed => { /* ... */ },
+///     Layout::Overlays => { /* ... */ },
+///     Layout::TopBanner => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `layout` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Layout::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Layout::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Layout::NewFeature` is defined.
+/// Specifically, when `layout` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Layout::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11110,8 +10978,8 @@ pub enum Layout {
     Overlays,
     #[allow(missing_docs)] // documentation missing in model
     TopBanner,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Layout {
     fn from(s: &str) -> Self {
@@ -11122,7 +10990,7 @@ impl std::convert::From<&str> for Layout {
             "MOBILE_FEED" => Layout::MobileFeed,
             "OVERLAYS" => Layout::Overlays,
             "TOP_BANNER" => Layout::TopBanner,
-            other => Layout::Unknown(other.to_owned()),
+            other => Layout::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -11143,11 +11011,11 @@ impl Layout {
             Layout::MobileFeed => "MOBILE_FEED",
             Layout::Overlays => "OVERLAYS",
             Layout::TopBanner => "TOP_BANNER",
-            Layout::Unknown(s) => s.as_ref(),
+            Layout::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BOTTOM_BANNER",
             "CAROUSEL",
@@ -11166,7 +11034,7 @@ impl AsRef<str> for Layout {
 
 /// <p>The configuration for the message content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppMessageContent {
     /// <p>The background color for the message.</p>
     #[doc(hidden)]
@@ -11213,23 +11081,11 @@ impl InAppMessageContent {
         self.secondary_btn.as_ref()
     }
 }
-impl std::fmt::Debug for InAppMessageContent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppMessageContent");
-        formatter.field("background_color", &self.background_color);
-        formatter.field("body_config", &self.body_config);
-        formatter.field("header_config", &self.header_config);
-        formatter.field("image_url", &self.image_url);
-        formatter.field("primary_btn", &self.primary_btn);
-        formatter.field("secondary_btn", &self.secondary_btn);
-        formatter.finish()
-    }
-}
 /// See [`InAppMessageContent`](crate::model::InAppMessageContent).
 pub mod in_app_message_content {
 
     /// A builder for [`InAppMessageContent`](crate::model::InAppMessageContent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) background_color: std::option::Option<std::string::String>,
         pub(crate) body_config: std::option::Option<crate::model::InAppMessageBodyConfig>,
@@ -11336,7 +11192,7 @@ impl InAppMessageContent {
 
 /// <p>Button Config for an in-app message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppMessageButton {
     /// <p>Default button content.</p>
     #[doc(hidden)]
@@ -11369,21 +11225,11 @@ impl InAppMessageButton {
         self.web.as_ref()
     }
 }
-impl std::fmt::Debug for InAppMessageButton {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppMessageButton");
-        formatter.field("android", &self.android);
-        formatter.field("default_config", &self.default_config);
-        formatter.field("ios", &self.ios);
-        formatter.field("web", &self.web);
-        formatter.finish()
-    }
-}
 /// See [`InAppMessageButton`](crate::model::InAppMessageButton).
 pub mod in_app_message_button {
 
     /// A builder for [`InAppMessageButton`](crate::model::InAppMessageButton).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) android: std::option::Option<crate::model::OverrideButtonConfiguration>,
         pub(crate) default_config: std::option::Option<crate::model::DefaultButtonConfiguration>,
@@ -11463,7 +11309,7 @@ impl InAppMessageButton {
 
 /// <p>Override button configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OverrideButtonConfiguration {
     /// <p>Action triggered by the button.</p>
     #[doc(hidden)]
@@ -11482,19 +11328,11 @@ impl OverrideButtonConfiguration {
         self.link.as_deref()
     }
 }
-impl std::fmt::Debug for OverrideButtonConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OverrideButtonConfiguration");
-        formatter.field("button_action", &self.button_action);
-        formatter.field("link", &self.link);
-        formatter.finish()
-    }
-}
 /// See [`OverrideButtonConfiguration`](crate::model::OverrideButtonConfiguration).
 pub mod override_button_configuration {
 
     /// A builder for [`OverrideButtonConfiguration`](crate::model::OverrideButtonConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) button_action: std::option::Option<crate::model::ButtonAction>,
         pub(crate) link: std::option::Option<std::string::String>,
@@ -11539,6 +11377,42 @@ impl OverrideButtonConfiguration {
     }
 }
 
+/// When writing a match expression against `ButtonAction`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let buttonaction = unimplemented!();
+/// match buttonaction {
+///     ButtonAction::Close => { /* ... */ },
+///     ButtonAction::DeepLink => { /* ... */ },
+///     ButtonAction::Link => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `buttonaction` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ButtonAction::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ButtonAction::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ButtonAction::NewFeature` is defined.
+/// Specifically, when `buttonaction` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ButtonAction::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11557,8 +11431,8 @@ pub enum ButtonAction {
     DeepLink,
     #[allow(missing_docs)] // documentation missing in model
     Link,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ButtonAction {
     fn from(s: &str) -> Self {
@@ -11566,7 +11440,7 @@ impl std::convert::From<&str> for ButtonAction {
             "CLOSE" => ButtonAction::Close,
             "DEEP_LINK" => ButtonAction::DeepLink,
             "LINK" => ButtonAction::Link,
-            other => ButtonAction::Unknown(other.to_owned()),
+            other => ButtonAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -11584,11 +11458,11 @@ impl ButtonAction {
             ButtonAction::Close => "CLOSE",
             ButtonAction::DeepLink => "DEEP_LINK",
             ButtonAction::Link => "LINK",
-            ButtonAction::Unknown(s) => s.as_ref(),
+            ButtonAction::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOSE", "DEEP_LINK", "LINK"]
     }
 }
@@ -11600,7 +11474,7 @@ impl AsRef<str> for ButtonAction {
 
 /// <p>Default button configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultButtonConfiguration {
     /// <p>The background color of the button.</p>
     #[doc(hidden)]
@@ -11647,23 +11521,11 @@ impl DefaultButtonConfiguration {
         self.text_color.as_deref()
     }
 }
-impl std::fmt::Debug for DefaultButtonConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultButtonConfiguration");
-        formatter.field("background_color", &self.background_color);
-        formatter.field("border_radius", &self.border_radius);
-        formatter.field("button_action", &self.button_action);
-        formatter.field("link", &self.link);
-        formatter.field("text", &self.text);
-        formatter.field("text_color", &self.text_color);
-        formatter.finish()
-    }
-}
 /// See [`DefaultButtonConfiguration`](crate::model::DefaultButtonConfiguration).
 pub mod default_button_configuration {
 
     /// A builder for [`DefaultButtonConfiguration`](crate::model::DefaultButtonConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) background_color: std::option::Option<std::string::String>,
         pub(crate) border_radius: std::option::Option<i32>,
@@ -11761,7 +11623,7 @@ impl DefaultButtonConfiguration {
 
 /// <p>Text config for Message Header.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppMessageHeaderConfig {
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
     #[doc(hidden)]
@@ -11787,20 +11649,11 @@ impl InAppMessageHeaderConfig {
         self.text_color.as_deref()
     }
 }
-impl std::fmt::Debug for InAppMessageHeaderConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppMessageHeaderConfig");
-        formatter.field("alignment", &self.alignment);
-        formatter.field("header", &self.header);
-        formatter.field("text_color", &self.text_color);
-        formatter.finish()
-    }
-}
 /// See [`InAppMessageHeaderConfig`](crate::model::InAppMessageHeaderConfig).
 pub mod in_app_message_header_config {
 
     /// A builder for [`InAppMessageHeaderConfig`](crate::model::InAppMessageHeaderConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alignment: std::option::Option<crate::model::Alignment>,
         pub(crate) header: std::option::Option<std::string::String>,
@@ -11857,6 +11710,42 @@ impl InAppMessageHeaderConfig {
     }
 }
 
+/// When writing a match expression against `Alignment`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let alignment = unimplemented!();
+/// match alignment {
+///     Alignment::Center => { /* ... */ },
+///     Alignment::Left => { /* ... */ },
+///     Alignment::Right => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `alignment` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Alignment::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Alignment::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Alignment::NewFeature` is defined.
+/// Specifically, when `alignment` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Alignment::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11875,8 +11764,8 @@ pub enum Alignment {
     Left,
     #[allow(missing_docs)] // documentation missing in model
     Right,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Alignment {
     fn from(s: &str) -> Self {
@@ -11884,7 +11773,7 @@ impl std::convert::From<&str> for Alignment {
             "CENTER" => Alignment::Center,
             "LEFT" => Alignment::Left,
             "RIGHT" => Alignment::Right,
-            other => Alignment::Unknown(other.to_owned()),
+            other => Alignment::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -11902,11 +11791,11 @@ impl Alignment {
             Alignment::Center => "CENTER",
             Alignment::Left => "LEFT",
             Alignment::Right => "RIGHT",
-            Alignment::Unknown(s) => s.as_ref(),
+            Alignment::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CENTER", "LEFT", "RIGHT"]
     }
 }
@@ -11918,7 +11807,7 @@ impl AsRef<str> for Alignment {
 
 /// <p>Text config for Message Body.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppMessageBodyConfig {
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
     #[doc(hidden)]
@@ -11944,20 +11833,11 @@ impl InAppMessageBodyConfig {
         self.text_color.as_deref()
     }
 }
-impl std::fmt::Debug for InAppMessageBodyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppMessageBodyConfig");
-        formatter.field("alignment", &self.alignment);
-        formatter.field("body", &self.body);
-        formatter.field("text_color", &self.text_color);
-        formatter.finish()
-    }
-}
 /// See [`InAppMessageBodyConfig`](crate::model::InAppMessageBodyConfig).
 pub mod in_app_message_body_config {
 
     /// A builder for [`InAppMessageBodyConfig`](crate::model::InAppMessageBodyConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alignment: std::option::Option<crate::model::Alignment>,
         pub(crate) body: std::option::Option<std::string::String>,
@@ -12016,7 +11896,7 @@ impl InAppMessageBodyConfig {
 
 /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GcmChannelResponse {
     /// <p>The unique identifier for the application that the GCM channel applies to.</p>
     #[doc(hidden)]
@@ -12098,28 +11978,11 @@ impl GcmChannelResponse {
         self.version
     }
 }
-impl std::fmt::Debug for GcmChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GcmChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("credential", &self.credential);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`GcmChannelResponse`](crate::model::GcmChannelResponse).
 pub mod gcm_channel_response {
 
     /// A builder for [`GcmChannelResponse`](crate::model::GcmChannelResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<std::string::String>,
@@ -12283,7 +12146,7 @@ impl GcmChannelResponse {
 
 /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GcmChannelRequest {
     /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
     #[doc(hidden)]
@@ -12302,19 +12165,11 @@ impl GcmChannelRequest {
         self.enabled
     }
 }
-impl std::fmt::Debug for GcmChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GcmChannelRequest");
-        formatter.field("api_key", &self.api_key);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 /// See [`GcmChannelRequest`](crate::model::GcmChannelRequest).
 pub mod gcm_channel_request {
 
     /// A builder for [`GcmChannelRequest`](crate::model::GcmChannelRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_key: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -12358,7 +12213,7 @@ impl GcmChannelRequest {
 
 /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointBatchRequest {
     /// <p>An array that defines the endpoints to create or update and, for each endpoint, the property values to set or change. An array can contain a maximum of 100 items.</p>
     #[doc(hidden)]
@@ -12370,18 +12225,11 @@ impl EndpointBatchRequest {
         self.item.as_deref()
     }
 }
-impl std::fmt::Debug for EndpointBatchRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointBatchRequest");
-        formatter.field("item", &self.item);
-        formatter.finish()
-    }
-}
 /// See [`EndpointBatchRequest`](crate::model::EndpointBatchRequest).
 pub mod endpoint_batch_request {
 
     /// A builder for [`EndpointBatchRequest`](crate::model::EndpointBatchRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<std::vec::Vec<crate::model::EndpointBatchItem>>,
     }
@@ -12420,7 +12268,7 @@ impl EndpointBatchRequest {
 
 /// <p>Specifies an endpoint to create or update and the settings and attributes to set or change for the endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointBatchItem {
     /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For a push-notification channel, use the token provided by the push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. For the SMS channel, use a phone number in E.164 format, such as +12065550100. For the email channel, use an email address.</p>
     #[doc(hidden)]
@@ -12521,29 +12369,11 @@ impl EndpointBatchItem {
         self.user.as_ref()
     }
 }
-impl std::fmt::Debug for EndpointBatchItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointBatchItem");
-        formatter.field("address", &self.address);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("channel_type", &self.channel_type);
-        formatter.field("demographic", &self.demographic);
-        formatter.field("effective_date", &self.effective_date);
-        formatter.field("endpoint_status", &self.endpoint_status);
-        formatter.field("id", &self.id);
-        formatter.field("location", &self.location);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("opt_out", &self.opt_out);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("user", &self.user);
-        formatter.finish()
-    }
-}
 /// See [`EndpointBatchItem`](crate::model::EndpointBatchItem).
 pub mod endpoint_batch_item {
 
     /// A builder for [`EndpointBatchItem`](crate::model::EndpointBatchItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
         pub(crate) attributes: std::option::Option<
@@ -12753,7 +12583,7 @@ impl EndpointBatchItem {
 
 /// <p>Specifies data for one or more attributes that describe the user who's associated with an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointUser {
     /// <p>One or more custom attributes that describe the user by associating a name with an array of values. For example, the value of an attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments. Attribute names are case sensitive.</p>
     /// <p>An attribute name can contain up to 50 characters. An attribute value can contain up to 100 characters. When you define the name of a custom attribute, avoid using the following characters: number sign (#), colon (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display attribute names that contain these characters. This restriction doesn't apply to attribute values.</p>
@@ -12780,19 +12610,11 @@ impl EndpointUser {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for EndpointUser {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointUser");
-        formatter.field("user_attributes", &self.user_attributes);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 /// See [`EndpointUser`](crate::model::EndpointUser).
 pub mod endpoint_user {
 
     /// A builder for [`EndpointUser`](crate::model::EndpointUser).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_attributes: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
@@ -12855,7 +12677,7 @@ impl EndpointUser {
 
 /// <p>Specifies geographic information about an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointLocation {
     /// <p>The name of the city where the endpoint is located.</p>
     #[doc(hidden)]
@@ -12902,23 +12724,11 @@ impl EndpointLocation {
         self.region.as_deref()
     }
 }
-impl std::fmt::Debug for EndpointLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointLocation");
-        formatter.field("city", &self.city);
-        formatter.field("country", &self.country);
-        formatter.field("latitude", &self.latitude);
-        formatter.field("longitude", &self.longitude);
-        formatter.field("postal_code", &self.postal_code);
-        formatter.field("region", &self.region);
-        formatter.finish()
-    }
-}
 /// See [`EndpointLocation`](crate::model::EndpointLocation).
 pub mod endpoint_location {
 
     /// A builder for [`EndpointLocation`](crate::model::EndpointLocation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) city: std::option::Option<std::string::String>,
         pub(crate) country: std::option::Option<std::string::String>,
@@ -13010,7 +12820,7 @@ impl EndpointLocation {
 
 /// <p>Specifies demographic information about an endpoint, such as the applicable time zone and platform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointDemographic {
     /// <p>The version of the app that's associated with the endpoint.</p>
     #[doc(hidden)]
@@ -13071,25 +12881,11 @@ impl EndpointDemographic {
         self.timezone.as_deref()
     }
 }
-impl std::fmt::Debug for EndpointDemographic {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointDemographic");
-        formatter.field("app_version", &self.app_version);
-        formatter.field("locale", &self.locale);
-        formatter.field("make", &self.make);
-        formatter.field("model", &self.model);
-        formatter.field("model_version", &self.model_version);
-        formatter.field("platform", &self.platform);
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field("timezone", &self.timezone);
-        formatter.finish()
-    }
-}
 /// See [`EndpointDemographic`](crate::model::EndpointDemographic).
 pub mod endpoint_demographic {
 
     /// A builder for [`EndpointDemographic`](crate::model::EndpointDemographic).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_version: std::option::Option<std::string::String>,
         pub(crate) locale: std::option::Option<std::string::String>,
@@ -13209,6 +13005,52 @@ impl EndpointDemographic {
     }
 }
 
+/// When writing a match expression against `ChannelType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let channeltype = unimplemented!();
+/// match channeltype {
+///     ChannelType::Adm => { /* ... */ },
+///     ChannelType::Apns => { /* ... */ },
+///     ChannelType::ApnsSandbox => { /* ... */ },
+///     ChannelType::ApnsVoip => { /* ... */ },
+///     ChannelType::ApnsVoipSandbox => { /* ... */ },
+///     ChannelType::Baidu => { /* ... */ },
+///     ChannelType::Custom => { /* ... */ },
+///     ChannelType::Email => { /* ... */ },
+///     ChannelType::Gcm => { /* ... */ },
+///     ChannelType::InApp => { /* ... */ },
+///     ChannelType::Push => { /* ... */ },
+///     ChannelType::Sms => { /* ... */ },
+///     ChannelType::Voice => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `channeltype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ChannelType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ChannelType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ChannelType::NewFeature` is defined.
+/// Specifically, when `channeltype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ChannelType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -13247,8 +13089,8 @@ pub enum ChannelType {
     Sms,
     #[allow(missing_docs)] // documentation missing in model
     Voice,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ChannelType {
     fn from(s: &str) -> Self {
@@ -13266,7 +13108,7 @@ impl std::convert::From<&str> for ChannelType {
             "PUSH" => ChannelType::Push,
             "SMS" => ChannelType::Sms,
             "VOICE" => ChannelType::Voice,
-            other => ChannelType::Unknown(other.to_owned()),
+            other => ChannelType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -13294,11 +13136,11 @@ impl ChannelType {
             ChannelType::Push => "PUSH",
             ChannelType::Sms => "SMS",
             ChannelType::Voice => "VOICE",
-            ChannelType::Unknown(s) => s.as_ref(),
+            ChannelType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADM",
             "APNS",
@@ -13324,7 +13166,7 @@ impl AsRef<str> for ChannelType {
 
 /// <p>Specifies the channel type and other settings for an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointRequest {
     /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For a push-notification channel, use the token provided by the push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. For the SMS channel, use a phone number in E.164 format, such as +12065550100. For the email channel, use an email address.</p>
     #[doc(hidden)]
@@ -13418,28 +13260,11 @@ impl EndpointRequest {
         self.user.as_ref()
     }
 }
-impl std::fmt::Debug for EndpointRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointRequest");
-        formatter.field("address", &self.address);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("channel_type", &self.channel_type);
-        formatter.field("demographic", &self.demographic);
-        formatter.field("effective_date", &self.effective_date);
-        formatter.field("endpoint_status", &self.endpoint_status);
-        formatter.field("location", &self.location);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("opt_out", &self.opt_out);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("user", &self.user);
-        formatter.finish()
-    }
-}
 /// See [`EndpointRequest`](crate::model::EndpointRequest).
 pub mod endpoint_request {
 
     /// A builder for [`EndpointRequest`](crate::model::EndpointRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
         pub(crate) attributes: std::option::Option<
@@ -13637,7 +13462,7 @@ impl EndpointRequest {
 
 /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailTemplateRequest {
     /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
     #[doc(hidden)]
@@ -13695,24 +13520,11 @@ impl EmailTemplateRequest {
         self.text_part.as_deref()
     }
 }
-impl std::fmt::Debug for EmailTemplateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailTemplateRequest");
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("html_part", &self.html_part);
-        formatter.field("recommender_id", &self.recommender_id);
-        formatter.field("subject", &self.subject);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("text_part", &self.text_part);
-        formatter.finish()
-    }
-}
 /// See [`EmailTemplateRequest`](crate::model::EmailTemplateRequest).
 pub mod email_template_request {
 
     /// A builder for [`EmailTemplateRequest`](crate::model::EmailTemplateRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_substitutions: std::option::Option<std::string::String>,
         pub(crate) html_part: std::option::Option<std::string::String>,
@@ -13842,7 +13654,7 @@ impl EmailTemplateRequest {
 
 /// <p>Provides information about the status and settings of the email channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailChannelResponse {
     /// <p>The unique identifier for the application that the email channel applies to.</p>
     #[doc(hidden)]
@@ -13952,32 +13764,11 @@ impl EmailChannelResponse {
         self.version
     }
 }
-impl std::fmt::Debug for EmailChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("configuration_set", &self.configuration_set);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("from_address", &self.from_address);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("id", &self.id);
-        formatter.field("identity", &self.identity);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("messages_per_second", &self.messages_per_second);
-        formatter.field("platform", &self.platform);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`EmailChannelResponse`](crate::model::EmailChannelResponse).
 pub mod email_channel_response {
 
     /// A builder for [`EmailChannelResponse`](crate::model::EmailChannelResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) configuration_set: std::option::Option<std::string::String>,
@@ -14192,7 +13983,7 @@ impl EmailChannelResponse {
 
 /// <p>Specifies the status and settings of the email channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailChannelRequest {
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
     #[doc(hidden)]
@@ -14232,22 +14023,11 @@ impl EmailChannelRequest {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for EmailChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailChannelRequest");
-        formatter.field("configuration_set", &self.configuration_set);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("from_address", &self.from_address);
-        formatter.field("identity", &self.identity);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`EmailChannelRequest`](crate::model::EmailChannelRequest).
 pub mod email_channel_request {
 
     /// A builder for [`EmailChannelRequest`](crate::model::EmailChannelRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -14330,7 +14110,7 @@ impl EmailChannelRequest {
 
 /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignResponse {
     /// <p>An array of responses, one for each treatment that you defined for the campaign, in addition to the default treatment.</p>
     #[doc(hidden)]
@@ -14521,45 +14301,11 @@ impl CampaignResponse {
         self.priority
     }
 }
-impl std::fmt::Debug for CampaignResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignResponse");
-        formatter.field("additional_treatments", &self.additional_treatments);
-        formatter.field("application_id", &self.application_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field(
-            "custom_delivery_configuration",
-            &self.custom_delivery_configuration,
-        );
-        formatter.field("default_state", &self.default_state);
-        formatter.field("description", &self.description);
-        formatter.field("holdout_percent", &self.holdout_percent);
-        formatter.field("hook", &self.hook);
-        formatter.field("id", &self.id);
-        formatter.field("is_paused", &self.is_paused);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("limits", &self.limits);
-        formatter.field("message_configuration", &self.message_configuration);
-        formatter.field("name", &self.name);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("segment_version", &self.segment_version);
-        formatter.field("state", &self.state);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_configuration", &self.template_configuration);
-        formatter.field("treatment_description", &self.treatment_description);
-        formatter.field("treatment_name", &self.treatment_name);
-        formatter.field("version", &self.version);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
-    }
-}
 /// See [`CampaignResponse`](crate::model::CampaignResponse).
 pub mod campaign_response {
 
     /// A builder for [`CampaignResponse`](crate::model::CampaignResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) additional_treatments:
             std::option::Option<std::vec::Vec<crate::model::TreatmentResource>>,
@@ -14946,7 +14692,7 @@ impl CampaignResponse {
 
 /// <p>Specifies the message template to use for the message, for each type of channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateConfiguration {
     /// <p>The email template to use for the message.</p>
     #[doc(hidden)]
@@ -14979,21 +14725,11 @@ impl TemplateConfiguration {
         self.voice_template.as_ref()
     }
 }
-impl std::fmt::Debug for TemplateConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateConfiguration");
-        formatter.field("email_template", &self.email_template);
-        formatter.field("push_template", &self.push_template);
-        formatter.field("sms_template", &self.sms_template);
-        formatter.field("voice_template", &self.voice_template);
-        formatter.finish()
-    }
-}
 /// See [`TemplateConfiguration`](crate::model::TemplateConfiguration).
 pub mod template_configuration {
 
     /// A builder for [`TemplateConfiguration`](crate::model::TemplateConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_template: std::option::Option<crate::model::Template>,
         pub(crate) push_template: std::option::Option<crate::model::Template>,
@@ -15073,7 +14809,7 @@ impl TemplateConfiguration {
 
 /// <p>Specifies the name and version of the message template to use for the message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Template {
     /// <p>The name of the message template to use for the message. If specified, this value must match the name of an existing message template.</p>
     #[doc(hidden)]
@@ -15096,19 +14832,11 @@ impl Template {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for Template {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Template");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`Template`](crate::model::Template).
 pub mod template {
 
     /// A builder for [`Template`](crate::model::Template).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -15156,7 +14884,7 @@ impl Template {
 
 /// <p>Provides information about the status of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignState {
     /// <p>The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign.</p>
     /// <p>If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status of COMPLETED. If you delete the segment that's associated with a campaign, the campaign fails and has a status of DELETED.</p>
@@ -15170,18 +14898,11 @@ impl CampaignState {
         self.campaign_status.as_ref()
     }
 }
-impl std::fmt::Debug for CampaignState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignState");
-        formatter.field("campaign_status", &self.campaign_status);
-        formatter.finish()
-    }
-}
 /// See [`CampaignState`](crate::model::CampaignState).
 pub mod campaign_state {
 
     /// A builder for [`CampaignState`](crate::model::CampaignState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_status: std::option::Option<crate::model::CampaignStatus>,
     }
@@ -15216,6 +14937,46 @@ impl CampaignState {
     }
 }
 
+/// When writing a match expression against `CampaignStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let campaignstatus = unimplemented!();
+/// match campaignstatus {
+///     CampaignStatus::Completed => { /* ... */ },
+///     CampaignStatus::Deleted => { /* ... */ },
+///     CampaignStatus::Executing => { /* ... */ },
+///     CampaignStatus::Invalid => { /* ... */ },
+///     CampaignStatus::Paused => { /* ... */ },
+///     CampaignStatus::PendingNextRun => { /* ... */ },
+///     CampaignStatus::Scheduled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `campaignstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CampaignStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CampaignStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CampaignStatus::NewFeature` is defined.
+/// Specifically, when `campaignstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CampaignStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -15242,8 +15003,8 @@ pub enum CampaignStatus {
     PendingNextRun,
     #[allow(missing_docs)] // documentation missing in model
     Scheduled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CampaignStatus {
     fn from(s: &str) -> Self {
@@ -15255,7 +15016,7 @@ impl std::convert::From<&str> for CampaignStatus {
             "PAUSED" => CampaignStatus::Paused,
             "PENDING_NEXT_RUN" => CampaignStatus::PendingNextRun,
             "SCHEDULED" => CampaignStatus::Scheduled,
-            other => CampaignStatus::Unknown(other.to_owned()),
+            other => CampaignStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -15277,11 +15038,11 @@ impl CampaignStatus {
             CampaignStatus::Paused => "PAUSED",
             CampaignStatus::PendingNextRun => "PENDING_NEXT_RUN",
             CampaignStatus::Scheduled => "SCHEDULED",
-            CampaignStatus::Unknown(s) => s.as_ref(),
+            CampaignStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "DELETED",
@@ -15301,7 +15062,7 @@ impl AsRef<str> for CampaignStatus {
 
 /// <p>Specifies the schedule settings for a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Schedule {
     /// <p>The scheduled time, in ISO 8601 format, when the campaign ended or will end.</p>
     #[doc(hidden)]
@@ -15367,24 +15128,11 @@ impl Schedule {
         self.timezone.as_deref()
     }
 }
-impl std::fmt::Debug for Schedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Schedule");
-        formatter.field("end_time", &self.end_time);
-        formatter.field("event_filter", &self.event_filter);
-        formatter.field("frequency", &self.frequency);
-        formatter.field("is_local_time", &self.is_local_time);
-        formatter.field("quiet_time", &self.quiet_time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("timezone", &self.timezone);
-        formatter.finish()
-    }
-}
 /// See [`Schedule`](crate::model::Schedule).
 pub mod schedule {
 
     /// A builder for [`Schedule`](crate::model::Schedule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) end_time: std::option::Option<std::string::String>,
         pub(crate) event_filter: std::option::Option<crate::model::CampaignEventFilter>,
@@ -15507,6 +15255,46 @@ impl Schedule {
     }
 }
 
+/// When writing a match expression against `Frequency`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let frequency = unimplemented!();
+/// match frequency {
+///     Frequency::Daily => { /* ... */ },
+///     Frequency::Event => { /* ... */ },
+///     Frequency::Hourly => { /* ... */ },
+///     Frequency::InAppEvent => { /* ... */ },
+///     Frequency::Monthly => { /* ... */ },
+///     Frequency::Once => { /* ... */ },
+///     Frequency::Weekly => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `frequency` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Frequency::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Frequency::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Frequency::NewFeature` is defined.
+/// Specifically, when `frequency` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Frequency::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -15533,8 +15321,8 @@ pub enum Frequency {
     Once,
     #[allow(missing_docs)] // documentation missing in model
     Weekly,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Frequency {
     fn from(s: &str) -> Self {
@@ -15546,7 +15334,7 @@ impl std::convert::From<&str> for Frequency {
             "MONTHLY" => Frequency::Monthly,
             "ONCE" => Frequency::Once,
             "WEEKLY" => Frequency::Weekly,
-            other => Frequency::Unknown(other.to_owned()),
+            other => Frequency::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -15568,11 +15356,11 @@ impl Frequency {
             Frequency::Monthly => "MONTHLY",
             Frequency::Once => "ONCE",
             Frequency::Weekly => "WEEKLY",
-            Frequency::Unknown(s) => s.as_ref(),
+            Frequency::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DAILY",
             "EVENT",
@@ -15592,7 +15380,7 @@ impl AsRef<str> for Frequency {
 
 /// <p>Specifies the settings for events that cause a campaign to be sent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignEventFilter {
     /// <p>The dimension settings of the event filter for the campaign.</p>
     #[doc(hidden)]
@@ -15613,19 +15401,11 @@ impl CampaignEventFilter {
         self.filter_type.as_ref()
     }
 }
-impl std::fmt::Debug for CampaignEventFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignEventFilter");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("filter_type", &self.filter_type);
-        formatter.finish()
-    }
-}
 /// See [`CampaignEventFilter`](crate::model::CampaignEventFilter).
 pub mod campaign_event_filter {
 
     /// A builder for [`CampaignEventFilter`](crate::model::CampaignEventFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimensions: std::option::Option<crate::model::EventDimensions>,
         pub(crate) filter_type: std::option::Option<crate::model::FilterType>,
@@ -15677,7 +15457,7 @@ impl CampaignEventFilter {
 
 /// <p>Specifies the message configuration settings for a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageConfiguration {
     /// <p>The message that the campaign sends through the ADM (Amazon Device Messaging) channel. If specified, this message overrides the default message.</p>
     #[doc(hidden)]
@@ -15745,26 +15525,11 @@ impl MessageConfiguration {
         self.in_app_message.as_ref()
     }
 }
-impl std::fmt::Debug for MessageConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageConfiguration");
-        formatter.field("adm_message", &self.adm_message);
-        formatter.field("apns_message", &self.apns_message);
-        formatter.field("baidu_message", &self.baidu_message);
-        formatter.field("custom_message", &self.custom_message);
-        formatter.field("default_message", &self.default_message);
-        formatter.field("email_message", &self.email_message);
-        formatter.field("gcm_message", &self.gcm_message);
-        formatter.field("sms_message", &self.sms_message);
-        formatter.field("in_app_message", &self.in_app_message);
-        formatter.finish()
-    }
-}
 /// See [`MessageConfiguration`](crate::model::MessageConfiguration).
 pub mod message_configuration {
 
     /// A builder for [`MessageConfiguration`](crate::model::MessageConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adm_message: std::option::Option<crate::model::Message>,
         pub(crate) apns_message: std::option::Option<crate::model::Message>,
@@ -15919,7 +15684,7 @@ impl MessageConfiguration {
 
 /// <p>In-app message configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignInAppMessage {
     /// <p>The message body of the notification, the email body or the text message.</p>
     #[doc(hidden)]
@@ -15956,21 +15721,11 @@ impl CampaignInAppMessage {
         self.layout.as_ref()
     }
 }
-impl std::fmt::Debug for CampaignInAppMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignInAppMessage");
-        formatter.field("body", &self.body);
-        formatter.field("content", &self.content);
-        formatter.field("custom_config", &self.custom_config);
-        formatter.field("layout", &self.layout);
-        formatter.finish()
-    }
-}
 /// See [`CampaignInAppMessage`](crate::model::CampaignInAppMessage).
 pub mod campaign_in_app_message {
 
     /// A builder for [`CampaignInAppMessage`](crate::model::CampaignInAppMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
@@ -16064,7 +15819,7 @@ impl CampaignInAppMessage {
 
 /// <p>Specifies the content and settings for an SMS message that's sent to recipients of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignSmsMessage {
     /// <p>The body of the SMS message.</p>
     #[doc(hidden)]
@@ -16111,23 +15866,11 @@ impl CampaignSmsMessage {
         self.template_id.as_deref()
     }
 }
-impl std::fmt::Debug for CampaignSmsMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignSmsMessage");
-        formatter.field("body", &self.body);
-        formatter.field("message_type", &self.message_type);
-        formatter.field("origination_number", &self.origination_number);
-        formatter.field("sender_id", &self.sender_id);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.finish()
-    }
-}
 /// See [`CampaignSmsMessage`](crate::model::CampaignSmsMessage).
 pub mod campaign_sms_message {
 
     /// A builder for [`CampaignSmsMessage`](crate::model::CampaignSmsMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<std::string::String>,
         pub(crate) message_type: std::option::Option<crate::model::MessageType>,
@@ -16225,7 +15968,7 @@ impl CampaignSmsMessage {
 
 /// <p>Specifies the content and settings for a push notification that's sent to recipients of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Message {
     /// <p>The action to occur if a recipient taps the push notification. Valid values are:</p>
     /// <ul>
@@ -16326,29 +16069,11 @@ impl Message {
         self.url.as_deref()
     }
 }
-impl std::fmt::Debug for Message {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Message");
-        formatter.field("action", &self.action);
-        formatter.field("body", &self.body);
-        formatter.field("image_icon_url", &self.image_icon_url);
-        formatter.field("image_small_icon_url", &self.image_small_icon_url);
-        formatter.field("image_url", &self.image_url);
-        formatter.field("json_body", &self.json_body);
-        formatter.field("media_url", &self.media_url);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("silent_push", &self.silent_push);
-        formatter.field("time_to_live", &self.time_to_live);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
-    }
-}
 /// See [`Message`](crate::model::Message).
 pub mod message {
 
     /// A builder for [`Message`](crate::model::Message).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
         pub(crate) body: std::option::Option<std::string::String>,
@@ -16530,7 +16255,7 @@ impl Message {
 
 /// <p>Specifies the content and "From" address for an email message that's sent to recipients of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignEmailMessage {
     /// <p>The body of the email for recipients whose email clients don't render HTML content.</p>
     #[doc(hidden)]
@@ -16563,21 +16288,11 @@ impl CampaignEmailMessage {
         self.title.as_deref()
     }
 }
-impl std::fmt::Debug for CampaignEmailMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignEmailMessage");
-        formatter.field("body", &self.body);
-        formatter.field("from_address", &self.from_address);
-        formatter.field("html_body", &self.html_body);
-        formatter.field("title", &self.title);
-        formatter.finish()
-    }
-}
 /// See [`CampaignEmailMessage`](crate::model::CampaignEmailMessage).
 pub mod campaign_email_message {
 
     /// A builder for [`CampaignEmailMessage`](crate::model::CampaignEmailMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<std::string::String>,
         pub(crate) from_address: std::option::Option<std::string::String>,
@@ -16645,7 +16360,7 @@ impl CampaignEmailMessage {
 
 /// <p>Specifies the contents of a message that's sent through a custom channel to recipients of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignCustomMessage {
     /// <p>The raw, JSON-formatted string to use as the payload for the message. The maximum size is 5 KB.</p>
     #[doc(hidden)]
@@ -16657,18 +16372,11 @@ impl CampaignCustomMessage {
         self.data.as_deref()
     }
 }
-impl std::fmt::Debug for CampaignCustomMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignCustomMessage");
-        formatter.field("data", &self.data);
-        formatter.finish()
-    }
-}
 /// See [`CampaignCustomMessage`](crate::model::CampaignCustomMessage).
 pub mod campaign_custom_message {
 
     /// A builder for [`CampaignCustomMessage`](crate::model::CampaignCustomMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data: std::option::Option<std::string::String>,
     }
@@ -16698,7 +16406,7 @@ impl CampaignCustomMessage {
 
 /// <p>For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns in the application can send.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignLimits {
     /// <p>The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. For an application, this value specifies the default limit for the number of messages that campaigns and journeys can send to a single endpoint during a 24-hour period. The maximum value is 100.</p>
     #[doc(hidden)]
@@ -16738,22 +16446,11 @@ impl CampaignLimits {
         self.session
     }
 }
-impl std::fmt::Debug for CampaignLimits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignLimits");
-        formatter.field("daily", &self.daily);
-        formatter.field("maximum_duration", &self.maximum_duration);
-        formatter.field("messages_per_second", &self.messages_per_second);
-        formatter.field("total", &self.total);
-        formatter.field("session", &self.session);
-        formatter.finish()
-    }
-}
 /// See [`CampaignLimits`](crate::model::CampaignLimits).
 pub mod campaign_limits {
 
     /// A builder for [`CampaignLimits`](crate::model::CampaignLimits).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) daily: std::option::Option<i32>,
         pub(crate) maximum_duration: std::option::Option<i32>,
@@ -16833,7 +16530,7 @@ impl CampaignLimits {
 
 /// <p>Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignHook {
     /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to customize a segment for a campaign.</p>
     #[doc(hidden)]
@@ -16867,20 +16564,11 @@ impl CampaignHook {
         self.web_url.as_deref()
     }
 }
-impl std::fmt::Debug for CampaignHook {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignHook");
-        formatter.field("lambda_function_name", &self.lambda_function_name);
-        formatter.field("mode", &self.mode);
-        formatter.field("web_url", &self.web_url);
-        formatter.finish()
-    }
-}
 /// See [`CampaignHook`](crate::model::CampaignHook).
 pub mod campaign_hook {
 
     /// A builder for [`CampaignHook`](crate::model::CampaignHook).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda_function_name: std::option::Option<std::string::String>,
         pub(crate) mode: std::option::Option<crate::model::Mode>,
@@ -16945,6 +16633,41 @@ impl CampaignHook {
     }
 }
 
+/// When writing a match expression against `Mode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let mode = unimplemented!();
+/// match mode {
+///     Mode::Delivery => { /* ... */ },
+///     Mode::Filter => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `mode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Mode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Mode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Mode::NewFeature` is defined.
+/// Specifically, when `mode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Mode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -16961,15 +16684,15 @@ pub enum Mode {
     Delivery,
     #[allow(missing_docs)] // documentation missing in model
     Filter,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Mode {
     fn from(s: &str) -> Self {
         match s {
             "DELIVERY" => Mode::Delivery,
             "FILTER" => Mode::Filter,
-            other => Mode::Unknown(other.to_owned()),
+            other => Mode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -16986,11 +16709,11 @@ impl Mode {
         match self {
             Mode::Delivery => "DELIVERY",
             Mode::Filter => "FILTER",
-            Mode::Unknown(s) => s.as_ref(),
+            Mode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELIVERY", "FILTER"]
     }
 }
@@ -17002,7 +16725,7 @@ impl AsRef<str> for Mode {
 
 /// <p>Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomDeliveryConfiguration {
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
     /// <ul>
@@ -17029,19 +16752,11 @@ impl CustomDeliveryConfiguration {
         self.endpoint_types.as_deref()
     }
 }
-impl std::fmt::Debug for CustomDeliveryConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomDeliveryConfiguration");
-        formatter.field("delivery_uri", &self.delivery_uri);
-        formatter.field("endpoint_types", &self.endpoint_types);
-        formatter.finish()
-    }
-}
 /// See [`CustomDeliveryConfiguration`](crate::model::CustomDeliveryConfiguration).
 pub mod custom_delivery_configuration {
 
     /// A builder for [`CustomDeliveryConfiguration`](crate::model::CustomDeliveryConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_uri: std::option::Option<std::string::String>,
         pub(crate) endpoint_types:
@@ -17103,7 +16818,7 @@ impl CustomDeliveryConfiguration {
 
 /// <p>Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B testing of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TreatmentResource {
     /// <p>The delivery configuration settings for sending the treatment through a custom channel. This object is required if the MessageConfiguration object for the treatment specifies a CustomMessage object.</p>
     #[doc(hidden)]
@@ -17178,29 +16893,11 @@ impl TreatmentResource {
         self.treatment_name.as_deref()
     }
 }
-impl std::fmt::Debug for TreatmentResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TreatmentResource");
-        formatter.field(
-            "custom_delivery_configuration",
-            &self.custom_delivery_configuration,
-        );
-        formatter.field("id", &self.id);
-        formatter.field("message_configuration", &self.message_configuration);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("size_percent", &self.size_percent);
-        formatter.field("state", &self.state);
-        formatter.field("template_configuration", &self.template_configuration);
-        formatter.field("treatment_description", &self.treatment_description);
-        formatter.field("treatment_name", &self.treatment_name);
-        formatter.finish()
-    }
-}
 /// See [`TreatmentResource`](crate::model::TreatmentResource).
 pub mod treatment_resource {
 
     /// A builder for [`TreatmentResource`](crate::model::TreatmentResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_delivery_configuration:
             std::option::Option<crate::model::CustomDeliveryConfiguration>,
@@ -17353,7 +17050,7 @@ impl TreatmentResource {
 
 /// <p>Specifies the configuration and other settings for a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WriteCampaignRequest {
     /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
     #[doc(hidden)]
@@ -17491,37 +17188,11 @@ impl WriteCampaignRequest {
         self.priority
     }
 }
-impl std::fmt::Debug for WriteCampaignRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WriteCampaignRequest");
-        formatter.field("additional_treatments", &self.additional_treatments);
-        formatter.field(
-            "custom_delivery_configuration",
-            &self.custom_delivery_configuration,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("holdout_percent", &self.holdout_percent);
-        formatter.field("hook", &self.hook);
-        formatter.field("is_paused", &self.is_paused);
-        formatter.field("limits", &self.limits);
-        formatter.field("message_configuration", &self.message_configuration);
-        formatter.field("name", &self.name);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("segment_version", &self.segment_version);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_configuration", &self.template_configuration);
-        formatter.field("treatment_description", &self.treatment_description);
-        formatter.field("treatment_name", &self.treatment_name);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
-    }
-}
 /// See [`WriteCampaignRequest`](crate::model::WriteCampaignRequest).
 pub mod write_campaign_request {
 
     /// A builder for [`WriteCampaignRequest`](crate::model::WriteCampaignRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) additional_treatments:
             std::option::Option<std::vec::Vec<crate::model::WriteTreatmentResource>>,
@@ -17800,7 +17471,7 @@ impl WriteCampaignRequest {
 
 /// <p>Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B testing of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WriteTreatmentResource {
     /// <p>The delivery configuration settings for sending the treatment through a custom channel. This object is required if the MessageConfiguration object for the treatment specifies a CustomMessage object.</p>
     #[doc(hidden)]
@@ -17861,27 +17532,11 @@ impl WriteTreatmentResource {
         self.treatment_name.as_deref()
     }
 }
-impl std::fmt::Debug for WriteTreatmentResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WriteTreatmentResource");
-        formatter.field(
-            "custom_delivery_configuration",
-            &self.custom_delivery_configuration,
-        );
-        formatter.field("message_configuration", &self.message_configuration);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("size_percent", &self.size_percent);
-        formatter.field("template_configuration", &self.template_configuration);
-        formatter.field("treatment_description", &self.treatment_description);
-        formatter.field("treatment_name", &self.treatment_name);
-        formatter.finish()
-    }
-}
 /// See [`WriteTreatmentResource`](crate::model::WriteTreatmentResource).
 pub mod write_treatment_resource {
 
     /// A builder for [`WriteTreatmentResource`](crate::model::WriteTreatmentResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_delivery_configuration:
             std::option::Option<crate::model::CustomDeliveryConfiguration>,
@@ -18007,7 +17662,7 @@ impl WriteTreatmentResource {
 
 /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BaiduChannelResponse {
     /// <p>The unique identifier for the application that the Baidu channel applies to.</p>
     #[doc(hidden)]
@@ -18089,28 +17744,11 @@ impl BaiduChannelResponse {
         self.version
     }
 }
-impl std::fmt::Debug for BaiduChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BaiduChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("credential", &self.credential);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`BaiduChannelResponse`](crate::model::BaiduChannelResponse).
 pub mod baidu_channel_response {
 
     /// A builder for [`BaiduChannelResponse`](crate::model::BaiduChannelResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<std::string::String>,
@@ -18274,7 +17912,7 @@ impl BaiduChannelResponse {
 
 /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BaiduChannelRequest {
     /// <p>The API key that you received from the Baidu Cloud Push service to communicate with the service.</p>
     #[doc(hidden)]
@@ -18300,20 +17938,11 @@ impl BaiduChannelRequest {
         self.secret_key.as_deref()
     }
 }
-impl std::fmt::Debug for BaiduChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BaiduChannelRequest");
-        formatter.field("api_key", &self.api_key);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("secret_key", &self.secret_key);
-        formatter.finish()
-    }
-}
 /// See [`BaiduChannelRequest`](crate::model::BaiduChannelRequest).
 pub mod baidu_channel_request {
 
     /// A builder for [`BaiduChannelRequest`](crate::model::BaiduChannelRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_key: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -18369,7 +17998,7 @@ impl BaiduChannelRequest {
 
 /// <p>Provides information about an application, including the default settings for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationSettingsResource {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -18421,22 +18050,11 @@ impl ApplicationSettingsResource {
         self.quiet_time.as_ref()
     }
 }
-impl std::fmt::Debug for ApplicationSettingsResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationSettingsResource");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("campaign_hook", &self.campaign_hook);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("limits", &self.limits);
-        formatter.field("quiet_time", &self.quiet_time);
-        formatter.finish()
-    }
-}
 /// See [`ApplicationSettingsResource`](crate::model::ApplicationSettingsResource).
 pub mod application_settings_resource {
 
     /// A builder for [`ApplicationSettingsResource`](crate::model::ApplicationSettingsResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) campaign_hook: std::option::Option<crate::model::CampaignHook>,
@@ -18543,7 +18161,7 @@ impl ApplicationSettingsResource {
 
 /// <p>Specifies the default settings for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WriteApplicationSettingsRequest {
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
     /// <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the
@@ -18609,25 +18227,11 @@ impl WriteApplicationSettingsRequest {
         self.quiet_time.as_ref()
     }
 }
-impl std::fmt::Debug for WriteApplicationSettingsRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WriteApplicationSettingsRequest");
-        formatter.field("campaign_hook", &self.campaign_hook);
-        formatter.field(
-            "cloud_watch_metrics_enabled",
-            &self.cloud_watch_metrics_enabled,
-        );
-        formatter.field("event_tagging_enabled", &self.event_tagging_enabled);
-        formatter.field("limits", &self.limits);
-        formatter.field("quiet_time", &self.quiet_time);
-        formatter.finish()
-    }
-}
 /// See [`WriteApplicationSettingsRequest`](crate::model::WriteApplicationSettingsRequest).
 pub mod write_application_settings_request {
 
     /// A builder for [`WriteApplicationSettingsRequest`](crate::model::WriteApplicationSettingsRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_hook: std::option::Option<crate::model::CampaignHook>,
         pub(crate) cloud_watch_metrics_enabled: std::option::Option<bool>,
@@ -18742,7 +18346,7 @@ impl WriteApplicationSettingsRequest {
 
 /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsVoipSandboxChannelResponse {
     /// <p>The unique identifier for the application that the APNs VoIP sandbox channel applies to.</p>
     #[doc(hidden)]
@@ -18831,32 +18435,11 @@ impl ApnsVoipSandboxChannelResponse {
         self.version
     }
 }
-impl std::fmt::Debug for ApnsVoipSandboxChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsVoipSandboxChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field(
-            "default_authentication_method",
-            &self.default_authentication_method,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("has_token_key", &self.has_token_key);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`ApnsVoipSandboxChannelResponse`](crate::model::ApnsVoipSandboxChannelResponse).
 pub mod apns_voip_sandbox_channel_response {
 
     /// A builder for [`ApnsVoipSandboxChannelResponse`](crate::model::ApnsVoipSandboxChannelResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<std::string::String>,
@@ -19038,7 +18621,7 @@ impl ApnsVoipSandboxChannelResponse {
 
 /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsVoipSandboxChannelRequest {
     /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
     #[doc(hidden)]
@@ -19099,28 +18682,11 @@ impl ApnsVoipSandboxChannelRequest {
         self.token_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for ApnsVoipSandboxChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsVoipSandboxChannelRequest");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("certificate", &self.certificate);
-        formatter.field(
-            "default_authentication_method",
-            &self.default_authentication_method,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("private_key", &self.private_key);
-        formatter.field("team_id", &self.team_id);
-        formatter.field("token_key", &self.token_key);
-        formatter.field("token_key_id", &self.token_key_id);
-        formatter.finish()
-    }
-}
 /// See [`ApnsVoipSandboxChannelRequest`](crate::model::ApnsVoipSandboxChannelRequest).
 pub mod apns_voip_sandbox_channel_request {
 
     /// A builder for [`ApnsVoipSandboxChannelRequest`](crate::model::ApnsVoipSandboxChannelRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bundle_id: std::option::Option<std::string::String>,
         pub(crate) certificate: std::option::Option<std::string::String>,
@@ -19242,7 +18808,7 @@ impl ApnsVoipSandboxChannelRequest {
 
 /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsVoipChannelResponse {
     /// <p>The unique identifier for the application that the APNs VoIP channel applies to.</p>
     #[doc(hidden)]
@@ -19331,32 +18897,11 @@ impl ApnsVoipChannelResponse {
         self.version
     }
 }
-impl std::fmt::Debug for ApnsVoipChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsVoipChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field(
-            "default_authentication_method",
-            &self.default_authentication_method,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("has_token_key", &self.has_token_key);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`ApnsVoipChannelResponse`](crate::model::ApnsVoipChannelResponse).
 pub mod apns_voip_channel_response {
 
     /// A builder for [`ApnsVoipChannelResponse`](crate::model::ApnsVoipChannelResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<std::string::String>,
@@ -19538,7 +19083,7 @@ impl ApnsVoipChannelResponse {
 
 /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsVoipChannelRequest {
     /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
     #[doc(hidden)]
@@ -19599,28 +19144,11 @@ impl ApnsVoipChannelRequest {
         self.token_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for ApnsVoipChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsVoipChannelRequest");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("certificate", &self.certificate);
-        formatter.field(
-            "default_authentication_method",
-            &self.default_authentication_method,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("private_key", &self.private_key);
-        formatter.field("team_id", &self.team_id);
-        formatter.field("token_key", &self.token_key);
-        formatter.field("token_key_id", &self.token_key_id);
-        formatter.finish()
-    }
-}
 /// See [`ApnsVoipChannelRequest`](crate::model::ApnsVoipChannelRequest).
 pub mod apns_voip_channel_request {
 
     /// A builder for [`ApnsVoipChannelRequest`](crate::model::ApnsVoipChannelRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bundle_id: std::option::Option<std::string::String>,
         pub(crate) certificate: std::option::Option<std::string::String>,
@@ -19742,7 +19270,7 @@ impl ApnsVoipChannelRequest {
 
 /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsSandboxChannelResponse {
     /// <p>The unique identifier for the application that the APNs sandbox channel applies to.</p>
     #[doc(hidden)]
@@ -19831,32 +19359,11 @@ impl ApnsSandboxChannelResponse {
         self.version
     }
 }
-impl std::fmt::Debug for ApnsSandboxChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsSandboxChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field(
-            "default_authentication_method",
-            &self.default_authentication_method,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("has_token_key", &self.has_token_key);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`ApnsSandboxChannelResponse`](crate::model::ApnsSandboxChannelResponse).
 pub mod apns_sandbox_channel_response {
 
     /// A builder for [`ApnsSandboxChannelResponse`](crate::model::ApnsSandboxChannelResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<std::string::String>,
@@ -20038,7 +19545,7 @@ impl ApnsSandboxChannelResponse {
 
 /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsSandboxChannelRequest {
     /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
     #[doc(hidden)]
@@ -20099,28 +19606,11 @@ impl ApnsSandboxChannelRequest {
         self.token_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for ApnsSandboxChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsSandboxChannelRequest");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("certificate", &self.certificate);
-        formatter.field(
-            "default_authentication_method",
-            &self.default_authentication_method,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("private_key", &self.private_key);
-        formatter.field("team_id", &self.team_id);
-        formatter.field("token_key", &self.token_key);
-        formatter.field("token_key_id", &self.token_key_id);
-        formatter.finish()
-    }
-}
 /// See [`ApnsSandboxChannelRequest`](crate::model::ApnsSandboxChannelRequest).
 pub mod apns_sandbox_channel_request {
 
     /// A builder for [`ApnsSandboxChannelRequest`](crate::model::ApnsSandboxChannelRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bundle_id: std::option::Option<std::string::String>,
         pub(crate) certificate: std::option::Option<std::string::String>,
@@ -20242,7 +19732,7 @@ impl ApnsSandboxChannelRequest {
 
 /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsChannelResponse {
     /// <p>The unique identifier for the application that the APNs channel applies to.</p>
     #[doc(hidden)]
@@ -20331,32 +19821,11 @@ impl ApnsChannelResponse {
         self.version
     }
 }
-impl std::fmt::Debug for ApnsChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field(
-            "default_authentication_method",
-            &self.default_authentication_method,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("has_token_key", &self.has_token_key);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`ApnsChannelResponse`](crate::model::ApnsChannelResponse).
 pub mod apns_channel_response {
 
     /// A builder for [`ApnsChannelResponse`](crate::model::ApnsChannelResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<std::string::String>,
@@ -20538,7 +20007,7 @@ impl ApnsChannelResponse {
 
 /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsChannelRequest {
     /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
     #[doc(hidden)]
@@ -20599,28 +20068,11 @@ impl ApnsChannelRequest {
         self.token_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for ApnsChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsChannelRequest");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("certificate", &self.certificate);
-        formatter.field(
-            "default_authentication_method",
-            &self.default_authentication_method,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field("private_key", &self.private_key);
-        formatter.field("team_id", &self.team_id);
-        formatter.field("token_key", &self.token_key);
-        formatter.field("token_key_id", &self.token_key_id);
-        formatter.finish()
-    }
-}
 /// See [`ApnsChannelRequest`](crate::model::ApnsChannelRequest).
 pub mod apns_channel_request {
 
     /// A builder for [`ApnsChannelRequest`](crate::model::ApnsChannelRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bundle_id: std::option::Option<std::string::String>,
         pub(crate) certificate: std::option::Option<std::string::String>,
@@ -20742,7 +20194,7 @@ impl ApnsChannelRequest {
 
 /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdmChannelResponse {
     /// <p>The unique identifier for the application that the ADM channel applies to.</p>
     #[doc(hidden)]
@@ -20817,27 +20269,11 @@ impl AdmChannelResponse {
         self.version
     }
 }
-impl std::fmt::Debug for AdmChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdmChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("platform", &self.platform);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`AdmChannelResponse`](crate::model::AdmChannelResponse).
 pub mod adm_channel_response {
 
     /// A builder for [`AdmChannelResponse`](crate::model::AdmChannelResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<std::string::String>,
@@ -20989,7 +20425,7 @@ impl AdmChannelResponse {
 
 /// <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdmChannelRequest {
     /// <p>The Client ID that you received from Amazon to send messages by using ADM.</p>
     #[doc(hidden)]
@@ -21015,20 +20451,11 @@ impl AdmChannelRequest {
         self.enabled
     }
 }
-impl std::fmt::Debug for AdmChannelRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdmChannelRequest");
-        formatter.field("client_id", &self.client_id);
-        formatter.field("client_secret", &self.client_secret);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 /// See [`AdmChannelRequest`](crate::model::AdmChannelRequest).
 pub mod adm_channel_request {
 
     /// A builder for [`AdmChannelRequest`](crate::model::AdmChannelRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) client_secret: std::option::Option<std::string::String>,
@@ -21087,7 +20514,7 @@ impl AdmChannelRequest {
 
 /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagsModel {
     /// <p>A string-to-string map of key-value pairs that defines the tags for an application, campaign, message template, or segment. Each of these resources can have a maximum of 50 tags.</p>
     /// <p>Each tag consists of a required tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
@@ -21105,18 +20532,11 @@ impl TagsModel {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagsModel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagsModel");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`TagsModel`](crate::model::TagsModel).
 pub mod tags_model {
 
     /// A builder for [`TagsModel`](crate::model::TagsModel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -21165,7 +20585,7 @@ impl TagsModel {
 
 /// <p>Provides information about which users and endpoints a message was sent to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendUsersMessageResponse {
     /// <p>The unique identifier for the application that was used to send the message.</p>
     #[doc(hidden)]
@@ -21203,20 +20623,11 @@ impl SendUsersMessageResponse {
         self.result.as_ref()
     }
 }
-impl std::fmt::Debug for SendUsersMessageResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendUsersMessageResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("result", &self.result);
-        formatter.finish()
-    }
-}
 /// See [`SendUsersMessageResponse`](crate::model::SendUsersMessageResponse).
 pub mod send_users_message_response {
 
     /// A builder for [`SendUsersMessageResponse`](crate::model::SendUsersMessageResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -21301,7 +20712,7 @@ impl SendUsersMessageResponse {
 
 /// <p>Provides information about the delivery status and results of sending a message directly to an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointMessageResult {
     /// <p>The endpoint address that the message was delivered to.</p>
     #[doc(hidden)]
@@ -21368,23 +20779,11 @@ impl EndpointMessageResult {
         self.updated_token.as_deref()
     }
 }
-impl std::fmt::Debug for EndpointMessageResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointMessageResult");
-        formatter.field("address", &self.address);
-        formatter.field("delivery_status", &self.delivery_status);
-        formatter.field("message_id", &self.message_id);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("updated_token", &self.updated_token);
-        formatter.finish()
-    }
-}
 /// See [`EndpointMessageResult`](crate::model::EndpointMessageResult).
 pub mod endpoint_message_result {
 
     /// A builder for [`EndpointMessageResult`](crate::model::EndpointMessageResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
         pub(crate) delivery_status: std::option::Option<crate::model::DeliveryStatus>,
@@ -21503,6 +20902,46 @@ impl EndpointMessageResult {
     }
 }
 
+/// When writing a match expression against `DeliveryStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let deliverystatus = unimplemented!();
+/// match deliverystatus {
+///     DeliveryStatus::Duplicate => { /* ... */ },
+///     DeliveryStatus::OptOut => { /* ... */ },
+///     DeliveryStatus::PermanentFailure => { /* ... */ },
+///     DeliveryStatus::Successful => { /* ... */ },
+///     DeliveryStatus::TemporaryFailure => { /* ... */ },
+///     DeliveryStatus::Throttled => { /* ... */ },
+///     DeliveryStatus::UnknownFailure => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `deliverystatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DeliveryStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DeliveryStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DeliveryStatus::NewFeature` is defined.
+/// Specifically, when `deliverystatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DeliveryStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -21529,8 +20968,8 @@ pub enum DeliveryStatus {
     Throttled,
     #[allow(missing_docs)] // documentation missing in model
     UnknownFailure,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DeliveryStatus {
     fn from(s: &str) -> Self {
@@ -21542,7 +20981,7 @@ impl std::convert::From<&str> for DeliveryStatus {
             "TEMPORARY_FAILURE" => DeliveryStatus::TemporaryFailure,
             "THROTTLED" => DeliveryStatus::Throttled,
             "UNKNOWN_FAILURE" => DeliveryStatus::UnknownFailure,
-            other => DeliveryStatus::Unknown(other.to_owned()),
+            other => DeliveryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -21564,11 +21003,11 @@ impl DeliveryStatus {
             DeliveryStatus::TemporaryFailure => "TEMPORARY_FAILURE",
             DeliveryStatus::Throttled => "THROTTLED",
             DeliveryStatus::UnknownFailure => "UNKNOWN_FAILURE",
-            DeliveryStatus::Unknown(s) => s.as_ref(),
+            DeliveryStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DUPLICATE",
             "OPT_OUT",
@@ -21588,7 +21027,7 @@ impl AsRef<str> for DeliveryStatus {
 
 /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendUsersMessageRequest {
     /// <p>A map of custom attribute-value pairs. For a push notification, Amazon Pinpoint adds these attributes to the data.pinpoint object in the body of the notification payload. Amazon Pinpoint also provides these attributes in the events that it generates for users-messages deliveries.</p>
     #[doc(hidden)]
@@ -21642,22 +21081,11 @@ impl SendUsersMessageRequest {
         self.users.as_ref()
     }
 }
-impl std::fmt::Debug for SendUsersMessageRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendUsersMessageRequest");
-        formatter.field("context", &self.context);
-        formatter.field("message_configuration", &self.message_configuration);
-        formatter.field("template_configuration", &self.template_configuration);
-        formatter.field("trace_id", &self.trace_id);
-        formatter.field("users", &self.users);
-        formatter.finish()
-    }
-}
 /// See [`SendUsersMessageRequest`](crate::model::SendUsersMessageRequest).
 pub mod send_users_message_request {
 
     /// A builder for [`SendUsersMessageRequest`](crate::model::SendUsersMessageRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) context: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -21787,7 +21215,7 @@ impl SendUsersMessageRequest {
 
 /// <p>Specifies the content, including message variables and attributes, to use in a message that's sent directly to an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointSendConfiguration {
     /// <p>The body of the message. If specified, this value overrides the default message body.</p>
     #[doc(hidden)]
@@ -21839,22 +21267,11 @@ impl EndpointSendConfiguration {
         self.title_override.as_deref()
     }
 }
-impl std::fmt::Debug for EndpointSendConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointSendConfiguration");
-        formatter.field("body_override", &self.body_override);
-        formatter.field("context", &self.context);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("title_override", &self.title_override);
-        formatter.finish()
-    }
-}
 /// See [`EndpointSendConfiguration`](crate::model::EndpointSendConfiguration).
 pub mod endpoint_send_configuration {
 
     /// A builder for [`EndpointSendConfiguration`](crate::model::EndpointSendConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body_override: std::option::Option<std::string::String>,
         pub(crate) context: std::option::Option<
@@ -21976,7 +21393,7 @@ impl EndpointSendConfiguration {
 
 /// <p>Specifies the settings and content for the default message and any default messages that you tailored for specific channels.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectMessageConfiguration {
     /// <p>The default push notification message for the ADM (Amazon Device Messaging) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
     #[doc(hidden)]
@@ -22047,29 +21464,11 @@ impl DirectMessageConfiguration {
         self.voice_message.as_ref()
     }
 }
-impl std::fmt::Debug for DirectMessageConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectMessageConfiguration");
-        formatter.field("adm_message", &self.adm_message);
-        formatter.field("apns_message", &self.apns_message);
-        formatter.field("baidu_message", &self.baidu_message);
-        formatter.field("default_message", &self.default_message);
-        formatter.field(
-            "default_push_notification_message",
-            &self.default_push_notification_message,
-        );
-        formatter.field("email_message", &self.email_message);
-        formatter.field("gcm_message", &self.gcm_message);
-        formatter.field("sms_message", &self.sms_message);
-        formatter.field("voice_message", &self.voice_message);
-        formatter.finish()
-    }
-}
 /// See [`DirectMessageConfiguration`](crate::model::DirectMessageConfiguration).
 pub mod direct_message_configuration {
 
     /// A builder for [`DirectMessageConfiguration`](crate::model::DirectMessageConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adm_message: std::option::Option<crate::model::AdmMessage>,
         pub(crate) apns_message: std::option::Option<crate::model::ApnsMessage>,
@@ -22228,7 +21627,7 @@ impl DirectMessageConfiguration {
 
 /// <p>Specifies the settings for a one-time voice message that's sent directly to an endpoint through the voice channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VoiceMessage {
     /// <p>The text of the script to use for the voice message.</p>
     #[doc(hidden)]
@@ -22274,22 +21673,11 @@ impl VoiceMessage {
         self.voice_id.as_deref()
     }
 }
-impl std::fmt::Debug for VoiceMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VoiceMessage");
-        formatter.field("body", &self.body);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("origination_number", &self.origination_number);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("voice_id", &self.voice_id);
-        formatter.finish()
-    }
-}
 /// See [`VoiceMessage`](crate::model::VoiceMessage).
 pub mod voice_message {
 
     /// A builder for [`VoiceMessage`](crate::model::VoiceMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<std::string::String>,
@@ -22392,7 +21780,7 @@ impl VoiceMessage {
 
 /// <p>Specifies the default settings for a one-time SMS message that's sent directly to an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsMessage {
     /// <p>The body of the SMS message.</p>
     #[doc(hidden)]
@@ -22466,26 +21854,11 @@ impl SmsMessage {
         self.template_id.as_deref()
     }
 }
-impl std::fmt::Debug for SmsMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsMessage");
-        formatter.field("body", &self.body);
-        formatter.field("keyword", &self.keyword);
-        formatter.field("media_url", &self.media_url);
-        formatter.field("message_type", &self.message_type);
-        formatter.field("origination_number", &self.origination_number);
-        formatter.field("sender_id", &self.sender_id);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.finish()
-    }
-}
 /// See [`SmsMessage`](crate::model::SmsMessage).
 pub mod sms_message {
 
     /// A builder for [`SmsMessage`](crate::model::SmsMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<std::string::String>,
         pub(crate) keyword: std::option::Option<std::string::String>,
@@ -22636,7 +22009,7 @@ impl SmsMessage {
 
 /// <p>Specifies the settings for a one-time message that's sent directly to an endpoint through the GCM channel. The GCM channel enables Amazon Pinpoint to send messages to the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GcmMessage {
     /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
     /// <ul>
@@ -22790,34 +22163,11 @@ impl GcmMessage {
         self.url.as_deref()
     }
 }
-impl std::fmt::Debug for GcmMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GcmMessage");
-        formatter.field("action", &self.action);
-        formatter.field("body", &self.body);
-        formatter.field("collapse_key", &self.collapse_key);
-        formatter.field("data", &self.data);
-        formatter.field("icon_reference", &self.icon_reference);
-        formatter.field("image_icon_url", &self.image_icon_url);
-        formatter.field("image_url", &self.image_url);
-        formatter.field("priority", &self.priority);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("restricted_package_name", &self.restricted_package_name);
-        formatter.field("silent_push", &self.silent_push);
-        formatter.field("small_image_icon_url", &self.small_image_icon_url);
-        formatter.field("sound", &self.sound);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("time_to_live", &self.time_to_live);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
-    }
-}
 /// See [`GcmMessage`](crate::model::GcmMessage).
 pub mod gcm_message {
 
     /// A builder for [`GcmMessage`](crate::model::GcmMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
         pub(crate) body: std::option::Option<std::string::String>,
@@ -23107,7 +22457,7 @@ impl GcmMessage {
 
 /// <p>Specifies the default settings and content for a one-time email message that's sent directly to an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailMessage {
     /// <p>The body of the email message.</p>
     #[doc(hidden)]
@@ -23167,27 +22517,11 @@ impl EmailMessage {
         self.substitutions.as_ref()
     }
 }
-impl std::fmt::Debug for EmailMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailMessage");
-        formatter.field("body", &self.body);
-        formatter.field(
-            "feedback_forwarding_address",
-            &self.feedback_forwarding_address,
-        );
-        formatter.field("from_address", &self.from_address);
-        formatter.field("raw_email", &self.raw_email);
-        formatter.field("reply_to_addresses", &self.reply_to_addresses);
-        formatter.field("simple_email", &self.simple_email);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.finish()
-    }
-}
 /// See [`EmailMessage`](crate::model::EmailMessage).
 pub mod email_message {
 
     /// A builder for [`EmailMessage`](crate::model::EmailMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<std::string::String>,
         pub(crate) feedback_forwarding_address: std::option::Option<std::string::String>,
@@ -23326,7 +22660,7 @@ impl EmailMessage {
 
 /// <p>Specifies the contents of an email message, composed of a subject, a text part, and an HTML part.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimpleEmail {
     /// <p>The body of the email message, in HTML format. We recommend using HTML format for email clients that render HTML content. You can include links, formatted text, and more in an HTML message.</p>
     #[doc(hidden)]
@@ -23352,20 +22686,11 @@ impl SimpleEmail {
         self.text_part.as_ref()
     }
 }
-impl std::fmt::Debug for SimpleEmail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimpleEmail");
-        formatter.field("html_part", &self.html_part);
-        formatter.field("subject", &self.subject);
-        formatter.field("text_part", &self.text_part);
-        formatter.finish()
-    }
-}
 /// See [`SimpleEmail`](crate::model::SimpleEmail).
 pub mod simple_email {
 
     /// A builder for [`SimpleEmail`](crate::model::SimpleEmail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) html_part: std::option::Option<crate::model::SimpleEmailPart>,
         pub(crate) subject: std::option::Option<crate::model::SimpleEmailPart>,
@@ -23430,7 +22755,7 @@ impl SimpleEmail {
 
 /// <p>Specifies the subject or body of an email message, represented as textual email data and the applicable character set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SimpleEmailPart {
     /// <p>The applicable character set for the message content.</p>
     #[doc(hidden)]
@@ -23449,19 +22774,11 @@ impl SimpleEmailPart {
         self.data.as_deref()
     }
 }
-impl std::fmt::Debug for SimpleEmailPart {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SimpleEmailPart");
-        formatter.field("charset", &self.charset);
-        formatter.field("data", &self.data);
-        formatter.finish()
-    }
-}
 /// See [`SimpleEmailPart`](crate::model::SimpleEmailPart).
 pub mod simple_email_part {
 
     /// A builder for [`SimpleEmailPart`](crate::model::SimpleEmailPart).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) charset: std::option::Option<std::string::String>,
         pub(crate) data: std::option::Option<std::string::String>,
@@ -23505,7 +22822,7 @@ impl SimpleEmailPart {
 
 /// <p>Specifies the contents of an email message, represented as a raw MIME message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RawEmail {
     /// <p>The email message, represented as a raw MIME message. The entire message must be base64 encoded.</p>
     #[doc(hidden)]
@@ -23517,18 +22834,11 @@ impl RawEmail {
         self.data.as_ref()
     }
 }
-impl std::fmt::Debug for RawEmail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RawEmail");
-        formatter.field("data", &self.data);
-        formatter.finish()
-    }
-}
 /// See [`RawEmail`](crate::model::RawEmail).
 pub mod raw_email {
 
     /// A builder for [`RawEmail`](crate::model::RawEmail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
     }
@@ -23558,7 +22868,7 @@ impl RawEmail {
 
 /// <p>Specifies the default settings and content for a push notification that's sent directly to an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultPushNotificationMessage {
     /// <p>The default action to occur if a recipient taps the push notification. Valid values are:</p>
     /// <ul>
@@ -23632,24 +22942,11 @@ impl DefaultPushNotificationMessage {
         self.url.as_deref()
     }
 }
-impl std::fmt::Debug for DefaultPushNotificationMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultPushNotificationMessage");
-        formatter.field("action", &self.action);
-        formatter.field("body", &self.body);
-        formatter.field("data", &self.data);
-        formatter.field("silent_push", &self.silent_push);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
-    }
-}
 /// See [`DefaultPushNotificationMessage`](crate::model::DefaultPushNotificationMessage).
 pub mod default_push_notification_message {
 
     /// A builder for [`DefaultPushNotificationMessage`](crate::model::DefaultPushNotificationMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
         pub(crate) body: std::option::Option<std::string::String>,
@@ -23797,7 +23094,7 @@ impl DefaultPushNotificationMessage {
 
 /// <p>Specifies the default message for all channels.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultMessage {
     /// <p>The default body of the message.</p>
     #[doc(hidden)]
@@ -23822,19 +23119,11 @@ impl DefaultMessage {
         self.substitutions.as_ref()
     }
 }
-impl std::fmt::Debug for DefaultMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultMessage");
-        formatter.field("body", &self.body);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.finish()
-    }
-}
 /// See [`DefaultMessage`](crate::model::DefaultMessage).
 pub mod default_message {
 
     /// A builder for [`DefaultMessage`](crate::model::DefaultMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<std::string::String>,
         pub(crate) substitutions: std::option::Option<
@@ -23895,7 +23184,7 @@ impl DefaultMessage {
 
 /// <p>Specifies the settings for a one-time message that's sent directly to an endpoint through the Baidu (Baidu Cloud Push) channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BaiduMessage {
     /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
     /// <ul>
@@ -24018,31 +23307,11 @@ impl BaiduMessage {
         self.url.as_deref()
     }
 }
-impl std::fmt::Debug for BaiduMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BaiduMessage");
-        formatter.field("action", &self.action);
-        formatter.field("body", &self.body);
-        formatter.field("data", &self.data);
-        formatter.field("icon_reference", &self.icon_reference);
-        formatter.field("image_icon_url", &self.image_icon_url);
-        formatter.field("image_url", &self.image_url);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("silent_push", &self.silent_push);
-        formatter.field("small_image_icon_url", &self.small_image_icon_url);
-        formatter.field("sound", &self.sound);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("time_to_live", &self.time_to_live);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
-    }
-}
 /// See [`BaiduMessage`](crate::model::BaiduMessage).
 pub mod baidu_message {
 
     /// A builder for [`BaiduMessage`](crate::model::BaiduMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
         pub(crate) body: std::option::Option<std::string::String>,
@@ -24283,7 +23552,7 @@ impl BaiduMessage {
 
 /// <p>Specifies the settings for a one-time message that's sent directly to an endpoint through the APNs (Apple Push Notification service) channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApnsMessage {
     /// <p>The type of push notification to send. Valid values are:</p>
     /// <ul>
@@ -24476,38 +23745,11 @@ impl ApnsMessage {
         self.url.as_deref()
     }
 }
-impl std::fmt::Debug for ApnsMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApnsMessage");
-        formatter.field("apns_push_type", &self.apns_push_type);
-        formatter.field("action", &self.action);
-        formatter.field("badge", &self.badge);
-        formatter.field("body", &self.body);
-        formatter.field("category", &self.category);
-        formatter.field("collapse_id", &self.collapse_id);
-        formatter.field("data", &self.data);
-        formatter.field("media_url", &self.media_url);
-        formatter.field(
-            "preferred_authentication_method",
-            &self.preferred_authentication_method,
-        );
-        formatter.field("priority", &self.priority);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("silent_push", &self.silent_push);
-        formatter.field("sound", &self.sound);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("thread_id", &self.thread_id);
-        formatter.field("time_to_live", &self.time_to_live);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
-    }
-}
 /// See [`ApnsMessage`](crate::model::ApnsMessage).
 pub mod apns_message {
 
     /// A builder for [`ApnsMessage`](crate::model::ApnsMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_push_type: std::option::Option<std::string::String>,
         pub(crate) action: std::option::Option<crate::model::Action>,
@@ -24838,7 +24080,7 @@ impl ApnsMessage {
 
 /// <p>Specifies the settings for a one-time message that's sent directly to an endpoint through the ADM (Amazon Device Messaging) channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdmMessage {
     /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
     /// <ul>
@@ -24975,33 +24217,11 @@ impl AdmMessage {
         self.url.as_deref()
     }
 }
-impl std::fmt::Debug for AdmMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdmMessage");
-        formatter.field("action", &self.action);
-        formatter.field("body", &self.body);
-        formatter.field("consolidation_key", &self.consolidation_key);
-        formatter.field("data", &self.data);
-        formatter.field("expires_after", &self.expires_after);
-        formatter.field("icon_reference", &self.icon_reference);
-        formatter.field("image_icon_url", &self.image_icon_url);
-        formatter.field("image_url", &self.image_url);
-        formatter.field("md5", &self.md5);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("silent_push", &self.silent_push);
-        formatter.field("small_image_icon_url", &self.small_image_icon_url);
-        formatter.field("sound", &self.sound);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("title", &self.title);
-        formatter.field("url", &self.url);
-        formatter.finish()
-    }
-}
 /// See [`AdmMessage`](crate::model::AdmMessage).
 pub mod adm_message {
 
     /// A builder for [`AdmMessage`](crate::model::AdmMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
         pub(crate) body: std::option::Option<std::string::String>,
@@ -25272,7 +24492,7 @@ impl AdmMessage {
 
 /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageResponse {
     /// <p>The unique identifier for the application that was used to send the message.</p>
     #[doc(hidden)]
@@ -25317,21 +24537,11 @@ impl MessageResponse {
         self.result.as_ref()
     }
 }
-impl std::fmt::Debug for MessageResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("endpoint_result", &self.endpoint_result);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("result", &self.result);
-        formatter.finish()
-    }
-}
 /// See [`MessageResponse`](crate::model::MessageResponse).
 pub mod message_response {
 
     /// A builder for [`MessageResponse`](crate::model::MessageResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) endpoint_result: std::option::Option<
@@ -25436,7 +24646,7 @@ impl MessageResponse {
 
 /// <p>Provides information about the results of sending a message directly to an endpoint address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageResult {
     /// <p>The delivery status of the message. Possible values are:</p>
     /// <ul>
@@ -25496,22 +24706,11 @@ impl MessageResult {
         self.updated_token.as_deref()
     }
 }
-impl std::fmt::Debug for MessageResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageResult");
-        formatter.field("delivery_status", &self.delivery_status);
-        formatter.field("message_id", &self.message_id);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("updated_token", &self.updated_token);
-        formatter.finish()
-    }
-}
 /// See [`MessageResult`](crate::model::MessageResult).
 pub mod message_result {
 
     /// A builder for [`MessageResult`](crate::model::MessageResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_status: std::option::Option<crate::model::DeliveryStatus>,
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -25620,7 +24819,7 @@ impl MessageResult {
 
 /// <p>Send OTP message request parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendOtpMessageRequestParameters {
     /// <p>The attempts allowed to validate an OTP.</p>
     #[doc(hidden)]
@@ -25702,28 +24901,11 @@ impl SendOtpMessageRequestParameters {
         self.validity_period
     }
 }
-impl std::fmt::Debug for SendOtpMessageRequestParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendOtpMessageRequestParameters");
-        formatter.field("allowed_attempts", &self.allowed_attempts);
-        formatter.field("brand_name", &self.brand_name);
-        formatter.field("channel", &self.channel);
-        formatter.field("code_length", &self.code_length);
-        formatter.field("destination_identity", &self.destination_identity);
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("language", &self.language);
-        formatter.field("origination_identity", &self.origination_identity);
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("validity_period", &self.validity_period);
-        formatter.finish()
-    }
-}
 /// See [`SendOtpMessageRequestParameters`](crate::model::SendOtpMessageRequestParameters).
 pub mod send_otp_message_request_parameters {
 
     /// A builder for [`SendOtpMessageRequestParameters`](crate::model::SendOtpMessageRequestParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allowed_attempts: std::option::Option<i32>,
         pub(crate) brand_name: std::option::Option<std::string::String>,
@@ -25881,7 +25063,7 @@ impl SendOtpMessageRequestParameters {
 
 /// <p>Specifies the configuration and other settings for a message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageRequest {
     /// <p>A map of key-value pairs, where each key is an address and each value is an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a> object. An address can be a push notification token, a phone number, or an email address. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a> object to tailor the message for an address by specifying settings such as content overrides and message variables.</p>
     #[doc(hidden)]
@@ -25948,23 +25130,11 @@ impl MessageRequest {
         self.trace_id.as_deref()
     }
 }
-impl std::fmt::Debug for MessageRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageRequest");
-        formatter.field("addresses", &self.addresses);
-        formatter.field("context", &self.context);
-        formatter.field("endpoints", &self.endpoints);
-        formatter.field("message_configuration", &self.message_configuration);
-        formatter.field("template_configuration", &self.template_configuration);
-        formatter.field("trace_id", &self.trace_id);
-        formatter.finish()
-    }
-}
 /// See [`MessageRequest`](crate::model::MessageRequest).
 pub mod message_request {
 
     /// A builder for [`MessageRequest`](crate::model::MessageRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) addresses: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AddressConfiguration>,
@@ -26123,7 +25293,7 @@ impl MessageRequest {
 
 /// <p>Specifies address-based configuration settings for a message that's sent directly to an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddressConfiguration {
     /// <p>The message body to use instead of the default message body. This value overrides the default message body.</p>
     #[doc(hidden)]
@@ -26182,23 +25352,11 @@ impl AddressConfiguration {
         self.title_override.as_deref()
     }
 }
-impl std::fmt::Debug for AddressConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddressConfiguration");
-        formatter.field("body_override", &self.body_override);
-        formatter.field("channel_type", &self.channel_type);
-        formatter.field("context", &self.context);
-        formatter.field("raw_content", &self.raw_content);
-        formatter.field("substitutions", &self.substitutions);
-        formatter.field("title_override", &self.title_override);
-        formatter.finish()
-    }
-}
 /// See [`AddressConfiguration`](crate::model::AddressConfiguration).
 pub mod address_configuration {
 
     /// A builder for [`AddressConfiguration`](crate::model::AddressConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body_override: std::option::Option<std::string::String>,
         pub(crate) channel_type: std::option::Option<crate::model::ChannelType>,
@@ -26335,7 +25493,7 @@ impl AddressConfiguration {
 
 /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributesResource {
     /// <p>The unique identifier for the application.</p>
     #[doc(hidden)]
@@ -26371,20 +25529,11 @@ impl AttributesResource {
         self.attributes.as_deref()
     }
 }
-impl std::fmt::Debug for AttributesResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributesResource");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("attribute_type", &self.attribute_type);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 /// See [`AttributesResource`](crate::model::AttributesResource).
 pub mod attributes_resource {
 
     /// A builder for [`AttributesResource`](crate::model::AttributesResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) attribute_type: std::option::Option<std::string::String>,
@@ -26465,7 +25614,7 @@ impl AttributesResource {
 
 /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAttributesRequest {
     /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
     #[doc(hidden)]
@@ -26477,18 +25626,11 @@ impl UpdateAttributesRequest {
         self.blacklist.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAttributesRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAttributesRequest");
-        formatter.field("blacklist", &self.blacklist);
-        formatter.finish()
-    }
-}
 /// See [`UpdateAttributesRequest`](crate::model::UpdateAttributesRequest).
 pub mod update_attributes_request {
 
     /// A builder for [`UpdateAttributesRequest`](crate::model::UpdateAttributesRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blacklist: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -26529,7 +25671,7 @@ impl UpdateAttributesRequest {
 
 /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventStream {
     /// <p>The unique identifier for the application to publish event data for.</p>
     #[doc(hidden)]
@@ -26604,23 +25746,11 @@ impl EventStream {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for EventStream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventStream");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("destination_stream_arn", &self.destination_stream_arn);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("last_updated_by", &self.last_updated_by);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`EventStream`](crate::model::EventStream).
 pub mod event_stream {
 
     /// A builder for [`EventStream`](crate::model::EventStream).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) destination_stream_arn: std::option::Option<std::string::String>,
@@ -26752,7 +25882,7 @@ impl EventStream {
 
 /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WriteEventStream {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon Kinesis Data Firehose delivery stream that you want to publish event data to.</p>
     /// <p>For a Kinesis data stream, the ARN format is: arn:aws:kinesis:<replaceable>
@@ -26799,19 +25929,11 @@ impl WriteEventStream {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for WriteEventStream {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WriteEventStream");
-        formatter.field("destination_stream_arn", &self.destination_stream_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 /// See [`WriteEventStream`](crate::model::WriteEventStream).
 pub mod write_event_stream {
 
     /// A builder for [`WriteEventStream`](crate::model::WriteEventStream).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_stream_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -26886,7 +26008,7 @@ impl WriteEventStream {
 
 /// <p>Provides information about endpoints and the events that they're associated with.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventsResponse {
     /// <p>A map that contains a multipart response for each endpoint. For each item in this object, the endpoint ID is the key and the item response is the value. If no item response exists, the value can also be one of the following: 202, the request was processed successfully; or 400, the payload wasn't valid or required fields were missing.</p>
     #[doc(hidden)]
@@ -26904,18 +26026,11 @@ impl EventsResponse {
         self.results.as_ref()
     }
 }
-impl std::fmt::Debug for EventsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventsResponse");
-        formatter.field("results", &self.results);
-        formatter.finish()
-    }
-}
 /// See [`EventsResponse`](crate::model::EventsResponse).
 pub mod events_response {
 
     /// A builder for [`EventsResponse`](crate::model::EventsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::ItemResponse>,
@@ -26964,7 +26079,7 @@ impl EventsResponse {
 
 /// <p>Provides information about the results of a request to create or update an endpoint that's associated with an event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ItemResponse {
     /// <p>The response that was received after the endpoint data was accepted.</p>
     #[doc(hidden)]
@@ -26991,19 +26106,11 @@ impl ItemResponse {
         self.events_item_response.as_ref()
     }
 }
-impl std::fmt::Debug for ItemResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ItemResponse");
-        formatter.field("endpoint_item_response", &self.endpoint_item_response);
-        formatter.field("events_item_response", &self.events_item_response);
-        formatter.finish()
-    }
-}
 /// See [`ItemResponse`](crate::model::ItemResponse).
 pub mod item_response {
 
     /// A builder for [`ItemResponse`](crate::model::ItemResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_item_response: std::option::Option<crate::model::EndpointItemResponse>,
         pub(crate) events_item_response: std::option::Option<
@@ -27067,7 +26174,7 @@ impl ItemResponse {
 
 /// <p>Provides the status code and message that result from processing an event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventItemResponse {
     /// <p>A custom message that's returned in the response as a result of processing the event.</p>
     #[doc(hidden)]
@@ -27086,19 +26193,11 @@ impl EventItemResponse {
         self.status_code
     }
 }
-impl std::fmt::Debug for EventItemResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventItemResponse");
-        formatter.field("message", &self.message);
-        formatter.field("status_code", &self.status_code);
-        formatter.finish()
-    }
-}
 /// See [`EventItemResponse`](crate::model::EventItemResponse).
 pub mod event_item_response {
 
     /// A builder for [`EventItemResponse`](crate::model::EventItemResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) status_code: std::option::Option<i32>,
@@ -27142,7 +26241,7 @@ impl EventItemResponse {
 
 /// <p>Provides the status code and message that result from processing data for an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointItemResponse {
     /// <p>The custom message that's returned in the response as a result of processing the endpoint data.</p>
     #[doc(hidden)]
@@ -27161,19 +26260,11 @@ impl EndpointItemResponse {
         self.status_code
     }
 }
-impl std::fmt::Debug for EndpointItemResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointItemResponse");
-        formatter.field("message", &self.message);
-        formatter.field("status_code", &self.status_code);
-        formatter.finish()
-    }
-}
 /// See [`EndpointItemResponse`](crate::model::EndpointItemResponse).
 pub mod endpoint_item_response {
 
     /// A builder for [`EndpointItemResponse`](crate::model::EndpointItemResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) status_code: std::option::Option<i32>,
@@ -27217,7 +26308,7 @@ impl EndpointItemResponse {
 
 /// <p>Specifies a batch of events to process.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventsRequest {
     /// <p>The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an EventsBatch object as its value.</p>
     #[doc(hidden)]
@@ -27235,18 +26326,11 @@ impl EventsRequest {
         self.batch_item.as_ref()
     }
 }
-impl std::fmt::Debug for EventsRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventsRequest");
-        formatter.field("batch_item", &self.batch_item);
-        formatter.finish()
-    }
-}
 /// See [`EventsRequest`](crate::model::EventsRequest).
 pub mod events_request {
 
     /// A builder for [`EventsRequest`](crate::model::EventsRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_item: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::EventsBatch>,
@@ -27295,7 +26379,7 @@ impl EventsRequest {
 
 /// <p>Specifies a batch of endpoints and events to process.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventsBatch {
     /// <p>A set of properties and attributes that are associated with the endpoint.</p>
     #[doc(hidden)]
@@ -27318,19 +26402,11 @@ impl EventsBatch {
         self.events.as_ref()
     }
 }
-impl std::fmt::Debug for EventsBatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventsBatch");
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("events", &self.events);
-        formatter.finish()
-    }
-}
 /// See [`EventsBatch`](crate::model::EventsBatch).
 pub mod events_batch {
 
     /// A builder for [`EventsBatch`](crate::model::EventsBatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<crate::model::PublicEndpoint>,
         pub(crate) events: std::option::Option<
@@ -27390,7 +26466,7 @@ impl EventsBatch {
 
 /// <p>Specifies information about an event that reports data to Amazon Pinpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p>The package name of the app that's recording the event.</p>
     #[doc(hidden)]
@@ -27471,27 +26547,11 @@ impl Event {
         self.timestamp.as_deref()
     }
 }
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("app_package_name", &self.app_package_name);
-        formatter.field("app_title", &self.app_title);
-        formatter.field("app_version_code", &self.app_version_code);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("client_sdk_version", &self.client_sdk_version);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("sdk_name", &self.sdk_name);
-        formatter.field("session", &self.session);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.finish()
-    }
-}
 /// See [`Event`](crate::model::Event).
 pub mod event {
 
     /// A builder for [`Event`](crate::model::Event).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_package_name: std::option::Option<std::string::String>,
         pub(crate) app_title: std::option::Option<std::string::String>,
@@ -27667,7 +26727,7 @@ impl Event {
 
 /// <p>Provides information about a session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Session {
     /// <p>The duration of the session, in milliseconds.</p>
     #[doc(hidden)]
@@ -27700,21 +26760,11 @@ impl Session {
         self.stop_timestamp.as_deref()
     }
 }
-impl std::fmt::Debug for Session {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Session");
-        formatter.field("duration", &self.duration);
-        formatter.field("id", &self.id);
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.field("stop_timestamp", &self.stop_timestamp);
-        formatter.finish()
-    }
-}
 /// See [`Session`](crate::model::Session).
 pub mod session {
 
     /// A builder for [`Session`](crate::model::Session).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration: std::option::Option<i32>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -27788,7 +26838,7 @@ impl Session {
 
 /// <p>Specifies the properties and attributes of an endpoint that's associated with an event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicEndpoint {
     /// <p>The unique identifier for the recipient, such as a device token, email address, or mobile phone number.</p>
     #[doc(hidden)]
@@ -27880,28 +26930,11 @@ impl PublicEndpoint {
         self.user.as_ref()
     }
 }
-impl std::fmt::Debug for PublicEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicEndpoint");
-        formatter.field("address", &self.address);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("channel_type", &self.channel_type);
-        formatter.field("demographic", &self.demographic);
-        formatter.field("effective_date", &self.effective_date);
-        formatter.field("endpoint_status", &self.endpoint_status);
-        formatter.field("location", &self.location);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("opt_out", &self.opt_out);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("user", &self.user);
-        formatter.finish()
-    }
-}
 /// See [`PublicEndpoint`](crate::model::PublicEndpoint).
 pub mod public_endpoint {
 
     /// A builder for [`PublicEndpoint`](crate::model::PublicEndpoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
         pub(crate) attributes: std::option::Option<
@@ -28097,7 +27130,7 @@ impl PublicEndpoint {
 
 /// <p>Provides information about a phone number.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NumberValidateResponse {
     /// <p>The carrier or service provider that the phone number is currently registered with. In some countries and regions, this value may be the carrier or service provider that the phone number was originally registered with.</p>
     #[doc(hidden)]
@@ -28200,40 +27233,11 @@ impl NumberValidateResponse {
         self.zip_code.as_deref()
     }
 }
-impl std::fmt::Debug for NumberValidateResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NumberValidateResponse");
-        formatter.field("carrier", &self.carrier);
-        formatter.field("city", &self.city);
-        formatter.field(
-            "cleansed_phone_number_e164",
-            &self.cleansed_phone_number_e164,
-        );
-        formatter.field(
-            "cleansed_phone_number_national",
-            &self.cleansed_phone_number_national,
-        );
-        formatter.field("country", &self.country);
-        formatter.field("country_code_iso2", &self.country_code_iso2);
-        formatter.field("country_code_numeric", &self.country_code_numeric);
-        formatter.field("county", &self.county);
-        formatter.field(
-            "original_country_code_iso2",
-            &self.original_country_code_iso2,
-        );
-        formatter.field("original_phone_number", &self.original_phone_number);
-        formatter.field("phone_type", &self.phone_type);
-        formatter.field("phone_type_code", &self.phone_type_code);
-        formatter.field("timezone", &self.timezone);
-        formatter.field("zip_code", &self.zip_code);
-        formatter.finish()
-    }
-}
 /// See [`NumberValidateResponse`](crate::model::NumberValidateResponse).
 pub mod number_validate_response {
 
     /// A builder for [`NumberValidateResponse`](crate::model::NumberValidateResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) carrier: std::option::Option<std::string::String>,
         pub(crate) city: std::option::Option<std::string::String>,
@@ -28442,7 +27446,7 @@ impl NumberValidateResponse {
 
 /// <p>Specifies a phone number to validate and retrieve information about.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NumberValidateRequest {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
     #[doc(hidden)]
@@ -28461,19 +27465,11 @@ impl NumberValidateRequest {
         self.phone_number.as_deref()
     }
 }
-impl std::fmt::Debug for NumberValidateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NumberValidateRequest");
-        formatter.field("iso_country_code", &self.iso_country_code);
-        formatter.field("phone_number", &self.phone_number);
-        formatter.finish()
-    }
-}
 /// See [`NumberValidateRequest`](crate::model::NumberValidateRequest).
 pub mod number_validate_request {
 
     /// A builder for [`NumberValidateRequest`](crate::model::NumberValidateRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iso_country_code: std::option::Option<std::string::String>,
         pub(crate) phone_number: std::option::Option<std::string::String>,
@@ -28520,7 +27516,7 @@ impl NumberValidateRequest {
 
 /// <p>Provides information about all the versions of a specific message template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateVersionsResponse {
     /// <p>An array of responses, one for each version of the message template.</p>
     #[doc(hidden)]
@@ -28553,21 +27549,11 @@ impl TemplateVersionsResponse {
         self.request_id.as_deref()
     }
 }
-impl std::fmt::Debug for TemplateVersionsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateVersionsResponse");
-        formatter.field("item", &self.item);
-        formatter.field("message", &self.message);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
-    }
-}
 /// See [`TemplateVersionsResponse`](crate::model::TemplateVersionsResponse).
 pub mod template_versions_response {
 
     /// A builder for [`TemplateVersionsResponse`](crate::model::TemplateVersionsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<std::vec::Vec<crate::model::TemplateVersionResponse>>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -28644,7 +27630,7 @@ impl TemplateVersionsResponse {
 
 /// <p>Provides information about a specific version of a message template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateVersionResponse {
     /// <p>The date, in ISO 8601 format, when the version of the message template was created.</p>
     #[doc(hidden)]
@@ -28698,24 +27684,11 @@ impl TemplateVersionResponse {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for TemplateVersionResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateVersionResponse");
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`TemplateVersionResponse`](crate::model::TemplateVersionResponse).
 pub mod template_version_response {
 
     /// A builder for [`TemplateVersionResponse`](crate::model::TemplateVersionResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_date: std::option::Option<std::string::String>,
         pub(crate) default_substitutions: std::option::Option<std::string::String>,
@@ -28837,7 +27810,7 @@ impl TemplateVersionResponse {
 
 /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplatesResponse {
     /// <p>An array of responses, one for each message template that's associated with your Amazon Pinpoint account and meets any filter criteria that you specified in the request.</p>
     #[doc(hidden)]
@@ -28856,19 +27829,11 @@ impl TemplatesResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for TemplatesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplatesResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`TemplatesResponse`](crate::model::TemplatesResponse).
 pub mod templates_response {
 
     /// A builder for [`TemplatesResponse`](crate::model::TemplatesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<std::vec::Vec<crate::model::TemplateResponse>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -28921,7 +27886,7 @@ impl TemplatesResponse {
 
 /// <p>Provides information about a message template that's associated with your Amazon Pinpoint account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateResponse {
     /// <p>The Amazon Resource Name (ARN) of the message template. This value isn't included in a TemplateResponse object. To retrieve the ARN of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the ARN for.</p>
     #[doc(hidden)]
@@ -28993,26 +27958,11 @@ impl TemplateResponse {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for TemplateResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateResponse");
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`TemplateResponse`](crate::model::TemplateResponse).
 pub mod template_response {
 
     /// A builder for [`TemplateResponse`](crate::model::TemplateResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<std::string::String>,
@@ -29173,6 +28123,44 @@ impl TemplateResponse {
     }
 }
 
+/// When writing a match expression against `TemplateType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let templatetype = unimplemented!();
+/// match templatetype {
+///     TemplateType::Email => { /* ... */ },
+///     TemplateType::Inapp => { /* ... */ },
+///     TemplateType::Push => { /* ... */ },
+///     TemplateType::Sms => { /* ... */ },
+///     TemplateType::Voice => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `templatetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TemplateType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TemplateType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TemplateType::NewFeature` is defined.
+/// Specifically, when `templatetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TemplateType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -29195,8 +28183,8 @@ pub enum TemplateType {
     Sms,
     #[allow(missing_docs)] // documentation missing in model
     Voice,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TemplateType {
     fn from(s: &str) -> Self {
@@ -29206,7 +28194,7 @@ impl std::convert::From<&str> for TemplateType {
             "PUSH" => TemplateType::Push,
             "SMS" => TemplateType::Sms,
             "VOICE" => TemplateType::Voice,
-            other => TemplateType::Unknown(other.to_owned()),
+            other => TemplateType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -29226,11 +28214,11 @@ impl TemplateType {
             TemplateType::Push => "PUSH",
             TemplateType::Sms => "SMS",
             TemplateType::Voice => "VOICE",
-            TemplateType::Unknown(s) => s.as_ref(),
+            TemplateType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EMAIL", "INAPP", "PUSH", "SMS", "VOICE"]
     }
 }
@@ -29242,7 +28230,7 @@ impl AsRef<str> for TemplateType {
 
 /// <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneysResponse {
     /// <p>An array of responses, one for each journey that's associated with the application.</p>
     #[doc(hidden)]
@@ -29261,19 +28249,11 @@ impl JourneysResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for JourneysResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneysResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`JourneysResponse`](crate::model::JourneysResponse).
 pub mod journeys_response {
 
     /// A builder for [`JourneysResponse`](crate::model::JourneysResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<std::vec::Vec<crate::model::JourneyResponse>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -29326,7 +28306,7 @@ impl JourneysResponse {
 
 /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VoiceTemplateResponse {
     /// <p>The Amazon Resource Name (ARN) of the message template.</p>
     #[doc(hidden)]
@@ -29419,29 +28399,11 @@ impl VoiceTemplateResponse {
         self.voice_id.as_deref()
     }
 }
-impl std::fmt::Debug for VoiceTemplateResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VoiceTemplateResponse");
-        formatter.field("arn", &self.arn);
-        formatter.field("body", &self.body);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("language_code", &self.language_code);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("version", &self.version);
-        formatter.field("voice_id", &self.voice_id);
-        formatter.finish()
-    }
-}
 /// See [`VoiceTemplateResponse`](crate::model::VoiceTemplateResponse).
 pub mod voice_template_response {
 
     /// A builder for [`VoiceTemplateResponse`](crate::model::VoiceTemplateResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) body: std::option::Option<std::string::String>,
@@ -29643,7 +28605,7 @@ impl VoiceTemplateResponse {
 
 /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointsResponse {
     /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
     #[doc(hidden)]
@@ -29655,18 +28617,11 @@ impl EndpointsResponse {
         self.item.as_deref()
     }
 }
-impl std::fmt::Debug for EndpointsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointsResponse");
-        formatter.field("item", &self.item);
-        formatter.finish()
-    }
-}
 /// See [`EndpointsResponse`](crate::model::EndpointsResponse).
 pub mod endpoints_response {
 
     /// A builder for [`EndpointsResponse`](crate::model::EndpointsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<std::vec::Vec<crate::model::EndpointResponse>>,
     }
@@ -29705,7 +28660,7 @@ impl EndpointsResponse {
 
 /// <p>Provides information about the channel type and other settings for an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointResponse {
     /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For example, the address for a push-notification channel is typically the token provided by a push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. The address for the SMS channel is a phone number in E.164 format, such as +12065550100. The address for the email channel is an email address.</p>
     #[doc(hidden)]
@@ -29825,32 +28780,11 @@ impl EndpointResponse {
         self.user.as_ref()
     }
 }
-impl std::fmt::Debug for EndpointResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointResponse");
-        formatter.field("address", &self.address);
-        formatter.field("application_id", &self.application_id);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("channel_type", &self.channel_type);
-        formatter.field("cohort_id", &self.cohort_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("demographic", &self.demographic);
-        formatter.field("effective_date", &self.effective_date);
-        formatter.field("endpoint_status", &self.endpoint_status);
-        formatter.field("id", &self.id);
-        formatter.field("location", &self.location);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("opt_out", &self.opt_out);
-        formatter.field("request_id", &self.request_id);
-        formatter.field("user", &self.user);
-        formatter.finish()
-    }
-}
 /// See [`EndpointResponse`](crate::model::EndpointResponse).
 pub mod endpoint_response {
 
     /// A builder for [`EndpointResponse`](crate::model::EndpointResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -30100,7 +29034,7 @@ impl EndpointResponse {
 
 /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsTemplateResponse {
     /// <p>The Amazon Resource Name (ARN) of the message template.</p>
     #[doc(hidden)]
@@ -30186,28 +29120,11 @@ impl SmsTemplateResponse {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for SmsTemplateResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsTemplateResponse");
-        formatter.field("arn", &self.arn);
-        formatter.field("body", &self.body);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("recommender_id", &self.recommender_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`SmsTemplateResponse`](crate::model::SmsTemplateResponse).
 pub mod sms_template_response {
 
     /// A builder for [`SmsTemplateResponse`](crate::model::SmsTemplateResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) body: std::option::Option<std::string::String>,
@@ -30397,7 +29314,7 @@ impl SmsTemplateResponse {
 
 /// <p>Provides information about all the segments that are associated with an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentsResponse {
     /// <p>An array of responses, one for each segment that's associated with the application (Segments resource) or each version of a segment that's associated with the application (Segment Versions resource).</p>
     #[doc(hidden)]
@@ -30416,19 +29333,11 @@ impl SegmentsResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for SegmentsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentsResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`SegmentsResponse`](crate::model::SegmentsResponse).
 pub mod segments_response {
 
     /// A builder for [`SegmentsResponse`](crate::model::SegmentsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<std::vec::Vec<crate::model::SegmentResponse>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -30481,7 +29390,7 @@ impl SegmentsResponse {
 
 /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportJobsResponse {
     /// <p>An array of responses, one for each import job that's associated with the application (Import Jobs resource) or segment (Segment Import Jobs resource).</p>
     #[doc(hidden)]
@@ -30500,19 +29409,11 @@ impl ImportJobsResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ImportJobsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportJobsResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ImportJobsResponse`](crate::model::ImportJobsResponse).
 pub mod import_jobs_response {
 
     /// A builder for [`ImportJobsResponse`](crate::model::ImportJobsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<std::vec::Vec<crate::model::ImportJobResponse>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -30565,7 +29466,7 @@ impl ImportJobsResponse {
 
 /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportJobResponse {
     /// <p>The unique identifier for the application that's associated with the import job.</p>
     #[doc(hidden)]
@@ -30661,30 +29562,11 @@ impl ImportJobResponse {
         self.r#type.as_deref()
     }
 }
-impl std::fmt::Debug for ImportJobResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportJobResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("completed_pieces", &self.completed_pieces);
-        formatter.field("completion_date", &self.completion_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("definition", &self.definition);
-        formatter.field("failed_pieces", &self.failed_pieces);
-        formatter.field("failures", &self.failures);
-        formatter.field("id", &self.id);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("total_failures", &self.total_failures);
-        formatter.field("total_pieces", &self.total_pieces);
-        formatter.field("total_processed", &self.total_processed);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`ImportJobResponse`](crate::model::ImportJobResponse).
 pub mod import_job_response {
 
     /// A builder for [`ImportJobResponse`](crate::model::ImportJobResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) completed_pieces: std::option::Option<i32>,
@@ -30882,6 +29764,48 @@ impl ImportJobResponse {
     }
 }
 
+/// When writing a match expression against `JobStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let jobstatus = unimplemented!();
+/// match jobstatus {
+///     JobStatus::Completed => { /* ... */ },
+///     JobStatus::Completing => { /* ... */ },
+///     JobStatus::Created => { /* ... */ },
+///     JobStatus::Failed => { /* ... */ },
+///     JobStatus::Failing => { /* ... */ },
+///     JobStatus::Initializing => { /* ... */ },
+///     JobStatus::PendingJob => { /* ... */ },
+///     JobStatus::PreparingForInitialization => { /* ... */ },
+///     JobStatus::Processing => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `jobstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `JobStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `JobStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `JobStatus::NewFeature` is defined.
+/// Specifically, when `jobstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `JobStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -30912,8 +29836,8 @@ pub enum JobStatus {
     PreparingForInitialization,
     #[allow(missing_docs)] // documentation missing in model
     Processing,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for JobStatus {
     fn from(s: &str) -> Self {
@@ -30927,7 +29851,7 @@ impl std::convert::From<&str> for JobStatus {
             "PENDING_JOB" => JobStatus::PendingJob,
             "PREPARING_FOR_INITIALIZATION" => JobStatus::PreparingForInitialization,
             "PROCESSING" => JobStatus::Processing,
-            other => JobStatus::Unknown(other.to_owned()),
+            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -30951,11 +29875,11 @@ impl JobStatus {
             JobStatus::PendingJob => "PENDING_JOB",
             JobStatus::PreparingForInitialization => "PREPARING_FOR_INITIALIZATION",
             JobStatus::Processing => "PROCESSING",
-            JobStatus::Unknown(s) => s.as_ref(),
+            JobStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "COMPLETING",
@@ -30977,7 +29901,7 @@ impl AsRef<str> for JobStatus {
 
 /// <p>Provides information about the resource settings for a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportJobResource {
     /// <p>Specifies whether the import job creates a segment that contains the endpoints, when the endpoint definitions are imported.</p>
     #[doc(hidden)]
@@ -31054,25 +29978,11 @@ impl ImportJobResource {
         self.segment_name.as_deref()
     }
 }
-impl std::fmt::Debug for ImportJobResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportJobResource");
-        formatter.field("define_segment", &self.define_segment);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("format", &self.format);
-        formatter.field("register_endpoints", &self.register_endpoints);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("s3_url", &self.s3_url);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("segment_name", &self.segment_name);
-        formatter.finish()
-    }
-}
 /// See [`ImportJobResource`](crate::model::ImportJobResource).
 pub mod import_job_resource {
 
     /// A builder for [`ImportJobResource`](crate::model::ImportJobResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) define_segment: std::option::Option<bool>,
         pub(crate) external_id: std::option::Option<std::string::String>,
@@ -31204,7 +30114,7 @@ impl ImportJobResource {
 
 /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportJobsResponse {
     /// <p>An array of responses, one for each export job that's associated with the application (Export Jobs resource) or segment (Segment Export Jobs resource).</p>
     #[doc(hidden)]
@@ -31223,19 +30133,11 @@ impl ExportJobsResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ExportJobsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportJobsResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ExportJobsResponse`](crate::model::ExportJobsResponse).
 pub mod export_jobs_response {
 
     /// A builder for [`ExportJobsResponse`](crate::model::ExportJobsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<std::vec::Vec<crate::model::ExportJobResponse>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -31288,7 +30190,7 @@ impl ExportJobsResponse {
 
 /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportJobResponse {
     /// <p>The unique identifier for the application that's associated with the export job.</p>
     #[doc(hidden)]
@@ -31384,30 +30286,11 @@ impl ExportJobResponse {
         self.r#type.as_deref()
     }
 }
-impl std::fmt::Debug for ExportJobResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportJobResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("completed_pieces", &self.completed_pieces);
-        formatter.field("completion_date", &self.completion_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("definition", &self.definition);
-        formatter.field("failed_pieces", &self.failed_pieces);
-        formatter.field("failures", &self.failures);
-        formatter.field("id", &self.id);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("total_failures", &self.total_failures);
-        formatter.field("total_pieces", &self.total_pieces);
-        formatter.field("total_processed", &self.total_processed);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`ExportJobResponse`](crate::model::ExportJobResponse).
 pub mod export_job_response {
 
     /// A builder for [`ExportJobResponse`](crate::model::ExportJobResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) completed_pieces: std::option::Option<i32>,
@@ -31607,7 +30490,7 @@ impl ExportJobResponse {
 
 /// <p>Provides information about the resource settings for a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportJobResource {
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location where the endpoint definitions were exported to.</p>
     #[doc(hidden)]
@@ -31648,21 +30531,11 @@ impl ExportJobResource {
         self.segment_version
     }
 }
-impl std::fmt::Debug for ExportJobResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportJobResource");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("s3_url_prefix", &self.s3_url_prefix);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("segment_version", &self.segment_version);
-        formatter.finish()
-    }
-}
 /// See [`ExportJobResource`](crate::model::ExportJobResource).
 pub mod export_job_resource {
 
     /// A builder for [`ExportJobResource`](crate::model::ExportJobResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) s3_url_prefix: std::option::Option<std::string::String>,
@@ -31741,7 +30614,7 @@ impl ExportJobResource {
 
 /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecommenderConfigurationsResponse {
     /// <p>An array of responses, one for each recommender model configuration that's associated with your Amazon Pinpoint account.</p>
     #[doc(hidden)]
@@ -31760,19 +30633,11 @@ impl ListRecommenderConfigurationsResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRecommenderConfigurationsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRecommenderConfigurationsResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListRecommenderConfigurationsResponse`](crate::model::ListRecommenderConfigurationsResponse).
 pub mod list_recommender_configurations_response {
 
     /// A builder for [`ListRecommenderConfigurationsResponse`](crate::model::ListRecommenderConfigurationsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item:
             std::option::Option<std::vec::Vec<crate::model::RecommenderConfigurationResponse>>,
@@ -31828,7 +30693,7 @@ impl ListRecommenderConfigurationsResponse {
 
 /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PushNotificationTemplateResponse {
     /// <p>The message template that's used for the ADM (Amazon Device Messaging) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
     #[doc(hidden)]
@@ -31948,32 +30813,11 @@ impl PushNotificationTemplateResponse {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for PushNotificationTemplateResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PushNotificationTemplateResponse");
-        formatter.field("adm", &self.adm);
-        formatter.field("apns", &self.apns);
-        formatter.field("arn", &self.arn);
-        formatter.field("baidu", &self.baidu);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("gcm", &self.gcm);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("recommender_id", &self.recommender_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`PushNotificationTemplateResponse`](crate::model::PushNotificationTemplateResponse).
 pub mod push_notification_template_response {
 
     /// A builder for [`PushNotificationTemplateResponse`](crate::model::PushNotificationTemplateResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adm: std::option::Option<crate::model::AndroidPushNotificationTemplate>,
         pub(crate) apns: std::option::Option<crate::model::ApnsPushNotificationTemplate>,
@@ -32230,7 +31074,7 @@ impl PushNotificationTemplateResponse {
 
 /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyExecutionMetricsResponse {
     /// <p>The unique identifier for the application that the metric applies to.</p>
     #[doc(hidden)]
@@ -32267,21 +31111,11 @@ impl JourneyExecutionMetricsResponse {
         self.metrics.as_ref()
     }
 }
-impl std::fmt::Debug for JourneyExecutionMetricsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyExecutionMetricsResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("journey_id", &self.journey_id);
-        formatter.field("last_evaluated_time", &self.last_evaluated_time);
-        formatter.field("metrics", &self.metrics);
-        formatter.finish()
-    }
-}
 /// See [`JourneyExecutionMetricsResponse`](crate::model::JourneyExecutionMetricsResponse).
 pub mod journey_execution_metrics_response {
 
     /// A builder for [`JourneyExecutionMetricsResponse`](crate::model::JourneyExecutionMetricsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) journey_id: std::option::Option<std::string::String>,
@@ -32372,7 +31206,7 @@ impl JourneyExecutionMetricsResponse {
 
 /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyExecutionActivityMetricsResponse {
     /// <p>The type of activity that the metric applies to. Possible values are:</p>
     /// <ul>
@@ -32439,23 +31273,11 @@ impl JourneyExecutionActivityMetricsResponse {
         self.metrics.as_ref()
     }
 }
-impl std::fmt::Debug for JourneyExecutionActivityMetricsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyExecutionActivityMetricsResponse");
-        formatter.field("activity_type", &self.activity_type);
-        formatter.field("application_id", &self.application_id);
-        formatter.field("journey_activity_id", &self.journey_activity_id);
-        formatter.field("journey_id", &self.journey_id);
-        formatter.field("last_evaluated_time", &self.last_evaluated_time);
-        formatter.field("metrics", &self.metrics);
-        formatter.finish()
-    }
-}
 /// See [`JourneyExecutionActivityMetricsResponse`](crate::model::JourneyExecutionActivityMetricsResponse).
 pub mod journey_execution_activity_metrics_response {
 
     /// A builder for [`JourneyExecutionActivityMetricsResponse`](crate::model::JourneyExecutionActivityMetricsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_type: std::option::Option<std::string::String>,
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -32592,7 +31414,7 @@ impl JourneyExecutionActivityMetricsResponse {
 
 /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JourneyDateRangeKpiResponse {
     /// <p>The unique identifier for the application that the metric applies to.</p>
     #[doc(hidden)]
@@ -32646,24 +31468,11 @@ impl JourneyDateRangeKpiResponse {
         self.start_time.as_ref()
     }
 }
-impl std::fmt::Debug for JourneyDateRangeKpiResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JourneyDateRangeKpiResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("journey_id", &self.journey_id);
-        formatter.field("kpi_name", &self.kpi_name);
-        formatter.field("kpi_result", &self.kpi_result);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
-    }
-}
 /// See [`JourneyDateRangeKpiResponse`](crate::model::JourneyDateRangeKpiResponse).
 pub mod journey_date_range_kpi_response {
 
     /// A builder for [`JourneyDateRangeKpiResponse`](crate::model::JourneyDateRangeKpiResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -32779,7 +31588,7 @@ impl JourneyDateRangeKpiResponse {
 
 /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BaseKpiResult {
     /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
     #[doc(hidden)]
@@ -32791,18 +31600,11 @@ impl BaseKpiResult {
         self.rows.as_deref()
     }
 }
-impl std::fmt::Debug for BaseKpiResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BaseKpiResult");
-        formatter.field("rows", &self.rows);
-        formatter.finish()
-    }
-}
 /// See [`BaseKpiResult`](crate::model::BaseKpiResult).
 pub mod base_kpi_result {
 
     /// A builder for [`BaseKpiResult`](crate::model::BaseKpiResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rows: std::option::Option<std::vec::Vec<crate::model::ResultRow>>,
     }
@@ -32841,7 +31643,7 @@ impl BaseKpiResult {
 
 /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultRow {
     /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
     #[doc(hidden)]
@@ -32860,19 +31662,11 @@ impl ResultRow {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for ResultRow {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultRow");
-        formatter.field("grouped_bys", &self.grouped_bys);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`ResultRow`](crate::model::ResultRow).
 pub mod result_row {
 
     /// A builder for [`ResultRow`](crate::model::ResultRow).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grouped_bys: std::option::Option<std::vec::Vec<crate::model::ResultRowValue>>,
         pub(crate) values: std::option::Option<std::vec::Vec<crate::model::ResultRowValue>>,
@@ -32934,7 +31728,7 @@ impl ResultRow {
 
 /// <p>Provides a single value and metadata about that value as part of an array of query results for a standard metric that applies to an application, campaign, or journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultRowValue {
     /// <p>The friendly name of the metric whose value is specified by the Value property.</p>
     #[doc(hidden)]
@@ -32960,20 +31754,11 @@ impl ResultRowValue {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for ResultRowValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultRowValue");
-        formatter.field("key", &self.key);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`ResultRowValue`](crate::model::ResultRowValue).
 pub mod result_row_value {
 
     /// A builder for [`ResultRowValue`](crate::model::ResultRowValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -33029,7 +31814,7 @@ impl ResultRowValue {
 
 /// <p>In-App Template Response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppTemplateResponse {
     /// <p>The resource arn of the template.</p>
     #[doc(hidden)]
@@ -33119,28 +31904,11 @@ impl InAppTemplateResponse {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for InAppTemplateResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppTemplateResponse");
-        formatter.field("arn", &self.arn);
-        formatter.field("content", &self.content);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("custom_config", &self.custom_config);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("layout", &self.layout);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`InAppTemplateResponse`](crate::model::InAppTemplateResponse).
 pub mod in_app_template_response {
 
     /// A builder for [`InAppTemplateResponse`](crate::model::InAppTemplateResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
@@ -33350,7 +32118,7 @@ impl InAppTemplateResponse {
 
 /// <p>Get in-app messages response object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppMessagesResponse {
     /// <p>List of targeted in-app message campaigns.</p>
     #[doc(hidden)]
@@ -33365,18 +32133,11 @@ impl InAppMessagesResponse {
         self.in_app_message_campaigns.as_deref()
     }
 }
-impl std::fmt::Debug for InAppMessagesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppMessagesResponse");
-        formatter.field("in_app_message_campaigns", &self.in_app_message_campaigns);
-        formatter.finish()
-    }
-}
 /// See [`InAppMessagesResponse`](crate::model::InAppMessagesResponse).
 pub mod in_app_messages_response {
 
     /// A builder for [`InAppMessagesResponse`](crate::model::InAppMessagesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) in_app_message_campaigns:
             std::option::Option<std::vec::Vec<crate::model::InAppMessageCampaign>>,
@@ -33421,7 +32182,7 @@ impl InAppMessagesResponse {
 
 /// <p>Targeted in-app message campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppMessageCampaign {
     /// <p>Campaign id of the corresponding campaign.</p>
     #[doc(hidden)]
@@ -33482,25 +32243,11 @@ impl InAppMessageCampaign {
         self.treatment_id.as_deref()
     }
 }
-impl std::fmt::Debug for InAppMessageCampaign {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppMessageCampaign");
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.field("daily_cap", &self.daily_cap);
-        formatter.field("in_app_message", &self.in_app_message);
-        formatter.field("priority", &self.priority);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("session_cap", &self.session_cap);
-        formatter.field("total_cap", &self.total_cap);
-        formatter.field("treatment_id", &self.treatment_id);
-        formatter.finish()
-    }
-}
 /// See [`InAppMessageCampaign`](crate::model::InAppMessageCampaign).
 pub mod in_app_message_campaign {
 
     /// A builder for [`InAppMessageCampaign`](crate::model::InAppMessageCampaign).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_id: std::option::Option<std::string::String>,
         pub(crate) daily_cap: std::option::Option<i32>,
@@ -33622,7 +32369,7 @@ impl InAppMessageCampaign {
 
 /// <p>Schedule of the campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppCampaignSchedule {
     /// <p>The scheduled time after which the in-app message should not be shown. Timestamp is in ISO 8601 format.</p>
     #[doc(hidden)]
@@ -33648,20 +32395,11 @@ impl InAppCampaignSchedule {
         self.quiet_time.as_ref()
     }
 }
-impl std::fmt::Debug for InAppCampaignSchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppCampaignSchedule");
-        formatter.field("end_date", &self.end_date);
-        formatter.field("event_filter", &self.event_filter);
-        formatter.field("quiet_time", &self.quiet_time);
-        formatter.finish()
-    }
-}
 /// See [`InAppCampaignSchedule`](crate::model::InAppCampaignSchedule).
 pub mod in_app_campaign_schedule {
 
     /// A builder for [`InAppCampaignSchedule`](crate::model::InAppCampaignSchedule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) end_date: std::option::Option<std::string::String>,
         pub(crate) event_filter: std::option::Option<crate::model::CampaignEventFilter>,
@@ -33723,7 +32461,7 @@ impl InAppCampaignSchedule {
 
 /// <p>Provides all fields required for building an in-app message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InAppMessage {
     /// <p>In-app message content.</p>
     #[doc(hidden)]
@@ -33753,20 +32491,11 @@ impl InAppMessage {
         self.layout.as_ref()
     }
 }
-impl std::fmt::Debug for InAppMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InAppMessage");
-        formatter.field("content", &self.content);
-        formatter.field("custom_config", &self.custom_config);
-        formatter.field("layout", &self.layout);
-        formatter.finish()
-    }
-}
 /// See [`InAppMessage`](crate::model::InAppMessage).
 pub mod in_app_message {
 
     /// A builder for [`InAppMessage`](crate::model::InAppMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
         pub(crate) custom_config: std::option::Option<
@@ -33848,7 +32577,7 @@ impl InAppMessage {
 
 /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailTemplateResponse {
     /// <p>The Amazon Resource Name (ARN) of the message template.</p>
     #[doc(hidden)]
@@ -33948,30 +32677,11 @@ impl EmailTemplateResponse {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for EmailTemplateResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailTemplateResponse");
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("default_substitutions", &self.default_substitutions);
-        formatter.field("html_part", &self.html_part);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("recommender_id", &self.recommender_id);
-        formatter.field("subject", &self.subject);
-        formatter.field("tags", &self.tags);
-        formatter.field("template_description", &self.template_description);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("text_part", &self.text_part);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`EmailTemplateResponse`](crate::model::EmailTemplateResponse).
 pub mod email_template_response {
 
     /// A builder for [`EmailTemplateResponse`](crate::model::EmailTemplateResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<std::string::String>,
@@ -34185,7 +32895,7 @@ impl EmailTemplateResponse {
 
 /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelsResponse {
     /// <p>A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the key and the Channel is the value.</p>
     #[doc(hidden)]
@@ -34203,18 +32913,11 @@ impl ChannelsResponse {
         self.channels.as_ref()
     }
 }
-impl std::fmt::Debug for ChannelsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelsResponse");
-        formatter.field("channels", &self.channels);
-        formatter.finish()
-    }
-}
 /// See [`ChannelsResponse`](crate::model::ChannelsResponse).
 pub mod channels_response {
 
     /// A builder for [`ChannelsResponse`](crate::model::ChannelsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channels: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::ChannelResponse>,
@@ -34263,7 +32966,7 @@ impl ChannelsResponse {
 
 /// <p>Provides information about the general settings and status of a channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChannelResponse {
     /// <p>The unique identifier for the application.</p>
     #[doc(hidden)]
@@ -34331,26 +33034,11 @@ impl ChannelResponse {
         self.version
     }
 }
-impl std::fmt::Debug for ChannelResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("has_credential", &self.has_credential);
-        formatter.field("id", &self.id);
-        formatter.field("is_archived", &self.is_archived);
-        formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`ChannelResponse`](crate::model::ChannelResponse).
 pub mod channel_response {
 
     /// A builder for [`ChannelResponse`](crate::model::ChannelResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<std::string::String>,
@@ -34490,7 +33178,7 @@ impl ChannelResponse {
 
 /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignsResponse {
     /// <p>An array of responses, one for each campaign that's associated with the application.</p>
     #[doc(hidden)]
@@ -34509,19 +33197,11 @@ impl CampaignsResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for CampaignsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignsResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`CampaignsResponse`](crate::model::CampaignsResponse).
 pub mod campaigns_response {
 
     /// A builder for [`CampaignsResponse`](crate::model::CampaignsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<std::vec::Vec<crate::model::CampaignResponse>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -34574,7 +33254,7 @@ impl CampaignsResponse {
 
 /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CampaignDateRangeKpiResponse {
     /// <p>The unique identifier for the application that the metric applies to.</p>
     #[doc(hidden)]
@@ -34628,24 +33308,11 @@ impl CampaignDateRangeKpiResponse {
         self.start_time.as_ref()
     }
 }
-impl std::fmt::Debug for CampaignDateRangeKpiResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CampaignDateRangeKpiResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("kpi_name", &self.kpi_name);
-        formatter.field("kpi_result", &self.kpi_result);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
-    }
-}
 /// See [`CampaignDateRangeKpiResponse`](crate::model::CampaignDateRangeKpiResponse).
 pub mod campaign_date_range_kpi_response {
 
     /// A builder for [`CampaignDateRangeKpiResponse`](crate::model::CampaignDateRangeKpiResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) campaign_id: std::option::Option<std::string::String>,
@@ -34761,7 +33428,7 @@ impl CampaignDateRangeKpiResponse {
 
 /// <p>Provides information about the activities that were performed by a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivitiesResponse {
     /// <p>An array of responses, one for each activity that was performed by the campaign.</p>
     #[doc(hidden)]
@@ -34780,19 +33447,11 @@ impl ActivitiesResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ActivitiesResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivitiesResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ActivitiesResponse`](crate::model::ActivitiesResponse).
 pub mod activities_response {
 
     /// A builder for [`ActivitiesResponse`](crate::model::ActivitiesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<std::vec::Vec<crate::model::ActivityResponse>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -34845,7 +33504,7 @@ impl ActivitiesResponse {
 
 /// <p>Provides information about an activity that was performed by a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityResponse {
     /// <p>The unique identifier for the application that the campaign applies to.</p>
     #[doc(hidden)]
@@ -34941,30 +33600,11 @@ impl ActivityResponse {
         self.treatment_id.as_deref()
     }
 }
-impl std::fmt::Debug for ActivityResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("campaign_id", &self.campaign_id);
-        formatter.field("end", &self.end);
-        formatter.field("id", &self.id);
-        formatter.field("result", &self.result);
-        formatter.field("scheduled_start", &self.scheduled_start);
-        formatter.field("start", &self.start);
-        formatter.field("state", &self.state);
-        formatter.field("successful_endpoint_count", &self.successful_endpoint_count);
-        formatter.field("timezones_completed_count", &self.timezones_completed_count);
-        formatter.field("timezones_total_count", &self.timezones_total_count);
-        formatter.field("total_endpoint_count", &self.total_endpoint_count);
-        formatter.field("treatment_id", &self.treatment_id);
-        formatter.finish()
-    }
-}
 /// See [`ActivityResponse`](crate::model::ActivityResponse).
 pub mod activity_response {
 
     /// A builder for [`ActivityResponse`](crate::model::ActivityResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) campaign_id: std::option::Option<std::string::String>,
@@ -35146,7 +33786,7 @@ impl ActivityResponse {
 
 /// <p>Provides information about all of your applications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationsResponse {
     /// <p>An array of responses, one for each application that was returned.</p>
     #[doc(hidden)]
@@ -35165,19 +33805,11 @@ impl ApplicationsResponse {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ApplicationsResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationsResponse");
-        formatter.field("item", &self.item);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ApplicationsResponse`](crate::model::ApplicationsResponse).
 pub mod applications_response {
 
     /// A builder for [`ApplicationsResponse`](crate::model::ApplicationsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<std::vec::Vec<crate::model::ApplicationResponse>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -35230,7 +33862,7 @@ impl ApplicationsResponse {
 
 /// <p>Provides information about an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationResponse {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
@@ -35274,22 +33906,11 @@ impl ApplicationResponse {
         self.creation_date.as_deref()
     }
 }
-impl std::fmt::Debug for ApplicationResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationResponse");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
-    }
-}
 /// See [`ApplicationResponse`](crate::model::ApplicationResponse).
 pub mod application_response {
 
     /// A builder for [`ApplicationResponse`](crate::model::ApplicationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -35389,7 +34010,7 @@ impl ApplicationResponse {
 
 /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationDateRangeKpiResponse {
     /// <p>The unique identifier for the application that the metric applies to.</p>
     #[doc(hidden)]
@@ -35436,23 +34057,11 @@ impl ApplicationDateRangeKpiResponse {
         self.start_time.as_ref()
     }
 }
-impl std::fmt::Debug for ApplicationDateRangeKpiResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationDateRangeKpiResponse");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("kpi_name", &self.kpi_name);
-        formatter.field("kpi_result", &self.kpi_result);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
-    }
-}
 /// See [`ApplicationDateRangeKpiResponse`](crate::model::ApplicationDateRangeKpiResponse).
 pub mod application_date_range_kpi_response {
 
     /// A builder for [`ApplicationDateRangeKpiResponse`](crate::model::ApplicationDateRangeKpiResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -35556,7 +34165,7 @@ impl ApplicationDateRangeKpiResponse {
 
 /// <p>Provides information about a request to create a message template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTemplateMessageBody {
     /// <p>The Amazon Resource Name (ARN) of the message template that was created.</p>
     #[doc(hidden)]
@@ -35582,20 +34191,11 @@ impl CreateTemplateMessageBody {
         self.request_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTemplateMessageBody {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTemplateMessageBody");
-        formatter.field("arn", &self.arn);
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateTemplateMessageBody`](crate::model::CreateTemplateMessageBody).
 pub mod create_template_message_body {
 
     /// A builder for [`CreateTemplateMessageBody`](crate::model::CreateTemplateMessageBody).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -35651,7 +34251,7 @@ impl CreateTemplateMessageBody {
 
 /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRecommenderConfigurationShape {
     /// <p>A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p>
     /// <p>In the map, the key is the name of a custom attribute and the value is a custom display name for that attribute. The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The following restrictions apply to these names:</p>
@@ -35747,44 +34347,11 @@ impl CreateRecommenderConfigurationShape {
         self.recommendations_per_message
     }
 }
-impl std::fmt::Debug for CreateRecommenderConfigurationShape {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRecommenderConfigurationShape");
-        formatter.field("attributes", &self.attributes);
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "recommendation_provider_id_type",
-            &self.recommendation_provider_id_type,
-        );
-        formatter.field(
-            "recommendation_provider_role_arn",
-            &self.recommendation_provider_role_arn,
-        );
-        formatter.field(
-            "recommendation_provider_uri",
-            &self.recommendation_provider_uri,
-        );
-        formatter.field(
-            "recommendation_transformer_uri",
-            &self.recommendation_transformer_uri,
-        );
-        formatter.field(
-            "recommendations_display_name",
-            &self.recommendations_display_name,
-        );
-        formatter.field(
-            "recommendations_per_message",
-            &self.recommendations_per_message,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CreateRecommenderConfigurationShape`](crate::model::CreateRecommenderConfigurationShape).
 pub mod create_recommender_configuration_shape {
 
     /// A builder for [`CreateRecommenderConfigurationShape`](crate::model::CreateRecommenderConfigurationShape).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -35983,7 +34550,7 @@ impl CreateRecommenderConfigurationShape {
 
 /// <p>Provides information about a request to create a message template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateCreateMessageBody {
     /// <p>The Amazon Resource Name (ARN) of the message template that was created.</p>
     #[doc(hidden)]
@@ -36009,20 +34576,11 @@ impl TemplateCreateMessageBody {
         self.request_id.as_deref()
     }
 }
-impl std::fmt::Debug for TemplateCreateMessageBody {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateCreateMessageBody");
-        formatter.field("arn", &self.arn);
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
-    }
-}
 /// See [`TemplateCreateMessageBody`](crate::model::TemplateCreateMessageBody).
 pub mod template_create_message_body {
 
     /// A builder for [`TemplateCreateMessageBody`](crate::model::TemplateCreateMessageBody).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -36078,7 +34636,7 @@ impl TemplateCreateMessageBody {
 
 /// <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportJobRequest {
     /// <p>Specifies whether to create a segment that contains the endpoints, when the endpoint definitions are imported.</p>
     #[doc(hidden)]
@@ -36153,25 +34711,11 @@ impl ImportJobRequest {
         self.segment_name.as_deref()
     }
 }
-impl std::fmt::Debug for ImportJobRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportJobRequest");
-        formatter.field("define_segment", &self.define_segment);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("format", &self.format);
-        formatter.field("register_endpoints", &self.register_endpoints);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("s3_url", &self.s3_url);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("segment_name", &self.segment_name);
-        formatter.finish()
-    }
-}
 /// See [`ImportJobRequest`](crate::model::ImportJobRequest).
 pub mod import_job_request {
 
     /// A builder for [`ImportJobRequest`](crate::model::ImportJobRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) define_segment: std::option::Option<bool>,
         pub(crate) external_id: std::option::Option<std::string::String>,
@@ -36301,7 +34845,7 @@ impl ImportJobRequest {
 
 /// <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportJobRequest {
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location where you want to export endpoint definitions to.</p>
     #[doc(hidden)]
@@ -36342,21 +34886,11 @@ impl ExportJobRequest {
         self.segment_version
     }
 }
-impl std::fmt::Debug for ExportJobRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportJobRequest");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("s3_url_prefix", &self.s3_url_prefix);
-        formatter.field("segment_id", &self.segment_id);
-        formatter.field("segment_version", &self.segment_version);
-        formatter.finish()
-    }
-}
 /// See [`ExportJobRequest`](crate::model::ExportJobRequest).
 pub mod export_job_request {
 
     /// A builder for [`ExportJobRequest`](crate::model::ExportJobRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) s3_url_prefix: std::option::Option<std::string::String>,
@@ -36435,7 +34969,7 @@ impl ExportJobRequest {
 
 /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApplicationRequest {
     /// <p>The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
@@ -36458,19 +34992,11 @@ impl CreateApplicationRequest {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateApplicationRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateApplicationRequest");
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`CreateApplicationRequest`](crate::model::CreateApplicationRequest).
 pub mod create_application_request {
 
     /// A builder for [`CreateApplicationRequest`](crate::model::CreateApplicationRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<

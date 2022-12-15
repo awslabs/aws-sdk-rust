@@ -5,7 +5,7 @@
  */
 
 use aws_smithy_json::deserialize::token::skip_value;
-use aws_smithy_json::deserialize::{json_token_iter, Error as DeserializeError, Token};
+use aws_smithy_json::deserialize::{error::DeserializeError, json_token_iter, Token};
 use aws_smithy_types::Error as SmithyError;
 use bytes::Bytes;
 use http::header::ToStrError;

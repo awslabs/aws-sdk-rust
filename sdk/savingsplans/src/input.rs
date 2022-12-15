@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_savings_plan_input {
 
     /// A builder for [`CreateSavingsPlanInput`](crate::input::CreateSavingsPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_offering_id: std::option::Option<std::string::String>,
         pub(crate) commitment: std::option::Option<std::string::String>,
@@ -104,8 +104,10 @@ pub mod create_savings_plan_input {
         /// Consumes the builder and constructs a [`CreateSavingsPlanInput`](crate::input::CreateSavingsPlanInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateSavingsPlanInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateSavingsPlanInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateSavingsPlanInput {
                 savings_plan_offering_id: self.savings_plan_offering_id,
                 commitment: self.commitment,
@@ -130,7 +132,7 @@ impl CreateSavingsPlanInput {
             crate::operation::CreateSavingsPlan,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -139,7 +141,7 @@ impl CreateSavingsPlanInput {
             fn uri_base(
                 _input: &crate::input::CreateSavingsPlanInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/CreateSavingsPlan").expect("formatting should succeed");
                 Ok(())
             }
@@ -147,8 +149,10 @@ impl CreateSavingsPlanInput {
             fn update_http_builder(
                 input: &crate::input::CreateSavingsPlanInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -232,7 +236,7 @@ impl CreateSavingsPlanInput {
 pub mod delete_queued_savings_plan_input {
 
     /// A builder for [`DeleteQueuedSavingsPlanInput`](crate::input::DeleteQueuedSavingsPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_id: std::option::Option<std::string::String>,
     }
@@ -255,7 +259,7 @@ pub mod delete_queued_savings_plan_input {
             self,
         ) -> Result<
             crate::input::DeleteQueuedSavingsPlanInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteQueuedSavingsPlanInput {
                 savings_plan_id: self.savings_plan_id,
@@ -276,13 +280,13 @@ impl DeleteQueuedSavingsPlanInput {
             crate::operation::DeleteQueuedSavingsPlan,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteQueuedSavingsPlanInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DeleteQueuedSavingsPlan").expect("formatting should succeed");
                 Ok(())
             }
@@ -290,8 +294,10 @@ impl DeleteQueuedSavingsPlanInput {
             fn update_http_builder(
                 input: &crate::input::DeleteQueuedSavingsPlanInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -377,7 +383,7 @@ impl DeleteQueuedSavingsPlanInput {
 pub mod describe_savings_plan_rates_input {
 
     /// A builder for [`DescribeSavingsPlanRatesInput`](crate::input::DescribeSavingsPlanRatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_id: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::SavingsPlanRateFilter>>,
@@ -442,7 +448,7 @@ pub mod describe_savings_plan_rates_input {
             self,
         ) -> Result<
             crate::input::DescribeSavingsPlanRatesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeSavingsPlanRatesInput {
                 savings_plan_id: self.savings_plan_id,
@@ -466,13 +472,13 @@ impl DescribeSavingsPlanRatesInput {
             crate::operation::DescribeSavingsPlanRates,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeSavingsPlanRatesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DescribeSavingsPlanRates").expect("formatting should succeed");
                 Ok(())
             }
@@ -480,8 +486,10 @@ impl DescribeSavingsPlanRatesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeSavingsPlanRatesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -567,7 +575,7 @@ impl DescribeSavingsPlanRatesInput {
 pub mod describe_savings_plans_input {
 
     /// A builder for [`DescribeSavingsPlansInput`](crate::input::DescribeSavingsPlansInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) savings_plan_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -676,8 +684,10 @@ pub mod describe_savings_plans_input {
         /// Consumes the builder and constructs a [`DescribeSavingsPlansInput`](crate::input::DescribeSavingsPlansInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeSavingsPlansInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeSavingsPlansInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeSavingsPlansInput {
                 savings_plan_arns: self.savings_plan_arns,
                 savings_plan_ids: self.savings_plan_ids,
@@ -702,13 +712,13 @@ impl DescribeSavingsPlansInput {
             crate::operation::DescribeSavingsPlans,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeSavingsPlansInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DescribeSavingsPlans").expect("formatting should succeed");
                 Ok(())
             }
@@ -716,8 +726,10 @@ impl DescribeSavingsPlansInput {
             fn update_http_builder(
                 input: &crate::input::DescribeSavingsPlansInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -803,7 +815,7 @@ impl DescribeSavingsPlansInput {
 pub mod describe_savings_plans_offering_rates_input {
 
     /// A builder for [`DescribeSavingsPlansOfferingRatesInput`](crate::input::DescribeSavingsPlansOfferingRatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_offering_ids:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1008,7 +1020,7 @@ pub mod describe_savings_plans_offering_rates_input {
             self,
         ) -> Result<
             crate::input::DescribeSavingsPlansOfferingRatesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeSavingsPlansOfferingRatesInput {
                 savings_plan_offering_ids: self.savings_plan_offering_ids,
@@ -1038,13 +1050,13 @@ impl DescribeSavingsPlansOfferingRatesInput {
             crate::operation::DescribeSavingsPlansOfferingRates,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeSavingsPlansOfferingRatesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DescribeSavingsPlansOfferingRates")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1053,8 +1065,10 @@ impl DescribeSavingsPlansOfferingRatesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeSavingsPlansOfferingRatesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1137,7 +1151,7 @@ impl DescribeSavingsPlansOfferingRatesInput {
 pub mod describe_savings_plans_offerings_input {
 
     /// A builder for [`DescribeSavingsPlansOfferingsInput`](crate::input::DescribeSavingsPlansOfferingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) payment_options:
@@ -1383,7 +1397,7 @@ pub mod describe_savings_plans_offerings_input {
             self,
         ) -> Result<
             crate::input::DescribeSavingsPlansOfferingsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeSavingsPlansOfferingsInput {
                 offering_ids: self.offering_ids,
@@ -1416,13 +1430,13 @@ impl DescribeSavingsPlansOfferingsInput {
             crate::operation::DescribeSavingsPlansOfferings,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeSavingsPlansOfferingsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DescribeSavingsPlansOfferings")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1431,8 +1445,10 @@ impl DescribeSavingsPlansOfferingsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeSavingsPlansOfferingsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1515,7 +1531,7 @@ impl DescribeSavingsPlansOfferingsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1533,8 +1549,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -1554,13 +1572,13 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ListTagsForResource").expect("formatting should succeed");
                 Ok(())
             }
@@ -1568,8 +1586,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1655,7 +1675,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -1701,7 +1721,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -1723,13 +1743,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/TagResource").expect("formatting should succeed");
                 Ok(())
             }
@@ -1737,8 +1757,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1822,7 +1844,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1860,7 +1882,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -1882,13 +1904,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/UntagResource").expect("formatting should succeed");
                 Ok(())
             }
@@ -1896,8 +1918,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1979,7 +2003,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -1998,18 +2022,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -2032,18 +2048,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -2055,17 +2063,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSavingsPlansOfferingsInput {
     /// <p>The IDs of the offerings.</p>
     #[doc(hidden)]
@@ -2165,29 +2166,10 @@ impl DescribeSavingsPlansOfferingsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeSavingsPlansOfferingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSavingsPlansOfferingsInput");
-        formatter.field("offering_ids", &self.offering_ids);
-        formatter.field("payment_options", &self.payment_options);
-        formatter.field("product_type", &self.product_type);
-        formatter.field("plan_types", &self.plan_types);
-        formatter.field("durations", &self.durations);
-        formatter.field("currencies", &self.currencies);
-        formatter.field("descriptions", &self.descriptions);
-        formatter.field("service_codes", &self.service_codes);
-        formatter.field("usage_types", &self.usage_types);
-        formatter.field("operations", &self.operations);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSavingsPlansOfferingRatesInput {
     /// <p>The IDs of the offerings.</p>
     #[doc(hidden)]
@@ -2270,29 +2252,10 @@ impl DescribeSavingsPlansOfferingRatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeSavingsPlansOfferingRatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSavingsPlansOfferingRatesInput");
-        formatter.field("savings_plan_offering_ids", &self.savings_plan_offering_ids);
-        formatter.field(
-            "savings_plan_payment_options",
-            &self.savings_plan_payment_options,
-        );
-        formatter.field("savings_plan_types", &self.savings_plan_types);
-        formatter.field("products", &self.products);
-        formatter.field("service_codes", &self.service_codes);
-        formatter.field("usage_types", &self.usage_types);
-        formatter.field("operations", &self.operations);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSavingsPlansInput {
     /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
     #[doc(hidden)]
@@ -2339,22 +2302,10 @@ impl DescribeSavingsPlansInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSavingsPlansInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSavingsPlansInput");
-        formatter.field("savings_plan_arns", &self.savings_plan_arns);
-        formatter.field("savings_plan_ids", &self.savings_plan_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("states", &self.states);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSavingsPlanRatesInput {
     /// <p>The ID of the Savings Plan.</p>
     #[doc(hidden)]
@@ -2387,20 +2338,10 @@ impl DescribeSavingsPlanRatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeSavingsPlanRatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSavingsPlanRatesInput");
-        formatter.field("savings_plan_id", &self.savings_plan_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteQueuedSavingsPlanInput {
     /// <p>The ID of the Savings Plan.</p>
     #[doc(hidden)]
@@ -2412,17 +2353,10 @@ impl DeleteQueuedSavingsPlanInput {
         self.savings_plan_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteQueuedSavingsPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteQueuedSavingsPlanInput");
-        formatter.field("savings_plan_id", &self.savings_plan_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSavingsPlanInput {
     /// <p>The ID of the offering.</p>
     #[doc(hidden)]
@@ -2471,17 +2405,5 @@ impl CreateSavingsPlanInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateSavingsPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSavingsPlanInput");
-        formatter.field("savings_plan_offering_id", &self.savings_plan_offering_id);
-        formatter.field("commitment", &self.commitment);
-        formatter.field("upfront_payment_amount", &self.upfront_payment_amount);
-        formatter.field("purchase_time", &self.purchase_time);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

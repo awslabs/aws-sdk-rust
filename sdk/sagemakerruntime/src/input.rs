@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod invoke_endpoint_input {
 
     /// A builder for [`InvokeEndpointInput`](crate::input::InvokeEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
         pub(crate) body: std::option::Option<aws_smithy_types::Blob>,
@@ -145,7 +145,7 @@ pub mod invoke_endpoint_input {
         /// Consumes the builder and constructs a [`InvokeEndpointInput`](crate::input::InvokeEndpointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::InvokeEndpointInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::InvokeEndpointInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::InvokeEndpointInput {
                 endpoint_name: self.endpoint_name,
@@ -159,6 +159,22 @@ pub mod invoke_endpoint_input {
                 inference_id: self.inference_id,
                 enable_explanations: self.enable_explanations,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("endpoint_name", &self.endpoint_name);
+            formatter.field("body", &"*** Sensitive Data Redacted ***");
+            formatter.field("content_type", &self.content_type);
+            formatter.field("accept", &self.accept);
+            formatter.field("custom_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("target_model", &self.target_model);
+            formatter.field("target_variant", &self.target_variant);
+            formatter.field("target_container_hostname", &self.target_container_hostname);
+            formatter.field("inference_id", &self.inference_id);
+            formatter.field("enable_explanations", &self.enable_explanations);
+            formatter.finish()
         }
     }
 }
@@ -175,26 +191,31 @@ impl InvokeEndpointInput {
             crate::operation::InvokeEndpoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::InvokeEndpointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.endpoint_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "endpoint_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let endpoint_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "endpoint_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let endpoint_name = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if endpoint_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "endpoint_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "endpoint_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -208,8 +229,10 @@ impl InvokeEndpointInput {
             fn update_http_builder(
                 input: &crate::input::InvokeEndpointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_invoke_endpoint(input, builder)?;
@@ -294,7 +317,7 @@ impl InvokeEndpointInput {
 pub mod invoke_endpoint_async_input {
 
     /// A builder for [`InvokeEndpointAsyncInput`](crate::input::InvokeEndpointAsyncInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -391,8 +414,10 @@ pub mod invoke_endpoint_async_input {
         /// Consumes the builder and constructs a [`InvokeEndpointAsyncInput`](crate::input::InvokeEndpointAsyncInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::InvokeEndpointAsyncInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::InvokeEndpointAsyncInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::InvokeEndpointAsyncInput {
                 endpoint_name: self.endpoint_name,
                 content_type: self.content_type,
@@ -402,6 +427,19 @@ pub mod invoke_endpoint_async_input {
                 input_location: self.input_location,
                 request_ttl_seconds: self.request_ttl_seconds,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("endpoint_name", &self.endpoint_name);
+            formatter.field("content_type", &self.content_type);
+            formatter.field("accept", &self.accept);
+            formatter.field("custom_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("inference_id", &self.inference_id);
+            formatter.field("input_location", &self.input_location);
+            formatter.field("request_ttl_seconds", &self.request_ttl_seconds);
+            formatter.finish()
         }
     }
 }
@@ -418,26 +456,31 @@ impl InvokeEndpointAsyncInput {
             crate::operation::InvokeEndpointAsync,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::InvokeEndpointAsyncInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.endpoint_name;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "endpoint_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let endpoint_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "endpoint_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let endpoint_name = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if endpoint_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "endpoint_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "endpoint_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -451,8 +494,10 @@ impl InvokeEndpointAsyncInput {
             fn update_http_builder(
                 input: &crate::input::InvokeEndpointAsyncInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_invoke_endpoint_async(input, builder)?;

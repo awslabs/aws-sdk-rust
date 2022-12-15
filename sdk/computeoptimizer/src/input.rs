@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod delete_recommendation_preferences_input {
 
     /// A builder for [`DeleteRecommendationPreferencesInput`](crate::input::DeleteRecommendationPreferencesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -73,7 +73,7 @@ pub mod delete_recommendation_preferences_input {
             self,
         ) -> Result<
             crate::input::DeleteRecommendationPreferencesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteRecommendationPreferencesInput {
                 resource_type: self.resource_type,
@@ -96,13 +96,13 @@ impl DeleteRecommendationPreferencesInput {
             crate::operation::DeleteRecommendationPreferences,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteRecommendationPreferencesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -110,8 +110,10 @@ impl DeleteRecommendationPreferencesInput {
             fn update_http_builder(
                 input: &crate::input::DeleteRecommendationPreferencesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -199,7 +201,7 @@ impl DeleteRecommendationPreferencesInput {
 pub mod describe_recommendation_export_jobs_input {
 
     /// A builder for [`DescribeRecommendationExportJobsInput`](crate::input::DescribeRecommendationExportJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::JobFilter>>,
@@ -276,7 +278,7 @@ pub mod describe_recommendation_export_jobs_input {
             self,
         ) -> Result<
             crate::input::DescribeRecommendationExportJobsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeRecommendationExportJobsInput {
                 job_ids: self.job_ids,
@@ -300,13 +302,13 @@ impl DescribeRecommendationExportJobsInput {
             crate::operation::DescribeRecommendationExportJobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeRecommendationExportJobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -314,8 +316,10 @@ impl DescribeRecommendationExportJobsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeRecommendationExportJobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -403,7 +407,7 @@ impl DescribeRecommendationExportJobsInput {
 pub mod export_auto_scaling_group_recommendations_input {
 
     /// A builder for [`ExportAutoScalingGroupRecommendationsInput`](crate::input::ExportAutoScalingGroupRecommendationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -555,7 +559,7 @@ pub mod export_auto_scaling_group_recommendations_input {
             self,
         ) -> Result<
             crate::input::ExportAutoScalingGroupRecommendationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ExportAutoScalingGroupRecommendationsInput {
                 account_ids: self.account_ids,
@@ -582,13 +586,13 @@ impl ExportAutoScalingGroupRecommendationsInput {
             crate::operation::ExportAutoScalingGroupRecommendations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ExportAutoScalingGroupRecommendationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -596,8 +600,10 @@ impl ExportAutoScalingGroupRecommendationsInput {
             fn update_http_builder(
                 input: &crate::input::ExportAutoScalingGroupRecommendationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -685,7 +691,7 @@ impl ExportAutoScalingGroupRecommendationsInput {
 pub mod export_ebs_volume_recommendations_input {
 
     /// A builder for [`ExportEbsVolumeRecommendationsInput`](crate::input::ExportEbsVolumeRecommendationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::EbsFilter>>,
@@ -814,7 +820,7 @@ pub mod export_ebs_volume_recommendations_input {
             self,
         ) -> Result<
             crate::input::ExportEbsVolumeRecommendationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ExportEbsVolumeRecommendationsInput {
                 account_ids: self.account_ids,
@@ -840,13 +846,13 @@ impl ExportEbsVolumeRecommendationsInput {
             crate::operation::ExportEBSVolumeRecommendations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ExportEbsVolumeRecommendationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -854,8 +860,10 @@ impl ExportEbsVolumeRecommendationsInput {
             fn update_http_builder(
                 input: &crate::input::ExportEbsVolumeRecommendationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -943,7 +951,7 @@ impl ExportEbsVolumeRecommendationsInput {
 pub mod export_ec2_instance_recommendations_input {
 
     /// A builder for [`ExportEc2InstanceRecommendationsInput`](crate::input::ExportEc2InstanceRecommendationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -1088,7 +1096,7 @@ pub mod export_ec2_instance_recommendations_input {
             self,
         ) -> Result<
             crate::input::ExportEc2InstanceRecommendationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ExportEc2InstanceRecommendationsInput {
                 account_ids: self.account_ids,
@@ -1115,13 +1123,13 @@ impl ExportEc2InstanceRecommendationsInput {
             crate::operation::ExportEC2InstanceRecommendations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ExportEc2InstanceRecommendationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1129,8 +1137,10 @@ impl ExportEc2InstanceRecommendationsInput {
             fn update_http_builder(
                 input: &crate::input::ExportEc2InstanceRecommendationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1218,7 +1228,7 @@ impl ExportEc2InstanceRecommendationsInput {
 pub mod export_lambda_function_recommendations_input {
 
     /// A builder for [`ExportLambdaFunctionRecommendationsInput`](crate::input::ExportLambdaFunctionRecommendationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filters:
@@ -1353,7 +1363,7 @@ pub mod export_lambda_function_recommendations_input {
             self,
         ) -> Result<
             crate::input::ExportLambdaFunctionRecommendationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ExportLambdaFunctionRecommendationsInput {
                 account_ids: self.account_ids,
@@ -1379,13 +1389,13 @@ impl ExportLambdaFunctionRecommendationsInput {
             crate::operation::ExportLambdaFunctionRecommendations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ExportLambdaFunctionRecommendationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1393,8 +1403,10 @@ impl ExportLambdaFunctionRecommendationsInput {
             fn update_http_builder(
                 input: &crate::input::ExportLambdaFunctionRecommendationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1482,7 +1494,7 @@ impl ExportLambdaFunctionRecommendationsInput {
 pub mod get_auto_scaling_group_recommendations_input {
 
     /// A builder for [`GetAutoScalingGroupRecommendationsInput`](crate::input::GetAutoScalingGroupRecommendationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) auto_scaling_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1597,7 +1609,7 @@ pub mod get_auto_scaling_group_recommendations_input {
             self,
         ) -> Result<
             crate::input::GetAutoScalingGroupRecommendationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetAutoScalingGroupRecommendationsInput {
                 account_ids: self.account_ids,
@@ -1623,13 +1635,13 @@ impl GetAutoScalingGroupRecommendationsInput {
             crate::operation::GetAutoScalingGroupRecommendations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAutoScalingGroupRecommendationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1637,8 +1649,10 @@ impl GetAutoScalingGroupRecommendationsInput {
             fn update_http_builder(
                 input: &crate::input::GetAutoScalingGroupRecommendationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1726,7 +1740,7 @@ impl GetAutoScalingGroupRecommendationsInput {
 pub mod get_ebs_volume_recommendations_input {
 
     /// A builder for [`GetEbsVolumeRecommendationsInput`](crate::input::GetEbsVolumeRecommendationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1823,7 +1837,7 @@ pub mod get_ebs_volume_recommendations_input {
             self,
         ) -> Result<
             crate::input::GetEbsVolumeRecommendationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetEbsVolumeRecommendationsInput {
                 volume_arns: self.volume_arns,
@@ -1848,13 +1862,13 @@ impl GetEbsVolumeRecommendationsInput {
             crate::operation::GetEBSVolumeRecommendations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetEbsVolumeRecommendationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1862,8 +1876,10 @@ impl GetEbsVolumeRecommendationsInput {
             fn update_http_builder(
                 input: &crate::input::GetEbsVolumeRecommendationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1951,7 +1967,7 @@ impl GetEbsVolumeRecommendationsInput {
 pub mod get_ec2_instance_recommendations_input {
 
     /// A builder for [`GetEc2InstanceRecommendationsInput`](crate::input::GetEc2InstanceRecommendationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2066,7 +2082,7 @@ pub mod get_ec2_instance_recommendations_input {
             self,
         ) -> Result<
             crate::input::GetEc2InstanceRecommendationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetEc2InstanceRecommendationsInput {
                 instance_arns: self.instance_arns,
@@ -2092,13 +2108,13 @@ impl GetEc2InstanceRecommendationsInput {
             crate::operation::GetEC2InstanceRecommendations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetEc2InstanceRecommendationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2106,8 +2122,10 @@ impl GetEc2InstanceRecommendationsInput {
             fn update_http_builder(
                 input: &crate::input::GetEc2InstanceRecommendationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2195,7 +2213,7 @@ impl GetEc2InstanceRecommendationsInput {
 pub mod get_ec2_recommendation_projected_metrics_input {
 
     /// A builder for [`GetEc2RecommendationProjectedMetricsInput`](crate::input::GetEc2RecommendationProjectedMetricsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
         pub(crate) stat: std::option::Option<crate::model::MetricStatistic>,
@@ -2286,7 +2304,7 @@ pub mod get_ec2_recommendation_projected_metrics_input {
             self,
         ) -> Result<
             crate::input::GetEc2RecommendationProjectedMetricsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetEc2RecommendationProjectedMetricsInput {
                 instance_arn: self.instance_arn,
@@ -2312,13 +2330,13 @@ impl GetEc2RecommendationProjectedMetricsInput {
             crate::operation::GetEC2RecommendationProjectedMetrics,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetEc2RecommendationProjectedMetricsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2326,8 +2344,10 @@ impl GetEc2RecommendationProjectedMetricsInput {
             fn update_http_builder(
                 input: &crate::input::GetEc2RecommendationProjectedMetricsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2415,7 +2435,7 @@ impl GetEc2RecommendationProjectedMetricsInput {
 pub mod get_effective_recommendation_preferences_input {
 
     /// A builder for [`GetEffectiveRecommendationPreferencesInput`](crate::input::GetEffectiveRecommendationPreferencesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2435,7 +2455,7 @@ pub mod get_effective_recommendation_preferences_input {
             self,
         ) -> Result<
             crate::input::GetEffectiveRecommendationPreferencesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetEffectiveRecommendationPreferencesInput {
                 resource_arn: self.resource_arn,
@@ -2456,13 +2476,13 @@ impl GetEffectiveRecommendationPreferencesInput {
             crate::operation::GetEffectiveRecommendationPreferences,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetEffectiveRecommendationPreferencesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2470,8 +2490,10 @@ impl GetEffectiveRecommendationPreferencesInput {
             fn update_http_builder(
                 input: &crate::input::GetEffectiveRecommendationPreferencesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2559,14 +2581,16 @@ impl GetEffectiveRecommendationPreferencesInput {
 pub mod get_enrollment_status_input {
 
     /// A builder for [`GetEnrollmentStatusInput`](crate::input::GetEnrollmentStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetEnrollmentStatusInput`](crate::input::GetEnrollmentStatusInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetEnrollmentStatusInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetEnrollmentStatusInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetEnrollmentStatusInput {})
         }
     }
@@ -2584,13 +2608,13 @@ impl GetEnrollmentStatusInput {
             crate::operation::GetEnrollmentStatus,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetEnrollmentStatusInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2598,8 +2622,10 @@ impl GetEnrollmentStatusInput {
             fn update_http_builder(
                 input: &crate::input::GetEnrollmentStatusInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2681,7 +2707,7 @@ impl GetEnrollmentStatusInput {
 pub mod get_enrollment_statuses_for_organization_input {
 
     /// A builder for [`GetEnrollmentStatusesForOrganizationInput`](crate::input::GetEnrollmentStatusesForOrganizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::EnrollmentFilter>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2734,7 +2760,7 @@ pub mod get_enrollment_statuses_for_organization_input {
             self,
         ) -> Result<
             crate::input::GetEnrollmentStatusesForOrganizationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetEnrollmentStatusesForOrganizationInput {
                 filters: self.filters,
@@ -2757,13 +2783,13 @@ impl GetEnrollmentStatusesForOrganizationInput {
             crate::operation::GetEnrollmentStatusesForOrganization,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetEnrollmentStatusesForOrganizationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2771,8 +2797,10 @@ impl GetEnrollmentStatusesForOrganizationInput {
             fn update_http_builder(
                 input: &crate::input::GetEnrollmentStatusesForOrganizationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2860,7 +2888,7 @@ impl GetEnrollmentStatusesForOrganizationInput {
 pub mod get_lambda_function_recommendations_input {
 
     /// A builder for [`GetLambdaFunctionRecommendationsInput`](crate::input::GetLambdaFunctionRecommendationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2962,7 +2990,7 @@ pub mod get_lambda_function_recommendations_input {
             self,
         ) -> Result<
             crate::input::GetLambdaFunctionRecommendationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetLambdaFunctionRecommendationsInput {
                 function_arns: self.function_arns,
@@ -2987,13 +3015,13 @@ impl GetLambdaFunctionRecommendationsInput {
             crate::operation::GetLambdaFunctionRecommendations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLambdaFunctionRecommendationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3001,8 +3029,10 @@ impl GetLambdaFunctionRecommendationsInput {
             fn update_http_builder(
                 input: &crate::input::GetLambdaFunctionRecommendationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3090,7 +3120,7 @@ impl GetLambdaFunctionRecommendationsInput {
 pub mod get_recommendation_preferences_input {
 
     /// A builder for [`GetRecommendationPreferencesInput`](crate::input::GetRecommendationPreferencesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -3156,7 +3186,7 @@ pub mod get_recommendation_preferences_input {
             self,
         ) -> Result<
             crate::input::GetRecommendationPreferencesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetRecommendationPreferencesInput {
                 resource_type: self.resource_type,
@@ -3180,13 +3210,13 @@ impl GetRecommendationPreferencesInput {
             crate::operation::GetRecommendationPreferences,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRecommendationPreferencesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3194,8 +3224,10 @@ impl GetRecommendationPreferencesInput {
             fn update_http_builder(
                 input: &crate::input::GetRecommendationPreferencesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3283,7 +3315,7 @@ impl GetRecommendationPreferencesInput {
 pub mod get_recommendation_summaries_input {
 
     /// A builder for [`GetRecommendationSummariesInput`](crate::input::GetRecommendationSummariesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3340,7 +3372,7 @@ pub mod get_recommendation_summaries_input {
             self,
         ) -> Result<
             crate::input::GetRecommendationSummariesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetRecommendationSummariesInput {
                 account_ids: self.account_ids,
@@ -3363,13 +3395,13 @@ impl GetRecommendationSummariesInput {
             crate::operation::GetRecommendationSummaries,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRecommendationSummariesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3377,8 +3409,10 @@ impl GetRecommendationSummariesInput {
             fn update_http_builder(
                 input: &crate::input::GetRecommendationSummariesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3469,7 +3503,7 @@ impl GetRecommendationSummariesInput {
 pub mod put_recommendation_preferences_input {
 
     /// A builder for [`PutRecommendationPreferencesInput`](crate::input::PutRecommendationPreferencesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -3563,7 +3597,7 @@ pub mod put_recommendation_preferences_input {
             self,
         ) -> Result<
             crate::input::PutRecommendationPreferencesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutRecommendationPreferencesInput {
                 resource_type: self.resource_type,
@@ -3587,13 +3621,13 @@ impl PutRecommendationPreferencesInput {
             crate::operation::PutRecommendationPreferences,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutRecommendationPreferencesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3601,8 +3635,10 @@ impl PutRecommendationPreferencesInput {
             fn update_http_builder(
                 input: &crate::input::PutRecommendationPreferencesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3690,7 +3726,7 @@ impl PutRecommendationPreferencesInput {
 pub mod update_enrollment_status_input {
 
     /// A builder for [`UpdateEnrollmentStatusInput`](crate::input::UpdateEnrollmentStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) include_member_accounts: std::option::Option<bool>,
@@ -3733,8 +3769,10 @@ pub mod update_enrollment_status_input {
         /// Consumes the builder and constructs a [`UpdateEnrollmentStatusInput`](crate::input::UpdateEnrollmentStatusInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateEnrollmentStatusInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateEnrollmentStatusInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateEnrollmentStatusInput {
                 status: self.status,
                 include_member_accounts: self.include_member_accounts.unwrap_or_default(),
@@ -3755,13 +3793,13 @@ impl UpdateEnrollmentStatusInput {
             crate::operation::UpdateEnrollmentStatus,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateEnrollmentStatusInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3769,8 +3807,10 @@ impl UpdateEnrollmentStatusInput {
             fn update_http_builder(
                 input: &crate::input::UpdateEnrollmentStatusInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3859,7 +3899,7 @@ impl UpdateEnrollmentStatusInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEnrollmentStatusInput {
     /// <p>The new enrollment status of the account.</p>
     /// <p>The following status options are available:</p>
@@ -3892,18 +3932,10 @@ impl UpdateEnrollmentStatusInput {
         self.include_member_accounts
     }
 }
-impl std::fmt::Debug for UpdateEnrollmentStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEnrollmentStatusInput");
-        formatter.field("status", &self.status);
-        formatter.field("include_member_accounts", &self.include_member_accounts);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecommendationPreferencesInput {
     /// <p>The target resource type of the recommendation preference to create.</p>
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
@@ -3965,23 +3997,10 @@ impl PutRecommendationPreferencesInput {
         self.inferred_workload_types.as_ref()
     }
 }
-impl std::fmt::Debug for PutRecommendationPreferencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRecommendationPreferencesInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("scope", &self.scope);
-        formatter.field(
-            "enhanced_infrastructure_metrics",
-            &self.enhanced_infrastructure_metrics,
-        );
-        formatter.field("inferred_workload_types", &self.inferred_workload_types);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecommendationSummariesInput {
     /// <p>The ID of the Amazon Web Services account for which to return recommendation summaries.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries.</p>
@@ -4013,19 +4032,10 @@ impl GetRecommendationSummariesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetRecommendationSummariesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecommendationSummariesInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecommendationPreferencesInput {
     /// <p>The target resource type of the recommendation preference for which to return preferences.</p>
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
@@ -4068,20 +4078,10 @@ impl GetRecommendationPreferencesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetRecommendationPreferencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecommendationPreferencesInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("scope", &self.scope);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLambdaFunctionRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</p>
     /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
@@ -4132,21 +4132,10 @@ impl GetLambdaFunctionRecommendationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetLambdaFunctionRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLambdaFunctionRecommendationsInput");
-        formatter.field("function_arns", &self.function_arns);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEnrollmentStatusesForOrganizationInput {
     /// <p>An array of objects to specify a filter that returns a more specific list of account enrollment statuses.</p>
     #[doc(hidden)]
@@ -4174,30 +4163,15 @@ impl GetEnrollmentStatusesForOrganizationInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetEnrollmentStatusesForOrganizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEnrollmentStatusesForOrganizationInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEnrollmentStatusInput {}
-impl std::fmt::Debug for GetEnrollmentStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEnrollmentStatusInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEffectiveRecommendationPreferencesInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective recommendation preferences. Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
     #[doc(hidden)]
@@ -4209,17 +4183,10 @@ impl GetEffectiveRecommendationPreferencesInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetEffectiveRecommendationPreferencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEffectiveRecommendationPreferencesInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEc2RecommendationProjectedMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation projected metrics.</p>
     #[doc(hidden)]
@@ -4268,25 +4235,10 @@ impl GetEc2RecommendationProjectedMetricsInput {
         self.recommendation_preferences.as_ref()
     }
 }
-impl std::fmt::Debug for GetEc2RecommendationProjectedMetricsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEc2RecommendationProjectedMetricsInput");
-        formatter.field("instance_arn", &self.instance_arn);
-        formatter.field("stat", &self.stat);
-        formatter.field("period", &self.period);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field(
-            "recommendation_preferences",
-            &self.recommendation_preferences,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEc2InstanceRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendations.</p>
     #[doc(hidden)]
@@ -4341,25 +4293,10 @@ impl GetEc2InstanceRecommendationsInput {
         self.recommendation_preferences.as_ref()
     }
 }
-impl std::fmt::Debug for GetEc2InstanceRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEc2InstanceRecommendationsInput");
-        formatter.field("instance_arns", &self.instance_arns);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field(
-            "recommendation_preferences",
-            &self.recommendation_preferences,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEbsVolumeRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the volumes for which to return recommendations.</p>
     #[doc(hidden)]
@@ -4405,21 +4342,10 @@ impl GetEbsVolumeRecommendationsInput {
         self.account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for GetEbsVolumeRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEbsVolumeRecommendationsInput");
-        formatter.field("volume_arns", &self.volume_arns);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAutoScalingGroupRecommendationsInput {
     /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Auto Scaling group recommendations.</p>
@@ -4474,25 +4400,10 @@ impl GetAutoScalingGroupRecommendationsInput {
         self.recommendation_preferences.as_ref()
     }
 }
-impl std::fmt::Debug for GetAutoScalingGroupRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAutoScalingGroupRecommendationsInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("auto_scaling_group_arns", &self.auto_scaling_group_arns);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.field(
-            "recommendation_preferences",
-            &self.recommendation_preferences,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportLambdaFunctionRecommendationsInput {
     /// <p>The IDs of the Amazon Web Services accounts for which to export Lambda function recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations.</p>
@@ -4565,22 +4476,10 @@ impl ExportLambdaFunctionRecommendationsInput {
         self.include_member_accounts
     }
 }
-impl std::fmt::Debug for ExportLambdaFunctionRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportLambdaFunctionRecommendationsInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("fields_to_export", &self.fields_to_export);
-        formatter.field("s3_destination_config", &self.s3_destination_config);
-        formatter.field("file_format", &self.file_format);
-        formatter.field("include_member_accounts", &self.include_member_accounts);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportEc2InstanceRecommendationsInput {
     /// <p>The IDs of the Amazon Web Services accounts for which to export instance recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations.</p>
@@ -4656,26 +4555,10 @@ impl ExportEc2InstanceRecommendationsInput {
         self.recommendation_preferences.as_ref()
     }
 }
-impl std::fmt::Debug for ExportEc2InstanceRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportEc2InstanceRecommendationsInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("fields_to_export", &self.fields_to_export);
-        formatter.field("s3_destination_config", &self.s3_destination_config);
-        formatter.field("file_format", &self.file_format);
-        formatter.field("include_member_accounts", &self.include_member_accounts);
-        formatter.field(
-            "recommendation_preferences",
-            &self.recommendation_preferences,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportEbsVolumeRecommendationsInput {
     /// <p>The IDs of the Amazon Web Services accounts for which to export Amazon EBS volume recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations.</p>
@@ -4742,22 +4625,10 @@ impl ExportEbsVolumeRecommendationsInput {
         self.include_member_accounts
     }
 }
-impl std::fmt::Debug for ExportEbsVolumeRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportEbsVolumeRecommendationsInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("fields_to_export", &self.fields_to_export);
-        formatter.field("s3_destination_config", &self.s3_destination_config);
-        formatter.field("file_format", &self.file_format);
-        formatter.field("include_member_accounts", &self.include_member_accounts);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportAutoScalingGroupRecommendationsInput {
     /// <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling group recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations.</p>
@@ -4836,26 +4707,10 @@ impl ExportAutoScalingGroupRecommendationsInput {
         self.recommendation_preferences.as_ref()
     }
 }
-impl std::fmt::Debug for ExportAutoScalingGroupRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportAutoScalingGroupRecommendationsInput");
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("fields_to_export", &self.fields_to_export);
-        formatter.field("s3_destination_config", &self.s3_destination_config);
-        formatter.field("file_format", &self.file_format);
-        formatter.field("include_member_accounts", &self.include_member_accounts);
-        formatter.field(
-            "recommendation_preferences",
-            &self.recommendation_preferences,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRecommendationExportJobsInput {
     /// <p>The identification numbers of the export jobs to return.</p>
     /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p>
@@ -4894,20 +4749,10 @@ impl DescribeRecommendationExportJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeRecommendationExportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRecommendationExportJobsInput");
-        formatter.field("job_ids", &self.job_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRecommendationPreferencesInput {
     /// <p>The target resource type of the recommendation preference to delete.</p>
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
@@ -4944,17 +4789,5 @@ impl DeleteRecommendationPreferencesInput {
         &self,
     ) -> std::option::Option<&[crate::model::RecommendationPreferenceName]> {
         self.recommendation_preference_names.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteRecommendationPreferencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRecommendationPreferencesInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("scope", &self.scope);
-        formatter.field(
-            "recommendation_preference_names",
-            &self.recommendation_preference_names,
-        );
-        formatter.finish()
     }
 }

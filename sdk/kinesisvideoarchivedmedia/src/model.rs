@@ -2,7 +2,7 @@
 
 /// <p>Represents a segment of video or other time-delimited data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Fragment {
     /// <p>The unique identifier of the fragment. This value monotonically increases based on the ingestion order.</p>
     #[doc(hidden)]
@@ -42,25 +42,11 @@ impl Fragment {
         self.fragment_length_in_milliseconds
     }
 }
-impl std::fmt::Debug for Fragment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Fragment");
-        formatter.field("fragment_number", &self.fragment_number);
-        formatter.field("fragment_size_in_bytes", &self.fragment_size_in_bytes);
-        formatter.field("producer_timestamp", &self.producer_timestamp);
-        formatter.field("server_timestamp", &self.server_timestamp);
-        formatter.field(
-            "fragment_length_in_milliseconds",
-            &self.fragment_length_in_milliseconds,
-        );
-        formatter.finish()
-    }
-}
 /// See [`Fragment`](crate::model::Fragment).
 pub mod fragment {
 
     /// A builder for [`Fragment`](crate::model::Fragment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fragment_number: std::option::Option<std::string::String>,
         pub(crate) fragment_size_in_bytes: std::option::Option<i64>,
@@ -162,7 +148,7 @@ impl Fragment {
 /// </ul>
 /// <p> A fragment selector range with a start time of 00:00:01 and end time of 00:00:04 would return the fragments with start times of 00:00:02 and 00:00:04. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FragmentSelector {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
     #[doc(hidden)]
@@ -183,19 +169,11 @@ impl FragmentSelector {
         self.timestamp_range.as_ref()
     }
 }
-impl std::fmt::Debug for FragmentSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FragmentSelector");
-        formatter.field("fragment_selector_type", &self.fragment_selector_type);
-        formatter.field("timestamp_range", &self.timestamp_range);
-        formatter.finish()
-    }
-}
 /// See [`FragmentSelector`](crate::model::FragmentSelector).
 pub mod fragment_selector {
 
     /// A builder for [`FragmentSelector`](crate::model::FragmentSelector).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fragment_selector_type: std::option::Option<crate::model::FragmentSelectorType>,
         pub(crate) timestamp_range: std::option::Option<crate::model::TimestampRange>,
@@ -245,7 +223,7 @@ impl FragmentSelector {
 
 /// <p>The range of timestamps for which to return fragments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimestampRange {
     /// <p>The starting timestamp in the range of timestamps for which to return fragments.</p>
     #[doc(hidden)]
@@ -264,19 +242,11 @@ impl TimestampRange {
         self.end_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for TimestampRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimestampRange");
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.field("end_timestamp", &self.end_timestamp);
-        formatter.finish()
-    }
-}
 /// See [`TimestampRange`](crate::model::TimestampRange).
 pub mod timestamp_range {
 
     /// A builder for [`TimestampRange`](crate::model::TimestampRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -324,6 +294,41 @@ impl TimestampRange {
     }
 }
 
+/// When writing a match expression against `FragmentSelectorType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let fragmentselectortype = unimplemented!();
+/// match fragmentselectortype {
+///     FragmentSelectorType::ProducerTimestamp => { /* ... */ },
+///     FragmentSelectorType::ServerTimestamp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `fragmentselectortype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FragmentSelectorType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FragmentSelectorType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FragmentSelectorType::NewFeature` is defined.
+/// Specifically, when `fragmentselectortype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FragmentSelectorType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -340,15 +345,17 @@ pub enum FragmentSelectorType {
     ProducerTimestamp,
     #[allow(missing_docs)] // documentation missing in model
     ServerTimestamp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FragmentSelectorType {
     fn from(s: &str) -> Self {
         match s {
             "PRODUCER_TIMESTAMP" => FragmentSelectorType::ProducerTimestamp,
             "SERVER_TIMESTAMP" => FragmentSelectorType::ServerTimestamp,
-            other => FragmentSelectorType::Unknown(other.to_owned()),
+            other => {
+                FragmentSelectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -365,11 +372,11 @@ impl FragmentSelectorType {
         match self {
             FragmentSelectorType::ProducerTimestamp => "PRODUCER_TIMESTAMP",
             FragmentSelectorType::ServerTimestamp => "SERVER_TIMESTAMP",
-            FragmentSelectorType::Unknown(s) => s.as_ref(),
+            FragmentSelectorType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
 }
@@ -381,7 +388,7 @@ impl AsRef<str> for FragmentSelectorType {
 
 /// <p>A structure that contains the <code>Timestamp</code>, <code>Error</code>, and <code>ImageContent</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Image {
     /// <p>An attribute of the <code>Image</code> object that is used to extract an image from the video stream. This field is used to manage gaps on images or to better understand the pagination window.</p>
     #[doc(hidden)]
@@ -419,20 +426,11 @@ impl Image {
         self.image_content.as_deref()
     }
 }
-impl std::fmt::Debug for Image {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Image");
-        formatter.field("time_stamp", &self.time_stamp);
-        formatter.field("error", &self.error);
-        formatter.field("image_content", &self.image_content);
-        formatter.finish()
-    }
-}
 /// See [`Image`](crate::model::Image).
 pub mod image {
 
     /// A builder for [`Image`](crate::model::Image).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_stamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) error: std::option::Option<crate::model::ImageError>,
@@ -504,6 +502,41 @@ impl Image {
     }
 }
 
+/// When writing a match expression against `ImageError`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let imageerror = unimplemented!();
+/// match imageerror {
+///     ImageError::MediaError => { /* ... */ },
+///     ImageError::NoMedia => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `imageerror` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ImageError::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ImageError::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ImageError::NewFeature` is defined.
+/// Specifically, when `imageerror` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ImageError::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -520,15 +553,15 @@ pub enum ImageError {
     MediaError,
     #[allow(missing_docs)] // documentation missing in model
     NoMedia,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ImageError {
     fn from(s: &str) -> Self {
         match s {
             "MEDIA_ERROR" => ImageError::MediaError,
             "NO_MEDIA" => ImageError::NoMedia,
-            other => ImageError::Unknown(other.to_owned()),
+            other => ImageError::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -545,11 +578,11 @@ impl ImageError {
         match self {
             ImageError::MediaError => "MEDIA_ERROR",
             ImageError::NoMedia => "NO_MEDIA",
-            ImageError::Unknown(s) => s.as_ref(),
+            ImageError::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MEDIA_ERROR", "NO_MEDIA"]
     }
 }
@@ -559,6 +592,40 @@ impl AsRef<str> for ImageError {
     }
 }
 
+/// When writing a match expression against `FormatConfigKey`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let formatconfigkey = unimplemented!();
+/// match formatconfigkey {
+///     FormatConfigKey::JpegQuality => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `formatconfigkey` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FormatConfigKey::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FormatConfigKey::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FormatConfigKey::NewFeature` is defined.
+/// Specifically, when `formatconfigkey` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FormatConfigKey::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -573,14 +640,14 @@ impl AsRef<str> for ImageError {
 pub enum FormatConfigKey {
     #[allow(missing_docs)] // documentation missing in model
     JpegQuality,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FormatConfigKey {
     fn from(s: &str) -> Self {
         match s {
             "JPEGQuality" => FormatConfigKey::JpegQuality,
-            other => FormatConfigKey::Unknown(other.to_owned()),
+            other => FormatConfigKey::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -596,11 +663,11 @@ impl FormatConfigKey {
     pub fn as_str(&self) -> &str {
         match self {
             FormatConfigKey::JpegQuality => "JPEGQuality",
-            FormatConfigKey::Unknown(s) => s.as_ref(),
+            FormatConfigKey::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JPEGQuality"]
     }
 }
@@ -610,6 +677,41 @@ impl AsRef<str> for FormatConfigKey {
     }
 }
 
+/// When writing a match expression against `Format`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let format = unimplemented!();
+/// match format {
+///     Format::Jpeg => { /* ... */ },
+///     Format::Png => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `format` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Format::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Format::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Format::NewFeature` is defined.
+/// Specifically, when `format` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Format::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -626,15 +728,15 @@ pub enum Format {
     Jpeg,
     #[allow(missing_docs)] // documentation missing in model
     Png,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Format {
     fn from(s: &str) -> Self {
         match s {
             "JPEG" => Format::Jpeg,
             "PNG" => Format::Png,
-            other => Format::Unknown(other.to_owned()),
+            other => Format::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -651,11 +753,11 @@ impl Format {
         match self {
             Format::Jpeg => "JPEG",
             Format::Png => "PNG",
-            Format::Unknown(s) => s.as_ref(),
+            Format::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JPEG", "PNG"]
     }
 }
@@ -665,6 +767,41 @@ impl AsRef<str> for Format {
     }
 }
 
+/// When writing a match expression against `ImageSelectorType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let imageselectortype = unimplemented!();
+/// match imageselectortype {
+///     ImageSelectorType::ProducerTimestamp => { /* ... */ },
+///     ImageSelectorType::ServerTimestamp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `imageselectortype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ImageSelectorType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ImageSelectorType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ImageSelectorType::NewFeature` is defined.
+/// Specifically, when `imageselectortype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ImageSelectorType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -681,15 +818,17 @@ pub enum ImageSelectorType {
     ProducerTimestamp,
     #[allow(missing_docs)] // documentation missing in model
     ServerTimestamp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ImageSelectorType {
     fn from(s: &str) -> Self {
         match s {
             "PRODUCER_TIMESTAMP" => ImageSelectorType::ProducerTimestamp,
             "SERVER_TIMESTAMP" => ImageSelectorType::ServerTimestamp,
-            other => ImageSelectorType::Unknown(other.to_owned()),
+            other => {
+                ImageSelectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -706,11 +845,11 @@ impl ImageSelectorType {
         match self {
             ImageSelectorType::ProducerTimestamp => "PRODUCER_TIMESTAMP",
             ImageSelectorType::ServerTimestamp => "SERVER_TIMESTAMP",
-            ImageSelectorType::Unknown(s) => s.as_ref(),
+            ImageSelectorType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
 }
@@ -720,6 +859,41 @@ impl AsRef<str> for ImageSelectorType {
     }
 }
 
+/// When writing a match expression against `HlsDisplayFragmentTimestamp`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let hlsdisplayfragmenttimestamp = unimplemented!();
+/// match hlsdisplayfragmenttimestamp {
+///     HlsDisplayFragmentTimestamp::Always => { /* ... */ },
+///     HlsDisplayFragmentTimestamp::Never => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `hlsdisplayfragmenttimestamp` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HlsDisplayFragmentTimestamp::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HlsDisplayFragmentTimestamp::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HlsDisplayFragmentTimestamp::NewFeature` is defined.
+/// Specifically, when `hlsdisplayfragmenttimestamp` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HlsDisplayFragmentTimestamp::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -736,15 +910,17 @@ pub enum HlsDisplayFragmentTimestamp {
     Always,
     #[allow(missing_docs)] // documentation missing in model
     Never,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HlsDisplayFragmentTimestamp {
     fn from(s: &str) -> Self {
         match s {
             "ALWAYS" => HlsDisplayFragmentTimestamp::Always,
             "NEVER" => HlsDisplayFragmentTimestamp::Never,
-            other => HlsDisplayFragmentTimestamp::Unknown(other.to_owned()),
+            other => HlsDisplayFragmentTimestamp::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -761,11 +937,11 @@ impl HlsDisplayFragmentTimestamp {
         match self {
             HlsDisplayFragmentTimestamp::Always => "ALWAYS",
             HlsDisplayFragmentTimestamp::Never => "NEVER",
-            HlsDisplayFragmentTimestamp::Unknown(s) => s.as_ref(),
+            HlsDisplayFragmentTimestamp::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "NEVER"]
     }
 }
@@ -775,6 +951,42 @@ impl AsRef<str> for HlsDisplayFragmentTimestamp {
     }
 }
 
+/// When writing a match expression against `HlsDiscontinuityMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let hlsdiscontinuitymode = unimplemented!();
+/// match hlsdiscontinuitymode {
+///     HlsDiscontinuityMode::Always => { /* ... */ },
+///     HlsDiscontinuityMode::Never => { /* ... */ },
+///     HlsDiscontinuityMode::OnDiscontinuity => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `hlsdiscontinuitymode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HlsDiscontinuityMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HlsDiscontinuityMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HlsDiscontinuityMode::NewFeature` is defined.
+/// Specifically, when `hlsdiscontinuitymode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HlsDiscontinuityMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -793,8 +1005,8 @@ pub enum HlsDiscontinuityMode {
     Never,
     #[allow(missing_docs)] // documentation missing in model
     OnDiscontinuity,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HlsDiscontinuityMode {
     fn from(s: &str) -> Self {
@@ -802,7 +1014,9 @@ impl std::convert::From<&str> for HlsDiscontinuityMode {
             "ALWAYS" => HlsDiscontinuityMode::Always,
             "NEVER" => HlsDiscontinuityMode::Never,
             "ON_DISCONTINUITY" => HlsDiscontinuityMode::OnDiscontinuity,
-            other => HlsDiscontinuityMode::Unknown(other.to_owned()),
+            other => {
+                HlsDiscontinuityMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -820,11 +1034,11 @@ impl HlsDiscontinuityMode {
             HlsDiscontinuityMode::Always => "ALWAYS",
             HlsDiscontinuityMode::Never => "NEVER",
             HlsDiscontinuityMode::OnDiscontinuity => "ON_DISCONTINUITY",
-            HlsDiscontinuityMode::Unknown(s) => s.as_ref(),
+            HlsDiscontinuityMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "NEVER", "ON_DISCONTINUITY"]
     }
 }
@@ -834,6 +1048,41 @@ impl AsRef<str> for HlsDiscontinuityMode {
     }
 }
 
+/// When writing a match expression against `ContainerFormat`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let containerformat = unimplemented!();
+/// match containerformat {
+///     ContainerFormat::FragmentedMp4 => { /* ... */ },
+///     ContainerFormat::MpegTs => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `containerformat` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ContainerFormat::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ContainerFormat::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ContainerFormat::NewFeature` is defined.
+/// Specifically, when `containerformat` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ContainerFormat::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -850,15 +1099,15 @@ pub enum ContainerFormat {
     FragmentedMp4,
     #[allow(missing_docs)] // documentation missing in model
     MpegTs,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ContainerFormat {
     fn from(s: &str) -> Self {
         match s {
             "FRAGMENTED_MP4" => ContainerFormat::FragmentedMp4,
             "MPEG_TS" => ContainerFormat::MpegTs,
-            other => ContainerFormat::Unknown(other.to_owned()),
+            other => ContainerFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -875,11 +1124,11 @@ impl ContainerFormat {
         match self {
             ContainerFormat::FragmentedMp4 => "FRAGMENTED_MP4",
             ContainerFormat::MpegTs => "MPEG_TS",
-            ContainerFormat::Unknown(s) => s.as_ref(),
+            ContainerFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FRAGMENTED_MP4", "MPEG_TS"]
     }
 }
@@ -891,7 +1140,7 @@ impl AsRef<str> for ContainerFormat {
 
 /// <p>Contains the range of timestamps for the requested media, and the source of the timestamps.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsFragmentSelector {
     /// <p>The source of the timestamps for the requested media.</p>
     /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</code> value) are included. </p>
@@ -922,19 +1171,11 @@ impl HlsFragmentSelector {
         self.timestamp_range.as_ref()
     }
 }
-impl std::fmt::Debug for HlsFragmentSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsFragmentSelector");
-        formatter.field("fragment_selector_type", &self.fragment_selector_type);
-        formatter.field("timestamp_range", &self.timestamp_range);
-        formatter.finish()
-    }
-}
 /// See [`HlsFragmentSelector`](crate::model::HlsFragmentSelector).
 pub mod hls_fragment_selector {
 
     /// A builder for [`HlsFragmentSelector`](crate::model::HlsFragmentSelector).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fragment_selector_type:
             std::option::Option<crate::model::HlsFragmentSelectorType>,
@@ -999,7 +1240,7 @@ impl HlsFragmentSelector {
 /// <p>The start and end of the timestamp range for the requested media.</p>
 /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsTimestampRange {
     /// <p>The start of the timestamp range for the requested media.</p>
     /// <p>If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required. </p>
@@ -1030,19 +1271,11 @@ impl HlsTimestampRange {
         self.end_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for HlsTimestampRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsTimestampRange");
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.field("end_timestamp", &self.end_timestamp);
-        formatter.finish()
-    }
-}
 /// See [`HlsTimestampRange`](crate::model::HlsTimestampRange).
 pub mod hls_timestamp_range {
 
     /// A builder for [`HlsTimestampRange`](crate::model::HlsTimestampRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1102,6 +1335,41 @@ impl HlsTimestampRange {
     }
 }
 
+/// When writing a match expression against `HlsFragmentSelectorType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let hlsfragmentselectortype = unimplemented!();
+/// match hlsfragmentselectortype {
+///     HlsFragmentSelectorType::ProducerTimestamp => { /* ... */ },
+///     HlsFragmentSelectorType::ServerTimestamp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `hlsfragmentselectortype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HlsFragmentSelectorType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HlsFragmentSelectorType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HlsFragmentSelectorType::NewFeature` is defined.
+/// Specifically, when `hlsfragmentselectortype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HlsFragmentSelectorType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1118,15 +1386,17 @@ pub enum HlsFragmentSelectorType {
     ProducerTimestamp,
     #[allow(missing_docs)] // documentation missing in model
     ServerTimestamp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HlsFragmentSelectorType {
     fn from(s: &str) -> Self {
         match s {
             "PRODUCER_TIMESTAMP" => HlsFragmentSelectorType::ProducerTimestamp,
             "SERVER_TIMESTAMP" => HlsFragmentSelectorType::ServerTimestamp,
-            other => HlsFragmentSelectorType::Unknown(other.to_owned()),
+            other => HlsFragmentSelectorType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1143,11 +1413,11 @@ impl HlsFragmentSelectorType {
         match self {
             HlsFragmentSelectorType::ProducerTimestamp => "PRODUCER_TIMESTAMP",
             HlsFragmentSelectorType::ServerTimestamp => "SERVER_TIMESTAMP",
-            HlsFragmentSelectorType::Unknown(s) => s.as_ref(),
+            HlsFragmentSelectorType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
 }
@@ -1157,6 +1427,42 @@ impl AsRef<str> for HlsFragmentSelectorType {
     }
 }
 
+/// When writing a match expression against `HlsPlaybackMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let hlsplaybackmode = unimplemented!();
+/// match hlsplaybackmode {
+///     HlsPlaybackMode::Live => { /* ... */ },
+///     HlsPlaybackMode::LiveReplay => { /* ... */ },
+///     HlsPlaybackMode::OnDemand => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `hlsplaybackmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HlsPlaybackMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HlsPlaybackMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HlsPlaybackMode::NewFeature` is defined.
+/// Specifically, when `hlsplaybackmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HlsPlaybackMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1175,8 +1481,8 @@ pub enum HlsPlaybackMode {
     LiveReplay,
     #[allow(missing_docs)] // documentation missing in model
     OnDemand,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HlsPlaybackMode {
     fn from(s: &str) -> Self {
@@ -1184,7 +1490,7 @@ impl std::convert::From<&str> for HlsPlaybackMode {
             "LIVE" => HlsPlaybackMode::Live,
             "LIVE_REPLAY" => HlsPlaybackMode::LiveReplay,
             "ON_DEMAND" => HlsPlaybackMode::OnDemand,
-            other => HlsPlaybackMode::Unknown(other.to_owned()),
+            other => HlsPlaybackMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1202,11 +1508,11 @@ impl HlsPlaybackMode {
             HlsPlaybackMode::Live => "LIVE",
             HlsPlaybackMode::LiveReplay => "LIVE_REPLAY",
             HlsPlaybackMode::OnDemand => "ON_DEMAND",
-            HlsPlaybackMode::Unknown(s) => s.as_ref(),
+            HlsPlaybackMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LIVE", "LIVE_REPLAY", "ON_DEMAND"]
     }
 }
@@ -1218,7 +1524,7 @@ impl AsRef<str> for HlsPlaybackMode {
 
 /// <p>Contains the range of timestamps for the requested media, and the source of the timestamps. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashFragmentSelector {
     /// <p>The source of the timestamps for the requested media.</p>
     /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetDASHStreamingSessionURLInput$MaxManifestFragmentResults</code> value) are included. </p>
@@ -1249,19 +1555,11 @@ impl DashFragmentSelector {
         self.timestamp_range.as_ref()
     }
 }
-impl std::fmt::Debug for DashFragmentSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashFragmentSelector");
-        formatter.field("fragment_selector_type", &self.fragment_selector_type);
-        formatter.field("timestamp_range", &self.timestamp_range);
-        formatter.finish()
-    }
-}
 /// See [`DashFragmentSelector`](crate::model::DashFragmentSelector).
 pub mod dash_fragment_selector {
 
     /// A builder for [`DashFragmentSelector`](crate::model::DashFragmentSelector).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fragment_selector_type:
             std::option::Option<crate::model::DashFragmentSelectorType>,
@@ -1327,7 +1625,7 @@ impl DashFragmentSelector {
 /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
 /// <p>The values in <code>DASHimestampRange</code> are inclusive. Fragments that start exactly at or after the start time are included in the session. Fragments that start before the start time and continue past it are not included in the session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashTimestampRange {
     /// <p>The start of the timestamp range for the requested media.</p>
     /// <p>If the <code>DASHTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.</p>
@@ -1358,19 +1656,11 @@ impl DashTimestampRange {
         self.end_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for DashTimestampRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashTimestampRange");
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.field("end_timestamp", &self.end_timestamp);
-        formatter.finish()
-    }
-}
 /// See [`DashTimestampRange`](crate::model::DashTimestampRange).
 pub mod dash_timestamp_range {
 
     /// A builder for [`DashTimestampRange`](crate::model::DashTimestampRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1430,6 +1720,41 @@ impl DashTimestampRange {
     }
 }
 
+/// When writing a match expression against `DashFragmentSelectorType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dashfragmentselectortype = unimplemented!();
+/// match dashfragmentselectortype {
+///     DashFragmentSelectorType::ProducerTimestamp => { /* ... */ },
+///     DashFragmentSelectorType::ServerTimestamp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dashfragmentselectortype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DashFragmentSelectorType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DashFragmentSelectorType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DashFragmentSelectorType::NewFeature` is defined.
+/// Specifically, when `dashfragmentselectortype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DashFragmentSelectorType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1446,15 +1771,17 @@ pub enum DashFragmentSelectorType {
     ProducerTimestamp,
     #[allow(missing_docs)] // documentation missing in model
     ServerTimestamp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DashFragmentSelectorType {
     fn from(s: &str) -> Self {
         match s {
             "PRODUCER_TIMESTAMP" => DashFragmentSelectorType::ProducerTimestamp,
             "SERVER_TIMESTAMP" => DashFragmentSelectorType::ServerTimestamp,
-            other => DashFragmentSelectorType::Unknown(other.to_owned()),
+            other => DashFragmentSelectorType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1471,11 +1798,11 @@ impl DashFragmentSelectorType {
         match self {
             DashFragmentSelectorType::ProducerTimestamp => "PRODUCER_TIMESTAMP",
             DashFragmentSelectorType::ServerTimestamp => "SERVER_TIMESTAMP",
-            DashFragmentSelectorType::Unknown(s) => s.as_ref(),
+            DashFragmentSelectorType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
 }
@@ -1485,6 +1812,41 @@ impl AsRef<str> for DashFragmentSelectorType {
     }
 }
 
+/// When writing a match expression against `DashDisplayFragmentNumber`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dashdisplayfragmentnumber = unimplemented!();
+/// match dashdisplayfragmentnumber {
+///     DashDisplayFragmentNumber::Always => { /* ... */ },
+///     DashDisplayFragmentNumber::Never => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dashdisplayfragmentnumber` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DashDisplayFragmentNumber::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DashDisplayFragmentNumber::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DashDisplayFragmentNumber::NewFeature` is defined.
+/// Specifically, when `dashdisplayfragmentnumber` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DashDisplayFragmentNumber::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1501,15 +1863,17 @@ pub enum DashDisplayFragmentNumber {
     Always,
     #[allow(missing_docs)] // documentation missing in model
     Never,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DashDisplayFragmentNumber {
     fn from(s: &str) -> Self {
         match s {
             "ALWAYS" => DashDisplayFragmentNumber::Always,
             "NEVER" => DashDisplayFragmentNumber::Never,
-            other => DashDisplayFragmentNumber::Unknown(other.to_owned()),
+            other => DashDisplayFragmentNumber::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1526,11 +1890,11 @@ impl DashDisplayFragmentNumber {
         match self {
             DashDisplayFragmentNumber::Always => "ALWAYS",
             DashDisplayFragmentNumber::Never => "NEVER",
-            DashDisplayFragmentNumber::Unknown(s) => s.as_ref(),
+            DashDisplayFragmentNumber::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "NEVER"]
     }
 }
@@ -1540,6 +1904,41 @@ impl AsRef<str> for DashDisplayFragmentNumber {
     }
 }
 
+/// When writing a match expression against `DashDisplayFragmentTimestamp`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dashdisplayfragmenttimestamp = unimplemented!();
+/// match dashdisplayfragmenttimestamp {
+///     DashDisplayFragmentTimestamp::Always => { /* ... */ },
+///     DashDisplayFragmentTimestamp::Never => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dashdisplayfragmenttimestamp` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DashDisplayFragmentTimestamp::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DashDisplayFragmentTimestamp::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DashDisplayFragmentTimestamp::NewFeature` is defined.
+/// Specifically, when `dashdisplayfragmenttimestamp` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DashDisplayFragmentTimestamp::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1556,15 +1955,17 @@ pub enum DashDisplayFragmentTimestamp {
     Always,
     #[allow(missing_docs)] // documentation missing in model
     Never,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DashDisplayFragmentTimestamp {
     fn from(s: &str) -> Self {
         match s {
             "ALWAYS" => DashDisplayFragmentTimestamp::Always,
             "NEVER" => DashDisplayFragmentTimestamp::Never,
-            other => DashDisplayFragmentTimestamp::Unknown(other.to_owned()),
+            other => DashDisplayFragmentTimestamp::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1581,11 +1982,11 @@ impl DashDisplayFragmentTimestamp {
         match self {
             DashDisplayFragmentTimestamp::Always => "ALWAYS",
             DashDisplayFragmentTimestamp::Never => "NEVER",
-            DashDisplayFragmentTimestamp::Unknown(s) => s.as_ref(),
+            DashDisplayFragmentTimestamp::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "NEVER"]
     }
 }
@@ -1595,6 +1996,42 @@ impl AsRef<str> for DashDisplayFragmentTimestamp {
     }
 }
 
+/// When writing a match expression against `DashPlaybackMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let dashplaybackmode = unimplemented!();
+/// match dashplaybackmode {
+///     DashPlaybackMode::Live => { /* ... */ },
+///     DashPlaybackMode::LiveReplay => { /* ... */ },
+///     DashPlaybackMode::OnDemand => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `dashplaybackmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DashPlaybackMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DashPlaybackMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DashPlaybackMode::NewFeature` is defined.
+/// Specifically, when `dashplaybackmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DashPlaybackMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1613,8 +2050,8 @@ pub enum DashPlaybackMode {
     LiveReplay,
     #[allow(missing_docs)] // documentation missing in model
     OnDemand,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DashPlaybackMode {
     fn from(s: &str) -> Self {
@@ -1622,7 +2059,7 @@ impl std::convert::From<&str> for DashPlaybackMode {
             "LIVE" => DashPlaybackMode::Live,
             "LIVE_REPLAY" => DashPlaybackMode::LiveReplay,
             "ON_DEMAND" => DashPlaybackMode::OnDemand,
-            other => DashPlaybackMode::Unknown(other.to_owned()),
+            other => DashPlaybackMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1640,11 +2077,11 @@ impl DashPlaybackMode {
             DashPlaybackMode::Live => "LIVE",
             DashPlaybackMode::LiveReplay => "LIVE_REPLAY",
             DashPlaybackMode::OnDemand => "ON_DEMAND",
-            DashPlaybackMode::Unknown(s) => s.as_ref(),
+            DashPlaybackMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LIVE", "LIVE_REPLAY", "ON_DEMAND"]
     }
 }
@@ -1657,7 +2094,7 @@ impl AsRef<str> for DashPlaybackMode {
 /// <p>Describes the timestamp range and timestamp origin of a range of fragments.</p>
 /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the clip will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClipFragmentSelector {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
     #[doc(hidden)]
@@ -1678,19 +2115,11 @@ impl ClipFragmentSelector {
         self.timestamp_range.as_ref()
     }
 }
-impl std::fmt::Debug for ClipFragmentSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClipFragmentSelector");
-        formatter.field("fragment_selector_type", &self.fragment_selector_type);
-        formatter.field("timestamp_range", &self.timestamp_range);
-        formatter.finish()
-    }
-}
 /// See [`ClipFragmentSelector`](crate::model::ClipFragmentSelector).
 pub mod clip_fragment_selector {
 
     /// A builder for [`ClipFragmentSelector`](crate::model::ClipFragmentSelector).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fragment_selector_type:
             std::option::Option<crate::model::ClipFragmentSelectorType>,
@@ -1744,7 +2173,7 @@ impl ClipFragmentSelector {
 
 /// <p>The range of timestamps for which to return fragments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClipTimestampRange {
     /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p>
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
@@ -1769,19 +2198,11 @@ impl ClipTimestampRange {
         self.end_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for ClipTimestampRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClipTimestampRange");
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.field("end_timestamp", &self.end_timestamp);
-        formatter.finish()
-    }
-}
 /// See [`ClipTimestampRange`](crate::model::ClipTimestampRange).
 pub mod clip_timestamp_range {
 
     /// A builder for [`ClipTimestampRange`](crate::model::ClipTimestampRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1835,6 +2256,41 @@ impl ClipTimestampRange {
     }
 }
 
+/// When writing a match expression against `ClipFragmentSelectorType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let clipfragmentselectortype = unimplemented!();
+/// match clipfragmentselectortype {
+///     ClipFragmentSelectorType::ProducerTimestamp => { /* ... */ },
+///     ClipFragmentSelectorType::ServerTimestamp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `clipfragmentselectortype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ClipFragmentSelectorType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ClipFragmentSelectorType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ClipFragmentSelectorType::NewFeature` is defined.
+/// Specifically, when `clipfragmentselectortype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ClipFragmentSelectorType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1851,15 +2307,17 @@ pub enum ClipFragmentSelectorType {
     ProducerTimestamp,
     #[allow(missing_docs)] // documentation missing in model
     ServerTimestamp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ClipFragmentSelectorType {
     fn from(s: &str) -> Self {
         match s {
             "PRODUCER_TIMESTAMP" => ClipFragmentSelectorType::ProducerTimestamp,
             "SERVER_TIMESTAMP" => ClipFragmentSelectorType::ServerTimestamp,
-            other => ClipFragmentSelectorType::Unknown(other.to_owned()),
+            other => ClipFragmentSelectorType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1876,11 +2334,11 @@ impl ClipFragmentSelectorType {
         match self {
             ClipFragmentSelectorType::ProducerTimestamp => "PRODUCER_TIMESTAMP",
             ClipFragmentSelectorType::ServerTimestamp => "SERVER_TIMESTAMP",
-            ClipFragmentSelectorType::Unknown(s) => s.as_ref(),
+            ClipFragmentSelectorType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
 }

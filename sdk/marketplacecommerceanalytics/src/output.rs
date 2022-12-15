@@ -2,7 +2,7 @@
 
 /// Container for the result of the StartSupportDataExport operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSupportDataExportOutput {
     /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl StartSupportDataExportOutput {
         self.data_set_request_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartSupportDataExportOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSupportDataExportOutput");
-        formatter.field("data_set_request_id", &self.data_set_request_id);
-        formatter.finish()
-    }
-}
 /// See [`StartSupportDataExportOutput`](crate::output::StartSupportDataExportOutput).
 pub mod start_support_data_export_output {
 
     /// A builder for [`StartSupportDataExportOutput`](crate::output::StartSupportDataExportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_request_id: std::option::Option<std::string::String>,
     }
@@ -60,7 +53,7 @@ impl StartSupportDataExportOutput {
 
 /// Container for the result of the GenerateDataSet operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateDataSetOutput {
     /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     #[doc(hidden)]
@@ -72,18 +65,11 @@ impl GenerateDataSetOutput {
         self.data_set_request_id.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateDataSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateDataSetOutput");
-        formatter.field("data_set_request_id", &self.data_set_request_id);
-        formatter.finish()
-    }
-}
 /// See [`GenerateDataSetOutput`](crate::output::GenerateDataSetOutput).
 pub mod generate_data_set_output {
 
     /// A builder for [`GenerateDataSetOutput`](crate::output::GenerateDataSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_request_id: std::option::Option<std::string::String>,
     }

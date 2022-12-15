@@ -2,7 +2,7 @@
 
 /// <p>When you update status for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePipelineStatusOutput {
     /// <p>A section of the response body that provides information about the pipeline.</p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl UpdatePipelineStatusOutput {
         self.pipeline.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePipelineStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePipelineStatusOutput");
-        formatter.field("pipeline", &self.pipeline);
-        formatter.finish()
-    }
-}
 /// See [`UpdatePipelineStatusOutput`](crate::output::UpdatePipelineStatusOutput).
 pub mod update_pipeline_status_output {
 
     /// A builder for [`UpdatePipelineStatusOutput`](crate::output::UpdatePipelineStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline: std::option::Option<crate::model::Pipeline>,
     }
@@ -57,7 +50,7 @@ impl UpdatePipelineStatusOutput {
 
 /// <p>The <code>UpdatePipelineNotificationsResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePipelineNotificationsOutput {
     /// <p>A section of the response body that provides information about the pipeline associated with this notification.</p>
     #[doc(hidden)]
@@ -69,18 +62,11 @@ impl UpdatePipelineNotificationsOutput {
         self.pipeline.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePipelineNotificationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePipelineNotificationsOutput");
-        formatter.field("pipeline", &self.pipeline);
-        formatter.finish()
-    }
-}
 /// See [`UpdatePipelineNotificationsOutput`](crate::output::UpdatePipelineNotificationsOutput).
 pub mod update_pipeline_notifications_output {
 
     /// A builder for [`UpdatePipelineNotificationsOutput`](crate::output::UpdatePipelineNotificationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline: std::option::Option<crate::model::Pipeline>,
     }
@@ -112,7 +98,7 @@ impl UpdatePipelineNotificationsOutput {
 
 /// <p>When you update a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePipelineOutput {
     /// <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
     #[doc(hidden)]
@@ -133,19 +119,11 @@ impl UpdatePipelineOutput {
         self.warnings.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePipelineOutput");
-        formatter.field("pipeline", &self.pipeline);
-        formatter.field("warnings", &self.warnings);
-        formatter.finish()
-    }
-}
 /// See [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput).
 pub mod update_pipeline_output {
 
     /// A builder for [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline: std::option::Option<crate::model::Pipeline>,
         pub(crate) warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
@@ -201,7 +179,7 @@ impl UpdatePipelineOutput {
 /// <p>The <code>TestRoleResponse</code> structure.</p>
 #[deprecated]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestRoleOutput {
     /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
     #[doc(hidden)]
@@ -220,19 +198,11 @@ impl TestRoleOutput {
         self.messages.as_deref()
     }
 }
-impl std::fmt::Debug for TestRoleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestRoleOutput");
-        formatter.field("success", &self.success);
-        formatter.field("messages", &self.messages);
-        formatter.finish()
-    }
-}
 /// See [`TestRoleOutput`](crate::output::TestRoleOutput).
 pub mod test_role_output {
 
     /// A builder for [`TestRoleOutput`](crate::output::TestRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) success: std::option::Option<std::string::String>,
         pub(crate) messages: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -285,7 +255,7 @@ impl TestRoleOutput {
 
 /// <p>The <code>ReadPresetResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReadPresetOutput {
     /// <p>A section of the response body that provides information about the preset.</p>
     #[doc(hidden)]
@@ -297,18 +267,11 @@ impl ReadPresetOutput {
         self.preset.as_ref()
     }
 }
-impl std::fmt::Debug for ReadPresetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReadPresetOutput");
-        formatter.field("preset", &self.preset);
-        formatter.finish()
-    }
-}
 /// See [`ReadPresetOutput`](crate::output::ReadPresetOutput).
 pub mod read_preset_output {
 
     /// A builder for [`ReadPresetOutput`](crate::output::ReadPresetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preset: std::option::Option<crate::model::Preset>,
     }
@@ -340,7 +303,7 @@ impl ReadPresetOutput {
 
 /// <p>The <code>ReadPipelineResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReadPipelineOutput {
     /// <p>A section of the response body that provides information about the pipeline.</p>
     #[doc(hidden)]
@@ -361,19 +324,11 @@ impl ReadPipelineOutput {
         self.warnings.as_deref()
     }
 }
-impl std::fmt::Debug for ReadPipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReadPipelineOutput");
-        formatter.field("pipeline", &self.pipeline);
-        formatter.field("warnings", &self.warnings);
-        formatter.finish()
-    }
-}
 /// See [`ReadPipelineOutput`](crate::output::ReadPipelineOutput).
 pub mod read_pipeline_output {
 
     /// A builder for [`ReadPipelineOutput`](crate::output::ReadPipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline: std::option::Option<crate::model::Pipeline>,
         pub(crate) warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
@@ -428,7 +383,7 @@ impl ReadPipelineOutput {
 
 /// <p>The <code>ReadJobResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReadJobOutput {
     /// <p>A section of the response body that provides information about the job.</p>
     #[doc(hidden)]
@@ -440,18 +395,11 @@ impl ReadJobOutput {
         self.job.as_ref()
     }
 }
-impl std::fmt::Debug for ReadJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReadJobOutput");
-        formatter.field("job", &self.job);
-        formatter.finish()
-    }
-}
 /// See [`ReadJobOutput`](crate::output::ReadJobOutput).
 pub mod read_job_output {
 
     /// A builder for [`ReadJobOutput`](crate::output::ReadJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<crate::model::Job>,
     }
@@ -481,7 +429,7 @@ impl ReadJobOutput {
 
 /// <p>The <code>ListPresetsResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPresetsOutput {
     /// <p>An array of <code>Preset</code> objects.</p>
     #[doc(hidden)]
@@ -500,19 +448,11 @@ impl ListPresetsOutput {
         self.next_page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPresetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPresetsOutput");
-        formatter.field("presets", &self.presets);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
-    }
-}
 /// See [`ListPresetsOutput`](crate::output::ListPresetsOutput).
 pub mod list_presets_output {
 
     /// A builder for [`ListPresetsOutput`](crate::output::ListPresetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) presets: std::option::Option<std::vec::Vec<crate::model::Preset>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
@@ -568,7 +508,7 @@ impl ListPresetsOutput {
 
 /// <p>A list of the pipelines associated with the current AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPipelinesOutput {
     /// <p>An array of <code>Pipeline</code> objects.</p>
     #[doc(hidden)]
@@ -587,19 +527,11 @@ impl ListPipelinesOutput {
         self.next_page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPipelinesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPipelinesOutput");
-        formatter.field("pipelines", &self.pipelines);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
-    }
-}
 /// See [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
 pub mod list_pipelines_output {
 
     /// A builder for [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipelines: std::option::Option<std::vec::Vec<crate::model::Pipeline>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
@@ -655,7 +587,7 @@ impl ListPipelinesOutput {
 
 /// <p> The <code>ListJobsByStatusResponse</code> structure. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsByStatusOutput {
     /// <p>An array of <code>Job</code> objects that have the specified status.</p>
     #[doc(hidden)]
@@ -674,19 +606,11 @@ impl ListJobsByStatusOutput {
         self.next_page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListJobsByStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsByStatusOutput");
-        formatter.field("jobs", &self.jobs);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
-    }
-}
 /// See [`ListJobsByStatusOutput`](crate::output::ListJobsByStatusOutput).
 pub mod list_jobs_by_status_output {
 
     /// A builder for [`ListJobsByStatusOutput`](crate::output::ListJobsByStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
@@ -742,7 +666,7 @@ impl ListJobsByStatusOutput {
 
 /// <p>The <code>ListJobsByPipelineResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsByPipelineOutput {
     /// <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
     #[doc(hidden)]
@@ -761,19 +685,11 @@ impl ListJobsByPipelineOutput {
         self.next_page_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListJobsByPipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsByPipelineOutput");
-        formatter.field("jobs", &self.jobs);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
-    }
-}
 /// See [`ListJobsByPipelineOutput`](crate::output::ListJobsByPipelineOutput).
 pub mod list_jobs_by_pipeline_output {
 
     /// A builder for [`ListJobsByPipelineOutput`](crate::output::ListJobsByPipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
@@ -829,19 +745,13 @@ impl ListJobsByPipelineOutput {
 
 /// <p>The <code>DeletePresetResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePresetOutput {}
-impl std::fmt::Debug for DeletePresetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePresetOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeletePresetOutput`](crate::output::DeletePresetOutput).
 pub mod delete_preset_output {
 
     /// A builder for [`DeletePresetOutput`](crate::output::DeletePresetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePresetOutput`](crate::output::DeletePresetOutput).
@@ -859,19 +769,13 @@ impl DeletePresetOutput {
 
 /// <p>The <code>DeletePipelineResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePipelineOutput {}
-impl std::fmt::Debug for DeletePipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePipelineOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
 pub mod delete_pipeline_output {
 
     /// A builder for [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
@@ -889,7 +793,7 @@ impl DeletePipelineOutput {
 
 /// <p>The <code>CreatePresetResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePresetOutput {
     /// <p>A section of the response body that provides information about the preset that is created.</p>
     #[doc(hidden)]
@@ -908,19 +812,11 @@ impl CreatePresetOutput {
         self.warning.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePresetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePresetOutput");
-        formatter.field("preset", &self.preset);
-        formatter.field("warning", &self.warning);
-        formatter.finish()
-    }
-}
 /// See [`CreatePresetOutput`](crate::output::CreatePresetOutput).
 pub mod create_preset_output {
 
     /// A builder for [`CreatePresetOutput`](crate::output::CreatePresetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preset: std::option::Option<crate::model::Preset>,
         pub(crate) warning: std::option::Option<std::string::String>,
@@ -964,7 +860,7 @@ impl CreatePresetOutput {
 
 /// <p>When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePipelineOutput {
     /// <p>A section of the response body that provides information about the pipeline that is created.</p>
     #[doc(hidden)]
@@ -985,19 +881,11 @@ impl CreatePipelineOutput {
         self.warnings.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePipelineOutput");
-        formatter.field("pipeline", &self.pipeline);
-        formatter.field("warnings", &self.warnings);
-        formatter.finish()
-    }
-}
 /// See [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
 pub mod create_pipeline_output {
 
     /// A builder for [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline: std::option::Option<crate::model::Pipeline>,
         pub(crate) warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
@@ -1052,7 +940,7 @@ impl CreatePipelineOutput {
 
 /// <p>The CreateJobResponse structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJobOutput {
     /// <p>A section of the response body that provides information about the job that is created.</p>
     #[doc(hidden)]
@@ -1064,18 +952,11 @@ impl CreateJobOutput {
         self.job.as_ref()
     }
 }
-impl std::fmt::Debug for CreateJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateJobOutput");
-        formatter.field("job", &self.job);
-        formatter.finish()
-    }
-}
 /// See [`CreateJobOutput`](crate::output::CreateJobOutput).
 pub mod create_job_output {
 
     /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<crate::model::Job>,
     }
@@ -1105,19 +986,13 @@ impl CreateJobOutput {
 
 /// <p>The response body contains a JSON object. If the job is successfully canceled, the value of <code>Success</code> is <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelJobOutput {}
-impl std::fmt::Debug for CancelJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelJobOutput");
-        formatter.finish()
-    }
-}
 /// See [`CancelJobOutput`](crate::output::CancelJobOutput).
 pub mod cancel_job_output {
 
     /// A builder for [`CancelJobOutput`](crate::output::CancelJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CancelJobOutput`](crate::output::CancelJobOutput).

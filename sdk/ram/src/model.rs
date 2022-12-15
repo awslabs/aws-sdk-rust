@@ -2,7 +2,7 @@
 
 /// <p>Describes a resource share in RAM.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceShare {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share</p>
     #[doc(hidden)]
@@ -87,27 +87,11 @@ impl ResourceShare {
         self.feature_set.as_ref()
     }
 }
-impl std::fmt::Debug for ResourceShare {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceShare");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("name", &self.name);
-        formatter.field("owning_account_id", &self.owning_account_id);
-        formatter.field("allow_external_principals", &self.allow_external_principals);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("tags", &self.tags);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("feature_set", &self.feature_set);
-        formatter.finish()
-    }
-}
 /// See [`ResourceShare`](crate::model::ResourceShare).
 pub mod resource_share {
 
     /// A builder for [`ResourceShare`](crate::model::ResourceShare).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -285,6 +269,42 @@ impl ResourceShare {
     }
 }
 
+/// When writing a match expression against `ResourceShareFeatureSet`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourcesharefeatureset = unimplemented!();
+/// match resourcesharefeatureset {
+///     ResourceShareFeatureSet::CreatedFromPolicy => { /* ... */ },
+///     ResourceShareFeatureSet::PromotingToStandard => { /* ... */ },
+///     ResourceShareFeatureSet::Standard => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourcesharefeatureset` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceShareFeatureSet::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceShareFeatureSet::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceShareFeatureSet::NewFeature` is defined.
+/// Specifically, when `resourcesharefeatureset` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceShareFeatureSet::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -303,8 +323,8 @@ pub enum ResourceShareFeatureSet {
     PromotingToStandard,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceShareFeatureSet {
     fn from(s: &str) -> Self {
@@ -312,7 +332,9 @@ impl std::convert::From<&str> for ResourceShareFeatureSet {
             "CREATED_FROM_POLICY" => ResourceShareFeatureSet::CreatedFromPolicy,
             "PROMOTING_TO_STANDARD" => ResourceShareFeatureSet::PromotingToStandard,
             "STANDARD" => ResourceShareFeatureSet::Standard,
-            other => ResourceShareFeatureSet::Unknown(other.to_owned()),
+            other => ResourceShareFeatureSet::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -330,11 +352,11 @@ impl ResourceShareFeatureSet {
             ResourceShareFeatureSet::CreatedFromPolicy => "CREATED_FROM_POLICY",
             ResourceShareFeatureSet::PromotingToStandard => "PROMOTING_TO_STANDARD",
             ResourceShareFeatureSet::Standard => "STANDARD",
-            ResourceShareFeatureSet::Unknown(s) => s.as_ref(),
+            ResourceShareFeatureSet::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATED_FROM_POLICY", "PROMOTING_TO_STANDARD", "STANDARD"]
     }
 }
@@ -347,7 +369,7 @@ impl AsRef<str> for ResourceShareFeatureSet {
 /// <p>A structure containing a tag. A tag is metadata that you can attach to your resources to help organize and categorize them. You can also use them to help you secure your resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
 /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key, or name, attached to the tag. Every tag must have a key. Key names are case sensitive.</p>
     #[doc(hidden)]
@@ -366,19 +388,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -420,6 +434,44 @@ impl Tag {
     }
 }
 
+/// When writing a match expression against `ResourceShareStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourcesharestatus = unimplemented!();
+/// match resourcesharestatus {
+///     ResourceShareStatus::Active => { /* ... */ },
+///     ResourceShareStatus::Deleted => { /* ... */ },
+///     ResourceShareStatus::Deleting => { /* ... */ },
+///     ResourceShareStatus::Failed => { /* ... */ },
+///     ResourceShareStatus::Pending => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourcesharestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceShareStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceShareStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceShareStatus::NewFeature` is defined.
+/// Specifically, when `resourcesharestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceShareStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -442,8 +494,8 @@ pub enum ResourceShareStatus {
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceShareStatus {
     fn from(s: &str) -> Self {
@@ -453,7 +505,9 @@ impl std::convert::From<&str> for ResourceShareStatus {
             "DELETING" => ResourceShareStatus::Deleting,
             "FAILED" => ResourceShareStatus::Failed,
             "PENDING" => ResourceShareStatus::Pending,
-            other => ResourceShareStatus::Unknown(other.to_owned()),
+            other => {
+                ResourceShareStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -473,11 +527,11 @@ impl ResourceShareStatus {
             ResourceShareStatus::Deleting => "DELETING",
             ResourceShareStatus::Failed => "FAILED",
             ResourceShareStatus::Pending => "PENDING",
-            ResourceShareStatus::Unknown(s) => s.as_ref(),
+            ResourceShareStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "DELETING", "FAILED", "PENDING"]
     }
 }
@@ -489,7 +543,7 @@ impl AsRef<str> for ResourceShareStatus {
 
 /// <p>Describes an invitation for an Amazon Web Services account to join a resource share.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceShareInvitation {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation.</p>
     #[doc(hidden)]
@@ -562,32 +616,11 @@ impl ResourceShareInvitation {
         self.receiver_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ResourceShareInvitation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceShareInvitation");
-        formatter.field(
-            "resource_share_invitation_arn",
-            &self.resource_share_invitation_arn,
-        );
-        formatter.field("resource_share_name", &self.resource_share_name);
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("sender_account_id", &self.sender_account_id);
-        formatter.field("receiver_account_id", &self.receiver_account_id);
-        formatter.field("invitation_timestamp", &self.invitation_timestamp);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "resource_share_associations",
-            &self.resource_share_associations,
-        );
-        formatter.field("receiver_arn", &self.receiver_arn);
-        formatter.finish()
-    }
-}
 /// See [`ResourceShareInvitation`](crate::model::ResourceShareInvitation).
 pub mod resource_share_invitation {
 
     /// A builder for [`ResourceShareInvitation`](crate::model::ResourceShareInvitation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_invitation_arn: std::option::Option<std::string::String>,
         pub(crate) resource_share_name: std::option::Option<std::string::String>,
@@ -754,7 +787,7 @@ impl ResourceShareInvitation {
 
 /// <p>Describes an association with a resource share and either a principal or a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceShareAssociation {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share.</p>
     #[doc(hidden)]
@@ -846,26 +879,11 @@ impl ResourceShareAssociation {
         self.external
     }
 }
-impl std::fmt::Debug for ResourceShareAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceShareAssociation");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("resource_share_name", &self.resource_share_name);
-        formatter.field("associated_entity", &self.associated_entity);
-        formatter.field("association_type", &self.association_type);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("external", &self.external);
-        formatter.finish()
-    }
-}
 /// See [`ResourceShareAssociation`](crate::model::ResourceShareAssociation).
 pub mod resource_share_association {
 
     /// A builder for [`ResourceShareAssociation`](crate::model::ResourceShareAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
         pub(crate) resource_share_name: std::option::Option<std::string::String>,
@@ -1041,6 +1059,44 @@ impl ResourceShareAssociation {
     }
 }
 
+/// When writing a match expression against `ResourceShareAssociationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourceshareassociationstatus = unimplemented!();
+/// match resourceshareassociationstatus {
+///     ResourceShareAssociationStatus::Associated => { /* ... */ },
+///     ResourceShareAssociationStatus::Associating => { /* ... */ },
+///     ResourceShareAssociationStatus::Disassociated => { /* ... */ },
+///     ResourceShareAssociationStatus::Disassociating => { /* ... */ },
+///     ResourceShareAssociationStatus::Failed => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourceshareassociationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceShareAssociationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceShareAssociationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceShareAssociationStatus::NewFeature` is defined.
+/// Specifically, when `resourceshareassociationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceShareAssociationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1063,8 +1119,8 @@ pub enum ResourceShareAssociationStatus {
     Disassociating,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceShareAssociationStatus {
     fn from(s: &str) -> Self {
@@ -1074,7 +1130,9 @@ impl std::convert::From<&str> for ResourceShareAssociationStatus {
             "DISASSOCIATED" => ResourceShareAssociationStatus::Disassociated,
             "DISASSOCIATING" => ResourceShareAssociationStatus::Disassociating,
             "FAILED" => ResourceShareAssociationStatus::Failed,
-            other => ResourceShareAssociationStatus::Unknown(other.to_owned()),
+            other => ResourceShareAssociationStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1094,11 +1152,11 @@ impl ResourceShareAssociationStatus {
             ResourceShareAssociationStatus::Disassociated => "DISASSOCIATED",
             ResourceShareAssociationStatus::Disassociating => "DISASSOCIATING",
             ResourceShareAssociationStatus::Failed => "FAILED",
-            ResourceShareAssociationStatus::Unknown(s) => s.as_ref(),
+            ResourceShareAssociationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ASSOCIATED",
             "ASSOCIATING",
@@ -1114,6 +1172,41 @@ impl AsRef<str> for ResourceShareAssociationStatus {
     }
 }
 
+/// When writing a match expression against `ResourceShareAssociationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourceshareassociationtype = unimplemented!();
+/// match resourceshareassociationtype {
+///     ResourceShareAssociationType::Principal => { /* ... */ },
+///     ResourceShareAssociationType::Resource => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourceshareassociationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceShareAssociationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceShareAssociationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceShareAssociationType::NewFeature` is defined.
+/// Specifically, when `resourceshareassociationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceShareAssociationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1130,15 +1223,17 @@ pub enum ResourceShareAssociationType {
     Principal,
     #[allow(missing_docs)] // documentation missing in model
     Resource,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceShareAssociationType {
     fn from(s: &str) -> Self {
         match s {
             "PRINCIPAL" => ResourceShareAssociationType::Principal,
             "RESOURCE" => ResourceShareAssociationType::Resource,
-            other => ResourceShareAssociationType::Unknown(other.to_owned()),
+            other => ResourceShareAssociationType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1155,11 +1250,11 @@ impl ResourceShareAssociationType {
         match self {
             ResourceShareAssociationType::Principal => "PRINCIPAL",
             ResourceShareAssociationType::Resource => "RESOURCE",
-            ResourceShareAssociationType::Unknown(s) => s.as_ref(),
+            ResourceShareAssociationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRINCIPAL", "RESOURCE"]
     }
 }
@@ -1169,6 +1264,43 @@ impl AsRef<str> for ResourceShareAssociationType {
     }
 }
 
+/// When writing a match expression against `ResourceShareInvitationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourceshareinvitationstatus = unimplemented!();
+/// match resourceshareinvitationstatus {
+///     ResourceShareInvitationStatus::Accepted => { /* ... */ },
+///     ResourceShareInvitationStatus::Expired => { /* ... */ },
+///     ResourceShareInvitationStatus::Pending => { /* ... */ },
+///     ResourceShareInvitationStatus::Rejected => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourceshareinvitationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceShareInvitationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceShareInvitationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceShareInvitationStatus::NewFeature` is defined.
+/// Specifically, when `resourceshareinvitationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceShareInvitationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1189,8 +1321,8 @@ pub enum ResourceShareInvitationStatus {
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     Rejected,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceShareInvitationStatus {
     fn from(s: &str) -> Self {
@@ -1199,7 +1331,9 @@ impl std::convert::From<&str> for ResourceShareInvitationStatus {
             "EXPIRED" => ResourceShareInvitationStatus::Expired,
             "PENDING" => ResourceShareInvitationStatus::Pending,
             "REJECTED" => ResourceShareInvitationStatus::Rejected,
-            other => ResourceShareInvitationStatus::Unknown(other.to_owned()),
+            other => ResourceShareInvitationStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1218,11 +1352,11 @@ impl ResourceShareInvitationStatus {
             ResourceShareInvitationStatus::Expired => "EXPIRED",
             ResourceShareInvitationStatus::Pending => "PENDING",
             ResourceShareInvitationStatus::Rejected => "REJECTED",
-            ResourceShareInvitationStatus::Unknown(s) => s.as_ref(),
+            ResourceShareInvitationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCEPTED", "EXPIRED", "PENDING", "REJECTED"]
     }
 }
@@ -1234,7 +1368,7 @@ impl AsRef<str> for ResourceShareInvitationStatus {
 
 /// <p>Information about a shareable resource type and the Amazon Web Services service to which resources of that type belong.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceNameAndResourceType {
     /// <p>The type of the resource.</p>
     #[doc(hidden)]
@@ -1268,20 +1402,11 @@ impl ServiceNameAndResourceType {
         self.resource_region_scope.as_ref()
     }
 }
-impl std::fmt::Debug for ServiceNameAndResourceType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceNameAndResourceType");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("resource_region_scope", &self.resource_region_scope);
-        formatter.finish()
-    }
-}
 /// See [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType).
 pub mod service_name_and_resource_type {
 
     /// A builder for [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -1349,6 +1474,41 @@ impl ServiceNameAndResourceType {
     }
 }
 
+/// When writing a match expression against `ResourceRegionScope`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourceregionscope = unimplemented!();
+/// match resourceregionscope {
+///     ResourceRegionScope::Global => { /* ... */ },
+///     ResourceRegionScope::Regional => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourceregionscope` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceRegionScope::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceRegionScope::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceRegionScope::NewFeature` is defined.
+/// Specifically, when `resourceregionscope` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceRegionScope::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1365,15 +1525,17 @@ pub enum ResourceRegionScope {
     Global,
     #[allow(missing_docs)] // documentation missing in model
     Regional,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceRegionScope {
     fn from(s: &str) -> Self {
         match s {
             "GLOBAL" => ResourceRegionScope::Global,
             "REGIONAL" => ResourceRegionScope::Regional,
-            other => ResourceRegionScope::Unknown(other.to_owned()),
+            other => {
+                ResourceRegionScope::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -1390,11 +1552,11 @@ impl ResourceRegionScope {
         match self {
             ResourceRegionScope::Global => "GLOBAL",
             ResourceRegionScope::Regional => "REGIONAL",
-            ResourceRegionScope::Unknown(s) => s.as_ref(),
+            ResourceRegionScope::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GLOBAL", "REGIONAL"]
     }
 }
@@ -1404,6 +1566,42 @@ impl AsRef<str> for ResourceRegionScope {
     }
 }
 
+/// When writing a match expression against `ResourceRegionScopeFilter`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourceregionscopefilter = unimplemented!();
+/// match resourceregionscopefilter {
+///     ResourceRegionScopeFilter::All => { /* ... */ },
+///     ResourceRegionScopeFilter::Global => { /* ... */ },
+///     ResourceRegionScopeFilter::Regional => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourceregionscopefilter` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceRegionScopeFilter::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceRegionScopeFilter::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceRegionScopeFilter::NewFeature` is defined.
+/// Specifically, when `resourceregionscopefilter` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceRegionScopeFilter::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1422,8 +1620,8 @@ pub enum ResourceRegionScopeFilter {
     Global,
     #[allow(missing_docs)] // documentation missing in model
     Regional,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceRegionScopeFilter {
     fn from(s: &str) -> Self {
@@ -1431,7 +1629,9 @@ impl std::convert::From<&str> for ResourceRegionScopeFilter {
             "ALL" => ResourceRegionScopeFilter::All,
             "GLOBAL" => ResourceRegionScopeFilter::Global,
             "REGIONAL" => ResourceRegionScopeFilter::Regional,
-            other => ResourceRegionScopeFilter::Unknown(other.to_owned()),
+            other => ResourceRegionScopeFilter::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1449,11 +1649,11 @@ impl ResourceRegionScopeFilter {
             ResourceRegionScopeFilter::All => "ALL",
             ResourceRegionScopeFilter::Global => "GLOBAL",
             ResourceRegionScopeFilter::Regional => "REGIONAL",
-            ResourceRegionScopeFilter::Unknown(s) => s.as_ref(),
+            ResourceRegionScopeFilter::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "GLOBAL", "REGIONAL"]
     }
 }
@@ -1465,7 +1665,7 @@ impl AsRef<str> for ResourceRegionScopeFilter {
 
 /// <p>Information about an RAM permission that is associated with a resource share and any of its resources of a specified type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceSharePermissionSummary {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission you want information about.</p>
     #[doc(hidden)]
@@ -1533,26 +1733,11 @@ impl ResourceSharePermissionSummary {
         self.is_resource_type_default
     }
 }
-impl std::fmt::Debug for ResourceSharePermissionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceSharePermissionSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("default_version", &self.default_version);
-        formatter.field("name", &self.name);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("status", &self.status);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("is_resource_type_default", &self.is_resource_type_default);
-        formatter.finish()
-    }
-}
 /// See [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary).
 pub mod resource_share_permission_summary {
 
     /// A builder for [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -1689,7 +1874,7 @@ impl ResourceSharePermissionSummary {
 
 /// <p>Describes a resource associated with a resource share in RAM.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resource {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource.</p>
     #[doc(hidden)]
@@ -1765,26 +1950,11 @@ impl Resource {
         self.resource_region_scope.as_ref()
     }
 }
-impl std::fmt::Debug for Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Resource");
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("resource_group_arn", &self.resource_group_arn);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("resource_region_scope", &self.resource_region_scope);
-        formatter.finish()
-    }
-}
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
 
     /// A builder for [`Resource`](crate::model::Resource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -1939,6 +2109,44 @@ impl Resource {
     }
 }
 
+/// When writing a match expression against `ResourceStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourcestatus = unimplemented!();
+/// match resourcestatus {
+///     ResourceStatus::Available => { /* ... */ },
+///     ResourceStatus::LimitExceeded => { /* ... */ },
+///     ResourceStatus::Pending => { /* ... */ },
+///     ResourceStatus::Unavailable => { /* ... */ },
+///     ResourceStatus::ZonalResourceInaccessible => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourcestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceStatus::NewFeature` is defined.
+/// Specifically, when `resourcestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1961,8 +2169,8 @@ pub enum ResourceStatus {
     Unavailable,
     #[allow(missing_docs)] // documentation missing in model
     ZonalResourceInaccessible,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceStatus {
     fn from(s: &str) -> Self {
@@ -1972,7 +2180,7 @@ impl std::convert::From<&str> for ResourceStatus {
             "PENDING" => ResourceStatus::Pending,
             "UNAVAILABLE" => ResourceStatus::Unavailable,
             "ZONAL_RESOURCE_INACCESSIBLE" => ResourceStatus::ZonalResourceInaccessible,
-            other => ResourceStatus::Unknown(other.to_owned()),
+            other => ResourceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1992,11 +2200,11 @@ impl ResourceStatus {
             ResourceStatus::Pending => "PENDING",
             ResourceStatus::Unavailable => "UNAVAILABLE",
             ResourceStatus::ZonalResourceInaccessible => "ZONAL_RESOURCE_INACCESSIBLE",
-            ResourceStatus::Unknown(s) => s.as_ref(),
+            ResourceStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "LIMIT_EXCEEDED",
@@ -2012,6 +2220,41 @@ impl AsRef<str> for ResourceStatus {
     }
 }
 
+/// When writing a match expression against `ResourceOwner`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourceowner = unimplemented!();
+/// match resourceowner {
+///     ResourceOwner::OtherAccounts => { /* ... */ },
+///     ResourceOwner::SelfValue => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourceowner` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceOwner::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceOwner::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceOwner::NewFeature` is defined.
+/// Specifically, when `resourceowner` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceOwner::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// _Note: `ResourceOwner::Self` has been renamed to `::SelfValue`._
 #[non_exhaustive]
 #[derive(
@@ -2028,15 +2271,15 @@ pub enum ResourceOwner {
     OtherAccounts,
     /// _Note: `::Self` has been renamed to `::SelfValue`._
     SelfValue,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceOwner {
     fn from(s: &str) -> Self {
         match s {
             "OTHER-ACCOUNTS" => ResourceOwner::OtherAccounts,
             "SELF" => ResourceOwner::SelfValue,
-            other => ResourceOwner::Unknown(other.to_owned()),
+            other => ResourceOwner::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2053,11 +2296,11 @@ impl ResourceOwner {
         match self {
             ResourceOwner::OtherAccounts => "OTHER-ACCOUNTS",
             ResourceOwner::SelfValue => "SELF",
-            ResourceOwner::Unknown(s) => s.as_ref(),
+            ResourceOwner::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OTHER-ACCOUNTS", "SELF"]
     }
 }
@@ -2069,7 +2312,7 @@ impl AsRef<str> for ResourceOwner {
 
 /// <p>Describes a principal for use with Resource Access Manager.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Principal {
     /// <p>The ID of the principal.</p>
     #[doc(hidden)]
@@ -2109,22 +2352,11 @@ impl Principal {
         self.external
     }
 }
-impl std::fmt::Debug for Principal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Principal");
-        formatter.field("id", &self.id);
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("external", &self.external);
-        formatter.finish()
-    }
-}
 /// See [`Principal`](crate::model::Principal).
 pub mod principal {
 
     /// A builder for [`Principal`](crate::model::Principal).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
@@ -2213,7 +2445,7 @@ impl Principal {
 
 /// <p>A tag key and optional list of possible values that you can use to filter results for tagged resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagFilter {
     /// <p>The tag key. This must have a valid string value and can't be empty.</p>
     #[doc(hidden)]
@@ -2232,19 +2464,11 @@ impl TagFilter {
         self.tag_values.as_deref()
     }
 }
-impl std::fmt::Debug for TagFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagFilter");
-        formatter.field("tag_key", &self.tag_key);
-        formatter.field("tag_values", &self.tag_values);
-        formatter.finish()
-    }
-}
 /// See [`TagFilter`](crate::model::TagFilter).
 pub mod tag_filter {
 
     /// A builder for [`TagFilter`](crate::model::TagFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_key: std::option::Option<std::string::String>,
         pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2297,7 +2521,7 @@ impl TagFilter {
 
 /// <p>Information about an RAM permission.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceSharePermissionDetail {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of this RAM permission.</p>
     #[doc(hidden)]
@@ -2365,26 +2589,11 @@ impl ResourceSharePermissionDetail {
         self.is_resource_type_default
     }
 }
-impl std::fmt::Debug for ResourceSharePermissionDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceSharePermissionDetail");
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("default_version", &self.default_version);
-        formatter.field("name", &self.name);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("permission", &self.permission);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("is_resource_type_default", &self.is_resource_type_default);
-        formatter.finish()
-    }
-}
 /// See [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail).
 pub mod resource_share_permission_detail {
 
     /// A builder for [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,

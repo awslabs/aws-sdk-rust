@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod describe_stream_input {
 
     /// A builder for [`DescribeStreamInput`](crate::input::DescribeStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -48,7 +48,7 @@ pub mod describe_stream_input {
         /// Consumes the builder and constructs a [`DescribeStreamInput`](crate::input::DescribeStreamInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeStreamInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeStreamInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeStreamInput {
                 stream_arn: self.stream_arn,
@@ -71,13 +71,13 @@ impl DescribeStreamInput {
             crate::operation::DescribeStream,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeStreamInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -85,8 +85,10 @@ impl DescribeStreamInput {
             fn update_http_builder(
                 input: &crate::input::DescribeStreamInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -175,7 +177,7 @@ impl DescribeStreamInput {
 pub mod get_records_input {
 
     /// A builder for [`GetRecordsInput`](crate::input::GetRecordsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shard_iterator: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -207,7 +209,8 @@ pub mod get_records_input {
         /// Consumes the builder and constructs a [`GetRecordsInput`](crate::input::GetRecordsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRecordsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetRecordsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetRecordsInput {
                 shard_iterator: self.shard_iterator,
                 limit: self.limit,
@@ -228,13 +231,13 @@ impl GetRecordsInput {
             crate::operation::GetRecords,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRecordsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -242,8 +245,10 @@ impl GetRecordsInput {
             fn update_http_builder(
                 input: &crate::input::GetRecordsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -332,7 +337,7 @@ impl GetRecordsInput {
 pub mod get_shard_iterator_input {
 
     /// A builder for [`GetShardIteratorInput`](crate::input::GetShardIteratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) shard_id: std::option::Option<std::string::String>,
@@ -401,8 +406,10 @@ pub mod get_shard_iterator_input {
         /// Consumes the builder and constructs a [`GetShardIteratorInput`](crate::input::GetShardIteratorInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetShardIteratorInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetShardIteratorInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetShardIteratorInput {
                 stream_arn: self.stream_arn,
                 shard_id: self.shard_id,
@@ -425,13 +432,13 @@ impl GetShardIteratorInput {
             crate::operation::GetShardIterator,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetShardIteratorInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -439,8 +446,10 @@ impl GetShardIteratorInput {
             fn update_http_builder(
                 input: &crate::input::GetShardIteratorInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -529,7 +538,7 @@ impl GetShardIteratorInput {
 pub mod list_streams_input {
 
     /// A builder for [`ListStreamsInput`](crate::input::ListStreamsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -572,7 +581,7 @@ pub mod list_streams_input {
         /// Consumes the builder and constructs a [`ListStreamsInput`](crate::input::ListStreamsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListStreamsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListStreamsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListStreamsInput {
                 table_name: self.table_name,
@@ -595,13 +604,13 @@ impl ListStreamsInput {
             crate::operation::ListStreams,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListStreamsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -609,8 +618,10 @@ impl ListStreamsInput {
             fn update_http_builder(
                 input: &crate::input::ListStreamsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -697,7 +708,7 @@ impl ListStreamsInput {
 
 /// <p>Represents the input of a <code>ListStreams</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamsInput {
     /// <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
     #[doc(hidden)]
@@ -723,22 +734,10 @@ impl ListStreamsInput {
         self.exclusive_start_stream_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListStreamsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStreamsInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("limit", &self.limit);
-        formatter.field(
-            "exclusive_start_stream_arn",
-            &self.exclusive_start_stream_arn,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetShardIterator</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetShardIteratorInput {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     #[doc(hidden)]
@@ -783,20 +782,10 @@ impl GetShardIteratorInput {
         self.sequence_number.as_deref()
     }
 }
-impl std::fmt::Debug for GetShardIteratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetShardIteratorInput");
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("shard_id", &self.shard_id);
-        formatter.field("shard_iterator_type", &self.shard_iterator_type);
-        formatter.field("sequence_number", &self.sequence_number);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetRecords</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecordsInput {
     /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
     #[doc(hidden)]
@@ -815,18 +804,10 @@ impl GetRecordsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for GetRecordsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecordsInput");
-        formatter.field("shard_iterator", &self.shard_iterator);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DescribeStream</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStreamInput {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     #[doc(hidden)]
@@ -850,14 +831,5 @@ impl DescribeStreamInput {
     /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
     pub fn exclusive_start_shard_id(&self) -> std::option::Option<&str> {
         self.exclusive_start_shard_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStreamInput");
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("limit", &self.limit);
-        formatter.field("exclusive_start_shard_id", &self.exclusive_start_shard_id);
-        formatter.finish()
     }
 }

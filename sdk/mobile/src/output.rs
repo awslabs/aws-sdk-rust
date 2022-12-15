@@ -2,7 +2,7 @@
 
 /// <p> Result structure used for requests to updated project configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProjectOutput {
     /// <p> Detailed information about the updated AWS Mobile Hub project. </p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl UpdateProjectOutput {
         self.details.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateProjectOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProjectOutput");
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 /// See [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
 pub mod update_project_output {
 
     /// A builder for [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<crate::model::ProjectDetails>,
     }
@@ -60,7 +53,7 @@ impl UpdateProjectOutput {
 
 /// <p> Result structure used for requests to list projects in AWS Mobile Hub. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProjectsOutput {
     /// <p> List of projects. </p>
     #[doc(hidden)]
@@ -79,19 +72,11 @@ impl ListProjectsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListProjectsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProjectsOutput");
-        formatter.field("projects", &self.projects);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListProjectsOutput`](crate::output::ListProjectsOutput).
 pub mod list_projects_output {
 
     /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) projects: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -144,7 +129,7 @@ impl ListProjectsOutput {
 
 /// <p> Result structure contains a list of all available bundles with details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBundlesOutput {
     /// <p> A list of bundles. </p>
     #[doc(hidden)]
@@ -163,19 +148,11 @@ impl ListBundlesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBundlesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBundlesOutput");
-        formatter.field("bundle_list", &self.bundle_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListBundlesOutput`](crate::output::ListBundlesOutput).
 pub mod list_bundles_output {
 
     /// A builder for [`ListBundlesOutput`](crate::output::ListBundlesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bundle_list: std::option::Option<std::vec::Vec<crate::model::BundleDetails>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -228,7 +205,7 @@ impl ListBundlesOutput {
 
 /// <p> Result structure used for requests to export project configuration details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportProjectOutput {
     /// <p> URL which can be used to download the exported project configuation file(s). </p>
     #[doc(hidden)]
@@ -254,20 +231,11 @@ impl ExportProjectOutput {
         self.snapshot_id.as_deref()
     }
 }
-impl std::fmt::Debug for ExportProjectOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportProjectOutput");
-        formatter.field("download_url", &self.download_url);
-        formatter.field("share_url", &self.share_url);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.finish()
-    }
-}
 /// See [`ExportProjectOutput`](crate::output::ExportProjectOutput).
 pub mod export_project_output {
 
     /// A builder for [`ExportProjectOutput`](crate::output::ExportProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) download_url: std::option::Option<std::string::String>,
         pub(crate) share_url: std::option::Option<std::string::String>,
@@ -323,7 +291,7 @@ impl ExportProjectOutput {
 
 /// <p> Result structure which contains link to download custom-generated SDK and tool packages used to integrate mobile web or app clients with backed AWS resources. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportBundleOutput {
     /// <p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>
     #[doc(hidden)]
@@ -335,18 +303,11 @@ impl ExportBundleOutput {
         self.download_url.as_deref()
     }
 }
-impl std::fmt::Debug for ExportBundleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportBundleOutput");
-        formatter.field("download_url", &self.download_url);
-        formatter.finish()
-    }
-}
 /// See [`ExportBundleOutput`](crate::output::ExportBundleOutput).
 pub mod export_bundle_output {
 
     /// A builder for [`ExportBundleOutput`](crate::output::ExportBundleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) download_url: std::option::Option<std::string::String>,
     }
@@ -378,7 +339,7 @@ impl ExportBundleOutput {
 
 /// <p> Result structure used for requests of project details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProjectOutput {
     /// <p> Detailed information about an AWS Mobile Hub project. </p>
     #[doc(hidden)]
@@ -390,18 +351,11 @@ impl DescribeProjectOutput {
         self.details.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeProjectOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProjectOutput");
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 /// See [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
 pub mod describe_project_output {
 
     /// A builder for [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<crate::model::ProjectDetails>,
     }
@@ -436,7 +390,7 @@ impl DescribeProjectOutput {
 
 /// <p> Result structure contains the details of the bundle. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBundleOutput {
     /// <p> The details of the bundle. </p>
     #[doc(hidden)]
@@ -448,18 +402,11 @@ impl DescribeBundleOutput {
         self.details.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeBundleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBundleOutput");
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 /// See [`DescribeBundleOutput`](crate::output::DescribeBundleOutput).
 pub mod describe_bundle_output {
 
     /// A builder for [`DescribeBundleOutput`](crate::output::DescribeBundleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<crate::model::BundleDetails>,
     }
@@ -494,7 +441,7 @@ impl DescribeBundleOutput {
 
 /// <p> Result structure used in response to request to delete a project. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProjectOutput {
     /// <p> Resources which were deleted. </p>
     #[doc(hidden)]
@@ -513,19 +460,11 @@ impl DeleteProjectOutput {
         self.orphaned_resources.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProjectOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProjectOutput");
-        formatter.field("deleted_resources", &self.deleted_resources);
-        formatter.field("orphaned_resources", &self.orphaned_resources);
-        formatter.finish()
-    }
-}
 /// See [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
 pub mod delete_project_output {
 
     /// A builder for [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deleted_resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
         pub(crate) orphaned_resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -587,7 +526,7 @@ impl DeleteProjectOutput {
 
 /// <p> Result structure used in response to a request to create a project. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProjectOutput {
     /// <p> Detailed information about the created AWS Mobile Hub project. </p>
     #[doc(hidden)]
@@ -599,18 +538,11 @@ impl CreateProjectOutput {
         self.details.as_ref()
     }
 }
-impl std::fmt::Debug for CreateProjectOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProjectOutput");
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 /// See [`CreateProjectOutput`](crate::output::CreateProjectOutput).
 pub mod create_project_output {
 
     /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<crate::model::ProjectDetails>,
     }

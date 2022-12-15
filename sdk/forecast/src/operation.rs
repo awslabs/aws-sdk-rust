@@ -5,7 +5,7 @@
 /// [`create_auto_predictor`](crate::client::Client::create_auto_predictor).
 ///
 /// See [`crate::client::fluent_builders::CreateAutoPredictor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAutoPredictor {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAutoPredictor {
 /// [`create_dataset`](crate::client::Client::create_dataset).
 ///
 /// See [`crate::client::fluent_builders::CreateDataset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDataset {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataset {
 /// [`create_dataset_group`](crate::client::Client::create_dataset_group).
 ///
 /// See [`crate::client::fluent_builders::CreateDatasetGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDatasetGroup {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDatasetGroup {
 /// [`create_dataset_import_job`](crate::client::Client::create_dataset_import_job).
 ///
 /// See [`crate::client::fluent_builders::CreateDatasetImportJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDatasetImportJob {
     _private: (),
 }
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDatasetImportJob {
 /// [`create_explainability`](crate::client::Client::create_explainability).
 ///
 /// See [`crate::client::fluent_builders::CreateExplainability`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateExplainability {
     _private: (),
 }
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateExplainability {
 /// [`create_explainability_export`](crate::client::Client::create_explainability_export).
 ///
 /// See [`crate::client::fluent_builders::CreateExplainabilityExport`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateExplainabilityExport {
     _private: (),
 }
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateExplainabilityExpo
 /// [`create_forecast`](crate::client::Client::create_forecast).
 ///
 /// See [`crate::client::fluent_builders::CreateForecast`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateForecast {
     _private: (),
 }
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateForecast {
 /// [`create_forecast_export_job`](crate::client::Client::create_forecast_export_job).
 ///
 /// See [`crate::client::fluent_builders::CreateForecastExportJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateForecastExportJob {
     _private: (),
 }
@@ -273,7 +273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateForecastExportJob 
 /// [`create_monitor`](crate::client::Client::create_monitor).
 ///
 /// See [`crate::client::fluent_builders::CreateMonitor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMonitor {
     _private: (),
 }
@@ -305,7 +305,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMonitor {
 /// [`create_predictor`](crate::client::Client::create_predictor).
 ///
 /// See [`crate::client::fluent_builders::CreatePredictor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePredictor {
     _private: (),
 }
@@ -339,7 +339,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePredictor {
 /// [`create_predictor_backtest_export_job`](crate::client::Client::create_predictor_backtest_export_job).
 ///
 /// See [`crate::client::fluent_builders::CreatePredictorBacktestExportJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePredictorBacktestExportJob {
     _private: (),
 }
@@ -373,7 +373,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePredictorBacktestE
 /// [`create_what_if_analysis`](crate::client::Client::create_what_if_analysis).
 ///
 /// See [`crate::client::fluent_builders::CreateWhatIfAnalysis`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWhatIfAnalysis {
     _private: (),
 }
@@ -407,7 +407,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWhatIfAnalysis {
 /// [`create_what_if_forecast`](crate::client::Client::create_what_if_forecast).
 ///
 /// See [`crate::client::fluent_builders::CreateWhatIfForecast`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWhatIfForecast {
     _private: (),
 }
@@ -441,7 +441,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWhatIfForecast {
 /// [`create_what_if_forecast_export`](crate::client::Client::create_what_if_forecast_export).
 ///
 /// See [`crate::client::fluent_builders::CreateWhatIfForecastExport`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWhatIfForecastExport {
     _private: (),
 }
@@ -475,7 +475,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWhatIfForecastExpo
 /// [`delete_dataset`](crate::client::Client::delete_dataset).
 ///
 /// See [`crate::client::fluent_builders::DeleteDataset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDataset {
     _private: (),
 }
@@ -507,7 +507,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataset {
 /// [`delete_dataset_group`](crate::client::Client::delete_dataset_group).
 ///
 /// See [`crate::client::fluent_builders::DeleteDatasetGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDatasetGroup {
     _private: (),
 }
@@ -541,7 +541,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDatasetGroup {
 /// [`delete_dataset_import_job`](crate::client::Client::delete_dataset_import_job).
 ///
 /// See [`crate::client::fluent_builders::DeleteDatasetImportJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDatasetImportJob {
     _private: (),
 }
@@ -575,7 +575,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDatasetImportJob {
 /// [`delete_explainability`](crate::client::Client::delete_explainability).
 ///
 /// See [`crate::client::fluent_builders::DeleteExplainability`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteExplainability {
     _private: (),
 }
@@ -609,7 +609,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteExplainability {
 /// [`delete_explainability_export`](crate::client::Client::delete_explainability_export).
 ///
 /// See [`crate::client::fluent_builders::DeleteExplainabilityExport`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteExplainabilityExport {
     _private: (),
 }
@@ -643,7 +643,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteExplainabilityExpo
 /// [`delete_forecast`](crate::client::Client::delete_forecast).
 ///
 /// See [`crate::client::fluent_builders::DeleteForecast`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteForecast {
     _private: (),
 }
@@ -675,7 +675,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteForecast {
 /// [`delete_forecast_export_job`](crate::client::Client::delete_forecast_export_job).
 ///
 /// See [`crate::client::fluent_builders::DeleteForecastExportJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteForecastExportJob {
     _private: (),
 }
@@ -709,7 +709,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteForecastExportJob 
 /// [`delete_monitor`](crate::client::Client::delete_monitor).
 ///
 /// See [`crate::client::fluent_builders::DeleteMonitor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMonitor {
     _private: (),
 }
@@ -741,7 +741,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMonitor {
 /// [`delete_predictor`](crate::client::Client::delete_predictor).
 ///
 /// See [`crate::client::fluent_builders::DeletePredictor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePredictor {
     _private: (),
 }
@@ -775,7 +775,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePredictor {
 /// [`delete_predictor_backtest_export_job`](crate::client::Client::delete_predictor_backtest_export_job).
 ///
 /// See [`crate::client::fluent_builders::DeletePredictorBacktestExportJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePredictorBacktestExportJob {
     _private: (),
 }
@@ -809,7 +809,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePredictorBacktestE
 /// [`delete_resource_tree`](crate::client::Client::delete_resource_tree).
 ///
 /// See [`crate::client::fluent_builders::DeleteResourceTree`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteResourceTree {
     _private: (),
 }
@@ -843,7 +843,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourceTree {
 /// [`delete_what_if_analysis`](crate::client::Client::delete_what_if_analysis).
 ///
 /// See [`crate::client::fluent_builders::DeleteWhatIfAnalysis`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWhatIfAnalysis {
     _private: (),
 }
@@ -877,7 +877,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWhatIfAnalysis {
 /// [`delete_what_if_forecast`](crate::client::Client::delete_what_if_forecast).
 ///
 /// See [`crate::client::fluent_builders::DeleteWhatIfForecast`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWhatIfForecast {
     _private: (),
 }
@@ -911,7 +911,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWhatIfForecast {
 /// [`delete_what_if_forecast_export`](crate::client::Client::delete_what_if_forecast_export).
 ///
 /// See [`crate::client::fluent_builders::DeleteWhatIfForecastExport`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWhatIfForecastExport {
     _private: (),
 }
@@ -945,7 +945,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWhatIfForecastExpo
 /// [`describe_auto_predictor`](crate::client::Client::describe_auto_predictor).
 ///
 /// See [`crate::client::fluent_builders::DescribeAutoPredictor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAutoPredictor {
     _private: (),
 }
@@ -979,7 +979,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAutoPredictor {
 /// [`describe_dataset`](crate::client::Client::describe_dataset).
 ///
 /// See [`crate::client::fluent_builders::DescribeDataset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDataset {
     _private: (),
 }
@@ -1013,7 +1013,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDataset {
 /// [`describe_dataset_group`](crate::client::Client::describe_dataset_group).
 ///
 /// See [`crate::client::fluent_builders::DescribeDatasetGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDatasetGroup {
     _private: (),
 }
@@ -1047,7 +1047,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDatasetGroup {
 /// [`describe_dataset_import_job`](crate::client::Client::describe_dataset_import_job).
 ///
 /// See [`crate::client::fluent_builders::DescribeDatasetImportJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDatasetImportJob {
     _private: (),
 }
@@ -1081,7 +1081,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDatasetImportJob
 /// [`describe_explainability`](crate::client::Client::describe_explainability).
 ///
 /// See [`crate::client::fluent_builders::DescribeExplainability`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeExplainability {
     _private: (),
 }
@@ -1115,7 +1115,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeExplainability {
 /// [`describe_explainability_export`](crate::client::Client::describe_explainability_export).
 ///
 /// See [`crate::client::fluent_builders::DescribeExplainabilityExport`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeExplainabilityExport {
     _private: (),
 }
@@ -1149,7 +1149,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeExplainabilityEx
 /// [`describe_forecast`](crate::client::Client::describe_forecast).
 ///
 /// See [`crate::client::fluent_builders::DescribeForecast`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeForecast {
     _private: (),
 }
@@ -1183,7 +1183,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeForecast {
 /// [`describe_forecast_export_job`](crate::client::Client::describe_forecast_export_job).
 ///
 /// See [`crate::client::fluent_builders::DescribeForecastExportJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeForecastExportJob {
     _private: (),
 }
@@ -1217,7 +1217,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeForecastExportJo
 /// [`describe_monitor`](crate::client::Client::describe_monitor).
 ///
 /// See [`crate::client::fluent_builders::DescribeMonitor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMonitor {
     _private: (),
 }
@@ -1251,7 +1251,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMonitor {
 /// [`describe_predictor`](crate::client::Client::describe_predictor).
 ///
 /// See [`crate::client::fluent_builders::DescribePredictor`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePredictor {
     _private: (),
 }
@@ -1285,7 +1285,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePredictor {
 /// [`describe_predictor_backtest_export_job`](crate::client::Client::describe_predictor_backtest_export_job).
 ///
 /// See [`crate::client::fluent_builders::DescribePredictorBacktestExportJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePredictorBacktestExportJob {
     _private: (),
 }
@@ -1319,7 +1319,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePredictorBacktes
 /// [`describe_what_if_analysis`](crate::client::Client::describe_what_if_analysis).
 ///
 /// See [`crate::client::fluent_builders::DescribeWhatIfAnalysis`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeWhatIfAnalysis {
     _private: (),
 }
@@ -1353,7 +1353,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWhatIfAnalysis {
 /// [`describe_what_if_forecast`](crate::client::Client::describe_what_if_forecast).
 ///
 /// See [`crate::client::fluent_builders::DescribeWhatIfForecast`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeWhatIfForecast {
     _private: (),
 }
@@ -1387,7 +1387,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWhatIfForecast {
 /// [`describe_what_if_forecast_export`](crate::client::Client::describe_what_if_forecast_export).
 ///
 /// See [`crate::client::fluent_builders::DescribeWhatIfForecastExport`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeWhatIfForecastExport {
     _private: (),
 }
@@ -1421,7 +1421,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWhatIfForecastEx
 /// [`get_accuracy_metrics`](crate::client::Client::get_accuracy_metrics).
 ///
 /// See [`crate::client::fluent_builders::GetAccuracyMetrics`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccuracyMetrics {
     _private: (),
 }
@@ -1455,7 +1455,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccuracyMetrics {
 /// [`list_dataset_groups`](crate::client::Client::list_dataset_groups).
 ///
 /// See [`crate::client::fluent_builders::ListDatasetGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDatasetGroups {
     _private: (),
 }
@@ -1489,7 +1489,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatasetGroups {
 /// [`list_dataset_import_jobs`](crate::client::Client::list_dataset_import_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListDatasetImportJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDatasetImportJobs {
     _private: (),
 }
@@ -1523,7 +1523,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatasetImportJobs {
 /// [`list_datasets`](crate::client::Client::list_datasets).
 ///
 /// See [`crate::client::fluent_builders::ListDatasets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDatasets {
     _private: (),
 }
@@ -1555,7 +1555,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatasets {
 /// [`list_explainabilities`](crate::client::Client::list_explainabilities).
 ///
 /// See [`crate::client::fluent_builders::ListExplainabilities`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListExplainabilities {
     _private: (),
 }
@@ -1589,7 +1589,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExplainabilities {
 /// [`list_explainability_exports`](crate::client::Client::list_explainability_exports).
 ///
 /// See [`crate::client::fluent_builders::ListExplainabilityExports`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListExplainabilityExports {
     _private: (),
 }
@@ -1623,7 +1623,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExplainabilityExport
 /// [`list_forecast_export_jobs`](crate::client::Client::list_forecast_export_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListForecastExportJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListForecastExportJobs {
     _private: (),
 }
@@ -1657,7 +1657,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListForecastExportJobs {
 /// [`list_forecasts`](crate::client::Client::list_forecasts).
 ///
 /// See [`crate::client::fluent_builders::ListForecasts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListForecasts {
     _private: (),
 }
@@ -1689,7 +1689,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListForecasts {
 /// [`list_monitor_evaluations`](crate::client::Client::list_monitor_evaluations).
 ///
 /// See [`crate::client::fluent_builders::ListMonitorEvaluations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMonitorEvaluations {
     _private: (),
 }
@@ -1723,7 +1723,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMonitorEvaluations {
 /// [`list_monitors`](crate::client::Client::list_monitors).
 ///
 /// See [`crate::client::fluent_builders::ListMonitors`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMonitors {
     _private: (),
 }
@@ -1755,7 +1755,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMonitors {
 /// [`list_predictor_backtest_export_jobs`](crate::client::Client::list_predictor_backtest_export_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListPredictorBacktestExportJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPredictorBacktestExportJobs {
     _private: (),
 }
@@ -1789,7 +1789,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPredictorBacktestExp
 /// [`list_predictors`](crate::client::Client::list_predictors).
 ///
 /// See [`crate::client::fluent_builders::ListPredictors`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPredictors {
     _private: (),
 }
@@ -1821,7 +1821,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPredictors {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -1855,7 +1855,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_what_if_analyses`](crate::client::Client::list_what_if_analyses).
 ///
 /// See [`crate::client::fluent_builders::ListWhatIfAnalyses`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWhatIfAnalyses {
     _private: (),
 }
@@ -1889,7 +1889,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWhatIfAnalyses {
 /// [`list_what_if_forecast_exports`](crate::client::Client::list_what_if_forecast_exports).
 ///
 /// See [`crate::client::fluent_builders::ListWhatIfForecastExports`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWhatIfForecastExports {
     _private: (),
 }
@@ -1923,7 +1923,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWhatIfForecastExport
 /// [`list_what_if_forecasts`](crate::client::Client::list_what_if_forecasts).
 ///
 /// See [`crate::client::fluent_builders::ListWhatIfForecasts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWhatIfForecasts {
     _private: (),
 }
@@ -1957,7 +1957,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWhatIfForecasts {
 /// [`resume_resource`](crate::client::Client::resume_resource).
 ///
 /// See [`crate::client::fluent_builders::ResumeResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ResumeResource {
     _private: (),
 }
@@ -1989,7 +1989,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResumeResource {
 /// [`stop_resource`](crate::client::Client::stop_resource).
 ///
 /// See [`crate::client::fluent_builders::StopResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopResource {
     _private: (),
 }
@@ -2021,7 +2021,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopResource {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -2053,7 +2053,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -2085,7 +2085,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_dataset_group`](crate::client::Client::update_dataset_group).
 ///
 /// See [`crate::client::fluent_builders::UpdateDatasetGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDatasetGroup {
     _private: (),
 }

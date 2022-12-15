@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod clone_receipt_rule_set_input {
 
     /// A builder for [`CloneReceiptRuleSetInput`](crate::input::CloneReceiptRuleSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
         pub(crate) original_rule_set_name: std::option::Option<std::string::String>,
@@ -50,8 +50,10 @@ pub mod clone_receipt_rule_set_input {
         /// Consumes the builder and constructs a [`CloneReceiptRuleSetInput`](crate::input::CloneReceiptRuleSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CloneReceiptRuleSetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CloneReceiptRuleSetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CloneReceiptRuleSetInput {
                 rule_set_name: self.rule_set_name,
                 original_rule_set_name: self.original_rule_set_name,
@@ -72,13 +74,13 @@ impl CloneReceiptRuleSetInput {
             crate::operation::CloneReceiptRuleSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CloneReceiptRuleSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -86,8 +88,10 @@ impl CloneReceiptRuleSetInput {
             fn update_http_builder(
                 input: &crate::input::CloneReceiptRuleSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -173,7 +177,7 @@ impl CloneReceiptRuleSetInput {
 pub mod create_configuration_set_input {
 
     /// A builder for [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set: std::option::Option<crate::model::ConfigurationSet>,
     }
@@ -194,8 +198,10 @@ pub mod create_configuration_set_input {
         /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateConfigurationSetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateConfigurationSetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateConfigurationSetInput {
                 configuration_set: self.configuration_set,
             })
@@ -215,13 +221,13 @@ impl CreateConfigurationSetInput {
             crate::operation::CreateConfigurationSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateConfigurationSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -229,8 +235,10 @@ impl CreateConfigurationSetInput {
             fn update_http_builder(
                 input: &crate::input::CreateConfigurationSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -316,7 +324,7 @@ impl CreateConfigurationSetInput {
 pub mod create_configuration_set_event_destination_input {
 
     /// A builder for [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) event_destination: std::option::Option<crate::model::EventDestination>,
@@ -353,7 +361,7 @@ pub mod create_configuration_set_event_destination_input {
             self,
         ) -> Result<
             crate::input::CreateConfigurationSetEventDestinationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateConfigurationSetEventDestinationInput {
                 configuration_set_name: self.configuration_set_name,
@@ -375,13 +383,13 @@ impl CreateConfigurationSetEventDestinationInput {
             crate::operation::CreateConfigurationSetEventDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateConfigurationSetEventDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -389,8 +397,10 @@ impl CreateConfigurationSetEventDestinationInput {
             fn update_http_builder(
                 input: &crate::input::CreateConfigurationSetEventDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -473,7 +483,7 @@ impl CreateConfigurationSetEventDestinationInput {
 pub mod create_configuration_set_tracking_options_input {
 
     /// A builder for [`CreateConfigurationSetTrackingOptionsInput`](crate::input::CreateConfigurationSetTrackingOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) tracking_options: std::option::Option<crate::model::TrackingOptions>,
@@ -512,7 +522,7 @@ pub mod create_configuration_set_tracking_options_input {
             self,
         ) -> Result<
             crate::input::CreateConfigurationSetTrackingOptionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateConfigurationSetTrackingOptionsInput {
                 configuration_set_name: self.configuration_set_name,
@@ -534,13 +544,13 @@ impl CreateConfigurationSetTrackingOptionsInput {
             crate::operation::CreateConfigurationSetTrackingOptions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateConfigurationSetTrackingOptionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -548,8 +558,10 @@ impl CreateConfigurationSetTrackingOptionsInput {
             fn update_http_builder(
                 input: &crate::input::CreateConfigurationSetTrackingOptionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -632,7 +644,7 @@ impl CreateConfigurationSetTrackingOptionsInput {
 pub mod create_custom_verification_email_template_input {
 
     /// A builder for [`CreateCustomVerificationEmailTemplateInput`](crate::input::CreateCustomVerificationEmailTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
         pub(crate) from_email_address: std::option::Option<std::string::String>,
@@ -725,7 +737,7 @@ pub mod create_custom_verification_email_template_input {
             self,
         ) -> Result<
             crate::input::CreateCustomVerificationEmailTemplateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateCustomVerificationEmailTemplateInput {
                 template_name: self.template_name,
@@ -751,13 +763,13 @@ impl CreateCustomVerificationEmailTemplateInput {
             crate::operation::CreateCustomVerificationEmailTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateCustomVerificationEmailTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -765,8 +777,10 @@ impl CreateCustomVerificationEmailTemplateInput {
             fn update_http_builder(
                 input: &crate::input::CreateCustomVerificationEmailTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -849,7 +863,7 @@ impl CreateCustomVerificationEmailTemplateInput {
 pub mod create_receipt_filter_input {
 
     /// A builder for [`CreateReceiptFilterInput`](crate::input::CreateReceiptFilterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::ReceiptFilter>,
     }
@@ -870,8 +884,10 @@ pub mod create_receipt_filter_input {
         /// Consumes the builder and constructs a [`CreateReceiptFilterInput`](crate::input::CreateReceiptFilterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateReceiptFilterInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateReceiptFilterInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateReceiptFilterInput {
                 filter: self.filter,
             })
@@ -891,13 +907,13 @@ impl CreateReceiptFilterInput {
             crate::operation::CreateReceiptFilter,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateReceiptFilterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -905,8 +921,10 @@ impl CreateReceiptFilterInput {
             fn update_http_builder(
                 input: &crate::input::CreateReceiptFilterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -990,7 +1008,7 @@ impl CreateReceiptFilterInput {
 pub mod create_receipt_rule_input {
 
     /// A builder for [`CreateReceiptRuleInput`](crate::input::CreateReceiptRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
         pub(crate) after: std::option::Option<std::string::String>,
@@ -1033,8 +1051,10 @@ pub mod create_receipt_rule_input {
         /// Consumes the builder and constructs a [`CreateReceiptRuleInput`](crate::input::CreateReceiptRuleInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateReceiptRuleInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateReceiptRuleInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateReceiptRuleInput {
                 rule_set_name: self.rule_set_name,
                 after: self.after,
@@ -1056,13 +1076,13 @@ impl CreateReceiptRuleInput {
             crate::operation::CreateReceiptRule,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateReceiptRuleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1070,8 +1090,10 @@ impl CreateReceiptRuleInput {
             fn update_http_builder(
                 input: &crate::input::CreateReceiptRuleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1155,7 +1177,7 @@ impl CreateReceiptRuleInput {
 pub mod create_receipt_rule_set_input {
 
     /// A builder for [`CreateReceiptRuleSetInput`](crate::input::CreateReceiptRuleSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
     }
@@ -1186,8 +1208,10 @@ pub mod create_receipt_rule_set_input {
         /// Consumes the builder and constructs a [`CreateReceiptRuleSetInput`](crate::input::CreateReceiptRuleSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateReceiptRuleSetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateReceiptRuleSetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateReceiptRuleSetInput {
                 rule_set_name: self.rule_set_name,
             })
@@ -1207,13 +1231,13 @@ impl CreateReceiptRuleSetInput {
             crate::operation::CreateReceiptRuleSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateReceiptRuleSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1221,8 +1245,10 @@ impl CreateReceiptRuleSetInput {
             fn update_http_builder(
                 input: &crate::input::CreateReceiptRuleSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1308,7 +1334,7 @@ impl CreateReceiptRuleSetInput {
 pub mod create_template_input {
 
     /// A builder for [`CreateTemplateInput`](crate::input::CreateTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template: std::option::Option<crate::model::Template>,
     }
@@ -1326,7 +1352,7 @@ pub mod create_template_input {
         /// Consumes the builder and constructs a [`CreateTemplateInput`](crate::input::CreateTemplateInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTemplateInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateTemplateInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateTemplateInput {
                 template: self.template,
@@ -1347,13 +1373,13 @@ impl CreateTemplateInput {
             crate::operation::CreateTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1361,8 +1387,10 @@ impl CreateTemplateInput {
             fn update_http_builder(
                 input: &crate::input::CreateTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1446,7 +1474,7 @@ impl CreateTemplateInput {
 pub mod delete_configuration_set_input {
 
     /// A builder for [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     }
@@ -1467,8 +1495,10 @@ pub mod delete_configuration_set_input {
         /// Consumes the builder and constructs a [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteConfigurationSetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteConfigurationSetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteConfigurationSetInput {
                 configuration_set_name: self.configuration_set_name,
             })
@@ -1488,13 +1518,13 @@ impl DeleteConfigurationSetInput {
             crate::operation::DeleteConfigurationSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteConfigurationSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1502,8 +1532,10 @@ impl DeleteConfigurationSetInput {
             fn update_http_builder(
                 input: &crate::input::DeleteConfigurationSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1589,7 +1621,7 @@ impl DeleteConfigurationSetInput {
 pub mod delete_configuration_set_event_destination_input {
 
     /// A builder for [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) event_destination_name: std::option::Option<std::string::String>,
@@ -1626,7 +1658,7 @@ pub mod delete_configuration_set_event_destination_input {
             self,
         ) -> Result<
             crate::input::DeleteConfigurationSetEventDestinationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteConfigurationSetEventDestinationInput {
                 configuration_set_name: self.configuration_set_name,
@@ -1648,13 +1680,13 @@ impl DeleteConfigurationSetEventDestinationInput {
             crate::operation::DeleteConfigurationSetEventDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteConfigurationSetEventDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1662,8 +1694,10 @@ impl DeleteConfigurationSetEventDestinationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteConfigurationSetEventDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1746,7 +1780,7 @@ impl DeleteConfigurationSetEventDestinationInput {
 pub mod delete_configuration_set_tracking_options_input {
 
     /// A builder for [`DeleteConfigurationSetTrackingOptionsInput`](crate::input::DeleteConfigurationSetTrackingOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     }
@@ -1769,7 +1803,7 @@ pub mod delete_configuration_set_tracking_options_input {
             self,
         ) -> Result<
             crate::input::DeleteConfigurationSetTrackingOptionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteConfigurationSetTrackingOptionsInput {
                 configuration_set_name: self.configuration_set_name,
@@ -1790,13 +1824,13 @@ impl DeleteConfigurationSetTrackingOptionsInput {
             crate::operation::DeleteConfigurationSetTrackingOptions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteConfigurationSetTrackingOptionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1804,8 +1838,10 @@ impl DeleteConfigurationSetTrackingOptionsInput {
             fn update_http_builder(
                 input: &crate::input::DeleteConfigurationSetTrackingOptionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1888,7 +1924,7 @@ impl DeleteConfigurationSetTrackingOptionsInput {
 pub mod delete_custom_verification_email_template_input {
 
     /// A builder for [`DeleteCustomVerificationEmailTemplateInput`](crate::input::DeleteCustomVerificationEmailTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
     }
@@ -1911,7 +1947,7 @@ pub mod delete_custom_verification_email_template_input {
             self,
         ) -> Result<
             crate::input::DeleteCustomVerificationEmailTemplateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteCustomVerificationEmailTemplateInput {
                 template_name: self.template_name,
@@ -1932,13 +1968,13 @@ impl DeleteCustomVerificationEmailTemplateInput {
             crate::operation::DeleteCustomVerificationEmailTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteCustomVerificationEmailTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1946,8 +1982,10 @@ impl DeleteCustomVerificationEmailTemplateInput {
             fn update_http_builder(
                 input: &crate::input::DeleteCustomVerificationEmailTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2030,7 +2068,7 @@ impl DeleteCustomVerificationEmailTemplateInput {
 pub mod delete_identity_input {
 
     /// A builder for [`DeleteIdentityInput`](crate::input::DeleteIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
     }
@@ -2048,7 +2086,7 @@ pub mod delete_identity_input {
         /// Consumes the builder and constructs a [`DeleteIdentityInput`](crate::input::DeleteIdentityInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteIdentityInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteIdentityInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteIdentityInput {
                 identity: self.identity,
@@ -2069,13 +2107,13 @@ impl DeleteIdentityInput {
             crate::operation::DeleteIdentity,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteIdentityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2083,8 +2121,10 @@ impl DeleteIdentityInput {
             fn update_http_builder(
                 input: &crate::input::DeleteIdentityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2168,7 +2208,7 @@ impl DeleteIdentityInput {
 pub mod delete_identity_policy_input {
 
     /// A builder for [`DeleteIdentityPolicyInput`](crate::input::DeleteIdentityPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -2199,8 +2239,10 @@ pub mod delete_identity_policy_input {
         /// Consumes the builder and constructs a [`DeleteIdentityPolicyInput`](crate::input::DeleteIdentityPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteIdentityPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteIdentityPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteIdentityPolicyInput {
                 identity: self.identity,
                 policy_name: self.policy_name,
@@ -2221,13 +2263,13 @@ impl DeleteIdentityPolicyInput {
             crate::operation::DeleteIdentityPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteIdentityPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2235,8 +2277,10 @@ impl DeleteIdentityPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteIdentityPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2322,7 +2366,7 @@ impl DeleteIdentityPolicyInput {
 pub mod delete_receipt_filter_input {
 
     /// A builder for [`DeleteReceiptFilterInput`](crate::input::DeleteReceiptFilterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_name: std::option::Option<std::string::String>,
     }
@@ -2340,8 +2384,10 @@ pub mod delete_receipt_filter_input {
         /// Consumes the builder and constructs a [`DeleteReceiptFilterInput`](crate::input::DeleteReceiptFilterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteReceiptFilterInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteReceiptFilterInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteReceiptFilterInput {
                 filter_name: self.filter_name,
             })
@@ -2361,13 +2407,13 @@ impl DeleteReceiptFilterInput {
             crate::operation::DeleteReceiptFilter,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteReceiptFilterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2375,8 +2421,10 @@ impl DeleteReceiptFilterInput {
             fn update_http_builder(
                 input: &crate::input::DeleteReceiptFilterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2460,7 +2508,7 @@ impl DeleteReceiptFilterInput {
 pub mod delete_receipt_rule_input {
 
     /// A builder for [`DeleteReceiptRuleInput`](crate::input::DeleteReceiptRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
         pub(crate) rule_name: std::option::Option<std::string::String>,
@@ -2492,8 +2540,10 @@ pub mod delete_receipt_rule_input {
         /// Consumes the builder and constructs a [`DeleteReceiptRuleInput`](crate::input::DeleteReceiptRuleInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteReceiptRuleInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteReceiptRuleInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteReceiptRuleInput {
                 rule_set_name: self.rule_set_name,
                 rule_name: self.rule_name,
@@ -2514,13 +2564,13 @@ impl DeleteReceiptRuleInput {
             crate::operation::DeleteReceiptRule,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteReceiptRuleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2528,8 +2578,10 @@ impl DeleteReceiptRuleInput {
             fn update_http_builder(
                 input: &crate::input::DeleteReceiptRuleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2613,7 +2665,7 @@ impl DeleteReceiptRuleInput {
 pub mod delete_receipt_rule_set_input {
 
     /// A builder for [`DeleteReceiptRuleSetInput`](crate::input::DeleteReceiptRuleSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
     }
@@ -2634,8 +2686,10 @@ pub mod delete_receipt_rule_set_input {
         /// Consumes the builder and constructs a [`DeleteReceiptRuleSetInput`](crate::input::DeleteReceiptRuleSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteReceiptRuleSetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteReceiptRuleSetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteReceiptRuleSetInput {
                 rule_set_name: self.rule_set_name,
             })
@@ -2655,13 +2709,13 @@ impl DeleteReceiptRuleSetInput {
             crate::operation::DeleteReceiptRuleSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteReceiptRuleSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2669,8 +2723,10 @@ impl DeleteReceiptRuleSetInput {
             fn update_http_builder(
                 input: &crate::input::DeleteReceiptRuleSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2756,7 +2812,7 @@ impl DeleteReceiptRuleSetInput {
 pub mod delete_template_input {
 
     /// A builder for [`DeleteTemplateInput`](crate::input::DeleteTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
     }
@@ -2777,7 +2833,7 @@ pub mod delete_template_input {
         /// Consumes the builder and constructs a [`DeleteTemplateInput`](crate::input::DeleteTemplateInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTemplateInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteTemplateInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteTemplateInput {
                 template_name: self.template_name,
@@ -2798,13 +2854,13 @@ impl DeleteTemplateInput {
             crate::operation::DeleteTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2812,8 +2868,10 @@ impl DeleteTemplateInput {
             fn update_http_builder(
                 input: &crate::input::DeleteTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2897,7 +2955,7 @@ impl DeleteTemplateInput {
 pub mod delete_verified_email_address_input {
 
     /// A builder for [`DeleteVerifiedEmailAddressInput`](crate::input::DeleteVerifiedEmailAddressInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
     }
@@ -2920,7 +2978,7 @@ pub mod delete_verified_email_address_input {
             self,
         ) -> Result<
             crate::input::DeleteVerifiedEmailAddressInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteVerifiedEmailAddressInput {
                 email_address: self.email_address,
@@ -2941,13 +2999,13 @@ impl DeleteVerifiedEmailAddressInput {
             crate::operation::DeleteVerifiedEmailAddress,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteVerifiedEmailAddressInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2955,8 +3013,10 @@ impl DeleteVerifiedEmailAddressInput {
             fn update_http_builder(
                 input: &crate::input::DeleteVerifiedEmailAddressInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3039,7 +3099,7 @@ impl DeleteVerifiedEmailAddressInput {
 pub mod describe_active_receipt_rule_set_input {
 
     /// A builder for [`DescribeActiveReceiptRuleSetInput`](crate::input::DescribeActiveReceiptRuleSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeActiveReceiptRuleSetInput`](crate::input::DescribeActiveReceiptRuleSetInput).
@@ -3047,7 +3107,7 @@ pub mod describe_active_receipt_rule_set_input {
             self,
         ) -> Result<
             crate::input::DescribeActiveReceiptRuleSetInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeActiveReceiptRuleSetInput {})
         }
@@ -3066,13 +3126,13 @@ impl DescribeActiveReceiptRuleSetInput {
             crate::operation::DescribeActiveReceiptRuleSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeActiveReceiptRuleSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3080,8 +3140,10 @@ impl DescribeActiveReceiptRuleSetInput {
             fn update_http_builder(
                 input: &crate::input::DescribeActiveReceiptRuleSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3157,7 +3219,7 @@ impl DescribeActiveReceiptRuleSetInput {
 pub mod describe_configuration_set_input {
 
     /// A builder for [`DescribeConfigurationSetInput`](crate::input::DescribeConfigurationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) configuration_set_attribute_names:
@@ -3204,7 +3266,7 @@ pub mod describe_configuration_set_input {
             self,
         ) -> Result<
             crate::input::DescribeConfigurationSetInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeConfigurationSetInput {
                 configuration_set_name: self.configuration_set_name,
@@ -3226,13 +3288,13 @@ impl DescribeConfigurationSetInput {
             crate::operation::DescribeConfigurationSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeConfigurationSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3240,8 +3302,10 @@ impl DescribeConfigurationSetInput {
             fn update_http_builder(
                 input: &crate::input::DescribeConfigurationSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3327,7 +3391,7 @@ impl DescribeConfigurationSetInput {
 pub mod describe_receipt_rule_input {
 
     /// A builder for [`DescribeReceiptRuleInput`](crate::input::DescribeReceiptRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
         pub(crate) rule_name: std::option::Option<std::string::String>,
@@ -3359,8 +3423,10 @@ pub mod describe_receipt_rule_input {
         /// Consumes the builder and constructs a [`DescribeReceiptRuleInput`](crate::input::DescribeReceiptRuleInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeReceiptRuleInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeReceiptRuleInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeReceiptRuleInput {
                 rule_set_name: self.rule_set_name,
                 rule_name: self.rule_name,
@@ -3381,13 +3447,13 @@ impl DescribeReceiptRuleInput {
             crate::operation::DescribeReceiptRule,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeReceiptRuleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3395,8 +3461,10 @@ impl DescribeReceiptRuleInput {
             fn update_http_builder(
                 input: &crate::input::DescribeReceiptRuleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3480,7 +3548,7 @@ impl DescribeReceiptRuleInput {
 pub mod describe_receipt_rule_set_input {
 
     /// A builder for [`DescribeReceiptRuleSetInput`](crate::input::DescribeReceiptRuleSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
     }
@@ -3501,8 +3569,10 @@ pub mod describe_receipt_rule_set_input {
         /// Consumes the builder and constructs a [`DescribeReceiptRuleSetInput`](crate::input::DescribeReceiptRuleSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeReceiptRuleSetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeReceiptRuleSetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeReceiptRuleSetInput {
                 rule_set_name: self.rule_set_name,
             })
@@ -3522,13 +3592,13 @@ impl DescribeReceiptRuleSetInput {
             crate::operation::DescribeReceiptRuleSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeReceiptRuleSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3536,8 +3606,10 @@ impl DescribeReceiptRuleSetInput {
             fn update_http_builder(
                 input: &crate::input::DescribeReceiptRuleSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3623,7 +3695,7 @@ impl DescribeReceiptRuleSetInput {
 pub mod get_account_sending_enabled_input {
 
     /// A builder for [`GetAccountSendingEnabledInput`](crate::input::GetAccountSendingEnabledInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetAccountSendingEnabledInput`](crate::input::GetAccountSendingEnabledInput).
@@ -3631,7 +3703,7 @@ pub mod get_account_sending_enabled_input {
             self,
         ) -> Result<
             crate::input::GetAccountSendingEnabledInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetAccountSendingEnabledInput {})
         }
@@ -3650,13 +3722,13 @@ impl GetAccountSendingEnabledInput {
             crate::operation::GetAccountSendingEnabled,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccountSendingEnabledInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3664,8 +3736,10 @@ impl GetAccountSendingEnabledInput {
             fn update_http_builder(
                 input: &crate::input::GetAccountSendingEnabledInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3744,7 +3818,7 @@ impl GetAccountSendingEnabledInput {
 pub mod get_custom_verification_email_template_input {
 
     /// A builder for [`GetCustomVerificationEmailTemplateInput`](crate::input::GetCustomVerificationEmailTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
     }
@@ -3767,7 +3841,7 @@ pub mod get_custom_verification_email_template_input {
             self,
         ) -> Result<
             crate::input::GetCustomVerificationEmailTemplateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetCustomVerificationEmailTemplateInput {
                 template_name: self.template_name,
@@ -3788,13 +3862,13 @@ impl GetCustomVerificationEmailTemplateInput {
             crate::operation::GetCustomVerificationEmailTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetCustomVerificationEmailTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3802,8 +3876,10 @@ impl GetCustomVerificationEmailTemplateInput {
             fn update_http_builder(
                 input: &crate::input::GetCustomVerificationEmailTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3886,7 +3962,7 @@ impl GetCustomVerificationEmailTemplateInput {
 pub mod get_identity_dkim_attributes_input {
 
     /// A builder for [`GetIdentityDkimAttributesInput`](crate::input::GetIdentityDkimAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identities: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -3915,7 +3991,7 @@ pub mod get_identity_dkim_attributes_input {
             self,
         ) -> Result<
             crate::input::GetIdentityDkimAttributesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetIdentityDkimAttributesInput {
                 identities: self.identities,
@@ -3936,13 +4012,13 @@ impl GetIdentityDkimAttributesInput {
             crate::operation::GetIdentityDkimAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetIdentityDkimAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3950,8 +4026,10 @@ impl GetIdentityDkimAttributesInput {
             fn update_http_builder(
                 input: &crate::input::GetIdentityDkimAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4037,7 +4115,7 @@ impl GetIdentityDkimAttributesInput {
 pub mod get_identity_mail_from_domain_attributes_input {
 
     /// A builder for [`GetIdentityMailFromDomainAttributesInput`](crate::input::GetIdentityMailFromDomainAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identities: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -4066,7 +4144,7 @@ pub mod get_identity_mail_from_domain_attributes_input {
             self,
         ) -> Result<
             crate::input::GetIdentityMailFromDomainAttributesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetIdentityMailFromDomainAttributesInput {
                 identities: self.identities,
@@ -4087,13 +4165,13 @@ impl GetIdentityMailFromDomainAttributesInput {
             crate::operation::GetIdentityMailFromDomainAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetIdentityMailFromDomainAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4101,8 +4179,10 @@ impl GetIdentityMailFromDomainAttributesInput {
             fn update_http_builder(
                 input: &crate::input::GetIdentityMailFromDomainAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4185,7 +4265,7 @@ impl GetIdentityMailFromDomainAttributesInput {
 pub mod get_identity_notification_attributes_input {
 
     /// A builder for [`GetIdentityNotificationAttributesInput`](crate::input::GetIdentityNotificationAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identities: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -4214,7 +4294,7 @@ pub mod get_identity_notification_attributes_input {
             self,
         ) -> Result<
             crate::input::GetIdentityNotificationAttributesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetIdentityNotificationAttributesInput {
                 identities: self.identities,
@@ -4235,13 +4315,13 @@ impl GetIdentityNotificationAttributesInput {
             crate::operation::GetIdentityNotificationAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetIdentityNotificationAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4249,8 +4329,10 @@ impl GetIdentityNotificationAttributesInput {
             fn update_http_builder(
                 input: &crate::input::GetIdentityNotificationAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4333,7 +4415,7 @@ impl GetIdentityNotificationAttributesInput {
 pub mod get_identity_policies_input {
 
     /// A builder for [`GetIdentityPoliciesInput`](crate::input::GetIdentityPoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
         pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4373,8 +4455,10 @@ pub mod get_identity_policies_input {
         /// Consumes the builder and constructs a [`GetIdentityPoliciesInput`](crate::input::GetIdentityPoliciesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetIdentityPoliciesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetIdentityPoliciesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetIdentityPoliciesInput {
                 identity: self.identity,
                 policy_names: self.policy_names,
@@ -4395,13 +4479,13 @@ impl GetIdentityPoliciesInput {
             crate::operation::GetIdentityPolicies,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetIdentityPoliciesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4409,8 +4493,10 @@ impl GetIdentityPoliciesInput {
             fn update_http_builder(
                 input: &crate::input::GetIdentityPoliciesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4494,7 +4580,7 @@ impl GetIdentityPoliciesInput {
 pub mod get_identity_verification_attributes_input {
 
     /// A builder for [`GetIdentityVerificationAttributesInput`](crate::input::GetIdentityVerificationAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identities: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -4523,7 +4609,7 @@ pub mod get_identity_verification_attributes_input {
             self,
         ) -> Result<
             crate::input::GetIdentityVerificationAttributesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetIdentityVerificationAttributesInput {
                 identities: self.identities,
@@ -4544,13 +4630,13 @@ impl GetIdentityVerificationAttributesInput {
             crate::operation::GetIdentityVerificationAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetIdentityVerificationAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4558,8 +4644,10 @@ impl GetIdentityVerificationAttributesInput {
             fn update_http_builder(
                 input: &crate::input::GetIdentityVerificationAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4642,13 +4730,13 @@ impl GetIdentityVerificationAttributesInput {
 pub mod get_send_quota_input {
 
     /// A builder for [`GetSendQuotaInput`](crate::input::GetSendQuotaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetSendQuotaInput`](crate::input::GetSendQuotaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSendQuotaInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetSendQuotaInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetSendQuotaInput {})
         }
@@ -4667,13 +4755,13 @@ impl GetSendQuotaInput {
             crate::operation::GetSendQuota,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetSendQuotaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4681,8 +4769,10 @@ impl GetSendQuotaInput {
             fn update_http_builder(
                 input: &crate::input::GetSendQuotaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4759,14 +4849,16 @@ impl GetSendQuotaInput {
 pub mod get_send_statistics_input {
 
     /// A builder for [`GetSendStatisticsInput`](crate::input::GetSendStatisticsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetSendStatisticsInput`](crate::input::GetSendStatisticsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSendStatisticsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetSendStatisticsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetSendStatisticsInput {})
         }
     }
@@ -4784,13 +4876,13 @@ impl GetSendStatisticsInput {
             crate::operation::GetSendStatistics,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetSendStatisticsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4798,8 +4890,10 @@ impl GetSendStatisticsInput {
             fn update_http_builder(
                 input: &crate::input::GetSendStatisticsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4876,7 +4970,7 @@ impl GetSendStatisticsInput {
 pub mod get_template_input {
 
     /// A builder for [`GetTemplateInput`](crate::input::GetTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
     }
@@ -4897,7 +4991,7 @@ pub mod get_template_input {
         /// Consumes the builder and constructs a [`GetTemplateInput`](crate::input::GetTemplateInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetTemplateInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetTemplateInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetTemplateInput {
                 template_name: self.template_name,
@@ -4918,13 +5012,13 @@ impl GetTemplateInput {
             crate::operation::GetTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4932,8 +5026,10 @@ impl GetTemplateInput {
             fn update_http_builder(
                 input: &crate::input::GetTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5017,7 +5113,7 @@ impl GetTemplateInput {
 pub mod list_configuration_sets_input {
 
     /// A builder for [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -5046,8 +5142,10 @@ pub mod list_configuration_sets_input {
         /// Consumes the builder and constructs a [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListConfigurationSetsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListConfigurationSetsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListConfigurationSetsInput {
                 next_token: self.next_token,
                 max_items: self.max_items,
@@ -5068,13 +5166,13 @@ impl ListConfigurationSetsInput {
             crate::operation::ListConfigurationSets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListConfigurationSetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5082,8 +5180,10 @@ impl ListConfigurationSetsInput {
             fn update_http_builder(
                 input: &crate::input::ListConfigurationSetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5169,7 +5269,7 @@ impl ListConfigurationSetsInput {
 pub mod list_custom_verification_email_templates_input {
 
     /// A builder for [`ListCustomVerificationEmailTemplatesInput`](crate::input::ListCustomVerificationEmailTemplatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5200,7 +5300,7 @@ pub mod list_custom_verification_email_templates_input {
             self,
         ) -> Result<
             crate::input::ListCustomVerificationEmailTemplatesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListCustomVerificationEmailTemplatesInput {
                 next_token: self.next_token,
@@ -5222,13 +5322,13 @@ impl ListCustomVerificationEmailTemplatesInput {
             crate::operation::ListCustomVerificationEmailTemplates,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListCustomVerificationEmailTemplatesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5236,8 +5336,10 @@ impl ListCustomVerificationEmailTemplatesInput {
             fn update_http_builder(
                 input: &crate::input::ListCustomVerificationEmailTemplatesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5320,7 +5422,7 @@ impl ListCustomVerificationEmailTemplatesInput {
 pub mod list_identities_input {
 
     /// A builder for [`ListIdentitiesInput`](crate::input::ListIdentitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_type: std::option::Option<crate::model::IdentityType>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5363,7 +5465,7 @@ pub mod list_identities_input {
         /// Consumes the builder and constructs a [`ListIdentitiesInput`](crate::input::ListIdentitiesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListIdentitiesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListIdentitiesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListIdentitiesInput {
                 identity_type: self.identity_type,
@@ -5386,13 +5488,13 @@ impl ListIdentitiesInput {
             crate::operation::ListIdentities,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListIdentitiesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5400,8 +5502,10 @@ impl ListIdentitiesInput {
             fn update_http_builder(
                 input: &crate::input::ListIdentitiesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5485,7 +5589,7 @@ impl ListIdentitiesInput {
 pub mod list_identity_policies_input {
 
     /// A builder for [`ListIdentityPoliciesInput`](crate::input::ListIdentityPoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
     }
@@ -5505,8 +5609,10 @@ pub mod list_identity_policies_input {
         /// Consumes the builder and constructs a [`ListIdentityPoliciesInput`](crate::input::ListIdentityPoliciesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListIdentityPoliciesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListIdentityPoliciesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListIdentityPoliciesInput {
                 identity: self.identity,
             })
@@ -5526,13 +5632,13 @@ impl ListIdentityPoliciesInput {
             crate::operation::ListIdentityPolicies,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListIdentityPoliciesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5540,8 +5646,10 @@ impl ListIdentityPoliciesInput {
             fn update_http_builder(
                 input: &crate::input::ListIdentityPoliciesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5627,14 +5735,16 @@ impl ListIdentityPoliciesInput {
 pub mod list_receipt_filters_input {
 
     /// A builder for [`ListReceiptFiltersInput`](crate::input::ListReceiptFiltersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ListReceiptFiltersInput`](crate::input::ListReceiptFiltersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListReceiptFiltersInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListReceiptFiltersInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListReceiptFiltersInput {})
         }
     }
@@ -5652,13 +5762,13 @@ impl ListReceiptFiltersInput {
             crate::operation::ListReceiptFilters,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListReceiptFiltersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5666,8 +5776,10 @@ impl ListReceiptFiltersInput {
             fn update_http_builder(
                 input: &crate::input::ListReceiptFiltersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5744,7 +5856,7 @@ impl ListReceiptFiltersInput {
 pub mod list_receipt_rule_sets_input {
 
     /// A builder for [`ListReceiptRuleSetsInput`](crate::input::ListReceiptRuleSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -5762,8 +5874,10 @@ pub mod list_receipt_rule_sets_input {
         /// Consumes the builder and constructs a [`ListReceiptRuleSetsInput`](crate::input::ListReceiptRuleSetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListReceiptRuleSetsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListReceiptRuleSetsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListReceiptRuleSetsInput {
                 next_token: self.next_token,
             })
@@ -5783,13 +5897,13 @@ impl ListReceiptRuleSetsInput {
             crate::operation::ListReceiptRuleSets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListReceiptRuleSetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5797,8 +5911,10 @@ impl ListReceiptRuleSetsInput {
             fn update_http_builder(
                 input: &crate::input::ListReceiptRuleSetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5884,7 +6000,7 @@ impl ListReceiptRuleSetsInput {
 pub mod list_templates_input {
 
     /// A builder for [`ListTemplatesInput`](crate::input::ListTemplatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -5913,7 +6029,7 @@ pub mod list_templates_input {
         /// Consumes the builder and constructs a [`ListTemplatesInput`](crate::input::ListTemplatesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTemplatesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListTemplatesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListTemplatesInput {
                 next_token: self.next_token,
@@ -5935,13 +6051,13 @@ impl ListTemplatesInput {
             crate::operation::ListTemplates,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTemplatesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5949,8 +6065,10 @@ impl ListTemplatesInput {
             fn update_http_builder(
                 input: &crate::input::ListTemplatesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6034,7 +6152,7 @@ impl ListTemplatesInput {
 pub mod list_verified_email_addresses_input {
 
     /// A builder for [`ListVerifiedEmailAddressesInput`](crate::input::ListVerifiedEmailAddressesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ListVerifiedEmailAddressesInput`](crate::input::ListVerifiedEmailAddressesInput).
@@ -6042,7 +6160,7 @@ pub mod list_verified_email_addresses_input {
             self,
         ) -> Result<
             crate::input::ListVerifiedEmailAddressesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListVerifiedEmailAddressesInput {})
         }
@@ -6061,13 +6179,13 @@ impl ListVerifiedEmailAddressesInput {
             crate::operation::ListVerifiedEmailAddresses,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListVerifiedEmailAddressesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6075,8 +6193,10 @@ impl ListVerifiedEmailAddressesInput {
             fn update_http_builder(
                 input: &crate::input::ListVerifiedEmailAddressesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6152,7 +6272,7 @@ impl ListVerifiedEmailAddressesInput {
 pub mod put_configuration_set_delivery_options_input {
 
     /// A builder for [`PutConfigurationSetDeliveryOptionsInput`](crate::input::PutConfigurationSetDeliveryOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) delivery_options: std::option::Option<crate::model::DeliveryOptions>,
@@ -6189,7 +6309,7 @@ pub mod put_configuration_set_delivery_options_input {
             self,
         ) -> Result<
             crate::input::PutConfigurationSetDeliveryOptionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutConfigurationSetDeliveryOptionsInput {
                 configuration_set_name: self.configuration_set_name,
@@ -6211,13 +6331,13 @@ impl PutConfigurationSetDeliveryOptionsInput {
             crate::operation::PutConfigurationSetDeliveryOptions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutConfigurationSetDeliveryOptionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6225,8 +6345,10 @@ impl PutConfigurationSetDeliveryOptionsInput {
             fn update_http_builder(
                 input: &crate::input::PutConfigurationSetDeliveryOptionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6309,7 +6431,7 @@ impl PutConfigurationSetDeliveryOptionsInput {
 pub mod put_identity_policy_input {
 
     /// A builder for [`PutIdentityPolicyInput`](crate::input::PutIdentityPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -6355,8 +6477,10 @@ pub mod put_identity_policy_input {
         /// Consumes the builder and constructs a [`PutIdentityPolicyInput`](crate::input::PutIdentityPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutIdentityPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutIdentityPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutIdentityPolicyInput {
                 identity: self.identity,
                 policy_name: self.policy_name,
@@ -6378,13 +6502,13 @@ impl PutIdentityPolicyInput {
             crate::operation::PutIdentityPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutIdentityPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6392,8 +6516,10 @@ impl PutIdentityPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutIdentityPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6477,7 +6603,7 @@ impl PutIdentityPolicyInput {
 pub mod reorder_receipt_rule_set_input {
 
     /// A builder for [`ReorderReceiptRuleSetInput`](crate::input::ReorderReceiptRuleSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
         pub(crate) rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6518,8 +6644,10 @@ pub mod reorder_receipt_rule_set_input {
         /// Consumes the builder and constructs a [`ReorderReceiptRuleSetInput`](crate::input::ReorderReceiptRuleSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ReorderReceiptRuleSetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ReorderReceiptRuleSetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ReorderReceiptRuleSetInput {
                 rule_set_name: self.rule_set_name,
                 rule_names: self.rule_names,
@@ -6540,13 +6668,13 @@ impl ReorderReceiptRuleSetInput {
             crate::operation::ReorderReceiptRuleSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ReorderReceiptRuleSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6554,8 +6682,10 @@ impl ReorderReceiptRuleSetInput {
             fn update_http_builder(
                 input: &crate::input::ReorderReceiptRuleSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6641,7 +6771,7 @@ impl ReorderReceiptRuleSetInput {
 pub mod send_bounce_input {
 
     /// A builder for [`SendBounceInput`](crate::input::SendBounceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) original_message_id: std::option::Option<std::string::String>,
         pub(crate) bounce_sender: std::option::Option<std::string::String>,
@@ -6739,7 +6869,8 @@ pub mod send_bounce_input {
         /// Consumes the builder and constructs a [`SendBounceInput`](crate::input::SendBounceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendBounceInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::SendBounceInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::SendBounceInput {
                 original_message_id: self.original_message_id,
                 bounce_sender: self.bounce_sender,
@@ -6764,13 +6895,13 @@ impl SendBounceInput {
             crate::operation::SendBounce,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendBounceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6778,8 +6909,10 @@ impl SendBounceInput {
             fn update_http_builder(
                 input: &crate::input::SendBounceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6863,7 +6996,7 @@ impl SendBounceInput {
 pub mod send_bulk_templated_email_input {
 
     /// A builder for [`SendBulkTemplatedEmailInput`](crate::input::SendBulkTemplatedEmailInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
@@ -7044,8 +7177,10 @@ pub mod send_bulk_templated_email_input {
         /// Consumes the builder and constructs a [`SendBulkTemplatedEmailInput`](crate::input::SendBulkTemplatedEmailInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendBulkTemplatedEmailInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SendBulkTemplatedEmailInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SendBulkTemplatedEmailInput {
                 source: self.source,
                 source_arn: self.source_arn,
@@ -7075,13 +7210,13 @@ impl SendBulkTemplatedEmailInput {
             crate::operation::SendBulkTemplatedEmail,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendBulkTemplatedEmailInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7089,8 +7224,10 @@ impl SendBulkTemplatedEmailInput {
             fn update_http_builder(
                 input: &crate::input::SendBulkTemplatedEmailInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7176,7 +7313,7 @@ impl SendBulkTemplatedEmailInput {
 pub mod send_custom_verification_email_input {
 
     /// A builder for [`SendCustomVerificationEmailInput`](crate::input::SendCustomVerificationEmailInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -7227,7 +7364,7 @@ pub mod send_custom_verification_email_input {
             self,
         ) -> Result<
             crate::input::SendCustomVerificationEmailInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::SendCustomVerificationEmailInput {
                 email_address: self.email_address,
@@ -7250,13 +7387,13 @@ impl SendCustomVerificationEmailInput {
             crate::operation::SendCustomVerificationEmail,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendCustomVerificationEmailInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7264,8 +7401,10 @@ impl SendCustomVerificationEmailInput {
             fn update_http_builder(
                 input: &crate::input::SendCustomVerificationEmailInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7348,7 +7487,7 @@ impl SendCustomVerificationEmailInput {
 pub mod send_email_input {
 
     /// A builder for [`SendEmailInput`](crate::input::SendEmailInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
         pub(crate) destination: std::option::Option<crate::model::Destination>,
@@ -7495,7 +7634,8 @@ pub mod send_email_input {
         /// Consumes the builder and constructs a [`SendEmailInput`](crate::input::SendEmailInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendEmailInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::SendEmailInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::SendEmailInput {
                 source: self.source,
                 destination: self.destination,
@@ -7523,13 +7663,13 @@ impl SendEmailInput {
             crate::operation::SendEmail,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendEmailInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7537,8 +7677,10 @@ impl SendEmailInput {
             fn update_http_builder(
                 input: &crate::input::SendEmailInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7620,7 +7762,7 @@ impl SendEmailInput {
 pub mod send_raw_email_input {
 
     /// A builder for [`SendRawEmailInput`](crate::input::SendRawEmailInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
         pub(crate) destinations: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7792,7 +7934,7 @@ pub mod send_raw_email_input {
         /// Consumes the builder and constructs a [`SendRawEmailInput`](crate::input::SendRawEmailInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendRawEmailInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::SendRawEmailInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::SendRawEmailInput {
                 source: self.source,
@@ -7820,13 +7962,13 @@ impl SendRawEmailInput {
             crate::operation::SendRawEmail,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendRawEmailInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7834,8 +7976,10 @@ impl SendRawEmailInput {
             fn update_http_builder(
                 input: &crate::input::SendRawEmailInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7919,7 +8063,7 @@ impl SendRawEmailInput {
 pub mod send_templated_email_input {
 
     /// A builder for [`SendTemplatedEmailInput`](crate::input::SendTemplatedEmailInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
         pub(crate) destination: std::option::Option<crate::model::Destination>,
@@ -8091,8 +8235,10 @@ pub mod send_templated_email_input {
         /// Consumes the builder and constructs a [`SendTemplatedEmailInput`](crate::input::SendTemplatedEmailInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendTemplatedEmailInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SendTemplatedEmailInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SendTemplatedEmailInput {
                 source: self.source,
                 destination: self.destination,
@@ -8122,13 +8268,13 @@ impl SendTemplatedEmailInput {
             crate::operation::SendTemplatedEmail,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendTemplatedEmailInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8136,8 +8282,10 @@ impl SendTemplatedEmailInput {
             fn update_http_builder(
                 input: &crate::input::SendTemplatedEmailInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8221,7 +8369,7 @@ impl SendTemplatedEmailInput {
 pub mod set_active_receipt_rule_set_input {
 
     /// A builder for [`SetActiveReceiptRuleSetInput`](crate::input::SetActiveReceiptRuleSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
     }
@@ -8244,7 +8392,7 @@ pub mod set_active_receipt_rule_set_input {
             self,
         ) -> Result<
             crate::input::SetActiveReceiptRuleSetInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::SetActiveReceiptRuleSetInput {
                 rule_set_name: self.rule_set_name,
@@ -8265,13 +8413,13 @@ impl SetActiveReceiptRuleSetInput {
             crate::operation::SetActiveReceiptRuleSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetActiveReceiptRuleSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8279,8 +8427,10 @@ impl SetActiveReceiptRuleSetInput {
             fn update_http_builder(
                 input: &crate::input::SetActiveReceiptRuleSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8366,7 +8516,7 @@ impl SetActiveReceiptRuleSetInput {
 pub mod set_identity_dkim_enabled_input {
 
     /// A builder for [`SetIdentityDkimEnabledInput`](crate::input::SetIdentityDkimEnabledInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
         pub(crate) dkim_enabled: std::option::Option<bool>,
@@ -8395,8 +8545,10 @@ pub mod set_identity_dkim_enabled_input {
         /// Consumes the builder and constructs a [`SetIdentityDkimEnabledInput`](crate::input::SetIdentityDkimEnabledInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SetIdentityDkimEnabledInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SetIdentityDkimEnabledInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SetIdentityDkimEnabledInput {
                 identity: self.identity,
                 dkim_enabled: self.dkim_enabled.unwrap_or_default(),
@@ -8417,13 +8569,13 @@ impl SetIdentityDkimEnabledInput {
             crate::operation::SetIdentityDkimEnabled,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetIdentityDkimEnabledInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8431,8 +8583,10 @@ impl SetIdentityDkimEnabledInput {
             fn update_http_builder(
                 input: &crate::input::SetIdentityDkimEnabledInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8518,7 +8672,7 @@ impl SetIdentityDkimEnabledInput {
 pub mod set_identity_feedback_forwarding_enabled_input {
 
     /// A builder for [`SetIdentityFeedbackForwardingEnabledInput`](crate::input::SetIdentityFeedbackForwardingEnabledInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
         pub(crate) forwarding_enabled: std::option::Option<bool>,
@@ -8549,7 +8703,7 @@ pub mod set_identity_feedback_forwarding_enabled_input {
             self,
         ) -> Result<
             crate::input::SetIdentityFeedbackForwardingEnabledInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::SetIdentityFeedbackForwardingEnabledInput {
                 identity: self.identity,
@@ -8571,13 +8725,13 @@ impl SetIdentityFeedbackForwardingEnabledInput {
             crate::operation::SetIdentityFeedbackForwardingEnabled,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetIdentityFeedbackForwardingEnabledInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8585,8 +8739,10 @@ impl SetIdentityFeedbackForwardingEnabledInput {
             fn update_http_builder(
                 input: &crate::input::SetIdentityFeedbackForwardingEnabledInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8669,7 +8825,7 @@ impl SetIdentityFeedbackForwardingEnabledInput {
 pub mod set_identity_headers_in_notifications_enabled_input {
 
     /// A builder for [`SetIdentityHeadersInNotificationsEnabledInput`](crate::input::SetIdentityHeadersInNotificationsEnabledInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
         pub(crate) notification_type: std::option::Option<crate::model::NotificationType>,
@@ -8716,7 +8872,7 @@ pub mod set_identity_headers_in_notifications_enabled_input {
             self,
         ) -> Result<
             crate::input::SetIdentityHeadersInNotificationsEnabledInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::SetIdentityHeadersInNotificationsEnabledInput {
@@ -8741,13 +8897,13 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
             crate::operation::SetIdentityHeadersInNotificationsEnabled,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetIdentityHeadersInNotificationsEnabledInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8755,8 +8911,10 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
             fn update_http_builder(
                 input: &crate::input::SetIdentityHeadersInNotificationsEnabledInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8839,7 +8997,7 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
 pub mod set_identity_mail_from_domain_input {
 
     /// A builder for [`SetIdentityMailFromDomainInput`](crate::input::SetIdentityMailFromDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
         pub(crate) mail_from_domain: std::option::Option<std::string::String>,
@@ -8889,7 +9047,7 @@ pub mod set_identity_mail_from_domain_input {
             self,
         ) -> Result<
             crate::input::SetIdentityMailFromDomainInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::SetIdentityMailFromDomainInput {
                 identity: self.identity,
@@ -8912,13 +9070,13 @@ impl SetIdentityMailFromDomainInput {
             crate::operation::SetIdentityMailFromDomain,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetIdentityMailFromDomainInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8926,8 +9084,10 @@ impl SetIdentityMailFromDomainInput {
             fn update_http_builder(
                 input: &crate::input::SetIdentityMailFromDomainInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9010,7 +9170,7 @@ impl SetIdentityMailFromDomainInput {
 pub mod set_identity_notification_topic_input {
 
     /// A builder for [`SetIdentityNotificationTopicInput`](crate::input::SetIdentityNotificationTopicInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
         pub(crate) notification_type: std::option::Option<crate::model::NotificationType>,
@@ -9061,7 +9221,7 @@ pub mod set_identity_notification_topic_input {
             self,
         ) -> Result<
             crate::input::SetIdentityNotificationTopicInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::SetIdentityNotificationTopicInput {
                 identity: self.identity,
@@ -9084,13 +9244,13 @@ impl SetIdentityNotificationTopicInput {
             crate::operation::SetIdentityNotificationTopic,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetIdentityNotificationTopicInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9098,8 +9258,10 @@ impl SetIdentityNotificationTopicInput {
             fn update_http_builder(
                 input: &crate::input::SetIdentityNotificationTopicInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9182,7 +9344,7 @@ impl SetIdentityNotificationTopicInput {
 pub mod set_receipt_rule_position_input {
 
     /// A builder for [`SetReceiptRulePositionInput`](crate::input::SetReceiptRulePositionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
         pub(crate) rule_name: std::option::Option<std::string::String>,
@@ -9225,8 +9387,10 @@ pub mod set_receipt_rule_position_input {
         /// Consumes the builder and constructs a [`SetReceiptRulePositionInput`](crate::input::SetReceiptRulePositionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SetReceiptRulePositionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SetReceiptRulePositionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SetReceiptRulePositionInput {
                 rule_set_name: self.rule_set_name,
                 rule_name: self.rule_name,
@@ -9248,13 +9412,13 @@ impl SetReceiptRulePositionInput {
             crate::operation::SetReceiptRulePosition,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetReceiptRulePositionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9262,8 +9426,10 @@ impl SetReceiptRulePositionInput {
             fn update_http_builder(
                 input: &crate::input::SetReceiptRulePositionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9349,7 +9515,7 @@ impl SetReceiptRulePositionInput {
 pub mod test_render_template_input {
 
     /// A builder for [`TestRenderTemplateInput`](crate::input::TestRenderTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
         pub(crate) template_data: std::option::Option<std::string::String>,
@@ -9384,8 +9550,10 @@ pub mod test_render_template_input {
         /// Consumes the builder and constructs a [`TestRenderTemplateInput`](crate::input::TestRenderTemplateInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TestRenderTemplateInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::TestRenderTemplateInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::TestRenderTemplateInput {
                 template_name: self.template_name,
                 template_data: self.template_data,
@@ -9406,13 +9574,13 @@ impl TestRenderTemplateInput {
             crate::operation::TestRenderTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TestRenderTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9420,8 +9588,10 @@ impl TestRenderTemplateInput {
             fn update_http_builder(
                 input: &crate::input::TestRenderTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9505,7 +9675,7 @@ impl TestRenderTemplateInput {
 pub mod update_account_sending_enabled_input {
 
     /// A builder for [`UpdateAccountSendingEnabledInput`](crate::input::UpdateAccountSendingEnabledInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
     }
@@ -9525,7 +9695,7 @@ pub mod update_account_sending_enabled_input {
             self,
         ) -> Result<
             crate::input::UpdateAccountSendingEnabledInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateAccountSendingEnabledInput {
                 enabled: self.enabled.unwrap_or_default(),
@@ -9546,13 +9716,13 @@ impl UpdateAccountSendingEnabledInput {
             crate::operation::UpdateAccountSendingEnabled,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateAccountSendingEnabledInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9560,8 +9730,10 @@ impl UpdateAccountSendingEnabledInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAccountSendingEnabledInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9644,7 +9816,7 @@ impl UpdateAccountSendingEnabledInput {
 pub mod update_configuration_set_event_destination_input {
 
     /// A builder for [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) event_destination: std::option::Option<crate::model::EventDestination>,
@@ -9681,7 +9853,7 @@ pub mod update_configuration_set_event_destination_input {
             self,
         ) -> Result<
             crate::input::UpdateConfigurationSetEventDestinationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateConfigurationSetEventDestinationInput {
                 configuration_set_name: self.configuration_set_name,
@@ -9703,13 +9875,13 @@ impl UpdateConfigurationSetEventDestinationInput {
             crate::operation::UpdateConfigurationSetEventDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateConfigurationSetEventDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9717,8 +9889,10 @@ impl UpdateConfigurationSetEventDestinationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateConfigurationSetEventDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9801,7 +9975,7 @@ impl UpdateConfigurationSetEventDestinationInput {
 pub mod update_configuration_set_reputation_metrics_enabled_input {
 
     /// A builder for [`UpdateConfigurationSetReputationMetricsEnabledInput`](crate::input::UpdateConfigurationSetReputationMetricsEnabledInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -9835,7 +10009,7 @@ pub mod update_configuration_set_reputation_metrics_enabled_input {
             self,
         ) -> Result<
             crate::input::UpdateConfigurationSetReputationMetricsEnabledInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::UpdateConfigurationSetReputationMetricsEnabledInput {
@@ -9859,13 +10033,13 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
             crate::operation::UpdateConfigurationSetReputationMetricsEnabled,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateConfigurationSetReputationMetricsEnabledInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9873,8 +10047,10 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
             fn update_http_builder(
                 input: &crate::input::UpdateConfigurationSetReputationMetricsEnabledInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9958,7 +10134,7 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
 pub mod update_configuration_set_sending_enabled_input {
 
     /// A builder for [`UpdateConfigurationSetSendingEnabledInput`](crate::input::UpdateConfigurationSetSendingEnabledInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -9992,7 +10168,7 @@ pub mod update_configuration_set_sending_enabled_input {
             self,
         ) -> Result<
             crate::input::UpdateConfigurationSetSendingEnabledInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateConfigurationSetSendingEnabledInput {
                 configuration_set_name: self.configuration_set_name,
@@ -10014,13 +10190,13 @@ impl UpdateConfigurationSetSendingEnabledInput {
             crate::operation::UpdateConfigurationSetSendingEnabled,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateConfigurationSetSendingEnabledInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10028,8 +10204,10 @@ impl UpdateConfigurationSetSendingEnabledInput {
             fn update_http_builder(
                 input: &crate::input::UpdateConfigurationSetSendingEnabledInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10112,7 +10290,7 @@ impl UpdateConfigurationSetSendingEnabledInput {
 pub mod update_configuration_set_tracking_options_input {
 
     /// A builder for [`UpdateConfigurationSetTrackingOptionsInput`](crate::input::UpdateConfigurationSetTrackingOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) tracking_options: std::option::Option<crate::model::TrackingOptions>,
@@ -10151,7 +10329,7 @@ pub mod update_configuration_set_tracking_options_input {
             self,
         ) -> Result<
             crate::input::UpdateConfigurationSetTrackingOptionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateConfigurationSetTrackingOptionsInput {
                 configuration_set_name: self.configuration_set_name,
@@ -10173,13 +10351,13 @@ impl UpdateConfigurationSetTrackingOptionsInput {
             crate::operation::UpdateConfigurationSetTrackingOptions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateConfigurationSetTrackingOptionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10187,8 +10365,10 @@ impl UpdateConfigurationSetTrackingOptionsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateConfigurationSetTrackingOptionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10271,7 +10451,7 @@ impl UpdateConfigurationSetTrackingOptionsInput {
 pub mod update_custom_verification_email_template_input {
 
     /// A builder for [`UpdateCustomVerificationEmailTemplateInput`](crate::input::UpdateCustomVerificationEmailTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
         pub(crate) from_email_address: std::option::Option<std::string::String>,
@@ -10364,7 +10544,7 @@ pub mod update_custom_verification_email_template_input {
             self,
         ) -> Result<
             crate::input::UpdateCustomVerificationEmailTemplateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateCustomVerificationEmailTemplateInput {
                 template_name: self.template_name,
@@ -10390,13 +10570,13 @@ impl UpdateCustomVerificationEmailTemplateInput {
             crate::operation::UpdateCustomVerificationEmailTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateCustomVerificationEmailTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10404,8 +10584,10 @@ impl UpdateCustomVerificationEmailTemplateInput {
             fn update_http_builder(
                 input: &crate::input::UpdateCustomVerificationEmailTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10488,7 +10670,7 @@ impl UpdateCustomVerificationEmailTemplateInput {
 pub mod update_receipt_rule_input {
 
     /// A builder for [`UpdateReceiptRuleInput`](crate::input::UpdateReceiptRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
         pub(crate) rule: std::option::Option<crate::model::ReceiptRule>,
@@ -10520,8 +10702,10 @@ pub mod update_receipt_rule_input {
         /// Consumes the builder and constructs a [`UpdateReceiptRuleInput`](crate::input::UpdateReceiptRuleInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateReceiptRuleInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateReceiptRuleInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateReceiptRuleInput {
                 rule_set_name: self.rule_set_name,
                 rule: self.rule,
@@ -10542,13 +10726,13 @@ impl UpdateReceiptRuleInput {
             crate::operation::UpdateReceiptRule,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateReceiptRuleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10556,8 +10740,10 @@ impl UpdateReceiptRuleInput {
             fn update_http_builder(
                 input: &crate::input::UpdateReceiptRuleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10641,7 +10827,7 @@ impl UpdateReceiptRuleInput {
 pub mod update_template_input {
 
     /// A builder for [`UpdateTemplateInput`](crate::input::UpdateTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template: std::option::Option<crate::model::Template>,
     }
@@ -10659,7 +10845,7 @@ pub mod update_template_input {
         /// Consumes the builder and constructs a [`UpdateTemplateInput`](crate::input::UpdateTemplateInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateTemplateInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateTemplateInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateTemplateInput {
                 template: self.template,
@@ -10680,13 +10866,13 @@ impl UpdateTemplateInput {
             crate::operation::UpdateTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10694,8 +10880,10 @@ impl UpdateTemplateInput {
             fn update_http_builder(
                 input: &crate::input::UpdateTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10779,7 +10967,7 @@ impl UpdateTemplateInput {
 pub mod verify_domain_dkim_input {
 
     /// A builder for [`VerifyDomainDkimInput`](crate::input::VerifyDomainDkimInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
     }
@@ -10797,8 +10985,10 @@ pub mod verify_domain_dkim_input {
         /// Consumes the builder and constructs a [`VerifyDomainDkimInput`](crate::input::VerifyDomainDkimInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::VerifyDomainDkimInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::VerifyDomainDkimInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::VerifyDomainDkimInput {
                 domain: self.domain,
             })
@@ -10818,13 +11008,13 @@ impl VerifyDomainDkimInput {
             crate::operation::VerifyDomainDkim,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::VerifyDomainDkimInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10832,8 +11022,10 @@ impl VerifyDomainDkimInput {
             fn update_http_builder(
                 input: &crate::input::VerifyDomainDkimInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10917,7 +11109,7 @@ impl VerifyDomainDkimInput {
 pub mod verify_domain_identity_input {
 
     /// A builder for [`VerifyDomainIdentityInput`](crate::input::VerifyDomainIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
     }
@@ -10935,8 +11127,10 @@ pub mod verify_domain_identity_input {
         /// Consumes the builder and constructs a [`VerifyDomainIdentityInput`](crate::input::VerifyDomainIdentityInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::VerifyDomainIdentityInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::VerifyDomainIdentityInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::VerifyDomainIdentityInput {
                 domain: self.domain,
             })
@@ -10956,13 +11150,13 @@ impl VerifyDomainIdentityInput {
             crate::operation::VerifyDomainIdentity,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::VerifyDomainIdentityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10970,8 +11164,10 @@ impl VerifyDomainIdentityInput {
             fn update_http_builder(
                 input: &crate::input::VerifyDomainIdentityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -11057,7 +11253,7 @@ impl VerifyDomainIdentityInput {
 pub mod verify_email_address_input {
 
     /// A builder for [`VerifyEmailAddressInput`](crate::input::VerifyEmailAddressInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
     }
@@ -11078,8 +11274,10 @@ pub mod verify_email_address_input {
         /// Consumes the builder and constructs a [`VerifyEmailAddressInput`](crate::input::VerifyEmailAddressInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::VerifyEmailAddressInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::VerifyEmailAddressInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::VerifyEmailAddressInput {
                 email_address: self.email_address,
             })
@@ -11099,13 +11297,13 @@ impl VerifyEmailAddressInput {
             crate::operation::VerifyEmailAddress,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::VerifyEmailAddressInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -11113,8 +11311,10 @@ impl VerifyEmailAddressInput {
             fn update_http_builder(
                 input: &crate::input::VerifyEmailAddressInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -11198,7 +11398,7 @@ impl VerifyEmailAddressInput {
 pub mod verify_email_identity_input {
 
     /// A builder for [`VerifyEmailIdentityInput`](crate::input::VerifyEmailIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
     }
@@ -11219,8 +11419,10 @@ pub mod verify_email_identity_input {
         /// Consumes the builder and constructs a [`VerifyEmailIdentityInput`](crate::input::VerifyEmailIdentityInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::VerifyEmailIdentityInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::VerifyEmailIdentityInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::VerifyEmailIdentityInput {
                 email_address: self.email_address,
             })
@@ -11240,13 +11442,13 @@ impl VerifyEmailIdentityInput {
             crate::operation::VerifyEmailIdentity,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::VerifyEmailIdentityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -11254,8 +11456,10 @@ impl VerifyEmailIdentityInput {
             fn update_http_builder(
                 input: &crate::input::VerifyEmailIdentityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -11337,7 +11541,7 @@ impl VerifyEmailIdentityInput {
 
 /// <p>Represents a request to begin email address verification with Amazon SES. For information about email address verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifyEmailIdentityInput {
     /// <p>The email address to be verified.</p>
     #[doc(hidden)]
@@ -11349,17 +11553,10 @@ impl VerifyEmailIdentityInput {
         self.email_address.as_deref()
     }
 }
-impl std::fmt::Debug for VerifyEmailIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifyEmailIdentityInput");
-        formatter.field("email_address", &self.email_address);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to begin email address verification with Amazon SES. For information about email address verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifyEmailAddressInput {
     /// <p>The email address to be verified.</p>
     #[doc(hidden)]
@@ -11371,17 +11568,10 @@ impl VerifyEmailAddressInput {
         self.email_address.as_deref()
     }
 }
-impl std::fmt::Debug for VerifyEmailAddressInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifyEmailAddressInput");
-        formatter.field("email_address", &self.email_address);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to begin Amazon SES domain verification and to generate the TXT records that you must publish to the DNS server of your domain to complete the verification. For information about domain verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domains.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifyDomainIdentityInput {
     /// <p>The domain to be verified.</p>
     #[doc(hidden)]
@@ -11393,17 +11583,10 @@ impl VerifyDomainIdentityInput {
         self.domain.as_deref()
     }
 }
-impl std::fmt::Debug for VerifyDomainIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifyDomainIdentityInput");
-        formatter.field("domain", &self.domain);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to generate the CNAME records needed to set up Easy DKIM with Amazon SES. For more information about setting up Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerifyDomainDkimInput {
     /// <p>The name of the domain to be verified for Easy DKIM signing.</p>
     #[doc(hidden)]
@@ -11415,17 +11598,10 @@ impl VerifyDomainDkimInput {
         self.domain.as_deref()
     }
 }
-impl std::fmt::Debug for VerifyDomainDkimInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerifyDomainDkimInput");
-        formatter.field("domain", &self.domain);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTemplateInput {
     /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
     #[doc(hidden)]
@@ -11437,17 +11613,10 @@ impl UpdateTemplateInput {
         self.template.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTemplateInput");
-        formatter.field("template", &self.template);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to update a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateReceiptRuleInput {
     /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
     #[doc(hidden)]
@@ -11466,18 +11635,10 @@ impl UpdateReceiptRuleInput {
         self.rule.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateReceiptRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateReceiptRuleInput");
-        formatter.field("rule_set_name", &self.rule_set_name);
-        formatter.field("rule", &self.rule);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to update an existing custom verification email template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCustomVerificationEmailTemplateInput {
     /// <p>The name of the custom verification email template that you want to update.</p>
     #[doc(hidden)]
@@ -11524,22 +11685,10 @@ impl UpdateCustomVerificationEmailTemplateInput {
         self.failure_redirection_url.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCustomVerificationEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCustomVerificationEmailTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("from_email_address", &self.from_email_address);
-        formatter.field("template_subject", &self.template_subject);
-        formatter.field("template_content", &self.template_content);
-        formatter.field("success_redirection_url", &self.success_redirection_url);
-        formatter.field("failure_redirection_url", &self.failure_redirection_url);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to update the tracking options for a configuration set. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationSetTrackingOptionsInput {
     /// <p>The name of the configuration set for which you want to update the custom tracking domain.</p>
     #[doc(hidden)]
@@ -11560,18 +11709,10 @@ impl UpdateConfigurationSetTrackingOptionsInput {
         self.tracking_options.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateConfigurationSetTrackingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationSetTrackingOptionsInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("tracking_options", &self.tracking_options);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to enable or disable the email sending capabilities for a specific configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationSetSendingEnabledInput {
     /// <p>The name of the configuration set that you want to update.</p>
     #[doc(hidden)]
@@ -11590,18 +11731,10 @@ impl UpdateConfigurationSetSendingEnabledInput {
         self.enabled
     }
 }
-impl std::fmt::Debug for UpdateConfigurationSetSendingEnabledInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationSetSendingEnabledInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to modify the reputation metric publishing settings for a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationSetReputationMetricsEnabledInput {
     /// <p>The name of the configuration set that you want to update.</p>
     #[doc(hidden)]
@@ -11620,18 +11753,10 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
         self.enabled
     }
 }
-impl std::fmt::Debug for UpdateConfigurationSetReputationMetricsEnabledInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationSetReputationMetricsEnabledInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to update the event destination of a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that contains the event destination that you want to update.</p>
     #[doc(hidden)]
@@ -11650,18 +11775,10 @@ impl UpdateConfigurationSetEventDestinationInput {
         self.event_destination.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateConfigurationSetEventDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigurationSetEventDestinationInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("event_destination", &self.event_destination);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to enable or disable the email sending capabilities for your entire Amazon SES account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccountSendingEnabledInput {
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
     #[doc(hidden)]
@@ -11673,17 +11790,10 @@ impl UpdateAccountSendingEnabledInput {
         self.enabled
     }
 }
-impl std::fmt::Debug for UpdateAccountSendingEnabledInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccountSendingEnabledInput");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestRenderTemplateInput {
     /// <p>The name of the template that you want to render.</p>
     #[doc(hidden)]
@@ -11702,18 +11812,10 @@ impl TestRenderTemplateInput {
         self.template_data.as_deref()
     }
 }
-impl std::fmt::Debug for TestRenderTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestRenderTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("template_data", &self.template_data);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to set the position of a receipt rule in a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetReceiptRulePositionInput {
     /// <p>The name of the receipt rule set that contains the receipt rule to reposition.</p>
     #[doc(hidden)]
@@ -11739,19 +11841,10 @@ impl SetReceiptRulePositionInput {
         self.after.as_deref()
     }
 }
-impl std::fmt::Debug for SetReceiptRulePositionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetReceiptRulePositionInput");
-        formatter.field("rule_set_name", &self.rule_set_name);
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("after", &self.after);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to specify the Amazon SNS topic to which Amazon SES will publish bounce, complaint, or delivery notifications for emails sent with that identity as the Source. For information about Amazon SES notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetIdentityNotificationTopicInput {
     /// <p>The identity (email address or domain) that you want to set the Amazon SNS topic for.</p> <important>
     /// <p>You can only specify a verified identity for this parameter.</p>
@@ -11783,19 +11876,10 @@ impl SetIdentityNotificationTopicInput {
         self.sns_topic.as_deref()
     }
 }
-impl std::fmt::Debug for SetIdentityNotificationTopicInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetIdentityNotificationTopicInput");
-        formatter.field("identity", &self.identity);
-        formatter.field("notification_type", &self.notification_type);
-        formatter.field("sns_topic", &self.sns_topic);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to enable or disable the Amazon SES custom MAIL FROM domain setup for a verified identity. For information about using a custom MAIL FROM domain, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetIdentityMailFromDomainInput {
     /// <p>The verified identity for which you want to enable or disable the specified custom MAIL FROM domain.</p>
     #[doc(hidden)]
@@ -11825,19 +11909,10 @@ impl SetIdentityMailFromDomainInput {
         self.behavior_on_mx_failure.as_ref()
     }
 }
-impl std::fmt::Debug for SetIdentityMailFromDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetIdentityMailFromDomainInput");
-        formatter.field("identity", &self.identity);
-        formatter.field("mail_from_domain", &self.mail_from_domain);
-        formatter.field("behavior_on_mx_failure", &self.behavior_on_mx_failure);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to set whether Amazon SES includes the original email headers in the Amazon SNS notifications of a specified type. For information about notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetIdentityHeadersInNotificationsEnabledInput {
     /// <p>The identity for which to enable or disable headers in notifications. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
     #[doc(hidden)]
@@ -11865,19 +11940,10 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
         self.enabled
     }
 }
-impl std::fmt::Debug for SetIdentityHeadersInNotificationsEnabledInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetIdentityHeadersInNotificationsEnabledInput");
-        formatter.field("identity", &self.identity);
-        formatter.field("notification_type", &self.notification_type);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to enable or disable whether Amazon SES forwards you bounce and complaint notifications through email. For information about email feedback forwarding, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-email.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetIdentityFeedbackForwardingEnabledInput {
     /// <p>The identity for which to set bounce and complaint notification forwarding. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
     #[doc(hidden)]
@@ -11896,18 +11962,10 @@ impl SetIdentityFeedbackForwardingEnabledInput {
         self.forwarding_enabled
     }
 }
-impl std::fmt::Debug for SetIdentityFeedbackForwardingEnabledInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetIdentityFeedbackForwardingEnabledInput");
-        formatter.field("identity", &self.identity);
-        formatter.field("forwarding_enabled", &self.forwarding_enabled);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to enable or disable Amazon SES Easy DKIM signing for an identity. For more information about setting up Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetIdentityDkimEnabledInput {
     /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
     #[doc(hidden)]
@@ -11926,18 +11984,10 @@ impl SetIdentityDkimEnabledInput {
         self.dkim_enabled
     }
 }
-impl std::fmt::Debug for SetIdentityDkimEnabledInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetIdentityDkimEnabledInput");
-        formatter.field("identity", &self.identity);
-        formatter.field("dkim_enabled", &self.dkim_enabled);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to set a receipt rule set as the active receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetActiveReceiptRuleSetInput {
     /// <p>The name of the receipt rule set to make active. Setting this value to null disables all email receiving.</p>
     #[doc(hidden)]
@@ -11949,17 +11999,10 @@ impl SetActiveReceiptRuleSetInput {
         self.rule_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for SetActiveReceiptRuleSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetActiveReceiptRuleSetInput");
-        formatter.field("rule_set_name", &self.rule_set_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to send a templated email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendTemplatedEmailInput {
     /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
     /// <p>If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <note>
@@ -12055,27 +12098,10 @@ impl SendTemplatedEmailInput {
         self.template_data.as_deref()
     }
 }
-impl std::fmt::Debug for SendTemplatedEmailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendTemplatedEmailInput");
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("reply_to_addresses", &self.reply_to_addresses);
-        formatter.field("return_path", &self.return_path);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("return_path_arn", &self.return_path_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("template", &self.template);
-        formatter.field("template_arn", &self.template_arn);
-        formatter.field("template_data", &self.template_data);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to send a single raw email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendRawEmailInput {
     /// <p>The identity's email address. If you do not provide a value for this parameter, you must specify a "From" address in the raw text of the message. (You can also specify both.)</p> <note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in<a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
@@ -12186,24 +12212,10 @@ impl SendRawEmailInput {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for SendRawEmailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendRawEmailInput");
-        formatter.field("source", &self.source);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("raw_message", &self.raw_message);
-        formatter.field("from_arn", &self.from_arn);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("return_path_arn", &self.return_path_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to send a single formatted email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendEmailInput {
     /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
     /// <p>If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <note>
@@ -12285,25 +12297,10 @@ impl SendEmailInput {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for SendEmailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendEmailInput");
-        formatter.field("source", &self.source);
-        formatter.field("destination", &self.destination);
-        formatter.field("message", &self.message);
-        formatter.field("reply_to_addresses", &self.reply_to_addresses);
-        formatter.field("return_path", &self.return_path);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("return_path_arn", &self.return_path_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to send a custom verification email to a specified recipient.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendCustomVerificationEmailInput {
     /// <p>The email address to verify.</p>
     #[doc(hidden)]
@@ -12329,19 +12326,10 @@ impl SendCustomVerificationEmailInput {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for SendCustomVerificationEmailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendCustomVerificationEmailInput");
-        formatter.field("email_address", &self.email_address);
-        formatter.field("template_name", &self.template_name);
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to send a templated email to multiple destinations using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendBulkTemplatedEmailInput {
     /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
     /// <p>If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <note>
@@ -12439,27 +12427,10 @@ impl SendBulkTemplatedEmailInput {
         self.destinations.as_deref()
     }
 }
-impl std::fmt::Debug for SendBulkTemplatedEmailInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendBulkTemplatedEmailInput");
-        formatter.field("source", &self.source);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("reply_to_addresses", &self.reply_to_addresses);
-        formatter.field("return_path", &self.return_path);
-        formatter.field("return_path_arn", &self.return_path_arn);
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("default_tags", &self.default_tags);
-        formatter.field("template", &self.template);
-        formatter.field("template_arn", &self.template_arn);
-        formatter.field("default_template_data", &self.default_template_data);
-        formatter.field("destinations", &self.destinations);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to send a bounce message to the sender of an email you received through Amazon SES.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendBounceInput {
     /// <p>The message ID of the message to be bounced.</p>
     #[doc(hidden)]
@@ -12509,25 +12480,10 @@ impl SendBounceInput {
         self.bounce_sender_arn.as_deref()
     }
 }
-impl std::fmt::Debug for SendBounceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendBounceInput");
-        formatter.field("original_message_id", &self.original_message_id);
-        formatter.field("bounce_sender", &self.bounce_sender);
-        formatter.field("explanation", &self.explanation);
-        formatter.field("message_dsn", &self.message_dsn);
-        formatter.field(
-            "bounced_recipient_info_list",
-            &self.bounced_recipient_info_list,
-        );
-        formatter.field("bounce_sender_arn", &self.bounce_sender_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to reorder the receipt rules within a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReorderReceiptRuleSetInput {
     /// <p>The name of the receipt rule set to reorder.</p>
     #[doc(hidden)]
@@ -12546,18 +12502,10 @@ impl ReorderReceiptRuleSetInput {
         self.rule_names.as_deref()
     }
 }
-impl std::fmt::Debug for ReorderReceiptRuleSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReorderReceiptRuleSetInput");
-        formatter.field("rule_set_name", &self.rule_set_name);
-        formatter.field("rule_names", &self.rule_names);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to add or update a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutIdentityPolicyInput {
     /// <p>The identity that the policy will apply to. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
@@ -12589,19 +12537,10 @@ impl PutIdentityPolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutIdentityPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutIdentityPolicyInput");
-        formatter.field("identity", &self.identity);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 /// <p>A request to modify the delivery options for a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutConfigurationSetDeliveryOptionsInput {
     /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
     #[doc(hidden)]
@@ -12620,29 +12559,15 @@ impl PutConfigurationSetDeliveryOptionsInput {
         self.delivery_options.as_ref()
     }
 }
-impl std::fmt::Debug for PutConfigurationSetDeliveryOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutConfigurationSetDeliveryOptionsInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("delivery_options", &self.delivery_options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVerifiedEmailAddressesInput {}
-impl std::fmt::Debug for ListVerifiedEmailAddressesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVerifiedEmailAddressesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTemplatesInput {
     /// <p>A token returned from a previous call to <code>ListTemplates</code> to indicate the position in the list of email templates.</p>
     #[doc(hidden)]
@@ -12661,18 +12586,10 @@ impl ListTemplatesInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTemplatesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to list the receipt rule sets that exist under your AWS account. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReceiptRuleSetsInput {
     /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate the position in the receipt rule set list.</p>
     #[doc(hidden)]
@@ -12684,28 +12601,15 @@ impl ListReceiptRuleSetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListReceiptRuleSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReceiptRuleSetsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to list the IP address filters that exist under your AWS account. You use IP address filters when you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReceiptFiltersInput {}
-impl std::fmt::Debug for ListReceiptFiltersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReceiptFiltersInput");
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to return a list of sending authorization policies that are attached to an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIdentityPoliciesInput {
     /// <p>The identity that is associated with the policy for which the policies will be listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
@@ -12719,17 +12623,10 @@ impl ListIdentityPoliciesInput {
         self.identity.as_deref()
     }
 }
-impl std::fmt::Debug for ListIdentityPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIdentityPoliciesInput");
-        formatter.field("identity", &self.identity);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to return a list of all identities (email addresses and domains) that you have attempted to verify under your AWS account, regardless of verification status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIdentitiesInput {
     /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
     #[doc(hidden)]
@@ -12755,20 +12652,11 @@ impl ListIdentitiesInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListIdentitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIdentitiesInput");
-        formatter.field("identity_type", &self.identity_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to list the existing custom verification email templates for your account.</p>
 /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomVerificationEmailTemplatesInput {
     /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
     #[doc(hidden)]
@@ -12787,18 +12675,10 @@ impl ListCustomVerificationEmailTemplatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListCustomVerificationEmailTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomVerificationEmailTemplatesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to list the configuration sets associated with your AWS account. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConfigurationSetsInput {
     /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position of the configuration set in the configuration set list.</p>
     #[doc(hidden)]
@@ -12817,18 +12697,10 @@ impl ListConfigurationSetsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for ListConfigurationSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConfigurationSetsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTemplateInput {
     /// <p>The name of the template you want to retrieve.</p>
     #[doc(hidden)]
@@ -12840,39 +12712,20 @@ impl GetTemplateInput {
         self.template_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSendStatisticsInput {}
-impl std::fmt::Debug for GetSendStatisticsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSendStatisticsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSendQuotaInput {}
-impl std::fmt::Debug for GetSendQuotaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSendQuotaInput");
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to return the Amazon SES verification status of a list of identities. For domain identities, this request also returns the verification token. For information about verifying identities with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityVerificationAttributesInput {
     /// <p>A list of identities.</p>
     #[doc(hidden)]
@@ -12884,17 +12737,10 @@ impl GetIdentityVerificationAttributesInput {
         self.identities.as_deref()
     }
 }
-impl std::fmt::Debug for GetIdentityVerificationAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityVerificationAttributesInput");
-        formatter.field("identities", &self.identities);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to return the requested sending authorization policies for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityPoliciesInput {
     /// <p>The identity for which the policies will be retrieved. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
@@ -12915,18 +12761,10 @@ impl GetIdentityPoliciesInput {
         self.policy_names.as_deref()
     }
 }
-impl std::fmt::Debug for GetIdentityPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityPoliciesInput");
-        formatter.field("identity", &self.identity);
-        formatter.field("policy_names", &self.policy_names);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to return the notification attributes for a list of identities you verified with Amazon SES. For information about Amazon SES notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityNotificationAttributesInput {
     /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     #[doc(hidden)]
@@ -12938,17 +12776,10 @@ impl GetIdentityNotificationAttributesInput {
         self.identities.as_deref()
     }
 }
-impl std::fmt::Debug for GetIdentityNotificationAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityNotificationAttributesInput");
-        formatter.field("identities", &self.identities);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to return the Amazon SES custom MAIL FROM attributes for a list of identities. For information about using a custom MAIL FROM domain, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityMailFromDomainAttributesInput {
     /// <p>A list of one or more identities.</p>
     #[doc(hidden)]
@@ -12960,17 +12791,10 @@ impl GetIdentityMailFromDomainAttributesInput {
         self.identities.as_deref()
     }
 }
-impl std::fmt::Debug for GetIdentityMailFromDomainAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityMailFromDomainAttributesInput");
-        formatter.field("identities", &self.identities);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request for the status of Amazon SES Easy DKIM signing for an identity. For domain identities, this request also returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES successfully verified that these tokens were published. For more information about Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIdentityDkimAttributesInput {
     /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
     #[doc(hidden)]
@@ -12982,17 +12806,10 @@ impl GetIdentityDkimAttributesInput {
         self.identities.as_deref()
     }
 }
-impl std::fmt::Debug for GetIdentityDkimAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIdentityDkimAttributesInput");
-        formatter.field("identities", &self.identities);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to retrieve an existing custom verification email template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCustomVerificationEmailTemplateInput {
     /// <p>The name of the custom verification email template that you want to retrieve.</p>
     #[doc(hidden)]
@@ -13004,28 +12821,15 @@ impl GetCustomVerificationEmailTemplateInput {
         self.template_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetCustomVerificationEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCustomVerificationEmailTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountSendingEnabledInput {}
-impl std::fmt::Debug for GetAccountSendingEnabledInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountSendingEnabledInput");
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to return the details of a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReceiptRuleSetInput {
     /// <p>The name of the receipt rule set to describe.</p>
     #[doc(hidden)]
@@ -13037,17 +12841,10 @@ impl DescribeReceiptRuleSetInput {
         self.rule_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReceiptRuleSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReceiptRuleSetInput");
-        formatter.field("rule_set_name", &self.rule_set_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to return the details of a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReceiptRuleInput {
     /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
     #[doc(hidden)]
@@ -13066,18 +12863,10 @@ impl DescribeReceiptRuleInput {
         self.rule_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReceiptRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReceiptRuleInput");
-        formatter.field("rule_set_name", &self.rule_set_name);
-        formatter.field("rule_name", &self.rule_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to return the details of a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConfigurationSetInput {
     /// <p>The name of the configuration set to describe.</p>
     #[doc(hidden)]
@@ -13099,32 +12888,15 @@ impl DescribeConfigurationSetInput {
         self.configuration_set_attribute_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConfigurationSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConfigurationSetInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field(
-            "configuration_set_attribute_names",
-            &self.configuration_set_attribute_names,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to return the metadata and receipt rules for the receipt rule set that is currently active. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeActiveReceiptRuleSetInput {}
-impl std::fmt::Debug for DescribeActiveReceiptRuleSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeActiveReceiptRuleSetInput");
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to delete an email address from the list of email addresses you have attempted to verify under your AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVerifiedEmailAddressInput {
     /// <p>An email address to be removed from the list of verified addresses.</p>
     #[doc(hidden)]
@@ -13136,17 +12908,10 @@ impl DeleteVerifiedEmailAddressInput {
         self.email_address.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVerifiedEmailAddressInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVerifiedEmailAddressInput");
-        formatter.field("email_address", &self.email_address);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to delete an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTemplateInput {
     /// <p>The name of the template to be deleted.</p>
     #[doc(hidden)]
@@ -13158,17 +12923,10 @@ impl DeleteTemplateInput {
         self.template_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to delete a receipt rule set and all of the receipt rules it contains. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReceiptRuleSetInput {
     /// <p>The name of the receipt rule set to delete.</p>
     #[doc(hidden)]
@@ -13180,17 +12938,10 @@ impl DeleteReceiptRuleSetInput {
         self.rule_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteReceiptRuleSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReceiptRuleSetInput");
-        formatter.field("rule_set_name", &self.rule_set_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to delete a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReceiptRuleInput {
     /// <p>The name of the receipt rule set that contains the receipt rule to delete.</p>
     #[doc(hidden)]
@@ -13209,18 +12960,10 @@ impl DeleteReceiptRuleInput {
         self.rule_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteReceiptRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReceiptRuleInput");
-        formatter.field("rule_set_name", &self.rule_set_name);
-        formatter.field("rule_name", &self.rule_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to delete an IP address filter. You use IP address filters when you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReceiptFilterInput {
     /// <p>The name of the IP address filter to delete.</p>
     #[doc(hidden)]
@@ -13232,17 +12975,10 @@ impl DeleteReceiptFilterInput {
         self.filter_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteReceiptFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReceiptFilterInput");
-        formatter.field("filter_name", &self.filter_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to delete a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIdentityPolicyInput {
     /// <p>The identity that is associated with the policy that you want to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
@@ -13263,18 +12999,10 @@ impl DeleteIdentityPolicyInput {
         self.policy_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIdentityPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIdentityPolicyInput");
-        formatter.field("identity", &self.identity);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to delete one of your Amazon SES identities (an email address or domain).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIdentityInput {
     /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
     #[doc(hidden)]
@@ -13286,17 +13014,10 @@ impl DeleteIdentityInput {
         self.identity.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIdentityInput");
-        formatter.field("identity", &self.identity);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to delete an existing custom verification email template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomVerificationEmailTemplateInput {
     /// <p>The name of the custom verification email template that you want to delete.</p>
     #[doc(hidden)]
@@ -13308,17 +13029,10 @@ impl DeleteCustomVerificationEmailTemplateInput {
         self.template_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCustomVerificationEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCustomVerificationEmailTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to delete open and click tracking options in a configuration set. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationSetTrackingOptionsInput {
     /// <p>The name of the configuration set from which you want to delete the tracking options.</p>
     #[doc(hidden)]
@@ -13330,17 +13044,10 @@ impl DeleteConfigurationSetTrackingOptionsInput {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigurationSetTrackingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationSetTrackingOptionsInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to delete a configuration set event destination. Configuration set event destinations are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set from which to delete the event destination.</p>
     #[doc(hidden)]
@@ -13359,18 +13066,10 @@ impl DeleteConfigurationSetEventDestinationInput {
         self.event_destination_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigurationSetEventDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationSetEventDestinationInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("event_destination_name", &self.event_destination_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to delete a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigurationSetInput {
     /// <p>The name of the configuration set to delete.</p>
     #[doc(hidden)]
@@ -13382,17 +13081,10 @@ impl DeleteConfigurationSetInput {
         self.configuration_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConfigurationSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigurationSetInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to create an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTemplateInput {
     /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
     #[doc(hidden)]
@@ -13404,17 +13096,10 @@ impl CreateTemplateInput {
         self.template.as_ref()
     }
 }
-impl std::fmt::Debug for CreateTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTemplateInput");
-        formatter.field("template", &self.template);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to create an empty receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReceiptRuleSetInput {
     /// <p>The name of the rule set to create. The name must:</p>
     /// <ul>
@@ -13436,17 +13121,10 @@ impl CreateReceiptRuleSetInput {
         self.rule_set_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateReceiptRuleSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReceiptRuleSetInput");
-        formatter.field("rule_set_name", &self.rule_set_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to create a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReceiptRuleInput {
     /// <p>The name of the rule set that the receipt rule will be added to.</p>
     #[doc(hidden)]
@@ -13472,19 +13150,10 @@ impl CreateReceiptRuleInput {
         self.rule.as_ref()
     }
 }
-impl std::fmt::Debug for CreateReceiptRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReceiptRuleInput");
-        formatter.field("rule_set_name", &self.rule_set_name);
-        formatter.field("after", &self.after);
-        formatter.field("rule", &self.rule);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to create a new IP address filter. You use IP address filters when you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateReceiptFilterInput {
     /// <p>A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.</p>
     #[doc(hidden)]
@@ -13496,17 +13165,10 @@ impl CreateReceiptFilterInput {
         self.filter.as_ref()
     }
 }
-impl std::fmt::Debug for CreateReceiptFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateReceiptFilterInput");
-        formatter.field("filter", &self.filter);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to create a custom verification email template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCustomVerificationEmailTemplateInput {
     /// <p>The name of the custom verification email template.</p>
     #[doc(hidden)]
@@ -13553,22 +13215,10 @@ impl CreateCustomVerificationEmailTemplateInput {
         self.failure_redirection_url.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCustomVerificationEmailTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCustomVerificationEmailTemplateInput");
-        formatter.field("template_name", &self.template_name);
-        formatter.field("from_email_address", &self.from_email_address);
-        formatter.field("template_subject", &self.template_subject);
-        formatter.field("template_content", &self.template_content);
-        formatter.field("success_redirection_url", &self.success_redirection_url);
-        formatter.field("failure_redirection_url", &self.failure_redirection_url);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to create an open and click tracking option object in a configuration set. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationSetTrackingOptionsInput {
     /// <p>The name of the configuration set that the tracking options should be associated with.</p>
     #[doc(hidden)]
@@ -13589,18 +13239,10 @@ impl CreateConfigurationSetTrackingOptionsInput {
         self.tracking_options.as_ref()
     }
 }
-impl std::fmt::Debug for CreateConfigurationSetTrackingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationSetTrackingOptionsInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("tracking_options", &self.tracking_options);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to create a configuration set event destination. A configuration set event destination, which can be either Amazon CloudWatch or Amazon Kinesis Firehose, describes an AWS service in which Amazon SES publishes the email sending events associated with a configuration set. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that the event destination should be associated with.</p>
     #[doc(hidden)]
@@ -13619,18 +13261,10 @@ impl CreateConfigurationSetEventDestinationInput {
         self.event_destination.as_ref()
     }
 }
-impl std::fmt::Debug for CreateConfigurationSetEventDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationSetEventDestinationInput");
-        formatter.field("configuration_set_name", &self.configuration_set_name);
-        formatter.field("event_destination", &self.event_destination);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to create a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigurationSetInput {
     /// <p>A data structure that contains the name of the configuration set.</p>
     #[doc(hidden)]
@@ -13642,17 +13276,10 @@ impl CreateConfigurationSetInput {
         self.configuration_set.as_ref()
     }
 }
-impl std::fmt::Debug for CreateConfigurationSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigurationSetInput");
-        formatter.field("configuration_set", &self.configuration_set);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents a request to create a receipt rule set by cloning an existing one. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloneReceiptRuleSetInput {
     /// <p>The name of the rule set to create. The name must:</p>
     /// <ul>
@@ -13679,13 +13306,5 @@ impl CloneReceiptRuleSetInput {
     /// <p>The name of the rule set to clone.</p>
     pub fn original_rule_set_name(&self) -> std::option::Option<&str> {
         self.original_rule_set_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CloneReceiptRuleSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloneReceiptRuleSetInput");
-        formatter.field("rule_set_name", &self.rule_set_name);
-        formatter.field("original_rule_set_name", &self.original_rule_set_name);
-        formatter.finish()
     }
 }

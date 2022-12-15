@@ -36,7 +36,7 @@ impl std::fmt::Debug for UpdateNetworkSitePlanOutput {
 pub mod update_network_site_plan_output {
 
     /// A builder for [`UpdateNetworkSitePlanOutput`](crate::output::UpdateNetworkSitePlanOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
         pub(crate) tags: std::option::Option<
@@ -90,6 +90,14 @@ pub mod update_network_site_plan_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("network_site", &self.network_site);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl UpdateNetworkSitePlanOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkSitePlanOutput`](crate::output::UpdateNetworkSitePlanOutput).
@@ -135,7 +143,7 @@ impl std::fmt::Debug for UpdateNetworkSiteOutput {
 pub mod update_network_site_output {
 
     /// A builder for [`UpdateNetworkSiteOutput`](crate::output::UpdateNetworkSiteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
         pub(crate) tags: std::option::Option<
@@ -189,6 +197,14 @@ pub mod update_network_site_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("network_site", &self.network_site);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl UpdateNetworkSiteOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkSiteOutput`](crate::output::UpdateNetworkSiteOutput).
@@ -199,19 +215,13 @@ impl UpdateNetworkSiteOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -229,19 +239,13 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -259,7 +263,7 @@ impl TagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PingOutput {
     /// <p>Information about the health of the service.</p>
     #[doc(hidden)]
@@ -271,18 +275,11 @@ impl PingOutput {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for PingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PingOutput");
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`PingOutput`](crate::output::PingOutput).
 pub mod ping_output {
 
     /// A builder for [`PingOutput`](crate::output::PingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
     }
@@ -341,7 +338,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -378,6 +375,13 @@ pub mod list_tags_for_resource_output {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -388,7 +392,7 @@ impl ListTagsForResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOrdersOutput {
     /// <p>Information about the orders.</p>
     #[doc(hidden)]
@@ -407,19 +411,11 @@ impl ListOrdersOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListOrdersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOrdersOutput");
-        formatter.field("orders", &self.orders);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListOrdersOutput`](crate::output::ListOrdersOutput).
 pub mod list_orders_output {
 
     /// A builder for [`ListOrdersOutput`](crate::output::ListOrdersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) orders: std::option::Option<std::vec::Vec<crate::model::Order>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -472,7 +468,7 @@ impl ListOrdersOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNetworkSitesOutput {
     /// <p>Information about the network sites.</p>
     #[doc(hidden)]
@@ -491,19 +487,11 @@ impl ListNetworkSitesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListNetworkSitesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNetworkSitesOutput");
-        formatter.field("network_sites", &self.network_sites);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListNetworkSitesOutput`](crate::output::ListNetworkSitesOutput).
 pub mod list_network_sites_output {
 
     /// A builder for [`ListNetworkSitesOutput`](crate::output::ListNetworkSitesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_sites: std::option::Option<std::vec::Vec<crate::model::NetworkSite>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -556,7 +544,7 @@ impl ListNetworkSitesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNetworksOutput {
     /// <p>The networks.</p>
     #[doc(hidden)]
@@ -575,19 +563,11 @@ impl ListNetworksOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListNetworksOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNetworksOutput");
-        formatter.field("networks", &self.networks);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListNetworksOutput`](crate::output::ListNetworksOutput).
 pub mod list_networks_output {
 
     /// A builder for [`ListNetworksOutput`](crate::output::ListNetworksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) networks: std::option::Option<std::vec::Vec<crate::model::Network>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -640,7 +620,7 @@ impl ListNetworksOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNetworkResourcesOutput {
     /// <p>Information about network resources.</p>
     #[doc(hidden)]
@@ -659,19 +639,11 @@ impl ListNetworkResourcesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListNetworkResourcesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNetworkResourcesOutput");
-        formatter.field("network_resources", &self.network_resources);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListNetworkResourcesOutput`](crate::output::ListNetworkResourcesOutput).
 pub mod list_network_resources_output {
 
     /// A builder for [`ListNetworkResourcesOutput`](crate::output::ListNetworkResourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_resources:
             std::option::Option<std::vec::Vec<crate::model::NetworkResource>>,
@@ -725,7 +697,7 @@ impl ListNetworkResourcesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeviceIdentifiersOutput {
     /// <p>Information about the device identifiers.</p>
     #[doc(hidden)]
@@ -744,19 +716,11 @@ impl ListDeviceIdentifiersOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeviceIdentifiersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeviceIdentifiersOutput");
-        formatter.field("device_identifiers", &self.device_identifiers);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListDeviceIdentifiersOutput`](crate::output::ListDeviceIdentifiersOutput).
 pub mod list_device_identifiers_output {
 
     /// A builder for [`ListDeviceIdentifiersOutput`](crate::output::ListDeviceIdentifiersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_identifiers:
             std::option::Option<std::vec::Vec<crate::model::DeviceIdentifier>>,
@@ -845,7 +809,7 @@ impl std::fmt::Debug for GetOrderOutput {
 pub mod get_order_output {
 
     /// A builder for [`GetOrderOutput`](crate::output::GetOrderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) order: std::option::Option<crate::model::Order>,
         pub(crate) tags: std::option::Option<
@@ -896,6 +860,14 @@ pub mod get_order_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("order", &self.order);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl GetOrderOutput {
     /// Creates a new builder-style object to manufacture [`GetOrderOutput`](crate::output::GetOrderOutput).
@@ -941,7 +913,7 @@ impl std::fmt::Debug for GetNetworkSiteOutput {
 pub mod get_network_site_output {
 
     /// A builder for [`GetNetworkSiteOutput`](crate::output::GetNetworkSiteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
         pub(crate) tags: std::option::Option<
@@ -995,6 +967,14 @@ pub mod get_network_site_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("network_site", &self.network_site);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl GetNetworkSiteOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkSiteOutput`](crate::output::GetNetworkSiteOutput).
@@ -1040,7 +1020,7 @@ impl std::fmt::Debug for GetNetworkResourceOutput {
 pub mod get_network_resource_output {
 
     /// A builder for [`GetNetworkResourceOutput`](crate::output::GetNetworkResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_resource: std::option::Option<crate::model::NetworkResource>,
         pub(crate) tags: std::option::Option<
@@ -1094,6 +1074,14 @@ pub mod get_network_resource_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("network_resource", &self.network_resource);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl GetNetworkResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkResourceOutput`](crate::output::GetNetworkResourceOutput).
@@ -1139,7 +1127,7 @@ impl std::fmt::Debug for GetNetworkOutput {
 pub mod get_network_output {
 
     /// A builder for [`GetNetworkOutput`](crate::output::GetNetworkOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network: std::option::Option<crate::model::Network>,
         pub(crate) tags: std::option::Option<
@@ -1190,6 +1178,14 @@ pub mod get_network_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("network", &self.network);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl GetNetworkOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkOutput`](crate::output::GetNetworkOutput).
@@ -1235,7 +1231,7 @@ impl std::fmt::Debug for GetDeviceIdentifierOutput {
 pub mod get_device_identifier_output {
 
     /// A builder for [`GetDeviceIdentifierOutput`](crate::output::GetDeviceIdentifierOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_identifier: std::option::Option<crate::model::DeviceIdentifier>,
         pub(crate) tags: std::option::Option<
@@ -1289,6 +1285,14 @@ pub mod get_device_identifier_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("device_identifier", &self.device_identifier);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl GetDeviceIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceIdentifierOutput`](crate::output::GetDeviceIdentifierOutput).
@@ -1299,7 +1303,7 @@ impl GetDeviceIdentifierOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNetworkSiteOutput {
     /// <p>Information about the network site.</p>
     #[doc(hidden)]
@@ -1311,18 +1315,11 @@ impl DeleteNetworkSiteOutput {
         self.network_site.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteNetworkSiteOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNetworkSiteOutput");
-        formatter.field("network_site", &self.network_site);
-        formatter.finish()
-    }
-}
 /// See [`DeleteNetworkSiteOutput`](crate::output::DeleteNetworkSiteOutput).
 pub mod delete_network_site_output {
 
     /// A builder for [`DeleteNetworkSiteOutput`](crate::output::DeleteNetworkSiteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
     }
@@ -1357,7 +1354,7 @@ impl DeleteNetworkSiteOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNetworkOutput {
     /// <p>Information about the network.</p>
     #[doc(hidden)]
@@ -1369,18 +1366,11 @@ impl DeleteNetworkOutput {
         self.network.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteNetworkOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNetworkOutput");
-        formatter.field("network", &self.network);
-        formatter.finish()
-    }
-}
 /// See [`DeleteNetworkOutput`](crate::output::DeleteNetworkOutput).
 pub mod delete_network_output {
 
     /// A builder for [`DeleteNetworkOutput`](crate::output::DeleteNetworkOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network: std::option::Option<crate::model::Network>,
     }
@@ -1412,7 +1402,7 @@ impl DeleteNetworkOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeactivateDeviceIdentifierOutput {
     /// <p>Information about the device identifier.</p>
     #[doc(hidden)]
@@ -1424,18 +1414,11 @@ impl DeactivateDeviceIdentifierOutput {
         self.device_identifier.as_ref()
     }
 }
-impl std::fmt::Debug for DeactivateDeviceIdentifierOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeactivateDeviceIdentifierOutput");
-        formatter.field("device_identifier", &self.device_identifier);
-        formatter.finish()
-    }
-}
 /// See [`DeactivateDeviceIdentifierOutput`](crate::output::DeactivateDeviceIdentifierOutput).
 pub mod deactivate_device_identifier_output {
 
     /// A builder for [`DeactivateDeviceIdentifierOutput`](crate::output::DeactivateDeviceIdentifierOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_identifier: std::option::Option<crate::model::DeviceIdentifier>,
     }
@@ -1505,7 +1488,7 @@ impl std::fmt::Debug for CreateNetworkSiteOutput {
 pub mod create_network_site_output {
 
     /// A builder for [`CreateNetworkSiteOutput`](crate::output::CreateNetworkSiteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
         pub(crate) tags: std::option::Option<
@@ -1559,6 +1542,14 @@ pub mod create_network_site_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("network_site", &self.network_site);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl CreateNetworkSiteOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkSiteOutput`](crate::output::CreateNetworkSiteOutput).
@@ -1604,7 +1595,7 @@ impl std::fmt::Debug for CreateNetworkOutput {
 pub mod create_network_output {
 
     /// A builder for [`CreateNetworkOutput`](crate::output::CreateNetworkOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network: std::option::Option<crate::model::Network>,
         pub(crate) tags: std::option::Option<
@@ -1655,6 +1646,14 @@ pub mod create_network_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("network", &self.network);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl CreateNetworkOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkOutput`](crate::output::CreateNetworkOutput).
@@ -1665,7 +1664,7 @@ impl CreateNetworkOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigureAccessPointOutput {
     /// <p>Information about the network resource.</p>
     #[doc(hidden)]
@@ -1677,18 +1676,11 @@ impl ConfigureAccessPointOutput {
         self.access_point.as_ref()
     }
 }
-impl std::fmt::Debug for ConfigureAccessPointOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigureAccessPointOutput");
-        formatter.field("access_point", &self.access_point);
-        formatter.finish()
-    }
-}
 /// See [`ConfigureAccessPointOutput`](crate::output::ConfigureAccessPointOutput).
 pub mod configure_access_point_output {
 
     /// A builder for [`ConfigureAccessPointOutput`](crate::output::ConfigureAccessPointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point: std::option::Option<crate::model::NetworkResource>,
     }
@@ -1723,7 +1715,7 @@ impl ConfigureAccessPointOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivateNetworkSiteOutput {
     /// <p>Information about the network site.</p>
     #[doc(hidden)]
@@ -1735,18 +1727,11 @@ impl ActivateNetworkSiteOutput {
         self.network_site.as_ref()
     }
 }
-impl std::fmt::Debug for ActivateNetworkSiteOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivateNetworkSiteOutput");
-        formatter.field("network_site", &self.network_site);
-        formatter.finish()
-    }
-}
 /// See [`ActivateNetworkSiteOutput`](crate::output::ActivateNetworkSiteOutput).
 pub mod activate_network_site_output {
 
     /// A builder for [`ActivateNetworkSiteOutput`](crate::output::ActivateNetworkSiteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
     }
@@ -1816,7 +1801,7 @@ impl std::fmt::Debug for ActivateDeviceIdentifierOutput {
 pub mod activate_device_identifier_output {
 
     /// A builder for [`ActivateDeviceIdentifierOutput`](crate::output::ActivateDeviceIdentifierOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_identifier: std::option::Option<crate::model::DeviceIdentifier>,
         pub(crate) tags: std::option::Option<
@@ -1870,6 +1855,14 @@ pub mod activate_device_identifier_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("device_identifier", &self.device_identifier);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ActivateDeviceIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`ActivateDeviceIdentifierOutput`](crate::output::ActivateDeviceIdentifierOutput).
@@ -1880,7 +1873,7 @@ impl ActivateDeviceIdentifierOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcknowledgeOrderReceiptOutput {
     /// <p>Information about the order.</p>
     #[doc(hidden)]
@@ -1892,18 +1885,11 @@ impl AcknowledgeOrderReceiptOutput {
         self.order.as_ref()
     }
 }
-impl std::fmt::Debug for AcknowledgeOrderReceiptOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcknowledgeOrderReceiptOutput");
-        formatter.field("order", &self.order);
-        formatter.finish()
-    }
-}
 /// See [`AcknowledgeOrderReceiptOutput`](crate::output::AcknowledgeOrderReceiptOutput).
 pub mod acknowledge_order_receipt_output {
 
     /// A builder for [`AcknowledgeOrderReceiptOutput`](crate::output::AcknowledgeOrderReceiptOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) order: std::option::Option<crate::model::Order>,
     }

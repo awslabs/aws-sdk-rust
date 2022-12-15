@@ -5,7 +5,7 @@
 /// [`accept_domain_transfer_from_another_aws_account`](crate::client::Client::accept_domain_transfer_from_another_aws_account).
 ///
 /// See [`crate::client::fluent_builders::AcceptDomainTransferFromAnotherAwsAccount`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AcceptDomainTransferFromAnotherAwsAccount {
     _private: (),
 }
@@ -44,7 +44,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptDomainTransferFrom
 /// [`cancel_domain_transfer_to_another_aws_account`](crate::client::Client::cancel_domain_transfer_to_another_aws_account).
 ///
 /// See [`crate::client::fluent_builders::CancelDomainTransferToAnotherAwsAccount`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelDomainTransferToAnotherAwsAccount {
     _private: (),
 }
@@ -82,7 +82,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelDomainTransferToAn
 /// [`check_domain_availability`](crate::client::Client::check_domain_availability).
 ///
 /// See [`crate::client::fluent_builders::CheckDomainAvailability`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CheckDomainAvailability {
     _private: (),
 }
@@ -116,7 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckDomainAvailability 
 /// [`check_domain_transferability`](crate::client::Client::check_domain_transferability).
 ///
 /// See [`crate::client::fluent_builders::CheckDomainTransferability`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CheckDomainTransferability {
     _private: (),
 }
@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckDomainTransferabili
 /// [`delete_domain`](crate::client::Client::delete_domain).
 ///
 /// See [`crate::client::fluent_builders::DeleteDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDomain {
     _private: (),
 }
@@ -182,7 +182,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDomain {
 /// [`delete_tags_for_domain`](crate::client::Client::delete_tags_for_domain).
 ///
 /// See [`crate::client::fluent_builders::DeleteTagsForDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTagsForDomain {
     _private: (),
 }
@@ -216,7 +216,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTagsForDomain {
 /// [`disable_domain_auto_renew`](crate::client::Client::disable_domain_auto_renew).
 ///
 /// See [`crate::client::fluent_builders::DisableDomainAutoRenew`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisableDomainAutoRenew {
     _private: (),
 }
@@ -250,7 +250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableDomainAutoRenew {
 /// [`disable_domain_transfer_lock`](crate::client::Client::disable_domain_transfer_lock).
 ///
 /// See [`crate::client::fluent_builders::DisableDomainTransferLock`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisableDomainTransferLock {
     _private: (),
 }
@@ -284,7 +284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableDomainTransferLoc
 /// [`enable_domain_auto_renew`](crate::client::Client::enable_domain_auto_renew).
 ///
 /// See [`crate::client::fluent_builders::EnableDomainAutoRenew`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct EnableDomainAutoRenew {
     _private: (),
 }
@@ -318,7 +318,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableDomainAutoRenew {
 /// [`enable_domain_transfer_lock`](crate::client::Client::enable_domain_transfer_lock).
 ///
 /// See [`crate::client::fluent_builders::EnableDomainTransferLock`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct EnableDomainTransferLock {
     _private: (),
 }
@@ -352,7 +352,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableDomainTransferLock
 /// [`get_contact_reachability_status`](crate::client::Client::get_contact_reachability_status).
 ///
 /// See [`crate::client::fluent_builders::GetContactReachabilityStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetContactReachabilityStatus {
     _private: (),
 }
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContactReachabilitySt
 /// [`get_domain_detail`](crate::client::Client::get_domain_detail).
 ///
 /// See [`crate::client::fluent_builders::GetDomainDetail`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDomainDetail {
     _private: (),
 }
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomainDetail {
 /// [`get_domain_suggestions`](crate::client::Client::get_domain_suggestions).
 ///
 /// See [`crate::client::fluent_builders::GetDomainSuggestions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDomainSuggestions {
     _private: (),
 }
@@ -454,7 +454,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomainSuggestions {
 /// [`get_operation_detail`](crate::client::Client::get_operation_detail).
 ///
 /// See [`crate::client::fluent_builders::GetOperationDetail`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetOperationDetail {
     _private: (),
 }
@@ -488,7 +488,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOperationDetail {
 /// [`list_domains`](crate::client::Client::list_domains).
 ///
 /// See [`crate::client::fluent_builders::ListDomains`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDomains {
     _private: (),
 }
@@ -520,7 +520,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
 /// [`list_operations`](crate::client::Client::list_operations).
 ///
 /// See [`crate::client::fluent_builders::ListOperations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListOperations {
     _private: (),
 }
@@ -552,7 +552,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOperations {
 /// [`list_prices`](crate::client::Client::list_prices).
 ///
 /// See [`crate::client::fluent_builders::ListPrices`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPrices {
     _private: (),
 }
@@ -584,7 +584,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPrices {
 /// [`list_tags_for_domain`](crate::client::Client::list_tags_for_domain).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForDomain {
     _private: (),
 }
@@ -618,7 +618,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForDomain {
 /// [`register_domain`](crate::client::Client::register_domain).
 ///
 /// See [`crate::client::fluent_builders::RegisterDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterDomain {
     _private: (),
 }
@@ -650,7 +650,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterDomain {
 /// [`reject_domain_transfer_from_another_aws_account`](crate::client::Client::reject_domain_transfer_from_another_aws_account).
 ///
 /// See [`crate::client::fluent_builders::RejectDomainTransferFromAnotherAwsAccount`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RejectDomainTransferFromAnotherAwsAccount {
     _private: (),
 }
@@ -689,7 +689,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectDomainTransferFrom
 /// [`renew_domain`](crate::client::Client::renew_domain).
 ///
 /// See [`crate::client::fluent_builders::RenewDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RenewDomain {
     _private: (),
 }
@@ -721,7 +721,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RenewDomain {
 /// [`resend_contact_reachability_email`](crate::client::Client::resend_contact_reachability_email).
 ///
 /// See [`crate::client::fluent_builders::ResendContactReachabilityEmail`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ResendContactReachabilityEmail {
     _private: (),
 }
@@ -755,7 +755,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResendContactReachabilit
 /// [`retrieve_domain_auth_code`](crate::client::Client::retrieve_domain_auth_code).
 ///
 /// See [`crate::client::fluent_builders::RetrieveDomainAuthCode`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RetrieveDomainAuthCode {
     _private: (),
 }
@@ -789,7 +789,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RetrieveDomainAuthCode {
 /// [`transfer_domain`](crate::client::Client::transfer_domain).
 ///
 /// See [`crate::client::fluent_builders::TransferDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TransferDomain {
     _private: (),
 }
@@ -821,7 +821,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TransferDomain {
 /// [`transfer_domain_to_another_aws_account`](crate::client::Client::transfer_domain_to_another_aws_account).
 ///
 /// See [`crate::client::fluent_builders::TransferDomainToAnotherAwsAccount`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TransferDomainToAnotherAwsAccount {
     _private: (),
 }
@@ -855,7 +855,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TransferDomainToAnotherA
 /// [`update_domain_contact`](crate::client::Client::update_domain_contact).
 ///
 /// See [`crate::client::fluent_builders::UpdateDomainContact`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDomainContact {
     _private: (),
 }
@@ -889,7 +889,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDomainContact {
 /// [`update_domain_contact_privacy`](crate::client::Client::update_domain_contact_privacy).
 ///
 /// See [`crate::client::fluent_builders::UpdateDomainContactPrivacy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDomainContactPrivacy {
     _private: (),
 }
@@ -923,7 +923,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDomainContactPriva
 /// [`update_domain_nameservers`](crate::client::Client::update_domain_nameservers).
 ///
 /// See [`crate::client::fluent_builders::UpdateDomainNameservers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDomainNameservers {
     _private: (),
 }
@@ -957,7 +957,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDomainNameservers 
 /// [`update_tags_for_domain`](crate::client::Client::update_tags_for_domain).
 ///
 /// See [`crate::client::fluent_builders::UpdateTagsForDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTagsForDomain {
     _private: (),
 }
@@ -991,7 +991,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTagsForDomain {
 /// [`view_billing`](crate::client::Client::view_billing).
 ///
 /// See [`crate::client::fluent_builders::ViewBilling`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ViewBilling {
     _private: (),
 }

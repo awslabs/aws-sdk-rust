@@ -2,7 +2,7 @@
 
 /// <p>Configuration information for Organizations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationConfiguration {
     /// <p>Enables Organizations integration.</p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl OrganizationConfiguration {
         self.enable_integration
     }
 }
-impl std::fmt::Debug for OrganizationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationConfiguration");
-        formatter.field("enable_integration", &self.enable_integration);
-        formatter.finish()
-    }
-}
 /// See [`OrganizationConfiguration`](crate::model::OrganizationConfiguration).
 pub mod organization_configuration {
 
     /// A builder for [`OrganizationConfiguration`](crate::model::OrganizationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enable_integration: std::option::Option<bool>,
     }
@@ -57,7 +50,7 @@ impl OrganizationConfiguration {
 
 /// <p>Details for associating a license configuration with a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseSpecification {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
@@ -76,19 +69,11 @@ impl LicenseSpecification {
         self.ami_association_scope.as_deref()
     }
 }
-impl std::fmt::Debug for LicenseSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseSpecification");
-        formatter.field("license_configuration_arn", &self.license_configuration_arn);
-        formatter.field("ami_association_scope", &self.ami_association_scope);
-        formatter.finish()
-    }
-}
 /// See [`LicenseSpecification`](crate::model::LicenseSpecification).
 pub mod license_specification {
 
     /// A builder for [`LicenseSpecification`](crate::model::LicenseSpecification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_arn: std::option::Option<std::string::String>,
         pub(crate) ami_association_scope: std::option::Option<std::string::String>,
@@ -138,7 +123,7 @@ impl LicenseSpecification {
 
 /// <p>Details about how frequently reports are generated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportFrequency {
     /// <p>Number of times within the frequency period that a report is generated. The only supported value is <code>1</code>.</p>
     #[doc(hidden)]
@@ -157,19 +142,11 @@ impl ReportFrequency {
         self.period.as_ref()
     }
 }
-impl std::fmt::Debug for ReportFrequency {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportFrequency");
-        formatter.field("value", &self.value);
-        formatter.field("period", &self.period);
-        formatter.finish()
-    }
-}
 /// See [`ReportFrequency`](crate::model::ReportFrequency).
 pub mod report_frequency {
 
     /// A builder for [`ReportFrequency`](crate::model::ReportFrequency).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<i32>,
         pub(crate) period: std::option::Option<crate::model::ReportFrequencyType>,
@@ -214,6 +191,42 @@ impl ReportFrequency {
     }
 }
 
+/// When writing a match expression against `ReportFrequencyType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let reportfrequencytype = unimplemented!();
+/// match reportfrequencytype {
+///     ReportFrequencyType::Day => { /* ... */ },
+///     ReportFrequencyType::Month => { /* ... */ },
+///     ReportFrequencyType::Week => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `reportfrequencytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ReportFrequencyType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ReportFrequencyType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ReportFrequencyType::NewFeature` is defined.
+/// Specifically, when `reportfrequencytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ReportFrequencyType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -232,8 +245,8 @@ pub enum ReportFrequencyType {
     Month,
     #[allow(missing_docs)] // documentation missing in model
     Week,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ReportFrequencyType {
     fn from(s: &str) -> Self {
@@ -241,7 +254,9 @@ impl std::convert::From<&str> for ReportFrequencyType {
             "DAY" => ReportFrequencyType::Day,
             "MONTH" => ReportFrequencyType::Month,
             "WEEK" => ReportFrequencyType::Week,
-            other => ReportFrequencyType::Unknown(other.to_owned()),
+            other => {
+                ReportFrequencyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -259,11 +274,11 @@ impl ReportFrequencyType {
             ReportFrequencyType::Day => "DAY",
             ReportFrequencyType::Month => "MONTH",
             ReportFrequencyType::Week => "WEEK",
-            ReportFrequencyType::Unknown(s) => s.as_ref(),
+            ReportFrequencyType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAY", "MONTH", "WEEK"]
     }
 }
@@ -275,7 +290,7 @@ impl AsRef<str> for ReportFrequencyType {
 
 /// <p>Details of the license configuration that this generator reports on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportContext {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
     #[doc(hidden)]
@@ -287,21 +302,11 @@ impl ReportContext {
         self.license_configuration_arns.as_deref()
     }
 }
-impl std::fmt::Debug for ReportContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportContext");
-        formatter.field(
-            "license_configuration_arns",
-            &self.license_configuration_arns,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ReportContext`](crate::model::ReportContext).
 pub mod report_context {
 
     /// A builder for [`ReportContext`](crate::model::ReportContext).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_arns:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -341,6 +346,41 @@ impl ReportContext {
     }
 }
 
+/// When writing a match expression against `ReportType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let reporttype = unimplemented!();
+/// match reporttype {
+///     ReportType::LicenseConfigurationSummaryReport => { /* ... */ },
+///     ReportType::LicenseConfigurationUsageReport => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `reporttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ReportType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ReportType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ReportType::NewFeature` is defined.
+/// Specifically, when `reporttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ReportType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -357,15 +397,15 @@ pub enum ReportType {
     LicenseConfigurationSummaryReport,
     #[allow(missing_docs)] // documentation missing in model
     LicenseConfigurationUsageReport,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ReportType {
     fn from(s: &str) -> Self {
         match s {
             "LicenseConfigurationSummaryReport" => ReportType::LicenseConfigurationSummaryReport,
             "LicenseConfigurationUsageReport" => ReportType::LicenseConfigurationUsageReport,
-            other => ReportType::Unknown(other.to_owned()),
+            other => ReportType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -382,11 +422,11 @@ impl ReportType {
         match self {
             ReportType::LicenseConfigurationSummaryReport => "LicenseConfigurationSummaryReport",
             ReportType::LicenseConfigurationUsageReport => "LicenseConfigurationUsageReport",
-            ReportType::Unknown(s) => s.as_ref(),
+            ReportType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "LicenseConfigurationSummaryReport",
             "LicenseConfigurationUsageReport",
@@ -401,7 +441,7 @@ impl AsRef<str> for ReportType {
 
 /// <p>Describes product information for a license configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProductInformation {
     /// <p>Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.</p>
     #[doc(hidden)]
@@ -457,22 +497,11 @@ impl ProductInformation {
         self.product_information_filter_list.as_deref()
     }
 }
-impl std::fmt::Debug for ProductInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProductInformation");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field(
-            "product_information_filter_list",
-            &self.product_information_filter_list,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ProductInformation`](crate::model::ProductInformation).
 pub mod product_information {
 
     /// A builder for [`ProductInformation`](crate::model::ProductInformation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) product_information_filter_list:
@@ -566,7 +595,7 @@ impl ProductInformation {
 
 /// <p>Describes product information filters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProductInformationFilter {
     /// <p>Filter name.</p>
     #[doc(hidden)]
@@ -592,29 +621,11 @@ impl ProductInformationFilter {
         self.product_information_filter_comparator.as_deref()
     }
 }
-impl std::fmt::Debug for ProductInformationFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProductInformationFilter");
-        formatter.field(
-            "product_information_filter_name",
-            &self.product_information_filter_name,
-        );
-        formatter.field(
-            "product_information_filter_value",
-            &self.product_information_filter_value,
-        );
-        formatter.field(
-            "product_information_filter_comparator",
-            &self.product_information_filter_comparator,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ProductInformationFilter`](crate::model::ProductInformationFilter).
 pub mod product_information_filter {
 
     /// A builder for [`ProductInformationFilter`](crate::model::ProductInformationFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_information_filter_name: std::option::Option<std::string::String>,
         pub(crate) product_information_filter_value:
@@ -693,6 +704,41 @@ impl ProductInformationFilter {
     }
 }
 
+/// When writing a match expression against `LicenseConfigurationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let licenseconfigurationstatus = unimplemented!();
+/// match licenseconfigurationstatus {
+///     LicenseConfigurationStatus::Available => { /* ... */ },
+///     LicenseConfigurationStatus::Disabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `licenseconfigurationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LicenseConfigurationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LicenseConfigurationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LicenseConfigurationStatus::NewFeature` is defined.
+/// Specifically, when `licenseconfigurationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LicenseConfigurationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -709,15 +755,17 @@ pub enum LicenseConfigurationStatus {
     Available,
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LicenseConfigurationStatus {
     fn from(s: &str) -> Self {
         match s {
             "AVAILABLE" => LicenseConfigurationStatus::Available,
             "DISABLED" => LicenseConfigurationStatus::Disabled,
-            other => LicenseConfigurationStatus::Unknown(other.to_owned()),
+            other => LicenseConfigurationStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -734,11 +782,11 @@ impl LicenseConfigurationStatus {
         match self {
             LicenseConfigurationStatus::Available => "AVAILABLE",
             LicenseConfigurationStatus::Disabled => "DISABLED",
-            LicenseConfigurationStatus::Unknown(s) => s.as_ref(),
+            LicenseConfigurationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DISABLED"]
     }
 }
@@ -750,7 +798,7 @@ impl AsRef<str> for LicenseConfigurationStatus {
 
 /// <p>Details about a tag for a license configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>Tag key.</p>
     #[doc(hidden)]
@@ -769,19 +817,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -823,6 +863,48 @@ impl Tag {
     }
 }
 
+/// When writing a match expression against `GrantStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let grantstatus = unimplemented!();
+/// match grantstatus {
+///     GrantStatus::Active => { /* ... */ },
+///     GrantStatus::Deleted => { /* ... */ },
+///     GrantStatus::Disabled => { /* ... */ },
+///     GrantStatus::FailedWorkflow => { /* ... */ },
+///     GrantStatus::PendingAccept => { /* ... */ },
+///     GrantStatus::PendingDelete => { /* ... */ },
+///     GrantStatus::PendingWorkflow => { /* ... */ },
+///     GrantStatus::Rejected => { /* ... */ },
+///     GrantStatus::WorkflowCompleted => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `grantstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `GrantStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `GrantStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `GrantStatus::NewFeature` is defined.
+/// Specifically, when `grantstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `GrantStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -853,8 +935,8 @@ pub enum GrantStatus {
     Rejected,
     #[allow(missing_docs)] // documentation missing in model
     WorkflowCompleted,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for GrantStatus {
     fn from(s: &str) -> Self {
@@ -868,7 +950,7 @@ impl std::convert::From<&str> for GrantStatus {
             "PENDING_WORKFLOW" => GrantStatus::PendingWorkflow,
             "REJECTED" => GrantStatus::Rejected,
             "WORKFLOW_COMPLETED" => GrantStatus::WorkflowCompleted,
-            other => GrantStatus::Unknown(other.to_owned()),
+            other => GrantStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -892,11 +974,11 @@ impl GrantStatus {
             GrantStatus::PendingWorkflow => "PENDING_WORKFLOW",
             GrantStatus::Rejected => "REJECTED",
             GrantStatus::WorkflowCompleted => "WORKFLOW_COMPLETED",
-            GrantStatus::Unknown(s) => s.as_ref(),
+            GrantStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "DELETED",
@@ -918,7 +1000,7 @@ impl AsRef<str> for GrantStatus {
 
 /// <p>Details about the usage of a resource associated with a license configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseConfigurationUsage {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -965,23 +1047,11 @@ impl LicenseConfigurationUsage {
         self.consumed_licenses
     }
 }
-impl std::fmt::Debug for LicenseConfigurationUsage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseConfigurationUsage");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_status", &self.resource_status);
-        formatter.field("resource_owner_id", &self.resource_owner_id);
-        formatter.field("association_time", &self.association_time);
-        formatter.field("consumed_licenses", &self.consumed_licenses);
-        formatter.finish()
-    }
-}
 /// See [`LicenseConfigurationUsage`](crate::model::LicenseConfigurationUsage).
 pub mod license_configuration_usage {
 
     /// A builder for [`LicenseConfigurationUsage`](crate::model::LicenseConfigurationUsage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -1083,6 +1153,44 @@ impl LicenseConfigurationUsage {
     }
 }
 
+/// When writing a match expression against `ResourceType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourcetype = unimplemented!();
+/// match resourcetype {
+///     ResourceType::Ec2Ami => { /* ... */ },
+///     ResourceType::Ec2Host => { /* ... */ },
+///     ResourceType::Ec2Instance => { /* ... */ },
+///     ResourceType::Rds => { /* ... */ },
+///     ResourceType::SystemsManagerManagedInstance => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourcetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceType::NewFeature` is defined.
+/// Specifically, when `resourcetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1105,8 +1213,8 @@ pub enum ResourceType {
     Rds,
     #[allow(missing_docs)] // documentation missing in model
     SystemsManagerManagedInstance,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
@@ -1116,7 +1224,7 @@ impl std::convert::From<&str> for ResourceType {
             "EC2_INSTANCE" => ResourceType::Ec2Instance,
             "RDS" => ResourceType::Rds,
             "SYSTEMS_MANAGER_MANAGED_INSTANCE" => ResourceType::SystemsManagerManagedInstance,
-            other => ResourceType::Unknown(other.to_owned()),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1136,11 +1244,11 @@ impl ResourceType {
             ResourceType::Ec2Instance => "EC2_INSTANCE",
             ResourceType::Rds => "RDS",
             ResourceType::SystemsManagerManagedInstance => "SYSTEMS_MANAGER_MANAGED_INSTANCE",
-            ResourceType::Unknown(s) => s.as_ref(),
+            ResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EC2_AMI",
             "EC2_HOST",
@@ -1158,7 +1266,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>A filter name and value pair that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>Name of the filter. Filter names are case-sensitive.</p>
     #[doc(hidden)]
@@ -1177,19 +1285,11 @@ impl Filter {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1242,7 +1342,7 @@ impl Filter {
 
 /// <p>Describes a token.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TokenData {
     /// <p>Token ID.</p>
     #[doc(hidden)]
@@ -1296,24 +1396,11 @@ impl TokenData {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for TokenData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TokenData");
-        formatter.field("token_id", &self.token_id);
-        formatter.field("token_type", &self.token_type);
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("expiration_time", &self.expiration_time);
-        formatter.field("token_properties", &self.token_properties);
-        formatter.field("role_arns", &self.role_arns);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`TokenData`](crate::model::TokenData).
 pub mod token_data {
 
     /// A builder for [`TokenData`](crate::model::TokenData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token_id: std::option::Option<std::string::String>,
         pub(crate) token_type: std::option::Option<std::string::String>,
@@ -1438,7 +1525,7 @@ impl TokenData {
 
 /// <p>Details about a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceInventory {
     /// <p>ID of the resource.</p>
     #[doc(hidden)]
@@ -1485,26 +1572,11 @@ impl ResourceInventory {
         self.resource_owning_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for ResourceInventory {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInventory");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("platform", &self.platform);
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field(
-            "resource_owning_account_id",
-            &self.resource_owning_account_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ResourceInventory`](crate::model::ResourceInventory).
 pub mod resource_inventory {
 
     /// A builder for [`ResourceInventory`](crate::model::ResourceInventory).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -1605,7 +1677,7 @@ impl ResourceInventory {
 
 /// <p>An inventory filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InventoryFilter {
     /// <p>Name of the filter.</p>
     #[doc(hidden)]
@@ -1631,20 +1703,11 @@ impl InventoryFilter {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for InventoryFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InventoryFilter");
-        formatter.field("name", &self.name);
-        formatter.field("condition", &self.condition);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`InventoryFilter`](crate::model::InventoryFilter).
 pub mod inventory_filter {
 
     /// A builder for [`InventoryFilter`](crate::model::InventoryFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) condition: std::option::Option<crate::model::InventoryFilterCondition>,
@@ -1701,6 +1764,43 @@ impl InventoryFilter {
     }
 }
 
+/// When writing a match expression against `InventoryFilterCondition`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let inventoryfiltercondition = unimplemented!();
+/// match inventoryfiltercondition {
+///     InventoryFilterCondition::BeginsWith => { /* ... */ },
+///     InventoryFilterCondition::Contains => { /* ... */ },
+///     InventoryFilterCondition::Equals => { /* ... */ },
+///     InventoryFilterCondition::NotEquals => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `inventoryfiltercondition` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InventoryFilterCondition::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InventoryFilterCondition::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InventoryFilterCondition::NewFeature` is defined.
+/// Specifically, when `inventoryfiltercondition` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InventoryFilterCondition::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1721,8 +1821,8 @@ pub enum InventoryFilterCondition {
     Equals,
     #[allow(missing_docs)] // documentation missing in model
     NotEquals,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InventoryFilterCondition {
     fn from(s: &str) -> Self {
@@ -1731,7 +1831,9 @@ impl std::convert::From<&str> for InventoryFilterCondition {
             "CONTAINS" => InventoryFilterCondition::Contains,
             "EQUALS" => InventoryFilterCondition::Equals,
             "NOT_EQUALS" => InventoryFilterCondition::NotEquals,
-            other => InventoryFilterCondition::Unknown(other.to_owned()),
+            other => InventoryFilterCondition::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1750,11 +1852,11 @@ impl InventoryFilterCondition {
             InventoryFilterCondition::Contains => "CONTAINS",
             InventoryFilterCondition::Equals => "EQUALS",
             InventoryFilterCondition::NotEquals => "NOT_EQUALS",
-            InventoryFilterCondition::Unknown(s) => s.as_ref(),
+            InventoryFilterCondition::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BEGINS_WITH", "CONTAINS", "EQUALS", "NOT_EQUALS"]
     }
 }
@@ -1766,7 +1868,7 @@ impl AsRef<str> for InventoryFilterCondition {
 
 /// <p>Describes a license that is granted to a grantee.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrantedLicense {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
@@ -1878,32 +1980,11 @@ impl GrantedLicense {
         self.received_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for GrantedLicense {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrantedLicense");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("license_name", &self.license_name);
-        formatter.field("product_name", &self.product_name);
-        formatter.field("product_sku", &self.product_sku);
-        formatter.field("issuer", &self.issuer);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("status", &self.status);
-        formatter.field("validity", &self.validity);
-        formatter.field("beneficiary", &self.beneficiary);
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("consumption_configuration", &self.consumption_configuration);
-        formatter.field("license_metadata", &self.license_metadata);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("version", &self.version);
-        formatter.field("received_metadata", &self.received_metadata);
-        formatter.finish()
-    }
-}
 /// See [`GrantedLicense`](crate::model::GrantedLicense).
 pub mod granted_license {
 
     /// A builder for [`GrantedLicense`](crate::model::GrantedLicense).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arn: std::option::Option<std::string::String>,
         pub(crate) license_name: std::option::Option<std::string::String>,
@@ -2140,7 +2221,7 @@ impl GrantedLicense {
 
 /// <p>Metadata associated with received licenses and grants.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReceivedMetadata {
     /// <p>Received status.</p>
     #[doc(hidden)]
@@ -2166,20 +2247,11 @@ impl ReceivedMetadata {
         self.allowed_operations.as_deref()
     }
 }
-impl std::fmt::Debug for ReceivedMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReceivedMetadata");
-        formatter.field("received_status", &self.received_status);
-        formatter.field("received_status_reason", &self.received_status_reason);
-        formatter.field("allowed_operations", &self.allowed_operations);
-        formatter.finish()
-    }
-}
 /// See [`ReceivedMetadata`](crate::model::ReceivedMetadata).
 pub mod received_metadata {
 
     /// A builder for [`ReceivedMetadata`](crate::model::ReceivedMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) received_status: std::option::Option<crate::model::ReceivedStatus>,
         pub(crate) received_status_reason: std::option::Option<std::string::String>,
@@ -2249,6 +2321,46 @@ impl ReceivedMetadata {
     }
 }
 
+/// When writing a match expression against `AllowedOperation`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let allowedoperation = unimplemented!();
+/// match allowedoperation {
+///     AllowedOperation::CheckInLicense => { /* ... */ },
+///     AllowedOperation::CheckoutBorrowLicense => { /* ... */ },
+///     AllowedOperation::CheckoutLicense => { /* ... */ },
+///     AllowedOperation::CreateGrant => { /* ... */ },
+///     AllowedOperation::CreateToken => { /* ... */ },
+///     AllowedOperation::ExtendConsumptionLicense => { /* ... */ },
+///     AllowedOperation::ListPurchasedLicenses => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `allowedoperation` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AllowedOperation::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AllowedOperation::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AllowedOperation::NewFeature` is defined.
+/// Specifically, when `allowedoperation` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AllowedOperation::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2275,8 +2387,8 @@ pub enum AllowedOperation {
     ExtendConsumptionLicense,
     #[allow(missing_docs)] // documentation missing in model
     ListPurchasedLicenses,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AllowedOperation {
     fn from(s: &str) -> Self {
@@ -2288,7 +2400,7 @@ impl std::convert::From<&str> for AllowedOperation {
             "CreateToken" => AllowedOperation::CreateToken,
             "ExtendConsumptionLicense" => AllowedOperation::ExtendConsumptionLicense,
             "ListPurchasedLicenses" => AllowedOperation::ListPurchasedLicenses,
-            other => AllowedOperation::Unknown(other.to_owned()),
+            other => AllowedOperation::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2310,11 +2422,11 @@ impl AllowedOperation {
             AllowedOperation::CreateToken => "CreateToken",
             AllowedOperation::ExtendConsumptionLicense => "ExtendConsumptionLicense",
             AllowedOperation::ListPurchasedLicenses => "ListPurchasedLicenses",
-            AllowedOperation::Unknown(s) => s.as_ref(),
+            AllowedOperation::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CheckInLicense",
             "CheckoutBorrowLicense",
@@ -2332,6 +2444,47 @@ impl AsRef<str> for AllowedOperation {
     }
 }
 
+/// When writing a match expression against `ReceivedStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let receivedstatus = unimplemented!();
+/// match receivedstatus {
+///     ReceivedStatus::Active => { /* ... */ },
+///     ReceivedStatus::Deleted => { /* ... */ },
+///     ReceivedStatus::Disabled => { /* ... */ },
+///     ReceivedStatus::FailedWorkflow => { /* ... */ },
+///     ReceivedStatus::PendingAccept => { /* ... */ },
+///     ReceivedStatus::PendingWorkflow => { /* ... */ },
+///     ReceivedStatus::Rejected => { /* ... */ },
+///     ReceivedStatus::WorkflowCompleted => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `receivedstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ReceivedStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ReceivedStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ReceivedStatus::NewFeature` is defined.
+/// Specifically, when `receivedstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ReceivedStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2360,8 +2513,8 @@ pub enum ReceivedStatus {
     Rejected,
     #[allow(missing_docs)] // documentation missing in model
     WorkflowCompleted,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ReceivedStatus {
     fn from(s: &str) -> Self {
@@ -2374,7 +2527,7 @@ impl std::convert::From<&str> for ReceivedStatus {
             "PENDING_WORKFLOW" => ReceivedStatus::PendingWorkflow,
             "REJECTED" => ReceivedStatus::Rejected,
             "WORKFLOW_COMPLETED" => ReceivedStatus::WorkflowCompleted,
-            other => ReceivedStatus::Unknown(other.to_owned()),
+            other => ReceivedStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2397,11 +2550,11 @@ impl ReceivedStatus {
             ReceivedStatus::PendingWorkflow => "PENDING_WORKFLOW",
             ReceivedStatus::Rejected => "REJECTED",
             ReceivedStatus::WorkflowCompleted => "WORKFLOW_COMPLETED",
-            ReceivedStatus::Unknown(s) => s.as_ref(),
+            ReceivedStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "DELETED",
@@ -2422,7 +2575,7 @@ impl AsRef<str> for ReceivedStatus {
 
 /// <p>Describes key/value pairs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Metadata {
     /// <p>The key name.</p>
     #[doc(hidden)]
@@ -2441,19 +2594,11 @@ impl Metadata {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Metadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Metadata");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Metadata`](crate::model::Metadata).
 pub mod metadata {
 
     /// A builder for [`Metadata`](crate::model::Metadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2497,7 +2642,7 @@ impl Metadata {
 
 /// <p>Details about a consumption configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConsumptionConfiguration {
     /// <p>Renewal frequency.</p>
     #[doc(hidden)]
@@ -2525,20 +2670,11 @@ impl ConsumptionConfiguration {
         self.borrow_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for ConsumptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConsumptionConfiguration");
-        formatter.field("renew_type", &self.renew_type);
-        formatter.field("provisional_configuration", &self.provisional_configuration);
-        formatter.field("borrow_configuration", &self.borrow_configuration);
-        formatter.finish()
-    }
-}
 /// See [`ConsumptionConfiguration`](crate::model::ConsumptionConfiguration).
 pub mod consumption_configuration {
 
     /// A builder for [`ConsumptionConfiguration`](crate::model::ConsumptionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) renew_type: std::option::Option<crate::model::RenewType>,
         pub(crate) provisional_configuration:
@@ -2607,7 +2743,7 @@ impl ConsumptionConfiguration {
 
 /// <p>Details about a borrow configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BorrowConfiguration {
     /// <p>Indicates whether early check-ins are allowed.</p>
     #[doc(hidden)]
@@ -2626,22 +2762,11 @@ impl BorrowConfiguration {
         self.max_time_to_live_in_minutes
     }
 }
-impl std::fmt::Debug for BorrowConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BorrowConfiguration");
-        formatter.field("allow_early_check_in", &self.allow_early_check_in);
-        formatter.field(
-            "max_time_to_live_in_minutes",
-            &self.max_time_to_live_in_minutes,
-        );
-        formatter.finish()
-    }
-}
 /// See [`BorrowConfiguration`](crate::model::BorrowConfiguration).
 pub mod borrow_configuration {
 
     /// A builder for [`BorrowConfiguration`](crate::model::BorrowConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_early_check_in: std::option::Option<bool>,
         pub(crate) max_time_to_live_in_minutes: std::option::Option<i32>,
@@ -2685,7 +2810,7 @@ impl BorrowConfiguration {
 
 /// <p>Details about a provisional configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionalConfiguration {
     /// <p>Maximum time for the provisional configuration, in minutes.</p>
     #[doc(hidden)]
@@ -2697,21 +2822,11 @@ impl ProvisionalConfiguration {
         self.max_time_to_live_in_minutes
     }
 }
-impl std::fmt::Debug for ProvisionalConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionalConfiguration");
-        formatter.field(
-            "max_time_to_live_in_minutes",
-            &self.max_time_to_live_in_minutes,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ProvisionalConfiguration`](crate::model::ProvisionalConfiguration).
 pub mod provisional_configuration {
 
     /// A builder for [`ProvisionalConfiguration`](crate::model::ProvisionalConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_time_to_live_in_minutes: std::option::Option<i32>,
     }
@@ -2741,6 +2856,42 @@ impl ProvisionalConfiguration {
     }
 }
 
+/// When writing a match expression against `RenewType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let renewtype = unimplemented!();
+/// match renewtype {
+///     RenewType::Monthly => { /* ... */ },
+///     RenewType::None => { /* ... */ },
+///     RenewType::Weekly => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `renewtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RenewType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RenewType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RenewType::NewFeature` is defined.
+/// Specifically, when `renewtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RenewType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2759,8 +2910,8 @@ pub enum RenewType {
     None,
     #[allow(missing_docs)] // documentation missing in model
     Weekly,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RenewType {
     fn from(s: &str) -> Self {
@@ -2768,7 +2919,7 @@ impl std::convert::From<&str> for RenewType {
             "Monthly" => RenewType::Monthly,
             "None" => RenewType::None,
             "Weekly" => RenewType::Weekly,
-            other => RenewType::Unknown(other.to_owned()),
+            other => RenewType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2786,11 +2937,11 @@ impl RenewType {
             RenewType::Monthly => "Monthly",
             RenewType::None => "None",
             RenewType::Weekly => "Weekly",
-            RenewType::Unknown(s) => s.as_ref(),
+            RenewType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Monthly", "None", "Weekly"]
     }
 }
@@ -2802,7 +2953,7 @@ impl AsRef<str> for RenewType {
 
 /// <p>Describes a resource entitled for use with a license.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Entitlement {
     /// <p>Entitlement name.</p>
     #[doc(hidden)]
@@ -2849,23 +3000,11 @@ impl Entitlement {
         self.allow_check_in
     }
 }
-impl std::fmt::Debug for Entitlement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Entitlement");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.field("max_count", &self.max_count);
-        formatter.field("overage", &self.overage);
-        formatter.field("unit", &self.unit);
-        formatter.field("allow_check_in", &self.allow_check_in);
-        formatter.finish()
-    }
-}
 /// See [`Entitlement`](crate::model::Entitlement).
 pub mod entitlement {
 
     /// A builder for [`Entitlement`](crate::model::Entitlement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2958,6 +3097,66 @@ impl Entitlement {
     }
 }
 
+/// When writing a match expression against `EntitlementUnit`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let entitlementunit = unimplemented!();
+/// match entitlementunit {
+///     EntitlementUnit::Bits => { /* ... */ },
+///     EntitlementUnit::BitsPerSecond => { /* ... */ },
+///     EntitlementUnit::Bytes => { /* ... */ },
+///     EntitlementUnit::BytesPerSecond => { /* ... */ },
+///     EntitlementUnit::Count => { /* ... */ },
+///     EntitlementUnit::CountPerSecond => { /* ... */ },
+///     EntitlementUnit::Gigabits => { /* ... */ },
+///     EntitlementUnit::GigabitsPerSecond => { /* ... */ },
+///     EntitlementUnit::Gigabytes => { /* ... */ },
+///     EntitlementUnit::GigabytesPerSecond => { /* ... */ },
+///     EntitlementUnit::Kilobits => { /* ... */ },
+///     EntitlementUnit::KilobitsPerSecond => { /* ... */ },
+///     EntitlementUnit::Kilobytes => { /* ... */ },
+///     EntitlementUnit::KilobytesPerSecond => { /* ... */ },
+///     EntitlementUnit::Megabits => { /* ... */ },
+///     EntitlementUnit::MegabitsPerSecond => { /* ... */ },
+///     EntitlementUnit::Megabytes => { /* ... */ },
+///     EntitlementUnit::MegabytesPerSecond => { /* ... */ },
+///     EntitlementUnit::Microseconds => { /* ... */ },
+///     EntitlementUnit::Milliseconds => { /* ... */ },
+///     EntitlementUnit::None => { /* ... */ },
+///     EntitlementUnit::Percent => { /* ... */ },
+///     EntitlementUnit::Seconds => { /* ... */ },
+///     EntitlementUnit::Terabits => { /* ... */ },
+///     EntitlementUnit::TerabitsPerSecond => { /* ... */ },
+///     EntitlementUnit::Terabytes => { /* ... */ },
+///     EntitlementUnit::TerabytesPerSecond => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `entitlementunit` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EntitlementUnit::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EntitlementUnit::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EntitlementUnit::NewFeature` is defined.
+/// Specifically, when `entitlementunit` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EntitlementUnit::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3024,8 +3223,8 @@ pub enum EntitlementUnit {
     Terabytes,
     #[allow(missing_docs)] // documentation missing in model
     TerabytesPerSecond,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EntitlementUnit {
     fn from(s: &str) -> Self {
@@ -3057,7 +3256,7 @@ impl std::convert::From<&str> for EntitlementUnit {
             "Terabits/Second" => EntitlementUnit::TerabitsPerSecond,
             "Terabytes" => EntitlementUnit::Terabytes,
             "Terabytes/Second" => EntitlementUnit::TerabytesPerSecond,
-            other => EntitlementUnit::Unknown(other.to_owned()),
+            other => EntitlementUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3099,11 +3298,11 @@ impl EntitlementUnit {
             EntitlementUnit::TerabitsPerSecond => "Terabits/Second",
             EntitlementUnit::Terabytes => "Terabytes",
             EntitlementUnit::TerabytesPerSecond => "Terabytes/Second",
-            EntitlementUnit::Unknown(s) => s.as_ref(),
+            EntitlementUnit::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Bits",
             "Bits/Second",
@@ -3143,7 +3342,7 @@ impl AsRef<str> for EntitlementUnit {
 
 /// <p>Describes a time range, in ISO8601-UTC format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatetimeRange {
     /// <p>Start of the time range.</p>
     #[doc(hidden)]
@@ -3162,19 +3361,11 @@ impl DatetimeRange {
         self.end.as_deref()
     }
 }
-impl std::fmt::Debug for DatetimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatetimeRange");
-        formatter.field("begin", &self.begin);
-        formatter.field("end", &self.end);
-        formatter.finish()
-    }
-}
 /// See [`DatetimeRange`](crate::model::DatetimeRange).
 pub mod datetime_range {
 
     /// A builder for [`DatetimeRange`](crate::model::DatetimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin: std::option::Option<std::string::String>,
         pub(crate) end: std::option::Option<std::string::String>,
@@ -3216,6 +3407,46 @@ impl DatetimeRange {
     }
 }
 
+/// When writing a match expression against `LicenseStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let licensestatus = unimplemented!();
+/// match licensestatus {
+///     LicenseStatus::Available => { /* ... */ },
+///     LicenseStatus::Deactivated => { /* ... */ },
+///     LicenseStatus::Deleted => { /* ... */ },
+///     LicenseStatus::Expired => { /* ... */ },
+///     LicenseStatus::PendingAvailable => { /* ... */ },
+///     LicenseStatus::PendingDelete => { /* ... */ },
+///     LicenseStatus::Suspended => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `licensestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LicenseStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LicenseStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LicenseStatus::NewFeature` is defined.
+/// Specifically, when `licensestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LicenseStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3242,8 +3473,8 @@ pub enum LicenseStatus {
     PendingDelete,
     #[allow(missing_docs)] // documentation missing in model
     Suspended,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LicenseStatus {
     fn from(s: &str) -> Self {
@@ -3255,7 +3486,7 @@ impl std::convert::From<&str> for LicenseStatus {
             "PENDING_AVAILABLE" => LicenseStatus::PendingAvailable,
             "PENDING_DELETE" => LicenseStatus::PendingDelete,
             "SUSPENDED" => LicenseStatus::Suspended,
-            other => LicenseStatus::Unknown(other.to_owned()),
+            other => LicenseStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3277,11 +3508,11 @@ impl LicenseStatus {
             LicenseStatus::PendingAvailable => "PENDING_AVAILABLE",
             LicenseStatus::PendingDelete => "PENDING_DELETE",
             LicenseStatus::Suspended => "SUSPENDED",
-            LicenseStatus::Unknown(s) => s.as_ref(),
+            LicenseStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "DEACTIVATED",
@@ -3301,7 +3532,7 @@ impl AsRef<str> for LicenseStatus {
 
 /// <p>Details associated with the issuer of a license.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IssuerDetails {
     /// <p>Issuer name.</p>
     #[doc(hidden)]
@@ -3327,20 +3558,11 @@ impl IssuerDetails {
         self.key_fingerprint.as_deref()
     }
 }
-impl std::fmt::Debug for IssuerDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IssuerDetails");
-        formatter.field("name", &self.name);
-        formatter.field("sign_key", &self.sign_key);
-        formatter.field("key_fingerprint", &self.key_fingerprint);
-        formatter.finish()
-    }
-}
 /// See [`IssuerDetails`](crate::model::IssuerDetails).
 pub mod issuer_details {
 
     /// A builder for [`IssuerDetails`](crate::model::IssuerDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) sign_key: std::option::Option<std::string::String>,
@@ -3399,7 +3621,7 @@ impl IssuerDetails {
 
 /// <p>Describes a grant.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Grant {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
@@ -3474,27 +3696,11 @@ impl Grant {
         self.granted_operations.as_deref()
     }
 }
-impl std::fmt::Debug for Grant {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Grant");
-        formatter.field("grant_arn", &self.grant_arn);
-        formatter.field("grant_name", &self.grant_name);
-        formatter.field("parent_arn", &self.parent_arn);
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("grantee_principal_arn", &self.grantee_principal_arn);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("grant_status", &self.grant_status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("version", &self.version);
-        formatter.field("granted_operations", &self.granted_operations);
-        formatter.finish()
-    }
-}
 /// See [`Grant`](crate::model::Grant).
 pub mod grant {
 
     /// A builder for [`Grant`](crate::model::Grant).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_arn: std::option::Option<std::string::String>,
         pub(crate) grant_name: std::option::Option<std::string::String>,
@@ -3653,7 +3859,7 @@ impl Grant {
 
 /// <p>Software license that is managed in License Manager.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct License {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
@@ -3758,31 +3964,11 @@ impl License {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for License {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("License");
-        formatter.field("license_arn", &self.license_arn);
-        formatter.field("license_name", &self.license_name);
-        formatter.field("product_name", &self.product_name);
-        formatter.field("product_sku", &self.product_sku);
-        formatter.field("issuer", &self.issuer);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("status", &self.status);
-        formatter.field("validity", &self.validity);
-        formatter.field("beneficiary", &self.beneficiary);
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("consumption_configuration", &self.consumption_configuration);
-        formatter.field("license_metadata", &self.license_metadata);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`License`](crate::model::License).
 pub mod license {
 
     /// A builder for [`License`](crate::model::License).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arn: std::option::Option<std::string::String>,
         pub(crate) license_name: std::option::Option<std::string::String>,
@@ -4004,7 +4190,7 @@ impl License {
 
 /// <p>Describe the details of a report generator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportGenerator {
     /// <p>Name of the report generator.</p>
     #[doc(hidden)]
@@ -4100,36 +4286,11 @@ impl ReportGenerator {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for ReportGenerator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportGenerator");
-        formatter.field("report_generator_name", &self.report_generator_name);
-        formatter.field("report_type", &self.report_type);
-        formatter.field("report_context", &self.report_context);
-        formatter.field("report_frequency", &self.report_frequency);
-        formatter.field(
-            "license_manager_report_generator_arn",
-            &self.license_manager_report_generator_arn,
-        );
-        formatter.field("last_run_status", &self.last_run_status);
-        formatter.field("last_run_failure_reason", &self.last_run_failure_reason);
-        formatter.field(
-            "last_report_generation_time",
-            &self.last_report_generation_time,
-        );
-        formatter.field("report_creator_account", &self.report_creator_account);
-        formatter.field("description", &self.description);
-        formatter.field("s3_location", &self.s3_location);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ReportGenerator`](crate::model::ReportGenerator).
 pub mod report_generator {
 
     /// A builder for [`ReportGenerator`](crate::model::ReportGenerator).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_generator_name: std::option::Option<std::string::String>,
         pub(crate) report_type: std::option::Option<std::vec::Vec<crate::model::ReportType>>,
@@ -4356,7 +4517,7 @@ impl ReportGenerator {
 
 /// <p>Details of the S3 bucket that report generator reports are published to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p>Name of the S3 bucket reports are published to.</p>
     #[doc(hidden)]
@@ -4375,19 +4536,11 @@ impl S3Location {
         self.key_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key_prefix", &self.key_prefix);
-        formatter.finish()
-    }
-}
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
 
     /// A builder for [`S3Location`](crate::model::S3Location).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key_prefix: std::option::Option<std::string::String>,
@@ -4431,7 +4584,7 @@ impl S3Location {
 
 /// <p>Information about a license type conversion task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseConversionTask {
     /// <p>The ID of the license type conversion task.</p>
     #[doc(hidden)]
@@ -4503,32 +4656,11 @@ impl LicenseConversionTask {
         self.end_time.as_ref()
     }
 }
-impl std::fmt::Debug for LicenseConversionTask {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseConversionTask");
-        formatter.field(
-            "license_conversion_task_id",
-            &self.license_conversion_task_id,
-        );
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("source_license_context", &self.source_license_context);
-        formatter.field(
-            "destination_license_context",
-            &self.destination_license_context,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("license_conversion_time", &self.license_conversion_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
-    }
-}
 /// See [`LicenseConversionTask`](crate::model::LicenseConversionTask).
 pub mod license_conversion_task {
 
     /// A builder for [`LicenseConversionTask`](crate::model::LicenseConversionTask).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_conversion_task_id: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4686,6 +4818,42 @@ impl LicenseConversionTask {
     }
 }
 
+/// When writing a match expression against `LicenseConversionTaskStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let licenseconversiontaskstatus = unimplemented!();
+/// match licenseconversiontaskstatus {
+///     LicenseConversionTaskStatus::Failed => { /* ... */ },
+///     LicenseConversionTaskStatus::InProgress => { /* ... */ },
+///     LicenseConversionTaskStatus::Succeeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `licenseconversiontaskstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LicenseConversionTaskStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LicenseConversionTaskStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LicenseConversionTaskStatus::NewFeature` is defined.
+/// Specifically, when `licenseconversiontaskstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LicenseConversionTaskStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4704,8 +4872,8 @@ pub enum LicenseConversionTaskStatus {
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LicenseConversionTaskStatus {
     fn from(s: &str) -> Self {
@@ -4713,7 +4881,9 @@ impl std::convert::From<&str> for LicenseConversionTaskStatus {
             "FAILED" => LicenseConversionTaskStatus::Failed,
             "IN_PROGRESS" => LicenseConversionTaskStatus::InProgress,
             "SUCCEEDED" => LicenseConversionTaskStatus::Succeeded,
-            other => LicenseConversionTaskStatus::Unknown(other.to_owned()),
+            other => LicenseConversionTaskStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -4731,11 +4901,11 @@ impl LicenseConversionTaskStatus {
             LicenseConversionTaskStatus::Failed => "FAILED",
             LicenseConversionTaskStatus::InProgress => "IN_PROGRESS",
             LicenseConversionTaskStatus::Succeeded => "SUCCEEDED",
-            LicenseConversionTaskStatus::Unknown(s) => s.as_ref(),
+            LicenseConversionTaskStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }
@@ -4747,7 +4917,7 @@ impl AsRef<str> for LicenseConversionTaskStatus {
 
 /// <p>Information about a license type conversion task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseConversionContext {
     /// <p>The Usage operation value that corresponds to the license type you are converting your resource from. For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform </a> </p>
     #[doc(hidden)]
@@ -4759,18 +4929,11 @@ impl LicenseConversionContext {
         self.usage_operation.as_deref()
     }
 }
-impl std::fmt::Debug for LicenseConversionContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseConversionContext");
-        formatter.field("usage_operation", &self.usage_operation);
-        formatter.finish()
-    }
-}
 /// See [`LicenseConversionContext`](crate::model::LicenseConversionContext).
 pub mod license_conversion_context {
 
     /// A builder for [`LicenseConversionContext`](crate::model::LicenseConversionContext).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_operation: std::option::Option<std::string::String>,
     }
@@ -4805,7 +4968,7 @@ impl LicenseConversionContext {
 
 /// <p>A license configuration is an abstraction of a customer license agreement that can be consumed and enforced by License Manager. Components include specifications for the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these), host affinity (how long a VM must be associated with a host), and the number of licenses purchased and used.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseConfiguration {
     /// <p>Unique ID of the license configuration.</p>
     #[doc(hidden)]
@@ -4934,45 +5097,11 @@ impl LicenseConfiguration {
         self.automated_discovery_information.as_ref()
     }
 }
-impl std::fmt::Debug for LicenseConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseConfiguration");
-        formatter.field("license_configuration_id", &self.license_configuration_id);
-        formatter.field("license_configuration_arn", &self.license_configuration_arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("license_counting_type", &self.license_counting_type);
-        formatter.field("license_rules", &self.license_rules);
-        formatter.field("license_count", &self.license_count);
-        formatter.field("license_count_hard_limit", &self.license_count_hard_limit);
-        formatter.field(
-            "disassociate_when_not_found",
-            &self.disassociate_when_not_found,
-        );
-        formatter.field("consumed_licenses", &self.consumed_licenses);
-        formatter.field("status", &self.status);
-        formatter.field("owner_account_id", &self.owner_account_id);
-        formatter.field(
-            "consumed_license_summary_list",
-            &self.consumed_license_summary_list,
-        );
-        formatter.field(
-            "managed_resource_summary_list",
-            &self.managed_resource_summary_list,
-        );
-        formatter.field("product_information_list", &self.product_information_list);
-        formatter.field(
-            "automated_discovery_information",
-            &self.automated_discovery_information,
-        );
-        formatter.finish()
-    }
-}
 /// See [`LicenseConfiguration`](crate::model::LicenseConfiguration).
 pub mod license_configuration {
 
     /// A builder for [`LicenseConfiguration`](crate::model::LicenseConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_id: std::option::Option<std::string::String>,
         pub(crate) license_configuration_arn: std::option::Option<std::string::String>,
@@ -5248,7 +5377,7 @@ impl LicenseConfiguration {
 
 /// <p>Describes automated discovery.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutomatedDiscoveryInformation {
     /// <p>Time that automated discovery last ran.</p>
     #[doc(hidden)]
@@ -5260,18 +5389,11 @@ impl AutomatedDiscoveryInformation {
         self.last_run_time.as_ref()
     }
 }
-impl std::fmt::Debug for AutomatedDiscoveryInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutomatedDiscoveryInformation");
-        formatter.field("last_run_time", &self.last_run_time);
-        formatter.finish()
-    }
-}
 /// See [`AutomatedDiscoveryInformation`](crate::model::AutomatedDiscoveryInformation).
 pub mod automated_discovery_information {
 
     /// A builder for [`AutomatedDiscoveryInformation`](crate::model::AutomatedDiscoveryInformation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_run_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -5306,7 +5428,7 @@ impl AutomatedDiscoveryInformation {
 
 /// <p>Summary information about a managed resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManagedResourceSummary {
     /// <p>Type of resource associated with a license.</p>
     #[doc(hidden)]
@@ -5325,19 +5447,11 @@ impl ManagedResourceSummary {
         self.association_count
     }
 }
-impl std::fmt::Debug for ManagedResourceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedResourceSummary");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("association_count", &self.association_count);
-        formatter.finish()
-    }
-}
 /// See [`ManagedResourceSummary`](crate::model::ManagedResourceSummary).
 pub mod managed_resource_summary {
 
     /// A builder for [`ManagedResourceSummary`](crate::model::ManagedResourceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) association_count: std::option::Option<i64>,
@@ -5384,7 +5498,7 @@ impl ManagedResourceSummary {
 
 /// <p>Details about license consumption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConsumedLicenseSummary {
     /// <p>Resource type of the resource consuming a license.</p>
     #[doc(hidden)]
@@ -5403,19 +5517,11 @@ impl ConsumedLicenseSummary {
         self.consumed_licenses
     }
 }
-impl std::fmt::Debug for ConsumedLicenseSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConsumedLicenseSummary");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("consumed_licenses", &self.consumed_licenses);
-        formatter.finish()
-    }
-}
 /// See [`ConsumedLicenseSummary`](crate::model::ConsumedLicenseSummary).
 pub mod consumed_license_summary {
 
     /// A builder for [`ConsumedLicenseSummary`](crate::model::ConsumedLicenseSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) consumed_licenses: std::option::Option<i64>,
@@ -5460,6 +5566,43 @@ impl ConsumedLicenseSummary {
     }
 }
 
+/// When writing a match expression against `LicenseCountingType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let licensecountingtype = unimplemented!();
+/// match licensecountingtype {
+///     LicenseCountingType::Core => { /* ... */ },
+///     LicenseCountingType::Instance => { /* ... */ },
+///     LicenseCountingType::Socket => { /* ... */ },
+///     LicenseCountingType::Vcpu => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `licensecountingtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LicenseCountingType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LicenseCountingType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LicenseCountingType::NewFeature` is defined.
+/// Specifically, when `licensecountingtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LicenseCountingType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5480,8 +5623,8 @@ pub enum LicenseCountingType {
     Socket,
     #[allow(missing_docs)] // documentation missing in model
     Vcpu,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LicenseCountingType {
     fn from(s: &str) -> Self {
@@ -5490,7 +5633,9 @@ impl std::convert::From<&str> for LicenseCountingType {
             "Instance" => LicenseCountingType::Instance,
             "Socket" => LicenseCountingType::Socket,
             "vCPU" => LicenseCountingType::Vcpu,
-            other => LicenseCountingType::Unknown(other.to_owned()),
+            other => {
+                LicenseCountingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -5509,11 +5654,11 @@ impl LicenseCountingType {
             LicenseCountingType::Instance => "Instance",
             LicenseCountingType::Socket => "Socket",
             LicenseCountingType::Vcpu => "vCPU",
-            LicenseCountingType::Unknown(s) => s.as_ref(),
+            LicenseCountingType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Core", "Instance", "Socket", "vCPU"]
     }
 }
@@ -5525,7 +5670,7 @@ impl AsRef<str> for LicenseCountingType {
 
 /// <p>Describes the failure of a license operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseOperationFailure {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -5586,25 +5731,11 @@ impl LicenseOperationFailure {
         self.metadata_list.as_deref()
     }
 }
-impl std::fmt::Debug for LicenseOperationFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseOperationFailure");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("failure_time", &self.failure_time);
-        formatter.field("operation_name", &self.operation_name);
-        formatter.field("resource_owner_id", &self.resource_owner_id);
-        formatter.field("operation_requested_by", &self.operation_requested_by);
-        formatter.field("metadata_list", &self.metadata_list);
-        formatter.finish()
-    }
-}
 /// See [`LicenseOperationFailure`](crate::model::LicenseOperationFailure).
 pub mod license_operation_failure {
 
     /// A builder for [`LicenseOperationFailure`](crate::model::LicenseOperationFailure).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -5747,7 +5878,7 @@ impl LicenseOperationFailure {
 
 /// <p>Describes an association with a license configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseConfigurationAssociation {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -5787,22 +5918,11 @@ impl LicenseConfigurationAssociation {
         self.ami_association_scope.as_deref()
     }
 }
-impl std::fmt::Debug for LicenseConfigurationAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseConfigurationAssociation");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_owner_id", &self.resource_owner_id);
-        formatter.field("association_time", &self.association_time);
-        formatter.field("ami_association_scope", &self.ami_association_scope);
-        formatter.finish()
-    }
-}
 /// See [`LicenseConfigurationAssociation`](crate::model::LicenseConfigurationAssociation).
 pub mod license_configuration_association {
 
     /// A builder for [`LicenseConfigurationAssociation`](crate::model::LicenseConfigurationAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -5894,7 +6014,7 @@ impl LicenseConfigurationAssociation {
 
 /// <p>Describes the entitlement usage associated with a license.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LicenseUsage {
     /// <p>License entitlement usages.</p>
     #[doc(hidden)]
@@ -5906,18 +6026,11 @@ impl LicenseUsage {
         self.entitlement_usages.as_deref()
     }
 }
-impl std::fmt::Debug for LicenseUsage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LicenseUsage");
-        formatter.field("entitlement_usages", &self.entitlement_usages);
-        formatter.finish()
-    }
-}
 /// See [`LicenseUsage`](crate::model::LicenseUsage).
 pub mod license_usage {
 
     /// A builder for [`LicenseUsage`](crate::model::LicenseUsage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlement_usages:
             std::option::Option<std::vec::Vec<crate::model::EntitlementUsage>>,
@@ -5959,7 +6072,7 @@ impl LicenseUsage {
 
 /// <p>Usage associated with an entitlement resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntitlementUsage {
     /// <p>Entitlement usage name.</p>
     #[doc(hidden)]
@@ -5992,21 +6105,11 @@ impl EntitlementUsage {
         self.unit.as_ref()
     }
 }
-impl std::fmt::Debug for EntitlementUsage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntitlementUsage");
-        formatter.field("name", &self.name);
-        formatter.field("consumed_value", &self.consumed_value);
-        formatter.field("max_count", &self.max_count);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
-    }
-}
 /// See [`EntitlementUsage`](crate::model::EntitlementUsage).
 pub mod entitlement_usage {
 
     /// A builder for [`EntitlementUsage`](crate::model::EntitlementUsage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) consumed_value: std::option::Option<std::string::String>,
@@ -6078,6 +6181,66 @@ impl EntitlementUsage {
     }
 }
 
+/// When writing a match expression against `EntitlementDataUnit`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let entitlementdataunit = unimplemented!();
+/// match entitlementdataunit {
+///     EntitlementDataUnit::Bits => { /* ... */ },
+///     EntitlementDataUnit::BitsPerSecond => { /* ... */ },
+///     EntitlementDataUnit::Bytes => { /* ... */ },
+///     EntitlementDataUnit::BytesPerSecond => { /* ... */ },
+///     EntitlementDataUnit::Count => { /* ... */ },
+///     EntitlementDataUnit::CountPerSecond => { /* ... */ },
+///     EntitlementDataUnit::Gigabits => { /* ... */ },
+///     EntitlementDataUnit::GigabitsPerSecond => { /* ... */ },
+///     EntitlementDataUnit::Gigabytes => { /* ... */ },
+///     EntitlementDataUnit::GigabytesPerSecond => { /* ... */ },
+///     EntitlementDataUnit::Kilobits => { /* ... */ },
+///     EntitlementDataUnit::KilobitsPerSecond => { /* ... */ },
+///     EntitlementDataUnit::Kilobytes => { /* ... */ },
+///     EntitlementDataUnit::KilobytesPerSecond => { /* ... */ },
+///     EntitlementDataUnit::Megabits => { /* ... */ },
+///     EntitlementDataUnit::MegabitsPerSecond => { /* ... */ },
+///     EntitlementDataUnit::Megabytes => { /* ... */ },
+///     EntitlementDataUnit::MegabytesPerSecond => { /* ... */ },
+///     EntitlementDataUnit::Microseconds => { /* ... */ },
+///     EntitlementDataUnit::Milliseconds => { /* ... */ },
+///     EntitlementDataUnit::None => { /* ... */ },
+///     EntitlementDataUnit::Percent => { /* ... */ },
+///     EntitlementDataUnit::Seconds => { /* ... */ },
+///     EntitlementDataUnit::Terabits => { /* ... */ },
+///     EntitlementDataUnit::TerabitsPerSecond => { /* ... */ },
+///     EntitlementDataUnit::Terabytes => { /* ... */ },
+///     EntitlementDataUnit::TerabytesPerSecond => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `entitlementdataunit` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EntitlementDataUnit::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EntitlementDataUnit::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EntitlementDataUnit::NewFeature` is defined.
+/// Specifically, when `entitlementdataunit` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EntitlementDataUnit::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6144,8 +6307,8 @@ pub enum EntitlementDataUnit {
     Terabytes,
     #[allow(missing_docs)] // documentation missing in model
     TerabytesPerSecond,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EntitlementDataUnit {
     fn from(s: &str) -> Self {
@@ -6177,7 +6340,9 @@ impl std::convert::From<&str> for EntitlementDataUnit {
             "Terabits/Second" => EntitlementDataUnit::TerabitsPerSecond,
             "Terabytes" => EntitlementDataUnit::Terabytes,
             "Terabytes/Second" => EntitlementDataUnit::TerabytesPerSecond,
-            other => EntitlementDataUnit::Unknown(other.to_owned()),
+            other => {
+                EntitlementDataUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -6219,11 +6384,11 @@ impl EntitlementDataUnit {
             EntitlementDataUnit::TerabitsPerSecond => "Terabits/Second",
             EntitlementDataUnit::Terabytes => "Terabytes",
             EntitlementDataUnit::TerabytesPerSecond => "Terabytes/Second",
-            EntitlementDataUnit::Unknown(s) => s.as_ref(),
+            EntitlementDataUnit::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Bits",
             "Bits/Second",
@@ -6261,6 +6426,41 @@ impl AsRef<str> for EntitlementDataUnit {
     }
 }
 
+/// When writing a match expression against `LicenseDeletionStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let licensedeletionstatus = unimplemented!();
+/// match licensedeletionstatus {
+///     LicenseDeletionStatus::Deleted => { /* ... */ },
+///     LicenseDeletionStatus::PendingDelete => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `licensedeletionstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LicenseDeletionStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LicenseDeletionStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LicenseDeletionStatus::NewFeature` is defined.
+/// Specifically, when `licensedeletionstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LicenseDeletionStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6277,15 +6477,17 @@ pub enum LicenseDeletionStatus {
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     PendingDelete,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LicenseDeletionStatus {
     fn from(s: &str) -> Self {
         match s {
             "DELETED" => LicenseDeletionStatus::Deleted,
             "PENDING_DELETE" => LicenseDeletionStatus::PendingDelete,
-            other => LicenseDeletionStatus::Unknown(other.to_owned()),
+            other => {
+                LicenseDeletionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -6302,11 +6504,11 @@ impl LicenseDeletionStatus {
         match self {
             LicenseDeletionStatus::Deleted => "DELETED",
             LicenseDeletionStatus::PendingDelete => "PENDING_DELETE",
-            LicenseDeletionStatus::Unknown(s) => s.as_ref(),
+            LicenseDeletionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETED", "PENDING_DELETE"]
     }
 }
@@ -6316,6 +6518,40 @@ impl AsRef<str> for LicenseDeletionStatus {
     }
 }
 
+/// When writing a match expression against `TokenType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let tokentype = unimplemented!();
+/// match tokentype {
+///     TokenType::RefreshToken => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `tokentype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TokenType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TokenType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TokenType::NewFeature` is defined.
+/// Specifically, when `tokentype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TokenType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6330,14 +6566,14 @@ impl AsRef<str> for LicenseDeletionStatus {
 pub enum TokenType {
     #[allow(missing_docs)] // documentation missing in model
     RefreshToken,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TokenType {
     fn from(s: &str) -> Self {
         match s {
             "REFRESH_TOKEN" => TokenType::RefreshToken,
-            other => TokenType::Unknown(other.to_owned()),
+            other => TokenType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -6353,11 +6589,11 @@ impl TokenType {
     pub fn as_str(&self) -> &str {
         match self {
             TokenType::RefreshToken => "REFRESH_TOKEN",
-            TokenType::Unknown(s) => s.as_ref(),
+            TokenType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["REFRESH_TOKEN"]
     }
 }
@@ -6369,7 +6605,7 @@ impl AsRef<str> for TokenType {
 
 /// <p>Details about the issuer of a license.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Issuer {
     /// <p>Issuer name.</p>
     #[doc(hidden)]
@@ -6388,19 +6624,11 @@ impl Issuer {
         self.sign_key.as_deref()
     }
 }
-impl std::fmt::Debug for Issuer {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Issuer");
-        formatter.field("name", &self.name);
-        formatter.field("sign_key", &self.sign_key);
-        formatter.finish()
-    }
-}
 /// See [`Issuer`](crate::model::Issuer).
 pub mod issuer {
 
     /// A builder for [`Issuer`](crate::model::Issuer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) sign_key: std::option::Option<std::string::String>,
@@ -6444,7 +6672,7 @@ impl Issuer {
 
 /// <p>Data associated with an entitlement resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntitlementData {
     /// <p>Entitlement data name.</p>
     #[doc(hidden)]
@@ -6470,20 +6698,11 @@ impl EntitlementData {
         self.unit.as_ref()
     }
 }
-impl std::fmt::Debug for EntitlementData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntitlementData");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
-    }
-}
 /// See [`EntitlementData`](crate::model::EntitlementData).
 pub mod entitlement_data {
 
     /// A builder for [`EntitlementData`](crate::model::EntitlementData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -6540,6 +6759,41 @@ impl EntitlementData {
     }
 }
 
+/// When writing a match expression against `CheckoutType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let checkouttype = unimplemented!();
+/// match checkouttype {
+///     CheckoutType::Perpetual => { /* ... */ },
+///     CheckoutType::Provisional => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `checkouttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CheckoutType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CheckoutType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CheckoutType::NewFeature` is defined.
+/// Specifically, when `checkouttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CheckoutType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6556,15 +6810,15 @@ pub enum CheckoutType {
     Perpetual,
     #[allow(missing_docs)] // documentation missing in model
     Provisional,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CheckoutType {
     fn from(s: &str) -> Self {
         match s {
             "PERPETUAL" => CheckoutType::Perpetual,
             "PROVISIONAL" => CheckoutType::Provisional,
-            other => CheckoutType::Unknown(other.to_owned()),
+            other => CheckoutType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -6581,11 +6835,11 @@ impl CheckoutType {
         match self {
             CheckoutType::Perpetual => "PERPETUAL",
             CheckoutType::Provisional => "PROVISIONAL",
-            CheckoutType::Unknown(s) => s.as_ref(),
+            CheckoutType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PERPETUAL", "PROVISIONAL"]
     }
 }
@@ -6595,6 +6849,40 @@ impl AsRef<str> for CheckoutType {
     }
 }
 
+/// When writing a match expression against `DigitalSignatureMethod`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let digitalsignaturemethod = unimplemented!();
+/// match digitalsignaturemethod {
+///     DigitalSignatureMethod::JwtPs384 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `digitalsignaturemethod` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DigitalSignatureMethod::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DigitalSignatureMethod::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DigitalSignatureMethod::NewFeature` is defined.
+/// Specifically, when `digitalsignaturemethod` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DigitalSignatureMethod::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6609,14 +6897,16 @@ impl AsRef<str> for CheckoutType {
 pub enum DigitalSignatureMethod {
     #[allow(missing_docs)] // documentation missing in model
     JwtPs384,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DigitalSignatureMethod {
     fn from(s: &str) -> Self {
         match s {
             "JWT_PS384" => DigitalSignatureMethod::JwtPs384,
-            other => DigitalSignatureMethod::Unknown(other.to_owned()),
+            other => {
+                DigitalSignatureMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -6632,11 +6922,11 @@ impl DigitalSignatureMethod {
     pub fn as_str(&self) -> &str {
         match self {
             DigitalSignatureMethod::JwtPs384 => "JWT_PS384",
-            DigitalSignatureMethod::Unknown(s) => s.as_ref(),
+            DigitalSignatureMethod::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JWT_PS384"]
     }
 }

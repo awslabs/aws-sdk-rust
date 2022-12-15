@@ -24,7 +24,7 @@ pub fn parse_create_access_point_error(
                     output = crate::json_deser::deser_structure_crate_error_access_point_already_exists_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAccessPointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -41,7 +41,7 @@ pub fn parse_create_access_point_error(
                     output = crate::json_deser::deser_structure_crate_error_access_point_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAccessPointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -62,7 +62,7 @@ pub fn parse_create_access_point_error(
                     .map_err(crate::error::CreateAccessPointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -79,7 +79,7 @@ pub fn parse_create_access_point_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAccessPointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -97,7 +97,7 @@ pub fn parse_create_access_point_error(
                     output = crate::json_deser::deser_structure_crate_error_incorrect_file_system_life_cycle_state_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAccessPointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -114,7 +114,7 @@ pub fn parse_create_access_point_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAccessPointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -131,7 +131,7 @@ pub fn parse_create_access_point_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAccessPointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -188,7 +188,7 @@ pub fn parse_create_file_system_error(
                     .map_err(crate::error::CreateFileSystemError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -205,7 +205,7 @@ pub fn parse_create_file_system_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_already_exists_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFileSystemError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -222,7 +222,7 @@ pub fn parse_create_file_system_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFileSystemError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -240,7 +240,7 @@ pub fn parse_create_file_system_error(
                     output = crate::json_deser::deser_structure_crate_error_insufficient_throughput_capacity_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFileSystemError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -257,7 +257,7 @@ pub fn parse_create_file_system_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFileSystemError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -274,7 +274,7 @@ pub fn parse_create_file_system_error(
                     output = crate::json_deser::deser_structure_crate_error_throughput_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFileSystemError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -292,7 +292,7 @@ pub fn parse_create_file_system_error(
                     output = crate::json_deser::deser_structure_crate_error_unsupported_availability_zone_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFileSystemError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -345,7 +345,7 @@ pub fn parse_create_mount_target_error(
                     output = crate::json_deser::deser_structure_crate_error_availability_zones_mismatch_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMountTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -366,7 +366,7 @@ pub fn parse_create_mount_target_error(
                     .map_err(crate::error::CreateMountTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -383,7 +383,7 @@ pub fn parse_create_mount_target_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMountTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -401,7 +401,7 @@ pub fn parse_create_mount_target_error(
                     output = crate::json_deser::deser_structure_crate_error_incorrect_file_system_life_cycle_state_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMountTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -418,7 +418,7 @@ pub fn parse_create_mount_target_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMountTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -436,7 +436,7 @@ pub fn parse_create_mount_target_error(
                         output = crate::json_deser::deser_structure_crate_error_ip_address_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMountTargetError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -454,7 +454,7 @@ pub fn parse_create_mount_target_error(
                     output = crate::json_deser::deser_structure_crate_error_mount_target_conflict_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMountTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -472,7 +472,7 @@ pub fn parse_create_mount_target_error(
                     output = crate::json_deser::deser_structure_crate_error_network_interface_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMountTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -489,7 +489,7 @@ pub fn parse_create_mount_target_error(
                     output = crate::json_deser::deser_structure_crate_error_no_free_addresses_in_subnet_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMountTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -507,7 +507,7 @@ pub fn parse_create_mount_target_error(
                     output = crate::json_deser::deser_structure_crate_error_security_group_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMountTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -524,7 +524,7 @@ pub fn parse_create_mount_target_error(
                     output = crate::json_deser::deser_structure_crate_error_security_group_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMountTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -542,7 +542,7 @@ pub fn parse_create_mount_target_error(
                         output = crate::json_deser::deser_structure_crate_error_subnet_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMountTargetError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -561,7 +561,7 @@ pub fn parse_create_mount_target_error(
                     output = crate::json_deser::deser_structure_crate_error_unsupported_availability_zone_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMountTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -614,7 +614,7 @@ pub fn parse_create_replication_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -628,7 +628,7 @@ pub fn parse_create_replication_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -642,7 +642,7 @@ pub fn parse_create_replication_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -656,7 +656,7 @@ pub fn parse_create_replication_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -670,7 +670,7 @@ pub fn parse_create_replication_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -684,7 +684,7 @@ pub fn parse_create_replication_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -698,7 +698,7 @@ pub fn parse_create_replication_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -712,7 +712,7 @@ pub fn parse_create_replication_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -726,7 +726,7 @@ pub fn parse_create_replication_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -740,7 +740,7 @@ pub fn parse_create_replication_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -798,7 +798,7 @@ pub fn parse_create_tags_error(
                     .map_err(crate::error::CreateTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -815,7 +815,7 @@ pub fn parse_create_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -832,7 +832,7 @@ pub fn parse_create_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -879,7 +879,7 @@ pub fn parse_delete_access_point_error(
                     output = crate::json_deser::deser_structure_crate_error_access_point_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccessPointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -900,7 +900,7 @@ pub fn parse_delete_access_point_error(
                     .map_err(crate::error::DeleteAccessPointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -917,7 +917,7 @@ pub fn parse_delete_access_point_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccessPointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -969,7 +969,7 @@ pub fn parse_delete_file_system_error(
                     .map_err(crate::error::DeleteFileSystemError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -987,7 +987,7 @@ pub fn parse_delete_file_system_error(
                         output = crate::json_deser::deser_structure_crate_error_file_system_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileSystemError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1005,7 +1005,7 @@ pub fn parse_delete_file_system_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileSystemError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1022,7 +1022,7 @@ pub fn parse_delete_file_system_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileSystemError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1080,7 +1080,7 @@ pub fn parse_delete_file_system_policy_error(
                     .map_err(crate::error::DeleteFileSystemPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1097,7 +1097,7 @@ pub fn parse_delete_file_system_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileSystemPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1116,7 +1116,7 @@ pub fn parse_delete_file_system_policy_error(
                                 output = crate::json_deser::deser_structure_crate_error_incorrect_file_system_life_cycle_state_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileSystemPolicyError::unhandled)?;
                                 output.build()
                             };
-                            if (&tmp.message).is_none() {
+                            if tmp.message.is_none() {
                                 tmp.message = _error_message;
                             }
                             tmp
@@ -1135,7 +1135,7 @@ pub fn parse_delete_file_system_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileSystemPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1189,7 +1189,7 @@ pub fn parse_delete_mount_target_error(
                     .map_err(crate::error::DeleteMountTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1207,7 +1207,7 @@ pub fn parse_delete_mount_target_error(
                         output = crate::json_deser::deser_structure_crate_error_dependency_timeout_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMountTargetError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1225,7 +1225,7 @@ pub fn parse_delete_mount_target_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMountTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1242,7 +1242,7 @@ pub fn parse_delete_mount_target_error(
                     output = crate::json_deser::deser_structure_crate_error_mount_target_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMountTargetError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1296,7 +1296,7 @@ pub fn parse_delete_replication_configuration_error(
                     .map_err(crate::error::DeleteReplicationConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1313,7 +1313,7 @@ pub fn parse_delete_replication_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1330,7 +1330,7 @@ pub fn parse_delete_replication_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1347,7 +1347,7 @@ pub fn parse_delete_replication_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_replication_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1400,7 +1400,7 @@ pub fn parse_delete_tags_error(
                     .map_err(crate::error::DeleteTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1417,7 +1417,7 @@ pub fn parse_delete_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1434,7 +1434,7 @@ pub fn parse_delete_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1483,7 +1483,7 @@ pub fn parse_describe_access_points_error(
                     output = crate::json_deser::deser_structure_crate_error_access_point_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccessPointsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1504,7 +1504,7 @@ pub fn parse_describe_access_points_error(
                     .map_err(crate::error::DescribeAccessPointsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1521,7 +1521,7 @@ pub fn parse_describe_access_points_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccessPointsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1538,7 +1538,7 @@ pub fn parse_describe_access_points_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccessPointsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1599,7 +1599,7 @@ pub fn parse_describe_account_preferences_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountPreferencesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1660,7 +1660,7 @@ pub fn parse_describe_backup_policy_error(
                     .map_err(crate::error::DescribeBackupPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1677,7 +1677,7 @@ pub fn parse_describe_backup_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBackupPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1694,7 +1694,7 @@ pub fn parse_describe_backup_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBackupPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1712,7 +1712,7 @@ pub fn parse_describe_backup_policy_error(
                         output = crate::json_deser::deser_structure_crate_error_policy_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBackupPolicyError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1730,7 +1730,7 @@ pub fn parse_describe_backup_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBackupPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1795,7 +1795,7 @@ pub fn parse_describe_file_system_policy_error(
                     .map_err(crate::error::DescribeFileSystemPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1812,7 +1812,7 @@ pub fn parse_describe_file_system_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFileSystemPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1829,7 +1829,7 @@ pub fn parse_describe_file_system_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFileSystemPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1847,7 +1847,7 @@ pub fn parse_describe_file_system_policy_error(
                         output = crate::json_deser::deser_structure_crate_error_policy_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFileSystemPolicyError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1909,7 +1909,7 @@ pub fn parse_describe_file_systems_error(
                     .map_err(crate::error::DescribeFileSystemsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1926,7 +1926,7 @@ pub fn parse_describe_file_systems_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFileSystemsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1943,7 +1943,7 @@ pub fn parse_describe_file_systems_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFileSystemsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2004,7 +2004,7 @@ pub fn parse_describe_lifecycle_configuration_error(
                     .map_err(crate::error::DescribeLifecycleConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2021,7 +2021,7 @@ pub fn parse_describe_lifecycle_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLifecycleConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2038,7 +2038,7 @@ pub fn parse_describe_lifecycle_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLifecycleConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2096,7 +2096,7 @@ pub fn parse_describe_mount_targets_error(
                     output = crate::json_deser::deser_structure_crate_error_access_point_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMountTargetsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2117,7 +2117,7 @@ pub fn parse_describe_mount_targets_error(
                     .map_err(crate::error::DescribeMountTargetsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2134,7 +2134,7 @@ pub fn parse_describe_mount_targets_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMountTargetsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2151,7 +2151,7 @@ pub fn parse_describe_mount_targets_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMountTargetsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2168,7 +2168,7 @@ pub fn parse_describe_mount_targets_error(
                     output = crate::json_deser::deser_structure_crate_error_mount_target_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMountTargetsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2231,7 +2231,7 @@ pub fn parse_describe_mount_target_security_groups_error(
                     .map_err(crate::error::DescribeMountTargetSecurityGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2251,7 +2251,7 @@ pub fn parse_describe_mount_target_security_groups_error(
                             output = crate::json_deser::deser_structure_crate_error_incorrect_mount_target_state_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMountTargetSecurityGroupsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2269,7 +2269,7 @@ pub fn parse_describe_mount_target_security_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMountTargetSecurityGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2286,7 +2286,7 @@ pub fn parse_describe_mount_target_security_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_mount_target_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMountTargetSecurityGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2346,7 +2346,7 @@ pub fn parse_describe_replication_configurations_error(
                     .map_err(crate::error::DescribeReplicationConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2363,7 +2363,7 @@ pub fn parse_describe_replication_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2380,7 +2380,7 @@ pub fn parse_describe_replication_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2397,7 +2397,7 @@ pub fn parse_describe_replication_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_replication_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2414,7 +2414,7 @@ pub fn parse_describe_replication_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2474,7 +2474,7 @@ pub fn parse_describe_tags_error(
                     .map_err(crate::error::DescribeTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2491,7 +2491,7 @@ pub fn parse_describe_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2508,7 +2508,7 @@ pub fn parse_describe_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2562,7 +2562,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_access_point_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2583,7 +2583,7 @@ pub fn parse_list_tags_for_resource_error(
                     .map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2600,7 +2600,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2617,7 +2617,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2678,7 +2678,7 @@ pub fn parse_modify_mount_target_security_groups_error(
                     .map_err(crate::error::ModifyMountTargetSecurityGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2697,7 +2697,7 @@ pub fn parse_modify_mount_target_security_groups_error(
                         output = crate::json_deser::deser_structure_crate_error_incorrect_mount_target_state_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyMountTargetSecurityGroupsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2715,7 +2715,7 @@ pub fn parse_modify_mount_target_security_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyMountTargetSecurityGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2732,7 +2732,7 @@ pub fn parse_modify_mount_target_security_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_mount_target_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyMountTargetSecurityGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2752,7 +2752,7 @@ pub fn parse_modify_mount_target_security_groups_error(
                             output = crate::json_deser::deser_structure_crate_error_security_group_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyMountTargetSecurityGroupsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2770,7 +2770,7 @@ pub fn parse_modify_mount_target_security_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_security_group_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyMountTargetSecurityGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2827,7 +2827,7 @@ pub fn parse_put_account_preferences_error(
                     .map_err(crate::error::PutAccountPreferencesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2844,7 +2844,7 @@ pub fn parse_put_account_preferences_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::PutAccountPreferencesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2902,7 +2902,7 @@ pub fn parse_put_backup_policy_error(
                     .map_err(crate::error::PutBackupPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2919,7 +2919,7 @@ pub fn parse_put_backup_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::PutBackupPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2937,7 +2937,7 @@ pub fn parse_put_backup_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_incorrect_file_system_life_cycle_state_json_err(response.body().as_ref(), output).map_err(crate::error::PutBackupPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2954,7 +2954,7 @@ pub fn parse_put_backup_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::PutBackupPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2971,7 +2971,7 @@ pub fn parse_put_backup_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutBackupPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3029,7 +3029,7 @@ pub fn parse_put_file_system_policy_error(
                     .map_err(crate::error::PutFileSystemPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3046,7 +3046,7 @@ pub fn parse_put_file_system_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::PutFileSystemPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3064,7 +3064,7 @@ pub fn parse_put_file_system_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_incorrect_file_system_life_cycle_state_json_err(response.body().as_ref(), output).map_err(crate::error::PutFileSystemPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3081,7 +3081,7 @@ pub fn parse_put_file_system_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::PutFileSystemPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3098,7 +3098,7 @@ pub fn parse_put_file_system_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFileSystemPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3163,7 +3163,7 @@ pub fn parse_put_lifecycle_configuration_error(
                     .map_err(crate::error::PutLifecycleConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3180,7 +3180,7 @@ pub fn parse_put_lifecycle_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::PutLifecycleConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3198,7 +3198,7 @@ pub fn parse_put_lifecycle_configuration_error(
                             output = crate::json_deser::deser_structure_crate_error_incorrect_file_system_life_cycle_state_json_err(response.body().as_ref(), output).map_err(crate::error::PutLifecycleConfigurationError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -3216,7 +3216,7 @@ pub fn parse_put_lifecycle_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::PutLifecycleConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3270,7 +3270,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_access_point_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3291,7 +3291,7 @@ pub fn parse_tag_resource_error(
                     .map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3308,7 +3308,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3325,7 +3325,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3371,7 +3371,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_access_point_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3392,7 +3392,7 @@ pub fn parse_untag_resource_error(
                     .map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3409,7 +3409,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3426,7 +3426,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3477,7 +3477,7 @@ pub fn parse_update_file_system_error(
                     .map_err(crate::error::UpdateFileSystemError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3494,7 +3494,7 @@ pub fn parse_update_file_system_error(
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFileSystemError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3512,7 +3512,7 @@ pub fn parse_update_file_system_error(
                     output = crate::json_deser::deser_structure_crate_error_incorrect_file_system_life_cycle_state_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFileSystemError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3530,7 +3530,7 @@ pub fn parse_update_file_system_error(
                     output = crate::json_deser::deser_structure_crate_error_insufficient_throughput_capacity_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFileSystemError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3547,7 +3547,7 @@ pub fn parse_update_file_system_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFileSystemError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3564,7 +3564,7 @@ pub fn parse_update_file_system_error(
                     output = crate::json_deser::deser_structure_crate_error_throughput_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFileSystemError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3582,7 +3582,7 @@ pub fn parse_update_file_system_error(
                         output = crate::json_deser::deser_structure_crate_error_too_many_requests_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFileSystemError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp

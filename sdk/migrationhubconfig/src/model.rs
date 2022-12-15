@@ -2,7 +2,7 @@
 
 /// <p>A home region control is an object that specifies the home region for an account, with some additional information. It contains a target (always of type <code>ACCOUNT</code>), an ID, and a time at which the home region was set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HomeRegionControl {
     /// <p>A unique identifier that's generated for each home region control. It's always a string that begins with "hrc-" followed by 12 lowercase letters and numbers.</p>
     #[doc(hidden)]
@@ -35,21 +35,11 @@ impl HomeRegionControl {
         self.requested_time.as_ref()
     }
 }
-impl std::fmt::Debug for HomeRegionControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HomeRegionControl");
-        formatter.field("control_id", &self.control_id);
-        formatter.field("home_region", &self.home_region);
-        formatter.field("target", &self.target);
-        formatter.field("requested_time", &self.requested_time);
-        formatter.finish()
-    }
-}
 /// See [`HomeRegionControl`](crate::model::HomeRegionControl).
 pub mod home_region_control {
 
     /// A builder for [`HomeRegionControl`](crate::model::HomeRegionControl).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_id: std::option::Option<std::string::String>,
         pub(crate) home_region: std::option::Option<std::string::String>,
@@ -120,7 +110,7 @@ impl HomeRegionControl {
 
 /// <p>The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Target {
     /// <p>The target type is always an <code>ACCOUNT</code>.</p>
     #[doc(hidden)]
@@ -139,19 +129,11 @@ impl Target {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for Target {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Target");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 /// See [`Target`](crate::model::Target).
 pub mod target {
 
     /// A builder for [`Target`](crate::model::Target).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::TargetType>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -193,6 +175,40 @@ impl Target {
     }
 }
 
+/// When writing a match expression against `TargetType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let targettype = unimplemented!();
+/// match targettype {
+///     TargetType::Account => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `targettype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TargetType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TargetType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TargetType::NewFeature` is defined.
+/// Specifically, when `targettype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TargetType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -207,14 +223,14 @@ impl Target {
 pub enum TargetType {
     #[allow(missing_docs)] // documentation missing in model
     Account,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TargetType {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT" => TargetType::Account,
-            other => TargetType::Unknown(other.to_owned()),
+            other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -230,11 +246,11 @@ impl TargetType {
     pub fn as_str(&self) -> &str {
         match self {
             TargetType::Account => "ACCOUNT",
-            TargetType::Unknown(s) => s.as_ref(),
+            TargetType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT"]
     }
 }

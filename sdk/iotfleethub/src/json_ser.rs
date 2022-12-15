@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_application_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateApplicationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.application_description {
         object.key("applicationDescription").string(var_1.as_str());
     }
@@ -16,10 +16,11 @@ pub fn serialize_structure_crate_input_create_application_input(
         object.key("roleArn").string(var_4.as_str());
     }
     if let Some(var_5) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("tags").start_object();
         for (key_7, value_8) in var_5 {
             {
-                object_6.key(key_7).string(value_8.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
         object_6.finish();
@@ -30,12 +31,13 @@ pub fn serialize_structure_crate_input_create_application_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_10 = object.key("tags").start_object();
         for (key_11, value_12) in var_9 {
             {
-                object_10.key(key_11).string(value_12.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
         object_10.finish();
@@ -46,7 +48,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_application_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateApplicationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_13) = &input.application_description {
         object.key("applicationDescription").string(var_13.as_str());
     }

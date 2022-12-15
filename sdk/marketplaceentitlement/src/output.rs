@@ -2,7 +2,7 @@
 
 /// <p>The GetEntitlementsRequest contains results from the GetEntitlements operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEntitlementsOutput {
     /// <p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl GetEntitlementsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetEntitlementsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEntitlementsOutput");
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput).
 pub mod get_entitlements_output {
 
     /// A builder for [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,

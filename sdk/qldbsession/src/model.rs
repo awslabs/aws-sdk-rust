@@ -2,7 +2,7 @@
 
 /// <p>Contains the page that was fetched.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FetchPageResult {
     /// <p>Contains details of the fetched page.</p>
     #[doc(hidden)]
@@ -28,20 +28,11 @@ impl FetchPageResult {
         self.consumed_i_os.as_ref()
     }
 }
-impl std::fmt::Debug for FetchPageResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FetchPageResult");
-        formatter.field("page", &self.page);
-        formatter.field("timing_information", &self.timing_information);
-        formatter.field("consumed_i_os", &self.consumed_i_os);
-        formatter.finish()
-    }
-}
 /// See [`FetchPageResult`](crate::model::FetchPageResult).
 pub mod fetch_page_result {
 
     /// A builder for [`FetchPageResult`](crate::model::FetchPageResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page: std::option::Option<crate::model::Page>,
         pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
@@ -103,7 +94,7 @@ impl FetchPageResult {
 
 /// <p>Contains I/O usage metrics for a command that was invoked.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IoUsage {
     /// <p>The number of read I/O requests that the command made.</p>
     #[doc(hidden)]
@@ -122,19 +113,11 @@ impl IoUsage {
         self.write_i_os
     }
 }
-impl std::fmt::Debug for IoUsage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IoUsage");
-        formatter.field("read_i_os", &self.read_i_os);
-        formatter.field("write_i_os", &self.write_i_os);
-        formatter.finish()
-    }
-}
 /// See [`IoUsage`](crate::model::IoUsage).
 pub mod io_usage {
 
     /// A builder for [`IoUsage`](crate::model::IoUsage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) read_i_os: std::option::Option<i64>,
         pub(crate) write_i_os: std::option::Option<i64>,
@@ -178,7 +161,7 @@ impl IoUsage {
 
 /// <p>Contains server-side performance information for a command. Amazon QLDB captures timing information between the times when it receives the request and when it sends the corresponding response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimingInformation {
     /// <p>The amount of time that QLDB spent on processing the command, measured in milliseconds.</p>
     #[doc(hidden)]
@@ -190,21 +173,11 @@ impl TimingInformation {
         self.processing_time_milliseconds
     }
 }
-impl std::fmt::Debug for TimingInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimingInformation");
-        formatter.field(
-            "processing_time_milliseconds",
-            &self.processing_time_milliseconds,
-        );
-        formatter.finish()
-    }
-}
 /// See [`TimingInformation`](crate::model::TimingInformation).
 pub mod timing_information {
 
     /// A builder for [`TimingInformation`](crate::model::TimingInformation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) processing_time_milliseconds: std::option::Option<i64>,
     }
@@ -236,7 +209,7 @@ impl TimingInformation {
 
 /// <p>Contains details of the fetched page.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Page {
     /// <p>A structure that contains values in multiple encoding formats.</p>
     #[doc(hidden)]
@@ -255,19 +228,11 @@ impl Page {
         self.next_page_token.as_deref()
     }
 }
-impl std::fmt::Debug for Page {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Page");
-        formatter.field("values", &self.values);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
-    }
-}
 /// See [`Page`](crate::model::Page).
 pub mod page {
 
     /// A builder for [`Page`](crate::model::Page).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) values: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
@@ -323,7 +288,7 @@ impl Page {
 
 /// <p>A structure that can contain a value in multiple encoding formats.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValueHolder {
     /// <p>An Amazon Ion binary value contained in a <code>ValueHolder</code> structure.</p>
     #[doc(hidden)]
@@ -342,19 +307,11 @@ impl ValueHolder {
         self.ion_text.as_deref()
     }
 }
-impl std::fmt::Debug for ValueHolder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValueHolder");
-        formatter.field("ion_binary", &self.ion_binary);
-        formatter.field("ion_text", &self.ion_text);
-        formatter.finish()
-    }
-}
 /// See [`ValueHolder`](crate::model::ValueHolder).
 pub mod value_holder {
 
     /// A builder for [`ValueHolder`](crate::model::ValueHolder).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ion_binary: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) ion_text: std::option::Option<std::string::String>,
@@ -401,7 +358,7 @@ impl ValueHolder {
 
 /// <p>Contains the details of the executed statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteStatementResult {
     /// <p>Contains the details of the first fetched page.</p>
     #[doc(hidden)]
@@ -427,20 +384,11 @@ impl ExecuteStatementResult {
         self.consumed_i_os.as_ref()
     }
 }
-impl std::fmt::Debug for ExecuteStatementResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteStatementResult");
-        formatter.field("first_page", &self.first_page);
-        formatter.field("timing_information", &self.timing_information);
-        formatter.field("consumed_i_os", &self.consumed_i_os);
-        formatter.finish()
-    }
-}
 /// See [`ExecuteStatementResult`](crate::model::ExecuteStatementResult).
 pub mod execute_statement_result {
 
     /// A builder for [`ExecuteStatementResult`](crate::model::ExecuteStatementResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) first_page: std::option::Option<crate::model::Page>,
         pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
@@ -502,7 +450,7 @@ impl ExecuteStatementResult {
 
 /// <p>Contains the details of the aborted transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbortTransactionResult {
     /// <p>Contains server-side performance information for the command.</p>
     #[doc(hidden)]
@@ -514,18 +462,11 @@ impl AbortTransactionResult {
         self.timing_information.as_ref()
     }
 }
-impl std::fmt::Debug for AbortTransactionResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbortTransactionResult");
-        formatter.field("timing_information", &self.timing_information);
-        formatter.finish()
-    }
-}
 /// See [`AbortTransactionResult`](crate::model::AbortTransactionResult).
 pub mod abort_transaction_result {
 
     /// A builder for [`AbortTransactionResult`](crate::model::AbortTransactionResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
     }
@@ -560,7 +501,7 @@ impl AbortTransactionResult {
 
 /// <p>Contains the details of the committed transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitTransactionResult {
     /// <p>The transaction ID of the committed transaction.</p>
     #[doc(hidden)]
@@ -593,21 +534,11 @@ impl CommitTransactionResult {
         self.consumed_i_os.as_ref()
     }
 }
-impl std::fmt::Debug for CommitTransactionResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitTransactionResult");
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.field("commit_digest", &self.commit_digest);
-        formatter.field("timing_information", &self.timing_information);
-        formatter.field("consumed_i_os", &self.consumed_i_os);
-        formatter.finish()
-    }
-}
 /// See [`CommitTransactionResult`](crate::model::CommitTransactionResult).
 pub mod commit_transaction_result {
 
     /// A builder for [`CommitTransactionResult`](crate::model::CommitTransactionResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
         pub(crate) commit_digest: std::option::Option<aws_smithy_types::Blob>,
@@ -687,7 +618,7 @@ impl CommitTransactionResult {
 
 /// <p>Contains the details of the ended session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndSessionResult {
     /// <p>Contains server-side performance information for the command.</p>
     #[doc(hidden)]
@@ -699,18 +630,11 @@ impl EndSessionResult {
         self.timing_information.as_ref()
     }
 }
-impl std::fmt::Debug for EndSessionResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndSessionResult");
-        formatter.field("timing_information", &self.timing_information);
-        formatter.finish()
-    }
-}
 /// See [`EndSessionResult`](crate::model::EndSessionResult).
 pub mod end_session_result {
 
     /// A builder for [`EndSessionResult`](crate::model::EndSessionResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
     }
@@ -745,7 +669,7 @@ impl EndSessionResult {
 
 /// <p>Contains the details of the started transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTransactionResult {
     /// <p>The transaction ID of the started transaction.</p>
     #[doc(hidden)]
@@ -764,19 +688,11 @@ impl StartTransactionResult {
         self.timing_information.as_ref()
     }
 }
-impl std::fmt::Debug for StartTransactionResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTransactionResult");
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.field("timing_information", &self.timing_information);
-        formatter.finish()
-    }
-}
 /// See [`StartTransactionResult`](crate::model::StartTransactionResult).
 pub mod start_transaction_result {
 
     /// A builder for [`StartTransactionResult`](crate::model::StartTransactionResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
         pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
@@ -826,7 +742,7 @@ impl StartTransactionResult {
 
 /// <p>Contains the details of the started session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSessionResult {
     /// <p>Session token of the started session. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
     #[doc(hidden)]
@@ -845,19 +761,11 @@ impl StartSessionResult {
         self.timing_information.as_ref()
     }
 }
-impl std::fmt::Debug for StartSessionResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSessionResult");
-        formatter.field("session_token", &self.session_token);
-        formatter.field("timing_information", &self.timing_information);
-        formatter.finish()
-    }
-}
 /// See [`StartSessionResult`](crate::model::StartSessionResult).
 pub mod start_session_result {
 
     /// A builder for [`StartSessionResult`](crate::model::StartSessionResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_token: std::option::Option<std::string::String>,
         pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
@@ -907,7 +815,7 @@ impl StartSessionResult {
 
 /// <p>Specifies the details of the page to be fetched.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FetchPageRequest {
     /// <p>Specifies the transaction ID of the page to be fetched.</p>
     #[doc(hidden)]
@@ -926,19 +834,11 @@ impl FetchPageRequest {
         self.next_page_token.as_deref()
     }
 }
-impl std::fmt::Debug for FetchPageRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FetchPageRequest");
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
-    }
-}
 /// See [`FetchPageRequest`](crate::model::FetchPageRequest).
 pub mod fetch_page_request {
 
     /// A builder for [`FetchPageRequest`](crate::model::FetchPageRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
@@ -988,7 +888,7 @@ impl FetchPageRequest {
 
 /// <p>Specifies a request to execute a statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteStatementRequest {
     /// <p>Specifies the transaction ID of the request.</p>
     #[doc(hidden)]
@@ -1014,20 +914,11 @@ impl ExecuteStatementRequest {
         self.parameters.as_deref()
     }
 }
-impl std::fmt::Debug for ExecuteStatementRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteStatementRequest");
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.field("statement", &self.statement);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 /// See [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest).
 pub mod execute_statement_request {
 
     /// A builder for [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
         pub(crate) statement: std::option::Option<std::string::String>,
@@ -1095,19 +986,13 @@ impl ExecuteStatementRequest {
 
 /// <p>Contains the details of the transaction to abort.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbortTransactionRequest {}
-impl std::fmt::Debug for AbortTransactionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AbortTransactionRequest");
-        formatter.finish()
-    }
-}
 /// See [`AbortTransactionRequest`](crate::model::AbortTransactionRequest).
 pub mod abort_transaction_request {
 
     /// A builder for [`AbortTransactionRequest`](crate::model::AbortTransactionRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AbortTransactionRequest`](crate::model::AbortTransactionRequest).
@@ -1125,7 +1010,7 @@ impl AbortTransactionRequest {
 
 /// <p>Contains the details of the transaction to commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitTransactionRequest {
     /// <p>Specifies the transaction ID of the transaction to commit.</p>
     #[doc(hidden)]
@@ -1146,19 +1031,11 @@ impl CommitTransactionRequest {
         self.commit_digest.as_ref()
     }
 }
-impl std::fmt::Debug for CommitTransactionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitTransactionRequest");
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.field("commit_digest", &self.commit_digest);
-        formatter.finish()
-    }
-}
 /// See [`CommitTransactionRequest`](crate::model::CommitTransactionRequest).
 pub mod commit_transaction_request {
 
     /// A builder for [`CommitTransactionRequest`](crate::model::CommitTransactionRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
         pub(crate) commit_digest: std::option::Option<aws_smithy_types::Blob>,
@@ -1210,19 +1087,13 @@ impl CommitTransactionRequest {
 
 /// <p>Specifies a request to end the session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndSessionRequest {}
-impl std::fmt::Debug for EndSessionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndSessionRequest");
-        formatter.finish()
-    }
-}
 /// See [`EndSessionRequest`](crate::model::EndSessionRequest).
 pub mod end_session_request {
 
     /// A builder for [`EndSessionRequest`](crate::model::EndSessionRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`EndSessionRequest`](crate::model::EndSessionRequest).
@@ -1240,19 +1111,13 @@ impl EndSessionRequest {
 
 /// <p>Specifies a request to start a transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTransactionRequest {}
-impl std::fmt::Debug for StartTransactionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTransactionRequest");
-        formatter.finish()
-    }
-}
 /// See [`StartTransactionRequest`](crate::model::StartTransactionRequest).
 pub mod start_transaction_request {
 
     /// A builder for [`StartTransactionRequest`](crate::model::StartTransactionRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StartTransactionRequest`](crate::model::StartTransactionRequest).
@@ -1270,7 +1135,7 @@ impl StartTransactionRequest {
 
 /// <p>Specifies a request to start a new session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSessionRequest {
     /// <p>The name of the ledger to start a new session against.</p>
     #[doc(hidden)]
@@ -1282,18 +1147,11 @@ impl StartSessionRequest {
         self.ledger_name.as_deref()
     }
 }
-impl std::fmt::Debug for StartSessionRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSessionRequest");
-        formatter.field("ledger_name", &self.ledger_name);
-        formatter.finish()
-    }
-}
 /// See [`StartSessionRequest`](crate::model::StartSessionRequest).
 pub mod start_session_request {
 
     /// A builder for [`StartSessionRequest`](crate::model::StartSessionRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ledger_name: std::option::Option<std::string::String>,
     }

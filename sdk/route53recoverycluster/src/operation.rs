@@ -5,7 +5,7 @@
 /// [`get_routing_control_state`](crate::client::Client::get_routing_control_state).
 ///
 /// See [`crate::client::fluent_builders::GetRoutingControlState`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRoutingControlState {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRoutingControlState {
 /// [`list_routing_controls`](crate::client::Client::list_routing_controls).
 ///
 /// See [`crate::client::fluent_builders::ListRoutingControls`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRoutingControls {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRoutingControls {
 /// [`update_routing_control_state`](crate::client::Client::update_routing_control_state).
 ///
 /// See [`crate::client::fluent_builders::UpdateRoutingControlState`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRoutingControlState {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoutingControlStat
 /// [`update_routing_control_states`](crate::client::Client::update_routing_control_states).
 ///
 /// See [`crate::client::fluent_builders::UpdateRoutingControlStates`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRoutingControlStates {
     _private: (),
 }

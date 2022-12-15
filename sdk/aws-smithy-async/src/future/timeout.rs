@@ -43,7 +43,7 @@ use std::pin::Pin;
 use std::task::{Context, Poll};
 
 /// Error returned when [`Timeout`] times out
-#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+#[derive(Debug)]
 pub struct TimedOutError;
 
 impl Error for TimedOutError {}
@@ -106,28 +106,31 @@ mod tests {
 
     #[tokio::test]
     async fn success() {
-        assert_eq!(
-            Ok(Ok(5)),
-            Timeout::new(async { Ok::<isize, isize>(5) }, Never).await
-        );
+        assert!(matches!(
+            Timeout::new(async { Ok::<isize, isize>(5) }, Never).await,
+            Ok(Ok(5))
+        ));
     }
 
     #[tokio::test]
     async fn failure() {
-        assert_eq!(
-            Ok(Err(0)),
-            Timeout::new(async { Err::<isize, isize>(0) }, Never).await
-        );
+        assert!(matches!(
+            Timeout::new(async { Err::<isize, isize>(0) }, Never).await,
+            Ok(Err(0))
+        ));
     }
 
     #[tokio::test]
     async fn timeout() {
-        assert_eq!(Err(TimedOutError), Timeout::new(Never, async {}).await);
+        assert!(matches!(
+            Timeout::new(Never, async {}).await,
+            Err(TimedOutError)
+        ));
     }
 
     // If the value is available at the same time as the timeout, then return the value
     #[tokio::test]
     async fn prefer_value_to_timeout() {
-        assert_eq!(Ok(5), Timeout::new(async { 5 }, async {}).await);
+        assert!(matches!(Timeout::new(async { 5 }, async {}).await, Ok(5)));
     }
 }

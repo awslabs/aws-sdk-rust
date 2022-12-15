@@ -3,7 +3,7 @@
 /// <p>A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as true, based on a rule configuration that you specify, which allows a set of routing control state changes to complete.</p>
 /// <p>For example, if you specify one gating routing control and you set the Type in the rule configuration to OR, that indicates that you must set the gating routing control to On for the rule to evaluate as true; that is, for the gating control "switch" to be "On". When you do that, then you can update the routing control states for the target routing controls that you specify in the gating rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatingRule {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     #[doc(hidden)]
@@ -64,25 +64,11 @@ impl GatingRule {
         self.wait_period_ms
     }
 }
-impl std::fmt::Debug for GatingRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatingRule");
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("gating_controls", &self.gating_controls);
-        formatter.field("name", &self.name);
-        formatter.field("rule_config", &self.rule_config);
-        formatter.field("safety_rule_arn", &self.safety_rule_arn);
-        formatter.field("status", &self.status);
-        formatter.field("target_controls", &self.target_controls);
-        formatter.field("wait_period_ms", &self.wait_period_ms);
-        formatter.finish()
-    }
-}
 /// See [`GatingRule`](crate::model::GatingRule).
 pub mod gating_rule {
 
     /// A builder for [`GatingRule`](crate::model::GatingRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
         pub(crate) gating_controls: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -223,6 +209,42 @@ impl GatingRule {
     }
 }
 
+/// When writing a match expression against `Status`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let status = unimplemented!();
+/// match status {
+///     Status::Deployed => { /* ... */ },
+///     Status::Pending => { /* ... */ },
+///     Status::PendingDeletion => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `status` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Status::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Status::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Status::NewFeature` is defined.
+/// Specifically, when `status` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Status::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The deployment status of a resource. Status can be one of the following:</p> <p>PENDING: Amazon Route 53 Application Recovery Controller is creating the resource.</p> <p>DEPLOYED: The resource is deployed and ready to use.</p> <p>PENDING_DELETION: Amazon Route 53 Application Recovery Controller is deleting the resource.</p>
 #[non_exhaustive]
 #[derive(
@@ -241,8 +263,8 @@ pub enum Status {
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     PendingDeletion,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Status {
     fn from(s: &str) -> Self {
@@ -250,7 +272,7 @@ impl std::convert::From<&str> for Status {
             "DEPLOYED" => Status::Deployed,
             "PENDING" => Status::Pending,
             "PENDING_DELETION" => Status::PendingDeletion,
-            other => Status::Unknown(other.to_owned()),
+            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -268,11 +290,11 @@ impl Status {
             Status::Deployed => "DEPLOYED",
             Status::Pending => "PENDING",
             Status::PendingDeletion => "PENDING_DELETION",
-            Status::Unknown(s) => s.as_ref(),
+            Status::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPLOYED", "PENDING", "PENDING_DELETION"]
     }
 }
@@ -284,7 +306,7 @@ impl AsRef<str> for Status {
 
 /// <p>The rule configuration for an assertion rule. That is, the criteria that you set for specific assertion controls (routing controls) that specify how many control states must be ON after a transaction completes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleConfig {
     /// <p>Logical negation of the rule. If the rule would usually evaluate true, it's evaluated as false, and vice versa.</p>
     #[doc(hidden)]
@@ -310,20 +332,11 @@ impl RuleConfig {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for RuleConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleConfig");
-        formatter.field("inverted", &self.inverted);
-        formatter.field("threshold", &self.threshold);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`RuleConfig`](crate::model::RuleConfig).
 pub mod rule_config {
 
     /// A builder for [`RuleConfig`](crate::model::RuleConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inverted: std::option::Option<bool>,
         pub(crate) threshold: std::option::Option<i32>,
@@ -377,6 +390,42 @@ impl RuleConfig {
     }
 }
 
+/// When writing a match expression against `RuleType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ruletype = unimplemented!();
+/// match ruletype {
+///     RuleType::And => { /* ... */ },
+///     RuleType::Atleast => { /* ... */ },
+///     RuleType::Or => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ruletype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RuleType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RuleType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RuleType::NewFeature` is defined.
+/// Specifically, when `ruletype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RuleType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>An enumerated type that determines how the evaluated rules are processed. RuleType can be one of the following:</p> <p>ATLEAST - At least N routing controls must be set. You specify N as the Threshold in the rule configuration.</p> <p>AND - All routing controls must be set. This is a shortcut for "At least N," where N is the total number of controls in the rule.</p> <p>OR - Any control must be set. This is a shortcut for "At least N," where N is 1.</p>
 #[non_exhaustive]
 #[derive(
@@ -395,8 +444,8 @@ pub enum RuleType {
     Atleast,
     #[allow(missing_docs)] // documentation missing in model
     Or,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RuleType {
     fn from(s: &str) -> Self {
@@ -404,7 +453,7 @@ impl std::convert::From<&str> for RuleType {
             "AND" => RuleType::And,
             "ATLEAST" => RuleType::Atleast,
             "OR" => RuleType::Or,
-            other => RuleType::Unknown(other.to_owned()),
+            other => RuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -422,11 +471,11 @@ impl RuleType {
             RuleType::And => "AND",
             RuleType::Atleast => "ATLEAST",
             RuleType::Or => "OR",
-            RuleType::Unknown(s) => s.as_ref(),
+            RuleType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AND", "ATLEAST", "OR"]
     }
 }
@@ -438,7 +487,7 @@ impl AsRef<str> for RuleType {
 
 /// <p>An assertion rule enforces that, when you change a routing control state, that the criteria that you set in the rule configuration is met. Otherwise, the change to the routing control is not accepted. For example, the criteria might be that at least one routing control state is On after the transation so that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssertionRule {
     /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
     #[doc(hidden)]
@@ -492,24 +541,11 @@ impl AssertionRule {
         self.wait_period_ms
     }
 }
-impl std::fmt::Debug for AssertionRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssertionRule");
-        formatter.field("asserted_controls", &self.asserted_controls);
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("name", &self.name);
-        formatter.field("rule_config", &self.rule_config);
-        formatter.field("safety_rule_arn", &self.safety_rule_arn);
-        formatter.field("status", &self.status);
-        formatter.field("wait_period_ms", &self.wait_period_ms);
-        formatter.finish()
-    }
-}
 /// See [`AssertionRule`](crate::model::AssertionRule).
 pub mod assertion_rule {
 
     /// A builder for [`AssertionRule`](crate::model::AssertionRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asserted_controls: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
@@ -631,7 +667,7 @@ impl AssertionRule {
 
 /// <p>Update to a gating rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatingRuleUpdate {
     /// <p>The name for the gating rule. You can use any non-white space character in the name.</p>
     #[doc(hidden)]
@@ -657,20 +693,11 @@ impl GatingRuleUpdate {
         self.wait_period_ms
     }
 }
-impl std::fmt::Debug for GatingRuleUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatingRuleUpdate");
-        formatter.field("name", &self.name);
-        formatter.field("safety_rule_arn", &self.safety_rule_arn);
-        formatter.field("wait_period_ms", &self.wait_period_ms);
-        formatter.finish()
-    }
-}
 /// See [`GatingRuleUpdate`](crate::model::GatingRuleUpdate).
 pub mod gating_rule_update {
 
     /// A builder for [`GatingRuleUpdate`](crate::model::GatingRuleUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) safety_rule_arn: std::option::Option<std::string::String>,
@@ -729,7 +756,7 @@ impl GatingRuleUpdate {
 
 /// <p>An update to an assertion rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssertionRuleUpdate {
     /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
     #[doc(hidden)]
@@ -755,20 +782,11 @@ impl AssertionRuleUpdate {
         self.wait_period_ms
     }
 }
-impl std::fmt::Debug for AssertionRuleUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssertionRuleUpdate");
-        formatter.field("name", &self.name);
-        formatter.field("safety_rule_arn", &self.safety_rule_arn);
-        formatter.field("wait_period_ms", &self.wait_period_ms);
-        formatter.finish()
-    }
-}
 /// See [`AssertionRuleUpdate`](crate::model::AssertionRuleUpdate).
 pub mod assertion_rule_update {
 
     /// A builder for [`AssertionRuleUpdate`](crate::model::AssertionRuleUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) safety_rule_arn: std::option::Option<std::string::String>,
@@ -827,7 +845,7 @@ impl AssertionRuleUpdate {
 
 /// <p>A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control traffic routing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoutingControl {
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
     #[doc(hidden)]
@@ -860,21 +878,11 @@ impl RoutingControl {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for RoutingControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoutingControl");
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("name", &self.name);
-        formatter.field("routing_control_arn", &self.routing_control_arn);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`RoutingControl`](crate::model::RoutingControl).
 pub mod routing_control {
 
     /// A builder for [`RoutingControl`](crate::model::RoutingControl).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -948,7 +956,7 @@ impl RoutingControl {
 
 /// <p>A control panel represents a group of routing controls that can be changed together in a single transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ControlPanel {
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the control panel.</p>
     #[doc(hidden)]
@@ -995,23 +1003,11 @@ impl ControlPanel {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for ControlPanel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ControlPanel");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("default_control_panel", &self.default_control_panel);
-        formatter.field("name", &self.name);
-        formatter.field("routing_control_count", &self.routing_control_count);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`ControlPanel`](crate::model::ControlPanel).
 pub mod control_panel {
 
     /// A builder for [`ControlPanel`](crate::model::ControlPanel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
@@ -1106,7 +1102,7 @@ impl ControlPanel {
 
 /// <p>A safety rule. A safety rule can be an assertion rule or a gating rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Rule {
     /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the criteria might be that at least one routing control state is On after the transation so that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.</p>
     #[doc(hidden)]
@@ -1127,19 +1123,11 @@ impl Rule {
         self.gating.as_ref()
     }
 }
-impl std::fmt::Debug for Rule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Rule");
-        formatter.field("assertion", &self.assertion);
-        formatter.field("gating", &self.gating);
-        formatter.finish()
-    }
-}
 /// See [`Rule`](crate::model::Rule).
 pub mod rule {
 
     /// A builder for [`Rule`](crate::model::Rule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assertion: std::option::Option<crate::model::AssertionRule>,
         pub(crate) gating: std::option::Option<crate::model::GatingRule>,
@@ -1188,7 +1176,7 @@ impl Rule {
 
 /// <p>A set of five redundant Regional endpoints against which you can execute API calls to update or get the state of routing controls. You can host multiple control panels and routing controls on one cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
@@ -1223,21 +1211,11 @@ impl Cluster {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for Cluster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cluster");
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("cluster_endpoints", &self.cluster_endpoints);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
 
     /// A builder for [`Cluster`](crate::model::Cluster).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_endpoints:
@@ -1317,7 +1295,7 @@ impl Cluster {
 
 /// <p>A cluster endpoint. Specify an endpoint when you want to set or retrieve a routing control state in the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterEndpoint {
     /// <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when you want to set or retrieve a routing control state in the cluster.</p>
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
@@ -1338,19 +1316,11 @@ impl ClusterEndpoint {
         self.region.as_deref()
     }
 }
-impl std::fmt::Debug for ClusterEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterEndpoint");
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("region", &self.region);
-        formatter.finish()
-    }
-}
 /// See [`ClusterEndpoint`](crate::model::ClusterEndpoint).
 pub mod cluster_endpoint {
 
     /// A builder for [`ClusterEndpoint`](crate::model::ClusterEndpoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
         pub(crate) region: std::option::Option<std::string::String>,
@@ -1396,7 +1366,7 @@ impl ClusterEndpoint {
 
 /// <p>A new gating rule for a control panel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NewGatingRule {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     #[doc(hidden)]
@@ -1445,23 +1415,11 @@ impl NewGatingRule {
         self.wait_period_ms
     }
 }
-impl std::fmt::Debug for NewGatingRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NewGatingRule");
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("gating_controls", &self.gating_controls);
-        formatter.field("name", &self.name);
-        formatter.field("rule_config", &self.rule_config);
-        formatter.field("target_controls", &self.target_controls);
-        formatter.field("wait_period_ms", &self.wait_period_ms);
-        formatter.finish()
-    }
-}
 /// See [`NewGatingRule`](crate::model::NewGatingRule).
 pub mod new_gating_rule {
 
     /// A builder for [`NewGatingRule`](crate::model::NewGatingRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
         pub(crate) gating_controls: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1579,7 +1537,7 @@ impl NewGatingRule {
 
 /// <p>A new assertion rule for a control panel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NewAssertionRule {
     /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
     #[doc(hidden)]
@@ -1619,22 +1577,11 @@ impl NewAssertionRule {
         self.wait_period_ms
     }
 }
-impl std::fmt::Debug for NewAssertionRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NewAssertionRule");
-        formatter.field("asserted_controls", &self.asserted_controls);
-        formatter.field("control_panel_arn", &self.control_panel_arn);
-        formatter.field("name", &self.name);
-        formatter.field("rule_config", &self.rule_config);
-        formatter.field("wait_period_ms", &self.wait_period_ms);
-        formatter.finish()
-    }
-}
 /// See [`NewAssertionRule`](crate::model::NewAssertionRule).
 pub mod new_assertion_rule {
 
     /// A builder for [`NewAssertionRule`](crate::model::NewAssertionRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asserted_controls: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,

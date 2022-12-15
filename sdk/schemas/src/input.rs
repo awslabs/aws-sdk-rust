@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_discoverer_input {
 
     /// A builder for [`CreateDiscovererInput`](crate::input::CreateDiscovererInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
@@ -73,8 +73,10 @@ pub mod create_discoverer_input {
         /// Consumes the builder and constructs a [`CreateDiscovererInput`](crate::input::CreateDiscovererInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDiscovererInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateDiscovererInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateDiscovererInput {
                 description: self.description,
                 source_arn: self.source_arn,
@@ -97,13 +99,13 @@ impl CreateDiscovererInput {
             crate::operation::CreateDiscoverer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateDiscovererInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/discoverers").expect("formatting should succeed");
                 Ok(())
             }
@@ -111,8 +113,10 @@ impl CreateDiscovererInput {
             fn update_http_builder(
                 input: &crate::input::CreateDiscovererInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -196,7 +200,7 @@ impl CreateDiscovererInput {
 pub mod create_registry_input {
 
     /// A builder for [`CreateRegistryInput`](crate::input::CreateRegistryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) registry_name: std::option::Option<std::string::String>,
@@ -256,7 +260,7 @@ pub mod create_registry_input {
         /// Consumes the builder and constructs a [`CreateRegistryInput`](crate::input::CreateRegistryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateRegistryInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateRegistryInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateRegistryInput {
                 description: self.description,
@@ -279,26 +283,31 @@ impl CreateRegistryInput {
             crate::operation::CreateRegistry,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateRegistryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.registry_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "registry_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let registry_name = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if registry_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "registry_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -312,8 +321,10 @@ impl CreateRegistryInput {
             fn update_http_builder(
                 input: &crate::input::CreateRegistryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -397,7 +408,7 @@ impl CreateRegistryInput {
 pub mod create_schema_input {
 
     /// A builder for [`CreateSchemaInput`](crate::input::CreateSchemaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -490,7 +501,7 @@ pub mod create_schema_input {
         /// Consumes the builder and constructs a [`CreateSchemaInput`](crate::input::CreateSchemaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateSchemaInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateSchemaInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateSchemaInput {
                 content: self.content,
@@ -516,40 +527,50 @@ impl CreateSchemaInput {
             crate::operation::CreateSchema,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateSchemaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.registry_name;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "registry_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let registry_name = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if registry_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "registry_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_3 = &_input.schema_name;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "schema_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let schema_name = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if schema_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "schema_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -564,8 +585,10 @@ impl CreateSchemaInput {
             fn update_http_builder(
                 input: &crate::input::CreateSchemaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -649,7 +672,7 @@ impl CreateSchemaInput {
 pub mod delete_discoverer_input {
 
     /// A builder for [`DeleteDiscovererInput`](crate::input::DeleteDiscovererInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) discoverer_id: std::option::Option<std::string::String>,
     }
@@ -670,8 +693,10 @@ pub mod delete_discoverer_input {
         /// Consumes the builder and constructs a [`DeleteDiscovererInput`](crate::input::DeleteDiscovererInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDiscovererInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteDiscovererInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteDiscovererInput {
                 discoverer_id: self.discoverer_id,
             })
@@ -691,26 +716,31 @@ impl DeleteDiscovererInput {
             crate::operation::DeleteDiscoverer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDiscovererInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.discoverer_id;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "discoverer_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let discoverer_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "discoverer_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let discoverer_id = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if discoverer_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "discoverer_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "discoverer_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -724,8 +754,10 @@ impl DeleteDiscovererInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDiscovererInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -795,7 +827,7 @@ impl DeleteDiscovererInput {
 pub mod delete_registry_input {
 
     /// A builder for [`DeleteRegistryInput`](crate::input::DeleteRegistryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
     }
@@ -816,7 +848,7 @@ pub mod delete_registry_input {
         /// Consumes the builder and constructs a [`DeleteRegistryInput`](crate::input::DeleteRegistryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteRegistryInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteRegistryInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteRegistryInput {
                 registry_name: self.registry_name,
@@ -837,26 +869,31 @@ impl DeleteRegistryInput {
             crate::operation::DeleteRegistry,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteRegistryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.registry_name;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "registry_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let registry_name = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if registry_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "registry_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -870,8 +907,10 @@ impl DeleteRegistryInput {
             fn update_http_builder(
                 input: &crate::input::DeleteRegistryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -941,7 +980,7 @@ impl DeleteRegistryInput {
 pub mod delete_resource_policy_input {
 
     /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
     }
@@ -962,8 +1001,10 @@ pub mod delete_resource_policy_input {
         /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteResourcePolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteResourcePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteResourcePolicyInput {
                 registry_name: self.registry_name,
             })
@@ -983,26 +1024,28 @@ impl DeleteResourcePolicyInput {
             crate::operation::DeleteResourcePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteResourcePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/policy").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DeleteResourcePolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_6) = &_input.registry_name {
-                    query.push_kv(
-                        "registryName",
-                        &aws_smithy_http::query::fmt_string(&inner_6),
-                    );
+                    {
+                        query.push_kv(
+                            "registryName",
+                            &aws_smithy_http::query::fmt_string(&inner_6),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1010,8 +1053,10 @@ impl DeleteResourcePolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteResourcePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1082,7 +1127,7 @@ impl DeleteResourcePolicyInput {
 pub mod delete_schema_input {
 
     /// A builder for [`DeleteSchemaInput`](crate::input::DeleteSchemaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
         pub(crate) schema_name: std::option::Option<std::string::String>,
@@ -1114,7 +1159,7 @@ pub mod delete_schema_input {
         /// Consumes the builder and constructs a [`DeleteSchemaInput`](crate::input::DeleteSchemaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteSchemaInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteSchemaInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteSchemaInput {
                 registry_name: self.registry_name,
@@ -1136,40 +1181,50 @@ impl DeleteSchemaInput {
             crate::operation::DeleteSchema,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteSchemaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.registry_name;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "registry_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let registry_name = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if registry_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "registry_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_8 = &_input.schema_name;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_8, false);
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "schema_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let schema_name = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if schema_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "schema_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1184,8 +1239,10 @@ impl DeleteSchemaInput {
             fn update_http_builder(
                 input: &crate::input::DeleteSchemaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1255,7 +1312,7 @@ impl DeleteSchemaInput {
 pub mod delete_schema_version_input {
 
     /// A builder for [`DeleteSchemaVersionInput`](crate::input::DeleteSchemaVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
         pub(crate) schema_name: std::option::Option<std::string::String>,
@@ -1301,8 +1358,10 @@ pub mod delete_schema_version_input {
         /// Consumes the builder and constructs a [`DeleteSchemaVersionInput`](crate::input::DeleteSchemaVersionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteSchemaVersionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteSchemaVersionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteSchemaVersionInput {
                 registry_name: self.registry_name,
                 schema_name: self.schema_name,
@@ -1324,54 +1383,69 @@ impl DeleteSchemaVersionInput {
             crate::operation::DeleteSchemaVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteSchemaVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.registry_name;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_9, false);
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "registry_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let registry_name = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if registry_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "registry_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_10 = &_input.schema_name;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_10, false);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "schema_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let schema_name = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if schema_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "schema_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_11 = &_input.schema_version;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_version",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let schema_version = aws_smithy_http::label::fmt_string(input_11, false);
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "schema_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let schema_version = aws_smithy_http::label::fmt_string(
+                    input_11,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if schema_version.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_version",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "schema_version",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/registries/name/{RegistryName}/schemas/name/{SchemaName}/version/{SchemaVersion}", RegistryName = registry_name, SchemaName = schema_name, SchemaVersion = schema_version).expect("formatting should succeed");
                 Ok(())
@@ -1380,8 +1454,10 @@ impl DeleteSchemaVersionInput {
             fn update_http_builder(
                 input: &crate::input::DeleteSchemaVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1451,7 +1527,7 @@ impl DeleteSchemaVersionInput {
 pub mod describe_code_binding_input {
 
     /// A builder for [`DescribeCodeBindingInput`](crate::input::DescribeCodeBindingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language: std::option::Option<std::string::String>,
         pub(crate) registry_name: std::option::Option<std::string::String>,
@@ -1508,8 +1584,10 @@ pub mod describe_code_binding_input {
         /// Consumes the builder and constructs a [`DescribeCodeBindingInput`](crate::input::DescribeCodeBindingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeCodeBindingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeCodeBindingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeCodeBindingInput {
                 language: self.language,
                 registry_name: self.registry_name,
@@ -1532,54 +1610,69 @@ impl DescribeCodeBindingInput {
             crate::operation::DescribeCodeBinding,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeCodeBindingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_12 = &_input.registry_name;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_12, false);
+                let input_12 = input_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "registry_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let registry_name = aws_smithy_http::label::fmt_string(
+                    input_12,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if registry_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "registry_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_13 = &_input.schema_name;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_13, false);
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "schema_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let schema_name = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if schema_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "schema_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_14 = &_input.language;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "language",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let language = aws_smithy_http::label::fmt_string(input_14, false);
+                let input_14 = input_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "language",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let language = aws_smithy_http::label::fmt_string(
+                    input_14,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if language.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "language",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "language",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/registries/name/{RegistryName}/schemas/name/{SchemaName}/language/{Language}", RegistryName = registry_name, SchemaName = schema_name, Language = language).expect("formatting should succeed");
                 Ok(())
@@ -1587,13 +1680,15 @@ impl DescribeCodeBindingInput {
             fn uri_query(
                 _input: &crate::input::DescribeCodeBindingInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_15) = &_input.schema_version {
-                    query.push_kv(
-                        "schemaVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_15),
-                    );
+                    {
+                        query.push_kv(
+                            "schemaVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_15),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1601,8 +1696,10 @@ impl DescribeCodeBindingInput {
             fn update_http_builder(
                 input: &crate::input::DescribeCodeBindingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1673,7 +1770,7 @@ impl DescribeCodeBindingInput {
 pub mod describe_discoverer_input {
 
     /// A builder for [`DescribeDiscovererInput`](crate::input::DescribeDiscovererInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) discoverer_id: std::option::Option<std::string::String>,
     }
@@ -1694,8 +1791,10 @@ pub mod describe_discoverer_input {
         /// Consumes the builder and constructs a [`DescribeDiscovererInput`](crate::input::DescribeDiscovererInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDiscovererInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeDiscovererInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeDiscovererInput {
                 discoverer_id: self.discoverer_id,
             })
@@ -1715,26 +1814,31 @@ impl DescribeDiscovererInput {
             crate::operation::DescribeDiscoverer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDiscovererInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_16 = &_input.discoverer_id;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "discoverer_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let discoverer_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "discoverer_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let discoverer_id = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if discoverer_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "discoverer_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "discoverer_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1748,8 +1852,10 @@ impl DescribeDiscovererInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDiscovererInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1819,7 +1925,7 @@ impl DescribeDiscovererInput {
 pub mod describe_registry_input {
 
     /// A builder for [`DescribeRegistryInput`](crate::input::DescribeRegistryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
     }
@@ -1840,8 +1946,10 @@ pub mod describe_registry_input {
         /// Consumes the builder and constructs a [`DescribeRegistryInput`](crate::input::DescribeRegistryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeRegistryInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeRegistryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeRegistryInput {
                 registry_name: self.registry_name,
             })
@@ -1861,26 +1969,31 @@ impl DescribeRegistryInput {
             crate::operation::DescribeRegistry,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeRegistryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_17 = &_input.registry_name;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_17, false);
+                let input_17 = input_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "registry_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let registry_name = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if registry_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "registry_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1894,8 +2007,10 @@ impl DescribeRegistryInput {
             fn update_http_builder(
                 input: &crate::input::DescribeRegistryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1965,7 +2080,7 @@ impl DescribeRegistryInput {
 pub mod describe_schema_input {
 
     /// A builder for [`DescribeSchemaInput`](crate::input::DescribeSchemaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
         pub(crate) schema_name: std::option::Option<std::string::String>,
@@ -2011,7 +2126,7 @@ pub mod describe_schema_input {
         /// Consumes the builder and constructs a [`DescribeSchemaInput`](crate::input::DescribeSchemaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeSchemaInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeSchemaInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeSchemaInput {
                 registry_name: self.registry_name,
@@ -2034,40 +2149,50 @@ impl DescribeSchemaInput {
             crate::operation::DescribeSchema,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeSchemaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_18 = &_input.registry_name;
-                let input_18 = input_18.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_18, false);
+                let input_18 = input_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "registry_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let registry_name = aws_smithy_http::label::fmt_string(
+                    input_18,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if registry_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "registry_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_19 = &_input.schema_name;
-                let input_19 = input_19.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_19, false);
+                let input_19 = input_19.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "schema_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let schema_name = aws_smithy_http::label::fmt_string(
+                    input_19,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if schema_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "schema_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2081,13 +2206,15 @@ impl DescribeSchemaInput {
             fn uri_query(
                 _input: &crate::input::DescribeSchemaInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_20) = &_input.schema_version {
-                    query.push_kv(
-                        "schemaVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_20),
-                    );
+                    {
+                        query.push_kv(
+                            "schemaVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_20),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2095,8 +2222,10 @@ impl DescribeSchemaInput {
             fn update_http_builder(
                 input: &crate::input::DescribeSchemaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2167,7 +2296,7 @@ impl DescribeSchemaInput {
 pub mod export_schema_input {
 
     /// A builder for [`ExportSchemaInput`](crate::input::ExportSchemaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
         pub(crate) schema_name: std::option::Option<std::string::String>,
@@ -2224,7 +2353,7 @@ pub mod export_schema_input {
         /// Consumes the builder and constructs a [`ExportSchemaInput`](crate::input::ExportSchemaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ExportSchemaInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ExportSchemaInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ExportSchemaInput {
                 registry_name: self.registry_name,
@@ -2248,40 +2377,50 @@ impl ExportSchemaInput {
             crate::operation::ExportSchema,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ExportSchemaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_21 = &_input.registry_name;
-                let input_21 = input_21.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_21, false);
+                let input_21 = input_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "registry_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let registry_name = aws_smithy_http::label::fmt_string(
+                    input_21,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if registry_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "registry_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_22 = &_input.schema_name;
-                let input_22 = input_22.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_22, false);
+                let input_22 = input_22.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "schema_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let schema_name = aws_smithy_http::label::fmt_string(
+                    input_22,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if schema_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "schema_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2295,25 +2434,42 @@ impl ExportSchemaInput {
             fn uri_query(
                 _input: &crate::input::ExportSchemaInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_23) = &_input.schema_version {
-                    query.push_kv(
-                        "schemaVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_23),
+                    {
+                        query.push_kv(
+                            "schemaVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_23),
+                        );
+                    }
+                }
+                let inner_24 = &_input.r#type;
+                let inner_24 = inner_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "r#type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_24.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "r#type",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_24) = &_input.r#type {
-                    query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_24));
-                }
+                query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_24));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ExportSchemaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2384,7 +2540,7 @@ impl ExportSchemaInput {
 pub mod get_code_binding_source_input {
 
     /// A builder for [`GetCodeBindingSourceInput`](crate::input::GetCodeBindingSourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language: std::option::Option<std::string::String>,
         pub(crate) registry_name: std::option::Option<std::string::String>,
@@ -2441,8 +2597,10 @@ pub mod get_code_binding_source_input {
         /// Consumes the builder and constructs a [`GetCodeBindingSourceInput`](crate::input::GetCodeBindingSourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetCodeBindingSourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetCodeBindingSourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetCodeBindingSourceInput {
                 language: self.language,
                 registry_name: self.registry_name,
@@ -2465,54 +2623,69 @@ impl GetCodeBindingSourceInput {
             crate::operation::GetCodeBindingSource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetCodeBindingSourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_25 = &_input.registry_name;
-                let input_25 = input_25.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_25, false);
+                let input_25 = input_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "registry_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let registry_name = aws_smithy_http::label::fmt_string(
+                    input_25,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if registry_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "registry_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_26 = &_input.schema_name;
-                let input_26 = input_26.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_26, false);
+                let input_26 = input_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "schema_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let schema_name = aws_smithy_http::label::fmt_string(
+                    input_26,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if schema_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "schema_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_27 = &_input.language;
-                let input_27 = input_27.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "language",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let language = aws_smithy_http::label::fmt_string(input_27, false);
+                let input_27 = input_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "language",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let language = aws_smithy_http::label::fmt_string(
+                    input_27,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if language.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "language",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "language",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/registries/name/{RegistryName}/schemas/name/{SchemaName}/language/{Language}/source", RegistryName = registry_name, SchemaName = schema_name, Language = language).expect("formatting should succeed");
                 Ok(())
@@ -2520,13 +2693,15 @@ impl GetCodeBindingSourceInput {
             fn uri_query(
                 _input: &crate::input::GetCodeBindingSourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_28) = &_input.schema_version {
-                    query.push_kv(
-                        "schemaVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_28),
-                    );
+                    {
+                        query.push_kv(
+                            "schemaVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_28),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2534,8 +2709,10 @@ impl GetCodeBindingSourceInput {
             fn update_http_builder(
                 input: &crate::input::GetCodeBindingSourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2606,7 +2783,7 @@ impl GetCodeBindingSourceInput {
 pub mod get_discovered_schema_input {
 
     /// A builder for [`GetDiscoveredSchemaInput`](crate::input::GetDiscoveredSchemaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) r#type: std::option::Option<crate::model::Type>,
@@ -2644,8 +2821,10 @@ pub mod get_discovered_schema_input {
         /// Consumes the builder and constructs a [`GetDiscoveredSchemaInput`](crate::input::GetDiscoveredSchemaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDiscoveredSchemaInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetDiscoveredSchemaInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetDiscoveredSchemaInput {
                 events: self.events,
                 r#type: self.r#type,
@@ -2666,13 +2845,13 @@ impl GetDiscoveredSchemaInput {
             crate::operation::GetDiscoveredSchema,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDiscoveredSchemaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/discover").expect("formatting should succeed");
                 Ok(())
             }
@@ -2680,8 +2859,10 @@ impl GetDiscoveredSchemaInput {
             fn update_http_builder(
                 input: &crate::input::GetDiscoveredSchemaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2765,7 +2946,7 @@ impl GetDiscoveredSchemaInput {
 pub mod get_resource_policy_input {
 
     /// A builder for [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
     }
@@ -2786,8 +2967,10 @@ pub mod get_resource_policy_input {
         /// Consumes the builder and constructs a [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetResourcePolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetResourcePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetResourcePolicyInput {
                 registry_name: self.registry_name,
             })
@@ -2807,26 +2990,28 @@ impl GetResourcePolicyInput {
             crate::operation::GetResourcePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourcePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/policy").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetResourcePolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_29) = &_input.registry_name {
-                    query.push_kv(
-                        "registryName",
-                        &aws_smithy_http::query::fmt_string(&inner_29),
-                    );
+                    {
+                        query.push_kv(
+                            "registryName",
+                            &aws_smithy_http::query::fmt_string(&inner_29),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2834,8 +3019,10 @@ impl GetResourcePolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetResourcePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2906,7 +3093,7 @@ impl GetResourcePolicyInput {
 pub mod list_discoverers_input {
 
     /// A builder for [`ListDiscoverersInput`](crate::input::ListDiscoverersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) discoverer_id_prefix: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -2963,7 +3150,7 @@ pub mod list_discoverers_input {
         /// Consumes the builder and constructs a [`ListDiscoverersInput`](crate::input::ListDiscoverersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDiscoverersInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListDiscoverersInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListDiscoverersInput {
                 discoverer_id_prefix: self.discoverer_id_prefix,
@@ -2987,26 +3174,28 @@ impl ListDiscoverersInput {
             crate::operation::ListDiscoverers,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDiscoverersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/discoverers").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListDiscoverersInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_30) = &_input.discoverer_id_prefix {
-                    query.push_kv(
-                        "discovererIdPrefix",
-                        &aws_smithy_http::query::fmt_string(&inner_30),
-                    );
+                    {
+                        query.push_kv(
+                            "discovererIdPrefix",
+                            &aws_smithy_http::query::fmt_string(&inner_30),
+                        );
+                    }
                 }
                 if _input.limit != 0 {
                     query.push_kv(
@@ -3015,13 +3204,17 @@ impl ListDiscoverersInput {
                     );
                 }
                 if let Some(inner_31) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
+                    }
                 }
                 if let Some(inner_32) = &_input.source_arn_prefix {
-                    query.push_kv(
-                        "sourceArnPrefix",
-                        &aws_smithy_http::query::fmt_string(&inner_32),
-                    );
+                    {
+                        query.push_kv(
+                            "sourceArnPrefix",
+                            &aws_smithy_http::query::fmt_string(&inner_32),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3029,8 +3222,10 @@ impl ListDiscoverersInput {
             fn update_http_builder(
                 input: &crate::input::ListDiscoverersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3101,7 +3296,7 @@ impl ListDiscoverersInput {
 pub mod list_registries_input {
 
     /// A builder for [`ListRegistriesInput`](crate::input::ListRegistriesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3155,7 +3350,7 @@ pub mod list_registries_input {
         /// Consumes the builder and constructs a [`ListRegistriesInput`](crate::input::ListRegistriesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRegistriesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListRegistriesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListRegistriesInput {
                 limit: self.limit.unwrap_or_default(),
@@ -3179,20 +3374,20 @@ impl ListRegistriesInput {
             crate::operation::ListRegistries,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRegistriesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/registries").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListRegistriesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.limit != 0 {
                     query.push_kv(
@@ -3201,16 +3396,22 @@ impl ListRegistriesInput {
                     );
                 }
                 if let Some(inner_33) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
+                    }
                 }
                 if let Some(inner_34) = &_input.registry_name_prefix {
-                    query.push_kv(
-                        "registryNamePrefix",
-                        &aws_smithy_http::query::fmt_string(&inner_34),
-                    );
+                    {
+                        query.push_kv(
+                            "registryNamePrefix",
+                            &aws_smithy_http::query::fmt_string(&inner_34),
+                        );
+                    }
                 }
                 if let Some(inner_35) = &_input.scope {
-                    query.push_kv("scope", &aws_smithy_http::query::fmt_string(&inner_35));
+                    {
+                        query.push_kv("scope", &aws_smithy_http::query::fmt_string(&inner_35));
+                    }
                 }
                 Ok(())
             }
@@ -3218,8 +3419,10 @@ impl ListRegistriesInput {
             fn update_http_builder(
                 input: &crate::input::ListRegistriesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3290,7 +3493,7 @@ impl ListRegistriesInput {
 pub mod list_schemas_input {
 
     /// A builder for [`ListSchemasInput`](crate::input::ListSchemasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3347,7 +3550,7 @@ pub mod list_schemas_input {
         /// Consumes the builder and constructs a [`ListSchemasInput`](crate::input::ListSchemasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSchemasInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListSchemasInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListSchemasInput {
                 limit: self.limit.unwrap_or_default(),
@@ -3371,26 +3574,31 @@ impl ListSchemasInput {
             crate::operation::ListSchemas,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSchemasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_36 = &_input.registry_name;
-                let input_36 = input_36.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_36, false);
+                let input_36 = input_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "registry_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let registry_name = aws_smithy_http::label::fmt_string(
+                    input_36,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if registry_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "registry_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3403,7 +3611,7 @@ impl ListSchemasInput {
             fn uri_query(
                 _input: &crate::input::ListSchemasInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.limit != 0 {
                     query.push_kv(
@@ -3412,13 +3620,17 @@ impl ListSchemasInput {
                     );
                 }
                 if let Some(inner_37) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                    }
                 }
                 if let Some(inner_38) = &_input.schema_name_prefix {
-                    query.push_kv(
-                        "schemaNamePrefix",
-                        &aws_smithy_http::query::fmt_string(&inner_38),
-                    );
+                    {
+                        query.push_kv(
+                            "schemaNamePrefix",
+                            &aws_smithy_http::query::fmt_string(&inner_38),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3426,8 +3638,10 @@ impl ListSchemasInput {
             fn update_http_builder(
                 input: &crate::input::ListSchemasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3498,7 +3712,7 @@ impl ListSchemasInput {
 pub mod list_schema_versions_input {
 
     /// A builder for [`ListSchemaVersionsInput`](crate::input::ListSchemaVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3552,8 +3766,10 @@ pub mod list_schema_versions_input {
         /// Consumes the builder and constructs a [`ListSchemaVersionsInput`](crate::input::ListSchemaVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSchemaVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListSchemaVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListSchemaVersionsInput {
                 limit: self.limit.unwrap_or_default(),
                 next_token: self.next_token,
@@ -3576,40 +3792,50 @@ impl ListSchemaVersionsInput {
             crate::operation::ListSchemaVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSchemaVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_39 = &_input.registry_name;
-                let input_39 = input_39.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_39, false);
+                let input_39 = input_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "registry_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let registry_name = aws_smithy_http::label::fmt_string(
+                    input_39,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if registry_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "registry_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_40 = &_input.schema_name;
-                let input_40 = input_40.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_40, false);
+                let input_40 = input_40.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "schema_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let schema_name = aws_smithy_http::label::fmt_string(
+                    input_40,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if schema_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "schema_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3623,7 +3849,7 @@ impl ListSchemaVersionsInput {
             fn uri_query(
                 _input: &crate::input::ListSchemaVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.limit != 0 {
                     query.push_kv(
@@ -3632,7 +3858,9 @@ impl ListSchemaVersionsInput {
                     );
                 }
                 if let Some(inner_41) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_41));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_41));
+                    }
                 }
                 Ok(())
             }
@@ -3640,8 +3868,10 @@ impl ListSchemaVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListSchemaVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3712,7 +3942,7 @@ impl ListSchemaVersionsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3730,8 +3960,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -3751,26 +3983,31 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_42 = &_input.resource_arn;
-                let input_42 = input_42.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_42, false);
+                let input_42 = input_42.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_42,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -3780,8 +4017,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3851,7 +4090,7 @@ impl ListTagsForResourceInput {
 pub mod put_code_binding_input {
 
     /// A builder for [`PutCodeBindingInput`](crate::input::PutCodeBindingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language: std::option::Option<std::string::String>,
         pub(crate) registry_name: std::option::Option<std::string::String>,
@@ -3908,7 +4147,7 @@ pub mod put_code_binding_input {
         /// Consumes the builder and constructs a [`PutCodeBindingInput`](crate::input::PutCodeBindingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutCodeBindingInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutCodeBindingInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutCodeBindingInput {
                 language: self.language,
@@ -3932,54 +4171,69 @@ impl PutCodeBindingInput {
             crate::operation::PutCodeBinding,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutCodeBindingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_43 = &_input.registry_name;
-                let input_43 = input_43.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_43, false);
+                let input_43 = input_43.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "registry_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let registry_name = aws_smithy_http::label::fmt_string(
+                    input_43,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if registry_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "registry_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_44 = &_input.schema_name;
-                let input_44 = input_44.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_44, false);
+                let input_44 = input_44.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "schema_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let schema_name = aws_smithy_http::label::fmt_string(
+                    input_44,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if schema_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "schema_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_45 = &_input.language;
-                let input_45 = input_45.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "language",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let language = aws_smithy_http::label::fmt_string(input_45, false);
+                let input_45 = input_45.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "language",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let language = aws_smithy_http::label::fmt_string(
+                    input_45,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if language.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "language",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "language",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/registries/name/{RegistryName}/schemas/name/{SchemaName}/language/{Language}", RegistryName = registry_name, SchemaName = schema_name, Language = language).expect("formatting should succeed");
                 Ok(())
@@ -3987,13 +4241,15 @@ impl PutCodeBindingInput {
             fn uri_query(
                 _input: &crate::input::PutCodeBindingInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_46) = &_input.schema_version {
-                    query.push_kv(
-                        "schemaVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_46),
-                    );
+                    {
+                        query.push_kv(
+                            "schemaVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_46),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4001,8 +4257,10 @@ impl PutCodeBindingInput {
             fn update_http_builder(
                 input: &crate::input::PutCodeBindingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4073,7 +4331,7 @@ impl PutCodeBindingInput {
 pub mod put_resource_policy_input {
 
     /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
         pub(crate) registry_name: std::option::Option<std::string::String>,
@@ -4116,8 +4374,10 @@ pub mod put_resource_policy_input {
         /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutResourcePolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutResourcePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutResourcePolicyInput {
                 policy: self.policy,
                 registry_name: self.registry_name,
@@ -4139,26 +4399,28 @@ impl PutResourcePolicyInput {
             crate::operation::PutResourcePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutResourcePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/policy").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::PutResourcePolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_47) = &_input.registry_name {
-                    query.push_kv(
-                        "registryName",
-                        &aws_smithy_http::query::fmt_string(&inner_47),
-                    );
+                    {
+                        query.push_kv(
+                            "registryName",
+                            &aws_smithy_http::query::fmt_string(&inner_47),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4166,8 +4428,10 @@ impl PutResourcePolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutResourcePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4252,7 +4516,7 @@ impl PutResourcePolicyInput {
 pub mod search_schemas_input {
 
     /// A builder for [`SearchSchemasInput`](crate::input::SearchSchemasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keywords: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -4306,7 +4570,7 @@ pub mod search_schemas_input {
         /// Consumes the builder and constructs a [`SearchSchemasInput`](crate::input::SearchSchemasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SearchSchemasInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::SearchSchemasInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::SearchSchemasInput {
                 keywords: self.keywords,
@@ -4330,26 +4594,31 @@ impl SearchSchemasInput {
             crate::operation::SearchSchemas,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SearchSchemasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_48 = &_input.registry_name;
-                let input_48 = input_48.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_48, false);
+                let input_48 = input_48.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "registry_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let registry_name = aws_smithy_http::label::fmt_string(
+                    input_48,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if registry_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "registry_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4362,11 +4631,24 @@ impl SearchSchemasInput {
             fn uri_query(
                 _input: &crate::input::SearchSchemasInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_49) = &_input.keywords {
-                    query.push_kv("keywords", &aws_smithy_http::query::fmt_string(&inner_49));
+                let inner_49 = &_input.keywords;
+                let inner_49 = inner_49.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "keywords",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_49.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "keywords",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("keywords", &aws_smithy_http::query::fmt_string(&inner_49));
                 if _input.limit != 0 {
                     query.push_kv(
                         "limit",
@@ -4374,7 +4656,9 @@ impl SearchSchemasInput {
                     );
                 }
                 if let Some(inner_50) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_50));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_50));
+                    }
                 }
                 Ok(())
             }
@@ -4382,8 +4666,10 @@ impl SearchSchemasInput {
             fn update_http_builder(
                 input: &crate::input::SearchSchemasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4454,7 +4740,7 @@ impl SearchSchemasInput {
 pub mod start_discoverer_input {
 
     /// A builder for [`StartDiscovererInput`](crate::input::StartDiscovererInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) discoverer_id: std::option::Option<std::string::String>,
     }
@@ -4475,7 +4761,7 @@ pub mod start_discoverer_input {
         /// Consumes the builder and constructs a [`StartDiscovererInput`](crate::input::StartDiscovererInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartDiscovererInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::StartDiscovererInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::StartDiscovererInput {
                 discoverer_id: self.discoverer_id,
@@ -4496,26 +4782,31 @@ impl StartDiscovererInput {
             crate::operation::StartDiscoverer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartDiscovererInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_51 = &_input.discoverer_id;
-                let input_51 = input_51.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "discoverer_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let discoverer_id = aws_smithy_http::label::fmt_string(input_51, false);
+                let input_51 = input_51.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "discoverer_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let discoverer_id = aws_smithy_http::label::fmt_string(
+                    input_51,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if discoverer_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "discoverer_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "discoverer_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4529,8 +4820,10 @@ impl StartDiscovererInput {
             fn update_http_builder(
                 input: &crate::input::StartDiscovererInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4600,7 +4893,7 @@ impl StartDiscovererInput {
 pub mod stop_discoverer_input {
 
     /// A builder for [`StopDiscovererInput`](crate::input::StopDiscovererInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) discoverer_id: std::option::Option<std::string::String>,
     }
@@ -4621,7 +4914,7 @@ pub mod stop_discoverer_input {
         /// Consumes the builder and constructs a [`StopDiscovererInput`](crate::input::StopDiscovererInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StopDiscovererInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::StopDiscovererInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::StopDiscovererInput {
                 discoverer_id: self.discoverer_id,
@@ -4642,26 +4935,31 @@ impl StopDiscovererInput {
             crate::operation::StopDiscoverer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StopDiscovererInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_52 = &_input.discoverer_id;
-                let input_52 = input_52.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "discoverer_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let discoverer_id = aws_smithy_http::label::fmt_string(input_52, false);
+                let input_52 = input_52.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "discoverer_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let discoverer_id = aws_smithy_http::label::fmt_string(
+                    input_52,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if discoverer_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "discoverer_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "discoverer_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4675,8 +4973,10 @@ impl StopDiscovererInput {
             fn update_http_builder(
                 input: &crate::input::StopDiscovererInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4746,7 +5046,7 @@ impl StopDiscovererInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -4792,7 +5092,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -4814,26 +5114,31 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_53 = &_input.resource_arn;
-                let input_53 = input_53.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_53, false);
+                let input_53 = input_53.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_53,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -4843,8 +5148,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4928,7 +5235,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4966,7 +5273,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -4988,26 +5295,31 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_54 = &_input.resource_arn;
-                let input_54 = input_54.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_54, false);
+                let input_54 = input_54.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_54,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -5016,12 +5328,17 @@ impl UntagResourceInput {
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_55) = &_input.tag_keys {
-                    for inner_56 in inner_55 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_56));
-                    }
+                let inner_55 = &_input.tag_keys;
+                let inner_55 = inner_55.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_56 in inner_55 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_56));
                 }
                 Ok(())
             }
@@ -5029,8 +5346,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5101,7 +5420,7 @@ impl UntagResourceInput {
 pub mod update_discoverer_input {
 
     /// A builder for [`UpdateDiscovererInput`](crate::input::UpdateDiscovererInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) discoverer_id: std::option::Option<std::string::String>,
@@ -5144,8 +5463,10 @@ pub mod update_discoverer_input {
         /// Consumes the builder and constructs a [`UpdateDiscovererInput`](crate::input::UpdateDiscovererInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateDiscovererInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateDiscovererInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateDiscovererInput {
                 description: self.description,
                 discoverer_id: self.discoverer_id,
@@ -5167,26 +5488,31 @@ impl UpdateDiscovererInput {
             crate::operation::UpdateDiscoverer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateDiscovererInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_57 = &_input.discoverer_id;
-                let input_57 = input_57.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "discoverer_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let discoverer_id = aws_smithy_http::label::fmt_string(input_57, false);
+                let input_57 = input_57.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "discoverer_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let discoverer_id = aws_smithy_http::label::fmt_string(
+                    input_57,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if discoverer_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "discoverer_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "discoverer_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5200,8 +5526,10 @@ impl UpdateDiscovererInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDiscovererInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5285,7 +5613,7 @@ impl UpdateDiscovererInput {
 pub mod update_registry_input {
 
     /// A builder for [`UpdateRegistryInput`](crate::input::UpdateRegistryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) registry_name: std::option::Option<std::string::String>,
@@ -5317,7 +5645,7 @@ pub mod update_registry_input {
         /// Consumes the builder and constructs a [`UpdateRegistryInput`](crate::input::UpdateRegistryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateRegistryInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateRegistryInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateRegistryInput {
                 description: self.description,
@@ -5339,26 +5667,31 @@ impl UpdateRegistryInput {
             crate::operation::UpdateRegistry,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateRegistryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_58 = &_input.registry_name;
-                let input_58 = input_58.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_58, false);
+                let input_58 = input_58.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "registry_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let registry_name = aws_smithy_http::label::fmt_string(
+                    input_58,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if registry_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "registry_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5372,8 +5705,10 @@ impl UpdateRegistryInput {
             fn update_http_builder(
                 input: &crate::input::UpdateRegistryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5457,7 +5792,7 @@ impl UpdateRegistryInput {
 pub mod update_schema_input {
 
     /// A builder for [`UpdateSchemaInput`](crate::input::UpdateSchemaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token_id: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::string::String>,
@@ -5536,7 +5871,7 @@ pub mod update_schema_input {
         /// Consumes the builder and constructs a [`UpdateSchemaInput`](crate::input::UpdateSchemaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateSchemaInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateSchemaInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateSchemaInput {
                 client_token_id: self.client_token_id,
@@ -5562,7 +5897,7 @@ impl UpdateSchemaInput {
             crate::operation::UpdateSchema,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token_id.is_none() {
             self.client_token_id = Some(_config.make_token.make_idempotency_token());
@@ -5571,34 +5906,44 @@ impl UpdateSchemaInput {
             fn uri_base(
                 _input: &crate::input::UpdateSchemaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_59 = &_input.registry_name;
-                let input_59 = input_59.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_59, false);
+                let input_59 = input_59.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "registry_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let registry_name = aws_smithy_http::label::fmt_string(
+                    input_59,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if registry_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "registry_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "registry_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_60 = &_input.schema_name;
-                let input_60 = input_60.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_60, false);
+                let input_60 = input_60.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "schema_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let schema_name = aws_smithy_http::label::fmt_string(
+                    input_60,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if schema_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "schema_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "schema_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5613,8 +5958,10 @@ impl UpdateSchemaInput {
             fn update_http_builder(
                 input: &crate::input::UpdateSchemaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5696,7 +6043,7 @@ impl UpdateSchemaInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSchemaInput {
     /// <p>The ID of the client token.</p>
     #[doc(hidden)]
@@ -5743,22 +6090,10 @@ impl UpdateSchemaInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSchemaInput");
-        formatter.field("client_token_id", &self.client_token_id);
-        formatter.field("content", &self.content);
-        formatter.field("description", &self.description);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 /// <p>Updates the registry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRegistryInput {
     /// <p>The description of the registry to update.</p>
     #[doc(hidden)]
@@ -5777,18 +6112,10 @@ impl UpdateRegistryInput {
         self.registry_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRegistryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRegistryInput");
-        formatter.field("description", &self.description);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDiscovererInput {
     /// <p>The description of the discoverer to update.</p>
     #[doc(hidden)]
@@ -5814,19 +6141,10 @@ impl UpdateDiscovererInput {
         self.cross_account
     }
 }
-impl std::fmt::Debug for UpdateDiscovererInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDiscovererInput");
-        formatter.field("description", &self.description);
-        formatter.field("discoverer_id", &self.discoverer_id);
-        formatter.field("cross_account", &self.cross_account);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -5845,18 +6163,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -5879,18 +6189,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopDiscovererInput {
     /// <p>The ID of the discoverer.</p>
     #[doc(hidden)]
@@ -5902,17 +6204,10 @@ impl StopDiscovererInput {
         self.discoverer_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopDiscovererInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopDiscovererInput");
-        formatter.field("discoverer_id", &self.discoverer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDiscovererInput {
     /// <p>The ID of the discoverer.</p>
     #[doc(hidden)]
@@ -5924,17 +6219,10 @@ impl StartDiscovererInput {
         self.discoverer_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartDiscovererInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDiscovererInput");
-        formatter.field("discoverer_id", &self.discoverer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchSchemasInput {
     /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
     #[doc(hidden)]
@@ -5967,20 +6255,10 @@ impl SearchSchemasInput {
         self.registry_name.as_deref()
     }
 }
-impl std::fmt::Debug for SearchSchemasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchSchemasInput");
-        formatter.field("keywords", &self.keywords);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.finish()
-    }
-}
 
 /// <p>The name of the policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>The resource-based policy.</p>
     #[doc(hidden)]
@@ -6006,19 +6284,10 @@ impl PutResourcePolicyInput {
         self.revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourcePolicyInput");
-        formatter.field("policy", &self.policy);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutCodeBindingInput {
     /// <p>The language of the code binding.</p>
     #[doc(hidden)]
@@ -6051,20 +6320,10 @@ impl PutCodeBindingInput {
         self.schema_version.as_deref()
     }
 }
-impl std::fmt::Debug for PutCodeBindingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutCodeBindingInput");
-        formatter.field("language", &self.language);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -6076,17 +6335,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSchemaVersionsInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -6119,20 +6371,10 @@ impl ListSchemaVersionsInput {
         self.schema_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListSchemaVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSchemaVersionsInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSchemasInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -6165,20 +6407,10 @@ impl ListSchemasInput {
         self.schema_name_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for ListSchemasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSchemasInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name_prefix", &self.schema_name_prefix);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRegistriesInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -6211,20 +6443,10 @@ impl ListRegistriesInput {
         self.scope.as_deref()
     }
 }
-impl std::fmt::Debug for ListRegistriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRegistriesInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("registry_name_prefix", &self.registry_name_prefix);
-        formatter.field("scope", &self.scope);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDiscoverersInput {
     /// <p>Specifying this limits the results to only those discoverer IDs that start with the specified prefix.</p>
     #[doc(hidden)]
@@ -6257,20 +6479,10 @@ impl ListDiscoverersInput {
         self.source_arn_prefix.as_deref()
     }
 }
-impl std::fmt::Debug for ListDiscoverersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDiscoverersInput");
-        formatter.field("discoverer_id_prefix", &self.discoverer_id_prefix);
-        formatter.field("limit", &self.limit);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("source_arn_prefix", &self.source_arn_prefix);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourcePolicyInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -6282,17 +6494,10 @@ impl GetResourcePolicyInput {
         self.registry_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourcePolicyInput");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDiscoveredSchemaInput {
     /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
     #[doc(hidden)]
@@ -6311,18 +6516,10 @@ impl GetDiscoveredSchemaInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for GetDiscoveredSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDiscoveredSchemaInput");
-        formatter.field("events", &self.events);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCodeBindingSourceInput {
     /// <p>The language of the code binding.</p>
     #[doc(hidden)]
@@ -6355,20 +6552,10 @@ impl GetCodeBindingSourceInput {
         self.schema_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetCodeBindingSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCodeBindingSourceInput");
-        formatter.field("language", &self.language);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportSchemaInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -6401,20 +6588,10 @@ impl ExportSchemaInput {
         self.r#type.as_deref()
     }
 }
-impl std::fmt::Debug for ExportSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportSchemaInput");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSchemaInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -6440,19 +6617,10 @@ impl DescribeSchemaInput {
         self.schema_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSchemaInput");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRegistryInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -6464,17 +6632,10 @@ impl DescribeRegistryInput {
         self.registry_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRegistryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRegistryInput");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDiscovererInput {
     /// <p>The ID of the discoverer.</p>
     #[doc(hidden)]
@@ -6486,17 +6647,10 @@ impl DescribeDiscovererInput {
         self.discoverer_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDiscovererInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDiscovererInput");
-        formatter.field("discoverer_id", &self.discoverer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCodeBindingInput {
     /// <p>The language of the code binding.</p>
     #[doc(hidden)]
@@ -6529,20 +6683,10 @@ impl DescribeCodeBindingInput {
         self.schema_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCodeBindingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCodeBindingInput");
-        formatter.field("language", &self.language);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSchemaVersionInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -6568,19 +6712,10 @@ impl DeleteSchemaVersionInput {
         self.schema_version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSchemaVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSchemaVersionInput");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSchemaInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -6599,18 +6734,10 @@ impl DeleteSchemaInput {
         self.schema_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSchemaInput");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -6622,17 +6749,10 @@ impl DeleteResourcePolicyInput {
         self.registry_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourcePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRegistryInput {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -6644,17 +6764,10 @@ impl DeleteRegistryInput {
         self.registry_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRegistryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRegistryInput");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDiscovererInput {
     /// <p>The ID of the discoverer.</p>
     #[doc(hidden)]
@@ -6666,17 +6779,10 @@ impl DeleteDiscovererInput {
         self.discoverer_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDiscovererInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDiscovererInput");
-        formatter.field("discoverer_id", &self.discoverer_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSchemaInput {
     /// <p>The source of the schema definition.</p>
     #[doc(hidden)]
@@ -6727,22 +6833,10 @@ impl CreateSchemaInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSchemaInput");
-        formatter.field("content", &self.content);
-        formatter.field("description", &self.description);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRegistryInput {
     /// <p>A description of the registry to be created.</p>
     #[doc(hidden)]
@@ -6772,19 +6866,10 @@ impl CreateRegistryInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRegistryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRegistryInput");
-        formatter.field("description", &self.description);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDiscovererInput {
     /// <p>A description for the discoverer.</p>
     #[doc(hidden)]
@@ -6819,15 +6904,5 @@ impl CreateDiscovererInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateDiscovererInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDiscovererInput");
-        formatter.field("description", &self.description);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("cross_account", &self.cross_account);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

@@ -2,22 +2,15 @@
 
 /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -25,7 +18,9 @@ impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -35,7 +30,7 @@ impl std::error::Error for ThrottlingException {}
 pub mod throttling_exception {
 
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -67,22 +62,15 @@ impl ThrottlingException {
 
 /// <p>The specified resource does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -90,7 +78,9 @@ impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -100,7 +90,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -132,22 +122,15 @@ impl ResourceNotFoundException {
 
 /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -155,7 +138,9 @@ impl std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -165,7 +150,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
 
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -197,22 +182,15 @@ impl InvalidParameterException {
 
 /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InternalServerException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -220,7 +198,9 @@ impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -230,7 +210,7 @@ impl std::error::Error for InternalServerException {}
 pub mod internal_server_exception {
 
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -262,22 +242,15 @@ impl InternalServerException {
 
 /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -285,7 +258,9 @@ impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -295,7 +270,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
 
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -327,22 +302,15 @@ impl LimitExceededException {
 
 /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdempotentParameterMismatchException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for IdempotentParameterMismatchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdempotentParameterMismatchException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl IdempotentParameterMismatchException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -350,7 +318,9 @@ impl std::fmt::Display for IdempotentParameterMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IdempotentParameterMismatchException")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -360,7 +330,7 @@ impl std::error::Error for IdempotentParameterMismatchException {}
 pub mod idempotent_parameter_mismatch_exception {
 
     /// A builder for [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -392,22 +362,15 @@ impl IdempotentParameterMismatchException {
 
 /// <p>The failure percentage threshold percentage was met.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConcurrentDeploymentException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ConcurrentDeploymentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentDeploymentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ConcurrentDeploymentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -415,7 +378,9 @@ impl std::fmt::Display for ConcurrentDeploymentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentDeploymentException")?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -425,7 +390,7 @@ impl std::error::Error for ConcurrentDeploymentException {}
 pub mod concurrent_deployment_exception {
 
     /// A builder for [`ConcurrentDeploymentException`](crate::error::ConcurrentDeploymentException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -457,22 +422,15 @@ impl ConcurrentDeploymentException {
 
 /// <p>The specified resource already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ResourceAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -480,7 +438,9 @@ impl std::fmt::Display for ResourceAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceAlreadyExistsException")?;
         if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+            {
+                write!(f, ": {}", inner_8)?;
+            }
         }
         Ok(())
     }
@@ -490,7 +450,7 @@ impl std::error::Error for ResourceAlreadyExistsException {}
 pub mod resource_already_exists_exception {
 
     /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -522,22 +482,15 @@ impl ResourceAlreadyExistsException {
 
 /// <p>The request has failed due to a temporary failure of the server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ServiceUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceUnavailableException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ServiceUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -545,7 +498,9 @@ impl std::fmt::Display for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUnavailableException")?;
         if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+            {
+                write!(f, ": {}", inner_9)?;
+            }
         }
         Ok(())
     }
@@ -555,7 +510,7 @@ impl std::error::Error for ServiceUnavailableException {}
 pub mod service_unavailable_exception {
 
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -594,6 +549,14 @@ pub struct BatchDeleteWorldsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for BatchDeleteWorldsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchDeleteWorldsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `BatchDeleteWorlds` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -604,8 +567,15 @@ pub enum BatchDeleteWorldsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDeleteWorldsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -634,7 +604,7 @@ impl BatchDeleteWorldsError {
     /// Creates the `BatchDeleteWorldsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDeleteWorldsErrorKind::Unhandled(err.into()),
+            kind: BatchDeleteWorldsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -643,7 +613,7 @@ impl BatchDeleteWorldsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDeleteWorldsErrorKind::Unhandled(err.into()),
+            kind: BatchDeleteWorldsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -695,7 +665,7 @@ impl std::error::Error for BatchDeleteWorldsError {
             BatchDeleteWorldsErrorKind::InternalServerException(_inner) => Some(_inner),
             BatchDeleteWorldsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             BatchDeleteWorldsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchDeleteWorldsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDeleteWorldsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -709,6 +679,16 @@ pub struct BatchDescribeSimulationJobError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for BatchDescribeSimulationJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchDescribeSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `BatchDescribeSimulationJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -721,8 +701,15 @@ pub enum BatchDescribeSimulationJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDescribeSimulationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -752,7 +739,9 @@ impl BatchDescribeSimulationJobError {
     /// Creates the `BatchDescribeSimulationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDescribeSimulationJobErrorKind::Unhandled(err.into()),
+            kind: BatchDescribeSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -761,7 +750,9 @@ impl BatchDescribeSimulationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDescribeSimulationJobErrorKind::Unhandled(err.into()),
+            kind: BatchDescribeSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -821,7 +812,7 @@ impl std::error::Error for BatchDescribeSimulationJobError {
             BatchDescribeSimulationJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             BatchDescribeSimulationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             BatchDescribeSimulationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchDescribeSimulationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDescribeSimulationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -835,6 +826,14 @@ pub struct CancelDeploymentJobError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CancelDeploymentJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CancelDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CancelDeploymentJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -847,8 +846,15 @@ pub enum CancelDeploymentJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelDeploymentJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -878,7 +884,7 @@ impl CancelDeploymentJobError {
     /// Creates the `CancelDeploymentJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelDeploymentJobErrorKind::Unhandled(err.into()),
+            kind: CancelDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -887,7 +893,7 @@ impl CancelDeploymentJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelDeploymentJobErrorKind::Unhandled(err.into()),
+            kind: CancelDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -947,7 +953,7 @@ impl std::error::Error for CancelDeploymentJobError {
             CancelDeploymentJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CancelDeploymentJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelDeploymentJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CancelDeploymentJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelDeploymentJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -961,6 +967,14 @@ pub struct CancelSimulationJobError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CancelSimulationJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CancelSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CancelSimulationJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -973,8 +987,15 @@ pub enum CancelSimulationJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelSimulationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1004,7 +1025,7 @@ impl CancelSimulationJobError {
     /// Creates the `CancelSimulationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelSimulationJobErrorKind::Unhandled(err.into()),
+            kind: CancelSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1013,7 +1034,7 @@ impl CancelSimulationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelSimulationJobErrorKind::Unhandled(err.into()),
+            kind: CancelSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1073,7 +1094,7 @@ impl std::error::Error for CancelSimulationJobError {
             CancelSimulationJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CancelSimulationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelSimulationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CancelSimulationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelSimulationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1087,6 +1108,16 @@ pub struct CancelSimulationJobBatchError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CancelSimulationJobBatchError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CancelSimulationJobBatchErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CancelSimulationJobBatch` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1099,8 +1130,15 @@ pub enum CancelSimulationJobBatchErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelSimulationJobBatchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1130,7 +1168,9 @@ impl CancelSimulationJobBatchError {
     /// Creates the `CancelSimulationJobBatchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelSimulationJobBatchErrorKind::Unhandled(err.into()),
+            kind: CancelSimulationJobBatchErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1139,7 +1179,9 @@ impl CancelSimulationJobBatchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelSimulationJobBatchErrorKind::Unhandled(err.into()),
+            kind: CancelSimulationJobBatchErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1199,7 +1241,7 @@ impl std::error::Error for CancelSimulationJobBatchError {
             CancelSimulationJobBatchErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CancelSimulationJobBatchErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelSimulationJobBatchErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CancelSimulationJobBatchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelSimulationJobBatchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1213,6 +1255,14 @@ pub struct CancelWorldExportJobError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CancelWorldExportJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CancelWorldExportJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CancelWorldExportJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1225,8 +1275,15 @@ pub enum CancelWorldExportJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelWorldExportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1256,7 +1313,9 @@ impl CancelWorldExportJobError {
     /// Creates the `CancelWorldExportJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelWorldExportJobErrorKind::Unhandled(err.into()),
+            kind: CancelWorldExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1265,7 +1324,9 @@ impl CancelWorldExportJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelWorldExportJobErrorKind::Unhandled(err.into()),
+            kind: CancelWorldExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1325,7 +1386,7 @@ impl std::error::Error for CancelWorldExportJobError {
             CancelWorldExportJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CancelWorldExportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelWorldExportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CancelWorldExportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelWorldExportJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1339,6 +1400,16 @@ pub struct CancelWorldGenerationJobError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CancelWorldGenerationJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CancelWorldGenerationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CancelWorldGenerationJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1351,8 +1422,15 @@ pub enum CancelWorldGenerationJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelWorldGenerationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1382,7 +1460,9 @@ impl CancelWorldGenerationJobError {
     /// Creates the `CancelWorldGenerationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelWorldGenerationJobErrorKind::Unhandled(err.into()),
+            kind: CancelWorldGenerationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1391,7 +1471,9 @@ impl CancelWorldGenerationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelWorldGenerationJobErrorKind::Unhandled(err.into()),
+            kind: CancelWorldGenerationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1451,7 +1533,7 @@ impl std::error::Error for CancelWorldGenerationJobError {
             CancelWorldGenerationJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CancelWorldGenerationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelWorldGenerationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CancelWorldGenerationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelWorldGenerationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1464,6 +1546,14 @@ pub struct CreateDeploymentJobError {
     pub kind: CreateDeploymentJobErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDeploymentJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDeploymentJob` operation.
 #[non_exhaustive]
@@ -1483,8 +1573,15 @@ pub enum CreateDeploymentJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDeploymentJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1519,7 +1616,7 @@ impl CreateDeploymentJobError {
     /// Creates the `CreateDeploymentJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDeploymentJobErrorKind::Unhandled(err.into()),
+            kind: CreateDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1528,7 +1625,7 @@ impl CreateDeploymentJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDeploymentJobErrorKind::Unhandled(err.into()),
+            kind: CreateDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1614,7 +1711,7 @@ impl std::error::Error for CreateDeploymentJobError {
             CreateDeploymentJobErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateDeploymentJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateDeploymentJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateDeploymentJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDeploymentJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1628,6 +1725,14 @@ pub struct CreateFleetError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateFleetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateFleetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateFleet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1640,8 +1745,15 @@ pub enum CreateFleetErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateFleetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1671,7 +1783,7 @@ impl CreateFleetError {
     /// Creates the `CreateFleetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateFleetErrorKind::Unhandled(err.into()),
+            kind: CreateFleetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1680,7 +1792,7 @@ impl CreateFleetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateFleetErrorKind::Unhandled(err.into()),
+            kind: CreateFleetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1731,7 +1843,7 @@ impl std::error::Error for CreateFleetError {
             CreateFleetErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CreateFleetErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateFleetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateFleetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateFleetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1744,6 +1856,14 @@ pub struct CreateRobotError {
     pub kind: CreateRobotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateRobotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateRobotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateRobot` operation.
 #[non_exhaustive]
@@ -1759,8 +1879,15 @@ pub enum CreateRobotErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRobotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1791,7 +1918,7 @@ impl CreateRobotError {
     /// Creates the `CreateRobotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRobotErrorKind::Unhandled(err.into()),
+            kind: CreateRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1800,7 +1927,7 @@ impl CreateRobotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRobotErrorKind::Unhandled(err.into()),
+            kind: CreateRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1859,7 +1986,7 @@ impl std::error::Error for CreateRobotError {
             CreateRobotErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateRobotErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateRobotErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateRobotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRobotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1872,6 +1999,14 @@ pub struct CreateRobotApplicationError {
     pub kind: CreateRobotApplicationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateRobotApplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateRobotApplication` operation.
 #[non_exhaustive]
@@ -1889,8 +2024,15 @@ pub enum CreateRobotApplicationErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRobotApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1926,7 +2068,9 @@ impl CreateRobotApplicationError {
     /// Creates the `CreateRobotApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRobotApplicationErrorKind::Unhandled(err.into()),
+            kind: CreateRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1935,7 +2079,9 @@ impl CreateRobotApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRobotApplicationErrorKind::Unhandled(err.into()),
+            kind: CreateRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2013,7 +2159,7 @@ impl std::error::Error for CreateRobotApplicationError {
             CreateRobotApplicationErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateRobotApplicationErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateRobotApplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateRobotApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRobotApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2026,6 +2172,16 @@ pub struct CreateRobotApplicationVersionError {
     pub kind: CreateRobotApplicationVersionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateRobotApplicationVersionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateRobotApplicationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateRobotApplicationVersion` operation.
 #[non_exhaustive]
@@ -2041,8 +2197,15 @@ pub enum CreateRobotApplicationVersionErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRobotApplicationVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2082,7 +2245,9 @@ impl CreateRobotApplicationVersionError {
     /// Creates the `CreateRobotApplicationVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRobotApplicationVersionErrorKind::Unhandled(err.into()),
+            kind: CreateRobotApplicationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2091,7 +2256,9 @@ impl CreateRobotApplicationVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRobotApplicationVersionErrorKind::Unhandled(err.into()),
+            kind: CreateRobotApplicationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2163,7 +2330,7 @@ impl std::error::Error for CreateRobotApplicationVersionError {
             }
             CreateRobotApplicationVersionErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateRobotApplicationVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateRobotApplicationVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRobotApplicationVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2176,6 +2343,16 @@ pub struct CreateSimulationApplicationError {
     pub kind: CreateSimulationApplicationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateSimulationApplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateSimulationApplication` operation.
 #[non_exhaustive]
@@ -2193,8 +2370,15 @@ pub enum CreateSimulationApplicationErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSimulationApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2232,7 +2416,9 @@ impl CreateSimulationApplicationError {
     /// Creates the `CreateSimulationApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSimulationApplicationErrorKind::Unhandled(err.into()),
+            kind: CreateSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2241,7 +2427,9 @@ impl CreateSimulationApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSimulationApplicationErrorKind::Unhandled(err.into()),
+            kind: CreateSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2321,7 +2509,7 @@ impl std::error::Error for CreateSimulationApplicationError {
                 Some(_inner)
             }
             CreateSimulationApplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateSimulationApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSimulationApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2334,6 +2522,16 @@ pub struct CreateSimulationApplicationVersionError {
     pub kind: CreateSimulationApplicationVersionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateSimulationApplicationVersionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateSimulationApplicationVersionErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateSimulationApplicationVersion` operation.
 #[non_exhaustive]
@@ -2349,8 +2547,15 @@ pub enum CreateSimulationApplicationVersionErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSimulationApplicationVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2394,7 +2599,9 @@ impl CreateSimulationApplicationVersionError {
     /// Creates the `CreateSimulationApplicationVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSimulationApplicationVersionErrorKind::Unhandled(err.into()),
+            kind: CreateSimulationApplicationVersionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2403,7 +2610,9 @@ impl CreateSimulationApplicationVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSimulationApplicationVersionErrorKind::Unhandled(err.into()),
+            kind: CreateSimulationApplicationVersionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2481,7 +2690,7 @@ impl std::error::Error for CreateSimulationApplicationVersionError {
             CreateSimulationApplicationVersionErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            CreateSimulationApplicationVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSimulationApplicationVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2494,6 +2703,14 @@ pub struct CreateSimulationJobError {
     pub kind: CreateSimulationJobErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateSimulationJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateSimulationJob` operation.
 #[non_exhaustive]
@@ -2513,8 +2730,15 @@ pub enum CreateSimulationJobErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSimulationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2549,7 +2773,7 @@ impl CreateSimulationJobError {
     /// Creates the `CreateSimulationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSimulationJobErrorKind::Unhandled(err.into()),
+            kind: CreateSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2558,7 +2782,7 @@ impl CreateSimulationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSimulationJobErrorKind::Unhandled(err.into()),
+            kind: CreateSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2644,7 +2868,7 @@ impl std::error::Error for CreateSimulationJobError {
             CreateSimulationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateSimulationJobErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateSimulationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateSimulationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSimulationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2657,6 +2881,14 @@ pub struct CreateWorldExportJobError {
     pub kind: CreateWorldExportJobErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateWorldExportJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateWorldExportJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateWorldExportJob` operation.
 #[non_exhaustive]
@@ -2674,8 +2906,15 @@ pub enum CreateWorldExportJobErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateWorldExportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2709,7 +2948,9 @@ impl CreateWorldExportJobError {
     /// Creates the `CreateWorldExportJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateWorldExportJobErrorKind::Unhandled(err.into()),
+            kind: CreateWorldExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2718,7 +2959,9 @@ impl CreateWorldExportJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateWorldExportJobErrorKind::Unhandled(err.into()),
+            kind: CreateWorldExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2796,7 +3039,7 @@ impl std::error::Error for CreateWorldExportJobError {
             CreateWorldExportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateWorldExportJobErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateWorldExportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateWorldExportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateWorldExportJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2809,6 +3052,16 @@ pub struct CreateWorldGenerationJobError {
     pub kind: CreateWorldGenerationJobErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateWorldGenerationJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateWorldGenerationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateWorldGenerationJob` operation.
 #[non_exhaustive]
@@ -2828,8 +3081,15 @@ pub enum CreateWorldGenerationJobErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateWorldGenerationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2864,7 +3124,9 @@ impl CreateWorldGenerationJobError {
     /// Creates the `CreateWorldGenerationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateWorldGenerationJobErrorKind::Unhandled(err.into()),
+            kind: CreateWorldGenerationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2873,7 +3135,9 @@ impl CreateWorldGenerationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateWorldGenerationJobErrorKind::Unhandled(err.into()),
+            kind: CreateWorldGenerationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2959,7 +3223,7 @@ impl std::error::Error for CreateWorldGenerationJobError {
             CreateWorldGenerationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateWorldGenerationJobErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateWorldGenerationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateWorldGenerationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateWorldGenerationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2972,6 +3236,14 @@ pub struct CreateWorldTemplateError {
     pub kind: CreateWorldTemplateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateWorldTemplateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateWorldTemplate` operation.
 #[non_exhaustive]
@@ -2989,8 +3261,15 @@ pub enum CreateWorldTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateWorldTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3022,7 +3301,7 @@ impl CreateWorldTemplateError {
     /// Creates the `CreateWorldTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateWorldTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3031,7 +3310,7 @@ impl CreateWorldTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateWorldTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3107,7 +3386,7 @@ impl std::error::Error for CreateWorldTemplateError {
             CreateWorldTemplateErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateWorldTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateWorldTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateWorldTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateWorldTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3121,6 +3400,14 @@ pub struct DeleteFleetError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteFleetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteFleetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteFleet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3131,8 +3418,15 @@ pub enum DeleteFleetErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFleetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3161,7 +3455,7 @@ impl DeleteFleetError {
     /// Creates the `DeleteFleetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFleetErrorKind::Unhandled(err.into()),
+            kind: DeleteFleetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3170,7 +3464,7 @@ impl DeleteFleetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFleetErrorKind::Unhandled(err.into()),
+            kind: DeleteFleetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3216,7 +3510,7 @@ impl std::error::Error for DeleteFleetError {
             DeleteFleetErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteFleetErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteFleetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteFleetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFleetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3230,6 +3524,14 @@ pub struct DeleteRobotError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteRobotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteRobotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteRobot` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3240,8 +3542,15 @@ pub enum DeleteRobotErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRobotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3270,7 +3579,7 @@ impl DeleteRobotError {
     /// Creates the `DeleteRobotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRobotErrorKind::Unhandled(err.into()),
+            kind: DeleteRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3279,7 +3588,7 @@ impl DeleteRobotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRobotErrorKind::Unhandled(err.into()),
+            kind: DeleteRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3325,7 +3634,7 @@ impl std::error::Error for DeleteRobotError {
             DeleteRobotErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteRobotErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteRobotErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteRobotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRobotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3339,6 +3648,14 @@ pub struct DeleteRobotApplicationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteRobotApplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteRobotApplication` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3349,8 +3666,15 @@ pub enum DeleteRobotApplicationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRobotApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3379,7 +3703,9 @@ impl DeleteRobotApplicationError {
     /// Creates the `DeleteRobotApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRobotApplicationErrorKind::Unhandled(err.into()),
+            kind: DeleteRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3388,7 +3714,9 @@ impl DeleteRobotApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRobotApplicationErrorKind::Unhandled(err.into()),
+            kind: DeleteRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3440,7 +3768,7 @@ impl std::error::Error for DeleteRobotApplicationError {
             DeleteRobotApplicationErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteRobotApplicationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteRobotApplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteRobotApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRobotApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3454,6 +3782,16 @@ pub struct DeleteSimulationApplicationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteSimulationApplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteSimulationApplication` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3464,8 +3802,15 @@ pub enum DeleteSimulationApplicationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSimulationApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3496,7 +3841,9 @@ impl DeleteSimulationApplicationError {
     /// Creates the `DeleteSimulationApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSimulationApplicationErrorKind::Unhandled(err.into()),
+            kind: DeleteSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3505,7 +3852,9 @@ impl DeleteSimulationApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSimulationApplicationErrorKind::Unhandled(err.into()),
+            kind: DeleteSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3557,7 +3906,7 @@ impl std::error::Error for DeleteSimulationApplicationError {
             DeleteSimulationApplicationErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteSimulationApplicationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteSimulationApplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteSimulationApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSimulationApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3571,6 +3920,14 @@ pub struct DeleteWorldTemplateError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteWorldTemplateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteWorldTemplate` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3583,8 +3940,15 @@ pub enum DeleteWorldTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteWorldTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3614,7 +3978,7 @@ impl DeleteWorldTemplateError {
     /// Creates the `DeleteWorldTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteWorldTemplateErrorKind::Unhandled(err.into()),
+            kind: DeleteWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3623,7 +3987,7 @@ impl DeleteWorldTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteWorldTemplateErrorKind::Unhandled(err.into()),
+            kind: DeleteWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3683,7 +4047,7 @@ impl std::error::Error for DeleteWorldTemplateError {
             DeleteWorldTemplateErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteWorldTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteWorldTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteWorldTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteWorldTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3697,6 +4061,14 @@ pub struct DeregisterRobotError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeregisterRobotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeregisterRobotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeregisterRobot` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3709,8 +4081,15 @@ pub enum DeregisterRobotErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeregisterRobotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3740,7 +4119,7 @@ impl DeregisterRobotError {
     /// Creates the `DeregisterRobotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeregisterRobotErrorKind::Unhandled(err.into()),
+            kind: DeregisterRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3749,7 +4128,7 @@ impl DeregisterRobotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeregisterRobotErrorKind::Unhandled(err.into()),
+            kind: DeregisterRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3806,7 +4185,7 @@ impl std::error::Error for DeregisterRobotError {
             DeregisterRobotErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeregisterRobotErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeregisterRobotErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeregisterRobotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeregisterRobotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3820,6 +4199,14 @@ pub struct DescribeDeploymentJobError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDeploymentJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDeploymentJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3832,8 +4219,15 @@ pub enum DescribeDeploymentJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDeploymentJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3863,7 +4257,9 @@ impl DescribeDeploymentJobError {
     /// Creates the `DescribeDeploymentJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDeploymentJobErrorKind::Unhandled(err.into()),
+            kind: DescribeDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3872,7 +4268,9 @@ impl DescribeDeploymentJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDeploymentJobErrorKind::Unhandled(err.into()),
+            kind: DescribeDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3932,7 +4330,7 @@ impl std::error::Error for DescribeDeploymentJobError {
             DescribeDeploymentJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeDeploymentJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeDeploymentJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeDeploymentJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDeploymentJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3946,6 +4344,14 @@ pub struct DescribeFleetError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeFleetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeFleetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeFleet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3958,8 +4364,15 @@ pub enum DescribeFleetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeFleetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3989,7 +4402,7 @@ impl DescribeFleetError {
     /// Creates the `DescribeFleetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeFleetErrorKind::Unhandled(err.into()),
+            kind: DescribeFleetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3998,7 +4411,7 @@ impl DescribeFleetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeFleetErrorKind::Unhandled(err.into()),
+            kind: DescribeFleetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4055,7 +4468,7 @@ impl std::error::Error for DescribeFleetError {
             DescribeFleetErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeFleetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeFleetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeFleetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeFleetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4069,6 +4482,14 @@ pub struct DescribeRobotError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeRobotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeRobotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeRobot` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4081,8 +4502,15 @@ pub enum DescribeRobotErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeRobotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4112,7 +4540,7 @@ impl DescribeRobotError {
     /// Creates the `DescribeRobotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeRobotErrorKind::Unhandled(err.into()),
+            kind: DescribeRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4121,7 +4549,7 @@ impl DescribeRobotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeRobotErrorKind::Unhandled(err.into()),
+            kind: DescribeRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4178,7 +4606,7 @@ impl std::error::Error for DescribeRobotError {
             DescribeRobotErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeRobotErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeRobotErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeRobotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeRobotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4192,6 +4620,16 @@ pub struct DescribeRobotApplicationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeRobotApplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeRobotApplication` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4204,8 +4642,15 @@ pub enum DescribeRobotApplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeRobotApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4235,7 +4680,9 @@ impl DescribeRobotApplicationError {
     /// Creates the `DescribeRobotApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeRobotApplicationErrorKind::Unhandled(err.into()),
+            kind: DescribeRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4244,7 +4691,9 @@ impl DescribeRobotApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeRobotApplicationErrorKind::Unhandled(err.into()),
+            kind: DescribeRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4304,7 +4753,7 @@ impl std::error::Error for DescribeRobotApplicationError {
             DescribeRobotApplicationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeRobotApplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeRobotApplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeRobotApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeRobotApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4318,6 +4767,16 @@ pub struct DescribeSimulationApplicationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeSimulationApplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeSimulationApplication` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4330,8 +4789,15 @@ pub enum DescribeSimulationApplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSimulationApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4370,7 +4836,9 @@ impl DescribeSimulationApplicationError {
     /// Creates the `DescribeSimulationApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSimulationApplicationErrorKind::Unhandled(err.into()),
+            kind: DescribeSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4379,7 +4847,9 @@ impl DescribeSimulationApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSimulationApplicationErrorKind::Unhandled(err.into()),
+            kind: DescribeSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4443,7 +4913,7 @@ impl std::error::Error for DescribeSimulationApplicationError {
                 Some(_inner)
             }
             DescribeSimulationApplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeSimulationApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSimulationApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4457,6 +4927,14 @@ pub struct DescribeSimulationJobError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeSimulationJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeSimulationJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4469,8 +4947,15 @@ pub enum DescribeSimulationJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSimulationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4500,7 +4985,9 @@ impl DescribeSimulationJobError {
     /// Creates the `DescribeSimulationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSimulationJobErrorKind::Unhandled(err.into()),
+            kind: DescribeSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4509,7 +4996,9 @@ impl DescribeSimulationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSimulationJobErrorKind::Unhandled(err.into()),
+            kind: DescribeSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4569,7 +5058,7 @@ impl std::error::Error for DescribeSimulationJobError {
             DescribeSimulationJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeSimulationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeSimulationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeSimulationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSimulationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4583,6 +5072,16 @@ pub struct DescribeSimulationJobBatchError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeSimulationJobBatchError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeSimulationJobBatchErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeSimulationJobBatch` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4593,8 +5092,15 @@ pub enum DescribeSimulationJobBatchErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSimulationJobBatchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4623,7 +5129,9 @@ impl DescribeSimulationJobBatchError {
     /// Creates the `DescribeSimulationJobBatchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSimulationJobBatchErrorKind::Unhandled(err.into()),
+            kind: DescribeSimulationJobBatchErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4632,7 +5140,9 @@ impl DescribeSimulationJobBatchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSimulationJobBatchErrorKind::Unhandled(err.into()),
+            kind: DescribeSimulationJobBatchErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4684,7 +5194,7 @@ impl std::error::Error for DescribeSimulationJobBatchError {
             DescribeSimulationJobBatchErrorKind::InternalServerException(_inner) => Some(_inner),
             DescribeSimulationJobBatchErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeSimulationJobBatchErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeSimulationJobBatchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSimulationJobBatchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4698,6 +5208,14 @@ pub struct DescribeWorldError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeWorldError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeWorldErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeWorld` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4710,8 +5228,15 @@ pub enum DescribeWorldErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeWorldError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4741,7 +5266,7 @@ impl DescribeWorldError {
     /// Creates the `DescribeWorldError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeWorldErrorKind::Unhandled(err.into()),
+            kind: DescribeWorldErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4750,7 +5275,7 @@ impl DescribeWorldError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeWorldErrorKind::Unhandled(err.into()),
+            kind: DescribeWorldErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4807,7 +5332,7 @@ impl std::error::Error for DescribeWorldError {
             DescribeWorldErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeWorldErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeWorldErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeWorldErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeWorldErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4821,6 +5346,14 @@ pub struct DescribeWorldExportJobError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeWorldExportJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeWorldExportJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeWorldExportJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4833,8 +5366,15 @@ pub enum DescribeWorldExportJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeWorldExportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4864,7 +5404,9 @@ impl DescribeWorldExportJobError {
     /// Creates the `DescribeWorldExportJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeWorldExportJobErrorKind::Unhandled(err.into()),
+            kind: DescribeWorldExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4873,7 +5415,9 @@ impl DescribeWorldExportJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeWorldExportJobErrorKind::Unhandled(err.into()),
+            kind: DescribeWorldExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4933,7 +5477,7 @@ impl std::error::Error for DescribeWorldExportJobError {
             DescribeWorldExportJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeWorldExportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeWorldExportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeWorldExportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeWorldExportJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4947,6 +5491,16 @@ pub struct DescribeWorldGenerationJobError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeWorldGenerationJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeWorldGenerationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeWorldGenerationJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4959,8 +5513,15 @@ pub enum DescribeWorldGenerationJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeWorldGenerationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4990,7 +5551,9 @@ impl DescribeWorldGenerationJobError {
     /// Creates the `DescribeWorldGenerationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeWorldGenerationJobErrorKind::Unhandled(err.into()),
+            kind: DescribeWorldGenerationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4999,7 +5562,9 @@ impl DescribeWorldGenerationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeWorldGenerationJobErrorKind::Unhandled(err.into()),
+            kind: DescribeWorldGenerationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5059,7 +5624,7 @@ impl std::error::Error for DescribeWorldGenerationJobError {
             DescribeWorldGenerationJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeWorldGenerationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeWorldGenerationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeWorldGenerationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeWorldGenerationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5073,6 +5638,14 @@ pub struct DescribeWorldTemplateError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeWorldTemplateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeWorldTemplate` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5085,8 +5658,15 @@ pub enum DescribeWorldTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeWorldTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5116,7 +5696,9 @@ impl DescribeWorldTemplateError {
     /// Creates the `DescribeWorldTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeWorldTemplateErrorKind::Unhandled(err.into()),
+            kind: DescribeWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5125,7 +5707,9 @@ impl DescribeWorldTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeWorldTemplateErrorKind::Unhandled(err.into()),
+            kind: DescribeWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5185,7 +5769,7 @@ impl std::error::Error for DescribeWorldTemplateError {
             DescribeWorldTemplateErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeWorldTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeWorldTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeWorldTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeWorldTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5199,6 +5783,14 @@ pub struct GetWorldTemplateBodyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetWorldTemplateBodyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetWorldTemplateBodyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetWorldTemplateBody` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5211,8 +5803,15 @@ pub enum GetWorldTemplateBodyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetWorldTemplateBodyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5242,7 +5841,9 @@ impl GetWorldTemplateBodyError {
     /// Creates the `GetWorldTemplateBodyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetWorldTemplateBodyErrorKind::Unhandled(err.into()),
+            kind: GetWorldTemplateBodyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5251,7 +5852,9 @@ impl GetWorldTemplateBodyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetWorldTemplateBodyErrorKind::Unhandled(err.into()),
+            kind: GetWorldTemplateBodyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5311,7 +5914,7 @@ impl std::error::Error for GetWorldTemplateBodyError {
             GetWorldTemplateBodyErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetWorldTemplateBodyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetWorldTemplateBodyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetWorldTemplateBodyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetWorldTemplateBodyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5325,6 +5928,14 @@ pub struct ListDeploymentJobsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListDeploymentJobsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListDeploymentJobsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListDeploymentJobs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5337,8 +5948,15 @@ pub enum ListDeploymentJobsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDeploymentJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5368,7 +5986,7 @@ impl ListDeploymentJobsError {
     /// Creates the `ListDeploymentJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDeploymentJobsErrorKind::Unhandled(err.into()),
+            kind: ListDeploymentJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5377,7 +5995,7 @@ impl ListDeploymentJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDeploymentJobsErrorKind::Unhandled(err.into()),
+            kind: ListDeploymentJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5437,7 +6055,7 @@ impl std::error::Error for ListDeploymentJobsError {
             ListDeploymentJobsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListDeploymentJobsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListDeploymentJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListDeploymentJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDeploymentJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5451,6 +6069,14 @@ pub struct ListFleetsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListFleetsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListFleetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListFleets` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5463,8 +6089,15 @@ pub enum ListFleetsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFleetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5494,7 +6127,7 @@ impl ListFleetsError {
     /// Creates the `ListFleetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFleetsErrorKind::Unhandled(err.into()),
+            kind: ListFleetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5503,7 +6136,7 @@ impl ListFleetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFleetsErrorKind::Unhandled(err.into()),
+            kind: ListFleetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5557,7 +6190,7 @@ impl std::error::Error for ListFleetsError {
             ListFleetsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListFleetsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListFleetsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListFleetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFleetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5571,6 +6204,14 @@ pub struct ListRobotApplicationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListRobotApplicationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListRobotApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListRobotApplications` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5581,8 +6222,15 @@ pub enum ListRobotApplicationsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRobotApplicationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5611,7 +6259,9 @@ impl ListRobotApplicationsError {
     /// Creates the `ListRobotApplicationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRobotApplicationsErrorKind::Unhandled(err.into()),
+            kind: ListRobotApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5620,7 +6270,9 @@ impl ListRobotApplicationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRobotApplicationsErrorKind::Unhandled(err.into()),
+            kind: ListRobotApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5672,7 +6324,7 @@ impl std::error::Error for ListRobotApplicationsError {
             ListRobotApplicationsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListRobotApplicationsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListRobotApplicationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListRobotApplicationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListRobotApplicationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5686,6 +6338,14 @@ pub struct ListRobotsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListRobotsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListRobotsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListRobots` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5698,8 +6358,15 @@ pub enum ListRobotsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRobotsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5729,7 +6396,7 @@ impl ListRobotsError {
     /// Creates the `ListRobotsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRobotsErrorKind::Unhandled(err.into()),
+            kind: ListRobotsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5738,7 +6405,7 @@ impl ListRobotsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRobotsErrorKind::Unhandled(err.into()),
+            kind: ListRobotsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5792,7 +6459,7 @@ impl std::error::Error for ListRobotsError {
             ListRobotsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListRobotsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListRobotsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListRobotsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListRobotsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5806,6 +6473,16 @@ pub struct ListSimulationApplicationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListSimulationApplicationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListSimulationApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListSimulationApplications` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5816,8 +6493,15 @@ pub enum ListSimulationApplicationsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSimulationApplicationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5846,7 +6530,9 @@ impl ListSimulationApplicationsError {
     /// Creates the `ListSimulationApplicationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSimulationApplicationsErrorKind::Unhandled(err.into()),
+            kind: ListSimulationApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5855,7 +6541,9 @@ impl ListSimulationApplicationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSimulationApplicationsErrorKind::Unhandled(err.into()),
+            kind: ListSimulationApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5907,7 +6595,7 @@ impl std::error::Error for ListSimulationApplicationsError {
             ListSimulationApplicationsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListSimulationApplicationsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListSimulationApplicationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListSimulationApplicationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSimulationApplicationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5921,6 +6609,16 @@ pub struct ListSimulationJobBatchesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListSimulationJobBatchesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListSimulationJobBatchesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListSimulationJobBatches` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5929,8 +6627,15 @@ pub enum ListSimulationJobBatchesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSimulationJobBatchesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5958,7 +6663,9 @@ impl ListSimulationJobBatchesError {
     /// Creates the `ListSimulationJobBatchesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSimulationJobBatchesErrorKind::Unhandled(err.into()),
+            kind: ListSimulationJobBatchesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5967,7 +6674,9 @@ impl ListSimulationJobBatchesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSimulationJobBatchesErrorKind::Unhandled(err.into()),
+            kind: ListSimulationJobBatchesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6011,7 +6720,7 @@ impl std::error::Error for ListSimulationJobBatchesError {
         match &self.kind {
             ListSimulationJobBatchesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListSimulationJobBatchesErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListSimulationJobBatchesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSimulationJobBatchesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6025,6 +6734,14 @@ pub struct ListSimulationJobsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListSimulationJobsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListSimulationJobsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListSimulationJobs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6035,8 +6752,15 @@ pub enum ListSimulationJobsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSimulationJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6065,7 +6789,7 @@ impl ListSimulationJobsError {
     /// Creates the `ListSimulationJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSimulationJobsErrorKind::Unhandled(err.into()),
+            kind: ListSimulationJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6074,7 +6798,7 @@ impl ListSimulationJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSimulationJobsErrorKind::Unhandled(err.into()),
+            kind: ListSimulationJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6126,7 +6850,7 @@ impl std::error::Error for ListSimulationJobsError {
             ListSimulationJobsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListSimulationJobsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListSimulationJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListSimulationJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSimulationJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6140,6 +6864,14 @@ pub struct ListTagsForResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListTagsForResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6152,8 +6884,15 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6183,7 +6922,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6192,7 +6931,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6252,7 +6991,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6266,6 +7005,14 @@ pub struct ListWorldExportJobsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListWorldExportJobsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListWorldExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListWorldExportJobs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6276,8 +7023,15 @@ pub enum ListWorldExportJobsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWorldExportJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6306,7 +7060,7 @@ impl ListWorldExportJobsError {
     /// Creates the `ListWorldExportJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWorldExportJobsErrorKind::Unhandled(err.into()),
+            kind: ListWorldExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6315,7 +7069,7 @@ impl ListWorldExportJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWorldExportJobsErrorKind::Unhandled(err.into()),
+            kind: ListWorldExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6367,7 +7121,7 @@ impl std::error::Error for ListWorldExportJobsError {
             ListWorldExportJobsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListWorldExportJobsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListWorldExportJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListWorldExportJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWorldExportJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6381,6 +7135,14 @@ pub struct ListWorldGenerationJobsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListWorldGenerationJobsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListWorldGenerationJobsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListWorldGenerationJobs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6391,8 +7153,15 @@ pub enum ListWorldGenerationJobsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWorldGenerationJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6421,7 +7190,9 @@ impl ListWorldGenerationJobsError {
     /// Creates the `ListWorldGenerationJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWorldGenerationJobsErrorKind::Unhandled(err.into()),
+            kind: ListWorldGenerationJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6430,7 +7201,9 @@ impl ListWorldGenerationJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWorldGenerationJobsErrorKind::Unhandled(err.into()),
+            kind: ListWorldGenerationJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6482,7 +7255,7 @@ impl std::error::Error for ListWorldGenerationJobsError {
             ListWorldGenerationJobsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListWorldGenerationJobsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListWorldGenerationJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListWorldGenerationJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWorldGenerationJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6496,6 +7269,14 @@ pub struct ListWorldsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListWorldsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListWorldsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListWorlds` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6506,8 +7287,15 @@ pub enum ListWorldsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWorldsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6536,7 +7324,7 @@ impl ListWorldsError {
     /// Creates the `ListWorldsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWorldsErrorKind::Unhandled(err.into()),
+            kind: ListWorldsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6545,7 +7333,7 @@ impl ListWorldsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWorldsErrorKind::Unhandled(err.into()),
+            kind: ListWorldsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6591,7 +7379,7 @@ impl std::error::Error for ListWorldsError {
             ListWorldsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListWorldsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListWorldsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListWorldsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWorldsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6605,6 +7393,14 @@ pub struct ListWorldTemplatesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListWorldTemplatesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListWorldTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListWorldTemplates` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6615,8 +7411,15 @@ pub enum ListWorldTemplatesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWorldTemplatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6645,7 +7448,7 @@ impl ListWorldTemplatesError {
     /// Creates the `ListWorldTemplatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWorldTemplatesErrorKind::Unhandled(err.into()),
+            kind: ListWorldTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6654,7 +7457,7 @@ impl ListWorldTemplatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWorldTemplatesErrorKind::Unhandled(err.into()),
+            kind: ListWorldTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6706,7 +7509,7 @@ impl std::error::Error for ListWorldTemplatesError {
             ListWorldTemplatesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListWorldTemplatesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListWorldTemplatesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListWorldTemplatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWorldTemplatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6719,6 +7522,14 @@ pub struct RegisterRobotError {
     pub kind: RegisterRobotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RegisterRobotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterRobotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RegisterRobot` operation.
 #[non_exhaustive]
@@ -6734,8 +7545,15 @@ pub enum RegisterRobotErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterRobotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6766,7 +7584,7 @@ impl RegisterRobotError {
     /// Creates the `RegisterRobotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterRobotErrorKind::Unhandled(err.into()),
+            kind: RegisterRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6775,7 +7593,7 @@ impl RegisterRobotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterRobotErrorKind::Unhandled(err.into()),
+            kind: RegisterRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6840,7 +7658,7 @@ impl std::error::Error for RegisterRobotError {
             RegisterRobotErrorKind::LimitExceededException(_inner) => Some(_inner),
             RegisterRobotErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RegisterRobotErrorKind::ThrottlingException(_inner) => Some(_inner),
-            RegisterRobotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterRobotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6853,6 +7671,14 @@ pub struct RestartSimulationJobError {
     pub kind: RestartSimulationJobErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RestartSimulationJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RestartSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RestartSimulationJob` operation.
 #[non_exhaustive]
@@ -6868,8 +7694,15 @@ pub enum RestartSimulationJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestartSimulationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6900,7 +7733,9 @@ impl RestartSimulationJobError {
     /// Creates the `RestartSimulationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RestartSimulationJobErrorKind::Unhandled(err.into()),
+            kind: RestartSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6909,7 +7744,9 @@ impl RestartSimulationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RestartSimulationJobErrorKind::Unhandled(err.into()),
+            kind: RestartSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6977,7 +7814,7 @@ impl std::error::Error for RestartSimulationJobError {
             RestartSimulationJobErrorKind::LimitExceededException(_inner) => Some(_inner),
             RestartSimulationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RestartSimulationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            RestartSimulationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RestartSimulationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6990,6 +7827,14 @@ pub struct StartSimulationJobBatchError {
     pub kind: StartSimulationJobBatchErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartSimulationJobBatchError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartSimulationJobBatchErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartSimulationJobBatch` operation.
 #[non_exhaustive]
@@ -7005,8 +7850,15 @@ pub enum StartSimulationJobBatchErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartSimulationJobBatchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7039,7 +7891,9 @@ impl StartSimulationJobBatchError {
     /// Creates the `StartSimulationJobBatchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartSimulationJobBatchErrorKind::Unhandled(err.into()),
+            kind: StartSimulationJobBatchErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7048,7 +7902,9 @@ impl StartSimulationJobBatchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartSimulationJobBatchErrorKind::Unhandled(err.into()),
+            kind: StartSimulationJobBatchErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7118,7 +7974,7 @@ impl std::error::Error for StartSimulationJobBatchError {
             StartSimulationJobBatchErrorKind::InvalidParameterException(_inner) => Some(_inner),
             StartSimulationJobBatchErrorKind::LimitExceededException(_inner) => Some(_inner),
             StartSimulationJobBatchErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartSimulationJobBatchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartSimulationJobBatchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7131,6 +7987,14 @@ pub struct SyncDeploymentJobError {
     pub kind: SyncDeploymentJobErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SyncDeploymentJobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SyncDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `SyncDeploymentJob` operation.
 #[non_exhaustive]
@@ -7150,8 +8014,15 @@ pub enum SyncDeploymentJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SyncDeploymentJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7186,7 +8057,7 @@ impl SyncDeploymentJobError {
     /// Creates the `SyncDeploymentJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SyncDeploymentJobErrorKind::Unhandled(err.into()),
+            kind: SyncDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7195,7 +8066,7 @@ impl SyncDeploymentJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SyncDeploymentJobErrorKind::Unhandled(err.into()),
+            kind: SyncDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7281,7 +8152,7 @@ impl std::error::Error for SyncDeploymentJobError {
             SyncDeploymentJobErrorKind::LimitExceededException(_inner) => Some(_inner),
             SyncDeploymentJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             SyncDeploymentJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            SyncDeploymentJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SyncDeploymentJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7295,6 +8166,14 @@ pub struct TagResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `TagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7307,8 +8186,15 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7338,7 +8224,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7347,7 +8233,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7401,7 +8287,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7415,6 +8301,14 @@ pub struct UntagResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UntagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7427,8 +8321,15 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7458,7 +8359,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7467,7 +8368,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7524,7 +8425,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7537,6 +8438,14 @@ pub struct UpdateRobotApplicationError {
     pub kind: UpdateRobotApplicationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateRobotApplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateRobotApplication` operation.
 #[non_exhaustive]
@@ -7552,8 +8461,15 @@ pub enum UpdateRobotApplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRobotApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7584,7 +8500,9 @@ impl UpdateRobotApplicationError {
     /// Creates the `UpdateRobotApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRobotApplicationErrorKind::Unhandled(err.into()),
+            kind: UpdateRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7593,7 +8511,9 @@ impl UpdateRobotApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRobotApplicationErrorKind::Unhandled(err.into()),
+            kind: UpdateRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7661,7 +8581,7 @@ impl std::error::Error for UpdateRobotApplicationError {
             UpdateRobotApplicationErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateRobotApplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateRobotApplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateRobotApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRobotApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7674,6 +8594,16 @@ pub struct UpdateSimulationApplicationError {
     pub kind: UpdateSimulationApplicationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateSimulationApplicationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateSimulationApplication` operation.
 #[non_exhaustive]
@@ -7689,8 +8619,15 @@ pub enum UpdateSimulationApplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSimulationApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7725,7 +8662,9 @@ impl UpdateSimulationApplicationError {
     /// Creates the `UpdateSimulationApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSimulationApplicationErrorKind::Unhandled(err.into()),
+            kind: UpdateSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7734,7 +8673,9 @@ impl UpdateSimulationApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSimulationApplicationErrorKind::Unhandled(err.into()),
+            kind: UpdateSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7802,7 +8743,7 @@ impl std::error::Error for UpdateSimulationApplicationError {
             UpdateSimulationApplicationErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateSimulationApplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateSimulationApplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateSimulationApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSimulationApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7816,6 +8757,14 @@ pub struct UpdateWorldTemplateError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateWorldTemplateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateWorldTemplate` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7828,8 +8777,15 @@ pub enum UpdateWorldTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateWorldTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7859,7 +8815,7 @@ impl UpdateWorldTemplateError {
     /// Creates the `UpdateWorldTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateWorldTemplateErrorKind::Unhandled(err.into()),
+            kind: UpdateWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7868,7 +8824,7 @@ impl UpdateWorldTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateWorldTemplateErrorKind::Unhandled(err.into()),
+            kind: UpdateWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7928,7 +8884,35 @@ impl std::error::Error for UpdateWorldTemplateError {
             UpdateWorldTemplateErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateWorldTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateWorldTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateWorldTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateWorldTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

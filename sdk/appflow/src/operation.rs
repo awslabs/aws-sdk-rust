@@ -5,7 +5,7 @@
 /// [`create_connector_profile`](crate::client::Client::create_connector_profile).
 ///
 /// See [`crate::client::fluent_builders::CreateConnectorProfile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateConnectorProfile {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConnectorProfile {
 /// [`create_flow`](crate::client::Client::create_flow).
 ///
 /// See [`crate::client::fluent_builders::CreateFlow`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateFlow {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFlow {
 /// [`delete_connector_profile`](crate::client::Client::delete_connector_profile).
 ///
 /// See [`crate::client::fluent_builders::DeleteConnectorProfile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConnectorProfile {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnectorProfile {
 /// [`delete_flow`](crate::client::Client::delete_flow).
 ///
 /// See [`crate::client::fluent_builders::DeleteFlow`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFlow {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFlow {
 /// [`describe_connector`](crate::client::Client::describe_connector).
 ///
 /// See [`crate::client::fluent_builders::DescribeConnector`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConnector {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnector {
 /// [`describe_connector_entity`](crate::client::Client::describe_connector_entity).
 ///
 /// See [`crate::client::fluent_builders::DescribeConnectorEntity`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConnectorEntity {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnectorEntity 
 /// [`describe_connector_profiles`](crate::client::Client::describe_connector_profiles).
 ///
 /// See [`crate::client::fluent_builders::DescribeConnectorProfiles`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConnectorProfiles {
     _private: (),
 }
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnectorProfile
 /// [`describe_connectors`](crate::client::Client::describe_connectors).
 ///
 /// See [`crate::client::fluent_builders::DescribeConnectors`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConnectors {
     _private: (),
 }
@@ -273,7 +273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnectors {
 /// [`describe_flow`](crate::client::Client::describe_flow).
 ///
 /// See [`crate::client::fluent_builders::DescribeFlow`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFlow {
     _private: (),
 }
@@ -305,7 +305,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFlow {
 /// [`describe_flow_execution_records`](crate::client::Client::describe_flow_execution_records).
 ///
 /// See [`crate::client::fluent_builders::DescribeFlowExecutionRecords`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFlowExecutionRecords {
     _private: (),
 }
@@ -339,7 +339,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFlowExecutionRec
 /// [`list_connector_entities`](crate::client::Client::list_connector_entities).
 ///
 /// See [`crate::client::fluent_builders::ListConnectorEntities`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListConnectorEntities {
     _private: (),
 }
@@ -373,7 +373,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConnectorEntities {
 /// [`list_connectors`](crate::client::Client::list_connectors).
 ///
 /// See [`crate::client::fluent_builders::ListConnectors`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListConnectors {
     _private: (),
 }
@@ -405,7 +405,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConnectors {
 /// [`list_flows`](crate::client::Client::list_flows).
 ///
 /// See [`crate::client::fluent_builders::ListFlows`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFlows {
     _private: (),
 }
@@ -436,7 +436,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFlows {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -470,7 +470,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`register_connector`](crate::client::Client::register_connector).
 ///
 /// See [`crate::client::fluent_builders::RegisterConnector`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterConnector {
     _private: (),
 }
@@ -504,7 +504,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterConnector {
 /// [`start_flow`](crate::client::Client::start_flow).
 ///
 /// See [`crate::client::fluent_builders::StartFlow`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartFlow {
     _private: (),
 }
@@ -535,7 +535,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartFlow {
 /// [`stop_flow`](crate::client::Client::stop_flow).
 ///
 /// See [`crate::client::fluent_builders::StopFlow`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopFlow {
     _private: (),
 }
@@ -566,7 +566,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopFlow {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -598,7 +598,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`unregister_connector`](crate::client::Client::unregister_connector).
 ///
 /// See [`crate::client::fluent_builders::UnregisterConnector`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UnregisterConnector {
     _private: (),
 }
@@ -632,7 +632,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnregisterConnector {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -664,7 +664,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_connector_profile`](crate::client::Client::update_connector_profile).
 ///
 /// See [`crate::client::fluent_builders::UpdateConnectorProfile`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateConnectorProfile {
     _private: (),
 }
@@ -698,7 +698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConnectorProfile {
 /// [`update_flow`](crate::client::Client::update_flow).
 ///
 /// See [`crate::client::fluent_builders::UpdateFlow`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFlow {
     _private: (),
 }

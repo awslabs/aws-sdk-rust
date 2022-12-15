@@ -5,7 +5,7 @@
 /// [`create_dataset`](crate::client::Client::create_dataset).
 ///
 /// See [`crate::client::fluent_builders::CreateDataset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDataset {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataset {
 /// [`create_inference_scheduler`](crate::client::Client::create_inference_scheduler).
 ///
 /// See [`crate::client::fluent_builders::CreateInferenceScheduler`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateInferenceScheduler {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInferenceScheduler
 /// [`create_label`](crate::client::Client::create_label).
 ///
 /// See [`crate::client::fluent_builders::CreateLabel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLabel {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLabel {
 /// [`create_label_group`](crate::client::Client::create_label_group).
 ///
 /// See [`crate::client::fluent_builders::CreateLabelGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLabelGroup {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLabelGroup {
 /// [`create_model`](crate::client::Client::create_model).
 ///
 /// See [`crate::client::fluent_builders::CreateModel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateModel {
     _private: (),
 }
@@ -169,7 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateModel {
 /// [`delete_dataset`](crate::client::Client::delete_dataset).
 ///
 /// See [`crate::client::fluent_builders::DeleteDataset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDataset {
     _private: (),
 }
@@ -201,7 +201,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataset {
 /// [`delete_inference_scheduler`](crate::client::Client::delete_inference_scheduler).
 ///
 /// See [`crate::client::fluent_builders::DeleteInferenceScheduler`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteInferenceScheduler {
     _private: (),
 }
@@ -235,7 +235,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInferenceScheduler
 /// [`delete_label`](crate::client::Client::delete_label).
 ///
 /// See [`crate::client::fluent_builders::DeleteLabel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLabel {
     _private: (),
 }
@@ -267,7 +267,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLabel {
 /// [`delete_label_group`](crate::client::Client::delete_label_group).
 ///
 /// See [`crate::client::fluent_builders::DeleteLabelGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLabelGroup {
     _private: (),
 }
@@ -301,7 +301,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLabelGroup {
 /// [`delete_model`](crate::client::Client::delete_model).
 ///
 /// See [`crate::client::fluent_builders::DeleteModel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteModel {
     _private: (),
 }
@@ -333,7 +333,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteModel {
 /// [`describe_data_ingestion_job`](crate::client::Client::describe_data_ingestion_job).
 ///
 /// See [`crate::client::fluent_builders::DescribeDataIngestionJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDataIngestionJob {
     _private: (),
 }
@@ -367,7 +367,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDataIngestionJob
 /// [`describe_dataset`](crate::client::Client::describe_dataset).
 ///
 /// See [`crate::client::fluent_builders::DescribeDataset`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDataset {
     _private: (),
 }
@@ -401,7 +401,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDataset {
 /// [`describe_inference_scheduler`](crate::client::Client::describe_inference_scheduler).
 ///
 /// See [`crate::client::fluent_builders::DescribeInferenceScheduler`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeInferenceScheduler {
     _private: (),
 }
@@ -435,7 +435,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInferenceSchedul
 /// [`describe_label`](crate::client::Client::describe_label).
 ///
 /// See [`crate::client::fluent_builders::DescribeLabel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLabel {
     _private: (),
 }
@@ -467,7 +467,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLabel {
 /// [`describe_label_group`](crate::client::Client::describe_label_group).
 ///
 /// See [`crate::client::fluent_builders::DescribeLabelGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLabelGroup {
     _private: (),
 }
@@ -501,7 +501,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLabelGroup {
 /// [`describe_model`](crate::client::Client::describe_model).
 ///
 /// See [`crate::client::fluent_builders::DescribeModel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeModel {
     _private: (),
 }
@@ -533,7 +533,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeModel {
 /// [`list_data_ingestion_jobs`](crate::client::Client::list_data_ingestion_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListDataIngestionJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDataIngestionJobs {
     _private: (),
 }
@@ -567,7 +567,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDataIngestionJobs {
 /// [`list_datasets`](crate::client::Client::list_datasets).
 ///
 /// See [`crate::client::fluent_builders::ListDatasets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDatasets {
     _private: (),
 }
@@ -599,7 +599,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatasets {
 /// [`list_inference_events`](crate::client::Client::list_inference_events).
 ///
 /// See [`crate::client::fluent_builders::ListInferenceEvents`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListInferenceEvents {
     _private: (),
 }
@@ -633,7 +633,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInferenceEvents {
 /// [`list_inference_executions`](crate::client::Client::list_inference_executions).
 ///
 /// See [`crate::client::fluent_builders::ListInferenceExecutions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListInferenceExecutions {
     _private: (),
 }
@@ -667,7 +667,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInferenceExecutions 
 /// [`list_inference_schedulers`](crate::client::Client::list_inference_schedulers).
 ///
 /// See [`crate::client::fluent_builders::ListInferenceSchedulers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListInferenceSchedulers {
     _private: (),
 }
@@ -701,7 +701,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInferenceSchedulers 
 /// [`list_label_groups`](crate::client::Client::list_label_groups).
 ///
 /// See [`crate::client::fluent_builders::ListLabelGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLabelGroups {
     _private: (),
 }
@@ -735,7 +735,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLabelGroups {
 /// [`list_labels`](crate::client::Client::list_labels).
 ///
 /// See [`crate::client::fluent_builders::ListLabels`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLabels {
     _private: (),
 }
@@ -767,7 +767,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLabels {
 /// [`list_models`](crate::client::Client::list_models).
 ///
 /// See [`crate::client::fluent_builders::ListModels`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListModels {
     _private: (),
 }
@@ -799,7 +799,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListModels {
 /// [`list_sensor_statistics`](crate::client::Client::list_sensor_statistics).
 ///
 /// See [`crate::client::fluent_builders::ListSensorStatistics`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSensorStatistics {
     _private: (),
 }
@@ -833,7 +833,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSensorStatistics {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -867,7 +867,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`start_data_ingestion_job`](crate::client::Client::start_data_ingestion_job).
 ///
 /// See [`crate::client::fluent_builders::StartDataIngestionJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartDataIngestionJob {
     _private: (),
 }
@@ -901,7 +901,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDataIngestionJob {
 /// [`start_inference_scheduler`](crate::client::Client::start_inference_scheduler).
 ///
 /// See [`crate::client::fluent_builders::StartInferenceScheduler`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartInferenceScheduler {
     _private: (),
 }
@@ -935,7 +935,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartInferenceScheduler 
 /// [`stop_inference_scheduler`](crate::client::Client::stop_inference_scheduler).
 ///
 /// See [`crate::client::fluent_builders::StopInferenceScheduler`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopInferenceScheduler {
     _private: (),
 }
@@ -969,7 +969,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopInferenceScheduler {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1001,7 +1001,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1033,7 +1033,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_inference_scheduler`](crate::client::Client::update_inference_scheduler).
 ///
 /// See [`crate::client::fluent_builders::UpdateInferenceScheduler`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateInferenceScheduler {
     _private: (),
 }
@@ -1067,7 +1067,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInferenceScheduler
 /// [`update_label_group`](crate::client::Client::update_label_group).
 ///
 /// See [`crate::client::fluent_builders::UpdateLabelGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLabelGroup {
     _private: (),
 }

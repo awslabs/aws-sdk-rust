@@ -376,7 +376,7 @@ mod tests {
 
     impl SputteringBody {
         fn len(&self) -> usize {
-            self.parts.iter().flat_map(|b| b).map(|b| b.len()).sum()
+            self.parts.iter().flatten().map(|b| b.len()).sum()
         }
     }
 
@@ -462,7 +462,10 @@ mod tests {
         };
 
         let timeout_duration = Duration::from_secs(3);
-        if let Err(_) = tokio::time::timeout(timeout_duration, test_fut).await {
+        if tokio::time::timeout(timeout_duration, test_fut)
+            .await
+            .is_err()
+        {
             panic!("test_aws_chunked_encoding timed out after {timeout_duration:?}");
         }
     }
@@ -513,7 +516,10 @@ mod tests {
         };
 
         let timeout_duration = Duration::from_secs(3);
-        if let Err(_) = tokio::time::timeout(timeout_duration, test_fut).await {
+        if tokio::time::timeout(timeout_duration, test_fut)
+            .await
+            .is_err()
+        {
             panic!(
                 "test_aws_chunked_encoding_sputtering_body timed out after {timeout_duration:?}"
             );

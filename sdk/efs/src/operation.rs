@@ -5,7 +5,7 @@
 /// [`create_access_point`](crate::client::Client::create_access_point).
 ///
 /// See [`crate::client::fluent_builders::CreateAccessPoint`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAccessPoint {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessPoint {
 /// [`create_file_system`](crate::client::Client::create_file_system).
 ///
 /// See [`crate::client::fluent_builders::CreateFileSystem`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateFileSystem {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFileSystem {
 /// [`create_mount_target`](crate::client::Client::create_mount_target).
 ///
 /// See [`crate::client::fluent_builders::CreateMountTarget`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMountTarget {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMountTarget {
 /// [`create_replication_configuration`](crate::client::Client::create_replication_configuration).
 ///
 /// See [`crate::client::fluent_builders::CreateReplicationConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateReplicationConfiguration {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReplicationConfigu
 /// [`create_tags`](crate::client::Client::create_tags).
 ///
 /// See [`crate::client::fluent_builders::CreateTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTags {
     _private: (),
 }
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTags {
 /// [`delete_access_point`](crate::client::Client::delete_access_point).
 ///
 /// See [`crate::client::fluent_builders::DeleteAccessPoint`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAccessPoint {
     _private: (),
 }
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessPoint {
 /// [`delete_file_system`](crate::client::Client::delete_file_system).
 ///
 /// See [`crate::client::fluent_builders::DeleteFileSystem`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFileSystem {
     _private: (),
 }
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFileSystem {
 /// [`delete_file_system_policy`](crate::client::Client::delete_file_system_policy).
 ///
 /// See [`crate::client::fluent_builders::DeleteFileSystemPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFileSystemPolicy {
     _private: (),
 }
@@ -275,7 +275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFileSystemPolicy {
 /// [`delete_mount_target`](crate::client::Client::delete_mount_target).
 ///
 /// See [`crate::client::fluent_builders::DeleteMountTarget`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMountTarget {
     _private: (),
 }
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMountTarget {
 /// [`delete_replication_configuration`](crate::client::Client::delete_replication_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteReplicationConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteReplicationConfiguration {
     _private: (),
 }
@@ -343,7 +343,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReplicationConfigu
 /// [`delete_tags`](crate::client::Client::delete_tags).
 ///
 /// See [`crate::client::fluent_builders::DeleteTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTags {
     _private: (),
 }
@@ -375,7 +375,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTags {
 /// [`describe_access_points`](crate::client::Client::describe_access_points).
 ///
 /// See [`crate::client::fluent_builders::DescribeAccessPoints`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAccessPoints {
     _private: (),
 }
@@ -409,7 +409,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccessPoints {
 /// [`describe_account_preferences`](crate::client::Client::describe_account_preferences).
 ///
 /// See [`crate::client::fluent_builders::DescribeAccountPreferences`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAccountPreferences {
     _private: (),
 }
@@ -443,7 +443,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountPreferenc
 /// [`describe_backup_policy`](crate::client::Client::describe_backup_policy).
 ///
 /// See [`crate::client::fluent_builders::DescribeBackupPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBackupPolicy {
     _private: (),
 }
@@ -477,7 +477,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBackupPolicy {
 /// [`describe_file_system_policy`](crate::client::Client::describe_file_system_policy).
 ///
 /// See [`crate::client::fluent_builders::DescribeFileSystemPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFileSystemPolicy {
     _private: (),
 }
@@ -511,7 +511,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFileSystemPolicy
 /// [`describe_file_systems`](crate::client::Client::describe_file_systems).
 ///
 /// See [`crate::client::fluent_builders::DescribeFileSystems`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFileSystems {
     _private: (),
 }
@@ -545,7 +545,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFileSystems {
 /// [`describe_lifecycle_configuration`](crate::client::Client::describe_lifecycle_configuration).
 ///
 /// See [`crate::client::fluent_builders::DescribeLifecycleConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLifecycleConfiguration {
     _private: (),
 }
@@ -579,7 +579,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLifecycleConfigu
 /// [`describe_mount_targets`](crate::client::Client::describe_mount_targets).
 ///
 /// See [`crate::client::fluent_builders::DescribeMountTargets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMountTargets {
     _private: (),
 }
@@ -613,7 +613,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMountTargets {
 /// [`describe_mount_target_security_groups`](crate::client::Client::describe_mount_target_security_groups).
 ///
 /// See [`crate::client::fluent_builders::DescribeMountTargetSecurityGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMountTargetSecurityGroups {
     _private: (),
 }
@@ -647,7 +647,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMountTargetSecur
 /// [`describe_replication_configurations`](crate::client::Client::describe_replication_configurations).
 ///
 /// See [`crate::client::fluent_builders::DescribeReplicationConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeReplicationConfigurations {
     _private: (),
 }
@@ -681,7 +681,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReplicationConfi
 /// [`describe_tags`](crate::client::Client::describe_tags).
 ///
 /// See [`crate::client::fluent_builders::DescribeTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTags {
     _private: (),
 }
@@ -713,7 +713,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTags {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -747,7 +747,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`modify_mount_target_security_groups`](crate::client::Client::modify_mount_target_security_groups).
 ///
 /// See [`crate::client::fluent_builders::ModifyMountTargetSecurityGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ModifyMountTargetSecurityGroups {
     _private: (),
 }
@@ -781,7 +781,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyMountTargetSecurit
 /// [`put_account_preferences`](crate::client::Client::put_account_preferences).
 ///
 /// See [`crate::client::fluent_builders::PutAccountPreferences`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutAccountPreferences {
     _private: (),
 }
@@ -815,7 +815,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccountPreferences {
 /// [`put_backup_policy`](crate::client::Client::put_backup_policy).
 ///
 /// See [`crate::client::fluent_builders::PutBackupPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBackupPolicy {
     _private: (),
 }
@@ -849,7 +849,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBackupPolicy {
 /// [`put_file_system_policy`](crate::client::Client::put_file_system_policy).
 ///
 /// See [`crate::client::fluent_builders::PutFileSystemPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutFileSystemPolicy {
     _private: (),
 }
@@ -883,7 +883,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutFileSystemPolicy {
 /// [`put_lifecycle_configuration`](crate::client::Client::put_lifecycle_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutLifecycleConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutLifecycleConfiguration {
     _private: (),
 }
@@ -917,7 +917,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLifecycleConfiguratio
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -949,7 +949,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -981,7 +981,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_file_system`](crate::client::Client::update_file_system).
 ///
 /// See [`crate::client::fluent_builders::UpdateFileSystem`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFileSystem {
     _private: (),
 }

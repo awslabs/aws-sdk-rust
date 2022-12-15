@@ -18,7 +18,6 @@
 #![cfg_attr(docsrs, feature(doc_cfg))]
 
 pub mod body;
-pub mod callback;
 pub mod endpoint;
 pub mod header;
 pub mod http_versions;
@@ -36,5 +35,4 @@ pub mod event_stream;
 
 pub mod byte_stream;
 
-mod pin_util;
 mod urlencode;

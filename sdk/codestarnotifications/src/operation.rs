@@ -5,7 +5,7 @@
 /// [`create_notification_rule`](crate::client::Client::create_notification_rule).
 ///
 /// See [`crate::client::fluent_builders::CreateNotificationRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateNotificationRule {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNotificationRule {
 /// [`delete_notification_rule`](crate::client::Client::delete_notification_rule).
 ///
 /// See [`crate::client::fluent_builders::DeleteNotificationRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteNotificationRule {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNotificationRule {
 /// [`delete_target`](crate::client::Client::delete_target).
 ///
 /// See [`crate::client::fluent_builders::DeleteTarget`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTarget {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTarget {
 /// [`describe_notification_rule`](crate::client::Client::describe_notification_rule).
 ///
 /// See [`crate::client::fluent_builders::DescribeNotificationRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeNotificationRule {
     _private: (),
 }
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNotificationRule
 /// [`list_event_types`](crate::client::Client::list_event_types).
 ///
 /// See [`crate::client::fluent_builders::ListEventTypes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEventTypes {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventTypes {
 /// [`list_notification_rules`](crate::client::Client::list_notification_rules).
 ///
 /// See [`crate::client::fluent_builders::ListNotificationRules`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListNotificationRules {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNotificationRules {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_targets`](crate::client::Client::list_targets).
 ///
 /// See [`crate::client::fluent_builders::ListTargets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTargets {
     _private: (),
 }
@@ -271,7 +271,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTargets {
 /// [`subscribe`](crate::client::Client::subscribe).
 ///
 /// See [`crate::client::fluent_builders::Subscribe`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Subscribe {
     _private: (),
 }
@@ -302,7 +302,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Subscribe {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -334,7 +334,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`unsubscribe`](crate::client::Client::unsubscribe).
 ///
 /// See [`crate::client::fluent_builders::Unsubscribe`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Unsubscribe {
     _private: (),
 }
@@ -366,7 +366,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Unsubscribe {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -398,7 +398,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_notification_rule`](crate::client::Client::update_notification_rule).
 ///
 /// See [`crate::client::fluent_builders::UpdateNotificationRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateNotificationRule {
     _private: (),
 }

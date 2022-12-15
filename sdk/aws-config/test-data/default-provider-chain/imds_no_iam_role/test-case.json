@@ -2,6 +2,6 @@
   "name": "imds-token-fail",
   "docs": "attempts to acquire an IMDS token, but the instance doesn't have a role configured",
   "result": {
-    "ErrorContains": "The credential provider was not enabled"
+    "ErrorContains": "the credential provider was not enabled"
   }
 }

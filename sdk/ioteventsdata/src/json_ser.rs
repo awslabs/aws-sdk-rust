@@ -2,11 +2,12 @@
 pub fn serialize_structure_crate_input_batch_acknowledge_alarm_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchAcknowledgeAlarmInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.acknowledge_action_requests {
         let mut array_2 = object.key("acknowledgeActionRequests").start_array();
         for item_3 in var_1 {
             {
+                #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_acknowledge_alarm_action_request(
                     &mut object_4,
@@ -23,11 +24,12 @@ pub fn serialize_structure_crate_input_batch_acknowledge_alarm_input(
 pub fn serialize_structure_crate_input_batch_delete_detector_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchDeleteDetectorInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_5) = &input.detectors {
         let mut array_6 = object.key("detectors").start_array();
         for item_7 in var_5 {
             {
+                #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_delete_detector_request(
                     &mut object_8,
@@ -44,11 +46,12 @@ pub fn serialize_structure_crate_input_batch_delete_detector_input(
 pub fn serialize_structure_crate_input_batch_disable_alarm_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchDisableAlarmInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.disable_action_requests {
         let mut array_10 = object.key("disableActionRequests").start_array();
         for item_11 in var_9 {
             {
+                #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_disable_alarm_action_request(
                     &mut object_12,
@@ -65,11 +68,12 @@ pub fn serialize_structure_crate_input_batch_disable_alarm_input(
 pub fn serialize_structure_crate_input_batch_enable_alarm_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchEnableAlarmInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_13) = &input.enable_action_requests {
         let mut array_14 = object.key("enableActionRequests").start_array();
         for item_15 in var_13 {
             {
+                #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_enable_alarm_action_request(
                     &mut object_16,
@@ -86,11 +90,12 @@ pub fn serialize_structure_crate_input_batch_enable_alarm_input(
 pub fn serialize_structure_crate_input_batch_put_message_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchPutMessageInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_17) = &input.messages {
         let mut array_18 = object.key("messages").start_array();
         for item_19 in var_17 {
             {
+                #[allow(unused_mut)]
                 let mut object_20 = array_18.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_message(&mut object_20, item_19)?;
                 object_20.finish();
@@ -104,11 +109,12 @@ pub fn serialize_structure_crate_input_batch_put_message_input(
 pub fn serialize_structure_crate_input_batch_reset_alarm_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchResetAlarmInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_21) = &input.reset_action_requests {
         let mut array_22 = object.key("resetActionRequests").start_array();
         for item_23 in var_21 {
             {
+                #[allow(unused_mut)]
                 let mut object_24 = array_22.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_reset_alarm_action_request(
                     &mut object_24,
@@ -125,11 +131,12 @@ pub fn serialize_structure_crate_input_batch_reset_alarm_input(
 pub fn serialize_structure_crate_input_batch_snooze_alarm_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchSnoozeAlarmInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_25) = &input.snooze_action_requests {
         let mut array_26 = object.key("snoozeActionRequests").start_array();
         for item_27 in var_25 {
             {
+                #[allow(unused_mut)]
                 let mut object_28 = array_26.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_snooze_alarm_action_request(
                     &mut object_28,
@@ -146,11 +153,12 @@ pub fn serialize_structure_crate_input_batch_snooze_alarm_input(
 pub fn serialize_structure_crate_input_batch_update_detector_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchUpdateDetectorInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_29) = &input.detectors {
         let mut array_30 = object.key("detectors").start_array();
         for item_31 in var_29 {
             {
+                #[allow(unused_mut)]
                 let mut object_32 = array_30.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_update_detector_request(
                     &mut object_32,
@@ -167,7 +175,7 @@ pub fn serialize_structure_crate_input_batch_update_detector_input(
 pub fn serialize_structure_crate_model_acknowledge_alarm_action_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AcknowledgeAlarmActionRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.request_id {
         object.key("requestId").string(var_33.as_str());
     }
@@ -186,7 +194,7 @@ pub fn serialize_structure_crate_model_acknowledge_alarm_action_request(
 pub fn serialize_structure_crate_model_delete_detector_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DeleteDetectorRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_37) = &input.message_id {
         object.key("messageId").string(var_37.as_str());
     }
@@ -202,7 +210,7 @@ pub fn serialize_structure_crate_model_delete_detector_request(
 pub fn serialize_structure_crate_model_disable_alarm_action_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DisableAlarmActionRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_40) = &input.request_id {
         object.key("requestId").string(var_40.as_str());
     }
@@ -221,7 +229,7 @@ pub fn serialize_structure_crate_model_disable_alarm_action_request(
 pub fn serialize_structure_crate_model_enable_alarm_action_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EnableAlarmActionRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_44) = &input.request_id {
         object.key("requestId").string(var_44.as_str());
     }
@@ -240,7 +248,7 @@ pub fn serialize_structure_crate_model_enable_alarm_action_request(
 pub fn serialize_structure_crate_model_message(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Message,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_48) = &input.message_id {
         object.key("messageId").string(var_48.as_str());
     }
@@ -253,6 +261,7 @@ pub fn serialize_structure_crate_model_message(
             .string_unchecked(&aws_smithy_types::base64::encode(var_50));
     }
     if let Some(var_51) = &input.timestamp {
+        #[allow(unused_mut)]
         let mut object_52 = object.key("timestamp").start_object();
         crate::json_ser::serialize_structure_crate_model_timestamp_value(&mut object_52, var_51)?;
         object_52.finish();
@@ -263,7 +272,7 @@ pub fn serialize_structure_crate_model_message(
 pub fn serialize_structure_crate_model_reset_alarm_action_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResetAlarmActionRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_53) = &input.request_id {
         object.key("requestId").string(var_53.as_str());
     }
@@ -282,7 +291,7 @@ pub fn serialize_structure_crate_model_reset_alarm_action_request(
 pub fn serialize_structure_crate_model_snooze_alarm_action_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SnoozeAlarmActionRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_57) = &input.request_id {
         object.key("requestId").string(var_57.as_str());
     }
@@ -307,7 +316,7 @@ pub fn serialize_structure_crate_model_snooze_alarm_action_request(
 pub fn serialize_structure_crate_model_update_detector_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateDetectorRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_62) = &input.message_id {
         object.key("messageId").string(var_62.as_str());
     }
@@ -318,6 +327,7 @@ pub fn serialize_structure_crate_model_update_detector_request(
         object.key("keyValue").string(var_64.as_str());
     }
     if let Some(var_65) = &input.state {
+        #[allow(unused_mut)]
         let mut object_66 = object.key("state").start_object();
         crate::json_ser::serialize_structure_crate_model_detector_state_definition(
             &mut object_66,
@@ -331,7 +341,7 @@ pub fn serialize_structure_crate_model_update_detector_request(
 pub fn serialize_structure_crate_model_timestamp_value(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TimestampValue,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_67) = &input.time_in_millis {
         object.key("timeInMillis").number(
             #[allow(clippy::useless_conversion)]
@@ -344,7 +354,7 @@ pub fn serialize_structure_crate_model_timestamp_value(
 pub fn serialize_structure_crate_model_detector_state_definition(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DetectorStateDefinition,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_68) = &input.state_name {
         object.key("stateName").string(var_68.as_str());
     }
@@ -352,6 +362,7 @@ pub fn serialize_structure_crate_model_detector_state_definition(
         let mut array_70 = object.key("variables").start_array();
         for item_71 in var_69 {
             {
+                #[allow(unused_mut)]
                 let mut object_72 = array_70.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_variable_definition(
                     &mut object_72,
@@ -366,6 +377,7 @@ pub fn serialize_structure_crate_model_detector_state_definition(
         let mut array_74 = object.key("timers").start_array();
         for item_75 in var_73 {
             {
+                #[allow(unused_mut)]
                 let mut object_76 = array_74.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_timer_definition(
                     &mut object_76,
@@ -382,7 +394,7 @@ pub fn serialize_structure_crate_model_detector_state_definition(
 pub fn serialize_structure_crate_model_variable_definition(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VariableDefinition,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_77) = &input.name {
         object.key("name").string(var_77.as_str());
     }
@@ -395,7 +407,7 @@ pub fn serialize_structure_crate_model_variable_definition(
 pub fn serialize_structure_crate_model_timer_definition(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TimerDefinition,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_79) = &input.name {
         object.key("name").string(var_79.as_str());
     }

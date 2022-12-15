@@ -2,7 +2,7 @@
 
 /// <p>Describes an experiment template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentTemplate {
     /// <p>The ID of the experiment template.</p>
     #[doc(hidden)]
@@ -98,27 +98,11 @@ impl ExperimentTemplate {
         self.log_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for ExperimentTemplate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentTemplate");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("targets", &self.targets);
-        formatter.field("actions", &self.actions);
-        formatter.field("stop_conditions", &self.stop_conditions);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("log_configuration", &self.log_configuration);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentTemplate`](crate::model::ExperimentTemplate).
 pub mod experiment_template {
 
     /// A builder for [`ExperimentTemplate`](crate::model::ExperimentTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -343,7 +327,7 @@ impl ExperimentTemplate {
 
 /// <p>Describes the configuration for experiment logging.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentTemplateLogConfiguration {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
@@ -374,23 +358,11 @@ impl ExperimentTemplateLogConfiguration {
         self.log_schema_version
     }
 }
-impl std::fmt::Debug for ExperimentTemplateLogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentTemplateLogConfiguration");
-        formatter.field(
-            "cloud_watch_logs_configuration",
-            &self.cloud_watch_logs_configuration,
-        );
-        formatter.field("s3_configuration", &self.s3_configuration);
-        formatter.field("log_schema_version", &self.log_schema_version);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentTemplateLogConfiguration`](crate::model::ExperimentTemplateLogConfiguration).
 pub mod experiment_template_log_configuration {
 
     /// A builder for [`ExperimentTemplateLogConfiguration`](crate::model::ExperimentTemplateLogConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_configuration:
             std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration>,
@@ -462,7 +434,7 @@ impl ExperimentTemplateLogConfiguration {
 
 /// <p>Describes the configuration for experiment logging to Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentTemplateS3LogConfiguration {
     /// <p>The name of the destination bucket.</p>
     #[doc(hidden)]
@@ -481,19 +453,11 @@ impl ExperimentTemplateS3LogConfiguration {
         self.prefix.as_deref()
     }
 }
-impl std::fmt::Debug for ExperimentTemplateS3LogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentTemplateS3LogConfiguration");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentTemplateS3LogConfiguration`](crate::model::ExperimentTemplateS3LogConfiguration).
 pub mod experiment_template_s3_log_configuration {
 
     /// A builder for [`ExperimentTemplateS3LogConfiguration`](crate::model::ExperimentTemplateS3LogConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -537,7 +501,7 @@ impl ExperimentTemplateS3LogConfiguration {
 
 /// <p>Describes the configuration for experiment logging to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentTemplateCloudWatchLogsLogConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
     #[doc(hidden)]
@@ -549,18 +513,11 @@ impl ExperimentTemplateCloudWatchLogsLogConfiguration {
         self.log_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ExperimentTemplateCloudWatchLogsLogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentTemplateCloudWatchLogsLogConfiguration");
-        formatter.field("log_group_arn", &self.log_group_arn);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentTemplateCloudWatchLogsLogConfiguration`](crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration).
 pub mod experiment_template_cloud_watch_logs_log_configuration {
 
     /// A builder for [`ExperimentTemplateCloudWatchLogsLogConfiguration`](crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_arn: std::option::Option<std::string::String>,
     }
@@ -596,7 +553,7 @@ impl ExperimentTemplateCloudWatchLogsLogConfiguration {
 
 /// <p>Describes a stop condition for an experiment template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentTemplateStopCondition {
     /// <p>The source for the stop condition.</p>
     #[doc(hidden)]
@@ -615,19 +572,11 @@ impl ExperimentTemplateStopCondition {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for ExperimentTemplateStopCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentTemplateStopCondition");
-        formatter.field("source", &self.source);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentTemplateStopCondition`](crate::model::ExperimentTemplateStopCondition).
 pub mod experiment_template_stop_condition {
 
     /// A builder for [`ExperimentTemplateStopCondition`](crate::model::ExperimentTemplateStopCondition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -671,7 +620,7 @@ impl ExperimentTemplateStopCondition {
 
 /// <p>Describes an action for an experiment template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentTemplateAction {
     /// <p>The ID of the action.</p>
     #[doc(hidden)]
@@ -719,22 +668,11 @@ impl ExperimentTemplateAction {
         self.start_after.as_deref()
     }
 }
-impl std::fmt::Debug for ExperimentTemplateAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentTemplateAction");
-        formatter.field("action_id", &self.action_id);
-        formatter.field("description", &self.description);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("targets", &self.targets);
-        formatter.field("start_after", &self.start_after);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentTemplateAction`](crate::model::ExperimentTemplateAction).
 pub mod experiment_template_action {
 
     /// A builder for [`ExperimentTemplateAction`](crate::model::ExperimentTemplateAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -857,7 +795,7 @@ impl ExperimentTemplateAction {
 
 /// <p>Describes a target for an experiment template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentTemplateTarget {
     /// <p>The resource type.</p>
     #[doc(hidden)]
@@ -912,23 +850,11 @@ impl ExperimentTemplateTarget {
         self.parameters.as_ref()
     }
 }
-impl std::fmt::Debug for ExperimentTemplateTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentTemplateTarget");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.field("filters", &self.filters);
-        formatter.field("selection_mode", &self.selection_mode);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentTemplateTarget`](crate::model::ExperimentTemplateTarget).
 pub mod experiment_template_target {
 
     /// A builder for [`ExperimentTemplateTarget`](crate::model::ExperimentTemplateTarget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1079,7 +1005,7 @@ impl ExperimentTemplateTarget {
 
 /// <p>Describes a filter used for the target resources in an experiment template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentTemplateTargetFilter {
     /// <p>The attribute path for the filter.</p>
     #[doc(hidden)]
@@ -1098,19 +1024,11 @@ impl ExperimentTemplateTargetFilter {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for ExperimentTemplateTargetFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentTemplateTargetFilter");
-        formatter.field("path", &self.path);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentTemplateTargetFilter`](crate::model::ExperimentTemplateTargetFilter).
 pub mod experiment_template_target_filter {
 
     /// A builder for [`ExperimentTemplateTargetFilter`](crate::model::ExperimentTemplateTargetFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1163,7 +1081,7 @@ impl ExperimentTemplateTargetFilter {
 
 /// <p>Specifies the configuration for experiment logging.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateExperimentTemplateLogConfigurationInput {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
@@ -1196,23 +1114,11 @@ impl UpdateExperimentTemplateLogConfigurationInput {
         self.log_schema_version
     }
 }
-impl std::fmt::Debug for UpdateExperimentTemplateLogConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateExperimentTemplateLogConfigurationInput");
-        formatter.field(
-            "cloud_watch_logs_configuration",
-            &self.cloud_watch_logs_configuration,
-        );
-        formatter.field("s3_configuration", &self.s3_configuration);
-        formatter.field("log_schema_version", &self.log_schema_version);
-        formatter.finish()
-    }
-}
 /// See [`UpdateExperimentTemplateLogConfigurationInput`](crate::model::UpdateExperimentTemplateLogConfigurationInput).
 pub mod update_experiment_template_log_configuration_input {
 
     /// A builder for [`UpdateExperimentTemplateLogConfigurationInput`](crate::model::UpdateExperimentTemplateLogConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_configuration: std::option::Option<
             crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
@@ -1285,7 +1191,7 @@ impl UpdateExperimentTemplateLogConfigurationInput {
 
 /// <p>Specifies the configuration for experiment logging to Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentTemplateS3LogConfigurationInput {
     /// <p>The name of the destination bucket.</p>
     #[doc(hidden)]
@@ -1304,19 +1210,11 @@ impl ExperimentTemplateS3LogConfigurationInput {
         self.prefix.as_deref()
     }
 }
-impl std::fmt::Debug for ExperimentTemplateS3LogConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentTemplateS3LogConfigurationInput");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentTemplateS3LogConfigurationInput`](crate::model::ExperimentTemplateS3LogConfigurationInput).
 pub mod experiment_template_s3_log_configuration_input {
 
     /// A builder for [`ExperimentTemplateS3LogConfigurationInput`](crate::model::ExperimentTemplateS3LogConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -1360,7 +1258,7 @@ impl ExperimentTemplateS3LogConfigurationInput {
 
 /// <p>Specifies the configuration for experiment logging to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentTemplateCloudWatchLogsLogConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
     #[doc(hidden)]
@@ -1372,18 +1270,11 @@ impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
         self.log_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ExperimentTemplateCloudWatchLogsLogConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentTemplateCloudWatchLogsLogConfigurationInput");
-        formatter.field("log_group_arn", &self.log_group_arn);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput).
 pub mod experiment_template_cloud_watch_logs_log_configuration_input {
 
     /// A builder for [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_arn: std::option::Option<std::string::String>,
     }
@@ -1420,7 +1311,7 @@ impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
 
 /// <p>Specifies an action for an experiment template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateExperimentTemplateActionInputItem {
     /// <p>The ID of the action.</p>
     #[doc(hidden)]
@@ -1468,22 +1359,11 @@ impl UpdateExperimentTemplateActionInputItem {
         self.start_after.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateExperimentTemplateActionInputItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateExperimentTemplateActionInputItem");
-        formatter.field("action_id", &self.action_id);
-        formatter.field("description", &self.description);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("targets", &self.targets);
-        formatter.field("start_after", &self.start_after);
-        formatter.finish()
-    }
-}
 /// See [`UpdateExperimentTemplateActionInputItem`](crate::model::UpdateExperimentTemplateActionInputItem).
 pub mod update_experiment_template_action_input_item {
 
     /// A builder for [`UpdateExperimentTemplateActionInputItem`](crate::model::UpdateExperimentTemplateActionInputItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1606,7 +1486,7 @@ impl UpdateExperimentTemplateActionInputItem {
 
 /// <p>Specifies a target for an experiment. You must specify at least one Amazon Resource Name (ARN) or at least one resource tag. You cannot specify both.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateExperimentTemplateTargetInput {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
     #[doc(hidden)]
@@ -1664,23 +1544,11 @@ impl UpdateExperimentTemplateTargetInput {
         self.parameters.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateExperimentTemplateTargetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateExperimentTemplateTargetInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.field("filters", &self.filters);
-        formatter.field("selection_mode", &self.selection_mode);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 /// See [`UpdateExperimentTemplateTargetInput`](crate::model::UpdateExperimentTemplateTargetInput).
 pub mod update_experiment_template_target_input {
 
     /// A builder for [`UpdateExperimentTemplateTargetInput`](crate::model::UpdateExperimentTemplateTargetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1834,7 +1702,7 @@ impl UpdateExperimentTemplateTargetInput {
 /// <p>Specifies a filter used for the target resource input in an experiment template.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/targets.html#target-filters">Resource filters</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentTemplateTargetInputFilter {
     /// <p>The attribute path for the filter.</p>
     #[doc(hidden)]
@@ -1853,19 +1721,11 @@ impl ExperimentTemplateTargetInputFilter {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for ExperimentTemplateTargetInputFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentTemplateTargetInputFilter");
-        formatter.field("path", &self.path);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentTemplateTargetInputFilter`](crate::model::ExperimentTemplateTargetInputFilter).
 pub mod experiment_template_target_input_filter {
 
     /// A builder for [`ExperimentTemplateTargetInputFilter`](crate::model::ExperimentTemplateTargetInputFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1918,7 +1778,7 @@ impl ExperimentTemplateTargetInputFilter {
 
 /// <p>Specifies a stop condition for an experiment. You can define a stop condition as a CloudWatch alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateExperimentTemplateStopConditionInput {
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
     #[doc(hidden)]
@@ -1937,19 +1797,11 @@ impl UpdateExperimentTemplateStopConditionInput {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateExperimentTemplateStopConditionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateExperimentTemplateStopConditionInput");
-        formatter.field("source", &self.source);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`UpdateExperimentTemplateStopConditionInput`](crate::model::UpdateExperimentTemplateStopConditionInput).
 pub mod update_experiment_template_stop_condition_input {
 
     /// A builder for [`UpdateExperimentTemplateStopConditionInput`](crate::model::UpdateExperimentTemplateStopConditionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1993,7 +1845,7 @@ impl UpdateExperimentTemplateStopConditionInput {
 
 /// <p>Describes an experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Experiment {
     /// <p>The ID of the experiment.</p>
     #[doc(hidden)]
@@ -2100,29 +1952,11 @@ impl Experiment {
         self.log_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for Experiment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Experiment");
-        formatter.field("id", &self.id);
-        formatter.field("experiment_template_id", &self.experiment_template_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("state", &self.state);
-        formatter.field("targets", &self.targets);
-        formatter.field("actions", &self.actions);
-        formatter.field("stop_conditions", &self.stop_conditions);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("tags", &self.tags);
-        formatter.field("log_configuration", &self.log_configuration);
-        formatter.finish()
-    }
-}
 /// See [`Experiment`](crate::model::Experiment).
 pub mod experiment {
 
     /// A builder for [`Experiment`](crate::model::Experiment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) experiment_template_id: std::option::Option<std::string::String>,
@@ -2368,7 +2202,7 @@ impl Experiment {
 
 /// <p>Describes the configuration for experiment logging.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentLogConfiguration {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
@@ -2399,23 +2233,11 @@ impl ExperimentLogConfiguration {
         self.log_schema_version
     }
 }
-impl std::fmt::Debug for ExperimentLogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentLogConfiguration");
-        formatter.field(
-            "cloud_watch_logs_configuration",
-            &self.cloud_watch_logs_configuration,
-        );
-        formatter.field("s3_configuration", &self.s3_configuration);
-        formatter.field("log_schema_version", &self.log_schema_version);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentLogConfiguration`](crate::model::ExperimentLogConfiguration).
 pub mod experiment_log_configuration {
 
     /// A builder for [`ExperimentLogConfiguration`](crate::model::ExperimentLogConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_configuration:
             std::option::Option<crate::model::ExperimentCloudWatchLogsLogConfiguration>,
@@ -2485,7 +2307,7 @@ impl ExperimentLogConfiguration {
 
 /// <p>Describes the configuration for experiment logging to Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentS3LogConfiguration {
     /// <p>The name of the destination bucket.</p>
     #[doc(hidden)]
@@ -2504,19 +2326,11 @@ impl ExperimentS3LogConfiguration {
         self.prefix.as_deref()
     }
 }
-impl std::fmt::Debug for ExperimentS3LogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentS3LogConfiguration");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentS3LogConfiguration`](crate::model::ExperimentS3LogConfiguration).
 pub mod experiment_s3_log_configuration {
 
     /// A builder for [`ExperimentS3LogConfiguration`](crate::model::ExperimentS3LogConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -2560,7 +2374,7 @@ impl ExperimentS3LogConfiguration {
 
 /// <p>Describes the configuration for experiment logging to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentCloudWatchLogsLogConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
     #[doc(hidden)]
@@ -2572,18 +2386,11 @@ impl ExperimentCloudWatchLogsLogConfiguration {
         self.log_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ExperimentCloudWatchLogsLogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentCloudWatchLogsLogConfiguration");
-        formatter.field("log_group_arn", &self.log_group_arn);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentCloudWatchLogsLogConfiguration`](crate::model::ExperimentCloudWatchLogsLogConfiguration).
 pub mod experiment_cloud_watch_logs_log_configuration {
 
     /// A builder for [`ExperimentCloudWatchLogsLogConfiguration`](crate::model::ExperimentCloudWatchLogsLogConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_arn: std::option::Option<std::string::String>,
     }
@@ -2618,7 +2425,7 @@ impl ExperimentCloudWatchLogsLogConfiguration {
 
 /// <p>Describes the stop condition for an experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentStopCondition {
     /// <p>The source for the stop condition.</p>
     #[doc(hidden)]
@@ -2637,19 +2444,11 @@ impl ExperimentStopCondition {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for ExperimentStopCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentStopCondition");
-        formatter.field("source", &self.source);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentStopCondition`](crate::model::ExperimentStopCondition).
 pub mod experiment_stop_condition {
 
     /// A builder for [`ExperimentStopCondition`](crate::model::ExperimentStopCondition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2693,7 +2492,7 @@ impl ExperimentStopCondition {
 
 /// <p>Describes the action for an experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentAction {
     /// <p>The ID of the action.</p>
     #[doc(hidden)]
@@ -2762,25 +2561,11 @@ impl ExperimentAction {
         self.end_time.as_ref()
     }
 }
-impl std::fmt::Debug for ExperimentAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentAction");
-        formatter.field("action_id", &self.action_id);
-        formatter.field("description", &self.description);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("targets", &self.targets);
-        formatter.field("start_after", &self.start_after);
-        formatter.field("state", &self.state);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentAction`](crate::model::ExperimentAction).
 pub mod experiment_action {
 
     /// A builder for [`ExperimentAction`](crate::model::ExperimentAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2948,7 +2733,7 @@ impl ExperimentAction {
 
 /// <p>Describes the state of an action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentActionState {
     /// <p>The state of the action.</p>
     #[doc(hidden)]
@@ -2967,19 +2752,11 @@ impl ExperimentActionState {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for ExperimentActionState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentActionState");
-        formatter.field("status", &self.status);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentActionState`](crate::model::ExperimentActionState).
 pub mod experiment_action_state {
 
     /// A builder for [`ExperimentActionState`](crate::model::ExperimentActionState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ExperimentActionStatus>,
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -3024,6 +2801,47 @@ impl ExperimentActionState {
     }
 }
 
+/// When writing a match expression against `ExperimentActionStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let experimentactionstatus = unimplemented!();
+/// match experimentactionstatus {
+///     ExperimentActionStatus::Cancelled => { /* ... */ },
+///     ExperimentActionStatus::Completed => { /* ... */ },
+///     ExperimentActionStatus::Failed => { /* ... */ },
+///     ExperimentActionStatus::Initiating => { /* ... */ },
+///     ExperimentActionStatus::Pending => { /* ... */ },
+///     ExperimentActionStatus::Running => { /* ... */ },
+///     ExperimentActionStatus::Stopped => { /* ... */ },
+///     ExperimentActionStatus::Stopping => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `experimentactionstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ExperimentActionStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ExperimentActionStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ExperimentActionStatus::NewFeature` is defined.
+/// Specifically, when `experimentactionstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ExperimentActionStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3052,8 +2870,8 @@ pub enum ExperimentActionStatus {
     Stopped,
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ExperimentActionStatus {
     fn from(s: &str) -> Self {
@@ -3066,7 +2884,9 @@ impl std::convert::From<&str> for ExperimentActionStatus {
             "running" => ExperimentActionStatus::Running,
             "stopped" => ExperimentActionStatus::Stopped,
             "stopping" => ExperimentActionStatus::Stopping,
-            other => ExperimentActionStatus::Unknown(other.to_owned()),
+            other => {
+                ExperimentActionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -3089,11 +2909,11 @@ impl ExperimentActionStatus {
             ExperimentActionStatus::Running => "running",
             ExperimentActionStatus::Stopped => "stopped",
             ExperimentActionStatus::Stopping => "stopping",
-            ExperimentActionStatus::Unknown(s) => s.as_ref(),
+            ExperimentActionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "cancelled",
             "completed",
@@ -3114,7 +2934,7 @@ impl AsRef<str> for ExperimentActionStatus {
 
 /// <p>Describes a target for an experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentTarget {
     /// <p>The resource type.</p>
     #[doc(hidden)]
@@ -3169,23 +2989,11 @@ impl ExperimentTarget {
         self.parameters.as_ref()
     }
 }
-impl std::fmt::Debug for ExperimentTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentTarget");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.field("filters", &self.filters);
-        formatter.field("selection_mode", &self.selection_mode);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentTarget`](crate::model::ExperimentTarget).
 pub mod experiment_target {
 
     /// A builder for [`ExperimentTarget`](crate::model::ExperimentTarget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3336,7 +3144,7 @@ impl ExperimentTarget {
 
 /// <p>Describes a filter used for the target resources in an experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentTargetFilter {
     /// <p>The attribute path for the filter.</p>
     #[doc(hidden)]
@@ -3355,19 +3163,11 @@ impl ExperimentTargetFilter {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for ExperimentTargetFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentTargetFilter");
-        formatter.field("path", &self.path);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentTargetFilter`](crate::model::ExperimentTargetFilter).
 pub mod experiment_target_filter {
 
     /// A builder for [`ExperimentTargetFilter`](crate::model::ExperimentTargetFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3420,7 +3220,7 @@ impl ExperimentTargetFilter {
 
 /// <p>Describes the state of an experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentState {
     /// <p>The state of the experiment.</p>
     #[doc(hidden)]
@@ -3439,19 +3239,11 @@ impl ExperimentState {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for ExperimentState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentState");
-        formatter.field("status", &self.status);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentState`](crate::model::ExperimentState).
 pub mod experiment_state {
 
     /// A builder for [`ExperimentState`](crate::model::ExperimentState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ExperimentStatus>,
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -3496,6 +3288,46 @@ impl ExperimentState {
     }
 }
 
+/// When writing a match expression against `ExperimentStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let experimentstatus = unimplemented!();
+/// match experimentstatus {
+///     ExperimentStatus::Completed => { /* ... */ },
+///     ExperimentStatus::Failed => { /* ... */ },
+///     ExperimentStatus::Initiating => { /* ... */ },
+///     ExperimentStatus::Pending => { /* ... */ },
+///     ExperimentStatus::Running => { /* ... */ },
+///     ExperimentStatus::Stopped => { /* ... */ },
+///     ExperimentStatus::Stopping => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `experimentstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ExperimentStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ExperimentStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ExperimentStatus::NewFeature` is defined.
+/// Specifically, when `experimentstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ExperimentStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3522,8 +3354,8 @@ pub enum ExperimentStatus {
     Stopped,
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ExperimentStatus {
     fn from(s: &str) -> Self {
@@ -3535,7 +3367,7 @@ impl std::convert::From<&str> for ExperimentStatus {
             "running" => ExperimentStatus::Running,
             "stopped" => ExperimentStatus::Stopped,
             "stopping" => ExperimentStatus::Stopping,
-            other => ExperimentStatus::Unknown(other.to_owned()),
+            other => ExperimentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3557,11 +3389,11 @@ impl ExperimentStatus {
             ExperimentStatus::Running => "running",
             ExperimentStatus::Stopped => "stopped",
             ExperimentStatus::Stopping => "stopping",
-            ExperimentStatus::Unknown(s) => s.as_ref(),
+            ExperimentStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "completed",
             "failed",
@@ -3581,7 +3413,7 @@ impl AsRef<str> for ExperimentStatus {
 
 /// <p>Describes a resource type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetResourceTypeSummary {
     /// <p>The resource type.</p>
     #[doc(hidden)]
@@ -3600,19 +3432,11 @@ impl TargetResourceTypeSummary {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for TargetResourceTypeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetResourceTypeSummary");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 /// See [`TargetResourceTypeSummary`](crate::model::TargetResourceTypeSummary).
 pub mod target_resource_type_summary {
 
     /// A builder for [`TargetResourceTypeSummary`](crate::model::TargetResourceTypeSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3659,7 +3483,7 @@ impl TargetResourceTypeSummary {
 
 /// <p>Provides a summary of an experiment template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentTemplateSummary {
     /// <p>The ID of the experiment template.</p>
     #[doc(hidden)]
@@ -3703,22 +3527,11 @@ impl ExperimentTemplateSummary {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ExperimentTemplateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentTemplateSummary");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentTemplateSummary`](crate::model::ExperimentTemplateSummary).
 pub mod experiment_template_summary {
 
     /// A builder for [`ExperimentTemplateSummary`](crate::model::ExperimentTemplateSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3821,7 +3634,7 @@ impl ExperimentTemplateSummary {
 
 /// <p>Provides a summary of an experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperimentSummary {
     /// <p>The ID of the experiment.</p>
     #[doc(hidden)]
@@ -3865,22 +3678,11 @@ impl ExperimentSummary {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ExperimentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperimentSummary");
-        formatter.field("id", &self.id);
-        formatter.field("experiment_template_id", &self.experiment_template_id);
-        formatter.field("state", &self.state);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ExperimentSummary`](crate::model::ExperimentSummary).
 pub mod experiment_summary {
 
     /// A builder for [`ExperimentSummary`](crate::model::ExperimentSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) experiment_template_id: std::option::Option<std::string::String>,
@@ -3986,7 +3788,7 @@ impl ExperimentSummary {
 
 /// <p>Provides a summary of an action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionSummary {
     /// <p>The ID of the action.</p>
     #[doc(hidden)]
@@ -4029,21 +3831,11 @@ impl ActionSummary {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ActionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionSummary");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("targets", &self.targets);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ActionSummary`](crate::model::ActionSummary).
 pub mod action_summary {
 
     /// A builder for [`ActionSummary`](crate::model::ActionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4145,7 +3937,7 @@ impl ActionSummary {
 
 /// <p>Describes a target for an action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionTarget {
     /// <p>The resource type of the target.</p>
     #[doc(hidden)]
@@ -4157,18 +3949,11 @@ impl ActionTarget {
         self.resource_type.as_deref()
     }
 }
-impl std::fmt::Debug for ActionTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionTarget");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 /// See [`ActionTarget`](crate::model::ActionTarget).
 pub mod action_target {
 
     /// A builder for [`ActionTarget`](crate::model::ActionTarget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
     }
@@ -4203,7 +3988,7 @@ impl ActionTarget {
 
 /// <p>Describes a resource type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetResourceType {
     /// <p>The resource type.</p>
     #[doc(hidden)]
@@ -4235,20 +4020,11 @@ impl TargetResourceType {
         self.parameters.as_ref()
     }
 }
-impl std::fmt::Debug for TargetResourceType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetResourceType");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("description", &self.description);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 /// See [`TargetResourceType`](crate::model::TargetResourceType).
 pub mod target_resource_type {
 
     /// A builder for [`TargetResourceType`](crate::model::TargetResourceType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4330,7 +4106,7 @@ impl TargetResourceType {
 
 /// <p>Describes the parameters for a resource type. Use parameters to determine which tasks are identified during target resolution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetResourceTypeParameter {
     /// <p>A description of the parameter.</p>
     #[doc(hidden)]
@@ -4349,19 +4125,11 @@ impl TargetResourceTypeParameter {
         self.required
     }
 }
-impl std::fmt::Debug for TargetResourceTypeParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetResourceTypeParameter");
-        formatter.field("description", &self.description);
-        formatter.field("required", &self.required);
-        formatter.finish()
-    }
-}
 /// See [`TargetResourceTypeParameter`](crate::model::TargetResourceTypeParameter).
 pub mod target_resource_type_parameter {
 
     /// A builder for [`TargetResourceTypeParameter`](crate::model::TargetResourceTypeParameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) required: std::option::Option<bool>,
@@ -4405,7 +4173,7 @@ impl TargetResourceTypeParameter {
 
 /// <p>Describes an action. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html">FIS actions</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Action {
     /// <p>The ID of the action.</p>
     #[doc(hidden)]
@@ -4461,22 +4229,11 @@ impl Action {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for Action {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Action");
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("targets", &self.targets);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`Action`](crate::model::Action).
 pub mod action {
 
     /// A builder for [`Action`](crate::model::Action).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4607,7 +4364,7 @@ impl Action {
 
 /// <p>Describes a parameter for an action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionParameter {
     /// <p>The parameter description.</p>
     #[doc(hidden)]
@@ -4626,19 +4383,11 @@ impl ActionParameter {
         self.required
     }
 }
-impl std::fmt::Debug for ActionParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionParameter");
-        formatter.field("description", &self.description);
-        formatter.field("required", &self.required);
-        formatter.finish()
-    }
-}
 /// See [`ActionParameter`](crate::model::ActionParameter).
 pub mod action_parameter {
 
     /// A builder for [`ActionParameter`](crate::model::ActionParameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) required: std::option::Option<bool>,
@@ -4682,7 +4431,7 @@ impl ActionParameter {
 
 /// <p>Specifies the configuration for experiment logging.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateExperimentTemplateLogConfigurationInput {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
@@ -4715,23 +4464,11 @@ impl CreateExperimentTemplateLogConfigurationInput {
         self.log_schema_version
     }
 }
-impl std::fmt::Debug for CreateExperimentTemplateLogConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateExperimentTemplateLogConfigurationInput");
-        formatter.field(
-            "cloud_watch_logs_configuration",
-            &self.cloud_watch_logs_configuration,
-        );
-        formatter.field("s3_configuration", &self.s3_configuration);
-        formatter.field("log_schema_version", &self.log_schema_version);
-        formatter.finish()
-    }
-}
 /// See [`CreateExperimentTemplateLogConfigurationInput`](crate::model::CreateExperimentTemplateLogConfigurationInput).
 pub mod create_experiment_template_log_configuration_input {
 
     /// A builder for [`CreateExperimentTemplateLogConfigurationInput`](crate::model::CreateExperimentTemplateLogConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_configuration: std::option::Option<
             crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
@@ -4805,7 +4542,7 @@ impl CreateExperimentTemplateLogConfigurationInput {
 /// <p>Specifies an action for an experiment template.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/actions.html">Actions</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateExperimentTemplateActionInput {
     /// <p>The ID of the action. The format of the action ID is: aws:<i>service-name</i>:<i>action-type</i>.</p>
     #[doc(hidden)]
@@ -4853,22 +4590,11 @@ impl CreateExperimentTemplateActionInput {
         self.start_after.as_deref()
     }
 }
-impl std::fmt::Debug for CreateExperimentTemplateActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateExperimentTemplateActionInput");
-        formatter.field("action_id", &self.action_id);
-        formatter.field("description", &self.description);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("targets", &self.targets);
-        formatter.field("start_after", &self.start_after);
-        formatter.finish()
-    }
-}
 /// See [`CreateExperimentTemplateActionInput`](crate::model::CreateExperimentTemplateActionInput).
 pub mod create_experiment_template_action_input {
 
     /// A builder for [`CreateExperimentTemplateActionInput`](crate::model::CreateExperimentTemplateActionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4992,7 +4718,7 @@ impl CreateExperimentTemplateActionInput {
 /// <p>Specifies a target for an experiment. You must specify at least one Amazon Resource Name (ARN) or at least one resource tag. You cannot specify both ARNs and tags.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/targets.html">Targets</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateExperimentTemplateTargetInput {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
     #[doc(hidden)]
@@ -5060,23 +4786,11 @@ impl CreateExperimentTemplateTargetInput {
         self.parameters.as_ref()
     }
 }
-impl std::fmt::Debug for CreateExperimentTemplateTargetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateExperimentTemplateTargetInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.field("filters", &self.filters);
-        formatter.field("selection_mode", &self.selection_mode);
-        formatter.field("parameters", &self.parameters);
-        formatter.finish()
-    }
-}
 /// See [`CreateExperimentTemplateTargetInput`](crate::model::CreateExperimentTemplateTargetInput).
 pub mod create_experiment_template_target_input {
 
     /// A builder for [`CreateExperimentTemplateTargetInput`](crate::model::CreateExperimentTemplateTargetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5239,7 +4953,7 @@ impl CreateExperimentTemplateTargetInput {
 
 /// <p>Specifies a stop condition for an experiment template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateExperimentTemplateStopConditionInput {
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
     #[doc(hidden)]
@@ -5258,19 +4972,11 @@ impl CreateExperimentTemplateStopConditionInput {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for CreateExperimentTemplateStopConditionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateExperimentTemplateStopConditionInput");
-        formatter.field("source", &self.source);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`CreateExperimentTemplateStopConditionInput`](crate::model::CreateExperimentTemplateStopConditionInput).
 pub mod create_experiment_template_stop_condition_input {
 
     /// A builder for [`CreateExperimentTemplateStopConditionInput`](crate::model::CreateExperimentTemplateStopConditionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,

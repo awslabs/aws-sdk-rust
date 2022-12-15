@@ -2,7 +2,7 @@
 
 /// <p>A <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingRule.html">SamplingRule</a> and its metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamplingRuleRecord {
     /// <p>The sampling rule.</p>
     #[doc(hidden)]
@@ -28,20 +28,11 @@ impl SamplingRuleRecord {
         self.modified_at.as_ref()
     }
 }
-impl std::fmt::Debug for SamplingRuleRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamplingRuleRecord");
-        formatter.field("sampling_rule", &self.sampling_rule);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("modified_at", &self.modified_at);
-        formatter.finish()
-    }
-}
 /// See [`SamplingRuleRecord`](crate::model::SamplingRuleRecord).
 pub mod sampling_rule_record {
 
     /// A builder for [`SamplingRuleRecord`](crate::model::SamplingRuleRecord).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sampling_rule: std::option::Option<crate::model::SamplingRule>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -106,7 +97,7 @@ impl SamplingRuleRecord {
 
 /// <p>A sampling rule that services use to decide whether to instrument a request. Rule fields can match properties of the service, or properties of a request. The service can ignore rules that don't match its properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamplingRule {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     #[doc(hidden)]
@@ -206,30 +197,11 @@ impl SamplingRule {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for SamplingRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamplingRule");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("rule_arn", &self.rule_arn);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("priority", &self.priority);
-        formatter.field("fixed_rate", &self.fixed_rate);
-        formatter.field("reservoir_size", &self.reservoir_size);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("service_type", &self.service_type);
-        formatter.field("host", &self.host);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("url_path", &self.url_path);
-        formatter.field("version", &self.version);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 /// See [`SamplingRule`](crate::model::SamplingRule).
 pub mod sampling_rule {
 
     /// A builder for [`SamplingRule`](crate::model::SamplingRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_name: std::option::Option<std::string::String>,
         pub(crate) rule_arn: std::option::Option<std::string::String>,
@@ -422,7 +394,7 @@ impl SamplingRule {
 
 /// <p>A document specifying changes to a sampling rule's configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamplingRuleUpdate {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     #[doc(hidden)]
@@ -515,29 +487,11 @@ impl SamplingRuleUpdate {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for SamplingRuleUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamplingRuleUpdate");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("rule_arn", &self.rule_arn);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("priority", &self.priority);
-        formatter.field("fixed_rate", &self.fixed_rate);
-        formatter.field("reservoir_size", &self.reservoir_size);
-        formatter.field("host", &self.host);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("service_type", &self.service_type);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("url_path", &self.url_path);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 /// See [`SamplingRuleUpdate`](crate::model::SamplingRuleUpdate).
 pub mod sampling_rule_update {
 
     /// A builder for [`SamplingRuleUpdate`](crate::model::SamplingRuleUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_name: std::option::Option<std::string::String>,
         pub(crate) rule_arn: std::option::Option<std::string::String>,
@@ -718,7 +672,7 @@ impl SamplingRuleUpdate {
 
 /// <p>Details and metadata for a group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Group {
     /// <p>The unique case-sensitive name of the group.</p>
     #[doc(hidden)]
@@ -761,21 +715,11 @@ impl Group {
         self.insights_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for Group {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Group");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.field("filter_expression", &self.filter_expression);
-        formatter.field("insights_configuration", &self.insights_configuration);
-        formatter.finish()
-    }
-}
 /// See [`Group`](crate::model::Group).
 pub mod group {
 
     /// A builder for [`Group`](crate::model::Group).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
         pub(crate) group_arn: std::option::Option<std::string::String>,
@@ -860,7 +804,7 @@ impl Group {
 
 /// <p>The structure containing configurations related to insights.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightsConfiguration {
     /// <p>Set the InsightsEnabled value to true to enable insights or false to disable insights.</p>
     #[doc(hidden)]
@@ -879,19 +823,11 @@ impl InsightsConfiguration {
         self.notifications_enabled
     }
 }
-impl std::fmt::Debug for InsightsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightsConfiguration");
-        formatter.field("insights_enabled", &self.insights_enabled);
-        formatter.field("notifications_enabled", &self.notifications_enabled);
-        formatter.finish()
-    }
-}
 /// See [`InsightsConfiguration`](crate::model::InsightsConfiguration).
 pub mod insights_configuration {
 
     /// A builder for [`InsightsConfiguration`](crate::model::InsightsConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insights_enabled: std::option::Option<bool>,
         pub(crate) notifications_enabled: std::option::Option<bool>,
@@ -941,7 +877,7 @@ impl InsightsConfiguration {
 /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You cannot edit or delete system tags.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
     #[doc(hidden)]
@@ -960,19 +896,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1016,7 +944,7 @@ impl Tag {
 
 /// <p>Information about a segment that failed processing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnprocessedTraceSegment {
     /// <p>The segment's ID.</p>
     #[doc(hidden)]
@@ -1042,20 +970,11 @@ impl UnprocessedTraceSegment {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for UnprocessedTraceSegment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessedTraceSegment");
-        formatter.field("id", &self.id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 /// See [`UnprocessedTraceSegment`](crate::model::UnprocessedTraceSegment).
 pub mod unprocessed_trace_segment {
 
     /// A builder for [`UnprocessedTraceSegment`](crate::model::UnprocessedTraceSegment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -1111,7 +1030,7 @@ impl UnprocessedTraceSegment {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TelemetryRecord {
     /// <p></p>
     #[doc(hidden)]
@@ -1160,23 +1079,11 @@ impl TelemetryRecord {
         self.backend_connection_errors.as_ref()
     }
 }
-impl std::fmt::Debug for TelemetryRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TelemetryRecord");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("segments_received_count", &self.segments_received_count);
-        formatter.field("segments_sent_count", &self.segments_sent_count);
-        formatter.field("segments_spillover_count", &self.segments_spillover_count);
-        formatter.field("segments_rejected_count", &self.segments_rejected_count);
-        formatter.field("backend_connection_errors", &self.backend_connection_errors);
-        formatter.finish()
-    }
-}
 /// See [`TelemetryRecord`](crate::model::TelemetryRecord).
 pub mod telemetry_record {
 
     /// A builder for [`TelemetryRecord`](crate::model::TelemetryRecord).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) segments_received_count: std::option::Option<i32>,
@@ -1278,7 +1185,7 @@ impl TelemetryRecord {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendConnectionErrors {
     /// <p></p>
     #[doc(hidden)]
@@ -1325,23 +1232,11 @@ impl BackendConnectionErrors {
         self.other_count
     }
 }
-impl std::fmt::Debug for BackendConnectionErrors {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendConnectionErrors");
-        formatter.field("timeout_count", &self.timeout_count);
-        formatter.field("connection_refused_count", &self.connection_refused_count);
-        formatter.field("http_code4_xx_count", &self.http_code4_xx_count);
-        formatter.field("http_code5_xx_count", &self.http_code5_xx_count);
-        formatter.field("unknown_host_count", &self.unknown_host_count);
-        formatter.field("other_count", &self.other_count);
-        formatter.finish()
-    }
-}
 /// See [`BackendConnectionErrors`](crate::model::BackendConnectionErrors).
 pub mod backend_connection_errors {
 
     /// A builder for [`BackendConnectionErrors`](crate::model::BackendConnectionErrors).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_count: std::option::Option<i32>,
         pub(crate) connection_refused_count: std::option::Option<i32>,
@@ -1433,7 +1328,7 @@ impl BackendConnectionErrors {
 
 /// <p>A configuration document that specifies encryption configuration settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionConfig {
     /// <p>The ID of the KMS key used for encryption, if applicable.</p>
     #[doc(hidden)]
@@ -1459,20 +1354,11 @@ impl EncryptionConfig {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for EncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionConfig");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("status", &self.status);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`EncryptionConfig`](crate::model::EncryptionConfig).
 pub mod encryption_config {
 
     /// A builder for [`EncryptionConfig`](crate::model::EncryptionConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EncryptionStatus>,
@@ -1532,6 +1418,41 @@ impl EncryptionConfig {
     }
 }
 
+/// When writing a match expression against `EncryptionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let encryptiontype = unimplemented!();
+/// match encryptiontype {
+///     EncryptionType::Kms => { /* ... */ },
+///     EncryptionType::None => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `encryptiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EncryptionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EncryptionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EncryptionType::NewFeature` is defined.
+/// Specifically, when `encryptiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EncryptionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1548,15 +1469,15 @@ pub enum EncryptionType {
     Kms,
     #[allow(missing_docs)] // documentation missing in model
     None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EncryptionType {
     fn from(s: &str) -> Self {
         match s {
             "KMS" => EncryptionType::Kms,
             "NONE" => EncryptionType::None,
-            other => EncryptionType::Unknown(other.to_owned()),
+            other => EncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1573,11 +1494,11 @@ impl EncryptionType {
         match self {
             EncryptionType::Kms => "KMS",
             EncryptionType::None => "NONE",
-            EncryptionType::Unknown(s) => s.as_ref(),
+            EncryptionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KMS", "NONE"]
     }
 }
@@ -1587,6 +1508,41 @@ impl AsRef<str> for EncryptionType {
     }
 }
 
+/// When writing a match expression against `EncryptionStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let encryptionstatus = unimplemented!();
+/// match encryptionstatus {
+///     EncryptionStatus::Active => { /* ... */ },
+///     EncryptionStatus::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `encryptionstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EncryptionStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EncryptionStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EncryptionStatus::NewFeature` is defined.
+/// Specifically, when `encryptionstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EncryptionStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1603,15 +1559,15 @@ pub enum EncryptionStatus {
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EncryptionStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => EncryptionStatus::Active,
             "UPDATING" => EncryptionStatus::Updating,
-            other => EncryptionStatus::Unknown(other.to_owned()),
+            other => EncryptionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1628,11 +1584,11 @@ impl EncryptionStatus {
         match self {
             EncryptionStatus::Active => "ACTIVE",
             EncryptionStatus::Updating => "UPDATING",
-            EncryptionStatus::Unknown(s) => s.as_ref(),
+            EncryptionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "UPDATING"]
     }
 }
@@ -1644,7 +1600,7 @@ impl AsRef<str> for EncryptionStatus {
 
 /// <p>Metadata generated from the segment documents in a trace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TraceSummary {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     #[doc(hidden)]
@@ -1807,37 +1763,11 @@ impl TraceSummary {
         self.matched_event_time.as_ref()
     }
 }
-impl std::fmt::Debug for TraceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TraceSummary");
-        formatter.field("id", &self.id);
-        formatter.field("duration", &self.duration);
-        formatter.field("response_time", &self.response_time);
-        formatter.field("has_fault", &self.has_fault);
-        formatter.field("has_error", &self.has_error);
-        formatter.field("has_throttle", &self.has_throttle);
-        formatter.field("is_partial", &self.is_partial);
-        formatter.field("http", &self.http);
-        formatter.field("annotations", &self.annotations);
-        formatter.field("users", &self.users);
-        formatter.field("service_ids", &self.service_ids);
-        formatter.field("resource_ar_ns", &self.resource_ar_ns);
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("entry_point", &self.entry_point);
-        formatter.field("fault_root_causes", &self.fault_root_causes);
-        formatter.field("error_root_causes", &self.error_root_causes);
-        formatter.field("response_time_root_causes", &self.response_time_root_causes);
-        formatter.field("revision", &self.revision);
-        formatter.field("matched_event_time", &self.matched_event_time);
-        formatter.finish()
-    }
-}
 /// See [`TraceSummary`](crate::model::TraceSummary).
 pub mod trace_summary {
 
     /// A builder for [`TraceSummary`](crate::model::TraceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) duration: std::option::Option<f64>,
@@ -2206,7 +2136,7 @@ impl TraceSummary {
 
 /// <p>The root cause information for a response time warning.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseTimeRootCause {
     /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
     #[doc(hidden)]
@@ -2225,19 +2155,11 @@ impl ResponseTimeRootCause {
         self.client_impacting
     }
 }
-impl std::fmt::Debug for ResponseTimeRootCause {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseTimeRootCause");
-        formatter.field("services", &self.services);
-        formatter.field("client_impacting", &self.client_impacting);
-        formatter.finish()
-    }
-}
 /// See [`ResponseTimeRootCause`](crate::model::ResponseTimeRootCause).
 pub mod response_time_root_cause {
 
     /// A builder for [`ResponseTimeRootCause`](crate::model::ResponseTimeRootCause).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) services:
             std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCauseService>>,
@@ -2291,7 +2213,7 @@ impl ResponseTimeRootCause {
 
 /// <p>A collection of fields identifying the service in a response time warning.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseTimeRootCauseService {
     /// <p>The service name.</p>
     #[doc(hidden)]
@@ -2338,23 +2260,11 @@ impl ResponseTimeRootCauseService {
         self.inferred
     }
 }
-impl std::fmt::Debug for ResponseTimeRootCauseService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseTimeRootCauseService");
-        formatter.field("name", &self.name);
-        formatter.field("names", &self.names);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("entity_path", &self.entity_path);
-        formatter.field("inferred", &self.inferred);
-        formatter.finish()
-    }
-}
 /// See [`ResponseTimeRootCauseService`](crate::model::ResponseTimeRootCauseService).
 pub mod response_time_root_cause_service {
 
     /// A builder for [`ResponseTimeRootCauseService`](crate::model::ResponseTimeRootCauseService).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2465,7 +2375,7 @@ impl ResponseTimeRootCauseService {
 
 /// <p>A collection of segments and corresponding subsegments associated to a response time warning.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseTimeRootCauseEntity {
     /// <p>The name of the entity.</p>
     #[doc(hidden)]
@@ -2491,20 +2401,11 @@ impl ResponseTimeRootCauseEntity {
         self.remote
     }
 }
-impl std::fmt::Debug for ResponseTimeRootCauseEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseTimeRootCauseEntity");
-        formatter.field("name", &self.name);
-        formatter.field("coverage", &self.coverage);
-        formatter.field("remote", &self.remote);
-        formatter.finish()
-    }
-}
 /// See [`ResponseTimeRootCauseEntity`](crate::model::ResponseTimeRootCauseEntity).
 pub mod response_time_root_cause_entity {
 
     /// A builder for [`ResponseTimeRootCauseEntity`](crate::model::ResponseTimeRootCauseEntity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) coverage: std::option::Option<f64>,
@@ -2560,7 +2461,7 @@ impl ResponseTimeRootCauseEntity {
 
 /// <p>The root cause of a trace summary error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorRootCause {
     /// <p>A list of services corresponding to an error. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
     #[doc(hidden)]
@@ -2579,19 +2480,11 @@ impl ErrorRootCause {
         self.client_impacting
     }
 }
-impl std::fmt::Debug for ErrorRootCause {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorRootCause");
-        formatter.field("services", &self.services);
-        formatter.field("client_impacting", &self.client_impacting);
-        formatter.finish()
-    }
-}
 /// See [`ErrorRootCause`](crate::model::ErrorRootCause).
 pub mod error_root_cause {
 
     /// A builder for [`ErrorRootCause`](crate::model::ErrorRootCause).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) services:
             std::option::Option<std::vec::Vec<crate::model::ErrorRootCauseService>>,
@@ -2645,7 +2538,7 @@ impl ErrorRootCause {
 
 /// <p>A collection of fields identifying the services in a trace summary error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorRootCauseService {
     /// <p>The service name.</p>
     #[doc(hidden)]
@@ -2692,23 +2585,11 @@ impl ErrorRootCauseService {
         self.inferred
     }
 }
-impl std::fmt::Debug for ErrorRootCauseService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorRootCauseService");
-        formatter.field("name", &self.name);
-        formatter.field("names", &self.names);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("entity_path", &self.entity_path);
-        formatter.field("inferred", &self.inferred);
-        formatter.finish()
-    }
-}
 /// See [`ErrorRootCauseService`](crate::model::ErrorRootCauseService).
 pub mod error_root_cause_service {
 
     /// A builder for [`ErrorRootCauseService`](crate::model::ErrorRootCauseService).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2819,7 +2700,7 @@ impl ErrorRootCauseService {
 
 /// <p>A collection of segments and corresponding subsegments associated to a trace summary error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorRootCauseEntity {
     /// <p>The name of the entity.</p>
     #[doc(hidden)]
@@ -2845,20 +2726,11 @@ impl ErrorRootCauseEntity {
         self.remote
     }
 }
-impl std::fmt::Debug for ErrorRootCauseEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorRootCauseEntity");
-        formatter.field("name", &self.name);
-        formatter.field("exceptions", &self.exceptions);
-        formatter.field("remote", &self.remote);
-        formatter.finish()
-    }
-}
 /// See [`ErrorRootCauseEntity`](crate::model::ErrorRootCauseEntity).
 pub mod error_root_cause_entity {
 
     /// A builder for [`ErrorRootCauseEntity`](crate::model::ErrorRootCauseEntity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) exceptions: std::option::Option<std::vec::Vec<crate::model::RootCauseException>>,
@@ -2923,7 +2795,7 @@ impl ErrorRootCauseEntity {
 
 /// <p>The exception associated with a root cause.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RootCauseException {
     /// <p>The name of the exception.</p>
     #[doc(hidden)]
@@ -2942,19 +2814,11 @@ impl RootCauseException {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for RootCauseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RootCauseException");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 /// See [`RootCauseException`](crate::model::RootCauseException).
 pub mod root_cause_exception {
 
     /// A builder for [`RootCauseException`](crate::model::RootCauseException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2998,7 +2862,7 @@ impl RootCauseException {
 
 /// <p>The root cause information for a trace summary fault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaultRootCause {
     /// <p>A list of corresponding services. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
     #[doc(hidden)]
@@ -3017,19 +2881,11 @@ impl FaultRootCause {
         self.client_impacting
     }
 }
-impl std::fmt::Debug for FaultRootCause {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FaultRootCause");
-        formatter.field("services", &self.services);
-        formatter.field("client_impacting", &self.client_impacting);
-        formatter.finish()
-    }
-}
 /// See [`FaultRootCause`](crate::model::FaultRootCause).
 pub mod fault_root_cause {
 
     /// A builder for [`FaultRootCause`](crate::model::FaultRootCause).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) services:
             std::option::Option<std::vec::Vec<crate::model::FaultRootCauseService>>,
@@ -3083,7 +2939,7 @@ impl FaultRootCause {
 
 /// <p>A collection of fields identifying the services in a trace summary fault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaultRootCauseService {
     /// <p>The service name.</p>
     #[doc(hidden)]
@@ -3130,23 +2986,11 @@ impl FaultRootCauseService {
         self.inferred
     }
 }
-impl std::fmt::Debug for FaultRootCauseService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FaultRootCauseService");
-        formatter.field("name", &self.name);
-        formatter.field("names", &self.names);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("entity_path", &self.entity_path);
-        formatter.field("inferred", &self.inferred);
-        formatter.finish()
-    }
-}
 /// See [`FaultRootCauseService`](crate::model::FaultRootCauseService).
 pub mod fault_root_cause_service {
 
     /// A builder for [`FaultRootCauseService`](crate::model::FaultRootCauseService).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3257,7 +3101,7 @@ impl FaultRootCauseService {
 
 /// <p>A collection of segments and corresponding subsegments associated to a trace summary fault error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaultRootCauseEntity {
     /// <p>The name of the entity.</p>
     #[doc(hidden)]
@@ -3283,20 +3127,11 @@ impl FaultRootCauseEntity {
         self.remote
     }
 }
-impl std::fmt::Debug for FaultRootCauseEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FaultRootCauseEntity");
-        formatter.field("name", &self.name);
-        formatter.field("exceptions", &self.exceptions);
-        formatter.field("remote", &self.remote);
-        formatter.finish()
-    }
-}
 /// See [`FaultRootCauseEntity`](crate::model::FaultRootCauseEntity).
 pub mod fault_root_cause_entity {
 
     /// A builder for [`FaultRootCauseEntity`](crate::model::FaultRootCauseEntity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) exceptions: std::option::Option<std::vec::Vec<crate::model::RootCauseException>>,
@@ -3361,7 +3196,7 @@ impl FaultRootCauseEntity {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceId {
     /// <p></p>
     #[doc(hidden)]
@@ -3394,21 +3229,11 @@ impl ServiceId {
         self.r#type.as_deref()
     }
 }
-impl std::fmt::Debug for ServiceId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceId");
-        formatter.field("name", &self.name);
-        formatter.field("names", &self.names);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`ServiceId`](crate::model::ServiceId).
 pub mod service_id {
 
     /// A builder for [`ServiceId`](crate::model::ServiceId).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3485,7 +3310,7 @@ impl ServiceId {
 
 /// <p>A list of Availability Zones corresponding to the segments in a trace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailabilityZoneDetail {
     /// <p>The name of a corresponding Availability Zone.</p>
     #[doc(hidden)]
@@ -3497,18 +3322,11 @@ impl AvailabilityZoneDetail {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for AvailabilityZoneDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailabilityZoneDetail");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 /// See [`AvailabilityZoneDetail`](crate::model::AvailabilityZoneDetail).
 pub mod availability_zone_detail {
 
     /// A builder for [`AvailabilityZoneDetail`](crate::model::AvailabilityZoneDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -3538,7 +3356,7 @@ impl AvailabilityZoneDetail {
 
 /// <p>A list of EC2 instance IDs corresponding to the segments in a trace. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceIdDetail {
     /// <p>The ID of a corresponding EC2 instance.</p>
     #[doc(hidden)]
@@ -3550,18 +3368,11 @@ impl InstanceIdDetail {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for InstanceIdDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceIdDetail");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 /// See [`InstanceIdDetail`](crate::model::InstanceIdDetail).
 pub mod instance_id_detail {
 
     /// A builder for [`InstanceIdDetail`](crate::model::InstanceIdDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -3591,7 +3402,7 @@ impl InstanceIdDetail {
 
 /// <p>A list of resources ARNs corresponding to the segments in a trace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceArnDetail {
     /// <p>The ARN of a corresponding resource.</p>
     #[doc(hidden)]
@@ -3603,18 +3414,11 @@ impl ResourceArnDetail {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for ResourceArnDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceArnDetail");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 /// See [`ResourceArnDetail`](crate::model::ResourceArnDetail).
 pub mod resource_arn_detail {
 
     /// A builder for [`ResourceArnDetail`](crate::model::ResourceArnDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -3644,7 +3448,7 @@ impl ResourceArnDetail {
 
 /// <p>Information about a user recorded in segment documents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TraceUser {
     /// <p>The user's name.</p>
     #[doc(hidden)]
@@ -3663,19 +3467,11 @@ impl TraceUser {
         self.service_ids.as_deref()
     }
 }
-impl std::fmt::Debug for TraceUser {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TraceUser");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("service_ids", &self.service_ids);
-        formatter.finish()
-    }
-}
 /// See [`TraceUser`](crate::model::TraceUser).
 pub mod trace_user {
 
     /// A builder for [`TraceUser`](crate::model::TraceUser).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) service_ids: std::option::Option<std::vec::Vec<crate::model::ServiceId>>,
@@ -3728,7 +3524,7 @@ impl TraceUser {
 
 /// <p>Information about a segment annotation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValueWithServiceIds {
     /// <p>Values of the annotation.</p>
     #[doc(hidden)]
@@ -3747,19 +3543,11 @@ impl ValueWithServiceIds {
         self.service_ids.as_deref()
     }
 }
-impl std::fmt::Debug for ValueWithServiceIds {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValueWithServiceIds");
-        formatter.field("annotation_value", &self.annotation_value);
-        formatter.field("service_ids", &self.service_ids);
-        formatter.finish()
-    }
-}
 /// See [`ValueWithServiceIds`](crate::model::ValueWithServiceIds).
 pub mod value_with_service_ids {
 
     /// A builder for [`ValueWithServiceIds`](crate::model::ValueWithServiceIds).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) annotation_value: std::option::Option<crate::model::AnnotationValue>,
         pub(crate) service_ids: std::option::Option<std::vec::Vec<crate::model::ServiceId>>,
@@ -3881,7 +3669,7 @@ impl AnnotationValue {
 
 /// <p>Information about an HTTP request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Http {
     /// <p>The request URL.</p>
     #[doc(hidden)]
@@ -3921,22 +3709,11 @@ impl Http {
         self.client_ip.as_deref()
     }
 }
-impl std::fmt::Debug for Http {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Http");
-        formatter.field("http_url", &self.http_url);
-        formatter.field("http_status", &self.http_status);
-        formatter.field("http_method", &self.http_method);
-        formatter.field("user_agent", &self.user_agent);
-        formatter.field("client_ip", &self.client_ip);
-        formatter.finish()
-    }
-}
 /// See [`Http`](crate::model::Http).
 pub mod http {
 
     /// A builder for [`Http`](crate::model::Http).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_url: std::option::Option<std::string::String>,
         pub(crate) http_status: std::option::Option<i32>,
@@ -4016,7 +3793,7 @@ impl Http {
 
 /// <p>The name and value of a sampling rule to apply to a trace summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamplingStrategy {
     /// <p>The name of a sampling rule.</p>
     #[doc(hidden)]
@@ -4035,19 +3812,11 @@ impl SamplingStrategy {
         self.value
     }
 }
-impl std::fmt::Debug for SamplingStrategy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamplingStrategy");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`SamplingStrategy`](crate::model::SamplingStrategy).
 pub mod sampling_strategy {
 
     /// A builder for [`SamplingStrategy`](crate::model::SamplingStrategy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SamplingStrategyName>,
         pub(crate) value: std::option::Option<f64>,
@@ -4092,6 +3861,41 @@ impl SamplingStrategy {
     }
 }
 
+/// When writing a match expression against `SamplingStrategyName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let samplingstrategyname = unimplemented!();
+/// match samplingstrategyname {
+///     SamplingStrategyName::FixedRate => { /* ... */ },
+///     SamplingStrategyName::PartialScan => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `samplingstrategyname` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SamplingStrategyName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SamplingStrategyName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SamplingStrategyName::NewFeature` is defined.
+/// Specifically, when `samplingstrategyname` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SamplingStrategyName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4108,15 +3912,17 @@ pub enum SamplingStrategyName {
     FixedRate,
     #[allow(missing_docs)] // documentation missing in model
     PartialScan,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SamplingStrategyName {
     fn from(s: &str) -> Self {
         match s {
             "FixedRate" => SamplingStrategyName::FixedRate,
             "PartialScan" => SamplingStrategyName::PartialScan,
-            other => SamplingStrategyName::Unknown(other.to_owned()),
+            other => {
+                SamplingStrategyName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -4133,11 +3939,11 @@ impl SamplingStrategyName {
         match self {
             SamplingStrategyName::FixedRate => "FixedRate",
             SamplingStrategyName::PartialScan => "PartialScan",
-            SamplingStrategyName::Unknown(s) => s.as_ref(),
+            SamplingStrategyName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FixedRate", "PartialScan"]
     }
 }
@@ -4147,6 +3953,41 @@ impl AsRef<str> for SamplingStrategyName {
     }
 }
 
+/// When writing a match expression against `TimeRangeType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let timerangetype = unimplemented!();
+/// match timerangetype {
+///     TimeRangeType::Event => { /* ... */ },
+///     TimeRangeType::TraceId => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `timerangetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TimeRangeType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TimeRangeType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TimeRangeType::NewFeature` is defined.
+/// Specifically, when `timerangetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TimeRangeType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4163,15 +4004,15 @@ pub enum TimeRangeType {
     Event,
     #[allow(missing_docs)] // documentation missing in model
     TraceId,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TimeRangeType {
     fn from(s: &str) -> Self {
         match s {
             "Event" => TimeRangeType::Event,
             "TraceId" => TimeRangeType::TraceId,
-            other => TimeRangeType::Unknown(other.to_owned()),
+            other => TimeRangeType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -4188,11 +4029,11 @@ impl TimeRangeType {
         match self {
             TimeRangeType::Event => "Event",
             TimeRangeType::TraceId => "TraceId",
-            TimeRangeType::Unknown(s) => s.as_ref(),
+            TimeRangeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Event", "TraceId"]
     }
 }
@@ -4204,7 +4045,7 @@ impl AsRef<str> for TimeRangeType {
 
 /// <p>Information about an application that processed requests, users that made requests, or downstream services, resources, and applications that an application used.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Service {
     /// <p>Identifier for the service. Unique within the service map.</p>
     #[doc(hidden)]
@@ -4312,30 +4153,11 @@ impl Service {
         self.response_time_histogram.as_deref()
     }
 }
-impl std::fmt::Debug for Service {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Service");
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("name", &self.name);
-        formatter.field("names", &self.names);
-        formatter.field("root", &self.root);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("state", &self.state);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("edges", &self.edges);
-        formatter.field("summary_statistics", &self.summary_statistics);
-        formatter.field("duration_histogram", &self.duration_histogram);
-        formatter.field("response_time_histogram", &self.response_time_histogram);
-        formatter.finish()
-    }
-}
 /// See [`Service`](crate::model::Service).
 pub mod service {
 
     /// A builder for [`Service`](crate::model::Service).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference_id: std::option::Option<i32>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4570,7 +4392,7 @@ impl Service {
 
 /// <p>An entry in a histogram for a statistic. A histogram maps the range of observed values on the X axis, and the prevalence of each value on the Y axis.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HistogramEntry {
     /// <p>The value of the entry.</p>
     #[doc(hidden)]
@@ -4589,19 +4411,11 @@ impl HistogramEntry {
         self.count
     }
 }
-impl std::fmt::Debug for HistogramEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HistogramEntry");
-        formatter.field("value", &self.value);
-        formatter.field("count", &self.count);
-        formatter.finish()
-    }
-}
 /// See [`HistogramEntry`](crate::model::HistogramEntry).
 pub mod histogram_entry {
 
     /// A builder for [`HistogramEntry`](crate::model::HistogramEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<f64>,
         pub(crate) count: std::option::Option<i32>,
@@ -4645,7 +4459,7 @@ impl HistogramEntry {
 
 /// <p>Response statistics for a service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceStatistics {
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
     #[doc(hidden)]
@@ -4685,22 +4499,11 @@ impl ServiceStatistics {
         self.total_response_time
     }
 }
-impl std::fmt::Debug for ServiceStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceStatistics");
-        formatter.field("ok_count", &self.ok_count);
-        formatter.field("error_statistics", &self.error_statistics);
-        formatter.field("fault_statistics", &self.fault_statistics);
-        formatter.field("total_count", &self.total_count);
-        formatter.field("total_response_time", &self.total_response_time);
-        formatter.finish()
-    }
-}
 /// See [`ServiceStatistics`](crate::model::ServiceStatistics).
 pub mod service_statistics {
 
     /// A builder for [`ServiceStatistics`](crate::model::ServiceStatistics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ok_count: std::option::Option<i64>,
         pub(crate) error_statistics: std::option::Option<crate::model::ErrorStatistics>,
@@ -4786,7 +4589,7 @@ impl ServiceStatistics {
 
 /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaultStatistics {
     /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
     #[doc(hidden)]
@@ -4805,19 +4608,11 @@ impl FaultStatistics {
         self.total_count
     }
 }
-impl std::fmt::Debug for FaultStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FaultStatistics");
-        formatter.field("other_count", &self.other_count);
-        formatter.field("total_count", &self.total_count);
-        formatter.finish()
-    }
-}
 /// See [`FaultStatistics`](crate::model::FaultStatistics).
 pub mod fault_statistics {
 
     /// A builder for [`FaultStatistics`](crate::model::FaultStatistics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) other_count: std::option::Option<i64>,
         pub(crate) total_count: std::option::Option<i64>,
@@ -4861,7 +4656,7 @@ impl FaultStatistics {
 
 /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorStatistics {
     /// <p>The number of requests that failed with a 419 throttling status code.</p>
     #[doc(hidden)]
@@ -4887,20 +4682,11 @@ impl ErrorStatistics {
         self.total_count
     }
 }
-impl std::fmt::Debug for ErrorStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorStatistics");
-        formatter.field("throttle_count", &self.throttle_count);
-        formatter.field("other_count", &self.other_count);
-        formatter.field("total_count", &self.total_count);
-        formatter.finish()
-    }
-}
 /// See [`ErrorStatistics`](crate::model::ErrorStatistics).
 pub mod error_statistics {
 
     /// A builder for [`ErrorStatistics`](crate::model::ErrorStatistics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) throttle_count: std::option::Option<i64>,
         pub(crate) other_count: std::option::Option<i64>,
@@ -4956,7 +4742,7 @@ impl ErrorStatistics {
 
 /// <p>Information about a connection between two services.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Edge {
     /// <p>Identifier of the edge. Unique within a service map.</p>
     #[doc(hidden)]
@@ -5003,23 +4789,11 @@ impl Edge {
         self.aliases.as_deref()
     }
 }
-impl std::fmt::Debug for Edge {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Edge");
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("summary_statistics", &self.summary_statistics);
-        formatter.field("response_time_histogram", &self.response_time_histogram);
-        formatter.field("aliases", &self.aliases);
-        formatter.finish()
-    }
-}
 /// See [`Edge`](crate::model::Edge).
 pub mod edge {
 
     /// A builder for [`Edge`](crate::model::Edge).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference_id: std::option::Option<i32>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -5139,7 +4913,7 @@ impl Edge {
 
 /// <p>An alias for an edge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alias {
     /// <p>The canonical name of the alias.</p>
     #[doc(hidden)]
@@ -5165,20 +4939,11 @@ impl Alias {
         self.r#type.as_deref()
     }
 }
-impl std::fmt::Debug for Alias {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Alias");
-        formatter.field("name", &self.name);
-        formatter.field("names", &self.names);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`Alias`](crate::model::Alias).
 pub mod alias {
 
     /// A builder for [`Alias`](crate::model::Alias).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5243,7 +5008,7 @@ impl Alias {
 
 /// <p>Response statistics for an edge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EdgeStatistics {
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
     #[doc(hidden)]
@@ -5283,22 +5048,11 @@ impl EdgeStatistics {
         self.total_response_time
     }
 }
-impl std::fmt::Debug for EdgeStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EdgeStatistics");
-        formatter.field("ok_count", &self.ok_count);
-        formatter.field("error_statistics", &self.error_statistics);
-        formatter.field("fault_statistics", &self.fault_statistics);
-        formatter.field("total_count", &self.total_count);
-        formatter.field("total_response_time", &self.total_response_time);
-        formatter.finish()
-    }
-}
 /// See [`EdgeStatistics`](crate::model::EdgeStatistics).
 pub mod edge_statistics {
 
     /// A builder for [`EdgeStatistics`](crate::model::EdgeStatistics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ok_count: std::option::Option<i64>,
         pub(crate) error_statistics: std::option::Option<crate::model::ErrorStatistics>,
@@ -5384,7 +5138,7 @@ impl EdgeStatistics {
 
 /// <p>A list of TimeSeriesStatistic structures.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeSeriesServiceStatistics {
     /// <p>Timestamp of the window for which statistics are aggregated.</p>
     #[doc(hidden)]
@@ -5428,28 +5182,11 @@ impl TimeSeriesServiceStatistics {
         self.response_time_histogram.as_deref()
     }
 }
-impl std::fmt::Debug for TimeSeriesServiceStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeSeriesServiceStatistics");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("edge_summary_statistics", &self.edge_summary_statistics);
-        formatter.field(
-            "service_summary_statistics",
-            &self.service_summary_statistics,
-        );
-        formatter.field(
-            "service_forecast_statistics",
-            &self.service_forecast_statistics,
-        );
-        formatter.field("response_time_histogram", &self.response_time_histogram);
-        formatter.finish()
-    }
-}
 /// See [`TimeSeriesServiceStatistics`](crate::model::TimeSeriesServiceStatistics).
 pub mod time_series_service_statistics {
 
     /// A builder for [`TimeSeriesServiceStatistics`](crate::model::TimeSeriesServiceStatistics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) edge_summary_statistics: std::option::Option<crate::model::EdgeStatistics>,
@@ -5558,7 +5295,7 @@ impl TimeSeriesServiceStatistics {
 
 /// <p>The predicted high and low fault count. This is used to determine if a service has become anomalous and if an insight should be created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ForecastStatistics {
     /// <p>The upper limit of fault counts for a service.</p>
     #[doc(hidden)]
@@ -5577,19 +5314,11 @@ impl ForecastStatistics {
         self.fault_count_low
     }
 }
-impl std::fmt::Debug for ForecastStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForecastStatistics");
-        formatter.field("fault_count_high", &self.fault_count_high);
-        formatter.field("fault_count_low", &self.fault_count_low);
-        formatter.finish()
-    }
-}
 /// See [`ForecastStatistics`](crate::model::ForecastStatistics).
 pub mod forecast_statistics {
 
     /// A builder for [`ForecastStatistics`](crate::model::ForecastStatistics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fault_count_high: std::option::Option<i64>,
         pub(crate) fault_count_low: std::option::Option<i64>,
@@ -5633,7 +5362,7 @@ impl ForecastStatistics {
 
 /// <p>Sampling statistics from a call to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a> that X-Ray could not process.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnprocessedStatistics {
     /// <p>The name of the sampling rule.</p>
     #[doc(hidden)]
@@ -5659,20 +5388,11 @@ impl UnprocessedStatistics {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for UnprocessedStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessedStatistics");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 /// See [`UnprocessedStatistics`](crate::model::UnprocessedStatistics).
 pub mod unprocessed_statistics {
 
     /// A builder for [`UnprocessedStatistics`](crate::model::UnprocessedStatistics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_name: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -5728,7 +5448,7 @@ impl UnprocessedStatistics {
 
 /// <p>Temporary changes to a sampling rule configuration. To meet the global sampling target for a rule, X-Ray calculates a new reservoir for each service based on the recent sampling results of all services that called <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamplingTargetDocument {
     /// <p>The name of the sampling rule.</p>
     #[doc(hidden)]
@@ -5768,22 +5488,11 @@ impl SamplingTargetDocument {
         self.interval
     }
 }
-impl std::fmt::Debug for SamplingTargetDocument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamplingTargetDocument");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("fixed_rate", &self.fixed_rate);
-        formatter.field("reservoir_quota", &self.reservoir_quota);
-        formatter.field("reservoir_quota_ttl", &self.reservoir_quota_ttl);
-        formatter.field("interval", &self.interval);
-        formatter.finish()
-    }
-}
 /// See [`SamplingTargetDocument`](crate::model::SamplingTargetDocument).
 pub mod sampling_target_document {
 
     /// A builder for [`SamplingTargetDocument`](crate::model::SamplingTargetDocument).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_name: std::option::Option<std::string::String>,
         pub(crate) fixed_rate: std::option::Option<f64>,
@@ -5866,7 +5575,7 @@ impl SamplingTargetDocument {
 
 /// <p>Request sampling results for a single rule from a service. Results are for the last 10 seconds unless the service has been assigned a longer reporting interval after a previous call to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamplingStatisticsDocument {
     /// <p>The name of the sampling rule.</p>
     #[doc(hidden)]
@@ -5913,23 +5622,11 @@ impl SamplingStatisticsDocument {
         self.borrow_count
     }
 }
-impl std::fmt::Debug for SamplingStatisticsDocument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamplingStatisticsDocument");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("client_id", &self.client_id);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("request_count", &self.request_count);
-        formatter.field("sampled_count", &self.sampled_count);
-        formatter.field("borrow_count", &self.borrow_count);
-        formatter.finish()
-    }
-}
 /// See [`SamplingStatisticsDocument`](crate::model::SamplingStatisticsDocument).
 pub mod sampling_statistics_document {
 
     /// A builder for [`SamplingStatisticsDocument`](crate::model::SamplingStatisticsDocument).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_name: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -6024,7 +5721,7 @@ impl SamplingStatisticsDocument {
 
 /// <p>Aggregated request sampling data for a sampling rule across all services for a 10-second window.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamplingStatisticSummary {
     /// <p>The name of the sampling rule.</p>
     #[doc(hidden)]
@@ -6064,22 +5761,11 @@ impl SamplingStatisticSummary {
         self.sampled_count
     }
 }
-impl std::fmt::Debug for SamplingStatisticSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamplingStatisticSummary");
-        formatter.field("rule_name", &self.rule_name);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("request_count", &self.request_count);
-        formatter.field("borrow_count", &self.borrow_count);
-        formatter.field("sampled_count", &self.sampled_count);
-        formatter.finish()
-    }
-}
 /// See [`SamplingStatisticSummary`](crate::model::SamplingStatisticSummary).
 pub mod sampling_statistic_summary {
 
     /// A builder for [`SamplingStatisticSummary`](crate::model::SamplingStatisticSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_name: std::option::Option<std::string::String>,
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -6162,7 +5848,7 @@ impl SamplingStatisticSummary {
 
 /// <p>Information that describes an insight.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightSummary {
     /// <p>The insights unique identifier. </p>
     #[doc(hidden)]
@@ -6264,36 +5950,11 @@ impl InsightSummary {
         self.last_update_time.as_ref()
     }
 }
-impl std::fmt::Debug for InsightSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightSummary");
-        formatter.field("insight_id", &self.insight_id);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("root_cause_service_id", &self.root_cause_service_id);
-        formatter.field("categories", &self.categories);
-        formatter.field("state", &self.state);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("summary", &self.summary);
-        formatter.field(
-            "client_request_impact_statistics",
-            &self.client_request_impact_statistics,
-        );
-        formatter.field(
-            "root_cause_service_request_impact_statistics",
-            &self.root_cause_service_request_impact_statistics,
-        );
-        formatter.field("top_anomalous_services", &self.top_anomalous_services);
-        formatter.field("last_update_time", &self.last_update_time);
-        formatter.finish()
-    }
-}
 /// See [`InsightSummary`](crate::model::InsightSummary).
 pub mod insight_summary {
 
     /// A builder for [`InsightSummary`](crate::model::InsightSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_id: std::option::Option<std::string::String>,
         pub(crate) group_arn: std::option::Option<std::string::String>,
@@ -6515,7 +6176,7 @@ impl InsightSummary {
 
 /// <p>The service within the service graph that has anomalously high fault rates. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnomalousService {
     /// <p></p>
     #[doc(hidden)]
@@ -6527,18 +6188,11 @@ impl AnomalousService {
         self.service_id.as_ref()
     }
 }
-impl std::fmt::Debug for AnomalousService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnomalousService");
-        formatter.field("service_id", &self.service_id);
-        formatter.finish()
-    }
-}
 /// See [`AnomalousService`](crate::model::AnomalousService).
 pub mod anomalous_service {
 
     /// A builder for [`AnomalousService`](crate::model::AnomalousService).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_id: std::option::Option<crate::model::ServiceId>,
     }
@@ -6573,7 +6227,7 @@ impl AnomalousService {
 
 /// <p>Statistics that describe how the incident has impacted a service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestImpactStatistics {
     /// <p>The number of requests that have resulted in a fault,</p>
     #[doc(hidden)]
@@ -6599,20 +6253,11 @@ impl RequestImpactStatistics {
         self.total_count
     }
 }
-impl std::fmt::Debug for RequestImpactStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestImpactStatistics");
-        formatter.field("fault_count", &self.fault_count);
-        formatter.field("ok_count", &self.ok_count);
-        formatter.field("total_count", &self.total_count);
-        formatter.finish()
-    }
-}
 /// See [`RequestImpactStatistics`](crate::model::RequestImpactStatistics).
 pub mod request_impact_statistics {
 
     /// A builder for [`RequestImpactStatistics`](crate::model::RequestImpactStatistics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fault_count: std::option::Option<i64>,
         pub(crate) ok_count: std::option::Option<i64>,
@@ -6666,6 +6311,41 @@ impl RequestImpactStatistics {
     }
 }
 
+/// When writing a match expression against `InsightState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let insightstate = unimplemented!();
+/// match insightstate {
+///     InsightState::Active => { /* ... */ },
+///     InsightState::Closed => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `insightstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InsightState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InsightState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InsightState::NewFeature` is defined.
+/// Specifically, when `insightstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InsightState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6682,15 +6362,15 @@ pub enum InsightState {
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Closed,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InsightState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => InsightState::Active,
             "CLOSED" => InsightState::Closed,
-            other => InsightState::Unknown(other.to_owned()),
+            other => InsightState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -6707,11 +6387,11 @@ impl InsightState {
         match self {
             InsightState::Active => "ACTIVE",
             InsightState::Closed => "CLOSED",
-            InsightState::Unknown(s) => s.as_ref(),
+            InsightState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CLOSED"]
     }
 }
@@ -6721,6 +6401,40 @@ impl AsRef<str> for InsightState {
     }
 }
 
+/// When writing a match expression against `InsightCategory`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let insightcategory = unimplemented!();
+/// match insightcategory {
+///     InsightCategory::Fault => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `insightcategory` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InsightCategory::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InsightCategory::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InsightCategory::NewFeature` is defined.
+/// Specifically, when `insightcategory` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InsightCategory::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6735,14 +6449,14 @@ impl AsRef<str> for InsightState {
 pub enum InsightCategory {
     #[allow(missing_docs)] // documentation missing in model
     Fault,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InsightCategory {
     fn from(s: &str) -> Self {
         match s {
             "FAULT" => InsightCategory::Fault,
-            other => InsightCategory::Unknown(other.to_owned()),
+            other => InsightCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -6758,11 +6472,11 @@ impl InsightCategory {
     pub fn as_str(&self) -> &str {
         match self {
             InsightCategory::Fault => "FAULT",
-            InsightCategory::Unknown(s) => s.as_ref(),
+            InsightCategory::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAULT"]
     }
 }
@@ -6774,7 +6488,7 @@ impl AsRef<str> for InsightCategory {
 
 /// <p>Information about an application that processed requests, users that made requests, or downstream services, resources, and applications that an application used. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightImpactGraphService {
     /// <p>Identifier for the service. Unique within the service map.</p>
     #[doc(hidden)]
@@ -6833,23 +6547,11 @@ impl InsightImpactGraphService {
         self.edges.as_deref()
     }
 }
-impl std::fmt::Debug for InsightImpactGraphService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightImpactGraphService");
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("names", &self.names);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("edges", &self.edges);
-        formatter.finish()
-    }
-}
 /// See [`InsightImpactGraphService`](crate::model::InsightImpactGraphService).
 pub mod insight_impact_graph_service {
 
     /// A builder for [`InsightImpactGraphService`](crate::model::InsightImpactGraphService).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference_id: std::option::Option<i32>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -6971,7 +6673,7 @@ impl InsightImpactGraphService {
 
 /// <p>The connection between two service in an insight impact graph.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightImpactGraphEdge {
     /// <p>Identifier of the edge. Unique within a service map.</p>
     #[doc(hidden)]
@@ -6983,18 +6685,11 @@ impl InsightImpactGraphEdge {
         self.reference_id
     }
 }
-impl std::fmt::Debug for InsightImpactGraphEdge {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightImpactGraphEdge");
-        formatter.field("reference_id", &self.reference_id);
-        formatter.finish()
-    }
-}
 /// See [`InsightImpactGraphEdge`](crate::model::InsightImpactGraphEdge).
 pub mod insight_impact_graph_edge {
 
     /// A builder for [`InsightImpactGraphEdge`](crate::model::InsightImpactGraphEdge).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference_id: std::option::Option<i32>,
     }
@@ -7026,7 +6721,7 @@ impl InsightImpactGraphEdge {
 
 /// <p>X-Ray reevaluates insights periodically until they are resolved, and records each intermediate state in an event. You can review incident events in the Impact Timeline on the Inspect page in the X-Ray console.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsightEvent {
     /// <p>A brief description of the event.</p>
     #[doc(hidden)]
@@ -7072,28 +6767,11 @@ impl InsightEvent {
         self.top_anomalous_services.as_deref()
     }
 }
-impl std::fmt::Debug for InsightEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsightEvent");
-        formatter.field("summary", &self.summary);
-        formatter.field("event_time", &self.event_time);
-        formatter.field(
-            "client_request_impact_statistics",
-            &self.client_request_impact_statistics,
-        );
-        formatter.field(
-            "root_cause_service_request_impact_statistics",
-            &self.root_cause_service_request_impact_statistics,
-        );
-        formatter.field("top_anomalous_services", &self.top_anomalous_services);
-        formatter.finish()
-    }
-}
 /// See [`InsightEvent`](crate::model::InsightEvent).
 pub mod insight_event {
 
     /// A builder for [`InsightEvent`](crate::model::InsightEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<std::string::String>,
         pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -7201,7 +6879,7 @@ impl InsightEvent {
 
 /// <p>When fault rates go outside of the expected range, X-Ray creates an insight. Insights tracks emergent issues within your applications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Insight {
     /// <p>The insights unique identifier. </p>
     #[doc(hidden)]
@@ -7296,35 +6974,11 @@ impl Insight {
         self.top_anomalous_services.as_deref()
     }
 }
-impl std::fmt::Debug for Insight {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Insight");
-        formatter.field("insight_id", &self.insight_id);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("root_cause_service_id", &self.root_cause_service_id);
-        formatter.field("categories", &self.categories);
-        formatter.field("state", &self.state);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("summary", &self.summary);
-        formatter.field(
-            "client_request_impact_statistics",
-            &self.client_request_impact_statistics,
-        );
-        formatter.field(
-            "root_cause_service_request_impact_statistics",
-            &self.root_cause_service_request_impact_statistics,
-        );
-        formatter.field("top_anomalous_services", &self.top_anomalous_services);
-        formatter.finish()
-    }
-}
 /// See [`Insight`](crate::model::Insight).
 pub mod insight {
 
     /// A builder for [`Insight`](crate::model::Insight).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_id: std::option::Option<std::string::String>,
         pub(crate) group_arn: std::option::Option<std::string::String>,
@@ -7531,7 +7185,7 @@ impl Insight {
 
 /// <p>Details for a group without metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupSummary {
     /// <p>The unique case-sensitive name of the group.</p>
     #[doc(hidden)]
@@ -7574,21 +7228,11 @@ impl GroupSummary {
         self.insights_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for GroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupSummary");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("group_arn", &self.group_arn);
-        formatter.field("filter_expression", &self.filter_expression);
-        formatter.field("insights_configuration", &self.insights_configuration);
-        formatter.finish()
-    }
-}
 /// See [`GroupSummary`](crate::model::GroupSummary).
 pub mod group_summary {
 
     /// A builder for [`GroupSummary`](crate::model::GroupSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
         pub(crate) group_arn: std::option::Option<std::string::String>,
@@ -7673,7 +7317,7 @@ impl GroupSummary {
 
 /// <p>A collection of segment documents with matching trace IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Trace {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     #[doc(hidden)]
@@ -7706,21 +7350,11 @@ impl Trace {
         self.segments.as_deref()
     }
 }
-impl std::fmt::Debug for Trace {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Trace");
-        formatter.field("id", &self.id);
-        formatter.field("duration", &self.duration);
-        formatter.field("limit_exceeded", &self.limit_exceeded);
-        formatter.field("segments", &self.segments);
-        formatter.finish()
-    }
-}
 /// See [`Trace`](crate::model::Trace).
 pub mod trace {
 
     /// A builder for [`Trace`](crate::model::Trace).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) duration: std::option::Option<f64>,
@@ -7798,7 +7432,7 @@ impl Trace {
 /// <p>A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with <a href="https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html">PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it.</p>
 /// <p>For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Segment {
     /// <p>The segment's ID.</p>
     #[doc(hidden)]
@@ -7817,19 +7451,11 @@ impl Segment {
         self.document.as_deref()
     }
 }
-impl std::fmt::Debug for Segment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Segment");
-        formatter.field("id", &self.id);
-        formatter.field("document", &self.document);
-        formatter.finish()
-    }
-}
 /// See [`Segment`](crate::model::Segment).
 pub mod segment {
 
     /// A builder for [`Segment`](crate::model::Segment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) document: std::option::Option<std::string::String>,

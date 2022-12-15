@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod delete_human_loop_input {
 
     /// A builder for [`DeleteHumanLoopInput`](crate::input::DeleteHumanLoopInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_name: std::option::Option<std::string::String>,
     }
@@ -26,7 +26,7 @@ pub mod delete_human_loop_input {
         /// Consumes the builder and constructs a [`DeleteHumanLoopInput`](crate::input::DeleteHumanLoopInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteHumanLoopInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteHumanLoopInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteHumanLoopInput {
                 human_loop_name: self.human_loop_name,
@@ -47,26 +47,31 @@ impl DeleteHumanLoopInput {
             crate::operation::DeleteHumanLoop,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteHumanLoopInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.human_loop_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "human_loop_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let human_loop_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "human_loop_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let human_loop_name = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if human_loop_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "human_loop_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "human_loop_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -80,8 +85,10 @@ impl DeleteHumanLoopInput {
             fn update_http_builder(
                 input: &crate::input::DeleteHumanLoopInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -151,7 +158,7 @@ impl DeleteHumanLoopInput {
 pub mod describe_human_loop_input {
 
     /// A builder for [`DescribeHumanLoopInput`](crate::input::DescribeHumanLoopInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_name: std::option::Option<std::string::String>,
     }
@@ -172,8 +179,10 @@ pub mod describe_human_loop_input {
         /// Consumes the builder and constructs a [`DescribeHumanLoopInput`](crate::input::DescribeHumanLoopInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeHumanLoopInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeHumanLoopInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeHumanLoopInput {
                 human_loop_name: self.human_loop_name,
             })
@@ -193,26 +202,31 @@ impl DescribeHumanLoopInput {
             crate::operation::DescribeHumanLoop,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeHumanLoopInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.human_loop_name;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "human_loop_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let human_loop_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "human_loop_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let human_loop_name = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if human_loop_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "human_loop_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "human_loop_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -226,8 +240,10 @@ impl DescribeHumanLoopInput {
             fn update_http_builder(
                 input: &crate::input::DescribeHumanLoopInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -297,7 +313,7 @@ impl DescribeHumanLoopInput {
 pub mod list_human_loops_input {
 
     /// A builder for [`ListHumanLoopsInput`](crate::input::ListHumanLoopsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
@@ -382,7 +398,7 @@ pub mod list_human_loops_input {
         /// Consumes the builder and constructs a [`ListHumanLoopsInput`](crate::input::ListHumanLoopsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListHumanLoopsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListHumanLoopsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListHumanLoopsInput {
                 creation_time_after: self.creation_time_after,
@@ -408,56 +424,79 @@ impl ListHumanLoopsInput {
             crate::operation::ListHumanLoops,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListHumanLoopsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/human-loops").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListHumanLoopsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.creation_time_after {
-                    query.push_kv(
-                        "CreationTimeAfter",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_3,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "CreationTimeAfter",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_3,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_4) = &_input.creation_time_before {
-                    query.push_kv(
-                        "CreationTimeBefore",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_4,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
+                    {
+                        query.push_kv(
+                            "CreationTimeBefore",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_4,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
+                }
+                let inner_5 = &_input.flow_definition_arn;
+                let inner_5 = inner_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "flow_definition_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_5.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "flow_definition_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_5) = &_input.flow_definition_arn {
-                    query.push_kv(
-                        "FlowDefinitionArn",
-                        &aws_smithy_http::query::fmt_string(&inner_5),
-                    );
-                }
+                query.push_kv(
+                    "FlowDefinitionArn",
+                    &aws_smithy_http::query::fmt_string(&inner_5),
+                );
                 if let Some(inner_6) = &_input.sort_order {
-                    query.push_kv("SortOrder", &aws_smithy_http::query::fmt_string(&inner_6));
+                    {
+                        query.push_kv("SortOrder", &aws_smithy_http::query::fmt_string(&inner_6));
+                    }
                 }
                 if let Some(inner_7) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                    }
                 }
                 if let Some(inner_8) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
-                    );
+                    if *inner_8 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -465,8 +504,10 @@ impl ListHumanLoopsInput {
             fn update_http_builder(
                 input: &crate::input::ListHumanLoopsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -537,7 +578,7 @@ impl ListHumanLoopsInput {
 pub mod start_human_loop_input {
 
     /// A builder for [`StartHumanLoopInput`](crate::input::StartHumanLoopInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_name: std::option::Option<std::string::String>,
         pub(crate) flow_definition_arn: std::option::Option<std::string::String>,
@@ -600,7 +641,7 @@ pub mod start_human_loop_input {
         /// Consumes the builder and constructs a [`StartHumanLoopInput`](crate::input::StartHumanLoopInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartHumanLoopInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::StartHumanLoopInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::StartHumanLoopInput {
                 human_loop_name: self.human_loop_name,
@@ -624,13 +665,13 @@ impl StartHumanLoopInput {
             crate::operation::StartHumanLoop,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartHumanLoopInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/human-loops").expect("formatting should succeed");
                 Ok(())
             }
@@ -638,8 +679,10 @@ impl StartHumanLoopInput {
             fn update_http_builder(
                 input: &crate::input::StartHumanLoopInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -723,7 +766,7 @@ impl StartHumanLoopInput {
 pub mod stop_human_loop_input {
 
     /// A builder for [`StopHumanLoopInput`](crate::input::StopHumanLoopInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_name: std::option::Option<std::string::String>,
     }
@@ -744,7 +787,7 @@ pub mod stop_human_loop_input {
         /// Consumes the builder and constructs a [`StopHumanLoopInput`](crate::input::StopHumanLoopInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StopHumanLoopInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::StopHumanLoopInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::StopHumanLoopInput {
                 human_loop_name: self.human_loop_name,
@@ -765,13 +808,13 @@ impl StopHumanLoopInput {
             crate::operation::StopHumanLoop,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StopHumanLoopInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/human-loops/stop").expect("formatting should succeed");
                 Ok(())
             }
@@ -779,8 +822,10 @@ impl StopHumanLoopInput {
             fn update_http_builder(
                 input: &crate::input::StopHumanLoopInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -862,7 +907,7 @@ impl StopHumanLoopInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopHumanLoopInput {
     /// <p>The name of the human loop that you want to stop.</p>
     #[doc(hidden)]
@@ -874,17 +919,10 @@ impl StopHumanLoopInput {
         self.human_loop_name.as_deref()
     }
 }
-impl std::fmt::Debug for StopHumanLoopInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopHumanLoopInput");
-        formatter.field("human_loop_name", &self.human_loop_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartHumanLoopInput {
     /// <p>The name of the human loop.</p>
     #[doc(hidden)]
@@ -917,20 +955,10 @@ impl StartHumanLoopInput {
         self.data_attributes.as_ref()
     }
 }
-impl std::fmt::Debug for StartHumanLoopInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartHumanLoopInput");
-        formatter.field("human_loop_name", &self.human_loop_name);
-        formatter.field("flow_definition_arn", &self.flow_definition_arn);
-        formatter.field("human_loop_input", &self.human_loop_input);
-        formatter.field("data_attributes", &self.data_attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHumanLoopsInput {
     /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
     #[doc(hidden)]
@@ -977,22 +1005,10 @@ impl ListHumanLoopsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListHumanLoopsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHumanLoopsInput");
-        formatter.field("creation_time_after", &self.creation_time_after);
-        formatter.field("creation_time_before", &self.creation_time_before);
-        formatter.field("flow_definition_arn", &self.flow_definition_arn);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeHumanLoopInput {
     /// <p>The name of the human loop that you want information about.</p>
     #[doc(hidden)]
@@ -1004,17 +1020,10 @@ impl DescribeHumanLoopInput {
         self.human_loop_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeHumanLoopInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeHumanLoopInput");
-        formatter.field("human_loop_name", &self.human_loop_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHumanLoopInput {
     /// <p>The name of the human loop that you want to delete.</p>
     #[doc(hidden)]
@@ -1024,12 +1033,5 @@ impl DeleteHumanLoopInput {
     /// <p>The name of the human loop that you want to delete.</p>
     pub fn human_loop_name(&self) -> std::option::Option<&str> {
         self.human_loop_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteHumanLoopInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteHumanLoopInput");
-        formatter.field("human_loop_name", &self.human_loop_name);
-        formatter.finish()
     }
 }

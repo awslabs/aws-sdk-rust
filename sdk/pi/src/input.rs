@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod describe_dimension_keys_input {
 
     /// A builder for [`DescribeDimensionKeysInput`](crate::input::DescribeDimensionKeysInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -235,8 +235,10 @@ pub mod describe_dimension_keys_input {
         /// Consumes the builder and constructs a [`DescribeDimensionKeysInput`](crate::input::DescribeDimensionKeysInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDimensionKeysInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeDimensionKeysInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeDimensionKeysInput {
                 service_type: self.service_type,
                 identifier: self.identifier,
@@ -267,13 +269,13 @@ impl DescribeDimensionKeysInput {
             crate::operation::DescribeDimensionKeys,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDimensionKeysInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -281,8 +283,10 @@ impl DescribeDimensionKeysInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDimensionKeysInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -373,7 +377,7 @@ impl DescribeDimensionKeysInput {
 pub mod get_dimension_key_details_input {
 
     /// A builder for [`GetDimensionKeyDetailsInput`](crate::input::GetDimensionKeyDetailsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -474,8 +478,10 @@ pub mod get_dimension_key_details_input {
         /// Consumes the builder and constructs a [`GetDimensionKeyDetailsInput`](crate::input::GetDimensionKeyDetailsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDimensionKeyDetailsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetDimensionKeyDetailsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetDimensionKeyDetailsInput {
                 service_type: self.service_type,
                 identifier: self.identifier,
@@ -499,13 +505,13 @@ impl GetDimensionKeyDetailsInput {
             crate::operation::GetDimensionKeyDetails,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDimensionKeyDetailsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -513,8 +519,10 @@ impl GetDimensionKeyDetailsInput {
             fn update_http_builder(
                 input: &crate::input::GetDimensionKeyDetailsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -605,7 +613,7 @@ impl GetDimensionKeyDetailsInput {
 pub mod get_resource_metadata_input {
 
     /// A builder for [`GetResourceMetadataInput`](crate::input::GetResourceMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -637,8 +645,10 @@ pub mod get_resource_metadata_input {
         /// Consumes the builder and constructs a [`GetResourceMetadataInput`](crate::input::GetResourceMetadataInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetResourceMetadataInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetResourceMetadataInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetResourceMetadataInput {
                 service_type: self.service_type,
                 identifier: self.identifier,
@@ -659,13 +669,13 @@ impl GetResourceMetadataInput {
             crate::operation::GetResourceMetadata,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourceMetadataInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -673,8 +683,10 @@ impl GetResourceMetadataInput {
             fn update_http_builder(
                 input: &crate::input::GetResourceMetadataInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -763,7 +775,7 @@ impl GetResourceMetadataInput {
 pub mod get_resource_metrics_input {
 
     /// A builder for [`GetResourceMetricsInput`](crate::input::GetResourceMetricsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -906,8 +918,10 @@ pub mod get_resource_metrics_input {
         /// Consumes the builder and constructs a [`GetResourceMetricsInput`](crate::input::GetResourceMetricsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetResourceMetricsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetResourceMetricsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetResourceMetricsInput {
                 service_type: self.service_type,
                 identifier: self.identifier,
@@ -934,13 +948,13 @@ impl GetResourceMetricsInput {
             crate::operation::GetResourceMetrics,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourceMetricsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -948,8 +962,10 @@ impl GetResourceMetricsInput {
             fn update_http_builder(
                 input: &crate::input::GetResourceMetricsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1038,7 +1054,7 @@ impl GetResourceMetricsInput {
 pub mod list_available_resource_dimensions_input {
 
     /// A builder for [`ListAvailableResourceDimensionsInput`](crate::input::ListAvailableResourceDimensionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -1114,7 +1130,7 @@ pub mod list_available_resource_dimensions_input {
             self,
         ) -> Result<
             crate::input::ListAvailableResourceDimensionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListAvailableResourceDimensionsInput {
                 service_type: self.service_type,
@@ -1139,13 +1155,13 @@ impl ListAvailableResourceDimensionsInput {
             crate::operation::ListAvailableResourceDimensions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAvailableResourceDimensionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1153,8 +1169,10 @@ impl ListAvailableResourceDimensionsInput {
             fn update_http_builder(
                 input: &crate::input::ListAvailableResourceDimensionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1242,7 +1260,7 @@ impl ListAvailableResourceDimensionsInput {
 pub mod list_available_resource_metrics_input {
 
     /// A builder for [`ListAvailableResourceMetricsInput`](crate::input::ListAvailableResourceMetricsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -1330,7 +1348,7 @@ pub mod list_available_resource_metrics_input {
             self,
         ) -> Result<
             crate::input::ListAvailableResourceMetricsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListAvailableResourceMetricsInput {
                 service_type: self.service_type,
@@ -1355,13 +1373,13 @@ impl ListAvailableResourceMetricsInput {
             crate::operation::ListAvailableResourceMetrics,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAvailableResourceMetricsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1369,8 +1387,10 @@ impl ListAvailableResourceMetricsInput {
             fn update_http_builder(
                 input: &crate::input::ListAvailableResourceMetricsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1456,7 +1476,7 @@ impl ListAvailableResourceMetricsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAvailableResourceMetricsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
     #[doc(hidden)]
@@ -1508,21 +1528,10 @@ impl ListAvailableResourceMetricsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAvailableResourceMetricsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAvailableResourceMetricsInput");
-        formatter.field("service_type", &self.service_type);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("metric_types", &self.metric_types);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAvailableResourceDimensionsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
     #[doc(hidden)]
@@ -1562,21 +1571,10 @@ impl ListAvailableResourceDimensionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAvailableResourceDimensionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAvailableResourceDimensionsInput");
-        formatter.field("service_type", &self.service_type);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceMetricsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
     /// <ul>
@@ -1667,24 +1665,10 @@ impl GetResourceMetricsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceMetricsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceMetricsInput");
-        formatter.field("service_type", &self.service_type);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("metric_queries", &self.metric_queries);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("period_in_seconds", &self.period_in_seconds);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceMetadataInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
     #[doc(hidden)]
@@ -1703,18 +1687,10 @@ impl GetResourceMetadataInput {
         self.identifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceMetadataInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceMetadataInput");
-        formatter.field("service_type", &self.service_type);
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDimensionKeyDetailsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
     #[doc(hidden)]
@@ -1778,21 +1754,10 @@ impl GetDimensionKeyDetailsInput {
         self.requested_dimensions.as_deref()
     }
 }
-impl std::fmt::Debug for GetDimensionKeyDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDimensionKeyDetailsInput");
-        formatter.field("service_type", &self.service_type);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("group", &self.group);
-        formatter.field("group_identifier", &self.group_identifier);
-        formatter.field("requested_dimensions", &self.requested_dimensions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDimensionKeysInput {
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid values are as follows:</p>
     /// <ul>
@@ -1933,23 +1898,5 @@ impl DescribeDimensionKeysInput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeDimensionKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDimensionKeysInput");
-        formatter.field("service_type", &self.service_type);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("metric", &self.metric);
-        formatter.field("period_in_seconds", &self.period_in_seconds);
-        formatter.field("group_by", &self.group_by);
-        formatter.field("additional_metrics", &self.additional_metrics);
-        formatter.field("partition_by", &self.partition_by);
-        formatter.field("filter", &self.filter);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod get_media_input {
 
     /// A builder for [`GetMediaInput`](crate::input::GetMediaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -48,7 +48,8 @@ pub mod get_media_input {
         /// Consumes the builder and constructs a [`GetMediaInput`](crate::input::GetMediaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetMediaInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetMediaInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetMediaInput {
                 stream_name: self.stream_name,
                 stream_arn: self.stream_arn,
@@ -70,13 +71,13 @@ impl GetMediaInput {
             crate::operation::GetMedia,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetMediaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getMedia").expect("formatting should succeed");
                 Ok(())
             }
@@ -84,8 +85,10 @@ impl GetMediaInput {
             fn update_http_builder(
                 input: &crate::input::GetMediaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -165,7 +168,7 @@ impl GetMediaInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMediaInput {
     /// <p>The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.</p>
     #[doc(hidden)]
@@ -189,14 +192,5 @@ impl GetMediaInput {
     /// <p>Identifies the starting chunk to get from the specified stream. </p>
     pub fn start_selector(&self) -> std::option::Option<&crate::model::StartSelector> {
         self.start_selector.as_ref()
-    }
-}
-impl std::fmt::Debug for GetMediaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMediaInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("start_selector", &self.start_selector);
-        formatter.finish()
     }
 }

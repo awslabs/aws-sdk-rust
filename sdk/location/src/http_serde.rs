@@ -8,7 +8,7 @@ pub fn deser_payload_get_map_glyphs_get_map_glyphs_output_blob(
         .transpose()
 }
 
-pub fn deser_header_get_map_glyphs_get_map_glyphs_output_content_type(
+pub(crate) fn deser_header_get_map_glyphs_get_map_glyphs_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -29,7 +29,7 @@ pub fn deser_payload_get_map_sprites_get_map_sprites_output_blob(
         .transpose()
 }
 
-pub fn deser_header_get_map_sprites_get_map_sprites_output_content_type(
+pub(crate) fn deser_header_get_map_sprites_get_map_sprites_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -50,7 +50,7 @@ pub fn deser_payload_get_map_style_descriptor_get_map_style_descriptor_output_bl
         .transpose()
 }
 
-pub fn deser_header_get_map_style_descriptor_get_map_style_descriptor_output_content_type(
+pub(crate) fn deser_header_get_map_style_descriptor_get_map_style_descriptor_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,
@@ -69,7 +69,7 @@ pub fn deser_payload_get_map_tile_get_map_tile_output_blob(
         .transpose()
 }
 
-pub fn deser_header_get_map_tile_get_map_tile_output_content_type(
+pub(crate) fn deser_header_get_map_tile_get_map_tile_output_content_type(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
     std::option::Option<std::string::String>,

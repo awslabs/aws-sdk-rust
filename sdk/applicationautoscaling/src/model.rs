@@ -2,7 +2,7 @@
 
 /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuspendedState {
     /// <p>Whether scale in by a target tracking scaling policy or a step scaling policy is suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to remove capacity when a scaling policy is triggered. The default is <code>false</code>. </p>
     #[doc(hidden)]
@@ -28,29 +28,11 @@ impl SuspendedState {
         self.scheduled_scaling_suspended
     }
 }
-impl std::fmt::Debug for SuspendedState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuspendedState");
-        formatter.field(
-            "dynamic_scaling_in_suspended",
-            &self.dynamic_scaling_in_suspended,
-        );
-        formatter.field(
-            "dynamic_scaling_out_suspended",
-            &self.dynamic_scaling_out_suspended,
-        );
-        formatter.field(
-            "scheduled_scaling_suspended",
-            &self.scheduled_scaling_suspended,
-        );
-        formatter.finish()
-    }
-}
 /// See [`SuspendedState`](crate::model::SuspendedState).
 pub mod suspended_state {
 
     /// A builder for [`SuspendedState`](crate::model::SuspendedState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dynamic_scaling_in_suspended: std::option::Option<bool>,
         pub(crate) dynamic_scaling_out_suspended: std::option::Option<bool>,
@@ -110,6 +92,59 @@ impl SuspendedState {
     }
 }
 
+/// When writing a match expression against `ScalableDimension`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let scalabledimension = unimplemented!();
+/// match scalabledimension {
+///     ScalableDimension::AppstreamFleetDesiredCapacity => { /* ... */ },
+///     ScalableDimension::CassandraTableReadCapacityUnits => { /* ... */ },
+///     ScalableDimension::CassandraTableWriteCapacityUnits => { /* ... */ },
+///     ScalableDimension::ComprehendDocClassifierEndpointInferenceUnits => { /* ... */ },
+///     ScalableDimension::ComprehendEntityRecognizerEndpointInferenceUnits => { /* ... */ },
+///     ScalableDimension::CustomResourceScalableDimension => { /* ... */ },
+///     ScalableDimension::DynamoDbIndexReadCapacityUnits => { /* ... */ },
+///     ScalableDimension::DynamoDbIndexWriteCapacityUnits => { /* ... */ },
+///     ScalableDimension::DynamoDbTableReadCapacityUnits => { /* ... */ },
+///     ScalableDimension::DynamoDbTableWriteCapacityUnits => { /* ... */ },
+///     ScalableDimension::Ec2SpotFleetRequestTargetCapacity => { /* ... */ },
+///     ScalableDimension::EcsServiceDesiredCount => { /* ... */ },
+///     ScalableDimension::ElastiCacheReplicationGroupNodeGroups => { /* ... */ },
+///     ScalableDimension::ElastiCacheReplicationGroupReplicas => { /* ... */ },
+///     ScalableDimension::EmrInstanceGroupInstanceCount => { /* ... */ },
+///     ScalableDimension::KafkaBrokerStorageVolumeSize => { /* ... */ },
+///     ScalableDimension::LambdaFunctionProvisionedConcurrency => { /* ... */ },
+///     ScalableDimension::NeptuneClusterReadReplicaCount => { /* ... */ },
+///     ScalableDimension::RdsClusterReadReplicaCount => { /* ... */ },
+///     ScalableDimension::SageMakerVariantDesiredInstanceCount => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `scalabledimension` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ScalableDimension::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ScalableDimension::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ScalableDimension::NewFeature` is defined.
+/// Specifically, when `scalabledimension` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ScalableDimension::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -162,8 +197,8 @@ pub enum ScalableDimension {
     RdsClusterReadReplicaCount,
     #[allow(missing_docs)] // documentation missing in model
     SageMakerVariantDesiredInstanceCount,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ScalableDimension {
     fn from(s: &str) -> Self {
@@ -214,7 +249,9 @@ impl std::convert::From<&str> for ScalableDimension {
             "sagemaker:variant:DesiredInstanceCount" => {
                 ScalableDimension::SageMakerVariantDesiredInstanceCount
             }
-            other => ScalableDimension::Unknown(other.to_owned()),
+            other => {
+                ScalableDimension::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -275,11 +312,11 @@ impl ScalableDimension {
             ScalableDimension::SageMakerVariantDesiredInstanceCount => {
                 "sagemaker:variant:DesiredInstanceCount"
             }
-            ScalableDimension::Unknown(s) => s.as_ref(),
+            ScalableDimension::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "appstream:fleet:DesiredCapacity",
             "cassandra:table:ReadCapacityUnits",
@@ -310,6 +347,53 @@ impl AsRef<str> for ScalableDimension {
     }
 }
 
+/// When writing a match expression against `ServiceNamespace`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let servicenamespace = unimplemented!();
+/// match servicenamespace {
+///     ServiceNamespace::Appstream => { /* ... */ },
+///     ServiceNamespace::Cassandra => { /* ... */ },
+///     ServiceNamespace::Comprehend => { /* ... */ },
+///     ServiceNamespace::CustomResource => { /* ... */ },
+///     ServiceNamespace::Dynamodb => { /* ... */ },
+///     ServiceNamespace::Ec2 => { /* ... */ },
+///     ServiceNamespace::Ecs => { /* ... */ },
+///     ServiceNamespace::Elasticache => { /* ... */ },
+///     ServiceNamespace::Emr => { /* ... */ },
+///     ServiceNamespace::Kafka => { /* ... */ },
+///     ServiceNamespace::Lambda => { /* ... */ },
+///     ServiceNamespace::Neptune => { /* ... */ },
+///     ServiceNamespace::Rds => { /* ... */ },
+///     ServiceNamespace::Sagemaker => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `servicenamespace` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ServiceNamespace::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ServiceNamespace::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ServiceNamespace::NewFeature` is defined.
+/// Specifically, when `servicenamespace` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ServiceNamespace::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -350,8 +434,8 @@ pub enum ServiceNamespace {
     Rds,
     #[allow(missing_docs)] // documentation missing in model
     Sagemaker,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ServiceNamespace {
     fn from(s: &str) -> Self {
@@ -370,7 +454,7 @@ impl std::convert::From<&str> for ServiceNamespace {
             "neptune" => ServiceNamespace::Neptune,
             "rds" => ServiceNamespace::Rds,
             "sagemaker" => ServiceNamespace::Sagemaker,
-            other => ServiceNamespace::Unknown(other.to_owned()),
+            other => ServiceNamespace::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -399,11 +483,11 @@ impl ServiceNamespace {
             ServiceNamespace::Neptune => "neptune",
             ServiceNamespace::Rds => "rds",
             ServiceNamespace::Sagemaker => "sagemaker",
-            ServiceNamespace::Unknown(s) => s.as_ref(),
+            ServiceNamespace::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "appstream",
             "cassandra",
@@ -430,7 +514,7 @@ impl AsRef<str> for ServiceNamespace {
 
 /// <p>Represents the minimum and maximum capacity for a scheduled action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalableTargetAction {
     /// <p>The minimum capacity.</p>
     /// <p>For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the minimum value allowed is 1.</p>
@@ -453,19 +537,11 @@ impl ScalableTargetAction {
         self.max_capacity
     }
 }
-impl std::fmt::Debug for ScalableTargetAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalableTargetAction");
-        formatter.field("min_capacity", &self.min_capacity);
-        formatter.field("max_capacity", &self.max_capacity);
-        formatter.finish()
-    }
-}
 /// See [`ScalableTargetAction`](crate::model::ScalableTargetAction).
 pub mod scalable_target_action {
 
     /// A builder for [`ScalableTargetAction`](crate::model::ScalableTargetAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min_capacity: std::option::Option<i32>,
         pub(crate) max_capacity: std::option::Option<i32>,
@@ -513,7 +589,7 @@ impl ScalableTargetAction {
 
 /// <p>Represents a CloudWatch alarm associated with a scaling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alarm {
     /// <p>The name of the alarm.</p>
     #[doc(hidden)]
@@ -532,19 +608,11 @@ impl Alarm {
         self.alarm_arn.as_deref()
     }
 }
-impl std::fmt::Debug for Alarm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Alarm");
-        formatter.field("alarm_name", &self.alarm_name);
-        formatter.field("alarm_arn", &self.alarm_arn);
-        formatter.finish()
-    }
-}
 /// See [`Alarm`](crate::model::Alarm).
 pub mod alarm {
 
     /// A builder for [`Alarm`](crate::model::Alarm).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_name: std::option::Option<std::string::String>,
         pub(crate) alarm_arn: std::option::Option<std::string::String>,
@@ -588,7 +656,7 @@ impl Alarm {
 
 /// <p>Represents a target tracking scaling policy configuration to use with Application Auto Scaling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetTrackingScalingPolicyConfiguration {
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out. </p>
     #[doc(hidden)]
@@ -721,29 +789,11 @@ impl TargetTrackingScalingPolicyConfiguration {
         self.disable_scale_in
     }
 }
-impl std::fmt::Debug for TargetTrackingScalingPolicyConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetTrackingScalingPolicyConfiguration");
-        formatter.field("target_value", &self.target_value);
-        formatter.field(
-            "predefined_metric_specification",
-            &self.predefined_metric_specification,
-        );
-        formatter.field(
-            "customized_metric_specification",
-            &self.customized_metric_specification,
-        );
-        formatter.field("scale_out_cooldown", &self.scale_out_cooldown);
-        formatter.field("scale_in_cooldown", &self.scale_in_cooldown);
-        formatter.field("disable_scale_in", &self.disable_scale_in);
-        formatter.finish()
-    }
-}
 /// See [`TargetTrackingScalingPolicyConfiguration`](crate::model::TargetTrackingScalingPolicyConfiguration).
 pub mod target_tracking_scaling_policy_configuration {
 
     /// A builder for [`TargetTrackingScalingPolicyConfiguration`](crate::model::TargetTrackingScalingPolicyConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_value: std::option::Option<f64>,
         pub(crate) predefined_metric_specification:
@@ -936,7 +986,7 @@ impl TargetTrackingScalingPolicyConfiguration {
 /// </ul>
 /// <p>For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomizedMetricSpecification {
     /// <p>The name of the metric. </p>
     #[doc(hidden)]
@@ -978,22 +1028,11 @@ impl CustomizedMetricSpecification {
         self.unit.as_deref()
     }
 }
-impl std::fmt::Debug for CustomizedMetricSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomizedMetricSpecification");
-        formatter.field("metric_name", &self.metric_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("statistic", &self.statistic);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
-    }
-}
 /// See [`CustomizedMetricSpecification`](crate::model::CustomizedMetricSpecification).
 pub mod customized_metric_specification {
 
     /// A builder for [`CustomizedMetricSpecification`](crate::model::CustomizedMetricSpecification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -1085,6 +1124,44 @@ impl CustomizedMetricSpecification {
     }
 }
 
+/// When writing a match expression against `MetricStatistic`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let metricstatistic = unimplemented!();
+/// match metricstatistic {
+///     MetricStatistic::Average => { /* ... */ },
+///     MetricStatistic::Maximum => { /* ... */ },
+///     MetricStatistic::Minimum => { /* ... */ },
+///     MetricStatistic::SampleCount => { /* ... */ },
+///     MetricStatistic::Sum => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `metricstatistic` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MetricStatistic::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MetricStatistic::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MetricStatistic::NewFeature` is defined.
+/// Specifically, when `metricstatistic` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MetricStatistic::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1107,8 +1184,8 @@ pub enum MetricStatistic {
     SampleCount,
     #[allow(missing_docs)] // documentation missing in model
     Sum,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MetricStatistic {
     fn from(s: &str) -> Self {
@@ -1118,7 +1195,7 @@ impl std::convert::From<&str> for MetricStatistic {
             "Minimum" => MetricStatistic::Minimum,
             "SampleCount" => MetricStatistic::SampleCount,
             "Sum" => MetricStatistic::Sum,
-            other => MetricStatistic::Unknown(other.to_owned()),
+            other => MetricStatistic::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1138,11 +1215,11 @@ impl MetricStatistic {
             MetricStatistic::Minimum => "Minimum",
             MetricStatistic::SampleCount => "SampleCount",
             MetricStatistic::Sum => "Sum",
-            MetricStatistic::Unknown(s) => s.as_ref(),
+            MetricStatistic::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
     }
 }
@@ -1154,7 +1231,7 @@ impl AsRef<str> for MetricStatistic {
 
 /// <p>Describes the dimension names and values associated with a metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDimension {
     /// <p>The name of the dimension.</p>
     #[doc(hidden)]
@@ -1173,19 +1250,11 @@ impl MetricDimension {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for MetricDimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDimension");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`MetricDimension`](crate::model::MetricDimension).
 pub mod metric_dimension {
 
     /// A builder for [`MetricDimension`](crate::model::MetricDimension).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1230,7 +1299,7 @@ impl MetricDimension {
 /// <p>Represents a predefined metric for a target tracking scaling policy to use with Application Auto Scaling.</p>
 /// <p>Only the Amazon Web Services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console, follow the procedure in <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html">Building dashboards with CloudWatch</a> in the <i>Application Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredefinedMetricSpecification {
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot Fleet requests and ECS services.</p>
     #[doc(hidden)]
@@ -1285,19 +1354,11 @@ impl PredefinedMetricSpecification {
         self.resource_label.as_deref()
     }
 }
-impl std::fmt::Debug for PredefinedMetricSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredefinedMetricSpecification");
-        formatter.field("predefined_metric_type", &self.predefined_metric_type);
-        formatter.field("resource_label", &self.resource_label);
-        formatter.finish()
-    }
-}
 /// See [`PredefinedMetricSpecification`](crate::model::PredefinedMetricSpecification).
 pub mod predefined_metric_specification {
 
     /// A builder for [`PredefinedMetricSpecification`](crate::model::PredefinedMetricSpecification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predefined_metric_type: std::option::Option<crate::model::MetricType>,
         pub(crate) resource_label: std::option::Option<std::string::String>,
@@ -1381,6 +1442,60 @@ impl PredefinedMetricSpecification {
     }
 }
 
+/// When writing a match expression against `MetricType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let metrictype = unimplemented!();
+/// match metrictype {
+///     MetricType::AlbRequestCountPerTarget => { /* ... */ },
+///     MetricType::AppStreamAverageCapacityUtilization => { /* ... */ },
+///     MetricType::CassandraReadCapacityUtilization => { /* ... */ },
+///     MetricType::CassandraWriteCapacityUtilization => { /* ... */ },
+///     MetricType::ComprehendInferenceUtilization => { /* ... */ },
+///     MetricType::DynamoDbReadCapacityUtilization => { /* ... */ },
+///     MetricType::DynamoDbWriteCapacityUtilization => { /* ... */ },
+///     MetricType::Ec2SpotFleetRequestAverageCpuUtilization => { /* ... */ },
+///     MetricType::Ec2SpotFleetRequestAverageNetworkIn => { /* ... */ },
+///     MetricType::Ec2SpotFleetRequestAverageNetworkOut => { /* ... */ },
+///     MetricType::EcsServiceAverageCpuUtilization => { /* ... */ },
+///     MetricType::EcsServiceAverageMemoryUtilization => { /* ... */ },
+///     MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage => { /* ... */ },
+///     MetricType::ElastiCachePrimaryEngineCpuUtilization => { /* ... */ },
+///     MetricType::ElastiCacheReplicaEngineCpuUtilization => { /* ... */ },
+///     MetricType::KafkaBrokerStorageUtilization => { /* ... */ },
+///     MetricType::LambdaProvisionedConcurrencyUtilization => { /* ... */ },
+///     MetricType::NeptuneReaderAverageCpuUtilization => { /* ... */ },
+///     MetricType::RdsReaderAverageCpuUtilization => { /* ... */ },
+///     MetricType::RdsReaderAverageDatabaseConnections => { /* ... */ },
+///     MetricType::SageMakerVariantInvocationsPerInstance => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `metrictype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MetricType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MetricType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MetricType::NewFeature` is defined.
+/// Specifically, when `metrictype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MetricType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1435,8 +1550,8 @@ pub enum MetricType {
     RdsReaderAverageDatabaseConnections,
     #[allow(missing_docs)] // documentation missing in model
     SageMakerVariantInvocationsPerInstance,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MetricType {
     fn from(s: &str) -> Self {
@@ -1482,7 +1597,7 @@ impl std::convert::From<&str> for MetricType {
             "SageMakerVariantInvocationsPerInstance" => {
                 MetricType::SageMakerVariantInvocationsPerInstance
             }
-            other => MetricType::Unknown(other.to_owned()),
+            other => MetricType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1538,11 +1653,11 @@ impl MetricType {
             MetricType::SageMakerVariantInvocationsPerInstance => {
                 "SageMakerVariantInvocationsPerInstance"
             }
-            MetricType::Unknown(s) => s.as_ref(),
+            MetricType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALBRequestCountPerTarget",
             "AppStreamAverageCapacityUtilization",
@@ -1576,7 +1691,7 @@ impl AsRef<str> for MetricType {
 
 /// <p>Represents a step scaling policy configuration to use with Application Auto Scaling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepScalingPolicyConfiguration {
     /// <p>Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
     /// <p> <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.</p>
@@ -1664,22 +1779,11 @@ impl StepScalingPolicyConfiguration {
         self.metric_aggregation_type.as_ref()
     }
 }
-impl std::fmt::Debug for StepScalingPolicyConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepScalingPolicyConfiguration");
-        formatter.field("adjustment_type", &self.adjustment_type);
-        formatter.field("step_adjustments", &self.step_adjustments);
-        formatter.field("min_adjustment_magnitude", &self.min_adjustment_magnitude);
-        formatter.field("cooldown", &self.cooldown);
-        formatter.field("metric_aggregation_type", &self.metric_aggregation_type);
-        formatter.finish()
-    }
-}
 /// See [`StepScalingPolicyConfiguration`](crate::model::StepScalingPolicyConfiguration).
 pub mod step_scaling_policy_configuration {
 
     /// A builder for [`StepScalingPolicyConfiguration`](crate::model::StepScalingPolicyConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adjustment_type: std::option::Option<crate::model::AdjustmentType>,
         pub(crate) step_adjustments:
@@ -1823,6 +1927,42 @@ impl StepScalingPolicyConfiguration {
     }
 }
 
+/// When writing a match expression against `MetricAggregationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let metricaggregationtype = unimplemented!();
+/// match metricaggregationtype {
+///     MetricAggregationType::Average => { /* ... */ },
+///     MetricAggregationType::Maximum => { /* ... */ },
+///     MetricAggregationType::Minimum => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `metricaggregationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MetricAggregationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MetricAggregationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MetricAggregationType::NewFeature` is defined.
+/// Specifically, when `metricaggregationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MetricAggregationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1841,8 +1981,8 @@ pub enum MetricAggregationType {
     Maximum,
     #[allow(missing_docs)] // documentation missing in model
     Minimum,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MetricAggregationType {
     fn from(s: &str) -> Self {
@@ -1850,7 +1990,9 @@ impl std::convert::From<&str> for MetricAggregationType {
             "Average" => MetricAggregationType::Average,
             "Maximum" => MetricAggregationType::Maximum,
             "Minimum" => MetricAggregationType::Minimum,
-            other => MetricAggregationType::Unknown(other.to_owned()),
+            other => {
+                MetricAggregationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -1868,11 +2010,11 @@ impl MetricAggregationType {
             MetricAggregationType::Average => "Average",
             MetricAggregationType::Maximum => "Maximum",
             MetricAggregationType::Minimum => "Minimum",
-            MetricAggregationType::Unknown(s) => s.as_ref(),
+            MetricAggregationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum"]
     }
 }
@@ -1896,7 +2038,7 @@ impl AsRef<str> for MetricAggregationType {
 /// <li> <p>The upper and lower bound can't be null in the same step adjustment.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StepAdjustment {
     /// <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
     #[doc(hidden)]
@@ -1924,26 +2066,11 @@ impl StepAdjustment {
         self.scaling_adjustment
     }
 }
-impl std::fmt::Debug for StepAdjustment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StepAdjustment");
-        formatter.field(
-            "metric_interval_lower_bound",
-            &self.metric_interval_lower_bound,
-        );
-        formatter.field(
-            "metric_interval_upper_bound",
-            &self.metric_interval_upper_bound,
-        );
-        formatter.field("scaling_adjustment", &self.scaling_adjustment);
-        formatter.finish()
-    }
-}
 /// See [`StepAdjustment`](crate::model::StepAdjustment).
 pub mod step_adjustment {
 
     /// A builder for [`StepAdjustment`](crate::model::StepAdjustment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_interval_lower_bound: std::option::Option<f64>,
         pub(crate) metric_interval_upper_bound: std::option::Option<f64>,
@@ -1999,6 +2126,42 @@ impl StepAdjustment {
     }
 }
 
+/// When writing a match expression against `AdjustmentType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let adjustmenttype = unimplemented!();
+/// match adjustmenttype {
+///     AdjustmentType::ChangeInCapacity => { /* ... */ },
+///     AdjustmentType::ExactCapacity => { /* ... */ },
+///     AdjustmentType::PercentChangeInCapacity => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `adjustmenttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AdjustmentType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AdjustmentType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AdjustmentType::NewFeature` is defined.
+/// Specifically, when `adjustmenttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AdjustmentType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2017,8 +2180,8 @@ pub enum AdjustmentType {
     ExactCapacity,
     #[allow(missing_docs)] // documentation missing in model
     PercentChangeInCapacity,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AdjustmentType {
     fn from(s: &str) -> Self {
@@ -2026,7 +2189,7 @@ impl std::convert::From<&str> for AdjustmentType {
             "ChangeInCapacity" => AdjustmentType::ChangeInCapacity,
             "ExactCapacity" => AdjustmentType::ExactCapacity,
             "PercentChangeInCapacity" => AdjustmentType::PercentChangeInCapacity,
-            other => AdjustmentType::Unknown(other.to_owned()),
+            other => AdjustmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2044,11 +2207,11 @@ impl AdjustmentType {
             AdjustmentType::ChangeInCapacity => "ChangeInCapacity",
             AdjustmentType::ExactCapacity => "ExactCapacity",
             AdjustmentType::PercentChangeInCapacity => "PercentChangeInCapacity",
-            AdjustmentType::Unknown(s) => s.as_ref(),
+            AdjustmentType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ChangeInCapacity",
             "ExactCapacity",
@@ -2062,6 +2225,41 @@ impl AsRef<str> for AdjustmentType {
     }
 }
 
+/// When writing a match expression against `PolicyType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let policytype = unimplemented!();
+/// match policytype {
+///     PolicyType::StepScaling => { /* ... */ },
+///     PolicyType::TargetTrackingScaling => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `policytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PolicyType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PolicyType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PolicyType::NewFeature` is defined.
+/// Specifically, when `policytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PolicyType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2078,15 +2276,15 @@ pub enum PolicyType {
     StepScaling,
     #[allow(missing_docs)] // documentation missing in model
     TargetTrackingScaling,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PolicyType {
     fn from(s: &str) -> Self {
         match s {
             "StepScaling" => PolicyType::StepScaling,
             "TargetTrackingScaling" => PolicyType::TargetTrackingScaling,
-            other => PolicyType::Unknown(other.to_owned()),
+            other => PolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2103,11 +2301,11 @@ impl PolicyType {
         match self {
             PolicyType::StepScaling => "StepScaling",
             PolicyType::TargetTrackingScaling => "TargetTrackingScaling",
-            PolicyType::Unknown(s) => s.as_ref(),
+            PolicyType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["StepScaling", "TargetTrackingScaling"]
     }
 }
@@ -2119,7 +2317,7 @@ impl AsRef<str> for PolicyType {
 
 /// <p>Represents a scheduled action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledAction {
     /// <p>The name of the scheduled action.</p>
     #[doc(hidden)]
@@ -2303,28 +2501,11 @@ impl ScheduledAction {
         self.creation_time.as_ref()
     }
 }
-impl std::fmt::Debug for ScheduledAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledAction");
-        formatter.field("scheduled_action_name", &self.scheduled_action_name);
-        formatter.field("scheduled_action_arn", &self.scheduled_action_arn);
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("timezone", &self.timezone);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("scalable_target_action", &self.scalable_target_action);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
-    }
-}
 /// See [`ScheduledAction`](crate::model::ScheduledAction).
 pub mod scheduled_action {
 
     /// A builder for [`ScheduledAction`](crate::model::ScheduledAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_action_name: std::option::Option<std::string::String>,
         pub(crate) scheduled_action_arn: std::option::Option<std::string::String>,
@@ -2601,7 +2782,7 @@ impl ScheduledAction {
 /// <p>Represents a scaling policy to use with Application Auto Scaling.</p>
 /// <p>For more information about configuring scaling policies for a specific service, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/getting-started.html">Getting started with Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingPolicy {
     /// <p>The Amazon Resource Name (ARN) of the scaling policy.</p>
     #[doc(hidden)]
@@ -2762,33 +2943,11 @@ impl ScalingPolicy {
         self.creation_time.as_ref()
     }
 }
-impl std::fmt::Debug for ScalingPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingPolicy");
-        formatter.field("policy_arn", &self.policy_arn);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("policy_type", &self.policy_type);
-        formatter.field(
-            "step_scaling_policy_configuration",
-            &self.step_scaling_policy_configuration,
-        );
-        formatter.field(
-            "target_tracking_scaling_policy_configuration",
-            &self.target_tracking_scaling_policy_configuration,
-        );
-        formatter.field("alarms", &self.alarms);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.finish()
-    }
-}
 /// See [`ScalingPolicy`](crate::model::ScalingPolicy).
 pub mod scaling_policy {
 
     /// A builder for [`ScalingPolicy`](crate::model::ScalingPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -3044,7 +3203,7 @@ impl ScalingPolicy {
 
 /// <p>Represents a scaling activity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalingActivity {
     /// <p>The unique identifier of the scaling activity.</p>
     #[doc(hidden)]
@@ -3206,28 +3365,11 @@ impl ScalingActivity {
         self.details.as_deref()
     }
 }
-impl std::fmt::Debug for ScalingActivity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalingActivity");
-        formatter.field("activity_id", &self.activity_id);
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("description", &self.description);
-        formatter.field("cause", &self.cause);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 /// See [`ScalingActivity`](crate::model::ScalingActivity).
 pub mod scaling_activity {
 
     /// A builder for [`ScalingActivity`](crate::model::ScalingActivity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_id: std::option::Option<std::string::String>,
         pub(crate) service_namespace: std::option::Option<crate::model::ServiceNamespace>,
@@ -3475,6 +3617,45 @@ impl ScalingActivity {
     }
 }
 
+/// When writing a match expression against `ScalingActivityStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let scalingactivitystatuscode = unimplemented!();
+/// match scalingactivitystatuscode {
+///     ScalingActivityStatusCode::Failed => { /* ... */ },
+///     ScalingActivityStatusCode::InProgress => { /* ... */ },
+///     ScalingActivityStatusCode::Overridden => { /* ... */ },
+///     ScalingActivityStatusCode::Pending => { /* ... */ },
+///     ScalingActivityStatusCode::Successful => { /* ... */ },
+///     ScalingActivityStatusCode::Unfulfilled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `scalingactivitystatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ScalingActivityStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ScalingActivityStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ScalingActivityStatusCode::NewFeature` is defined.
+/// Specifically, when `scalingactivitystatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ScalingActivityStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3499,8 +3680,8 @@ pub enum ScalingActivityStatusCode {
     Successful,
     #[allow(missing_docs)] // documentation missing in model
     Unfulfilled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ScalingActivityStatusCode {
     fn from(s: &str) -> Self {
@@ -3511,7 +3692,9 @@ impl std::convert::From<&str> for ScalingActivityStatusCode {
             "Pending" => ScalingActivityStatusCode::Pending,
             "Successful" => ScalingActivityStatusCode::Successful,
             "Unfulfilled" => ScalingActivityStatusCode::Unfulfilled,
-            other => ScalingActivityStatusCode::Unknown(other.to_owned()),
+            other => ScalingActivityStatusCode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -3532,11 +3715,11 @@ impl ScalingActivityStatusCode {
             ScalingActivityStatusCode::Pending => "Pending",
             ScalingActivityStatusCode::Successful => "Successful",
             ScalingActivityStatusCode::Unfulfilled => "Unfulfilled",
-            ScalingActivityStatusCode::Unknown(s) => s.as_ref(),
+            ScalingActivityStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Failed",
             "InProgress",
@@ -3555,7 +3738,7 @@ impl AsRef<str> for ScalingActivityStatusCode {
 
 /// <p>Represents a scalable target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScalableTarget {
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     #[doc(hidden)]
@@ -3696,25 +3879,11 @@ impl ScalableTarget {
         self.suspended_state.as_ref()
     }
 }
-impl std::fmt::Debug for ScalableTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScalableTarget");
-        formatter.field("service_namespace", &self.service_namespace);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("scalable_dimension", &self.scalable_dimension);
-        formatter.field("min_capacity", &self.min_capacity);
-        formatter.field("max_capacity", &self.max_capacity);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("suspended_state", &self.suspended_state);
-        formatter.finish()
-    }
-}
 /// See [`ScalableTarget`](crate::model::ScalableTarget).
 pub mod scalable_target {
 
     /// A builder for [`ScalableTarget`](crate::model::ScalableTarget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_namespace: std::option::Option<crate::model::ServiceNamespace>,
         pub(crate) resource_id: std::option::Option<std::string::String>,

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod cancel_ingestion_input {
 
     /// A builder for [`CancelIngestionInput`](crate::input::CancelIngestionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -48,7 +48,7 @@ pub mod cancel_ingestion_input {
         /// Consumes the builder and constructs a [`CancelIngestionInput`](crate::input::CancelIngestionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelIngestionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CancelIngestionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CancelIngestionInput {
                 aws_account_id: self.aws_account_id,
@@ -71,54 +71,69 @@ impl CancelIngestionInput {
             crate::operation::CancelIngestion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CancelIngestionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.aws_account_id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_2 = &_input.data_set_id;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let data_set_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "data_set_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let data_set_id = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if data_set_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "data_set_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_3 = &_input.ingestion_id;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ingestion_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let ingestion_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "ingestion_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let ingestion_id = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if ingestion_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ingestion_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "ingestion_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -134,8 +149,10 @@ impl CancelIngestionInput {
             fn update_http_builder(
                 input: &crate::input::CancelIngestionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -205,7 +222,7 @@ impl CancelIngestionInput {
 pub mod create_account_customization_input {
 
     /// A builder for [`CreateAccountCustomizationInput`](crate::input::CreateAccountCustomizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -275,7 +292,7 @@ pub mod create_account_customization_input {
             self,
         ) -> Result<
             crate::input::CreateAccountCustomizationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateAccountCustomizationInput {
                 aws_account_id: self.aws_account_id,
@@ -299,26 +316,31 @@ impl CreateAccountCustomizationInput {
             crate::operation::CreateAccountCustomization,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateAccountCustomizationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.aws_account_id;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -331,10 +353,12 @@ impl CreateAccountCustomizationInput {
             fn uri_query(
                 _input: &crate::input::CreateAccountCustomizationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_5) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_5));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_5));
+                    }
                 }
                 Ok(())
             }
@@ -342,8 +366,10 @@ impl CreateAccountCustomizationInput {
             fn update_http_builder(
                 input: &crate::input::CreateAccountCustomizationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -430,7 +456,7 @@ impl CreateAccountCustomizationInput {
 pub mod create_account_subscription_input {
 
     /// A builder for [`CreateAccountSubscriptionInput`](crate::input::CreateAccountSubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) edition: std::option::Option<crate::model::Edition>,
         pub(crate) authentication_method:
@@ -669,7 +695,7 @@ pub mod create_account_subscription_input {
             self,
         ) -> Result<
             crate::input::CreateAccountSubscriptionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateAccountSubscriptionInput {
                 edition: self.edition,
@@ -704,26 +730,31 @@ impl CreateAccountSubscriptionInput {
             crate::operation::CreateAccountSubscription,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateAccountSubscriptionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.aws_account_id;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -737,8 +768,10 @@ impl CreateAccountSubscriptionInput {
             fn update_http_builder(
                 input: &crate::input::CreateAccountSubscriptionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -824,7 +857,7 @@ impl CreateAccountSubscriptionInput {
 pub mod create_analysis_input {
 
     /// A builder for [`CreateAnalysisInput`](crate::input::CreateAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) analysis_id: std::option::Option<std::string::String>,
@@ -949,7 +982,7 @@ pub mod create_analysis_input {
         /// Consumes the builder and constructs a [`CreateAnalysisInput`](crate::input::CreateAnalysisInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAnalysisInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateAnalysisInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateAnalysisInput {
                 aws_account_id: self.aws_account_id,
@@ -977,40 +1010,50 @@ impl CreateAnalysisInput {
             crate::operation::CreateAnalysis,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateAnalysisInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.aws_account_id;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_8 = &_input.analysis_id;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let analysis_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "analysis_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let analysis_id = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if analysis_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "analysis_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1025,8 +1068,10 @@ impl CreateAnalysisInput {
             fn update_http_builder(
                 input: &crate::input::CreateAnalysisInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1110,7 +1155,7 @@ impl CreateAnalysisInput {
 pub mod create_dashboard_input {
 
     /// A builder for [`CreateDashboardInput`](crate::input::CreateDashboardInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
@@ -1279,7 +1324,7 @@ pub mod create_dashboard_input {
         /// Consumes the builder and constructs a [`CreateDashboardInput`](crate::input::CreateDashboardInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDashboardInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateDashboardInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateDashboardInput {
                 aws_account_id: self.aws_account_id,
@@ -1309,40 +1354,50 @@ impl CreateDashboardInput {
             crate::operation::CreateDashboard,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateDashboardInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.aws_account_id;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_10 = &_input.dashboard_id;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dashboard_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dashboard_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dashboard_id = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dashboard_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dashboard_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1357,8 +1412,10 @@ impl CreateDashboardInput {
             fn update_http_builder(
                 input: &crate::input::CreateDashboardInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1442,7 +1499,7 @@ impl CreateDashboardInput {
 pub mod create_data_set_input {
 
     /// A builder for [`CreateDataSetInput`](crate::input::CreateDataSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -1722,7 +1779,7 @@ pub mod create_data_set_input {
         /// Consumes the builder and constructs a [`CreateDataSetInput`](crate::input::CreateDataSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDataSetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateDataSetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateDataSetInput {
                 aws_account_id: self.aws_account_id,
@@ -1756,26 +1813,31 @@ impl CreateDataSetInput {
             crate::operation::CreateDataSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateDataSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.aws_account_id;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_11,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1789,8 +1851,10 @@ impl CreateDataSetInput {
             fn update_http_builder(
                 input: &crate::input::CreateDataSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1874,7 +1938,7 @@ impl CreateDataSetInput {
 pub mod create_data_source_input {
 
     /// A builder for [`CreateDataSourceInput`](crate::input::CreateDataSourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -2037,8 +2101,10 @@ pub mod create_data_source_input {
         /// Consumes the builder and constructs a [`CreateDataSourceInput`](crate::input::CreateDataSourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDataSourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateDataSourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateDataSourceInput {
                 aws_account_id: self.aws_account_id,
                 data_source_id: self.data_source_id,
@@ -2051,6 +2117,22 @@ pub mod create_data_source_input {
                 ssl_properties: self.ssl_properties,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("aws_account_id", &self.aws_account_id);
+            formatter.field("data_source_id", &self.data_source_id);
+            formatter.field("name", &self.name);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("data_source_parameters", &self.data_source_parameters);
+            formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+            formatter.field("permissions", &self.permissions);
+            formatter.field("vpc_connection_properties", &self.vpc_connection_properties);
+            formatter.field("ssl_properties", &self.ssl_properties);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -2067,26 +2149,31 @@ impl CreateDataSourceInput {
             crate::operation::CreateDataSource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateDataSourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_12 = &_input.aws_account_id;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_12, false);
+                let input_12 = input_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_12,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2100,8 +2187,10 @@ impl CreateDataSourceInput {
             fn update_http_builder(
                 input: &crate::input::CreateDataSourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2185,7 +2274,7 @@ impl CreateDataSourceInput {
 pub mod create_folder_input {
 
     /// A builder for [`CreateFolderInput`](crate::input::CreateFolderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -2301,7 +2390,7 @@ pub mod create_folder_input {
         /// Consumes the builder and constructs a [`CreateFolderInput`](crate::input::CreateFolderInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateFolderInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateFolderInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateFolderInput {
                 aws_account_id: self.aws_account_id,
@@ -2328,40 +2417,50 @@ impl CreateFolderInput {
             crate::operation::CreateFolder,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateFolderInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.aws_account_id;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_14 = &_input.folder_id;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let folder_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let input_14 = input_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "folder_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let folder_id = aws_smithy_http::label::fmt_string(
+                    input_14,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if folder_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "folder_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2376,8 +2475,10 @@ impl CreateFolderInput {
             fn update_http_builder(
                 input: &crate::input::CreateFolderInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2461,7 +2562,7 @@ impl CreateFolderInput {
 pub mod create_folder_membership_input {
 
     /// A builder for [`CreateFolderMembershipInput`](crate::input::CreateFolderMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -2518,8 +2619,10 @@ pub mod create_folder_membership_input {
         /// Consumes the builder and constructs a [`CreateFolderMembershipInput`](crate::input::CreateFolderMembershipInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateFolderMembershipInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateFolderMembershipInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateFolderMembershipInput {
                 aws_account_id: self.aws_account_id,
                 folder_id: self.folder_id,
@@ -2542,68 +2645,88 @@ impl CreateFolderMembershipInput {
             crate::operation::CreateFolderMembership,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateFolderMembershipInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_15 = &_input.aws_account_id;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let input_15 = input_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_15,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_16 = &_input.folder_id;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let folder_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "folder_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let folder_id = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if folder_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "folder_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_17 = &_input.member_type;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "member_type",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let member_type = aws_smithy_http::label::fmt_string(input_17, false);
+                let input_17 = input_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "member_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let member_type = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if member_type.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "member_type",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "member_type",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_18 = &_input.member_id;
-                let input_18 = input_18.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "member_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let member_id = aws_smithy_http::label::fmt_string(input_18, false);
+                let input_18 = input_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "member_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let member_id = aws_smithy_http::label::fmt_string(
+                    input_18,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if member_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "member_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "member_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2620,8 +2743,10 @@ impl CreateFolderMembershipInput {
             fn update_http_builder(
                 input: &crate::input::CreateFolderMembershipInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -2691,7 +2816,7 @@ impl CreateFolderMembershipInput {
 pub mod create_group_input {
 
     /// A builder for [`CreateGroupInput`](crate::input::CreateGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2745,7 +2870,7 @@ pub mod create_group_input {
         /// Consumes the builder and constructs a [`CreateGroupInput`](crate::input::CreateGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateGroupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateGroupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateGroupInput {
                 group_name: self.group_name,
@@ -2769,40 +2894,50 @@ impl CreateGroupInput {
             crate::operation::CreateGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_19 = &_input.aws_account_id;
-                let input_19 = input_19.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_19, false);
+                let input_19 = input_19.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_19,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_20 = &_input.namespace;
-                let input_20 = input_20.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_20, false);
+                let input_20 = input_20.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_20,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2817,8 +2952,10 @@ impl CreateGroupInput {
             fn update_http_builder(
                 input: &crate::input::CreateGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2902,7 +3039,7 @@ impl CreateGroupInput {
 pub mod create_group_membership_input {
 
     /// A builder for [`CreateGroupMembershipInput`](crate::input::CreateGroupMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_name: std::option::Option<std::string::String>,
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -2956,8 +3093,10 @@ pub mod create_group_membership_input {
         /// Consumes the builder and constructs a [`CreateGroupMembershipInput`](crate::input::CreateGroupMembershipInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateGroupMembershipInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateGroupMembershipInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateGroupMembershipInput {
                 member_name: self.member_name,
                 group_name: self.group_name,
@@ -2980,68 +3119,88 @@ impl CreateGroupMembershipInput {
             crate::operation::CreateGroupMembership,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateGroupMembershipInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_21 = &_input.aws_account_id;
-                let input_21 = input_21.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let input_21 = input_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_21,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_22 = &_input.namespace;
-                let input_22 = input_22.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_22, false);
+                let input_22 = input_22.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_22,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_23 = &_input.group_name;
-                let input_23 = input_23.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "group_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let group_name = aws_smithy_http::label::fmt_string(input_23, false);
+                let input_23 = input_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "group_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let group_name = aws_smithy_http::label::fmt_string(
+                    input_23,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if group_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "group_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "group_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_24 = &_input.member_name;
-                let input_24 = input_24.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "member_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let member_name = aws_smithy_http::label::fmt_string(input_24, false);
+                let input_24 = input_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "member_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let member_name = aws_smithy_http::label::fmt_string(
+                    input_24,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if member_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "member_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "member_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members/{MemberName}", AwsAccountId = aws_account_id, Namespace = namespace, GroupName = group_name, MemberName = member_name).expect("formatting should succeed");
                 Ok(())
@@ -3050,8 +3209,10 @@ impl CreateGroupMembershipInput {
             fn update_http_builder(
                 input: &crate::input::CreateGroupMembershipInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -3121,7 +3282,7 @@ impl CreateGroupMembershipInput {
 pub mod create_iam_policy_assignment_input {
 
     /// A builder for [`CreateIamPolicyAssignmentInput`](crate::input::CreateIamPolicyAssignmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) assignment_name: std::option::Option<std::string::String>,
@@ -3232,7 +3393,7 @@ pub mod create_iam_policy_assignment_input {
             self,
         ) -> Result<
             crate::input::CreateIamPolicyAssignmentInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateIamPolicyAssignmentInput {
                 aws_account_id: self.aws_account_id,
@@ -3258,40 +3419,50 @@ impl CreateIamPolicyAssignmentInput {
             crate::operation::CreateIAMPolicyAssignment,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateIamPolicyAssignmentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_25 = &_input.aws_account_id;
-                let input_25 = input_25.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_25, false);
+                let input_25 = input_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_25,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_26 = &_input.namespace;
-                let input_26 = input_26.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_26, false);
+                let input_26 = input_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_26,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3306,8 +3477,10 @@ impl CreateIamPolicyAssignmentInput {
             fn update_http_builder(
                 input: &crate::input::CreateIamPolicyAssignmentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3393,7 +3566,7 @@ impl CreateIamPolicyAssignmentInput {
 pub mod create_ingestion_input {
 
     /// A builder for [`CreateIngestionInput`](crate::input::CreateIngestionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
         pub(crate) ingestion_id: std::option::Option<std::string::String>,
@@ -3450,7 +3623,7 @@ pub mod create_ingestion_input {
         /// Consumes the builder and constructs a [`CreateIngestionInput`](crate::input::CreateIngestionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateIngestionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateIngestionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateIngestionInput {
                 data_set_id: self.data_set_id,
@@ -3474,54 +3647,69 @@ impl CreateIngestionInput {
             crate::operation::CreateIngestion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateIngestionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_27 = &_input.aws_account_id;
-                let input_27 = input_27.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_27, false);
+                let input_27 = input_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_27,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_28 = &_input.data_set_id;
-                let input_28 = input_28.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let data_set_id = aws_smithy_http::label::fmt_string(input_28, false);
+                let input_28 = input_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "data_set_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let data_set_id = aws_smithy_http::label::fmt_string(
+                    input_28,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if data_set_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "data_set_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_29 = &_input.ingestion_id;
-                let input_29 = input_29.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ingestion_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let ingestion_id = aws_smithy_http::label::fmt_string(input_29, false);
+                let input_29 = input_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "ingestion_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let ingestion_id = aws_smithy_http::label::fmt_string(
+                    input_29,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if ingestion_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ingestion_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "ingestion_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3537,8 +3725,10 @@ impl CreateIngestionInput {
             fn update_http_builder(
                 input: &crate::input::CreateIngestionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -3622,7 +3812,7 @@ impl CreateIngestionInput {
 pub mod create_namespace_input {
 
     /// A builder for [`CreateNamespaceInput`](crate::input::CreateNamespaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -3688,7 +3878,7 @@ pub mod create_namespace_input {
         /// Consumes the builder and constructs a [`CreateNamespaceInput`](crate::input::CreateNamespaceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateNamespaceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateNamespaceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateNamespaceInput {
                 aws_account_id: self.aws_account_id,
@@ -3712,26 +3902,31 @@ impl CreateNamespaceInput {
             crate::operation::CreateNamespace,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateNamespaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_30 = &_input.aws_account_id;
-                let input_30 = input_30.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_30, false);
+                let input_30 = input_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_30,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3745,8 +3940,10 @@ impl CreateNamespaceInput {
             fn update_http_builder(
                 input: &crate::input::CreateNamespaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3830,7 +4027,7 @@ impl CreateNamespaceInput {
 pub mod create_template_input {
 
     /// A builder for [`CreateTemplateInput`](crate::input::CreateTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) template_id: std::option::Option<std::string::String>,
@@ -3944,7 +4141,7 @@ pub mod create_template_input {
         /// Consumes the builder and constructs a [`CreateTemplateInput`](crate::input::CreateTemplateInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTemplateInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateTemplateInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateTemplateInput {
                 aws_account_id: self.aws_account_id,
@@ -3971,40 +4168,50 @@ impl CreateTemplateInput {
             crate::operation::CreateTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_31 = &_input.aws_account_id;
-                let input_31 = input_31.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_31, false);
+                let input_31 = input_31.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_31,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_32 = &_input.template_id;
-                let input_32 = input_32.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let template_id = aws_smithy_http::label::fmt_string(input_32, false);
+                let input_32 = input_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let template_id = aws_smithy_http::label::fmt_string(
+                    input_32,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if template_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "template_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4019,8 +4226,10 @@ impl CreateTemplateInput {
             fn update_http_builder(
                 input: &crate::input::CreateTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4104,7 +4313,7 @@ impl CreateTemplateInput {
 pub mod create_template_alias_input {
 
     /// A builder for [`CreateTemplateAliasInput`](crate::input::CreateTemplateAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) template_id: std::option::Option<std::string::String>,
@@ -4158,8 +4367,10 @@ pub mod create_template_alias_input {
         /// Consumes the builder and constructs a [`CreateTemplateAliasInput`](crate::input::CreateTemplateAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTemplateAliasInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateTemplateAliasInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateTemplateAliasInput {
                 aws_account_id: self.aws_account_id,
                 template_id: self.template_id,
@@ -4182,54 +4393,69 @@ impl CreateTemplateAliasInput {
             crate::operation::CreateTemplateAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateTemplateAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_33 = &_input.aws_account_id;
-                let input_33 = input_33.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_33, false);
+                let input_33 = input_33.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_33,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_34 = &_input.template_id;
-                let input_34 = input_34.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let template_id = aws_smithy_http::label::fmt_string(input_34, false);
+                let input_34 = input_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let template_id = aws_smithy_http::label::fmt_string(
+                    input_34,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if template_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "template_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_35 = &_input.alias_name;
-                let input_35 = input_35.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alias_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let alias_name = aws_smithy_http::label::fmt_string(input_35, false);
+                let input_35 = input_35.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alias_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let alias_name = aws_smithy_http::label::fmt_string(
+                    input_35,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if alias_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alias_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alias_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4245,8 +4471,10 @@ impl CreateTemplateAliasInput {
             fn update_http_builder(
                 input: &crate::input::CreateTemplateAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4330,7 +4558,7 @@ impl CreateTemplateAliasInput {
 pub mod create_theme_input {
 
     /// A builder for [`CreateThemeInput`](crate::input::CreateThemeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) theme_id: std::option::Option<std::string::String>,
@@ -4456,7 +4684,7 @@ pub mod create_theme_input {
         /// Consumes the builder and constructs a [`CreateThemeInput`](crate::input::CreateThemeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateThemeInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateThemeInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateThemeInput {
                 aws_account_id: self.aws_account_id,
@@ -4484,40 +4712,50 @@ impl CreateThemeInput {
             crate::operation::CreateTheme,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateThemeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_36 = &_input.aws_account_id;
-                let input_36 = input_36.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_36, false);
+                let input_36 = input_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_36,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_37 = &_input.theme_id;
-                let input_37 = input_37.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let theme_id = aws_smithy_http::label::fmt_string(input_37, false);
+                let input_37 = input_37.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "theme_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let theme_id = aws_smithy_http::label::fmt_string(
+                    input_37,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if theme_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "theme_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4532,8 +4770,10 @@ impl CreateThemeInput {
             fn update_http_builder(
                 input: &crate::input::CreateThemeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4617,7 +4857,7 @@ impl CreateThemeInput {
 pub mod create_theme_alias_input {
 
     /// A builder for [`CreateThemeAliasInput`](crate::input::CreateThemeAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) theme_id: std::option::Option<std::string::String>,
@@ -4671,8 +4911,10 @@ pub mod create_theme_alias_input {
         /// Consumes the builder and constructs a [`CreateThemeAliasInput`](crate::input::CreateThemeAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateThemeAliasInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateThemeAliasInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateThemeAliasInput {
                 aws_account_id: self.aws_account_id,
                 theme_id: self.theme_id,
@@ -4695,54 +4937,69 @@ impl CreateThemeAliasInput {
             crate::operation::CreateThemeAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateThemeAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_38 = &_input.aws_account_id;
-                let input_38 = input_38.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let input_38 = input_38.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_38,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_39 = &_input.theme_id;
-                let input_39 = input_39.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let theme_id = aws_smithy_http::label::fmt_string(input_39, false);
+                let input_39 = input_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "theme_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let theme_id = aws_smithy_http::label::fmt_string(
+                    input_39,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if theme_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "theme_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_40 = &_input.alias_name;
-                let input_40 = input_40.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alias_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let alias_name = aws_smithy_http::label::fmt_string(input_40, false);
+                let input_40 = input_40.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alias_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let alias_name = aws_smithy_http::label::fmt_string(
+                    input_40,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if alias_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alias_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alias_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4758,8 +5015,10 @@ impl CreateThemeAliasInput {
             fn update_http_builder(
                 input: &crate::input::CreateThemeAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4843,7 +5102,7 @@ impl CreateThemeAliasInput {
 pub mod delete_account_customization_input {
 
     /// A builder for [`DeleteAccountCustomizationInput`](crate::input::DeleteAccountCustomizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -4877,7 +5136,7 @@ pub mod delete_account_customization_input {
             self,
         ) -> Result<
             crate::input::DeleteAccountCustomizationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteAccountCustomizationInput {
                 aws_account_id: self.aws_account_id,
@@ -4899,26 +5158,31 @@ impl DeleteAccountCustomizationInput {
             crate::operation::DeleteAccountCustomization,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAccountCustomizationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_41 = &_input.aws_account_id;
-                let input_41 = input_41.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_41, false);
+                let input_41 = input_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_41,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4931,10 +5195,12 @@ impl DeleteAccountCustomizationInput {
             fn uri_query(
                 _input: &crate::input::DeleteAccountCustomizationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_42) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_42));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_42));
+                    }
                 }
                 Ok(())
             }
@@ -4942,8 +5208,10 @@ impl DeleteAccountCustomizationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAccountCustomizationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5014,7 +5282,7 @@ impl DeleteAccountCustomizationInput {
 pub mod delete_analysis_input {
 
     /// A builder for [`DeleteAnalysisInput`](crate::input::DeleteAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) analysis_id: std::option::Option<std::string::String>,
@@ -5071,7 +5339,7 @@ pub mod delete_analysis_input {
         /// Consumes the builder and constructs a [`DeleteAnalysisInput`](crate::input::DeleteAnalysisInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAnalysisInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteAnalysisInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteAnalysisInput {
                 aws_account_id: self.aws_account_id,
@@ -5097,40 +5365,50 @@ impl DeleteAnalysisInput {
             crate::operation::DeleteAnalysis,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAnalysisInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_43 = &_input.aws_account_id;
-                let input_43 = input_43.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_43, false);
+                let input_43 = input_43.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_43,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_44 = &_input.analysis_id;
-                let input_44 = input_44.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let analysis_id = aws_smithy_http::label::fmt_string(input_44, false);
+                let input_44 = input_44.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "analysis_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let analysis_id = aws_smithy_http::label::fmt_string(
+                    input_44,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if analysis_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "analysis_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5144,13 +5422,15 @@ impl DeleteAnalysisInput {
             fn uri_query(
                 _input: &crate::input::DeleteAnalysisInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_45) = &_input.recovery_window_in_days {
-                    query.push_kv(
-                        "recovery-window-in-days",
-                        aws_smithy_types::primitive::Encoder::from(*inner_45).encode(),
-                    );
+                    if *inner_45 != 0 {
+                        query.push_kv(
+                            "recovery-window-in-days",
+                            aws_smithy_types::primitive::Encoder::from(*inner_45).encode(),
+                        );
+                    }
                 }
                 if _input.force_delete_without_recovery {
                     query.push_kv(
@@ -5167,8 +5447,10 @@ impl DeleteAnalysisInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAnalysisInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5239,7 +5521,7 @@ impl DeleteAnalysisInput {
 pub mod delete_dashboard_input {
 
     /// A builder for [`DeleteDashboardInput`](crate::input::DeleteDashboardInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
@@ -5282,7 +5564,7 @@ pub mod delete_dashboard_input {
         /// Consumes the builder and constructs a [`DeleteDashboardInput`](crate::input::DeleteDashboardInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDashboardInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteDashboardInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteDashboardInput {
                 aws_account_id: self.aws_account_id,
@@ -5305,40 +5587,50 @@ impl DeleteDashboardInput {
             crate::operation::DeleteDashboard,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDashboardInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_46 = &_input.aws_account_id;
-                let input_46 = input_46.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_46, false);
+                let input_46 = input_46.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_46,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_47 = &_input.dashboard_id;
-                let input_47 = input_47.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dashboard_id = aws_smithy_http::label::fmt_string(input_47, false);
+                let input_47 = input_47.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dashboard_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dashboard_id = aws_smithy_http::label::fmt_string(
+                    input_47,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dashboard_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dashboard_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5352,13 +5644,15 @@ impl DeleteDashboardInput {
             fn uri_query(
                 _input: &crate::input::DeleteDashboardInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_48) = &_input.version_number {
-                    query.push_kv(
-                        "version-number",
-                        aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
-                    );
+                    if *inner_48 != 0 {
+                        query.push_kv(
+                            "version-number",
+                            aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -5366,8 +5660,10 @@ impl DeleteDashboardInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDashboardInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5438,7 +5734,7 @@ impl DeleteDashboardInput {
 pub mod delete_data_set_input {
 
     /// A builder for [`DeleteDataSetInput`](crate::input::DeleteDataSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -5470,7 +5766,7 @@ pub mod delete_data_set_input {
         /// Consumes the builder and constructs a [`DeleteDataSetInput`](crate::input::DeleteDataSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDataSetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteDataSetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteDataSetInput {
                 aws_account_id: self.aws_account_id,
@@ -5492,40 +5788,50 @@ impl DeleteDataSetInput {
             crate::operation::DeleteDataSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDataSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_49 = &_input.aws_account_id;
-                let input_49 = input_49.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_49, false);
+                let input_49 = input_49.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_49,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_50 = &_input.data_set_id;
-                let input_50 = input_50.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let data_set_id = aws_smithy_http::label::fmt_string(input_50, false);
+                let input_50 = input_50.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "data_set_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let data_set_id = aws_smithy_http::label::fmt_string(
+                    input_50,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if data_set_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "data_set_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5540,8 +5846,10 @@ impl DeleteDataSetInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDataSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -5611,7 +5919,7 @@ impl DeleteDataSetInput {
 pub mod delete_data_source_input {
 
     /// A builder for [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -5646,8 +5954,10 @@ pub mod delete_data_source_input {
         /// Consumes the builder and constructs a [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDataSourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteDataSourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteDataSourceInput {
                 aws_account_id: self.aws_account_id,
                 data_source_id: self.data_source_id,
@@ -5668,40 +5978,50 @@ impl DeleteDataSourceInput {
             crate::operation::DeleteDataSource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDataSourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_51 = &_input.aws_account_id;
-                let input_51 = input_51.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_51, false);
+                let input_51 = input_51.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_51,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_52 = &_input.data_source_id;
-                let input_52 = input_52.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_source_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let data_source_id = aws_smithy_http::label::fmt_string(input_52, false);
+                let input_52 = input_52.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "data_source_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let data_source_id = aws_smithy_http::label::fmt_string(
+                    input_52,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if data_source_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_source_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "data_source_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5716,8 +6036,10 @@ impl DeleteDataSourceInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDataSourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -5787,7 +6109,7 @@ impl DeleteDataSourceInput {
 pub mod delete_folder_input {
 
     /// A builder for [`DeleteFolderInput`](crate::input::DeleteFolderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -5819,7 +6141,7 @@ pub mod delete_folder_input {
         /// Consumes the builder and constructs a [`DeleteFolderInput`](crate::input::DeleteFolderInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteFolderInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteFolderInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteFolderInput {
                 aws_account_id: self.aws_account_id,
@@ -5841,40 +6163,50 @@ impl DeleteFolderInput {
             crate::operation::DeleteFolder,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteFolderInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_53 = &_input.aws_account_id;
-                let input_53 = input_53.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_53, false);
+                let input_53 = input_53.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_53,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_54 = &_input.folder_id;
-                let input_54 = input_54.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let folder_id = aws_smithy_http::label::fmt_string(input_54, false);
+                let input_54 = input_54.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "folder_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let folder_id = aws_smithy_http::label::fmt_string(
+                    input_54,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if folder_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "folder_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5889,8 +6221,10 @@ impl DeleteFolderInput {
             fn update_http_builder(
                 input: &crate::input::DeleteFolderInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -5960,7 +6294,7 @@ impl DeleteFolderInput {
 pub mod delete_folder_membership_input {
 
     /// A builder for [`DeleteFolderMembershipInput`](crate::input::DeleteFolderMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -6017,8 +6351,10 @@ pub mod delete_folder_membership_input {
         /// Consumes the builder and constructs a [`DeleteFolderMembershipInput`](crate::input::DeleteFolderMembershipInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteFolderMembershipInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteFolderMembershipInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteFolderMembershipInput {
                 aws_account_id: self.aws_account_id,
                 folder_id: self.folder_id,
@@ -6041,68 +6377,88 @@ impl DeleteFolderMembershipInput {
             crate::operation::DeleteFolderMembership,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteFolderMembershipInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_55 = &_input.aws_account_id;
-                let input_55 = input_55.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_55, false);
+                let input_55 = input_55.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_55,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_56 = &_input.folder_id;
-                let input_56 = input_56.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let folder_id = aws_smithy_http::label::fmt_string(input_56, false);
+                let input_56 = input_56.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "folder_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let folder_id = aws_smithy_http::label::fmt_string(
+                    input_56,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if folder_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "folder_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_57 = &_input.member_type;
-                let input_57 = input_57.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "member_type",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let member_type = aws_smithy_http::label::fmt_string(input_57, false);
+                let input_57 = input_57.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "member_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let member_type = aws_smithy_http::label::fmt_string(
+                    input_57,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if member_type.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "member_type",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "member_type",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_58 = &_input.member_id;
-                let input_58 = input_58.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "member_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let member_id = aws_smithy_http::label::fmt_string(input_58, false);
+                let input_58 = input_58.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "member_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let member_id = aws_smithy_http::label::fmt_string(
+                    input_58,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if member_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "member_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "member_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6119,8 +6475,10 @@ impl DeleteFolderMembershipInput {
             fn update_http_builder(
                 input: &crate::input::DeleteFolderMembershipInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -6190,7 +6548,7 @@ impl DeleteFolderMembershipInput {
 pub mod delete_group_input {
 
     /// A builder for [`DeleteGroupInput`](crate::input::DeleteGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -6233,7 +6591,7 @@ pub mod delete_group_input {
         /// Consumes the builder and constructs a [`DeleteGroupInput`](crate::input::DeleteGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteGroupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteGroupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteGroupInput {
                 group_name: self.group_name,
@@ -6256,54 +6614,69 @@ impl DeleteGroupInput {
             crate::operation::DeleteGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_59 = &_input.aws_account_id;
-                let input_59 = input_59.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_59, false);
+                let input_59 = input_59.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_59,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_60 = &_input.namespace;
-                let input_60 = input_60.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_60, false);
+                let input_60 = input_60.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_60,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_61 = &_input.group_name;
-                let input_61 = input_61.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "group_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let group_name = aws_smithy_http::label::fmt_string(input_61, false);
+                let input_61 = input_61.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "group_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let group_name = aws_smithy_http::label::fmt_string(
+                    input_61,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if group_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "group_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "group_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6319,8 +6692,10 @@ impl DeleteGroupInput {
             fn update_http_builder(
                 input: &crate::input::DeleteGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -6390,7 +6765,7 @@ impl DeleteGroupInput {
 pub mod delete_group_membership_input {
 
     /// A builder for [`DeleteGroupMembershipInput`](crate::input::DeleteGroupMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_name: std::option::Option<std::string::String>,
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -6444,8 +6819,10 @@ pub mod delete_group_membership_input {
         /// Consumes the builder and constructs a [`DeleteGroupMembershipInput`](crate::input::DeleteGroupMembershipInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteGroupMembershipInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteGroupMembershipInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteGroupMembershipInput {
                 member_name: self.member_name,
                 group_name: self.group_name,
@@ -6468,68 +6845,88 @@ impl DeleteGroupMembershipInput {
             crate::operation::DeleteGroupMembership,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteGroupMembershipInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_62 = &_input.aws_account_id;
-                let input_62 = input_62.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_62, false);
+                let input_62 = input_62.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_62,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_63 = &_input.namespace;
-                let input_63 = input_63.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_63, false);
+                let input_63 = input_63.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_63,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_64 = &_input.group_name;
-                let input_64 = input_64.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "group_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let group_name = aws_smithy_http::label::fmt_string(input_64, false);
+                let input_64 = input_64.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "group_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let group_name = aws_smithy_http::label::fmt_string(
+                    input_64,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if group_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "group_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "group_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_65 = &_input.member_name;
-                let input_65 = input_65.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "member_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let member_name = aws_smithy_http::label::fmt_string(input_65, false);
+                let input_65 = input_65.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "member_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let member_name = aws_smithy_http::label::fmt_string(
+                    input_65,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if member_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "member_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "member_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members/{MemberName}", AwsAccountId = aws_account_id, Namespace = namespace, GroupName = group_name, MemberName = member_name).expect("formatting should succeed");
                 Ok(())
@@ -6538,8 +6935,10 @@ impl DeleteGroupMembershipInput {
             fn update_http_builder(
                 input: &crate::input::DeleteGroupMembershipInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -6609,7 +7008,7 @@ impl DeleteGroupMembershipInput {
 pub mod delete_iam_policy_assignment_input {
 
     /// A builder for [`DeleteIamPolicyAssignmentInput`](crate::input::DeleteIamPolicyAssignmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) assignment_name: std::option::Option<std::string::String>,
@@ -6657,7 +7056,7 @@ pub mod delete_iam_policy_assignment_input {
             self,
         ) -> Result<
             crate::input::DeleteIamPolicyAssignmentInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteIamPolicyAssignmentInput {
                 aws_account_id: self.aws_account_id,
@@ -6680,54 +7079,69 @@ impl DeleteIamPolicyAssignmentInput {
             crate::operation::DeleteIAMPolicyAssignment,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteIamPolicyAssignmentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_66 = &_input.aws_account_id;
-                let input_66 = input_66.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_66, false);
+                let input_66 = input_66.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_66,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_67 = &_input.namespace;
-                let input_67 = input_67.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_67, false);
+                let input_67 = input_67.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_67,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_68 = &_input.assignment_name;
-                let input_68 = input_68.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "assignment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let assignment_name = aws_smithy_http::label::fmt_string(input_68, false);
+                let input_68 = input_68.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "assignment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let assignment_name = aws_smithy_http::label::fmt_string(
+                    input_68,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if assignment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "assignment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "assignment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/accounts/{AwsAccountId}/namespace/{Namespace}/iam-policy-assignments/{AssignmentName}", AwsAccountId = aws_account_id, Namespace = namespace, AssignmentName = assignment_name).expect("formatting should succeed");
                 Ok(())
@@ -6736,8 +7150,10 @@ impl DeleteIamPolicyAssignmentInput {
             fn update_http_builder(
                 input: &crate::input::DeleteIamPolicyAssignmentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -6807,7 +7223,7 @@ impl DeleteIamPolicyAssignmentInput {
 pub mod delete_namespace_input {
 
     /// A builder for [`DeleteNamespaceInput`](crate::input::DeleteNamespaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -6839,7 +7255,7 @@ pub mod delete_namespace_input {
         /// Consumes the builder and constructs a [`DeleteNamespaceInput`](crate::input::DeleteNamespaceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteNamespaceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteNamespaceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteNamespaceInput {
                 aws_account_id: self.aws_account_id,
@@ -6861,40 +7277,50 @@ impl DeleteNamespaceInput {
             crate::operation::DeleteNamespace,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteNamespaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_69 = &_input.aws_account_id;
-                let input_69 = input_69.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_69, false);
+                let input_69 = input_69.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_69,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_70 = &_input.namespace;
-                let input_70 = input_70.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_70, false);
+                let input_70 = input_70.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_70,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6909,8 +7335,10 @@ impl DeleteNamespaceInput {
             fn update_http_builder(
                 input: &crate::input::DeleteNamespaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -6980,7 +7408,7 @@ impl DeleteNamespaceInput {
 pub mod delete_template_input {
 
     /// A builder for [`DeleteTemplateInput`](crate::input::DeleteTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) template_id: std::option::Option<std::string::String>,
@@ -7023,7 +7451,7 @@ pub mod delete_template_input {
         /// Consumes the builder and constructs a [`DeleteTemplateInput`](crate::input::DeleteTemplateInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTemplateInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteTemplateInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteTemplateInput {
                 aws_account_id: self.aws_account_id,
@@ -7046,40 +7474,50 @@ impl DeleteTemplateInput {
             crate::operation::DeleteTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_71 = &_input.aws_account_id;
-                let input_71 = input_71.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_71, false);
+                let input_71 = input_71.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_71,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_72 = &_input.template_id;
-                let input_72 = input_72.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let template_id = aws_smithy_http::label::fmt_string(input_72, false);
+                let input_72 = input_72.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let template_id = aws_smithy_http::label::fmt_string(
+                    input_72,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if template_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "template_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7093,13 +7531,15 @@ impl DeleteTemplateInput {
             fn uri_query(
                 _input: &crate::input::DeleteTemplateInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_73) = &_input.version_number {
-                    query.push_kv(
-                        "version-number",
-                        aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
-                    );
+                    if *inner_73 != 0 {
+                        query.push_kv(
+                            "version-number",
+                            aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7107,8 +7547,10 @@ impl DeleteTemplateInput {
             fn update_http_builder(
                 input: &crate::input::DeleteTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7179,7 +7621,7 @@ impl DeleteTemplateInput {
 pub mod delete_template_alias_input {
 
     /// A builder for [`DeleteTemplateAliasInput`](crate::input::DeleteTemplateAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) template_id: std::option::Option<std::string::String>,
@@ -7222,8 +7664,10 @@ pub mod delete_template_alias_input {
         /// Consumes the builder and constructs a [`DeleteTemplateAliasInput`](crate::input::DeleteTemplateAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTemplateAliasInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteTemplateAliasInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteTemplateAliasInput {
                 aws_account_id: self.aws_account_id,
                 template_id: self.template_id,
@@ -7245,54 +7689,69 @@ impl DeleteTemplateAliasInput {
             crate::operation::DeleteTemplateAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteTemplateAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_74 = &_input.aws_account_id;
-                let input_74 = input_74.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_74, false);
+                let input_74 = input_74.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_74,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_75 = &_input.template_id;
-                let input_75 = input_75.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let template_id = aws_smithy_http::label::fmt_string(input_75, false);
+                let input_75 = input_75.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let template_id = aws_smithy_http::label::fmt_string(
+                    input_75,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if template_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "template_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_76 = &_input.alias_name;
-                let input_76 = input_76.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alias_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let alias_name = aws_smithy_http::label::fmt_string(input_76, false);
+                let input_76 = input_76.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alias_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let alias_name = aws_smithy_http::label::fmt_string(
+                    input_76,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if alias_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alias_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alias_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7308,8 +7767,10 @@ impl DeleteTemplateAliasInput {
             fn update_http_builder(
                 input: &crate::input::DeleteTemplateAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -7379,7 +7840,7 @@ impl DeleteTemplateAliasInput {
 pub mod delete_theme_input {
 
     /// A builder for [`DeleteThemeInput`](crate::input::DeleteThemeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) theme_id: std::option::Option<std::string::String>,
@@ -7424,7 +7885,7 @@ pub mod delete_theme_input {
         /// Consumes the builder and constructs a [`DeleteThemeInput`](crate::input::DeleteThemeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteThemeInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteThemeInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteThemeInput {
                 aws_account_id: self.aws_account_id,
@@ -7447,40 +7908,50 @@ impl DeleteThemeInput {
             crate::operation::DeleteTheme,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteThemeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_77 = &_input.aws_account_id;
-                let input_77 = input_77.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_77, false);
+                let input_77 = input_77.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_77,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_78 = &_input.theme_id;
-                let input_78 = input_78.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let theme_id = aws_smithy_http::label::fmt_string(input_78, false);
+                let input_78 = input_78.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "theme_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let theme_id = aws_smithy_http::label::fmt_string(
+                    input_78,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if theme_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "theme_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7494,13 +7965,15 @@ impl DeleteThemeInput {
             fn uri_query(
                 _input: &crate::input::DeleteThemeInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_79) = &_input.version_number {
-                    query.push_kv(
-                        "version-number",
-                        aws_smithy_types::primitive::Encoder::from(*inner_79).encode(),
-                    );
+                    if *inner_79 != 0 {
+                        query.push_kv(
+                            "version-number",
+                            aws_smithy_types::primitive::Encoder::from(*inner_79).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7508,8 +7981,10 @@ impl DeleteThemeInput {
             fn update_http_builder(
                 input: &crate::input::DeleteThemeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7580,7 +8055,7 @@ impl DeleteThemeInput {
 pub mod delete_theme_alias_input {
 
     /// A builder for [`DeleteThemeAliasInput`](crate::input::DeleteThemeAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) theme_id: std::option::Option<std::string::String>,
@@ -7623,8 +8098,10 @@ pub mod delete_theme_alias_input {
         /// Consumes the builder and constructs a [`DeleteThemeAliasInput`](crate::input::DeleteThemeAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteThemeAliasInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteThemeAliasInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteThemeAliasInput {
                 aws_account_id: self.aws_account_id,
                 theme_id: self.theme_id,
@@ -7646,54 +8123,69 @@ impl DeleteThemeAliasInput {
             crate::operation::DeleteThemeAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteThemeAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_80 = &_input.aws_account_id;
-                let input_80 = input_80.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_80, false);
+                let input_80 = input_80.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_80,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_81 = &_input.theme_id;
-                let input_81 = input_81.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let theme_id = aws_smithy_http::label::fmt_string(input_81, false);
+                let input_81 = input_81.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "theme_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let theme_id = aws_smithy_http::label::fmt_string(
+                    input_81,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if theme_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "theme_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_82 = &_input.alias_name;
-                let input_82 = input_82.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alias_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let alias_name = aws_smithy_http::label::fmt_string(input_82, false);
+                let input_82 = input_82.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alias_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let alias_name = aws_smithy_http::label::fmt_string(
+                    input_82,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if alias_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alias_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alias_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7709,8 +8201,10 @@ impl DeleteThemeAliasInput {
             fn update_http_builder(
                 input: &crate::input::DeleteThemeAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -7780,7 +8274,7 @@ impl DeleteThemeAliasInput {
 pub mod delete_user_input {
 
     /// A builder for [`DeleteUserInput`](crate::input::DeleteUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -7823,7 +8317,8 @@ pub mod delete_user_input {
         /// Consumes the builder and constructs a [`DeleteUserInput`](crate::input::DeleteUserInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteUserInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::DeleteUserInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::DeleteUserInput {
                 user_name: self.user_name,
                 aws_account_id: self.aws_account_id,
@@ -7845,54 +8340,69 @@ impl DeleteUserInput {
             crate::operation::DeleteUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_83 = &_input.aws_account_id;
-                let input_83 = input_83.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_83, false);
+                let input_83 = input_83.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_83,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_84 = &_input.namespace;
-                let input_84 = input_84.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_84, false);
+                let input_84 = input_84.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_84,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_85 = &_input.user_name;
-                let input_85 = input_85.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_name = aws_smithy_http::label::fmt_string(input_85, false);
+                let input_85 = input_85.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_name = aws_smithy_http::label::fmt_string(
+                    input_85,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7908,8 +8418,10 @@ impl DeleteUserInput {
             fn update_http_builder(
                 input: &crate::input::DeleteUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -7979,7 +8491,7 @@ impl DeleteUserInput {
 pub mod delete_user_by_principal_id_input {
 
     /// A builder for [`DeleteUserByPrincipalIdInput`](crate::input::DeleteUserByPrincipalIdInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) principal_id: std::option::Option<std::string::String>,
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -8024,7 +8536,7 @@ pub mod delete_user_by_principal_id_input {
             self,
         ) -> Result<
             crate::input::DeleteUserByPrincipalIdInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteUserByPrincipalIdInput {
                 principal_id: self.principal_id,
@@ -8047,54 +8559,69 @@ impl DeleteUserByPrincipalIdInput {
             crate::operation::DeleteUserByPrincipalId,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteUserByPrincipalIdInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_86 = &_input.aws_account_id;
-                let input_86 = input_86.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_86, false);
+                let input_86 = input_86.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_86,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_87 = &_input.namespace;
-                let input_87 = input_87.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_87, false);
+                let input_87 = input_87.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_87,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_88 = &_input.principal_id;
-                let input_88 = input_88.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "principal_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let principal_id = aws_smithy_http::label::fmt_string(input_88, false);
+                let input_88 = input_88.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "principal_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let principal_id = aws_smithy_http::label::fmt_string(
+                    input_88,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if principal_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "principal_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "principal_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -8110,8 +8637,10 @@ impl DeleteUserByPrincipalIdInput {
             fn update_http_builder(
                 input: &crate::input::DeleteUserByPrincipalIdInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -8181,7 +8710,7 @@ impl DeleteUserByPrincipalIdInput {
 pub mod describe_account_customization_input {
 
     /// A builder for [`DescribeAccountCustomizationInput`](crate::input::DescribeAccountCustomizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -8226,7 +8755,7 @@ pub mod describe_account_customization_input {
             self,
         ) -> Result<
             crate::input::DescribeAccountCustomizationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeAccountCustomizationInput {
                 aws_account_id: self.aws_account_id,
@@ -8249,26 +8778,31 @@ impl DescribeAccountCustomizationInput {
             crate::operation::DescribeAccountCustomization,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAccountCustomizationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_89 = &_input.aws_account_id;
-                let input_89 = input_89.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_89, false);
+                let input_89 = input_89.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_89,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -8281,10 +8815,12 @@ impl DescribeAccountCustomizationInput {
             fn uri_query(
                 _input: &crate::input::DescribeAccountCustomizationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_90) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_90));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_90));
+                    }
                 }
                 if _input.resolved {
                     query.push_kv(
@@ -8298,8 +8834,10 @@ impl DescribeAccountCustomizationInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAccountCustomizationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8370,7 +8908,7 @@ impl DescribeAccountCustomizationInput {
 pub mod describe_account_settings_input {
 
     /// A builder for [`DescribeAccountSettingsInput`](crate::input::DescribeAccountSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
     }
@@ -8393,7 +8931,7 @@ pub mod describe_account_settings_input {
             self,
         ) -> Result<
             crate::input::DescribeAccountSettingsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeAccountSettingsInput {
                 aws_account_id: self.aws_account_id,
@@ -8414,26 +8952,31 @@ impl DescribeAccountSettingsInput {
             crate::operation::DescribeAccountSettings,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAccountSettingsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_91 = &_input.aws_account_id;
-                let input_91 = input_91.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_91, false);
+                let input_91 = input_91.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_91,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -8447,8 +8990,10 @@ impl DescribeAccountSettingsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAccountSettingsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -8518,7 +9063,7 @@ impl DescribeAccountSettingsInput {
 pub mod describe_account_subscription_input {
 
     /// A builder for [`DescribeAccountSubscriptionInput`](crate::input::DescribeAccountSubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
     }
@@ -8541,7 +9086,7 @@ pub mod describe_account_subscription_input {
             self,
         ) -> Result<
             crate::input::DescribeAccountSubscriptionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeAccountSubscriptionInput {
                 aws_account_id: self.aws_account_id,
@@ -8562,26 +9107,31 @@ impl DescribeAccountSubscriptionInput {
             crate::operation::DescribeAccountSubscription,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAccountSubscriptionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_92 = &_input.aws_account_id;
-                let input_92 = input_92.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_92, false);
+                let input_92 = input_92.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_92,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -8595,8 +9145,10 @@ impl DescribeAccountSubscriptionInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAccountSubscriptionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -8666,7 +9218,7 @@ impl DescribeAccountSubscriptionInput {
 pub mod describe_analysis_input {
 
     /// A builder for [`DescribeAnalysisInput`](crate::input::DescribeAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) analysis_id: std::option::Option<std::string::String>,
@@ -8698,8 +9250,10 @@ pub mod describe_analysis_input {
         /// Consumes the builder and constructs a [`DescribeAnalysisInput`](crate::input::DescribeAnalysisInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeAnalysisInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeAnalysisInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeAnalysisInput {
                 aws_account_id: self.aws_account_id,
                 analysis_id: self.analysis_id,
@@ -8720,40 +9274,50 @@ impl DescribeAnalysisInput {
             crate::operation::DescribeAnalysis,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAnalysisInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_93 = &_input.aws_account_id;
-                let input_93 = input_93.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_93, false);
+                let input_93 = input_93.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_93,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_94 = &_input.analysis_id;
-                let input_94 = input_94.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let analysis_id = aws_smithy_http::label::fmt_string(input_94, false);
+                let input_94 = input_94.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "analysis_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let analysis_id = aws_smithy_http::label::fmt_string(
+                    input_94,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if analysis_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "analysis_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -8768,8 +9332,10 @@ impl DescribeAnalysisInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAnalysisInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -8839,7 +9405,7 @@ impl DescribeAnalysisInput {
 pub mod describe_analysis_permissions_input {
 
     /// A builder for [`DescribeAnalysisPermissionsInput`](crate::input::DescribeAnalysisPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) analysis_id: std::option::Option<std::string::String>,
@@ -8873,7 +9439,7 @@ pub mod describe_analysis_permissions_input {
             self,
         ) -> Result<
             crate::input::DescribeAnalysisPermissionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeAnalysisPermissionsInput {
                 aws_account_id: self.aws_account_id,
@@ -8895,40 +9461,50 @@ impl DescribeAnalysisPermissionsInput {
             crate::operation::DescribeAnalysisPermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAnalysisPermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_95 = &_input.aws_account_id;
-                let input_95 = input_95.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_95, false);
+                let input_95 = input_95.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_95,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_96 = &_input.analysis_id;
-                let input_96 = input_96.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let analysis_id = aws_smithy_http::label::fmt_string(input_96, false);
+                let input_96 = input_96.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "analysis_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let analysis_id = aws_smithy_http::label::fmt_string(
+                    input_96,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if analysis_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "analysis_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -8943,8 +9519,10 @@ impl DescribeAnalysisPermissionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAnalysisPermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -9014,7 +9592,7 @@ impl DescribeAnalysisPermissionsInput {
 pub mod describe_dashboard_input {
 
     /// A builder for [`DescribeDashboardInput`](crate::input::DescribeDashboardInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
@@ -9068,8 +9646,10 @@ pub mod describe_dashboard_input {
         /// Consumes the builder and constructs a [`DescribeDashboardInput`](crate::input::DescribeDashboardInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDashboardInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeDashboardInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeDashboardInput {
                 aws_account_id: self.aws_account_id,
                 dashboard_id: self.dashboard_id,
@@ -9092,40 +9672,50 @@ impl DescribeDashboardInput {
             crate::operation::DescribeDashboard,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDashboardInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_97 = &_input.aws_account_id;
-                let input_97 = input_97.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_97, false);
+                let input_97 = input_97.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_97,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_98 = &_input.dashboard_id;
-                let input_98 = input_98.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dashboard_id = aws_smithy_http::label::fmt_string(input_98, false);
+                let input_98 = input_98.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dashboard_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dashboard_id = aws_smithy_http::label::fmt_string(
+                    input_98,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dashboard_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dashboard_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -9139,19 +9729,23 @@ impl DescribeDashboardInput {
             fn uri_query(
                 _input: &crate::input::DescribeDashboardInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_99) = &_input.version_number {
-                    query.push_kv(
-                        "version-number",
-                        aws_smithy_types::primitive::Encoder::from(*inner_99).encode(),
-                    );
+                    if *inner_99 != 0 {
+                        query.push_kv(
+                            "version-number",
+                            aws_smithy_types::primitive::Encoder::from(*inner_99).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_100) = &_input.alias_name {
-                    query.push_kv(
-                        "alias-name",
-                        &aws_smithy_http::query::fmt_string(&inner_100),
-                    );
+                    {
+                        query.push_kv(
+                            "alias-name",
+                            &aws_smithy_http::query::fmt_string(&inner_100),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -9159,8 +9753,10 @@ impl DescribeDashboardInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDashboardInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -9231,7 +9827,7 @@ impl DescribeDashboardInput {
 pub mod describe_dashboard_permissions_input {
 
     /// A builder for [`DescribeDashboardPermissionsInput`](crate::input::DescribeDashboardPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
@@ -9265,7 +9861,7 @@ pub mod describe_dashboard_permissions_input {
             self,
         ) -> Result<
             crate::input::DescribeDashboardPermissionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeDashboardPermissionsInput {
                 aws_account_id: self.aws_account_id,
@@ -9287,40 +9883,50 @@ impl DescribeDashboardPermissionsInput {
             crate::operation::DescribeDashboardPermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDashboardPermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_101 = &_input.aws_account_id;
-                let input_101 = input_101.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_101, false);
+                let input_101 = input_101.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_101,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_102 = &_input.dashboard_id;
-                let input_102 = input_102.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dashboard_id = aws_smithy_http::label::fmt_string(input_102, false);
+                let input_102 = input_102.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dashboard_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dashboard_id = aws_smithy_http::label::fmt_string(
+                    input_102,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dashboard_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dashboard_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -9335,8 +9941,10 @@ impl DescribeDashboardPermissionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDashboardPermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -9406,7 +10014,7 @@ impl DescribeDashboardPermissionsInput {
 pub mod describe_data_set_input {
 
     /// A builder for [`DescribeDataSetInput`](crate::input::DescribeDataSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -9438,7 +10046,7 @@ pub mod describe_data_set_input {
         /// Consumes the builder and constructs a [`DescribeDataSetInput`](crate::input::DescribeDataSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDataSetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeDataSetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeDataSetInput {
                 aws_account_id: self.aws_account_id,
@@ -9460,40 +10068,50 @@ impl DescribeDataSetInput {
             crate::operation::DescribeDataSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDataSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_103 = &_input.aws_account_id;
-                let input_103 = input_103.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_103, false);
+                let input_103 = input_103.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_103,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_104 = &_input.data_set_id;
-                let input_104 = input_104.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let data_set_id = aws_smithy_http::label::fmt_string(input_104, false);
+                let input_104 = input_104.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "data_set_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let data_set_id = aws_smithy_http::label::fmt_string(
+                    input_104,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if data_set_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "data_set_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -9508,8 +10126,10 @@ impl DescribeDataSetInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDataSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -9579,7 +10199,7 @@ impl DescribeDataSetInput {
 pub mod describe_data_set_permissions_input {
 
     /// A builder for [`DescribeDataSetPermissionsInput`](crate::input::DescribeDataSetPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -9613,7 +10233,7 @@ pub mod describe_data_set_permissions_input {
             self,
         ) -> Result<
             crate::input::DescribeDataSetPermissionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeDataSetPermissionsInput {
                 aws_account_id: self.aws_account_id,
@@ -9635,40 +10255,50 @@ impl DescribeDataSetPermissionsInput {
             crate::operation::DescribeDataSetPermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDataSetPermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_105 = &_input.aws_account_id;
-                let input_105 = input_105.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_105, false);
+                let input_105 = input_105.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_105,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_106 = &_input.data_set_id;
-                let input_106 = input_106.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let data_set_id = aws_smithy_http::label::fmt_string(input_106, false);
+                let input_106 = input_106.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "data_set_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let data_set_id = aws_smithy_http::label::fmt_string(
+                    input_106,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if data_set_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "data_set_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -9683,8 +10313,10 @@ impl DescribeDataSetPermissionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDataSetPermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -9754,7 +10386,7 @@ impl DescribeDataSetPermissionsInput {
 pub mod describe_data_source_input {
 
     /// A builder for [`DescribeDataSourceInput`](crate::input::DescribeDataSourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -9789,8 +10421,10 @@ pub mod describe_data_source_input {
         /// Consumes the builder and constructs a [`DescribeDataSourceInput`](crate::input::DescribeDataSourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDataSourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeDataSourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeDataSourceInput {
                 aws_account_id: self.aws_account_id,
                 data_source_id: self.data_source_id,
@@ -9811,40 +10445,50 @@ impl DescribeDataSourceInput {
             crate::operation::DescribeDataSource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDataSourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_107 = &_input.aws_account_id;
-                let input_107 = input_107.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_107, false);
+                let input_107 = input_107.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_107,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_108 = &_input.data_source_id;
-                let input_108 = input_108.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_source_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let data_source_id = aws_smithy_http::label::fmt_string(input_108, false);
+                let input_108 = input_108.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "data_source_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let data_source_id = aws_smithy_http::label::fmt_string(
+                    input_108,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if data_source_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_source_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "data_source_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -9859,8 +10503,10 @@ impl DescribeDataSourceInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDataSourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -9930,7 +10576,7 @@ impl DescribeDataSourceInput {
 pub mod describe_data_source_permissions_input {
 
     /// A builder for [`DescribeDataSourcePermissionsInput`](crate::input::DescribeDataSourcePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -9967,7 +10613,7 @@ pub mod describe_data_source_permissions_input {
             self,
         ) -> Result<
             crate::input::DescribeDataSourcePermissionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeDataSourcePermissionsInput {
                 aws_account_id: self.aws_account_id,
@@ -9989,40 +10635,50 @@ impl DescribeDataSourcePermissionsInput {
             crate::operation::DescribeDataSourcePermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDataSourcePermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_109 = &_input.aws_account_id;
-                let input_109 = input_109.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_109, false);
+                let input_109 = input_109.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_109,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_110 = &_input.data_source_id;
-                let input_110 = input_110.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_source_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let data_source_id = aws_smithy_http::label::fmt_string(input_110, false);
+                let input_110 = input_110.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "data_source_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let data_source_id = aws_smithy_http::label::fmt_string(
+                    input_110,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if data_source_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_source_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "data_source_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -10037,8 +10693,10 @@ impl DescribeDataSourcePermissionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDataSourcePermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -10108,7 +10766,7 @@ impl DescribeDataSourcePermissionsInput {
 pub mod describe_folder_input {
 
     /// A builder for [`DescribeFolderInput`](crate::input::DescribeFolderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -10140,7 +10798,7 @@ pub mod describe_folder_input {
         /// Consumes the builder and constructs a [`DescribeFolderInput`](crate::input::DescribeFolderInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeFolderInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeFolderInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeFolderInput {
                 aws_account_id: self.aws_account_id,
@@ -10162,40 +10820,50 @@ impl DescribeFolderInput {
             crate::operation::DescribeFolder,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeFolderInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_111 = &_input.aws_account_id;
-                let input_111 = input_111.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_111, false);
+                let input_111 = input_111.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_111,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_112 = &_input.folder_id;
-                let input_112 = input_112.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let folder_id = aws_smithy_http::label::fmt_string(input_112, false);
+                let input_112 = input_112.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "folder_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let folder_id = aws_smithy_http::label::fmt_string(
+                    input_112,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if folder_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "folder_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -10210,8 +10878,10 @@ impl DescribeFolderInput {
             fn update_http_builder(
                 input: &crate::input::DescribeFolderInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -10281,7 +10951,7 @@ impl DescribeFolderInput {
 pub mod describe_folder_permissions_input {
 
     /// A builder for [`DescribeFolderPermissionsInput`](crate::input::DescribeFolderPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -10315,7 +10985,7 @@ pub mod describe_folder_permissions_input {
             self,
         ) -> Result<
             crate::input::DescribeFolderPermissionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeFolderPermissionsInput {
                 aws_account_id: self.aws_account_id,
@@ -10337,40 +11007,50 @@ impl DescribeFolderPermissionsInput {
             crate::operation::DescribeFolderPermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeFolderPermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_113 = &_input.aws_account_id;
-                let input_113 = input_113.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_113, false);
+                let input_113 = input_113.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_113,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_114 = &_input.folder_id;
-                let input_114 = input_114.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let folder_id = aws_smithy_http::label::fmt_string(input_114, false);
+                let input_114 = input_114.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "folder_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let folder_id = aws_smithy_http::label::fmt_string(
+                    input_114,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if folder_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "folder_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -10385,8 +11065,10 @@ impl DescribeFolderPermissionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeFolderPermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -10456,7 +11138,7 @@ impl DescribeFolderPermissionsInput {
 pub mod describe_folder_resolved_permissions_input {
 
     /// A builder for [`DescribeFolderResolvedPermissionsInput`](crate::input::DescribeFolderResolvedPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -10490,7 +11172,7 @@ pub mod describe_folder_resolved_permissions_input {
             self,
         ) -> Result<
             crate::input::DescribeFolderResolvedPermissionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeFolderResolvedPermissionsInput {
                 aws_account_id: self.aws_account_id,
@@ -10512,40 +11194,50 @@ impl DescribeFolderResolvedPermissionsInput {
             crate::operation::DescribeFolderResolvedPermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeFolderResolvedPermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_115 = &_input.aws_account_id;
-                let input_115 = input_115.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_115, false);
+                let input_115 = input_115.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_115,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_116 = &_input.folder_id;
-                let input_116 = input_116.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let folder_id = aws_smithy_http::label::fmt_string(input_116, false);
+                let input_116 = input_116.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "folder_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let folder_id = aws_smithy_http::label::fmt_string(
+                    input_116,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if folder_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "folder_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -10560,8 +11252,10 @@ impl DescribeFolderResolvedPermissionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeFolderResolvedPermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -10631,7 +11325,7 @@ impl DescribeFolderResolvedPermissionsInput {
 pub mod describe_group_input {
 
     /// A builder for [`DescribeGroupInput`](crate::input::DescribeGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -10674,7 +11368,7 @@ pub mod describe_group_input {
         /// Consumes the builder and constructs a [`DescribeGroupInput`](crate::input::DescribeGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeGroupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeGroupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeGroupInput {
                 group_name: self.group_name,
@@ -10697,54 +11391,69 @@ impl DescribeGroupInput {
             crate::operation::DescribeGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_117 = &_input.aws_account_id;
-                let input_117 = input_117.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_117, false);
+                let input_117 = input_117.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_117,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_118 = &_input.namespace;
-                let input_118 = input_118.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_118, false);
+                let input_118 = input_118.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_118,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_119 = &_input.group_name;
-                let input_119 = input_119.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "group_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let group_name = aws_smithy_http::label::fmt_string(input_119, false);
+                let input_119 = input_119.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "group_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let group_name = aws_smithy_http::label::fmt_string(
+                    input_119,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if group_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "group_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "group_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -10760,8 +11469,10 @@ impl DescribeGroupInput {
             fn update_http_builder(
                 input: &crate::input::DescribeGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -10831,7 +11542,7 @@ impl DescribeGroupInput {
 pub mod describe_group_membership_input {
 
     /// A builder for [`DescribeGroupMembershipInput`](crate::input::DescribeGroupMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_name: std::option::Option<std::string::String>,
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -10887,7 +11598,7 @@ pub mod describe_group_membership_input {
             self,
         ) -> Result<
             crate::input::DescribeGroupMembershipInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeGroupMembershipInput {
                 member_name: self.member_name,
@@ -10911,68 +11622,88 @@ impl DescribeGroupMembershipInput {
             crate::operation::DescribeGroupMembership,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeGroupMembershipInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_120 = &_input.aws_account_id;
-                let input_120 = input_120.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_120, false);
+                let input_120 = input_120.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_120,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_121 = &_input.namespace;
-                let input_121 = input_121.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_121, false);
+                let input_121 = input_121.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_121,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_122 = &_input.group_name;
-                let input_122 = input_122.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "group_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let group_name = aws_smithy_http::label::fmt_string(input_122, false);
+                let input_122 = input_122.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "group_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let group_name = aws_smithy_http::label::fmt_string(
+                    input_122,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if group_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "group_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "group_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_123 = &_input.member_name;
-                let input_123 = input_123.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "member_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let member_name = aws_smithy_http::label::fmt_string(input_123, false);
+                let input_123 = input_123.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "member_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let member_name = aws_smithy_http::label::fmt_string(
+                    input_123,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if member_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "member_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "member_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members/{MemberName}", AwsAccountId = aws_account_id, Namespace = namespace, GroupName = group_name, MemberName = member_name).expect("formatting should succeed");
                 Ok(())
@@ -10981,8 +11712,10 @@ impl DescribeGroupMembershipInput {
             fn update_http_builder(
                 input: &crate::input::DescribeGroupMembershipInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -11052,7 +11785,7 @@ impl DescribeGroupMembershipInput {
 pub mod describe_iam_policy_assignment_input {
 
     /// A builder for [`DescribeIamPolicyAssignmentInput`](crate::input::DescribeIamPolicyAssignmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) assignment_name: std::option::Option<std::string::String>,
@@ -11100,7 +11833,7 @@ pub mod describe_iam_policy_assignment_input {
             self,
         ) -> Result<
             crate::input::DescribeIamPolicyAssignmentInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeIamPolicyAssignmentInput {
                 aws_account_id: self.aws_account_id,
@@ -11123,54 +11856,69 @@ impl DescribeIamPolicyAssignmentInput {
             crate::operation::DescribeIAMPolicyAssignment,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeIamPolicyAssignmentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_124 = &_input.aws_account_id;
-                let input_124 = input_124.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_124, false);
+                let input_124 = input_124.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_124,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_125 = &_input.namespace;
-                let input_125 = input_125.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_125, false);
+                let input_125 = input_125.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_125,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_126 = &_input.assignment_name;
-                let input_126 = input_126.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "assignment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let assignment_name = aws_smithy_http::label::fmt_string(input_126, false);
+                let input_126 = input_126.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "assignment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let assignment_name = aws_smithy_http::label::fmt_string(
+                    input_126,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if assignment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "assignment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "assignment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/accounts/{AwsAccountId}/namespaces/{Namespace}/iam-policy-assignments/{AssignmentName}", AwsAccountId = aws_account_id, Namespace = namespace, AssignmentName = assignment_name).expect("formatting should succeed");
                 Ok(())
@@ -11179,8 +11927,10 @@ impl DescribeIamPolicyAssignmentInput {
             fn update_http_builder(
                 input: &crate::input::DescribeIamPolicyAssignmentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -11250,7 +12000,7 @@ impl DescribeIamPolicyAssignmentInput {
 pub mod describe_ingestion_input {
 
     /// A builder for [`DescribeIngestionInput`](crate::input::DescribeIngestionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -11293,8 +12043,10 @@ pub mod describe_ingestion_input {
         /// Consumes the builder and constructs a [`DescribeIngestionInput`](crate::input::DescribeIngestionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeIngestionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeIngestionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeIngestionInput {
                 aws_account_id: self.aws_account_id,
                 data_set_id: self.data_set_id,
@@ -11316,54 +12068,69 @@ impl DescribeIngestionInput {
             crate::operation::DescribeIngestion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeIngestionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_127 = &_input.aws_account_id;
-                let input_127 = input_127.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_127, false);
+                let input_127 = input_127.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_127,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_128 = &_input.data_set_id;
-                let input_128 = input_128.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let data_set_id = aws_smithy_http::label::fmt_string(input_128, false);
+                let input_128 = input_128.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "data_set_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let data_set_id = aws_smithy_http::label::fmt_string(
+                    input_128,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if data_set_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "data_set_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_129 = &_input.ingestion_id;
-                let input_129 = input_129.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ingestion_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let ingestion_id = aws_smithy_http::label::fmt_string(input_129, false);
+                let input_129 = input_129.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "ingestion_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let ingestion_id = aws_smithy_http::label::fmt_string(
+                    input_129,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if ingestion_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "ingestion_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "ingestion_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -11379,8 +12146,10 @@ impl DescribeIngestionInput {
             fn update_http_builder(
                 input: &crate::input::DescribeIngestionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -11450,7 +12219,7 @@ impl DescribeIngestionInput {
 pub mod describe_ip_restriction_input {
 
     /// A builder for [`DescribeIpRestrictionInput`](crate::input::DescribeIpRestrictionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
     }
@@ -11471,8 +12240,10 @@ pub mod describe_ip_restriction_input {
         /// Consumes the builder and constructs a [`DescribeIpRestrictionInput`](crate::input::DescribeIpRestrictionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeIpRestrictionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeIpRestrictionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeIpRestrictionInput {
                 aws_account_id: self.aws_account_id,
             })
@@ -11492,26 +12263,31 @@ impl DescribeIpRestrictionInput {
             crate::operation::DescribeIpRestriction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeIpRestrictionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_130 = &_input.aws_account_id;
-                let input_130 = input_130.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_130, false);
+                let input_130 = input_130.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_130,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -11525,8 +12301,10 @@ impl DescribeIpRestrictionInput {
             fn update_http_builder(
                 input: &crate::input::DescribeIpRestrictionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -11596,7 +12374,7 @@ impl DescribeIpRestrictionInput {
 pub mod describe_namespace_input {
 
     /// A builder for [`DescribeNamespaceInput`](crate::input::DescribeNamespaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -11628,8 +12406,10 @@ pub mod describe_namespace_input {
         /// Consumes the builder and constructs a [`DescribeNamespaceInput`](crate::input::DescribeNamespaceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeNamespaceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeNamespaceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeNamespaceInput {
                 aws_account_id: self.aws_account_id,
                 namespace: self.namespace,
@@ -11650,40 +12430,50 @@ impl DescribeNamespaceInput {
             crate::operation::DescribeNamespace,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeNamespaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_131 = &_input.aws_account_id;
-                let input_131 = input_131.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_131, false);
+                let input_131 = input_131.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_131,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_132 = &_input.namespace;
-                let input_132 = input_132.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_132, false);
+                let input_132 = input_132.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_132,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -11698,8 +12488,10 @@ impl DescribeNamespaceInput {
             fn update_http_builder(
                 input: &crate::input::DescribeNamespaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -11769,7 +12561,7 @@ impl DescribeNamespaceInput {
 pub mod describe_template_input {
 
     /// A builder for [`DescribeTemplateInput`](crate::input::DescribeTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) template_id: std::option::Option<std::string::String>,
@@ -11823,8 +12615,10 @@ pub mod describe_template_input {
         /// Consumes the builder and constructs a [`DescribeTemplateInput`](crate::input::DescribeTemplateInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeTemplateInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeTemplateInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeTemplateInput {
                 aws_account_id: self.aws_account_id,
                 template_id: self.template_id,
@@ -11847,40 +12641,50 @@ impl DescribeTemplateInput {
             crate::operation::DescribeTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_133 = &_input.aws_account_id;
-                let input_133 = input_133.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_133, false);
+                let input_133 = input_133.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_133,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_134 = &_input.template_id;
-                let input_134 = input_134.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let template_id = aws_smithy_http::label::fmt_string(input_134, false);
+                let input_134 = input_134.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let template_id = aws_smithy_http::label::fmt_string(
+                    input_134,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if template_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "template_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -11894,19 +12698,23 @@ impl DescribeTemplateInput {
             fn uri_query(
                 _input: &crate::input::DescribeTemplateInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_135) = &_input.version_number {
-                    query.push_kv(
-                        "version-number",
-                        aws_smithy_types::primitive::Encoder::from(*inner_135).encode(),
-                    );
+                    if *inner_135 != 0 {
+                        query.push_kv(
+                            "version-number",
+                            aws_smithy_types::primitive::Encoder::from(*inner_135).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_136) = &_input.alias_name {
-                    query.push_kv(
-                        "alias-name",
-                        &aws_smithy_http::query::fmt_string(&inner_136),
-                    );
+                    {
+                        query.push_kv(
+                            "alias-name",
+                            &aws_smithy_http::query::fmt_string(&inner_136),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -11914,8 +12722,10 @@ impl DescribeTemplateInput {
             fn update_http_builder(
                 input: &crate::input::DescribeTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -11986,7 +12796,7 @@ impl DescribeTemplateInput {
 pub mod describe_template_alias_input {
 
     /// A builder for [`DescribeTemplateAliasInput`](crate::input::DescribeTemplateAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) template_id: std::option::Option<std::string::String>,
@@ -12029,8 +12839,10 @@ pub mod describe_template_alias_input {
         /// Consumes the builder and constructs a [`DescribeTemplateAliasInput`](crate::input::DescribeTemplateAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeTemplateAliasInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeTemplateAliasInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeTemplateAliasInput {
                 aws_account_id: self.aws_account_id,
                 template_id: self.template_id,
@@ -12052,54 +12864,69 @@ impl DescribeTemplateAliasInput {
             crate::operation::DescribeTemplateAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeTemplateAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_137 = &_input.aws_account_id;
-                let input_137 = input_137.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_137, false);
+                let input_137 = input_137.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_137,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_138 = &_input.template_id;
-                let input_138 = input_138.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let template_id = aws_smithy_http::label::fmt_string(input_138, false);
+                let input_138 = input_138.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let template_id = aws_smithy_http::label::fmt_string(
+                    input_138,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if template_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "template_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_139 = &_input.alias_name;
-                let input_139 = input_139.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alias_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let alias_name = aws_smithy_http::label::fmt_string(input_139, false);
+                let input_139 = input_139.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alias_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let alias_name = aws_smithy_http::label::fmt_string(
+                    input_139,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if alias_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alias_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alias_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -12115,8 +12942,10 @@ impl DescribeTemplateAliasInput {
             fn update_http_builder(
                 input: &crate::input::DescribeTemplateAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -12186,7 +13015,7 @@ impl DescribeTemplateAliasInput {
 pub mod describe_template_permissions_input {
 
     /// A builder for [`DescribeTemplatePermissionsInput`](crate::input::DescribeTemplatePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) template_id: std::option::Option<std::string::String>,
@@ -12220,7 +13049,7 @@ pub mod describe_template_permissions_input {
             self,
         ) -> Result<
             crate::input::DescribeTemplatePermissionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeTemplatePermissionsInput {
                 aws_account_id: self.aws_account_id,
@@ -12242,40 +13071,50 @@ impl DescribeTemplatePermissionsInput {
             crate::operation::DescribeTemplatePermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeTemplatePermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_140 = &_input.aws_account_id;
-                let input_140 = input_140.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_140, false);
+                let input_140 = input_140.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_140,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_141 = &_input.template_id;
-                let input_141 = input_141.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let template_id = aws_smithy_http::label::fmt_string(input_141, false);
+                let input_141 = input_141.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let template_id = aws_smithy_http::label::fmt_string(
+                    input_141,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if template_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "template_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -12290,8 +13129,10 @@ impl DescribeTemplatePermissionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeTemplatePermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -12361,7 +13202,7 @@ impl DescribeTemplatePermissionsInput {
 pub mod describe_theme_input {
 
     /// A builder for [`DescribeThemeInput`](crate::input::DescribeThemeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) theme_id: std::option::Option<std::string::String>,
@@ -12415,7 +13256,7 @@ pub mod describe_theme_input {
         /// Consumes the builder and constructs a [`DescribeThemeInput`](crate::input::DescribeThemeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeThemeInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeThemeInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeThemeInput {
                 aws_account_id: self.aws_account_id,
@@ -12439,40 +13280,50 @@ impl DescribeThemeInput {
             crate::operation::DescribeTheme,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeThemeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_142 = &_input.aws_account_id;
-                let input_142 = input_142.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_142, false);
+                let input_142 = input_142.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_142,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_143 = &_input.theme_id;
-                let input_143 = input_143.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let theme_id = aws_smithy_http::label::fmt_string(input_143, false);
+                let input_143 = input_143.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "theme_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let theme_id = aws_smithy_http::label::fmt_string(
+                    input_143,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if theme_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "theme_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -12486,19 +13337,23 @@ impl DescribeThemeInput {
             fn uri_query(
                 _input: &crate::input::DescribeThemeInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_144) = &_input.version_number {
-                    query.push_kv(
-                        "version-number",
-                        aws_smithy_types::primitive::Encoder::from(*inner_144).encode(),
-                    );
+                    if *inner_144 != 0 {
+                        query.push_kv(
+                            "version-number",
+                            aws_smithy_types::primitive::Encoder::from(*inner_144).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_145) = &_input.alias_name {
-                    query.push_kv(
-                        "alias-name",
-                        &aws_smithy_http::query::fmt_string(&inner_145),
-                    );
+                    {
+                        query.push_kv(
+                            "alias-name",
+                            &aws_smithy_http::query::fmt_string(&inner_145),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -12506,8 +13361,10 @@ impl DescribeThemeInput {
             fn update_http_builder(
                 input: &crate::input::DescribeThemeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -12578,7 +13435,7 @@ impl DescribeThemeInput {
 pub mod describe_theme_alias_input {
 
     /// A builder for [`DescribeThemeAliasInput`](crate::input::DescribeThemeAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) theme_id: std::option::Option<std::string::String>,
@@ -12621,8 +13478,10 @@ pub mod describe_theme_alias_input {
         /// Consumes the builder and constructs a [`DescribeThemeAliasInput`](crate::input::DescribeThemeAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeThemeAliasInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeThemeAliasInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeThemeAliasInput {
                 aws_account_id: self.aws_account_id,
                 theme_id: self.theme_id,
@@ -12644,54 +13503,69 @@ impl DescribeThemeAliasInput {
             crate::operation::DescribeThemeAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeThemeAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_146 = &_input.aws_account_id;
-                let input_146 = input_146.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_146, false);
+                let input_146 = input_146.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_146,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_147 = &_input.theme_id;
-                let input_147 = input_147.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let theme_id = aws_smithy_http::label::fmt_string(input_147, false);
+                let input_147 = input_147.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "theme_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let theme_id = aws_smithy_http::label::fmt_string(
+                    input_147,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if theme_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "theme_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_148 = &_input.alias_name;
-                let input_148 = input_148.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alias_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let alias_name = aws_smithy_http::label::fmt_string(input_148, false);
+                let input_148 = input_148.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alias_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let alias_name = aws_smithy_http::label::fmt_string(
+                    input_148,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if alias_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alias_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alias_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -12707,8 +13581,10 @@ impl DescribeThemeAliasInput {
             fn update_http_builder(
                 input: &crate::input::DescribeThemeAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -12778,7 +13654,7 @@ impl DescribeThemeAliasInput {
 pub mod describe_theme_permissions_input {
 
     /// A builder for [`DescribeThemePermissionsInput`](crate::input::DescribeThemePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) theme_id: std::option::Option<std::string::String>,
@@ -12812,7 +13688,7 @@ pub mod describe_theme_permissions_input {
             self,
         ) -> Result<
             crate::input::DescribeThemePermissionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeThemePermissionsInput {
                 aws_account_id: self.aws_account_id,
@@ -12834,40 +13710,50 @@ impl DescribeThemePermissionsInput {
             crate::operation::DescribeThemePermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeThemePermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_149 = &_input.aws_account_id;
-                let input_149 = input_149.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_149, false);
+                let input_149 = input_149.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_149,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_150 = &_input.theme_id;
-                let input_150 = input_150.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let theme_id = aws_smithy_http::label::fmt_string(input_150, false);
+                let input_150 = input_150.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "theme_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let theme_id = aws_smithy_http::label::fmt_string(
+                    input_150,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if theme_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "theme_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -12882,8 +13768,10 @@ impl DescribeThemePermissionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeThemePermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -12953,7 +13841,7 @@ impl DescribeThemePermissionsInput {
 pub mod describe_user_input {
 
     /// A builder for [`DescribeUserInput`](crate::input::DescribeUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -12996,7 +13884,7 @@ pub mod describe_user_input {
         /// Consumes the builder and constructs a [`DescribeUserInput`](crate::input::DescribeUserInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeUserInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeUserInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeUserInput {
                 user_name: self.user_name,
@@ -13019,54 +13907,69 @@ impl DescribeUserInput {
             crate::operation::DescribeUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_151 = &_input.aws_account_id;
-                let input_151 = input_151.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_151, false);
+                let input_151 = input_151.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_151,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_152 = &_input.namespace;
-                let input_152 = input_152.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_152, false);
+                let input_152 = input_152.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_152,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_153 = &_input.user_name;
-                let input_153 = input_153.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_name = aws_smithy_http::label::fmt_string(input_153, false);
+                let input_153 = input_153.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_name = aws_smithy_http::label::fmt_string(
+                    input_153,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -13082,8 +13985,10 @@ impl DescribeUserInput {
             fn update_http_builder(
                 input: &crate::input::DescribeUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -13153,7 +14058,7 @@ impl DescribeUserInput {
 pub mod generate_embed_url_for_anonymous_user_input {
 
     /// A builder for [`GenerateEmbedUrlForAnonymousUserInput`](crate::input::GenerateEmbedUrlForAnonymousUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) session_lifetime_in_minutes: std::option::Option<i64>,
@@ -13281,7 +14186,7 @@ pub mod generate_embed_url_for_anonymous_user_input {
             self,
         ) -> Result<
             crate::input::GenerateEmbedUrlForAnonymousUserInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GenerateEmbedUrlForAnonymousUserInput {
                 aws_account_id: self.aws_account_id,
@@ -13308,26 +14213,31 @@ impl GenerateEmbedUrlForAnonymousUserInput {
             crate::operation::GenerateEmbedUrlForAnonymousUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GenerateEmbedUrlForAnonymousUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_154 = &_input.aws_account_id;
-                let input_154 = input_154.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_154, false);
+                let input_154 = input_154.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_154,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -13341,8 +14251,10 @@ impl GenerateEmbedUrlForAnonymousUserInput {
             fn update_http_builder(
                 input: &crate::input::GenerateEmbedUrlForAnonymousUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -13425,7 +14337,7 @@ impl GenerateEmbedUrlForAnonymousUserInput {
 pub mod generate_embed_url_for_registered_user_input {
 
     /// A builder for [`GenerateEmbedUrlForRegisteredUserInput`](crate::input::GenerateEmbedUrlForRegisteredUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) session_lifetime_in_minutes: std::option::Option<i64>,
@@ -13512,7 +14424,7 @@ pub mod generate_embed_url_for_registered_user_input {
             self,
         ) -> Result<
             crate::input::GenerateEmbedUrlForRegisteredUserInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GenerateEmbedUrlForRegisteredUserInput {
                 aws_account_id: self.aws_account_id,
@@ -13537,26 +14449,31 @@ impl GenerateEmbedUrlForRegisteredUserInput {
             crate::operation::GenerateEmbedUrlForRegisteredUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GenerateEmbedUrlForRegisteredUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_155 = &_input.aws_account_id;
-                let input_155 = input_155.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_155, false);
+                let input_155 = input_155.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_155,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -13570,8 +14487,10 @@ impl GenerateEmbedUrlForRegisteredUserInput {
             fn update_http_builder(
                 input: &crate::input::GenerateEmbedUrlForRegisteredUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -13654,7 +14573,7 @@ impl GenerateEmbedUrlForRegisteredUserInput {
 pub mod get_dashboard_embed_url_input {
 
     /// A builder for [`GetDashboardEmbedUrlInput`](crate::input::GetDashboardEmbedUrlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
@@ -13799,8 +14718,10 @@ pub mod get_dashboard_embed_url_input {
         /// Consumes the builder and constructs a [`GetDashboardEmbedUrlInput`](crate::input::GetDashboardEmbedUrlInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDashboardEmbedUrlInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetDashboardEmbedUrlInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetDashboardEmbedUrlInput {
                 aws_account_id: self.aws_account_id,
                 dashboard_id: self.dashboard_id,
@@ -13829,40 +14750,50 @@ impl GetDashboardEmbedUrlInput {
             crate::operation::GetDashboardEmbedUrl,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDashboardEmbedUrlInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_156 = &_input.aws_account_id;
-                let input_156 = input_156.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_156, false);
+                let input_156 = input_156.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_156,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_157 = &_input.dashboard_id;
-                let input_157 = input_157.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dashboard_id = aws_smithy_http::label::fmt_string(input_157, false);
+                let input_157 = input_157.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dashboard_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dashboard_id = aws_smithy_http::label::fmt_string(
+                    input_157,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dashboard_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dashboard_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -13876,19 +14807,26 @@ impl GetDashboardEmbedUrlInput {
             fn uri_query(
                 _input: &crate::input::GetDashboardEmbedUrlInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_158) = &_input.identity_type {
-                    query.push_kv(
-                        "creds-type",
-                        &aws_smithy_http::query::fmt_string(&inner_158),
-                    );
-                }
+                let inner_158 = &_input.identity_type;
+                let inner_158 = inner_158.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "identity_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "creds-type",
+                    &aws_smithy_http::query::fmt_string(&inner_158),
+                );
                 if let Some(inner_159) = &_input.session_lifetime_in_minutes {
-                    query.push_kv(
-                        "session-lifetime",
-                        aws_smithy_types::primitive::Encoder::from(*inner_159).encode(),
-                    );
+                    if *inner_159 != 0 {
+                        query.push_kv(
+                            "session-lifetime",
+                            aws_smithy_types::primitive::Encoder::from(*inner_159).encode(),
+                        );
+                    }
                 }
                 if _input.undo_redo_disabled {
                     query.push_kv(
@@ -13913,17 +14851,23 @@ impl GetDashboardEmbedUrlInput {
                     );
                 }
                 if let Some(inner_160) = &_input.user_arn {
-                    query.push_kv("user-arn", &aws_smithy_http::query::fmt_string(&inner_160));
+                    {
+                        query.push_kv("user-arn", &aws_smithy_http::query::fmt_string(&inner_160));
+                    }
                 }
                 if let Some(inner_161) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_161));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_161));
+                    }
                 }
                 if let Some(inner_162) = &_input.additional_dashboard_ids {
-                    for inner_163 in inner_162 {
-                        query.push_kv(
-                            "additional-dashboard-ids",
-                            &aws_smithy_http::query::fmt_string(&inner_163),
-                        );
+                    {
+                        for inner_163 in inner_162 {
+                            query.push_kv(
+                                "additional-dashboard-ids",
+                                &aws_smithy_http::query::fmt_string(&inner_163),
+                            );
+                        }
                     }
                 }
                 Ok(())
@@ -13932,8 +14876,10 @@ impl GetDashboardEmbedUrlInput {
             fn update_http_builder(
                 input: &crate::input::GetDashboardEmbedUrlInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -14004,7 +14950,7 @@ impl GetDashboardEmbedUrlInput {
 pub mod get_session_embed_url_input {
 
     /// A builder for [`GetSessionEmbedUrlInput`](crate::input::GetSessionEmbedUrlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) entry_point: std::option::Option<std::string::String>,
@@ -14086,8 +15032,10 @@ pub mod get_session_embed_url_input {
         /// Consumes the builder and constructs a [`GetSessionEmbedUrlInput`](crate::input::GetSessionEmbedUrlInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSessionEmbedUrlInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetSessionEmbedUrlInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetSessionEmbedUrlInput {
                 aws_account_id: self.aws_account_id,
                 entry_point: self.entry_point,
@@ -14110,26 +15058,31 @@ impl GetSessionEmbedUrlInput {
             crate::operation::GetSessionEmbedUrl,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetSessionEmbedUrlInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_164 = &_input.aws_account_id;
-                let input_164 = input_164.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_164, false);
+                let input_164 = input_164.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_164,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -14142,22 +15095,28 @@ impl GetSessionEmbedUrlInput {
             fn uri_query(
                 _input: &crate::input::GetSessionEmbedUrlInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_165) = &_input.entry_point {
-                    query.push_kv(
-                        "entry-point",
-                        &aws_smithy_http::query::fmt_string(&inner_165),
-                    );
+                    {
+                        query.push_kv(
+                            "entry-point",
+                            &aws_smithy_http::query::fmt_string(&inner_165),
+                        );
+                    }
                 }
                 if let Some(inner_166) = &_input.session_lifetime_in_minutes {
-                    query.push_kv(
-                        "session-lifetime",
-                        aws_smithy_types::primitive::Encoder::from(*inner_166).encode(),
-                    );
+                    if *inner_166 != 0 {
+                        query.push_kv(
+                            "session-lifetime",
+                            aws_smithy_types::primitive::Encoder::from(*inner_166).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_167) = &_input.user_arn {
-                    query.push_kv("user-arn", &aws_smithy_http::query::fmt_string(&inner_167));
+                    {
+                        query.push_kv("user-arn", &aws_smithy_http::query::fmt_string(&inner_167));
+                    }
                 }
                 Ok(())
             }
@@ -14165,8 +15124,10 @@ impl GetSessionEmbedUrlInput {
             fn update_http_builder(
                 input: &crate::input::GetSessionEmbedUrlInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -14237,7 +15198,7 @@ impl GetSessionEmbedUrlInput {
 pub mod list_analyses_input {
 
     /// A builder for [`ListAnalysesInput`](crate::input::ListAnalysesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -14280,7 +15241,7 @@ pub mod list_analyses_input {
         /// Consumes the builder and constructs a [`ListAnalysesInput`](crate::input::ListAnalysesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAnalysesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListAnalysesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListAnalysesInput {
                 aws_account_id: self.aws_account_id,
@@ -14303,26 +15264,31 @@ impl ListAnalysesInput {
             crate::operation::ListAnalyses,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAnalysesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_168 = &_input.aws_account_id;
-                let input_168 = input_168.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_168, false);
+                let input_168 = input_168.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_168,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -14335,19 +15301,23 @@ impl ListAnalysesInput {
             fn uri_query(
                 _input: &crate::input::ListAnalysesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_169) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_169),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_169),
+                        );
+                    }
                 }
                 if let Some(inner_170) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_170).encode(),
-                    );
+                    if *inner_170 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_170).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -14355,8 +15325,10 @@ impl ListAnalysesInput {
             fn update_http_builder(
                 input: &crate::input::ListAnalysesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -14427,7 +15399,7 @@ impl ListAnalysesInput {
 pub mod list_dashboards_input {
 
     /// A builder for [`ListDashboardsInput`](crate::input::ListDashboardsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -14470,7 +15442,7 @@ pub mod list_dashboards_input {
         /// Consumes the builder and constructs a [`ListDashboardsInput`](crate::input::ListDashboardsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDashboardsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListDashboardsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListDashboardsInput {
                 aws_account_id: self.aws_account_id,
@@ -14493,26 +15465,31 @@ impl ListDashboardsInput {
             crate::operation::ListDashboards,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDashboardsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_171 = &_input.aws_account_id;
-                let input_171 = input_171.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_171, false);
+                let input_171 = input_171.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_171,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -14525,19 +15502,23 @@ impl ListDashboardsInput {
             fn uri_query(
                 _input: &crate::input::ListDashboardsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_172) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_172),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_172),
+                        );
+                    }
                 }
                 if let Some(inner_173) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_173).encode(),
-                    );
+                    if *inner_173 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_173).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -14545,8 +15526,10 @@ impl ListDashboardsInput {
             fn update_http_builder(
                 input: &crate::input::ListDashboardsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -14617,7 +15600,7 @@ impl ListDashboardsInput {
 pub mod list_dashboard_versions_input {
 
     /// A builder for [`ListDashboardVersionsInput`](crate::input::ListDashboardVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
@@ -14671,8 +15654,10 @@ pub mod list_dashboard_versions_input {
         /// Consumes the builder and constructs a [`ListDashboardVersionsInput`](crate::input::ListDashboardVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDashboardVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListDashboardVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListDashboardVersionsInput {
                 aws_account_id: self.aws_account_id,
                 dashboard_id: self.dashboard_id,
@@ -14695,40 +15680,50 @@ impl ListDashboardVersionsInput {
             crate::operation::ListDashboardVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDashboardVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_174 = &_input.aws_account_id;
-                let input_174 = input_174.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_174, false);
+                let input_174 = input_174.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_174,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_175 = &_input.dashboard_id;
-                let input_175 = input_175.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dashboard_id = aws_smithy_http::label::fmt_string(input_175, false);
+                let input_175 = input_175.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dashboard_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dashboard_id = aws_smithy_http::label::fmt_string(
+                    input_175,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dashboard_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dashboard_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -14742,19 +15737,23 @@ impl ListDashboardVersionsInput {
             fn uri_query(
                 _input: &crate::input::ListDashboardVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_176) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_176),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_176),
+                        );
+                    }
                 }
                 if let Some(inner_177) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_177).encode(),
-                    );
+                    if *inner_177 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_177).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -14762,8 +15761,10 @@ impl ListDashboardVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListDashboardVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -14834,7 +15835,7 @@ impl ListDashboardVersionsInput {
 pub mod list_data_sets_input {
 
     /// A builder for [`ListDataSetsInput`](crate::input::ListDataSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -14877,7 +15878,7 @@ pub mod list_data_sets_input {
         /// Consumes the builder and constructs a [`ListDataSetsInput`](crate::input::ListDataSetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDataSetsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListDataSetsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListDataSetsInput {
                 aws_account_id: self.aws_account_id,
@@ -14900,26 +15901,31 @@ impl ListDataSetsInput {
             crate::operation::ListDataSets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDataSetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_178 = &_input.aws_account_id;
-                let input_178 = input_178.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_178, false);
+                let input_178 = input_178.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_178,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -14932,19 +15938,23 @@ impl ListDataSetsInput {
             fn uri_query(
                 _input: &crate::input::ListDataSetsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_179) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_179),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_179),
+                        );
+                    }
                 }
                 if let Some(inner_180) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_180).encode(),
-                    );
+                    if *inner_180 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_180).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -14952,8 +15962,10 @@ impl ListDataSetsInput {
             fn update_http_builder(
                 input: &crate::input::ListDataSetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -15024,7 +16036,7 @@ impl ListDataSetsInput {
 pub mod list_data_sources_input {
 
     /// A builder for [`ListDataSourcesInput`](crate::input::ListDataSourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -15067,7 +16079,7 @@ pub mod list_data_sources_input {
         /// Consumes the builder and constructs a [`ListDataSourcesInput`](crate::input::ListDataSourcesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDataSourcesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListDataSourcesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListDataSourcesInput {
                 aws_account_id: self.aws_account_id,
@@ -15090,26 +16102,31 @@ impl ListDataSourcesInput {
             crate::operation::ListDataSources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDataSourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_181 = &_input.aws_account_id;
-                let input_181 = input_181.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_181, false);
+                let input_181 = input_181.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_181,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -15122,19 +16139,23 @@ impl ListDataSourcesInput {
             fn uri_query(
                 _input: &crate::input::ListDataSourcesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_182) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_182),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_182),
+                        );
+                    }
                 }
                 if let Some(inner_183) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_183).encode(),
-                    );
+                    if *inner_183 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_183).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -15142,8 +16163,10 @@ impl ListDataSourcesInput {
             fn update_http_builder(
                 input: &crate::input::ListDataSourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -15214,7 +16237,7 @@ impl ListDataSourcesInput {
 pub mod list_folder_members_input {
 
     /// A builder for [`ListFolderMembersInput`](crate::input::ListFolderMembersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -15268,8 +16291,10 @@ pub mod list_folder_members_input {
         /// Consumes the builder and constructs a [`ListFolderMembersInput`](crate::input::ListFolderMembersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListFolderMembersInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListFolderMembersInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListFolderMembersInput {
                 aws_account_id: self.aws_account_id,
                 folder_id: self.folder_id,
@@ -15292,40 +16317,50 @@ impl ListFolderMembersInput {
             crate::operation::ListFolderMembers,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListFolderMembersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_184 = &_input.aws_account_id;
-                let input_184 = input_184.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_184, false);
+                let input_184 = input_184.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_184,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_185 = &_input.folder_id;
-                let input_185 = input_185.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let folder_id = aws_smithy_http::label::fmt_string(input_185, false);
+                let input_185 = input_185.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "folder_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let folder_id = aws_smithy_http::label::fmt_string(
+                    input_185,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if folder_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "folder_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -15339,19 +16374,23 @@ impl ListFolderMembersInput {
             fn uri_query(
                 _input: &crate::input::ListFolderMembersInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_186) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_186),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_186),
+                        );
+                    }
                 }
                 if let Some(inner_187) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_187).encode(),
-                    );
+                    if *inner_187 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_187).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -15359,8 +16398,10 @@ impl ListFolderMembersInput {
             fn update_http_builder(
                 input: &crate::input::ListFolderMembersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -15431,7 +16472,7 @@ impl ListFolderMembersInput {
 pub mod list_folders_input {
 
     /// A builder for [`ListFoldersInput`](crate::input::ListFoldersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -15474,7 +16515,7 @@ pub mod list_folders_input {
         /// Consumes the builder and constructs a [`ListFoldersInput`](crate::input::ListFoldersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListFoldersInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListFoldersInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListFoldersInput {
                 aws_account_id: self.aws_account_id,
@@ -15497,26 +16538,31 @@ impl ListFoldersInput {
             crate::operation::ListFolders,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListFoldersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_188 = &_input.aws_account_id;
-                let input_188 = input_188.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_188, false);
+                let input_188 = input_188.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_188,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -15529,19 +16575,23 @@ impl ListFoldersInput {
             fn uri_query(
                 _input: &crate::input::ListFoldersInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_189) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_189),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_189),
+                        );
+                    }
                 }
                 if let Some(inner_190) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_190).encode(),
-                    );
+                    if *inner_190 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_190).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -15549,8 +16599,10 @@ impl ListFoldersInput {
             fn update_http_builder(
                 input: &crate::input::ListFoldersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -15621,7 +16673,7 @@ impl ListFoldersInput {
 pub mod list_group_memberships_input {
 
     /// A builder for [`ListGroupMembershipsInput`](crate::input::ListGroupMembershipsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -15686,8 +16738,10 @@ pub mod list_group_memberships_input {
         /// Consumes the builder and constructs a [`ListGroupMembershipsInput`](crate::input::ListGroupMembershipsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListGroupMembershipsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListGroupMembershipsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListGroupMembershipsInput {
                 group_name: self.group_name,
                 next_token: self.next_token,
@@ -15711,54 +16765,69 @@ impl ListGroupMembershipsInput {
             crate::operation::ListGroupMemberships,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListGroupMembershipsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_191 = &_input.aws_account_id;
-                let input_191 = input_191.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_191, false);
+                let input_191 = input_191.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_191,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_192 = &_input.namespace;
-                let input_192 = input_192.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_192, false);
+                let input_192 = input_192.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_192,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_193 = &_input.group_name;
-                let input_193 = input_193.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "group_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let group_name = aws_smithy_http::label::fmt_string(input_193, false);
+                let input_193 = input_193.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "group_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let group_name = aws_smithy_http::label::fmt_string(
+                    input_193,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if group_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "group_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "group_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -15773,19 +16842,23 @@ impl ListGroupMembershipsInput {
             fn uri_query(
                 _input: &crate::input::ListGroupMembershipsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_194) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_194),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_194),
+                        );
+                    }
                 }
                 if let Some(inner_195) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_195).encode(),
-                    );
+                    if *inner_195 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_195).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -15793,8 +16866,10 @@ impl ListGroupMembershipsInput {
             fn update_http_builder(
                 input: &crate::input::ListGroupMembershipsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -15865,7 +16940,7 @@ impl ListGroupMembershipsInput {
 pub mod list_groups_input {
 
     /// A builder for [`ListGroupsInput`](crate::input::ListGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -15919,7 +16994,8 @@ pub mod list_groups_input {
         /// Consumes the builder and constructs a [`ListGroupsInput`](crate::input::ListGroupsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListGroupsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListGroupsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListGroupsInput {
                 aws_account_id: self.aws_account_id,
                 next_token: self.next_token,
@@ -15942,40 +17018,50 @@ impl ListGroupsInput {
             crate::operation::ListGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_196 = &_input.aws_account_id;
-                let input_196 = input_196.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_196, false);
+                let input_196 = input_196.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_196,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_197 = &_input.namespace;
-                let input_197 = input_197.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_197, false);
+                let input_197 = input_197.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_197,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -15989,19 +17075,23 @@ impl ListGroupsInput {
             fn uri_query(
                 _input: &crate::input::ListGroupsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_198) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_198),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_198),
+                        );
+                    }
                 }
                 if let Some(inner_199) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_199).encode(),
-                    );
+                    if *inner_199 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_199).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -16009,8 +17099,10 @@ impl ListGroupsInput {
             fn update_http_builder(
                 input: &crate::input::ListGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -16081,7 +17173,7 @@ impl ListGroupsInput {
 pub mod list_iam_policy_assignments_input {
 
     /// A builder for [`ListIamPolicyAssignmentsInput`](crate::input::ListIamPolicyAssignmentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) assignment_status: std::option::Option<crate::model::AssignmentStatus>,
@@ -16151,7 +17243,7 @@ pub mod list_iam_policy_assignments_input {
             self,
         ) -> Result<
             crate::input::ListIamPolicyAssignmentsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListIamPolicyAssignmentsInput {
                 aws_account_id: self.aws_account_id,
@@ -16176,40 +17268,50 @@ impl ListIamPolicyAssignmentsInput {
             crate::operation::ListIAMPolicyAssignments,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListIamPolicyAssignmentsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_200 = &_input.aws_account_id;
-                let input_200 = input_200.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_200, false);
+                let input_200 = input_200.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_200,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_201 = &_input.namespace;
-                let input_201 = input_201.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_201, false);
+                let input_201 = input_201.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_201,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -16223,19 +17325,23 @@ impl ListIamPolicyAssignmentsInput {
             fn uri_query(
                 _input: &crate::input::ListIamPolicyAssignmentsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_202) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_202),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_202),
+                        );
+                    }
                 }
                 if let Some(inner_203) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_203).encode(),
-                    );
+                    if *inner_203 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_203).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -16243,8 +17349,10 @@ impl ListIamPolicyAssignmentsInput {
             fn update_http_builder(
                 input: &crate::input::ListIamPolicyAssignmentsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -16331,7 +17439,7 @@ impl ListIamPolicyAssignmentsInput {
 pub mod list_iam_policy_assignments_for_user_input {
 
     /// A builder for [`ListIamPolicyAssignmentsForUserInput`](crate::input::ListIamPolicyAssignmentsForUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -16398,7 +17506,7 @@ pub mod list_iam_policy_assignments_for_user_input {
             self,
         ) -> Result<
             crate::input::ListIamPolicyAssignmentsForUserInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListIamPolicyAssignmentsForUserInput {
                 aws_account_id: self.aws_account_id,
@@ -16423,54 +17531,69 @@ impl ListIamPolicyAssignmentsForUserInput {
             crate::operation::ListIAMPolicyAssignmentsForUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListIamPolicyAssignmentsForUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_204 = &_input.aws_account_id;
-                let input_204 = input_204.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_204, false);
+                let input_204 = input_204.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_204,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_205 = &_input.namespace;
-                let input_205 = input_205.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_205, false);
+                let input_205 = input_205.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_205,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_206 = &_input.user_name;
-                let input_206 = input_206.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_name = aws_smithy_http::label::fmt_string(input_206, false);
+                let input_206 = input_206.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_name = aws_smithy_http::label::fmt_string(
+                    input_206,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}/iam-policy-assignments", AwsAccountId = aws_account_id, Namespace = namespace, UserName = user_name).expect("formatting should succeed");
                 Ok(())
@@ -16478,19 +17601,23 @@ impl ListIamPolicyAssignmentsForUserInput {
             fn uri_query(
                 _input: &crate::input::ListIamPolicyAssignmentsForUserInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_207) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_207),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_207),
+                        );
+                    }
                 }
                 if let Some(inner_208) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_208).encode(),
-                    );
+                    if *inner_208 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_208).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -16498,8 +17625,10 @@ impl ListIamPolicyAssignmentsForUserInput {
             fn update_http_builder(
                 input: &crate::input::ListIamPolicyAssignmentsForUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -16570,7 +17699,7 @@ impl ListIamPolicyAssignmentsForUserInput {
 pub mod list_ingestions_input {
 
     /// A builder for [`ListIngestionsInput`](crate::input::ListIngestionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -16624,7 +17753,7 @@ pub mod list_ingestions_input {
         /// Consumes the builder and constructs a [`ListIngestionsInput`](crate::input::ListIngestionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListIngestionsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListIngestionsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListIngestionsInput {
                 data_set_id: self.data_set_id,
@@ -16648,40 +17777,50 @@ impl ListIngestionsInput {
             crate::operation::ListIngestions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListIngestionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_209 = &_input.aws_account_id;
-                let input_209 = input_209.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_209, false);
+                let input_209 = input_209.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_209,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_210 = &_input.data_set_id;
-                let input_210 = input_210.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let data_set_id = aws_smithy_http::label::fmt_string(input_210, false);
+                let input_210 = input_210.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "data_set_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let data_set_id = aws_smithy_http::label::fmt_string(
+                    input_210,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if data_set_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "data_set_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -16695,19 +17834,23 @@ impl ListIngestionsInput {
             fn uri_query(
                 _input: &crate::input::ListIngestionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_211) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_211),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_211),
+                        );
+                    }
                 }
                 if let Some(inner_212) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_212).encode(),
-                    );
+                    if *inner_212 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_212).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -16715,8 +17858,10 @@ impl ListIngestionsInput {
             fn update_http_builder(
                 input: &crate::input::ListIngestionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -16787,7 +17932,7 @@ impl ListIngestionsInput {
 pub mod list_namespaces_input {
 
     /// A builder for [`ListNamespacesInput`](crate::input::ListNamespacesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -16830,7 +17975,7 @@ pub mod list_namespaces_input {
         /// Consumes the builder and constructs a [`ListNamespacesInput`](crate::input::ListNamespacesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListNamespacesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListNamespacesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListNamespacesInput {
                 aws_account_id: self.aws_account_id,
@@ -16853,26 +17998,31 @@ impl ListNamespacesInput {
             crate::operation::ListNamespaces,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListNamespacesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_213 = &_input.aws_account_id;
-                let input_213 = input_213.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_213, false);
+                let input_213 = input_213.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_213,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -16885,19 +18035,23 @@ impl ListNamespacesInput {
             fn uri_query(
                 _input: &crate::input::ListNamespacesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_214) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_214),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_214),
+                        );
+                    }
                 }
                 if let Some(inner_215) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_215).encode(),
-                    );
+                    if *inner_215 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_215).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -16905,8 +18059,10 @@ impl ListNamespacesInput {
             fn update_http_builder(
                 input: &crate::input::ListNamespacesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -16977,7 +18133,7 @@ impl ListNamespacesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -16995,8 +18151,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -17016,26 +18174,31 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_216 = &_input.resource_arn;
-                let input_216 = input_216.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_216, false);
+                let input_216 = input_216.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_216,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -17049,8 +18212,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -17120,7 +18285,7 @@ impl ListTagsForResourceInput {
 pub mod list_template_aliases_input {
 
     /// A builder for [`ListTemplateAliasesInput`](crate::input::ListTemplateAliasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) template_id: std::option::Option<std::string::String>,
@@ -17174,8 +18339,10 @@ pub mod list_template_aliases_input {
         /// Consumes the builder and constructs a [`ListTemplateAliasesInput`](crate::input::ListTemplateAliasesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTemplateAliasesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTemplateAliasesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTemplateAliasesInput {
                 aws_account_id: self.aws_account_id,
                 template_id: self.template_id,
@@ -17198,40 +18365,50 @@ impl ListTemplateAliasesInput {
             crate::operation::ListTemplateAliases,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTemplateAliasesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_217 = &_input.aws_account_id;
-                let input_217 = input_217.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_217, false);
+                let input_217 = input_217.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_217,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_218 = &_input.template_id;
-                let input_218 = input_218.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let template_id = aws_smithy_http::label::fmt_string(input_218, false);
+                let input_218 = input_218.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let template_id = aws_smithy_http::label::fmt_string(
+                    input_218,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if template_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "template_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -17245,19 +18422,23 @@ impl ListTemplateAliasesInput {
             fn uri_query(
                 _input: &crate::input::ListTemplateAliasesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_219) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_219),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_219),
+                        );
+                    }
                 }
                 if let Some(inner_220) = &_input.max_results {
-                    query.push_kv(
-                        "max-result",
-                        aws_smithy_types::primitive::Encoder::from(*inner_220).encode(),
-                    );
+                    if *inner_220 != 0 {
+                        query.push_kv(
+                            "max-result",
+                            aws_smithy_types::primitive::Encoder::from(*inner_220).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -17265,8 +18446,10 @@ impl ListTemplateAliasesInput {
             fn update_http_builder(
                 input: &crate::input::ListTemplateAliasesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -17337,7 +18520,7 @@ impl ListTemplateAliasesInput {
 pub mod list_templates_input {
 
     /// A builder for [`ListTemplatesInput`](crate::input::ListTemplatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -17380,7 +18563,7 @@ pub mod list_templates_input {
         /// Consumes the builder and constructs a [`ListTemplatesInput`](crate::input::ListTemplatesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTemplatesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListTemplatesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListTemplatesInput {
                 aws_account_id: self.aws_account_id,
@@ -17403,26 +18586,31 @@ impl ListTemplatesInput {
             crate::operation::ListTemplates,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTemplatesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_221 = &_input.aws_account_id;
-                let input_221 = input_221.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_221, false);
+                let input_221 = input_221.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_221,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -17435,19 +18623,23 @@ impl ListTemplatesInput {
             fn uri_query(
                 _input: &crate::input::ListTemplatesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_222) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_222),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_222),
+                        );
+                    }
                 }
                 if let Some(inner_223) = &_input.max_results {
-                    query.push_kv(
-                        "max-result",
-                        aws_smithy_types::primitive::Encoder::from(*inner_223).encode(),
-                    );
+                    if *inner_223 != 0 {
+                        query.push_kv(
+                            "max-result",
+                            aws_smithy_types::primitive::Encoder::from(*inner_223).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -17455,8 +18647,10 @@ impl ListTemplatesInput {
             fn update_http_builder(
                 input: &crate::input::ListTemplatesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -17527,7 +18721,7 @@ impl ListTemplatesInput {
 pub mod list_template_versions_input {
 
     /// A builder for [`ListTemplateVersionsInput`](crate::input::ListTemplateVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) template_id: std::option::Option<std::string::String>,
@@ -17581,8 +18775,10 @@ pub mod list_template_versions_input {
         /// Consumes the builder and constructs a [`ListTemplateVersionsInput`](crate::input::ListTemplateVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTemplateVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTemplateVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTemplateVersionsInput {
                 aws_account_id: self.aws_account_id,
                 template_id: self.template_id,
@@ -17605,40 +18801,50 @@ impl ListTemplateVersionsInput {
             crate::operation::ListTemplateVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTemplateVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_224 = &_input.aws_account_id;
-                let input_224 = input_224.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_224, false);
+                let input_224 = input_224.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_224,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_225 = &_input.template_id;
-                let input_225 = input_225.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let template_id = aws_smithy_http::label::fmt_string(input_225, false);
+                let input_225 = input_225.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let template_id = aws_smithy_http::label::fmt_string(
+                    input_225,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if template_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "template_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -17652,19 +18858,23 @@ impl ListTemplateVersionsInput {
             fn uri_query(
                 _input: &crate::input::ListTemplateVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_226) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_226),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_226),
+                        );
+                    }
                 }
                 if let Some(inner_227) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_227).encode(),
-                    );
+                    if *inner_227 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_227).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -17672,8 +18882,10 @@ impl ListTemplateVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListTemplateVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -17744,7 +18956,7 @@ impl ListTemplateVersionsInput {
 pub mod list_theme_aliases_input {
 
     /// A builder for [`ListThemeAliasesInput`](crate::input::ListThemeAliasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) theme_id: std::option::Option<std::string::String>,
@@ -17798,8 +19010,10 @@ pub mod list_theme_aliases_input {
         /// Consumes the builder and constructs a [`ListThemeAliasesInput`](crate::input::ListThemeAliasesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListThemeAliasesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListThemeAliasesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListThemeAliasesInput {
                 aws_account_id: self.aws_account_id,
                 theme_id: self.theme_id,
@@ -17822,40 +19036,50 @@ impl ListThemeAliasesInput {
             crate::operation::ListThemeAliases,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListThemeAliasesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_228 = &_input.aws_account_id;
-                let input_228 = input_228.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_228, false);
+                let input_228 = input_228.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_228,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_229 = &_input.theme_id;
-                let input_229 = input_229.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let theme_id = aws_smithy_http::label::fmt_string(input_229, false);
+                let input_229 = input_229.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "theme_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let theme_id = aws_smithy_http::label::fmt_string(
+                    input_229,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if theme_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "theme_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -17869,19 +19093,23 @@ impl ListThemeAliasesInput {
             fn uri_query(
                 _input: &crate::input::ListThemeAliasesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_230) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_230),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_230),
+                        );
+                    }
                 }
                 if let Some(inner_231) = &_input.max_results {
-                    query.push_kv(
-                        "max-result",
-                        aws_smithy_types::primitive::Encoder::from(*inner_231).encode(),
-                    );
+                    if *inner_231 != 0 {
+                        query.push_kv(
+                            "max-result",
+                            aws_smithy_types::primitive::Encoder::from(*inner_231).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -17889,8 +19117,10 @@ impl ListThemeAliasesInput {
             fn update_http_builder(
                 input: &crate::input::ListThemeAliasesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -17961,7 +19191,7 @@ impl ListThemeAliasesInput {
 pub mod list_themes_input {
 
     /// A builder for [`ListThemesInput`](crate::input::ListThemesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -18025,7 +19255,8 @@ pub mod list_themes_input {
         /// Consumes the builder and constructs a [`ListThemesInput`](crate::input::ListThemesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListThemesInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListThemesInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListThemesInput {
                 aws_account_id: self.aws_account_id,
                 next_token: self.next_token,
@@ -18048,26 +19279,31 @@ impl ListThemesInput {
             crate::operation::ListThemes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListThemesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_232 = &_input.aws_account_id;
-                let input_232 = input_232.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_232, false);
+                let input_232 = input_232.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_232,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -18080,22 +19316,28 @@ impl ListThemesInput {
             fn uri_query(
                 _input: &crate::input::ListThemesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_233) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_233),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_233),
+                        );
+                    }
                 }
                 if let Some(inner_234) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_234).encode(),
-                    );
+                    if *inner_234 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_234).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_235) = &_input.r#type {
-                    query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_235));
+                    {
+                        query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_235));
+                    }
                 }
                 Ok(())
             }
@@ -18103,8 +19345,10 @@ impl ListThemesInput {
             fn update_http_builder(
                 input: &crate::input::ListThemesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -18175,7 +19419,7 @@ impl ListThemesInput {
 pub mod list_theme_versions_input {
 
     /// A builder for [`ListThemeVersionsInput`](crate::input::ListThemeVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) theme_id: std::option::Option<std::string::String>,
@@ -18229,8 +19473,10 @@ pub mod list_theme_versions_input {
         /// Consumes the builder and constructs a [`ListThemeVersionsInput`](crate::input::ListThemeVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListThemeVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListThemeVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListThemeVersionsInput {
                 aws_account_id: self.aws_account_id,
                 theme_id: self.theme_id,
@@ -18253,40 +19499,50 @@ impl ListThemeVersionsInput {
             crate::operation::ListThemeVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListThemeVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_236 = &_input.aws_account_id;
-                let input_236 = input_236.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_236, false);
+                let input_236 = input_236.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_236,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_237 = &_input.theme_id;
-                let input_237 = input_237.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let theme_id = aws_smithy_http::label::fmt_string(input_237, false);
+                let input_237 = input_237.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "theme_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let theme_id = aws_smithy_http::label::fmt_string(
+                    input_237,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if theme_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "theme_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -18300,19 +19556,23 @@ impl ListThemeVersionsInput {
             fn uri_query(
                 _input: &crate::input::ListThemeVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_238) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_238),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_238),
+                        );
+                    }
                 }
                 if let Some(inner_239) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_239).encode(),
-                    );
+                    if *inner_239 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_239).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -18320,8 +19580,10 @@ impl ListThemeVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListThemeVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -18392,7 +19654,7 @@ impl ListThemeVersionsInput {
 pub mod list_user_groups_input {
 
     /// A builder for [`ListUserGroupsInput`](crate::input::ListUserGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -18457,7 +19719,7 @@ pub mod list_user_groups_input {
         /// Consumes the builder and constructs a [`ListUserGroupsInput`](crate::input::ListUserGroupsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListUserGroupsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListUserGroupsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListUserGroupsInput {
                 user_name: self.user_name,
@@ -18482,54 +19744,69 @@ impl ListUserGroupsInput {
             crate::operation::ListUserGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListUserGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_240 = &_input.aws_account_id;
-                let input_240 = input_240.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_240, false);
+                let input_240 = input_240.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_240,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_241 = &_input.namespace;
-                let input_241 = input_241.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_241, false);
+                let input_241 = input_241.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_241,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_242 = &_input.user_name;
-                let input_242 = input_242.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_name = aws_smithy_http::label::fmt_string(input_242, false);
+                let input_242 = input_242.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_name = aws_smithy_http::label::fmt_string(
+                    input_242,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -18544,19 +19821,23 @@ impl ListUserGroupsInput {
             fn uri_query(
                 _input: &crate::input::ListUserGroupsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_243) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_243),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_243),
+                        );
+                    }
                 }
                 if let Some(inner_244) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_244).encode(),
-                    );
+                    if *inner_244 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_244).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -18564,8 +19845,10 @@ impl ListUserGroupsInput {
             fn update_http_builder(
                 input: &crate::input::ListUserGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -18636,7 +19919,7 @@ impl ListUserGroupsInput {
 pub mod list_users_input {
 
     /// A builder for [`ListUsersInput`](crate::input::ListUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -18690,7 +19973,8 @@ pub mod list_users_input {
         /// Consumes the builder and constructs a [`ListUsersInput`](crate::input::ListUsersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListUsersInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListUsersInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListUsersInput {
                 aws_account_id: self.aws_account_id,
                 next_token: self.next_token,
@@ -18713,40 +19997,50 @@ impl ListUsersInput {
             crate::operation::ListUsers,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListUsersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_245 = &_input.aws_account_id;
-                let input_245 = input_245.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_245, false);
+                let input_245 = input_245.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_245,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_246 = &_input.namespace;
-                let input_246 = input_246.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_246, false);
+                let input_246 = input_246.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_246,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -18760,19 +20054,23 @@ impl ListUsersInput {
             fn uri_query(
                 _input: &crate::input::ListUsersInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_247) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_247),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_247),
+                        );
+                    }
                 }
                 if let Some(inner_248) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_248).encode(),
-                    );
+                    if *inner_248 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_248).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -18780,8 +20078,10 @@ impl ListUsersInput {
             fn update_http_builder(
                 input: &crate::input::ListUsersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -18850,7 +20150,7 @@ impl ListUsersInput {
 pub mod register_user_input {
 
     /// A builder for [`RegisterUserInput`](crate::input::RegisterUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_type: std::option::Option<crate::model::IdentityType>,
         pub(crate) email: std::option::Option<std::string::String>,
@@ -19064,7 +20364,7 @@ pub mod register_user_input {
         /// Consumes the builder and constructs a [`RegisterUserInput`](crate::input::RegisterUserInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RegisterUserInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::RegisterUserInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::RegisterUserInput {
                 identity_type: self.identity_type,
@@ -19097,40 +20397,50 @@ impl RegisterUserInput {
             crate::operation::RegisterUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RegisterUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_249 = &_input.aws_account_id;
-                let input_249 = input_249.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_249, false);
+                let input_249 = input_249.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_249,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_250 = &_input.namespace;
-                let input_250 = input_250.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_250, false);
+                let input_250 = input_250.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_250,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -19145,8 +20455,10 @@ impl RegisterUserInput {
             fn update_http_builder(
                 input: &crate::input::RegisterUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -19230,7 +20542,7 @@ impl RegisterUserInput {
 pub mod restore_analysis_input {
 
     /// A builder for [`RestoreAnalysisInput`](crate::input::RestoreAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) analysis_id: std::option::Option<std::string::String>,
@@ -19262,7 +20574,7 @@ pub mod restore_analysis_input {
         /// Consumes the builder and constructs a [`RestoreAnalysisInput`](crate::input::RestoreAnalysisInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RestoreAnalysisInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::RestoreAnalysisInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::RestoreAnalysisInput {
                 aws_account_id: self.aws_account_id,
@@ -19284,40 +20596,50 @@ impl RestoreAnalysisInput {
             crate::operation::RestoreAnalysis,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RestoreAnalysisInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_251 = &_input.aws_account_id;
-                let input_251 = input_251.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_251, false);
+                let input_251 = input_251.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_251,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_252 = &_input.analysis_id;
-                let input_252 = input_252.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let analysis_id = aws_smithy_http::label::fmt_string(input_252, false);
+                let input_252 = input_252.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "analysis_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let analysis_id = aws_smithy_http::label::fmt_string(
+                    input_252,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if analysis_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "analysis_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -19332,8 +20654,10 @@ impl RestoreAnalysisInput {
             fn update_http_builder(
                 input: &crate::input::RestoreAnalysisInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -19403,7 +20727,7 @@ impl RestoreAnalysisInput {
 pub mod search_analyses_input {
 
     /// A builder for [`SearchAnalysesInput`](crate::input::SearchAnalysesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::AnalysisSearchFilter>>,
@@ -19466,7 +20790,7 @@ pub mod search_analyses_input {
         /// Consumes the builder and constructs a [`SearchAnalysesInput`](crate::input::SearchAnalysesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SearchAnalysesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::SearchAnalysesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::SearchAnalysesInput {
                 aws_account_id: self.aws_account_id,
@@ -19490,26 +20814,31 @@ impl SearchAnalysesInput {
             crate::operation::SearchAnalyses,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SearchAnalysesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_253 = &_input.aws_account_id;
-                let input_253 = input_253.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_253, false);
+                let input_253 = input_253.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_253,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -19523,8 +20852,10 @@ impl SearchAnalysesInput {
             fn update_http_builder(
                 input: &crate::input::SearchAnalysesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -19608,7 +20939,7 @@ impl SearchAnalysesInput {
 pub mod search_dashboards_input {
 
     /// A builder for [`SearchDashboardsInput`](crate::input::SearchDashboardsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::DashboardSearchFilter>>,
@@ -19671,8 +21002,10 @@ pub mod search_dashboards_input {
         /// Consumes the builder and constructs a [`SearchDashboardsInput`](crate::input::SearchDashboardsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SearchDashboardsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SearchDashboardsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SearchDashboardsInput {
                 aws_account_id: self.aws_account_id,
                 filters: self.filters,
@@ -19695,26 +21028,31 @@ impl SearchDashboardsInput {
             crate::operation::SearchDashboards,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SearchDashboardsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_254 = &_input.aws_account_id;
-                let input_254 = input_254.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_254, false);
+                let input_254 = input_254.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_254,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -19728,8 +21066,10 @@ impl SearchDashboardsInput {
             fn update_http_builder(
                 input: &crate::input::SearchDashboardsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -19813,7 +21153,7 @@ impl SearchDashboardsInput {
 pub mod search_folders_input {
 
     /// A builder for [`SearchFoldersInput`](crate::input::SearchFoldersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::FolderSearchFilter>>,
@@ -19876,7 +21216,7 @@ pub mod search_folders_input {
         /// Consumes the builder and constructs a [`SearchFoldersInput`](crate::input::SearchFoldersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SearchFoldersInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::SearchFoldersInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::SearchFoldersInput {
                 aws_account_id: self.aws_account_id,
@@ -19900,26 +21240,31 @@ impl SearchFoldersInput {
             crate::operation::SearchFolders,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SearchFoldersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_255 = &_input.aws_account_id;
-                let input_255 = input_255.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_255, false);
+                let input_255 = input_255.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_255,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -19933,8 +21278,10 @@ impl SearchFoldersInput {
             fn update_http_builder(
                 input: &crate::input::SearchFoldersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -20018,7 +21365,7 @@ impl SearchFoldersInput {
 pub mod search_groups_input {
 
     /// A builder for [`SearchGroupsInput`](crate::input::SearchGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -20092,7 +21439,7 @@ pub mod search_groups_input {
         /// Consumes the builder and constructs a [`SearchGroupsInput`](crate::input::SearchGroupsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SearchGroupsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::SearchGroupsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::SearchGroupsInput {
                 aws_account_id: self.aws_account_id,
@@ -20117,40 +21464,50 @@ impl SearchGroupsInput {
             crate::operation::SearchGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SearchGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_256 = &_input.aws_account_id;
-                let input_256 = input_256.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_256, false);
+                let input_256 = input_256.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_256,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_257 = &_input.namespace;
-                let input_257 = input_257.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_257, false);
+                let input_257 = input_257.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_257,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -20164,19 +21521,23 @@ impl SearchGroupsInput {
             fn uri_query(
                 _input: &crate::input::SearchGroupsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_258) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_258),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_258),
+                        );
+                    }
                 }
                 if let Some(inner_259) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_259).encode(),
-                    );
+                    if *inner_259 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_259).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -20184,8 +21545,10 @@ impl SearchGroupsInput {
             fn update_http_builder(
                 input: &crate::input::SearchGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -20270,7 +21633,7 @@ impl SearchGroupsInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -20308,7 +21671,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -20330,26 +21693,31 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_260 = &_input.resource_arn;
-                let input_260 = input_260.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_260, false);
+                let input_260 = input_260.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_260,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -20363,8 +21731,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -20448,7 +21818,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20486,7 +21856,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -20508,26 +21878,31 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_261 = &_input.resource_arn;
-                let input_261 = input_261.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_261, false);
+                let input_261 = input_261.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_261,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -20540,12 +21915,17 @@ impl UntagResourceInput {
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_262) = &_input.tag_keys {
-                    for inner_263 in inner_262 {
-                        query.push_kv("keys", &aws_smithy_http::query::fmt_string(&inner_263));
-                    }
+                let inner_262 = &_input.tag_keys;
+                let inner_262 = inner_262.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_263 in inner_262 {
+                    query.push_kv("keys", &aws_smithy_http::query::fmt_string(&inner_263));
                 }
                 Ok(())
             }
@@ -20553,8 +21933,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -20625,7 +22007,7 @@ impl UntagResourceInput {
 pub mod update_account_customization_input {
 
     /// A builder for [`UpdateAccountCustomizationInput`](crate::input::UpdateAccountCustomizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -20673,7 +22055,7 @@ pub mod update_account_customization_input {
             self,
         ) -> Result<
             crate::input::UpdateAccountCustomizationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateAccountCustomizationInput {
                 aws_account_id: self.aws_account_id,
@@ -20696,26 +22078,31 @@ impl UpdateAccountCustomizationInput {
             crate::operation::UpdateAccountCustomization,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateAccountCustomizationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_264 = &_input.aws_account_id;
-                let input_264 = input_264.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_264, false);
+                let input_264 = input_264.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_264,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -20728,10 +22115,12 @@ impl UpdateAccountCustomizationInput {
             fn uri_query(
                 _input: &crate::input::UpdateAccountCustomizationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_265) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_265));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_265));
+                    }
                 }
                 Ok(())
             }
@@ -20739,8 +22128,10 @@ impl UpdateAccountCustomizationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAccountCustomizationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -20827,7 +22218,7 @@ impl UpdateAccountCustomizationInput {
 pub mod update_account_settings_input {
 
     /// A builder for [`UpdateAccountSettingsInput`](crate::input::UpdateAccountSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) default_namespace: std::option::Option<std::string::String>,
@@ -20876,8 +22267,10 @@ pub mod update_account_settings_input {
         /// Consumes the builder and constructs a [`UpdateAccountSettingsInput`](crate::input::UpdateAccountSettingsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAccountSettingsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateAccountSettingsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateAccountSettingsInput {
                 aws_account_id: self.aws_account_id,
                 default_namespace: self.default_namespace,
@@ -20899,26 +22292,31 @@ impl UpdateAccountSettingsInput {
             crate::operation::UpdateAccountSettings,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateAccountSettingsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_266 = &_input.aws_account_id;
-                let input_266 = input_266.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_266, false);
+                let input_266 = input_266.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_266,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -20932,8 +22330,10 @@ impl UpdateAccountSettingsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAccountSettingsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -21019,7 +22419,7 @@ impl UpdateAccountSettingsInput {
 pub mod update_analysis_input {
 
     /// A builder for [`UpdateAnalysisInput`](crate::input::UpdateAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) analysis_id: std::option::Option<std::string::String>,
@@ -21101,7 +22501,7 @@ pub mod update_analysis_input {
         /// Consumes the builder and constructs a [`UpdateAnalysisInput`](crate::input::UpdateAnalysisInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAnalysisInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateAnalysisInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateAnalysisInput {
                 aws_account_id: self.aws_account_id,
@@ -21127,40 +22527,50 @@ impl UpdateAnalysisInput {
             crate::operation::UpdateAnalysis,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateAnalysisInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_267 = &_input.aws_account_id;
-                let input_267 = input_267.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_267, false);
+                let input_267 = input_267.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_267,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_268 = &_input.analysis_id;
-                let input_268 = input_268.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let analysis_id = aws_smithy_http::label::fmt_string(input_268, false);
+                let input_268 = input_268.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "analysis_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let analysis_id = aws_smithy_http::label::fmt_string(
+                    input_268,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if analysis_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "analysis_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -21175,8 +22585,10 @@ impl UpdateAnalysisInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAnalysisInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -21260,7 +22672,7 @@ impl UpdateAnalysisInput {
 pub mod update_analysis_permissions_input {
 
     /// A builder for [`UpdateAnalysisPermissionsInput`](crate::input::UpdateAnalysisPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) analysis_id: std::option::Option<std::string::String>,
@@ -21336,7 +22748,7 @@ pub mod update_analysis_permissions_input {
             self,
         ) -> Result<
             crate::input::UpdateAnalysisPermissionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateAnalysisPermissionsInput {
                 aws_account_id: self.aws_account_id,
@@ -21360,40 +22772,50 @@ impl UpdateAnalysisPermissionsInput {
             crate::operation::UpdateAnalysisPermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateAnalysisPermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_269 = &_input.aws_account_id;
-                let input_269 = input_269.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_269, false);
+                let input_269 = input_269.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_269,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_270 = &_input.analysis_id;
-                let input_270 = input_270.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let analysis_id = aws_smithy_http::label::fmt_string(input_270, false);
+                let input_270 = input_270.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "analysis_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let analysis_id = aws_smithy_http::label::fmt_string(
+                    input_270,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if analysis_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "analysis_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -21408,8 +22830,10 @@ impl UpdateAnalysisPermissionsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAnalysisPermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -21495,7 +22919,7 @@ impl UpdateAnalysisPermissionsInput {
 pub mod update_dashboard_input {
 
     /// A builder for [`UpdateDashboardInput`](crate::input::UpdateDashboardInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
@@ -21621,7 +23045,7 @@ pub mod update_dashboard_input {
         /// Consumes the builder and constructs a [`UpdateDashboardInput`](crate::input::UpdateDashboardInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateDashboardInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateDashboardInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateDashboardInput {
                 aws_account_id: self.aws_account_id,
@@ -21649,40 +23073,50 @@ impl UpdateDashboardInput {
             crate::operation::UpdateDashboard,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateDashboardInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_271 = &_input.aws_account_id;
-                let input_271 = input_271.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_271, false);
+                let input_271 = input_271.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_271,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_272 = &_input.dashboard_id;
-                let input_272 = input_272.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dashboard_id = aws_smithy_http::label::fmt_string(input_272, false);
+                let input_272 = input_272.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dashboard_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dashboard_id = aws_smithy_http::label::fmt_string(
+                    input_272,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dashboard_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dashboard_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -21697,8 +23131,10 @@ impl UpdateDashboardInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDashboardInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -21782,7 +23218,7 @@ impl UpdateDashboardInput {
 pub mod update_dashboard_permissions_input {
 
     /// A builder for [`UpdateDashboardPermissionsInput`](crate::input::UpdateDashboardPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
@@ -21900,7 +23336,7 @@ pub mod update_dashboard_permissions_input {
             self,
         ) -> Result<
             crate::input::UpdateDashboardPermissionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateDashboardPermissionsInput {
                 aws_account_id: self.aws_account_id,
@@ -21926,40 +23362,50 @@ impl UpdateDashboardPermissionsInput {
             crate::operation::UpdateDashboardPermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateDashboardPermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_273 = &_input.aws_account_id;
-                let input_273 = input_273.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_273, false);
+                let input_273 = input_273.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_273,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_274 = &_input.dashboard_id;
-                let input_274 = input_274.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dashboard_id = aws_smithy_http::label::fmt_string(input_274, false);
+                let input_274 = input_274.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dashboard_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dashboard_id = aws_smithy_http::label::fmt_string(
+                    input_274,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dashboard_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dashboard_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -21974,8 +23420,10 @@ impl UpdateDashboardPermissionsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDashboardPermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -22061,7 +23509,7 @@ impl UpdateDashboardPermissionsInput {
 pub mod update_dashboard_published_version_input {
 
     /// A builder for [`UpdateDashboardPublishedVersionInput`](crate::input::UpdateDashboardPublishedVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
@@ -22106,7 +23554,7 @@ pub mod update_dashboard_published_version_input {
             self,
         ) -> Result<
             crate::input::UpdateDashboardPublishedVersionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateDashboardPublishedVersionInput {
                 aws_account_id: self.aws_account_id,
@@ -22129,56 +23577,68 @@ impl UpdateDashboardPublishedVersionInput {
             crate::operation::UpdateDashboardPublishedVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateDashboardPublishedVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_275 = &_input.aws_account_id;
-                let input_275 = input_275.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_275, false);
+                let input_275 = input_275.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_275,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_276 = &_input.dashboard_id;
-                let input_276 = input_276.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let dashboard_id = aws_smithy_http::label::fmt_string(input_276, false);
+                let input_276 = input_276.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "dashboard_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let dashboard_id = aws_smithy_http::label::fmt_string(
+                    input_276,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if dashboard_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "dashboard_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "dashboard_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_277 = &_input.version_number;
-                let input_277 = input_277.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "version_number",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_277 = input_277.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "version_number",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mut version_number_encoder =
                     aws_smithy_types::primitive::Encoder::from(*input_277);
                 let version_number = version_number_encoder.encode();
                 if version_number.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "version_number",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "version_number",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -22194,8 +23654,10 @@ impl UpdateDashboardPublishedVersionInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDashboardPublishedVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -22265,7 +23727,7 @@ impl UpdateDashboardPublishedVersionInput {
 pub mod update_data_set_input {
 
     /// A builder for [`UpdateDataSetInput`](crate::input::UpdateDataSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -22504,7 +23966,7 @@ pub mod update_data_set_input {
         /// Consumes the builder and constructs a [`UpdateDataSetInput`](crate::input::UpdateDataSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateDataSetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateDataSetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateDataSetInput {
                 aws_account_id: self.aws_account_id,
@@ -22536,40 +23998,50 @@ impl UpdateDataSetInput {
             crate::operation::UpdateDataSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateDataSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_278 = &_input.aws_account_id;
-                let input_278 = input_278.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_278, false);
+                let input_278 = input_278.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_278,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_279 = &_input.data_set_id;
-                let input_279 = input_279.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let data_set_id = aws_smithy_http::label::fmt_string(input_279, false);
+                let input_279 = input_279.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "data_set_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let data_set_id = aws_smithy_http::label::fmt_string(
+                    input_279,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if data_set_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "data_set_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -22584,8 +24056,10 @@ impl UpdateDataSetInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDataSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -22669,7 +24143,7 @@ impl UpdateDataSetInput {
 pub mod update_data_set_permissions_input {
 
     /// A builder for [`UpdateDataSetPermissionsInput`](crate::input::UpdateDataSetPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -22745,7 +24219,7 @@ pub mod update_data_set_permissions_input {
             self,
         ) -> Result<
             crate::input::UpdateDataSetPermissionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateDataSetPermissionsInput {
                 aws_account_id: self.aws_account_id,
@@ -22769,40 +24243,50 @@ impl UpdateDataSetPermissionsInput {
             crate::operation::UpdateDataSetPermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateDataSetPermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_280 = &_input.aws_account_id;
-                let input_280 = input_280.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_280, false);
+                let input_280 = input_280.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_280,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_281 = &_input.data_set_id;
-                let input_281 = input_281.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let data_set_id = aws_smithy_http::label::fmt_string(input_281, false);
+                let input_281 = input_281.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "data_set_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let data_set_id = aws_smithy_http::label::fmt_string(
+                    input_281,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if data_set_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_set_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "data_set_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -22817,8 +24301,10 @@ impl UpdateDataSetPermissionsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDataSetPermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -22904,7 +24390,7 @@ impl UpdateDataSetPermissionsInput {
 pub mod update_data_source_input {
 
     /// A builder for [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -23010,8 +24496,10 @@ pub mod update_data_source_input {
         /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateDataSourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateDataSourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateDataSourceInput {
                 aws_account_id: self.aws_account_id,
                 data_source_id: self.data_source_id,
@@ -23021,6 +24509,19 @@ pub mod update_data_source_input {
                 vpc_connection_properties: self.vpc_connection_properties,
                 ssl_properties: self.ssl_properties,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("aws_account_id", &self.aws_account_id);
+            formatter.field("data_source_id", &self.data_source_id);
+            formatter.field("name", &self.name);
+            formatter.field("data_source_parameters", &self.data_source_parameters);
+            formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+            formatter.field("vpc_connection_properties", &self.vpc_connection_properties);
+            formatter.field("ssl_properties", &self.ssl_properties);
+            formatter.finish()
         }
     }
 }
@@ -23037,40 +24538,50 @@ impl UpdateDataSourceInput {
             crate::operation::UpdateDataSource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateDataSourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_282 = &_input.aws_account_id;
-                let input_282 = input_282.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_282, false);
+                let input_282 = input_282.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_282,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_283 = &_input.data_source_id;
-                let input_283 = input_283.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_source_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let data_source_id = aws_smithy_http::label::fmt_string(input_283, false);
+                let input_283 = input_283.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "data_source_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let data_source_id = aws_smithy_http::label::fmt_string(
+                    input_283,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if data_source_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_source_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "data_source_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -23085,8 +24596,10 @@ impl UpdateDataSourceInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDataSourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -23170,7 +24683,7 @@ impl UpdateDataSourceInput {
 pub mod update_data_source_permissions_input {
 
     /// A builder for [`UpdateDataSourcePermissionsInput`](crate::input::UpdateDataSourcePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -23249,7 +24762,7 @@ pub mod update_data_source_permissions_input {
             self,
         ) -> Result<
             crate::input::UpdateDataSourcePermissionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateDataSourcePermissionsInput {
                 aws_account_id: self.aws_account_id,
@@ -23273,40 +24786,50 @@ impl UpdateDataSourcePermissionsInput {
             crate::operation::UpdateDataSourcePermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateDataSourcePermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_284 = &_input.aws_account_id;
-                let input_284 = input_284.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_284, false);
+                let input_284 = input_284.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_284,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_285 = &_input.data_source_id;
-                let input_285 = input_285.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_source_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let data_source_id = aws_smithy_http::label::fmt_string(input_285, false);
+                let input_285 = input_285.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "data_source_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let data_source_id = aws_smithy_http::label::fmt_string(
+                    input_285,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if data_source_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "data_source_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "data_source_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -23321,8 +24844,10 @@ impl UpdateDataSourcePermissionsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDataSourcePermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -23405,7 +24930,7 @@ impl UpdateDataSourcePermissionsInput {
 pub mod update_folder_input {
 
     /// A builder for [`UpdateFolderInput`](crate::input::UpdateFolderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -23448,7 +24973,7 @@ pub mod update_folder_input {
         /// Consumes the builder and constructs a [`UpdateFolderInput`](crate::input::UpdateFolderInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateFolderInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateFolderInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateFolderInput {
                 aws_account_id: self.aws_account_id,
@@ -23471,40 +24996,50 @@ impl UpdateFolderInput {
             crate::operation::UpdateFolder,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateFolderInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_286 = &_input.aws_account_id;
-                let input_286 = input_286.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_286, false);
+                let input_286 = input_286.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_286,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_287 = &_input.folder_id;
-                let input_287 = input_287.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let folder_id = aws_smithy_http::label::fmt_string(input_287, false);
+                let input_287 = input_287.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "folder_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let folder_id = aws_smithy_http::label::fmt_string(
+                    input_287,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if folder_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "folder_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -23519,8 +25054,10 @@ impl UpdateFolderInput {
             fn update_http_builder(
                 input: &crate::input::UpdateFolderInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -23604,7 +25141,7 @@ impl UpdateFolderInput {
 pub mod update_folder_permissions_input {
 
     /// A builder for [`UpdateFolderPermissionsInput`](crate::input::UpdateFolderPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
@@ -23680,7 +25217,7 @@ pub mod update_folder_permissions_input {
             self,
         ) -> Result<
             crate::input::UpdateFolderPermissionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateFolderPermissionsInput {
                 aws_account_id: self.aws_account_id,
@@ -23704,40 +25241,50 @@ impl UpdateFolderPermissionsInput {
             crate::operation::UpdateFolderPermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateFolderPermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_288 = &_input.aws_account_id;
-                let input_288 = input_288.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_288, false);
+                let input_288 = input_288.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_288,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_289 = &_input.folder_id;
-                let input_289 = input_289.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let folder_id = aws_smithy_http::label::fmt_string(input_289, false);
+                let input_289 = input_289.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "folder_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let folder_id = aws_smithy_http::label::fmt_string(
+                    input_289,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if folder_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "folder_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "folder_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -23752,8 +25299,10 @@ impl UpdateFolderPermissionsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateFolderPermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -23839,7 +25388,7 @@ impl UpdateFolderPermissionsInput {
 pub mod update_group_input {
 
     /// A builder for [`UpdateGroupInput`](crate::input::UpdateGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -23893,7 +25442,7 @@ pub mod update_group_input {
         /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::input::UpdateGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateGroupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateGroupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateGroupInput {
                 group_name: self.group_name,
@@ -23917,54 +25466,69 @@ impl UpdateGroupInput {
             crate::operation::UpdateGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_290 = &_input.aws_account_id;
-                let input_290 = input_290.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_290, false);
+                let input_290 = input_290.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_290,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_291 = &_input.namespace;
-                let input_291 = input_291.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_291, false);
+                let input_291 = input_291.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_291,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_292 = &_input.group_name;
-                let input_292 = input_292.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "group_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let group_name = aws_smithy_http::label::fmt_string(input_292, false);
+                let input_292 = input_292.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "group_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let group_name = aws_smithy_http::label::fmt_string(
+                    input_292,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if group_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "group_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "group_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -23980,8 +25544,10 @@ impl UpdateGroupInput {
             fn update_http_builder(
                 input: &crate::input::UpdateGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -24065,7 +25631,7 @@ impl UpdateGroupInput {
 pub mod update_iam_policy_assignment_input {
 
     /// A builder for [`UpdateIamPolicyAssignmentInput`](crate::input::UpdateIamPolicyAssignmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) assignment_name: std::option::Option<std::string::String>,
@@ -24176,7 +25742,7 @@ pub mod update_iam_policy_assignment_input {
             self,
         ) -> Result<
             crate::input::UpdateIamPolicyAssignmentInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateIamPolicyAssignmentInput {
                 aws_account_id: self.aws_account_id,
@@ -24202,54 +25768,69 @@ impl UpdateIamPolicyAssignmentInput {
             crate::operation::UpdateIAMPolicyAssignment,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateIamPolicyAssignmentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_293 = &_input.aws_account_id;
-                let input_293 = input_293.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_293, false);
+                let input_293 = input_293.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_293,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_294 = &_input.namespace;
-                let input_294 = input_294.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_294, false);
+                let input_294 = input_294.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_294,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_295 = &_input.assignment_name;
-                let input_295 = input_295.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "assignment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let assignment_name = aws_smithy_http::label::fmt_string(input_295, false);
+                let input_295 = input_295.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "assignment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let assignment_name = aws_smithy_http::label::fmt_string(
+                    input_295,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if assignment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "assignment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "assignment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/accounts/{AwsAccountId}/namespaces/{Namespace}/iam-policy-assignments/{AssignmentName}", AwsAccountId = aws_account_id, Namespace = namespace, AssignmentName = assignment_name).expect("formatting should succeed");
                 Ok(())
@@ -24258,8 +25839,10 @@ impl UpdateIamPolicyAssignmentInput {
             fn update_http_builder(
                 input: &crate::input::UpdateIamPolicyAssignmentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -24345,7 +25928,7 @@ impl UpdateIamPolicyAssignmentInput {
 pub mod update_ip_restriction_input {
 
     /// A builder for [`UpdateIpRestrictionInput`](crate::input::UpdateIpRestrictionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) ip_restriction_rule_map: std::option::Option<
@@ -24405,8 +25988,10 @@ pub mod update_ip_restriction_input {
         /// Consumes the builder and constructs a [`UpdateIpRestrictionInput`](crate::input::UpdateIpRestrictionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateIpRestrictionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateIpRestrictionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateIpRestrictionInput {
                 aws_account_id: self.aws_account_id,
                 ip_restriction_rule_map: self.ip_restriction_rule_map,
@@ -24428,26 +26013,31 @@ impl UpdateIpRestrictionInput {
             crate::operation::UpdateIpRestriction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateIpRestrictionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_296 = &_input.aws_account_id;
-                let input_296 = input_296.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_296, false);
+                let input_296 = input_296.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_296,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -24461,8 +26051,10 @@ impl UpdateIpRestrictionInput {
             fn update_http_builder(
                 input: &crate::input::UpdateIpRestrictionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -24546,7 +26138,7 @@ impl UpdateIpRestrictionInput {
 pub mod update_public_sharing_settings_input {
 
     /// A builder for [`UpdatePublicSharingSettingsInput`](crate::input::UpdatePublicSharingSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) public_sharing_enabled: std::option::Option<bool>,
@@ -24580,7 +26172,7 @@ pub mod update_public_sharing_settings_input {
             self,
         ) -> Result<
             crate::input::UpdatePublicSharingSettingsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdatePublicSharingSettingsInput {
                 aws_account_id: self.aws_account_id,
@@ -24602,26 +26194,31 @@ impl UpdatePublicSharingSettingsInput {
             crate::operation::UpdatePublicSharingSettings,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdatePublicSharingSettingsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_297 = &_input.aws_account_id;
-                let input_297 = input_297.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_297, false);
+                let input_297 = input_297.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_297,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -24635,8 +26232,10 @@ impl UpdatePublicSharingSettingsInput {
             fn update_http_builder(
                 input: &crate::input::UpdatePublicSharingSettingsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -24719,7 +26318,7 @@ impl UpdatePublicSharingSettingsInput {
 pub mod update_template_input {
 
     /// A builder for [`UpdateTemplateInput`](crate::input::UpdateTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) template_id: std::option::Option<std::string::String>,
@@ -24792,7 +26391,7 @@ pub mod update_template_input {
         /// Consumes the builder and constructs a [`UpdateTemplateInput`](crate::input::UpdateTemplateInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateTemplateInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateTemplateInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateTemplateInput {
                 aws_account_id: self.aws_account_id,
@@ -24817,40 +26416,50 @@ impl UpdateTemplateInput {
             crate::operation::UpdateTemplate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateTemplateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_298 = &_input.aws_account_id;
-                let input_298 = input_298.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_298, false);
+                let input_298 = input_298.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_298,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_299 = &_input.template_id;
-                let input_299 = input_299.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let template_id = aws_smithy_http::label::fmt_string(input_299, false);
+                let input_299 = input_299.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let template_id = aws_smithy_http::label::fmt_string(
+                    input_299,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if template_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "template_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -24865,8 +26474,10 @@ impl UpdateTemplateInput {
             fn update_http_builder(
                 input: &crate::input::UpdateTemplateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -24950,7 +26561,7 @@ impl UpdateTemplateInput {
 pub mod update_template_alias_input {
 
     /// A builder for [`UpdateTemplateAliasInput`](crate::input::UpdateTemplateAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) template_id: std::option::Option<std::string::String>,
@@ -25004,8 +26615,10 @@ pub mod update_template_alias_input {
         /// Consumes the builder and constructs a [`UpdateTemplateAliasInput`](crate::input::UpdateTemplateAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateTemplateAliasInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateTemplateAliasInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateTemplateAliasInput {
                 aws_account_id: self.aws_account_id,
                 template_id: self.template_id,
@@ -25028,54 +26641,69 @@ impl UpdateTemplateAliasInput {
             crate::operation::UpdateTemplateAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateTemplateAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_300 = &_input.aws_account_id;
-                let input_300 = input_300.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_300, false);
+                let input_300 = input_300.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_300,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_301 = &_input.template_id;
-                let input_301 = input_301.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let template_id = aws_smithy_http::label::fmt_string(input_301, false);
+                let input_301 = input_301.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let template_id = aws_smithy_http::label::fmt_string(
+                    input_301,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if template_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "template_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_302 = &_input.alias_name;
-                let input_302 = input_302.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alias_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let alias_name = aws_smithy_http::label::fmt_string(input_302, false);
+                let input_302 = input_302.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alias_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let alias_name = aws_smithy_http::label::fmt_string(
+                    input_302,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if alias_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alias_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alias_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -25091,8 +26719,10 @@ impl UpdateTemplateAliasInput {
             fn update_http_builder(
                 input: &crate::input::UpdateTemplateAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -25176,7 +26806,7 @@ impl UpdateTemplateAliasInput {
 pub mod update_template_permissions_input {
 
     /// A builder for [`UpdateTemplatePermissionsInput`](crate::input::UpdateTemplatePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) template_id: std::option::Option<std::string::String>,
@@ -25252,7 +26882,7 @@ pub mod update_template_permissions_input {
             self,
         ) -> Result<
             crate::input::UpdateTemplatePermissionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateTemplatePermissionsInput {
                 aws_account_id: self.aws_account_id,
@@ -25276,40 +26906,50 @@ impl UpdateTemplatePermissionsInput {
             crate::operation::UpdateTemplatePermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateTemplatePermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_303 = &_input.aws_account_id;
-                let input_303 = input_303.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_303, false);
+                let input_303 = input_303.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_303,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_304 = &_input.template_id;
-                let input_304 = input_304.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let template_id = aws_smithy_http::label::fmt_string(input_304, false);
+                let input_304 = input_304.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let template_id = aws_smithy_http::label::fmt_string(
+                    input_304,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if template_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "template_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "template_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -25324,8 +26964,10 @@ impl UpdateTemplatePermissionsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateTemplatePermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -25411,7 +27053,7 @@ impl UpdateTemplatePermissionsInput {
 pub mod update_theme_input {
 
     /// A builder for [`UpdateThemeInput`](crate::input::UpdateThemeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) theme_id: std::option::Option<std::string::String>,
@@ -25496,7 +27138,7 @@ pub mod update_theme_input {
         /// Consumes the builder and constructs a [`UpdateThemeInput`](crate::input::UpdateThemeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateThemeInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateThemeInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateThemeInput {
                 aws_account_id: self.aws_account_id,
@@ -25522,40 +27164,50 @@ impl UpdateThemeInput {
             crate::operation::UpdateTheme,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateThemeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_305 = &_input.aws_account_id;
-                let input_305 = input_305.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_305, false);
+                let input_305 = input_305.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_305,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_306 = &_input.theme_id;
-                let input_306 = input_306.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let theme_id = aws_smithy_http::label::fmt_string(input_306, false);
+                let input_306 = input_306.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "theme_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let theme_id = aws_smithy_http::label::fmt_string(
+                    input_306,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if theme_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "theme_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -25570,8 +27222,10 @@ impl UpdateThemeInput {
             fn update_http_builder(
                 input: &crate::input::UpdateThemeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -25655,7 +27309,7 @@ impl UpdateThemeInput {
 pub mod update_theme_alias_input {
 
     /// A builder for [`UpdateThemeAliasInput`](crate::input::UpdateThemeAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) theme_id: std::option::Option<std::string::String>,
@@ -25709,8 +27363,10 @@ pub mod update_theme_alias_input {
         /// Consumes the builder and constructs a [`UpdateThemeAliasInput`](crate::input::UpdateThemeAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateThemeAliasInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateThemeAliasInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateThemeAliasInput {
                 aws_account_id: self.aws_account_id,
                 theme_id: self.theme_id,
@@ -25733,54 +27389,69 @@ impl UpdateThemeAliasInput {
             crate::operation::UpdateThemeAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateThemeAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_307 = &_input.aws_account_id;
-                let input_307 = input_307.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_307, false);
+                let input_307 = input_307.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_307,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_308 = &_input.theme_id;
-                let input_308 = input_308.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let theme_id = aws_smithy_http::label::fmt_string(input_308, false);
+                let input_308 = input_308.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "theme_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let theme_id = aws_smithy_http::label::fmt_string(
+                    input_308,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if theme_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "theme_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_309 = &_input.alias_name;
-                let input_309 = input_309.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alias_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let alias_name = aws_smithy_http::label::fmt_string(input_309, false);
+                let input_309 = input_309.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alias_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let alias_name = aws_smithy_http::label::fmt_string(
+                    input_309,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if alias_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alias_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alias_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -25796,8 +27467,10 @@ impl UpdateThemeAliasInput {
             fn update_http_builder(
                 input: &crate::input::UpdateThemeAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -25881,7 +27554,7 @@ impl UpdateThemeAliasInput {
 pub mod update_theme_permissions_input {
 
     /// A builder for [`UpdateThemePermissionsInput`](crate::input::UpdateThemePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) theme_id: std::option::Option<std::string::String>,
@@ -25955,8 +27628,10 @@ pub mod update_theme_permissions_input {
         /// Consumes the builder and constructs a [`UpdateThemePermissionsInput`](crate::input::UpdateThemePermissionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateThemePermissionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateThemePermissionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateThemePermissionsInput {
                 aws_account_id: self.aws_account_id,
                 theme_id: self.theme_id,
@@ -25979,40 +27654,50 @@ impl UpdateThemePermissionsInput {
             crate::operation::UpdateThemePermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateThemePermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_310 = &_input.aws_account_id;
-                let input_310 = input_310.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_310, false);
+                let input_310 = input_310.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_310,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_311 = &_input.theme_id;
-                let input_311 = input_311.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let theme_id = aws_smithy_http::label::fmt_string(input_311, false);
+                let input_311 = input_311.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "theme_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let theme_id = aws_smithy_http::label::fmt_string(
+                    input_311,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if theme_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "theme_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "theme_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -26027,8 +27712,10 @@ impl UpdateThemePermissionsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateThemePermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -26114,7 +27801,7 @@ impl UpdateThemePermissionsInput {
 pub mod update_user_input {
 
     /// A builder for [`UpdateUserInput`](crate::input::UpdateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -26293,7 +27980,8 @@ pub mod update_user_input {
         /// Consumes the builder and constructs a [`UpdateUserInput`](crate::input::UpdateUserInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateUserInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::UpdateUserInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::UpdateUserInput {
                 user_name: self.user_name,
                 aws_account_id: self.aws_account_id,
@@ -26323,54 +28011,69 @@ impl UpdateUserInput {
             crate::operation::UpdateUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_312 = &_input.aws_account_id;
-                let input_312 = input_312.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let aws_account_id = aws_smithy_http::label::fmt_string(input_312, false);
+                let input_312 = input_312.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "aws_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let aws_account_id = aws_smithy_http::label::fmt_string(
+                    input_312,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if aws_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "aws_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "aws_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_313 = &_input.namespace;
-                let input_313 = input_313.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let namespace = aws_smithy_http::label::fmt_string(input_313, false);
+                let input_313 = input_313.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "namespace",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let namespace = aws_smithy_http::label::fmt_string(
+                    input_313,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if namespace.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "namespace",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "namespace",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_314 = &_input.user_name;
-                let input_314 = input_314.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let user_name = aws_smithy_http::label::fmt_string(input_314, false);
+                let input_314 = input_314.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "user_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let user_name = aws_smithy_http::label::fmt_string(
+                    input_314,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if user_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "user_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "user_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -26386,8 +28089,10 @@ impl UpdateUserInput {
             fn update_http_builder(
                 input: &crate::input::UpdateUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -26469,7 +28174,7 @@ impl UpdateUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserInput {
     /// <p>The Amazon QuickSight user name that you want to update.</p>
     #[doc(hidden)]
@@ -26584,35 +28289,10 @@ impl UpdateUserInput {
         self.external_login_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserInput");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("email", &self.email);
-        formatter.field("role", &self.role);
-        formatter.field("custom_permissions_name", &self.custom_permissions_name);
-        formatter.field(
-            "unapply_custom_permissions",
-            &self.unapply_custom_permissions,
-        );
-        formatter.field(
-            "external_login_federation_provider_type",
-            &self.external_login_federation_provider_type,
-        );
-        formatter.field(
-            "custom_federation_provider_url",
-            &self.custom_federation_provider_url,
-        );
-        formatter.field("external_login_id", &self.external_login_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateThemePermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme.</p>
     #[doc(hidden)]
@@ -26645,20 +28325,10 @@ impl UpdateThemePermissionsInput {
         self.revoke_permissions.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateThemePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateThemePermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("grant_permissions", &self.grant_permissions);
-        formatter.field("revoke_permissions", &self.revoke_permissions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateThemeAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
     #[doc(hidden)]
@@ -26691,20 +28361,10 @@ impl UpdateThemeAliasInput {
         self.theme_version_number
     }
 }
-impl std::fmt::Debug for UpdateThemeAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateThemeAliasInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.field("theme_version_number", &self.theme_version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateThemeInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
     #[doc(hidden)]
@@ -26751,22 +28411,10 @@ impl UpdateThemeInput {
         self.configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateThemeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateThemeInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("name", &self.name);
-        formatter.field("base_theme_id", &self.base_theme_id);
-        formatter.field("version_description", &self.version_description);
-        formatter.field("configuration", &self.configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTemplatePermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the template.</p>
     #[doc(hidden)]
@@ -26799,20 +28447,10 @@ impl UpdateTemplatePermissionsInput {
         self.revoke_permissions.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTemplatePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTemplatePermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("grant_permissions", &self.grant_permissions);
-        formatter.field("revoke_permissions", &self.revoke_permissions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTemplateAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the template alias that you're updating.</p>
     #[doc(hidden)]
@@ -26845,20 +28483,10 @@ impl UpdateTemplateAliasInput {
         self.template_version_number
     }
 }
-impl std::fmt::Debug for UpdateTemplateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTemplateAliasInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.field("template_version_number", &self.template_version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTemplateInput {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're updating.</p>
     #[doc(hidden)]
@@ -26900,21 +28528,10 @@ impl UpdateTemplateInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTemplateInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("source_entity", &self.source_entity);
-        formatter.field("version_description", &self.version_description);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePublicSharingSettingsInput {
     /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
     #[doc(hidden)]
@@ -26933,18 +28550,10 @@ impl UpdatePublicSharingSettingsInput {
         self.public_sharing_enabled
     }
 }
-impl std::fmt::Debug for UpdatePublicSharingSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePublicSharingSettingsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("public_sharing_enabled", &self.public_sharing_enabled);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIpRestrictionInput {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     #[doc(hidden)]
@@ -26974,19 +28583,10 @@ impl UpdateIpRestrictionInput {
         self.enabled
     }
 }
-impl std::fmt::Debug for UpdateIpRestrictionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIpRestrictionInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("ip_restriction_rule_map", &self.ip_restriction_rule_map);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIamPolicyAssignmentInput {
     /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
     #[doc(hidden)]
@@ -27049,22 +28649,10 @@ impl UpdateIamPolicyAssignmentInput {
         self.identities.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateIamPolicyAssignmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIamPolicyAssignmentInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("assignment_name", &self.assignment_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("assignment_status", &self.assignment_status);
-        formatter.field("policy_arn", &self.policy_arn);
-        formatter.field("identities", &self.identities);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGroupInput {
     /// <p>The name of the group that you want to update.</p>
     #[doc(hidden)]
@@ -27097,20 +28685,10 @@ impl UpdateGroupInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("description", &self.description);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFolderPermissionsInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
     #[doc(hidden)]
@@ -27143,20 +28721,10 @@ impl UpdateFolderPermissionsInput {
         self.revoke_permissions.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFolderPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFolderPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.field("grant_permissions", &self.grant_permissions);
-        formatter.field("revoke_permissions", &self.revoke_permissions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFolderInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
     #[doc(hidden)]
@@ -27182,19 +28750,10 @@ impl UpdateFolderInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFolderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFolderInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDataSourcePermissionsInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -27225,16 +28784,6 @@ impl UpdateDataSourcePermissionsInput {
     /// <p>A list of resource permissions that you want to revoke on the data source.</p>
     pub fn revoke_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
         self.revoke_permissions.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateDataSourcePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDataSourcePermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.field("grant_permissions", &self.grant_permissions);
-        formatter.field("revoke_permissions", &self.revoke_permissions);
-        formatter.finish()
     }
 }
 
@@ -27314,7 +28863,7 @@ impl std::fmt::Debug for UpdateDataSourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDataSetPermissionsInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -27347,20 +28896,10 @@ impl UpdateDataSetPermissionsInput {
         self.revoke_permissions.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDataSetPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDataSetPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("grant_permissions", &self.grant_permissions);
-        formatter.field("revoke_permissions", &self.revoke_permissions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -27477,40 +29016,10 @@ impl UpdateDataSetInput {
         self.data_set_usage_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDataSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDataSetInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("name", &self.name);
-        formatter.field("physical_table_map", &self.physical_table_map);
-        formatter.field("logical_table_map", &self.logical_table_map);
-        formatter.field("import_mode", &self.import_mode);
-        formatter.field("column_groups", &self.column_groups);
-        formatter.field("field_folders", &self.field_folders);
-        formatter.field(
-            "row_level_permission_data_set",
-            &self.row_level_permission_data_set,
-        );
-        formatter.field(
-            "row_level_permission_tag_configuration",
-            &self.row_level_permission_tag_configuration,
-        );
-        formatter.field(
-            "column_level_permission_rules",
-            &self.column_level_permission_rules,
-        );
-        formatter.field(
-            "data_set_usage_configuration",
-            &self.data_set_usage_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDashboardPublishedVersionInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
     #[doc(hidden)]
@@ -27536,19 +29045,10 @@ impl UpdateDashboardPublishedVersionInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for UpdateDashboardPublishedVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDashboardPublishedVersionInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDashboardPermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.</p>
     #[doc(hidden)]
@@ -27601,22 +29101,10 @@ impl UpdateDashboardPermissionsInput {
         self.revoke_link_permissions.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDashboardPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDashboardPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("grant_permissions", &self.grant_permissions);
-        formatter.field("revoke_permissions", &self.revoke_permissions);
-        formatter.field("grant_link_permissions", &self.grant_link_permissions);
-        formatter.field("revoke_link_permissions", &self.revoke_link_permissions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDashboardInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
     #[doc(hidden)]
@@ -27691,24 +29179,10 @@ impl UpdateDashboardInput {
         self.theme_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDashboardInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("name", &self.name);
-        formatter.field("source_entity", &self.source_entity);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("version_description", &self.version_description);
-        formatter.field("dashboard_publish_options", &self.dashboard_publish_options);
-        formatter.field("theme_arn", &self.theme_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAnalysisPermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.</p>
     #[doc(hidden)]
@@ -27741,20 +29215,10 @@ impl UpdateAnalysisPermissionsInput {
         self.revoke_permissions.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAnalysisPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAnalysisPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.field("grant_permissions", &self.grant_permissions);
-        formatter.field("revoke_permissions", &self.revoke_permissions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAnalysisInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
     #[doc(hidden)]
@@ -27801,22 +29265,10 @@ impl UpdateAnalysisInput {
         self.theme_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAnalysisInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.field("name", &self.name);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("source_entity", &self.source_entity);
-        formatter.field("theme_arn", &self.theme_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccountSettingsInput {
     /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
     #[doc(hidden)]
@@ -27842,19 +29294,10 @@ impl UpdateAccountSettingsInput {
         self.notification_email.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAccountSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccountSettingsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("default_namespace", &self.default_namespace);
-        formatter.field("notification_email", &self.notification_email);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccountCustomizationInput {
     /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
     #[doc(hidden)]
@@ -27882,19 +29325,10 @@ impl UpdateAccountCustomizationInput {
         self.account_customization.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAccountCustomizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccountCustomizationInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("account_customization", &self.account_customization);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
     #[doc(hidden)]
@@ -27913,18 +29347,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
     #[doc(hidden)]
@@ -27943,18 +29369,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchGroupsInput {
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     #[doc(hidden)]
@@ -27994,21 +29412,10 @@ impl SearchGroupsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for SearchGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchGroupsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchFoldersInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -28041,20 +29448,10 @@ impl SearchFoldersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for SearchFoldersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchFoldersInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchDashboardsInput {
     /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
     #[doc(hidden)]
@@ -28087,20 +29484,10 @@ impl SearchDashboardsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for SearchDashboardsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchDashboardsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchAnalysesInput {
     /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching for.</p>
     #[doc(hidden)]
@@ -28133,20 +29520,10 @@ impl SearchAnalysesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for SearchAnalysesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchAnalysesInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreAnalysisInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis.</p>
     #[doc(hidden)]
@@ -28165,18 +29542,10 @@ impl RestoreAnalysisInput {
         self.analysis_id.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreAnalysisInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterUserInput {
     /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
     /// <ul>
@@ -28315,34 +29684,10 @@ impl RegisterUserInput {
         self.external_login_id.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterUserInput");
-        formatter.field("identity_type", &self.identity_type);
-        formatter.field("email", &self.email);
-        formatter.field("user_role", &self.user_role);
-        formatter.field("iam_arn", &self.iam_arn);
-        formatter.field("session_name", &self.session_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("user_name", &self.user_name);
-        formatter.field("custom_permissions_name", &self.custom_permissions_name);
-        formatter.field(
-            "external_login_federation_provider_type",
-            &self.external_login_federation_provider_type,
-        );
-        formatter.field(
-            "custom_federation_provider_url",
-            &self.custom_federation_provider_url,
-        );
-        formatter.field("external_login_id", &self.external_login_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersInput {
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     #[doc(hidden)]
@@ -28375,20 +29720,10 @@ impl ListUsersInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for ListUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUserGroupsInput {
     /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
     #[doc(hidden)]
@@ -28428,21 +29763,10 @@ impl ListUserGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListUserGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUserGroupsInput");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListThemeVersionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
     #[doc(hidden)]
@@ -28475,20 +29799,10 @@ impl ListThemeVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListThemeVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListThemeVersionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListThemesInput {
     /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
     #[doc(hidden)]
@@ -28531,20 +29845,10 @@ impl ListThemesInput {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for ListThemesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListThemesInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListThemeAliasesInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme aliases that you're listing.</p>
     #[doc(hidden)]
@@ -28577,20 +29881,10 @@ impl ListThemeAliasesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListThemeAliasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListThemeAliasesInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTemplateVersionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
     #[doc(hidden)]
@@ -28623,20 +29917,10 @@ impl ListTemplateVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTemplateVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTemplateVersionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTemplatesInput {
     /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
     #[doc(hidden)]
@@ -28662,19 +29946,10 @@ impl ListTemplatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTemplatesInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTemplateAliasesInput {
     /// <p>The ID of the Amazon Web Services account that contains the template aliases that you're listing.</p>
     #[doc(hidden)]
@@ -28707,20 +29982,10 @@ impl ListTemplateAliasesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTemplateAliasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTemplateAliasesInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want a list of tags for.</p>
     #[doc(hidden)]
@@ -28732,17 +29997,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNamespacesInput {
     /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces that you want to list.</p>
     #[doc(hidden)]
@@ -28768,19 +30026,10 @@ impl ListNamespacesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListNamespacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNamespacesInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIngestionsInput {
     /// <p>The ID of the dataset used in the ingestion.</p>
     #[doc(hidden)]
@@ -28813,20 +30062,10 @@ impl ListIngestionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListIngestionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIngestionsInput");
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIamPolicyAssignmentsForUserInput {
     /// <p>The ID of the Amazon Web Services account that contains the assignments.</p>
     #[doc(hidden)]
@@ -28866,21 +30105,10 @@ impl ListIamPolicyAssignmentsForUserInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for ListIamPolicyAssignmentsForUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIamPolicyAssignmentsForUserInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("user_name", &self.user_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIamPolicyAssignmentsInput {
     /// <p>The ID of the Amazon Web Services account that contains these IAM policy assignments.</p>
     #[doc(hidden)]
@@ -28920,21 +30148,10 @@ impl ListIamPolicyAssignmentsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListIamPolicyAssignmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIamPolicyAssignmentsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("assignment_status", &self.assignment_status);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupsInput {
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     #[doc(hidden)]
@@ -28967,20 +30184,10 @@ impl ListGroupsInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for ListGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroupMembershipsInput {
     /// <p>The name of the group that you want to see a membership list of.</p>
     #[doc(hidden)]
@@ -29020,21 +30227,10 @@ impl ListGroupMembershipsInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for ListGroupMembershipsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroupMembershipsInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFoldersInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -29060,19 +30256,10 @@ impl ListFoldersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFoldersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFoldersInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFolderMembersInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -29105,20 +30292,10 @@ impl ListFolderMembersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFolderMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFolderMembersInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDataSourcesInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -29144,19 +30321,10 @@ impl ListDataSourcesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDataSourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDataSourcesInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDataSetsInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -29182,19 +30350,10 @@ impl ListDataSetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDataSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDataSetsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDashboardVersionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
     #[doc(hidden)]
@@ -29227,20 +30386,10 @@ impl ListDashboardVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDashboardVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDashboardVersionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDashboardsInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboards that you're listing.</p>
     #[doc(hidden)]
@@ -29266,19 +30415,10 @@ impl ListDashboardsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDashboardsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDashboardsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAnalysesInput {
     /// <p>The ID of the Amazon Web Services account that contains the analyses.</p>
     #[doc(hidden)]
@@ -29304,19 +30444,10 @@ impl ListAnalysesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAnalysesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAnalysesInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSessionEmbedUrlInput {
     /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
     #[doc(hidden)]
@@ -29377,23 +30508,10 @@ impl GetSessionEmbedUrlInput {
         self.user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetSessionEmbedUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSessionEmbedUrlInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("entry_point", &self.entry_point);
-        formatter.field(
-            "session_lifetime_in_minutes",
-            &self.session_lifetime_in_minutes,
-        );
-        formatter.field("user_arn", &self.user_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDashboardEmbedUrlInput {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
     #[doc(hidden)]
@@ -29480,29 +30598,10 @@ impl GetDashboardEmbedUrlInput {
         self.additional_dashboard_ids.as_deref()
     }
 }
-impl std::fmt::Debug for GetDashboardEmbedUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDashboardEmbedUrlInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("identity_type", &self.identity_type);
-        formatter.field(
-            "session_lifetime_in_minutes",
-            &self.session_lifetime_in_minutes,
-        );
-        formatter.field("undo_redo_disabled", &self.undo_redo_disabled);
-        formatter.field("reset_disabled", &self.reset_disabled);
-        formatter.field("state_persistence_enabled", &self.state_persistence_enabled);
-        formatter.field("user_arn", &self.user_arn);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("additional_dashboard_ids", &self.additional_dashboard_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateEmbedUrlForRegisteredUserInput {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
     #[doc(hidden)]
@@ -29547,24 +30646,10 @@ impl GenerateEmbedUrlForRegisteredUserInput {
         self.allowed_domains.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateEmbedUrlForRegisteredUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateEmbedUrlForRegisteredUserInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field(
-            "session_lifetime_in_minutes",
-            &self.session_lifetime_in_minutes,
-        );
-        formatter.field("user_arn", &self.user_arn);
-        formatter.field("experience_configuration", &self.experience_configuration);
-        formatter.field("allowed_domains", &self.allowed_domains);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateEmbedUrlForAnonymousUserInput {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
     #[doc(hidden)]
@@ -29625,26 +30710,10 @@ impl GenerateEmbedUrlForAnonymousUserInput {
         self.allowed_domains.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateEmbedUrlForAnonymousUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateEmbedUrlForAnonymousUserInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field(
-            "session_lifetime_in_minutes",
-            &self.session_lifetime_in_minutes,
-        );
-        formatter.field("namespace", &self.namespace);
-        formatter.field("session_tags", &self.session_tags);
-        formatter.field("authorized_resource_arns", &self.authorized_resource_arns);
-        formatter.field("experience_configuration", &self.experience_configuration);
-        formatter.field("allowed_domains", &self.allowed_domains);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserInput {
     /// <p>The name of the user that you want to describe.</p>
     #[doc(hidden)]
@@ -29670,19 +30739,10 @@ impl DescribeUserInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserInput");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeThemePermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
     #[doc(hidden)]
@@ -29701,18 +30761,10 @@ impl DescribeThemePermissionsInput {
         self.theme_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeThemePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeThemePermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeThemeAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're describing.</p>
     #[doc(hidden)]
@@ -29738,19 +30790,10 @@ impl DescribeThemeAliasInput {
         self.alias_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeThemeAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeThemeAliasInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeThemeInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
     #[doc(hidden)]
@@ -29783,20 +30826,10 @@ impl DescribeThemeInput {
         self.alias_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeThemeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeThemeInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTemplatePermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
     #[doc(hidden)]
@@ -29815,18 +30848,10 @@ impl DescribeTemplatePermissionsInput {
         self.template_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTemplatePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTemplatePermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTemplateAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the template alias that you're describing.</p>
     #[doc(hidden)]
@@ -29852,19 +30877,10 @@ impl DescribeTemplateAliasInput {
         self.alias_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTemplateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTemplateAliasInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTemplateInput {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
     #[doc(hidden)]
@@ -29897,20 +30913,10 @@ impl DescribeTemplateInput {
         self.alias_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTemplateInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeNamespaceInput {
     /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe.</p>
     #[doc(hidden)]
@@ -29929,18 +30935,10 @@ impl DescribeNamespaceInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeNamespaceInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIpRestrictionInput {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     #[doc(hidden)]
@@ -29952,17 +30950,10 @@ impl DescribeIpRestrictionInput {
         self.aws_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIpRestrictionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIpRestrictionInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIngestionInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -29988,19 +30979,10 @@ impl DescribeIngestionInput {
         self.ingestion_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIngestionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIngestionInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("ingestion_id", &self.ingestion_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIamPolicyAssignmentInput {
     /// <p>The ID of the Amazon Web Services account that contains the assignment that you want to describe.</p>
     #[doc(hidden)]
@@ -30026,19 +31008,10 @@ impl DescribeIamPolicyAssignmentInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIamPolicyAssignmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIamPolicyAssignmentInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("assignment_name", &self.assignment_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGroupMembershipInput {
     /// <p>The user name of the user that you want to search for.</p>
     #[doc(hidden)]
@@ -30071,20 +31044,10 @@ impl DescribeGroupMembershipInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGroupMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGroupMembershipInput");
-        formatter.field("member_name", &self.member_name);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGroupInput {
     /// <p>The name of the group that you want to describe.</p>
     #[doc(hidden)]
@@ -30110,19 +31073,10 @@ impl DescribeGroupInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFolderResolvedPermissionsInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -30141,18 +31095,10 @@ impl DescribeFolderResolvedPermissionsInput {
         self.folder_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFolderResolvedPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFolderResolvedPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFolderPermissionsInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -30171,18 +31117,10 @@ impl DescribeFolderPermissionsInput {
         self.folder_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFolderPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFolderPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFolderInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -30201,18 +31139,10 @@ impl DescribeFolderInput {
         self.folder_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFolderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFolderInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDataSourcePermissionsInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -30231,18 +31161,10 @@ impl DescribeDataSourcePermissionsInput {
         self.data_source_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDataSourcePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDataSourcePermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDataSourceInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -30261,18 +31183,10 @@ impl DescribeDataSourceInput {
         self.data_source_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDataSourceInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDataSetPermissionsInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -30291,18 +31205,10 @@ impl DescribeDataSetPermissionsInput {
         self.data_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDataSetPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDataSetPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -30321,18 +31227,10 @@ impl DescribeDataSetInput {
         self.data_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDataSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDataSetInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDashboardPermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.</p>
     #[doc(hidden)]
@@ -30351,18 +31249,10 @@ impl DescribeDashboardPermissionsInput {
         self.dashboard_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDashboardPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDashboardPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDashboardInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
     #[doc(hidden)]
@@ -30395,20 +31285,10 @@ impl DescribeDashboardInput {
         self.alias_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDashboardInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAnalysisPermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.</p>
     #[doc(hidden)]
@@ -30427,18 +31307,10 @@ impl DescribeAnalysisPermissionsInput {
         self.analysis_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAnalysisPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAnalysisPermissionsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAnalysisInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
     #[doc(hidden)]
@@ -30457,18 +31329,10 @@ impl DescribeAnalysisInput {
         self.analysis_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAnalysisInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountSubscriptionInput {
     /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight account.</p>
     #[doc(hidden)]
@@ -30480,17 +31344,10 @@ impl DescribeAccountSubscriptionInput {
         self.aws_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAccountSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountSubscriptionInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountSettingsInput {
     /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
     #[doc(hidden)]
@@ -30502,17 +31359,10 @@ impl DescribeAccountSettingsInput {
         self.aws_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAccountSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountSettingsInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountCustomizationInput {
     /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.</p>
     #[doc(hidden)]
@@ -30538,19 +31388,10 @@ impl DescribeAccountCustomizationInput {
         self.resolved
     }
 }
-impl std::fmt::Debug for DescribeAccountCustomizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountCustomizationInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("resolved", &self.resolved);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserByPrincipalIdInput {
     /// <p>The principal ID of the user.</p>
     #[doc(hidden)]
@@ -30576,19 +31417,10 @@ impl DeleteUserByPrincipalIdInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserByPrincipalIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserByPrincipalIdInput");
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserInput {
     /// <p>The name of the user that you want to delete.</p>
     #[doc(hidden)]
@@ -30614,19 +31446,10 @@ impl DeleteUserInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserInput");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteThemeAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme alias to delete.</p>
     #[doc(hidden)]
@@ -30652,19 +31475,10 @@ impl DeleteThemeAliasInput {
         self.alias_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteThemeAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteThemeAliasInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteThemeInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're deleting.</p>
     #[doc(hidden)]
@@ -30692,19 +31506,10 @@ impl DeleteThemeInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for DeleteThemeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteThemeInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTemplateAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
     #[doc(hidden)]
@@ -30730,19 +31535,10 @@ impl DeleteTemplateAliasInput {
         self.alias_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTemplateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTemplateAliasInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTemplateInput {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're deleting.</p>
     #[doc(hidden)]
@@ -30768,19 +31564,10 @@ impl DeleteTemplateInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for DeleteTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTemplateInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNamespaceInput {
     /// <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
     #[doc(hidden)]
@@ -30799,18 +31586,10 @@ impl DeleteNamespaceInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNamespaceInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIamPolicyAssignmentInput {
     /// <p>The Amazon Web Services account ID where you want to delete the IAM policy assignment.</p>
     #[doc(hidden)]
@@ -30836,19 +31615,10 @@ impl DeleteIamPolicyAssignmentInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIamPolicyAssignmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIamPolicyAssignmentInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("assignment_name", &self.assignment_name);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGroupMembershipInput {
     /// <p>The name of the user that you want to delete from the group membership.</p>
     #[doc(hidden)]
@@ -30881,20 +31651,10 @@ impl DeleteGroupMembershipInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGroupMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGroupMembershipInput");
-        formatter.field("member_name", &self.member_name);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGroupInput {
     /// <p>The name of the group that you want to delete.</p>
     #[doc(hidden)]
@@ -30920,19 +31680,10 @@ impl DeleteGroupInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFolderMembershipInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -30965,20 +31716,10 @@ impl DeleteFolderMembershipInput {
         self.member_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteFolderMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFolderMembershipInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("member_type", &self.member_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFolderInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -30997,18 +31738,10 @@ impl DeleteFolderInput {
         self.folder_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFolderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFolderInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDataSourceInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -31027,18 +31760,10 @@ impl DeleteDataSourceInput {
         self.data_source_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDataSourceInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -31057,18 +31782,10 @@ impl DeleteDataSetInput {
         self.data_set_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDataSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDataSetInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDashboardInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're deleting.</p>
     #[doc(hidden)]
@@ -31094,19 +31811,10 @@ impl DeleteDashboardInput {
         self.version_number
     }
 }
-impl std::fmt::Debug for DeleteDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDashboardInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("version_number", &self.version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAnalysisInput {
     /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
     #[doc(hidden)]
@@ -31139,23 +31847,10 @@ impl DeleteAnalysisInput {
         self.force_delete_without_recovery
     }
 }
-impl std::fmt::Debug for DeleteAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAnalysisInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.field("recovery_window_in_days", &self.recovery_window_in_days);
-        formatter.field(
-            "force_delete_without_recovery",
-            &self.force_delete_without_recovery,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccountCustomizationInput {
     /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -31174,18 +31869,10 @@ impl DeleteAccountCustomizationInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccountCustomizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccountCustomizationInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateThemeAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
     #[doc(hidden)]
@@ -31218,20 +31905,10 @@ impl CreateThemeAliasInput {
         self.theme_version_number
     }
 }
-impl std::fmt::Debug for CreateThemeAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateThemeAliasInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.field("theme_version_number", &self.theme_version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateThemeInput {
     /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
     #[doc(hidden)]
@@ -31292,24 +31969,10 @@ impl CreateThemeInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateThemeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateThemeInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("theme_id", &self.theme_id);
-        formatter.field("name", &self.name);
-        formatter.field("base_theme_id", &self.base_theme_id);
-        formatter.field("version_description", &self.version_description);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTemplateAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
     #[doc(hidden)]
@@ -31342,20 +32005,10 @@ impl CreateTemplateAliasInput {
         self.template_version_number
     }
 }
-impl std::fmt::Debug for CreateTemplateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTemplateAliasInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("alias_name", &self.alias_name);
-        formatter.field("template_version_number", &self.template_version_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTemplateInput {
     /// <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     #[doc(hidden)]
@@ -31411,23 +32064,10 @@ impl CreateTemplateInput {
         self.version_description.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTemplateInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("name", &self.name);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("source_entity", &self.source_entity);
-        formatter.field("tags", &self.tags);
-        formatter.field("version_description", &self.version_description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateNamespaceInput {
     /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
     #[doc(hidden)]
@@ -31460,20 +32100,10 @@ impl CreateNamespaceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateNamespaceInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("identity_store", &self.identity_store);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIngestionInput {
     /// <p>The ID of the dataset used in the ingestion.</p>
     #[doc(hidden)]
@@ -31506,20 +32136,10 @@ impl CreateIngestionInput {
         self.ingestion_type.as_ref()
     }
 }
-impl std::fmt::Debug for CreateIngestionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIngestionInput");
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("ingestion_id", &self.ingestion_id);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("ingestion_type", &self.ingestion_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIamPolicyAssignmentInput {
     /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups.</p>
     #[doc(hidden)]
@@ -31582,22 +32202,10 @@ impl CreateIamPolicyAssignmentInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for CreateIamPolicyAssignmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIamPolicyAssignmentInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("assignment_name", &self.assignment_name);
-        formatter.field("assignment_status", &self.assignment_status);
-        formatter.field("policy_arn", &self.policy_arn);
-        formatter.field("identities", &self.identities);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGroupMembershipInput {
     /// <p>The name of the user that you want to add to the group membership.</p>
     #[doc(hidden)]
@@ -31630,20 +32238,10 @@ impl CreateGroupMembershipInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGroupMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGroupMembershipInput");
-        formatter.field("member_name", &self.member_name);
-        formatter.field("group_name", &self.group_name);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 /// <p>The request object for this operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGroupInput {
     /// <p>A name for the group that you want to create.</p>
     #[doc(hidden)]
@@ -31676,20 +32274,10 @@ impl CreateGroupInput {
         self.namespace.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGroupInput");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("description", &self.description);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFolderMembershipInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
@@ -31722,20 +32310,10 @@ impl CreateFolderMembershipInput {
         self.member_type.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFolderMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFolderMembershipInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("member_type", &self.member_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFolderInput {
     /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
     #[doc(hidden)]
@@ -31791,19 +32369,6 @@ impl CreateFolderInput {
     /// <p>Tags for the folder.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateFolderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFolderInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("folder_id", &self.folder_id);
-        formatter.field("name", &self.name);
-        formatter.field("folder_type", &self.folder_type);
-        formatter.field("parent_folder_arn", &self.parent_folder_arn);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 
@@ -31909,7 +32474,7 @@ impl std::fmt::Debug for CreateDataSourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -32040,42 +32605,10 @@ impl CreateDataSetInput {
         self.data_set_usage_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDataSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataSetInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("name", &self.name);
-        formatter.field("physical_table_map", &self.physical_table_map);
-        formatter.field("logical_table_map", &self.logical_table_map);
-        formatter.field("import_mode", &self.import_mode);
-        formatter.field("column_groups", &self.column_groups);
-        formatter.field("field_folders", &self.field_folders);
-        formatter.field("permissions", &self.permissions);
-        formatter.field(
-            "row_level_permission_data_set",
-            &self.row_level_permission_data_set,
-        );
-        formatter.field(
-            "row_level_permission_tag_configuration",
-            &self.row_level_permission_tag_configuration,
-        );
-        formatter.field(
-            "column_level_permission_rules",
-            &self.column_level_permission_rules,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "data_set_usage_configuration",
-            &self.data_set_usage_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDashboardInput {
     /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
     #[doc(hidden)]
@@ -32166,26 +32699,10 @@ impl CreateDashboardInput {
         self.theme_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDashboardInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDashboardInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("dashboard_id", &self.dashboard_id);
-        formatter.field("name", &self.name);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("source_entity", &self.source_entity);
-        formatter.field("tags", &self.tags);
-        formatter.field("version_description", &self.version_description);
-        formatter.field("dashboard_publish_options", &self.dashboard_publish_options);
-        formatter.field("theme_arn", &self.theme_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAnalysisInput {
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
     #[doc(hidden)]
@@ -32248,24 +32765,10 @@ impl CreateAnalysisInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAnalysisInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.field("name", &self.name);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("source_entity", &self.source_entity);
-        formatter.field("theme_arn", &self.theme_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccountSubscriptionInput {
     /// <p>The edition of Amazon QuickSight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
     /// <p>If you choose <code>ENTERPRISE_AND_Q</code>, the following parameters are required:</p>
@@ -32393,31 +32896,10 @@ impl CreateAccountSubscriptionInput {
         self.contact_number.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAccountSubscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccountSubscriptionInput");
-        formatter.field("edition", &self.edition);
-        formatter.field("authentication_method", &self.authentication_method);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("account_name", &self.account_name);
-        formatter.field("notification_email", &self.notification_email);
-        formatter.field("active_directory_name", &self.active_directory_name);
-        formatter.field("realm", &self.realm);
-        formatter.field("directory_id", &self.directory_id);
-        formatter.field("admin_group", &self.admin_group);
-        formatter.field("author_group", &self.author_group);
-        formatter.field("reader_group", &self.reader_group);
-        formatter.field("first_name", &self.first_name);
-        formatter.field("last_name", &self.last_name);
-        formatter.field("email_address", &self.email_address);
-        formatter.field("contact_number", &self.contact_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccountCustomizationInput {
     /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
     #[doc(hidden)]
@@ -32454,20 +32936,10 @@ impl CreateAccountCustomizationInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAccountCustomizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccountCustomizationInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("account_customization", &self.account_customization);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelIngestionInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
@@ -32491,14 +32963,5 @@ impl CancelIngestionInput {
     /// <p>An ID for the ingestion.</p>
     pub fn ingestion_id(&self) -> std::option::Option<&str> {
         self.ingestion_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelIngestionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelIngestionInput");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("data_set_id", &self.data_set_id);
-        formatter.field("ingestion_id", &self.ingestion_id);
-        formatter.finish()
     }
 }

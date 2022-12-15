@@ -4,29 +4,16 @@
  */
 
 use aws_http::user_agent::AwsUserAgent;
-use aws_sdk_s3control::operation::ListAccessPoints;
-use aws_sdk_s3control::{Credentials, Region};
+use aws_sdk_s3control::{Client, Credentials, Region};
 use aws_smithy_client::test_connection::TestConnection;
 use aws_smithy_http::body::SdkBody;
+use aws_types::credentials::SharedCredentialsProvider;
+use aws_types::SdkConfig;
+use std::convert::Infallible;
 use std::time::{Duration, UNIX_EPOCH};
 
-use aws_sdk_s3control::middleware::DefaultMiddleware;
-use aws_smithy_client::Client as CoreClient;
-pub type Client<C> = CoreClient<C, DefaultMiddleware>;
-
 #[tokio::test]
-async fn test_signer() -> Result<(), aws_sdk_s3control::Error> {
-    let creds = Credentials::new(
-        "ANOTREAL",
-        "notrealrnrELgWzOk3IfjzDKtFBhDby",
-        Some("notarealsessiontoken".to_string()),
-        None,
-        "test",
-    );
-    let conf = aws_sdk_s3control::Config::builder()
-        .credentials_provider(creds)
-        .region(Region::new("us-east-1"))
-        .build();
+async fn test_signer() {
     let conn = TestConnection::new(vec![(
         http::Request::builder()
             .header("authorization",
@@ -38,19 +25,36 @@ async fn test_signer() -> Result<(), aws_sdk_s3control::Error> {
             .unwrap(),
         http::Response::builder().status(200).body("").unwrap(),
     )]);
-    let client = Client::new(conn.clone());
-    let mut op = ListAccessPoints::builder()
-        .account_id("test-bucket")
-        .build()
-        .unwrap()
-        .make_operation(&conf)
-        .await
-        .unwrap();
-    op.properties_mut()
-        .insert(UNIX_EPOCH + Duration::from_secs(1636751225));
-    op.properties_mut().insert(AwsUserAgent::for_tests());
+    let sdk_config = SdkConfig::builder()
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::new(
+            "ANOTREAL",
+            "notrealrnrELgWzOk3IfjzDKtFBhDby",
+            Some("notarealsessiontoken".to_string()),
+            None,
+            "test",
+        )))
+        .http_connector(conn.clone())
+        .region(Region::new("us-east-1"))
+        .build();
+    let client = Client::new(&sdk_config);
 
-    client.call(op).await.expect_err("empty response");
+    let _ = client
+        .list_access_points()
+        .account_id("test-bucket")
+        .customize()
+        .await
+        .unwrap()
+        .map_operation(|mut op| {
+            op.properties_mut()
+                .insert(UNIX_EPOCH + Duration::from_secs(1636751225));
+            op.properties_mut().insert(AwsUserAgent::for_tests());
+
+            Result::Ok::<_, Infallible>(op)
+        })
+        .unwrap()
+        .send()
+        .await
+        .expect_err("empty response");
+
     conn.assert_requests_match(&[]);
-    Ok(())
 }

@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Key");
     if let Some(var_2) = &input.key {
@@ -21,7 +21,7 @@ pub fn serialize_structure_crate_model_tag(
 pub fn serialize_structure_crate_model_scaling_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ScalingConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("MinCapacity");
     if let Some(var_6) = &input.min_capacity {
@@ -71,7 +71,7 @@ pub fn serialize_structure_crate_model_scaling_configuration(
 pub fn serialize_structure_crate_model_serverless_v2_scaling_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ServerlessV2ScalingConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("MinCapacity");
     if let Some(var_18) = &input.min_capacity {
@@ -95,7 +95,7 @@ pub fn serialize_structure_crate_model_serverless_v2_scaling_configuration(
 pub fn serialize_structure_crate_model_processor_feature(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ProcessorFeature,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_21 = writer.prefix("Name");
     if let Some(var_22) = &input.name {
@@ -113,7 +113,7 @@ pub fn serialize_structure_crate_model_processor_feature(
 pub fn serialize_structure_crate_model_user_auth_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::UserAuthConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_25 = writer.prefix("Description");
     if let Some(var_26) = &input.description {
@@ -146,7 +146,7 @@ pub fn serialize_structure_crate_model_user_auth_config(
 pub fn serialize_structure_crate_model_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Filter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_35 = writer.prefix("Name");
     if let Some(var_36) = &input.name {
@@ -170,7 +170,7 @@ pub fn serialize_structure_crate_model_filter(
 pub fn serialize_structure_crate_model_cloudwatch_logs_export_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::CloudwatchLogsExportConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_42 = writer.prefix("EnableLogTypes");
     if let Some(var_43) = &input.enable_log_types {
@@ -200,7 +200,7 @@ pub fn serialize_structure_crate_model_cloudwatch_logs_export_configuration(
 pub fn serialize_structure_crate_model_parameter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Parameter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_52 = writer.prefix("ParameterName");
     if let Some(var_53) = &input.parameter_name {
@@ -269,7 +269,7 @@ pub fn serialize_structure_crate_model_parameter(
 pub fn serialize_structure_crate_model_connection_pool_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ConnectionPoolConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_76 = writer.prefix("MaxConnectionsPercent");
     if let Some(var_77) = &input.max_connections_percent {
@@ -317,7 +317,7 @@ pub fn serialize_structure_crate_model_connection_pool_configuration(
 pub fn serialize_structure_crate_model_option_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::OptionConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_89 = writer.prefix("OptionName");
     if let Some(var_90) = &input.option_name {
@@ -376,7 +376,7 @@ pub fn serialize_structure_crate_model_option_configuration(
 pub fn serialize_structure_crate_model_option_setting(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::OptionSetting,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_110 = writer.prefix("Name");
     if let Some(var_111) = &input.name {

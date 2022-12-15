@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod put_events_input {
 
     /// A builder for [`PutEventsInput`](crate::input::PutEventsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracking_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -65,7 +65,8 @@ pub mod put_events_input {
         /// Consumes the builder and constructs a [`PutEventsInput`](crate::input::PutEventsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutEventsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::PutEventsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::PutEventsInput {
                 tracking_id: self.tracking_id,
                 user_id: self.user_id,
@@ -88,13 +89,13 @@ impl PutEventsInput {
             crate::operation::PutEvents,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutEventsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/events").expect("formatting should succeed");
                 Ok(())
             }
@@ -102,8 +103,10 @@ impl PutEventsInput {
             fn update_http_builder(
                 input: &crate::input::PutEventsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -185,7 +188,7 @@ impl PutEventsInput {
 pub mod put_items_input {
 
     /// A builder for [`PutItemsInput`](crate::input::PutItemsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Item>>,
@@ -223,7 +226,8 @@ pub mod put_items_input {
         /// Consumes the builder and constructs a [`PutItemsInput`](crate::input::PutItemsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutItemsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::PutItemsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::PutItemsInput {
                 dataset_arn: self.dataset_arn,
                 items: self.items,
@@ -244,13 +248,13 @@ impl PutItemsInput {
             crate::operation::PutItems,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutItemsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/items").expect("formatting should succeed");
                 Ok(())
             }
@@ -258,8 +262,10 @@ impl PutItemsInput {
             fn update_http_builder(
                 input: &crate::input::PutItemsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -341,7 +347,7 @@ impl PutItemsInput {
 pub mod put_users_input {
 
     /// A builder for [`PutUsersInput`](crate::input::PutUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -379,7 +385,8 @@ pub mod put_users_input {
         /// Consumes the builder and constructs a [`PutUsersInput`](crate::input::PutUsersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutUsersInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::PutUsersInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::PutUsersInput {
                 dataset_arn: self.dataset_arn,
                 users: self.users,
@@ -400,13 +407,13 @@ impl PutUsersInput {
             crate::operation::PutUsers,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutUsersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/users").expect("formatting should succeed");
                 Ok(())
             }
@@ -414,8 +421,10 @@ impl PutUsersInput {
             fn update_http_builder(
                 input: &crate::input::PutUsersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -495,7 +504,7 @@ impl PutUsersInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutUsersInput {
     /// <p>The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.</p>
     #[doc(hidden)]
@@ -514,18 +523,10 @@ impl PutUsersInput {
         self.users.as_deref()
     }
 }
-impl std::fmt::Debug for PutUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutUsersInput");
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("users", &self.users);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutItemsInput {
     /// <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.</p>
     #[doc(hidden)]
@@ -544,18 +545,10 @@ impl PutItemsInput {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for PutItemsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutItemsInput");
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("items", &self.items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEventsInput {
     /// <p>The tracking ID for the event. The ID is generated by a call to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a> API.</p>
     #[doc(hidden)]
@@ -586,15 +579,5 @@ impl PutEventsInput {
     /// <p>A list of event data from the session.</p>
     pub fn event_list(&self) -> std::option::Option<&[crate::model::Event]> {
         self.event_list.as_deref()
-    }
-}
-impl std::fmt::Debug for PutEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutEventsInput");
-        formatter.field("tracking_id", &self.tracking_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("session_id", &self.session_id);
-        formatter.field("event_list", &self.event_list);
-        formatter.finish()
     }
 }

@@ -5,13 +5,12 @@
 
 #![no_main]
 
-use arbitrary::Arbitrary;
 use aws_smithy_eventstream::frame::Message;
 use bytes::BufMut;
 use crc32fast::Hasher as Crc;
 use libfuzzer_sys::fuzz_target;
 
-#[derive(Arbitrary, Debug)]
+#[derive(derive_arbitrary::Arbitrary, Debug)]
 struct Input {
     headers: Vec<u8>,
     payload: Vec<u8>,

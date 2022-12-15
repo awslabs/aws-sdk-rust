@@ -5,7 +5,7 @@
 /// [`create_alert_manager_definition`](crate::client::Client::create_alert_manager_definition).
 ///
 /// See [`crate::client::fluent_builders::CreateAlertManagerDefinition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAlertManagerDefinition {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAlertManagerDefini
 /// [`create_logging_configuration`](crate::client::Client::create_logging_configuration).
 ///
 /// See [`crate::client::fluent_builders::CreateLoggingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLoggingConfiguration {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLoggingConfigurati
 /// [`create_rule_groups_namespace`](crate::client::Client::create_rule_groups_namespace).
 ///
 /// See [`crate::client::fluent_builders::CreateRuleGroupsNamespace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRuleGroupsNamespace {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRuleGroupsNamespac
 /// [`create_workspace`](crate::client::Client::create_workspace).
 ///
 /// See [`crate::client::fluent_builders::CreateWorkspace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorkspace {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkspace {
 /// [`delete_alert_manager_definition`](crate::client::Client::delete_alert_manager_definition).
 ///
 /// See [`crate::client::fluent_builders::DeleteAlertManagerDefinition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAlertManagerDefinition {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlertManagerDefini
 /// [`delete_logging_configuration`](crate::client::Client::delete_logging_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteLoggingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLoggingConfiguration {
     _private: (),
 }
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoggingConfigurati
 /// [`delete_rule_groups_namespace`](crate::client::Client::delete_rule_groups_namespace).
 ///
 /// See [`crate::client::fluent_builders::DeleteRuleGroupsNamespace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRuleGroupsNamespace {
     _private: (),
 }
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRuleGroupsNamespac
 /// [`delete_workspace`](crate::client::Client::delete_workspace).
 ///
 /// See [`crate::client::fluent_builders::DeleteWorkspace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWorkspace {
     _private: (),
 }
@@ -277,7 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkspace {
 /// [`describe_alert_manager_definition`](crate::client::Client::describe_alert_manager_definition).
 ///
 /// See [`crate::client::fluent_builders::DescribeAlertManagerDefinition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAlertManagerDefinition {
     _private: (),
 }
@@ -311,7 +311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAlertManagerDefi
 /// [`describe_logging_configuration`](crate::client::Client::describe_logging_configuration).
 ///
 /// See [`crate::client::fluent_builders::DescribeLoggingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLoggingConfiguration {
     _private: (),
 }
@@ -345,7 +345,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoggingConfigura
 /// [`describe_rule_groups_namespace`](crate::client::Client::describe_rule_groups_namespace).
 ///
 /// See [`crate::client::fluent_builders::DescribeRuleGroupsNamespace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRuleGroupsNamespace {
     _private: (),
 }
@@ -379,7 +379,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRuleGroupsNamesp
 /// [`describe_workspace`](crate::client::Client::describe_workspace).
 ///
 /// See [`crate::client::fluent_builders::DescribeWorkspace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeWorkspace {
     _private: (),
 }
@@ -413,7 +413,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkspace {
 /// [`list_rule_groups_namespaces`](crate::client::Client::list_rule_groups_namespaces).
 ///
 /// See [`crate::client::fluent_builders::ListRuleGroupsNamespaces`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRuleGroupsNamespaces {
     _private: (),
 }
@@ -447,7 +447,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRuleGroupsNamespaces
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -481,7 +481,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_workspaces`](crate::client::Client::list_workspaces).
 ///
 /// See [`crate::client::fluent_builders::ListWorkspaces`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkspaces {
     _private: (),
 }
@@ -513,7 +513,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkspaces {
 /// [`put_alert_manager_definition`](crate::client::Client::put_alert_manager_definition).
 ///
 /// See [`crate::client::fluent_builders::PutAlertManagerDefinition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutAlertManagerDefinition {
     _private: (),
 }
@@ -547,7 +547,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAlertManagerDefinitio
 /// [`put_rule_groups_namespace`](crate::client::Client::put_rule_groups_namespace).
 ///
 /// See [`crate::client::fluent_builders::PutRuleGroupsNamespace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRuleGroupsNamespace {
     _private: (),
 }
@@ -581,7 +581,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRuleGroupsNamespace {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -613,7 +613,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -645,7 +645,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_logging_configuration`](crate::client::Client::update_logging_configuration).
 ///
 /// See [`crate::client::fluent_builders::UpdateLoggingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLoggingConfiguration {
     _private: (),
 }
@@ -679,7 +679,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLoggingConfigurati
 /// [`update_workspace_alias`](crate::client::Client::update_workspace_alias).
 ///
 /// See [`crate::client::fluent_builders::UpdateWorkspaceAlias`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateWorkspaceAlias {
     _private: (),
 }

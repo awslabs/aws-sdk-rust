@@ -5,7 +5,7 @@
 /// [`acknowledge_job`](crate::client::Client::acknowledge_job).
 ///
 /// See [`crate::client::fluent_builders::AcknowledgeJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AcknowledgeJob {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcknowledgeJob {
 /// [`acknowledge_third_party_job`](crate::client::Client::acknowledge_third_party_job).
 ///
 /// See [`crate::client::fluent_builders::AcknowledgeThirdPartyJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AcknowledgeThirdPartyJob {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcknowledgeThirdPartyJob
 /// [`create_custom_action_type`](crate::client::Client::create_custom_action_type).
 ///
 /// See [`crate::client::fluent_builders::CreateCustomActionType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCustomActionType {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomActionType {
 /// [`create_pipeline`](crate::client::Client::create_pipeline).
 ///
 /// See [`crate::client::fluent_builders::CreatePipeline`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePipeline {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePipeline {
 /// [`delete_custom_action_type`](crate::client::Client::delete_custom_action_type).
 ///
 /// See [`crate::client::fluent_builders::DeleteCustomActionType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCustomActionType {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomActionType {
 /// [`delete_pipeline`](crate::client::Client::delete_pipeline).
 ///
 /// See [`crate::client::fluent_builders::DeletePipeline`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePipeline {
     _private: (),
 }
@@ -203,7 +203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePipeline {
 /// [`delete_webhook`](crate::client::Client::delete_webhook).
 ///
 /// See [`crate::client::fluent_builders::DeleteWebhook`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWebhook {
     _private: (),
 }
@@ -235,7 +235,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWebhook {
 /// [`deregister_webhook_with_third_party`](crate::client::Client::deregister_webhook_with_third_party).
 ///
 /// See [`crate::client::fluent_builders::DeregisterWebhookWithThirdParty`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeregisterWebhookWithThirdParty {
     _private: (),
 }
@@ -269,7 +269,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterWebhookWithThi
 /// [`disable_stage_transition`](crate::client::Client::disable_stage_transition).
 ///
 /// See [`crate::client::fluent_builders::DisableStageTransition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisableStageTransition {
     _private: (),
 }
@@ -303,7 +303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableStageTransition {
 /// [`enable_stage_transition`](crate::client::Client::enable_stage_transition).
 ///
 /// See [`crate::client::fluent_builders::EnableStageTransition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct EnableStageTransition {
     _private: (),
 }
@@ -337,7 +337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableStageTransition {
 /// [`get_action_type`](crate::client::Client::get_action_type).
 ///
 /// See [`crate::client::fluent_builders::GetActionType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetActionType {
     _private: (),
 }
@@ -369,7 +369,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetActionType {
 /// [`get_job_details`](crate::client::Client::get_job_details).
 ///
 /// See [`crate::client::fluent_builders::GetJobDetails`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetJobDetails {
     _private: (),
 }
@@ -401,7 +401,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJobDetails {
 /// [`get_pipeline`](crate::client::Client::get_pipeline).
 ///
 /// See [`crate::client::fluent_builders::GetPipeline`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPipeline {
     _private: (),
 }
@@ -433,7 +433,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPipeline {
 /// [`get_pipeline_execution`](crate::client::Client::get_pipeline_execution).
 ///
 /// See [`crate::client::fluent_builders::GetPipelineExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPipelineExecution {
     _private: (),
 }
@@ -467,7 +467,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPipelineExecution {
 /// [`get_pipeline_state`](crate::client::Client::get_pipeline_state).
 ///
 /// See [`crate::client::fluent_builders::GetPipelineState`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPipelineState {
     _private: (),
 }
@@ -501,7 +501,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPipelineState {
 /// [`get_third_party_job_details`](crate::client::Client::get_third_party_job_details).
 ///
 /// See [`crate::client::fluent_builders::GetThirdPartyJobDetails`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetThirdPartyJobDetails {
     _private: (),
 }
@@ -535,7 +535,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetThirdPartyJobDetails 
 /// [`list_action_executions`](crate::client::Client::list_action_executions).
 ///
 /// See [`crate::client::fluent_builders::ListActionExecutions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListActionExecutions {
     _private: (),
 }
@@ -569,7 +569,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListActionExecutions {
 /// [`list_action_types`](crate::client::Client::list_action_types).
 ///
 /// See [`crate::client::fluent_builders::ListActionTypes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListActionTypes {
     _private: (),
 }
@@ -603,7 +603,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListActionTypes {
 /// [`list_pipeline_executions`](crate::client::Client::list_pipeline_executions).
 ///
 /// See [`crate::client::fluent_builders::ListPipelineExecutions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPipelineExecutions {
     _private: (),
 }
@@ -637,7 +637,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPipelineExecutions {
 /// [`list_pipelines`](crate::client::Client::list_pipelines).
 ///
 /// See [`crate::client::fluent_builders::ListPipelines`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPipelines {
     _private: (),
 }
@@ -669,7 +669,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPipelines {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -703,7 +703,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_webhooks`](crate::client::Client::list_webhooks).
 ///
 /// See [`crate::client::fluent_builders::ListWebhooks`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWebhooks {
     _private: (),
 }
@@ -735,7 +735,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWebhooks {
 /// [`poll_for_jobs`](crate::client::Client::poll_for_jobs).
 ///
 /// See [`crate::client::fluent_builders::PollForJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PollForJobs {
     _private: (),
 }
@@ -767,7 +767,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PollForJobs {
 /// [`poll_for_third_party_jobs`](crate::client::Client::poll_for_third_party_jobs).
 ///
 /// See [`crate::client::fluent_builders::PollForThirdPartyJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PollForThirdPartyJobs {
     _private: (),
 }
@@ -801,7 +801,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PollForThirdPartyJobs {
 /// [`put_action_revision`](crate::client::Client::put_action_revision).
 ///
 /// See [`crate::client::fluent_builders::PutActionRevision`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutActionRevision {
     _private: (),
 }
@@ -835,7 +835,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutActionRevision {
 /// [`put_approval_result`](crate::client::Client::put_approval_result).
 ///
 /// See [`crate::client::fluent_builders::PutApprovalResult`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutApprovalResult {
     _private: (),
 }
@@ -869,7 +869,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutApprovalResult {
 /// [`put_job_failure_result`](crate::client::Client::put_job_failure_result).
 ///
 /// See [`crate::client::fluent_builders::PutJobFailureResult`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutJobFailureResult {
     _private: (),
 }
@@ -903,7 +903,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutJobFailureResult {
 /// [`put_job_success_result`](crate::client::Client::put_job_success_result).
 ///
 /// See [`crate::client::fluent_builders::PutJobSuccessResult`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutJobSuccessResult {
     _private: (),
 }
@@ -937,7 +937,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutJobSuccessResult {
 /// [`put_third_party_job_failure_result`](crate::client::Client::put_third_party_job_failure_result).
 ///
 /// See [`crate::client::fluent_builders::PutThirdPartyJobFailureResult`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutThirdPartyJobFailureResult {
     _private: (),
 }
@@ -971,7 +971,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutThirdPartyJobFailureR
 /// [`put_third_party_job_success_result`](crate::client::Client::put_third_party_job_success_result).
 ///
 /// See [`crate::client::fluent_builders::PutThirdPartyJobSuccessResult`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutThirdPartyJobSuccessResult {
     _private: (),
 }
@@ -1005,7 +1005,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutThirdPartyJobSuccessR
 /// [`put_webhook`](crate::client::Client::put_webhook).
 ///
 /// See [`crate::client::fluent_builders::PutWebhook`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutWebhook {
     _private: (),
 }
@@ -1037,7 +1037,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutWebhook {
 /// [`register_webhook_with_third_party`](crate::client::Client::register_webhook_with_third_party).
 ///
 /// See [`crate::client::fluent_builders::RegisterWebhookWithThirdParty`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterWebhookWithThirdParty {
     _private: (),
 }
@@ -1071,7 +1071,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterWebhookWithThird
 /// [`retry_stage_execution`](crate::client::Client::retry_stage_execution).
 ///
 /// See [`crate::client::fluent_builders::RetryStageExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RetryStageExecution {
     _private: (),
 }
@@ -1105,7 +1105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RetryStageExecution {
 /// [`start_pipeline_execution`](crate::client::Client::start_pipeline_execution).
 ///
 /// See [`crate::client::fluent_builders::StartPipelineExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartPipelineExecution {
     _private: (),
 }
@@ -1139,7 +1139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartPipelineExecution {
 /// [`stop_pipeline_execution`](crate::client::Client::stop_pipeline_execution).
 ///
 /// See [`crate::client::fluent_builders::StopPipelineExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopPipelineExecution {
     _private: (),
 }
@@ -1173,7 +1173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopPipelineExecution {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1205,7 +1205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1237,7 +1237,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_action_type`](crate::client::Client::update_action_type).
 ///
 /// See [`crate::client::fluent_builders::UpdateActionType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateActionType {
     _private: (),
 }
@@ -1271,7 +1271,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateActionType {
 /// [`update_pipeline`](crate::client::Client::update_pipeline).
 ///
 /// See [`crate::client::fluent_builders::UpdatePipeline`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePipeline {
     _private: (),
 }

@@ -5,7 +5,7 @@
 /// [`add_tags`](crate::client::Client::add_tags).
 ///
 /// See [`crate::client::fluent_builders::AddTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddTags {
     _private: (),
 }
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTags {
 /// [`cancel_query`](crate::client::Client::cancel_query).
 ///
 /// See [`crate::client::fluent_builders::CancelQuery`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelQuery {
     _private: (),
 }
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelQuery {
 /// [`create_event_data_store`](crate::client::Client::create_event_data_store).
 ///
 /// See [`crate::client::fluent_builders::CreateEventDataStore`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateEventDataStore {
     _private: (),
 }
@@ -102,7 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEventDataStore {
 /// [`create_trail`](crate::client::Client::create_trail).
 ///
 /// See [`crate::client::fluent_builders::CreateTrail`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTrail {
     _private: (),
 }
@@ -134,7 +134,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrail {
 /// [`delete_event_data_store`](crate::client::Client::delete_event_data_store).
 ///
 /// See [`crate::client::fluent_builders::DeleteEventDataStore`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEventDataStore {
     _private: (),
 }
@@ -168,7 +168,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEventDataStore {
 /// [`delete_trail`](crate::client::Client::delete_trail).
 ///
 /// See [`crate::client::fluent_builders::DeleteTrail`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTrail {
     _private: (),
 }
@@ -200,7 +200,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrail {
 /// [`describe_query`](crate::client::Client::describe_query).
 ///
 /// See [`crate::client::fluent_builders::DescribeQuery`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeQuery {
     _private: (),
 }
@@ -232,7 +232,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeQuery {
 /// [`describe_trails`](crate::client::Client::describe_trails).
 ///
 /// See [`crate::client::fluent_builders::DescribeTrails`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTrails {
     _private: (),
 }
@@ -264,7 +264,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrails {
 /// [`get_channel`](crate::client::Client::get_channel).
 ///
 /// See [`crate::client::fluent_builders::GetChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetChannel {
     _private: (),
 }
@@ -296,7 +296,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChannel {
 /// [`get_event_data_store`](crate::client::Client::get_event_data_store).
 ///
 /// See [`crate::client::fluent_builders::GetEventDataStore`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEventDataStore {
     _private: (),
 }
@@ -330,7 +330,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEventDataStore {
 /// [`get_event_selectors`](crate::client::Client::get_event_selectors).
 ///
 /// See [`crate::client::fluent_builders::GetEventSelectors`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEventSelectors {
     _private: (),
 }
@@ -364,7 +364,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEventSelectors {
 /// [`get_import`](crate::client::Client::get_import).
 ///
 /// See [`crate::client::fluent_builders::GetImport`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetImport {
     _private: (),
 }
@@ -395,7 +395,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImport {
 /// [`get_insight_selectors`](crate::client::Client::get_insight_selectors).
 ///
 /// See [`crate::client::fluent_builders::GetInsightSelectors`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetInsightSelectors {
     _private: (),
 }
@@ -429,7 +429,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsightSelectors {
 /// [`get_query_results`](crate::client::Client::get_query_results).
 ///
 /// See [`crate::client::fluent_builders::GetQueryResults`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetQueryResults {
     _private: (),
 }
@@ -463,7 +463,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueryResults {
 /// [`get_trail`](crate::client::Client::get_trail).
 ///
 /// See [`crate::client::fluent_builders::GetTrail`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTrail {
     _private: (),
 }
@@ -494,7 +494,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrail {
 /// [`get_trail_status`](crate::client::Client::get_trail_status).
 ///
 /// See [`crate::client::fluent_builders::GetTrailStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTrailStatus {
     _private: (),
 }
@@ -526,7 +526,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrailStatus {
 /// [`list_channels`](crate::client::Client::list_channels).
 ///
 /// See [`crate::client::fluent_builders::ListChannels`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListChannels {
     _private: (),
 }
@@ -558,7 +558,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannels {
 /// [`list_event_data_stores`](crate::client::Client::list_event_data_stores).
 ///
 /// See [`crate::client::fluent_builders::ListEventDataStores`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEventDataStores {
     _private: (),
 }
@@ -592,7 +592,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventDataStores {
 /// [`list_import_failures`](crate::client::Client::list_import_failures).
 ///
 /// See [`crate::client::fluent_builders::ListImportFailures`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListImportFailures {
     _private: (),
 }
@@ -626,7 +626,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImportFailures {
 /// [`list_imports`](crate::client::Client::list_imports).
 ///
 /// See [`crate::client::fluent_builders::ListImports`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListImports {
     _private: (),
 }
@@ -658,7 +658,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImports {
 /// [`list_public_keys`](crate::client::Client::list_public_keys).
 ///
 /// See [`crate::client::fluent_builders::ListPublicKeys`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPublicKeys {
     _private: (),
 }
@@ -690,7 +690,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPublicKeys {
 /// [`list_queries`](crate::client::Client::list_queries).
 ///
 /// See [`crate::client::fluent_builders::ListQueries`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListQueries {
     _private: (),
 }
@@ -722,7 +722,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueries {
 /// [`list_tags`](crate::client::Client::list_tags).
 ///
 /// See [`crate::client::fluent_builders::ListTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTags {
     _private: (),
 }
@@ -753,7 +753,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTags {
 /// [`list_trails`](crate::client::Client::list_trails).
 ///
 /// See [`crate::client::fluent_builders::ListTrails`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTrails {
     _private: (),
 }
@@ -785,7 +785,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrails {
 /// [`lookup_events`](crate::client::Client::lookup_events).
 ///
 /// See [`crate::client::fluent_builders::LookupEvents`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct LookupEvents {
     _private: (),
 }
@@ -817,7 +817,7 @@ impl aws_smithy_http::response::ParseStrictResponse for LookupEvents {
 /// [`put_event_selectors`](crate::client::Client::put_event_selectors).
 ///
 /// See [`crate::client::fluent_builders::PutEventSelectors`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutEventSelectors {
     _private: (),
 }
@@ -851,7 +851,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutEventSelectors {
 /// [`put_insight_selectors`](crate::client::Client::put_insight_selectors).
 ///
 /// See [`crate::client::fluent_builders::PutInsightSelectors`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutInsightSelectors {
     _private: (),
 }
@@ -885,7 +885,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutInsightSelectors {
 /// [`remove_tags`](crate::client::Client::remove_tags).
 ///
 /// See [`crate::client::fluent_builders::RemoveTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveTags {
     _private: (),
 }
@@ -917,7 +917,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTags {
 /// [`restore_event_data_store`](crate::client::Client::restore_event_data_store).
 ///
 /// See [`crate::client::fluent_builders::RestoreEventDataStore`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RestoreEventDataStore {
     _private: (),
 }
@@ -951,7 +951,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreEventDataStore {
 /// [`start_import`](crate::client::Client::start_import).
 ///
 /// See [`crate::client::fluent_builders::StartImport`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartImport {
     _private: (),
 }
@@ -983,7 +983,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartImport {
 /// [`start_logging`](crate::client::Client::start_logging).
 ///
 /// See [`crate::client::fluent_builders::StartLogging`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartLogging {
     _private: (),
 }
@@ -1015,7 +1015,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartLogging {
 /// [`start_query`](crate::client::Client::start_query).
 ///
 /// See [`crate::client::fluent_builders::StartQuery`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartQuery {
     _private: (),
 }
@@ -1047,7 +1047,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartQuery {
 /// [`stop_import`](crate::client::Client::stop_import).
 ///
 /// See [`crate::client::fluent_builders::StopImport`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopImport {
     _private: (),
 }
@@ -1079,7 +1079,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopImport {
 /// [`stop_logging`](crate::client::Client::stop_logging).
 ///
 /// See [`crate::client::fluent_builders::StopLogging`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopLogging {
     _private: (),
 }
@@ -1111,7 +1111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopLogging {
 /// [`update_event_data_store`](crate::client::Client::update_event_data_store).
 ///
 /// See [`crate::client::fluent_builders::UpdateEventDataStore`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateEventDataStore {
     _private: (),
 }
@@ -1145,7 +1145,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEventDataStore {
 /// [`update_trail`](crate::client::Client::update_trail).
 ///
 /// See [`crate::client::fluent_builders::UpdateTrail`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTrail {
     _private: (),
 }

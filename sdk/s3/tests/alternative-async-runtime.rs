@@ -82,11 +82,12 @@ async fn timeout_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std
         .build();
     let config = Config::builder()
         .region(region)
+        .http_connector(conn.clone())
         .credentials_provider(credentials)
         .timeout_config(timeout_config)
         .sleep_impl(sleep_impl)
         .build();
-    let client = Client::from_conf_conn(config, conn.clone());
+    let client = Client::from_conf(config);
 
     let now = Instant::now();
 
@@ -115,9 +116,9 @@ async fn timeout_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std
         .await
         .unwrap_err();
 
-    assert_eq!(format!("{:?}", err), "TimeoutError(RequestTimeoutError { kind: \"operation timeout (all attempts including retries)\", duration: 500ms })");
+    assert_eq!("TimeoutError(TimeoutError { source: RequestTimeoutError { kind: \"operation timeout (all attempts including retries)\", duration: 500ms } })", format!("{:?}", err));
     // Assert 500ms have passed with a 10ms margin of error
-    assert_elapsed!(now, Duration::from_millis(500), Duration::from_millis(10));
+    assert_elapsed!(now, Duration::from_millis(500), Duration::from_millis(100));
 
     Ok(())
 }
@@ -127,6 +128,7 @@ async fn retry_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std::
     let credentials = Credentials::new("test", "test", None, None, "test");
     let conf = aws_types::SdkConfig::builder()
         .region(Region::new("us-east-2"))
+        .http_connector(conn.clone())
         .credentials_provider(aws_types::credentials::SharedCredentialsProvider::new(
             credentials,
         ))
@@ -138,7 +140,7 @@ async fn retry_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std::
         )
         .sleep_impl(sleep_impl)
         .build();
-    let client = Client::from_conf_conn(Config::new(&conf), conn.clone());
+    let client = Client::new(&conf);
     let resp = client
         .list_buckets()
         .send()
@@ -146,12 +148,12 @@ async fn retry_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std::
         .expect_err("call should fail");
     assert!(
         matches!(resp, SdkError::TimeoutError { .. }),
-        "expected a timeout error, got: {}",
+        "expected a timeout error, got: {:?}",
         resp
     );
     assert_eq!(
-        conn.num_calls(),
         3,
+        conn.num_calls(),
         "client level timeouts should be retried"
     );
 

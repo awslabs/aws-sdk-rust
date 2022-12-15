@@ -2,7 +2,7 @@
 
 /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleGroupResponse {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p> <note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
@@ -113,31 +113,11 @@ impl RuleGroupResponse {
         self.last_modified_time.as_ref()
     }
 }
-impl std::fmt::Debug for RuleGroupResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleGroupResponse");
-        formatter.field("rule_group_arn", &self.rule_group_arn);
-        formatter.field("rule_group_name", &self.rule_group_name);
-        formatter.field("rule_group_id", &self.rule_group_id);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("capacity", &self.capacity);
-        formatter.field("rule_group_status", &self.rule_group_status);
-        formatter.field("tags", &self.tags);
-        formatter.field("consumed_capacity", &self.consumed_capacity);
-        formatter.field("number_of_associations", &self.number_of_associations);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field("source_metadata", &self.source_metadata);
-        formatter.field("sns_topic", &self.sns_topic);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
-    }
-}
 /// See [`RuleGroupResponse`](crate::model::RuleGroupResponse).
 pub mod rule_group_response {
 
     /// A builder for [`RuleGroupResponse`](crate::model::RuleGroupResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_arn: std::option::Option<std::string::String>,
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
@@ -365,7 +345,7 @@ impl RuleGroupResponse {
 
 /// <p>High-level information about the managed rule group that your own rule group is copied from. You can use the the metadata to track version updates made to the originating rule group. You can retrieve all objects for a rule group by calling <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html">DescribeRuleGroup</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceMetadata {
     /// <p>The Amazon Resource Name (ARN) of the rule group that your own rule group is copied from.</p>
     #[doc(hidden)]
@@ -384,19 +364,11 @@ impl SourceMetadata {
         self.source_update_token.as_deref()
     }
 }
-impl std::fmt::Debug for SourceMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceMetadata");
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("source_update_token", &self.source_update_token);
-        formatter.finish()
-    }
-}
 /// See [`SourceMetadata`](crate::model::SourceMetadata).
 pub mod source_metadata {
 
     /// A builder for [`SourceMetadata`](crate::model::SourceMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) source_update_token: std::option::Option<std::string::String>,
@@ -443,7 +415,7 @@ impl SourceMetadata {
 
 /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionConfiguration {
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key. You can use any of the key identifiers that KMS supports, unless you're using a key that's managed by another account. If you're using a key managed by another account, then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -462,19 +434,11 @@ impl EncryptionConfiguration {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for EncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionConfiguration");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
 pub mod encryption_configuration {
 
     /// A builder for [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::EncryptionType>,
@@ -519,6 +483,41 @@ impl EncryptionConfiguration {
     }
 }
 
+/// When writing a match expression against `EncryptionType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let encryptiontype = unimplemented!();
+/// match encryptiontype {
+///     EncryptionType::AwsOwnedKmsKey => { /* ... */ },
+///     EncryptionType::CustomerKms => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `encryptiontype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EncryptionType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EncryptionType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EncryptionType::NewFeature` is defined.
+/// Specifically, when `encryptiontype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EncryptionType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -535,15 +534,15 @@ pub enum EncryptionType {
     AwsOwnedKmsKey,
     #[allow(missing_docs)] // documentation missing in model
     CustomerKms,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EncryptionType {
     fn from(s: &str) -> Self {
         match s {
             "AWS_OWNED_KMS_KEY" => EncryptionType::AwsOwnedKmsKey,
             "CUSTOMER_KMS" => EncryptionType::CustomerKms,
-            other => EncryptionType::Unknown(other.to_owned()),
+            other => EncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -560,11 +559,11 @@ impl EncryptionType {
         match self {
             EncryptionType::AwsOwnedKmsKey => "AWS_OWNED_KMS_KEY",
             EncryptionType::CustomerKms => "CUSTOMER_KMS",
-            EncryptionType::Unknown(s) => s.as_ref(),
+            EncryptionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_OWNED_KMS_KEY", "CUSTOMER_KMS"]
     }
 }
@@ -576,7 +575,7 @@ impl AsRef<str> for EncryptionType {
 
 /// <p>A key:value pair associated with an Amazon Web Services resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each Amazon Web Services resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
     #[doc(hidden)]
@@ -595,19 +594,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -649,6 +640,41 @@ impl Tag {
     }
 }
 
+/// When writing a match expression against `ResourceStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourcestatus = unimplemented!();
+/// match resourcestatus {
+///     ResourceStatus::Active => { /* ... */ },
+///     ResourceStatus::Deleting => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourcestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceStatus::NewFeature` is defined.
+/// Specifically, when `resourcestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -665,15 +691,15 @@ pub enum ResourceStatus {
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => ResourceStatus::Active,
             "DELETING" => ResourceStatus::Deleting,
-            other => ResourceStatus::Unknown(other.to_owned()),
+            other => ResourceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -690,11 +716,11 @@ impl ResourceStatus {
         match self {
             ResourceStatus::Active => "ACTIVE",
             ResourceStatus::Deleting => "DELETING",
-            ResourceStatus::Unknown(s) => s.as_ref(),
+            ResourceStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING"]
     }
 }
@@ -704,6 +730,41 @@ impl AsRef<str> for ResourceStatus {
     }
 }
 
+/// When writing a match expression against `RuleGroupType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let rulegrouptype = unimplemented!();
+/// match rulegrouptype {
+///     RuleGroupType::Stateful => { /* ... */ },
+///     RuleGroupType::Stateless => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `rulegrouptype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RuleGroupType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RuleGroupType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RuleGroupType::NewFeature` is defined.
+/// Specifically, when `rulegrouptype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RuleGroupType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -720,15 +781,15 @@ pub enum RuleGroupType {
     Stateful,
     #[allow(missing_docs)] // documentation missing in model
     Stateless,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RuleGroupType {
     fn from(s: &str) -> Self {
         match s {
             "STATEFUL" => RuleGroupType::Stateful,
             "STATELESS" => RuleGroupType::Stateless,
-            other => RuleGroupType::Unknown(other.to_owned()),
+            other => RuleGroupType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -745,11 +806,11 @@ impl RuleGroupType {
         match self {
             RuleGroupType::Stateful => "STATEFUL",
             RuleGroupType::Stateless => "STATELESS",
-            RuleGroupType::Unknown(s) => s.as_ref(),
+            RuleGroupType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STATEFUL", "STATELESS"]
     }
 }
@@ -763,7 +824,7 @@ impl AsRef<str> for RuleGroupType {
 /// <p>Network Firewall uses a rule group to inspect and control network traffic. You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their traffic flow. </p>
 /// <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleGroup {
     /// <p>Settings that are available for use in the rules in the rule group. You can only use these for stateful rule groups. </p>
     #[doc(hidden)]
@@ -796,21 +857,11 @@ impl RuleGroup {
         self.stateful_rule_options.as_ref()
     }
 }
-impl std::fmt::Debug for RuleGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleGroup");
-        formatter.field("rule_variables", &self.rule_variables);
-        formatter.field("reference_sets", &self.reference_sets);
-        formatter.field("rules_source", &self.rules_source);
-        formatter.field("stateful_rule_options", &self.stateful_rule_options);
-        formatter.finish()
-    }
-}
 /// See [`RuleGroup`](crate::model::RuleGroup).
 pub mod rule_group {
 
     /// A builder for [`RuleGroup`](crate::model::RuleGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_variables: std::option::Option<crate::model::RuleVariables>,
         pub(crate) reference_sets: std::option::Option<crate::model::ReferenceSets>,
@@ -890,7 +941,7 @@ impl RuleGroup {
 
 /// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatefulRuleOptions {
     /// <p>Indicates how to manage the order of the rule evaluation for the rule group. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
     #[doc(hidden)]
@@ -902,18 +953,11 @@ impl StatefulRuleOptions {
         self.rule_order.as_ref()
     }
 }
-impl std::fmt::Debug for StatefulRuleOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatefulRuleOptions");
-        formatter.field("rule_order", &self.rule_order);
-        formatter.finish()
-    }
-}
 /// See [`StatefulRuleOptions`](crate::model::StatefulRuleOptions).
 pub mod stateful_rule_options {
 
     /// A builder for [`StatefulRuleOptions`](crate::model::StatefulRuleOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_order: std::option::Option<crate::model::RuleOrder>,
     }
@@ -946,6 +990,41 @@ impl StatefulRuleOptions {
     }
 }
 
+/// When writing a match expression against `RuleOrder`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ruleorder = unimplemented!();
+/// match ruleorder {
+///     RuleOrder::DefaultActionOrder => { /* ... */ },
+///     RuleOrder::StrictOrder => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ruleorder` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RuleOrder::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RuleOrder::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RuleOrder::NewFeature` is defined.
+/// Specifically, when `ruleorder` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RuleOrder::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -962,15 +1041,15 @@ pub enum RuleOrder {
     DefaultActionOrder,
     #[allow(missing_docs)] // documentation missing in model
     StrictOrder,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RuleOrder {
     fn from(s: &str) -> Self {
         match s {
             "DEFAULT_ACTION_ORDER" => RuleOrder::DefaultActionOrder,
             "STRICT_ORDER" => RuleOrder::StrictOrder,
-            other => RuleOrder::Unknown(other.to_owned()),
+            other => RuleOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -987,11 +1066,11 @@ impl RuleOrder {
         match self {
             RuleOrder::DefaultActionOrder => "DEFAULT_ACTION_ORDER",
             RuleOrder::StrictOrder => "STRICT_ORDER",
-            RuleOrder::Unknown(s) => s.as_ref(),
+            RuleOrder::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT_ACTION_ORDER", "STRICT_ORDER"]
     }
 }
@@ -1003,7 +1082,7 @@ impl AsRef<str> for RuleOrder {
 
 /// <p>The stateless or stateful rules definitions for use in a single rule group. Each rule group requires a single <code>RulesSource</code>. You can use an instance of this for either stateless rules or stateful rules. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RulesSource {
     /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules. Suricata is an open-source network IPS that includes a standard rule-based language for network traffic inspection.</p>
     /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p>
@@ -1041,24 +1120,11 @@ impl RulesSource {
         self.stateless_rules_and_custom_actions.as_ref()
     }
 }
-impl std::fmt::Debug for RulesSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RulesSource");
-        formatter.field("rules_string", &self.rules_string);
-        formatter.field("rules_source_list", &self.rules_source_list);
-        formatter.field("stateful_rules", &self.stateful_rules);
-        formatter.field(
-            "stateless_rules_and_custom_actions",
-            &self.stateless_rules_and_custom_actions,
-        );
-        formatter.finish()
-    }
-}
 /// See [`RulesSource`](crate::model::RulesSource).
 pub mod rules_source {
 
     /// A builder for [`RulesSource`](crate::model::RulesSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules_string: std::option::Option<std::string::String>,
         pub(crate) rules_source_list: std::option::Option<crate::model::RulesSourceList>,
@@ -1147,7 +1213,7 @@ impl RulesSource {
 
 /// <p>Stateless inspection criteria. Each stateless rule group uses exactly one of these data types to define its stateless rules. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatelessRulesAndCustomActions {
     /// <p>Defines the set of stateless rules for use in a stateless rule group. </p>
     #[doc(hidden)]
@@ -1166,19 +1232,11 @@ impl StatelessRulesAndCustomActions {
         self.custom_actions.as_deref()
     }
 }
-impl std::fmt::Debug for StatelessRulesAndCustomActions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatelessRulesAndCustomActions");
-        formatter.field("stateless_rules", &self.stateless_rules);
-        formatter.field("custom_actions", &self.custom_actions);
-        formatter.finish()
-    }
-}
 /// See [`StatelessRulesAndCustomActions`](crate::model::StatelessRulesAndCustomActions).
 pub mod stateless_rules_and_custom_actions {
 
     /// A builder for [`StatelessRulesAndCustomActions`](crate::model::StatelessRulesAndCustomActions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stateless_rules: std::option::Option<std::vec::Vec<crate::model::StatelessRule>>,
         pub(crate) custom_actions: std::option::Option<std::vec::Vec<crate::model::CustomAction>>,
@@ -1246,7 +1304,7 @@ impl StatelessRulesAndCustomActions {
 /// <li> <p>In a <code>FirewallPolicy</code> specification, in <code>StatelessCustomActions</code>. The custom actions are available for use inside the policy where you define them. You can use them for the policy's default stateless actions settings to specify what to do with packets that don't match any of the policy's stateless rules. </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomAction {
     /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
     #[doc(hidden)]
@@ -1265,19 +1323,11 @@ impl CustomAction {
         self.action_definition.as_ref()
     }
 }
-impl std::fmt::Debug for CustomAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomAction");
-        formatter.field("action_name", &self.action_name);
-        formatter.field("action_definition", &self.action_definition);
-        formatter.finish()
-    }
-}
 /// See [`CustomAction`](crate::model::CustomAction).
 pub mod custom_action {
 
     /// A builder for [`CustomAction`](crate::model::CustomAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_name: std::option::Option<std::string::String>,
         pub(crate) action_definition: std::option::Option<crate::model::ActionDefinition>,
@@ -1324,7 +1374,7 @@ impl CustomAction {
 
 /// <p>A custom action to use in stateless rule actions settings. This is used in <code>CustomAction</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActionDefinition {
     /// <p>Stateless inspection criteria that publishes the specified metrics to Amazon CloudWatch for the matching packet. This setting defines a CloudWatch dimension value to be published.</p>
     /// <p>You can pair this custom action with any of the standard stateless rule actions. For example, you could pair this in a rule action with the standard action that forwards the packet for stateful inspection. Then, when a packet matches the rule, Network Firewall publishes metrics for the packet and forwards it. </p>
@@ -1338,18 +1388,11 @@ impl ActionDefinition {
         self.publish_metric_action.as_ref()
     }
 }
-impl std::fmt::Debug for ActionDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActionDefinition");
-        formatter.field("publish_metric_action", &self.publish_metric_action);
-        formatter.finish()
-    }
-}
 /// See [`ActionDefinition`](crate::model::ActionDefinition).
 pub mod action_definition {
 
     /// A builder for [`ActionDefinition`](crate::model::ActionDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) publish_metric_action: std::option::Option<crate::model::PublishMetricAction>,
     }
@@ -1386,7 +1429,7 @@ impl ActionDefinition {
 
 /// <p>Stateless inspection criteria that publishes the specified metrics to Amazon CloudWatch for the matching packet. This setting defines a CloudWatch dimension value to be published.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishMetricAction {
     /// <p></p>
     #[doc(hidden)]
@@ -1398,18 +1441,11 @@ impl PublishMetricAction {
         self.dimensions.as_deref()
     }
 }
-impl std::fmt::Debug for PublishMetricAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishMetricAction");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.finish()
-    }
-}
 /// See [`PublishMetricAction`](crate::model::PublishMetricAction).
 pub mod publish_metric_action {
 
     /// A builder for [`PublishMetricAction`](crate::model::PublishMetricAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
     }
@@ -1452,7 +1488,7 @@ impl PublishMetricAction {
 /// <p>Network Firewall sets the dimension name to <code>CustomAction</code> and you provide the dimension value. </p>
 /// <p>For more information about CloudWatch custom metric dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#usingDimensions">Publishing Custom Metrics</a> in the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Dimension {
     /// <p>The value to use in the custom metric dimension.</p>
     #[doc(hidden)]
@@ -1464,18 +1500,11 @@ impl Dimension {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Dimension {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Dimension");
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Dimension`](crate::model::Dimension).
 pub mod dimension {
 
     /// A builder for [`Dimension`](crate::model::Dimension).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
     }
@@ -1505,7 +1534,7 @@ impl Dimension {
 
 /// <p>A single stateless rule. This is used in <code>StatelessRulesAndCustomActions</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatelessRule {
     /// <p>Defines the stateless 5-tuple packet inspection criteria and the action to take on a packet that matches the criteria. </p>
     #[doc(hidden)]
@@ -1528,19 +1557,11 @@ impl StatelessRule {
         self.priority
     }
 }
-impl std::fmt::Debug for StatelessRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatelessRule");
-        formatter.field("rule_definition", &self.rule_definition);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
-    }
-}
 /// See [`StatelessRule`](crate::model::StatelessRule).
 pub mod stateless_rule {
 
     /// A builder for [`StatelessRule`](crate::model::StatelessRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_definition: std::option::Option<crate::model::RuleDefinition>,
         pub(crate) priority: std::option::Option<i32>,
@@ -1591,7 +1612,7 @@ impl StatelessRule {
 
 /// <p>The inspection criteria and action for a single stateless rule. Network Firewall inspects each packet for the specified matching criteria. When a packet matches the criteria, Network Firewall performs the rule's actions on the packet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleDefinition {
     /// <p>Criteria for Network Firewall to use to inspect an individual packet in stateless rule inspection. Each match attributes set can include one or more items such as IP address, CIDR range, port number, protocol, and TCP flags. </p>
     #[doc(hidden)]
@@ -1630,19 +1651,11 @@ impl RuleDefinition {
         self.actions.as_deref()
     }
 }
-impl std::fmt::Debug for RuleDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleDefinition");
-        formatter.field("match_attributes", &self.match_attributes);
-        formatter.field("actions", &self.actions);
-        formatter.finish()
-    }
-}
 /// See [`RuleDefinition`](crate::model::RuleDefinition).
 pub mod rule_definition {
 
     /// A builder for [`RuleDefinition`](crate::model::RuleDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) match_attributes: std::option::Option<crate::model::MatchAttributes>,
         pub(crate) actions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1718,7 +1731,7 @@ impl RuleDefinition {
 
 /// <p>Criteria for Network Firewall to use to inspect an individual packet in stateless rule inspection. Each match attributes set can include one or more items such as IP address, CIDR range, port number, protocol, and TCP flags. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MatchAttributes {
     /// <p>The source IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any source address. </p>
     #[doc(hidden)]
@@ -1769,23 +1782,11 @@ impl MatchAttributes {
         self.tcp_flags.as_deref()
     }
 }
-impl std::fmt::Debug for MatchAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MatchAttributes");
-        formatter.field("sources", &self.sources);
-        formatter.field("destinations", &self.destinations);
-        formatter.field("source_ports", &self.source_ports);
-        formatter.field("destination_ports", &self.destination_ports);
-        formatter.field("protocols", &self.protocols);
-        formatter.field("tcp_flags", &self.tcp_flags);
-        formatter.finish()
-    }
-}
 /// See [`MatchAttributes`](crate::model::MatchAttributes).
 pub mod match_attributes {
 
     /// A builder for [`MatchAttributes`](crate::model::MatchAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::Address>>,
         pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::Address>>,
@@ -1932,7 +1933,7 @@ impl MatchAttributes {
 
 /// <p>TCP flags and masks to inspect packets for, used in stateless rules <code>MatchAttributes</code> settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TcpFlagField {
     /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
     /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match: </p>
@@ -1961,19 +1962,11 @@ impl TcpFlagField {
         self.masks.as_deref()
     }
 }
-impl std::fmt::Debug for TcpFlagField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TcpFlagField");
-        formatter.field("flags", &self.flags);
-        formatter.field("masks", &self.masks);
-        formatter.finish()
-    }
-}
 /// See [`TcpFlagField`](crate::model::TcpFlagField).
 pub mod tcp_flag_field {
 
     /// A builder for [`TcpFlagField`](crate::model::TcpFlagField).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flags: std::option::Option<std::vec::Vec<crate::model::TcpFlag>>,
         pub(crate) masks: std::option::Option<std::vec::Vec<crate::model::TcpFlag>>,
@@ -2043,6 +2036,47 @@ impl TcpFlagField {
     }
 }
 
+/// When writing a match expression against `TcpFlag`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let tcpflag = unimplemented!();
+/// match tcpflag {
+///     TcpFlag::Ack => { /* ... */ },
+///     TcpFlag::Cwr => { /* ... */ },
+///     TcpFlag::Ece => { /* ... */ },
+///     TcpFlag::Fin => { /* ... */ },
+///     TcpFlag::Psh => { /* ... */ },
+///     TcpFlag::Rst => { /* ... */ },
+///     TcpFlag::Syn => { /* ... */ },
+///     TcpFlag::Urg => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `tcpflag` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TcpFlag::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TcpFlag::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TcpFlag::NewFeature` is defined.
+/// Specifically, when `tcpflag` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TcpFlag::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2071,8 +2105,8 @@ pub enum TcpFlag {
     Syn,
     #[allow(missing_docs)] // documentation missing in model
     Urg,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TcpFlag {
     fn from(s: &str) -> Self {
@@ -2085,7 +2119,7 @@ impl std::convert::From<&str> for TcpFlag {
             "RST" => TcpFlag::Rst,
             "SYN" => TcpFlag::Syn,
             "URG" => TcpFlag::Urg,
-            other => TcpFlag::Unknown(other.to_owned()),
+            other => TcpFlag::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2108,11 +2142,11 @@ impl TcpFlag {
             TcpFlag::Rst => "RST",
             TcpFlag::Syn => "SYN",
             TcpFlag::Urg => "URG",
-            TcpFlag::Unknown(s) => s.as_ref(),
+            TcpFlag::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACK", "CWR", "ECE", "FIN", "PSH", "RST", "SYN", "URG"]
     }
 }
@@ -2124,7 +2158,7 @@ impl AsRef<str> for TcpFlag {
 
 /// <p>A single port range specification. This is used for source and destination port ranges in the stateless rule <code>MatchAttributes</code>, <code>SourcePorts</code>, and <code>DestinationPorts</code> settings. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortRange {
     /// <p>The lower limit of the port range. This must be less than or equal to the <code>ToPort</code> specification. </p>
     #[doc(hidden)]
@@ -2143,19 +2177,11 @@ impl PortRange {
         self.to_port
     }
 }
-impl std::fmt::Debug for PortRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortRange");
-        formatter.field("from_port", &self.from_port);
-        formatter.field("to_port", &self.to_port);
-        formatter.finish()
-    }
-}
 /// See [`PortRange`](crate::model::PortRange).
 pub mod port_range {
 
     /// A builder for [`PortRange`](crate::model::PortRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_port: std::option::Option<i32>,
         pub(crate) to_port: std::option::Option<i32>,
@@ -2199,7 +2225,7 @@ impl PortRange {
 
 /// <p>A single IP address specification. This is used in the <code>MatchAttributes</code> source and destination specifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Address {
     /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
     /// <p>Examples: </p>
@@ -2223,18 +2249,11 @@ impl Address {
         self.address_definition.as_deref()
     }
 }
-impl std::fmt::Debug for Address {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Address");
-        formatter.field("address_definition", &self.address_definition);
-        formatter.finish()
-    }
-}
 /// See [`Address`](crate::model::Address).
 pub mod address {
 
     /// A builder for [`Address`](crate::model::Address).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_definition: std::option::Option<std::string::String>,
     }
@@ -2281,7 +2300,7 @@ impl Address {
 
 /// <p>A single Suricata rules specification, for use in a stateful rule group. Use this option to specify a simple Suricata rule with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules Format</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatefulRule {
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria. For all actions, Network Firewall performs the specified action and discontinues stateful inspection of the traffic flow. </p>
     /// <p>The actions for a stateful rule are defined as follows: </p>
@@ -2319,20 +2338,11 @@ impl StatefulRule {
         self.rule_options.as_deref()
     }
 }
-impl std::fmt::Debug for StatefulRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatefulRule");
-        formatter.field("action", &self.action);
-        formatter.field("header", &self.header);
-        formatter.field("rule_options", &self.rule_options);
-        formatter.finish()
-    }
-}
 /// See [`StatefulRule`](crate::model::StatefulRule).
 pub mod stateful_rule {
 
     /// A builder for [`StatefulRule`](crate::model::StatefulRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::StatefulAction>,
         pub(crate) header: std::option::Option<crate::model::Header>,
@@ -2412,7 +2422,7 @@ impl StatefulRule {
 
 /// <p>Additional settings for a stateful rule. This is part of the <code>StatefulRule</code> configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleOption {
     /// <p></p>
     #[doc(hidden)]
@@ -2431,19 +2441,11 @@ impl RuleOption {
         self.settings.as_deref()
     }
 }
-impl std::fmt::Debug for RuleOption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleOption");
-        formatter.field("keyword", &self.keyword);
-        formatter.field("settings", &self.settings);
-        formatter.finish()
-    }
-}
 /// See [`RuleOption`](crate::model::RuleOption).
 pub mod rule_option {
 
     /// A builder for [`RuleOption`](crate::model::RuleOption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyword: std::option::Option<std::string::String>,
         pub(crate) settings: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2496,7 +2498,7 @@ impl RuleOption {
 
 /// <p>The basic rule criteria for Network Firewall to use to inspect packet headers in stateful traffic flow inspection. Traffic flows that match the criteria are a match for the corresponding <code>StatefulRule</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Header {
     /// <p>The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on Amazon Web Services and on the internet is IP.</p>
     #[doc(hidden)]
@@ -2571,23 +2573,11 @@ impl Header {
         self.destination_port.as_deref()
     }
 }
-impl std::fmt::Debug for Header {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Header");
-        formatter.field("protocol", &self.protocol);
-        formatter.field("source", &self.source);
-        formatter.field("source_port", &self.source_port);
-        formatter.field("direction", &self.direction);
-        formatter.field("destination", &self.destination);
-        formatter.field("destination_port", &self.destination_port);
-        formatter.finish()
-    }
-}
 /// See [`Header`](crate::model::Header).
 pub mod header {
 
     /// A builder for [`Header`](crate::model::Header).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol: std::option::Option<crate::model::StatefulRuleProtocol>,
         pub(crate) source: std::option::Option<std::string::String>,
@@ -2714,6 +2704,41 @@ impl Header {
     }
 }
 
+/// When writing a match expression against `StatefulRuleDirection`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let statefulruledirection = unimplemented!();
+/// match statefulruledirection {
+///     StatefulRuleDirection::Any => { /* ... */ },
+///     StatefulRuleDirection::Forward => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `statefulruledirection` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StatefulRuleDirection::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StatefulRuleDirection::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StatefulRuleDirection::NewFeature` is defined.
+/// Specifically, when `statefulruledirection` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StatefulRuleDirection::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2730,15 +2755,17 @@ pub enum StatefulRuleDirection {
     Any,
     #[allow(missing_docs)] // documentation missing in model
     Forward,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StatefulRuleDirection {
     fn from(s: &str) -> Self {
         match s {
             "ANY" => StatefulRuleDirection::Any,
             "FORWARD" => StatefulRuleDirection::Forward,
-            other => StatefulRuleDirection::Unknown(other.to_owned()),
+            other => {
+                StatefulRuleDirection::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2755,11 +2782,11 @@ impl StatefulRuleDirection {
         match self {
             StatefulRuleDirection::Any => "ANY",
             StatefulRuleDirection::Forward => "FORWARD",
-            StatefulRuleDirection::Unknown(s) => s.as_ref(),
+            StatefulRuleDirection::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ANY", "FORWARD"]
     }
 }
@@ -2769,6 +2796,58 @@ impl AsRef<str> for StatefulRuleDirection {
     }
 }
 
+/// When writing a match expression against `StatefulRuleProtocol`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let statefulruleprotocol = unimplemented!();
+/// match statefulruleprotocol {
+///     StatefulRuleProtocol::Dcerpc => { /* ... */ },
+///     StatefulRuleProtocol::Dhcp => { /* ... */ },
+///     StatefulRuleProtocol::Dns => { /* ... */ },
+///     StatefulRuleProtocol::Ftp => { /* ... */ },
+///     StatefulRuleProtocol::Http => { /* ... */ },
+///     StatefulRuleProtocol::Icmp => { /* ... */ },
+///     StatefulRuleProtocol::Ikev2 => { /* ... */ },
+///     StatefulRuleProtocol::Imap => { /* ... */ },
+///     StatefulRuleProtocol::Any => { /* ... */ },
+///     StatefulRuleProtocol::Krb5 => { /* ... */ },
+///     StatefulRuleProtocol::Msn => { /* ... */ },
+///     StatefulRuleProtocol::Ntp => { /* ... */ },
+///     StatefulRuleProtocol::Smb => { /* ... */ },
+///     StatefulRuleProtocol::Smtp => { /* ... */ },
+///     StatefulRuleProtocol::Ssh => { /* ... */ },
+///     StatefulRuleProtocol::Tcp => { /* ... */ },
+///     StatefulRuleProtocol::Tftp => { /* ... */ },
+///     StatefulRuleProtocol::Tls => { /* ... */ },
+///     StatefulRuleProtocol::Udp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `statefulruleprotocol` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StatefulRuleProtocol::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StatefulRuleProtocol::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StatefulRuleProtocol::NewFeature` is defined.
+/// Specifically, when `statefulruleprotocol` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StatefulRuleProtocol::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2819,8 +2898,8 @@ pub enum StatefulRuleProtocol {
     Tls,
     #[allow(missing_docs)] // documentation missing in model
     Udp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StatefulRuleProtocol {
     fn from(s: &str) -> Self {
@@ -2844,7 +2923,9 @@ impl std::convert::From<&str> for StatefulRuleProtocol {
             "TFTP" => StatefulRuleProtocol::Tftp,
             "TLS" => StatefulRuleProtocol::Tls,
             "UDP" => StatefulRuleProtocol::Udp,
-            other => StatefulRuleProtocol::Unknown(other.to_owned()),
+            other => {
+                StatefulRuleProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2878,11 +2959,11 @@ impl StatefulRuleProtocol {
             StatefulRuleProtocol::Tftp => "TFTP",
             StatefulRuleProtocol::Tls => "TLS",
             StatefulRuleProtocol::Udp => "UDP",
-            StatefulRuleProtocol::Unknown(s) => s.as_ref(),
+            StatefulRuleProtocol::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DCERPC", "DHCP", "DNS", "FTP", "HTTP", "ICMP", "IKEV2", "IMAP", "IP", "KRB5", "MSN",
             "NTP", "SMB", "SMTP", "SSH", "TCP", "TFTP", "TLS", "UDP",
@@ -2895,6 +2976,42 @@ impl AsRef<str> for StatefulRuleProtocol {
     }
 }
 
+/// When writing a match expression against `StatefulAction`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let statefulaction = unimplemented!();
+/// match statefulaction {
+///     StatefulAction::Alert => { /* ... */ },
+///     StatefulAction::Drop => { /* ... */ },
+///     StatefulAction::Pass => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `statefulaction` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StatefulAction::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StatefulAction::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StatefulAction::NewFeature` is defined.
+/// Specifically, when `statefulaction` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StatefulAction::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2913,8 +3030,8 @@ pub enum StatefulAction {
     Drop,
     #[allow(missing_docs)] // documentation missing in model
     Pass,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StatefulAction {
     fn from(s: &str) -> Self {
@@ -2922,7 +3039,7 @@ impl std::convert::From<&str> for StatefulAction {
             "ALERT" => StatefulAction::Alert,
             "DROP" => StatefulAction::Drop,
             "PASS" => StatefulAction::Pass,
-            other => StatefulAction::Unknown(other.to_owned()),
+            other => StatefulAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2940,11 +3057,11 @@ impl StatefulAction {
             StatefulAction::Alert => "ALERT",
             StatefulAction::Drop => "DROP",
             StatefulAction::Pass => "PASS",
-            StatefulAction::Unknown(s) => s.as_ref(),
+            StatefulAction::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALERT", "DROP", "PASS"]
     }
 }
@@ -2958,7 +3075,7 @@ impl AsRef<str> for StatefulAction {
 /// <p>For HTTPS traffic, domain filtering is SNI-based. It uses the server name indicator extension of the TLS handshake.</p>
 /// <p>By default, Network Firewall domain list inspection only includes traffic coming from the VPC where you deploy the firewall. To inspect traffic from IP addresses outside of the deployment VPC, you set the <code>HOME_NET</code> rule variable to include the CIDR range of the deployment VPC plus the other CIDR ranges. For more information, see <code>RuleVariables</code> in this guide and <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html">Stateful domain list rule groups in Network Firewall</a> in the <i>Network Firewall Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RulesSourceList {
     /// <p>The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:</p>
     /// <ul>
@@ -2992,20 +3109,11 @@ impl RulesSourceList {
         self.generated_rules_type.as_ref()
     }
 }
-impl std::fmt::Debug for RulesSourceList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RulesSourceList");
-        formatter.field("targets", &self.targets);
-        formatter.field("target_types", &self.target_types);
-        formatter.field("generated_rules_type", &self.generated_rules_type);
-        formatter.finish()
-    }
-}
 /// See [`RulesSourceList`](crate::model::RulesSourceList).
 pub mod rules_source_list {
 
     /// A builder for [`RulesSourceList`](crate::model::RulesSourceList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) targets: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) target_types: std::option::Option<std::vec::Vec<crate::model::TargetType>>,
@@ -3088,6 +3196,41 @@ impl RulesSourceList {
     }
 }
 
+/// When writing a match expression against `GeneratedRulesType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let generatedrulestype = unimplemented!();
+/// match generatedrulestype {
+///     GeneratedRulesType::Allowlist => { /* ... */ },
+///     GeneratedRulesType::Denylist => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `generatedrulestype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `GeneratedRulesType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `GeneratedRulesType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `GeneratedRulesType::NewFeature` is defined.
+/// Specifically, when `generatedrulestype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `GeneratedRulesType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3104,15 +3247,17 @@ pub enum GeneratedRulesType {
     Allowlist,
     #[allow(missing_docs)] // documentation missing in model
     Denylist,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for GeneratedRulesType {
     fn from(s: &str) -> Self {
         match s {
             "ALLOWLIST" => GeneratedRulesType::Allowlist,
             "DENYLIST" => GeneratedRulesType::Denylist,
-            other => GeneratedRulesType::Unknown(other.to_owned()),
+            other => {
+                GeneratedRulesType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -3129,11 +3274,11 @@ impl GeneratedRulesType {
         match self {
             GeneratedRulesType::Allowlist => "ALLOWLIST",
             GeneratedRulesType::Denylist => "DENYLIST",
-            GeneratedRulesType::Unknown(s) => s.as_ref(),
+            GeneratedRulesType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOWLIST", "DENYLIST"]
     }
 }
@@ -3143,6 +3288,41 @@ impl AsRef<str> for GeneratedRulesType {
     }
 }
 
+/// When writing a match expression against `TargetType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let targettype = unimplemented!();
+/// match targettype {
+///     TargetType::HttpHost => { /* ... */ },
+///     TargetType::TlsSni => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `targettype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TargetType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TargetType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TargetType::NewFeature` is defined.
+/// Specifically, when `targettype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TargetType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3159,15 +3339,15 @@ pub enum TargetType {
     HttpHost,
     #[allow(missing_docs)] // documentation missing in model
     TlsSni,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TargetType {
     fn from(s: &str) -> Self {
         match s {
             "HTTP_HOST" => TargetType::HttpHost,
             "TLS_SNI" => TargetType::TlsSni,
-            other => TargetType::Unknown(other.to_owned()),
+            other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3184,11 +3364,11 @@ impl TargetType {
         match self {
             TargetType::HttpHost => "HTTP_HOST",
             TargetType::TlsSni => "TLS_SNI",
-            TargetType::Unknown(s) => s.as_ref(),
+            TargetType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HTTP_HOST", "TLS_SNI"]
     }
 }
@@ -3200,7 +3380,7 @@ impl AsRef<str> for TargetType {
 
 /// <p>Contains a set of IP set references.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferenceSets {
     /// <p>The list of IP set references.</p>
     #[doc(hidden)]
@@ -3218,18 +3398,11 @@ impl ReferenceSets {
         self.ip_set_references.as_ref()
     }
 }
-impl std::fmt::Debug for ReferenceSets {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferenceSets");
-        formatter.field("ip_set_references", &self.ip_set_references);
-        formatter.finish()
-    }
-}
 /// See [`ReferenceSets`](crate::model::ReferenceSets).
 pub mod reference_sets {
 
     /// A builder for [`ReferenceSets`](crate::model::ReferenceSets).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_set_references: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::IpSetReference>,
@@ -3279,7 +3452,7 @@ impl ReferenceSets {
 /// <p>Configures one or more IP set references for a Suricata-compatible rule group. This is used in <code>CreateRuleGroup</code> or <code>UpdateRuleGroup</code>. An IP set reference is a rule variable that references a resource that you create and manage in another Amazon Web Services service, such as an Amazon VPC prefix list. Network Firewall IP set references enable you to dynamically update the contents of your rules. When you create, update, or delete the IP set you are referencing in your rule, Network Firewall automatically updates the rule's content with the changes. For more information about IP set references in Network Firewall, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/rule-groups-ip-set-references">Using IP set references</a> in the <i>Network Firewall Developer Guide</i>.</p>
 /// <p> Network Firewall currently supports only <a href="https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html">Amazon VPC prefix lists</a> as IP set references. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpSetReference {
     /// <p>The Amazon Resource Name (ARN) of the resource that you are referencing in your rule group.</p>
     #[doc(hidden)]
@@ -3291,18 +3464,11 @@ impl IpSetReference {
         self.reference_arn.as_deref()
     }
 }
-impl std::fmt::Debug for IpSetReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpSetReference");
-        formatter.field("reference_arn", &self.reference_arn);
-        formatter.finish()
-    }
-}
 /// See [`IpSetReference`](crate::model::IpSetReference).
 pub mod ip_set_reference {
 
     /// A builder for [`IpSetReference`](crate::model::IpSetReference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference_arn: std::option::Option<std::string::String>,
     }
@@ -3337,7 +3503,7 @@ impl IpSetReference {
 
 /// <p>Settings that are available for use in the rules in the <code>RuleGroup</code> where this is defined. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleVariables {
     /// <p>A list of IP addresses and address ranges, in CIDR notation. </p>
     #[doc(hidden)]
@@ -3364,19 +3530,11 @@ impl RuleVariables {
         self.port_sets.as_ref()
     }
 }
-impl std::fmt::Debug for RuleVariables {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleVariables");
-        formatter.field("ip_sets", &self.ip_sets);
-        formatter.field("port_sets", &self.port_sets);
-        formatter.finish()
-    }
-}
 /// See [`RuleVariables`](crate::model::RuleVariables).
 pub mod rule_variables {
 
     /// A builder for [`RuleVariables`](crate::model::RuleVariables).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_sets: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::IpSet>,
@@ -3454,7 +3612,7 @@ impl RuleVariables {
 
 /// <p>A set of port ranges for use in the rules in a rule group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortSet {
     /// <p>The set of port ranges. </p>
     #[doc(hidden)]
@@ -3466,18 +3624,11 @@ impl PortSet {
         self.definition.as_deref()
     }
 }
-impl std::fmt::Debug for PortSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortSet");
-        formatter.field("definition", &self.definition);
-        formatter.finish()
-    }
-}
 /// See [`PortSet`](crate::model::PortSet).
 pub mod port_set {
 
     /// A builder for [`PortSet`](crate::model::PortSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definition: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -3518,7 +3669,7 @@ impl PortSet {
 
 /// <p>A list of IP addresses and address ranges, in CIDR notation. This is part of a <code>RuleVariables</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpSet {
     /// <p>The list of IP addresses and address ranges, in CIDR notation. </p>
     #[doc(hidden)]
@@ -3530,18 +3681,11 @@ impl IpSet {
         self.definition.as_deref()
     }
 }
-impl std::fmt::Debug for IpSet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpSet");
-        formatter.field("definition", &self.definition);
-        formatter.finish()
-    }
-}
 /// See [`IpSet`](crate::model::IpSet).
 pub mod ip_set {
 
     /// A builder for [`IpSet`](crate::model::IpSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definition: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -3582,7 +3726,7 @@ impl IpSet {
 
 /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>Defines the logging destinations for the logs for a firewall. Network Firewall generates logs for stateful rule groups. </p>
     #[doc(hidden)]
@@ -3597,18 +3741,11 @@ impl LoggingConfiguration {
         self.log_destination_configs.as_deref()
     }
 }
-impl std::fmt::Debug for LoggingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingConfiguration");
-        formatter.field("log_destination_configs", &self.log_destination_configs);
-        formatter.finish()
-    }
-}
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
 pub mod logging_configuration {
 
     /// A builder for [`LoggingConfiguration`](crate::model::LoggingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_destination_configs:
             std::option::Option<std::vec::Vec<crate::model::LogDestinationConfig>>,
@@ -3654,7 +3791,7 @@ impl LoggingConfiguration {
 /// <p>Defines where Network Firewall sends logs for the firewall for one log type. This is used in <code>LoggingConfiguration</code>. You can send each type of log to an Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery stream.</p>
 /// <p>Network Firewall generates logs for stateful rule groups. You can save alert and flow log types. The stateful rules engine records flow logs for all network traffic that it receives. It records alert logs for traffic that matches stateful rules that have the rule action set to <code>DROP</code> or <code>ALERT</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogDestinationConfig {
     /// <p>The type of log to send. Alert logs report traffic that matches a <code>StatefulRule</code> with an action setting that sends an alert log message. Flow logs are standard network traffic flow logs. </p>
     #[doc(hidden)]
@@ -3694,20 +3831,11 @@ impl LogDestinationConfig {
         self.log_destination.as_ref()
     }
 }
-impl std::fmt::Debug for LogDestinationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogDestinationConfig");
-        formatter.field("log_type", &self.log_type);
-        formatter.field("log_destination_type", &self.log_destination_type);
-        formatter.field("log_destination", &self.log_destination);
-        formatter.finish()
-    }
-}
 /// See [`LogDestinationConfig`](crate::model::LogDestinationConfig).
 pub mod log_destination_config {
 
     /// A builder for [`LogDestinationConfig`](crate::model::LogDestinationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_type: std::option::Option<crate::model::LogType>,
         pub(crate) log_destination_type: std::option::Option<crate::model::LogDestinationType>,
@@ -3791,6 +3919,42 @@ impl LogDestinationConfig {
     }
 }
 
+/// When writing a match expression against `LogDestinationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let logdestinationtype = unimplemented!();
+/// match logdestinationtype {
+///     LogDestinationType::CloudwatchLogs => { /* ... */ },
+///     LogDestinationType::KinesisDataFirehose => { /* ... */ },
+///     LogDestinationType::S3 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `logdestinationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LogDestinationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LogDestinationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LogDestinationType::NewFeature` is defined.
+/// Specifically, when `logdestinationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LogDestinationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3809,8 +3973,8 @@ pub enum LogDestinationType {
     KinesisDataFirehose,
     #[allow(missing_docs)] // documentation missing in model
     S3,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LogDestinationType {
     fn from(s: &str) -> Self {
@@ -3818,7 +3982,9 @@ impl std::convert::From<&str> for LogDestinationType {
             "CloudWatchLogs" => LogDestinationType::CloudwatchLogs,
             "KinesisDataFirehose" => LogDestinationType::KinesisDataFirehose,
             "S3" => LogDestinationType::S3,
-            other => LogDestinationType::Unknown(other.to_owned()),
+            other => {
+                LogDestinationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -3836,11 +4002,11 @@ impl LogDestinationType {
             LogDestinationType::CloudwatchLogs => "CloudWatchLogs",
             LogDestinationType::KinesisDataFirehose => "KinesisDataFirehose",
             LogDestinationType::S3 => "S3",
-            LogDestinationType::Unknown(s) => s.as_ref(),
+            LogDestinationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CloudWatchLogs", "KinesisDataFirehose", "S3"]
     }
 }
@@ -3850,6 +4016,41 @@ impl AsRef<str> for LogDestinationType {
     }
 }
 
+/// When writing a match expression against `LogType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let logtype = unimplemented!();
+/// match logtype {
+///     LogType::Alert => { /* ... */ },
+///     LogType::Flow => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `logtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LogType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LogType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LogType::NewFeature` is defined.
+/// Specifically, when `logtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LogType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3866,15 +4067,15 @@ pub enum LogType {
     Alert,
     #[allow(missing_docs)] // documentation missing in model
     Flow,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LogType {
     fn from(s: &str) -> Self {
         match s {
             "ALERT" => LogType::Alert,
             "FLOW" => LogType::Flow,
-            other => LogType::Unknown(other.to_owned()),
+            other => LogType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3891,11 +4092,11 @@ impl LogType {
         match self {
             LogType::Alert => "ALERT",
             LogType::Flow => "FLOW",
-            LogType::Unknown(s) => s.as_ref(),
+            LogType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALERT", "FLOW"]
     }
 }
@@ -3907,7 +4108,7 @@ impl AsRef<str> for LogType {
 
 /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallPolicyResponse {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     #[doc(hidden)]
@@ -3995,34 +4196,11 @@ impl FirewallPolicyResponse {
         self.last_modified_time.as_ref()
     }
 }
-impl std::fmt::Debug for FirewallPolicyResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallPolicyResponse");
-        formatter.field("firewall_policy_name", &self.firewall_policy_name);
-        formatter.field("firewall_policy_arn", &self.firewall_policy_arn);
-        formatter.field("firewall_policy_id", &self.firewall_policy_id);
-        formatter.field("description", &self.description);
-        formatter.field("firewall_policy_status", &self.firewall_policy_status);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "consumed_stateless_rule_capacity",
-            &self.consumed_stateless_rule_capacity,
-        );
-        formatter.field(
-            "consumed_stateful_rule_capacity",
-            &self.consumed_stateful_rule_capacity,
-        );
-        formatter.field("number_of_associations", &self.number_of_associations);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
-    }
-}
 /// See [`FirewallPolicyResponse`](crate::model::FirewallPolicyResponse).
 pub mod firewall_policy_response {
 
     /// A builder for [`FirewallPolicyResponse`](crate::model::FirewallPolicyResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy_name: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_arn: std::option::Option<std::string::String>,
@@ -4216,7 +4394,7 @@ impl FirewallPolicyResponse {
 /// <p>The firewall policy defines the behavior of a firewall using a collection of stateless and stateful rule groups and other settings. You can use one firewall policy for multiple firewalls. </p>
 /// <p>This, along with <code>FirewallPolicyResponse</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallPolicy {
     /// <p>References to the stateless rule groups that are used in the policy. These define the matching criteria in stateless rules. </p>
     #[doc(hidden)]
@@ -4304,33 +4482,11 @@ impl FirewallPolicy {
         self.stateful_engine_options.as_ref()
     }
 }
-impl std::fmt::Debug for FirewallPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallPolicy");
-        formatter.field(
-            "stateless_rule_group_references",
-            &self.stateless_rule_group_references,
-        );
-        formatter.field("stateless_default_actions", &self.stateless_default_actions);
-        formatter.field(
-            "stateless_fragment_default_actions",
-            &self.stateless_fragment_default_actions,
-        );
-        formatter.field("stateless_custom_actions", &self.stateless_custom_actions);
-        formatter.field(
-            "stateful_rule_group_references",
-            &self.stateful_rule_group_references,
-        );
-        formatter.field("stateful_default_actions", &self.stateful_default_actions);
-        formatter.field("stateful_engine_options", &self.stateful_engine_options);
-        formatter.finish()
-    }
-}
 /// See [`FirewallPolicy`](crate::model::FirewallPolicy).
 pub mod firewall_policy {
 
     /// A builder for [`FirewallPolicy`](crate::model::FirewallPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stateless_rule_group_references:
             std::option::Option<std::vec::Vec<crate::model::StatelessRuleGroupReference>>,
@@ -4534,7 +4690,7 @@ impl FirewallPolicy {
 
 /// <p>Configuration settings for the handling of the stateful rule groups in a firewall policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatefulEngineOptions {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
     #[doc(hidden)]
@@ -4546,18 +4702,11 @@ impl StatefulEngineOptions {
         self.rule_order.as_ref()
     }
 }
-impl std::fmt::Debug for StatefulEngineOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatefulEngineOptions");
-        formatter.field("rule_order", &self.rule_order);
-        formatter.finish()
-    }
-}
 /// See [`StatefulEngineOptions`](crate::model::StatefulEngineOptions).
 pub mod stateful_engine_options {
 
     /// A builder for [`StatefulEngineOptions`](crate::model::StatefulEngineOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_order: std::option::Option<crate::model::RuleOrder>,
     }
@@ -4592,7 +4741,7 @@ impl StatefulEngineOptions {
 
 /// <p>Identifier for a single stateful rule group, used in a firewall policy to refer to a rule group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatefulRuleGroupReference {
     /// <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
     #[doc(hidden)]
@@ -4622,20 +4771,11 @@ impl StatefulRuleGroupReference {
         self.r#override.as_ref()
     }
 }
-impl std::fmt::Debug for StatefulRuleGroupReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatefulRuleGroupReference");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("priority", &self.priority);
-        formatter.field("r#override", &self.r#override);
-        formatter.finish()
-    }
-}
 /// See [`StatefulRuleGroupReference`](crate::model::StatefulRuleGroupReference).
 pub mod stateful_rule_group_reference {
 
     /// A builder for [`StatefulRuleGroupReference`](crate::model::StatefulRuleGroupReference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) priority: std::option::Option<i32>,
@@ -4698,7 +4838,7 @@ impl StatefulRuleGroupReference {
 
 /// <p>The setting that allows the policy owner to change the behavior of the rule group within a policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatefulRuleGroupOverride {
     /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
     #[doc(hidden)]
@@ -4710,18 +4850,11 @@ impl StatefulRuleGroupOverride {
         self.action.as_ref()
     }
 }
-impl std::fmt::Debug for StatefulRuleGroupOverride {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatefulRuleGroupOverride");
-        formatter.field("action", &self.action);
-        formatter.finish()
-    }
-}
 /// See [`StatefulRuleGroupOverride`](crate::model::StatefulRuleGroupOverride).
 pub mod stateful_rule_group_override {
 
     /// A builder for [`StatefulRuleGroupOverride`](crate::model::StatefulRuleGroupOverride).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::OverrideAction>,
     }
@@ -4754,6 +4887,40 @@ impl StatefulRuleGroupOverride {
     }
 }
 
+/// When writing a match expression against `OverrideAction`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let overrideaction = unimplemented!();
+/// match overrideaction {
+///     OverrideAction::DropToAlert => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `overrideaction` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OverrideAction::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OverrideAction::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OverrideAction::NewFeature` is defined.
+/// Specifically, when `overrideaction` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OverrideAction::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4768,14 +4935,14 @@ impl StatefulRuleGroupOverride {
 pub enum OverrideAction {
     #[allow(missing_docs)] // documentation missing in model
     DropToAlert,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OverrideAction {
     fn from(s: &str) -> Self {
         match s {
             "DROP_TO_ALERT" => OverrideAction::DropToAlert,
-            other => OverrideAction::Unknown(other.to_owned()),
+            other => OverrideAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -4791,11 +4958,11 @@ impl OverrideAction {
     pub fn as_str(&self) -> &str {
         match self {
             OverrideAction::DropToAlert => "DROP_TO_ALERT",
-            OverrideAction::Unknown(s) => s.as_ref(),
+            OverrideAction::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DROP_TO_ALERT"]
     }
 }
@@ -4807,7 +4974,7 @@ impl AsRef<str> for OverrideAction {
 
 /// <p>Identifier for a single stateless rule group, used in a firewall policy to refer to the rule group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StatelessRuleGroupReference {
     /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
     #[doc(hidden)]
@@ -4826,19 +4993,11 @@ impl StatelessRuleGroupReference {
         self.priority
     }
 }
-impl std::fmt::Debug for StatelessRuleGroupReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StatelessRuleGroupReference");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
-    }
-}
 /// See [`StatelessRuleGroupReference`](crate::model::StatelessRuleGroupReference).
 pub mod stateless_rule_group_reference {
 
     /// A builder for [`StatelessRuleGroupReference`](crate::model::StatelessRuleGroupReference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) priority: std::option::Option<i32>,
@@ -4882,7 +5041,7 @@ impl StatelessRuleGroupReference {
 
 /// <p>High-level information about a rule group, returned by <code>ListRuleGroups</code>. You can use the information provided in the metadata to retrieve and manage a rule group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleGroupMetadata {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     #[doc(hidden)]
@@ -4901,19 +5060,11 @@ impl RuleGroupMetadata {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for RuleGroupMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleGroupMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 /// See [`RuleGroupMetadata`](crate::model::RuleGroupMetadata).
 pub mod rule_group_metadata {
 
     /// A builder for [`RuleGroupMetadata`](crate::model::RuleGroupMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4955,6 +5106,41 @@ impl RuleGroupMetadata {
     }
 }
 
+/// When writing a match expression against `ResourceManagedType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourcemanagedtype = unimplemented!();
+/// match resourcemanagedtype {
+///     ResourceManagedType::AwsManagedDomainLists => { /* ... */ },
+///     ResourceManagedType::AwsManagedThreatSignatures => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourcemanagedtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceManagedType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceManagedType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceManagedType::NewFeature` is defined.
+/// Specifically, when `resourcemanagedtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceManagedType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4971,15 +5157,17 @@ pub enum ResourceManagedType {
     AwsManagedDomainLists,
     #[allow(missing_docs)] // documentation missing in model
     AwsManagedThreatSignatures,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceManagedType {
     fn from(s: &str) -> Self {
         match s {
             "AWS_MANAGED_DOMAIN_LISTS" => ResourceManagedType::AwsManagedDomainLists,
             "AWS_MANAGED_THREAT_SIGNATURES" => ResourceManagedType::AwsManagedThreatSignatures,
-            other => ResourceManagedType::Unknown(other.to_owned()),
+            other => {
+                ResourceManagedType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -4996,11 +5184,11 @@ impl ResourceManagedType {
         match self {
             ResourceManagedType::AwsManagedDomainLists => "AWS_MANAGED_DOMAIN_LISTS",
             ResourceManagedType::AwsManagedThreatSignatures => "AWS_MANAGED_THREAT_SIGNATURES",
-            ResourceManagedType::Unknown(s) => s.as_ref(),
+            ResourceManagedType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_MANAGED_DOMAIN_LISTS", "AWS_MANAGED_THREAT_SIGNATURES"]
     }
 }
@@ -5010,6 +5198,41 @@ impl AsRef<str> for ResourceManagedType {
     }
 }
 
+/// When writing a match expression against `ResourceManagedStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourcemanagedstatus = unimplemented!();
+/// match resourcemanagedstatus {
+///     ResourceManagedStatus::Account => { /* ... */ },
+///     ResourceManagedStatus::Managed => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourcemanagedstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceManagedStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceManagedStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceManagedStatus::NewFeature` is defined.
+/// Specifically, when `resourcemanagedstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceManagedStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5026,15 +5249,17 @@ pub enum ResourceManagedStatus {
     Account,
     #[allow(missing_docs)] // documentation missing in model
     Managed,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceManagedStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT" => ResourceManagedStatus::Account,
             "MANAGED" => ResourceManagedStatus::Managed,
-            other => ResourceManagedStatus::Unknown(other.to_owned()),
+            other => {
+                ResourceManagedStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -5051,11 +5276,11 @@ impl ResourceManagedStatus {
         match self {
             ResourceManagedStatus::Account => "ACCOUNT",
             ResourceManagedStatus::Managed => "MANAGED",
-            ResourceManagedStatus::Unknown(s) => s.as_ref(),
+            ResourceManagedStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT", "MANAGED"]
     }
 }
@@ -5067,7 +5292,7 @@ impl AsRef<str> for ResourceManagedStatus {
 
 /// <p>High-level information about a firewall, returned by operations like create and describe. You can use the information provided in the metadata to retrieve and manage a firewall.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallMetadata {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     #[doc(hidden)]
@@ -5086,19 +5311,11 @@ impl FirewallMetadata {
         self.firewall_arn.as_deref()
     }
 }
-impl std::fmt::Debug for FirewallMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallMetadata");
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.finish()
-    }
-}
 /// See [`FirewallMetadata`](crate::model::FirewallMetadata).
 pub mod firewall_metadata {
 
     /// A builder for [`FirewallMetadata`](crate::model::FirewallMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -5145,7 +5362,7 @@ impl FirewallMetadata {
 
 /// <p>High-level information about a firewall policy, returned by operations like create and describe. You can use the information provided in the metadata to retrieve and manage a firewall policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallPolicyMetadata {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     #[doc(hidden)]
@@ -5164,19 +5381,11 @@ impl FirewallPolicyMetadata {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for FirewallPolicyMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallPolicyMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 /// See [`FirewallPolicyMetadata`](crate::model::FirewallPolicyMetadata).
 pub mod firewall_policy_metadata {
 
     /// A builder for [`FirewallPolicyMetadata`](crate::model::FirewallPolicyMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5220,7 +5429,7 @@ impl FirewallPolicyMetadata {
 
 /// <p>The ID for a subnet that you want to associate with the firewall. This is used with <code>CreateFirewall</code> and <code>AssociateSubnets</code>. Network Firewall creates an instance of the associated firewall in each subnet that you specify, to filter traffic in the subnet's Availability Zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubnetMapping {
     /// <p>The unique identifier for the subnet. </p>
     #[doc(hidden)]
@@ -5232,18 +5441,11 @@ impl SubnetMapping {
         self.subnet_id.as_deref()
     }
 }
-impl std::fmt::Debug for SubnetMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubnetMapping");
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.finish()
-    }
-}
 /// See [`SubnetMapping`](crate::model::SubnetMapping).
 pub mod subnet_mapping {
 
     /// A builder for [`SubnetMapping`](crate::model::SubnetMapping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_id: std::option::Option<std::string::String>,
     }
@@ -5275,7 +5477,7 @@ impl SubnetMapping {
 
 /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FirewallStatus {
     /// <p>The readiness of the configured firewall to handle network traffic across all of the Availability Zones where you've configured it. This setting is <code>READY</code> only when the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code> and the <code>Attachment</code> <code>Status</code> values for all of the configured subnets are <code>READY</code>. </p>
     #[doc(hidden)]
@@ -5321,24 +5523,11 @@ impl FirewallStatus {
         self.capacity_usage_summary.as_ref()
     }
 }
-impl std::fmt::Debug for FirewallStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FirewallStatus");
-        formatter.field("status", &self.status);
-        formatter.field(
-            "configuration_sync_state_summary",
-            &self.configuration_sync_state_summary,
-        );
-        formatter.field("sync_states", &self.sync_states);
-        formatter.field("capacity_usage_summary", &self.capacity_usage_summary);
-        formatter.finish()
-    }
-}
 /// See [`FirewallStatus`](crate::model::FirewallStatus).
 pub mod firewall_status {
 
     /// A builder for [`FirewallStatus`](crate::model::FirewallStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::FirewallStatusValue>,
         pub(crate) configuration_sync_state_summary:
@@ -5440,7 +5629,7 @@ impl FirewallStatus {
 
 /// <p>The capacity usage summary of the resources used by the <code>ReferenceSets</code> in a firewall.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CapacityUsageSummary {
     /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
     #[doc(hidden)]
@@ -5452,18 +5641,11 @@ impl CapacityUsageSummary {
         self.cid_rs.as_ref()
     }
 }
-impl std::fmt::Debug for CapacityUsageSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CapacityUsageSummary");
-        formatter.field("cid_rs", &self.cid_rs);
-        formatter.finish()
-    }
-}
 /// See [`CapacityUsageSummary`](crate::model::CapacityUsageSummary).
 pub mod capacity_usage_summary {
 
     /// A builder for [`CapacityUsageSummary`](crate::model::CapacityUsageSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cid_rs: std::option::Option<crate::model::CidrSummary>,
     }
@@ -5495,7 +5677,7 @@ impl CapacityUsageSummary {
 
 /// <p>Summarizes the CIDR blocks used by the IP set references in a firewall. Network Firewall calculates the number of CIDRs by taking an aggregated count of all CIDRs used by the IP sets you are referencing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CidrSummary {
     /// <p>The number of CIDR blocks available for use by the IP set references in a firewall.</p>
     #[doc(hidden)]
@@ -5527,20 +5709,11 @@ impl CidrSummary {
         self.ip_set_references.as_ref()
     }
 }
-impl std::fmt::Debug for CidrSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CidrSummary");
-        formatter.field("available_cidr_count", &self.available_cidr_count);
-        formatter.field("utilized_cidr_count", &self.utilized_cidr_count);
-        formatter.field("ip_set_references", &self.ip_set_references);
-        formatter.finish()
-    }
-}
 /// See [`CidrSummary`](crate::model::CidrSummary).
 pub mod cidr_summary {
 
     /// A builder for [`CidrSummary`](crate::model::CidrSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) available_cidr_count: std::option::Option<i32>,
         pub(crate) utilized_cidr_count: std::option::Option<i32>,
@@ -5613,7 +5786,7 @@ impl CidrSummary {
 
 /// <p>General information about the IP set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IpSetMetadata {
     /// <p>Describes the total number of CIDR blocks currently in use by the IP set references in a firewall. To determine how many CIDR blocks are available for you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
     #[doc(hidden)]
@@ -5625,18 +5798,11 @@ impl IpSetMetadata {
         self.resolved_cidr_count
     }
 }
-impl std::fmt::Debug for IpSetMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IpSetMetadata");
-        formatter.field("resolved_cidr_count", &self.resolved_cidr_count);
-        formatter.finish()
-    }
-}
 /// See [`IpSetMetadata`](crate::model::IpSetMetadata).
 pub mod ip_set_metadata {
 
     /// A builder for [`IpSetMetadata`](crate::model::IpSetMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolved_cidr_count: std::option::Option<i32>,
     }
@@ -5674,7 +5840,7 @@ impl IpSetMetadata {
 /// </ul>
 /// <p>When you update a firewall, for example to add a subnet association or change a rule group in the firewall policy, the affected sync states reflect out-of-sync or not ready status until the changes are complete. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SyncState {
     /// <p>The attachment status of the firewall's association with a single VPC subnet. For each configured subnet, Network Firewall creates the attachment by instantiating the firewall endpoint in the subnet so that it's ready to take traffic. This is part of the <code>FirewallStatus</code>.</p>
     #[doc(hidden)]
@@ -5699,19 +5865,11 @@ impl SyncState {
         self.config.as_ref()
     }
 }
-impl std::fmt::Debug for SyncState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SyncState");
-        formatter.field("attachment", &self.attachment);
-        formatter.field("config", &self.config);
-        formatter.finish()
-    }
-}
 /// See [`SyncState`](crate::model::SyncState).
 pub mod sync_state {
 
     /// A builder for [`SyncState`](crate::model::SyncState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment: std::option::Option<crate::model::Attachment>,
         pub(crate) config: std::option::Option<
@@ -5775,7 +5933,7 @@ impl SyncState {
 
 /// <p>Provides configuration status for a single policy or rule group that is used for a firewall endpoint. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic. This is part of a <code>SyncState</code> for a firewall.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PerObjectStatus {
     /// <p>Indicates whether this object is in sync with the version indicated in the update token.</p>
     #[doc(hidden)]
@@ -5794,19 +5952,11 @@ impl PerObjectStatus {
         self.update_token.as_deref()
     }
 }
-impl std::fmt::Debug for PerObjectStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PerObjectStatus");
-        formatter.field("sync_status", &self.sync_status);
-        formatter.field("update_token", &self.update_token);
-        formatter.finish()
-    }
-}
 /// See [`PerObjectStatus`](crate::model::PerObjectStatus).
 pub mod per_object_status {
 
     /// A builder for [`PerObjectStatus`](crate::model::PerObjectStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sync_status: std::option::Option<crate::model::PerObjectSyncStatus>,
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -5851,6 +6001,42 @@ impl PerObjectStatus {
     }
 }
 
+/// When writing a match expression against `PerObjectSyncStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let perobjectsyncstatus = unimplemented!();
+/// match perobjectsyncstatus {
+///     PerObjectSyncStatus::CapacityConstrained => { /* ... */ },
+///     PerObjectSyncStatus::InSync => { /* ... */ },
+///     PerObjectSyncStatus::Pending => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `perobjectsyncstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PerObjectSyncStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PerObjectSyncStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PerObjectSyncStatus::NewFeature` is defined.
+/// Specifically, when `perobjectsyncstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PerObjectSyncStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5869,8 +6055,8 @@ pub enum PerObjectSyncStatus {
     InSync,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PerObjectSyncStatus {
     fn from(s: &str) -> Self {
@@ -5878,7 +6064,9 @@ impl std::convert::From<&str> for PerObjectSyncStatus {
             "CAPACITY_CONSTRAINED" => PerObjectSyncStatus::CapacityConstrained,
             "IN_SYNC" => PerObjectSyncStatus::InSync,
             "PENDING" => PerObjectSyncStatus::Pending,
-            other => PerObjectSyncStatus::Unknown(other.to_owned()),
+            other => {
+                PerObjectSyncStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -5896,11 +6084,11 @@ impl PerObjectSyncStatus {
             PerObjectSyncStatus::CapacityConstrained => "CAPACITY_CONSTRAINED",
             PerObjectSyncStatus::InSync => "IN_SYNC",
             PerObjectSyncStatus::Pending => "PENDING",
-            PerObjectSyncStatus::Unknown(s) => s.as_ref(),
+            PerObjectSyncStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CAPACITY_CONSTRAINED", "IN_SYNC", "PENDING"]
     }
 }
@@ -5912,7 +6100,7 @@ impl AsRef<str> for PerObjectSyncStatus {
 
 /// <p>The configuration and status for a single subnet that you've specified for use by the Network Firewall firewall. This is part of the <code>FirewallStatus</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Attachment {
     /// <p>The unique identifier of the subnet that you've specified to be used for a firewall endpoint. </p>
     #[doc(hidden)]
@@ -5938,20 +6126,11 @@ impl Attachment {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for Attachment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Attachment");
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("endpoint_id", &self.endpoint_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`Attachment`](crate::model::Attachment).
 pub mod attachment {
 
     /// A builder for [`Attachment`](crate::model::Attachment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_id: std::option::Option<std::string::String>,
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
@@ -6008,6 +6187,43 @@ impl Attachment {
     }
 }
 
+/// When writing a match expression against `AttachmentStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let attachmentstatus = unimplemented!();
+/// match attachmentstatus {
+///     AttachmentStatus::Creating => { /* ... */ },
+///     AttachmentStatus::Deleting => { /* ... */ },
+///     AttachmentStatus::Ready => { /* ... */ },
+///     AttachmentStatus::Scaling => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `attachmentstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AttachmentStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AttachmentStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AttachmentStatus::NewFeature` is defined.
+/// Specifically, when `attachmentstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AttachmentStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6028,8 +6244,8 @@ pub enum AttachmentStatus {
     Ready,
     #[allow(missing_docs)] // documentation missing in model
     Scaling,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AttachmentStatus {
     fn from(s: &str) -> Self {
@@ -6038,7 +6254,7 @@ impl std::convert::From<&str> for AttachmentStatus {
             "DELETING" => AttachmentStatus::Deleting,
             "READY" => AttachmentStatus::Ready,
             "SCALING" => AttachmentStatus::Scaling,
-            other => AttachmentStatus::Unknown(other.to_owned()),
+            other => AttachmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -6057,11 +6273,11 @@ impl AttachmentStatus {
             AttachmentStatus::Deleting => "DELETING",
             AttachmentStatus::Ready => "READY",
             AttachmentStatus::Scaling => "SCALING",
-            AttachmentStatus::Unknown(s) => s.as_ref(),
+            AttachmentStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATING", "DELETING", "READY", "SCALING"]
     }
 }
@@ -6071,6 +6287,42 @@ impl AsRef<str> for AttachmentStatus {
     }
 }
 
+/// When writing a match expression against `ConfigurationSyncState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let configurationsyncstate = unimplemented!();
+/// match configurationsyncstate {
+///     ConfigurationSyncState::CapacityConstrained => { /* ... */ },
+///     ConfigurationSyncState::InSync => { /* ... */ },
+///     ConfigurationSyncState::Pending => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `configurationsyncstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ConfigurationSyncState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ConfigurationSyncState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ConfigurationSyncState::NewFeature` is defined.
+/// Specifically, when `configurationsyncstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ConfigurationSyncState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6089,8 +6341,8 @@ pub enum ConfigurationSyncState {
     InSync,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ConfigurationSyncState {
     fn from(s: &str) -> Self {
@@ -6098,7 +6350,9 @@ impl std::convert::From<&str> for ConfigurationSyncState {
             "CAPACITY_CONSTRAINED" => ConfigurationSyncState::CapacityConstrained,
             "IN_SYNC" => ConfigurationSyncState::InSync,
             "PENDING" => ConfigurationSyncState::Pending,
-            other => ConfigurationSyncState::Unknown(other.to_owned()),
+            other => {
+                ConfigurationSyncState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -6116,11 +6370,11 @@ impl ConfigurationSyncState {
             ConfigurationSyncState::CapacityConstrained => "CAPACITY_CONSTRAINED",
             ConfigurationSyncState::InSync => "IN_SYNC",
             ConfigurationSyncState::Pending => "PENDING",
-            ConfigurationSyncState::Unknown(s) => s.as_ref(),
+            ConfigurationSyncState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CAPACITY_CONSTRAINED", "IN_SYNC", "PENDING"]
     }
 }
@@ -6130,6 +6384,42 @@ impl AsRef<str> for ConfigurationSyncState {
     }
 }
 
+/// When writing a match expression against `FirewallStatusValue`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let firewallstatusvalue = unimplemented!();
+/// match firewallstatusvalue {
+///     FirewallStatusValue::Deleting => { /* ... */ },
+///     FirewallStatusValue::Provisioning => { /* ... */ },
+///     FirewallStatusValue::Ready => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `firewallstatusvalue` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FirewallStatusValue::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FirewallStatusValue::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FirewallStatusValue::NewFeature` is defined.
+/// Specifically, when `firewallstatusvalue` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FirewallStatusValue::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6148,8 +6438,8 @@ pub enum FirewallStatusValue {
     Provisioning,
     #[allow(missing_docs)] // documentation missing in model
     Ready,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FirewallStatusValue {
     fn from(s: &str) -> Self {
@@ -6157,7 +6447,9 @@ impl std::convert::From<&str> for FirewallStatusValue {
             "DELETING" => FirewallStatusValue::Deleting,
             "PROVISIONING" => FirewallStatusValue::Provisioning,
             "READY" => FirewallStatusValue::Ready,
-            other => FirewallStatusValue::Unknown(other.to_owned()),
+            other => {
+                FirewallStatusValue::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -6175,11 +6467,11 @@ impl FirewallStatusValue {
             FirewallStatusValue::Deleting => "DELETING",
             FirewallStatusValue::Provisioning => "PROVISIONING",
             FirewallStatusValue::Ready => "READY",
-            FirewallStatusValue::Unknown(s) => s.as_ref(),
+            FirewallStatusValue::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETING", "PROVISIONING", "READY"]
     }
 }
@@ -6192,7 +6484,7 @@ impl AsRef<str> for FirewallStatusValue {
 /// <p>The firewall defines the configuration settings for an Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall Amazon Web Services resource. </p>
 /// <p>The status of the firewall, for example whether it's ready to filter network traffic, is provided in the corresponding <code>FirewallStatus</code>. You can retrieve both objects by calling <code>DescribeFirewall</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Firewall {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     #[doc(hidden)]
@@ -6285,32 +6577,11 @@ impl Firewall {
         self.encryption_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for Firewall {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Firewall");
-        formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("firewall_arn", &self.firewall_arn);
-        formatter.field("firewall_policy_arn", &self.firewall_policy_arn);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_mappings", &self.subnet_mappings);
-        formatter.field("delete_protection", &self.delete_protection);
-        formatter.field("subnet_change_protection", &self.subnet_change_protection);
-        formatter.field(
-            "firewall_policy_change_protection",
-            &self.firewall_policy_change_protection,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("firewall_id", &self.firewall_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.finish()
-    }
-}
 /// See [`Firewall`](crate::model::Firewall).
 pub mod firewall {
 
     /// A builder for [`Firewall`](crate::model::Firewall).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_delivery_stream_input {
 
     /// A builder for [`CreateDeliveryStreamInput`](crate::input::CreateDeliveryStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) delivery_stream_type: std::option::Option<crate::model::DeliveryStreamType>,
@@ -236,8 +236,10 @@ pub mod create_delivery_stream_input {
         /// Consumes the builder and constructs a [`CreateDeliveryStreamInput`](crate::input::CreateDeliveryStreamInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDeliveryStreamInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateDeliveryStreamInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateDeliveryStreamInput {
                 delivery_stream_name: self.delivery_stream_name,
                 delivery_stream_type: self.delivery_stream_type,
@@ -272,13 +274,13 @@ impl CreateDeliveryStreamInput {
             crate::operation::CreateDeliveryStream,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateDeliveryStreamInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -286,8 +288,10 @@ impl CreateDeliveryStreamInput {
             fn update_http_builder(
                 input: &crate::input::CreateDeliveryStreamInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -378,7 +382,7 @@ impl CreateDeliveryStreamInput {
 pub mod delete_delivery_stream_input {
 
     /// A builder for [`DeleteDeliveryStreamInput`](crate::input::DeleteDeliveryStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) allow_force_delete: std::option::Option<bool>,
@@ -412,8 +416,10 @@ pub mod delete_delivery_stream_input {
         /// Consumes the builder and constructs a [`DeleteDeliveryStreamInput`](crate::input::DeleteDeliveryStreamInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDeliveryStreamInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteDeliveryStreamInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteDeliveryStreamInput {
                 delivery_stream_name: self.delivery_stream_name,
                 allow_force_delete: self.allow_force_delete,
@@ -434,13 +440,13 @@ impl DeleteDeliveryStreamInput {
             crate::operation::DeleteDeliveryStream,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDeliveryStreamInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -448,8 +454,10 @@ impl DeleteDeliveryStreamInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDeliveryStreamInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -540,7 +548,7 @@ impl DeleteDeliveryStreamInput {
 pub mod describe_delivery_stream_input {
 
     /// A builder for [`DescribeDeliveryStreamInput`](crate::input::DescribeDeliveryStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -589,8 +597,10 @@ pub mod describe_delivery_stream_input {
         /// Consumes the builder and constructs a [`DescribeDeliveryStreamInput`](crate::input::DescribeDeliveryStreamInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDeliveryStreamInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeDeliveryStreamInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeDeliveryStreamInput {
                 delivery_stream_name: self.delivery_stream_name,
                 limit: self.limit,
@@ -612,13 +622,13 @@ impl DescribeDeliveryStreamInput {
             crate::operation::DescribeDeliveryStream,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDeliveryStreamInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -626,8 +636,10 @@ impl DescribeDeliveryStreamInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDeliveryStreamInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -718,7 +730,7 @@ impl DescribeDeliveryStreamInput {
 pub mod list_delivery_streams_input {
 
     /// A builder for [`ListDeliveryStreamsInput`](crate::input::ListDeliveryStreamsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) delivery_stream_type: std::option::Option<crate::model::DeliveryStreamType>,
@@ -777,8 +789,10 @@ pub mod list_delivery_streams_input {
         /// Consumes the builder and constructs a [`ListDeliveryStreamsInput`](crate::input::ListDeliveryStreamsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDeliveryStreamsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListDeliveryStreamsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListDeliveryStreamsInput {
                 limit: self.limit,
                 delivery_stream_type: self.delivery_stream_type,
@@ -800,13 +814,13 @@ impl ListDeliveryStreamsInput {
             crate::operation::ListDeliveryStreams,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDeliveryStreamsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -814,8 +828,10 @@ impl ListDeliveryStreamsInput {
             fn update_http_builder(
                 input: &crate::input::ListDeliveryStreamsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -904,7 +920,7 @@ impl ListDeliveryStreamsInput {
 pub mod list_tags_for_delivery_stream_input {
 
     /// A builder for [`ListTagsForDeliveryStreamInput`](crate::input::ListTagsForDeliveryStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) exclusive_start_tag_key: std::option::Option<std::string::String>,
@@ -952,7 +968,7 @@ pub mod list_tags_for_delivery_stream_input {
             self,
         ) -> Result<
             crate::input::ListTagsForDeliveryStreamInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListTagsForDeliveryStreamInput {
                 delivery_stream_name: self.delivery_stream_name,
@@ -975,13 +991,13 @@ impl ListTagsForDeliveryStreamInput {
             crate::operation::ListTagsForDeliveryStream,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForDeliveryStreamInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -989,8 +1005,10 @@ impl ListTagsForDeliveryStreamInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForDeliveryStreamInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1078,7 +1096,7 @@ impl ListTagsForDeliveryStreamInput {
 pub mod put_record_input {
 
     /// A builder for [`PutRecordInput`](crate::input::PutRecordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) record: std::option::Option<crate::model::Record>,
@@ -1110,7 +1128,8 @@ pub mod put_record_input {
         /// Consumes the builder and constructs a [`PutRecordInput`](crate::input::PutRecordInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutRecordInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::PutRecordInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::PutRecordInput {
                 delivery_stream_name: self.delivery_stream_name,
                 record: self.record,
@@ -1131,13 +1150,13 @@ impl PutRecordInput {
             crate::operation::PutRecord,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutRecordInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1145,8 +1164,10 @@ impl PutRecordInput {
             fn update_http_builder(
                 input: &crate::input::PutRecordInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1233,7 +1254,7 @@ impl PutRecordInput {
 pub mod put_record_batch_input {
 
     /// A builder for [`PutRecordBatchInput`](crate::input::PutRecordBatchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::Record>>,
@@ -1274,7 +1295,7 @@ pub mod put_record_batch_input {
         /// Consumes the builder and constructs a [`PutRecordBatchInput`](crate::input::PutRecordBatchInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutRecordBatchInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutRecordBatchInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutRecordBatchInput {
                 delivery_stream_name: self.delivery_stream_name,
@@ -1296,13 +1317,13 @@ impl PutRecordBatchInput {
             crate::operation::PutRecordBatch,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutRecordBatchInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1310,8 +1331,10 @@ impl PutRecordBatchInput {
             fn update_http_builder(
                 input: &crate::input::PutRecordBatchInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1400,7 +1423,7 @@ impl PutRecordBatchInput {
 pub mod start_delivery_stream_encryption_input {
 
     /// A builder for [`StartDeliveryStreamEncryptionInput`](crate::input::StartDeliveryStreamEncryptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) delivery_stream_encryption_configuration_input:
@@ -1441,7 +1464,7 @@ pub mod start_delivery_stream_encryption_input {
             self,
         ) -> Result<
             crate::input::StartDeliveryStreamEncryptionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StartDeliveryStreamEncryptionInput {
                 delivery_stream_name: self.delivery_stream_name,
@@ -1464,13 +1487,13 @@ impl StartDeliveryStreamEncryptionInput {
             crate::operation::StartDeliveryStreamEncryption,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartDeliveryStreamEncryptionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1478,8 +1501,10 @@ impl StartDeliveryStreamEncryptionInput {
             fn update_http_builder(
                 input: &crate::input::StartDeliveryStreamEncryptionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1567,7 +1592,7 @@ impl StartDeliveryStreamEncryptionInput {
 pub mod stop_delivery_stream_encryption_input {
 
     /// A builder for [`StopDeliveryStreamEncryptionInput`](crate::input::StopDeliveryStreamEncryptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
     }
@@ -1590,7 +1615,7 @@ pub mod stop_delivery_stream_encryption_input {
             self,
         ) -> Result<
             crate::input::StopDeliveryStreamEncryptionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StopDeliveryStreamEncryptionInput {
                 delivery_stream_name: self.delivery_stream_name,
@@ -1611,13 +1636,13 @@ impl StopDeliveryStreamEncryptionInput {
             crate::operation::StopDeliveryStreamEncryption,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StopDeliveryStreamEncryptionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1625,8 +1650,10 @@ impl StopDeliveryStreamEncryptionInput {
             fn update_http_builder(
                 input: &crate::input::StopDeliveryStreamEncryptionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1714,7 +1741,7 @@ impl StopDeliveryStreamEncryptionInput {
 pub mod tag_delivery_stream_input {
 
     /// A builder for [`TagDeliveryStreamInput`](crate::input::TagDeliveryStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1755,8 +1782,10 @@ pub mod tag_delivery_stream_input {
         /// Consumes the builder and constructs a [`TagDeliveryStreamInput`](crate::input::TagDeliveryStreamInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagDeliveryStreamInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::TagDeliveryStreamInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::TagDeliveryStreamInput {
                 delivery_stream_name: self.delivery_stream_name,
                 tags: self.tags,
@@ -1777,13 +1806,13 @@ impl TagDeliveryStreamInput {
             crate::operation::TagDeliveryStream,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagDeliveryStreamInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1791,8 +1820,10 @@ impl TagDeliveryStreamInput {
             fn update_http_builder(
                 input: &crate::input::TagDeliveryStreamInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1881,7 +1912,7 @@ impl TagDeliveryStreamInput {
 pub mod untag_delivery_stream_input {
 
     /// A builder for [`UntagDeliveryStreamInput`](crate::input::UntagDeliveryStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1922,8 +1953,10 @@ pub mod untag_delivery_stream_input {
         /// Consumes the builder and constructs a [`UntagDeliveryStreamInput`](crate::input::UntagDeliveryStreamInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagDeliveryStreamInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UntagDeliveryStreamInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UntagDeliveryStreamInput {
                 delivery_stream_name: self.delivery_stream_name,
                 tag_keys: self.tag_keys,
@@ -1944,13 +1977,13 @@ impl UntagDeliveryStreamInput {
             crate::operation::UntagDeliveryStream,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagDeliveryStreamInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1958,8 +1991,10 @@ impl UntagDeliveryStreamInput {
             fn update_http_builder(
                 input: &crate::input::UntagDeliveryStreamInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2048,7 +2083,7 @@ impl UntagDeliveryStreamInput {
 pub mod update_destination_input {
 
     /// A builder for [`UpdateDestinationInput`](crate::input::UpdateDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) current_delivery_stream_version_id: std::option::Option<std::string::String>,
@@ -2224,8 +2259,10 @@ pub mod update_destination_input {
         /// Consumes the builder and constructs a [`UpdateDestinationInput`](crate::input::UpdateDestinationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateDestinationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateDestinationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateDestinationInput {
                 delivery_stream_name: self.delivery_stream_name,
                 current_delivery_stream_version_id: self.current_delivery_stream_version_id,
@@ -2255,13 +2292,13 @@ impl UpdateDestinationInput {
             crate::operation::UpdateDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2269,8 +2306,10 @@ impl UpdateDestinationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2357,7 +2396,7 @@ impl UpdateDestinationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDestinationInput {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
@@ -2450,44 +2489,10 @@ impl UpdateDestinationInput {
         self.http_endpoint_destination_update.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDestinationInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field(
-            "current_delivery_stream_version_id",
-            &self.current_delivery_stream_version_id,
-        );
-        formatter.field("destination_id", &self.destination_id);
-        formatter.field("s3_destination_update", &self.s3_destination_update);
-        formatter.field(
-            "extended_s3_destination_update",
-            &self.extended_s3_destination_update,
-        );
-        formatter.field(
-            "redshift_destination_update",
-            &self.redshift_destination_update,
-        );
-        formatter.field(
-            "elasticsearch_destination_update",
-            &self.elasticsearch_destination_update,
-        );
-        formatter.field(
-            "amazonopensearchservice_destination_update",
-            &self.amazonopensearchservice_destination_update,
-        );
-        formatter.field("splunk_destination_update", &self.splunk_destination_update);
-        formatter.field(
-            "http_endpoint_destination_update",
-            &self.http_endpoint_destination_update,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
@@ -2506,18 +2511,10 @@ impl UntagDeliveryStreamInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagDeliveryStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagDeliveryStreamInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagDeliveryStreamInput {
     /// <p>The name of the delivery stream to which you want to add the tags.</p>
     #[doc(hidden)]
@@ -2536,18 +2533,10 @@ impl TagDeliveryStreamInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagDeliveryStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagDeliveryStreamInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopDeliveryStreamEncryptionInput {
     /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
     #[doc(hidden)]
@@ -2559,17 +2548,10 @@ impl StopDeliveryStreamEncryptionInput {
         self.delivery_stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for StopDeliveryStreamEncryptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopDeliveryStreamEncryptionInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDeliveryStreamEncryptionInput {
     /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
     #[doc(hidden)]
@@ -2591,21 +2573,10 @@ impl StartDeliveryStreamEncryptionInput {
         self.delivery_stream_encryption_configuration_input.as_ref()
     }
 }
-impl std::fmt::Debug for StartDeliveryStreamEncryptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDeliveryStreamEncryptionInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field(
-            "delivery_stream_encryption_configuration_input",
-            &self.delivery_stream_encryption_configuration_input,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecordBatchInput {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
@@ -2624,18 +2595,10 @@ impl PutRecordBatchInput {
         self.records.as_deref()
     }
 }
-impl std::fmt::Debug for PutRecordBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRecordBatchInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("records", &self.records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecordInput {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
@@ -2654,18 +2617,10 @@ impl PutRecordInput {
         self.record.as_ref()
     }
 }
-impl std::fmt::Debug for PutRecordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRecordInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("record", &self.record);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForDeliveryStreamInput {
     /// <p>The name of the delivery stream whose tags you want to list.</p>
     #[doc(hidden)]
@@ -2691,19 +2646,10 @@ impl ListTagsForDeliveryStreamInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListTagsForDeliveryStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForDeliveryStreamInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("exclusive_start_tag_key", &self.exclusive_start_tag_key);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeliveryStreamsInput {
     /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
     #[doc(hidden)]
@@ -2739,22 +2685,10 @@ impl ListDeliveryStreamsInput {
         self.exclusive_start_delivery_stream_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListDeliveryStreamsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeliveryStreamsInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("delivery_stream_type", &self.delivery_stream_type);
-        formatter.field(
-            "exclusive_start_delivery_stream_name",
-            &self.exclusive_start_delivery_stream_name,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
@@ -2780,22 +2714,10 @@ impl DescribeDeliveryStreamInput {
         self.exclusive_start_destination_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDeliveryStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDeliveryStreamInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("limit", &self.limit);
-        formatter.field(
-            "exclusive_start_destination_id",
-            &self.exclusive_start_destination_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
@@ -2816,18 +2738,10 @@ impl DeleteDeliveryStreamInput {
         self.allow_force_delete
     }
 }
-impl std::fmt::Debug for DeleteDeliveryStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeliveryStreamInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("allow_force_delete", &self.allow_force_delete);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeliveryStreamInput {
     /// <p>The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
     #[doc(hidden)]
@@ -2953,50 +2867,5 @@ impl CreateDeliveryStreamInput {
     /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateDeliveryStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeliveryStreamInput");
-        formatter.field("delivery_stream_name", &self.delivery_stream_name);
-        formatter.field("delivery_stream_type", &self.delivery_stream_type);
-        formatter.field(
-            "kinesis_stream_source_configuration",
-            &self.kinesis_stream_source_configuration,
-        );
-        formatter.field(
-            "delivery_stream_encryption_configuration_input",
-            &self.delivery_stream_encryption_configuration_input,
-        );
-        formatter.field(
-            "s3_destination_configuration",
-            &self.s3_destination_configuration,
-        );
-        formatter.field(
-            "extended_s3_destination_configuration",
-            &self.extended_s3_destination_configuration,
-        );
-        formatter.field(
-            "redshift_destination_configuration",
-            &self.redshift_destination_configuration,
-        );
-        formatter.field(
-            "elasticsearch_destination_configuration",
-            &self.elasticsearch_destination_configuration,
-        );
-        formatter.field(
-            "amazonopensearchservice_destination_configuration",
-            &self.amazonopensearchservice_destination_configuration,
-        );
-        formatter.field(
-            "splunk_destination_configuration",
-            &self.splunk_destination_configuration,
-        );
-        formatter.field(
-            "http_endpoint_destination_configuration",
-            &self.http_endpoint_destination_configuration,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

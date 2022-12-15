@@ -2,7 +2,7 @@
 
 /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArtifactConfigInput {
     /// <p>A structure that contains the configuration of the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3. Artifact encryption functionality is available only for canaries that use Synthetics runtime version syn-nodejs-puppeteer-3.3 or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_artifact_encryption.html">Encrypting canary artifacts</a> </p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl ArtifactConfigInput {
         self.s3_encryption.as_ref()
     }
 }
-impl std::fmt::Debug for ArtifactConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArtifactConfigInput");
-        formatter.field("s3_encryption", &self.s3_encryption);
-        formatter.finish()
-    }
-}
 /// See [`ArtifactConfigInput`](crate::model::ArtifactConfigInput).
 pub mod artifact_config_input {
 
     /// A builder for [`ArtifactConfigInput`](crate::model::ArtifactConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_encryption: std::option::Option<crate::model::S3EncryptionConfig>,
     }
@@ -61,7 +54,7 @@ impl ArtifactConfigInput {
 /// <p>A structure that contains the configuration of encryption-at-rest settings for canary artifacts that the canary uploads to Amazon S3. </p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_artifact_encryption.html">Encrypting canary artifacts</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3EncryptionConfig {
     /// <p> The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code> to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <code>SSE-KMS</code> to use server-side encryption with a customer-managed KMS key.</p>
     /// <p>If you omit this parameter, an Amazon Web Services-managed KMS key is used. </p>
@@ -82,19 +75,11 @@ impl S3EncryptionConfig {
         self.kms_key_arn.as_deref()
     }
 }
-impl std::fmt::Debug for S3EncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3EncryptionConfig");
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
-    }
-}
 /// See [`S3EncryptionConfig`](crate::model::S3EncryptionConfig).
 pub mod s3_encryption_config {
 
     /// A builder for [`S3EncryptionConfig`](crate::model::S3EncryptionConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_mode: std::option::Option<crate::model::EncryptionMode>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
@@ -141,6 +126,41 @@ impl S3EncryptionConfig {
     }
 }
 
+/// When writing a match expression against `EncryptionMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let encryptionmode = unimplemented!();
+/// match encryptionmode {
+///     EncryptionMode::SseKms => { /* ... */ },
+///     EncryptionMode::SseS3 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `encryptionmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EncryptionMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EncryptionMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EncryptionMode::NewFeature` is defined.
+/// Specifically, when `encryptionmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EncryptionMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -157,15 +177,15 @@ pub enum EncryptionMode {
     SseKms,
     #[allow(missing_docs)] // documentation missing in model
     SseS3,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EncryptionMode {
     fn from(s: &str) -> Self {
         match s {
             "SSE_KMS" => EncryptionMode::SseKms,
             "SSE_S3" => EncryptionMode::SseS3,
-            other => EncryptionMode::Unknown(other.to_owned()),
+            other => EncryptionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -182,11 +202,11 @@ impl EncryptionMode {
         match self {
             EncryptionMode::SseKms => "SSE_KMS",
             EncryptionMode::SseS3 => "SSE_S3",
-            EncryptionMode::Unknown(s) => s.as_ref(),
+            EncryptionMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SSE_KMS", "SSE_S3"]
     }
 }
@@ -199,7 +219,7 @@ impl AsRef<str> for EncryptionMode {
 /// <p>An object that specifies what screenshots to use as a baseline for visual monitoring by this canary. It can optionally also specify parts of the screenshots to ignore during the visual monitoring comparison.</p>
 /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VisualReferenceInput {
     /// <p>An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If there is a screenshot that you don't want to be used for visual monitoring, remove it from this array.</p>
     #[doc(hidden)]
@@ -218,19 +238,11 @@ impl VisualReferenceInput {
         self.base_canary_run_id.as_deref()
     }
 }
-impl std::fmt::Debug for VisualReferenceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VisualReferenceInput");
-        formatter.field("base_screenshots", &self.base_screenshots);
-        formatter.field("base_canary_run_id", &self.base_canary_run_id);
-        formatter.finish()
-    }
-}
 /// See [`VisualReferenceInput`](crate::model::VisualReferenceInput).
 pub mod visual_reference_input {
 
     /// A builder for [`VisualReferenceInput`](crate::model::VisualReferenceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base_screenshots:
             std::option::Option<std::vec::Vec<crate::model::BaseScreenshot>>,
@@ -287,7 +299,7 @@ impl VisualReferenceInput {
 
 /// <p>A structure representing a screenshot that is used as a baseline during visual monitoring comparisons made by the canary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BaseScreenshot {
     /// <p>The name of the screenshot. This is generated the first time the canary is run after the <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.</p>
     #[doc(hidden)]
@@ -306,19 +318,11 @@ impl BaseScreenshot {
         self.ignore_coordinates.as_deref()
     }
 }
-impl std::fmt::Debug for BaseScreenshot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BaseScreenshot");
-        formatter.field("screenshot_name", &self.screenshot_name);
-        formatter.field("ignore_coordinates", &self.ignore_coordinates);
-        formatter.finish()
-    }
-}
 /// See [`BaseScreenshot`](crate::model::BaseScreenshot).
 pub mod base_screenshot {
 
     /// A builder for [`BaseScreenshot`](crate::model::BaseScreenshot).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) screenshot_name: std::option::Option<std::string::String>,
         pub(crate) ignore_coordinates: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -374,7 +378,7 @@ impl BaseScreenshot {
 
 /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfigInput {
     /// <p>The IDs of the subnets where this canary is to run.</p>
     #[doc(hidden)]
@@ -393,19 +397,11 @@ impl VpcConfigInput {
         self.security_group_ids.as_deref()
     }
 }
-impl std::fmt::Debug for VpcConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfigInput");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
-    }
-}
 /// See [`VpcConfigInput`](crate::model::VpcConfigInput).
 pub mod vpc_config_input {
 
     /// A builder for [`VpcConfigInput`](crate::model::VpcConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -467,7 +463,7 @@ impl VpcConfigInput {
 
 /// <p>A structure that contains input information for a canary run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CanaryRunConfigInput {
     /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer than the frequency of the runs of this canary.</p>
     /// <p>If you omit this field, the frequency of the canary is used as this value, up to a maximum of 14 minutes.</p>
@@ -516,21 +512,11 @@ impl CanaryRunConfigInput {
         self.environment_variables.as_ref()
     }
 }
-impl std::fmt::Debug for CanaryRunConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CanaryRunConfigInput");
-        formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
-        formatter.field("memory_in_mb", &self.memory_in_mb);
-        formatter.field("active_tracing", &self.active_tracing);
-        formatter.field("environment_variables", &self.environment_variables);
-        formatter.finish()
-    }
-}
 /// See [`CanaryRunConfigInput`](crate::model::CanaryRunConfigInput).
 pub mod canary_run_config_input {
 
     /// A builder for [`CanaryRunConfigInput`](crate::model::CanaryRunConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_in_seconds: std::option::Option<i32>,
         pub(crate) memory_in_mb: std::option::Option<i32>,
@@ -627,7 +613,7 @@ impl CanaryRunConfigInput {
 
 /// <p>This structure specifies how often a canary is to make runs and the date and time when it should stop making runs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CanaryScheduleInput {
     /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p>
     /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p>
@@ -654,19 +640,11 @@ impl CanaryScheduleInput {
         self.duration_in_seconds
     }
 }
-impl std::fmt::Debug for CanaryScheduleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CanaryScheduleInput");
-        formatter.field("expression", &self.expression);
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.finish()
-    }
-}
 /// See [`CanaryScheduleInput`](crate::model::CanaryScheduleInput).
 pub mod canary_schedule_input {
 
     /// A builder for [`CanaryScheduleInput`](crate::model::CanaryScheduleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
         pub(crate) duration_in_seconds: std::option::Option<i64>,
@@ -718,7 +696,7 @@ impl CanaryScheduleInput {
 
 /// <p>Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CanaryCodeInput {
     /// <p>If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as the start of the bucket name.</p>
     #[doc(hidden)]
@@ -760,22 +738,11 @@ impl CanaryCodeInput {
         self.handler.as_deref()
     }
 }
-impl std::fmt::Debug for CanaryCodeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CanaryCodeInput");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_key", &self.s3_key);
-        formatter.field("s3_version", &self.s3_version);
-        formatter.field("zip_file", &self.zip_file);
-        formatter.field("handler", &self.handler);
-        formatter.finish()
-    }
-}
 /// See [`CanaryCodeInput`](crate::model::CanaryCodeInput).
 pub mod canary_code_input {
 
     /// A builder for [`CanaryCodeInput`](crate::model::CanaryCodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
         pub(crate) s3_key: std::option::Option<std::string::String>,
@@ -857,7 +824,7 @@ impl CanaryCodeInput {
 
 /// <p>A structure containing some information about a group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupSummary {
     /// <p>The unique ID of the group.</p>
     #[doc(hidden)]
@@ -883,20 +850,11 @@ impl GroupSummary {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 /// See [`GroupSummary`](crate::model::GroupSummary).
 pub mod group_summary {
 
     /// A builder for [`GroupSummary`](crate::model::GroupSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -952,7 +910,7 @@ impl GroupSummary {
 
 /// <p>This structure contains information about one group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Group {
     /// <p>The unique ID of the group.</p>
     #[doc(hidden)]
@@ -1003,23 +961,11 @@ impl Group {
         self.last_modified_time.as_ref()
     }
 }
-impl std::fmt::Debug for Group {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Group");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.finish()
-    }
-}
 /// See [`Group`](crate::model::Group).
 pub mod group {
 
     /// A builder for [`Group`](crate::model::Group).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1134,7 +1080,7 @@ impl Group {
 
 /// <p>This structure contains the details about one run of one canary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CanaryRun {
     /// <p>A unique ID that identifies this canary run.</p>
     #[doc(hidden)]
@@ -1174,22 +1120,11 @@ impl CanaryRun {
         self.artifact_s3_location.as_deref()
     }
 }
-impl std::fmt::Debug for CanaryRun {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CanaryRun");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("timeline", &self.timeline);
-        formatter.field("artifact_s3_location", &self.artifact_s3_location);
-        formatter.finish()
-    }
-}
 /// See [`CanaryRun`](crate::model::CanaryRun).
 pub mod canary_run {
 
     /// A builder for [`CanaryRun`](crate::model::CanaryRun).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1278,7 +1213,7 @@ impl CanaryRun {
 
 /// <p>This structure contains the start and end times of a single canary run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CanaryRunTimeline {
     /// <p>The start time of the run.</p>
     #[doc(hidden)]
@@ -1297,19 +1232,11 @@ impl CanaryRunTimeline {
         self.completed.as_ref()
     }
 }
-impl std::fmt::Debug for CanaryRunTimeline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CanaryRunTimeline");
-        formatter.field("started", &self.started);
-        formatter.field("completed", &self.completed);
-        formatter.finish()
-    }
-}
 /// See [`CanaryRunTimeline`](crate::model::CanaryRunTimeline).
 pub mod canary_run_timeline {
 
     /// A builder for [`CanaryRunTimeline`](crate::model::CanaryRunTimeline).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) started: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completed: std::option::Option<aws_smithy_types::DateTime>,
@@ -1359,7 +1286,7 @@ impl CanaryRunTimeline {
 
 /// <p>This structure contains the status information about a canary run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CanaryRunStatus {
     /// <p>The current state of the run.</p>
     #[doc(hidden)]
@@ -1387,20 +1314,11 @@ impl CanaryRunStatus {
         self.state_reason_code.as_ref()
     }
 }
-impl std::fmt::Debug for CanaryRunStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CanaryRunStatus");
-        formatter.field("state", &self.state);
-        formatter.field("state_reason", &self.state_reason);
-        formatter.field("state_reason_code", &self.state_reason_code);
-        formatter.finish()
-    }
-}
 /// See [`CanaryRunStatus`](crate::model::CanaryRunStatus).
 pub mod canary_run_status {
 
     /// A builder for [`CanaryRunStatus`](crate::model::CanaryRunStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::CanaryRunState>,
         pub(crate) state_reason: std::option::Option<std::string::String>,
@@ -1460,6 +1378,41 @@ impl CanaryRunStatus {
     }
 }
 
+/// When writing a match expression against `CanaryRunStateReasonCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let canaryrunstatereasoncode = unimplemented!();
+/// match canaryrunstatereasoncode {
+///     CanaryRunStateReasonCode::CanaryFailure => { /* ... */ },
+///     CanaryRunStateReasonCode::ExecutionFailure => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `canaryrunstatereasoncode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CanaryRunStateReasonCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CanaryRunStateReasonCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CanaryRunStateReasonCode::NewFeature` is defined.
+/// Specifically, when `canaryrunstatereasoncode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CanaryRunStateReasonCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1476,15 +1429,17 @@ pub enum CanaryRunStateReasonCode {
     CanaryFailure,
     #[allow(missing_docs)] // documentation missing in model
     ExecutionFailure,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CanaryRunStateReasonCode {
     fn from(s: &str) -> Self {
         match s {
             "CANARY_FAILURE" => CanaryRunStateReasonCode::CanaryFailure,
             "EXECUTION_FAILURE" => CanaryRunStateReasonCode::ExecutionFailure,
-            other => CanaryRunStateReasonCode::Unknown(other.to_owned()),
+            other => CanaryRunStateReasonCode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1501,11 +1456,11 @@ impl CanaryRunStateReasonCode {
         match self {
             CanaryRunStateReasonCode::CanaryFailure => "CANARY_FAILURE",
             CanaryRunStateReasonCode::ExecutionFailure => "EXECUTION_FAILURE",
-            CanaryRunStateReasonCode::Unknown(s) => s.as_ref(),
+            CanaryRunStateReasonCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANARY_FAILURE", "EXECUTION_FAILURE"]
     }
 }
@@ -1515,6 +1470,42 @@ impl AsRef<str> for CanaryRunStateReasonCode {
     }
 }
 
+/// When writing a match expression against `CanaryRunState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let canaryrunstate = unimplemented!();
+/// match canaryrunstate {
+///     CanaryRunState::Failed => { /* ... */ },
+///     CanaryRunState::Passed => { /* ... */ },
+///     CanaryRunState::Running => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `canaryrunstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CanaryRunState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CanaryRunState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CanaryRunState::NewFeature` is defined.
+/// Specifically, when `canaryrunstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CanaryRunState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1533,8 +1524,8 @@ pub enum CanaryRunState {
     Passed,
     #[allow(missing_docs)] // documentation missing in model
     Running,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CanaryRunState {
     fn from(s: &str) -> Self {
@@ -1542,7 +1533,7 @@ impl std::convert::From<&str> for CanaryRunState {
             "FAILED" => CanaryRunState::Failed,
             "PASSED" => CanaryRunState::Passed,
             "RUNNING" => CanaryRunState::Running,
-            other => CanaryRunState::Unknown(other.to_owned()),
+            other => CanaryRunState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1560,11 +1551,11 @@ impl CanaryRunState {
             CanaryRunState::Failed => "FAILED",
             CanaryRunState::Passed => "PASSED",
             CanaryRunState::Running => "RUNNING",
-            CanaryRunState::Unknown(s) => s.as_ref(),
+            CanaryRunState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PASSED", "RUNNING"]
     }
 }
@@ -1576,7 +1567,7 @@ impl AsRef<str> for CanaryRunState {
 
 /// <p>This structure contains all information about one canary in your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Canary {
     /// <p>The unique ID of this canary.</p>
     #[doc(hidden)]
@@ -1704,40 +1695,11 @@ impl Canary {
         self.artifact_config.as_ref()
     }
 }
-impl std::fmt::Debug for Canary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Canary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("code", &self.code);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("run_config", &self.run_config);
-        formatter.field(
-            "success_retention_period_in_days",
-            &self.success_retention_period_in_days,
-        );
-        formatter.field(
-            "failure_retention_period_in_days",
-            &self.failure_retention_period_in_days,
-        );
-        formatter.field("status", &self.status);
-        formatter.field("timeline", &self.timeline);
-        formatter.field("artifact_s3_location", &self.artifact_s3_location);
-        formatter.field("engine_arn", &self.engine_arn);
-        formatter.field("runtime_version", &self.runtime_version);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("visual_reference", &self.visual_reference);
-        formatter.field("tags", &self.tags);
-        formatter.field("artifact_config", &self.artifact_config);
-        formatter.finish()
-    }
-}
 /// See [`Canary`](crate::model::Canary).
 pub mod canary {
 
     /// A builder for [`Canary`](crate::model::Canary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2017,7 +1979,7 @@ impl Canary {
 
 /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ArtifactConfigOutput {
     /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3. </p>
     #[doc(hidden)]
@@ -2029,18 +1991,11 @@ impl ArtifactConfigOutput {
         self.s3_encryption.as_ref()
     }
 }
-impl std::fmt::Debug for ArtifactConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ArtifactConfigOutput");
-        formatter.field("s3_encryption", &self.s3_encryption);
-        formatter.finish()
-    }
-}
 /// See [`ArtifactConfigOutput`](crate::model::ArtifactConfigOutput).
 pub mod artifact_config_output {
 
     /// A builder for [`ArtifactConfigOutput`](crate::model::ArtifactConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_encryption: std::option::Option<crate::model::S3EncryptionConfig>,
     }
@@ -2076,7 +2031,7 @@ impl ArtifactConfigOutput {
 /// <p>If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary run that is used as the baseline for screenshots, and the coordinates of any parts of those screenshots that are ignored during visual monitoring comparison.</p>
 /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VisualReferenceOutput {
     /// <p>An array of screenshots that are used as the baseline for comparisons during visual monitoring.</p>
     #[doc(hidden)]
@@ -2095,19 +2050,11 @@ impl VisualReferenceOutput {
         self.base_canary_run_id.as_deref()
     }
 }
-impl std::fmt::Debug for VisualReferenceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VisualReferenceOutput");
-        formatter.field("base_screenshots", &self.base_screenshots);
-        formatter.field("base_canary_run_id", &self.base_canary_run_id);
-        formatter.finish()
-    }
-}
 /// See [`VisualReferenceOutput`](crate::model::VisualReferenceOutput).
 pub mod visual_reference_output {
 
     /// A builder for [`VisualReferenceOutput`](crate::model::VisualReferenceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base_screenshots:
             std::option::Option<std::vec::Vec<crate::model::BaseScreenshot>>,
@@ -2164,7 +2111,7 @@ impl VisualReferenceOutput {
 
 /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfigOutput {
     /// <p>The IDs of the VPC where this canary is to run.</p>
     #[doc(hidden)]
@@ -2190,20 +2137,11 @@ impl VpcConfigOutput {
         self.security_group_ids.as_deref()
     }
 }
-impl std::fmt::Debug for VpcConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfigOutput");
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
-    }
-}
 /// See [`VpcConfigOutput`](crate::model::VpcConfigOutput).
 pub mod vpc_config_output {
 
     /// A builder for [`VpcConfigOutput`](crate::model::VpcConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2277,7 +2215,7 @@ impl VpcConfigOutput {
 
 /// <p>This structure contains information about when the canary was created and modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CanaryTimeline {
     /// <p>The date and time the canary was created.</p>
     #[doc(hidden)]
@@ -2310,21 +2248,11 @@ impl CanaryTimeline {
         self.last_stopped.as_ref()
     }
 }
-impl std::fmt::Debug for CanaryTimeline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CanaryTimeline");
-        formatter.field("created", &self.created);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("last_started", &self.last_started);
-        formatter.field("last_stopped", &self.last_stopped);
-        formatter.finish()
-    }
-}
 /// See [`CanaryTimeline`](crate::model::CanaryTimeline).
 pub mod canary_timeline {
 
     /// A builder for [`CanaryTimeline`](crate::model::CanaryTimeline).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
@@ -2404,7 +2332,7 @@ impl CanaryTimeline {
 
 /// <p>A structure that contains the current state of the canary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CanaryStatus {
     /// <p>The current state of the canary.</p>
     #[doc(hidden)]
@@ -2430,20 +2358,11 @@ impl CanaryStatus {
         self.state_reason_code.as_ref()
     }
 }
-impl std::fmt::Debug for CanaryStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CanaryStatus");
-        formatter.field("state", &self.state);
-        formatter.field("state_reason", &self.state_reason);
-        formatter.field("state_reason_code", &self.state_reason_code);
-        formatter.finish()
-    }
-}
 /// See [`CanaryStatus`](crate::model::CanaryStatus).
 pub mod canary_status {
 
     /// A builder for [`CanaryStatus`](crate::model::CanaryStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::CanaryState>,
         pub(crate) state_reason: std::option::Option<std::string::String>,
@@ -2500,6 +2419,51 @@ impl CanaryStatus {
     }
 }
 
+/// When writing a match expression against `CanaryStateReasonCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let canarystatereasoncode = unimplemented!();
+/// match canarystatereasoncode {
+///     CanaryStateReasonCode::CreateFailed => { /* ... */ },
+///     CanaryStateReasonCode::CreateInProgress => { /* ... */ },
+///     CanaryStateReasonCode::CreatePending => { /* ... */ },
+///     CanaryStateReasonCode::DeleteFailed => { /* ... */ },
+///     CanaryStateReasonCode::DeleteInProgress => { /* ... */ },
+///     CanaryStateReasonCode::InvalidPermissions => { /* ... */ },
+///     CanaryStateReasonCode::RollbackComplete => { /* ... */ },
+///     CanaryStateReasonCode::RollbackFailed => { /* ... */ },
+///     CanaryStateReasonCode::SyncDeleteInProgress => { /* ... */ },
+///     CanaryStateReasonCode::UpdateComplete => { /* ... */ },
+///     CanaryStateReasonCode::UpdateInProgress => { /* ... */ },
+///     CanaryStateReasonCode::UpdatePending => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `canarystatereasoncode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CanaryStateReasonCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CanaryStateReasonCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CanaryStateReasonCode::NewFeature` is defined.
+/// Specifically, when `canarystatereasoncode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CanaryStateReasonCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2536,8 +2500,8 @@ pub enum CanaryStateReasonCode {
     UpdateInProgress,
     #[allow(missing_docs)] // documentation missing in model
     UpdatePending,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CanaryStateReasonCode {
     fn from(s: &str) -> Self {
@@ -2554,7 +2518,9 @@ impl std::convert::From<&str> for CanaryStateReasonCode {
             "UPDATE_COMPLETE" => CanaryStateReasonCode::UpdateComplete,
             "UPDATE_IN_PROGRESS" => CanaryStateReasonCode::UpdateInProgress,
             "UPDATE_PENDING" => CanaryStateReasonCode::UpdatePending,
-            other => CanaryStateReasonCode::Unknown(other.to_owned()),
+            other => {
+                CanaryStateReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2581,11 +2547,11 @@ impl CanaryStateReasonCode {
             CanaryStateReasonCode::UpdateComplete => "UPDATE_COMPLETE",
             CanaryStateReasonCode::UpdateInProgress => "UPDATE_IN_PROGRESS",
             CanaryStateReasonCode::UpdatePending => "UPDATE_PENDING",
-            CanaryStateReasonCode::Unknown(s) => s.as_ref(),
+            CanaryStateReasonCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
             "CREATE_IN_PROGRESS",
@@ -2608,6 +2574,48 @@ impl AsRef<str> for CanaryStateReasonCode {
     }
 }
 
+/// When writing a match expression against `CanaryState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let canarystate = unimplemented!();
+/// match canarystate {
+///     CanaryState::Creating => { /* ... */ },
+///     CanaryState::Deleting => { /* ... */ },
+///     CanaryState::Error => { /* ... */ },
+///     CanaryState::Ready => { /* ... */ },
+///     CanaryState::Running => { /* ... */ },
+///     CanaryState::Starting => { /* ... */ },
+///     CanaryState::Stopped => { /* ... */ },
+///     CanaryState::Stopping => { /* ... */ },
+///     CanaryState::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `canarystate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CanaryState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CanaryState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CanaryState::NewFeature` is defined.
+/// Specifically, when `canarystate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CanaryState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2638,8 +2646,8 @@ pub enum CanaryState {
     Stopping,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CanaryState {
     fn from(s: &str) -> Self {
@@ -2653,7 +2661,7 @@ impl std::convert::From<&str> for CanaryState {
             "STOPPED" => CanaryState::Stopped,
             "STOPPING" => CanaryState::Stopping,
             "UPDATING" => CanaryState::Updating,
-            other => CanaryState::Unknown(other.to_owned()),
+            other => CanaryState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2677,11 +2685,11 @@ impl CanaryState {
             CanaryState::Stopped => "STOPPED",
             CanaryState::Stopping => "STOPPING",
             CanaryState::Updating => "UPDATING",
-            CanaryState::Unknown(s) => s.as_ref(),
+            CanaryState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATING", "DELETING", "ERROR", "READY", "RUNNING", "STARTING", "STOPPED", "STOPPING",
             "UPDATING",
@@ -2696,7 +2704,7 @@ impl AsRef<str> for CanaryState {
 
 /// <p>A structure that contains information about a canary run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CanaryRunConfigOutput {
     /// <p>How long the canary is allowed to run before it must stop.</p>
     #[doc(hidden)]
@@ -2722,20 +2730,11 @@ impl CanaryRunConfigOutput {
         self.active_tracing
     }
 }
-impl std::fmt::Debug for CanaryRunConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CanaryRunConfigOutput");
-        formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
-        formatter.field("memory_in_mb", &self.memory_in_mb);
-        formatter.field("active_tracing", &self.active_tracing);
-        formatter.finish()
-    }
-}
 /// See [`CanaryRunConfigOutput`](crate::model::CanaryRunConfigOutput).
 pub mod canary_run_config_output {
 
     /// A builder for [`CanaryRunConfigOutput`](crate::model::CanaryRunConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_in_seconds: std::option::Option<i32>,
         pub(crate) memory_in_mb: std::option::Option<i32>,
@@ -2791,7 +2790,7 @@ impl CanaryRunConfigOutput {
 
 /// <p>How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CanaryScheduleOutput {
     /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p>
     /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p>
@@ -2818,19 +2817,11 @@ impl CanaryScheduleOutput {
         self.duration_in_seconds
     }
 }
-impl std::fmt::Debug for CanaryScheduleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CanaryScheduleOutput");
-        formatter.field("expression", &self.expression);
-        formatter.field("duration_in_seconds", &self.duration_in_seconds);
-        formatter.finish()
-    }
-}
 /// See [`CanaryScheduleOutput`](crate::model::CanaryScheduleOutput).
 pub mod canary_schedule_output {
 
     /// A builder for [`CanaryScheduleOutput`](crate::model::CanaryScheduleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
         pub(crate) duration_in_seconds: std::option::Option<i64>,
@@ -2882,7 +2873,7 @@ impl CanaryScheduleOutput {
 
 /// <p>This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CanaryCodeOutput {
     /// <p>The ARN of the Lambda layer where Synthetics stores the canary script code.</p>
     #[doc(hidden)]
@@ -2901,19 +2892,11 @@ impl CanaryCodeOutput {
         self.handler.as_deref()
     }
 }
-impl std::fmt::Debug for CanaryCodeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CanaryCodeOutput");
-        formatter.field("source_location_arn", &self.source_location_arn);
-        formatter.field("handler", &self.handler);
-        formatter.finish()
-    }
-}
 /// See [`CanaryCodeOutput`](crate::model::CanaryCodeOutput).
 pub mod canary_code_output {
 
     /// A builder for [`CanaryCodeOutput`](crate::model::CanaryCodeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_location_arn: std::option::Option<std::string::String>,
         pub(crate) handler: std::option::Option<std::string::String>,
@@ -2960,7 +2943,7 @@ impl CanaryCodeOutput {
 
 /// <p>This structure contains information about one canary runtime version. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuntimeVersion {
     /// <p>The name of the runtime version. For a list of valid runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
     #[doc(hidden)]
@@ -2993,21 +2976,11 @@ impl RuntimeVersion {
         self.deprecation_date.as_ref()
     }
 }
-impl std::fmt::Debug for RuntimeVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuntimeVersion");
-        formatter.field("version_name", &self.version_name);
-        formatter.field("description", &self.description);
-        formatter.field("release_date", &self.release_date);
-        formatter.field("deprecation_date", &self.deprecation_date);
-        formatter.finish()
-    }
-}
 /// See [`RuntimeVersion`](crate::model::RuntimeVersion).
 pub mod runtime_version {
 
     /// A builder for [`RuntimeVersion`](crate::model::RuntimeVersion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3081,7 +3054,7 @@ impl RuntimeVersion {
 
 /// <p>This structure contains information about the most recent run of a single canary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CanaryLastRun {
     /// <p>The name of the canary.</p>
     #[doc(hidden)]
@@ -3100,19 +3073,11 @@ impl CanaryLastRun {
         self.last_run.as_ref()
     }
 }
-impl std::fmt::Debug for CanaryLastRun {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CanaryLastRun");
-        formatter.field("canary_name", &self.canary_name);
-        formatter.field("last_run", &self.last_run);
-        formatter.finish()
-    }
-}
 /// See [`CanaryLastRun`](crate::model::CanaryLastRun).
 pub mod canary_last_run {
 
     /// A builder for [`CanaryLastRun`](crate::model::CanaryLastRun).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canary_name: std::option::Option<std::string::String>,
         pub(crate) last_run: std::option::Option<crate::model::CanaryRun>,

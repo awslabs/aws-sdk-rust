@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod cancel_task_execution_input {
 
     /// A builder for [`CancelTaskExecutionInput`](crate::input::CancelTaskExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_execution_arn: std::option::Option<std::string::String>,
     }
@@ -26,8 +26,10 @@ pub mod cancel_task_execution_input {
         /// Consumes the builder and constructs a [`CancelTaskExecutionInput`](crate::input::CancelTaskExecutionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelTaskExecutionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CancelTaskExecutionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CancelTaskExecutionInput {
                 task_execution_arn: self.task_execution_arn,
             })
@@ -47,13 +49,13 @@ impl CancelTaskExecutionInput {
             crate::operation::CancelTaskExecution,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CancelTaskExecutionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -61,8 +63,10 @@ impl CancelTaskExecutionInput {
             fn update_http_builder(
                 input: &crate::input::CancelTaskExecutionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -151,7 +155,7 @@ impl CancelTaskExecutionInput {
 pub mod create_agent_input {
 
     /// A builder for [`CreateAgentInput`](crate::input::CreateAgentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activation_key: std::option::Option<std::string::String>,
         pub(crate) agent_name: std::option::Option<std::string::String>,
@@ -267,7 +271,7 @@ pub mod create_agent_input {
         /// Consumes the builder and constructs a [`CreateAgentInput`](crate::input::CreateAgentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAgentInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateAgentInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateAgentInput {
                 activation_key: self.activation_key,
@@ -293,13 +297,13 @@ impl CreateAgentInput {
             crate::operation::CreateAgent,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateAgentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -307,8 +311,10 @@ impl CreateAgentInput {
             fn update_http_builder(
                 input: &crate::input::CreateAgentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -397,7 +403,7 @@ impl CreateAgentInput {
 pub mod create_location_efs_input {
 
     /// A builder for [`CreateLocationEfsInput`](crate::input::CreateLocationEfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
         pub(crate) efs_filesystem_arn: std::option::Option<std::string::String>,
@@ -517,8 +523,10 @@ pub mod create_location_efs_input {
         /// Consumes the builder and constructs a [`CreateLocationEfsInput`](crate::input::CreateLocationEfsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateLocationEfsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateLocationEfsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateLocationEfsInput {
                 subdirectory: self.subdirectory,
                 efs_filesystem_arn: self.efs_filesystem_arn,
@@ -544,13 +552,13 @@ impl CreateLocationEfsInput {
             crate::operation::CreateLocationEfs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLocationEfsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -558,8 +566,10 @@ impl CreateLocationEfsInput {
             fn update_http_builder(
                 input: &crate::input::CreateLocationEfsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -648,7 +658,7 @@ impl CreateLocationEfsInput {
 pub mod create_location_fsx_lustre_input {
 
     /// A builder for [`CreateLocationFsxLustreInput`](crate::input::CreateLocationFsxLustreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fsx_filesystem_arn: std::option::Option<std::string::String>,
         pub(crate) security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -722,7 +732,7 @@ pub mod create_location_fsx_lustre_input {
             self,
         ) -> Result<
             crate::input::CreateLocationFsxLustreInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateLocationFsxLustreInput {
                 fsx_filesystem_arn: self.fsx_filesystem_arn,
@@ -746,13 +756,13 @@ impl CreateLocationFsxLustreInput {
             crate::operation::CreateLocationFsxLustre,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLocationFsxLustreInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -760,8 +770,10 @@ impl CreateLocationFsxLustreInput {
             fn update_http_builder(
                 input: &crate::input::CreateLocationFsxLustreInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -852,7 +864,7 @@ impl CreateLocationFsxLustreInput {
 pub mod create_location_fsx_ontap_input {
 
     /// A builder for [`CreateLocationFsxOntapInput`](crate::input::CreateLocationFsxOntapInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol: std::option::Option<crate::model::FsxProtocol>,
         pub(crate) security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -957,8 +969,10 @@ pub mod create_location_fsx_ontap_input {
         /// Consumes the builder and constructs a [`CreateLocationFsxOntapInput`](crate::input::CreateLocationFsxOntapInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateLocationFsxOntapInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateLocationFsxOntapInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateLocationFsxOntapInput {
                 protocol: self.protocol,
                 security_group_arns: self.security_group_arns,
@@ -982,13 +996,13 @@ impl CreateLocationFsxOntapInput {
             crate::operation::CreateLocationFsxOntap,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLocationFsxOntapInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -996,8 +1010,10 @@ impl CreateLocationFsxOntapInput {
             fn update_http_builder(
                 input: &crate::input::CreateLocationFsxOntapInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1088,7 +1104,7 @@ impl CreateLocationFsxOntapInput {
 pub mod create_location_fsx_open_zfs_input {
 
     /// A builder for [`CreateLocationFsxOpenZfsInput`](crate::input::CreateLocationFsxOpenZfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fsx_filesystem_arn: std::option::Option<std::string::String>,
         pub(crate) protocol: std::option::Option<crate::model::FsxProtocol>,
@@ -1176,7 +1192,7 @@ pub mod create_location_fsx_open_zfs_input {
             self,
         ) -> Result<
             crate::input::CreateLocationFsxOpenZfsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateLocationFsxOpenZfsInput {
                 fsx_filesystem_arn: self.fsx_filesystem_arn,
@@ -1201,13 +1217,13 @@ impl CreateLocationFsxOpenZfsInput {
             crate::operation::CreateLocationFsxOpenZfs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLocationFsxOpenZfsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1215,8 +1231,10 @@ impl CreateLocationFsxOpenZfsInput {
             fn update_http_builder(
                 input: &crate::input::CreateLocationFsxOpenZfsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1307,7 +1325,7 @@ impl CreateLocationFsxOpenZfsInput {
 pub mod create_location_fsx_windows_input {
 
     /// A builder for [`CreateLocationFsxWindowsInput`](crate::input::CreateLocationFsxWindowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
         pub(crate) fsx_filesystem_arn: std::option::Option<std::string::String>,
@@ -1428,7 +1446,7 @@ pub mod create_location_fsx_windows_input {
             self,
         ) -> Result<
             crate::input::CreateLocationFsxWindowsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateLocationFsxWindowsInput {
                 subdirectory: self.subdirectory,
@@ -1439,6 +1457,19 @@ pub mod create_location_fsx_windows_input {
                 domain: self.domain,
                 password: self.password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("subdirectory", &self.subdirectory);
+            formatter.field("fsx_filesystem_arn", &self.fsx_filesystem_arn);
+            formatter.field("security_group_arns", &self.security_group_arns);
+            formatter.field("tags", &self.tags);
+            formatter.field("user", &self.user);
+            formatter.field("domain", &self.domain);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1455,13 +1486,13 @@ impl CreateLocationFsxWindowsInput {
             crate::operation::CreateLocationFsxWindows,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLocationFsxWindowsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1469,8 +1500,10 @@ impl CreateLocationFsxWindowsInput {
             fn update_http_builder(
                 input: &crate::input::CreateLocationFsxWindowsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1561,7 +1594,7 @@ impl CreateLocationFsxWindowsInput {
 pub mod create_location_hdfs_input {
 
     /// A builder for [`CreateLocationHdfsInput`](crate::input::CreateLocationHdfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
         pub(crate) name_nodes: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
@@ -1772,8 +1805,10 @@ pub mod create_location_hdfs_input {
         /// Consumes the builder and constructs a [`CreateLocationHdfsInput`](crate::input::CreateLocationHdfsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateLocationHdfsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateLocationHdfsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateLocationHdfsInput {
                 subdirectory: self.subdirectory,
                 name_nodes: self.name_nodes,
@@ -1805,13 +1840,13 @@ impl CreateLocationHdfsInput {
             crate::operation::CreateLocationHdfs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLocationHdfsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1819,8 +1854,10 @@ impl CreateLocationHdfsInput {
             fn update_http_builder(
                 input: &crate::input::CreateLocationHdfsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1909,7 +1946,7 @@ impl CreateLocationHdfsInput {
 pub mod create_location_nfs_input {
 
     /// A builder for [`CreateLocationNfsInput`](crate::input::CreateLocationNfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
         pub(crate) server_hostname: std::option::Option<std::string::String>,
@@ -2005,8 +2042,10 @@ pub mod create_location_nfs_input {
         /// Consumes the builder and constructs a [`CreateLocationNfsInput`](crate::input::CreateLocationNfsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateLocationNfsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateLocationNfsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateLocationNfsInput {
                 subdirectory: self.subdirectory,
                 server_hostname: self.server_hostname,
@@ -2030,13 +2069,13 @@ impl CreateLocationNfsInput {
             crate::operation::CreateLocationNfs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLocationNfsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2044,8 +2083,10 @@ impl CreateLocationNfsInput {
             fn update_http_builder(
                 input: &crate::input::CreateLocationNfsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2134,7 +2175,7 @@ impl CreateLocationNfsInput {
 pub mod create_location_object_storage_input {
 
     /// A builder for [`CreateLocationObjectStorageInput`](crate::input::CreateLocationObjectStorageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) server_hostname: std::option::Option<std::string::String>,
         pub(crate) server_port: std::option::Option<i32>,
@@ -2266,7 +2307,7 @@ pub mod create_location_object_storage_input {
             self,
         ) -> Result<
             crate::input::CreateLocationObjectStorageInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateLocationObjectStorageInput {
                 server_hostname: self.server_hostname,
@@ -2279,6 +2320,21 @@ pub mod create_location_object_storage_input {
                 agent_arns: self.agent_arns,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("server_hostname", &self.server_hostname);
+            formatter.field("server_port", &self.server_port);
+            formatter.field("server_protocol", &self.server_protocol);
+            formatter.field("subdirectory", &self.subdirectory);
+            formatter.field("bucket_name", &self.bucket_name);
+            formatter.field("access_key", &self.access_key);
+            formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("agent_arns", &self.agent_arns);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -2295,13 +2351,13 @@ impl CreateLocationObjectStorageInput {
             crate::operation::CreateLocationObjectStorage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLocationObjectStorageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2309,8 +2365,10 @@ impl CreateLocationObjectStorageInput {
             fn update_http_builder(
                 input: &crate::input::CreateLocationObjectStorageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2398,7 +2456,7 @@ impl CreateLocationObjectStorageInput {
 pub mod create_location_s3_input {
 
     /// A builder for [`CreateLocationS3Input`](crate::input::CreateLocationS3Input).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
         pub(crate) s3_bucket_arn: std::option::Option<std::string::String>,
@@ -2499,8 +2557,10 @@ pub mod create_location_s3_input {
         /// Consumes the builder and constructs a [`CreateLocationS3Input`](crate::input::CreateLocationS3Input).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateLocationS3Input, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateLocationS3Input,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateLocationS3Input {
                 subdirectory: self.subdirectory,
                 s3_bucket_arn: self.s3_bucket_arn,
@@ -2525,13 +2585,13 @@ impl CreateLocationS3Input {
             crate::operation::CreateLocationS3,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLocationS3Input,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2539,8 +2599,10 @@ impl CreateLocationS3Input {
             fn update_http_builder(
                 input: &crate::input::CreateLocationS3Input,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2629,7 +2691,7 @@ impl CreateLocationS3Input {
 pub mod create_location_smb_input {
 
     /// A builder for [`CreateLocationSmbInput`](crate::input::CreateLocationSmbInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) subdirectory: std::option::Option<std::string::String>,
         pub(crate) server_hostname: std::option::Option<std::string::String>,
@@ -2760,8 +2822,10 @@ pub mod create_location_smb_input {
         /// Consumes the builder and constructs a [`CreateLocationSmbInput`](crate::input::CreateLocationSmbInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateLocationSmbInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateLocationSmbInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateLocationSmbInput {
                 subdirectory: self.subdirectory,
                 server_hostname: self.server_hostname,
@@ -2772,6 +2836,20 @@ pub mod create_location_smb_input {
                 mount_options: self.mount_options,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("subdirectory", &self.subdirectory);
+            formatter.field("server_hostname", &self.server_hostname);
+            formatter.field("user", &self.user);
+            formatter.field("domain", &self.domain);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("agent_arns", &self.agent_arns);
+            formatter.field("mount_options", &self.mount_options);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -2788,13 +2866,13 @@ impl CreateLocationSmbInput {
             crate::operation::CreateLocationSmb,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateLocationSmbInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2802,8 +2880,10 @@ impl CreateLocationSmbInput {
             fn update_http_builder(
                 input: &crate::input::CreateLocationSmbInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2892,7 +2972,7 @@ impl CreateLocationSmbInput {
 pub mod create_task_input {
 
     /// A builder for [`CreateTaskInput`](crate::input::CreateTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_location_arn: std::option::Option<std::string::String>,
         pub(crate) destination_location_arn: std::option::Option<std::string::String>,
@@ -3041,7 +3121,8 @@ pub mod create_task_input {
         /// Consumes the builder and constructs a [`CreateTaskInput`](crate::input::CreateTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTaskInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::CreateTaskInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::CreateTaskInput {
                 source_location_arn: self.source_location_arn,
                 destination_location_arn: self.destination_location_arn,
@@ -3069,13 +3150,13 @@ impl CreateTaskInput {
             crate::operation::CreateTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3083,8 +3164,10 @@ impl CreateTaskInput {
             fn update_http_builder(
                 input: &crate::input::CreateTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3173,7 +3256,7 @@ impl CreateTaskInput {
 pub mod delete_agent_input {
 
     /// A builder for [`DeleteAgentInput`](crate::input::DeleteAgentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_arn: std::option::Option<std::string::String>,
     }
@@ -3191,7 +3274,7 @@ pub mod delete_agent_input {
         /// Consumes the builder and constructs a [`DeleteAgentInput`](crate::input::DeleteAgentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAgentInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteAgentInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteAgentInput {
                 agent_arn: self.agent_arn,
@@ -3212,13 +3295,13 @@ impl DeleteAgentInput {
             crate::operation::DeleteAgent,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAgentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3226,8 +3309,10 @@ impl DeleteAgentInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAgentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3316,7 +3401,7 @@ impl DeleteAgentInput {
 pub mod delete_location_input {
 
     /// A builder for [`DeleteLocationInput`](crate::input::DeleteLocationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -3334,7 +3419,7 @@ pub mod delete_location_input {
         /// Consumes the builder and constructs a [`DeleteLocationInput`](crate::input::DeleteLocationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteLocationInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteLocationInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteLocationInput {
                 location_arn: self.location_arn,
@@ -3355,13 +3440,13 @@ impl DeleteLocationInput {
             crate::operation::DeleteLocation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteLocationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3369,8 +3454,10 @@ impl DeleteLocationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteLocationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3459,7 +3546,7 @@ impl DeleteLocationInput {
 pub mod delete_task_input {
 
     /// A builder for [`DeleteTaskInput`](crate::input::DeleteTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
     }
@@ -3477,7 +3564,8 @@ pub mod delete_task_input {
         /// Consumes the builder and constructs a [`DeleteTaskInput`](crate::input::DeleteTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTaskInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::DeleteTaskInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::DeleteTaskInput {
                 task_arn: self.task_arn,
             })
@@ -3497,13 +3585,13 @@ impl DeleteTaskInput {
             crate::operation::DeleteTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3511,8 +3599,10 @@ impl DeleteTaskInput {
             fn update_http_builder(
                 input: &crate::input::DeleteTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3601,7 +3691,7 @@ impl DeleteTaskInput {
 pub mod describe_agent_input {
 
     /// A builder for [`DescribeAgentInput`](crate::input::DescribeAgentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_arn: std::option::Option<std::string::String>,
     }
@@ -3619,7 +3709,7 @@ pub mod describe_agent_input {
         /// Consumes the builder and constructs a [`DescribeAgentInput`](crate::input::DescribeAgentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeAgentInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeAgentInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeAgentInput {
                 agent_arn: self.agent_arn,
@@ -3640,13 +3730,13 @@ impl DescribeAgentInput {
             crate::operation::DescribeAgent,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAgentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3654,8 +3744,10 @@ impl DescribeAgentInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAgentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3744,7 +3836,7 @@ impl DescribeAgentInput {
 pub mod describe_location_efs_input {
 
     /// A builder for [`DescribeLocationEfsInput`](crate::input::DescribeLocationEfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -3762,8 +3854,10 @@ pub mod describe_location_efs_input {
         /// Consumes the builder and constructs a [`DescribeLocationEfsInput`](crate::input::DescribeLocationEfsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLocationEfsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeLocationEfsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeLocationEfsInput {
                 location_arn: self.location_arn,
             })
@@ -3783,13 +3877,13 @@ impl DescribeLocationEfsInput {
             crate::operation::DescribeLocationEfs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLocationEfsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3797,8 +3891,10 @@ impl DescribeLocationEfsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLocationEfsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3887,7 +3983,7 @@ impl DescribeLocationEfsInput {
 pub mod describe_location_fsx_lustre_input {
 
     /// A builder for [`DescribeLocationFsxLustreInput`](crate::input::DescribeLocationFsxLustreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -3907,7 +4003,7 @@ pub mod describe_location_fsx_lustre_input {
             self,
         ) -> Result<
             crate::input::DescribeLocationFsxLustreInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeLocationFsxLustreInput {
                 location_arn: self.location_arn,
@@ -3928,13 +4024,13 @@ impl DescribeLocationFsxLustreInput {
             crate::operation::DescribeLocationFsxLustre,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLocationFsxLustreInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3942,8 +4038,10 @@ impl DescribeLocationFsxLustreInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLocationFsxLustreInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4034,7 +4132,7 @@ impl DescribeLocationFsxLustreInput {
 pub mod describe_location_fsx_ontap_input {
 
     /// A builder for [`DescribeLocationFsxOntapInput`](crate::input::DescribeLocationFsxOntapInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -4054,7 +4152,7 @@ pub mod describe_location_fsx_ontap_input {
             self,
         ) -> Result<
             crate::input::DescribeLocationFsxOntapInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeLocationFsxOntapInput {
                 location_arn: self.location_arn,
@@ -4075,13 +4173,13 @@ impl DescribeLocationFsxOntapInput {
             crate::operation::DescribeLocationFsxOntap,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLocationFsxOntapInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4089,8 +4187,10 @@ impl DescribeLocationFsxOntapInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLocationFsxOntapInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4181,7 +4281,7 @@ impl DescribeLocationFsxOntapInput {
 pub mod describe_location_fsx_open_zfs_input {
 
     /// A builder for [`DescribeLocationFsxOpenZfsInput`](crate::input::DescribeLocationFsxOpenZfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -4201,7 +4301,7 @@ pub mod describe_location_fsx_open_zfs_input {
             self,
         ) -> Result<
             crate::input::DescribeLocationFsxOpenZfsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeLocationFsxOpenZfsInput {
                 location_arn: self.location_arn,
@@ -4222,13 +4322,13 @@ impl DescribeLocationFsxOpenZfsInput {
             crate::operation::DescribeLocationFsxOpenZfs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLocationFsxOpenZfsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4236,8 +4336,10 @@ impl DescribeLocationFsxOpenZfsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLocationFsxOpenZfsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4325,7 +4427,7 @@ impl DescribeLocationFsxOpenZfsInput {
 pub mod describe_location_fsx_windows_input {
 
     /// A builder for [`DescribeLocationFsxWindowsInput`](crate::input::DescribeLocationFsxWindowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -4345,7 +4447,7 @@ pub mod describe_location_fsx_windows_input {
             self,
         ) -> Result<
             crate::input::DescribeLocationFsxWindowsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeLocationFsxWindowsInput {
                 location_arn: self.location_arn,
@@ -4366,13 +4468,13 @@ impl DescribeLocationFsxWindowsInput {
             crate::operation::DescribeLocationFsxWindows,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLocationFsxWindowsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4380,8 +4482,10 @@ impl DescribeLocationFsxWindowsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLocationFsxWindowsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4469,7 +4573,7 @@ impl DescribeLocationFsxWindowsInput {
 pub mod describe_location_hdfs_input {
 
     /// A builder for [`DescribeLocationHdfsInput`](crate::input::DescribeLocationHdfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -4487,8 +4591,10 @@ pub mod describe_location_hdfs_input {
         /// Consumes the builder and constructs a [`DescribeLocationHdfsInput`](crate::input::DescribeLocationHdfsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLocationHdfsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeLocationHdfsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeLocationHdfsInput {
                 location_arn: self.location_arn,
             })
@@ -4508,13 +4614,13 @@ impl DescribeLocationHdfsInput {
             crate::operation::DescribeLocationHdfs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLocationHdfsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4522,8 +4628,10 @@ impl DescribeLocationHdfsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLocationHdfsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4614,7 +4722,7 @@ impl DescribeLocationHdfsInput {
 pub mod describe_location_nfs_input {
 
     /// A builder for [`DescribeLocationNfsInput`](crate::input::DescribeLocationNfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -4632,8 +4740,10 @@ pub mod describe_location_nfs_input {
         /// Consumes the builder and constructs a [`DescribeLocationNfsInput`](crate::input::DescribeLocationNfsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLocationNfsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeLocationNfsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeLocationNfsInput {
                 location_arn: self.location_arn,
             })
@@ -4653,13 +4763,13 @@ impl DescribeLocationNfsInput {
             crate::operation::DescribeLocationNfs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLocationNfsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4667,8 +4777,10 @@ impl DescribeLocationNfsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLocationNfsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4757,7 +4869,7 @@ impl DescribeLocationNfsInput {
 pub mod describe_location_object_storage_input {
 
     /// A builder for [`DescribeLocationObjectStorageInput`](crate::input::DescribeLocationObjectStorageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -4777,7 +4889,7 @@ pub mod describe_location_object_storage_input {
             self,
         ) -> Result<
             crate::input::DescribeLocationObjectStorageInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeLocationObjectStorageInput {
                 location_arn: self.location_arn,
@@ -4798,13 +4910,13 @@ impl DescribeLocationObjectStorageInput {
             crate::operation::DescribeLocationObjectStorage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLocationObjectStorageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4812,8 +4924,10 @@ impl DescribeLocationObjectStorageInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLocationObjectStorageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4901,7 +5015,7 @@ impl DescribeLocationObjectStorageInput {
 pub mod describe_location_s3_input {
 
     /// A builder for [`DescribeLocationS3Input`](crate::input::DescribeLocationS3Input).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -4919,8 +5033,10 @@ pub mod describe_location_s3_input {
         /// Consumes the builder and constructs a [`DescribeLocationS3Input`](crate::input::DescribeLocationS3Input).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLocationS3Input, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeLocationS3Input,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeLocationS3Input {
                 location_arn: self.location_arn,
             })
@@ -4940,13 +5056,13 @@ impl DescribeLocationS3Input {
             crate::operation::DescribeLocationS3,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLocationS3Input,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4954,8 +5070,10 @@ impl DescribeLocationS3Input {
             fn update_http_builder(
                 input: &crate::input::DescribeLocationS3Input,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5044,7 +5162,7 @@ impl DescribeLocationS3Input {
 pub mod describe_location_smb_input {
 
     /// A builder for [`DescribeLocationSmbInput`](crate::input::DescribeLocationSmbInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
@@ -5062,8 +5180,10 @@ pub mod describe_location_smb_input {
         /// Consumes the builder and constructs a [`DescribeLocationSmbInput`](crate::input::DescribeLocationSmbInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLocationSmbInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeLocationSmbInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeLocationSmbInput {
                 location_arn: self.location_arn,
             })
@@ -5083,13 +5203,13 @@ impl DescribeLocationSmbInput {
             crate::operation::DescribeLocationSmb,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLocationSmbInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5097,8 +5217,10 @@ impl DescribeLocationSmbInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLocationSmbInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5187,7 +5309,7 @@ impl DescribeLocationSmbInput {
 pub mod describe_task_input {
 
     /// A builder for [`DescribeTaskInput`](crate::input::DescribeTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
     }
@@ -5205,7 +5327,7 @@ pub mod describe_task_input {
         /// Consumes the builder and constructs a [`DescribeTaskInput`](crate::input::DescribeTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeTaskInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeTaskInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeTaskInput {
                 task_arn: self.task_arn,
@@ -5226,13 +5348,13 @@ impl DescribeTaskInput {
             crate::operation::DescribeTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5240,8 +5362,10 @@ impl DescribeTaskInput {
             fn update_http_builder(
                 input: &crate::input::DescribeTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5330,7 +5454,7 @@ impl DescribeTaskInput {
 pub mod describe_task_execution_input {
 
     /// A builder for [`DescribeTaskExecutionInput`](crate::input::DescribeTaskExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_execution_arn: std::option::Option<std::string::String>,
     }
@@ -5351,8 +5475,10 @@ pub mod describe_task_execution_input {
         /// Consumes the builder and constructs a [`DescribeTaskExecutionInput`](crate::input::DescribeTaskExecutionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeTaskExecutionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeTaskExecutionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeTaskExecutionInput {
                 task_execution_arn: self.task_execution_arn,
             })
@@ -5372,13 +5498,13 @@ impl DescribeTaskExecutionInput {
             crate::operation::DescribeTaskExecution,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeTaskExecutionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5386,8 +5512,10 @@ impl DescribeTaskExecutionInput {
             fn update_http_builder(
                 input: &crate::input::DescribeTaskExecutionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5478,7 +5606,7 @@ impl DescribeTaskExecutionInput {
 pub mod list_agents_input {
 
     /// A builder for [`ListAgentsInput`](crate::input::ListAgentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5507,7 +5635,8 @@ pub mod list_agents_input {
         /// Consumes the builder and constructs a [`ListAgentsInput`](crate::input::ListAgentsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAgentsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListAgentsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListAgentsInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -5528,13 +5657,13 @@ impl ListAgentsInput {
             crate::operation::ListAgents,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAgentsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5542,8 +5671,10 @@ impl ListAgentsInput {
             fn update_http_builder(
                 input: &crate::input::ListAgentsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5632,7 +5763,7 @@ impl ListAgentsInput {
 pub mod list_locations_input {
 
     /// A builder for [`ListLocationsInput`](crate::input::ListLocationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5681,7 +5812,7 @@ pub mod list_locations_input {
         /// Consumes the builder and constructs a [`ListLocationsInput`](crate::input::ListLocationsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListLocationsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListLocationsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListLocationsInput {
                 max_results: self.max_results,
@@ -5704,13 +5835,13 @@ impl ListLocationsInput {
             crate::operation::ListLocations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListLocationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5718,8 +5849,10 @@ impl ListLocationsInput {
             fn update_http_builder(
                 input: &crate::input::ListLocationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5808,7 +5941,7 @@ impl ListLocationsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5848,8 +5981,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
                 max_results: self.max_results,
@@ -5871,13 +6006,13 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5885,8 +6020,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5977,7 +6114,7 @@ impl ListTagsForResourceInput {
 pub mod list_task_executions_input {
 
     /// A builder for [`ListTaskExecutionsInput`](crate::input::ListTaskExecutionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -6017,8 +6154,10 @@ pub mod list_task_executions_input {
         /// Consumes the builder and constructs a [`ListTaskExecutionsInput`](crate::input::ListTaskExecutionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTaskExecutionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTaskExecutionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTaskExecutionsInput {
                 task_arn: self.task_arn,
                 max_results: self.max_results,
@@ -6040,13 +6179,13 @@ impl ListTaskExecutionsInput {
             crate::operation::ListTaskExecutions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTaskExecutionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6054,8 +6193,10 @@ impl ListTaskExecutionsInput {
             fn update_http_builder(
                 input: &crate::input::ListTaskExecutionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6144,7 +6285,7 @@ impl ListTaskExecutionsInput {
 pub mod list_tasks_input {
 
     /// A builder for [`ListTasksInput`](crate::input::ListTasksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6193,7 +6334,8 @@ pub mod list_tasks_input {
         /// Consumes the builder and constructs a [`ListTasksInput`](crate::input::ListTasksInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTasksInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListTasksInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListTasksInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -6215,13 +6357,13 @@ impl ListTasksInput {
             crate::operation::ListTasks,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTasksInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6229,8 +6371,10 @@ impl ListTasksInput {
             fn update_http_builder(
                 input: &crate::input::ListTasksInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6317,7 +6461,7 @@ impl ListTasksInput {
 pub mod start_task_execution_input {
 
     /// A builder for [`StartTaskExecutionInput`](crate::input::StartTaskExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
         pub(crate) override_options: std::option::Option<crate::model::Options>,
@@ -6393,8 +6537,10 @@ pub mod start_task_execution_input {
         /// Consumes the builder and constructs a [`StartTaskExecutionInput`](crate::input::StartTaskExecutionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartTaskExecutionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartTaskExecutionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartTaskExecutionInput {
                 task_arn: self.task_arn,
                 override_options: self.override_options,
@@ -6417,13 +6563,13 @@ impl StartTaskExecutionInput {
             crate::operation::StartTaskExecution,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartTaskExecutionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6431,8 +6577,10 @@ impl StartTaskExecutionInput {
             fn update_http_builder(
                 input: &crate::input::StartTaskExecutionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6521,7 +6669,7 @@ impl StartTaskExecutionInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -6559,7 +6707,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -6581,13 +6729,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6595,8 +6743,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6685,7 +6835,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6723,7 +6873,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -6745,13 +6895,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6759,8 +6909,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6849,7 +7001,7 @@ impl UntagResourceInput {
 pub mod update_agent_input {
 
     /// A builder for [`UpdateAgentInput`](crate::input::UpdateAgentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6878,7 +7030,7 @@ pub mod update_agent_input {
         /// Consumes the builder and constructs a [`UpdateAgentInput`](crate::input::UpdateAgentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAgentInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateAgentInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateAgentInput {
                 agent_arn: self.agent_arn,
@@ -6900,13 +7052,13 @@ impl UpdateAgentInput {
             crate::operation::UpdateAgent,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateAgentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6914,8 +7066,10 @@ impl UpdateAgentInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAgentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7004,7 +7158,7 @@ impl UpdateAgentInput {
 pub mod update_location_hdfs_input {
 
     /// A builder for [`UpdateLocationHdfsInput`](crate::input::UpdateLocationHdfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
         pub(crate) subdirectory: std::option::Option<std::string::String>,
@@ -7190,8 +7344,10 @@ pub mod update_location_hdfs_input {
         /// Consumes the builder and constructs a [`UpdateLocationHdfsInput`](crate::input::UpdateLocationHdfsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateLocationHdfsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateLocationHdfsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateLocationHdfsInput {
                 location_arn: self.location_arn,
                 subdirectory: self.subdirectory,
@@ -7223,13 +7379,13 @@ impl UpdateLocationHdfsInput {
             crate::operation::UpdateLocationHdfs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateLocationHdfsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7237,8 +7393,10 @@ impl UpdateLocationHdfsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateLocationHdfsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7327,7 +7485,7 @@ impl UpdateLocationHdfsInput {
 pub mod update_location_nfs_input {
 
     /// A builder for [`UpdateLocationNfsInput`](crate::input::UpdateLocationNfsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
         pub(crate) subdirectory: std::option::Option<std::string::String>,
@@ -7392,8 +7550,10 @@ pub mod update_location_nfs_input {
         /// Consumes the builder and constructs a [`UpdateLocationNfsInput`](crate::input::UpdateLocationNfsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateLocationNfsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateLocationNfsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateLocationNfsInput {
                 location_arn: self.location_arn,
                 subdirectory: self.subdirectory,
@@ -7416,13 +7576,13 @@ impl UpdateLocationNfsInput {
             crate::operation::UpdateLocationNfs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateLocationNfsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7430,8 +7590,10 @@ impl UpdateLocationNfsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateLocationNfsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7520,7 +7682,7 @@ impl UpdateLocationNfsInput {
 pub mod update_location_object_storage_input {
 
     /// A builder for [`UpdateLocationObjectStorageInput`](crate::input::UpdateLocationObjectStorageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
         pub(crate) server_port: std::option::Option<i32>,
@@ -7618,7 +7780,7 @@ pub mod update_location_object_storage_input {
             self,
         ) -> Result<
             crate::input::UpdateLocationObjectStorageInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateLocationObjectStorageInput {
                 location_arn: self.location_arn,
@@ -7629,6 +7791,19 @@ pub mod update_location_object_storage_input {
                 secret_key: self.secret_key,
                 agent_arns: self.agent_arns,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("location_arn", &self.location_arn);
+            formatter.field("server_port", &self.server_port);
+            formatter.field("server_protocol", &self.server_protocol);
+            formatter.field("subdirectory", &self.subdirectory);
+            formatter.field("access_key", &self.access_key);
+            formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("agent_arns", &self.agent_arns);
+            formatter.finish()
         }
     }
 }
@@ -7645,13 +7820,13 @@ impl UpdateLocationObjectStorageInput {
             crate::operation::UpdateLocationObjectStorage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateLocationObjectStorageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7659,8 +7834,10 @@ impl UpdateLocationObjectStorageInput {
             fn update_http_builder(
                 input: &crate::input::UpdateLocationObjectStorageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7748,7 +7925,7 @@ impl UpdateLocationObjectStorageInput {
 pub mod update_location_smb_input {
 
     /// A builder for [`UpdateLocationSmbInput`](crate::input::UpdateLocationSmbInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
         pub(crate) subdirectory: std::option::Option<std::string::String>,
@@ -7860,8 +8037,10 @@ pub mod update_location_smb_input {
         /// Consumes the builder and constructs a [`UpdateLocationSmbInput`](crate::input::UpdateLocationSmbInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateLocationSmbInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateLocationSmbInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateLocationSmbInput {
                 location_arn: self.location_arn,
                 subdirectory: self.subdirectory,
@@ -7871,6 +8050,19 @@ pub mod update_location_smb_input {
                 agent_arns: self.agent_arns,
                 mount_options: self.mount_options,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("location_arn", &self.location_arn);
+            formatter.field("subdirectory", &self.subdirectory);
+            formatter.field("user", &self.user);
+            formatter.field("domain", &self.domain);
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
+            formatter.field("agent_arns", &self.agent_arns);
+            formatter.field("mount_options", &self.mount_options);
+            formatter.finish()
         }
     }
 }
@@ -7887,13 +8079,13 @@ impl UpdateLocationSmbInput {
             crate::operation::UpdateLocationSmb,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateLocationSmbInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7901,8 +8093,10 @@ impl UpdateLocationSmbInput {
             fn update_http_builder(
                 input: &crate::input::UpdateLocationSmbInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7991,7 +8185,7 @@ impl UpdateLocationSmbInput {
 pub mod update_task_input {
 
     /// A builder for [`UpdateTaskInput`](crate::input::UpdateTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
         pub(crate) options: std::option::Option<crate::model::Options>,
@@ -8103,7 +8297,8 @@ pub mod update_task_input {
         /// Consumes the builder and constructs a [`UpdateTaskInput`](crate::input::UpdateTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateTaskInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::UpdateTaskInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::UpdateTaskInput {
                 task_arn: self.task_arn,
                 options: self.options,
@@ -8129,13 +8324,13 @@ impl UpdateTaskInput {
             crate::operation::UpdateTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8143,8 +8338,10 @@ impl UpdateTaskInput {
             fn update_http_builder(
                 input: &crate::input::UpdateTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8233,7 +8430,7 @@ impl UpdateTaskInput {
 pub mod update_task_execution_input {
 
     /// A builder for [`UpdateTaskExecutionInput`](crate::input::UpdateTaskExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_execution_arn: std::option::Option<std::string::String>,
         pub(crate) options: std::option::Option<crate::model::Options>,
@@ -8267,8 +8464,10 @@ pub mod update_task_execution_input {
         /// Consumes the builder and constructs a [`UpdateTaskExecutionInput`](crate::input::UpdateTaskExecutionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateTaskExecutionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateTaskExecutionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateTaskExecutionInput {
                 task_execution_arn: self.task_execution_arn,
                 options: self.options,
@@ -8289,13 +8488,13 @@ impl UpdateTaskExecutionInput {
             crate::operation::UpdateTaskExecution,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateTaskExecutionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8303,8 +8502,10 @@ impl UpdateTaskExecutionInput {
             fn update_http_builder(
                 input: &crate::input::UpdateTaskExecutionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8391,7 +8592,7 @@ impl UpdateTaskExecutionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the specific task execution that is being updated. </p>
     #[doc(hidden)]
@@ -8412,18 +8613,10 @@ impl UpdateTaskExecutionInput {
         self.options.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTaskExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTaskExecutionInput");
-        formatter.field("task_execution_arn", &self.task_execution_arn);
-        formatter.field("options", &self.options);
-        formatter.finish()
-    }
-}
 
 /// <p>UpdateTaskResponse</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
     #[doc(hidden)]
@@ -8479,19 +8672,6 @@ impl UpdateTaskInput {
     /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
     pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.includes.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTaskInput");
-        formatter.field("task_arn", &self.task_arn);
-        formatter.field("options", &self.options);
-        formatter.field("excludes", &self.excludes);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("name", &self.name);
-        formatter.field("cloud_watch_log_group_arn", &self.cloud_watch_log_group_arn);
-        formatter.field("includes", &self.includes);
-        formatter.finish()
     }
 }
 
@@ -8655,7 +8835,7 @@ impl std::fmt::Debug for UpdateLocationObjectStorageInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLocationNfsInput {
     /// <p>The Amazon Resource Name (ARN) of the NFS location to update.</p>
     #[doc(hidden)]
@@ -8696,20 +8876,10 @@ impl UpdateLocationNfsInput {
         self.mount_options.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateLocationNfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLocationNfsInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("on_prem_config", &self.on_prem_config);
-        formatter.field("mount_options", &self.mount_options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLocationHdfsInput {
     /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
     #[doc(hidden)]
@@ -8807,29 +8977,10 @@ impl UpdateLocationHdfsInput {
         self.agent_arns.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLocationHdfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLocationHdfsInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("name_nodes", &self.name_nodes);
-        formatter.field("block_size", &self.block_size);
-        formatter.field("replication_factor", &self.replication_factor);
-        formatter.field("kms_key_provider_uri", &self.kms_key_provider_uri);
-        formatter.field("qop_configuration", &self.qop_configuration);
-        formatter.field("authentication_type", &self.authentication_type);
-        formatter.field("simple_user", &self.simple_user);
-        formatter.field("kerberos_principal", &self.kerberos_principal);
-        formatter.field("kerberos_keytab", &self.kerberos_keytab);
-        formatter.field("kerberos_krb5_conf", &self.kerberos_krb5_conf);
-        formatter.field("agent_arns", &self.agent_arns);
-        formatter.finish()
-    }
-}
 
 /// <p>UpdateAgentRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
     #[doc(hidden)]
@@ -8848,18 +8999,10 @@ impl UpdateAgentInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAgentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAgentInput");
-        formatter.field("agent_arn", &self.agent_arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 /// <p>UntagResourceRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
     #[doc(hidden)]
@@ -8878,18 +9021,10 @@ impl UntagResourceInput {
         self.keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("keys", &self.keys);
-        formatter.finish()
-    }
-}
 
 /// <p>TagResourceRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
     #[doc(hidden)]
@@ -8908,18 +9043,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>StartTaskExecutionRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task to start.</p>
     #[doc(hidden)]
@@ -8956,20 +9083,10 @@ impl StartTaskExecutionInput {
         self.excludes.as_deref()
     }
 }
-impl std::fmt::Debug for StartTaskExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTaskExecutionInput");
-        formatter.field("task_arn", &self.task_arn);
-        formatter.field("override_options", &self.override_options);
-        formatter.field("includes", &self.includes);
-        formatter.field("excludes", &self.excludes);
-        formatter.finish()
-    }
-}
 
 /// <p>ListTasksRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTasksInput {
     /// <p>The maximum number of tasks to return.</p>
     #[doc(hidden)]
@@ -8995,19 +9112,10 @@ impl ListTasksInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTasksInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 /// <p>ListTaskExecutions</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTaskExecutionsInput {
     /// <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
     #[doc(hidden)]
@@ -9033,19 +9141,10 @@ impl ListTaskExecutionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTaskExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTaskExecutionsInput");
-        formatter.field("task_arn", &self.task_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>ListTagsForResourceRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags to list.</p>
     #[doc(hidden)]
@@ -9071,19 +9170,10 @@ impl ListTagsForResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>ListLocationsRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLocationsInput {
     /// <p>The maximum number of locations to return.</p>
     #[doc(hidden)]
@@ -9109,19 +9199,10 @@ impl ListLocationsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListLocationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLocationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 /// <p>ListAgentsRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAgentsInput {
     /// <p>The maximum number of agents to list.</p>
     #[doc(hidden)]
@@ -9140,18 +9221,10 @@ impl ListAgentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAgentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAgentsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeTaskExecutionRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
     #[doc(hidden)]
@@ -9163,17 +9236,10 @@ impl DescribeTaskExecutionInput {
         self.task_execution_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTaskExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTaskExecutionInput");
-        formatter.field("task_execution_arn", &self.task_execution_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeTaskRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the task to describe.</p>
     #[doc(hidden)]
@@ -9185,17 +9251,10 @@ impl DescribeTaskInput {
         self.task_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTaskInput");
-        formatter.field("task_arn", &self.task_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeLocationSmbRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationSmbInput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
     #[doc(hidden)]
@@ -9207,17 +9266,10 @@ impl DescribeLocationSmbInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationSmbInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationSmbInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeLocationS3Request</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationS3Input {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
     #[doc(hidden)]
@@ -9229,17 +9281,10 @@ impl DescribeLocationS3Input {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationS3Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationS3Input");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeLocationObjectStorageRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationObjectStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
     #[doc(hidden)]
@@ -9251,17 +9296,10 @@ impl DescribeLocationObjectStorageInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationObjectStorageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationObjectStorageInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeLocationNfsRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationNfsInput {
     /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
     #[doc(hidden)]
@@ -9273,17 +9311,10 @@ impl DescribeLocationNfsInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationNfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationNfsInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationHdfsInput {
     /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
     #[doc(hidden)]
@@ -9295,17 +9326,10 @@ impl DescribeLocationHdfsInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationHdfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationHdfsInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationFsxWindowsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.</p>
     #[doc(hidden)]
@@ -9317,17 +9341,10 @@ impl DescribeLocationFsxWindowsInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationFsxWindowsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationFsxWindowsInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationFsxOpenZfsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
     #[doc(hidden)]
@@ -9339,17 +9356,10 @@ impl DescribeLocationFsxOpenZfsInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationFsxOpenZfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationFsxOpenZfsInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationFsxOntapInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the FSx for ONTAP file system location that you want information about.</p>
     #[doc(hidden)]
@@ -9361,17 +9371,10 @@ impl DescribeLocationFsxOntapInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationFsxOntapInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationFsxOntapInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationFsxLustreInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
     #[doc(hidden)]
@@ -9383,17 +9386,10 @@ impl DescribeLocationFsxLustreInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationFsxLustreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationFsxLustreInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeLocationEfsRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationEfsInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
     #[doc(hidden)]
@@ -9405,17 +9401,10 @@ impl DescribeLocationEfsInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationEfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationEfsInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DescribeAgent</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
     #[doc(hidden)]
@@ -9427,17 +9416,10 @@ impl DescribeAgentInput {
         self.agent_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAgentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAgentInput");
-        formatter.field("agent_arn", &self.agent_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DeleteTask</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the task to delete.</p>
     #[doc(hidden)]
@@ -9449,17 +9431,10 @@ impl DeleteTaskInput {
         self.task_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTaskInput");
-        formatter.field("task_arn", &self.task_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DeleteLocation</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLocationInput {
     /// <p>The Amazon Resource Name (ARN) of the location to delete.</p>
     #[doc(hidden)]
@@ -9471,17 +9446,10 @@ impl DeleteLocationInput {
         self.location_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLocationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLocationInput");
-        formatter.field("location_arn", &self.location_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>DeleteAgentRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -9493,17 +9461,10 @@ impl DeleteAgentInput {
         self.agent_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAgentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAgentInput");
-        formatter.field("agent_arn", &self.agent_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>CreateTaskRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
     #[doc(hidden)]
@@ -9573,21 +9534,6 @@ impl CreateTaskInput {
     /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
     pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.includes.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTaskInput");
-        formatter.field("source_location_arn", &self.source_location_arn);
-        formatter.field("destination_location_arn", &self.destination_location_arn);
-        formatter.field("cloud_watch_log_group_arn", &self.cloud_watch_log_group_arn);
-        formatter.field("name", &self.name);
-        formatter.field("options", &self.options);
-        formatter.field("excludes", &self.excludes);
-        formatter.field("schedule", &self.schedule);
-        formatter.field("tags", &self.tags);
-        formatter.field("includes", &self.includes);
-        formatter.finish()
     }
 }
 
@@ -9683,7 +9629,7 @@ impl std::fmt::Debug for CreateLocationSmbInput {
 
 /// <p>CreateLocationS3Request</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocationS3Input {
     /// <p>A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3 source location or write data to the S3 destination.</p>
     #[doc(hidden)]
@@ -9732,18 +9678,6 @@ impl CreateLocationS3Input {
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateLocationS3Input {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLocationS3Input");
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("s3_bucket_arn", &self.s3_bucket_arn);
-        formatter.field("s3_storage_class", &self.s3_storage_class);
-        formatter.field("s3_config", &self.s3_config);
-        formatter.field("agent_arns", &self.agent_arns);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 
@@ -9837,7 +9771,7 @@ impl std::fmt::Debug for CreateLocationObjectStorageInput {
 
 /// <p>CreateLocationNfsRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocationNfsInput {
     /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p>
     /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
@@ -9893,21 +9827,10 @@ impl CreateLocationNfsInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationNfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLocationNfsInput");
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("server_hostname", &self.server_hostname);
-        formatter.field("on_prem_config", &self.on_prem_config);
-        formatter.field("mount_options", &self.mount_options);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocationHdfsInput {
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to <code>/</code>.</p>
     #[doc(hidden)]
@@ -10021,25 +9944,6 @@ impl CreateLocationHdfsInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationHdfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLocationHdfsInput");
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("name_nodes", &self.name_nodes);
-        formatter.field("block_size", &self.block_size);
-        formatter.field("replication_factor", &self.replication_factor);
-        formatter.field("kms_key_provider_uri", &self.kms_key_provider_uri);
-        formatter.field("qop_configuration", &self.qop_configuration);
-        formatter.field("authentication_type", &self.authentication_type);
-        formatter.field("simple_user", &self.simple_user);
-        formatter.field("kerberos_principal", &self.kerberos_principal);
-        formatter.field("kerberos_keytab", &self.kerberos_keytab);
-        formatter.field("kerberos_krb5_conf", &self.kerberos_krb5_conf);
-        formatter.field("agent_arns", &self.agent_arns);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -10127,7 +10031,7 @@ impl std::fmt::Debug for CreateLocationFsxWindowsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocationFsxOpenZfsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
     #[doc(hidden)]
@@ -10167,21 +10071,10 @@ impl CreateLocationFsxOpenZfsInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationFsxOpenZfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLocationFsxOpenZfsInput");
-        formatter.field("fsx_filesystem_arn", &self.fsx_filesystem_arn);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("security_group_arns", &self.security_group_arns);
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocationFsxOntapInput {
     /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
     #[doc(hidden)]
@@ -10237,24 +10130,10 @@ impl CreateLocationFsxOntapInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationFsxOntapInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLocationFsxOntapInput");
-        formatter.field("protocol", &self.protocol);
-        formatter.field("security_group_arns", &self.security_group_arns);
-        formatter.field(
-            "storage_virtual_machine_arn",
-            &self.storage_virtual_machine_arn,
-        );
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocationFsxLustreInput {
     /// <p>The Amazon Resource Name (ARN) for the FSx for Lustre file system.</p>
     #[doc(hidden)]
@@ -10287,20 +10166,10 @@ impl CreateLocationFsxLustreInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLocationFsxLustreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLocationFsxLustreInput");
-        formatter.field("fsx_filesystem_arn", &self.fsx_filesystem_arn);
-        formatter.field("security_group_arns", &self.security_group_arns);
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>CreateLocationEfsRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLocationEfsInput {
     /// <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p> <note>
     /// <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p>
@@ -10362,26 +10231,10 @@ impl CreateLocationEfsInput {
         self.in_transit_encryption.as_ref()
     }
 }
-impl std::fmt::Debug for CreateLocationEfsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLocationEfsInput");
-        formatter.field("subdirectory", &self.subdirectory);
-        formatter.field("efs_filesystem_arn", &self.efs_filesystem_arn);
-        formatter.field("ec2_config", &self.ec2_config);
-        formatter.field("tags", &self.tags);
-        formatter.field("access_point_arn", &self.access_point_arn);
-        formatter.field(
-            "file_system_access_role_arn",
-            &self.file_system_access_role_arn,
-        );
-        formatter.field("in_transit_encryption", &self.in_transit_encryption);
-        formatter.finish()
-    }
-}
 
 /// <p>CreateAgentRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAgentInput {
     /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.</p>
     /// <p>The redirect URL returned in the response provides you the activation key for your agent in the query string parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.</p>
@@ -10438,22 +10291,10 @@ impl CreateAgentInput {
         self.security_group_arns.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAgentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAgentInput");
-        formatter.field("activation_key", &self.activation_key);
-        formatter.field("agent_name", &self.agent_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("vpc_endpoint_id", &self.vpc_endpoint_id);
-        formatter.field("subnet_arns", &self.subnet_arns);
-        formatter.field("security_group_arns", &self.security_group_arns);
-        formatter.finish()
-    }
-}
 
 /// <p>CancelTaskExecutionRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
     #[doc(hidden)]
@@ -10463,12 +10304,5 @@ impl CancelTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
     pub fn task_execution_arn(&self) -> std::option::Option<&str> {
         self.task_execution_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelTaskExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelTaskExecutionInput");
-        formatter.field("task_execution_arn", &self.task_execution_arn);
-        formatter.finish()
     }
 }

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod activate_pipeline_input {
 
     /// A builder for [`ActivatePipelineInput`](crate::input::ActivatePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) parameter_values:
@@ -58,8 +58,10 @@ pub mod activate_pipeline_input {
         /// Consumes the builder and constructs a [`ActivatePipelineInput`](crate::input::ActivatePipelineInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ActivatePipelineInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ActivatePipelineInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ActivatePipelineInput {
                 pipeline_id: self.pipeline_id,
                 parameter_values: self.parameter_values,
@@ -81,13 +83,13 @@ impl ActivatePipelineInput {
             crate::operation::ActivatePipeline,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ActivatePipelineInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -95,8 +97,10 @@ impl ActivatePipelineInput {
             fn update_http_builder(
                 input: &crate::input::ActivatePipelineInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -185,7 +189,7 @@ impl ActivatePipelineInput {
 pub mod add_tags_input {
 
     /// A builder for [`AddTagsInput`](crate::input::AddTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -223,7 +227,8 @@ pub mod add_tags_input {
         /// Consumes the builder and constructs a [`AddTagsInput`](crate::input::AddTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AddTagsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::AddTagsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::AddTagsInput {
                 pipeline_id: self.pipeline_id,
                 tags: self.tags,
@@ -244,13 +249,13 @@ impl AddTagsInput {
             crate::operation::AddTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AddTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -258,8 +263,10 @@ impl AddTagsInput {
             fn update_http_builder(
                 input: &crate::input::AddTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -346,7 +353,7 @@ impl AddTagsInput {
 pub mod create_pipeline_input {
 
     /// A builder for [`CreatePipelineInput`](crate::input::CreatePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) unique_id: std::option::Option<std::string::String>,
@@ -406,7 +413,7 @@ pub mod create_pipeline_input {
         /// Consumes the builder and constructs a [`CreatePipelineInput`](crate::input::CreatePipelineInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreatePipelineInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreatePipelineInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreatePipelineInput {
                 name: self.name,
@@ -430,13 +437,13 @@ impl CreatePipelineInput {
             crate::operation::CreatePipeline,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreatePipelineInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -444,8 +451,10 @@ impl CreatePipelineInput {
             fn update_http_builder(
                 input: &crate::input::CreatePipelineInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -534,7 +543,7 @@ impl CreatePipelineInput {
 pub mod deactivate_pipeline_input {
 
     /// A builder for [`DeactivatePipelineInput`](crate::input::DeactivatePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) cancel_active: std::option::Option<bool>,
@@ -563,8 +572,10 @@ pub mod deactivate_pipeline_input {
         /// Consumes the builder and constructs a [`DeactivatePipelineInput`](crate::input::DeactivatePipelineInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeactivatePipelineInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeactivatePipelineInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeactivatePipelineInput {
                 pipeline_id: self.pipeline_id,
                 cancel_active: self.cancel_active,
@@ -585,13 +596,13 @@ impl DeactivatePipelineInput {
             crate::operation::DeactivatePipeline,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeactivatePipelineInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -599,8 +610,10 @@ impl DeactivatePipelineInput {
             fn update_http_builder(
                 input: &crate::input::DeactivatePipelineInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -689,7 +702,7 @@ impl DeactivatePipelineInput {
 pub mod delete_pipeline_input {
 
     /// A builder for [`DeletePipelineInput`](crate::input::DeletePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
     }
@@ -707,7 +720,7 @@ pub mod delete_pipeline_input {
         /// Consumes the builder and constructs a [`DeletePipelineInput`](crate::input::DeletePipelineInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeletePipelineInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeletePipelineInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeletePipelineInput {
                 pipeline_id: self.pipeline_id,
@@ -728,13 +741,13 @@ impl DeletePipelineInput {
             crate::operation::DeletePipeline,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeletePipelineInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -742,8 +755,10 @@ impl DeletePipelineInput {
             fn update_http_builder(
                 input: &crate::input::DeletePipelineInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -832,7 +847,7 @@ impl DeletePipelineInput {
 pub mod describe_objects_input {
 
     /// A builder for [`DescribeObjectsInput`](crate::input::DescribeObjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) object_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -892,7 +907,7 @@ pub mod describe_objects_input {
         /// Consumes the builder and constructs a [`DescribeObjectsInput`](crate::input::DescribeObjectsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeObjectsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeObjectsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeObjectsInput {
                 pipeline_id: self.pipeline_id,
@@ -916,13 +931,13 @@ impl DescribeObjectsInput {
             crate::operation::DescribeObjects,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeObjectsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -930,8 +945,10 @@ impl DescribeObjectsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeObjectsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1020,7 +1037,7 @@ impl DescribeObjectsInput {
 pub mod describe_pipelines_input {
 
     /// A builder for [`DescribePipelinesInput`](crate::input::DescribePipelinesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1047,8 +1064,10 @@ pub mod describe_pipelines_input {
         /// Consumes the builder and constructs a [`DescribePipelinesInput`](crate::input::DescribePipelinesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribePipelinesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribePipelinesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribePipelinesInput {
                 pipeline_ids: self.pipeline_ids,
             })
@@ -1068,13 +1087,13 @@ impl DescribePipelinesInput {
             crate::operation::DescribePipelines,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribePipelinesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1082,8 +1101,10 @@ impl DescribePipelinesInput {
             fn update_http_builder(
                 input: &crate::input::DescribePipelinesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1172,7 +1193,7 @@ impl DescribePipelinesInput {
 pub mod evaluate_expression_input {
 
     /// A builder for [`EvaluateExpressionInput`](crate::input::EvaluateExpressionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) object_id: std::option::Option<std::string::String>,
@@ -1212,8 +1233,10 @@ pub mod evaluate_expression_input {
         /// Consumes the builder and constructs a [`EvaluateExpressionInput`](crate::input::EvaluateExpressionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::EvaluateExpressionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::EvaluateExpressionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::EvaluateExpressionInput {
                 pipeline_id: self.pipeline_id,
                 object_id: self.object_id,
@@ -1235,13 +1258,13 @@ impl EvaluateExpressionInput {
             crate::operation::EvaluateExpression,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::EvaluateExpressionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1249,8 +1272,10 @@ impl EvaluateExpressionInput {
             fn update_http_builder(
                 input: &crate::input::EvaluateExpressionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1339,7 +1364,7 @@ impl EvaluateExpressionInput {
 pub mod get_pipeline_definition_input {
 
     /// A builder for [`GetPipelineDefinitionInput`](crate::input::GetPipelineDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -1368,8 +1393,10 @@ pub mod get_pipeline_definition_input {
         /// Consumes the builder and constructs a [`GetPipelineDefinitionInput`](crate::input::GetPipelineDefinitionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPipelineDefinitionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetPipelineDefinitionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetPipelineDefinitionInput {
                 pipeline_id: self.pipeline_id,
                 version: self.version,
@@ -1390,13 +1417,13 @@ impl GetPipelineDefinitionInput {
             crate::operation::GetPipelineDefinition,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPipelineDefinitionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1404,8 +1431,10 @@ impl GetPipelineDefinitionInput {
             fn update_http_builder(
                 input: &crate::input::GetPipelineDefinitionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1496,7 +1525,7 @@ impl GetPipelineDefinitionInput {
 pub mod list_pipelines_input {
 
     /// A builder for [`ListPipelinesInput`](crate::input::ListPipelinesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
@@ -1514,7 +1543,7 @@ pub mod list_pipelines_input {
         /// Consumes the builder and constructs a [`ListPipelinesInput`](crate::input::ListPipelinesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPipelinesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListPipelinesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListPipelinesInput {
                 marker: self.marker,
@@ -1535,13 +1564,13 @@ impl ListPipelinesInput {
             crate::operation::ListPipelines,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPipelinesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1549,8 +1578,10 @@ impl ListPipelinesInput {
             fn update_http_builder(
                 input: &crate::input::ListPipelinesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1639,7 +1670,7 @@ impl ListPipelinesInput {
 pub mod poll_for_task_input {
 
     /// A builder for [`PollForTaskInput`](crate::input::PollForTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) worker_group: std::option::Option<std::string::String>,
         pub(crate) hostname: std::option::Option<std::string::String>,
@@ -1682,7 +1713,7 @@ pub mod poll_for_task_input {
         /// Consumes the builder and constructs a [`PollForTaskInput`](crate::input::PollForTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PollForTaskInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PollForTaskInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PollForTaskInput {
                 worker_group: self.worker_group,
@@ -1705,13 +1736,13 @@ impl PollForTaskInput {
             crate::operation::PollForTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PollForTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1719,8 +1750,10 @@ impl PollForTaskInput {
             fn update_http_builder(
                 input: &crate::input::PollForTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1809,7 +1842,7 @@ impl PollForTaskInput {
 pub mod put_pipeline_definition_input {
 
     /// A builder for [`PutPipelineDefinitionInput`](crate::input::PutPipelineDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) pipeline_objects:
@@ -1890,8 +1923,10 @@ pub mod put_pipeline_definition_input {
         /// Consumes the builder and constructs a [`PutPipelineDefinitionInput`](crate::input::PutPipelineDefinitionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutPipelineDefinitionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutPipelineDefinitionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutPipelineDefinitionInput {
                 pipeline_id: self.pipeline_id,
                 pipeline_objects: self.pipeline_objects,
@@ -1914,13 +1949,13 @@ impl PutPipelineDefinitionInput {
             crate::operation::PutPipelineDefinition,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutPipelineDefinitionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1928,8 +1963,10 @@ impl PutPipelineDefinitionInput {
             fn update_http_builder(
                 input: &crate::input::PutPipelineDefinitionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2020,7 +2057,7 @@ impl PutPipelineDefinitionInput {
 pub mod query_objects_input {
 
     /// A builder for [`QueryObjectsInput`](crate::input::QueryObjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) query: std::option::Option<crate::model::Query>,
@@ -2082,7 +2119,7 @@ pub mod query_objects_input {
         /// Consumes the builder and constructs a [`QueryObjectsInput`](crate::input::QueryObjectsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::QueryObjectsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::QueryObjectsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::QueryObjectsInput {
                 pipeline_id: self.pipeline_id,
@@ -2107,13 +2144,13 @@ impl QueryObjectsInput {
             crate::operation::QueryObjects,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::QueryObjectsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2121,8 +2158,10 @@ impl QueryObjectsInput {
             fn update_http_builder(
                 input: &crate::input::QueryObjectsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2211,7 +2250,7 @@ impl QueryObjectsInput {
 pub mod remove_tags_input {
 
     /// A builder for [`RemoveTagsInput`](crate::input::RemoveTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2249,7 +2288,8 @@ pub mod remove_tags_input {
         /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::input::RemoveTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RemoveTagsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::RemoveTagsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::RemoveTagsInput {
                 pipeline_id: self.pipeline_id,
                 tag_keys: self.tag_keys,
@@ -2270,13 +2310,13 @@ impl RemoveTagsInput {
             crate::operation::RemoveTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RemoveTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2284,8 +2324,10 @@ impl RemoveTagsInput {
             fn update_http_builder(
                 input: &crate::input::RemoveTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2374,7 +2416,7 @@ impl RemoveTagsInput {
 pub mod report_task_progress_input {
 
     /// A builder for [`ReportTaskProgressInput`](crate::input::ReportTaskProgressInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
@@ -2412,8 +2454,10 @@ pub mod report_task_progress_input {
         /// Consumes the builder and constructs a [`ReportTaskProgressInput`](crate::input::ReportTaskProgressInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ReportTaskProgressInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ReportTaskProgressInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ReportTaskProgressInput {
                 task_id: self.task_id,
                 fields: self.fields,
@@ -2434,13 +2478,13 @@ impl ReportTaskProgressInput {
             crate::operation::ReportTaskProgress,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ReportTaskProgressInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2448,8 +2492,10 @@ impl ReportTaskProgressInput {
             fn update_http_builder(
                 input: &crate::input::ReportTaskProgressInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2538,7 +2584,7 @@ impl ReportTaskProgressInput {
 pub mod report_task_runner_heartbeat_input {
 
     /// A builder for [`ReportTaskRunnerHeartbeatInput`](crate::input::ReportTaskRunnerHeartbeatInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) taskrunner_id: std::option::Option<std::string::String>,
         pub(crate) worker_group: std::option::Option<std::string::String>,
@@ -2583,7 +2629,7 @@ pub mod report_task_runner_heartbeat_input {
             self,
         ) -> Result<
             crate::input::ReportTaskRunnerHeartbeatInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ReportTaskRunnerHeartbeatInput {
                 taskrunner_id: self.taskrunner_id,
@@ -2606,13 +2652,13 @@ impl ReportTaskRunnerHeartbeatInput {
             crate::operation::ReportTaskRunnerHeartbeat,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ReportTaskRunnerHeartbeatInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2620,8 +2666,10 @@ impl ReportTaskRunnerHeartbeatInput {
             fn update_http_builder(
                 input: &crate::input::ReportTaskRunnerHeartbeatInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2712,7 +2760,7 @@ impl ReportTaskRunnerHeartbeatInput {
 pub mod set_status_input {
 
     /// A builder for [`SetStatusInput`](crate::input::SetStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) object_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2761,7 +2809,8 @@ pub mod set_status_input {
         /// Consumes the builder and constructs a [`SetStatusInput`](crate::input::SetStatusInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SetStatusInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::SetStatusInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::SetStatusInput {
                 pipeline_id: self.pipeline_id,
                 object_ids: self.object_ids,
@@ -2783,13 +2832,13 @@ impl SetStatusInput {
             crate::operation::SetStatus,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetStatusInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2797,8 +2846,10 @@ impl SetStatusInput {
             fn update_http_builder(
                 input: &crate::input::SetStatusInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2885,7 +2936,7 @@ impl SetStatusInput {
 pub mod set_task_status_input {
 
     /// A builder for [`SetTaskStatusInput`](crate::input::SetTaskStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) task_status: std::option::Option<crate::model::TaskStatus>,
@@ -2956,7 +3007,7 @@ pub mod set_task_status_input {
         /// Consumes the builder and constructs a [`SetTaskStatusInput`](crate::input::SetTaskStatusInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SetTaskStatusInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::SetTaskStatusInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::SetTaskStatusInput {
                 task_id: self.task_id,
@@ -2981,13 +3032,13 @@ impl SetTaskStatusInput {
             crate::operation::SetTaskStatus,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SetTaskStatusInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2995,8 +3046,10 @@ impl SetTaskStatusInput {
             fn update_http_builder(
                 input: &crate::input::SetTaskStatusInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3085,7 +3138,7 @@ impl SetTaskStatusInput {
 pub mod validate_pipeline_definition_input {
 
     /// A builder for [`ValidatePipelineDefinitionInput`](crate::input::ValidatePipelineDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) pipeline_objects:
@@ -3168,7 +3221,7 @@ pub mod validate_pipeline_definition_input {
             self,
         ) -> Result<
             crate::input::ValidatePipelineDefinitionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ValidatePipelineDefinitionInput {
                 pipeline_id: self.pipeline_id,
@@ -3192,13 +3245,13 @@ impl ValidatePipelineDefinitionInput {
             crate::operation::ValidatePipelineDefinition,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ValidatePipelineDefinitionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3206,8 +3259,10 @@ impl ValidatePipelineDefinitionInput {
             fn update_http_builder(
                 input: &crate::input::ValidatePipelineDefinitionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3296,7 +3351,7 @@ impl ValidatePipelineDefinitionInput {
 
 /// <p>Contains the parameters for ValidatePipelineDefinition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidatePipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3329,20 +3384,10 @@ impl ValidatePipelineDefinitionInput {
         self.parameter_values.as_deref()
     }
 }
-impl std::fmt::Debug for ValidatePipelineDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidatePipelineDefinitionInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("pipeline_objects", &self.pipeline_objects);
-        formatter.field("parameter_objects", &self.parameter_objects);
-        formatter.field("parameter_values", &self.parameter_values);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for SetTaskStatus.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetTaskStatusInput {
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
     #[doc(hidden)]
@@ -3382,21 +3427,10 @@ impl SetTaskStatusInput {
         self.error_stack_trace.as_deref()
     }
 }
-impl std::fmt::Debug for SetTaskStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetTaskStatusInput");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("task_status", &self.task_status);
-        formatter.field("error_id", &self.error_id);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("error_stack_trace", &self.error_stack_trace);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for SetStatus.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetStatusInput {
     /// <p>The ID of the pipeline that contains the objects.</p>
     #[doc(hidden)]
@@ -3422,19 +3456,10 @@ impl SetStatusInput {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for SetStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetStatusInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("object_ids", &self.object_ids);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for ReportTaskRunnerHeartbeat.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportTaskRunnerHeartbeatInput {
     /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
     #[doc(hidden)]
@@ -3460,19 +3485,10 @@ impl ReportTaskRunnerHeartbeatInput {
         self.hostname.as_deref()
     }
 }
-impl std::fmt::Debug for ReportTaskRunnerHeartbeatInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportTaskRunnerHeartbeatInput");
-        formatter.field("taskrunner_id", &self.taskrunner_id);
-        formatter.field("worker_group", &self.worker_group);
-        formatter.field("hostname", &self.hostname);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for ReportTaskProgress.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReportTaskProgressInput {
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
     #[doc(hidden)]
@@ -3491,18 +3507,10 @@ impl ReportTaskProgressInput {
         self.fields.as_deref()
     }
 }
-impl std::fmt::Debug for ReportTaskProgressInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReportTaskProgressInput");
-        formatter.field("task_id", &self.task_id);
-        formatter.field("fields", &self.fields);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for RemoveTags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3521,18 +3529,10 @@ impl RemoveTagsInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for QueryObjects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryObjectsInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3572,21 +3572,10 @@ impl QueryObjectsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for QueryObjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryObjectsInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("query", &self.query);
-        formatter.field("sphere", &self.sphere);
-        formatter.field("marker", &self.marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for PutPipelineDefinition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3619,20 +3608,10 @@ impl PutPipelineDefinitionInput {
         self.parameter_values.as_deref()
     }
 }
-impl std::fmt::Debug for PutPipelineDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPipelineDefinitionInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("pipeline_objects", &self.pipeline_objects);
-        formatter.field("parameter_objects", &self.parameter_objects);
-        formatter.field("parameter_values", &self.parameter_values);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for PollForTask.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PollForTaskInput {
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
     #[doc(hidden)]
@@ -3658,19 +3637,10 @@ impl PollForTaskInput {
         self.instance_identity.as_ref()
     }
 }
-impl std::fmt::Debug for PollForTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PollForTaskInput");
-        formatter.field("worker_group", &self.worker_group);
-        formatter.field("hostname", &self.hostname);
-        formatter.field("instance_identity", &self.instance_identity);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for ListPipelines.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPipelinesInput {
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>
     #[doc(hidden)]
@@ -3682,17 +3652,10 @@ impl ListPipelinesInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListPipelinesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPipelinesInput");
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for GetPipelineDefinition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3711,18 +3674,10 @@ impl GetPipelineDefinitionInput {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for GetPipelineDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPipelineDefinitionInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for EvaluateExpression.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EvaluateExpressionInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3748,19 +3703,10 @@ impl EvaluateExpressionInput {
         self.expression.as_deref()
     }
 }
-impl std::fmt::Debug for EvaluateExpressionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EvaluateExpressionInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("object_id", &self.object_id);
-        formatter.field("expression", &self.expression);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DescribePipelines.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePipelinesInput {
     /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
     #[doc(hidden)]
@@ -3772,17 +3718,10 @@ impl DescribePipelinesInput {
         self.pipeline_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePipelinesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePipelinesInput");
-        formatter.field("pipeline_ids", &self.pipeline_ids);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DescribeObjects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeObjectsInput {
     /// <p>The ID of the pipeline that contains the object definitions.</p>
     #[doc(hidden)]
@@ -3815,20 +3754,10 @@ impl DescribeObjectsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeObjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeObjectsInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("object_ids", &self.object_ids);
-        formatter.field("evaluate_expressions", &self.evaluate_expressions);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DeletePipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePipelineInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3840,17 +3769,10 @@ impl DeletePipelineInput {
         self.pipeline_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePipelineInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for DeactivatePipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeactivatePipelineInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3869,18 +3791,10 @@ impl DeactivatePipelineInput {
         self.cancel_active
     }
 }
-impl std::fmt::Debug for DeactivatePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeactivatePipelineInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("cancel_active", &self.cancel_active);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for CreatePipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePipelineInput {
     /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
     #[doc(hidden)]
@@ -3913,20 +3827,10 @@ impl CreatePipelineInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePipelineInput");
-        formatter.field("name", &self.name);
-        formatter.field("unique_id", &self.unique_id);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for AddTags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3945,18 +3849,10 @@ impl AddTagsInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for AddTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for ActivatePipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivatePipelineInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
@@ -3980,14 +3876,5 @@ impl ActivatePipelineInput {
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
     pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
-    }
-}
-impl std::fmt::Debug for ActivatePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivatePipelineInput");
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("parameter_values", &self.parameter_values);
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.finish()
     }
 }

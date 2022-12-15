@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_keyspace_input {
 
     /// A builder for [`CreateKeyspaceInput`](crate::input::CreateKeyspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -48,7 +48,7 @@ pub mod create_keyspace_input {
         /// Consumes the builder and constructs a [`CreateKeyspaceInput`](crate::input::CreateKeyspaceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateKeyspaceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateKeyspaceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateKeyspaceInput {
                 keyspace_name: self.keyspace_name,
@@ -70,13 +70,13 @@ impl CreateKeyspaceInput {
             crate::operation::CreateKeyspace,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateKeyspaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -84,8 +84,10 @@ impl CreateKeyspaceInput {
             fn update_http_builder(
                 input: &crate::input::CreateKeyspaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -174,7 +176,7 @@ impl CreateKeyspaceInput {
 pub mod create_table_input {
 
     /// A builder for [`CreateTableInput`](crate::input::CreateTableInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -382,7 +384,7 @@ pub mod create_table_input {
         /// Consumes the builder and constructs a [`CreateTableInput`](crate::input::CreateTableInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTableInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateTableInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateTableInput {
                 keyspace_name: self.keyspace_name,
@@ -412,13 +414,13 @@ impl CreateTableInput {
             crate::operation::CreateTable,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateTableInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -426,8 +428,10 @@ impl CreateTableInput {
             fn update_http_builder(
                 input: &crate::input::CreateTableInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -516,7 +520,7 @@ impl CreateTableInput {
 pub mod delete_keyspace_input {
 
     /// A builder for [`DeleteKeyspaceInput`](crate::input::DeleteKeyspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
     }
@@ -537,7 +541,7 @@ pub mod delete_keyspace_input {
         /// Consumes the builder and constructs a [`DeleteKeyspaceInput`](crate::input::DeleteKeyspaceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteKeyspaceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteKeyspaceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteKeyspaceInput {
                 keyspace_name: self.keyspace_name,
@@ -558,13 +562,13 @@ impl DeleteKeyspaceInput {
             crate::operation::DeleteKeyspace,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteKeyspaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -572,8 +576,10 @@ impl DeleteKeyspaceInput {
             fn update_http_builder(
                 input: &crate::input::DeleteKeyspaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -662,7 +668,7 @@ impl DeleteKeyspaceInput {
 pub mod delete_table_input {
 
     /// A builder for [`DeleteTableInput`](crate::input::DeleteTableInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -694,7 +700,7 @@ pub mod delete_table_input {
         /// Consumes the builder and constructs a [`DeleteTableInput`](crate::input::DeleteTableInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTableInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteTableInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteTableInput {
                 keyspace_name: self.keyspace_name,
@@ -716,13 +722,13 @@ impl DeleteTableInput {
             crate::operation::DeleteTable,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteTableInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -730,8 +736,10 @@ impl DeleteTableInput {
             fn update_http_builder(
                 input: &crate::input::DeleteTableInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -820,7 +828,7 @@ impl DeleteTableInput {
 pub mod get_keyspace_input {
 
     /// A builder for [`GetKeyspaceInput`](crate::input::GetKeyspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
     }
@@ -841,7 +849,7 @@ pub mod get_keyspace_input {
         /// Consumes the builder and constructs a [`GetKeyspaceInput`](crate::input::GetKeyspaceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetKeyspaceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetKeyspaceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetKeyspaceInput {
                 keyspace_name: self.keyspace_name,
@@ -862,13 +870,13 @@ impl GetKeyspaceInput {
             crate::operation::GetKeyspace,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetKeyspaceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -876,8 +884,10 @@ impl GetKeyspaceInput {
             fn update_http_builder(
                 input: &crate::input::GetKeyspaceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -966,7 +976,7 @@ impl GetKeyspaceInput {
 pub mod get_table_input {
 
     /// A builder for [`GetTableInput`](crate::input::GetTableInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -998,7 +1008,8 @@ pub mod get_table_input {
         /// Consumes the builder and constructs a [`GetTableInput`](crate::input::GetTableInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetTableInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetTableInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetTableInput {
                 keyspace_name: self.keyspace_name,
                 table_name: self.table_name,
@@ -1019,13 +1030,13 @@ impl GetTableInput {
             crate::operation::GetTable,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetTableInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1033,8 +1044,10 @@ impl GetTableInput {
             fn update_http_builder(
                 input: &crate::input::GetTableInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1121,7 +1134,7 @@ impl GetTableInput {
 pub mod list_keyspaces_input {
 
     /// A builder for [`ListKeyspacesInput`](crate::input::ListKeyspacesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1150,7 +1163,7 @@ pub mod list_keyspaces_input {
         /// Consumes the builder and constructs a [`ListKeyspacesInput`](crate::input::ListKeyspacesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListKeyspacesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListKeyspacesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListKeyspacesInput {
                 next_token: self.next_token,
@@ -1172,13 +1185,13 @@ impl ListKeyspacesInput {
             crate::operation::ListKeyspaces,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListKeyspacesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1186,8 +1199,10 @@ impl ListKeyspacesInput {
             fn update_http_builder(
                 input: &crate::input::ListKeyspacesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1276,7 +1291,7 @@ impl ListKeyspacesInput {
 pub mod list_tables_input {
 
     /// A builder for [`ListTablesInput`](crate::input::ListTablesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1319,7 +1334,8 @@ pub mod list_tables_input {
         /// Consumes the builder and constructs a [`ListTablesInput`](crate::input::ListTablesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTablesInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListTablesInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListTablesInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -1341,13 +1357,13 @@ impl ListTablesInput {
             crate::operation::ListTables,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTablesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1355,8 +1371,10 @@ impl ListTablesInput {
             fn update_http_builder(
                 input: &crate::input::ListTablesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1445,7 +1463,7 @@ impl ListTablesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1485,8 +1503,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
                 next_token: self.next_token,
@@ -1508,13 +1528,13 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1522,8 +1542,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1614,7 +1636,7 @@ impl ListTagsForResourceInput {
 pub mod restore_table_input {
 
     /// A builder for [`RestoreTableInput`](crate::input::RestoreTableInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_keyspace_name: std::option::Option<std::string::String>,
         pub(crate) source_table_name: std::option::Option<std::string::String>,
@@ -1791,7 +1813,7 @@ pub mod restore_table_input {
         /// Consumes the builder and constructs a [`RestoreTableInput`](crate::input::RestoreTableInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RestoreTableInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::RestoreTableInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::RestoreTableInput {
                 source_keyspace_name: self.source_keyspace_name,
@@ -1820,13 +1842,13 @@ impl RestoreTableInput {
             crate::operation::RestoreTable,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RestoreTableInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1834,8 +1856,10 @@ impl RestoreTableInput {
             fn update_http_builder(
                 input: &crate::input::RestoreTableInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1924,7 +1948,7 @@ impl RestoreTableInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1962,7 +1986,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -1984,13 +2008,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1998,8 +2022,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2088,7 +2114,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2126,7 +2152,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2148,13 +2174,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2162,8 +2188,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2252,7 +2280,7 @@ impl UntagResourceInput {
 pub mod update_table_input {
 
     /// A builder for [`UpdateTableInput`](crate::input::UpdateTableInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -2413,7 +2441,7 @@ pub mod update_table_input {
         /// Consumes the builder and constructs a [`UpdateTableInput`](crate::input::UpdateTableInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateTableInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateTableInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateTableInput {
                 keyspace_name: self.keyspace_name,
@@ -2441,13 +2469,13 @@ impl UpdateTableInput {
             crate::operation::UpdateTable,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateTableInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2455,8 +2483,10 @@ impl UpdateTableInput {
             fn update_http_builder(
                 input: &crate::input::UpdateTableInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2543,7 +2573,7 @@ impl UpdateTableInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTableInput {
     /// <p>The name of the keyspace the specified table is stored in.</p>
     #[doc(hidden)]
@@ -2648,24 +2678,10 @@ impl UpdateTableInput {
         self.default_time_to_live
     }
 }
-impl std::fmt::Debug for UpdateTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTableInput");
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("add_columns", &self.add_columns);
-        formatter.field("capacity_specification", &self.capacity_specification);
-        formatter.field("encryption_specification", &self.encryption_specification);
-        formatter.field("point_in_time_recovery", &self.point_in_time_recovery);
-        formatter.field("ttl", &self.ttl);
-        formatter.field("default_time_to_live", &self.default_time_to_live);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Keyspaces resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -2684,18 +2700,10 @@ impl UntagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Keyspaces resource to which to add tags.</p>
     #[doc(hidden)]
@@ -2714,18 +2722,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreTableInput {
     /// <p>The keyspace name of the source table.</p>
     #[doc(hidden)]
@@ -2826,34 +2826,10 @@ impl RestoreTableInput {
         self.tags_override.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreTableInput");
-        formatter.field("source_keyspace_name", &self.source_keyspace_name);
-        formatter.field("source_table_name", &self.source_table_name);
-        formatter.field("target_keyspace_name", &self.target_keyspace_name);
-        formatter.field("target_table_name", &self.target_table_name);
-        formatter.field("restore_timestamp", &self.restore_timestamp);
-        formatter.field(
-            "capacity_specification_override",
-            &self.capacity_specification_override,
-        );
-        formatter.field(
-            "encryption_specification_override",
-            &self.encryption_specification_override,
-        );
-        formatter.field(
-            "point_in_time_recovery_override",
-            &self.point_in_time_recovery_override,
-        );
-        formatter.field("tags_override", &self.tags_override);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Keyspaces resource.</p>
     #[doc(hidden)]
@@ -2879,19 +2855,10 @@ impl ListTagsForResourceInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTablesInput {
     /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
     #[doc(hidden)]
@@ -2917,19 +2884,10 @@ impl ListTablesInput {
         self.keyspace_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListTablesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTablesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListKeyspacesInput {
     /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as argument of a subsequent API invocation.</p>
     #[doc(hidden)]
@@ -2948,18 +2906,10 @@ impl ListKeyspacesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListKeyspacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListKeyspacesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTableInput {
     /// <p>The name of the keyspace that the table is stored in.</p>
     #[doc(hidden)]
@@ -2978,18 +2928,10 @@ impl GetTableInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTableInput");
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetKeyspaceInput {
     /// <p>The name of the keyspace.</p>
     #[doc(hidden)]
@@ -3001,17 +2943,10 @@ impl GetKeyspaceInput {
         self.keyspace_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetKeyspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetKeyspaceInput");
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTableInput {
     /// <p>The name of the keyspace of the to be deleted table.</p>
     #[doc(hidden)]
@@ -3030,18 +2965,10 @@ impl DeleteTableInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTableInput");
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteKeyspaceInput {
     /// <p>The name of the keyspace to be deleted.</p>
     #[doc(hidden)]
@@ -3053,17 +2980,10 @@ impl DeleteKeyspaceInput {
         self.keyspace_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteKeyspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteKeyspaceInput");
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTableInput {
     /// <p>The name of the keyspace that the table is going to be created in.</p>
     #[doc(hidden)]
@@ -3204,26 +3124,10 @@ impl CreateTableInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTableInput");
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("schema_definition", &self.schema_definition);
-        formatter.field("comment", &self.comment);
-        formatter.field("capacity_specification", &self.capacity_specification);
-        formatter.field("encryption_specification", &self.encryption_specification);
-        formatter.field("point_in_time_recovery", &self.point_in_time_recovery);
-        formatter.field("ttl", &self.ttl);
-        formatter.field("default_time_to_live", &self.default_time_to_live);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateKeyspaceInput {
     /// <p>The name of the keyspace to be created.</p>
     #[doc(hidden)]
@@ -3242,13 +3146,5 @@ impl CreateKeyspaceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateKeyspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateKeyspaceInput");
-        formatter.field("keyspace_name", &self.keyspace_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

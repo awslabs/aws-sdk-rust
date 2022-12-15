@@ -2,7 +2,7 @@
 
 /// <p>An analyzed segment for a real-time analysis session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RealtimeContactAnalysisSegment {
     /// <p>The analyzed transcript.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl RealtimeContactAnalysisSegment {
         self.categories.as_ref()
     }
 }
-impl std::fmt::Debug for RealtimeContactAnalysisSegment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RealtimeContactAnalysisSegment");
-        formatter.field("transcript", &self.transcript);
-        formatter.field("categories", &self.categories);
-        formatter.finish()
-    }
-}
 /// See [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment).
 pub mod realtime_contact_analysis_segment {
 
     /// A builder for [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcript: std::option::Option<crate::model::Transcript>,
         pub(crate) categories: std::option::Option<crate::model::Categories>,
@@ -83,7 +75,7 @@ impl RealtimeContactAnalysisSegment {
 
 /// <p>Provides the category rules that are used to automatically categorize contacts based on uttered keywords and phrases.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Categories {
     /// <p>The category rules that have been matched in the analyzed segment.</p>
     #[doc(hidden)]
@@ -108,19 +100,11 @@ impl Categories {
         self.matched_details.as_ref()
     }
 }
-impl std::fmt::Debug for Categories {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Categories");
-        formatter.field("matched_categories", &self.matched_categories);
-        formatter.field("matched_details", &self.matched_details);
-        formatter.finish()
-    }
-}
 /// See [`Categories`](crate::model::Categories).
 pub mod categories {
 
     /// A builder for [`Categories`](crate::model::Categories).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) matched_categories: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) matched_details: std::option::Option<
@@ -190,7 +174,7 @@ impl Categories {
 
 /// <p>Provides information about the category rule that was matched.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CategoryDetails {
     /// <p>The section of audio where the category rule was detected.</p>
     #[doc(hidden)]
@@ -202,18 +186,11 @@ impl CategoryDetails {
         self.points_of_interest.as_deref()
     }
 }
-impl std::fmt::Debug for CategoryDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CategoryDetails");
-        formatter.field("points_of_interest", &self.points_of_interest);
-        formatter.finish()
-    }
-}
 /// See [`CategoryDetails`](crate::model::CategoryDetails).
 pub mod category_details {
 
     /// A builder for [`CategoryDetails`](crate::model::CategoryDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) points_of_interest:
             std::option::Option<std::vec::Vec<crate::model::PointOfInterest>>,
@@ -255,7 +232,7 @@ impl CategoryDetails {
 
 /// <p>The section of the contact audio where that category rule was detected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PointOfInterest {
     /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
     #[doc(hidden)]
@@ -274,19 +251,11 @@ impl PointOfInterest {
         self.end_offset_millis
     }
 }
-impl std::fmt::Debug for PointOfInterest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PointOfInterest");
-        formatter.field("begin_offset_millis", &self.begin_offset_millis);
-        formatter.field("end_offset_millis", &self.end_offset_millis);
-        formatter.finish()
-    }
-}
 /// See [`PointOfInterest`](crate::model::PointOfInterest).
 pub mod point_of_interest {
 
     /// A builder for [`PointOfInterest`](crate::model::PointOfInterest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin_offset_millis: std::option::Option<i32>,
         pub(crate) end_offset_millis: std::option::Option<i32>,
@@ -330,7 +299,7 @@ impl PointOfInterest {
 
 /// <p>A list of messages in the session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Transcript {
     /// <p>The identifier of the transcript.</p>
     #[doc(hidden)]
@@ -391,25 +360,11 @@ impl Transcript {
         self.issues_detected.as_deref()
     }
 }
-impl std::fmt::Debug for Transcript {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Transcript");
-        formatter.field("id", &self.id);
-        formatter.field("participant_id", &self.participant_id);
-        formatter.field("participant_role", &self.participant_role);
-        formatter.field("content", &self.content);
-        formatter.field("begin_offset_millis", &self.begin_offset_millis);
-        formatter.field("end_offset_millis", &self.end_offset_millis);
-        formatter.field("sentiment", &self.sentiment);
-        formatter.field("issues_detected", &self.issues_detected);
-        formatter.finish()
-    }
-}
 /// See [`Transcript`](crate::model::Transcript).
 pub mod transcript {
 
     /// A builder for [`Transcript`](crate::model::Transcript).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) participant_id: std::option::Option<std::string::String>,
@@ -543,7 +498,7 @@ impl Transcript {
 
 /// <p>Potential issues that are detected based on an artificial intelligence analysis of each turn in the conversation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IssueDetected {
     /// <p>The offset for when the issue was detected in the segment.</p>
     #[doc(hidden)]
@@ -555,18 +510,11 @@ impl IssueDetected {
         self.character_offsets.as_ref()
     }
 }
-impl std::fmt::Debug for IssueDetected {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IssueDetected");
-        formatter.field("character_offsets", &self.character_offsets);
-        formatter.finish()
-    }
-}
 /// See [`IssueDetected`](crate::model::IssueDetected).
 pub mod issue_detected {
 
     /// A builder for [`IssueDetected`](crate::model::IssueDetected).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) character_offsets: std::option::Option<crate::model::CharacterOffsets>,
     }
@@ -601,7 +549,7 @@ impl IssueDetected {
 
 /// <p>For characters that were detected as issues, where they occur in the transcript.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CharacterOffsets {
     /// <p>The beginning of the issue.</p>
     #[doc(hidden)]
@@ -620,19 +568,11 @@ impl CharacterOffsets {
         self.end_offset_char
     }
 }
-impl std::fmt::Debug for CharacterOffsets {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CharacterOffsets");
-        formatter.field("begin_offset_char", &self.begin_offset_char);
-        formatter.field("end_offset_char", &self.end_offset_char);
-        formatter.finish()
-    }
-}
 /// See [`CharacterOffsets`](crate::model::CharacterOffsets).
 pub mod character_offsets {
 
     /// A builder for [`CharacterOffsets`](crate::model::CharacterOffsets).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin_offset_char: std::option::Option<i32>,
         pub(crate) end_offset_char: std::option::Option<i32>,
@@ -674,6 +614,42 @@ impl CharacterOffsets {
     }
 }
 
+/// When writing a match expression against `SentimentValue`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sentimentvalue = unimplemented!();
+/// match sentimentvalue {
+///     SentimentValue::Negative => { /* ... */ },
+///     SentimentValue::Neutral => { /* ... */ },
+///     SentimentValue::Positive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sentimentvalue` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SentimentValue::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SentimentValue::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SentimentValue::NewFeature` is defined.
+/// Specifically, when `sentimentvalue` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SentimentValue::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -692,8 +668,8 @@ pub enum SentimentValue {
     Neutral,
     #[allow(missing_docs)] // documentation missing in model
     Positive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SentimentValue {
     fn from(s: &str) -> Self {
@@ -701,7 +677,7 @@ impl std::convert::From<&str> for SentimentValue {
             "NEGATIVE" => SentimentValue::Negative,
             "NEUTRAL" => SentimentValue::Neutral,
             "POSITIVE" => SentimentValue::Positive,
-            other => SentimentValue::Unknown(other.to_owned()),
+            other => SentimentValue::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -719,11 +695,11 @@ impl SentimentValue {
             SentimentValue::Negative => "NEGATIVE",
             SentimentValue::Neutral => "NEUTRAL",
             SentimentValue::Positive => "POSITIVE",
-            SentimentValue::Unknown(s) => s.as_ref(),
+            SentimentValue::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NEGATIVE", "NEUTRAL", "POSITIVE"]
     }
 }

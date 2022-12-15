@@ -5,7 +5,7 @@
 /// [`count_closed_workflow_executions`](crate::client::Client::count_closed_workflow_executions).
 ///
 /// See [`crate::client::fluent_builders::CountClosedWorkflowExecutions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CountClosedWorkflowExecutions {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CountClosedWorkflowExecu
 /// [`count_open_workflow_executions`](crate::client::Client::count_open_workflow_executions).
 ///
 /// See [`crate::client::fluent_builders::CountOpenWorkflowExecutions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CountOpenWorkflowExecutions {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CountOpenWorkflowExecuti
 /// [`count_pending_activity_tasks`](crate::client::Client::count_pending_activity_tasks).
 ///
 /// See [`crate::client::fluent_builders::CountPendingActivityTasks`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CountPendingActivityTasks {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CountPendingActivityTask
 /// [`count_pending_decision_tasks`](crate::client::Client::count_pending_decision_tasks).
 ///
 /// See [`crate::client::fluent_builders::CountPendingDecisionTasks`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CountPendingDecisionTasks {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CountPendingDecisionTask
 /// [`deprecate_activity_type`](crate::client::Client::deprecate_activity_type).
 ///
 /// See [`crate::client::fluent_builders::DeprecateActivityType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeprecateActivityType {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprecateActivityType {
 /// [`deprecate_domain`](crate::client::Client::deprecate_domain).
 ///
 /// See [`crate::client::fluent_builders::DeprecateDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeprecateDomain {
     _private: (),
 }
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprecateDomain {
 /// [`deprecate_workflow_type`](crate::client::Client::deprecate_workflow_type).
 ///
 /// See [`crate::client::fluent_builders::DeprecateWorkflowType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeprecateWorkflowType {
     _private: (),
 }
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprecateWorkflowType {
 /// [`describe_activity_type`](crate::client::Client::describe_activity_type).
 ///
 /// See [`crate::client::fluent_builders::DescribeActivityType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeActivityType {
     _private: (),
 }
@@ -277,7 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeActivityType {
 /// [`describe_domain`](crate::client::Client::describe_domain).
 ///
 /// See [`crate::client::fluent_builders::DescribeDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDomain {
     _private: (),
 }
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomain {
 /// [`describe_workflow_execution`](crate::client::Client::describe_workflow_execution).
 ///
 /// See [`crate::client::fluent_builders::DescribeWorkflowExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeWorkflowExecution {
     _private: (),
 }
@@ -343,7 +343,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkflowExecutio
 /// [`describe_workflow_type`](crate::client::Client::describe_workflow_type).
 ///
 /// See [`crate::client::fluent_builders::DescribeWorkflowType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeWorkflowType {
     _private: (),
 }
@@ -377,7 +377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkflowType {
 /// [`get_workflow_execution_history`](crate::client::Client::get_workflow_execution_history).
 ///
 /// See [`crate::client::fluent_builders::GetWorkflowExecutionHistory`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWorkflowExecutionHistory {
     _private: (),
 }
@@ -411,7 +411,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkflowExecutionHist
 /// [`list_activity_types`](crate::client::Client::list_activity_types).
 ///
 /// See [`crate::client::fluent_builders::ListActivityTypes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListActivityTypes {
     _private: (),
 }
@@ -445,7 +445,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListActivityTypes {
 /// [`list_closed_workflow_executions`](crate::client::Client::list_closed_workflow_executions).
 ///
 /// See [`crate::client::fluent_builders::ListClosedWorkflowExecutions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListClosedWorkflowExecutions {
     _private: (),
 }
@@ -479,7 +479,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClosedWorkflowExecut
 /// [`list_domains`](crate::client::Client::list_domains).
 ///
 /// See [`crate::client::fluent_builders::ListDomains`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDomains {
     _private: (),
 }
@@ -511,7 +511,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
 /// [`list_open_workflow_executions`](crate::client::Client::list_open_workflow_executions).
 ///
 /// See [`crate::client::fluent_builders::ListOpenWorkflowExecutions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListOpenWorkflowExecutions {
     _private: (),
 }
@@ -545,7 +545,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOpenWorkflowExecutio
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -579,7 +579,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_workflow_types`](crate::client::Client::list_workflow_types).
 ///
 /// See [`crate::client::fluent_builders::ListWorkflowTypes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkflowTypes {
     _private: (),
 }
@@ -613,7 +613,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkflowTypes {
 /// [`poll_for_activity_task`](crate::client::Client::poll_for_activity_task).
 ///
 /// See [`crate::client::fluent_builders::PollForActivityTask`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PollForActivityTask {
     _private: (),
 }
@@ -647,7 +647,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PollForActivityTask {
 /// [`poll_for_decision_task`](crate::client::Client::poll_for_decision_task).
 ///
 /// See [`crate::client::fluent_builders::PollForDecisionTask`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PollForDecisionTask {
     _private: (),
 }
@@ -681,7 +681,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PollForDecisionTask {
 /// [`record_activity_task_heartbeat`](crate::client::Client::record_activity_task_heartbeat).
 ///
 /// See [`crate::client::fluent_builders::RecordActivityTaskHeartbeat`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RecordActivityTaskHeartbeat {
     _private: (),
 }
@@ -715,7 +715,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RecordActivityTaskHeartb
 /// [`register_activity_type`](crate::client::Client::register_activity_type).
 ///
 /// See [`crate::client::fluent_builders::RegisterActivityType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterActivityType {
     _private: (),
 }
@@ -749,7 +749,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterActivityType {
 /// [`register_domain`](crate::client::Client::register_domain).
 ///
 /// See [`crate::client::fluent_builders::RegisterDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterDomain {
     _private: (),
 }
@@ -781,7 +781,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterDomain {
 /// [`register_workflow_type`](crate::client::Client::register_workflow_type).
 ///
 /// See [`crate::client::fluent_builders::RegisterWorkflowType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterWorkflowType {
     _private: (),
 }
@@ -815,7 +815,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterWorkflowType {
 /// [`request_cancel_workflow_execution`](crate::client::Client::request_cancel_workflow_execution).
 ///
 /// See [`crate::client::fluent_builders::RequestCancelWorkflowExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RequestCancelWorkflowExecution {
     _private: (),
 }
@@ -849,7 +849,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RequestCancelWorkflowExe
 /// [`respond_activity_task_canceled`](crate::client::Client::respond_activity_task_canceled).
 ///
 /// See [`crate::client::fluent_builders::RespondActivityTaskCanceled`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RespondActivityTaskCanceled {
     _private: (),
 }
@@ -883,7 +883,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondActivityTaskCance
 /// [`respond_activity_task_completed`](crate::client::Client::respond_activity_task_completed).
 ///
 /// See [`crate::client::fluent_builders::RespondActivityTaskCompleted`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RespondActivityTaskCompleted {
     _private: (),
 }
@@ -917,7 +917,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondActivityTaskCompl
 /// [`respond_activity_task_failed`](crate::client::Client::respond_activity_task_failed).
 ///
 /// See [`crate::client::fluent_builders::RespondActivityTaskFailed`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RespondActivityTaskFailed {
     _private: (),
 }
@@ -951,7 +951,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondActivityTaskFaile
 /// [`respond_decision_task_completed`](crate::client::Client::respond_decision_task_completed).
 ///
 /// See [`crate::client::fluent_builders::RespondDecisionTaskCompleted`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RespondDecisionTaskCompleted {
     _private: (),
 }
@@ -985,7 +985,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondDecisionTaskCompl
 /// [`signal_workflow_execution`](crate::client::Client::signal_workflow_execution).
 ///
 /// See [`crate::client::fluent_builders::SignalWorkflowExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SignalWorkflowExecution {
     _private: (),
 }
@@ -1019,7 +1019,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SignalWorkflowExecution 
 /// [`start_workflow_execution`](crate::client::Client::start_workflow_execution).
 ///
 /// See [`crate::client::fluent_builders::StartWorkflowExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartWorkflowExecution {
     _private: (),
 }
@@ -1053,7 +1053,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartWorkflowExecution {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1085,7 +1085,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`terminate_workflow_execution`](crate::client::Client::terminate_workflow_execution).
 ///
 /// See [`crate::client::fluent_builders::TerminateWorkflowExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TerminateWorkflowExecution {
     _private: (),
 }
@@ -1119,7 +1119,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateWorkflowExecuti
 /// [`undeprecate_activity_type`](crate::client::Client::undeprecate_activity_type).
 ///
 /// See [`crate::client::fluent_builders::UndeprecateActivityType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UndeprecateActivityType {
     _private: (),
 }
@@ -1153,7 +1153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UndeprecateActivityType 
 /// [`undeprecate_domain`](crate::client::Client::undeprecate_domain).
 ///
 /// See [`crate::client::fluent_builders::UndeprecateDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UndeprecateDomain {
     _private: (),
 }
@@ -1187,7 +1187,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UndeprecateDomain {
 /// [`undeprecate_workflow_type`](crate::client::Client::undeprecate_workflow_type).
 ///
 /// See [`crate::client::fluent_builders::UndeprecateWorkflowType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UndeprecateWorkflowType {
     _private: (),
 }
@@ -1221,7 +1221,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UndeprecateWorkflowType 
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }

@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_application_resource_lifecycle_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ApplicationResourceLifecycleConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ServiceRole");
     if let Some(var_2) = &input.service_role {
@@ -23,7 +23,7 @@ pub fn serialize_structure_crate_model_application_resource_lifecycle_config(
 pub fn serialize_structure_crate_model_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("Key");
     if let Some(var_6) = &input.key {
@@ -41,7 +41,7 @@ pub fn serialize_structure_crate_model_tag(
 pub fn serialize_structure_crate_model_source_build_information(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::SourceBuildInformation,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("SourceType");
     if let Some(var_10) = &input.source_type {
@@ -64,7 +64,7 @@ pub fn serialize_structure_crate_model_source_build_information(
 pub fn serialize_structure_crate_model_s3_location(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::S3Location,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("S3Bucket");
     if let Some(var_16) = &input.s3_bucket {
@@ -82,7 +82,7 @@ pub fn serialize_structure_crate_model_s3_location(
 pub fn serialize_structure_crate_model_build_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::BuildConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("ArtifactName");
     if let Some(var_20) = &input.artifact_name {
@@ -118,7 +118,7 @@ pub fn serialize_structure_crate_model_build_configuration(
 pub fn serialize_structure_crate_model_source_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::SourceConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_29 = writer.prefix("ApplicationName");
     if let Some(var_30) = &input.application_name {
@@ -136,7 +136,7 @@ pub fn serialize_structure_crate_model_source_configuration(
 pub fn serialize_structure_crate_model_configuration_option_setting(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ConfigurationOptionSetting,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_33 = writer.prefix("ResourceName");
     if let Some(var_34) = &input.resource_name {
@@ -164,7 +164,7 @@ pub fn serialize_structure_crate_model_configuration_option_setting(
 pub fn serialize_structure_crate_model_environment_tier(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::EnvironmentTier,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_41 = writer.prefix("Name");
     if let Some(var_42) = &input.name {
@@ -187,7 +187,7 @@ pub fn serialize_structure_crate_model_environment_tier(
 pub fn serialize_structure_crate_model_option_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::OptionSpecification,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_47 = writer.prefix("ResourceName");
     if let Some(var_48) = &input.resource_name {
@@ -210,7 +210,7 @@ pub fn serialize_structure_crate_model_option_specification(
 pub fn serialize_structure_crate_model_search_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::SearchFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_53 = writer.prefix("Attribute");
     if let Some(var_54) = &input.attribute {
@@ -239,7 +239,7 @@ pub fn serialize_structure_crate_model_search_filter(
 pub fn serialize_structure_crate_model_platform_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::PlatformFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_62 = writer.prefix("Type");
     if let Some(var_63) = &input.r#type {
@@ -268,7 +268,7 @@ pub fn serialize_structure_crate_model_platform_filter(
 pub fn serialize_structure_crate_model_application_version_lifecycle_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ApplicationVersionLifecycleConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_71 = writer.prefix("MaxCountRule");
     if let Some(var_72) = &input.max_count_rule {
@@ -286,7 +286,7 @@ pub fn serialize_structure_crate_model_application_version_lifecycle_config(
 pub fn serialize_structure_crate_model_max_count_rule(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MaxCountRule,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_75 = writer.prefix("Enabled");
     if let Some(var_76) = &input.enabled {
@@ -312,7 +312,7 @@ pub fn serialize_structure_crate_model_max_count_rule(
 pub fn serialize_structure_crate_model_max_age_rule(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MaxAgeRule,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_81 = writer.prefix("Enabled");
     if let Some(var_82) = &input.enabled {

@@ -5,7 +5,7 @@
 /// [`add_layer_version_permission`](crate::client::Client::add_layer_version_permission).
 ///
 /// See [`crate::client::fluent_builders::AddLayerVersionPermission`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddLayerVersionPermission {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddLayerVersionPermissio
 /// [`add_permission`](crate::client::Client::add_permission).
 ///
 /// See [`crate::client::fluent_builders::AddPermission`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddPermission {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddPermission {
 /// [`create_alias`](crate::client::Client::create_alias).
 ///
 /// See [`crate::client::fluent_builders::CreateAlias`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAlias {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAlias {
 /// [`create_code_signing_config`](crate::client::Client::create_code_signing_config).
 ///
 /// See [`crate::client::fluent_builders::CreateCodeSigningConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCodeSigningConfig {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCodeSigningConfig 
 /// [`create_event_source_mapping`](crate::client::Client::create_event_source_mapping).
 ///
 /// See [`crate::client::fluent_builders::CreateEventSourceMapping`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateEventSourceMapping {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEventSourceMapping
 /// [`create_function`](crate::client::Client::create_function).
 ///
 /// See [`crate::client::fluent_builders::CreateFunction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateFunction {
     _private: (),
 }
@@ -203,7 +203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFunction {
 /// [`create_function_url_config`](crate::client::Client::create_function_url_config).
 ///
 /// See [`crate::client::fluent_builders::CreateFunctionUrlConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateFunctionUrlConfig {
     _private: (),
 }
@@ -237,7 +237,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFunctionUrlConfig 
 /// [`delete_alias`](crate::client::Client::delete_alias).
 ///
 /// See [`crate::client::fluent_builders::DeleteAlias`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAlias {
     _private: (),
 }
@@ -269,7 +269,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlias {
 /// [`delete_code_signing_config`](crate::client::Client::delete_code_signing_config).
 ///
 /// See [`crate::client::fluent_builders::DeleteCodeSigningConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCodeSigningConfig {
     _private: (),
 }
@@ -303,7 +303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCodeSigningConfig 
 /// [`delete_event_source_mapping`](crate::client::Client::delete_event_source_mapping).
 ///
 /// See [`crate::client::fluent_builders::DeleteEventSourceMapping`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEventSourceMapping {
     _private: (),
 }
@@ -337,7 +337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEventSourceMapping
 /// [`delete_function`](crate::client::Client::delete_function).
 ///
 /// See [`crate::client::fluent_builders::DeleteFunction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFunction {
     _private: (),
 }
@@ -369,7 +369,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFunction {
 /// [`delete_function_code_signing_config`](crate::client::Client::delete_function_code_signing_config).
 ///
 /// See [`crate::client::fluent_builders::DeleteFunctionCodeSigningConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFunctionCodeSigningConfig {
     _private: (),
 }
@@ -403,7 +403,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFunctionCodeSignin
 /// [`delete_function_concurrency`](crate::client::Client::delete_function_concurrency).
 ///
 /// See [`crate::client::fluent_builders::DeleteFunctionConcurrency`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFunctionConcurrency {
     _private: (),
 }
@@ -437,7 +437,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFunctionConcurrenc
 /// [`delete_function_event_invoke_config`](crate::client::Client::delete_function_event_invoke_config).
 ///
 /// See [`crate::client::fluent_builders::DeleteFunctionEventInvokeConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFunctionEventInvokeConfig {
     _private: (),
 }
@@ -471,7 +471,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFunctionEventInvok
 /// [`delete_function_url_config`](crate::client::Client::delete_function_url_config).
 ///
 /// See [`crate::client::fluent_builders::DeleteFunctionUrlConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFunctionUrlConfig {
     _private: (),
 }
@@ -505,7 +505,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFunctionUrlConfig 
 /// [`delete_layer_version`](crate::client::Client::delete_layer_version).
 ///
 /// See [`crate::client::fluent_builders::DeleteLayerVersion`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLayerVersion {
     _private: (),
 }
@@ -539,7 +539,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLayerVersion {
 /// [`delete_provisioned_concurrency_config`](crate::client::Client::delete_provisioned_concurrency_config).
 ///
 /// See [`crate::client::fluent_builders::DeleteProvisionedConcurrencyConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteProvisionedConcurrencyConfig {
     _private: (),
 }
@@ -573,7 +573,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProvisionedConcurr
 /// [`get_account_settings`](crate::client::Client::get_account_settings).
 ///
 /// See [`crate::client::fluent_builders::GetAccountSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccountSettings {
     _private: (),
 }
@@ -607,7 +607,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountSettings {
 /// [`get_alias`](crate::client::Client::get_alias).
 ///
 /// See [`crate::client::fluent_builders::GetAlias`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAlias {
     _private: (),
 }
@@ -638,7 +638,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAlias {
 /// [`get_code_signing_config`](crate::client::Client::get_code_signing_config).
 ///
 /// See [`crate::client::fluent_builders::GetCodeSigningConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCodeSigningConfig {
     _private: (),
 }
@@ -672,7 +672,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCodeSigningConfig {
 /// [`get_event_source_mapping`](crate::client::Client::get_event_source_mapping).
 ///
 /// See [`crate::client::fluent_builders::GetEventSourceMapping`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEventSourceMapping {
     _private: (),
 }
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEventSourceMapping {
 /// [`get_function`](crate::client::Client::get_function).
 ///
 /// See [`crate::client::fluent_builders::GetFunction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFunction {
     _private: (),
 }
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFunction {
 /// [`get_function_code_signing_config`](crate::client::Client::get_function_code_signing_config).
 ///
 /// See [`crate::client::fluent_builders::GetFunctionCodeSigningConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFunctionCodeSigningConfig {
     _private: (),
 }
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFunctionCodeSigningCo
 /// [`get_function_concurrency`](crate::client::Client::get_function_concurrency).
 ///
 /// See [`crate::client::fluent_builders::GetFunctionConcurrency`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFunctionConcurrency {
     _private: (),
 }
@@ -806,7 +806,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFunctionConcurrency {
 /// [`get_function_configuration`](crate::client::Client::get_function_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetFunctionConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFunctionConfiguration {
     _private: (),
 }
@@ -840,7 +840,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFunctionConfiguration
 /// [`get_function_event_invoke_config`](crate::client::Client::get_function_event_invoke_config).
 ///
 /// See [`crate::client::fluent_builders::GetFunctionEventInvokeConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFunctionEventInvokeConfig {
     _private: (),
 }
@@ -874,7 +874,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFunctionEventInvokeCo
 /// [`get_function_url_config`](crate::client::Client::get_function_url_config).
 ///
 /// See [`crate::client::fluent_builders::GetFunctionUrlConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFunctionUrlConfig {
     _private: (),
 }
@@ -908,7 +908,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFunctionUrlConfig {
 /// [`get_layer_version`](crate::client::Client::get_layer_version).
 ///
 /// See [`crate::client::fluent_builders::GetLayerVersion`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLayerVersion {
     _private: (),
 }
@@ -942,7 +942,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLayerVersion {
 /// [`get_layer_version_by_arn`](crate::client::Client::get_layer_version_by_arn).
 ///
 /// See [`crate::client::fluent_builders::GetLayerVersionByArn`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLayerVersionByArn {
     _private: (),
 }
@@ -976,7 +976,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLayerVersionByArn {
 /// [`get_layer_version_policy`](crate::client::Client::get_layer_version_policy).
 ///
 /// See [`crate::client::fluent_builders::GetLayerVersionPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLayerVersionPolicy {
     _private: (),
 }
@@ -1010,7 +1010,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLayerVersionPolicy {
 /// [`get_policy`](crate::client::Client::get_policy).
 ///
 /// See [`crate::client::fluent_builders::GetPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPolicy {
     _private: (),
 }
@@ -1041,7 +1041,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPolicy {
 /// [`get_provisioned_concurrency_config`](crate::client::Client::get_provisioned_concurrency_config).
 ///
 /// See [`crate::client::fluent_builders::GetProvisionedConcurrencyConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetProvisionedConcurrencyConfig {
     _private: (),
 }
@@ -1075,7 +1075,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProvisionedConcurrenc
 /// [`invoke`](crate::client::Client::invoke).
 ///
 /// See [`crate::client::fluent_builders::Invoke`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Invoke {
     _private: (),
 }
@@ -1106,7 +1106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Invoke {
 /// [`invoke_async`](crate::client::Client::invoke_async).
 ///
 /// See [`crate::client::fluent_builders::InvokeAsync`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct InvokeAsync {
     _private: (),
 }
@@ -1138,7 +1138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeAsync {
 /// [`list_aliases`](crate::client::Client::list_aliases).
 ///
 /// See [`crate::client::fluent_builders::ListAliases`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAliases {
     _private: (),
 }
@@ -1170,7 +1170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAliases {
 /// [`list_code_signing_configs`](crate::client::Client::list_code_signing_configs).
 ///
 /// See [`crate::client::fluent_builders::ListCodeSigningConfigs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCodeSigningConfigs {
     _private: (),
 }
@@ -1204,7 +1204,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCodeSigningConfigs {
 /// [`list_event_source_mappings`](crate::client::Client::list_event_source_mappings).
 ///
 /// See [`crate::client::fluent_builders::ListEventSourceMappings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEventSourceMappings {
     _private: (),
 }
@@ -1238,7 +1238,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventSourceMappings 
 /// [`list_function_event_invoke_configs`](crate::client::Client::list_function_event_invoke_configs).
 ///
 /// See [`crate::client::fluent_builders::ListFunctionEventInvokeConfigs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFunctionEventInvokeConfigs {
     _private: (),
 }
@@ -1272,7 +1272,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFunctionEventInvokeC
 /// [`list_functions`](crate::client::Client::list_functions).
 ///
 /// See [`crate::client::fluent_builders::ListFunctions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFunctions {
     _private: (),
 }
@@ -1304,7 +1304,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFunctions {
 /// [`list_functions_by_code_signing_config`](crate::client::Client::list_functions_by_code_signing_config).
 ///
 /// See [`crate::client::fluent_builders::ListFunctionsByCodeSigningConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFunctionsByCodeSigningConfig {
     _private: (),
 }
@@ -1338,7 +1338,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFunctionsByCodeSigni
 /// [`list_function_url_configs`](crate::client::Client::list_function_url_configs).
 ///
 /// See [`crate::client::fluent_builders::ListFunctionUrlConfigs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFunctionUrlConfigs {
     _private: (),
 }
@@ -1372,7 +1372,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFunctionUrlConfigs {
 /// [`list_layers`](crate::client::Client::list_layers).
 ///
 /// See [`crate::client::fluent_builders::ListLayers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLayers {
     _private: (),
 }
@@ -1404,7 +1404,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLayers {
 /// [`list_layer_versions`](crate::client::Client::list_layer_versions).
 ///
 /// See [`crate::client::fluent_builders::ListLayerVersions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLayerVersions {
     _private: (),
 }
@@ -1438,7 +1438,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLayerVersions {
 /// [`list_provisioned_concurrency_configs`](crate::client::Client::list_provisioned_concurrency_configs).
 ///
 /// See [`crate::client::fluent_builders::ListProvisionedConcurrencyConfigs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProvisionedConcurrencyConfigs {
     _private: (),
 }
@@ -1472,7 +1472,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProvisionedConcurren
 /// [`list_tags`](crate::client::Client::list_tags).
 ///
 /// See [`crate::client::fluent_builders::ListTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTags {
     _private: (),
 }
@@ -1503,7 +1503,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTags {
 /// [`list_versions_by_function`](crate::client::Client::list_versions_by_function).
 ///
 /// See [`crate::client::fluent_builders::ListVersionsByFunction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVersionsByFunction {
     _private: (),
 }
@@ -1537,7 +1537,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVersionsByFunction {
 /// [`publish_layer_version`](crate::client::Client::publish_layer_version).
 ///
 /// See [`crate::client::fluent_builders::PublishLayerVersion`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PublishLayerVersion {
     _private: (),
 }
@@ -1571,7 +1571,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PublishLayerVersion {
 /// [`publish_version`](crate::client::Client::publish_version).
 ///
 /// See [`crate::client::fluent_builders::PublishVersion`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PublishVersion {
     _private: (),
 }
@@ -1603,7 +1603,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PublishVersion {
 /// [`put_function_code_signing_config`](crate::client::Client::put_function_code_signing_config).
 ///
 /// See [`crate::client::fluent_builders::PutFunctionCodeSigningConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutFunctionCodeSigningConfig {
     _private: (),
 }
@@ -1637,7 +1637,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutFunctionCodeSigningCo
 /// [`put_function_concurrency`](crate::client::Client::put_function_concurrency).
 ///
 /// See [`crate::client::fluent_builders::PutFunctionConcurrency`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutFunctionConcurrency {
     _private: (),
 }
@@ -1671,7 +1671,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutFunctionConcurrency {
 /// [`put_function_event_invoke_config`](crate::client::Client::put_function_event_invoke_config).
 ///
 /// See [`crate::client::fluent_builders::PutFunctionEventInvokeConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutFunctionEventInvokeConfig {
     _private: (),
 }
@@ -1705,7 +1705,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutFunctionEventInvokeCo
 /// [`put_provisioned_concurrency_config`](crate::client::Client::put_provisioned_concurrency_config).
 ///
 /// See [`crate::client::fluent_builders::PutProvisionedConcurrencyConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutProvisionedConcurrencyConfig {
     _private: (),
 }
@@ -1739,7 +1739,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutProvisionedConcurrenc
 /// [`remove_layer_version_permission`](crate::client::Client::remove_layer_version_permission).
 ///
 /// See [`crate::client::fluent_builders::RemoveLayerVersionPermission`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveLayerVersionPermission {
     _private: (),
 }
@@ -1773,7 +1773,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveLayerVersionPermis
 /// [`remove_permission`](crate::client::Client::remove_permission).
 ///
 /// See [`crate::client::fluent_builders::RemovePermission`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemovePermission {
     _private: (),
 }
@@ -1807,7 +1807,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemovePermission {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1839,7 +1839,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1871,7 +1871,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_alias`](crate::client::Client::update_alias).
 ///
 /// See [`crate::client::fluent_builders::UpdateAlias`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAlias {
     _private: (),
 }
@@ -1903,7 +1903,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAlias {
 /// [`update_code_signing_config`](crate::client::Client::update_code_signing_config).
 ///
 /// See [`crate::client::fluent_builders::UpdateCodeSigningConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCodeSigningConfig {
     _private: (),
 }
@@ -1937,7 +1937,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCodeSigningConfig 
 /// [`update_event_source_mapping`](crate::client::Client::update_event_source_mapping).
 ///
 /// See [`crate::client::fluent_builders::UpdateEventSourceMapping`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateEventSourceMapping {
     _private: (),
 }
@@ -1971,7 +1971,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEventSourceMapping
 /// [`update_function_code`](crate::client::Client::update_function_code).
 ///
 /// See [`crate::client::fluent_builders::UpdateFunctionCode`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFunctionCode {
     _private: (),
 }
@@ -2005,7 +2005,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFunctionCode {
 /// [`update_function_configuration`](crate::client::Client::update_function_configuration).
 ///
 /// See [`crate::client::fluent_builders::UpdateFunctionConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFunctionConfiguration {
     _private: (),
 }
@@ -2039,7 +2039,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFunctionConfigurat
 /// [`update_function_event_invoke_config`](crate::client::Client::update_function_event_invoke_config).
 ///
 /// See [`crate::client::fluent_builders::UpdateFunctionEventInvokeConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFunctionEventInvokeConfig {
     _private: (),
 }
@@ -2073,7 +2073,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFunctionEventInvok
 /// [`update_function_url_config`](crate::client::Client::update_function_url_config).
 ///
 /// See [`crate::client::fluent_builders::UpdateFunctionUrlConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFunctionUrlConfig {
     _private: (),
 }

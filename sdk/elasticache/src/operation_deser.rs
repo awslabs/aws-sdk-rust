@@ -25,7 +25,7 @@ pub fn parse_add_tags_to_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -43,7 +43,7 @@ pub fn parse_add_tags_to_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -61,7 +61,7 @@ pub fn parse_add_tags_to_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -79,7 +79,7 @@ pub fn parse_add_tags_to_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -97,7 +97,7 @@ pub fn parse_add_tags_to_resource_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_arn_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -116,7 +116,7 @@ pub fn parse_add_tags_to_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -134,7 +134,7 @@ pub fn parse_add_tags_to_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -152,7 +152,7 @@ pub fn parse_add_tags_to_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_reserved_cache_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -169,7 +169,7 @@ pub fn parse_add_tags_to_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -187,7 +187,7 @@ pub fn parse_add_tags_to_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -204,7 +204,7 @@ pub fn parse_add_tags_to_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -222,7 +222,7 @@ pub fn parse_add_tags_to_resource_error(
                         output = crate::xml_deser::deser_structure_crate_error_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -278,7 +278,7 @@ pub fn parse_authorize_cache_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -292,7 +292,7 @@ pub fn parse_authorize_cache_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -306,7 +306,7 @@ pub fn parse_authorize_cache_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -320,7 +320,7 @@ pub fn parse_authorize_cache_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -334,7 +334,7 @@ pub fn parse_authorize_cache_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -392,7 +392,7 @@ pub fn parse_batch_apply_update_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchApplyUpdateActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -410,7 +410,7 @@ pub fn parse_batch_apply_update_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_update_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchApplyUpdateActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -468,7 +468,7 @@ pub fn parse_batch_stop_update_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchStopUpdateActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -486,7 +486,7 @@ pub fn parse_batch_stop_update_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_update_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchStopUpdateActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -542,7 +542,7 @@ pub fn parse_complete_migration_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CompleteMigrationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -560,7 +560,7 @@ pub fn parse_complete_migration_error(
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CompleteMigrationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -577,7 +577,7 @@ pub fn parse_complete_migration_error(
                         output = crate::xml_deser::deser_structure_crate_error_replication_group_not_under_migration_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CompleteMigrationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -631,7 +631,7 @@ pub fn parse_copy_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -649,7 +649,7 @@ pub fn parse_copy_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -666,7 +666,7 @@ pub fn parse_copy_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -684,7 +684,7 @@ pub fn parse_copy_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -701,7 +701,7 @@ pub fn parse_copy_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -719,7 +719,7 @@ pub fn parse_copy_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -737,7 +737,7 @@ pub fn parse_copy_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CopySnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -792,7 +792,7 @@ pub fn parse_create_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -810,7 +810,7 @@ pub fn parse_create_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -828,7 +828,7 @@ pub fn parse_create_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -846,7 +846,7 @@ pub fn parse_create_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -863,7 +863,7 @@ pub fn parse_create_cache_cluster_error(
                         output = crate::xml_deser::deser_structure_crate_error_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -881,7 +881,7 @@ pub fn parse_create_cache_cluster_error(
                         output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -901,7 +901,7 @@ pub fn parse_create_cache_cluster_error(
                                 output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                                 output.build()
                             };
-                            if (&tmp.message).is_none() {
+                            if tmp.message.is_none() {
                                 tmp.message = _error_message;
                             }
                             tmp
@@ -921,7 +921,7 @@ pub fn parse_create_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -939,7 +939,7 @@ pub fn parse_create_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -957,7 +957,7 @@ pub fn parse_create_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -975,7 +975,7 @@ pub fn parse_create_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_node_quota_for_cluster_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -993,7 +993,7 @@ pub fn parse_create_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1011,7 +1011,7 @@ pub fn parse_create_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1029,7 +1029,7 @@ pub fn parse_create_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1088,7 +1088,7 @@ pub fn parse_create_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1102,7 +1102,7 @@ pub fn parse_create_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1116,7 +1116,7 @@ pub fn parse_create_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1130,7 +1130,7 @@ pub fn parse_create_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1144,7 +1144,7 @@ pub fn parse_create_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1158,7 +1158,7 @@ pub fn parse_create_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1216,7 +1216,7 @@ pub fn parse_create_cache_security_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1230,7 +1230,7 @@ pub fn parse_create_cache_security_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1244,7 +1244,7 @@ pub fn parse_create_cache_security_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1258,7 +1258,7 @@ pub fn parse_create_cache_security_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1272,7 +1272,7 @@ pub fn parse_create_cache_security_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1335,7 +1335,7 @@ pub fn parse_create_cache_subnet_group_error(
                         output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1356,7 +1356,7 @@ pub fn parse_create_cache_subnet_group_error(
                         output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1375,7 +1375,7 @@ pub fn parse_create_cache_subnet_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_subnet_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1396,7 +1396,7 @@ pub fn parse_create_cache_subnet_group_error(
                     .map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1413,7 +1413,7 @@ pub fn parse_create_cache_subnet_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_subnet_not_allowed_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1431,7 +1431,7 @@ pub fn parse_create_cache_subnet_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1490,7 +1490,7 @@ pub fn parse_create_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1504,7 +1504,7 @@ pub fn parse_create_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1518,7 +1518,7 @@ pub fn parse_create_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1532,7 +1532,7 @@ pub fn parse_create_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1546,7 +1546,7 @@ pub fn parse_create_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1604,7 +1604,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1618,7 +1618,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1632,7 +1632,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1646,7 +1646,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1660,7 +1660,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1674,7 +1674,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1688,7 +1688,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1702,7 +1702,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1716,7 +1716,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1730,7 +1730,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1744,7 +1744,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1758,7 +1758,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1772,7 +1772,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1786,7 +1786,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1800,7 +1800,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1814,7 +1814,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1828,7 +1828,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1842,7 +1842,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1856,7 +1856,7 @@ pub fn parse_create_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1910,7 +1910,7 @@ pub fn parse_create_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1928,7 +1928,7 @@ pub fn parse_create_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1946,7 +1946,7 @@ pub fn parse_create_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1964,7 +1964,7 @@ pub fn parse_create_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1982,7 +1982,7 @@ pub fn parse_create_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2000,7 +2000,7 @@ pub fn parse_create_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2018,7 +2018,7 @@ pub fn parse_create_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2036,7 +2036,7 @@ pub fn parse_create_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_feature_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2054,7 +2054,7 @@ pub fn parse_create_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2072,7 +2072,7 @@ pub fn parse_create_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2123,7 +2123,7 @@ pub fn parse_create_user_error(
                     output = crate::xml_deser::deser_structure_crate_error_duplicate_user_name_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2141,7 +2141,7 @@ pub fn parse_create_user_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2159,7 +2159,7 @@ pub fn parse_create_user_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2177,7 +2177,7 @@ pub fn parse_create_user_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2195,7 +2195,7 @@ pub fn parse_create_user_error(
                     output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2212,7 +2212,7 @@ pub fn parse_create_user_error(
                     output = crate::xml_deser::deser_structure_crate_error_user_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2229,7 +2229,7 @@ pub fn parse_create_user_error(
                     output = crate::xml_deser::deser_structure_crate_error_user_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2280,7 +2280,7 @@ pub fn parse_create_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_default_user_required_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2297,7 +2297,7 @@ pub fn parse_create_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_duplicate_user_name_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2315,7 +2315,7 @@ pub fn parse_create_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2333,7 +2333,7 @@ pub fn parse_create_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2351,7 +2351,7 @@ pub fn parse_create_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2369,7 +2369,7 @@ pub fn parse_create_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_user_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2387,7 +2387,7 @@ pub fn parse_create_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_user_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2405,7 +2405,7 @@ pub fn parse_create_user_group_error(
                         output = crate::xml_deser::deser_structure_crate_error_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2462,7 +2462,7 @@ pub fn parse_decrease_node_groups_in_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2476,7 +2476,7 @@ pub fn parse_decrease_node_groups_in_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2490,7 +2490,7 @@ pub fn parse_decrease_node_groups_in_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2504,7 +2504,7 @@ pub fn parse_decrease_node_groups_in_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2553,7 +2553,7 @@ pub fn parse_decrease_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2567,7 +2567,7 @@ pub fn parse_decrease_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2581,7 +2581,7 @@ pub fn parse_decrease_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2595,7 +2595,7 @@ pub fn parse_decrease_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2609,7 +2609,7 @@ pub fn parse_decrease_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2623,7 +2623,7 @@ pub fn parse_decrease_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2637,7 +2637,7 @@ pub fn parse_decrease_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2651,7 +2651,7 @@ pub fn parse_decrease_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2665,7 +2665,7 @@ pub fn parse_decrease_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2679,7 +2679,7 @@ pub fn parse_decrease_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2693,7 +2693,7 @@ pub fn parse_decrease_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2707,7 +2707,7 @@ pub fn parse_decrease_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2764,7 +2764,7 @@ pub fn parse_delete_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2782,7 +2782,7 @@ pub fn parse_delete_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2801,7 +2801,7 @@ pub fn parse_delete_cache_cluster_error(
                                 output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
                                 output.build()
                             };
-                            if (&tmp.message).is_none() {
+                            if tmp.message.is_none() {
                                 tmp.message = _error_message;
                             }
                             tmp
@@ -2821,7 +2821,7 @@ pub fn parse_delete_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2839,7 +2839,7 @@ pub fn parse_delete_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2857,7 +2857,7 @@ pub fn parse_delete_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_feature_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2875,7 +2875,7 @@ pub fn parse_delete_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2934,7 +2934,7 @@ pub fn parse_delete_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2948,7 +2948,7 @@ pub fn parse_delete_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2962,7 +2962,7 @@ pub fn parse_delete_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2976,7 +2976,7 @@ pub fn parse_delete_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3029,7 +3029,7 @@ pub fn parse_delete_cache_security_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3043,7 +3043,7 @@ pub fn parse_delete_cache_security_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3057,7 +3057,7 @@ pub fn parse_delete_cache_security_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3071,7 +3071,7 @@ pub fn parse_delete_cache_security_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3126,7 +3126,7 @@ pub fn parse_delete_cache_subnet_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3144,7 +3144,7 @@ pub fn parse_delete_cache_subnet_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3198,7 +3198,7 @@ pub fn parse_delete_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3212,7 +3212,7 @@ pub fn parse_delete_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3226,7 +3226,7 @@ pub fn parse_delete_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3287,7 +3287,7 @@ pub fn parse_delete_replication_group_error(
                             output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -3306,7 +3306,7 @@ pub fn parse_delete_replication_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3325,7 +3325,7 @@ pub fn parse_delete_replication_group_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3344,7 +3344,7 @@ pub fn parse_delete_replication_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3362,7 +3362,7 @@ pub fn parse_delete_replication_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3381,7 +3381,7 @@ pub fn parse_delete_replication_group_error(
                         output = crate::xml_deser::deser_structure_crate_error_snapshot_feature_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3400,7 +3400,7 @@ pub fn parse_delete_replication_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3455,7 +3455,7 @@ pub fn parse_delete_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3473,7 +3473,7 @@ pub fn parse_delete_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3490,7 +3490,7 @@ pub fn parse_delete_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3507,7 +3507,7 @@ pub fn parse_delete_snapshot_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3558,7 +3558,7 @@ pub fn parse_delete_user_error(
                         output = crate::xml_deser::deser_structure_crate_error_default_user_associated_to_user_group_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3577,7 +3577,7 @@ pub fn parse_delete_user_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3594,7 +3594,7 @@ pub fn parse_delete_user_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_user_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3612,7 +3612,7 @@ pub fn parse_delete_user_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3630,7 +3630,7 @@ pub fn parse_delete_user_error(
                         output = crate::xml_deser::deser_structure_crate_error_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3683,7 +3683,7 @@ pub fn parse_delete_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3701,7 +3701,7 @@ pub fn parse_delete_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3719,7 +3719,7 @@ pub fn parse_delete_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3736,7 +3736,7 @@ pub fn parse_delete_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3791,7 +3791,7 @@ pub fn parse_describe_cache_clusters_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheClustersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3809,7 +3809,7 @@ pub fn parse_describe_cache_clusters_error(
                             output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheClustersError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -3828,7 +3828,7 @@ pub fn parse_describe_cache_clusters_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheClustersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3921,7 +3921,7 @@ pub fn parse_describe_cache_parameter_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3935,7 +3935,7 @@ pub fn parse_describe_cache_parameter_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3949,7 +3949,7 @@ pub fn parse_describe_cache_parameter_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4011,7 +4011,7 @@ pub fn parse_describe_cache_parameters_error(
                         output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParametersError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4030,7 +4030,7 @@ pub fn parse_describe_cache_parameters_error(
                             output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParametersError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -4049,7 +4049,7 @@ pub fn parse_describe_cache_parameters_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParametersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4108,7 +4108,7 @@ pub fn parse_describe_cache_security_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4122,7 +4122,7 @@ pub fn parse_describe_cache_security_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4136,7 +4136,7 @@ pub fn parse_describe_cache_security_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4198,7 +4198,7 @@ pub fn parse_describe_cache_subnet_groups_error(
                         output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheSubnetGroupsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4254,7 +4254,7 @@ pub fn parse_describe_engine_default_parameters_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4268,7 +4268,7 @@ pub fn parse_describe_engine_default_parameters_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4324,7 +4324,7 @@ pub fn parse_describe_events_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4342,7 +4342,7 @@ pub fn parse_describe_events_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4394,7 +4394,7 @@ pub fn parse_describe_global_replication_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4408,7 +4408,7 @@ pub fn parse_describe_global_replication_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4422,7 +4422,7 @@ pub fn parse_describe_global_replication_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4482,7 +4482,7 @@ pub fn parse_describe_replication_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4496,7 +4496,7 @@ pub fn parse_describe_replication_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4510,7 +4510,7 @@ pub fn parse_describe_replication_groups_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4568,7 +4568,7 @@ pub fn parse_describe_reserved_cache_nodes_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4582,7 +4582,7 @@ pub fn parse_describe_reserved_cache_nodes_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4596,7 +4596,7 @@ pub fn parse_describe_reserved_cache_nodes_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4652,7 +4652,7 @@ pub fn parse_describe_reserved_cache_nodes_offerings_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4666,7 +4666,7 @@ pub fn parse_describe_reserved_cache_nodes_offerings_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4680,7 +4680,7 @@ pub fn parse_describe_reserved_cache_nodes_offerings_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4738,7 +4738,7 @@ pub fn parse_describe_service_updates_error(
                             output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceUpdatesError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -4757,7 +4757,7 @@ pub fn parse_describe_service_updates_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceUpdatesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4775,7 +4775,7 @@ pub fn parse_describe_service_updates_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_update_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceUpdatesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4831,7 +4831,7 @@ pub fn parse_describe_snapshots_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4849,7 +4849,7 @@ pub fn parse_describe_snapshots_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4867,7 +4867,7 @@ pub fn parse_describe_snapshots_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4884,7 +4884,7 @@ pub fn parse_describe_snapshots_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4940,7 +4940,7 @@ pub fn parse_describe_update_actions_error(
                             output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUpdateActionsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -4959,7 +4959,7 @@ pub fn parse_describe_update_actions_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUpdateActionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5018,7 +5018,7 @@ pub fn parse_describe_user_groups_error(
                                 output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserGroupsError::unhandled)?;
                                 output.build()
                             };
-                            if (&tmp.message).is_none() {
+                            if tmp.message.is_none() {
                                 tmp.message = _error_message;
                             }
                             tmp
@@ -5038,7 +5038,7 @@ pub fn parse_describe_user_groups_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5055,7 +5055,7 @@ pub fn parse_describe_user_groups_error(
                     output = crate::xml_deser::deser_structure_crate_error_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5110,7 +5110,7 @@ pub fn parse_describe_users_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUsersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5128,7 +5128,7 @@ pub fn parse_describe_users_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUsersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5146,7 +5146,7 @@ pub fn parse_describe_users_error(
                         output = crate::xml_deser::deser_structure_crate_error_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUsersError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -5201,7 +5201,7 @@ pub fn parse_disassociate_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5215,7 +5215,7 @@ pub fn parse_disassociate_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5229,7 +5229,7 @@ pub fn parse_disassociate_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5243,7 +5243,7 @@ pub fn parse_disassociate_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5294,7 +5294,7 @@ pub fn parse_failover_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5308,7 +5308,7 @@ pub fn parse_failover_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5322,7 +5322,7 @@ pub fn parse_failover_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5336,7 +5336,7 @@ pub fn parse_failover_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5396,7 +5396,7 @@ pub fn parse_increase_node_groups_in_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5410,7 +5410,7 @@ pub fn parse_increase_node_groups_in_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5424,7 +5424,7 @@ pub fn parse_increase_node_groups_in_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5473,7 +5473,7 @@ pub fn parse_increase_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5487,7 +5487,7 @@ pub fn parse_increase_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5501,7 +5501,7 @@ pub fn parse_increase_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5515,7 +5515,7 @@ pub fn parse_increase_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5529,7 +5529,7 @@ pub fn parse_increase_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5543,7 +5543,7 @@ pub fn parse_increase_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5557,7 +5557,7 @@ pub fn parse_increase_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5571,7 +5571,7 @@ pub fn parse_increase_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5585,7 +5585,7 @@ pub fn parse_increase_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5599,7 +5599,7 @@ pub fn parse_increase_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5613,7 +5613,7 @@ pub fn parse_increase_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5627,7 +5627,7 @@ pub fn parse_increase_replica_count_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5683,7 +5683,7 @@ pub fn parse_list_allowed_node_type_modifications_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5697,7 +5697,7 @@ pub fn parse_list_allowed_node_type_modifications_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5711,7 +5711,7 @@ pub fn parse_list_allowed_node_type_modifications_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5725,7 +5725,7 @@ pub fn parse_list_allowed_node_type_modifications_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -5784,7 +5784,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5802,7 +5802,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5820,7 +5820,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5838,7 +5838,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5856,7 +5856,7 @@ pub fn parse_list_tags_for_resource_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_arn_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -5875,7 +5875,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5893,7 +5893,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5911,7 +5911,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_reserved_cache_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5928,7 +5928,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5945,7 +5945,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5963,7 +5963,7 @@ pub fn parse_list_tags_for_resource_error(
                         output = crate::xml_deser::deser_structure_crate_error_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6022,7 +6022,7 @@ pub fn parse_modify_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6040,7 +6040,7 @@ pub fn parse_modify_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6058,7 +6058,7 @@ pub fn parse_modify_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6075,7 +6075,7 @@ pub fn parse_modify_cache_cluster_error(
                         output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6094,7 +6094,7 @@ pub fn parse_modify_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6112,7 +6112,7 @@ pub fn parse_modify_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6131,7 +6131,7 @@ pub fn parse_modify_cache_cluster_error(
                                 output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                                 output.build()
                             };
-                            if (&tmp.message).is_none() {
+                            if tmp.message.is_none() {
                                 tmp.message = _error_message;
                             }
                             tmp
@@ -6151,7 +6151,7 @@ pub fn parse_modify_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6169,7 +6169,7 @@ pub fn parse_modify_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6187,7 +6187,7 @@ pub fn parse_modify_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_node_quota_for_cluster_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6205,7 +6205,7 @@ pub fn parse_modify_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6264,7 +6264,7 @@ pub fn parse_modify_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6278,7 +6278,7 @@ pub fn parse_modify_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6292,7 +6292,7 @@ pub fn parse_modify_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6306,7 +6306,7 @@ pub fn parse_modify_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6320,7 +6320,7 @@ pub fn parse_modify_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6381,7 +6381,7 @@ pub fn parse_modify_cache_subnet_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6399,7 +6399,7 @@ pub fn parse_modify_cache_subnet_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_subnet_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6420,7 +6420,7 @@ pub fn parse_modify_cache_subnet_group_error(
                     .map_err(crate::error::ModifyCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6441,7 +6441,7 @@ pub fn parse_modify_cache_subnet_group_error(
                     .map_err(crate::error::ModifyCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6458,7 +6458,7 @@ pub fn parse_modify_cache_subnet_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_subnet_not_allowed_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheSubnetGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6517,7 +6517,7 @@ pub fn parse_modify_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6531,7 +6531,7 @@ pub fn parse_modify_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6545,7 +6545,7 @@ pub fn parse_modify_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6606,7 +6606,7 @@ pub fn parse_modify_replication_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6625,7 +6625,7 @@ pub fn parse_modify_replication_group_error(
                         output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6644,7 +6644,7 @@ pub fn parse_modify_replication_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6662,7 +6662,7 @@ pub fn parse_modify_replication_group_error(
                             output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -6681,7 +6681,7 @@ pub fn parse_modify_replication_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6699,7 +6699,7 @@ pub fn parse_modify_replication_group_error(
                             output = crate::xml_deser::deser_structure_crate_error_invalid_cache_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -6717,7 +6717,7 @@ pub fn parse_modify_replication_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_kms_key_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6735,7 +6735,7 @@ pub fn parse_modify_replication_group_error(
                             output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -6754,7 +6754,7 @@ pub fn parse_modify_replication_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6773,7 +6773,7 @@ pub fn parse_modify_replication_group_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6792,7 +6792,7 @@ pub fn parse_modify_replication_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6810,7 +6810,7 @@ pub fn parse_modify_replication_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6829,7 +6829,7 @@ pub fn parse_modify_replication_group_error(
                         output = crate::xml_deser::deser_structure_crate_error_node_quota_for_cluster_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6849,7 +6849,7 @@ pub fn parse_modify_replication_group_error(
                                 output = crate::xml_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                                 output.build()
                             };
-                            if (&tmp.message).is_none() {
+                            if tmp.message.is_none() {
                                 tmp.message = _error_message;
                             }
                             tmp
@@ -6869,7 +6869,7 @@ pub fn parse_modify_replication_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6886,7 +6886,7 @@ pub fn parse_modify_replication_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6945,7 +6945,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6959,7 +6959,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6973,7 +6973,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -6987,7 +6987,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7001,7 +7001,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7015,7 +7015,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7029,7 +7029,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7043,7 +7043,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7057,7 +7057,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7071,7 +7071,7 @@ pub fn parse_modify_replication_group_shard_configuration_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7122,7 +7122,7 @@ pub fn parse_modify_user_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7140,7 +7140,7 @@ pub fn parse_modify_user_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7157,7 +7157,7 @@ pub fn parse_modify_user_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_user_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7175,7 +7175,7 @@ pub fn parse_modify_user_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7193,7 +7193,7 @@ pub fn parse_modify_user_error(
                         output = crate::xml_deser::deser_structure_crate_error_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -7245,7 +7245,7 @@ pub fn parse_modify_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_default_user_required_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7262,7 +7262,7 @@ pub fn parse_modify_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_duplicate_user_name_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7280,7 +7280,7 @@ pub fn parse_modify_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7298,7 +7298,7 @@ pub fn parse_modify_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7316,7 +7316,7 @@ pub fn parse_modify_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7334,7 +7334,7 @@ pub fn parse_modify_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7351,7 +7351,7 @@ pub fn parse_modify_user_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7369,7 +7369,7 @@ pub fn parse_modify_user_group_error(
                         output = crate::xml_deser::deser_structure_crate_error_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -7424,7 +7424,7 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7438,7 +7438,7 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7452,7 +7452,7 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7466,7 +7466,7 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7480,7 +7480,7 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7494,7 +7494,7 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7549,7 +7549,7 @@ pub fn parse_rebalance_slots_in_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7563,7 +7563,7 @@ pub fn parse_rebalance_slots_in_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7577,7 +7577,7 @@ pub fn parse_rebalance_slots_in_global_replication_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7631,7 +7631,7 @@ pub fn parse_reboot_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebootCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7649,7 +7649,7 @@ pub fn parse_reboot_cache_cluster_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebootCacheClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7711,7 +7711,7 @@ pub fn parse_remove_tags_from_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7730,7 +7730,7 @@ pub fn parse_remove_tags_from_resource_error(
                         output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -7749,7 +7749,7 @@ pub fn parse_remove_tags_from_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7767,7 +7767,7 @@ pub fn parse_remove_tags_from_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7785,7 +7785,7 @@ pub fn parse_remove_tags_from_resource_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_arn_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -7805,7 +7805,7 @@ pub fn parse_remove_tags_from_resource_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -7824,7 +7824,7 @@ pub fn parse_remove_tags_from_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7842,7 +7842,7 @@ pub fn parse_remove_tags_from_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_reserved_cache_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7859,7 +7859,7 @@ pub fn parse_remove_tags_from_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7877,7 +7877,7 @@ pub fn parse_remove_tags_from_resource_error(
                         output = crate::xml_deser::deser_structure_crate_error_tag_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -7895,7 +7895,7 @@ pub fn parse_remove_tags_from_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7913,7 +7913,7 @@ pub fn parse_remove_tags_from_resource_error(
                         output = crate::xml_deser::deser_structure_crate_error_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -7973,7 +7973,7 @@ pub fn parse_reset_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7987,7 +7987,7 @@ pub fn parse_reset_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8001,7 +8001,7 @@ pub fn parse_reset_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8015,7 +8015,7 @@ pub fn parse_reset_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8029,7 +8029,7 @@ pub fn parse_reset_cache_parameter_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8083,7 +8083,7 @@ pub fn parse_revoke_cache_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8097,7 +8097,7 @@ pub fn parse_revoke_cache_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8111,7 +8111,7 @@ pub fn parse_revoke_cache_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8125,7 +8125,7 @@ pub fn parse_revoke_cache_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8139,7 +8139,7 @@ pub fn parse_revoke_cache_security_group_ingress_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -8195,7 +8195,7 @@ pub fn parse_start_migration_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMigrationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8213,7 +8213,7 @@ pub fn parse_start_migration_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMigrationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8230,7 +8230,7 @@ pub fn parse_start_migration_error(
                         output = crate::xml_deser::deser_structure_crate_error_replication_group_already_under_migration_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMigrationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -8249,7 +8249,7 @@ pub fn parse_start_migration_error(
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMigrationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8300,7 +8300,7 @@ pub fn parse_test_failover_error(
                         output = crate::xml_deser::deser_structure_crate_error_api_call_rate_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -8319,7 +8319,7 @@ pub fn parse_test_failover_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8336,7 +8336,7 @@ pub fn parse_test_failover_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_kms_key_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8354,7 +8354,7 @@ pub fn parse_test_failover_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8372,7 +8372,7 @@ pub fn parse_test_failover_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8390,7 +8390,7 @@ pub fn parse_test_failover_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8407,7 +8407,7 @@ pub fn parse_test_failover_error(
                     output = crate::xml_deser::deser_structure_crate_error_node_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8425,7 +8425,7 @@ pub fn parse_test_failover_error(
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8443,7 +8443,7 @@ pub fn parse_test_failover_error(
                     output = crate::xml_deser::deser_structure_crate_error_test_failover_not_available_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

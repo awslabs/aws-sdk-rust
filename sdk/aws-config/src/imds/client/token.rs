@@ -14,13 +14,11 @@
 //! - Retry token loading when it fails
 //! - Attach the token to the request in the `x-aws-ec2-metadata-token` header
 
-use std::fmt::{Debug, Formatter};
-use std::future::Future;
-use std::pin::Pin;
-use std::sync::Arc;
-use std::time::{Duration, SystemTime};
-
+use crate::cache::ExpiringCache;
+use crate::imds::client::error::{ImdsError, TokenError, TokenErrorKind};
+use crate::imds::client::ImdsResponseRetryClassifier;
 use aws_http::user_agent::UserAgentStage;
+use aws_sdk_sso::config::timeout::TimeoutConfig;
 use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_client::erase::DynConnector;
 use aws_smithy_client::retry;
@@ -33,12 +31,12 @@ use aws_smithy_http::operation::{Metadata, Request};
 use aws_smithy_http::response::ParseStrictResponse;
 use aws_smithy_http_tower::map_request::MapRequestLayer;
 use aws_types::os_shim_internal::TimeSource;
-
 use http::{HeaderValue, Uri};
-
-use crate::cache::ExpiringCache;
-use crate::imds::client::{ImdsError, ImdsResponseRetryClassifier, TokenError};
-use aws_sdk_sso::config::timeout::TimeoutConfig;
+use std::fmt::{Debug, Formatter};
+use std::future::Future;
+use std::pin::Pin;
+use std::sync::Arc;
+use std::time::{Duration, SystemTime};
 
 /// Token Refresh Buffer
 ///
@@ -130,7 +128,9 @@ impl TokenMiddleware {
 
     async fn get_token(&self) -> Result<(Token, SystemTime), ImdsError> {
         let mut uri = Uri::from_static("/latest/api/token");
-        self.endpoint.set_endpoint(&mut uri, None);
+        self.endpoint
+            .set_endpoint(&mut uri, None)
+            .map_err(ImdsError::unexpected)?;
         let request = http::Request::builder()
             .header(
                 X_AWS_EC2_METADATA_TOKEN_TTL_SECONDS,
@@ -150,7 +150,7 @@ impl TokenMiddleware {
             .client
             .call(operation)
             .await
-            .map_err(ImdsError::FailedToLoadToken)?;
+            .map_err(ImdsError::failed_to_load_token)?;
         let expiry = response.expiry;
         Ok((response, expiry))
     }
@@ -159,6 +159,10 @@ impl TokenMiddleware {
 impl AsyncMapRequest for TokenMiddleware {
     type Error = ImdsError;
     type Future = Pin<Box<dyn Future<Output = Result<Request, Self::Error>> + Send + 'static>>;
+
+    fn name(&self) -> &'static str {
+        "attach_imds_token"
+    }
 
     fn apply(&self, request: Request) -> Self::Future {
         let this = self.clone();
@@ -176,20 +180,20 @@ impl ParseStrictResponse for GetTokenResponseHandler {
 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         match response.status().as_u16() {
-            400 => return Err(TokenError::InvalidParameters),
-            403 => return Err(TokenError::Forbidden),
+            400 => return Err(TokenErrorKind::InvalidParameters.into()),
+            403 => return Err(TokenErrorKind::Forbidden.into()),
             _ => {}
         }
         let value = HeaderValue::from_maybe_shared(response.body().clone())
-            .map_err(|_| TokenError::InvalidToken)?;
+            .map_err(|_| TokenErrorKind::InvalidToken)?;
         let ttl: u64 = response
             .headers()
             .get(X_AWS_EC2_METADATA_TOKEN_TTL_SECONDS)
-            .ok_or(TokenError::NoTtl)?
+            .ok_or(TokenErrorKind::NoTtl)?
             .to_str()
-            .map_err(|_| TokenError::InvalidTtl)?
+            .map_err(|_| TokenErrorKind::InvalidTtl)?
             .parse()
-            .map_err(|_parse_error| TokenError::InvalidTtl)?;
+            .map_err(|_parse_error| TokenErrorKind::InvalidTtl)?;
         Ok(Token {
             value,
             expiry: self.time.now() + Duration::from_secs(ttl),

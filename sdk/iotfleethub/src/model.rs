@@ -4,7 +4,7 @@
 /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>The unique Id of the web application.</p>
     #[doc(hidden)]
@@ -58,27 +58,11 @@ impl ApplicationSummary {
         self.application_state.as_ref()
     }
 }
-impl std::fmt::Debug for ApplicationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationSummary");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("application_name", &self.application_name);
-        formatter.field("application_description", &self.application_description);
-        formatter.field("application_url", &self.application_url);
-        formatter.field("application_creation_date", &self.application_creation_date);
-        formatter.field(
-            "application_last_update_date",
-            &self.application_last_update_date,
-        );
-        formatter.field("application_state", &self.application_state);
-        formatter.finish()
-    }
-}
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
 pub mod application_summary {
 
     /// A builder for [`ApplicationSummary`](crate::model::ApplicationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -195,6 +179,44 @@ impl ApplicationSummary {
     }
 }
 
+/// When writing a match expression against `ApplicationState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let applicationstate = unimplemented!();
+/// match applicationstate {
+///     ApplicationState::Active => { /* ... */ },
+///     ApplicationState::CreateFailed => { /* ... */ },
+///     ApplicationState::Creating => { /* ... */ },
+///     ApplicationState::DeleteFailed => { /* ... */ },
+///     ApplicationState::Deleting => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `applicationstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ApplicationState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ApplicationState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ApplicationState::NewFeature` is defined.
+/// Specifically, when `applicationstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ApplicationState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -217,8 +239,8 @@ pub enum ApplicationState {
     DeleteFailed,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ApplicationState {
     fn from(s: &str) -> Self {
@@ -228,7 +250,7 @@ impl std::convert::From<&str> for ApplicationState {
             "CREATING" => ApplicationState::Creating,
             "DELETE_FAILED" => ApplicationState::DeleteFailed,
             "DELETING" => ApplicationState::Deleting,
-            other => ApplicationState::Unknown(other.to_owned()),
+            other => ApplicationState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -248,11 +270,11 @@ impl ApplicationState {
             ApplicationState::Creating => "CREATING",
             ApplicationState::DeleteFailed => "DELETE_FAILED",
             ApplicationState::Deleting => "DELETING",
-            ApplicationState::Unknown(s) => s.as_ref(),
+            ApplicationState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATE_FAILED",

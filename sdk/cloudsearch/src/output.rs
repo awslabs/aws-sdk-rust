@@ -2,7 +2,7 @@
 
 /// <p>The result of an <code>UpdateServiceAccessPolicies</code> request. Contains the new access policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServiceAccessPoliciesOutput {
     /// <p>The access rules configured for the domain.</p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl UpdateServiceAccessPoliciesOutput {
         self.access_policies.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateServiceAccessPoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServiceAccessPoliciesOutput");
-        formatter.field("access_policies", &self.access_policies);
-        formatter.finish()
-    }
-}
 /// See [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput).
 pub mod update_service_access_policies_output {
 
     /// A builder for [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policies: std::option::Option<crate::model::AccessPoliciesStatus>,
     }
@@ -60,7 +53,7 @@ impl UpdateServiceAccessPoliciesOutput {
 
 /// <p>The result of a <code>UpdateScalingParameters</code> request. Contains the status of the newly-configured scaling parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateScalingParametersOutput {
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
     #[doc(hidden)]
@@ -74,18 +67,11 @@ impl UpdateScalingParametersOutput {
         self.scaling_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateScalingParametersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateScalingParametersOutput");
-        formatter.field("scaling_parameters", &self.scaling_parameters);
-        formatter.finish()
-    }
-}
 /// See [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput).
 pub mod update_scaling_parameters_output {
 
     /// A builder for [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_parameters: std::option::Option<crate::model::ScalingParametersStatus>,
     }
@@ -120,7 +106,7 @@ impl UpdateScalingParametersOutput {
 
 /// <p>The result of a <code>UpdateDomainEndpointOptions</code> request. Contains the configuration and status of the domain's endpoint options. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainEndpointOptionsOutput {
     /// <p>The newly-configured domain endpoint options.</p>
     #[doc(hidden)]
@@ -134,18 +120,11 @@ impl UpdateDomainEndpointOptionsOutput {
         self.domain_endpoint_options.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDomainEndpointOptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainEndpointOptionsOutput");
-        formatter.field("domain_endpoint_options", &self.domain_endpoint_options);
-        formatter.finish()
-    }
-}
 /// See [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput).
 pub mod update_domain_endpoint_options_output {
 
     /// A builder for [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_endpoint_options:
             std::option::Option<crate::model::DomainEndpointOptionsStatus>,
@@ -184,7 +163,7 @@ impl UpdateDomainEndpointOptionsOutput {
 
 /// <p>The result of a <code>UpdateAvailabilityOptions</code> request. Contains the status of the domain's availability options. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAvailabilityOptionsOutput {
     /// <p>The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain. </p>
     #[doc(hidden)]
@@ -198,18 +177,11 @@ impl UpdateAvailabilityOptionsOutput {
         self.availability_options.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAvailabilityOptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAvailabilityOptionsOutput");
-        formatter.field("availability_options", &self.availability_options);
-        formatter.finish()
-    }
-}
 /// See [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput).
 pub mod update_availability_options_output {
 
     /// A builder for [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_options:
             std::option::Option<crate::model::AvailabilityOptionsStatus>,
@@ -248,7 +220,7 @@ impl UpdateAvailabilityOptionsOutput {
 
 /// <p>The result of a <code>ListDomainNames</code> request. Contains a list of the domains owned by an account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainNamesOutput {
     /// <p>The names of the search domains owned by an account.</p>
     #[doc(hidden)]
@@ -264,18 +236,11 @@ impl ListDomainNamesOutput {
         self.domain_names.as_ref()
     }
 }
-impl std::fmt::Debug for ListDomainNamesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainNamesOutput");
-        formatter.field("domain_names", &self.domain_names);
-        formatter.finish()
-    }
-}
 /// See [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
 pub mod list_domain_names_output {
 
     /// A builder for [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_names: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -324,7 +289,7 @@ impl ListDomainNamesOutput {
 
 /// <p>The result of an <code>IndexDocuments</code> request. Contains the status of the indexing operation, including the fields being indexed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IndexDocumentsOutput {
     /// <p>The names of the fields that are currently being indexed.</p>
     #[doc(hidden)]
@@ -336,18 +301,11 @@ impl IndexDocumentsOutput {
         self.field_names.as_deref()
     }
 }
-impl std::fmt::Debug for IndexDocumentsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IndexDocumentsOutput");
-        formatter.field("field_names", &self.field_names);
-        formatter.finish()
-    }
-}
 /// See [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput).
 pub mod index_documents_output {
 
     /// A builder for [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -388,7 +346,7 @@ impl IndexDocumentsOutput {
 
 /// <p>The result of a <code>DescribeSuggesters</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSuggestersOutput {
     /// <p>The suggesters configured for the domain specified in the request.</p>
     #[doc(hidden)]
@@ -400,18 +358,11 @@ impl DescribeSuggestersOutput {
         self.suggesters.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSuggestersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSuggestersOutput");
-        formatter.field("suggesters", &self.suggesters);
-        formatter.finish()
-    }
-}
 /// See [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput).
 pub mod describe_suggesters_output {
 
     /// A builder for [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suggesters: std::option::Option<std::vec::Vec<crate::model::SuggesterStatus>>,
     }
@@ -452,7 +403,7 @@ impl DescribeSuggestersOutput {
 
 /// <p>The result of a <code>DescribeServiceAccessPolicies</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServiceAccessPoliciesOutput {
     /// <p>The access rules configured for the domain specified in the request.</p>
     #[doc(hidden)]
@@ -464,18 +415,11 @@ impl DescribeServiceAccessPoliciesOutput {
         self.access_policies.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeServiceAccessPoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServiceAccessPoliciesOutput");
-        formatter.field("access_policies", &self.access_policies);
-        formatter.finish()
-    }
-}
 /// See [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput).
 pub mod describe_service_access_policies_output {
 
     /// A builder for [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policies: std::option::Option<crate::model::AccessPoliciesStatus>,
     }
@@ -510,7 +454,7 @@ impl DescribeServiceAccessPoliciesOutput {
 
 /// <p>The result of a <code>DescribeScalingParameters</code> request. Contains the scaling parameters configured for the domain specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScalingParametersOutput {
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
     #[doc(hidden)]
@@ -524,18 +468,11 @@ impl DescribeScalingParametersOutput {
         self.scaling_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeScalingParametersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScalingParametersOutput");
-        formatter.field("scaling_parameters", &self.scaling_parameters);
-        formatter.finish()
-    }
-}
 /// See [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput).
 pub mod describe_scaling_parameters_output {
 
     /// A builder for [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_parameters: std::option::Option<crate::model::ScalingParametersStatus>,
     }
@@ -570,7 +507,7 @@ impl DescribeScalingParametersOutput {
 
 /// <p>The result of a <code>DescribeIndexFields</code> request. Contains the index fields configured for the domain specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeIndexFieldsOutput {
     /// <p>The index fields configured for the domain.</p>
     #[doc(hidden)]
@@ -582,18 +519,11 @@ impl DescribeIndexFieldsOutput {
         self.index_fields.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeIndexFieldsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeIndexFieldsOutput");
-        formatter.field("index_fields", &self.index_fields);
-        formatter.finish()
-    }
-}
 /// See [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput).
 pub mod describe_index_fields_output {
 
     /// A builder for [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_fields: std::option::Option<std::vec::Vec<crate::model::IndexFieldStatus>>,
     }
@@ -634,7 +564,7 @@ impl DescribeIndexFieldsOutput {
 
 /// <p>The result of a <code>DescribeExpressions</code> request. Contains the expressions configured for the domain specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExpressionsOutput {
     /// <p>The expressions configured for the domain.</p>
     #[doc(hidden)]
@@ -646,18 +576,11 @@ impl DescribeExpressionsOutput {
         self.expressions.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeExpressionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeExpressionsOutput");
-        formatter.field("expressions", &self.expressions);
-        formatter.finish()
-    }
-}
 /// See [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput).
 pub mod describe_expressions_output {
 
     /// A builder for [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expressions: std::option::Option<std::vec::Vec<crate::model::ExpressionStatus>>,
     }
@@ -698,7 +621,7 @@ impl DescribeExpressionsOutput {
 
 /// <p>The result of a <code>DescribeDomains</code> request. Contains the status of the domains specified in the request or all domains owned by the account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainsOutput {
     /// <p>A list that contains the status of each requested domain.</p>
     #[doc(hidden)]
@@ -710,18 +633,11 @@ impl DescribeDomainsOutput {
         self.domain_status_list.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDomainsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainsOutput");
-        formatter.field("domain_status_list", &self.domain_status_list);
-        formatter.finish()
-    }
-}
 /// See [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
 pub mod describe_domains_output {
 
     /// A builder for [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status_list:
             std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
@@ -763,7 +679,7 @@ impl DescribeDomainsOutput {
 
 /// <p>The result of a <code>DescribeDomainEndpointOptions</code> request. Contains the status and configuration of a search domain's endpoint options. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainEndpointOptionsOutput {
     /// <p>The status and configuration of a search domain's endpoint options.</p>
     #[doc(hidden)]
@@ -777,18 +693,11 @@ impl DescribeDomainEndpointOptionsOutput {
         self.domain_endpoint_options.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeDomainEndpointOptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainEndpointOptionsOutput");
-        formatter.field("domain_endpoint_options", &self.domain_endpoint_options);
-        formatter.finish()
-    }
-}
 /// See [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput).
 pub mod describe_domain_endpoint_options_output {
 
     /// A builder for [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_endpoint_options:
             std::option::Option<crate::model::DomainEndpointOptionsStatus>,
@@ -827,7 +736,7 @@ impl DescribeDomainEndpointOptionsOutput {
 
 /// <p>The result of a <code>DescribeAvailabilityOptions</code> request. Indicates whether or not the Multi-AZ option is enabled for the domain specified in the request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAvailabilityOptionsOutput {
     /// <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
     #[doc(hidden)]
@@ -841,18 +750,11 @@ impl DescribeAvailabilityOptionsOutput {
         self.availability_options.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeAvailabilityOptionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAvailabilityOptionsOutput");
-        formatter.field("availability_options", &self.availability_options);
-        formatter.finish()
-    }
-}
 /// See [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput).
 pub mod describe_availability_options_output {
 
     /// A builder for [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_options:
             std::option::Option<crate::model::AvailabilityOptionsStatus>,
@@ -891,7 +793,7 @@ impl DescribeAvailabilityOptionsOutput {
 
 /// <p>The result of a <code>DescribeAnalysisSchemes</code> request. Contains the analysis schemes configured for the domain specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAnalysisSchemesOutput {
     /// <p>The analysis scheme descriptions.</p>
     #[doc(hidden)]
@@ -903,18 +805,11 @@ impl DescribeAnalysisSchemesOutput {
         self.analysis_schemes.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAnalysisSchemesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAnalysisSchemesOutput");
-        formatter.field("analysis_schemes", &self.analysis_schemes);
-        formatter.finish()
-    }
-}
 /// See [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput).
 pub mod describe_analysis_schemes_output {
 
     /// A builder for [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_schemes:
             std::option::Option<std::vec::Vec<crate::model::AnalysisSchemeStatus>>,
@@ -956,7 +851,7 @@ impl DescribeAnalysisSchemesOutput {
 
 /// <p>The result of a <code>DeleteSuggester</code> request. Contains the status of the deleted suggester.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSuggesterOutput {
     /// <p>The status of the suggester being deleted.</p>
     #[doc(hidden)]
@@ -968,18 +863,11 @@ impl DeleteSuggesterOutput {
         self.suggester.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteSuggesterOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSuggesterOutput");
-        formatter.field("suggester", &self.suggester);
-        formatter.finish()
-    }
-}
 /// See [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput).
 pub mod delete_suggester_output {
 
     /// A builder for [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suggester: std::option::Option<crate::model::SuggesterStatus>,
     }
@@ -1014,7 +902,7 @@ impl DeleteSuggesterOutput {
 
 /// <p>The result of a <code><code>DeleteIndexField</code></code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIndexFieldOutput {
     /// <p>The status of the index field being deleted.</p>
     #[doc(hidden)]
@@ -1026,18 +914,11 @@ impl DeleteIndexFieldOutput {
         self.index_field.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteIndexFieldOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIndexFieldOutput");
-        formatter.field("index_field", &self.index_field);
-        formatter.finish()
-    }
-}
 /// See [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput).
 pub mod delete_index_field_output {
 
     /// A builder for [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_field: std::option::Option<crate::model::IndexFieldStatus>,
     }
@@ -1072,7 +953,7 @@ impl DeleteIndexFieldOutput {
 
 /// <p>The result of a <code><code>DeleteExpression</code></code> request. Specifies the expression being deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteExpressionOutput {
     /// <p>The status of the expression being deleted.</p>
     #[doc(hidden)]
@@ -1084,18 +965,11 @@ impl DeleteExpressionOutput {
         self.expression.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteExpressionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteExpressionOutput");
-        formatter.field("expression", &self.expression);
-        formatter.finish()
-    }
-}
 /// See [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput).
 pub mod delete_expression_output {
 
     /// A builder for [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<crate::model::ExpressionStatus>,
     }
@@ -1130,7 +1004,7 @@ impl DeleteExpressionOutput {
 
 /// <p>The result of a <code>DeleteDomain</code> request. Contains the status of a newly deleted domain, or no status if the domain has already been completely deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainOutput {
     /// <p>The current status of the search domain.</p>
     #[doc(hidden)]
@@ -1142,18 +1016,11 @@ impl DeleteDomainOutput {
         self.domain_status.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainOutput");
-        formatter.field("domain_status", &self.domain_status);
-        formatter.finish()
-    }
-}
 /// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
 pub mod delete_domain_output {
 
     /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
     }
@@ -1188,7 +1055,7 @@ impl DeleteDomainOutput {
 
 /// <p>The result of a <code>DeleteAnalysisScheme</code> request. Contains the status of the deleted analysis scheme.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAnalysisSchemeOutput {
     /// <p>The status of the analysis scheme being deleted.</p>
     #[doc(hidden)]
@@ -1200,18 +1067,11 @@ impl DeleteAnalysisSchemeOutput {
         self.analysis_scheme.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteAnalysisSchemeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAnalysisSchemeOutput");
-        formatter.field("analysis_scheme", &self.analysis_scheme);
-        formatter.finish()
-    }
-}
 /// See [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput).
 pub mod delete_analysis_scheme_output {
 
     /// A builder for [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_scheme: std::option::Option<crate::model::AnalysisSchemeStatus>,
     }
@@ -1246,7 +1106,7 @@ impl DeleteAnalysisSchemeOutput {
 
 /// <p>The result of a <code>DefineSuggester</code> request. Contains the status of the newly-configured suggester.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefineSuggesterOutput {
     /// <p>The value of a <code>Suggester</code> and its current status.</p>
     #[doc(hidden)]
@@ -1258,18 +1118,11 @@ impl DefineSuggesterOutput {
         self.suggester.as_ref()
     }
 }
-impl std::fmt::Debug for DefineSuggesterOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefineSuggesterOutput");
-        formatter.field("suggester", &self.suggester);
-        formatter.finish()
-    }
-}
 /// See [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput).
 pub mod define_suggester_output {
 
     /// A builder for [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suggester: std::option::Option<crate::model::SuggesterStatus>,
     }
@@ -1304,7 +1157,7 @@ impl DefineSuggesterOutput {
 
 /// <p>The result of a <code><code>DefineIndexField</code></code> request. Contains the status of the newly-configured index field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefineIndexFieldOutput {
     /// <p>The value of an <code>IndexField</code> and its current status.</p>
     #[doc(hidden)]
@@ -1316,18 +1169,11 @@ impl DefineIndexFieldOutput {
         self.index_field.as_ref()
     }
 }
-impl std::fmt::Debug for DefineIndexFieldOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefineIndexFieldOutput");
-        formatter.field("index_field", &self.index_field);
-        formatter.finish()
-    }
-}
 /// See [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput).
 pub mod define_index_field_output {
 
     /// A builder for [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_field: std::option::Option<crate::model::IndexFieldStatus>,
     }
@@ -1362,7 +1208,7 @@ impl DefineIndexFieldOutput {
 
 /// <p>The result of a <code>DefineExpression</code> request. Contains the status of the newly-configured expression.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefineExpressionOutput {
     /// <p>The value of an <code>Expression</code> and its current status.</p>
     #[doc(hidden)]
@@ -1374,18 +1220,11 @@ impl DefineExpressionOutput {
         self.expression.as_ref()
     }
 }
-impl std::fmt::Debug for DefineExpressionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefineExpressionOutput");
-        formatter.field("expression", &self.expression);
-        formatter.finish()
-    }
-}
 /// See [`DefineExpressionOutput`](crate::output::DefineExpressionOutput).
 pub mod define_expression_output {
 
     /// A builder for [`DefineExpressionOutput`](crate::output::DefineExpressionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<crate::model::ExpressionStatus>,
     }
@@ -1420,7 +1259,7 @@ impl DefineExpressionOutput {
 
 /// <p>The result of a <code><code>DefineAnalysisScheme</code></code> request. Contains the status of the newly-configured analysis scheme.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefineAnalysisSchemeOutput {
     /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
     #[doc(hidden)]
@@ -1432,18 +1271,11 @@ impl DefineAnalysisSchemeOutput {
         self.analysis_scheme.as_ref()
     }
 }
-impl std::fmt::Debug for DefineAnalysisSchemeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefineAnalysisSchemeOutput");
-        formatter.field("analysis_scheme", &self.analysis_scheme);
-        formatter.finish()
-    }
-}
 /// See [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput).
 pub mod define_analysis_scheme_output {
 
     /// A builder for [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_scheme: std::option::Option<crate::model::AnalysisSchemeStatus>,
     }
@@ -1478,7 +1310,7 @@ impl DefineAnalysisSchemeOutput {
 
 /// <p>The result of a <code>CreateDomainRequest</code>. Contains the status of a newly created domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainOutput {
     /// <p>The current status of the search domain.</p>
     #[doc(hidden)]
@@ -1490,18 +1322,11 @@ impl CreateDomainOutput {
         self.domain_status.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainOutput");
-        formatter.field("domain_status", &self.domain_status);
-        formatter.finish()
-    }
-}
 /// See [`CreateDomainOutput`](crate::output::CreateDomainOutput).
 pub mod create_domain_output {
 
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
     }
@@ -1536,7 +1361,7 @@ impl CreateDomainOutput {
 
 /// <p>The result of a <code>BuildSuggester</code> request. Contains a list of the fields used for suggestions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuildSuggestersOutput {
     /// <p>A list of field names.</p>
     #[doc(hidden)]
@@ -1548,18 +1373,11 @@ impl BuildSuggestersOutput {
         self.field_names.as_deref()
     }
 }
-impl std::fmt::Debug for BuildSuggestersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuildSuggestersOutput");
-        formatter.field("field_names", &self.field_names);
-        formatter.finish()
-    }
-}
 /// See [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput).
 pub mod build_suggesters_output {
 
     /// A builder for [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }

@@ -2,7 +2,7 @@
 
 /// An object that defines a single event destination.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDestinationDefinition {
     /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
     #[doc(hidden)]
@@ -46,28 +46,11 @@ impl EventDestinationDefinition {
         self.sns_destination.as_ref()
     }
 }
-impl std::fmt::Debug for EventDestinationDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDestinationDefinition");
-        formatter.field(
-            "cloud_watch_logs_destination",
-            &self.cloud_watch_logs_destination,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field(
-            "kinesis_firehose_destination",
-            &self.kinesis_firehose_destination,
-        );
-        formatter.field("matching_event_types", &self.matching_event_types);
-        formatter.field("sns_destination", &self.sns_destination);
-        formatter.finish()
-    }
-}
 /// See [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
 pub mod event_destination_definition {
 
     /// A builder for [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_destination:
             std::option::Option<crate::model::CloudWatchLogsDestination>,
@@ -174,7 +157,7 @@ impl EventDestinationDefinition {
 
 /// An object that contains information about an event destination that sends data to Amazon SNS.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SnsDestination {
     /// The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.
     #[doc(hidden)]
@@ -186,18 +169,11 @@ impl SnsDestination {
         self.topic_arn.as_deref()
     }
 }
-impl std::fmt::Debug for SnsDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsDestination");
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.finish()
-    }
-}
 /// See [`SnsDestination`](crate::model::SnsDestination).
 pub mod sns_destination {
 
     /// A builder for [`SnsDestination`](crate::model::SnsDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
     }
@@ -227,6 +203,46 @@ impl SnsDestination {
     }
 }
 
+/// When writing a match expression against `EventType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let eventtype = unimplemented!();
+/// match eventtype {
+///     EventType::Answered => { /* ... */ },
+///     EventType::Busy => { /* ... */ },
+///     EventType::CompletedCall => { /* ... */ },
+///     EventType::Failed => { /* ... */ },
+///     EventType::InitiatedCall => { /* ... */ },
+///     EventType::NoAnswer => { /* ... */ },
+///     EventType::Ringing => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `eventtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EventType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EventType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EventType::NewFeature` is defined.
+/// Specifically, when `eventtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EventType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// The types of events that are sent to the event destination.
 #[non_exhaustive]
 #[derive(
@@ -253,8 +269,8 @@ pub enum EventType {
     NoAnswer,
     #[allow(missing_docs)] // documentation missing in model
     Ringing,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EventType {
     fn from(s: &str) -> Self {
@@ -266,7 +282,7 @@ impl std::convert::From<&str> for EventType {
             "INITIATED_CALL" => EventType::InitiatedCall,
             "NO_ANSWER" => EventType::NoAnswer,
             "RINGING" => EventType::Ringing,
-            other => EventType::Unknown(other.to_owned()),
+            other => EventType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -288,11 +304,11 @@ impl EventType {
             EventType::InitiatedCall => "INITIATED_CALL",
             EventType::NoAnswer => "NO_ANSWER",
             EventType::Ringing => "RINGING",
-            EventType::Unknown(s) => s.as_ref(),
+            EventType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ANSWERED",
             "BUSY",
@@ -312,7 +328,7 @@ impl AsRef<str> for EventType {
 
 /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KinesisFirehoseDestination {
     /// The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon Kinesis Data Firehose stream.
     #[doc(hidden)]
@@ -331,19 +347,11 @@ impl KinesisFirehoseDestination {
         self.iam_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisFirehoseDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KinesisFirehoseDestination");
-        formatter.field("delivery_stream_arn", &self.delivery_stream_arn);
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.finish()
-    }
-}
 /// See [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
 pub mod kinesis_firehose_destination {
 
     /// A builder for [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_arn: std::option::Option<std::string::String>,
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
@@ -390,7 +398,7 @@ impl KinesisFirehoseDestination {
 
 /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLogsDestination {
     /// The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.
     #[doc(hidden)]
@@ -409,19 +417,11 @@ impl CloudWatchLogsDestination {
         self.log_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CloudWatchLogsDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLogsDestination");
-        formatter.field("iam_role_arn", &self.iam_role_arn);
-        formatter.field("log_group_arn", &self.log_group_arn);
-        formatter.finish()
-    }
-}
 /// See [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
 pub mod cloud_watch_logs_destination {
 
     /// A builder for [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
         pub(crate) log_group_arn: std::option::Option<std::string::String>,
@@ -468,7 +468,7 @@ impl CloudWatchLogsDestination {
 
 /// An object that contains a voice message and information about the recipient that you want to send it to.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VoiceMessageContent {
     /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
     #[doc(hidden)]
@@ -496,20 +496,11 @@ impl VoiceMessageContent {
         self.ssml_message.as_ref()
     }
 }
-impl std::fmt::Debug for VoiceMessageContent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VoiceMessageContent");
-        formatter.field("call_instructions_message", &self.call_instructions_message);
-        formatter.field("plain_text_message", &self.plain_text_message);
-        formatter.field("ssml_message", &self.ssml_message);
-        formatter.finish()
-    }
-}
 /// See [`VoiceMessageContent`](crate::model::VoiceMessageContent).
 pub mod voice_message_content {
 
     /// A builder for [`VoiceMessageContent`](crate::model::VoiceMessageContent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) call_instructions_message:
             std::option::Option<crate::model::CallInstructionsMessageType>,
@@ -578,7 +569,7 @@ impl VoiceMessageContent {
 
 /// An object that defines a message that contains SSML-formatted text.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SsmlMessageType {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
     #[doc(hidden)]
@@ -604,20 +595,11 @@ impl SsmlMessageType {
         self.voice_id.as_deref()
     }
 }
-impl std::fmt::Debug for SsmlMessageType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SsmlMessageType");
-        formatter.field("language_code", &self.language_code);
-        formatter.field("text", &self.text);
-        formatter.field("voice_id", &self.voice_id);
-        formatter.finish()
-    }
-}
 /// See [`SsmlMessageType`](crate::model::SsmlMessageType).
 pub mod ssml_message_type {
 
     /// A builder for [`SsmlMessageType`](crate::model::SsmlMessageType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<std::string::String>,
         pub(crate) text: std::option::Option<std::string::String>,
@@ -676,7 +658,7 @@ impl SsmlMessageType {
 
 /// An object that defines a message that contains unformatted text.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlainTextMessageType {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
     #[doc(hidden)]
@@ -702,20 +684,11 @@ impl PlainTextMessageType {
         self.voice_id.as_deref()
     }
 }
-impl std::fmt::Debug for PlainTextMessageType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlainTextMessageType");
-        formatter.field("language_code", &self.language_code);
-        formatter.field("text", &self.text);
-        formatter.field("voice_id", &self.voice_id);
-        formatter.finish()
-    }
-}
 /// See [`PlainTextMessageType`](crate::model::PlainTextMessageType).
 pub mod plain_text_message_type {
 
     /// A builder for [`PlainTextMessageType`](crate::model::PlainTextMessageType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<std::string::String>,
         pub(crate) text: std::option::Option<std::string::String>,
@@ -774,7 +747,7 @@ impl PlainTextMessageType {
 
 /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CallInstructionsMessageType {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
     #[doc(hidden)]
@@ -786,18 +759,11 @@ impl CallInstructionsMessageType {
         self.text.as_deref()
     }
 }
-impl std::fmt::Debug for CallInstructionsMessageType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CallInstructionsMessageType");
-        formatter.field("text", &self.text);
-        formatter.finish()
-    }
-}
 /// See [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType).
 pub mod call_instructions_message_type {
 
     /// A builder for [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
     }
@@ -827,7 +793,7 @@ impl CallInstructionsMessageType {
 
 /// An object that defines an event destination.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDestination {
     /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
     #[doc(hidden)]
@@ -878,29 +844,11 @@ impl EventDestination {
         self.sns_destination.as_ref()
     }
 }
-impl std::fmt::Debug for EventDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDestination");
-        formatter.field(
-            "cloud_watch_logs_destination",
-            &self.cloud_watch_logs_destination,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field(
-            "kinesis_firehose_destination",
-            &self.kinesis_firehose_destination,
-        );
-        formatter.field("matching_event_types", &self.matching_event_types);
-        formatter.field("name", &self.name);
-        formatter.field("sns_destination", &self.sns_destination);
-        formatter.finish()
-    }
-}
 /// See [`EventDestination`](crate::model::EventDestination).
 pub mod event_destination {
 
     /// A builder for [`EventDestination`](crate::model::EventDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_destination:
             std::option::Option<crate::model::CloudWatchLogsDestination>,

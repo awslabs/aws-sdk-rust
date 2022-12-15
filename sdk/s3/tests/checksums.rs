@@ -3,30 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_config::SdkConfig;
 use aws_http::user_agent::AwsUserAgent;
-use aws_sdk_s3::{
-    middleware::DefaultMiddleware,
-    model::ChecksumAlgorithm,
-    operation::{GetObject, PutObject},
-    output::GetObjectOutput,
-    Credentials, Region,
-};
-use aws_smithy_client::{
-    test_connection::{capture_request, TestConnection},
-    Client as CoreClient,
-};
+use aws_sdk_s3::{model::ChecksumAlgorithm, output::GetObjectOutput, Client, Credentials, Region};
+use aws_smithy_client::test_connection::{capture_request, TestConnection};
 use aws_smithy_http::body::SdkBody;
+use aws_types::credentials::SharedCredentialsProvider;
 use http::{HeaderValue, Uri};
-use std::time::{Duration, UNIX_EPOCH};
-
-// static INIT_LOGGER: std::sync::Once = std::sync::Once::new();
-// fn init_logger() {
-//     INIT_LOGGER.call_once(|| {
-//         tracing_subscriber::fmt::init();
-//     });
-// }
-
-pub type Client<C> = CoreClient<C, DefaultMiddleware>;
+use std::{
+    convert::Infallible,
+    time::{Duration, UNIX_EPOCH},
+};
 
 /// Test connection for the movies IT
 /// headers are signed with actual creds, at some point we could replace them with verifiable test
@@ -65,37 +52,43 @@ async fn test_checksum_on_streaming_response(
     checksum_header_name: &'static str,
     checksum_header_value: &'static str,
 ) -> GetObjectOutput {
-    let creds = Credentials::new(
-        "ANOTREAL",
-        "notrealrnrELgWzOk3IfjzDKtFBhDby",
-        Some("notarealsessiontoken".to_string()),
-        None,
-        "test",
-    );
-    let conf = aws_sdk_s3::Config::builder()
-        .credentials_provider(creds)
-        .region(Region::new("us-east-1"))
-        .build();
     let conn = new_checksum_validated_response_test_connection(
         checksum_header_name,
         checksum_header_value,
     );
-    let client = Client::new(conn.clone());
+    let sdk_config = SdkConfig::builder()
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::new(
+            "ANOTREAL",
+            "notrealrnrELgWzOk3IfjzDKtFBhDby",
+            Some("notarealsessiontoken".to_string()),
+            None,
+            "test",
+        )))
+        .region(Region::new("us-east-1"))
+        .http_connector(conn.clone())
+        .build();
 
-    let mut op = GetObject::builder()
+    let client = Client::new(&sdk_config);
+
+    let res = client
+        .get_object()
         .bucket("some-test-bucket")
         .key("test.txt")
         .checksum_mode(aws_sdk_s3::model::ChecksumMode::Enabled)
-        .build()
+        .customize()
+        .await
         .unwrap()
-        .make_operation(&conf)
+        .map_operation(|mut op| {
+            op.properties_mut()
+                .insert(UNIX_EPOCH + Duration::from_secs(1624036048));
+            op.properties_mut().insert(AwsUserAgent::for_tests());
+
+            Result::Ok::<_, Infallible>(op)
+        })
+        .unwrap()
+        .send()
         .await
         .unwrap();
-    op.properties_mut()
-        .insert(UNIX_EPOCH + Duration::from_secs(1624036048));
-    op.properties_mut().insert(AwsUserAgent::for_tests());
-
-    let res = client.call(op).await.unwrap();
 
     conn.assert_requests_match(&[http::header::HeaderName::from_static("x-amz-checksum-mode")]);
 
@@ -164,21 +157,20 @@ async fn test_checksum_on_streaming_request<'a>(
     expected_encoded_content_length: &'a str,
     expected_aws_chunked_encoded_body: &'a str,
 ) {
-    let creds = aws_sdk_s3::Credentials::new(
-        "ANOTREAL",
-        "notrealrnrELgWzOk3IfjzDKtFBhDby",
-        Some("notarealsessiontoken".to_string()),
-        None,
-        "test",
-    );
-    let conf = aws_sdk_s3::Config::builder()
-        .credentials_provider(creds)
-        .region(aws_sdk_s3::Region::new("us-east-1"))
-        .build();
     let (conn, rcvr) = capture_request(None);
+    let sdk_config = SdkConfig::builder()
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::new(
+            "ANOTREAL",
+            "notrealrnrELgWzOk3IfjzDKtFBhDby",
+            Some("notarealsessiontoken".to_string()),
+            None,
+            "test",
+        )))
+        .region(Region::new("us-east-1"))
+        .http_connector(conn.clone())
+        .build();
 
-    let client: aws_smithy_client::Client<_, aws_sdk_s3::middleware::DefaultMiddleware> =
-        aws_smithy_client::Client::new(conn.clone());
+    let client = Client::new(&sdk_config);
 
     // ByteStreams created from a file are streaming and have a known size
     let mut file = tempfile::NamedTempFile::new().unwrap();
@@ -192,23 +184,29 @@ async fn test_checksum_on_streaming_request<'a>(
         .await
         .unwrap();
 
-    let mut op = PutObject::builder()
+    // The response from the fake connection won't return the expected XML but we don't care about
+    // that error in this test
+    let _ = client
+        .put_object()
         .bucket("test-bucket")
         .key("test.txt")
         .body(body)
         .checksum_algorithm(checksum_algorithm)
-        .build()
-        .unwrap()
-        .make_operation(&conf)
+        .customize()
         .await
-        .expect("failed to construct operation");
-    op.properties_mut()
-        .insert(UNIX_EPOCH + Duration::from_secs(1624036048));
-    op.properties_mut().insert(AwsUserAgent::for_tests());
+        .unwrap()
+        .map_operation(|mut op| {
+            op.properties_mut()
+                .insert(UNIX_EPOCH + Duration::from_secs(1624036048));
+            op.properties_mut().insert(AwsUserAgent::for_tests());
 
-    // The response from the fake connection won't return the expected XML but we don't care about
-    // that error in this test
-    let _ = client.call(op).await;
+            Result::Ok::<_, Infallible>(op)
+        })
+        .unwrap()
+        .send()
+        .await
+        .unwrap();
+
     let req = rcvr.expect_request();
 
     let headers = req.headers();

@@ -5,7 +5,7 @@
 /// [`get_ice_server_config`](crate::client::Client::get_ice_server_config).
 ///
 /// See [`crate::client::fluent_builders::GetIceServerConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetIceServerConfig {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIceServerConfig {
 /// [`send_alexa_offer_to_master`](crate::client::Client::send_alexa_offer_to_master).
 ///
 /// See [`crate::client::fluent_builders::SendAlexaOfferToMaster`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendAlexaOfferToMaster {
     _private: (),
 }

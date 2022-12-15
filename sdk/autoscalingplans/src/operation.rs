@@ -5,7 +5,7 @@
 /// [`create_scaling_plan`](crate::client::Client::create_scaling_plan).
 ///
 /// See [`crate::client::fluent_builders::CreateScalingPlan`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateScalingPlan {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateScalingPlan {
 /// [`delete_scaling_plan`](crate::client::Client::delete_scaling_plan).
 ///
 /// See [`crate::client::fluent_builders::DeleteScalingPlan`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteScalingPlan {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteScalingPlan {
 /// [`describe_scaling_plan_resources`](crate::client::Client::describe_scaling_plan_resources).
 ///
 /// See [`crate::client::fluent_builders::DescribeScalingPlanResources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeScalingPlanResources {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScalingPlanResou
 /// [`describe_scaling_plans`](crate::client::Client::describe_scaling_plans).
 ///
 /// See [`crate::client::fluent_builders::DescribeScalingPlans`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeScalingPlans {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScalingPlans {
 /// [`get_scaling_plan_resource_forecast_data`](crate::client::Client::get_scaling_plan_resource_forecast_data).
 ///
 /// See [`crate::client::fluent_builders::GetScalingPlanResourceForecastData`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetScalingPlanResourceForecastData {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetScalingPlanResourceFo
 /// [`update_scaling_plan`](crate::client::Client::update_scaling_plan).
 ///
 /// See [`crate::client::fluent_builders::UpdateScalingPlan`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateScalingPlan {
     _private: (),
 }

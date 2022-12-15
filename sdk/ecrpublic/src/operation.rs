@@ -5,7 +5,7 @@
 /// [`batch_check_layer_availability`](crate::client::Client::batch_check_layer_availability).
 ///
 /// See [`crate::client::fluent_builders::BatchCheckLayerAvailability`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchCheckLayerAvailability {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCheckLayerAvailabil
 /// [`batch_delete_image`](crate::client::Client::batch_delete_image).
 ///
 /// See [`crate::client::fluent_builders::BatchDeleteImage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDeleteImage {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteImage {
 /// [`complete_layer_upload`](crate::client::Client::complete_layer_upload).
 ///
 /// See [`crate::client::fluent_builders::CompleteLayerUpload`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CompleteLayerUpload {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CompleteLayerUpload {
 /// [`create_repository`](crate::client::Client::create_repository).
 ///
 /// See [`crate::client::fluent_builders::CreateRepository`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRepository {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRepository {
 /// [`delete_repository`](crate::client::Client::delete_repository).
 ///
 /// See [`crate::client::fluent_builders::DeleteRepository`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRepository {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRepository {
 /// [`delete_repository_policy`](crate::client::Client::delete_repository_policy).
 ///
 /// See [`crate::client::fluent_builders::DeleteRepositoryPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRepositoryPolicy {
     _private: (),
 }
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRepositoryPolicy {
 /// [`describe_images`](crate::client::Client::describe_images).
 ///
 /// See [`crate::client::fluent_builders::DescribeImages`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeImages {
     _private: (),
 }
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImages {
 /// [`describe_image_tags`](crate::client::Client::describe_image_tags).
 ///
 /// See [`crate::client::fluent_builders::DescribeImageTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeImageTags {
     _private: (),
 }
@@ -275,7 +275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImageTags {
 /// [`describe_registries`](crate::client::Client::describe_registries).
 ///
 /// See [`crate::client::fluent_builders::DescribeRegistries`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRegistries {
     _private: (),
 }
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRegistries {
 /// [`describe_repositories`](crate::client::Client::describe_repositories).
 ///
 /// See [`crate::client::fluent_builders::DescribeRepositories`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRepositories {
     _private: (),
 }
@@ -343,7 +343,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRepositories {
 /// [`get_authorization_token`](crate::client::Client::get_authorization_token).
 ///
 /// See [`crate::client::fluent_builders::GetAuthorizationToken`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAuthorizationToken {
     _private: (),
 }
@@ -377,7 +377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAuthorizationToken {
 /// [`get_registry_catalog_data`](crate::client::Client::get_registry_catalog_data).
 ///
 /// See [`crate::client::fluent_builders::GetRegistryCatalogData`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRegistryCatalogData {
     _private: (),
 }
@@ -411,7 +411,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRegistryCatalogData {
 /// [`get_repository_catalog_data`](crate::client::Client::get_repository_catalog_data).
 ///
 /// See [`crate::client::fluent_builders::GetRepositoryCatalogData`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRepositoryCatalogData {
     _private: (),
 }
@@ -445,7 +445,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRepositoryCatalogData
 /// [`get_repository_policy`](crate::client::Client::get_repository_policy).
 ///
 /// See [`crate::client::fluent_builders::GetRepositoryPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRepositoryPolicy {
     _private: (),
 }
@@ -479,7 +479,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRepositoryPolicy {
 /// [`initiate_layer_upload`](crate::client::Client::initiate_layer_upload).
 ///
 /// See [`crate::client::fluent_builders::InitiateLayerUpload`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct InitiateLayerUpload {
     _private: (),
 }
@@ -513,7 +513,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InitiateLayerUpload {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -547,7 +547,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`put_image`](crate::client::Client::put_image).
 ///
 /// See [`crate::client::fluent_builders::PutImage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutImage {
     _private: (),
 }
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutImage {
 /// [`put_registry_catalog_data`](crate::client::Client::put_registry_catalog_data).
 ///
 /// See [`crate::client::fluent_builders::PutRegistryCatalogData`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRegistryCatalogData {
     _private: (),
 }
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRegistryCatalogData {
 /// [`put_repository_catalog_data`](crate::client::Client::put_repository_catalog_data).
 ///
 /// See [`crate::client::fluent_builders::PutRepositoryCatalogData`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRepositoryCatalogData {
     _private: (),
 }
@@ -646,7 +646,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRepositoryCatalogData
 /// [`set_repository_policy`](crate::client::Client::set_repository_policy).
 ///
 /// See [`crate::client::fluent_builders::SetRepositoryPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetRepositoryPolicy {
     _private: (),
 }
@@ -680,7 +680,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetRepositoryPolicy {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -712,7 +712,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -744,7 +744,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`upload_layer_part`](crate::client::Client::upload_layer_part).
 ///
 /// See [`crate::client::fluent_builders::UploadLayerPart`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UploadLayerPart {
     _private: (),
 }

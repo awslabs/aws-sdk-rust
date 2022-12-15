@@ -33,6 +33,10 @@ impl RecursionDetectionStage {
 impl MapRequest for RecursionDetectionStage {
     type Error = std::convert::Infallible;
 
+    fn name(&self) -> &'static str {
+        "recursion_detection"
+    }
+
     fn apply(&self, request: Request) -> Result<Request, Self::Error> {
         request.augment(|mut req, _conf| {
             augument_request(&mut req, &self.env);
@@ -160,7 +164,7 @@ mod test {
             )
         }
         assert_ok(validate_headers(
-            &augmented_req.http().headers(),
+            augmented_req.http().headers(),
             test_case.request_headers_after(),
         ))
     }

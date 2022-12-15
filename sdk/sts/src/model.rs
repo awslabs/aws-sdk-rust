@@ -2,7 +2,7 @@
 
 /// <p>Amazon Web Services credentials for API authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Credentials {
     /// <p>The access key ID that identifies the temporary security credentials.</p>
     #[doc(hidden)]
@@ -35,21 +35,11 @@ impl Credentials {
         self.expiration.as_ref()
     }
 }
-impl std::fmt::Debug for Credentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Credentials");
-        formatter.field("access_key_id", &self.access_key_id);
-        formatter.field("secret_access_key", &self.secret_access_key);
-        formatter.field("session_token", &self.session_token);
-        formatter.field("expiration", &self.expiration);
-        formatter.finish()
-    }
-}
 /// See [`Credentials`](crate::model::Credentials).
 pub mod credentials {
 
     /// A builder for [`Credentials`](crate::model::Credentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) secret_access_key: std::option::Option<std::string::String>,
@@ -129,7 +119,7 @@ impl Credentials {
 
 /// <p>Identifiers for the federated user that is associated with the credentials.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FederatedUser {
     /// <p>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</p>
     #[doc(hidden)]
@@ -148,19 +138,11 @@ impl FederatedUser {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for FederatedUser {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FederatedUser");
-        formatter.field("federated_user_id", &self.federated_user_id);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 /// See [`FederatedUser`](crate::model::FederatedUser).
 pub mod federated_user {
 
     /// A builder for [`FederatedUser`](crate::model::FederatedUser).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) federated_user_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -207,7 +189,7 @@ impl FederatedUser {
 
 /// <p>You can pass custom key-value pair attributes when you assume a role or federate a user. These are called session tags. You can then use the session tags to control access to resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging Amazon Web Services STS Sessions</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key for a session tag.</p>
     /// <p>You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128 characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
@@ -230,19 +212,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -290,7 +264,7 @@ impl Tag {
 
 /// <p>A reference to the IAM managed policy that is passed as a session policy for a role session or a federated user session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PolicyDescriptorType {
     /// <p>The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
@@ -302,18 +276,11 @@ impl PolicyDescriptorType {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for PolicyDescriptorType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyDescriptorType");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 /// See [`PolicyDescriptorType`](crate::model::PolicyDescriptorType).
 pub mod policy_descriptor_type {
 
     /// A builder for [`PolicyDescriptorType`](crate::model::PolicyDescriptorType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -343,7 +310,7 @@ impl PolicyDescriptorType {
 
 /// <p>The identifiers for the temporary security credentials that the operation returns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssumedRoleUser {
     /// <p>A unique identifier that contains the role ID and the role session name of the role that is being assumed. The role ID is generated by Amazon Web Services when the role is created.</p>
     #[doc(hidden)]
@@ -362,19 +329,11 @@ impl AssumedRoleUser {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for AssumedRoleUser {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssumedRoleUser");
-        formatter.field("assumed_role_id", &self.assumed_role_id);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 /// See [`AssumedRoleUser`](crate::model::AssumedRoleUser).
 pub mod assumed_role_user {
 
     /// A builder for [`AssumedRoleUser`](crate::model::AssumedRoleUser).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assumed_role_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,

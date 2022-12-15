@@ -24,7 +24,7 @@ pub fn parse_search_error(
                         output = crate::json_deser::deser_structure_crate_error_search_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -77,7 +77,7 @@ pub fn parse_suggest_error(
                         output = crate::json_deser::deser_structure_crate_error_search_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SuggestError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -129,7 +129,7 @@ pub fn parse_upload_documents_error(
                     output = crate::json_deser::deser_structure_crate_error_document_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UploadDocumentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

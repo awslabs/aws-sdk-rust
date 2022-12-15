@@ -2,7 +2,7 @@
 
 /// <p>The resource configuration for updating backend storage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendStorageResourceConfig {
     /// <p>The authorization configuration for the storage S3 bucket.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl UpdateBackendStorageResourceConfig {
         self.service_name.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateBackendStorageResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendStorageResourceConfig");
-        formatter.field("permissions", &self.permissions);
-        formatter.field("service_name", &self.service_name);
-        formatter.finish()
-    }
-}
 /// See [`UpdateBackendStorageResourceConfig`](crate::model::UpdateBackendStorageResourceConfig).
 pub mod update_backend_storage_resource_config {
 
     /// A builder for [`UpdateBackendStorageResourceConfig`](crate::model::UpdateBackendStorageResourceConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions: std::option::Option<crate::model::BackendStoragePermissions>,
         pub(crate) service_name: std::option::Option<crate::model::ServiceName>,
@@ -81,6 +73,40 @@ impl UpdateBackendStorageResourceConfig {
     }
 }
 
+/// When writing a match expression against `ServiceName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let servicename = unimplemented!();
+/// match servicename {
+///     ServiceName::S3 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `servicename` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ServiceName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ServiceName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ServiceName::NewFeature` is defined.
+/// Specifically, when `servicename` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ServiceName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -95,14 +121,14 @@ impl UpdateBackendStorageResourceConfig {
 pub enum ServiceName {
     #[allow(missing_docs)] // documentation missing in model
     S3,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ServiceName {
     fn from(s: &str) -> Self {
         match s {
             "S3" => ServiceName::S3,
-            other => ServiceName::Unknown(other.to_owned()),
+            other => ServiceName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -118,11 +144,11 @@ impl ServiceName {
     pub fn as_str(&self) -> &str {
         match self {
             ServiceName::S3 => "S3",
-            ServiceName::Unknown(s) => s.as_ref(),
+            ServiceName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["S3"]
     }
 }
@@ -134,7 +160,7 @@ impl AsRef<str> for ServiceName {
 
 /// <p>Describes the read, write, and delete permissions users have against your storage S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendStoragePermissions {
     /// <p>Lists all authenticated user read, write, and delete permissions for your S3 bucket.</p>
     #[doc(hidden)]
@@ -153,19 +179,11 @@ impl BackendStoragePermissions {
         self.un_authenticated.as_deref()
     }
 }
-impl std::fmt::Debug for BackendStoragePermissions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendStoragePermissions");
-        formatter.field("authenticated", &self.authenticated);
-        formatter.field("un_authenticated", &self.un_authenticated);
-        formatter.finish()
-    }
-}
 /// See [`BackendStoragePermissions`](crate::model::BackendStoragePermissions).
 pub mod backend_storage_permissions {
 
     /// A builder for [`BackendStoragePermissions`](crate::model::BackendStoragePermissions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authenticated:
             std::option::Option<std::vec::Vec<crate::model::AuthenticatedElement>>,
@@ -227,6 +245,42 @@ impl BackendStoragePermissions {
     }
 }
 
+/// When writing a match expression against `UnAuthenticatedElement`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let unauthenticatedelement = unimplemented!();
+/// match unauthenticatedelement {
+///     UnAuthenticatedElement::CreateAndUpdate => { /* ... */ },
+///     UnAuthenticatedElement::Delete => { /* ... */ },
+///     UnAuthenticatedElement::Read => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `unauthenticatedelement` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `UnAuthenticatedElement::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `UnAuthenticatedElement::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `UnAuthenticatedElement::NewFeature` is defined.
+/// Specifically, when `unauthenticatedelement` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `UnAuthenticatedElement::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -245,8 +299,8 @@ pub enum UnAuthenticatedElement {
     Delete,
     #[allow(missing_docs)] // documentation missing in model
     Read,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for UnAuthenticatedElement {
     fn from(s: &str) -> Self {
@@ -254,7 +308,9 @@ impl std::convert::From<&str> for UnAuthenticatedElement {
             "CREATE_AND_UPDATE" => UnAuthenticatedElement::CreateAndUpdate,
             "DELETE" => UnAuthenticatedElement::Delete,
             "READ" => UnAuthenticatedElement::Read,
-            other => UnAuthenticatedElement::Unknown(other.to_owned()),
+            other => {
+                UnAuthenticatedElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -272,11 +328,11 @@ impl UnAuthenticatedElement {
             UnAuthenticatedElement::CreateAndUpdate => "CREATE_AND_UPDATE",
             UnAuthenticatedElement::Delete => "DELETE",
             UnAuthenticatedElement::Read => "READ",
-            UnAuthenticatedElement::Unknown(s) => s.as_ref(),
+            UnAuthenticatedElement::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE_AND_UPDATE", "DELETE", "READ"]
     }
 }
@@ -286,6 +342,42 @@ impl AsRef<str> for UnAuthenticatedElement {
     }
 }
 
+/// When writing a match expression against `AuthenticatedElement`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let authenticatedelement = unimplemented!();
+/// match authenticatedelement {
+///     AuthenticatedElement::CreateAndUpdate => { /* ... */ },
+///     AuthenticatedElement::Delete => { /* ... */ },
+///     AuthenticatedElement::Read => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `authenticatedelement` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AuthenticatedElement::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AuthenticatedElement::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AuthenticatedElement::NewFeature` is defined.
+/// Specifically, when `authenticatedelement` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AuthenticatedElement::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -304,8 +396,8 @@ pub enum AuthenticatedElement {
     Delete,
     #[allow(missing_docs)] // documentation missing in model
     Read,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AuthenticatedElement {
     fn from(s: &str) -> Self {
@@ -313,7 +405,9 @@ impl std::convert::From<&str> for AuthenticatedElement {
             "CREATE_AND_UPDATE" => AuthenticatedElement::CreateAndUpdate,
             "DELETE" => AuthenticatedElement::Delete,
             "READ" => AuthenticatedElement::Read,
-            other => AuthenticatedElement::Unknown(other.to_owned()),
+            other => {
+                AuthenticatedElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -331,11 +425,11 @@ impl AuthenticatedElement {
             AuthenticatedElement::CreateAndUpdate => "CREATE_AND_UPDATE",
             AuthenticatedElement::Delete => "DELETE",
             AuthenticatedElement::Read => "READ",
-            AuthenticatedElement::Unknown(s) => s.as_ref(),
+            AuthenticatedElement::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE_AND_UPDATE", "DELETE", "READ"]
     }
 }
@@ -347,7 +441,7 @@ impl AsRef<str> for AuthenticatedElement {
 
 /// <p>The request object for this operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoginAuthConfigReqObj {
     /// <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.</p>
     #[doc(hidden)]
@@ -380,27 +474,11 @@ impl LoginAuthConfigReqObj {
         self.aws_user_pools_web_client_id.as_deref()
     }
 }
-impl std::fmt::Debug for LoginAuthConfigReqObj {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoginAuthConfigReqObj");
-        formatter.field(
-            "aws_cognito_identity_pool_id",
-            &self.aws_cognito_identity_pool_id,
-        );
-        formatter.field("aws_cognito_region", &self.aws_cognito_region);
-        formatter.field("aws_user_pools_id", &self.aws_user_pools_id);
-        formatter.field(
-            "aws_user_pools_web_client_id",
-            &self.aws_user_pools_web_client_id,
-        );
-        formatter.finish()
-    }
-}
 /// See [`LoginAuthConfigReqObj`](crate::model::LoginAuthConfigReqObj).
 pub mod login_auth_config_req_obj {
 
     /// A builder for [`LoginAuthConfigReqObj`](crate::model::LoginAuthConfigReqObj).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_cognito_identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) aws_cognito_region: std::option::Option<std::string::String>,
@@ -486,7 +564,7 @@ impl LoginAuthConfigReqObj {
 
 /// <p>Defines the resource configuration when updating an authentication resource in your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthResourceConfig {
     /// <p>Defines the service name to use when configuring an authentication resource in your Amplify project.</p>
     #[doc(hidden)]
@@ -524,21 +602,11 @@ impl UpdateBackendAuthResourceConfig {
         self.user_pool_configs.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateBackendAuthResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthResourceConfig");
-        formatter.field("auth_resources", &self.auth_resources);
-        formatter.field("identity_pool_configs", &self.identity_pool_configs);
-        formatter.field("service", &self.service);
-        formatter.field("user_pool_configs", &self.user_pool_configs);
-        formatter.finish()
-    }
-}
 /// See [`UpdateBackendAuthResourceConfig`](crate::model::UpdateBackendAuthResourceConfig).
 pub mod update_backend_auth_resource_config {
 
     /// A builder for [`UpdateBackendAuthResourceConfig`](crate::model::UpdateBackendAuthResourceConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auth_resources: std::option::Option<crate::model::AuthResources>,
         pub(crate) identity_pool_configs:
@@ -623,7 +691,7 @@ impl UpdateBackendAuthResourceConfig {
 
 /// <p>Describes the Amazon Cognito user pool configuration for the authorization resource to be configured for your Amplify project on an update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthUserPoolConfig {
     /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
@@ -670,22 +738,11 @@ impl UpdateBackendAuthUserPoolConfig {
         self.verification_message.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateBackendAuthUserPoolConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthUserPoolConfig");
-        formatter.field("forgot_password", &self.forgot_password);
-        formatter.field("mfa", &self.mfa);
-        formatter.field("o_auth", &self.o_auth);
-        formatter.field("password_policy", &self.password_policy);
-        formatter.field("verification_message", &self.verification_message);
-        formatter.finish()
-    }
-}
 /// See [`UpdateBackendAuthUserPoolConfig`](crate::model::UpdateBackendAuthUserPoolConfig).
 pub mod update_backend_auth_user_pool_config {
 
     /// A builder for [`UpdateBackendAuthUserPoolConfig`](crate::model::UpdateBackendAuthUserPoolConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forgot_password:
             std::option::Option<crate::model::UpdateBackendAuthForgotPasswordConfig>,
@@ -792,7 +849,7 @@ impl UpdateBackendAuthUserPoolConfig {
 
 /// <p>Updates the configuration of the email or SMS message for the auth resource configured for your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthVerificationMessageConfig {
     /// <p>The type of verification message to send.</p>
     #[doc(hidden)]
@@ -818,20 +875,11 @@ impl UpdateBackendAuthVerificationMessageConfig {
         self.sms_settings.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateBackendAuthVerificationMessageConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthVerificationMessageConfig");
-        formatter.field("delivery_method", &self.delivery_method);
-        formatter.field("email_settings", &self.email_settings);
-        formatter.field("sms_settings", &self.sms_settings);
-        formatter.finish()
-    }
-}
 /// See [`UpdateBackendAuthVerificationMessageConfig`](crate::model::UpdateBackendAuthVerificationMessageConfig).
 pub mod update_backend_auth_verification_message_config {
 
     /// A builder for [`UpdateBackendAuthVerificationMessageConfig`](crate::model::UpdateBackendAuthVerificationMessageConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_method: std::option::Option<crate::model::DeliveryMethod>,
         pub(crate) email_settings: std::option::Option<crate::model::EmailSettings>,
@@ -896,7 +944,7 @@ impl UpdateBackendAuthVerificationMessageConfig {
 
 /// <p>SMS settings for authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsSettings {
     /// <p>The contents of the SMS message.</p>
     #[doc(hidden)]
@@ -908,18 +956,11 @@ impl SmsSettings {
         self.sms_message.as_deref()
     }
 }
-impl std::fmt::Debug for SmsSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsSettings");
-        formatter.field("sms_message", &self.sms_message);
-        formatter.finish()
-    }
-}
 /// See [`SmsSettings`](crate::model::SmsSettings).
 pub mod sms_settings {
 
     /// A builder for [`SmsSettings`](crate::model::SmsSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sms_message: std::option::Option<std::string::String>,
     }
@@ -951,7 +992,7 @@ impl SmsSettings {
 
 /// <p>The configuration for the email sent when an app user forgets their password.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailSettings {
     /// <p>The contents of the email message.</p>
     #[doc(hidden)]
@@ -970,19 +1011,11 @@ impl EmailSettings {
         self.email_subject.as_deref()
     }
 }
-impl std::fmt::Debug for EmailSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailSettings");
-        formatter.field("email_message", &self.email_message);
-        formatter.field("email_subject", &self.email_subject);
-        formatter.finish()
-    }
-}
 /// See [`EmailSettings`](crate::model::EmailSettings).
 pub mod email_settings {
 
     /// A builder for [`EmailSettings`](crate::model::EmailSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_message: std::option::Option<std::string::String>,
         pub(crate) email_subject: std::option::Option<std::string::String>,
@@ -1030,6 +1063,41 @@ impl EmailSettings {
     }
 }
 
+/// When writing a match expression against `DeliveryMethod`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let deliverymethod = unimplemented!();
+/// match deliverymethod {
+///     DeliveryMethod::Email => { /* ... */ },
+///     DeliveryMethod::Sms => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `deliverymethod` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DeliveryMethod::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DeliveryMethod::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DeliveryMethod::NewFeature` is defined.
+/// Specifically, when `deliverymethod` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DeliveryMethod::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The type of verification message to send.</p>
 #[non_exhaustive]
 #[derive(
@@ -1046,15 +1114,15 @@ pub enum DeliveryMethod {
     Email,
     #[allow(missing_docs)] // documentation missing in model
     Sms,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DeliveryMethod {
     fn from(s: &str) -> Self {
         match s {
             "EMAIL" => DeliveryMethod::Email,
             "SMS" => DeliveryMethod::Sms,
-            other => DeliveryMethod::Unknown(other.to_owned()),
+            other => DeliveryMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1071,11 +1139,11 @@ impl DeliveryMethod {
         match self {
             DeliveryMethod::Email => "EMAIL",
             DeliveryMethod::Sms => "SMS",
-            DeliveryMethod::Unknown(s) => s.as_ref(),
+            DeliveryMethod::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EMAIL", "SMS"]
     }
 }
@@ -1087,7 +1155,7 @@ impl AsRef<str> for DeliveryMethod {
 
 /// <p>Describes the password policy for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthPasswordPolicyConfig {
     /// <p>Describes additional constraints on password requirements to sign in to the auth resource, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
@@ -1109,19 +1177,11 @@ impl UpdateBackendAuthPasswordPolicyConfig {
         self.minimum_length
     }
 }
-impl std::fmt::Debug for UpdateBackendAuthPasswordPolicyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthPasswordPolicyConfig");
-        formatter.field("additional_constraints", &self.additional_constraints);
-        formatter.field("minimum_length", &self.minimum_length);
-        formatter.finish()
-    }
-}
 /// See [`UpdateBackendAuthPasswordPolicyConfig`](crate::model::UpdateBackendAuthPasswordPolicyConfig).
 pub mod update_backend_auth_password_policy_config {
 
     /// A builder for [`UpdateBackendAuthPasswordPolicyConfig`](crate::model::UpdateBackendAuthPasswordPolicyConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) additional_constraints:
             std::option::Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>,
@@ -1176,6 +1236,43 @@ impl UpdateBackendAuthPasswordPolicyConfig {
     }
 }
 
+/// When writing a match expression against `AdditionalConstraintsElement`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let additionalconstraintselement = unimplemented!();
+/// match additionalconstraintselement {
+///     AdditionalConstraintsElement::RequireDigit => { /* ... */ },
+///     AdditionalConstraintsElement::RequireLowercase => { /* ... */ },
+///     AdditionalConstraintsElement::RequireSymbol => { /* ... */ },
+///     AdditionalConstraintsElement::RequireUppercase => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `additionalconstraintselement` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AdditionalConstraintsElement::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AdditionalConstraintsElement::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AdditionalConstraintsElement::NewFeature` is defined.
+/// Specifically, when `additionalconstraintselement` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AdditionalConstraintsElement::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1196,8 +1293,8 @@ pub enum AdditionalConstraintsElement {
     RequireSymbol,
     #[allow(missing_docs)] // documentation missing in model
     RequireUppercase,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AdditionalConstraintsElement {
     fn from(s: &str) -> Self {
@@ -1206,7 +1303,9 @@ impl std::convert::From<&str> for AdditionalConstraintsElement {
             "REQUIRE_LOWERCASE" => AdditionalConstraintsElement::RequireLowercase,
             "REQUIRE_SYMBOL" => AdditionalConstraintsElement::RequireSymbol,
             "REQUIRE_UPPERCASE" => AdditionalConstraintsElement::RequireUppercase,
-            other => AdditionalConstraintsElement::Unknown(other.to_owned()),
+            other => AdditionalConstraintsElement::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1225,11 +1324,11 @@ impl AdditionalConstraintsElement {
             AdditionalConstraintsElement::RequireLowercase => "REQUIRE_LOWERCASE",
             AdditionalConstraintsElement::RequireSymbol => "REQUIRE_SYMBOL",
             AdditionalConstraintsElement::RequireUppercase => "REQUIRE_UPPERCASE",
-            AdditionalConstraintsElement::Unknown(s) => s.as_ref(),
+            AdditionalConstraintsElement::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "REQUIRE_DIGIT",
             "REQUIRE_LOWERCASE",
@@ -1246,7 +1345,7 @@ impl AsRef<str> for AdditionalConstraintsElement {
 
 /// <p>The OAuth configurations for authenticating users into your Amplify app.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthOAuthConfig {
     /// <p>The Amazon Cognito domain prefix used to create a hosted UI for authentication.</p>
     #[doc(hidden)]
@@ -1295,23 +1394,11 @@ impl UpdateBackendAuthOAuthConfig {
         self.social_provider_settings.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateBackendAuthOAuthConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthOAuthConfig");
-        formatter.field("domain_prefix", &self.domain_prefix);
-        formatter.field("o_auth_grant_type", &self.o_auth_grant_type);
-        formatter.field("o_auth_scopes", &self.o_auth_scopes);
-        formatter.field("redirect_sign_in_ur_is", &self.redirect_sign_in_ur_is);
-        formatter.field("redirect_sign_out_ur_is", &self.redirect_sign_out_ur_is);
-        formatter.field("social_provider_settings", &self.social_provider_settings);
-        formatter.finish()
-    }
-}
 /// See [`UpdateBackendAuthOAuthConfig`](crate::model::UpdateBackendAuthOAuthConfig).
 pub mod update_backend_auth_o_auth_config {
 
     /// A builder for [`UpdateBackendAuthOAuthConfig`](crate::model::UpdateBackendAuthOAuthConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_prefix: std::option::Option<std::string::String>,
         pub(crate) o_auth_grant_type: std::option::Option<crate::model::OAuthGrantType>,
@@ -1444,7 +1531,7 @@ impl UpdateBackendAuthOAuthConfig {
 
 /// <p>The settings for using the social identity providers for access to your Amplify app.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SocialProviderSettings {
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
     #[doc(hidden)]
@@ -1481,21 +1568,11 @@ impl SocialProviderSettings {
         self.sign_in_with_apple.as_ref()
     }
 }
-impl std::fmt::Debug for SocialProviderSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SocialProviderSettings");
-        formatter.field("facebook", &self.facebook);
-        formatter.field("google", &self.google);
-        formatter.field("login_with_amazon", &self.login_with_amazon);
-        formatter.field("sign_in_with_apple", &self.sign_in_with_apple);
-        formatter.finish()
-    }
-}
 /// See [`SocialProviderSettings`](crate::model::SocialProviderSettings).
 pub mod social_provider_settings {
 
     /// A builder for [`SocialProviderSettings`](crate::model::SocialProviderSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) facebook: std::option::Option<crate::model::BackendAuthSocialProviderConfig>,
         pub(crate) google: std::option::Option<crate::model::BackendAuthSocialProviderConfig>,
@@ -1583,7 +1660,7 @@ impl SocialProviderSettings {
 
 /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendAuthAppleProviderConfig {
     /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
     #[doc(hidden)]
@@ -1616,21 +1693,11 @@ impl BackendAuthAppleProviderConfig {
         self.team_id.as_deref()
     }
 }
-impl std::fmt::Debug for BackendAuthAppleProviderConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendAuthAppleProviderConfig");
-        formatter.field("client_id", &self.client_id);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("private_key", &self.private_key);
-        formatter.field("team_id", &self.team_id);
-        formatter.finish()
-    }
-}
 /// See [`BackendAuthAppleProviderConfig`](crate::model::BackendAuthAppleProviderConfig).
 pub mod backend_auth_apple_provider_config {
 
     /// A builder for [`BackendAuthAppleProviderConfig`](crate::model::BackendAuthAppleProviderConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -1698,7 +1765,7 @@ impl BackendAuthAppleProviderConfig {
 
 /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendAuthSocialProviderConfig {
     /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
     #[doc(hidden)]
@@ -1717,19 +1784,11 @@ impl BackendAuthSocialProviderConfig {
         self.client_secret.as_deref()
     }
 }
-impl std::fmt::Debug for BackendAuthSocialProviderConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendAuthSocialProviderConfig");
-        formatter.field("client_id", &self.client_id);
-        formatter.field("client_secret", &self.client_secret);
-        formatter.finish()
-    }
-}
 /// See [`BackendAuthSocialProviderConfig`](crate::model::BackendAuthSocialProviderConfig).
 pub mod backend_auth_social_provider_config {
 
     /// A builder for [`BackendAuthSocialProviderConfig`](crate::model::BackendAuthSocialProviderConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) client_secret: std::option::Option<std::string::String>,
@@ -1774,6 +1833,44 @@ impl BackendAuthSocialProviderConfig {
     }
 }
 
+/// When writing a match expression against `OAuthScopesElement`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let oauthscopeselement = unimplemented!();
+/// match oauthscopeselement {
+///     OAuthScopesElement::AwsCognitoSigninUserAdmin => { /* ... */ },
+///     OAuthScopesElement::Email => { /* ... */ },
+///     OAuthScopesElement::Openid => { /* ... */ },
+///     OAuthScopesElement::Phone => { /* ... */ },
+///     OAuthScopesElement::Profile => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `oauthscopeselement` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OAuthScopesElement::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OAuthScopesElement::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OAuthScopesElement::NewFeature` is defined.
+/// Specifically, when `oauthscopeselement` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OAuthScopesElement::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1796,8 +1893,8 @@ pub enum OAuthScopesElement {
     Phone,
     #[allow(missing_docs)] // documentation missing in model
     Profile,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OAuthScopesElement {
     fn from(s: &str) -> Self {
@@ -1807,7 +1904,9 @@ impl std::convert::From<&str> for OAuthScopesElement {
             "OPENID" => OAuthScopesElement::Openid,
             "PHONE" => OAuthScopesElement::Phone,
             "PROFILE" => OAuthScopesElement::Profile,
-            other => OAuthScopesElement::Unknown(other.to_owned()),
+            other => {
+                OAuthScopesElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -1827,11 +1926,11 @@ impl OAuthScopesElement {
             OAuthScopesElement::Openid => "OPENID",
             OAuthScopesElement::Phone => "PHONE",
             OAuthScopesElement::Profile => "PROFILE",
-            OAuthScopesElement::Unknown(s) => s.as_ref(),
+            OAuthScopesElement::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS_COGNITO_SIGNIN_USER_ADMIN",
             "EMAIL",
@@ -1847,6 +1946,41 @@ impl AsRef<str> for OAuthScopesElement {
     }
 }
 
+/// When writing a match expression against `OAuthGrantType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let oauthgranttype = unimplemented!();
+/// match oauthgranttype {
+///     OAuthGrantType::Code => { /* ... */ },
+///     OAuthGrantType::Implicit => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `oauthgranttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OAuthGrantType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OAuthGrantType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OAuthGrantType::NewFeature` is defined.
+/// Specifically, when `oauthgranttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OAuthGrantType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1863,15 +1997,15 @@ pub enum OAuthGrantType {
     Code,
     #[allow(missing_docs)] // documentation missing in model
     Implicit,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OAuthGrantType {
     fn from(s: &str) -> Self {
         match s {
             "CODE" => OAuthGrantType::Code,
             "IMPLICIT" => OAuthGrantType::Implicit,
-            other => OAuthGrantType::Unknown(other.to_owned()),
+            other => OAuthGrantType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1888,11 +2022,11 @@ impl OAuthGrantType {
         match self {
             OAuthGrantType::Code => "CODE",
             OAuthGrantType::Implicit => "IMPLICIT",
-            OAuthGrantType::Unknown(s) => s.as_ref(),
+            OAuthGrantType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CODE", "IMPLICIT"]
     }
 }
@@ -1904,7 +2038,7 @@ impl AsRef<str> for OAuthGrantType {
 
 /// <p>Updates the multi-factor authentication (MFA) configuration for the backend of your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthMfaConfig {
     /// <p>The MFA mode for the backend of your Amplify project.</p>
     #[doc(hidden)]
@@ -1923,19 +2057,11 @@ impl UpdateBackendAuthMfaConfig {
         self.settings.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateBackendAuthMfaConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthMfaConfig");
-        formatter.field("mfa_mode", &self.mfa_mode);
-        formatter.field("settings", &self.settings);
-        formatter.finish()
-    }
-}
 /// See [`UpdateBackendAuthMfaConfig`](crate::model::UpdateBackendAuthMfaConfig).
 pub mod update_backend_auth_mfa_config {
 
     /// A builder for [`UpdateBackendAuthMfaConfig`](crate::model::UpdateBackendAuthMfaConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mfa_mode: std::option::Option<crate::model::MfaMode>,
         pub(crate) settings: std::option::Option<crate::model::Settings>,
@@ -1979,7 +2105,7 @@ impl UpdateBackendAuthMfaConfig {
 
 /// <p>The settings of your MFA configuration for the backend of your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Settings {
     /// <p>The supported MFA types.</p>
     #[doc(hidden)]
@@ -1998,19 +2124,11 @@ impl Settings {
         self.sms_message.as_deref()
     }
 }
-impl std::fmt::Debug for Settings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Settings");
-        formatter.field("mfa_types", &self.mfa_types);
-        formatter.field("sms_message", &self.sms_message);
-        formatter.finish()
-    }
-}
 /// See [`Settings`](crate::model::Settings).
 pub mod settings {
 
     /// A builder for [`Settings`](crate::model::Settings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mfa_types: std::option::Option<std::vec::Vec<crate::model::MfaTypesElement>>,
         pub(crate) sms_message: std::option::Option<std::string::String>,
@@ -2061,6 +2179,41 @@ impl Settings {
     }
 }
 
+/// When writing a match expression against `MfaTypesElement`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let mfatypeselement = unimplemented!();
+/// match mfatypeselement {
+///     MfaTypesElement::Sms => { /* ... */ },
+///     MfaTypesElement::Totp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `mfatypeselement` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MfaTypesElement::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MfaTypesElement::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MfaTypesElement::NewFeature` is defined.
+/// Specifically, when `mfatypeselement` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MfaTypesElement::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2077,15 +2230,15 @@ pub enum MfaTypesElement {
     Sms,
     #[allow(missing_docs)] // documentation missing in model
     Totp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MfaTypesElement {
     fn from(s: &str) -> Self {
         match s {
             "SMS" => MfaTypesElement::Sms,
             "TOTP" => MfaTypesElement::Totp,
-            other => MfaTypesElement::Unknown(other.to_owned()),
+            other => MfaTypesElement::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2102,11 +2255,11 @@ impl MfaTypesElement {
         match self {
             MfaTypesElement::Sms => "SMS",
             MfaTypesElement::Totp => "TOTP",
-            MfaTypesElement::Unknown(s) => s.as_ref(),
+            MfaTypesElement::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SMS", "TOTP"]
     }
 }
@@ -2116,6 +2269,42 @@ impl AsRef<str> for MfaTypesElement {
     }
 }
 
+/// When writing a match expression against `MfaMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let mfamode = unimplemented!();
+/// match mfamode {
+///     MfaMode::Off => { /* ... */ },
+///     MfaMode::On => { /* ... */ },
+///     MfaMode::Optional => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `mfamode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MfaMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MfaMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MfaMode::NewFeature` is defined.
+/// Specifically, when `mfamode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MfaMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2134,8 +2323,8 @@ pub enum MfaMode {
     On,
     #[allow(missing_docs)] // documentation missing in model
     Optional,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MfaMode {
     fn from(s: &str) -> Self {
@@ -2143,7 +2332,7 @@ impl std::convert::From<&str> for MfaMode {
             "OFF" => MfaMode::Off,
             "ON" => MfaMode::On,
             "OPTIONAL" => MfaMode::Optional,
-            other => MfaMode::Unknown(other.to_owned()),
+            other => MfaMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2161,11 +2350,11 @@ impl MfaMode {
             MfaMode::Off => "OFF",
             MfaMode::On => "ON",
             MfaMode::Optional => "OPTIONAL",
-            MfaMode::Unknown(s) => s.as_ref(),
+            MfaMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OFF", "ON", "OPTIONAL"]
     }
 }
@@ -2177,7 +2366,7 @@ impl AsRef<str> for MfaMode {
 
 /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for authenticating into the Amplify app.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthForgotPasswordConfig {
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
     #[doc(hidden)]
@@ -2203,20 +2392,11 @@ impl UpdateBackendAuthForgotPasswordConfig {
         self.sms_settings.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateBackendAuthForgotPasswordConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthForgotPasswordConfig");
-        formatter.field("delivery_method", &self.delivery_method);
-        formatter.field("email_settings", &self.email_settings);
-        formatter.field("sms_settings", &self.sms_settings);
-        formatter.finish()
-    }
-}
 /// See [`UpdateBackendAuthForgotPasswordConfig`](crate::model::UpdateBackendAuthForgotPasswordConfig).
 pub mod update_backend_auth_forgot_password_config {
 
     /// A builder for [`UpdateBackendAuthForgotPasswordConfig`](crate::model::UpdateBackendAuthForgotPasswordConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_method: std::option::Option<crate::model::DeliveryMethod>,
         pub(crate) email_settings: std::option::Option<crate::model::EmailSettings>,
@@ -2279,6 +2459,40 @@ impl UpdateBackendAuthForgotPasswordConfig {
     }
 }
 
+/// When writing a match expression against `Service`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let service = unimplemented!();
+/// match service {
+///     Service::Cognito => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `service` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Service::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Service::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Service::NewFeature` is defined.
+/// Specifically, when `service` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Service::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2293,14 +2507,14 @@ impl UpdateBackendAuthForgotPasswordConfig {
 pub enum Service {
     #[allow(missing_docs)] // documentation missing in model
     Cognito,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Service {
     fn from(s: &str) -> Self {
         match s {
             "COGNITO" => Service::Cognito,
-            other => Service::Unknown(other.to_owned()),
+            other => Service::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2316,11 +2530,11 @@ impl Service {
     pub fn as_str(&self) -> &str {
         match self {
             Service::Cognito => "COGNITO",
-            Service::Unknown(s) => s.as_ref(),
+            Service::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COGNITO"]
     }
 }
@@ -2332,7 +2546,7 @@ impl AsRef<str> for Service {
 
 /// <p>Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBackendAuthIdentityPoolConfig {
     /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
     #[doc(hidden)]
@@ -2344,18 +2558,11 @@ impl UpdateBackendAuthIdentityPoolConfig {
         self.unauthenticated_login
     }
 }
-impl std::fmt::Debug for UpdateBackendAuthIdentityPoolConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBackendAuthIdentityPoolConfig");
-        formatter.field("unauthenticated_login", &self.unauthenticated_login);
-        formatter.finish()
-    }
-}
 /// See [`UpdateBackendAuthIdentityPoolConfig`](crate::model::UpdateBackendAuthIdentityPoolConfig).
 pub mod update_backend_auth_identity_pool_config {
 
     /// A builder for [`UpdateBackendAuthIdentityPoolConfig`](crate::model::UpdateBackendAuthIdentityPoolConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) unauthenticated_login: std::option::Option<bool>,
     }
@@ -2385,6 +2592,41 @@ impl UpdateBackendAuthIdentityPoolConfig {
     }
 }
 
+/// When writing a match expression against `AuthResources`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let authresources = unimplemented!();
+/// match authresources {
+///     AuthResources::IdentityPoolAndUserPool => { /* ... */ },
+///     AuthResources::UserPoolOnly => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `authresources` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AuthResources::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AuthResources::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AuthResources::NewFeature` is defined.
+/// Specifically, when `authresources` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AuthResources::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2401,15 +2643,15 @@ pub enum AuthResources {
     IdentityPoolAndUserPool,
     #[allow(missing_docs)] // documentation missing in model
     UserPoolOnly,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AuthResources {
     fn from(s: &str) -> Self {
         match s {
             "IDENTITY_POOL_AND_USER_POOL" => AuthResources::IdentityPoolAndUserPool,
             "USER_POOL_ONLY" => AuthResources::UserPoolOnly,
-            other => AuthResources::Unknown(other.to_owned()),
+            other => AuthResources::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2426,11 +2668,11 @@ impl AuthResources {
         match self {
             AuthResources::IdentityPoolAndUserPool => "IDENTITY_POOL_AND_USER_POOL",
             AuthResources::UserPoolOnly => "USER_POOL_ONLY",
-            AuthResources::Unknown(s) => s.as_ref(),
+            AuthResources::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IDENTITY_POOL_AND_USER_POOL", "USER_POOL_ONLY"]
     }
 }
@@ -2442,7 +2684,7 @@ impl AsRef<str> for AuthResources {
 
 /// <p>The resource config for the data model, configured as a part of the Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendApiResourceConfig {
     /// <p>Additional authentication methods used to interact with your data models.</p>
     #[doc(hidden)]
@@ -2493,23 +2735,11 @@ impl BackendApiResourceConfig {
         self.transform_schema.as_deref()
     }
 }
-impl std::fmt::Debug for BackendApiResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendApiResourceConfig");
-        formatter.field("additional_auth_types", &self.additional_auth_types);
-        formatter.field("api_name", &self.api_name);
-        formatter.field("conflict_resolution", &self.conflict_resolution);
-        formatter.field("default_auth_type", &self.default_auth_type);
-        formatter.field("service", &self.service);
-        formatter.field("transform_schema", &self.transform_schema);
-        formatter.finish()
-    }
-}
 /// See [`BackendApiResourceConfig`](crate::model::BackendApiResourceConfig).
 pub mod backend_api_resource_config {
 
     /// A builder for [`BackendApiResourceConfig`](crate::model::BackendApiResourceConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) additional_auth_types:
             std::option::Option<std::vec::Vec<crate::model::BackendApiAuthType>>,
@@ -2624,7 +2854,7 @@ impl BackendApiResourceConfig {
 
 /// <p>Describes the auth types for your configured data models.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendApiAuthType {
     /// <p>Describes the authentication mode.</p>
     #[doc(hidden)]
@@ -2643,19 +2873,11 @@ impl BackendApiAuthType {
         self.settings.as_ref()
     }
 }
-impl std::fmt::Debug for BackendApiAuthType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendApiAuthType");
-        formatter.field("mode", &self.mode);
-        formatter.field("settings", &self.settings);
-        formatter.finish()
-    }
-}
 /// See [`BackendApiAuthType`](crate::model::BackendApiAuthType).
 pub mod backend_api_auth_type {
 
     /// A builder for [`BackendApiAuthType`](crate::model::BackendApiAuthType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<crate::model::Mode>,
         pub(crate) settings: std::option::Option<crate::model::BackendApiAppSyncAuthSettings>,
@@ -2702,7 +2924,7 @@ impl BackendApiAuthType {
 
 /// <p>The authentication settings for accessing provisioned data models in your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendApiAppSyncAuthSettings {
     /// <p>The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data models.</p>
     #[doc(hidden)]
@@ -2763,25 +2985,11 @@ impl BackendApiAppSyncAuthSettings {
         self.open_id_provider_name.as_deref()
     }
 }
-impl std::fmt::Debug for BackendApiAppSyncAuthSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendApiAppSyncAuthSettings");
-        formatter.field("cognito_user_pool_id", &self.cognito_user_pool_id);
-        formatter.field("description", &self.description);
-        formatter.field("expiration_time", &self.expiration_time);
-        formatter.field("open_id_auth_ttl", &self.open_id_auth_ttl);
-        formatter.field("open_id_client_id", &self.open_id_client_id);
-        formatter.field("open_id_iat_ttl", &self.open_id_iat_ttl);
-        formatter.field("open_id_issue_url", &self.open_id_issue_url);
-        formatter.field("open_id_provider_name", &self.open_id_provider_name);
-        formatter.finish()
-    }
-}
 /// See [`BackendApiAppSyncAuthSettings`](crate::model::BackendApiAppSyncAuthSettings).
 pub mod backend_api_app_sync_auth_settings {
 
     /// A builder for [`BackendApiAppSyncAuthSettings`](crate::model::BackendApiAppSyncAuthSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cognito_user_pool_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2913,6 +3121,43 @@ impl BackendApiAppSyncAuthSettings {
     }
 }
 
+/// When writing a match expression against `Mode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let mode = unimplemented!();
+/// match mode {
+///     Mode::AmazonCognitoUserPools => { /* ... */ },
+///     Mode::ApiKey => { /* ... */ },
+///     Mode::AwsIam => { /* ... */ },
+///     Mode::OpenidConnect => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `mode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Mode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Mode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Mode::NewFeature` is defined.
+/// Specifically, when `mode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Mode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2933,8 +3178,8 @@ pub enum Mode {
     AwsIam,
     #[allow(missing_docs)] // documentation missing in model
     OpenidConnect,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Mode {
     fn from(s: &str) -> Self {
@@ -2943,7 +3188,7 @@ impl std::convert::From<&str> for Mode {
             "API_KEY" => Mode::ApiKey,
             "AWS_IAM" => Mode::AwsIam,
             "OPENID_CONNECT" => Mode::OpenidConnect,
-            other => Mode::Unknown(other.to_owned()),
+            other => Mode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2962,11 +3207,11 @@ impl Mode {
             Mode::ApiKey => "API_KEY",
             Mode::AwsIam => "AWS_IAM",
             Mode::OpenidConnect => "OPENID_CONNECT",
-            Mode::Unknown(s) => s.as_ref(),
+            Mode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AMAZON_COGNITO_USER_POOLS",
             "API_KEY",
@@ -2983,7 +3228,7 @@ impl AsRef<str> for Mode {
 
 /// <p>Describes the conflict resolution configuration for your data model configured in your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendApiConflictResolution {
     /// <p>The strategy for conflict resolution.</p>
     #[doc(hidden)]
@@ -2995,18 +3240,11 @@ impl BackendApiConflictResolution {
         self.resolution_strategy.as_ref()
     }
 }
-impl std::fmt::Debug for BackendApiConflictResolution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendApiConflictResolution");
-        formatter.field("resolution_strategy", &self.resolution_strategy);
-        formatter.finish()
-    }
-}
 /// See [`BackendApiConflictResolution`](crate::model::BackendApiConflictResolution).
 pub mod backend_api_conflict_resolution {
 
     /// A builder for [`BackendApiConflictResolution`](crate::model::BackendApiConflictResolution).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolution_strategy: std::option::Option<crate::model::ResolutionStrategy>,
     }
@@ -3039,6 +3277,43 @@ impl BackendApiConflictResolution {
     }
 }
 
+/// When writing a match expression against `ResolutionStrategy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resolutionstrategy = unimplemented!();
+/// match resolutionstrategy {
+///     ResolutionStrategy::Automerge => { /* ... */ },
+///     ResolutionStrategy::Lambda => { /* ... */ },
+///     ResolutionStrategy::None => { /* ... */ },
+///     ResolutionStrategy::OptimisticConcurrency => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resolutionstrategy` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResolutionStrategy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResolutionStrategy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResolutionStrategy::NewFeature` is defined.
+/// Specifically, when `resolutionstrategy` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResolutionStrategy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3059,8 +3334,8 @@ pub enum ResolutionStrategy {
     None,
     #[allow(missing_docs)] // documentation missing in model
     OptimisticConcurrency,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResolutionStrategy {
     fn from(s: &str) -> Self {
@@ -3069,7 +3344,9 @@ impl std::convert::From<&str> for ResolutionStrategy {
             "LAMBDA" => ResolutionStrategy::Lambda,
             "NONE" => ResolutionStrategy::None,
             "OPTIMISTIC_CONCURRENCY" => ResolutionStrategy::OptimisticConcurrency,
-            other => ResolutionStrategy::Unknown(other.to_owned()),
+            other => {
+                ResolutionStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -3088,11 +3365,11 @@ impl ResolutionStrategy {
             ResolutionStrategy::Lambda => "LAMBDA",
             ResolutionStrategy::None => "NONE",
             ResolutionStrategy::OptimisticConcurrency => "OPTIMISTIC_CONCURRENCY",
-            ResolutionStrategy::Unknown(s) => s.as_ref(),
+            ResolutionStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTOMERGE", "LAMBDA", "NONE", "OPTIMISTIC_CONCURRENCY"]
     }
 }
@@ -3104,7 +3381,7 @@ impl AsRef<str> for ResolutionStrategy {
 
 /// <p>Describes the metadata of the S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3BucketInfo {
     /// <p>The creation date of the S3 bucket.</p>
     #[doc(hidden)]
@@ -3123,19 +3400,11 @@ impl S3BucketInfo {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for S3BucketInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3BucketInfo");
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 /// See [`S3BucketInfo`](crate::model::S3BucketInfo).
 pub mod s3_bucket_info {
 
     /// A builder for [`S3BucketInfo`](crate::model::S3BucketInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_date: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3182,7 +3451,7 @@ impl S3BucketInfo {
 
 /// <p>The response object for this operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendJobRespObj {
     /// <p>The app ID.</p>
     #[doc(hidden)]
@@ -3243,25 +3512,11 @@ impl BackendJobRespObj {
         self.update_time.as_deref()
     }
 }
-impl std::fmt::Debug for BackendJobRespObj {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendJobRespObj");
-        formatter.field("app_id", &self.app_id);
-        formatter.field("backend_environment_name", &self.backend_environment_name);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("error", &self.error);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("operation", &self.operation);
-        formatter.field("status", &self.status);
-        formatter.field("update_time", &self.update_time);
-        formatter.finish()
-    }
-}
 /// See [`BackendJobRespObj`](crate::model::BackendJobRespObj).
 pub mod backend_job_resp_obj {
 
     /// A builder for [`BackendJobRespObj`](crate::model::BackendJobRespObj).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -3380,7 +3635,7 @@ impl BackendJobRespObj {
 
 /// <p>The details for a backend storage resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBackendStorageResourceConfig {
     /// <p>The name of the S3 bucket.</p>
     #[doc(hidden)]
@@ -3413,21 +3668,11 @@ impl GetBackendStorageResourceConfig {
         self.service_name.as_ref()
     }
 }
-impl std::fmt::Debug for GetBackendStorageResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBackendStorageResourceConfig");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("imported", &self.imported);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("service_name", &self.service_name);
-        formatter.finish()
-    }
-}
 /// See [`GetBackendStorageResourceConfig`](crate::model::GetBackendStorageResourceConfig).
 pub mod get_backend_storage_resource_config {
 
     /// A builder for [`GetBackendStorageResourceConfig`](crate::model::GetBackendStorageResourceConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) imported: std::option::Option<bool>,
@@ -3501,7 +3746,7 @@ impl GetBackendStorageResourceConfig {
 
 /// <p>Defines the resource configuration when creating an auth resource in your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthResourceConfig {
     /// <p>Defines whether you want to configure only authentication or both authentication and authorization settings.</p>
     #[doc(hidden)]
@@ -3539,21 +3784,11 @@ impl CreateBackendAuthResourceConfig {
         self.user_pool_configs.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBackendAuthResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthResourceConfig");
-        formatter.field("auth_resources", &self.auth_resources);
-        formatter.field("identity_pool_configs", &self.identity_pool_configs);
-        formatter.field("service", &self.service);
-        formatter.field("user_pool_configs", &self.user_pool_configs);
-        formatter.finish()
-    }
-}
 /// See [`CreateBackendAuthResourceConfig`](crate::model::CreateBackendAuthResourceConfig).
 pub mod create_backend_auth_resource_config {
 
     /// A builder for [`CreateBackendAuthResourceConfig`](crate::model::CreateBackendAuthResourceConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auth_resources: std::option::Option<crate::model::AuthResources>,
         pub(crate) identity_pool_configs:
@@ -3638,7 +3873,7 @@ impl CreateBackendAuthResourceConfig {
 
 /// <p>Describes the Amazon Cognito user pool configuration for the auth resource to be configured for your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthUserPoolConfig {
     /// <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
@@ -3709,28 +3944,11 @@ impl CreateBackendAuthUserPoolConfig {
         self.verification_message.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBackendAuthUserPoolConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthUserPoolConfig");
-        formatter.field("forgot_password", &self.forgot_password);
-        formatter.field("mfa", &self.mfa);
-        formatter.field("o_auth", &self.o_auth);
-        formatter.field("password_policy", &self.password_policy);
-        formatter.field(
-            "required_sign_up_attributes",
-            &self.required_sign_up_attributes,
-        );
-        formatter.field("sign_in_method", &self.sign_in_method);
-        formatter.field("user_pool_name", &self.user_pool_name);
-        formatter.field("verification_message", &self.verification_message);
-        formatter.finish()
-    }
-}
 /// See [`CreateBackendAuthUserPoolConfig`](crate::model::CreateBackendAuthUserPoolConfig).
 pub mod create_backend_auth_user_pool_config {
 
     /// A builder for [`CreateBackendAuthUserPoolConfig`](crate::model::CreateBackendAuthUserPoolConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forgot_password:
             std::option::Option<crate::model::CreateBackendAuthForgotPasswordConfig>,
@@ -3894,7 +4112,7 @@ impl CreateBackendAuthUserPoolConfig {
 
 /// <p>Creates an email or SMS verification message for the auth resource configured for your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthVerificationMessageConfig {
     /// <p>The type of verification message to send.</p>
     #[doc(hidden)]
@@ -3920,20 +4138,11 @@ impl CreateBackendAuthVerificationMessageConfig {
         self.sms_settings.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBackendAuthVerificationMessageConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthVerificationMessageConfig");
-        formatter.field("delivery_method", &self.delivery_method);
-        formatter.field("email_settings", &self.email_settings);
-        formatter.field("sms_settings", &self.sms_settings);
-        formatter.finish()
-    }
-}
 /// See [`CreateBackendAuthVerificationMessageConfig`](crate::model::CreateBackendAuthVerificationMessageConfig).
 pub mod create_backend_auth_verification_message_config {
 
     /// A builder for [`CreateBackendAuthVerificationMessageConfig`](crate::model::CreateBackendAuthVerificationMessageConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_method: std::option::Option<crate::model::DeliveryMethod>,
         pub(crate) email_settings: std::option::Option<crate::model::EmailSettings>,
@@ -3996,6 +4205,43 @@ impl CreateBackendAuthVerificationMessageConfig {
     }
 }
 
+/// When writing a match expression against `SignInMethod`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let signinmethod = unimplemented!();
+/// match signinmethod {
+///     SignInMethod::Email => { /* ... */ },
+///     SignInMethod::EmailAndPhoneNumber => { /* ... */ },
+///     SignInMethod::PhoneNumber => { /* ... */ },
+///     SignInMethod::Username => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `signinmethod` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SignInMethod::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SignInMethod::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SignInMethod::NewFeature` is defined.
+/// Specifically, when `signinmethod` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SignInMethod::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4016,8 +4262,8 @@ pub enum SignInMethod {
     PhoneNumber,
     #[allow(missing_docs)] // documentation missing in model
     Username,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SignInMethod {
     fn from(s: &str) -> Self {
@@ -4026,7 +4272,7 @@ impl std::convert::From<&str> for SignInMethod {
             "EMAIL_AND_PHONE_NUMBER" => SignInMethod::EmailAndPhoneNumber,
             "PHONE_NUMBER" => SignInMethod::PhoneNumber,
             "USERNAME" => SignInMethod::Username,
-            other => SignInMethod::Unknown(other.to_owned()),
+            other => SignInMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -4045,11 +4291,11 @@ impl SignInMethod {
             SignInMethod::EmailAndPhoneNumber => "EMAIL_AND_PHONE_NUMBER",
             SignInMethod::PhoneNumber => "PHONE_NUMBER",
             SignInMethod::Username => "USERNAME",
-            SignInMethod::Unknown(s) => s.as_ref(),
+            SignInMethod::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EMAIL",
             "EMAIL_AND_PHONE_NUMBER",
@@ -4064,6 +4310,56 @@ impl AsRef<str> for SignInMethod {
     }
 }
 
+/// When writing a match expression against `RequiredSignUpAttributesElement`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let requiredsignupattributeselement = unimplemented!();
+/// match requiredsignupattributeselement {
+///     RequiredSignUpAttributesElement::Address => { /* ... */ },
+///     RequiredSignUpAttributesElement::Birthdate => { /* ... */ },
+///     RequiredSignUpAttributesElement::Email => { /* ... */ },
+///     RequiredSignUpAttributesElement::FamilyName => { /* ... */ },
+///     RequiredSignUpAttributesElement::Gender => { /* ... */ },
+///     RequiredSignUpAttributesElement::GivenName => { /* ... */ },
+///     RequiredSignUpAttributesElement::Locale => { /* ... */ },
+///     RequiredSignUpAttributesElement::MiddleName => { /* ... */ },
+///     RequiredSignUpAttributesElement::Name => { /* ... */ },
+///     RequiredSignUpAttributesElement::Nickname => { /* ... */ },
+///     RequiredSignUpAttributesElement::PhoneNumber => { /* ... */ },
+///     RequiredSignUpAttributesElement::Picture => { /* ... */ },
+///     RequiredSignUpAttributesElement::PreferredUsername => { /* ... */ },
+///     RequiredSignUpAttributesElement::Profile => { /* ... */ },
+///     RequiredSignUpAttributesElement::UpdatedAt => { /* ... */ },
+///     RequiredSignUpAttributesElement::Website => { /* ... */ },
+///     RequiredSignUpAttributesElement::ZoneInfo => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `requiredsignupattributeselement` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RequiredSignUpAttributesElement::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RequiredSignUpAttributesElement::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RequiredSignUpAttributesElement::NewFeature` is defined.
+/// Specifically, when `requiredsignupattributeselement` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RequiredSignUpAttributesElement::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4110,8 +4406,8 @@ pub enum RequiredSignUpAttributesElement {
     Website,
     #[allow(missing_docs)] // documentation missing in model
     ZoneInfo,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RequiredSignUpAttributesElement {
     fn from(s: &str) -> Self {
@@ -4133,7 +4429,9 @@ impl std::convert::From<&str> for RequiredSignUpAttributesElement {
             "UPDATED_AT" => RequiredSignUpAttributesElement::UpdatedAt,
             "WEBSITE" => RequiredSignUpAttributesElement::Website,
             "ZONE_INFO" => RequiredSignUpAttributesElement::ZoneInfo,
-            other => RequiredSignUpAttributesElement::Unknown(other.to_owned()),
+            other => RequiredSignUpAttributesElement::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -4165,11 +4463,11 @@ impl RequiredSignUpAttributesElement {
             RequiredSignUpAttributesElement::UpdatedAt => "UPDATED_AT",
             RequiredSignUpAttributesElement::Website => "WEBSITE",
             RequiredSignUpAttributesElement::ZoneInfo => "ZONE_INFO",
-            RequiredSignUpAttributesElement::Unknown(s) => s.as_ref(),
+            RequiredSignUpAttributesElement::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDRESS",
             "BIRTHDATE",
@@ -4199,7 +4497,7 @@ impl AsRef<str> for RequiredSignUpAttributesElement {
 
 /// <p>The password policy configuration for the backend to your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthPasswordPolicyConfig {
     /// <p>Additional constraints for the password used to access the backend of your Amplify project.</p>
     #[doc(hidden)]
@@ -4221,19 +4519,11 @@ impl CreateBackendAuthPasswordPolicyConfig {
         self.minimum_length
     }
 }
-impl std::fmt::Debug for CreateBackendAuthPasswordPolicyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthPasswordPolicyConfig");
-        formatter.field("additional_constraints", &self.additional_constraints);
-        formatter.field("minimum_length", &self.minimum_length);
-        formatter.finish()
-    }
-}
 /// See [`CreateBackendAuthPasswordPolicyConfig`](crate::model::CreateBackendAuthPasswordPolicyConfig).
 pub mod create_backend_auth_password_policy_config {
 
     /// A builder for [`CreateBackendAuthPasswordPolicyConfig`](crate::model::CreateBackendAuthPasswordPolicyConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) additional_constraints:
             std::option::Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>,
@@ -4290,7 +4580,7 @@ impl CreateBackendAuthPasswordPolicyConfig {
 
 /// <p>Creates the OAuth configuration for your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthOAuthConfig {
     /// <p>The domain prefix for your Amplify app.</p>
     #[doc(hidden)]
@@ -4339,23 +4629,11 @@ impl CreateBackendAuthOAuthConfig {
         self.social_provider_settings.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBackendAuthOAuthConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthOAuthConfig");
-        formatter.field("domain_prefix", &self.domain_prefix);
-        formatter.field("o_auth_grant_type", &self.o_auth_grant_type);
-        formatter.field("o_auth_scopes", &self.o_auth_scopes);
-        formatter.field("redirect_sign_in_ur_is", &self.redirect_sign_in_ur_is);
-        formatter.field("redirect_sign_out_ur_is", &self.redirect_sign_out_ur_is);
-        formatter.field("social_provider_settings", &self.social_provider_settings);
-        formatter.finish()
-    }
-}
 /// See [`CreateBackendAuthOAuthConfig`](crate::model::CreateBackendAuthOAuthConfig).
 pub mod create_backend_auth_o_auth_config {
 
     /// A builder for [`CreateBackendAuthOAuthConfig`](crate::model::CreateBackendAuthOAuthConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_prefix: std::option::Option<std::string::String>,
         pub(crate) o_auth_grant_type: std::option::Option<crate::model::OAuthGrantType>,
@@ -4488,7 +4766,7 @@ impl CreateBackendAuthOAuthConfig {
 
 /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthMfaConfig {
     /// <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.</p>
     #[doc(hidden)]
@@ -4507,19 +4785,11 @@ impl CreateBackendAuthMfaConfig {
         self.settings.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBackendAuthMfaConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthMfaConfig");
-        formatter.field("mfa_mode", &self.mfa_mode);
-        formatter.field("settings", &self.settings);
-        formatter.finish()
-    }
-}
 /// See [`CreateBackendAuthMfaConfig`](crate::model::CreateBackendAuthMfaConfig).
 pub mod create_backend_auth_mfa_config {
 
     /// A builder for [`CreateBackendAuthMfaConfig`](crate::model::CreateBackendAuthMfaConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mfa_mode: std::option::Option<crate::model::MfaMode>,
         pub(crate) settings: std::option::Option<crate::model::Settings>,
@@ -4563,7 +4833,7 @@ impl CreateBackendAuthMfaConfig {
 
 /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for authenticating into the Amplify app.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthForgotPasswordConfig {
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
     #[doc(hidden)]
@@ -4589,20 +4859,11 @@ impl CreateBackendAuthForgotPasswordConfig {
         self.sms_settings.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBackendAuthForgotPasswordConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthForgotPasswordConfig");
-        formatter.field("delivery_method", &self.delivery_method);
-        formatter.field("email_settings", &self.email_settings);
-        formatter.field("sms_settings", &self.sms_settings);
-        formatter.finish()
-    }
-}
 /// See [`CreateBackendAuthForgotPasswordConfig`](crate::model::CreateBackendAuthForgotPasswordConfig).
 pub mod create_backend_auth_forgot_password_config {
 
     /// A builder for [`CreateBackendAuthForgotPasswordConfig`](crate::model::CreateBackendAuthForgotPasswordConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_method: std::option::Option<crate::model::DeliveryMethod>,
         pub(crate) email_settings: std::option::Option<crate::model::EmailSettings>,
@@ -4667,7 +4928,7 @@ impl CreateBackendAuthForgotPasswordConfig {
 
 /// <p>Describes authorization configurations for the auth resources, configured as a part of your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendAuthIdentityPoolConfig {
     /// <p>Name of the Amazon Cognito identity pool used for authorization.</p>
     #[doc(hidden)]
@@ -4686,19 +4947,11 @@ impl CreateBackendAuthIdentityPoolConfig {
         self.unauthenticated_login
     }
 }
-impl std::fmt::Debug for CreateBackendAuthIdentityPoolConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendAuthIdentityPoolConfig");
-        formatter.field("identity_pool_name", &self.identity_pool_name);
-        formatter.field("unauthenticated_login", &self.unauthenticated_login);
-        formatter.finish()
-    }
-}
 /// See [`CreateBackendAuthIdentityPoolConfig`](crate::model::CreateBackendAuthIdentityPoolConfig).
 pub mod create_backend_auth_identity_pool_config {
 
     /// A builder for [`CreateBackendAuthIdentityPoolConfig`](crate::model::CreateBackendAuthIdentityPoolConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_name: std::option::Option<std::string::String>,
         pub(crate) unauthenticated_login: std::option::Option<bool>,
@@ -4743,6 +4996,41 @@ impl CreateBackendAuthIdentityPoolConfig {
     }
 }
 
+/// When writing a match expression against `Status`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let status = unimplemented!();
+/// match status {
+///     Status::Latest => { /* ... */ },
+///     Status::Stale => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `status` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Status::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Status::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Status::NewFeature` is defined.
+/// Specifically, when `status` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Status::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4759,15 +5047,15 @@ pub enum Status {
     Latest,
     #[allow(missing_docs)] // documentation missing in model
     Stale,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Status {
     fn from(s: &str) -> Self {
         match s {
             "LATEST" => Status::Latest,
             "STALE" => Status::Stale,
-            other => Status::Unknown(other.to_owned()),
+            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -4784,11 +5072,11 @@ impl Status {
         match self {
             Status::Latest => "LATEST",
             Status::Stale => "STALE",
-            Status::Unknown(s) => s.as_ref(),
+            Status::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LATEST", "STALE"]
     }
 }
@@ -4800,7 +5088,7 @@ impl AsRef<str> for Status {
 
 /// <p>The resource configuration for creating backend storage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackendStorageResourceConfig {
     /// <p>The name of the S3 bucket.</p>
     #[doc(hidden)]
@@ -4826,20 +5114,11 @@ impl CreateBackendStorageResourceConfig {
         self.service_name.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBackendStorageResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackendStorageResourceConfig");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("permissions", &self.permissions);
-        formatter.field("service_name", &self.service_name);
-        formatter.finish()
-    }
-}
 /// See [`CreateBackendStorageResourceConfig`](crate::model::CreateBackendStorageResourceConfig).
 pub mod create_backend_storage_resource_config {
 
     /// A builder for [`CreateBackendStorageResourceConfig`](crate::model::CreateBackendStorageResourceConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) permissions: std::option::Option<crate::model::BackendStoragePermissions>,
@@ -4901,19 +5180,13 @@ impl CreateBackendStorageResourceConfig {
 
 /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceConfig {}
-impl std::fmt::Debug for ResourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceConfig");
-        formatter.finish()
-    }
-}
 /// See [`ResourceConfig`](crate::model::ResourceConfig).
 pub mod resource_config {
 
     /// A builder for [`ResourceConfig`](crate::model::ResourceConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ResourceConfig`](crate::model::ResourceConfig).

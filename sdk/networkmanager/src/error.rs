@@ -2,7 +2,7 @@
 
 /// <p>The input fails to satisfy the constraints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -24,18 +24,9 @@ impl ValidationException {
         self.fields.as_deref()
     }
 }
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("message", &self.message);
-        formatter.field("reason", &self.reason);
-        formatter.field("fields", &self.fields);
-        formatter.finish()
-    }
-}
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -43,7 +34,9 @@ impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -53,7 +46,7 @@ impl std::error::Error for ValidationException {}
 pub mod validation_exception {
 
     /// A builder for [`ValidationException`](crate::error::ValidationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<crate::model::ValidationExceptionReason>,
@@ -122,7 +115,7 @@ impl ValidationException {
 
 /// <p>The request was denied due to request throttling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -137,17 +130,9 @@ impl ThrottlingException {
         self.retry_after_seconds
     }
 }
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("message", &self.message);
-        formatter.field("retry_after_seconds", &self.retry_after_seconds);
-        formatter.finish()
-    }
-}
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -155,7 +140,9 @@ impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -165,7 +152,7 @@ impl std::error::Error for ThrottlingException {}
 pub mod throttling_exception {
 
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) retry_after_seconds: std::option::Option<i32>,
@@ -209,7 +196,7 @@ impl ThrottlingException {
 
 /// <p>The specified resource could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -242,19 +229,9 @@ impl ResourceNotFoundException {
         self.context.as_ref()
     }
 }
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("context", &self.context);
-        formatter.finish()
-    }
-}
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -262,7 +239,9 @@ impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -272,7 +251,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -360,7 +339,7 @@ impl ResourceNotFoundException {
 
 /// <p>The request has failed due to an internal error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -375,17 +354,9 @@ impl InternalServerException {
         self.retry_after_seconds
     }
 }
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("message", &self.message);
-        formatter.field("retry_after_seconds", &self.retry_after_seconds);
-        formatter.finish()
-    }
-}
 impl InternalServerException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -393,7 +364,9 @@ impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -403,7 +376,7 @@ impl std::error::Error for InternalServerException {}
 pub mod internal_server_exception {
 
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) retry_after_seconds: std::option::Option<i32>,
@@ -447,7 +420,7 @@ impl InternalServerException {
 
 /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -469,18 +442,9 @@ impl ConflictException {
         self.resource_type.as_deref()
     }
 }
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -488,7 +452,9 @@ impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -498,7 +464,7 @@ impl std::error::Error for ConflictException {}
 pub mod conflict_exception {
 
     /// A builder for [`ConflictException`](crate::error::ConflictException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -557,22 +523,15 @@ impl ConflictException {
 
 /// <p>You do not have sufficient access to perform this action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -580,7 +539,9 @@ impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -590,7 +551,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
 
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -622,7 +583,7 @@ impl AccessDeniedException {
 
 /// <p>A service limit was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
     /// <p>The error message.</p>
     #[doc(hidden)]
@@ -658,20 +619,9 @@ impl ServiceQuotaExceededException {
         self.service_code.as_deref()
     }
 }
-impl std::fmt::Debug for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("limit_code", &self.limit_code);
-        formatter.field("service_code", &self.service_code);
-        formatter.finish()
-    }
-}
 impl ServiceQuotaExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -679,7 +629,9 @@ impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -689,7 +641,7 @@ impl std::error::Error for ServiceQuotaExceededException {}
 pub mod service_quota_exceeded_exception {
 
     /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -772,7 +724,7 @@ impl ServiceQuotaExceededException {
 
 /// <p>Describes a core network policy exception.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CoreNetworkPolicyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -787,17 +739,9 @@ impl CoreNetworkPolicyException {
         self.errors.as_deref()
     }
 }
-impl std::fmt::Debug for CoreNetworkPolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CoreNetworkPolicyException");
-        formatter.field("message", &self.message);
-        formatter.field("errors", &self.errors);
-        formatter.finish()
-    }
-}
 impl CoreNetworkPolicyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -805,7 +749,9 @@ impl std::fmt::Display for CoreNetworkPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CoreNetworkPolicyException")?;
         if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+            {
+                write!(f, ": {}", inner_8)?;
+            }
         }
         Ok(())
     }
@@ -815,7 +761,7 @@ impl std::error::Error for CoreNetworkPolicyException {}
 pub mod core_network_policy_exception {
 
     /// A builder for [`CoreNetworkPolicyException`](crate::error::CoreNetworkPolicyException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::CoreNetworkPolicyError>>,
@@ -875,6 +821,14 @@ pub struct AcceptAttachmentError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AcceptAttachmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AcceptAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AcceptAttachment` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -891,8 +845,15 @@ pub enum AcceptAttachmentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AcceptAttachmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -924,7 +885,7 @@ impl AcceptAttachmentError {
     /// Creates the `AcceptAttachmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AcceptAttachmentErrorKind::Unhandled(err.into()),
+            kind: AcceptAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -933,7 +894,7 @@ impl AcceptAttachmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AcceptAttachmentErrorKind::Unhandled(err.into()),
+            kind: AcceptAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1006,7 +967,7 @@ impl std::error::Error for AcceptAttachmentError {
             AcceptAttachmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AcceptAttachmentErrorKind::ThrottlingException(_inner) => Some(_inner),
             AcceptAttachmentErrorKind::ValidationException(_inner) => Some(_inner),
-            AcceptAttachmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AcceptAttachmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1019,6 +980,14 @@ pub struct AssociateConnectPeerError {
     pub kind: AssociateConnectPeerErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AssociateConnectPeerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateConnectPeerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `AssociateConnectPeer` operation.
 #[non_exhaustive]
@@ -1038,8 +1007,15 @@ pub enum AssociateConnectPeerErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateConnectPeerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1072,7 +1048,9 @@ impl AssociateConnectPeerError {
     /// Creates the `AssociateConnectPeerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateConnectPeerErrorKind::Unhandled(err.into()),
+            kind: AssociateConnectPeerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1081,7 +1059,9 @@ impl AssociateConnectPeerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateConnectPeerErrorKind::Unhandled(err.into()),
+            kind: AssociateConnectPeerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1165,7 +1145,7 @@ impl std::error::Error for AssociateConnectPeerError {
             AssociateConnectPeerErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             AssociateConnectPeerErrorKind::ThrottlingException(_inner) => Some(_inner),
             AssociateConnectPeerErrorKind::ValidationException(_inner) => Some(_inner),
-            AssociateConnectPeerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateConnectPeerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1178,6 +1158,16 @@ pub struct AssociateCustomerGatewayError {
     pub kind: AssociateCustomerGatewayErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AssociateCustomerGatewayError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateCustomerGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `AssociateCustomerGateway` operation.
 #[non_exhaustive]
@@ -1197,8 +1187,15 @@ pub enum AssociateCustomerGatewayErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateCustomerGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1233,7 +1230,9 @@ impl AssociateCustomerGatewayError {
     /// Creates the `AssociateCustomerGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateCustomerGatewayErrorKind::Unhandled(err.into()),
+            kind: AssociateCustomerGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1242,7 +1241,9 @@ impl AssociateCustomerGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateCustomerGatewayErrorKind::Unhandled(err.into()),
+            kind: AssociateCustomerGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1328,7 +1329,7 @@ impl std::error::Error for AssociateCustomerGatewayError {
             }
             AssociateCustomerGatewayErrorKind::ThrottlingException(_inner) => Some(_inner),
             AssociateCustomerGatewayErrorKind::ValidationException(_inner) => Some(_inner),
-            AssociateCustomerGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateCustomerGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1341,6 +1342,14 @@ pub struct AssociateLinkError {
     pub kind: AssociateLinkErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AssociateLinkError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateLinkErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `AssociateLink` operation.
 #[non_exhaustive]
@@ -1360,8 +1369,15 @@ pub enum AssociateLinkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1394,7 +1410,7 @@ impl AssociateLinkError {
     /// Creates the `AssociateLinkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateLinkErrorKind::Unhandled(err.into()),
+            kind: AssociateLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1403,7 +1419,7 @@ impl AssociateLinkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateLinkErrorKind::Unhandled(err.into()),
+            kind: AssociateLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1475,7 +1491,7 @@ impl std::error::Error for AssociateLinkError {
             AssociateLinkErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             AssociateLinkErrorKind::ThrottlingException(_inner) => Some(_inner),
             AssociateLinkErrorKind::ValidationException(_inner) => Some(_inner),
-            AssociateLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateLinkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1488,6 +1504,16 @@ pub struct AssociateTransitGatewayConnectPeerError {
     pub kind: AssociateTransitGatewayConnectPeerErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AssociateTransitGatewayConnectPeerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateTransitGatewayConnectPeerErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `AssociateTransitGatewayConnectPeer` operation.
 #[non_exhaustive]
@@ -1507,8 +1533,15 @@ pub enum AssociateTransitGatewayConnectPeerErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateTransitGatewayConnectPeerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1556,7 +1589,9 @@ impl AssociateTransitGatewayConnectPeerError {
     /// Creates the `AssociateTransitGatewayConnectPeerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateTransitGatewayConnectPeerErrorKind::Unhandled(err.into()),
+            kind: AssociateTransitGatewayConnectPeerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1565,7 +1600,9 @@ impl AssociateTransitGatewayConnectPeerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateTransitGatewayConnectPeerErrorKind::Unhandled(err.into()),
+            kind: AssociateTransitGatewayConnectPeerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1661,7 +1698,7 @@ impl std::error::Error for AssociateTransitGatewayConnectPeerError {
             AssociateTransitGatewayConnectPeerErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            AssociateTransitGatewayConnectPeerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateTransitGatewayConnectPeerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1674,6 +1711,14 @@ pub struct CreateConnectAttachmentError {
     pub kind: CreateConnectAttachmentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateConnectAttachmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateConnectAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateConnectAttachment` operation.
 #[non_exhaustive]
@@ -1691,8 +1736,15 @@ pub enum CreateConnectAttachmentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateConnectAttachmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1724,7 +1776,9 @@ impl CreateConnectAttachmentError {
     /// Creates the `CreateConnectAttachmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateConnectAttachmentErrorKind::Unhandled(err.into()),
+            kind: CreateConnectAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1733,7 +1787,9 @@ impl CreateConnectAttachmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateConnectAttachmentErrorKind::Unhandled(err.into()),
+            kind: CreateConnectAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1809,7 +1865,7 @@ impl std::error::Error for CreateConnectAttachmentError {
             CreateConnectAttachmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateConnectAttachmentErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateConnectAttachmentErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateConnectAttachmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateConnectAttachmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1822,6 +1878,14 @@ pub struct CreateConnectionError {
     pub kind: CreateConnectionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateConnectionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateConnection` operation.
 #[non_exhaustive]
@@ -1839,8 +1903,15 @@ pub enum CreateConnectionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1872,7 +1943,7 @@ impl CreateConnectionError {
     /// Creates the `CreateConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateConnectionErrorKind::Unhandled(err.into()),
+            kind: CreateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1881,7 +1952,7 @@ impl CreateConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateConnectionErrorKind::Unhandled(err.into()),
+            kind: CreateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1954,7 +2025,7 @@ impl std::error::Error for CreateConnectionError {
             CreateConnectionErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateConnectionErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateConnectionErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1967,6 +2038,14 @@ pub struct CreateConnectPeerError {
     pub kind: CreateConnectPeerErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateConnectPeerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateConnectPeerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateConnectPeer` operation.
 #[non_exhaustive]
@@ -1984,8 +2063,15 @@ pub enum CreateConnectPeerErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateConnectPeerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2017,7 +2103,7 @@ impl CreateConnectPeerError {
     /// Creates the `CreateConnectPeerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateConnectPeerErrorKind::Unhandled(err.into()),
+            kind: CreateConnectPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2026,7 +2112,7 @@ impl CreateConnectPeerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateConnectPeerErrorKind::Unhandled(err.into()),
+            kind: CreateConnectPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2099,7 +2185,7 @@ impl std::error::Error for CreateConnectPeerError {
             CreateConnectPeerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateConnectPeerErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateConnectPeerErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateConnectPeerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateConnectPeerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2112,6 +2198,14 @@ pub struct CreateCoreNetworkError {
     pub kind: CreateCoreNetworkErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateCoreNetworkError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateCoreNetworkErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateCoreNetwork` operation.
 #[non_exhaustive]
@@ -2131,8 +2225,15 @@ pub enum CreateCoreNetworkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCoreNetworkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2165,7 +2266,7 @@ impl CreateCoreNetworkError {
     /// Creates the `CreateCoreNetworkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCoreNetworkErrorKind::Unhandled(err.into()),
+            kind: CreateCoreNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2174,7 +2275,7 @@ impl CreateCoreNetworkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCoreNetworkErrorKind::Unhandled(err.into()),
+            kind: CreateCoreNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2255,7 +2356,7 @@ impl std::error::Error for CreateCoreNetworkError {
             CreateCoreNetworkErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateCoreNetworkErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateCoreNetworkErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateCoreNetworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCoreNetworkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2268,6 +2369,14 @@ pub struct CreateDeviceError {
     pub kind: CreateDeviceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDeviceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDeviceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDevice` operation.
 #[non_exhaustive]
@@ -2287,8 +2396,15 @@ pub enum CreateDeviceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2321,7 +2437,7 @@ impl CreateDeviceError {
     /// Creates the `CreateDeviceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDeviceErrorKind::Unhandled(err.into()),
+            kind: CreateDeviceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2330,7 +2446,7 @@ impl CreateDeviceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDeviceErrorKind::Unhandled(err.into()),
+            kind: CreateDeviceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2402,7 +2518,7 @@ impl std::error::Error for CreateDeviceError {
             CreateDeviceErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateDeviceErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateDeviceErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateDeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDeviceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2415,6 +2531,14 @@ pub struct CreateGlobalNetworkError {
     pub kind: CreateGlobalNetworkErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateGlobalNetworkError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateGlobalNetworkErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateGlobalNetwork` operation.
 #[non_exhaustive]
@@ -2432,8 +2556,15 @@ pub enum CreateGlobalNetworkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGlobalNetworkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2465,7 +2596,7 @@ impl CreateGlobalNetworkError {
     /// Creates the `CreateGlobalNetworkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGlobalNetworkErrorKind::Unhandled(err.into()),
+            kind: CreateGlobalNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2474,7 +2605,7 @@ impl CreateGlobalNetworkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGlobalNetworkErrorKind::Unhandled(err.into()),
+            kind: CreateGlobalNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2550,7 +2681,7 @@ impl std::error::Error for CreateGlobalNetworkError {
             CreateGlobalNetworkErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateGlobalNetworkErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateGlobalNetworkErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateGlobalNetworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGlobalNetworkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2563,6 +2694,14 @@ pub struct CreateLinkError {
     pub kind: CreateLinkErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateLinkError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateLinkErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateLink` operation.
 #[non_exhaustive]
@@ -2582,8 +2721,15 @@ pub enum CreateLinkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2616,7 +2762,7 @@ impl CreateLinkError {
     /// Creates the `CreateLinkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLinkErrorKind::Unhandled(err.into()),
+            kind: CreateLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2625,7 +2771,7 @@ impl CreateLinkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLinkErrorKind::Unhandled(err.into()),
+            kind: CreateLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2694,7 +2840,7 @@ impl std::error::Error for CreateLinkError {
             CreateLinkErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateLinkErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateLinkErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLinkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2707,6 +2853,14 @@ pub struct CreateSiteError {
     pub kind: CreateSiteErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateSiteError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateSiteErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateSite` operation.
 #[non_exhaustive]
@@ -2726,8 +2880,15 @@ pub enum CreateSiteErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSiteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2760,7 +2921,7 @@ impl CreateSiteError {
     /// Creates the `CreateSiteError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSiteErrorKind::Unhandled(err.into()),
+            kind: CreateSiteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2769,7 +2930,7 @@ impl CreateSiteError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSiteErrorKind::Unhandled(err.into()),
+            kind: CreateSiteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2838,7 +2999,7 @@ impl std::error::Error for CreateSiteError {
             CreateSiteErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateSiteErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateSiteErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateSiteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSiteErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2851,6 +3012,16 @@ pub struct CreateSiteToSiteVpnAttachmentError {
     pub kind: CreateSiteToSiteVpnAttachmentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateSiteToSiteVpnAttachmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateSiteToSiteVpnAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateSiteToSiteVpnAttachment` operation.
 #[non_exhaustive]
@@ -2868,8 +3039,15 @@ pub enum CreateSiteToSiteVpnAttachmentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSiteToSiteVpnAttachmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2908,7 +3086,9 @@ impl CreateSiteToSiteVpnAttachmentError {
     /// Creates the `CreateSiteToSiteVpnAttachmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSiteToSiteVpnAttachmentErrorKind::Unhandled(err.into()),
+            kind: CreateSiteToSiteVpnAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2917,7 +3097,9 @@ impl CreateSiteToSiteVpnAttachmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSiteToSiteVpnAttachmentErrorKind::Unhandled(err.into()),
+            kind: CreateSiteToSiteVpnAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2995,7 +3177,7 @@ impl std::error::Error for CreateSiteToSiteVpnAttachmentError {
             }
             CreateSiteToSiteVpnAttachmentErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateSiteToSiteVpnAttachmentErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateSiteToSiteVpnAttachmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSiteToSiteVpnAttachmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3008,6 +3190,16 @@ pub struct CreateTransitGatewayPeeringError {
     pub kind: CreateTransitGatewayPeeringErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateTransitGatewayPeeringError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateTransitGatewayPeeringErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateTransitGatewayPeering` operation.
 #[non_exhaustive]
@@ -3025,8 +3217,15 @@ pub enum CreateTransitGatewayPeeringErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTransitGatewayPeeringError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3060,7 +3259,9 @@ impl CreateTransitGatewayPeeringError {
     /// Creates the `CreateTransitGatewayPeeringError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTransitGatewayPeeringErrorKind::Unhandled(err.into()),
+            kind: CreateTransitGatewayPeeringErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3069,7 +3270,9 @@ impl CreateTransitGatewayPeeringError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTransitGatewayPeeringErrorKind::Unhandled(err.into()),
+            kind: CreateTransitGatewayPeeringErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3145,7 +3348,7 @@ impl std::error::Error for CreateTransitGatewayPeeringError {
             CreateTransitGatewayPeeringErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateTransitGatewayPeeringErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateTransitGatewayPeeringErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateTransitGatewayPeeringErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTransitGatewayPeeringErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3158,6 +3361,18 @@ pub struct CreateTransitGatewayRouteTableAttachmentError {
     pub kind: CreateTransitGatewayRouteTableAttachmentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for CreateTransitGatewayRouteTableAttachmentError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateTransitGatewayRouteTableAttachmentErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateTransitGatewayRouteTableAttachment` operation.
 #[non_exhaustive]
@@ -3175,8 +3390,15 @@ pub enum CreateTransitGatewayRouteTableAttachmentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTransitGatewayRouteTableAttachmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3223,7 +3445,9 @@ impl CreateTransitGatewayRouteTableAttachmentError {
     /// Creates the `CreateTransitGatewayRouteTableAttachmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTransitGatewayRouteTableAttachmentErrorKind::Unhandled(err.into()),
+            kind: CreateTransitGatewayRouteTableAttachmentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3232,7 +3456,9 @@ impl CreateTransitGatewayRouteTableAttachmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTransitGatewayRouteTableAttachmentErrorKind::Unhandled(err.into()),
+            kind: CreateTransitGatewayRouteTableAttachmentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3320,9 +3546,7 @@ impl std::error::Error for CreateTransitGatewayRouteTableAttachmentError {
             CreateTransitGatewayRouteTableAttachmentErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            CreateTransitGatewayRouteTableAttachmentErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            CreateTransitGatewayRouteTableAttachmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3335,6 +3559,14 @@ pub struct CreateVpcAttachmentError {
     pub kind: CreateVpcAttachmentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateVpcAttachmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateVpcAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateVpcAttachment` operation.
 #[non_exhaustive]
@@ -3352,8 +3584,15 @@ pub enum CreateVpcAttachmentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateVpcAttachmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3385,7 +3624,7 @@ impl CreateVpcAttachmentError {
     /// Creates the `CreateVpcAttachmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateVpcAttachmentErrorKind::Unhandled(err.into()),
+            kind: CreateVpcAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3394,7 +3633,7 @@ impl CreateVpcAttachmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateVpcAttachmentErrorKind::Unhandled(err.into()),
+            kind: CreateVpcAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3470,7 +3709,7 @@ impl std::error::Error for CreateVpcAttachmentError {
             CreateVpcAttachmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateVpcAttachmentErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateVpcAttachmentErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateVpcAttachmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateVpcAttachmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3483,6 +3722,14 @@ pub struct DeleteAttachmentError {
     pub kind: DeleteAttachmentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteAttachmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteAttachment` operation.
 #[non_exhaustive]
@@ -3500,8 +3747,15 @@ pub enum DeleteAttachmentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAttachmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3533,7 +3787,7 @@ impl DeleteAttachmentError {
     /// Creates the `DeleteAttachmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAttachmentErrorKind::Unhandled(err.into()),
+            kind: DeleteAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3542,7 +3796,7 @@ impl DeleteAttachmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAttachmentErrorKind::Unhandled(err.into()),
+            kind: DeleteAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3615,7 +3869,7 @@ impl std::error::Error for DeleteAttachmentError {
             DeleteAttachmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteAttachmentErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteAttachmentErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteAttachmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAttachmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3628,6 +3882,14 @@ pub struct DeleteConnectionError {
     pub kind: DeleteConnectionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteConnectionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteConnectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteConnection` operation.
 #[non_exhaustive]
@@ -3645,8 +3907,15 @@ pub enum DeleteConnectionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3678,7 +3947,7 @@ impl DeleteConnectionError {
     /// Creates the `DeleteConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteConnectionErrorKind::Unhandled(err.into()),
+            kind: DeleteConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3687,7 +3956,7 @@ impl DeleteConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteConnectionErrorKind::Unhandled(err.into()),
+            kind: DeleteConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3760,7 +4029,7 @@ impl std::error::Error for DeleteConnectionError {
             DeleteConnectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteConnectionErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteConnectionErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3773,6 +4042,14 @@ pub struct DeleteConnectPeerError {
     pub kind: DeleteConnectPeerErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteConnectPeerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteConnectPeerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteConnectPeer` operation.
 #[non_exhaustive]
@@ -3790,8 +4067,15 @@ pub enum DeleteConnectPeerErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteConnectPeerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3823,7 +4107,7 @@ impl DeleteConnectPeerError {
     /// Creates the `DeleteConnectPeerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteConnectPeerErrorKind::Unhandled(err.into()),
+            kind: DeleteConnectPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3832,7 +4116,7 @@ impl DeleteConnectPeerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteConnectPeerErrorKind::Unhandled(err.into()),
+            kind: DeleteConnectPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3905,7 +4189,7 @@ impl std::error::Error for DeleteConnectPeerError {
             DeleteConnectPeerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteConnectPeerErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteConnectPeerErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteConnectPeerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteConnectPeerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3918,6 +4202,14 @@ pub struct DeleteCoreNetworkError {
     pub kind: DeleteCoreNetworkErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteCoreNetworkError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteCoreNetworkErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteCoreNetwork` operation.
 #[non_exhaustive]
@@ -3935,8 +4227,15 @@ pub enum DeleteCoreNetworkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCoreNetworkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3968,7 +4267,7 @@ impl DeleteCoreNetworkError {
     /// Creates the `DeleteCoreNetworkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCoreNetworkErrorKind::Unhandled(err.into()),
+            kind: DeleteCoreNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3977,7 +4276,7 @@ impl DeleteCoreNetworkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCoreNetworkErrorKind::Unhandled(err.into()),
+            kind: DeleteCoreNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4050,7 +4349,7 @@ impl std::error::Error for DeleteCoreNetworkError {
             DeleteCoreNetworkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteCoreNetworkErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteCoreNetworkErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteCoreNetworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCoreNetworkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4063,6 +4362,16 @@ pub struct DeleteCoreNetworkPolicyVersionError {
     pub kind: DeleteCoreNetworkPolicyVersionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteCoreNetworkPolicyVersionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteCoreNetworkPolicyVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteCoreNetworkPolicyVersion` operation.
 #[non_exhaustive]
@@ -4080,8 +4389,15 @@ pub enum DeleteCoreNetworkPolicyVersionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCoreNetworkPolicyVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4120,7 +4436,9 @@ impl DeleteCoreNetworkPolicyVersionError {
     /// Creates the `DeleteCoreNetworkPolicyVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCoreNetworkPolicyVersionErrorKind::Unhandled(err.into()),
+            kind: DeleteCoreNetworkPolicyVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4129,7 +4447,9 @@ impl DeleteCoreNetworkPolicyVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCoreNetworkPolicyVersionErrorKind::Unhandled(err.into()),
+            kind: DeleteCoreNetworkPolicyVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4209,7 +4529,7 @@ impl std::error::Error for DeleteCoreNetworkPolicyVersionError {
             }
             DeleteCoreNetworkPolicyVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteCoreNetworkPolicyVersionErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteCoreNetworkPolicyVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCoreNetworkPolicyVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4222,6 +4542,14 @@ pub struct DeleteDeviceError {
     pub kind: DeleteDeviceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDeviceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDeviceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteDevice` operation.
 #[non_exhaustive]
@@ -4239,8 +4567,15 @@ pub enum DeleteDeviceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4272,7 +4607,7 @@ impl DeleteDeviceError {
     /// Creates the `DeleteDeviceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDeviceErrorKind::Unhandled(err.into()),
+            kind: DeleteDeviceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4281,7 +4616,7 @@ impl DeleteDeviceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDeviceErrorKind::Unhandled(err.into()),
+            kind: DeleteDeviceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4345,7 +4680,7 @@ impl std::error::Error for DeleteDeviceError {
             DeleteDeviceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteDeviceErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteDeviceErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteDeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDeviceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4358,6 +4693,14 @@ pub struct DeleteGlobalNetworkError {
     pub kind: DeleteGlobalNetworkErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteGlobalNetworkError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteGlobalNetworkErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteGlobalNetwork` operation.
 #[non_exhaustive]
@@ -4375,8 +4718,15 @@ pub enum DeleteGlobalNetworkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGlobalNetworkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4408,7 +4758,7 @@ impl DeleteGlobalNetworkError {
     /// Creates the `DeleteGlobalNetworkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteGlobalNetworkErrorKind::Unhandled(err.into()),
+            kind: DeleteGlobalNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4417,7 +4767,7 @@ impl DeleteGlobalNetworkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteGlobalNetworkErrorKind::Unhandled(err.into()),
+            kind: DeleteGlobalNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4493,7 +4843,7 @@ impl std::error::Error for DeleteGlobalNetworkError {
             DeleteGlobalNetworkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteGlobalNetworkErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteGlobalNetworkErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteGlobalNetworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteGlobalNetworkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4506,6 +4856,14 @@ pub struct DeleteLinkError {
     pub kind: DeleteLinkErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteLinkError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteLinkErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteLink` operation.
 #[non_exhaustive]
@@ -4523,8 +4881,15 @@ pub enum DeleteLinkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4556,7 +4921,7 @@ impl DeleteLinkError {
     /// Creates the `DeleteLinkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLinkErrorKind::Unhandled(err.into()),
+            kind: DeleteLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4565,7 +4930,7 @@ impl DeleteLinkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLinkErrorKind::Unhandled(err.into()),
+            kind: DeleteLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4626,7 +4991,7 @@ impl std::error::Error for DeleteLinkError {
             DeleteLinkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteLinkErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteLinkErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLinkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4639,6 +5004,14 @@ pub struct DeletePeeringError {
     pub kind: DeletePeeringErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeletePeeringError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeletePeeringErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeletePeering` operation.
 #[non_exhaustive]
@@ -4656,8 +5029,15 @@ pub enum DeletePeeringErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePeeringError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4689,7 +5069,7 @@ impl DeletePeeringError {
     /// Creates the `DeletePeeringError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePeeringErrorKind::Unhandled(err.into()),
+            kind: DeletePeeringErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4698,7 +5078,7 @@ impl DeletePeeringError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePeeringErrorKind::Unhandled(err.into()),
+            kind: DeletePeeringErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4762,7 +5142,7 @@ impl std::error::Error for DeletePeeringError {
             DeletePeeringErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeletePeeringErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeletePeeringErrorKind::ValidationException(_inner) => Some(_inner),
-            DeletePeeringErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePeeringErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4775,6 +5155,14 @@ pub struct DeleteResourcePolicyError {
     pub kind: DeleteResourcePolicyErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteResourcePolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteResourcePolicy` operation.
 #[non_exhaustive]
@@ -4790,8 +5178,15 @@ pub enum DeleteResourcePolicyErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4822,7 +5217,9 @@ impl DeleteResourcePolicyError {
     /// Creates the `DeleteResourcePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4831,7 +5228,9 @@ impl DeleteResourcePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4899,7 +5298,7 @@ impl std::error::Error for DeleteResourcePolicyError {
             DeleteResourcePolicyErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4912,6 +5311,14 @@ pub struct DeleteSiteError {
     pub kind: DeleteSiteErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteSiteError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteSiteErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteSite` operation.
 #[non_exhaustive]
@@ -4929,8 +5336,15 @@ pub enum DeleteSiteErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSiteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4962,7 +5376,7 @@ impl DeleteSiteError {
     /// Creates the `DeleteSiteError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSiteErrorKind::Unhandled(err.into()),
+            kind: DeleteSiteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4971,7 +5385,7 @@ impl DeleteSiteError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSiteErrorKind::Unhandled(err.into()),
+            kind: DeleteSiteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5032,7 +5446,7 @@ impl std::error::Error for DeleteSiteError {
             DeleteSiteErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteSiteErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteSiteErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteSiteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSiteErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5045,6 +5459,16 @@ pub struct DeregisterTransitGatewayError {
     pub kind: DeregisterTransitGatewayErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeregisterTransitGatewayError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeregisterTransitGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeregisterTransitGateway` operation.
 #[non_exhaustive]
@@ -5062,8 +5486,15 @@ pub enum DeregisterTransitGatewayErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeregisterTransitGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5095,7 +5526,9 @@ impl DeregisterTransitGatewayError {
     /// Creates the `DeregisterTransitGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeregisterTransitGatewayErrorKind::Unhandled(err.into()),
+            kind: DeregisterTransitGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5104,7 +5537,9 @@ impl DeregisterTransitGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeregisterTransitGatewayErrorKind::Unhandled(err.into()),
+            kind: DeregisterTransitGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5180,7 +5615,7 @@ impl std::error::Error for DeregisterTransitGatewayError {
             DeregisterTransitGatewayErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeregisterTransitGatewayErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeregisterTransitGatewayErrorKind::ValidationException(_inner) => Some(_inner),
-            DeregisterTransitGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeregisterTransitGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5193,6 +5628,14 @@ pub struct DescribeGlobalNetworksError {
     pub kind: DescribeGlobalNetworksErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeGlobalNetworksError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeGlobalNetworksErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeGlobalNetworks` operation.
 #[non_exhaustive]
@@ -5208,8 +5651,15 @@ pub enum DescribeGlobalNetworksErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGlobalNetworksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5240,7 +5690,9 @@ impl DescribeGlobalNetworksError {
     /// Creates the `DescribeGlobalNetworksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeGlobalNetworksErrorKind::Unhandled(err.into()),
+            kind: DescribeGlobalNetworksErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5249,7 +5701,9 @@ impl DescribeGlobalNetworksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeGlobalNetworksErrorKind::Unhandled(err.into()),
+            kind: DescribeGlobalNetworksErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5317,7 +5771,7 @@ impl std::error::Error for DescribeGlobalNetworksError {
             DescribeGlobalNetworksErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeGlobalNetworksErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeGlobalNetworksErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeGlobalNetworksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeGlobalNetworksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5330,6 +5784,14 @@ pub struct DisassociateConnectPeerError {
     pub kind: DisassociateConnectPeerErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateConnectPeerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateConnectPeerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DisassociateConnectPeer` operation.
 #[non_exhaustive]
@@ -5347,8 +5809,15 @@ pub enum DisassociateConnectPeerErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateConnectPeerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5380,7 +5849,9 @@ impl DisassociateConnectPeerError {
     /// Creates the `DisassociateConnectPeerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateConnectPeerErrorKind::Unhandled(err.into()),
+            kind: DisassociateConnectPeerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5389,7 +5860,9 @@ impl DisassociateConnectPeerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateConnectPeerErrorKind::Unhandled(err.into()),
+            kind: DisassociateConnectPeerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5465,7 +5938,7 @@ impl std::error::Error for DisassociateConnectPeerError {
             DisassociateConnectPeerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisassociateConnectPeerErrorKind::ThrottlingException(_inner) => Some(_inner),
             DisassociateConnectPeerErrorKind::ValidationException(_inner) => Some(_inner),
-            DisassociateConnectPeerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateConnectPeerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5478,6 +5951,16 @@ pub struct DisassociateCustomerGatewayError {
     pub kind: DisassociateCustomerGatewayErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateCustomerGatewayError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateCustomerGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DisassociateCustomerGateway` operation.
 #[non_exhaustive]
@@ -5495,8 +5978,15 @@ pub enum DisassociateCustomerGatewayErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateCustomerGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5530,7 +6020,9 @@ impl DisassociateCustomerGatewayError {
     /// Creates the `DisassociateCustomerGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateCustomerGatewayErrorKind::Unhandled(err.into()),
+            kind: DisassociateCustomerGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5539,7 +6031,9 @@ impl DisassociateCustomerGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateCustomerGatewayErrorKind::Unhandled(err.into()),
+            kind: DisassociateCustomerGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5615,7 +6109,7 @@ impl std::error::Error for DisassociateCustomerGatewayError {
             DisassociateCustomerGatewayErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisassociateCustomerGatewayErrorKind::ThrottlingException(_inner) => Some(_inner),
             DisassociateCustomerGatewayErrorKind::ValidationException(_inner) => Some(_inner),
-            DisassociateCustomerGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateCustomerGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5628,6 +6122,14 @@ pub struct DisassociateLinkError {
     pub kind: DisassociateLinkErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateLinkError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateLinkErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DisassociateLink` operation.
 #[non_exhaustive]
@@ -5645,8 +6147,15 @@ pub enum DisassociateLinkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5678,7 +6187,7 @@ impl DisassociateLinkError {
     /// Creates the `DisassociateLinkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateLinkErrorKind::Unhandled(err.into()),
+            kind: DisassociateLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5687,7 +6196,7 @@ impl DisassociateLinkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateLinkErrorKind::Unhandled(err.into()),
+            kind: DisassociateLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5760,7 +6269,7 @@ impl std::error::Error for DisassociateLinkError {
             DisassociateLinkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisassociateLinkErrorKind::ThrottlingException(_inner) => Some(_inner),
             DisassociateLinkErrorKind::ValidationException(_inner) => Some(_inner),
-            DisassociateLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateLinkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5773,6 +6282,16 @@ pub struct DisassociateTransitGatewayConnectPeerError {
     pub kind: DisassociateTransitGatewayConnectPeerErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateTransitGatewayConnectPeerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateTransitGatewayConnectPeerErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DisassociateTransitGatewayConnectPeer` operation.
 #[non_exhaustive]
@@ -5790,8 +6309,15 @@ pub enum DisassociateTransitGatewayConnectPeerErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateTransitGatewayConnectPeerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5838,7 +6364,9 @@ impl DisassociateTransitGatewayConnectPeerError {
     /// Creates the `DisassociateTransitGatewayConnectPeerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateTransitGatewayConnectPeerErrorKind::Unhandled(err.into()),
+            kind: DisassociateTransitGatewayConnectPeerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5847,7 +6375,9 @@ impl DisassociateTransitGatewayConnectPeerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateTransitGatewayConnectPeerErrorKind::Unhandled(err.into()),
+            kind: DisassociateTransitGatewayConnectPeerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5935,9 +6465,7 @@ impl std::error::Error for DisassociateTransitGatewayConnectPeerError {
             DisassociateTransitGatewayConnectPeerErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            DisassociateTransitGatewayConnectPeerErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DisassociateTransitGatewayConnectPeerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5950,6 +6478,16 @@ pub struct ExecuteCoreNetworkChangeSetError {
     pub kind: ExecuteCoreNetworkChangeSetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ExecuteCoreNetworkChangeSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ExecuteCoreNetworkChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ExecuteCoreNetworkChangeSet` operation.
 #[non_exhaustive]
@@ -5967,8 +6505,15 @@ pub enum ExecuteCoreNetworkChangeSetErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExecuteCoreNetworkChangeSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6002,7 +6547,9 @@ impl ExecuteCoreNetworkChangeSetError {
     /// Creates the `ExecuteCoreNetworkChangeSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExecuteCoreNetworkChangeSetErrorKind::Unhandled(err.into()),
+            kind: ExecuteCoreNetworkChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6011,7 +6558,9 @@ impl ExecuteCoreNetworkChangeSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExecuteCoreNetworkChangeSetErrorKind::Unhandled(err.into()),
+            kind: ExecuteCoreNetworkChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6087,7 +6636,7 @@ impl std::error::Error for ExecuteCoreNetworkChangeSetError {
             ExecuteCoreNetworkChangeSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ExecuteCoreNetworkChangeSetErrorKind::ThrottlingException(_inner) => Some(_inner),
             ExecuteCoreNetworkChangeSetErrorKind::ValidationException(_inner) => Some(_inner),
-            ExecuteCoreNetworkChangeSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExecuteCoreNetworkChangeSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6100,6 +6649,14 @@ pub struct GetConnectAttachmentError {
     pub kind: GetConnectAttachmentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetConnectAttachmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetConnectAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetConnectAttachment` operation.
 #[non_exhaustive]
@@ -6115,8 +6672,15 @@ pub enum GetConnectAttachmentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetConnectAttachmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6147,7 +6711,9 @@ impl GetConnectAttachmentError {
     /// Creates the `GetConnectAttachmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetConnectAttachmentErrorKind::Unhandled(err.into()),
+            kind: GetConnectAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6156,7 +6722,9 @@ impl GetConnectAttachmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetConnectAttachmentErrorKind::Unhandled(err.into()),
+            kind: GetConnectAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6224,7 +6792,7 @@ impl std::error::Error for GetConnectAttachmentError {
             GetConnectAttachmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetConnectAttachmentErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetConnectAttachmentErrorKind::ValidationException(_inner) => Some(_inner),
-            GetConnectAttachmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetConnectAttachmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6237,6 +6805,14 @@ pub struct GetConnectionsError {
     pub kind: GetConnectionsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetConnectionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetConnections` operation.
 #[non_exhaustive]
@@ -6252,8 +6828,15 @@ pub enum GetConnectionsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetConnectionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6284,7 +6867,7 @@ impl GetConnectionsError {
     /// Creates the `GetConnectionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetConnectionsErrorKind::Unhandled(err.into()),
+            kind: GetConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6293,7 +6876,7 @@ impl GetConnectionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetConnectionsErrorKind::Unhandled(err.into()),
+            kind: GetConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6355,7 +6938,7 @@ impl std::error::Error for GetConnectionsError {
             GetConnectionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetConnectionsErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetConnectionsErrorKind::ValidationException(_inner) => Some(_inner),
-            GetConnectionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetConnectionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6368,6 +6951,14 @@ pub struct GetConnectPeerError {
     pub kind: GetConnectPeerErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetConnectPeerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetConnectPeerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetConnectPeer` operation.
 #[non_exhaustive]
@@ -6383,8 +6974,15 @@ pub enum GetConnectPeerErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetConnectPeerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6415,7 +7013,7 @@ impl GetConnectPeerError {
     /// Creates the `GetConnectPeerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetConnectPeerErrorKind::Unhandled(err.into()),
+            kind: GetConnectPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6424,7 +7022,7 @@ impl GetConnectPeerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetConnectPeerErrorKind::Unhandled(err.into()),
+            kind: GetConnectPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6486,7 +7084,7 @@ impl std::error::Error for GetConnectPeerError {
             GetConnectPeerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetConnectPeerErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetConnectPeerErrorKind::ValidationException(_inner) => Some(_inner),
-            GetConnectPeerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetConnectPeerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6499,6 +7097,16 @@ pub struct GetConnectPeerAssociationsError {
     pub kind: GetConnectPeerAssociationsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetConnectPeerAssociationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetConnectPeerAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetConnectPeerAssociations` operation.
 #[non_exhaustive]
@@ -6516,8 +7124,15 @@ pub enum GetConnectPeerAssociationsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetConnectPeerAssociationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6549,7 +7164,9 @@ impl GetConnectPeerAssociationsError {
     /// Creates the `GetConnectPeerAssociationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetConnectPeerAssociationsErrorKind::Unhandled(err.into()),
+            kind: GetConnectPeerAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6558,7 +7175,9 @@ impl GetConnectPeerAssociationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetConnectPeerAssociationsErrorKind::Unhandled(err.into()),
+            kind: GetConnectPeerAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6634,7 +7253,7 @@ impl std::error::Error for GetConnectPeerAssociationsError {
             GetConnectPeerAssociationsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetConnectPeerAssociationsErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetConnectPeerAssociationsErrorKind::ValidationException(_inner) => Some(_inner),
-            GetConnectPeerAssociationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetConnectPeerAssociationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6647,6 +7266,14 @@ pub struct GetCoreNetworkError {
     pub kind: GetCoreNetworkErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetCoreNetworkError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetCoreNetworkErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetCoreNetwork` operation.
 #[non_exhaustive]
@@ -6662,8 +7289,15 @@ pub enum GetCoreNetworkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCoreNetworkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6694,7 +7328,7 @@ impl GetCoreNetworkError {
     /// Creates the `GetCoreNetworkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCoreNetworkErrorKind::Unhandled(err.into()),
+            kind: GetCoreNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6703,7 +7337,7 @@ impl GetCoreNetworkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCoreNetworkErrorKind::Unhandled(err.into()),
+            kind: GetCoreNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6765,7 +7399,7 @@ impl std::error::Error for GetCoreNetworkError {
             GetCoreNetworkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetCoreNetworkErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetCoreNetworkErrorKind::ValidationException(_inner) => Some(_inner),
-            GetCoreNetworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCoreNetworkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6778,6 +7412,16 @@ pub struct GetCoreNetworkChangeEventsError {
     pub kind: GetCoreNetworkChangeEventsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetCoreNetworkChangeEventsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetCoreNetworkChangeEventsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetCoreNetworkChangeEvents` operation.
 #[non_exhaustive]
@@ -6793,8 +7437,15 @@ pub enum GetCoreNetworkChangeEventsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCoreNetworkChangeEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6825,7 +7476,9 @@ impl GetCoreNetworkChangeEventsError {
     /// Creates the `GetCoreNetworkChangeEventsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCoreNetworkChangeEventsErrorKind::Unhandled(err.into()),
+            kind: GetCoreNetworkChangeEventsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6834,7 +7487,9 @@ impl GetCoreNetworkChangeEventsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCoreNetworkChangeEventsErrorKind::Unhandled(err.into()),
+            kind: GetCoreNetworkChangeEventsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6902,7 +7557,7 @@ impl std::error::Error for GetCoreNetworkChangeEventsError {
             GetCoreNetworkChangeEventsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetCoreNetworkChangeEventsErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetCoreNetworkChangeEventsErrorKind::ValidationException(_inner) => Some(_inner),
-            GetCoreNetworkChangeEventsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCoreNetworkChangeEventsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6915,6 +7570,14 @@ pub struct GetCoreNetworkChangeSetError {
     pub kind: GetCoreNetworkChangeSetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetCoreNetworkChangeSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetCoreNetworkChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetCoreNetworkChangeSet` operation.
 #[non_exhaustive]
@@ -6930,8 +7593,15 @@ pub enum GetCoreNetworkChangeSetErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCoreNetworkChangeSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6962,7 +7632,9 @@ impl GetCoreNetworkChangeSetError {
     /// Creates the `GetCoreNetworkChangeSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCoreNetworkChangeSetErrorKind::Unhandled(err.into()),
+            kind: GetCoreNetworkChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6971,7 +7643,9 @@ impl GetCoreNetworkChangeSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCoreNetworkChangeSetErrorKind::Unhandled(err.into()),
+            kind: GetCoreNetworkChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7039,7 +7713,7 @@ impl std::error::Error for GetCoreNetworkChangeSetError {
             GetCoreNetworkChangeSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetCoreNetworkChangeSetErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetCoreNetworkChangeSetErrorKind::ValidationException(_inner) => Some(_inner),
-            GetCoreNetworkChangeSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCoreNetworkChangeSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7052,6 +7726,14 @@ pub struct GetCoreNetworkPolicyError {
     pub kind: GetCoreNetworkPolicyErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetCoreNetworkPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetCoreNetworkPolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetCoreNetworkPolicy` operation.
 #[non_exhaustive]
@@ -7067,8 +7749,15 @@ pub enum GetCoreNetworkPolicyErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCoreNetworkPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7099,7 +7788,9 @@ impl GetCoreNetworkPolicyError {
     /// Creates the `GetCoreNetworkPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCoreNetworkPolicyErrorKind::Unhandled(err.into()),
+            kind: GetCoreNetworkPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7108,7 +7799,9 @@ impl GetCoreNetworkPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCoreNetworkPolicyErrorKind::Unhandled(err.into()),
+            kind: GetCoreNetworkPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7176,7 +7869,7 @@ impl std::error::Error for GetCoreNetworkPolicyError {
             GetCoreNetworkPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetCoreNetworkPolicyErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetCoreNetworkPolicyErrorKind::ValidationException(_inner) => Some(_inner),
-            GetCoreNetworkPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCoreNetworkPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7189,6 +7882,16 @@ pub struct GetCustomerGatewayAssociationsError {
     pub kind: GetCustomerGatewayAssociationsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetCustomerGatewayAssociationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetCustomerGatewayAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetCustomerGatewayAssociations` operation.
 #[non_exhaustive]
@@ -7206,8 +7909,15 @@ pub enum GetCustomerGatewayAssociationsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCustomerGatewayAssociationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7246,7 +7956,9 @@ impl GetCustomerGatewayAssociationsError {
     /// Creates the `GetCustomerGatewayAssociationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCustomerGatewayAssociationsErrorKind::Unhandled(err.into()),
+            kind: GetCustomerGatewayAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7255,7 +7967,9 @@ impl GetCustomerGatewayAssociationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCustomerGatewayAssociationsErrorKind::Unhandled(err.into()),
+            kind: GetCustomerGatewayAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7335,7 +8049,7 @@ impl std::error::Error for GetCustomerGatewayAssociationsError {
             }
             GetCustomerGatewayAssociationsErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetCustomerGatewayAssociationsErrorKind::ValidationException(_inner) => Some(_inner),
-            GetCustomerGatewayAssociationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCustomerGatewayAssociationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7348,6 +8062,14 @@ pub struct GetDevicesError {
     pub kind: GetDevicesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDevicesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDevicesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetDevices` operation.
 #[non_exhaustive]
@@ -7363,8 +8085,15 @@ pub enum GetDevicesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDevicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7395,7 +8124,7 @@ impl GetDevicesError {
     /// Creates the `GetDevicesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDevicesErrorKind::Unhandled(err.into()),
+            kind: GetDevicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7404,7 +8133,7 @@ impl GetDevicesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDevicesErrorKind::Unhandled(err.into()),
+            kind: GetDevicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7460,7 +8189,7 @@ impl std::error::Error for GetDevicesError {
             GetDevicesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetDevicesErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetDevicesErrorKind::ValidationException(_inner) => Some(_inner),
-            GetDevicesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDevicesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7473,6 +8202,14 @@ pub struct GetLinkAssociationsError {
     pub kind: GetLinkAssociationsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetLinkAssociationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetLinkAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetLinkAssociations` operation.
 #[non_exhaustive]
@@ -7488,8 +8225,15 @@ pub enum GetLinkAssociationsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLinkAssociationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7520,7 +8264,7 @@ impl GetLinkAssociationsError {
     /// Creates the `GetLinkAssociationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLinkAssociationsErrorKind::Unhandled(err.into()),
+            kind: GetLinkAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7529,7 +8273,7 @@ impl GetLinkAssociationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLinkAssociationsErrorKind::Unhandled(err.into()),
+            kind: GetLinkAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7597,7 +8341,7 @@ impl std::error::Error for GetLinkAssociationsError {
             GetLinkAssociationsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetLinkAssociationsErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetLinkAssociationsErrorKind::ValidationException(_inner) => Some(_inner),
-            GetLinkAssociationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLinkAssociationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7610,6 +8354,14 @@ pub struct GetLinksError {
     pub kind: GetLinksErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetLinksError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetLinksErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetLinks` operation.
 #[non_exhaustive]
@@ -7625,8 +8377,15 @@ pub enum GetLinksErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLinksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7657,7 +8416,7 @@ impl GetLinksError {
     /// Creates the `GetLinksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLinksErrorKind::Unhandled(err.into()),
+            kind: GetLinksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7666,7 +8425,7 @@ impl GetLinksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLinksErrorKind::Unhandled(err.into()),
+            kind: GetLinksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7719,7 +8478,7 @@ impl std::error::Error for GetLinksError {
             GetLinksErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetLinksErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetLinksErrorKind::ValidationException(_inner) => Some(_inner),
-            GetLinksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLinksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7733,6 +8492,16 @@ pub struct GetNetworkResourceCountsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetNetworkResourceCountsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetNetworkResourceCountsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetNetworkResourceCounts` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7745,8 +8514,15 @@ pub enum GetNetworkResourceCountsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetNetworkResourceCountsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7776,7 +8552,9 @@ impl GetNetworkResourceCountsError {
     /// Creates the `GetNetworkResourceCountsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetNetworkResourceCountsErrorKind::Unhandled(err.into()),
+            kind: GetNetworkResourceCountsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7785,7 +8563,9 @@ impl GetNetworkResourceCountsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetNetworkResourceCountsErrorKind::Unhandled(err.into()),
+            kind: GetNetworkResourceCountsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7845,7 +8625,7 @@ impl std::error::Error for GetNetworkResourceCountsError {
             GetNetworkResourceCountsErrorKind::InternalServerException(_inner) => Some(_inner),
             GetNetworkResourceCountsErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetNetworkResourceCountsErrorKind::ValidationException(_inner) => Some(_inner),
-            GetNetworkResourceCountsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetNetworkResourceCountsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7858,6 +8638,16 @@ pub struct GetNetworkResourceRelationshipsError {
     pub kind: GetNetworkResourceRelationshipsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetNetworkResourceRelationshipsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetNetworkResourceRelationshipsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetNetworkResourceRelationships` operation.
 #[non_exhaustive]
@@ -7873,8 +8663,15 @@ pub enum GetNetworkResourceRelationshipsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetNetworkResourceRelationshipsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7914,7 +8711,9 @@ impl GetNetworkResourceRelationshipsError {
     /// Creates the `GetNetworkResourceRelationshipsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetNetworkResourceRelationshipsErrorKind::Unhandled(err.into()),
+            kind: GetNetworkResourceRelationshipsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -7923,7 +8722,9 @@ impl GetNetworkResourceRelationshipsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetNetworkResourceRelationshipsErrorKind::Unhandled(err.into()),
+            kind: GetNetworkResourceRelationshipsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -7995,7 +8796,7 @@ impl std::error::Error for GetNetworkResourceRelationshipsError {
             }
             GetNetworkResourceRelationshipsErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetNetworkResourceRelationshipsErrorKind::ValidationException(_inner) => Some(_inner),
-            GetNetworkResourceRelationshipsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetNetworkResourceRelationshipsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8008,6 +8809,14 @@ pub struct GetNetworkResourcesError {
     pub kind: GetNetworkResourcesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetNetworkResourcesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetNetworkResourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetNetworkResources` operation.
 #[non_exhaustive]
@@ -8023,8 +8832,15 @@ pub enum GetNetworkResourcesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetNetworkResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8055,7 +8871,7 @@ impl GetNetworkResourcesError {
     /// Creates the `GetNetworkResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetNetworkResourcesErrorKind::Unhandled(err.into()),
+            kind: GetNetworkResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8064,7 +8880,7 @@ impl GetNetworkResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetNetworkResourcesErrorKind::Unhandled(err.into()),
+            kind: GetNetworkResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8132,7 +8948,7 @@ impl std::error::Error for GetNetworkResourcesError {
             GetNetworkResourcesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetNetworkResourcesErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetNetworkResourcesErrorKind::ValidationException(_inner) => Some(_inner),
-            GetNetworkResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetNetworkResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8145,6 +8961,14 @@ pub struct GetNetworkRoutesError {
     pub kind: GetNetworkRoutesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetNetworkRoutesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetNetworkRoutesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetNetworkRoutes` operation.
 #[non_exhaustive]
@@ -8160,8 +8984,15 @@ pub enum GetNetworkRoutesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetNetworkRoutesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8192,7 +9023,7 @@ impl GetNetworkRoutesError {
     /// Creates the `GetNetworkRoutesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetNetworkRoutesErrorKind::Unhandled(err.into()),
+            kind: GetNetworkRoutesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8201,7 +9032,7 @@ impl GetNetworkRoutesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetNetworkRoutesErrorKind::Unhandled(err.into()),
+            kind: GetNetworkRoutesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8269,7 +9100,7 @@ impl std::error::Error for GetNetworkRoutesError {
             GetNetworkRoutesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetNetworkRoutesErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetNetworkRoutesErrorKind::ValidationException(_inner) => Some(_inner),
-            GetNetworkRoutesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetNetworkRoutesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8282,6 +9113,14 @@ pub struct GetNetworkTelemetryError {
     pub kind: GetNetworkTelemetryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetNetworkTelemetryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetNetworkTelemetryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetNetworkTelemetry` operation.
 #[non_exhaustive]
@@ -8297,8 +9136,15 @@ pub enum GetNetworkTelemetryErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetNetworkTelemetryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8329,7 +9175,7 @@ impl GetNetworkTelemetryError {
     /// Creates the `GetNetworkTelemetryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetNetworkTelemetryErrorKind::Unhandled(err.into()),
+            kind: GetNetworkTelemetryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8338,7 +9184,7 @@ impl GetNetworkTelemetryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetNetworkTelemetryErrorKind::Unhandled(err.into()),
+            kind: GetNetworkTelemetryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8406,7 +9252,7 @@ impl std::error::Error for GetNetworkTelemetryError {
             GetNetworkTelemetryErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetNetworkTelemetryErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetNetworkTelemetryErrorKind::ValidationException(_inner) => Some(_inner),
-            GetNetworkTelemetryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetNetworkTelemetryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8420,6 +9266,14 @@ pub struct GetResourcePolicyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetResourcePolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetResourcePolicy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8432,8 +9286,15 @@ pub enum GetResourcePolicyErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8463,7 +9324,7 @@ impl GetResourcePolicyError {
     /// Creates the `GetResourcePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: GetResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8472,7 +9333,7 @@ impl GetResourcePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: GetResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8532,7 +9393,7 @@ impl std::error::Error for GetResourcePolicyError {
             GetResourcePolicyErrorKind::InternalServerException(_inner) => Some(_inner),
             GetResourcePolicyErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetResourcePolicyErrorKind::ValidationException(_inner) => Some(_inner),
-            GetResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8545,6 +9406,14 @@ pub struct GetRouteAnalysisError {
     pub kind: GetRouteAnalysisErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRouteAnalysisError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRouteAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRouteAnalysis` operation.
 #[non_exhaustive]
@@ -8560,8 +9429,15 @@ pub enum GetRouteAnalysisErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRouteAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8592,7 +9468,7 @@ impl GetRouteAnalysisError {
     /// Creates the `GetRouteAnalysisError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRouteAnalysisErrorKind::Unhandled(err.into()),
+            kind: GetRouteAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8601,7 +9477,7 @@ impl GetRouteAnalysisError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRouteAnalysisErrorKind::Unhandled(err.into()),
+            kind: GetRouteAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8669,7 +9545,7 @@ impl std::error::Error for GetRouteAnalysisError {
             GetRouteAnalysisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetRouteAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetRouteAnalysisErrorKind::ValidationException(_inner) => Some(_inner),
-            GetRouteAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRouteAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8682,6 +9558,14 @@ pub struct GetSitesError {
     pub kind: GetSitesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetSitesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetSitesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetSites` operation.
 #[non_exhaustive]
@@ -8697,8 +9581,15 @@ pub enum GetSitesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSitesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8729,7 +9620,7 @@ impl GetSitesError {
     /// Creates the `GetSitesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSitesErrorKind::Unhandled(err.into()),
+            kind: GetSitesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8738,7 +9629,7 @@ impl GetSitesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSitesErrorKind::Unhandled(err.into()),
+            kind: GetSitesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8791,7 +9682,7 @@ impl std::error::Error for GetSitesError {
             GetSitesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetSitesErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetSitesErrorKind::ValidationException(_inner) => Some(_inner),
-            GetSitesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSitesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8804,6 +9695,16 @@ pub struct GetSiteToSiteVpnAttachmentError {
     pub kind: GetSiteToSiteVpnAttachmentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetSiteToSiteVpnAttachmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetSiteToSiteVpnAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetSiteToSiteVpnAttachment` operation.
 #[non_exhaustive]
@@ -8819,8 +9720,15 @@ pub enum GetSiteToSiteVpnAttachmentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSiteToSiteVpnAttachmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8851,7 +9759,9 @@ impl GetSiteToSiteVpnAttachmentError {
     /// Creates the `GetSiteToSiteVpnAttachmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSiteToSiteVpnAttachmentErrorKind::Unhandled(err.into()),
+            kind: GetSiteToSiteVpnAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8860,7 +9770,9 @@ impl GetSiteToSiteVpnAttachmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSiteToSiteVpnAttachmentErrorKind::Unhandled(err.into()),
+            kind: GetSiteToSiteVpnAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8928,7 +9840,7 @@ impl std::error::Error for GetSiteToSiteVpnAttachmentError {
             GetSiteToSiteVpnAttachmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetSiteToSiteVpnAttachmentErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetSiteToSiteVpnAttachmentErrorKind::ValidationException(_inner) => Some(_inner),
-            GetSiteToSiteVpnAttachmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSiteToSiteVpnAttachmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8941,6 +9853,18 @@ pub struct GetTransitGatewayConnectPeerAssociationsError {
     pub kind: GetTransitGatewayConnectPeerAssociationsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for GetTransitGatewayConnectPeerAssociationsError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetTransitGatewayConnectPeerAssociationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetTransitGatewayConnectPeerAssociations` operation.
 #[non_exhaustive]
@@ -8958,8 +9882,15 @@ pub enum GetTransitGatewayConnectPeerAssociationsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTransitGatewayConnectPeerAssociationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9006,7 +9937,9 @@ impl GetTransitGatewayConnectPeerAssociationsError {
     /// Creates the `GetTransitGatewayConnectPeerAssociationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTransitGatewayConnectPeerAssociationsErrorKind::Unhandled(err.into()),
+            kind: GetTransitGatewayConnectPeerAssociationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -9015,7 +9948,9 @@ impl GetTransitGatewayConnectPeerAssociationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTransitGatewayConnectPeerAssociationsErrorKind::Unhandled(err.into()),
+            kind: GetTransitGatewayConnectPeerAssociationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -9103,9 +10038,7 @@ impl std::error::Error for GetTransitGatewayConnectPeerAssociationsError {
             GetTransitGatewayConnectPeerAssociationsErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            GetTransitGatewayConnectPeerAssociationsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            GetTransitGatewayConnectPeerAssociationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9118,6 +10051,16 @@ pub struct GetTransitGatewayPeeringError {
     pub kind: GetTransitGatewayPeeringErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetTransitGatewayPeeringError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetTransitGatewayPeeringErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetTransitGatewayPeering` operation.
 #[non_exhaustive]
@@ -9133,8 +10076,15 @@ pub enum GetTransitGatewayPeeringErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTransitGatewayPeeringError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9165,7 +10115,9 @@ impl GetTransitGatewayPeeringError {
     /// Creates the `GetTransitGatewayPeeringError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTransitGatewayPeeringErrorKind::Unhandled(err.into()),
+            kind: GetTransitGatewayPeeringErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9174,7 +10126,9 @@ impl GetTransitGatewayPeeringError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTransitGatewayPeeringErrorKind::Unhandled(err.into()),
+            kind: GetTransitGatewayPeeringErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9242,7 +10196,7 @@ impl std::error::Error for GetTransitGatewayPeeringError {
             GetTransitGatewayPeeringErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetTransitGatewayPeeringErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetTransitGatewayPeeringErrorKind::ValidationException(_inner) => Some(_inner),
-            GetTransitGatewayPeeringErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetTransitGatewayPeeringErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9255,6 +10209,16 @@ pub struct GetTransitGatewayRegistrationsError {
     pub kind: GetTransitGatewayRegistrationsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetTransitGatewayRegistrationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetTransitGatewayRegistrationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetTransitGatewayRegistrations` operation.
 #[non_exhaustive]
@@ -9270,8 +10234,15 @@ pub enum GetTransitGatewayRegistrationsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTransitGatewayRegistrationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9309,7 +10280,9 @@ impl GetTransitGatewayRegistrationsError {
     /// Creates the `GetTransitGatewayRegistrationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTransitGatewayRegistrationsErrorKind::Unhandled(err.into()),
+            kind: GetTransitGatewayRegistrationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9318,7 +10291,9 @@ impl GetTransitGatewayRegistrationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTransitGatewayRegistrationsErrorKind::Unhandled(err.into()),
+            kind: GetTransitGatewayRegistrationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9390,7 +10365,7 @@ impl std::error::Error for GetTransitGatewayRegistrationsError {
             }
             GetTransitGatewayRegistrationsErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetTransitGatewayRegistrationsErrorKind::ValidationException(_inner) => Some(_inner),
-            GetTransitGatewayRegistrationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetTransitGatewayRegistrationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9403,6 +10378,16 @@ pub struct GetTransitGatewayRouteTableAttachmentError {
     pub kind: GetTransitGatewayRouteTableAttachmentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetTransitGatewayRouteTableAttachmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetTransitGatewayRouteTableAttachmentErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetTransitGatewayRouteTableAttachment` operation.
 #[non_exhaustive]
@@ -9418,8 +10403,15 @@ pub enum GetTransitGatewayRouteTableAttachmentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTransitGatewayRouteTableAttachmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9463,7 +10455,9 @@ impl GetTransitGatewayRouteTableAttachmentError {
     /// Creates the `GetTransitGatewayRouteTableAttachmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTransitGatewayRouteTableAttachmentErrorKind::Unhandled(err.into()),
+            kind: GetTransitGatewayRouteTableAttachmentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -9472,7 +10466,9 @@ impl GetTransitGatewayRouteTableAttachmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTransitGatewayRouteTableAttachmentErrorKind::Unhandled(err.into()),
+            kind: GetTransitGatewayRouteTableAttachmentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -9550,9 +10546,7 @@ impl std::error::Error for GetTransitGatewayRouteTableAttachmentError {
             GetTransitGatewayRouteTableAttachmentErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            GetTransitGatewayRouteTableAttachmentErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            GetTransitGatewayRouteTableAttachmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9565,6 +10559,14 @@ pub struct GetVpcAttachmentError {
     pub kind: GetVpcAttachmentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetVpcAttachmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetVpcAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetVpcAttachment` operation.
 #[non_exhaustive]
@@ -9580,8 +10582,15 @@ pub enum GetVpcAttachmentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetVpcAttachmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9612,7 +10621,7 @@ impl GetVpcAttachmentError {
     /// Creates the `GetVpcAttachmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetVpcAttachmentErrorKind::Unhandled(err.into()),
+            kind: GetVpcAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9621,7 +10630,7 @@ impl GetVpcAttachmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetVpcAttachmentErrorKind::Unhandled(err.into()),
+            kind: GetVpcAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9689,7 +10698,7 @@ impl std::error::Error for GetVpcAttachmentError {
             GetVpcAttachmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetVpcAttachmentErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetVpcAttachmentErrorKind::ValidationException(_inner) => Some(_inner),
-            GetVpcAttachmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetVpcAttachmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9703,6 +10712,14 @@ pub struct ListAttachmentsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListAttachmentsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAttachmentsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListAttachments` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9715,8 +10732,15 @@ pub enum ListAttachmentsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAttachmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9746,7 +10770,7 @@ impl ListAttachmentsError {
     /// Creates the `ListAttachmentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAttachmentsErrorKind::Unhandled(err.into()),
+            kind: ListAttachmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9755,7 +10779,7 @@ impl ListAttachmentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAttachmentsErrorKind::Unhandled(err.into()),
+            kind: ListAttachmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9809,7 +10833,7 @@ impl std::error::Error for ListAttachmentsError {
             ListAttachmentsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListAttachmentsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListAttachmentsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListAttachmentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAttachmentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9823,6 +10847,14 @@ pub struct ListConnectPeersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListConnectPeersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListConnectPeersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListConnectPeers` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9835,8 +10867,15 @@ pub enum ListConnectPeersErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListConnectPeersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9866,7 +10905,7 @@ impl ListConnectPeersError {
     /// Creates the `ListConnectPeersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListConnectPeersErrorKind::Unhandled(err.into()),
+            kind: ListConnectPeersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9875,7 +10914,7 @@ impl ListConnectPeersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListConnectPeersErrorKind::Unhandled(err.into()),
+            kind: ListConnectPeersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9935,7 +10974,7 @@ impl std::error::Error for ListConnectPeersError {
             ListConnectPeersErrorKind::InternalServerException(_inner) => Some(_inner),
             ListConnectPeersErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListConnectPeersErrorKind::ValidationException(_inner) => Some(_inner),
-            ListConnectPeersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListConnectPeersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9948,6 +10987,16 @@ pub struct ListCoreNetworkPolicyVersionsError {
     pub kind: ListCoreNetworkPolicyVersionsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListCoreNetworkPolicyVersionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListCoreNetworkPolicyVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListCoreNetworkPolicyVersions` operation.
 #[non_exhaustive]
@@ -9963,8 +11012,15 @@ pub enum ListCoreNetworkPolicyVersionsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCoreNetworkPolicyVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10002,7 +11058,9 @@ impl ListCoreNetworkPolicyVersionsError {
     /// Creates the `ListCoreNetworkPolicyVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCoreNetworkPolicyVersionsErrorKind::Unhandled(err.into()),
+            kind: ListCoreNetworkPolicyVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10011,7 +11069,9 @@ impl ListCoreNetworkPolicyVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCoreNetworkPolicyVersionsErrorKind::Unhandled(err.into()),
+            kind: ListCoreNetworkPolicyVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10081,7 +11141,7 @@ impl std::error::Error for ListCoreNetworkPolicyVersionsError {
             }
             ListCoreNetworkPolicyVersionsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListCoreNetworkPolicyVersionsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListCoreNetworkPolicyVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListCoreNetworkPolicyVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10095,6 +11155,14 @@ pub struct ListCoreNetworksError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListCoreNetworksError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListCoreNetworksErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListCoreNetworks` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10107,8 +11175,15 @@ pub enum ListCoreNetworksErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCoreNetworksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10138,7 +11213,7 @@ impl ListCoreNetworksError {
     /// Creates the `ListCoreNetworksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCoreNetworksErrorKind::Unhandled(err.into()),
+            kind: ListCoreNetworksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10147,7 +11222,7 @@ impl ListCoreNetworksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCoreNetworksErrorKind::Unhandled(err.into()),
+            kind: ListCoreNetworksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10207,7 +11282,7 @@ impl std::error::Error for ListCoreNetworksError {
             ListCoreNetworksErrorKind::InternalServerException(_inner) => Some(_inner),
             ListCoreNetworksErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListCoreNetworksErrorKind::ValidationException(_inner) => Some(_inner),
-            ListCoreNetworksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListCoreNetworksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10221,12 +11296,29 @@ pub struct ListOrganizationServiceAccessStatusError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListOrganizationServiceAccessStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListOrganizationServiceAccessStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListOrganizationServiceAccessStatus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListOrganizationServiceAccessStatusErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListOrganizationServiceAccessStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10255,7 +11347,9 @@ impl ListOrganizationServiceAccessStatusError {
     /// Creates the `ListOrganizationServiceAccessStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListOrganizationServiceAccessStatusErrorKind::Unhandled(err.into()),
+            kind: ListOrganizationServiceAccessStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -10264,7 +11358,9 @@ impl ListOrganizationServiceAccessStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListOrganizationServiceAccessStatusErrorKind::Unhandled(err.into()),
+            kind: ListOrganizationServiceAccessStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -10292,9 +11388,7 @@ impl ListOrganizationServiceAccessStatusError {
 impl std::error::Error for ListOrganizationServiceAccessStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListOrganizationServiceAccessStatusErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListOrganizationServiceAccessStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10308,6 +11402,14 @@ pub struct ListPeeringsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListPeeringsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListPeeringsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListPeerings` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10320,8 +11422,15 @@ pub enum ListPeeringsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPeeringsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10351,7 +11460,7 @@ impl ListPeeringsError {
     /// Creates the `ListPeeringsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPeeringsErrorKind::Unhandled(err.into()),
+            kind: ListPeeringsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10360,7 +11469,7 @@ impl ListPeeringsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPeeringsErrorKind::Unhandled(err.into()),
+            kind: ListPeeringsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10411,7 +11520,7 @@ impl std::error::Error for ListPeeringsError {
             ListPeeringsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListPeeringsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListPeeringsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListPeeringsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPeeringsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10424,6 +11533,14 @@ pub struct ListTagsForResourceError {
     pub kind: ListTagsForResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListTagsForResource` operation.
 #[non_exhaustive]
@@ -10439,8 +11556,15 @@ pub enum ListTagsForResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10471,7 +11595,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10480,7 +11604,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10548,7 +11672,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10561,6 +11685,14 @@ pub struct PutCoreNetworkPolicyError {
     pub kind: PutCoreNetworkPolicyErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutCoreNetworkPolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutCoreNetworkPolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutCoreNetworkPolicy` operation.
 #[non_exhaustive]
@@ -10580,8 +11712,15 @@ pub enum PutCoreNetworkPolicyErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutCoreNetworkPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10614,7 +11753,9 @@ impl PutCoreNetworkPolicyError {
     /// Creates the `PutCoreNetworkPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutCoreNetworkPolicyErrorKind::Unhandled(err.into()),
+            kind: PutCoreNetworkPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10623,7 +11764,9 @@ impl PutCoreNetworkPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutCoreNetworkPolicyErrorKind::Unhandled(err.into()),
+            kind: PutCoreNetworkPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10707,7 +11850,7 @@ impl std::error::Error for PutCoreNetworkPolicyError {
             PutCoreNetworkPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutCoreNetworkPolicyErrorKind::ThrottlingException(_inner) => Some(_inner),
             PutCoreNetworkPolicyErrorKind::ValidationException(_inner) => Some(_inner),
-            PutCoreNetworkPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutCoreNetworkPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10720,6 +11863,14 @@ pub struct PutResourcePolicyError {
     pub kind: PutResourcePolicyErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutResourcePolicyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutResourcePolicy` operation.
 #[non_exhaustive]
@@ -10737,8 +11888,15 @@ pub enum PutResourcePolicyErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10770,7 +11928,7 @@ impl PutResourcePolicyError {
     /// Creates the `PutResourcePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10779,7 +11937,7 @@ impl PutResourcePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10852,7 +12010,7 @@ impl std::error::Error for PutResourcePolicyError {
             PutResourcePolicyErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             PutResourcePolicyErrorKind::ThrottlingException(_inner) => Some(_inner),
             PutResourcePolicyErrorKind::ValidationException(_inner) => Some(_inner),
-            PutResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10865,6 +12023,14 @@ pub struct RegisterTransitGatewayError {
     pub kind: RegisterTransitGatewayErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RegisterTransitGatewayError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterTransitGatewayErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RegisterTransitGateway` operation.
 #[non_exhaustive]
@@ -10882,8 +12048,15 @@ pub enum RegisterTransitGatewayErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterTransitGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10915,7 +12088,9 @@ impl RegisterTransitGatewayError {
     /// Creates the `RegisterTransitGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterTransitGatewayErrorKind::Unhandled(err.into()),
+            kind: RegisterTransitGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10924,7 +12099,9 @@ impl RegisterTransitGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterTransitGatewayErrorKind::Unhandled(err.into()),
+            kind: RegisterTransitGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11000,7 +12177,7 @@ impl std::error::Error for RegisterTransitGatewayError {
             RegisterTransitGatewayErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RegisterTransitGatewayErrorKind::ThrottlingException(_inner) => Some(_inner),
             RegisterTransitGatewayErrorKind::ValidationException(_inner) => Some(_inner),
-            RegisterTransitGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterTransitGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11013,6 +12190,14 @@ pub struct RejectAttachmentError {
     pub kind: RejectAttachmentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RejectAttachmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RejectAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RejectAttachment` operation.
 #[non_exhaustive]
@@ -11030,8 +12215,15 @@ pub enum RejectAttachmentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RejectAttachmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11063,7 +12255,7 @@ impl RejectAttachmentError {
     /// Creates the `RejectAttachmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RejectAttachmentErrorKind::Unhandled(err.into()),
+            kind: RejectAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11072,7 +12264,7 @@ impl RejectAttachmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RejectAttachmentErrorKind::Unhandled(err.into()),
+            kind: RejectAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11145,7 +12337,7 @@ impl std::error::Error for RejectAttachmentError {
             RejectAttachmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RejectAttachmentErrorKind::ThrottlingException(_inner) => Some(_inner),
             RejectAttachmentErrorKind::ValidationException(_inner) => Some(_inner),
-            RejectAttachmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RejectAttachmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11158,6 +12350,16 @@ pub struct RestoreCoreNetworkPolicyVersionError {
     pub kind: RestoreCoreNetworkPolicyVersionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RestoreCoreNetworkPolicyVersionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RestoreCoreNetworkPolicyVersionErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RestoreCoreNetworkPolicyVersion` operation.
 #[non_exhaustive]
@@ -11175,8 +12377,15 @@ pub enum RestoreCoreNetworkPolicyVersionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestoreCoreNetworkPolicyVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11217,7 +12426,9 @@ impl RestoreCoreNetworkPolicyVersionError {
     /// Creates the `RestoreCoreNetworkPolicyVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RestoreCoreNetworkPolicyVersionErrorKind::Unhandled(err.into()),
+            kind: RestoreCoreNetworkPolicyVersionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -11226,7 +12437,9 @@ impl RestoreCoreNetworkPolicyVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RestoreCoreNetworkPolicyVersionErrorKind::Unhandled(err.into()),
+            kind: RestoreCoreNetworkPolicyVersionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -11306,7 +12519,7 @@ impl std::error::Error for RestoreCoreNetworkPolicyVersionError {
             }
             RestoreCoreNetworkPolicyVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
             RestoreCoreNetworkPolicyVersionErrorKind::ValidationException(_inner) => Some(_inner),
-            RestoreCoreNetworkPolicyVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RestoreCoreNetworkPolicyVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11319,6 +12532,16 @@ pub struct StartOrganizationServiceAccessUpdateError {
     pub kind: StartOrganizationServiceAccessUpdateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartOrganizationServiceAccessUpdateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartOrganizationServiceAccessUpdateErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartOrganizationServiceAccessUpdate` operation.
 #[non_exhaustive]
@@ -11336,8 +12559,15 @@ pub enum StartOrganizationServiceAccessUpdateErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartOrganizationServiceAccessUpdateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11384,7 +12614,9 @@ impl StartOrganizationServiceAccessUpdateError {
     /// Creates the `StartOrganizationServiceAccessUpdateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartOrganizationServiceAccessUpdateErrorKind::Unhandled(err.into()),
+            kind: StartOrganizationServiceAccessUpdateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -11393,7 +12625,9 @@ impl StartOrganizationServiceAccessUpdateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartOrganizationServiceAccessUpdateErrorKind::Unhandled(err.into()),
+            kind: StartOrganizationServiceAccessUpdateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -11481,9 +12715,7 @@ impl std::error::Error for StartOrganizationServiceAccessUpdateError {
             StartOrganizationServiceAccessUpdateErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            StartOrganizationServiceAccessUpdateErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            StartOrganizationServiceAccessUpdateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11496,6 +12728,14 @@ pub struct StartRouteAnalysisError {
     pub kind: StartRouteAnalysisErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartRouteAnalysisError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartRouteAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartRouteAnalysis` operation.
 #[non_exhaustive]
@@ -11513,8 +12753,15 @@ pub enum StartRouteAnalysisErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartRouteAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11546,7 +12793,7 @@ impl StartRouteAnalysisError {
     /// Creates the `StartRouteAnalysisError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartRouteAnalysisErrorKind::Unhandled(err.into()),
+            kind: StartRouteAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11555,7 +12802,7 @@ impl StartRouteAnalysisError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartRouteAnalysisErrorKind::Unhandled(err.into()),
+            kind: StartRouteAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11631,7 +12878,7 @@ impl std::error::Error for StartRouteAnalysisError {
             StartRouteAnalysisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StartRouteAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartRouteAnalysisErrorKind::ValidationException(_inner) => Some(_inner),
-            StartRouteAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartRouteAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11644,6 +12891,14 @@ pub struct TagResourceError {
     pub kind: TagResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `TagResource` operation.
 #[non_exhaustive]
@@ -11663,8 +12918,15 @@ pub enum TagResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11697,7 +12959,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11706,7 +12968,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11775,7 +13037,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11788,6 +13050,14 @@ pub struct UntagResourceError {
     pub kind: UntagResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UntagResource` operation.
 #[non_exhaustive]
@@ -11805,8 +13075,15 @@ pub enum UntagResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11838,7 +13115,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11847,7 +13124,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11911,7 +13188,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11924,6 +13201,14 @@ pub struct UpdateConnectionError {
     pub kind: UpdateConnectionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateConnectionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateConnection` operation.
 #[non_exhaustive]
@@ -11941,8 +13226,15 @@ pub enum UpdateConnectionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11974,7 +13266,7 @@ impl UpdateConnectionError {
     /// Creates the `UpdateConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateConnectionErrorKind::Unhandled(err.into()),
+            kind: UpdateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11983,7 +13275,7 @@ impl UpdateConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateConnectionErrorKind::Unhandled(err.into()),
+            kind: UpdateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12056,7 +13348,7 @@ impl std::error::Error for UpdateConnectionError {
             UpdateConnectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateConnectionErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateConnectionErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12069,6 +13361,14 @@ pub struct UpdateCoreNetworkError {
     pub kind: UpdateCoreNetworkErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateCoreNetworkError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateCoreNetworkErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateCoreNetwork` operation.
 #[non_exhaustive]
@@ -12086,8 +13386,15 @@ pub enum UpdateCoreNetworkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCoreNetworkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12119,7 +13426,7 @@ impl UpdateCoreNetworkError {
     /// Creates the `UpdateCoreNetworkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCoreNetworkErrorKind::Unhandled(err.into()),
+            kind: UpdateCoreNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12128,7 +13435,7 @@ impl UpdateCoreNetworkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCoreNetworkErrorKind::Unhandled(err.into()),
+            kind: UpdateCoreNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12201,7 +13508,7 @@ impl std::error::Error for UpdateCoreNetworkError {
             UpdateCoreNetworkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateCoreNetworkErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateCoreNetworkErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateCoreNetworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateCoreNetworkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12214,6 +13521,14 @@ pub struct UpdateDeviceError {
     pub kind: UpdateDeviceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateDeviceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateDeviceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateDevice` operation.
 #[non_exhaustive]
@@ -12231,8 +13546,15 @@ pub enum UpdateDeviceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12264,7 +13586,7 @@ impl UpdateDeviceError {
     /// Creates the `UpdateDeviceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDeviceErrorKind::Unhandled(err.into()),
+            kind: UpdateDeviceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12273,7 +13595,7 @@ impl UpdateDeviceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDeviceErrorKind::Unhandled(err.into()),
+            kind: UpdateDeviceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12337,7 +13659,7 @@ impl std::error::Error for UpdateDeviceError {
             UpdateDeviceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateDeviceErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateDeviceErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateDeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDeviceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12350,6 +13672,14 @@ pub struct UpdateGlobalNetworkError {
     pub kind: UpdateGlobalNetworkErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateGlobalNetworkError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateGlobalNetworkErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateGlobalNetwork` operation.
 #[non_exhaustive]
@@ -12367,8 +13697,15 @@ pub enum UpdateGlobalNetworkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGlobalNetworkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12400,7 +13737,7 @@ impl UpdateGlobalNetworkError {
     /// Creates the `UpdateGlobalNetworkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGlobalNetworkErrorKind::Unhandled(err.into()),
+            kind: UpdateGlobalNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12409,7 +13746,7 @@ impl UpdateGlobalNetworkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGlobalNetworkErrorKind::Unhandled(err.into()),
+            kind: UpdateGlobalNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12485,7 +13822,7 @@ impl std::error::Error for UpdateGlobalNetworkError {
             UpdateGlobalNetworkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateGlobalNetworkErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateGlobalNetworkErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateGlobalNetworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGlobalNetworkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12498,6 +13835,14 @@ pub struct UpdateLinkError {
     pub kind: UpdateLinkErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateLinkError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateLinkErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateLink` operation.
 #[non_exhaustive]
@@ -12517,8 +13862,15 @@ pub enum UpdateLinkErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12551,7 +13903,7 @@ impl UpdateLinkError {
     /// Creates the `UpdateLinkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateLinkErrorKind::Unhandled(err.into()),
+            kind: UpdateLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12560,7 +13912,7 @@ impl UpdateLinkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateLinkErrorKind::Unhandled(err.into()),
+            kind: UpdateLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12629,7 +13981,7 @@ impl std::error::Error for UpdateLinkError {
             UpdateLinkErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             UpdateLinkErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateLinkErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateLinkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12642,6 +13994,16 @@ pub struct UpdateNetworkResourceMetadataError {
     pub kind: UpdateNetworkResourceMetadataErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateNetworkResourceMetadataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateNetworkResourceMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateNetworkResourceMetadata` operation.
 #[non_exhaustive]
@@ -12659,8 +14021,15 @@ pub enum UpdateNetworkResourceMetadataErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateNetworkResourceMetadataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12699,7 +14068,9 @@ impl UpdateNetworkResourceMetadataError {
     /// Creates the `UpdateNetworkResourceMetadataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateNetworkResourceMetadataErrorKind::Unhandled(err.into()),
+            kind: UpdateNetworkResourceMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12708,7 +14079,9 @@ impl UpdateNetworkResourceMetadataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateNetworkResourceMetadataErrorKind::Unhandled(err.into()),
+            kind: UpdateNetworkResourceMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12786,7 +14159,7 @@ impl std::error::Error for UpdateNetworkResourceMetadataError {
             }
             UpdateNetworkResourceMetadataErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateNetworkResourceMetadataErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateNetworkResourceMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateNetworkResourceMetadataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12799,6 +14172,14 @@ pub struct UpdateSiteError {
     pub kind: UpdateSiteErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateSiteError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateSiteErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateSite` operation.
 #[non_exhaustive]
@@ -12816,8 +14197,15 @@ pub enum UpdateSiteErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSiteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12849,7 +14237,7 @@ impl UpdateSiteError {
     /// Creates the `UpdateSiteError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSiteErrorKind::Unhandled(err.into()),
+            kind: UpdateSiteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12858,7 +14246,7 @@ impl UpdateSiteError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSiteErrorKind::Unhandled(err.into()),
+            kind: UpdateSiteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12919,7 +14307,7 @@ impl std::error::Error for UpdateSiteError {
             UpdateSiteErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateSiteErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateSiteErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateSiteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSiteErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12932,6 +14320,14 @@ pub struct UpdateVpcAttachmentError {
     pub kind: UpdateVpcAttachmentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateVpcAttachmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateVpcAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateVpcAttachment` operation.
 #[non_exhaustive]
@@ -12949,8 +14345,15 @@ pub enum UpdateVpcAttachmentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateVpcAttachmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12982,7 +14385,7 @@ impl UpdateVpcAttachmentError {
     /// Creates the `UpdateVpcAttachmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateVpcAttachmentErrorKind::Unhandled(err.into()),
+            kind: UpdateVpcAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12991,7 +14394,7 @@ impl UpdateVpcAttachmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateVpcAttachmentErrorKind::Unhandled(err.into()),
+            kind: UpdateVpcAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13067,7 +14470,35 @@ impl std::error::Error for UpdateVpcAttachmentError {
             UpdateVpcAttachmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateVpcAttachmentErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateVpcAttachmentErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateVpcAttachmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateVpcAttachmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

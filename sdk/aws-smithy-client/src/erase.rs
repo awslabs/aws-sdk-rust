@@ -5,17 +5,20 @@
 
 //! Type-erased variants of [`Client`] and friends.
 
+use std::fmt;
+
+use tower::{Layer, Service, ServiceExt};
+
+use aws_smithy_http::body::SdkBody;
+use aws_smithy_http::result::ConnectorError;
+use boxclone::*;
+
+use crate::{bounds, retry, Client};
+
 // These types are technically public in that they're reachable from the public trait impls on
 // DynMiddleware, but no-one should ever look at them or use them.
 #[doc(hidden)]
 pub mod boxclone;
-use boxclone::*;
-
-use crate::{bounds, http_connector::HttpConnector, retry, Client};
-use aws_smithy_http::body::SdkBody;
-use aws_smithy_http::result::ConnectorError;
-use std::fmt;
-use tower::{Layer, Service, ServiceExt};
 
 /// A [`Client`] whose connector and middleware types have been erased.
 ///
@@ -175,12 +178,6 @@ impl Service<http::Request<SdkBody>> for DynConnector {
 
     fn call(&mut self, req: http::Request<SdkBody>) -> Self::Future {
         self.0.call(req)
-    }
-}
-
-impl From<DynConnector> for HttpConnector {
-    fn from(connector: DynConnector) -> Self {
-        HttpConnector::Prebuilt(Some(connector))
     }
 }
 

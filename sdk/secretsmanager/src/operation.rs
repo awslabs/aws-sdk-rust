@@ -5,7 +5,7 @@
 /// [`cancel_rotate_secret`](crate::client::Client::cancel_rotate_secret).
 ///
 /// See [`crate::client::fluent_builders::CancelRotateSecret`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelRotateSecret {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelRotateSecret {
 /// [`create_secret`](crate::client::Client::create_secret).
 ///
 /// See [`crate::client::fluent_builders::CreateSecret`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSecret {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSecret {
 /// [`delete_resource_policy`](crate::client::Client::delete_resource_policy).
 ///
 /// See [`crate::client::fluent_builders::DeleteResourcePolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteResourcePolicy {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
 /// [`delete_secret`](crate::client::Client::delete_secret).
 ///
 /// See [`crate::client::fluent_builders::DeleteSecret`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSecret {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSecret {
 /// [`describe_secret`](crate::client::Client::describe_secret).
 ///
 /// See [`crate::client::fluent_builders::DescribeSecret`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSecret {
     _private: (),
 }
@@ -169,7 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSecret {
 /// [`get_random_password`](crate::client::Client::get_random_password).
 ///
 /// See [`crate::client::fluent_builders::GetRandomPassword`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRandomPassword {
     _private: (),
 }
@@ -203,7 +203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRandomPassword {
 /// [`get_resource_policy`](crate::client::Client::get_resource_policy).
 ///
 /// See [`crate::client::fluent_builders::GetResourcePolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResourcePolicy {
     _private: (),
 }
@@ -237,7 +237,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourcePolicy {
 /// [`get_secret_value`](crate::client::Client::get_secret_value).
 ///
 /// See [`crate::client::fluent_builders::GetSecretValue`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSecretValue {
     _private: (),
 }
@@ -269,7 +269,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSecretValue {
 /// [`list_secrets`](crate::client::Client::list_secrets).
 ///
 /// See [`crate::client::fluent_builders::ListSecrets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSecrets {
     _private: (),
 }
@@ -301,7 +301,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSecrets {
 /// [`list_secret_version_ids`](crate::client::Client::list_secret_version_ids).
 ///
 /// See [`crate::client::fluent_builders::ListSecretVersionIds`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSecretVersionIds {
     _private: (),
 }
@@ -335,7 +335,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSecretVersionIds {
 /// [`put_resource_policy`](crate::client::Client::put_resource_policy).
 ///
 /// See [`crate::client::fluent_builders::PutResourcePolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutResourcePolicy {
     _private: (),
 }
@@ -369,7 +369,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResourcePolicy {
 /// [`put_secret_value`](crate::client::Client::put_secret_value).
 ///
 /// See [`crate::client::fluent_builders::PutSecretValue`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutSecretValue {
     _private: (),
 }
@@ -401,7 +401,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSecretValue {
 /// [`remove_regions_from_replication`](crate::client::Client::remove_regions_from_replication).
 ///
 /// See [`crate::client::fluent_builders::RemoveRegionsFromReplication`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveRegionsFromReplication {
     _private: (),
 }
@@ -435,7 +435,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveRegionsFromReplica
 /// [`replicate_secret_to_regions`](crate::client::Client::replicate_secret_to_regions).
 ///
 /// See [`crate::client::fluent_builders::ReplicateSecretToRegions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ReplicateSecretToRegions {
     _private: (),
 }
@@ -469,7 +469,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReplicateSecretToRegions
 /// [`restore_secret`](crate::client::Client::restore_secret).
 ///
 /// See [`crate::client::fluent_builders::RestoreSecret`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RestoreSecret {
     _private: (),
 }
@@ -501,7 +501,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreSecret {
 /// [`rotate_secret`](crate::client::Client::rotate_secret).
 ///
 /// See [`crate::client::fluent_builders::RotateSecret`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RotateSecret {
     _private: (),
 }
@@ -533,7 +533,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RotateSecret {
 /// [`stop_replication_to_replica`](crate::client::Client::stop_replication_to_replica).
 ///
 /// See [`crate::client::fluent_builders::StopReplicationToReplica`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopReplicationToReplica {
     _private: (),
 }
@@ -567,7 +567,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopReplicationToReplica
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -599,7 +599,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -631,7 +631,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_secret`](crate::client::Client::update_secret).
 ///
 /// See [`crate::client::fluent_builders::UpdateSecret`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSecret {
     _private: (),
 }
@@ -663,7 +663,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSecret {
 /// [`update_secret_version_stage`](crate::client::Client::update_secret_version_stage).
 ///
 /// See [`crate::client::fluent_builders::UpdateSecretVersionStage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSecretVersionStage {
     _private: (),
 }
@@ -697,7 +697,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSecretVersionStage
 /// [`validate_resource_policy`](crate::client::Client::validate_resource_policy).
 ///
 /// See [`crate::client::fluent_builders::ValidateResourcePolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ValidateResourcePolicy {
     _private: (),
 }

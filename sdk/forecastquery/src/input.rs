@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod query_forecast_input {
 
     /// A builder for [`QueryForecastInput`](crate::input::QueryForecastInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forecast_arn: std::option::Option<std::string::String>,
         pub(crate) start_date: std::option::Option<std::string::String>,
@@ -88,7 +88,7 @@ pub mod query_forecast_input {
         /// Consumes the builder and constructs a [`QueryForecastInput`](crate::input::QueryForecastInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::QueryForecastInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::QueryForecastInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::QueryForecastInput {
                 forecast_arn: self.forecast_arn,
@@ -113,13 +113,13 @@ impl QueryForecastInput {
             crate::operation::QueryForecast,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::QueryForecastInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -127,8 +127,10 @@ impl QueryForecastInput {
             fn update_http_builder(
                 input: &crate::input::QueryForecastInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -217,7 +219,7 @@ impl QueryForecastInput {
 pub mod query_what_if_forecast_input {
 
     /// A builder for [`QueryWhatIfForecastInput`](crate::input::QueryWhatIfForecastInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) what_if_forecast_arn: std::option::Option<std::string::String>,
         pub(crate) start_date: std::option::Option<std::string::String>,
@@ -303,8 +305,10 @@ pub mod query_what_if_forecast_input {
         /// Consumes the builder and constructs a [`QueryWhatIfForecastInput`](crate::input::QueryWhatIfForecastInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::QueryWhatIfForecastInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::QueryWhatIfForecastInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::QueryWhatIfForecastInput {
                 what_if_forecast_arn: self.what_if_forecast_arn,
                 start_date: self.start_date,
@@ -328,13 +332,13 @@ impl QueryWhatIfForecastInput {
             crate::operation::QueryWhatIfForecast,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::QueryWhatIfForecastInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -342,8 +346,10 @@ impl QueryWhatIfForecastInput {
             fn update_http_builder(
                 input: &crate::input::QueryWhatIfForecastInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -432,7 +438,7 @@ impl QueryWhatIfForecastInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryWhatIfForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
     #[doc(hidden)]
@@ -480,21 +486,10 @@ impl QueryWhatIfForecastInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for QueryWhatIfForecastInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryWhatIfForecastInput");
-        formatter.field("what_if_forecast_arn", &self.what_if_forecast_arn);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
     #[doc(hidden)]
@@ -540,16 +535,5 @@ impl QueryForecastInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryForecastInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryForecastInput");
-        formatter.field("forecast_arn", &self.forecast_arn);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }

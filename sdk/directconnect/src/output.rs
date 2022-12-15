@@ -2,7 +2,7 @@
 
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVirtualInterfaceAttributesOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     #[doc(hidden)]
@@ -215,43 +215,11 @@ impl UpdateVirtualInterfaceAttributesOutput {
         self.site_link_enabled
     }
 }
-impl std::fmt::Debug for UpdateVirtualInterfaceAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVirtualInterfaceAttributesOutput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("location", &self.location);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("virtual_interface_type", &self.virtual_interface_type);
-        formatter.field("virtual_interface_name", &self.virtual_interface_name);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("asn", &self.asn);
-        formatter.field("amazon_side_asn", &self.amazon_side_asn);
-        formatter.field("auth_key", &self.auth_key);
-        formatter.field("amazon_address", &self.amazon_address);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.field("address_family", &self.address_family);
-        formatter.field("virtual_interface_state", &self.virtual_interface_state);
-        formatter.field("customer_router_config", &self.customer_router_config);
-        formatter.field("mtu", &self.mtu);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("route_filter_prefixes", &self.route_filter_prefixes);
-        formatter.field("bgp_peers", &self.bgp_peers);
-        formatter.field("region", &self.region);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("site_link_enabled", &self.site_link_enabled);
-        formatter.finish()
-    }
-}
 /// See [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput).
 pub mod update_virtual_interface_attributes_output {
 
     /// A builder for [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -681,7 +649,7 @@ impl UpdateVirtualInterfaceAttributesOutput {
 
 /// <p>Information about a link aggregation group (LAG).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLagOutput {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     #[doc(hidden)]
@@ -855,38 +823,11 @@ impl UpdateLagOutput {
         self.mac_sec_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLagOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLagOutput");
-        formatter.field("connections_bandwidth", &self.connections_bandwidth);
-        formatter.field("number_of_connections", &self.number_of_connections);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("lag_name", &self.lag_name);
-        formatter.field("lag_state", &self.lag_state);
-        formatter.field("location", &self.location);
-        formatter.field("region", &self.region);
-        formatter.field("minimum_links", &self.minimum_links);
-        formatter.field("aws_device", &self.aws_device);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("connections", &self.connections);
-        formatter.field("allows_hosted_connections", &self.allows_hosted_connections);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("mac_sec_capable", &self.mac_sec_capable);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("mac_sec_keys", &self.mac_sec_keys);
-        formatter.finish()
-    }
-}
 /// See [`UpdateLagOutput`](crate::output::UpdateLagOutput).
 pub mod update_lag_output {
 
     /// A builder for [`UpdateLagOutput`](crate::output::UpdateLagOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections_bandwidth: std::option::Option<std::string::String>,
         pub(crate) number_of_connections: std::option::Option<i32>,
@@ -1226,7 +1167,7 @@ impl UpdateLagOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayAssociationOutput {
     /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
     #[doc(hidden)]
@@ -1241,21 +1182,11 @@ impl UpdateDirectConnectGatewayAssociationOutput {
         self.direct_connect_gateway_association.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDirectConnectGatewayAssociationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDirectConnectGatewayAssociationOutput");
-        formatter.field(
-            "direct_connect_gateway_association",
-            &self.direct_connect_gateway_association,
-        );
-        formatter.finish()
-    }
-}
 /// See [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput).
 pub mod update_direct_connect_gateway_association_output {
 
     /// A builder for [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association:
             std::option::Option<crate::model::DirectConnectGatewayAssociation>,
@@ -1294,7 +1225,7 @@ impl UpdateDirectConnectGatewayAssociationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayOutput {
     /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
     #[doc(hidden)]
@@ -1308,18 +1239,11 @@ impl UpdateDirectConnectGatewayOutput {
         self.direct_connect_gateway.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDirectConnectGatewayOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDirectConnectGatewayOutput");
-        formatter.field("direct_connect_gateway", &self.direct_connect_gateway);
-        formatter.finish()
-    }
-}
 /// See [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput).
 pub mod update_direct_connect_gateway_output {
 
     /// A builder for [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
     }
@@ -1354,7 +1278,7 @@ impl UpdateDirectConnectGatewayOutput {
 
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
@@ -1541,39 +1465,11 @@ impl UpdateConnectionOutput {
         self.mac_sec_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectionOutput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field("region", &self.region);
-        formatter.field("location", &self.location);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("partner_name", &self.partner_name);
-        formatter.field("loa_issue_time", &self.loa_issue_time);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("aws_device", &self.aws_device);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("mac_sec_capable", &self.mac_sec_capable);
-        formatter.field("port_encryption_status", &self.port_encryption_status);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("mac_sec_keys", &self.mac_sec_keys);
-        formatter.finish()
-    }
-}
 /// See [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
 pub mod update_connection_output {
 
     /// A builder for [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -1934,19 +1830,13 @@ impl UpdateConnectionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1964,19 +1854,13 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1994,7 +1878,7 @@ impl TagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopBgpFailoverTestOutput {
     /// <p>Information about the virtual interface failover test.</p>
     #[doc(hidden)]
@@ -2008,18 +1892,11 @@ impl StopBgpFailoverTestOutput {
         self.virtual_interface_test.as_ref()
     }
 }
-impl std::fmt::Debug for StopBgpFailoverTestOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopBgpFailoverTestOutput");
-        formatter.field("virtual_interface_test", &self.virtual_interface_test);
-        formatter.finish()
-    }
-}
 /// See [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput).
 pub mod stop_bgp_failover_test_output {
 
     /// A builder for [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_test:
             std::option::Option<crate::model::VirtualInterfaceTestHistory>,
@@ -2058,7 +1935,7 @@ impl StopBgpFailoverTestOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartBgpFailoverTestOutput {
     /// <p>Information about the virtual interface failover test.</p>
     #[doc(hidden)]
@@ -2072,18 +1949,11 @@ impl StartBgpFailoverTestOutput {
         self.virtual_interface_test.as_ref()
     }
 }
-impl std::fmt::Debug for StartBgpFailoverTestOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartBgpFailoverTestOutput");
-        formatter.field("virtual_interface_test", &self.virtual_interface_test);
-        formatter.finish()
-    }
-}
 /// See [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput).
 pub mod start_bgp_failover_test_output {
 
     /// A builder for [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_test:
             std::option::Option<crate::model::VirtualInterfaceTestHistory>,
@@ -2122,7 +1992,7 @@ impl StartBgpFailoverTestOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVirtualInterfaceTestHistoryOutput {
     /// <p>The ID of the tested virtual interface.</p>
     #[doc(hidden)]
@@ -2144,22 +2014,11 @@ impl ListVirtualInterfaceTestHistoryOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListVirtualInterfaceTestHistoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVirtualInterfaceTestHistoryOutput");
-        formatter.field(
-            "virtual_interface_test_history",
-            &self.virtual_interface_test_history,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput).
 pub mod list_virtual_interface_test_history_output {
 
     /// A builder for [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_test_history:
             std::option::Option<std::vec::Vec<crate::model::VirtualInterfaceTestHistory>>,
@@ -2216,7 +2075,7 @@ impl ListVirtualInterfaceTestHistoryOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateMacSecKeyOutput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     #[doc(hidden)]
@@ -2235,19 +2094,11 @@ impl DisassociateMacSecKeyOutput {
         self.mac_sec_keys.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateMacSecKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateMacSecKeyOutput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("mac_sec_keys", &self.mac_sec_keys);
-        formatter.finish()
-    }
-}
 /// See [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput).
 pub mod disassociate_mac_sec_key_output {
 
     /// A builder for [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
@@ -2303,7 +2154,7 @@ impl DisassociateMacSecKeyOutput {
 
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateConnectionFromLagOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
@@ -2490,39 +2341,11 @@ impl DisassociateConnectionFromLagOutput {
         self.mac_sec_keys.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateConnectionFromLagOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateConnectionFromLagOutput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field("region", &self.region);
-        formatter.field("location", &self.location);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("partner_name", &self.partner_name);
-        formatter.field("loa_issue_time", &self.loa_issue_time);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("aws_device", &self.aws_device);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("mac_sec_capable", &self.mac_sec_capable);
-        formatter.field("port_encryption_status", &self.port_encryption_status);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("mac_sec_keys", &self.mac_sec_keys);
-        formatter.finish()
-    }
-}
 /// See [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput).
 pub mod disassociate_connection_from_lag_output {
 
     /// A builder for [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -2883,7 +2706,7 @@ impl DisassociateConnectionFromLagOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVirtualInterfacesOutput {
     /// <p>The virtual interfaces</p>
     #[doc(hidden)]
@@ -2895,18 +2718,11 @@ impl DescribeVirtualInterfacesOutput {
         self.virtual_interfaces.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVirtualInterfacesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVirtualInterfacesOutput");
-        formatter.field("virtual_interfaces", &self.virtual_interfaces);
-        formatter.finish()
-    }
-}
 /// See [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput).
 pub mod describe_virtual_interfaces_output {
 
     /// A builder for [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interfaces:
             std::option::Option<std::vec::Vec<crate::model::VirtualInterface>>,
@@ -2948,7 +2764,7 @@ impl DescribeVirtualInterfacesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVirtualGatewaysOutput {
     /// <p>The virtual private gateways.</p>
     #[doc(hidden)]
@@ -2960,18 +2776,11 @@ impl DescribeVirtualGatewaysOutput {
         self.virtual_gateways.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVirtualGatewaysOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVirtualGatewaysOutput");
-        formatter.field("virtual_gateways", &self.virtual_gateways);
-        formatter.finish()
-    }
-}
 /// See [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput).
 pub mod describe_virtual_gateways_output {
 
     /// A builder for [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateways:
             std::option::Option<std::vec::Vec<crate::model::VirtualGateway>>,
@@ -3013,7 +2822,7 @@ impl DescribeVirtualGatewaysOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTagsOutput {
     /// <p>Information about the tags.</p>
     #[doc(hidden)]
@@ -3025,18 +2834,11 @@ impl DescribeTagsOutput {
         self.resource_tags.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTagsOutput");
-        formatter.field("resource_tags", &self.resource_tags);
-        formatter.finish()
-    }
-}
 /// See [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
 pub mod describe_tags_output {
 
     /// A builder for [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
     }
@@ -3077,7 +2879,7 @@ impl DescribeTagsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRouterConfigurationOutput {
     /// <p>The customer router configuration.</p>
     #[doc(hidden)]
@@ -3110,21 +2912,11 @@ impl DescribeRouterConfigurationOutput {
         self.virtual_interface_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRouterConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRouterConfigurationOutput");
-        formatter.field("customer_router_config", &self.customer_router_config);
-        formatter.field("router", &self.router);
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("virtual_interface_name", &self.virtual_interface_name);
-        formatter.finish()
-    }
-}
 /// See [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput).
 pub mod describe_router_configuration_output {
 
     /// A builder for [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) customer_router_config: std::option::Option<std::string::String>,
         pub(crate) router: std::option::Option<crate::model::RouterType>,
@@ -3201,7 +2993,7 @@ impl DescribeRouterConfigurationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLocationsOutput {
     /// <p>The locations.</p>
     #[doc(hidden)]
@@ -3213,18 +3005,11 @@ impl DescribeLocationsOutput {
         self.locations.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLocationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLocationsOutput");
-        formatter.field("locations", &self.locations);
-        formatter.finish()
-    }
-}
 /// See [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput).
 pub mod describe_locations_output {
 
     /// A builder for [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) locations: std::option::Option<std::vec::Vec<crate::model::Location>>,
     }
@@ -3265,7 +3050,7 @@ impl DescribeLocationsOutput {
 
 /// <p>Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoaOutput {
     /// <p>The binary contents of the LOA-CFA document.</p>
     #[doc(hidden)]
@@ -3284,19 +3069,11 @@ impl DescribeLoaOutput {
         self.loa_content_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeLoaOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoaOutput");
-        formatter.field("loa_content", &self.loa_content);
-        formatter.field("loa_content_type", &self.loa_content_type);
-        formatter.finish()
-    }
-}
 /// See [`DescribeLoaOutput`](crate::output::DescribeLoaOutput).
 pub mod describe_loa_output {
 
     /// A builder for [`DescribeLoaOutput`](crate::output::DescribeLoaOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) loa_content: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) loa_content_type: std::option::Option<crate::model::LoaContentType>,
@@ -3346,7 +3123,7 @@ impl DescribeLoaOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLagsOutput {
     /// <p>The LAGs.</p>
     #[doc(hidden)]
@@ -3358,18 +3135,11 @@ impl DescribeLagsOutput {
         self.lags.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLagsOutput");
-        formatter.field("lags", &self.lags);
-        formatter.finish()
-    }
-}
 /// See [`DescribeLagsOutput`](crate::output::DescribeLagsOutput).
 pub mod describe_lags_output {
 
     /// A builder for [`DescribeLagsOutput`](crate::output::DescribeLagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lags: std::option::Option<std::vec::Vec<crate::model::Lag>>,
     }
@@ -3408,7 +3178,7 @@ impl DescribeLagsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInterconnectsOutput {
     /// <p>The interconnects.</p>
     #[doc(hidden)]
@@ -3420,18 +3190,11 @@ impl DescribeInterconnectsOutput {
         self.interconnects.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInterconnectsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInterconnectsOutput");
-        formatter.field("interconnects", &self.interconnects);
-        formatter.finish()
-    }
-}
 /// See [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput).
 pub mod describe_interconnects_output {
 
     /// A builder for [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnects: std::option::Option<std::vec::Vec<crate::model::Interconnect>>,
     }
@@ -3472,7 +3235,7 @@ impl DescribeInterconnectsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInterconnectLoaOutput {
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
     #[doc(hidden)]
@@ -3484,18 +3247,11 @@ impl DescribeInterconnectLoaOutput {
         self.loa.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeInterconnectLoaOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInterconnectLoaOutput");
-        formatter.field("loa", &self.loa);
-        formatter.finish()
-    }
-}
 /// See [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput).
 pub mod describe_interconnect_loa_output {
 
     /// A builder for [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) loa: std::option::Option<crate::model::Loa>,
     }
@@ -3525,7 +3281,7 @@ impl DescribeInterconnectLoaOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeHostedConnectionsOutput {
     /// <p>The connections.</p>
     #[doc(hidden)]
@@ -3537,18 +3293,11 @@ impl DescribeHostedConnectionsOutput {
         self.connections.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeHostedConnectionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeHostedConnectionsOutput");
-        formatter.field("connections", &self.connections);
-        formatter.finish()
-    }
-}
 /// See [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput).
 pub mod describe_hosted_connections_output {
 
     /// A builder for [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
     }
@@ -3589,7 +3338,7 @@ impl DescribeHostedConnectionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewaysOutput {
     /// <p>The Direct Connect gateways.</p>
     #[doc(hidden)]
@@ -3611,19 +3360,11 @@ impl DescribeDirectConnectGatewaysOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDirectConnectGatewaysOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDirectConnectGatewaysOutput");
-        formatter.field("direct_connect_gateways", &self.direct_connect_gateways);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput).
 pub mod describe_direct_connect_gateways_output {
 
     /// A builder for [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateways:
             std::option::Option<std::vec::Vec<crate::model::DirectConnectGateway>>,
@@ -3680,7 +3421,7 @@ impl DescribeDirectConnectGatewaysOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAttachmentsOutput {
     /// <p>The attachments.</p>
     #[doc(hidden)]
@@ -3702,22 +3443,11 @@ impl DescribeDirectConnectGatewayAttachmentsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDirectConnectGatewayAttachmentsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDirectConnectGatewayAttachmentsOutput");
-        formatter.field(
-            "direct_connect_gateway_attachments",
-            &self.direct_connect_gateway_attachments,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput).
 pub mod describe_direct_connect_gateway_attachments_output {
 
     /// A builder for [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_attachments:
             std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAttachment>>,
@@ -3774,7 +3504,7 @@ impl DescribeDirectConnectGatewayAttachmentsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAssociationsOutput {
     /// <p>Information about the associations.</p>
     #[doc(hidden)]
@@ -3796,22 +3526,11 @@ impl DescribeDirectConnectGatewayAssociationsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDirectConnectGatewayAssociationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDirectConnectGatewayAssociationsOutput");
-        formatter.field(
-            "direct_connect_gateway_associations",
-            &self.direct_connect_gateway_associations,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput).
 pub mod describe_direct_connect_gateway_associations_output {
 
     /// A builder for [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_associations:
             std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAssociation>>,
@@ -3871,7 +3590,7 @@ impl DescribeDirectConnectGatewayAssociationsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAssociationProposalsOutput {
     /// <p>Describes the Direct Connect gateway association proposals.</p>
     #[doc(hidden)]
@@ -3893,23 +3612,11 @@ impl DescribeDirectConnectGatewayAssociationProposalsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDirectConnectGatewayAssociationProposalsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("DescribeDirectConnectGatewayAssociationProposalsOutput");
-        formatter.field(
-            "direct_connect_gateway_association_proposals",
-            &self.direct_connect_gateway_association_proposals,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput).
 pub mod describe_direct_connect_gateway_association_proposals_output {
 
     /// A builder for [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association_proposals: std::option::Option<
             std::vec::Vec<crate::model::DirectConnectGatewayAssociationProposal>,
@@ -3975,7 +3682,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCustomerMetadataOutput {
     /// <p>The list of customer agreements.</p>
     #[doc(hidden)]
@@ -4004,19 +3711,11 @@ impl DescribeCustomerMetadataOutput {
         self.nni_partner_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeCustomerMetadataOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCustomerMetadataOutput");
-        formatter.field("agreements", &self.agreements);
-        formatter.field("nni_partner_type", &self.nni_partner_type);
-        formatter.finish()
-    }
-}
 /// See [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput).
 pub mod describe_customer_metadata_output {
 
     /// A builder for [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agreements: std::option::Option<std::vec::Vec<crate::model::CustomerAgreement>>,
         pub(crate) nni_partner_type: std::option::Option<crate::model::NniPartnerType>,
@@ -4082,7 +3781,7 @@ impl DescribeCustomerMetadataOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectionsOnInterconnectOutput {
     /// <p>The connections.</p>
     #[doc(hidden)]
@@ -4094,18 +3793,11 @@ impl DescribeConnectionsOnInterconnectOutput {
         self.connections.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConnectionsOnInterconnectOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectionsOnInterconnectOutput");
-        formatter.field("connections", &self.connections);
-        formatter.finish()
-    }
-}
 /// See [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput).
 pub mod describe_connections_on_interconnect_output {
 
     /// A builder for [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
     }
@@ -4146,7 +3838,7 @@ impl DescribeConnectionsOnInterconnectOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectionsOutput {
     /// <p>The connections.</p>
     #[doc(hidden)]
@@ -4158,18 +3850,11 @@ impl DescribeConnectionsOutput {
         self.connections.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeConnectionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectionsOutput");
-        formatter.field("connections", &self.connections);
-        formatter.finish()
-    }
-}
 /// See [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
 pub mod describe_connections_output {
 
     /// A builder for [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
     }
@@ -4210,7 +3895,7 @@ impl DescribeConnectionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectionLoaOutput {
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
     #[doc(hidden)]
@@ -4222,18 +3907,11 @@ impl DescribeConnectionLoaOutput {
         self.loa.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeConnectionLoaOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectionLoaOutput");
-        formatter.field("loa", &self.loa);
-        formatter.finish()
-    }
-}
 /// See [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput).
 pub mod describe_connection_loa_output {
 
     /// A builder for [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) loa: std::option::Option<crate::model::Loa>,
     }
@@ -4263,7 +3941,7 @@ impl DescribeConnectionLoaOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVirtualInterfaceOutput {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
@@ -4299,18 +3977,11 @@ impl DeleteVirtualInterfaceOutput {
         self.virtual_interface_state.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteVirtualInterfaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVirtualInterfaceOutput");
-        formatter.field("virtual_interface_state", &self.virtual_interface_state);
-        formatter.finish()
-    }
-}
 /// See [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput).
 pub mod delete_virtual_interface_output {
 
     /// A builder for [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_state:
             std::option::Option<crate::model::VirtualInterfaceState>,
@@ -4371,7 +4042,7 @@ impl DeleteVirtualInterfaceOutput {
 
 /// <p>Information about a link aggregation group (LAG).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLagOutput {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     #[doc(hidden)]
@@ -4545,38 +4216,11 @@ impl DeleteLagOutput {
         self.mac_sec_keys.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLagOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLagOutput");
-        formatter.field("connections_bandwidth", &self.connections_bandwidth);
-        formatter.field("number_of_connections", &self.number_of_connections);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("lag_name", &self.lag_name);
-        formatter.field("lag_state", &self.lag_state);
-        formatter.field("location", &self.location);
-        formatter.field("region", &self.region);
-        formatter.field("minimum_links", &self.minimum_links);
-        formatter.field("aws_device", &self.aws_device);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("connections", &self.connections);
-        formatter.field("allows_hosted_connections", &self.allows_hosted_connections);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("mac_sec_capable", &self.mac_sec_capable);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("mac_sec_keys", &self.mac_sec_keys);
-        formatter.finish()
-    }
-}
 /// See [`DeleteLagOutput`](crate::output::DeleteLagOutput).
 pub mod delete_lag_output {
 
     /// A builder for [`DeleteLagOutput`](crate::output::DeleteLagOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections_bandwidth: std::option::Option<std::string::String>,
         pub(crate) number_of_connections: std::option::Option<i32>,
@@ -4916,7 +4560,7 @@ impl DeleteLagOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInterconnectOutput {
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
@@ -4946,18 +4590,11 @@ impl DeleteInterconnectOutput {
         self.interconnect_state.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteInterconnectOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInterconnectOutput");
-        formatter.field("interconnect_state", &self.interconnect_state);
-        formatter.finish()
-    }
-}
 /// See [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput).
 pub mod delete_interconnect_output {
 
     /// A builder for [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_state: std::option::Option<crate::model::InterconnectState>,
     }
@@ -5010,7 +4647,7 @@ impl DeleteInterconnectOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayAssociationProposalOutput {
     /// <p>The ID of the associated gateway.</p>
     #[doc(hidden)]
@@ -5025,21 +4662,11 @@ impl DeleteDirectConnectGatewayAssociationProposalOutput {
         self.direct_connect_gateway_association_proposal.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteDirectConnectGatewayAssociationProposalOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDirectConnectGatewayAssociationProposalOutput");
-        formatter.field(
-            "direct_connect_gateway_association_proposal",
-            &self.direct_connect_gateway_association_proposal,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput).
 pub mod delete_direct_connect_gateway_association_proposal_output {
 
     /// A builder for [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association_proposal:
             std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
@@ -5080,7 +4707,7 @@ impl DeleteDirectConnectGatewayAssociationProposalOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayAssociationOutput {
     /// <p>Information about the deleted association.</p>
     #[doc(hidden)]
@@ -5095,21 +4722,11 @@ impl DeleteDirectConnectGatewayAssociationOutput {
         self.direct_connect_gateway_association.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteDirectConnectGatewayAssociationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDirectConnectGatewayAssociationOutput");
-        formatter.field(
-            "direct_connect_gateway_association",
-            &self.direct_connect_gateway_association,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput).
 pub mod delete_direct_connect_gateway_association_output {
 
     /// A builder for [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association:
             std::option::Option<crate::model::DirectConnectGatewayAssociation>,
@@ -5148,7 +4765,7 @@ impl DeleteDirectConnectGatewayAssociationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayOutput {
     /// <p>The Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -5162,18 +4779,11 @@ impl DeleteDirectConnectGatewayOutput {
         self.direct_connect_gateway.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteDirectConnectGatewayOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDirectConnectGatewayOutput");
-        formatter.field("direct_connect_gateway", &self.direct_connect_gateway);
-        formatter.finish()
-    }
-}
 /// See [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput).
 pub mod delete_direct_connect_gateway_output {
 
     /// A builder for [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
     }
@@ -5208,7 +4818,7 @@ impl DeleteDirectConnectGatewayOutput {
 
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
@@ -5395,39 +5005,11 @@ impl DeleteConnectionOutput {
         self.mac_sec_keys.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectionOutput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field("region", &self.region);
-        formatter.field("location", &self.location);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("partner_name", &self.partner_name);
-        formatter.field("loa_issue_time", &self.loa_issue_time);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("aws_device", &self.aws_device);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("mac_sec_capable", &self.mac_sec_capable);
-        formatter.field("port_encryption_status", &self.port_encryption_status);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("mac_sec_keys", &self.mac_sec_keys);
-        formatter.finish()
-    }
-}
 /// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
 pub mod delete_connection_output {
 
     /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -5788,7 +5370,7 @@ impl DeleteConnectionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBgpPeerOutput {
     /// <p>The virtual interface.</p>
     #[doc(hidden)]
@@ -5800,18 +5382,11 @@ impl DeleteBgpPeerOutput {
         self.virtual_interface.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteBgpPeerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBgpPeerOutput");
-        formatter.field("virtual_interface", &self.virtual_interface);
-        formatter.finish()
-    }
-}
 /// See [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput).
 pub mod delete_bgp_peer_output {
 
     /// A builder for [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface: std::option::Option<crate::model::VirtualInterface>,
     }
@@ -5846,7 +5421,7 @@ impl DeleteBgpPeerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTransitVirtualInterfaceOutput {
     /// <p>Information about a virtual interface.</p>
     #[doc(hidden)]
@@ -5858,18 +5433,11 @@ impl CreateTransitVirtualInterfaceOutput {
         self.virtual_interface.as_ref()
     }
 }
-impl std::fmt::Debug for CreateTransitVirtualInterfaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTransitVirtualInterfaceOutput");
-        formatter.field("virtual_interface", &self.virtual_interface);
-        formatter.finish()
-    }
-}
 /// See [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput).
 pub mod create_transit_virtual_interface_output {
 
     /// A builder for [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface: std::option::Option<crate::model::VirtualInterface>,
     }
@@ -5904,7 +5472,7 @@ impl CreateTransitVirtualInterfaceOutput {
 
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePublicVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     #[doc(hidden)]
@@ -6117,43 +5685,11 @@ impl CreatePublicVirtualInterfaceOutput {
         self.site_link_enabled
     }
 }
-impl std::fmt::Debug for CreatePublicVirtualInterfaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePublicVirtualInterfaceOutput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("location", &self.location);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("virtual_interface_type", &self.virtual_interface_type);
-        formatter.field("virtual_interface_name", &self.virtual_interface_name);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("asn", &self.asn);
-        formatter.field("amazon_side_asn", &self.amazon_side_asn);
-        formatter.field("auth_key", &self.auth_key);
-        formatter.field("amazon_address", &self.amazon_address);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.field("address_family", &self.address_family);
-        formatter.field("virtual_interface_state", &self.virtual_interface_state);
-        formatter.field("customer_router_config", &self.customer_router_config);
-        formatter.field("mtu", &self.mtu);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("route_filter_prefixes", &self.route_filter_prefixes);
-        formatter.field("bgp_peers", &self.bgp_peers);
-        formatter.field("region", &self.region);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("site_link_enabled", &self.site_link_enabled);
-        formatter.finish()
-    }
-}
 /// See [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput).
 pub mod create_public_virtual_interface_output {
 
     /// A builder for [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -6583,7 +6119,7 @@ impl CreatePublicVirtualInterfaceOutput {
 
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePrivateVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     #[doc(hidden)]
@@ -6796,43 +6332,11 @@ impl CreatePrivateVirtualInterfaceOutput {
         self.site_link_enabled
     }
 }
-impl std::fmt::Debug for CreatePrivateVirtualInterfaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePrivateVirtualInterfaceOutput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("location", &self.location);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("virtual_interface_type", &self.virtual_interface_type);
-        formatter.field("virtual_interface_name", &self.virtual_interface_name);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("asn", &self.asn);
-        formatter.field("amazon_side_asn", &self.amazon_side_asn);
-        formatter.field("auth_key", &self.auth_key);
-        formatter.field("amazon_address", &self.amazon_address);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.field("address_family", &self.address_family);
-        formatter.field("virtual_interface_state", &self.virtual_interface_state);
-        formatter.field("customer_router_config", &self.customer_router_config);
-        formatter.field("mtu", &self.mtu);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("route_filter_prefixes", &self.route_filter_prefixes);
-        formatter.field("bgp_peers", &self.bgp_peers);
-        formatter.field("region", &self.region);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("site_link_enabled", &self.site_link_enabled);
-        formatter.finish()
-    }
-}
 /// See [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput).
 pub mod create_private_virtual_interface_output {
 
     /// A builder for [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -7262,7 +6766,7 @@ impl CreatePrivateVirtualInterfaceOutput {
 
 /// <p>Information about a link aggregation group (LAG).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLagOutput {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     #[doc(hidden)]
@@ -7436,38 +6940,11 @@ impl CreateLagOutput {
         self.mac_sec_keys.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLagOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLagOutput");
-        formatter.field("connections_bandwidth", &self.connections_bandwidth);
-        formatter.field("number_of_connections", &self.number_of_connections);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("lag_name", &self.lag_name);
-        formatter.field("lag_state", &self.lag_state);
-        formatter.field("location", &self.location);
-        formatter.field("region", &self.region);
-        formatter.field("minimum_links", &self.minimum_links);
-        formatter.field("aws_device", &self.aws_device);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("connections", &self.connections);
-        formatter.field("allows_hosted_connections", &self.allows_hosted_connections);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("mac_sec_capable", &self.mac_sec_capable);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("mac_sec_keys", &self.mac_sec_keys);
-        formatter.finish()
-    }
-}
 /// See [`CreateLagOutput`](crate::output::CreateLagOutput).
 pub mod create_lag_output {
 
     /// A builder for [`CreateLagOutput`](crate::output::CreateLagOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections_bandwidth: std::option::Option<std::string::String>,
         pub(crate) number_of_connections: std::option::Option<i32>,
@@ -7807,7 +7284,7 @@ impl CreateLagOutput {
 
 /// <p>Information about an interconnect.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInterconnectOutput {
     /// <p>The ID of the interconnect.</p>
     #[doc(hidden)]
@@ -7937,32 +7414,11 @@ impl CreateInterconnectOutput {
         self.provider_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateInterconnectOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInterconnectOutput");
-        formatter.field("interconnect_id", &self.interconnect_id);
-        formatter.field("interconnect_name", &self.interconnect_name);
-        formatter.field("interconnect_state", &self.interconnect_state);
-        formatter.field("region", &self.region);
-        formatter.field("location", &self.location);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("loa_issue_time", &self.loa_issue_time);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("aws_device", &self.aws_device);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.finish()
-    }
-}
 /// See [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput).
 pub mod create_interconnect_output {
 
     /// A builder for [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_id: std::option::Option<std::string::String>,
         pub(crate) interconnect_name: std::option::Option<std::string::String>,
@@ -8213,7 +7669,7 @@ impl CreateInterconnectOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayAssociationProposalOutput {
     /// <p>Information about the Direct Connect gateway proposal.</p>
     #[doc(hidden)]
@@ -8228,21 +7684,11 @@ impl CreateDirectConnectGatewayAssociationProposalOutput {
         self.direct_connect_gateway_association_proposal.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDirectConnectGatewayAssociationProposalOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDirectConnectGatewayAssociationProposalOutput");
-        formatter.field(
-            "direct_connect_gateway_association_proposal",
-            &self.direct_connect_gateway_association_proposal,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput).
 pub mod create_direct_connect_gateway_association_proposal_output {
 
     /// A builder for [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association_proposal:
             std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
@@ -8283,7 +7729,7 @@ impl CreateDirectConnectGatewayAssociationProposalOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayAssociationOutput {
     /// <p>The association to be created.</p>
     #[doc(hidden)]
@@ -8298,21 +7744,11 @@ impl CreateDirectConnectGatewayAssociationOutput {
         self.direct_connect_gateway_association.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDirectConnectGatewayAssociationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDirectConnectGatewayAssociationOutput");
-        formatter.field(
-            "direct_connect_gateway_association",
-            &self.direct_connect_gateway_association,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput).
 pub mod create_direct_connect_gateway_association_output {
 
     /// A builder for [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association:
             std::option::Option<crate::model::DirectConnectGatewayAssociation>,
@@ -8351,7 +7787,7 @@ impl CreateDirectConnectGatewayAssociationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayOutput {
     /// <p>The Direct Connect gateway.</p>
     #[doc(hidden)]
@@ -8365,18 +7801,11 @@ impl CreateDirectConnectGatewayOutput {
         self.direct_connect_gateway.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDirectConnectGatewayOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDirectConnectGatewayOutput");
-        formatter.field("direct_connect_gateway", &self.direct_connect_gateway);
-        formatter.finish()
-    }
-}
 /// See [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput).
 pub mod create_direct_connect_gateway_output {
 
     /// A builder for [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
     }
@@ -8411,7 +7840,7 @@ impl CreateDirectConnectGatewayOutput {
 
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
@@ -8598,39 +8027,11 @@ impl CreateConnectionOutput {
         self.mac_sec_keys.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectionOutput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field("region", &self.region);
-        formatter.field("location", &self.location);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("partner_name", &self.partner_name);
-        formatter.field("loa_issue_time", &self.loa_issue_time);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("aws_device", &self.aws_device);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("mac_sec_capable", &self.mac_sec_capable);
-        formatter.field("port_encryption_status", &self.port_encryption_status);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("mac_sec_keys", &self.mac_sec_keys);
-        formatter.finish()
-    }
-}
 /// See [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
 pub mod create_connection_output {
 
     /// A builder for [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -8991,7 +8392,7 @@ impl CreateConnectionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBgpPeerOutput {
     /// <p>The virtual interface.</p>
     #[doc(hidden)]
@@ -9003,18 +8404,11 @@ impl CreateBgpPeerOutput {
         self.virtual_interface.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBgpPeerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBgpPeerOutput");
-        formatter.field("virtual_interface", &self.virtual_interface);
-        formatter.finish()
-    }
-}
 /// See [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput).
 pub mod create_bgp_peer_output {
 
     /// A builder for [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface: std::option::Option<crate::model::VirtualInterface>,
     }
@@ -9049,7 +8443,7 @@ impl CreateBgpPeerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmTransitVirtualInterfaceOutput {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
@@ -9085,18 +8479,11 @@ impl ConfirmTransitVirtualInterfaceOutput {
         self.virtual_interface_state.as_ref()
     }
 }
-impl std::fmt::Debug for ConfirmTransitVirtualInterfaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmTransitVirtualInterfaceOutput");
-        formatter.field("virtual_interface_state", &self.virtual_interface_state);
-        formatter.finish()
-    }
-}
 /// See [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput).
 pub mod confirm_transit_virtual_interface_output {
 
     /// A builder for [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_state:
             std::option::Option<crate::model::VirtualInterfaceState>,
@@ -9157,7 +8544,7 @@ impl ConfirmTransitVirtualInterfaceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmPublicVirtualInterfaceOutput {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
@@ -9193,18 +8580,11 @@ impl ConfirmPublicVirtualInterfaceOutput {
         self.virtual_interface_state.as_ref()
     }
 }
-impl std::fmt::Debug for ConfirmPublicVirtualInterfaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmPublicVirtualInterfaceOutput");
-        formatter.field("virtual_interface_state", &self.virtual_interface_state);
-        formatter.finish()
-    }
-}
 /// See [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput).
 pub mod confirm_public_virtual_interface_output {
 
     /// A builder for [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_state:
             std::option::Option<crate::model::VirtualInterfaceState>,
@@ -9265,7 +8645,7 @@ impl ConfirmPublicVirtualInterfaceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmPrivateVirtualInterfaceOutput {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
@@ -9301,18 +8681,11 @@ impl ConfirmPrivateVirtualInterfaceOutput {
         self.virtual_interface_state.as_ref()
     }
 }
-impl std::fmt::Debug for ConfirmPrivateVirtualInterfaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmPrivateVirtualInterfaceOutput");
-        formatter.field("virtual_interface_state", &self.virtual_interface_state);
-        formatter.finish()
-    }
-}
 /// See [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput).
 pub mod confirm_private_virtual_interface_output {
 
     /// A builder for [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_state:
             std::option::Option<crate::model::VirtualInterfaceState>,
@@ -9373,7 +8746,7 @@ impl ConfirmPrivateVirtualInterfaceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmCustomerAgreementOutput {
     /// <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
     #[doc(hidden)]
@@ -9385,18 +8758,11 @@ impl ConfirmCustomerAgreementOutput {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for ConfirmCustomerAgreementOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmCustomerAgreementOutput");
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput).
 pub mod confirm_customer_agreement_output {
 
     /// A builder for [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
     }
@@ -9428,7 +8794,7 @@ impl ConfirmCustomerAgreementOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfirmConnectionOutput {
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
@@ -9462,18 +8828,11 @@ impl ConfirmConnectionOutput {
         self.connection_state.as_ref()
     }
 }
-impl std::fmt::Debug for ConfirmConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfirmConnectionOutput");
-        formatter.field("connection_state", &self.connection_state);
-        formatter.finish()
-    }
-}
 /// See [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput).
 pub mod confirm_connection_output {
 
     /// A builder for [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_state: std::option::Option<crate::model::ConnectionState>,
     }
@@ -9530,7 +8889,7 @@ impl ConfirmConnectionOutput {
 
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     #[doc(hidden)]
@@ -9743,43 +9102,11 @@ impl AssociateVirtualInterfaceOutput {
         self.site_link_enabled
     }
 }
-impl std::fmt::Debug for AssociateVirtualInterfaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateVirtualInterfaceOutput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("location", &self.location);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("virtual_interface_type", &self.virtual_interface_type);
-        formatter.field("virtual_interface_name", &self.virtual_interface_name);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("asn", &self.asn);
-        formatter.field("amazon_side_asn", &self.amazon_side_asn);
-        formatter.field("auth_key", &self.auth_key);
-        formatter.field("amazon_address", &self.amazon_address);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.field("address_family", &self.address_family);
-        formatter.field("virtual_interface_state", &self.virtual_interface_state);
-        formatter.field("customer_router_config", &self.customer_router_config);
-        formatter.field("mtu", &self.mtu);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("route_filter_prefixes", &self.route_filter_prefixes);
-        formatter.field("bgp_peers", &self.bgp_peers);
-        formatter.field("region", &self.region);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("site_link_enabled", &self.site_link_enabled);
-        formatter.finish()
-    }
-}
 /// See [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput).
 pub mod associate_virtual_interface_output {
 
     /// A builder for [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -10209,7 +9536,7 @@ impl AssociateVirtualInterfaceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateMacSecKeyOutput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     #[doc(hidden)]
@@ -10228,19 +9555,11 @@ impl AssociateMacSecKeyOutput {
         self.mac_sec_keys.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateMacSecKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateMacSecKeyOutput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("mac_sec_keys", &self.mac_sec_keys);
-        formatter.finish()
-    }
-}
 /// See [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput).
 pub mod associate_mac_sec_key_output {
 
     /// A builder for [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
@@ -10296,7 +9615,7 @@ impl AssociateMacSecKeyOutput {
 
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateHostedConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
@@ -10483,39 +9802,11 @@ impl AssociateHostedConnectionOutput {
         self.mac_sec_keys.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateHostedConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateHostedConnectionOutput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field("region", &self.region);
-        formatter.field("location", &self.location);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("partner_name", &self.partner_name);
-        formatter.field("loa_issue_time", &self.loa_issue_time);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("aws_device", &self.aws_device);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("mac_sec_capable", &self.mac_sec_capable);
-        formatter.field("port_encryption_status", &self.port_encryption_status);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("mac_sec_keys", &self.mac_sec_keys);
-        formatter.finish()
-    }
-}
 /// See [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput).
 pub mod associate_hosted_connection_output {
 
     /// A builder for [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -10876,7 +10167,7 @@ impl AssociateHostedConnectionOutput {
 
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateConnectionWithLagOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
@@ -11063,39 +10354,11 @@ impl AssociateConnectionWithLagOutput {
         self.mac_sec_keys.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateConnectionWithLagOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateConnectionWithLagOutput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field("region", &self.region);
-        formatter.field("location", &self.location);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("partner_name", &self.partner_name);
-        formatter.field("loa_issue_time", &self.loa_issue_time);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("aws_device", &self.aws_device);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("mac_sec_capable", &self.mac_sec_capable);
-        formatter.field("port_encryption_status", &self.port_encryption_status);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("mac_sec_keys", &self.mac_sec_keys);
-        formatter.finish()
-    }
-}
 /// See [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput).
 pub mod associate_connection_with_lag_output {
 
     /// A builder for [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -11456,7 +10719,7 @@ impl AssociateConnectionWithLagOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllocateTransitVirtualInterfaceOutput {
     /// <p>Information about a virtual interface.</p>
     #[doc(hidden)]
@@ -11468,18 +10731,11 @@ impl AllocateTransitVirtualInterfaceOutput {
         self.virtual_interface.as_ref()
     }
 }
-impl std::fmt::Debug for AllocateTransitVirtualInterfaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllocateTransitVirtualInterfaceOutput");
-        formatter.field("virtual_interface", &self.virtual_interface);
-        formatter.finish()
-    }
-}
 /// See [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput).
 pub mod allocate_transit_virtual_interface_output {
 
     /// A builder for [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface: std::option::Option<crate::model::VirtualInterface>,
     }
@@ -11514,7 +10770,7 @@ impl AllocateTransitVirtualInterfaceOutput {
 
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllocatePublicVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     #[doc(hidden)]
@@ -11727,43 +10983,11 @@ impl AllocatePublicVirtualInterfaceOutput {
         self.site_link_enabled
     }
 }
-impl std::fmt::Debug for AllocatePublicVirtualInterfaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllocatePublicVirtualInterfaceOutput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("location", &self.location);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("virtual_interface_type", &self.virtual_interface_type);
-        formatter.field("virtual_interface_name", &self.virtual_interface_name);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("asn", &self.asn);
-        formatter.field("amazon_side_asn", &self.amazon_side_asn);
-        formatter.field("auth_key", &self.auth_key);
-        formatter.field("amazon_address", &self.amazon_address);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.field("address_family", &self.address_family);
-        formatter.field("virtual_interface_state", &self.virtual_interface_state);
-        formatter.field("customer_router_config", &self.customer_router_config);
-        formatter.field("mtu", &self.mtu);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("route_filter_prefixes", &self.route_filter_prefixes);
-        formatter.field("bgp_peers", &self.bgp_peers);
-        formatter.field("region", &self.region);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("site_link_enabled", &self.site_link_enabled);
-        formatter.finish()
-    }
-}
 /// See [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput).
 pub mod allocate_public_virtual_interface_output {
 
     /// A builder for [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -12193,7 +11417,7 @@ impl AllocatePublicVirtualInterfaceOutput {
 
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllocatePrivateVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     #[doc(hidden)]
@@ -12406,43 +11630,11 @@ impl AllocatePrivateVirtualInterfaceOutput {
         self.site_link_enabled
     }
 }
-impl std::fmt::Debug for AllocatePrivateVirtualInterfaceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllocatePrivateVirtualInterfaceOutput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("virtual_interface_id", &self.virtual_interface_id);
-        formatter.field("location", &self.location);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("virtual_interface_type", &self.virtual_interface_type);
-        formatter.field("virtual_interface_name", &self.virtual_interface_name);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("asn", &self.asn);
-        formatter.field("amazon_side_asn", &self.amazon_side_asn);
-        formatter.field("auth_key", &self.auth_key);
-        formatter.field("amazon_address", &self.amazon_address);
-        formatter.field("customer_address", &self.customer_address);
-        formatter.field("address_family", &self.address_family);
-        formatter.field("virtual_interface_state", &self.virtual_interface_state);
-        formatter.field("customer_router_config", &self.customer_router_config);
-        formatter.field("mtu", &self.mtu);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
-        formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
-        formatter.field("route_filter_prefixes", &self.route_filter_prefixes);
-        formatter.field("bgp_peers", &self.bgp_peers);
-        formatter.field("region", &self.region);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("tags", &self.tags);
-        formatter.field("site_link_enabled", &self.site_link_enabled);
-        formatter.finish()
-    }
-}
 /// See [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput).
 pub mod allocate_private_virtual_interface_output {
 
     /// A builder for [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -12872,7 +12064,7 @@ impl AllocatePrivateVirtualInterfaceOutput {
 
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllocateHostedConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
@@ -13059,39 +12251,11 @@ impl AllocateHostedConnectionOutput {
         self.mac_sec_keys.as_deref()
     }
 }
-impl std::fmt::Debug for AllocateHostedConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllocateHostedConnectionOutput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field("region", &self.region);
-        formatter.field("location", &self.location);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("partner_name", &self.partner_name);
-        formatter.field("loa_issue_time", &self.loa_issue_time);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("aws_device", &self.aws_device);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("mac_sec_capable", &self.mac_sec_capable);
-        formatter.field("port_encryption_status", &self.port_encryption_status);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("mac_sec_keys", &self.mac_sec_keys);
-        formatter.finish()
-    }
-}
 /// See [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput).
 pub mod allocate_hosted_connection_output {
 
     /// A builder for [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -13452,7 +12616,7 @@ impl AllocateHostedConnectionOutput {
 
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllocateConnectionOnInterconnectOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
@@ -13639,39 +12803,11 @@ impl AllocateConnectionOnInterconnectOutput {
         self.mac_sec_keys.as_deref()
     }
 }
-impl std::fmt::Debug for AllocateConnectionOnInterconnectOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllocateConnectionOnInterconnectOutput");
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connection_state", &self.connection_state);
-        formatter.field("region", &self.region);
-        formatter.field("location", &self.location);
-        formatter.field("bandwidth", &self.bandwidth);
-        formatter.field("vlan", &self.vlan);
-        formatter.field("partner_name", &self.partner_name);
-        formatter.field("loa_issue_time", &self.loa_issue_time);
-        formatter.field("lag_id", &self.lag_id);
-        formatter.field("aws_device", &self.aws_device);
-        formatter.field("jumbo_frame_capable", &self.jumbo_frame_capable);
-        formatter.field("aws_device_v2", &self.aws_device_v2);
-        formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
-        formatter.field("has_logical_redundancy", &self.has_logical_redundancy);
-        formatter.field("tags", &self.tags);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("mac_sec_capable", &self.mac_sec_capable);
-        formatter.field("port_encryption_status", &self.port_encryption_status);
-        formatter.field("encryption_mode", &self.encryption_mode);
-        formatter.field("mac_sec_keys", &self.mac_sec_keys);
-        formatter.finish()
-    }
-}
 /// See [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput).
 pub mod allocate_connection_on_interconnect_output {
 
     /// A builder for [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -14032,7 +13168,7 @@ impl AllocateConnectionOnInterconnectOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptDirectConnectGatewayAssociationProposalOutput {
     /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
     #[doc(hidden)]
@@ -14047,21 +13183,11 @@ impl AcceptDirectConnectGatewayAssociationProposalOutput {
         self.direct_connect_gateway_association.as_ref()
     }
 }
-impl std::fmt::Debug for AcceptDirectConnectGatewayAssociationProposalOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptDirectConnectGatewayAssociationProposalOutput");
-        formatter.field(
-            "direct_connect_gateway_association",
-            &self.direct_connect_gateway_association,
-        );
-        formatter.finish()
-    }
-}
 /// See [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput).
 pub mod accept_direct_connect_gateway_association_proposal_output {
 
     /// A builder for [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association:
             std::option::Option<crate::model::DirectConnectGatewayAssociation>,

@@ -3,7 +3,7 @@
 /// <p>Represents the output of an <code>UpdateMLModel</code> operation.</p>
 /// <p>You can see the updated content by using the <code>GetMLModel</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMlModelOutput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>
     #[doc(hidden)]
@@ -15,18 +15,11 @@ impl UpdateMlModelOutput {
         self.ml_model_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMlModelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMlModelOutput");
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.finish()
-    }
-}
 /// See [`UpdateMlModelOutput`](crate::output::UpdateMlModelOutput).
 pub mod update_ml_model_output {
 
     /// A builder for [`UpdateMlModelOutput`](crate::output::UpdateMlModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
     }
@@ -59,7 +52,7 @@ impl UpdateMlModelOutput {
 /// <p>Represents the output of an <code>UpdateEvaluation</code> operation.</p>
 /// <p>You can see the updated content by using the <code>GetEvaluation</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEvaluationOutput {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation. This value should be identical to the value of the <code>Evaluation</code> in the request.</p>
     #[doc(hidden)]
@@ -71,18 +64,11 @@ impl UpdateEvaluationOutput {
         self.evaluation_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateEvaluationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEvaluationOutput");
-        formatter.field("evaluation_id", &self.evaluation_id);
-        formatter.finish()
-    }
-}
 /// See [`UpdateEvaluationOutput`](crate::output::UpdateEvaluationOutput).
 pub mod update_evaluation_output {
 
     /// A builder for [`UpdateEvaluationOutput`](crate::output::UpdateEvaluationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
     }
@@ -118,7 +104,7 @@ impl UpdateEvaluationOutput {
 /// <p>Represents the output of an <code>UpdateDataSource</code> operation.</p>
 /// <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDataSourceOutput {
     /// <p>The ID assigned to the <code>DataSource</code> during creation. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
     #[doc(hidden)]
@@ -130,18 +116,11 @@ impl UpdateDataSourceOutput {
         self.data_source_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDataSourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDataSourceOutput");
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.finish()
-    }
-}
 /// See [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput).
 pub mod update_data_source_output {
 
     /// A builder for [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
     }
@@ -177,7 +156,7 @@ impl UpdateDataSourceOutput {
 /// <p>Represents the output of an <code>UpdateBatchPrediction</code> operation.</p>
 /// <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBatchPredictionOutput {
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation. This value should be identical to the value of the <code>BatchPredictionId</code> in the request.</p>
     #[doc(hidden)]
@@ -189,18 +168,11 @@ impl UpdateBatchPredictionOutput {
         self.batch_prediction_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBatchPredictionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBatchPredictionOutput");
-        formatter.field("batch_prediction_id", &self.batch_prediction_id);
-        formatter.finish()
-    }
-}
 /// See [`UpdateBatchPredictionOutput`](crate::output::UpdateBatchPredictionOutput).
 pub mod update_batch_prediction_output {
 
     /// A builder for [`UpdateBatchPredictionOutput`](crate::output::UpdateBatchPredictionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
     }
@@ -235,7 +207,7 @@ impl UpdateBatchPredictionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PredictOutput {
     /// <p>The output from a <code>Predict</code> operation: </p>
     /// <ul>
@@ -259,18 +231,11 @@ impl PredictOutput {
         self.prediction.as_ref()
     }
 }
-impl std::fmt::Debug for PredictOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PredictOutput");
-        formatter.field("prediction", &self.prediction);
-        formatter.finish()
-    }
-}
 /// See [`PredictOutput`](crate::output::PredictOutput).
 pub mod predict_output {
 
     /// A builder for [`PredictOutput`](crate::output::PredictOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prediction: std::option::Option<crate::model::Prediction>,
     }
@@ -317,7 +282,7 @@ impl PredictOutput {
 
 /// <p>Represents the output of a <code>GetMLModel</code> operation, and provides detailed information about a <code>MLModel</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMlModelOutput {
     /// <p>The MLModel ID, which is same as the <code>MLModelId</code> in the request.</p>
     #[doc(hidden)]
@@ -521,41 +486,11 @@ impl GetMlModelOutput {
         self.schema.as_deref()
     }
 }
-impl std::fmt::Debug for GetMlModelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMlModelOutput");
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.field("training_data_source_id", &self.training_data_source_id);
-        formatter.field("created_by_iam_user", &self.created_by_iam_user);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("size_in_bytes", &self.size_in_bytes);
-        formatter.field("endpoint_info", &self.endpoint_info);
-        formatter.field("training_parameters", &self.training_parameters);
-        formatter.field("input_data_location_s3", &self.input_data_location_s3);
-        formatter.field("ml_model_type", &self.ml_model_type);
-        formatter.field("score_threshold", &self.score_threshold);
-        formatter.field(
-            "score_threshold_last_updated_at",
-            &self.score_threshold_last_updated_at,
-        );
-        formatter.field("log_uri", &self.log_uri);
-        formatter.field("message", &self.message);
-        formatter.field("compute_time", &self.compute_time);
-        formatter.field("finished_at", &self.finished_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("recipe", &self.recipe);
-        formatter.field("schema", &self.schema);
-        formatter.finish()
-    }
-}
 /// See [`GetMlModelOutput`](crate::output::GetMlModelOutput).
 pub mod get_ml_model_output {
 
     /// A builder for [`GetMlModelOutput`](crate::output::GetMlModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
         pub(crate) training_data_source_id: std::option::Option<std::string::String>,
@@ -926,7 +861,7 @@ impl GetMlModelOutput {
 
 /// <p>Represents the output of a <code>GetEvaluation</code> operation and describes an <code>Evaluation</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEvaluationOutput {
     /// <p>The evaluation ID which is same as the <code>EvaluationId</code> in the request.</p>
     #[doc(hidden)]
@@ -1062,32 +997,11 @@ impl GetEvaluationOutput {
         self.started_at.as_ref()
     }
 }
-impl std::fmt::Debug for GetEvaluationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEvaluationOutput");
-        formatter.field("evaluation_id", &self.evaluation_id);
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.field("evaluation_data_source_id", &self.evaluation_data_source_id);
-        formatter.field("input_data_location_s3", &self.input_data_location_s3);
-        formatter.field("created_by_iam_user", &self.created_by_iam_user);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("performance_metrics", &self.performance_metrics);
-        formatter.field("log_uri", &self.log_uri);
-        formatter.field("message", &self.message);
-        formatter.field("compute_time", &self.compute_time);
-        formatter.field("finished_at", &self.finished_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.finish()
-    }
-}
 /// See [`GetEvaluationOutput`](crate::output::GetEvaluationOutput).
 pub mod get_evaluation_output {
 
     /// A builder for [`GetEvaluationOutput`](crate::output::GetEvaluationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
@@ -1343,7 +1257,7 @@ impl GetEvaluationOutput {
 
 /// <p>Represents the output of a <code>GetDataSource</code> operation and describes a <code>DataSource</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataSourceOutput {
     /// <p>The ID assigned to the <code>DataSource</code> at creation. This value should be identical to the value of the <code>DataSourceId</code> in the request.</p>
     #[doc(hidden)]
@@ -1504,37 +1418,11 @@ impl GetDataSourceOutput {
         self.data_source_schema.as_deref()
     }
 }
-impl std::fmt::Debug for GetDataSourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDataSourceOutput");
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.field("data_location_s3", &self.data_location_s3);
-        formatter.field("data_rearrangement", &self.data_rearrangement);
-        formatter.field("created_by_iam_user", &self.created_by_iam_user);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("data_size_in_bytes", &self.data_size_in_bytes);
-        formatter.field("number_of_files", &self.number_of_files);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("log_uri", &self.log_uri);
-        formatter.field("message", &self.message);
-        formatter.field("redshift_metadata", &self.redshift_metadata);
-        formatter.field("rds_metadata", &self.rds_metadata);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("compute_statistics", &self.compute_statistics);
-        formatter.field("compute_time", &self.compute_time);
-        formatter.field("finished_at", &self.finished_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("data_source_schema", &self.data_source_schema);
-        formatter.finish()
-    }
-}
 /// See [`GetDataSourceOutput`](crate::output::GetDataSourceOutput).
 pub mod get_data_source_output {
 
     /// A builder for [`GetDataSourceOutput`](crate::output::GetDataSourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
         pub(crate) data_location_s3: std::option::Option<std::string::String>,
@@ -1846,7 +1734,7 @@ impl GetDataSourceOutput {
 
 /// <p>Represents the output of a <code>GetBatchPrediction</code> operation and describes a <code>BatchPrediction</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBatchPredictionOutput {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
     #[doc(hidden)]
@@ -1984,37 +1872,11 @@ impl GetBatchPredictionOutput {
         self.invalid_record_count
     }
 }
-impl std::fmt::Debug for GetBatchPredictionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBatchPredictionOutput");
-        formatter.field("batch_prediction_id", &self.batch_prediction_id);
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.field(
-            "batch_prediction_data_source_id",
-            &self.batch_prediction_data_source_id,
-        );
-        formatter.field("input_data_location_s3", &self.input_data_location_s3);
-        formatter.field("created_by_iam_user", &self.created_by_iam_user);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("output_uri", &self.output_uri);
-        formatter.field("log_uri", &self.log_uri);
-        formatter.field("message", &self.message);
-        formatter.field("compute_time", &self.compute_time);
-        formatter.field("finished_at", &self.finished_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("total_record_count", &self.total_record_count);
-        formatter.field("invalid_record_count", &self.invalid_record_count);
-        formatter.finish()
-    }
-}
 /// See [`GetBatchPredictionOutput`](crate::output::GetBatchPredictionOutput).
 pub mod get_batch_prediction_output {
 
     /// A builder for [`GetBatchPredictionOutput`](crate::output::GetBatchPredictionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
@@ -2282,7 +2144,7 @@ impl GetBatchPredictionOutput {
 
 /// <p>Amazon ML returns the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTagsOutput {
     /// <p>The ID of the tagged ML object.</p>
     #[doc(hidden)]
@@ -2308,20 +2170,11 @@ impl DescribeTagsOutput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTagsOutput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
 pub mod describe_tags_output {
 
     /// A builder for [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::TaggableResourceType>,
@@ -2389,7 +2242,7 @@ impl DescribeTagsOutput {
 
 /// <p>Represents the output of a <code>DescribeMLModels</code> operation. The content is essentially a list of <code>MLModel</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMlModelsOutput {
     /// <p>A list of <code>MLModel</code> that meet the search criteria.</p>
     #[doc(hidden)]
@@ -2408,19 +2261,11 @@ impl DescribeMlModelsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMlModelsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMlModelsOutput");
-        formatter.field("results", &self.results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeMlModelsOutput`](crate::output::DescribeMlModelsOutput).
 pub mod describe_ml_models_output {
 
     /// A builder for [`DescribeMlModelsOutput`](crate::output::DescribeMlModelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::MlModel>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2473,7 +2318,7 @@ impl DescribeMlModelsOutput {
 
 /// <p>Represents the query results from a <code>DescribeEvaluations</code> operation. The content is essentially a list of <code>Evaluation</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEvaluationsOutput {
     /// <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
     #[doc(hidden)]
@@ -2492,19 +2337,11 @@ impl DescribeEvaluationsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEvaluationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEvaluationsOutput");
-        formatter.field("results", &self.results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeEvaluationsOutput`](crate::output::DescribeEvaluationsOutput).
 pub mod describe_evaluations_output {
 
     /// A builder for [`DescribeEvaluationsOutput`](crate::output::DescribeEvaluationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2557,7 +2394,7 @@ impl DescribeEvaluationsOutput {
 
 /// <p>Represents the query results from a <code>DescribeDataSources</code> operation. The content is essentially a list of <code>DataSource</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDataSourcesOutput {
     /// <p>A list of <code>DataSource</code> that meet the search criteria. </p>
     #[doc(hidden)]
@@ -2576,19 +2413,11 @@ impl DescribeDataSourcesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDataSourcesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDataSourcesOutput");
-        formatter.field("results", &self.results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeDataSourcesOutput`](crate::output::DescribeDataSourcesOutput).
 pub mod describe_data_sources_output {
 
     /// A builder for [`DescribeDataSourcesOutput`](crate::output::DescribeDataSourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2641,7 +2470,7 @@ impl DescribeDataSourcesOutput {
 
 /// <p>Represents the output of a <code>DescribeBatchPredictions</code> operation. The content is essentially a list of <code>BatchPrediction</code>s.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBatchPredictionsOutput {
     /// <p>A list of <code>BatchPrediction</code> objects that meet the search criteria. </p>
     #[doc(hidden)]
@@ -2660,19 +2489,11 @@ impl DescribeBatchPredictionsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBatchPredictionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBatchPredictionsOutput");
-        formatter.field("results", &self.results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeBatchPredictionsOutput`](crate::output::DescribeBatchPredictionsOutput).
 pub mod describe_batch_predictions_output {
 
     /// A builder for [`DescribeBatchPredictionsOutput`](crate::output::DescribeBatchPredictionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::BatchPrediction>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2725,7 +2546,7 @@ impl DescribeBatchPredictionsOutput {
 
 /// <p>Amazon ML returns the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTagsOutput {
     /// <p>The ID of the ML object from which tags were deleted.</p>
     #[doc(hidden)]
@@ -2744,19 +2565,11 @@ impl DeleteTagsOutput {
         self.resource_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTagsOutput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 /// See [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
 pub mod delete_tags_output {
 
     /// A builder for [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::TaggableResourceType>,
@@ -2804,7 +2617,7 @@ impl DeleteTagsOutput {
 /// <p>Represents the output of an <code>DeleteRealtimeEndpoint</code> operation.</p>
 /// <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRealtimeEndpointOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
     #[doc(hidden)]
@@ -2825,19 +2638,11 @@ impl DeleteRealtimeEndpointOutput {
         self.realtime_endpoint_info.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteRealtimeEndpointOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRealtimeEndpointOutput");
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.field("realtime_endpoint_info", &self.realtime_endpoint_info);
-        formatter.finish()
-    }
-}
 /// See [`DeleteRealtimeEndpointOutput`](crate::output::DeleteRealtimeEndpointOutput).
 pub mod delete_realtime_endpoint_output {
 
     /// A builder for [`DeleteRealtimeEndpointOutput`](crate::output::DeleteRealtimeEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
         pub(crate) realtime_endpoint_info: std::option::Option<crate::model::RealtimeEndpointInfo>,
@@ -2885,7 +2690,7 @@ impl DeleteRealtimeEndpointOutput {
 /// <p>Represents the output of a <code>DeleteMLModel</code> operation.</p>
 /// <p>You can use the <code>GetMLModel</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMlModelOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>
     #[doc(hidden)]
@@ -2897,18 +2702,11 @@ impl DeleteMlModelOutput {
         self.ml_model_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMlModelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMlModelOutput");
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.finish()
-    }
-}
 /// See [`DeleteMlModelOutput`](crate::output::DeleteMlModelOutput).
 pub mod delete_ml_model_output {
 
     /// A builder for [`DeleteMlModelOutput`](crate::output::DeleteMlModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
     }
@@ -2941,7 +2739,7 @@ impl DeleteMlModelOutput {
 /// <p> Represents the output of a <code>DeleteEvaluation</code> operation. The output indicates that Amazon Machine Learning (Amazon ML) received the request.</p>
 /// <p>You can use the <code>GetEvaluation</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEvaluationOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
     #[doc(hidden)]
@@ -2953,18 +2751,11 @@ impl DeleteEvaluationOutput {
         self.evaluation_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEvaluationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEvaluationOutput");
-        formatter.field("evaluation_id", &self.evaluation_id);
-        formatter.finish()
-    }
-}
 /// See [`DeleteEvaluationOutput`](crate::output::DeleteEvaluationOutput).
 pub mod delete_evaluation_output {
 
     /// A builder for [`DeleteEvaluationOutput`](crate::output::DeleteEvaluationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
     }
@@ -2999,7 +2790,7 @@ impl DeleteEvaluationOutput {
 
 /// <p> Represents the output of a <code>DeleteDataSource</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDataSourceOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
     #[doc(hidden)]
@@ -3011,18 +2802,11 @@ impl DeleteDataSourceOutput {
         self.data_source_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDataSourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDataSourceOutput");
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.finish()
-    }
-}
 /// See [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput).
 pub mod delete_data_source_output {
 
     /// A builder for [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
     }
@@ -3058,7 +2842,7 @@ impl DeleteDataSourceOutput {
 /// <p> Represents the output of a <code>DeleteBatchPrediction</code> operation.</p>
 /// <p>You can use the <code>GetBatchPrediction</code> operation and check the value of the <code>Status</code> parameter to see whether a <code>BatchPrediction</code> is marked as <code>DELETED</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBatchPredictionOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
     #[doc(hidden)]
@@ -3070,18 +2854,11 @@ impl DeleteBatchPredictionOutput {
         self.batch_prediction_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBatchPredictionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBatchPredictionOutput");
-        formatter.field("batch_prediction_id", &self.batch_prediction_id);
-        formatter.finish()
-    }
-}
 /// See [`DeleteBatchPredictionOutput`](crate::output::DeleteBatchPredictionOutput).
 pub mod delete_batch_prediction_output {
 
     /// A builder for [`DeleteBatchPredictionOutput`](crate::output::DeleteBatchPredictionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
     }
@@ -3118,7 +2895,7 @@ impl DeleteBatchPredictionOutput {
 /// <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.</p>
 /// <p> <b>Note:</b> The endpoint information includes the URI of the <code>MLModel</code>; that is, the location to send online prediction requests for the specified <code>MLModel</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRealtimeEndpointOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
     #[doc(hidden)]
@@ -3139,19 +2916,11 @@ impl CreateRealtimeEndpointOutput {
         self.realtime_endpoint_info.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRealtimeEndpointOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRealtimeEndpointOutput");
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.field("realtime_endpoint_info", &self.realtime_endpoint_info);
-        formatter.finish()
-    }
-}
 /// See [`CreateRealtimeEndpointOutput`](crate::output::CreateRealtimeEndpointOutput).
 pub mod create_realtime_endpoint_output {
 
     /// A builder for [`CreateRealtimeEndpointOutput`](crate::output::CreateRealtimeEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
         pub(crate) realtime_endpoint_info: std::option::Option<crate::model::RealtimeEndpointInfo>,
@@ -3199,7 +2968,7 @@ impl CreateRealtimeEndpointOutput {
 /// <p> Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement that Amazon ML received the request.</p>
 /// <p>The <code>CreateMLModel</code> operation is asynchronous. You can poll for status updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code> parameter. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMlModelOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request. </p>
     #[doc(hidden)]
@@ -3211,18 +2980,11 @@ impl CreateMlModelOutput {
         self.ml_model_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMlModelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMlModelOutput");
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateMlModelOutput`](crate::output::CreateMlModelOutput).
 pub mod create_ml_model_output {
 
     /// A builder for [`CreateMlModelOutput`](crate::output::CreateMlModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
     }
@@ -3255,7 +3017,7 @@ impl CreateMlModelOutput {
 /// <p> Represents the output of a <code>CreateEvaluation</code> operation, and is an acknowledgement that Amazon ML received the request.</p>
 /// <p> <code>CreateEvaluation</code> operation is asynchronous. You can poll for status updates by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code> parameter. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateEvaluationOutput {
     /// <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
     #[doc(hidden)]
@@ -3267,18 +3029,11 @@ impl CreateEvaluationOutput {
         self.evaluation_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateEvaluationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateEvaluationOutput");
-        formatter.field("evaluation_id", &self.evaluation_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateEvaluationOutput`](crate::output::CreateEvaluationOutput).
 pub mod create_evaluation_output {
 
     /// A builder for [`CreateEvaluationOutput`](crate::output::CreateEvaluationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
     }
@@ -3314,7 +3069,7 @@ impl CreateEvaluationOutput {
 /// <p> Represents the output of a <code>CreateDataSourceFromS3</code> operation, and is an acknowledgement that Amazon ML received the request.</p>
 /// <p>The <code>CreateDataSourceFromS3</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataSourceFromS3Output {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
     #[doc(hidden)]
@@ -3326,18 +3081,11 @@ impl CreateDataSourceFromS3Output {
         self.data_source_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDataSourceFromS3Output {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataSourceFromS3Output");
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateDataSourceFromS3Output`](crate::output::CreateDataSourceFromS3Output).
 pub mod create_data_source_from_s3_output {
 
     /// A builder for [`CreateDataSourceFromS3Output`](crate::output::CreateDataSourceFromS3Output).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
     }
@@ -3373,7 +3121,7 @@ impl CreateDataSourceFromS3Output {
 /// <p> Represents the output of a <code>CreateDataSourceFromRedshift</code> operation, and is an acknowledgement that Amazon ML received the request.</p>
 /// <p>The <code>CreateDataSourceFromRedshift</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataSourceFromRedshiftOutput {
     /// <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
     #[doc(hidden)]
@@ -3385,18 +3133,11 @@ impl CreateDataSourceFromRedshiftOutput {
         self.data_source_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDataSourceFromRedshiftOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataSourceFromRedshiftOutput");
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateDataSourceFromRedshiftOutput`](crate::output::CreateDataSourceFromRedshiftOutput).
 pub mod create_data_source_from_redshift_output {
 
     /// A builder for [`CreateDataSourceFromRedshiftOutput`](crate::output::CreateDataSourceFromRedshiftOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
     }
@@ -3432,7 +3173,7 @@ impl CreateDataSourceFromRedshiftOutput {
 /// <p> Represents the output of a <code>CreateDataSourceFromRDS</code> operation, and is an acknowledgement that Amazon ML received the request.</p>
 /// <p>The <code>CreateDataSourceFromRDS</code>&gt; operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code> shows up as <code>FAILED</code>. You can also check the progress of the copy operation by going to the <code>DataPipeline</code> console and looking up the pipeline using the <code>pipelineId </code> from the describe call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataSourceFromRdsOutput {
     /// <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
     #[doc(hidden)]
@@ -3444,18 +3185,11 @@ impl CreateDataSourceFromRdsOutput {
         self.data_source_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDataSourceFromRdsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataSourceFromRdsOutput");
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateDataSourceFromRdsOutput`](crate::output::CreateDataSourceFromRdsOutput).
 pub mod create_data_source_from_rds_output {
 
     /// A builder for [`CreateDataSourceFromRdsOutput`](crate::output::CreateDataSourceFromRdsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
     }
@@ -3491,7 +3225,7 @@ impl CreateDataSourceFromRdsOutput {
 /// <p> Represents the output of a <code>CreateBatchPrediction</code> operation, and is an acknowledgement that Amazon ML received the request.</p>
 /// <p>The <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for status updates by using the <code>&gt;GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBatchPredictionOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value is identical to the value of the <code>BatchPredictionId</code> in the request.</p>
     #[doc(hidden)]
@@ -3503,18 +3237,11 @@ impl CreateBatchPredictionOutput {
         self.batch_prediction_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBatchPredictionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBatchPredictionOutput");
-        formatter.field("batch_prediction_id", &self.batch_prediction_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateBatchPredictionOutput`](crate::output::CreateBatchPredictionOutput).
 pub mod create_batch_prediction_output {
 
     /// A builder for [`CreateBatchPredictionOutput`](crate::output::CreateBatchPredictionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
     }
@@ -3549,7 +3276,7 @@ impl CreateBatchPredictionOutput {
 
 /// <p>Amazon ML returns the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsOutput {
     /// <p>The ID of the ML object that was tagged.</p>
     #[doc(hidden)]
@@ -3568,19 +3295,11 @@ impl AddTagsOutput {
         self.resource_type.as_ref()
     }
 }
-impl std::fmt::Debug for AddTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsOutput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 /// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
 
     /// A builder for [`AddTagsOutput`](crate::output::AddTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::TaggableResourceType>,

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_container_input {
 
     /// A builder for [`CreateContainerInput`](crate::input::CreateContainerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -46,7 +46,7 @@ pub mod create_container_input {
         /// Consumes the builder and constructs a [`CreateContainerInput`](crate::input::CreateContainerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateContainerInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateContainerInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateContainerInput {
                 container_name: self.container_name,
@@ -68,13 +68,13 @@ impl CreateContainerInput {
             crate::operation::CreateContainer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateContainerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -82,8 +82,10 @@ impl CreateContainerInput {
             fn update_http_builder(
                 input: &crate::input::CreateContainerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -172,7 +174,7 @@ impl CreateContainerInput {
 pub mod delete_container_input {
 
     /// A builder for [`DeleteContainerInput`](crate::input::DeleteContainerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
     }
@@ -193,7 +195,7 @@ pub mod delete_container_input {
         /// Consumes the builder and constructs a [`DeleteContainerInput`](crate::input::DeleteContainerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteContainerInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteContainerInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteContainerInput {
                 container_name: self.container_name,
@@ -214,13 +216,13 @@ impl DeleteContainerInput {
             crate::operation::DeleteContainer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteContainerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -228,8 +230,10 @@ impl DeleteContainerInput {
             fn update_http_builder(
                 input: &crate::input::DeleteContainerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -318,7 +322,7 @@ impl DeleteContainerInput {
 pub mod delete_container_policy_input {
 
     /// A builder for [`DeleteContainerPolicyInput`](crate::input::DeleteContainerPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
     }
@@ -339,8 +343,10 @@ pub mod delete_container_policy_input {
         /// Consumes the builder and constructs a [`DeleteContainerPolicyInput`](crate::input::DeleteContainerPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteContainerPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteContainerPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteContainerPolicyInput {
                 container_name: self.container_name,
             })
@@ -360,13 +366,13 @@ impl DeleteContainerPolicyInput {
             crate::operation::DeleteContainerPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteContainerPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -374,8 +380,10 @@ impl DeleteContainerPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteContainerPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -466,7 +474,7 @@ impl DeleteContainerPolicyInput {
 pub mod delete_cors_policy_input {
 
     /// A builder for [`DeleteCorsPolicyInput`](crate::input::DeleteCorsPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
     }
@@ -487,8 +495,10 @@ pub mod delete_cors_policy_input {
         /// Consumes the builder and constructs a [`DeleteCorsPolicyInput`](crate::input::DeleteCorsPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteCorsPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteCorsPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteCorsPolicyInput {
                 container_name: self.container_name,
             })
@@ -508,13 +518,13 @@ impl DeleteCorsPolicyInput {
             crate::operation::DeleteCorsPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteCorsPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -522,8 +532,10 @@ impl DeleteCorsPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteCorsPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -612,7 +624,7 @@ impl DeleteCorsPolicyInput {
 pub mod delete_lifecycle_policy_input {
 
     /// A builder for [`DeleteLifecyclePolicyInput`](crate::input::DeleteLifecyclePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
     }
@@ -633,8 +645,10 @@ pub mod delete_lifecycle_policy_input {
         /// Consumes the builder and constructs a [`DeleteLifecyclePolicyInput`](crate::input::DeleteLifecyclePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteLifecyclePolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteLifecyclePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteLifecyclePolicyInput {
                 container_name: self.container_name,
             })
@@ -654,13 +668,13 @@ impl DeleteLifecyclePolicyInput {
             crate::operation::DeleteLifecyclePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteLifecyclePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -668,8 +682,10 @@ impl DeleteLifecyclePolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteLifecyclePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -760,7 +776,7 @@ impl DeleteLifecyclePolicyInput {
 pub mod delete_metric_policy_input {
 
     /// A builder for [`DeleteMetricPolicyInput`](crate::input::DeleteMetricPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
     }
@@ -781,8 +797,10 @@ pub mod delete_metric_policy_input {
         /// Consumes the builder and constructs a [`DeleteMetricPolicyInput`](crate::input::DeleteMetricPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteMetricPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteMetricPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteMetricPolicyInput {
                 container_name: self.container_name,
             })
@@ -802,13 +820,13 @@ impl DeleteMetricPolicyInput {
             crate::operation::DeleteMetricPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteMetricPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -816,8 +834,10 @@ impl DeleteMetricPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteMetricPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -906,7 +926,7 @@ impl DeleteMetricPolicyInput {
 pub mod describe_container_input {
 
     /// A builder for [`DescribeContainerInput`](crate::input::DescribeContainerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
     }
@@ -927,8 +947,10 @@ pub mod describe_container_input {
         /// Consumes the builder and constructs a [`DescribeContainerInput`](crate::input::DescribeContainerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeContainerInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeContainerInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeContainerInput {
                 container_name: self.container_name,
             })
@@ -948,13 +970,13 @@ impl DescribeContainerInput {
             crate::operation::DescribeContainer,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeContainerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -962,8 +984,10 @@ impl DescribeContainerInput {
             fn update_http_builder(
                 input: &crate::input::DescribeContainerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1052,7 +1076,7 @@ impl DescribeContainerInput {
 pub mod get_container_policy_input {
 
     /// A builder for [`GetContainerPolicyInput`](crate::input::GetContainerPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
     }
@@ -1073,8 +1097,10 @@ pub mod get_container_policy_input {
         /// Consumes the builder and constructs a [`GetContainerPolicyInput`](crate::input::GetContainerPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetContainerPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetContainerPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetContainerPolicyInput {
                 container_name: self.container_name,
             })
@@ -1094,13 +1120,13 @@ impl GetContainerPolicyInput {
             crate::operation::GetContainerPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetContainerPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1108,8 +1134,10 @@ impl GetContainerPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetContainerPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1198,7 +1226,7 @@ impl GetContainerPolicyInput {
 pub mod get_cors_policy_input {
 
     /// A builder for [`GetCorsPolicyInput`](crate::input::GetCorsPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
     }
@@ -1219,7 +1247,7 @@ pub mod get_cors_policy_input {
         /// Consumes the builder and constructs a [`GetCorsPolicyInput`](crate::input::GetCorsPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetCorsPolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetCorsPolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetCorsPolicyInput {
                 container_name: self.container_name,
@@ -1240,13 +1268,13 @@ impl GetCorsPolicyInput {
             crate::operation::GetCorsPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetCorsPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1254,8 +1282,10 @@ impl GetCorsPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetCorsPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1344,7 +1374,7 @@ impl GetCorsPolicyInput {
 pub mod get_lifecycle_policy_input {
 
     /// A builder for [`GetLifecyclePolicyInput`](crate::input::GetLifecyclePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
     }
@@ -1365,8 +1395,10 @@ pub mod get_lifecycle_policy_input {
         /// Consumes the builder and constructs a [`GetLifecyclePolicyInput`](crate::input::GetLifecyclePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetLifecyclePolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetLifecyclePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetLifecyclePolicyInput {
                 container_name: self.container_name,
             })
@@ -1386,13 +1418,13 @@ impl GetLifecyclePolicyInput {
             crate::operation::GetLifecyclePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLifecyclePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1400,8 +1432,10 @@ impl GetLifecyclePolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetLifecyclePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1490,7 +1524,7 @@ impl GetLifecyclePolicyInput {
 pub mod get_metric_policy_input {
 
     /// A builder for [`GetMetricPolicyInput`](crate::input::GetMetricPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
     }
@@ -1511,7 +1545,7 @@ pub mod get_metric_policy_input {
         /// Consumes the builder and constructs a [`GetMetricPolicyInput`](crate::input::GetMetricPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetMetricPolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetMetricPolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetMetricPolicyInput {
                 container_name: self.container_name,
@@ -1532,13 +1566,13 @@ impl GetMetricPolicyInput {
             crate::operation::GetMetricPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetMetricPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1546,8 +1580,10 @@ impl GetMetricPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetMetricPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1636,7 +1672,7 @@ impl GetMetricPolicyInput {
 pub mod list_containers_input {
 
     /// A builder for [`ListContainersInput`](crate::input::ListContainersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1665,7 +1701,7 @@ pub mod list_containers_input {
         /// Consumes the builder and constructs a [`ListContainersInput`](crate::input::ListContainersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListContainersInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListContainersInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListContainersInput {
                 next_token: self.next_token,
@@ -1687,13 +1723,13 @@ impl ListContainersInput {
             crate::operation::ListContainers,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListContainersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1701,8 +1737,10 @@ impl ListContainersInput {
             fn update_http_builder(
                 input: &crate::input::ListContainersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1791,7 +1829,7 @@ impl ListContainersInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
     }
@@ -1809,8 +1847,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource: self.resource,
             })
@@ -1830,13 +1870,13 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1844,8 +1884,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1936,7 +1978,7 @@ impl ListTagsForResourceInput {
 pub mod put_container_policy_input {
 
     /// A builder for [`PutContainerPolicyInput`](crate::input::PutContainerPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -1976,8 +2018,10 @@ pub mod put_container_policy_input {
         /// Consumes the builder and constructs a [`PutContainerPolicyInput`](crate::input::PutContainerPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutContainerPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutContainerPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutContainerPolicyInput {
                 container_name: self.container_name,
                 policy: self.policy,
@@ -1998,13 +2042,13 @@ impl PutContainerPolicyInput {
             crate::operation::PutContainerPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutContainerPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2012,8 +2056,10 @@ impl PutContainerPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutContainerPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2102,7 +2148,7 @@ impl PutContainerPolicyInput {
 pub mod put_cors_policy_input {
 
     /// A builder for [`PutCorsPolicyInput`](crate::input::PutCorsPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
         pub(crate) cors_policy: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
@@ -2143,7 +2189,7 @@ pub mod put_cors_policy_input {
         /// Consumes the builder and constructs a [`PutCorsPolicyInput`](crate::input::PutCorsPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutCorsPolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutCorsPolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutCorsPolicyInput {
                 container_name: self.container_name,
@@ -2165,13 +2211,13 @@ impl PutCorsPolicyInput {
             crate::operation::PutCorsPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutCorsPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2179,8 +2225,10 @@ impl PutCorsPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutCorsPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2269,7 +2317,7 @@ impl PutCorsPolicyInput {
 pub mod put_lifecycle_policy_input {
 
     /// A builder for [`PutLifecyclePolicyInput`](crate::input::PutLifecyclePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
         pub(crate) lifecycle_policy: std::option::Option<std::string::String>,
@@ -2304,8 +2352,10 @@ pub mod put_lifecycle_policy_input {
         /// Consumes the builder and constructs a [`PutLifecyclePolicyInput`](crate::input::PutLifecyclePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutLifecyclePolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutLifecyclePolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutLifecyclePolicyInput {
                 container_name: self.container_name,
                 lifecycle_policy: self.lifecycle_policy,
@@ -2326,13 +2376,13 @@ impl PutLifecyclePolicyInput {
             crate::operation::PutLifecyclePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutLifecyclePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2340,8 +2390,10 @@ impl PutLifecyclePolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutLifecyclePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2430,7 +2482,7 @@ impl PutLifecyclePolicyInput {
 pub mod put_metric_policy_input {
 
     /// A builder for [`PutMetricPolicyInput`](crate::input::PutMetricPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
         pub(crate) metric_policy: std::option::Option<crate::model::MetricPolicy>,
@@ -2473,7 +2525,7 @@ pub mod put_metric_policy_input {
         /// Consumes the builder and constructs a [`PutMetricPolicyInput`](crate::input::PutMetricPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutMetricPolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutMetricPolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutMetricPolicyInput {
                 container_name: self.container_name,
@@ -2495,13 +2547,13 @@ impl PutMetricPolicyInput {
             crate::operation::PutMetricPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutMetricPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2509,8 +2561,10 @@ impl PutMetricPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutMetricPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2599,7 +2653,7 @@ impl PutMetricPolicyInput {
 pub mod start_access_logging_input {
 
     /// A builder for [`StartAccessLoggingInput`](crate::input::StartAccessLoggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
     }
@@ -2620,8 +2674,10 @@ pub mod start_access_logging_input {
         /// Consumes the builder and constructs a [`StartAccessLoggingInput`](crate::input::StartAccessLoggingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartAccessLoggingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartAccessLoggingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartAccessLoggingInput {
                 container_name: self.container_name,
             })
@@ -2641,13 +2697,13 @@ impl StartAccessLoggingInput {
             crate::operation::StartAccessLogging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartAccessLoggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2655,8 +2711,10 @@ impl StartAccessLoggingInput {
             fn update_http_builder(
                 input: &crate::input::StartAccessLoggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2745,7 +2803,7 @@ impl StartAccessLoggingInput {
 pub mod stop_access_logging_input {
 
     /// A builder for [`StopAccessLoggingInput`](crate::input::StopAccessLoggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
     }
@@ -2766,8 +2824,10 @@ pub mod stop_access_logging_input {
         /// Consumes the builder and constructs a [`StopAccessLoggingInput`](crate::input::StopAccessLoggingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StopAccessLoggingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StopAccessLoggingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StopAccessLoggingInput {
                 container_name: self.container_name,
             })
@@ -2787,13 +2847,13 @@ impl StopAccessLoggingInput {
             crate::operation::StopAccessLogging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StopAccessLoggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2801,8 +2861,10 @@ impl StopAccessLoggingInput {
             fn update_http_builder(
                 input: &crate::input::StopAccessLoggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2891,7 +2953,7 @@ impl StopAccessLoggingInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2929,7 +2991,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource: self.resource,
@@ -2951,13 +3013,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2965,8 +3027,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3055,7 +3119,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3093,7 +3157,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource: self.resource,
@@ -3115,13 +3179,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3129,8 +3193,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3217,7 +3283,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the container.</p>
     #[doc(hidden)]
@@ -3236,18 +3302,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource", &self.resource);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the container. </p>
     #[doc(hidden)]
@@ -3266,18 +3324,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource", &self.resource);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopAccessLoggingInput {
     /// <p>The name of the container that you want to stop access logging on.</p>
     #[doc(hidden)]
@@ -3289,17 +3339,10 @@ impl StopAccessLoggingInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for StopAccessLoggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopAccessLoggingInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartAccessLoggingInput {
     /// <p>The name of the container that you want to start access logging on.</p>
     #[doc(hidden)]
@@ -3311,17 +3354,10 @@ impl StartAccessLoggingInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for StartAccessLoggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartAccessLoggingInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMetricPolicyInput {
     /// <p>The name of the container that you want to add the metric policy to.</p>
     #[doc(hidden)]
@@ -3348,18 +3384,10 @@ impl PutMetricPolicyInput {
         self.metric_policy.as_ref()
     }
 }
-impl std::fmt::Debug for PutMetricPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMetricPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.field("metric_policy", &self.metric_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLifecyclePolicyInput {
     /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
     #[doc(hidden)]
@@ -3378,18 +3406,10 @@ impl PutLifecyclePolicyInput {
         self.lifecycle_policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutLifecyclePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLifecyclePolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.field("lifecycle_policy", &self.lifecycle_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutCorsPolicyInput {
     /// <p>The name of the container that you want to assign the CORS policy to.</p>
     #[doc(hidden)]
@@ -3408,18 +3428,10 @@ impl PutCorsPolicyInput {
         self.cors_policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutCorsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutCorsPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.field("cors_policy", &self.cors_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutContainerPolicyInput {
     /// <p>The name of the container.</p>
     #[doc(hidden)]
@@ -3446,18 +3458,10 @@ impl PutContainerPolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutContainerPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutContainerPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the container.</p>
     #[doc(hidden)]
@@ -3469,17 +3473,10 @@ impl ListTagsForResourceInput {
         self.resource.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource", &self.resource);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContainersInput {
     /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
     #[doc(hidden)]
@@ -3498,18 +3495,10 @@ impl ListContainersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListContainersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListContainersInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMetricPolicyInput {
     /// <p>The name of the container that is associated with the metric policy.</p>
     #[doc(hidden)]
@@ -3521,17 +3510,10 @@ impl GetMetricPolicyInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetMetricPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMetricPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLifecyclePolicyInput {
     /// <p>The name of the container that the object lifecycle policy is assigned to.</p>
     #[doc(hidden)]
@@ -3543,17 +3525,10 @@ impl GetLifecyclePolicyInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetLifecyclePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLifecyclePolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCorsPolicyInput {
     /// <p>The name of the container that the policy is assigned to.</p>
     #[doc(hidden)]
@@ -3565,17 +3540,10 @@ impl GetCorsPolicyInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetCorsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCorsPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContainerPolicyInput {
     /// <p>The name of the container. </p>
     #[doc(hidden)]
@@ -3587,17 +3555,10 @@ impl GetContainerPolicyInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetContainerPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContainerPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeContainerInput {
     /// <p>The name of the container to query.</p>
     #[doc(hidden)]
@@ -3609,17 +3570,10 @@ impl DescribeContainerInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeContainerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeContainerInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMetricPolicyInput {
     /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
     #[doc(hidden)]
@@ -3631,17 +3585,10 @@ impl DeleteMetricPolicyInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMetricPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMetricPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLifecyclePolicyInput {
     /// <p>The name of the container that holds the object lifecycle policy.</p>
     #[doc(hidden)]
@@ -3653,17 +3600,10 @@ impl DeleteLifecyclePolicyInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLifecyclePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLifecyclePolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCorsPolicyInput {
     /// <p>The name of the container to remove the policy from.</p>
     #[doc(hidden)]
@@ -3675,17 +3615,10 @@ impl DeleteCorsPolicyInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCorsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCorsPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteContainerPolicyInput {
     /// <p>The name of the container that holds the policy.</p>
     #[doc(hidden)]
@@ -3697,17 +3630,10 @@ impl DeleteContainerPolicyInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteContainerPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteContainerPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteContainerInput {
     /// <p>The name of the container to delete. </p>
     #[doc(hidden)]
@@ -3719,17 +3645,10 @@ impl DeleteContainerInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteContainerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteContainerInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateContainerInput {
     /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
     #[doc(hidden)]
@@ -3746,13 +3665,5 @@ impl CreateContainerInput {
     /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateContainerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateContainerInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

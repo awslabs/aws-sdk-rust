@@ -14,6 +14,7 @@ use aws_types::os_shim_internal::{Env, Fs};
 use serde::Deserialize;
 
 use crate::connector::default_connector;
+use aws_smithy_types::error::display::DisplayErrorContext;
 use std::collections::HashMap;
 use std::error::Error;
 use std::fmt::Debug;
@@ -100,12 +101,11 @@ where
                 assert_eq!(expected, &actual.into(), "incorrect result was returned")
             }
             (Err(err), GenericTestResult::ErrorContains(substr)) => {
+                let message = format!("{}", DisplayErrorContext(&err));
                 assert!(
-                    format!("{}", err).contains(substr),
-                    "`{}` did not contain `{}`",
-                    err,
-                    substr
-                )
+                    message.contains(substr),
+                    "`{message}` did not contain `{substr}`"
+                );
             }
             (Err(actual_error), GenericTestResult::Ok(expected_creds)) => panic!(
                 "expected credentials ({:?}) but an error was returned: {}",

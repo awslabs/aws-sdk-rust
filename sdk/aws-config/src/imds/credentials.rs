@@ -8,15 +8,34 @@
 //! # Important
 //! This credential provider will NOT fallback to IMDSv1. Ensure that IMDSv2 is enabled on your instances.
 
+use super::client::error::ImdsError;
 use crate::imds;
-use crate::imds::client::{ImdsError, LazyClient};
+use crate::imds::client::LazyClient;
 use crate::json_credentials::{parse_json_credentials, JsonCredentials, RefreshableCredentials};
 use crate::provider_config::ProviderConfig;
-use aws_smithy_client::SdkError;
 use aws_types::credentials::{future, CredentialsError, ProvideCredentials};
 use aws_types::os_shim_internal::Env;
 use aws_types::{credentials, Credentials};
 use std::borrow::Cow;
+use std::error::Error as StdError;
+use std::fmt;
+
+#[derive(Debug)]
+struct ImdsCommunicationError {
+    source: Box<dyn StdError + Send + Sync + 'static>,
+}
+
+impl fmt::Display for ImdsCommunicationError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "could not communicate with IMDS")
+    }
+}
+
+impl StdError for ImdsCommunicationError {
+    fn source(&self) -> Option<&(dyn StdError + 'static)> {
+        Some(self.source.as_ref())
+    }
+}
 
 /// IMDSv2 Credentials Provider
 ///
@@ -130,16 +149,20 @@ impl ImdsCredentialsProvider {
             .await
         {
             Ok(profile) => Ok(profile),
-            Err(ImdsError::ErrorResponse { response, .. }) if response.status().as_u16() == 404 => {
-                tracing::info!(
+            Err(ImdsError::ErrorResponse(context))
+                if context.response().status().as_u16() == 404 =>
+            {
+                tracing::warn!(
                     "received 404 from IMDS when loading profile information. \
-                Hint: This instance may not have an IAM role associated."
+                    Hint: This instance may not have an IAM role associated."
                 );
                 Err(CredentialsError::not_loaded("received 404 from IMDS"))
             }
-            Err(ImdsError::FailedToLoadToken(SdkError::DispatchFailure(err))) => Err(
-                CredentialsError::not_loaded(format!("could not communicate with imds: {}", err)),
-            ),
+            Err(ImdsError::FailedToLoadToken(context)) if context.is_dispatch_failure() => {
+                Err(CredentialsError::not_loaded(ImdsCommunicationError {
+                    source: context.into_source().into(),
+                }))
+            }
             Err(other) => Err(CredentialsError::provider_error(other)),
         }
     }

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_access_point_input {
 
     /// A builder for [`CreateAccessPointInput`](crate::input::CreateAccessPointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -105,8 +105,10 @@ pub mod create_access_point_input {
         /// Consumes the builder and constructs a [`CreateAccessPointInput`](crate::input::CreateAccessPointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAccessPointInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateAccessPointInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateAccessPointInput {
                 account_id: self.account_id,
                 name: self.name,
@@ -130,26 +132,31 @@ impl CreateAccessPointInput {
             crate::operation::CreateAccessPoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateAccessPointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/accesspoint/{Name}", Name = name)
                     .expect("formatting should succeed");
@@ -159,8 +166,10 @@ impl CreateAccessPointInput {
             fn update_http_builder(
                 input: &crate::input::CreateAccessPointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_create_access_point(input, builder)?;
@@ -191,7 +200,7 @@ impl CreateAccessPointInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -257,7 +266,7 @@ impl CreateAccessPointInput {
 pub mod create_access_point_for_object_lambda_input {
 
     /// A builder for [`CreateAccessPointForObjectLambdaInput`](crate::input::CreateAccessPointForObjectLambdaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -302,7 +311,7 @@ pub mod create_access_point_for_object_lambda_input {
             self,
         ) -> Result<
             crate::input::CreateAccessPointForObjectLambdaInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateAccessPointForObjectLambdaInput {
                 account_id: self.account_id,
@@ -325,26 +334,31 @@ impl CreateAccessPointForObjectLambdaInput {
             crate::operation::CreateAccessPointForObjectLambda,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateAccessPointForObjectLambdaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.name;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -358,8 +372,10 @@ impl CreateAccessPointForObjectLambdaInput {
             fn update_http_builder(
                 input: &crate::input::CreateAccessPointForObjectLambdaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_create_access_point_for_object_lambda(
@@ -391,7 +407,7 @@ impl CreateAccessPointForObjectLambdaInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -457,7 +473,7 @@ impl CreateAccessPointForObjectLambdaInput {
 pub mod create_bucket_input {
 
     /// A builder for [`CreateBucketInput`](crate::input::CreateBucketInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::BucketCannedAcl>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -632,7 +648,7 @@ pub mod create_bucket_input {
         /// Consumes the builder and constructs a [`CreateBucketInput`](crate::input::CreateBucketInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateBucketInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateBucketInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateBucketInput {
                 acl: self.acl,
@@ -664,26 +680,31 @@ impl CreateBucketInput {
             crate::operation::CreateBucket,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateBucketInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.bucket;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/bucket/{Bucket}", Bucket = bucket)
                     .expect("formatting should succeed");
@@ -693,8 +714,10 @@ impl CreateBucketInput {
             fn update_http_builder(
                 input: &crate::input::CreateBucketInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_create_bucket(input, builder)?;
@@ -736,7 +759,7 @@ impl CreateBucketInput {
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -796,7 +819,7 @@ impl CreateBucketInput {
 pub mod create_job_input {
 
     /// A builder for [`CreateJobInput`](crate::input::CreateJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) confirmation_required: std::option::Option<bool>,
@@ -945,7 +968,8 @@ pub mod create_job_input {
         /// Consumes the builder and constructs a [`CreateJobInput`](crate::input::CreateJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateJobInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::CreateJobInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::CreateJobInput {
                 account_id: self.account_id,
                 confirmation_required: self.confirmation_required,
@@ -975,7 +999,7 @@ impl CreateJobInput {
             crate::operation::CreateJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -984,7 +1008,7 @@ impl CreateJobInput {
             fn uri_base(
                 _input: &crate::input::CreateJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20180820/jobs").expect("formatting should succeed");
                 Ok(())
             }
@@ -992,8 +1016,10 @@ impl CreateJobInput {
             fn update_http_builder(
                 input: &crate::input::CreateJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_create_job(input, builder)?;
@@ -1024,7 +1050,7 @@ impl CreateJobInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -1088,7 +1114,7 @@ impl CreateJobInput {
 pub mod create_multi_region_access_point_input {
 
     /// A builder for [`CreateMultiRegionAccessPointInput`](crate::input::CreateMultiRegionAccessPointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1133,7 +1159,7 @@ pub mod create_multi_region_access_point_input {
             self,
         ) -> Result<
             crate::input::CreateMultiRegionAccessPointInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateMultiRegionAccessPointInput {
                 account_id: self.account_id,
@@ -1156,7 +1182,7 @@ impl CreateMultiRegionAccessPointInput {
             crate::operation::CreateMultiRegionAccessPoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1165,7 +1191,7 @@ impl CreateMultiRegionAccessPointInput {
             fn uri_base(
                 _input: &crate::input::CreateMultiRegionAccessPointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20180820/async-requests/mrap/create")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1174,8 +1200,10 @@ impl CreateMultiRegionAccessPointInput {
             fn update_http_builder(
                 input: &crate::input::CreateMultiRegionAccessPointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_create_multi_region_access_point(
@@ -1207,7 +1235,7 @@ impl CreateMultiRegionAccessPointInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -1227,7 +1255,7 @@ impl CreateMultiRegionAccessPointInput {
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -1287,7 +1315,7 @@ impl CreateMultiRegionAccessPointInput {
 pub mod delete_access_point_input {
 
     /// A builder for [`DeleteAccessPointInput`](crate::input::DeleteAccessPointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1340,8 +1368,10 @@ pub mod delete_access_point_input {
         /// Consumes the builder and constructs a [`DeleteAccessPointInput`](crate::input::DeleteAccessPointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAccessPointInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteAccessPointInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteAccessPointInput {
                 account_id: self.account_id,
                 name: self.name,
@@ -1362,26 +1392,31 @@ impl DeleteAccessPointInput {
             crate::operation::DeleteAccessPoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAccessPointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.name;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/accesspoint/{Name}", Name = name)
                     .expect("formatting should succeed");
@@ -1391,8 +1426,10 @@ impl DeleteAccessPointInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAccessPointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_delete_access_point(input, builder)?;
@@ -1409,7 +1446,7 @@ impl DeleteAccessPointInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -1475,7 +1512,7 @@ impl DeleteAccessPointInput {
 pub mod delete_access_point_for_object_lambda_input {
 
     /// A builder for [`DeleteAccessPointForObjectLambdaInput`](crate::input::DeleteAccessPointForObjectLambdaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1506,7 +1543,7 @@ pub mod delete_access_point_for_object_lambda_input {
             self,
         ) -> Result<
             crate::input::DeleteAccessPointForObjectLambdaInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteAccessPointForObjectLambdaInput {
                 account_id: self.account_id,
@@ -1528,26 +1565,31 @@ impl DeleteAccessPointForObjectLambdaInput {
             crate::operation::DeleteAccessPointForObjectLambda,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAccessPointForObjectLambdaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.name;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1561,8 +1603,10 @@ impl DeleteAccessPointForObjectLambdaInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAccessPointForObjectLambdaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_delete_access_point_for_object_lambda(
@@ -1581,7 +1625,7 @@ impl DeleteAccessPointForObjectLambdaInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -1647,7 +1691,7 @@ impl DeleteAccessPointForObjectLambdaInput {
 pub mod delete_access_point_policy_input {
 
     /// A builder for [`DeleteAccessPointPolicyInput`](crate::input::DeleteAccessPointPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1702,7 +1746,7 @@ pub mod delete_access_point_policy_input {
             self,
         ) -> Result<
             crate::input::DeleteAccessPointPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteAccessPointPolicyInput {
                 account_id: self.account_id,
@@ -1724,26 +1768,31 @@ impl DeleteAccessPointPolicyInput {
             crate::operation::DeleteAccessPointPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAccessPointPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.name;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/accesspoint/{Name}/policy", Name = name)
                     .expect("formatting should succeed");
@@ -1753,8 +1802,10 @@ impl DeleteAccessPointPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAccessPointPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -1772,7 +1823,7 @@ impl DeleteAccessPointPolicyInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -1838,7 +1889,7 @@ impl DeleteAccessPointPolicyInput {
 pub mod delete_access_point_policy_for_object_lambda_input {
 
     /// A builder for [`DeleteAccessPointPolicyForObjectLambdaInput`](crate::input::DeleteAccessPointPolicyForObjectLambdaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1869,7 +1920,7 @@ pub mod delete_access_point_policy_for_object_lambda_input {
             self,
         ) -> Result<
             crate::input::DeleteAccessPointPolicyForObjectLambdaInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteAccessPointPolicyForObjectLambdaInput {
                 account_id: self.account_id,
@@ -1891,26 +1942,31 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
             crate::operation::DeleteAccessPointPolicyForObjectLambda,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAccessPointPolicyForObjectLambdaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.name;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1924,8 +1980,10 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAccessPointPolicyForObjectLambdaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -1945,7 +2003,7 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -2011,7 +2069,7 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
 pub mod delete_bucket_input {
 
     /// A builder for [`DeleteBucketInput`](crate::input::DeleteBucketInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -2064,7 +2122,7 @@ pub mod delete_bucket_input {
         /// Consumes the builder and constructs a [`DeleteBucketInput`](crate::input::DeleteBucketInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteBucketInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteBucketInput {
                 account_id: self.account_id,
@@ -2086,26 +2144,31 @@ impl DeleteBucketInput {
             crate::operation::DeleteBucket,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_8 = &_input.bucket;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_8, false);
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/bucket/{Bucket}", Bucket = bucket)
                     .expect("formatting should succeed");
@@ -2115,8 +2178,10 @@ impl DeleteBucketInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBucketInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_delete_bucket(input, builder)?;
@@ -2133,7 +2198,7 @@ impl DeleteBucketInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -2199,7 +2264,7 @@ impl DeleteBucketInput {
 pub mod delete_bucket_lifecycle_configuration_input {
 
     /// A builder for [`DeleteBucketLifecycleConfigurationInput`](crate::input::DeleteBucketLifecycleConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -2254,7 +2319,7 @@ pub mod delete_bucket_lifecycle_configuration_input {
             self,
         ) -> Result<
             crate::input::DeleteBucketLifecycleConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteBucketLifecycleConfigurationInput {
                 account_id: self.account_id,
@@ -2276,26 +2341,31 @@ impl DeleteBucketLifecycleConfigurationInput {
             crate::operation::DeleteBucketLifecycleConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketLifecycleConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.bucket;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_9, false);
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2309,8 +2379,10 @@ impl DeleteBucketLifecycleConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBucketLifecycleConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_delete_bucket_lifecycle_configuration(
@@ -2329,7 +2401,7 @@ impl DeleteBucketLifecycleConfigurationInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -2395,7 +2467,7 @@ impl DeleteBucketLifecycleConfigurationInput {
 pub mod delete_bucket_policy_input {
 
     /// A builder for [`DeleteBucketPolicyInput`](crate::input::DeleteBucketPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -2448,8 +2520,10 @@ pub mod delete_bucket_policy_input {
         /// Consumes the builder and constructs a [`DeleteBucketPolicyInput`](crate::input::DeleteBucketPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteBucketPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteBucketPolicyInput {
                 account_id: self.account_id,
                 bucket: self.bucket,
@@ -2470,26 +2544,31 @@ impl DeleteBucketPolicyInput {
             crate::operation::DeleteBucketPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.bucket;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_10, false);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/bucket/{Bucket}/policy", Bucket = bucket)
                     .expect("formatting should succeed");
@@ -2499,8 +2578,10 @@ impl DeleteBucketPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBucketPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_delete_bucket_policy(input, builder)?;
@@ -2517,7 +2598,7 @@ impl DeleteBucketPolicyInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -2583,7 +2664,7 @@ impl DeleteBucketPolicyInput {
 pub mod delete_bucket_tagging_input {
 
     /// A builder for [`DeleteBucketTaggingInput`](crate::input::DeleteBucketTaggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -2636,8 +2717,10 @@ pub mod delete_bucket_tagging_input {
         /// Consumes the builder and constructs a [`DeleteBucketTaggingInput`](crate::input::DeleteBucketTaggingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBucketTaggingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteBucketTaggingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteBucketTaggingInput {
                 account_id: self.account_id,
                 bucket: self.bucket,
@@ -2658,26 +2741,31 @@ impl DeleteBucketTaggingInput {
             crate::operation::DeleteBucketTagging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketTaggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.bucket;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_11, false);
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_11,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2691,8 +2779,10 @@ impl DeleteBucketTaggingInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBucketTaggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_delete_bucket_tagging(input, builder)?;
@@ -2709,7 +2799,7 @@ impl DeleteBucketTaggingInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -2775,7 +2865,7 @@ impl DeleteBucketTaggingInput {
 pub mod delete_job_tagging_input {
 
     /// A builder for [`DeleteJobTaggingInput`](crate::input::DeleteJobTaggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -2804,8 +2894,10 @@ pub mod delete_job_tagging_input {
         /// Consumes the builder and constructs a [`DeleteJobTaggingInput`](crate::input::DeleteJobTaggingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteJobTaggingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteJobTaggingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteJobTaggingInput {
                 account_id: self.account_id,
                 job_id: self.job_id,
@@ -2826,26 +2918,31 @@ impl DeleteJobTaggingInput {
             crate::operation::DeleteJobTagging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteJobTaggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_12 = &_input.job_id;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_12, false);
+                let input_12 = input_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "job_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_12,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "job_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/jobs/{JobId}/tagging", JobId = job_id)
                     .expect("formatting should succeed");
@@ -2855,8 +2952,10 @@ impl DeleteJobTaggingInput {
             fn update_http_builder(
                 input: &crate::input::DeleteJobTaggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_delete_job_tagging(input, builder)?;
@@ -2873,7 +2972,7 @@ impl DeleteJobTaggingInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -2939,7 +3038,7 @@ impl DeleteJobTaggingInput {
 pub mod delete_multi_region_access_point_input {
 
     /// A builder for [`DeleteMultiRegionAccessPointInput`](crate::input::DeleteMultiRegionAccessPointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -2984,7 +3083,7 @@ pub mod delete_multi_region_access_point_input {
             self,
         ) -> Result<
             crate::input::DeleteMultiRegionAccessPointInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteMultiRegionAccessPointInput {
                 account_id: self.account_id,
@@ -3007,7 +3106,7 @@ impl DeleteMultiRegionAccessPointInput {
             crate::operation::DeleteMultiRegionAccessPoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -3016,7 +3115,7 @@ impl DeleteMultiRegionAccessPointInput {
             fn uri_base(
                 _input: &crate::input::DeleteMultiRegionAccessPointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20180820/async-requests/mrap/delete")
                     .expect("formatting should succeed");
                 Ok(())
@@ -3025,8 +3124,10 @@ impl DeleteMultiRegionAccessPointInput {
             fn update_http_builder(
                 input: &crate::input::DeleteMultiRegionAccessPointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_delete_multi_region_access_point(
@@ -3058,7 +3159,7 @@ impl DeleteMultiRegionAccessPointInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -3078,7 +3179,7 @@ impl DeleteMultiRegionAccessPointInput {
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -3138,7 +3239,7 @@ impl DeleteMultiRegionAccessPointInput {
 pub mod delete_public_access_block_input {
 
     /// A builder for [`DeletePublicAccessBlockInput`](crate::input::DeletePublicAccessBlockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
@@ -3158,7 +3259,7 @@ pub mod delete_public_access_block_input {
             self,
         ) -> Result<
             crate::input::DeletePublicAccessBlockInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeletePublicAccessBlockInput {
                 account_id: self.account_id,
@@ -3179,13 +3280,13 @@ impl DeletePublicAccessBlockInput {
             crate::operation::DeletePublicAccessBlock,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeletePublicAccessBlockInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20180820/configuration/publicAccessBlock")
                     .expect("formatting should succeed");
                 Ok(())
@@ -3194,8 +3295,10 @@ impl DeletePublicAccessBlockInput {
             fn update_http_builder(
                 input: &crate::input::DeletePublicAccessBlockInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -3213,7 +3316,7 @@ impl DeletePublicAccessBlockInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -3279,7 +3382,7 @@ impl DeletePublicAccessBlockInput {
 pub mod delete_storage_lens_configuration_input {
 
     /// A builder for [`DeleteStorageLensConfigurationInput`](crate::input::DeleteStorageLensConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -3310,7 +3413,7 @@ pub mod delete_storage_lens_configuration_input {
             self,
         ) -> Result<
             crate::input::DeleteStorageLensConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteStorageLensConfigurationInput {
                 config_id: self.config_id,
@@ -3332,26 +3435,31 @@ impl DeleteStorageLensConfigurationInput {
             crate::operation::DeleteStorageLensConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteStorageLensConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.config_id;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "config_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let config_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "config_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let config_id = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if config_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "config_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "config_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3365,8 +3473,10 @@ impl DeleteStorageLensConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteStorageLensConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_delete_storage_lens_configuration(
@@ -3385,7 +3495,7 @@ impl DeleteStorageLensConfigurationInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -3451,7 +3561,7 @@ impl DeleteStorageLensConfigurationInput {
 pub mod delete_storage_lens_configuration_tagging_input {
 
     /// A builder for [`DeleteStorageLensConfigurationTaggingInput`](crate::input::DeleteStorageLensConfigurationTaggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -3482,7 +3592,7 @@ pub mod delete_storage_lens_configuration_tagging_input {
             self,
         ) -> Result<
             crate::input::DeleteStorageLensConfigurationTaggingInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteStorageLensConfigurationTaggingInput {
                 config_id: self.config_id,
@@ -3504,26 +3614,31 @@ impl DeleteStorageLensConfigurationTaggingInput {
             crate::operation::DeleteStorageLensConfigurationTagging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteStorageLensConfigurationTaggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.config_id;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "config_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let config_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let input_14 = input_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "config_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let config_id = aws_smithy_http::label::fmt_string(
+                    input_14,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if config_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "config_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "config_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3537,8 +3652,10 @@ impl DeleteStorageLensConfigurationTaggingInput {
             fn update_http_builder(
                 input: &crate::input::DeleteStorageLensConfigurationTaggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -3558,7 +3675,7 @@ impl DeleteStorageLensConfigurationTaggingInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -3624,7 +3741,7 @@ impl DeleteStorageLensConfigurationTaggingInput {
 pub mod describe_job_input {
 
     /// A builder for [`DescribeJobInput`](crate::input::DescribeJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -3653,7 +3770,7 @@ pub mod describe_job_input {
         /// Consumes the builder and constructs a [`DescribeJobInput`](crate::input::DescribeJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeJobInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeJobInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeJobInput {
                 account_id: self.account_id,
@@ -3675,26 +3792,31 @@ impl DescribeJobInput {
             crate::operation::DescribeJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_15 = &_input.job_id;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let input_15 = input_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "job_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_15,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "job_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/jobs/{JobId}", JobId = job_id)
                     .expect("formatting should succeed");
@@ -3704,8 +3826,10 @@ impl DescribeJobInput {
             fn update_http_builder(
                 input: &crate::input::DescribeJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_describe_job(input, builder)?;
@@ -3722,7 +3846,7 @@ impl DescribeJobInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -3788,7 +3912,7 @@ impl DescribeJobInput {
 pub mod describe_multi_region_access_point_operation_input {
 
     /// A builder for [`DescribeMultiRegionAccessPointOperationInput`](crate::input::DescribeMultiRegionAccessPointOperationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) request_token_arn: std::option::Option<std::string::String>,
@@ -3822,7 +3946,7 @@ pub mod describe_multi_region_access_point_operation_input {
             self,
         ) -> Result<
             crate::input::DescribeMultiRegionAccessPointOperationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeMultiRegionAccessPointOperationInput {
                 account_id: self.account_id,
@@ -3844,26 +3968,31 @@ impl DescribeMultiRegionAccessPointOperationInput {
             crate::operation::DescribeMultiRegionAccessPointOperation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeMultiRegionAccessPointOperationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_16 = &_input.request_token_arn;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "request_token_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let request_token_arn = aws_smithy_http::label::fmt_string(input_16, true);
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "request_token_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let request_token_arn = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if request_token_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "request_token_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "request_token_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3877,8 +4006,10 @@ impl DescribeMultiRegionAccessPointOperationInput {
             fn update_http_builder(
                 input: &crate::input::DescribeMultiRegionAccessPointOperationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -3898,7 +4029,7 @@ impl DescribeMultiRegionAccessPointOperationInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -3918,7 +4049,7 @@ impl DescribeMultiRegionAccessPointOperationInput {
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -3978,7 +4109,7 @@ impl DescribeMultiRegionAccessPointOperationInput {
 pub mod get_access_point_input {
 
     /// A builder for [`GetAccessPointInput`](crate::input::GetAccessPointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4031,7 +4162,7 @@ pub mod get_access_point_input {
         /// Consumes the builder and constructs a [`GetAccessPointInput`](crate::input::GetAccessPointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAccessPointInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetAccessPointInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetAccessPointInput {
                 account_id: self.account_id,
@@ -4053,26 +4184,31 @@ impl GetAccessPointInput {
             crate::operation::GetAccessPoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccessPointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_17 = &_input.name;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_17, false);
+                let input_17 = input_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/accesspoint/{Name}", Name = name)
                     .expect("formatting should succeed");
@@ -4082,8 +4218,10 @@ impl GetAccessPointInput {
             fn update_http_builder(
                 input: &crate::input::GetAccessPointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_access_point(input, builder)?;
@@ -4100,7 +4238,7 @@ impl GetAccessPointInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -4166,7 +4304,7 @@ impl GetAccessPointInput {
 pub mod get_access_point_configuration_for_object_lambda_input {
 
     /// A builder for [`GetAccessPointConfigurationForObjectLambdaInput`](crate::input::GetAccessPointConfigurationForObjectLambdaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4197,7 +4335,7 @@ pub mod get_access_point_configuration_for_object_lambda_input {
             self,
         ) -> Result<
             crate::input::GetAccessPointConfigurationForObjectLambdaInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::GetAccessPointConfigurationForObjectLambdaInput {
@@ -4221,26 +4359,31 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
             crate::operation::GetAccessPointConfigurationForObjectLambda,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccessPointConfigurationForObjectLambdaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_18 = &_input.name;
-                let input_18 = input_18.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_18, false);
+                let input_18 = input_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_18,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4254,8 +4397,10 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
             fn update_http_builder(
                 input: &crate::input::GetAccessPointConfigurationForObjectLambdaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_access_point_configuration_for_object_lambda(input, builder)?;
@@ -4272,7 +4417,7 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -4339,7 +4484,7 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
 pub mod get_access_point_for_object_lambda_input {
 
     /// A builder for [`GetAccessPointForObjectLambdaInput`](crate::input::GetAccessPointForObjectLambdaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4370,7 +4515,7 @@ pub mod get_access_point_for_object_lambda_input {
             self,
         ) -> Result<
             crate::input::GetAccessPointForObjectLambdaInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetAccessPointForObjectLambdaInput {
                 account_id: self.account_id,
@@ -4392,26 +4537,31 @@ impl GetAccessPointForObjectLambdaInput {
             crate::operation::GetAccessPointForObjectLambda,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccessPointForObjectLambdaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_19 = &_input.name;
-                let input_19 = input_19.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_19, false);
+                let input_19 = input_19.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_19,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4425,8 +4575,10 @@ impl GetAccessPointForObjectLambdaInput {
             fn update_http_builder(
                 input: &crate::input::GetAccessPointForObjectLambdaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_access_point_for_object_lambda(
@@ -4445,7 +4597,7 @@ impl GetAccessPointForObjectLambdaInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -4511,7 +4663,7 @@ impl GetAccessPointForObjectLambdaInput {
 pub mod get_access_point_policy_input {
 
     /// A builder for [`GetAccessPointPolicyInput`](crate::input::GetAccessPointPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4564,8 +4716,10 @@ pub mod get_access_point_policy_input {
         /// Consumes the builder and constructs a [`GetAccessPointPolicyInput`](crate::input::GetAccessPointPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAccessPointPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetAccessPointPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetAccessPointPolicyInput {
                 account_id: self.account_id,
                 name: self.name,
@@ -4586,26 +4740,31 @@ impl GetAccessPointPolicyInput {
             crate::operation::GetAccessPointPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccessPointPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_20 = &_input.name;
-                let input_20 = input_20.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_20, false);
+                let input_20 = input_20.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_20,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/accesspoint/{Name}/policy", Name = name)
                     .expect("formatting should succeed");
@@ -4615,8 +4774,10 @@ impl GetAccessPointPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetAccessPointPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -4634,7 +4795,7 @@ impl GetAccessPointPolicyInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -4700,7 +4861,7 @@ impl GetAccessPointPolicyInput {
 pub mod get_access_point_policy_for_object_lambda_input {
 
     /// A builder for [`GetAccessPointPolicyForObjectLambdaInput`](crate::input::GetAccessPointPolicyForObjectLambdaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4731,7 +4892,7 @@ pub mod get_access_point_policy_for_object_lambda_input {
             self,
         ) -> Result<
             crate::input::GetAccessPointPolicyForObjectLambdaInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetAccessPointPolicyForObjectLambdaInput {
                 account_id: self.account_id,
@@ -4753,26 +4914,31 @@ impl GetAccessPointPolicyForObjectLambdaInput {
             crate::operation::GetAccessPointPolicyForObjectLambda,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccessPointPolicyForObjectLambdaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_21 = &_input.name;
-                let input_21 = input_21.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_21, false);
+                let input_21 = input_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_21,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4786,8 +4952,10 @@ impl GetAccessPointPolicyForObjectLambdaInput {
             fn update_http_builder(
                 input: &crate::input::GetAccessPointPolicyForObjectLambdaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -4807,7 +4975,7 @@ impl GetAccessPointPolicyForObjectLambdaInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -4873,7 +5041,7 @@ impl GetAccessPointPolicyForObjectLambdaInput {
 pub mod get_access_point_policy_status_input {
 
     /// A builder for [`GetAccessPointPolicyStatusInput`](crate::input::GetAccessPointPolicyStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4904,7 +5072,7 @@ pub mod get_access_point_policy_status_input {
             self,
         ) -> Result<
             crate::input::GetAccessPointPolicyStatusInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetAccessPointPolicyStatusInput {
                 account_id: self.account_id,
@@ -4926,26 +5094,31 @@ impl GetAccessPointPolicyStatusInput {
             crate::operation::GetAccessPointPolicyStatus,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccessPointPolicyStatusInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_22 = &_input.name;
-                let input_22 = input_22.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_22, false);
+                let input_22 = input_22.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_22,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4959,8 +5132,10 @@ impl GetAccessPointPolicyStatusInput {
             fn update_http_builder(
                 input: &crate::input::GetAccessPointPolicyStatusInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -4978,7 +5153,7 @@ impl GetAccessPointPolicyStatusInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -5044,7 +5219,7 @@ impl GetAccessPointPolicyStatusInput {
 pub mod get_access_point_policy_status_for_object_lambda_input {
 
     /// A builder for [`GetAccessPointPolicyStatusForObjectLambdaInput`](crate::input::GetAccessPointPolicyStatusForObjectLambdaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5075,7 +5250,7 @@ pub mod get_access_point_policy_status_for_object_lambda_input {
             self,
         ) -> Result<
             crate::input::GetAccessPointPolicyStatusForObjectLambdaInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::GetAccessPointPolicyStatusForObjectLambdaInput {
@@ -5099,26 +5274,31 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
             crate::operation::GetAccessPointPolicyStatusForObjectLambda,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccessPointPolicyStatusForObjectLambdaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_23 = &_input.name;
-                let input_23 = input_23.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_23, false);
+                let input_23 = input_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_23,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5132,8 +5312,10 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
             fn update_http_builder(
                 input: &crate::input::GetAccessPointPolicyStatusForObjectLambdaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_access_point_policy_status_for_object_lambda(input, builder)?;
@@ -5150,7 +5332,7 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -5217,7 +5399,7 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
 pub mod get_bucket_input {
 
     /// A builder for [`GetBucketInput`](crate::input::GetBucketInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -5270,7 +5452,8 @@ pub mod get_bucket_input {
         /// Consumes the builder and constructs a [`GetBucketInput`](crate::input::GetBucketInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetBucketInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetBucketInput {
                 account_id: self.account_id,
                 bucket: self.bucket,
@@ -5291,26 +5474,31 @@ impl GetBucketInput {
             crate::operation::GetBucket,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_24 = &_input.bucket;
-                let input_24 = input_24.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_24, false);
+                let input_24 = input_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_24,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/bucket/{Bucket}", Bucket = bucket)
                     .expect("formatting should succeed");
@@ -5320,8 +5508,10 @@ impl GetBucketInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_bucket(input, builder)?;
@@ -5338,7 +5528,7 @@ impl GetBucketInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -5402,7 +5592,7 @@ impl GetBucketInput {
 pub mod get_bucket_lifecycle_configuration_input {
 
     /// A builder for [`GetBucketLifecycleConfigurationInput`](crate::input::GetBucketLifecycleConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -5457,7 +5647,7 @@ pub mod get_bucket_lifecycle_configuration_input {
             self,
         ) -> Result<
             crate::input::GetBucketLifecycleConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetBucketLifecycleConfigurationInput {
                 account_id: self.account_id,
@@ -5479,26 +5669,31 @@ impl GetBucketLifecycleConfigurationInput {
             crate::operation::GetBucketLifecycleConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketLifecycleConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_25 = &_input.bucket;
-                let input_25 = input_25.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_25, false);
+                let input_25 = input_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_25,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5512,8 +5707,10 @@ impl GetBucketLifecycleConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketLifecycleConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_bucket_lifecycle_configuration(
@@ -5532,7 +5729,7 @@ impl GetBucketLifecycleConfigurationInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -5598,7 +5795,7 @@ impl GetBucketLifecycleConfigurationInput {
 pub mod get_bucket_policy_input {
 
     /// A builder for [`GetBucketPolicyInput`](crate::input::GetBucketPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -5651,7 +5848,7 @@ pub mod get_bucket_policy_input {
         /// Consumes the builder and constructs a [`GetBucketPolicyInput`](crate::input::GetBucketPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketPolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetBucketPolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetBucketPolicyInput {
                 account_id: self.account_id,
@@ -5673,26 +5870,31 @@ impl GetBucketPolicyInput {
             crate::operation::GetBucketPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_26 = &_input.bucket;
-                let input_26 = input_26.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_26, false);
+                let input_26 = input_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_26,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/bucket/{Bucket}/policy", Bucket = bucket)
                     .expect("formatting should succeed");
@@ -5702,8 +5904,10 @@ impl GetBucketPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_bucket_policy(input, builder)?;
@@ -5720,7 +5924,7 @@ impl GetBucketPolicyInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -5786,7 +5990,7 @@ impl GetBucketPolicyInput {
 pub mod get_bucket_tagging_input {
 
     /// A builder for [`GetBucketTaggingInput`](crate::input::GetBucketTaggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -5839,8 +6043,10 @@ pub mod get_bucket_tagging_input {
         /// Consumes the builder and constructs a [`GetBucketTaggingInput`](crate::input::GetBucketTaggingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketTaggingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetBucketTaggingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetBucketTaggingInput {
                 account_id: self.account_id,
                 bucket: self.bucket,
@@ -5861,26 +6067,31 @@ impl GetBucketTaggingInput {
             crate::operation::GetBucketTagging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketTaggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_27 = &_input.bucket;
-                let input_27 = input_27.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_27, false);
+                let input_27 = input_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_27,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5894,8 +6105,10 @@ impl GetBucketTaggingInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketTaggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_bucket_tagging(input, builder)?;
@@ -5912,7 +6125,7 @@ impl GetBucketTaggingInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -5978,7 +6191,7 @@ impl GetBucketTaggingInput {
 pub mod get_bucket_versioning_input {
 
     /// A builder for [`GetBucketVersioningInput`](crate::input::GetBucketVersioningInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -6007,8 +6220,10 @@ pub mod get_bucket_versioning_input {
         /// Consumes the builder and constructs a [`GetBucketVersioningInput`](crate::input::GetBucketVersioningInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBucketVersioningInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetBucketVersioningInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetBucketVersioningInput {
                 account_id: self.account_id,
                 bucket: self.bucket,
@@ -6029,26 +6244,31 @@ impl GetBucketVersioningInput {
             crate::operation::GetBucketVersioning,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketVersioningInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_28 = &_input.bucket;
-                let input_28 = input_28.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_28, false);
+                let input_28 = input_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_28,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6062,8 +6282,10 @@ impl GetBucketVersioningInput {
             fn update_http_builder(
                 input: &crate::input::GetBucketVersioningInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_bucket_versioning(input, builder)?;
@@ -6080,7 +6302,7 @@ impl GetBucketVersioningInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -6146,7 +6368,7 @@ impl GetBucketVersioningInput {
 pub mod get_job_tagging_input {
 
     /// A builder for [`GetJobTaggingInput`](crate::input::GetJobTaggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -6175,7 +6397,7 @@ pub mod get_job_tagging_input {
         /// Consumes the builder and constructs a [`GetJobTaggingInput`](crate::input::GetJobTaggingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetJobTaggingInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetJobTaggingInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetJobTaggingInput {
                 account_id: self.account_id,
@@ -6197,26 +6419,31 @@ impl GetJobTaggingInput {
             crate::operation::GetJobTagging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetJobTaggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_29 = &_input.job_id;
-                let input_29 = input_29.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_29, false);
+                let input_29 = input_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "job_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_29,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "job_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/jobs/{JobId}/tagging", JobId = job_id)
                     .expect("formatting should succeed");
@@ -6226,8 +6453,10 @@ impl GetJobTaggingInput {
             fn update_http_builder(
                 input: &crate::input::GetJobTaggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_job_tagging(input, builder)?;
@@ -6244,7 +6473,7 @@ impl GetJobTaggingInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -6310,7 +6539,7 @@ impl GetJobTaggingInput {
 pub mod get_multi_region_access_point_input {
 
     /// A builder for [`GetMultiRegionAccessPointInput`](crate::input::GetMultiRegionAccessPointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6341,7 +6570,7 @@ pub mod get_multi_region_access_point_input {
             self,
         ) -> Result<
             crate::input::GetMultiRegionAccessPointInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetMultiRegionAccessPointInput {
                 account_id: self.account_id,
@@ -6363,26 +6592,31 @@ impl GetMultiRegionAccessPointInput {
             crate::operation::GetMultiRegionAccessPoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetMultiRegionAccessPointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_30 = &_input.name;
-                let input_30 = input_30.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_30, false);
+                let input_30 = input_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_30,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/mrap/instances/{Name}", Name = name)
                     .expect("formatting should succeed");
@@ -6392,8 +6626,10 @@ impl GetMultiRegionAccessPointInput {
             fn update_http_builder(
                 input: &crate::input::GetMultiRegionAccessPointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -6411,7 +6647,7 @@ impl GetMultiRegionAccessPointInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -6431,7 +6667,7 @@ impl GetMultiRegionAccessPointInput {
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -6491,7 +6727,7 @@ impl GetMultiRegionAccessPointInput {
 pub mod get_multi_region_access_point_policy_input {
 
     /// A builder for [`GetMultiRegionAccessPointPolicyInput`](crate::input::GetMultiRegionAccessPointPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6522,7 +6758,7 @@ pub mod get_multi_region_access_point_policy_input {
             self,
         ) -> Result<
             crate::input::GetMultiRegionAccessPointPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetMultiRegionAccessPointPolicyInput {
                 account_id: self.account_id,
@@ -6544,26 +6780,31 @@ impl GetMultiRegionAccessPointPolicyInput {
             crate::operation::GetMultiRegionAccessPointPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetMultiRegionAccessPointPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_31 = &_input.name;
-                let input_31 = input_31.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_31, false);
+                let input_31 = input_31.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_31,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6577,8 +6818,10 @@ impl GetMultiRegionAccessPointPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetMultiRegionAccessPointPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_multi_region_access_point_policy(
@@ -6597,7 +6840,7 @@ impl GetMultiRegionAccessPointPolicyInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -6617,7 +6860,7 @@ impl GetMultiRegionAccessPointPolicyInput {
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -6677,7 +6920,7 @@ impl GetMultiRegionAccessPointPolicyInput {
 pub mod get_multi_region_access_point_policy_status_input {
 
     /// A builder for [`GetMultiRegionAccessPointPolicyStatusInput`](crate::input::GetMultiRegionAccessPointPolicyStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6708,7 +6951,7 @@ pub mod get_multi_region_access_point_policy_status_input {
             self,
         ) -> Result<
             crate::input::GetMultiRegionAccessPointPolicyStatusInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetMultiRegionAccessPointPolicyStatusInput {
                 account_id: self.account_id,
@@ -6730,26 +6973,31 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
             crate::operation::GetMultiRegionAccessPointPolicyStatus,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetMultiRegionAccessPointPolicyStatusInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_32 = &_input.name;
-                let input_32 = input_32.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_32, false);
+                let input_32 = input_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_32,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6763,8 +7011,10 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
             fn update_http_builder(
                 input: &crate::input::GetMultiRegionAccessPointPolicyStatusInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -6784,7 +7034,7 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -6804,7 +7054,7 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -6864,7 +7114,7 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
 pub mod get_public_access_block_input {
 
     /// A builder for [`GetPublicAccessBlockInput`](crate::input::GetPublicAccessBlockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
@@ -6882,8 +7132,10 @@ pub mod get_public_access_block_input {
         /// Consumes the builder and constructs a [`GetPublicAccessBlockInput`](crate::input::GetPublicAccessBlockInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPublicAccessBlockInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetPublicAccessBlockInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetPublicAccessBlockInput {
                 account_id: self.account_id,
             })
@@ -6903,13 +7155,13 @@ impl GetPublicAccessBlockInput {
             crate::operation::GetPublicAccessBlock,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPublicAccessBlockInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20180820/configuration/publicAccessBlock")
                     .expect("formatting should succeed");
                 Ok(())
@@ -6918,8 +7170,10 @@ impl GetPublicAccessBlockInput {
             fn update_http_builder(
                 input: &crate::input::GetPublicAccessBlockInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -6937,7 +7191,7 @@ impl GetPublicAccessBlockInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -7003,7 +7257,7 @@ impl GetPublicAccessBlockInput {
 pub mod get_storage_lens_configuration_input {
 
     /// A builder for [`GetStorageLensConfigurationInput`](crate::input::GetStorageLensConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -7034,7 +7288,7 @@ pub mod get_storage_lens_configuration_input {
             self,
         ) -> Result<
             crate::input::GetStorageLensConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetStorageLensConfigurationInput {
                 config_id: self.config_id,
@@ -7056,26 +7310,31 @@ impl GetStorageLensConfigurationInput {
             crate::operation::GetStorageLensConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetStorageLensConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_33 = &_input.config_id;
-                let input_33 = input_33.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "config_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let config_id = aws_smithy_http::label::fmt_string(input_33, false);
+                let input_33 = input_33.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "config_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let config_id = aws_smithy_http::label::fmt_string(
+                    input_33,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if config_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "config_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "config_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7089,8 +7348,10 @@ impl GetStorageLensConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::GetStorageLensConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -7108,7 +7369,7 @@ impl GetStorageLensConfigurationInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -7174,7 +7435,7 @@ impl GetStorageLensConfigurationInput {
 pub mod get_storage_lens_configuration_tagging_input {
 
     /// A builder for [`GetStorageLensConfigurationTaggingInput`](crate::input::GetStorageLensConfigurationTaggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -7205,7 +7466,7 @@ pub mod get_storage_lens_configuration_tagging_input {
             self,
         ) -> Result<
             crate::input::GetStorageLensConfigurationTaggingInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetStorageLensConfigurationTaggingInput {
                 config_id: self.config_id,
@@ -7227,26 +7488,31 @@ impl GetStorageLensConfigurationTaggingInput {
             crate::operation::GetStorageLensConfigurationTagging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetStorageLensConfigurationTaggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_34 = &_input.config_id;
-                let input_34 = input_34.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "config_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let config_id = aws_smithy_http::label::fmt_string(input_34, false);
+                let input_34 = input_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "config_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let config_id = aws_smithy_http::label::fmt_string(
+                    input_34,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if config_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "config_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "config_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7260,8 +7526,10 @@ impl GetStorageLensConfigurationTaggingInput {
             fn update_http_builder(
                 input: &crate::input::GetStorageLensConfigurationTaggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -7281,7 +7549,7 @@ impl GetStorageLensConfigurationTaggingInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -7347,7 +7615,7 @@ impl GetStorageLensConfigurationTaggingInput {
 pub mod list_access_points_input {
 
     /// A builder for [`ListAccessPointsInput`](crate::input::ListAccessPointsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -7422,8 +7690,10 @@ pub mod list_access_points_input {
         /// Consumes the builder and constructs a [`ListAccessPointsInput`](crate::input::ListAccessPointsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAccessPointsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListAccessPointsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListAccessPointsInput {
                 account_id: self.account_id,
                 bucket: self.bucket,
@@ -7446,26 +7716,30 @@ impl ListAccessPointsInput {
             crate::operation::ListAccessPoints,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAccessPointsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20180820/accesspoint").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListAccessPointsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_35) = &_input.bucket {
-                    query.push_kv("bucket", &aws_smithy_http::query::fmt_string(&inner_35));
+                    {
+                        query.push_kv("bucket", &aws_smithy_http::query::fmt_string(&inner_35));
+                    }
                 }
                 if let Some(inner_36) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -7479,8 +7753,10 @@ impl ListAccessPointsInput {
             fn update_http_builder(
                 input: &crate::input::ListAccessPointsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7498,7 +7774,7 @@ impl ListAccessPointsInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -7564,7 +7840,7 @@ impl ListAccessPointsInput {
 pub mod list_access_points_for_object_lambda_input {
 
     /// A builder for [`ListAccessPointsForObjectLambdaInput`](crate::input::ListAccessPointsForObjectLambdaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7606,7 +7882,7 @@ pub mod list_access_points_for_object_lambda_input {
             self,
         ) -> Result<
             crate::input::ListAccessPointsForObjectLambdaInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListAccessPointsForObjectLambdaInput {
                 account_id: self.account_id,
@@ -7629,13 +7905,13 @@ impl ListAccessPointsForObjectLambdaInput {
             crate::operation::ListAccessPointsForObjectLambda,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAccessPointsForObjectLambdaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20180820/accesspointforobjectlambda")
                     .expect("formatting should succeed");
                 Ok(())
@@ -7643,10 +7919,12 @@ impl ListAccessPointsForObjectLambdaInput {
             fn uri_query(
                 _input: &crate::input::ListAccessPointsForObjectLambdaInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_37) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -7660,8 +7938,10 @@ impl ListAccessPointsForObjectLambdaInput {
             fn update_http_builder(
                 input: &crate::input::ListAccessPointsForObjectLambdaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7681,7 +7961,7 @@ impl ListAccessPointsForObjectLambdaInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -7747,7 +8027,7 @@ impl ListAccessPointsForObjectLambdaInput {
 pub mod list_jobs_input {
 
     /// A builder for [`ListJobsInput`](crate::input::ListJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) job_statuses: std::option::Option<std::vec::Vec<crate::model::JobStatus>>,
@@ -7807,7 +8087,8 @@ pub mod list_jobs_input {
         /// Consumes the builder and constructs a [`ListJobsInput`](crate::input::ListJobsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListJobsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListJobsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListJobsInput {
                 account_id: self.account_id,
                 job_statuses: self.job_statuses,
@@ -7830,37 +8111,43 @@ impl ListJobsInput {
             crate::operation::ListJobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListJobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20180820/jobs").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListJobsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_38) = &_input.job_statuses {
-                    for inner_39 in inner_38 {
-                        query.push_kv(
-                            "jobStatuses",
-                            &aws_smithy_http::query::fmt_string(&inner_39),
-                        );
+                    {
+                        for inner_39 in inner_38 {
+                            query.push_kv(
+                                "jobStatuses",
+                                &aws_smithy_http::query::fmt_string(&inner_39),
+                            );
+                        }
                     }
                 }
                 if let Some(inner_40) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+                    }
                 }
                 if let Some(inner_41) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
-                    );
+                    if *inner_41 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7868,8 +8155,10 @@ impl ListJobsInput {
             fn update_http_builder(
                 input: &crate::input::ListJobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7887,7 +8176,7 @@ impl ListJobsInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -7951,7 +8240,7 @@ impl ListJobsInput {
 pub mod list_multi_region_access_points_input {
 
     /// A builder for [`ListMultiRegionAccessPointsInput`](crate::input::ListMultiRegionAccessPointsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7993,7 +8282,7 @@ pub mod list_multi_region_access_points_input {
             self,
         ) -> Result<
             crate::input::ListMultiRegionAccessPointsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListMultiRegionAccessPointsInput {
                 account_id: self.account_id,
@@ -8016,23 +8305,25 @@ impl ListMultiRegionAccessPointsInput {
             crate::operation::ListMultiRegionAccessPoints,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListMultiRegionAccessPointsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20180820/mrap/instances").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListMultiRegionAccessPointsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_42) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_42));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_42));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -8046,8 +8337,10 @@ impl ListMultiRegionAccessPointsInput {
             fn update_http_builder(
                 input: &crate::input::ListMultiRegionAccessPointsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8066,7 +8359,7 @@ impl ListMultiRegionAccessPointsInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -8086,7 +8379,7 @@ impl ListMultiRegionAccessPointsInput {
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -8146,7 +8439,7 @@ impl ListMultiRegionAccessPointsInput {
 pub mod list_regional_buckets_input {
 
     /// A builder for [`ListRegionalBucketsInput`](crate::input::ListRegionalBucketsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8201,8 +8494,10 @@ pub mod list_regional_buckets_input {
         /// Consumes the builder and constructs a [`ListRegionalBucketsInput`](crate::input::ListRegionalBucketsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRegionalBucketsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListRegionalBucketsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListRegionalBucketsInput {
                 account_id: self.account_id,
                 next_token: self.next_token,
@@ -8225,23 +8520,25 @@ impl ListRegionalBucketsInput {
             crate::operation::ListRegionalBuckets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRegionalBucketsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20180820/bucket").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListRegionalBucketsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_43) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -8255,8 +8552,10 @@ impl ListRegionalBucketsInput {
             fn update_http_builder(
                 input: &crate::input::ListRegionalBucketsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8274,7 +8573,7 @@ impl ListRegionalBucketsInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -8340,7 +8639,7 @@ impl ListRegionalBucketsInput {
 pub mod list_storage_lens_configurations_input {
 
     /// A builder for [`ListStorageLensConfigurationsInput`](crate::input::ListStorageLensConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8371,7 +8670,7 @@ pub mod list_storage_lens_configurations_input {
             self,
         ) -> Result<
             crate::input::ListStorageLensConfigurationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListStorageLensConfigurationsInput {
                 account_id: self.account_id,
@@ -8393,23 +8692,25 @@ impl ListStorageLensConfigurationsInput {
             crate::operation::ListStorageLensConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListStorageLensConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20180820/storagelens").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListStorageLensConfigurationsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_44) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_44));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_44));
+                    }
                 }
                 Ok(())
             }
@@ -8417,8 +8718,10 @@ impl ListStorageLensConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::ListStorageLensConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8438,7 +8741,7 @@ impl ListStorageLensConfigurationsInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -8504,7 +8807,7 @@ impl ListStorageLensConfigurationsInput {
 pub mod put_access_point_configuration_for_object_lambda_input {
 
     /// A builder for [`PutAccessPointConfigurationForObjectLambdaInput`](crate::input::PutAccessPointConfigurationForObjectLambdaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8549,7 +8852,7 @@ pub mod put_access_point_configuration_for_object_lambda_input {
             self,
         ) -> Result<
             crate::input::PutAccessPointConfigurationForObjectLambdaInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::PutAccessPointConfigurationForObjectLambdaInput {
@@ -8574,26 +8877,31 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
             crate::operation::PutAccessPointConfigurationForObjectLambda,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutAccessPointConfigurationForObjectLambdaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_45 = &_input.name;
-                let input_45 = input_45.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_45, false);
+                let input_45 = input_45.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_45,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -8607,8 +8915,10 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
             fn update_http_builder(
                 input: &crate::input::PutAccessPointConfigurationForObjectLambdaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_put_access_point_configuration_for_object_lambda(input, builder)?;
@@ -8638,7 +8948,7 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -8705,7 +9015,7 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
 pub mod put_access_point_policy_input {
 
     /// A builder for [`PutAccessPointPolicyInput`](crate::input::PutAccessPointPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8769,8 +9079,10 @@ pub mod put_access_point_policy_input {
         /// Consumes the builder and constructs a [`PutAccessPointPolicyInput`](crate::input::PutAccessPointPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutAccessPointPolicyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutAccessPointPolicyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutAccessPointPolicyInput {
                 account_id: self.account_id,
                 name: self.name,
@@ -8792,26 +9104,31 @@ impl PutAccessPointPolicyInput {
             crate::operation::PutAccessPointPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutAccessPointPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_46 = &_input.name;
-                let input_46 = input_46.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_46, false);
+                let input_46 = input_46.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_46,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/accesspoint/{Name}/policy", Name = name)
                     .expect("formatting should succeed");
@@ -8821,8 +9138,10 @@ impl PutAccessPointPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutAccessPointPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -8856,7 +9175,7 @@ impl PutAccessPointPolicyInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -8922,7 +9241,7 @@ impl PutAccessPointPolicyInput {
 pub mod put_access_point_policy_for_object_lambda_input {
 
     /// A builder for [`PutAccessPointPolicyForObjectLambdaInput`](crate::input::PutAccessPointPolicyForObjectLambdaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8964,7 +9283,7 @@ pub mod put_access_point_policy_for_object_lambda_input {
             self,
         ) -> Result<
             crate::input::PutAccessPointPolicyForObjectLambdaInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutAccessPointPolicyForObjectLambdaInput {
                 account_id: self.account_id,
@@ -8987,26 +9306,31 @@ impl PutAccessPointPolicyForObjectLambdaInput {
             crate::operation::PutAccessPointPolicyForObjectLambda,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutAccessPointPolicyForObjectLambdaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_47 = &_input.name;
-                let input_47 = input_47.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_47, false);
+                let input_47 = input_47.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_47,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -9020,8 +9344,10 @@ impl PutAccessPointPolicyForObjectLambdaInput {
             fn update_http_builder(
                 input: &crate::input::PutAccessPointPolicyForObjectLambdaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -9054,7 +9380,7 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -9120,7 +9446,7 @@ impl PutAccessPointPolicyForObjectLambdaInput {
 pub mod put_bucket_lifecycle_configuration_input {
 
     /// A builder for [`PutBucketLifecycleConfigurationInput`](crate::input::PutBucketLifecycleConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -9169,7 +9495,7 @@ pub mod put_bucket_lifecycle_configuration_input {
             self,
         ) -> Result<
             crate::input::PutBucketLifecycleConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutBucketLifecycleConfigurationInput {
                 account_id: self.account_id,
@@ -9192,26 +9518,31 @@ impl PutBucketLifecycleConfigurationInput {
             crate::operation::PutBucketLifecycleConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketLifecycleConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_48 = &_input.bucket;
-                let input_48 = input_48.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_48, false);
+                let input_48 = input_48.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_48,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -9225,8 +9556,10 @@ impl PutBucketLifecycleConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketLifecycleConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_put_bucket_lifecycle_configuration(
@@ -9261,7 +9594,7 @@ impl PutBucketLifecycleConfigurationInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -9281,7 +9614,7 @@ impl PutBucketLifecycleConfigurationInput {
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -9341,7 +9674,7 @@ impl PutBucketLifecycleConfigurationInput {
 pub mod put_bucket_policy_input {
 
     /// A builder for [`PutBucketPolicyInput`](crate::input::PutBucketPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -9423,7 +9756,7 @@ pub mod put_bucket_policy_input {
         /// Consumes the builder and constructs a [`PutBucketPolicyInput`](crate::input::PutBucketPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketPolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutBucketPolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutBucketPolicyInput {
                 account_id: self.account_id,
@@ -9449,26 +9782,31 @@ impl PutBucketPolicyInput {
             crate::operation::PutBucketPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_49 = &_input.bucket;
-                let input_49 = input_49.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_49, false);
+                let input_49 = input_49.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_49,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/bucket/{Bucket}/policy", Bucket = bucket)
                     .expect("formatting should succeed");
@@ -9478,8 +9816,10 @@ impl PutBucketPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_put_bucket_policy(input, builder)?;
@@ -9510,7 +9850,7 @@ impl PutBucketPolicyInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -9530,7 +9870,7 @@ impl PutBucketPolicyInput {
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -9590,7 +9930,7 @@ impl PutBucketPolicyInput {
 pub mod put_bucket_tagging_input {
 
     /// A builder for [`PutBucketTaggingInput`](crate::input::PutBucketTaggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -9654,8 +9994,10 @@ pub mod put_bucket_tagging_input {
         /// Consumes the builder and constructs a [`PutBucketTaggingInput`](crate::input::PutBucketTaggingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketTaggingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutBucketTaggingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutBucketTaggingInput {
                 account_id: self.account_id,
                 bucket: self.bucket,
@@ -9677,26 +10019,31 @@ impl PutBucketTaggingInput {
             crate::operation::PutBucketTagging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketTaggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_50 = &_input.bucket;
-                let input_50 = input_50.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_50, false);
+                let input_50 = input_50.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_50,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -9710,8 +10057,10 @@ impl PutBucketTaggingInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketTaggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_put_bucket_tagging(input, builder)?;
@@ -9742,7 +10091,7 @@ impl PutBucketTaggingInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -9762,7 +10111,7 @@ impl PutBucketTaggingInput {
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -9822,7 +10171,7 @@ impl PutBucketTaggingInput {
 pub mod put_bucket_versioning_input {
 
     /// A builder for [`PutBucketVersioningInput`](crate::input::PutBucketVersioningInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -9880,8 +10229,10 @@ pub mod put_bucket_versioning_input {
         /// Consumes the builder and constructs a [`PutBucketVersioningInput`](crate::input::PutBucketVersioningInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutBucketVersioningInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutBucketVersioningInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutBucketVersioningInput {
                 account_id: self.account_id,
                 bucket: self.bucket,
@@ -9904,26 +10255,31 @@ impl PutBucketVersioningInput {
             crate::operation::PutBucketVersioning,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketVersioningInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_51 = &_input.bucket;
-                let input_51 = input_51.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_51, false);
+                let input_51 = input_51.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "bucket",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let bucket = aws_smithy_http::label::fmt_string(
+                    input_51,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if bucket.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "bucket",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "bucket",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -9937,8 +10293,10 @@ impl PutBucketVersioningInput {
             fn update_http_builder(
                 input: &crate::input::PutBucketVersioningInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_put_bucket_versioning(input, builder)?;
@@ -9971,7 +10329,7 @@ impl PutBucketVersioningInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -9991,7 +10349,7 @@ impl PutBucketVersioningInput {
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -10051,7 +10409,7 @@ impl PutBucketVersioningInput {
 pub mod put_job_tagging_input {
 
     /// A builder for [`PutJobTaggingInput`](crate::input::PutJobTaggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -10100,7 +10458,7 @@ pub mod put_job_tagging_input {
         /// Consumes the builder and constructs a [`PutJobTaggingInput`](crate::input::PutJobTaggingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutJobTaggingInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutJobTaggingInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutJobTaggingInput {
                 account_id: self.account_id,
@@ -10123,26 +10481,31 @@ impl PutJobTaggingInput {
             crate::operation::PutJobTagging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutJobTaggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_52 = &_input.job_id;
-                let input_52 = input_52.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_52, false);
+                let input_52 = input_52.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "job_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_52,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "job_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/jobs/{JobId}/tagging", JobId = job_id)
                     .expect("formatting should succeed");
@@ -10152,8 +10515,10 @@ impl PutJobTaggingInput {
             fn update_http_builder(
                 input: &crate::input::PutJobTaggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_put_job_tagging(input, builder)?;
@@ -10184,7 +10549,7 @@ impl PutJobTaggingInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -10250,7 +10615,7 @@ impl PutJobTaggingInput {
 pub mod put_multi_region_access_point_policy_input {
 
     /// A builder for [`PutMultiRegionAccessPointPolicyInput`](crate::input::PutMultiRegionAccessPointPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -10298,7 +10663,7 @@ pub mod put_multi_region_access_point_policy_input {
             self,
         ) -> Result<
             crate::input::PutMultiRegionAccessPointPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutMultiRegionAccessPointPolicyInput {
                 account_id: self.account_id,
@@ -10321,7 +10686,7 @@ impl PutMultiRegionAccessPointPolicyInput {
             crate::operation::PutMultiRegionAccessPointPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -10330,7 +10695,7 @@ impl PutMultiRegionAccessPointPolicyInput {
             fn uri_base(
                 _input: &crate::input::PutMultiRegionAccessPointPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20180820/async-requests/mrap/put-policy")
                     .expect("formatting should succeed");
                 Ok(())
@@ -10339,8 +10704,10 @@ impl PutMultiRegionAccessPointPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutMultiRegionAccessPointPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_put_multi_region_access_point_policy(
@@ -10372,7 +10739,7 @@ impl PutMultiRegionAccessPointPolicyInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -10392,7 +10759,7 @@ impl PutMultiRegionAccessPointPolicyInput {
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::error::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -10452,7 +10819,7 @@ impl PutMultiRegionAccessPointPolicyInput {
 pub mod put_public_access_block_input {
 
     /// A builder for [`PutPublicAccessBlockInput`](crate::input::PutPublicAccessBlockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_access_block_configuration:
             std::option::Option<crate::model::PublicAccessBlockConfiguration>,
@@ -10488,8 +10855,10 @@ pub mod put_public_access_block_input {
         /// Consumes the builder and constructs a [`PutPublicAccessBlockInput`](crate::input::PutPublicAccessBlockInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutPublicAccessBlockInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutPublicAccessBlockInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutPublicAccessBlockInput {
                 public_access_block_configuration: self.public_access_block_configuration,
                 account_id: self.account_id,
@@ -10510,13 +10879,13 @@ impl PutPublicAccessBlockInput {
             crate::operation::PutPublicAccessBlock,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutPublicAccessBlockInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20180820/configuration/publicAccessBlock")
                     .expect("formatting should succeed");
                 Ok(())
@@ -10525,8 +10894,10 @@ impl PutPublicAccessBlockInput {
             fn update_http_builder(
                 input: &crate::input::PutPublicAccessBlockInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -10560,7 +10931,7 @@ impl PutPublicAccessBlockInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -10626,7 +10997,7 @@ impl PutPublicAccessBlockInput {
 pub mod put_storage_lens_configuration_input {
 
     /// A builder for [`PutStorageLensConfigurationInput`](crate::input::PutStorageLensConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -10699,7 +11070,7 @@ pub mod put_storage_lens_configuration_input {
             self,
         ) -> Result<
             crate::input::PutStorageLensConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutStorageLensConfigurationInput {
                 config_id: self.config_id,
@@ -10723,26 +11094,31 @@ impl PutStorageLensConfigurationInput {
             crate::operation::PutStorageLensConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutStorageLensConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_53 = &_input.config_id;
-                let input_53 = input_53.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "config_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let config_id = aws_smithy_http::label::fmt_string(input_53, false);
+                let input_53 = input_53.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "config_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let config_id = aws_smithy_http::label::fmt_string(
+                    input_53,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if config_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "config_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "config_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -10756,8 +11132,10 @@ impl PutStorageLensConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::PutStorageLensConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -10788,7 +11166,7 @@ impl PutStorageLensConfigurationInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -10854,7 +11232,7 @@ impl PutStorageLensConfigurationInput {
 pub mod put_storage_lens_configuration_tagging_input {
 
     /// A builder for [`PutStorageLensConfigurationTaggingInput`](crate::input::PutStorageLensConfigurationTaggingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -10909,7 +11287,7 @@ pub mod put_storage_lens_configuration_tagging_input {
             self,
         ) -> Result<
             crate::input::PutStorageLensConfigurationTaggingInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutStorageLensConfigurationTaggingInput {
                 config_id: self.config_id,
@@ -10932,26 +11310,31 @@ impl PutStorageLensConfigurationTaggingInput {
             crate::operation::PutStorageLensConfigurationTagging,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutStorageLensConfigurationTaggingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_54 = &_input.config_id;
-                let input_54 = input_54.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "config_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let config_id = aws_smithy_http::label::fmt_string(input_54, false);
+                let input_54 = input_54.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "config_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let config_id = aws_smithy_http::label::fmt_string(
+                    input_54,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if config_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "config_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "config_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -10965,8 +11348,10 @@ impl PutStorageLensConfigurationTaggingInput {
             fn update_http_builder(
                 input: &crate::input::PutStorageLensConfigurationTaggingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -10999,7 +11384,7 @@ impl PutStorageLensConfigurationTaggingInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -11065,7 +11450,7 @@ impl PutStorageLensConfigurationTaggingInput {
 pub mod update_job_priority_input {
 
     /// A builder for [`UpdateJobPriorityInput`](crate::input::UpdateJobPriorityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -11105,8 +11490,10 @@ pub mod update_job_priority_input {
         /// Consumes the builder and constructs a [`UpdateJobPriorityInput`](crate::input::UpdateJobPriorityInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateJobPriorityInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateJobPriorityInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateJobPriorityInput {
                 account_id: self.account_id,
                 job_id: self.job_id,
@@ -11128,26 +11515,31 @@ impl UpdateJobPriorityInput {
             crate::operation::UpdateJobPriority,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateJobPriorityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_55 = &_input.job_id;
-                let input_55 = input_55.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_55, false);
+                let input_55 = input_55.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "job_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_55,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "job_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/jobs/{JobId}/priority", JobId = job_id)
                     .expect("formatting should succeed");
@@ -11156,22 +11548,23 @@ impl UpdateJobPriorityInput {
             fn uri_query(
                 _input: &crate::input::UpdateJobPriorityInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if _input.priority != 0 {
-                    query.push_kv(
-                        "priority",
-                        aws_smithy_types::primitive::Encoder::from(_input.priority).encode(),
-                    );
-                }
+                let inner_56 = &_input.priority;
+                query.push_kv(
+                    "priority",
+                    aws_smithy_types::primitive::Encoder::from(*inner_56).encode(),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::UpdateJobPriorityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -11189,7 +11582,7 @@ impl UpdateJobPriorityInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -11255,7 +11648,7 @@ impl UpdateJobPriorityInput {
 pub mod update_job_status_input {
 
     /// A builder for [`UpdateJobStatusInput`](crate::input::UpdateJobStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -11312,7 +11705,7 @@ pub mod update_job_status_input {
         /// Consumes the builder and constructs a [`UpdateJobStatusInput`](crate::input::UpdateJobStatusInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateJobStatusInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateJobStatusInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateJobStatusInput {
                 account_id: self.account_id,
@@ -11336,26 +11729,31 @@ impl UpdateJobStatusInput {
             crate::operation::UpdateJobStatus,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateJobStatusInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_56 = &_input.job_id;
-                let input_56 = input_56.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_56, false);
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_57 = &_input.job_id;
+                let input_57 = input_57.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "job_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_57,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "job_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20180820/jobs/{JobId}/status", JobId = job_id)
                     .expect("formatting should succeed");
@@ -11364,19 +11762,26 @@ impl UpdateJobStatusInput {
             fn uri_query(
                 _input: &crate::input::UpdateJobStatusInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_57) = &_input.requested_job_status {
-                    query.push_kv(
-                        "requestedJobStatus",
-                        &aws_smithy_http::query::fmt_string(&inner_57),
-                    );
-                }
-                if let Some(inner_58) = &_input.status_update_reason {
-                    query.push_kv(
-                        "statusUpdateReason",
-                        &aws_smithy_http::query::fmt_string(&inner_58),
-                    );
+                let inner_58 = &_input.requested_job_status;
+                let inner_58 = inner_58.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "requested_job_status",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "requestedJobStatus",
+                    &aws_smithy_http::query::fmt_string(&inner_58),
+                );
+                if let Some(inner_59) = &_input.status_update_reason {
+                    {
+                        query.push_kv(
+                            "statusUpdateReason",
+                            &aws_smithy_http::query::fmt_string(&inner_59),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -11384,8 +11789,10 @@ impl UpdateJobStatusInput {
             fn update_http_builder(
                 input: &crate::input::UpdateJobStatusInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -11403,7 +11810,7 @@ impl UpdateJobStatusInput {
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
             }
             aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
@@ -11467,7 +11874,7 @@ impl UpdateJobStatusInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateJobStatusInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     #[doc(hidden)]
@@ -11500,20 +11907,10 @@ impl UpdateJobStatusInput {
         self.status_update_reason.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateJobStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateJobStatusInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("requested_job_status", &self.requested_job_status);
-        formatter.field("status_update_reason", &self.status_update_reason);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateJobPriorityInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     #[doc(hidden)]
@@ -11539,19 +11936,10 @@ impl UpdateJobPriorityInput {
         self.priority
     }
 }
-impl std::fmt::Debug for UpdateJobPriorityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateJobPriorityInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("priority", &self.priority);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutStorageLensConfigurationTaggingInput {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
     #[doc(hidden)]
@@ -11581,19 +11969,10 @@ impl PutStorageLensConfigurationTaggingInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutStorageLensConfigurationTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutStorageLensConfigurationTaggingInput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutStorageLensConfigurationInput {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
     #[doc(hidden)]
@@ -11632,23 +12011,10 @@ impl PutStorageLensConfigurationInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutStorageLensConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutStorageLensConfigurationInput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field(
-            "storage_lens_configuration",
-            &self.storage_lens_configuration,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPublicAccessBlockInput {
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -11670,21 +12036,10 @@ impl PutPublicAccessBlockInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutPublicAccessBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPublicAccessBlockInput");
-        formatter.field(
-            "public_access_block_configuration",
-            &self.public_access_block_configuration,
-        );
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMultiRegionAccessPointPolicyInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
@@ -11712,19 +12067,10 @@ impl PutMultiRegionAccessPointPolicyInput {
         self.details.as_ref()
     }
 }
-impl std::fmt::Debug for PutMultiRegionAccessPointPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMultiRegionAccessPointPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutJobTaggingInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     #[doc(hidden)]
@@ -11750,19 +12096,10 @@ impl PutJobTaggingInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PutJobTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutJobTaggingInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketVersioningInput {
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
     #[doc(hidden)]
@@ -11797,20 +12134,10 @@ impl PutBucketVersioningInput {
         self.versioning_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutBucketVersioningInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketVersioningInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("mfa", &self.mfa);
-        formatter.field("versioning_configuration", &self.versioning_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketTaggingInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -11860,19 +12187,10 @@ impl PutBucketTaggingInput {
         self.tagging.as_ref()
     }
 }
-impl std::fmt::Debug for PutBucketTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketTaggingInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("tagging", &self.tagging);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketPolicyInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -11933,23 +12251,10 @@ impl PutBucketPolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutBucketPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.field(
-            "confirm_remove_self_bucket_access",
-            &self.confirm_remove_self_bucket_access,
-        );
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketLifecycleConfigurationInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -11977,19 +12282,10 @@ impl PutBucketLifecycleConfigurationInput {
         self.lifecycle_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutBucketLifecycleConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBucketLifecycleConfigurationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccessPointPolicyForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -12015,19 +12311,10 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutAccessPointPolicyForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccessPointPolicyForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccessPointPolicyInput {
     /// <p>The Amazon Web Services account ID for owner of the bucket associated with the specified access point.</p>
     #[doc(hidden)]
@@ -12077,19 +12364,10 @@ impl PutAccessPointPolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutAccessPointPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccessPointPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccessPointConfigurationForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -12115,19 +12393,10 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
         self.configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutAccessPointConfigurationForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAccessPointConfigurationForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.field("configuration", &self.configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStorageLensConfigurationsInput {
     /// <p>The account ID of the requester.</p>
     #[doc(hidden)]
@@ -12146,18 +12415,10 @@ impl ListStorageLensConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListStorageLensConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStorageLensConfigurationsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRegionalBucketsInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -12194,20 +12455,10 @@ impl ListRegionalBucketsInput {
         self.outpost_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListRegionalBucketsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRegionalBucketsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("outpost_id", &self.outpost_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMultiRegionAccessPointsInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
@@ -12233,19 +12484,10 @@ impl ListMultiRegionAccessPointsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMultiRegionAccessPointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMultiRegionAccessPointsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     #[doc(hidden)]
@@ -12278,20 +12520,10 @@ impl ListJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("job_statuses", &self.job_statuses);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccessPointsForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -12317,19 +12549,10 @@ impl ListAccessPointsForObjectLambdaInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAccessPointsForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccessPointsForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccessPointsInput {
     /// <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
     #[doc(hidden)]
@@ -12386,20 +12609,10 @@ impl ListAccessPointsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAccessPointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccessPointsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStorageLensConfigurationTaggingInput {
     /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
     #[doc(hidden)]
@@ -12418,18 +12631,10 @@ impl GetStorageLensConfigurationTaggingInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetStorageLensConfigurationTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStorageLensConfigurationTaggingInput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStorageLensConfigurationInput {
     /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
     #[doc(hidden)]
@@ -12448,18 +12653,10 @@ impl GetStorageLensConfigurationInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetStorageLensConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStorageLensConfigurationInput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPublicAccessBlockInput {
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
     #[doc(hidden)]
@@ -12471,17 +12668,10 @@ impl GetPublicAccessBlockInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetPublicAccessBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPublicAccessBlockInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointPolicyStatusInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
@@ -12500,18 +12690,10 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetMultiRegionAccessPointPolicyStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMultiRegionAccessPointPolicyStatusInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointPolicyInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
@@ -12530,18 +12712,10 @@ impl GetMultiRegionAccessPointPolicyInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetMultiRegionAccessPointPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMultiRegionAccessPointPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
@@ -12560,18 +12734,10 @@ impl GetMultiRegionAccessPointInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetMultiRegionAccessPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMultiRegionAccessPointInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJobTaggingInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     #[doc(hidden)]
@@ -12590,18 +12756,10 @@ impl GetJobTaggingInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetJobTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJobTaggingInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketVersioningInput {
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
     #[doc(hidden)]
@@ -12620,18 +12778,10 @@ impl GetBucketVersioningInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketVersioningInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketVersioningInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketTaggingInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -12674,18 +12824,10 @@ impl GetBucketTaggingInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketTaggingInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketPolicyInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -12728,18 +12870,10 @@ impl GetBucketPolicyInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketLifecycleConfigurationInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -12782,18 +12916,10 @@ impl GetBucketLifecycleConfigurationInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketLifecycleConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketLifecycleConfigurationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -12836,18 +12962,10 @@ impl GetBucketInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for GetBucketInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBucketInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessPointPolicyStatusForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -12866,18 +12984,10 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessPointPolicyStatusForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessPointPolicyStatusForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessPointPolicyStatusInput {
     /// <p>The account ID for the account that owns the specified access point.</p>
     #[doc(hidden)]
@@ -12896,18 +13006,10 @@ impl GetAccessPointPolicyStatusInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessPointPolicyStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessPointPolicyStatusInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessPointPolicyForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -12926,18 +13028,10 @@ impl GetAccessPointPolicyForObjectLambdaInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessPointPolicyForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessPointPolicyForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessPointPolicyInput {
     /// <p>The account ID for the account that owns the specified access point.</p>
     #[doc(hidden)]
@@ -12980,18 +13074,10 @@ impl GetAccessPointPolicyInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessPointPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessPointPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessPointForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -13010,18 +13096,10 @@ impl GetAccessPointForObjectLambdaInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessPointForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessPointForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessPointConfigurationForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -13040,18 +13118,10 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessPointConfigurationForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessPointConfigurationForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessPointInput {
     /// <p>The account ID for the account that owns the specified access point.</p>
     #[doc(hidden)]
@@ -13094,18 +13164,10 @@ impl GetAccessPointInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessPointInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMultiRegionAccessPointOperationInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
@@ -13124,18 +13186,10 @@ impl DescribeMultiRegionAccessPointOperationInput {
         self.request_token_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMultiRegionAccessPointOperationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMultiRegionAccessPointOperationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("request_token_arn", &self.request_token_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     #[doc(hidden)]
@@ -13154,18 +13208,10 @@ impl DescribeJobInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStorageLensConfigurationTaggingInput {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
     #[doc(hidden)]
@@ -13184,18 +13230,10 @@ impl DeleteStorageLensConfigurationTaggingInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStorageLensConfigurationTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStorageLensConfigurationTaggingInput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStorageLensConfigurationInput {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
     #[doc(hidden)]
@@ -13214,18 +13252,10 @@ impl DeleteStorageLensConfigurationInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStorageLensConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStorageLensConfigurationInput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePublicAccessBlockInput {
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to remove.</p>
     #[doc(hidden)]
@@ -13237,17 +13267,10 @@ impl DeletePublicAccessBlockInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePublicAccessBlockInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePublicAccessBlockInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMultiRegionAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
@@ -13273,19 +13296,10 @@ impl DeleteMultiRegionAccessPointInput {
         self.details.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteMultiRegionAccessPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMultiRegionAccessPointInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteJobTaggingInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     #[doc(hidden)]
@@ -13304,18 +13318,10 @@ impl DeleteJobTaggingInput {
         self.job_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteJobTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteJobTaggingInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketTaggingInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket tag set to be removed.</p>
     #[doc(hidden)]
@@ -13358,18 +13364,10 @@ impl DeleteBucketTaggingInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketTaggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketTaggingInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketPolicyInput {
     /// <p>The account ID of the Outposts bucket.</p>
     #[doc(hidden)]
@@ -13412,18 +13410,10 @@ impl DeleteBucketPolicyInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketLifecycleConfigurationInput {
     /// <p>The account ID of the lifecycle configuration to delete.</p>
     #[doc(hidden)]
@@ -13466,18 +13456,10 @@ impl DeleteBucketLifecycleConfigurationInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketLifecycleConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketLifecycleConfigurationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketInput {
     /// <p>The account ID that owns the Outposts bucket.</p>
     #[doc(hidden)]
@@ -13520,18 +13502,10 @@ impl DeleteBucketInput {
         self.bucket.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBucketInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBucketInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bucket", &self.bucket);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessPointPolicyForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -13550,18 +13524,10 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccessPointPolicyForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessPointPolicyForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessPointPolicyInput {
     /// <p>The account ID for the account that owns the specified access point.</p>
     #[doc(hidden)]
@@ -13604,18 +13570,10 @@ impl DeleteAccessPointPolicyInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccessPointPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessPointPolicyInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessPointForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -13634,18 +13592,10 @@ impl DeleteAccessPointForObjectLambdaInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccessPointForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessPointForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessPointInput {
     /// <p>The account ID for the account that owns the specified access point.</p>
     #[doc(hidden)]
@@ -13688,18 +13638,10 @@ impl DeleteAccessPointInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccessPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessPointInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMultiRegionAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own the underlying buckets.</p>
     #[doc(hidden)]
@@ -13725,19 +13667,10 @@ impl CreateMultiRegionAccessPointInput {
         self.details.as_ref()
     }
 }
-impl std::fmt::Debug for CreateMultiRegionAccessPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMultiRegionAccessPointInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJobInput {
     /// <p>The Amazon Web Services account ID that creates the job.</p>
     #[doc(hidden)]
@@ -13819,27 +13752,10 @@ impl CreateJobInput {
         self.manifest_generator.as_ref()
     }
 }
-impl std::fmt::Debug for CreateJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateJobInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("confirmation_required", &self.confirmation_required);
-        formatter.field("operation", &self.operation);
-        formatter.field("report", &self.report);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("manifest", &self.manifest);
-        formatter.field("description", &self.description);
-        formatter.field("priority", &self.priority);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("manifest_generator", &self.manifest_generator);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBucketInput {
     /// <p>The canned ACL to apply to the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
@@ -13952,32 +13868,10 @@ impl CreateBucketInput {
         self.outpost_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBucketInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBucketInput");
-        formatter.field("acl", &self.acl);
-        formatter.field("bucket", &self.bucket);
-        formatter.field(
-            "create_bucket_configuration",
-            &self.create_bucket_configuration,
-        );
-        formatter.field("grant_full_control", &self.grant_full_control);
-        formatter.field("grant_read", &self.grant_read);
-        formatter.field("grant_read_acp", &self.grant_read_acp);
-        formatter.field("grant_write", &self.grant_write);
-        formatter.field("grant_write_acp", &self.grant_write_acp);
-        formatter.field(
-            "object_lock_enabled_for_bucket",
-            &self.object_lock_enabled_for_bucket,
-        );
-        formatter.field("outpost_id", &self.outpost_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccessPointForObjectLambdaInput {
     /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
@@ -14003,19 +13897,10 @@ impl CreateAccessPointForObjectLambdaInput {
         self.configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAccessPointForObjectLambdaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccessPointForObjectLambdaInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.field("configuration", &self.configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccessPointInput {
     /// <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
     #[doc(hidden)]
@@ -14084,19 +13969,5 @@ impl CreateAccessPointInput {
         &self,
     ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
         self.public_access_block_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateAccessPointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccessPointInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.field("bucket", &self.bucket);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.field(
-            "public_access_block_configuration",
-            &self.public_access_block_configuration,
-        );
-        formatter.finish()
     }
 }

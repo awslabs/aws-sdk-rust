@@ -2,7 +2,7 @@
 
 /// <p> The details of an Elastic Inference Accelerator type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceleratorType {
     /// <p> The name of the Elastic Inference Accelerator type. </p>
     #[doc(hidden)]
@@ -28,20 +28,11 @@ impl AcceleratorType {
         self.throughput_info.as_deref()
     }
 }
-impl std::fmt::Debug for AcceleratorType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceleratorType");
-        formatter.field("accelerator_type_name", &self.accelerator_type_name);
-        formatter.field("memory_info", &self.memory_info);
-        formatter.field("throughput_info", &self.throughput_info);
-        formatter.finish()
-    }
-}
 /// See [`AcceleratorType`](crate::model::AcceleratorType).
 pub mod accelerator_type {
 
     /// A builder for [`AcceleratorType`](crate::model::AcceleratorType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_type_name: std::option::Option<std::string::String>,
         pub(crate) memory_info: std::option::Option<crate::model::MemoryInfo>,
@@ -112,7 +103,7 @@ impl AcceleratorType {
 
 /// <p> A throughput entry for an Elastic Inference Accelerator type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyValuePair {
     /// <p> The throughput value of the Elastic Inference Accelerator type. It can assume the following values: TFLOPS16bit: the throughput expressed in 16bit TeraFLOPS. TFLOPS32bit: the throughput expressed in 32bit TeraFLOPS. </p>
     #[doc(hidden)]
@@ -131,19 +122,11 @@ impl KeyValuePair {
         self.value
     }
 }
-impl std::fmt::Debug for KeyValuePair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyValuePair");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`KeyValuePair`](crate::model::KeyValuePair).
 pub mod key_value_pair {
 
     /// A builder for [`KeyValuePair`](crate::model::KeyValuePair).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<i32>,
@@ -187,7 +170,7 @@ impl KeyValuePair {
 
 /// <p> The memory information of an Elastic Inference Accelerator type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemoryInfo {
     /// <p> The size in mebibytes of the Elastic Inference Accelerator type. </p>
     #[doc(hidden)]
@@ -199,18 +182,11 @@ impl MemoryInfo {
         self.size_in_mi_b
     }
 }
-impl std::fmt::Debug for MemoryInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemoryInfo");
-        formatter.field("size_in_mi_b", &self.size_in_mi_b);
-        formatter.finish()
-    }
-}
 /// See [`MemoryInfo`](crate::model::MemoryInfo).
 pub mod memory_info {
 
     /// A builder for [`MemoryInfo`](crate::model::MemoryInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_in_mi_b: std::option::Option<i32>,
     }
@@ -242,7 +218,7 @@ impl MemoryInfo {
 
 /// <p> The details of an Elastic Inference Accelerator. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticInferenceAccelerator {
     /// <p> The health of the Elastic Inference Accelerator. </p>
     #[doc(hidden)]
@@ -284,22 +260,11 @@ impl ElasticInferenceAccelerator {
         self.attached_resource.as_deref()
     }
 }
-impl std::fmt::Debug for ElasticInferenceAccelerator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticInferenceAccelerator");
-        formatter.field("accelerator_health", &self.accelerator_health);
-        formatter.field("accelerator_type", &self.accelerator_type);
-        formatter.field("accelerator_id", &self.accelerator_id);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("attached_resource", &self.attached_resource);
-        formatter.finish()
-    }
-}
 /// See [`ElasticInferenceAccelerator`](crate::model::ElasticInferenceAccelerator).
 pub mod elastic_inference_accelerator {
 
     /// A builder for [`ElasticInferenceAccelerator`](crate::model::ElasticInferenceAccelerator).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_health:
             std::option::Option<crate::model::ElasticInferenceAcceleratorHealth>,
@@ -398,7 +363,7 @@ impl ElasticInferenceAccelerator {
 
 /// <p> The health details of an Elastic Inference Accelerator. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElasticInferenceAcceleratorHealth {
     /// <p> The health status of the Elastic Inference Accelerator. </p>
     #[doc(hidden)]
@@ -410,18 +375,11 @@ impl ElasticInferenceAcceleratorHealth {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for ElasticInferenceAcceleratorHealth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElasticInferenceAcceleratorHealth");
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`ElasticInferenceAcceleratorHealth`](crate::model::ElasticInferenceAcceleratorHealth).
 pub mod elastic_inference_accelerator_health {
 
     /// A builder for [`ElasticInferenceAcceleratorHealth`](crate::model::ElasticInferenceAcceleratorHealth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
     }
@@ -453,7 +411,7 @@ impl ElasticInferenceAcceleratorHealth {
 
 /// <p> A filter expression for the Elastic Inference Accelerator list. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p> The filter name for the Elastic Inference Accelerator list. It can assume the following values: accelerator-type: the type of Elastic Inference Accelerator to filter for. instance-id: an EC2 instance id to filter for. </p>
     #[doc(hidden)]
@@ -472,19 +430,11 @@ impl Filter {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -537,7 +487,7 @@ impl Filter {
 
 /// <p> The offering for an Elastic Inference Accelerator type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceleratorTypeOffering {
     /// <p> The name of the Elastic Inference Accelerator type. </p>
     #[doc(hidden)]
@@ -563,20 +513,11 @@ impl AcceleratorTypeOffering {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for AcceleratorTypeOffering {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceleratorTypeOffering");
-        formatter.field("accelerator_type", &self.accelerator_type);
-        formatter.field("location_type", &self.location_type);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 /// See [`AcceleratorTypeOffering`](crate::model::AcceleratorTypeOffering).
 pub mod accelerator_type_offering {
 
     /// A builder for [`AcceleratorTypeOffering`](crate::model::AcceleratorTypeOffering).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_type: std::option::Option<std::string::String>,
         pub(crate) location_type: std::option::Option<crate::model::LocationType>,
@@ -636,6 +577,42 @@ impl AcceleratorTypeOffering {
     }
 }
 
+/// When writing a match expression against `LocationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let locationtype = unimplemented!();
+/// match locationtype {
+///     LocationType::AvailabilityZone => { /* ... */ },
+///     LocationType::AvailabilityZoneId => { /* ... */ },
+///     LocationType::Region => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `locationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LocationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LocationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LocationType::NewFeature` is defined.
+/// Specifically, when `locationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LocationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -654,8 +631,8 @@ pub enum LocationType {
     AvailabilityZoneId,
     #[allow(missing_docs)] // documentation missing in model
     Region,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LocationType {
     fn from(s: &str) -> Self {
@@ -663,7 +640,7 @@ impl std::convert::From<&str> for LocationType {
             "availability-zone" => LocationType::AvailabilityZone,
             "availability-zone-id" => LocationType::AvailabilityZoneId,
             "region" => LocationType::Region,
-            other => LocationType::Unknown(other.to_owned()),
+            other => LocationType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -681,11 +658,11 @@ impl LocationType {
             LocationType::AvailabilityZone => "availability-zone",
             LocationType::AvailabilityZoneId => "availability-zone-id",
             LocationType::Region => "region",
-            LocationType::Unknown(s) => s.as_ref(),
+            LocationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["availability-zone", "availability-zone-id", "region"]
     }
 }

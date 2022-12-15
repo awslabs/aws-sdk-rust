@@ -4,7 +4,7 @@
 /// <p>You can use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html">DescribeEventTypes</a> API operation to return this information about an event.</p>
 /// <p>You can also use the Amazon CloudWatch Events console to create a rule so that you can get notified or take action when Health delivers a specific event to your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/cloudwatch-events-health.html">Monitor for Health events with Amazon CloudWatch Events</a> in the <i>Health User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventType {
     /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     #[doc(hidden)]
@@ -30,20 +30,11 @@ impl EventType {
         self.category.as_ref()
     }
 }
-impl std::fmt::Debug for EventType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventType");
-        formatter.field("service", &self.service);
-        formatter.field("code", &self.code);
-        formatter.field("category", &self.category);
-        formatter.finish()
-    }
-}
 /// See [`EventType`](crate::model::EventType).
 pub mod event_type {
 
     /// A builder for [`EventType`](crate::model::EventType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -100,6 +91,43 @@ impl EventType {
     }
 }
 
+/// When writing a match expression against `EventTypeCategory`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let eventtypecategory = unimplemented!();
+/// match eventtypecategory {
+///     EventTypeCategory::AccountNotification => { /* ... */ },
+///     EventTypeCategory::Investigation => { /* ... */ },
+///     EventTypeCategory::Issue => { /* ... */ },
+///     EventTypeCategory::ScheduledChange => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `eventtypecategory` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EventTypeCategory::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EventTypeCategory::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EventTypeCategory::NewFeature` is defined.
+/// Specifically, when `eventtypecategory` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EventTypeCategory::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -120,8 +148,8 @@ pub enum EventTypeCategory {
     Issue,
     #[allow(missing_docs)] // documentation missing in model
     ScheduledChange,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EventTypeCategory {
     fn from(s: &str) -> Self {
@@ -130,7 +158,9 @@ impl std::convert::From<&str> for EventTypeCategory {
             "investigation" => EventTypeCategory::Investigation,
             "issue" => EventTypeCategory::Issue,
             "scheduledChange" => EventTypeCategory::ScheduledChange,
-            other => EventTypeCategory::Unknown(other.to_owned()),
+            other => {
+                EventTypeCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -149,11 +179,11 @@ impl EventTypeCategory {
             EventTypeCategory::Investigation => "investigation",
             EventTypeCategory::Issue => "issue",
             EventTypeCategory::ScheduledChange => "scheduledChange",
-            EventTypeCategory::Unknown(s) => s.as_ref(),
+            EventTypeCategory::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "accountNotification",
             "investigation",
@@ -170,7 +200,7 @@ impl AsRef<str> for EventTypeCategory {
 
 /// <p>The values to use to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html">DescribeEventTypes</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventTypeFilter {
     /// <p>A list of event type codes.</p>
     #[doc(hidden)]
@@ -196,20 +226,11 @@ impl EventTypeFilter {
         self.event_type_categories.as_deref()
     }
 }
-impl std::fmt::Debug for EventTypeFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventTypeFilter");
-        formatter.field("event_type_codes", &self.event_type_codes);
-        formatter.field("services", &self.services);
-        formatter.field("event_type_categories", &self.event_type_categories);
-        formatter.finish()
-    }
-}
 /// See [`EventTypeFilter`](crate::model::EventTypeFilter).
 pub mod event_type_filter {
 
     /// A builder for [`EventTypeFilter`](crate::model::EventTypeFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_type_codes: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) services: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -293,7 +314,7 @@ impl EventTypeFilter {
 
 /// <p>Summary information about an event, returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html">DescribeEventsForOrganization</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationEvent {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
@@ -382,27 +403,11 @@ impl OrganizationEvent {
         self.status_code.as_ref()
     }
 }
-impl std::fmt::Debug for OrganizationEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationEvent");
-        formatter.field("arn", &self.arn);
-        formatter.field("service", &self.service);
-        formatter.field("event_type_code", &self.event_type_code);
-        formatter.field("event_type_category", &self.event_type_category);
-        formatter.field("event_scope_code", &self.event_scope_code);
-        formatter.field("region", &self.region);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("status_code", &self.status_code);
-        formatter.finish()
-    }
-}
 /// See [`OrganizationEvent`](crate::model::OrganizationEvent).
 pub mod organization_event {
 
     /// A builder for [`OrganizationEvent`](crate::model::OrganizationEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) service: std::option::Option<std::string::String>,
@@ -575,6 +580,42 @@ impl OrganizationEvent {
     }
 }
 
+/// When writing a match expression against `EventStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let eventstatuscode = unimplemented!();
+/// match eventstatuscode {
+///     EventStatusCode::Closed => { /* ... */ },
+///     EventStatusCode::Open => { /* ... */ },
+///     EventStatusCode::Upcoming => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `eventstatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EventStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EventStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EventStatusCode::NewFeature` is defined.
+/// Specifically, when `eventstatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EventStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -593,8 +634,8 @@ pub enum EventStatusCode {
     Open,
     #[allow(missing_docs)] // documentation missing in model
     Upcoming,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EventStatusCode {
     fn from(s: &str) -> Self {
@@ -602,7 +643,7 @@ impl std::convert::From<&str> for EventStatusCode {
             "closed" => EventStatusCode::Closed,
             "open" => EventStatusCode::Open,
             "upcoming" => EventStatusCode::Upcoming,
-            other => EventStatusCode::Unknown(other.to_owned()),
+            other => EventStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -620,11 +661,11 @@ impl EventStatusCode {
             EventStatusCode::Closed => "closed",
             EventStatusCode::Open => "open",
             EventStatusCode::Upcoming => "upcoming",
-            EventStatusCode::Unknown(s) => s.as_ref(),
+            EventStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["closed", "open", "upcoming"]
     }
 }
@@ -634,6 +675,42 @@ impl AsRef<str> for EventStatusCode {
     }
 }
 
+/// When writing a match expression against `EventScopeCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let eventscopecode = unimplemented!();
+/// match eventscopecode {
+///     EventScopeCode::AccountSpecific => { /* ... */ },
+///     EventScopeCode::None => { /* ... */ },
+///     EventScopeCode::Public => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `eventscopecode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EventScopeCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EventScopeCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EventScopeCode::NewFeature` is defined.
+/// Specifically, when `eventscopecode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EventScopeCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -652,8 +729,8 @@ pub enum EventScopeCode {
     None,
     #[allow(missing_docs)] // documentation missing in model
     Public,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EventScopeCode {
     fn from(s: &str) -> Self {
@@ -661,7 +738,7 @@ impl std::convert::From<&str> for EventScopeCode {
             "ACCOUNT_SPECIFIC" => EventScopeCode::AccountSpecific,
             "NONE" => EventScopeCode::None,
             "PUBLIC" => EventScopeCode::Public,
-            other => EventScopeCode::Unknown(other.to_owned()),
+            other => EventScopeCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -679,11 +756,11 @@ impl EventScopeCode {
             EventScopeCode::AccountSpecific => "ACCOUNT_SPECIFIC",
             EventScopeCode::None => "NONE",
             EventScopeCode::Public => "PUBLIC",
-            EventScopeCode::Unknown(s) => s.as_ref(),
+            EventScopeCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT_SPECIFIC", "NONE", "PUBLIC"]
     }
 }
@@ -695,7 +772,7 @@ impl AsRef<str> for EventScopeCode {
 
 /// <p>The values to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html">DescribeEventsForOrganization</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationEventFilter {
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code> </p>
     #[doc(hidden)]
@@ -777,28 +854,11 @@ impl OrganizationEventFilter {
         self.event_status_codes.as_deref()
     }
 }
-impl std::fmt::Debug for OrganizationEventFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationEventFilter");
-        formatter.field("event_type_codes", &self.event_type_codes);
-        formatter.field("aws_account_ids", &self.aws_account_ids);
-        formatter.field("services", &self.services);
-        formatter.field("regions", &self.regions);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("entity_arns", &self.entity_arns);
-        formatter.field("entity_values", &self.entity_values);
-        formatter.field("event_type_categories", &self.event_type_categories);
-        formatter.field("event_status_codes", &self.event_status_codes);
-        formatter.finish()
-    }
-}
 /// See [`OrganizationEventFilter`](crate::model::OrganizationEventFilter).
 pub mod organization_event_filter {
 
     /// A builder for [`OrganizationEventFilter`](crate::model::OrganizationEventFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_type_codes: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) aws_account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1033,7 +1093,7 @@ impl OrganizationEventFilter {
 
 /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DateTimeRange {
     /// <p>The starting date and time of a time range.</p>
     #[doc(hidden)]
@@ -1052,19 +1112,11 @@ impl DateTimeRange {
         self.to.as_ref()
     }
 }
-impl std::fmt::Debug for DateTimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DateTimeRange");
-        formatter.field("from", &self.from);
-        formatter.field("to", &self.to);
-        formatter.finish()
-    }
-}
 /// See [`DateTimeRange`](crate::model::DateTimeRange).
 pub mod date_time_range {
 
     /// A builder for [`DateTimeRange`](crate::model::DateTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) to: std::option::Option<aws_smithy_types::DateTime>,
@@ -1114,7 +1166,7 @@ impl DateTimeRange {
 /// </ul>
 /// <p>You can determine if an event is public or account-specific by using the <code>eventScopeCode</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode">eventScopeCode</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Event {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
@@ -1210,28 +1262,11 @@ impl Event {
         self.event_scope_code.as_ref()
     }
 }
-impl std::fmt::Debug for Event {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Event");
-        formatter.field("arn", &self.arn);
-        formatter.field("service", &self.service);
-        formatter.field("event_type_code", &self.event_type_code);
-        formatter.field("event_type_category", &self.event_type_category);
-        formatter.field("region", &self.region);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("event_scope_code", &self.event_scope_code);
-        formatter.finish()
-    }
-}
 /// See [`Event`](crate::model::Event).
 pub mod event {
 
     /// A builder for [`Event`](crate::model::Event).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) service: std::option::Option<std::string::String>,
@@ -1421,7 +1456,7 @@ impl Event {
 
 /// <p>The values to use to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html">DescribeEventAggregates</a> operations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventFilter {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
     #[doc(hidden)]
@@ -1526,30 +1561,11 @@ impl EventFilter {
         self.event_status_codes.as_deref()
     }
 }
-impl std::fmt::Debug for EventFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventFilter");
-        formatter.field("event_arns", &self.event_arns);
-        formatter.field("event_type_codes", &self.event_type_codes);
-        formatter.field("services", &self.services);
-        formatter.field("regions", &self.regions);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("start_times", &self.start_times);
-        formatter.field("end_times", &self.end_times);
-        formatter.field("last_updated_times", &self.last_updated_times);
-        formatter.field("entity_arns", &self.entity_arns);
-        formatter.field("entity_values", &self.entity_values);
-        formatter.field("event_type_categories", &self.event_type_categories);
-        formatter.field("tags", &self.tags);
-        formatter.field("event_status_codes", &self.event_status_codes);
-        formatter.finish()
-    }
-}
 /// See [`EventFilter`](crate::model::EventFilter).
 pub mod event_filter {
 
     /// A builder for [`EventFilter`](crate::model::EventFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) event_type_codes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1856,7 +1872,7 @@ impl EventFilter {
 
 /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation can't find a specified event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationEventDetailsErrorItem {
     /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation can't find a specified event.</p>
     #[doc(hidden)]
@@ -1905,21 +1921,11 @@ impl OrganizationEventDetailsErrorItem {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for OrganizationEventDetailsErrorItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationEventDetailsErrorItem");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("event_arn", &self.event_arn);
-        formatter.field("error_name", &self.error_name);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`OrganizationEventDetailsErrorItem`](crate::model::OrganizationEventDetailsErrorItem).
 pub mod organization_event_details_error_item {
 
     /// A builder for [`OrganizationEventDetailsErrorItem`](crate::model::OrganizationEventDetailsErrorItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) event_arn: std::option::Option<std::string::String>,
@@ -2009,7 +2015,7 @@ impl OrganizationEventDetailsErrorItem {
 
 /// <p>Detailed information about an event. A combination of an <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a> object, an <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventDescription.html">EventDescription</a> object, and additional metadata about the event. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationEventDetails {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     #[doc(hidden)]
@@ -2058,21 +2064,11 @@ impl OrganizationEventDetails {
         self.event_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for OrganizationEventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationEventDetails");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("event", &self.event);
-        formatter.field("event_description", &self.event_description);
-        formatter.field("event_metadata", &self.event_metadata);
-        formatter.finish()
-    }
-}
 /// See [`OrganizationEventDetails`](crate::model::OrganizationEventDetails).
 pub mod organization_event_details {
 
     /// A builder for [`OrganizationEventDetails`](crate::model::OrganizationEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) event: std::option::Option<crate::model::Event>,
@@ -2175,7 +2171,7 @@ impl OrganizationEventDetails {
 
 /// <p>The detailed description of the event. Included in the information returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDescription {
     /// <p>The most recent description of the event.</p>
     #[doc(hidden)]
@@ -2187,18 +2183,11 @@ impl EventDescription {
         self.latest_description.as_deref()
     }
 }
-impl std::fmt::Debug for EventDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDescription");
-        formatter.field("latest_description", &self.latest_description);
-        formatter.finish()
-    }
-}
 /// See [`EventDescription`](crate::model::EventDescription).
 pub mod event_description {
 
     /// A builder for [`EventDescription`](crate::model::EventDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) latest_description: std::option::Option<std::string::String>,
     }
@@ -2233,7 +2222,7 @@ impl EventDescription {
 
 /// <p>The values used to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a> operations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventAccountFilter {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
@@ -2256,19 +2245,11 @@ impl EventAccountFilter {
         self.aws_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for EventAccountFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventAccountFilter");
-        formatter.field("event_arn", &self.event_arn);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.finish()
-    }
-}
 /// See [`EventAccountFilter`](crate::model::EventAccountFilter).
 pub mod event_account_filter {
 
     /// A builder for [`EventAccountFilter`](crate::model::EventAccountFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arn: std::option::Option<std::string::String>,
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -2319,7 +2300,7 @@ impl EventAccountFilter {
 
 /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation can't find a specified event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDetailsErrorItem {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
@@ -2349,20 +2330,11 @@ impl EventDetailsErrorItem {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for EventDetailsErrorItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDetailsErrorItem");
-        formatter.field("event_arn", &self.event_arn);
-        formatter.field("error_name", &self.error_name);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`EventDetailsErrorItem`](crate::model::EventDetailsErrorItem).
 pub mod event_details_error_item {
 
     /// A builder for [`EventDetailsErrorItem`](crate::model::EventDetailsErrorItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arn: std::option::Option<std::string::String>,
         pub(crate) error_name: std::option::Option<std::string::String>,
@@ -2425,7 +2397,7 @@ impl EventDetailsErrorItem {
 
 /// <p>Detailed information about an event. A combination of an <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a> object, an <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventDescription.html">EventDescription</a> object, and additional metadata about the event. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventDetails {
     /// <p>Summary information about the event.</p>
     #[doc(hidden)]
@@ -2455,20 +2427,11 @@ impl EventDetails {
         self.event_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for EventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventDetails");
-        formatter.field("event", &self.event);
-        formatter.field("event_description", &self.event_description);
-        formatter.field("event_metadata", &self.event_metadata);
-        formatter.finish()
-    }
-}
 /// See [`EventDetails`](crate::model::EventDetails).
 pub mod event_details {
 
     /// A builder for [`EventDetails`](crate::model::EventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event: std::option::Option<crate::model::Event>,
         pub(crate) event_description: std::option::Option<crate::model::EventDescription>,
@@ -2544,7 +2507,7 @@ impl EventDetails {
 
 /// <p>The number of events of each issue type. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html">DescribeEventAggregates</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventAggregate {
     /// <p>The issue type for the associated count.</p>
     #[doc(hidden)]
@@ -2563,19 +2526,11 @@ impl EventAggregate {
         self.count
     }
 }
-impl std::fmt::Debug for EventAggregate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventAggregate");
-        formatter.field("aggregate_value", &self.aggregate_value);
-        formatter.field("count", &self.count);
-        formatter.finish()
-    }
-}
 /// See [`EventAggregate`](crate::model::EventAggregate).
 pub mod event_aggregate {
 
     /// A builder for [`EventAggregate`](crate::model::EventAggregate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aggregate_value: std::option::Option<std::string::String>,
         pub(crate) count: std::option::Option<i32>,
@@ -2620,6 +2575,40 @@ impl EventAggregate {
     }
 }
 
+/// When writing a match expression against `EventAggregateField`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let eventaggregatefield = unimplemented!();
+/// match eventaggregatefield {
+///     EventAggregateField::EventTypeCategory => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `eventaggregatefield` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EventAggregateField::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EventAggregateField::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EventAggregateField::NewFeature` is defined.
+/// Specifically, when `eventaggregatefield` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EventAggregateField::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2634,14 +2623,16 @@ impl EventAggregate {
 pub enum EventAggregateField {
     #[allow(missing_docs)] // documentation missing in model
     EventTypeCategory,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EventAggregateField {
     fn from(s: &str) -> Self {
         match s {
             "eventTypeCategory" => EventAggregateField::EventTypeCategory,
-            other => EventAggregateField::Unknown(other.to_owned()),
+            other => {
+                EventAggregateField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2657,11 +2648,11 @@ impl EventAggregateField {
     pub fn as_str(&self) -> &str {
         match self {
             EventAggregateField::EventTypeCategory => "eventTypeCategory",
-            EventAggregateField::Unknown(s) => s.as_ref(),
+            EventAggregateField::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["eventTypeCategory"]
     }
 }
@@ -2673,7 +2664,7 @@ impl AsRef<str> for EventAggregateField {
 
 /// <p>The number of entities that are affected by one or more events. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html">DescribeEntityAggregates</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityAggregate {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
@@ -2696,19 +2687,11 @@ impl EntityAggregate {
         self.count
     }
 }
-impl std::fmt::Debug for EntityAggregate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityAggregate");
-        formatter.field("event_arn", &self.event_arn);
-        formatter.field("count", &self.count);
-        formatter.finish()
-    }
-}
 /// See [`EntityAggregate`](crate::model::EntityAggregate).
 pub mod entity_aggregate {
 
     /// A builder for [`EntityAggregate`](crate::model::EntityAggregate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arn: std::option::Option<std::string::String>,
         pub(crate) count: std::option::Option<i32>,
@@ -2756,7 +2739,7 @@ impl EntityAggregate {
 
 /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a> operation can't find or process a specific entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationAffectedEntitiesErrorItem {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     #[doc(hidden)]
@@ -2793,21 +2776,11 @@ impl OrganizationAffectedEntitiesErrorItem {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for OrganizationAffectedEntitiesErrorItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationAffectedEntitiesErrorItem");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("event_arn", &self.event_arn);
-        formatter.field("error_name", &self.error_name);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`OrganizationAffectedEntitiesErrorItem`](crate::model::OrganizationAffectedEntitiesErrorItem).
 pub mod organization_affected_entities_error_item {
 
     /// A builder for [`OrganizationAffectedEntitiesErrorItem`](crate::model::OrganizationAffectedEntitiesErrorItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) event_arn: std::option::Option<std::string::String>,
@@ -2885,7 +2858,7 @@ impl OrganizationAffectedEntitiesErrorItem {
 
 /// <p>Information about an entity that is affected by a Health event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AffectedEntity {
     /// <p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code> </p>
     #[doc(hidden)]
@@ -2958,25 +2931,11 @@ impl AffectedEntity {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for AffectedEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AffectedEntity");
-        formatter.field("entity_arn", &self.entity_arn);
-        formatter.field("event_arn", &self.event_arn);
-        formatter.field("entity_value", &self.entity_value);
-        formatter.field("entity_url", &self.entity_url);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`AffectedEntity`](crate::model::AffectedEntity).
 pub mod affected_entity {
 
     /// A builder for [`AffectedEntity`](crate::model::AffectedEntity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_arn: std::option::Option<std::string::String>,
         pub(crate) event_arn: std::option::Option<std::string::String>,
@@ -3124,6 +3083,42 @@ impl AffectedEntity {
     }
 }
 
+/// When writing a match expression against `EntityStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let entitystatuscode = unimplemented!();
+/// match entitystatuscode {
+///     EntityStatusCode::Impaired => { /* ... */ },
+///     EntityStatusCode::Unimpaired => { /* ... */ },
+///     EntityStatusCode::UnknownValue => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `entitystatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EntityStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EntityStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EntityStatusCode::NewFeature` is defined.
+/// Specifically, when `entitystatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EntityStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// _Note: `EntityStatusCode::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
@@ -3142,8 +3137,8 @@ pub enum EntityStatusCode {
     Unimpaired,
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EntityStatusCode {
     fn from(s: &str) -> Self {
@@ -3151,7 +3146,7 @@ impl std::convert::From<&str> for EntityStatusCode {
             "IMPAIRED" => EntityStatusCode::Impaired,
             "UNIMPAIRED" => EntityStatusCode::Unimpaired,
             "UNKNOWN" => EntityStatusCode::UnknownValue,
-            other => EntityStatusCode::Unknown(other.to_owned()),
+            other => EntityStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3169,11 +3164,11 @@ impl EntityStatusCode {
             EntityStatusCode::Impaired => "IMPAIRED",
             EntityStatusCode::Unimpaired => "UNIMPAIRED",
             EntityStatusCode::UnknownValue => "UNKNOWN",
-            EntityStatusCode::Unknown(s) => s.as_ref(),
+            EntityStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IMPAIRED", "UNIMPAIRED", "UNKNOWN"]
     }
 }
@@ -3185,7 +3180,7 @@ impl AsRef<str> for EntityStatusCode {
 
 /// <p>The values to use to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityFilter {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
     #[doc(hidden)]
@@ -3241,23 +3236,11 @@ impl EntityFilter {
         self.status_codes.as_deref()
     }
 }
-impl std::fmt::Debug for EntityFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityFilter");
-        formatter.field("event_arns", &self.event_arns);
-        formatter.field("entity_arns", &self.entity_arns);
-        formatter.field("entity_values", &self.entity_values);
-        formatter.field("last_updated_times", &self.last_updated_times);
-        formatter.field("tags", &self.tags);
-        formatter.field("status_codes", &self.status_codes);
-        formatter.finish()
-    }
-}
 /// See [`EntityFilter`](crate::model::EntityFilter).
 pub mod entity_filter {
 
     /// A builder for [`EntityFilter`](crate::model::EntityFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) entity_arns: std::option::Option<std::vec::Vec<std::string::String>>,

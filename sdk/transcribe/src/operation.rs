@@ -5,7 +5,7 @@
 /// [`create_call_analytics_category`](crate::client::Client::create_call_analytics_category).
 ///
 /// See [`crate::client::fluent_builders::CreateCallAnalyticsCategory`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCallAnalyticsCategory {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCallAnalyticsCateg
 /// [`create_language_model`](crate::client::Client::create_language_model).
 ///
 /// See [`crate::client::fluent_builders::CreateLanguageModel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLanguageModel {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLanguageModel {
 /// [`create_medical_vocabulary`](crate::client::Client::create_medical_vocabulary).
 ///
 /// See [`crate::client::fluent_builders::CreateMedicalVocabulary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMedicalVocabulary {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMedicalVocabulary 
 /// [`create_vocabulary`](crate::client::Client::create_vocabulary).
 ///
 /// See [`crate::client::fluent_builders::CreateVocabulary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVocabulary {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVocabulary {
 /// [`create_vocabulary_filter`](crate::client::Client::create_vocabulary_filter).
 ///
 /// See [`crate::client::fluent_builders::CreateVocabularyFilter`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVocabularyFilter {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVocabularyFilter {
 /// [`delete_call_analytics_category`](crate::client::Client::delete_call_analytics_category).
 ///
 /// See [`crate::client::fluent_builders::DeleteCallAnalyticsCategory`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCallAnalyticsCategory {
     _private: (),
 }
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCallAnalyticsCateg
 /// [`delete_call_analytics_job`](crate::client::Client::delete_call_analytics_job).
 ///
 /// See [`crate::client::fluent_builders::DeleteCallAnalyticsJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCallAnalyticsJob {
     _private: (),
 }
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCallAnalyticsJob {
 /// [`delete_language_model`](crate::client::Client::delete_language_model).
 ///
 /// See [`crate::client::fluent_builders::DeleteLanguageModel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLanguageModel {
     _private: (),
 }
@@ -277,7 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLanguageModel {
 /// [`delete_medical_transcription_job`](crate::client::Client::delete_medical_transcription_job).
 ///
 /// See [`crate::client::fluent_builders::DeleteMedicalTranscriptionJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMedicalTranscriptionJob {
     _private: (),
 }
@@ -311,7 +311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMedicalTranscripti
 /// [`delete_medical_vocabulary`](crate::client::Client::delete_medical_vocabulary).
 ///
 /// See [`crate::client::fluent_builders::DeleteMedicalVocabulary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMedicalVocabulary {
     _private: (),
 }
@@ -345,7 +345,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMedicalVocabulary 
 /// [`delete_transcription_job`](crate::client::Client::delete_transcription_job).
 ///
 /// See [`crate::client::fluent_builders::DeleteTranscriptionJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTranscriptionJob {
     _private: (),
 }
@@ -379,7 +379,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTranscriptionJob {
 /// [`delete_vocabulary`](crate::client::Client::delete_vocabulary).
 ///
 /// See [`crate::client::fluent_builders::DeleteVocabulary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVocabulary {
     _private: (),
 }
@@ -413,7 +413,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVocabulary {
 /// [`delete_vocabulary_filter`](crate::client::Client::delete_vocabulary_filter).
 ///
 /// See [`crate::client::fluent_builders::DeleteVocabularyFilter`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVocabularyFilter {
     _private: (),
 }
@@ -447,7 +447,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVocabularyFilter {
 /// [`describe_language_model`](crate::client::Client::describe_language_model).
 ///
 /// See [`crate::client::fluent_builders::DescribeLanguageModel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLanguageModel {
     _private: (),
 }
@@ -481,7 +481,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLanguageModel {
 /// [`get_call_analytics_category`](crate::client::Client::get_call_analytics_category).
 ///
 /// See [`crate::client::fluent_builders::GetCallAnalyticsCategory`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCallAnalyticsCategory {
     _private: (),
 }
@@ -515,7 +515,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCallAnalyticsCategory
 /// [`get_call_analytics_job`](crate::client::Client::get_call_analytics_job).
 ///
 /// See [`crate::client::fluent_builders::GetCallAnalyticsJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCallAnalyticsJob {
     _private: (),
 }
@@ -549,7 +549,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCallAnalyticsJob {
 /// [`get_medical_transcription_job`](crate::client::Client::get_medical_transcription_job).
 ///
 /// See [`crate::client::fluent_builders::GetMedicalTranscriptionJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMedicalTranscriptionJob {
     _private: (),
 }
@@ -583,7 +583,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMedicalTranscriptionJ
 /// [`get_medical_vocabulary`](crate::client::Client::get_medical_vocabulary).
 ///
 /// See [`crate::client::fluent_builders::GetMedicalVocabulary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMedicalVocabulary {
     _private: (),
 }
@@ -617,7 +617,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMedicalVocabulary {
 /// [`get_transcription_job`](crate::client::Client::get_transcription_job).
 ///
 /// See [`crate::client::fluent_builders::GetTranscriptionJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTranscriptionJob {
     _private: (),
 }
@@ -651,7 +651,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTranscriptionJob {
 /// [`get_vocabulary`](crate::client::Client::get_vocabulary).
 ///
 /// See [`crate::client::fluent_builders::GetVocabulary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetVocabulary {
     _private: (),
 }
@@ -683,7 +683,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVocabulary {
 /// [`get_vocabulary_filter`](crate::client::Client::get_vocabulary_filter).
 ///
 /// See [`crate::client::fluent_builders::GetVocabularyFilter`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetVocabularyFilter {
     _private: (),
 }
@@ -717,7 +717,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVocabularyFilter {
 /// [`list_call_analytics_categories`](crate::client::Client::list_call_analytics_categories).
 ///
 /// See [`crate::client::fluent_builders::ListCallAnalyticsCategories`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCallAnalyticsCategories {
     _private: (),
 }
@@ -751,7 +751,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCallAnalyticsCategor
 /// [`list_call_analytics_jobs`](crate::client::Client::list_call_analytics_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListCallAnalyticsJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCallAnalyticsJobs {
     _private: (),
 }
@@ -785,7 +785,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCallAnalyticsJobs {
 /// [`list_language_models`](crate::client::Client::list_language_models).
 ///
 /// See [`crate::client::fluent_builders::ListLanguageModels`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLanguageModels {
     _private: (),
 }
@@ -819,7 +819,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLanguageModels {
 /// [`list_medical_transcription_jobs`](crate::client::Client::list_medical_transcription_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListMedicalTranscriptionJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMedicalTranscriptionJobs {
     _private: (),
 }
@@ -853,7 +853,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMedicalTranscription
 /// [`list_medical_vocabularies`](crate::client::Client::list_medical_vocabularies).
 ///
 /// See [`crate::client::fluent_builders::ListMedicalVocabularies`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMedicalVocabularies {
     _private: (),
 }
@@ -887,7 +887,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMedicalVocabularies 
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -921,7 +921,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_transcription_jobs`](crate::client::Client::list_transcription_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListTranscriptionJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTranscriptionJobs {
     _private: (),
 }
@@ -955,7 +955,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTranscriptionJobs {
 /// [`list_vocabularies`](crate::client::Client::list_vocabularies).
 ///
 /// See [`crate::client::fluent_builders::ListVocabularies`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVocabularies {
     _private: (),
 }
@@ -989,7 +989,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVocabularies {
 /// [`list_vocabulary_filters`](crate::client::Client::list_vocabulary_filters).
 ///
 /// See [`crate::client::fluent_builders::ListVocabularyFilters`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVocabularyFilters {
     _private: (),
 }
@@ -1023,7 +1023,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVocabularyFilters {
 /// [`start_call_analytics_job`](crate::client::Client::start_call_analytics_job).
 ///
 /// See [`crate::client::fluent_builders::StartCallAnalyticsJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartCallAnalyticsJob {
     _private: (),
 }
@@ -1057,7 +1057,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCallAnalyticsJob {
 /// [`start_medical_transcription_job`](crate::client::Client::start_medical_transcription_job).
 ///
 /// See [`crate::client::fluent_builders::StartMedicalTranscriptionJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartMedicalTranscriptionJob {
     _private: (),
 }
@@ -1091,7 +1091,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMedicalTranscriptio
 /// [`start_transcription_job`](crate::client::Client::start_transcription_job).
 ///
 /// See [`crate::client::fluent_builders::StartTranscriptionJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartTranscriptionJob {
     _private: (),
 }
@@ -1125,7 +1125,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTranscriptionJob {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1157,7 +1157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1189,7 +1189,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_call_analytics_category`](crate::client::Client::update_call_analytics_category).
 ///
 /// See [`crate::client::fluent_builders::UpdateCallAnalyticsCategory`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCallAnalyticsCategory {
     _private: (),
 }
@@ -1223,7 +1223,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCallAnalyticsCateg
 /// [`update_medical_vocabulary`](crate::client::Client::update_medical_vocabulary).
 ///
 /// See [`crate::client::fluent_builders::UpdateMedicalVocabulary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateMedicalVocabulary {
     _private: (),
 }
@@ -1257,7 +1257,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMedicalVocabulary 
 /// [`update_vocabulary`](crate::client::Client::update_vocabulary).
 ///
 /// See [`crate::client::fluent_builders::UpdateVocabulary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVocabulary {
     _private: (),
 }
@@ -1291,7 +1291,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVocabulary {
 /// [`update_vocabulary_filter`](crate::client::Client::update_vocabulary_filter).
 ///
 /// See [`crate::client::fluent_builders::UpdateVocabularyFilter`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVocabularyFilter {
     _private: (),
 }

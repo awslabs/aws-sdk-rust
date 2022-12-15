@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod get_entitlements_input {
 
     /// A builder for [`GetEntitlementsInput`](crate::input::GetEntitlementsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_code: std::option::Option<std::string::String>,
         pub(crate) filter: std::option::Option<
@@ -79,7 +79,7 @@ pub mod get_entitlements_input {
         /// Consumes the builder and constructs a [`GetEntitlementsInput`](crate::input::GetEntitlementsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetEntitlementsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetEntitlementsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetEntitlementsInput {
                 product_code: self.product_code,
@@ -103,13 +103,13 @@ impl GetEntitlementsInput {
             crate::operation::GetEntitlements,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetEntitlementsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -117,8 +117,10 @@ impl GetEntitlementsInput {
             fn update_http_builder(
                 input: &crate::input::GetEntitlementsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -205,7 +207,7 @@ impl GetEntitlementsInput {
 
 /// <p>The GetEntitlementsRequest contains parameters for the GetEntitlements operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEntitlementsInput {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>
     #[doc(hidden)]
@@ -248,15 +250,5 @@ impl GetEntitlementsInput {
     /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for GetEntitlementsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEntitlementsInput");
-        formatter.field("product_code", &self.product_code);
-        formatter.field("filter", &self.filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }

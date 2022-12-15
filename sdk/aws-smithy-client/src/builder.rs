@@ -87,6 +87,20 @@ use crate::http_connector::ConnectorSettings;
 #[cfg(any(feature = "rustls", feature = "native-tls"))]
 use crate::hyper_ext::Adapter as HyperAdapter;
 
+/// Max idle connections is not standardized across SDKs. Java V1 and V2 use 50, and Go V2 uses 100.
+/// The number below was chosen arbitrarily between those two reference points, and should allow
+/// for 14 separate SDK clients in a Lambda where the max file handles is 1024.
+#[cfg(any(feature = "rustls", feature = "native-tls"))]
+const DEFAULT_MAX_IDLE_CONNECTIONS: usize = 70;
+
+/// Returns default HTTP client settings for hyper.
+#[cfg(any(feature = "rustls", feature = "native-tls"))]
+fn default_hyper_builder() -> hyper::client::Builder {
+    let mut builder = hyper::client::Builder::default();
+    builder.pool_max_idle_per_host(DEFAULT_MAX_IDLE_CONNECTIONS);
+    builder
+}
+
 #[cfg(feature = "rustls")]
 impl<M, R> Builder<(), M, R> {
     /// Connect to the service over HTTPS using Rustls using dynamic dispatch.
@@ -96,6 +110,7 @@ impl<M, R> Builder<(), M, R> {
     ) -> Builder<DynConnector, M, R> {
         self.connector(DynConnector::new(
             HyperAdapter::builder()
+                .hyper_builder(default_hyper_builder())
                 .connector_settings(connector_settings)
                 .build(crate::conns::https()),
         ))
@@ -112,6 +127,7 @@ impl<M, R> Builder<(), M, R> {
     ) -> Builder<DynConnector, M, R> {
         self.connector(DynConnector::new(
             HyperAdapter::builder()
+                .hyper_builder(default_hyper_builder())
                 .connector_settings(connector_settings)
                 .build(crate::conns::native_tls()),
         ))

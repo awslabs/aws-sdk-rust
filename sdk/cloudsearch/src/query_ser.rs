@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_analysis_scheme(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::AnalysisScheme,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AnalysisSchemeName");
     if let Some(var_2) = &input.analysis_scheme_name {
@@ -26,7 +26,7 @@ pub fn serialize_structure_crate_model_analysis_scheme(
 pub fn serialize_structure_crate_model_expression(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Expression,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("ExpressionName");
     if let Some(var_8) = &input.expression_name {
@@ -44,7 +44,7 @@ pub fn serialize_structure_crate_model_expression(
 pub fn serialize_structure_crate_model_index_field(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::IndexField,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_11 = writer.prefix("IndexFieldName");
     if let Some(var_12) = &input.index_field_name {
@@ -117,7 +117,7 @@ pub fn serialize_structure_crate_model_index_field(
 pub fn serialize_structure_crate_model_suggester(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Suggester,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_37 = writer.prefix("SuggesterName");
     if let Some(var_38) = &input.suggester_name {
@@ -137,7 +137,7 @@ pub fn serialize_structure_crate_model_suggester(
 pub fn serialize_structure_crate_model_domain_endpoint_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DomainEndpointOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_41 = writer.prefix("EnforceHTTPS");
     if let Some(var_42) = &input.enforce_https {
@@ -155,7 +155,7 @@ pub fn serialize_structure_crate_model_domain_endpoint_options(
 pub fn serialize_structure_crate_model_scaling_parameters(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ScalingParameters,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_45 = writer.prefix("DesiredInstanceType");
     if let Some(var_46) = &input.desired_instance_type {
@@ -184,7 +184,7 @@ pub fn serialize_structure_crate_model_scaling_parameters(
 pub fn serialize_structure_crate_model_analysis_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::AnalysisOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_49 = writer.prefix("Synonyms");
     if let Some(var_50) = &input.synonyms {
@@ -217,7 +217,7 @@ pub fn serialize_structure_crate_model_analysis_options(
 pub fn serialize_structure_crate_model_int_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::IntOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_59 = writer.prefix("DefaultValue");
     if let Some(var_60) = &input.default_value {
@@ -258,7 +258,7 @@ pub fn serialize_structure_crate_model_int_options(
 pub fn serialize_structure_crate_model_double_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DoubleOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_71 = writer.prefix("DefaultValue");
     if let Some(var_72) = &input.default_value {
@@ -299,7 +299,7 @@ pub fn serialize_structure_crate_model_double_options(
 pub fn serialize_structure_crate_model_literal_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LiteralOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_83 = writer.prefix("DefaultValue");
     if let Some(var_84) = &input.default_value {
@@ -337,7 +337,7 @@ pub fn serialize_structure_crate_model_literal_options(
 pub fn serialize_structure_crate_model_text_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TextOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_95 = writer.prefix("DefaultValue");
     if let Some(var_96) = &input.default_value {
@@ -375,7 +375,7 @@ pub fn serialize_structure_crate_model_text_options(
 pub fn serialize_structure_crate_model_date_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DateOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_107 = writer.prefix("DefaultValue");
     if let Some(var_108) = &input.default_value {
@@ -413,7 +413,7 @@ pub fn serialize_structure_crate_model_date_options(
 pub fn serialize_structure_crate_model_lat_lon_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LatLonOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_119 = writer.prefix("DefaultValue");
     if let Some(var_120) = &input.default_value {
@@ -451,7 +451,7 @@ pub fn serialize_structure_crate_model_lat_lon_options(
 pub fn serialize_structure_crate_model_int_array_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::IntArrayOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_131 = writer.prefix("DefaultValue");
     if let Some(var_132) = &input.default_value {
@@ -487,7 +487,7 @@ pub fn serialize_structure_crate_model_int_array_options(
 pub fn serialize_structure_crate_model_double_array_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DoubleArrayOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_141 = writer.prefix("DefaultValue");
     if let Some(var_142) = &input.default_value {
@@ -523,7 +523,7 @@ pub fn serialize_structure_crate_model_double_array_options(
 pub fn serialize_structure_crate_model_literal_array_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LiteralArrayOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_151 = writer.prefix("DefaultValue");
     if let Some(var_152) = &input.default_value {
@@ -556,7 +556,7 @@ pub fn serialize_structure_crate_model_literal_array_options(
 pub fn serialize_structure_crate_model_text_array_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TextArrayOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_161 = writer.prefix("DefaultValue");
     if let Some(var_162) = &input.default_value {
@@ -589,7 +589,7 @@ pub fn serialize_structure_crate_model_text_array_options(
 pub fn serialize_structure_crate_model_date_array_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DateArrayOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_171 = writer.prefix("DefaultValue");
     if let Some(var_172) = &input.default_value {
@@ -622,7 +622,7 @@ pub fn serialize_structure_crate_model_date_array_options(
 pub fn serialize_structure_crate_model_document_suggester_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DocumentSuggesterOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_181 = writer.prefix("SourceField");
     if let Some(var_182) = &input.source_field {

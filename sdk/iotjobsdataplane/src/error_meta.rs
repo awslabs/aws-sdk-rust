@@ -17,8 +17,15 @@ pub enum Error {
     TerminalStateException(crate::error::TerminalStateException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -43,30 +50,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeJobExecutionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeJobExecutionErrorKind::CertificateValidationException(
-                    inner,
-                ) => Error::CertificateValidationException(inner),
-                crate::error::DescribeJobExecutionErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DescribeJobExecutionErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::DescribeJobExecutionErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::DescribeJobExecutionErrorKind::TerminalStateException(inner) => {
-                    Error::TerminalStateException(inner)
-                }
-                crate::error::DescribeJobExecutionErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::DescribeJobExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeJobExecutionError> for Error {
+    fn from(err: crate::error::DescribeJobExecutionError) -> Self {
+        match err.kind {
+            crate::error::DescribeJobExecutionErrorKind::CertificateValidationException(inner) => {
+                Error::CertificateValidationException(inner)
+            }
+            crate::error::DescribeJobExecutionErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DescribeJobExecutionErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DescribeJobExecutionErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::DescribeJobExecutionErrorKind::TerminalStateException(inner) => {
+                Error::TerminalStateException(inner)
+            }
+            crate::error::DescribeJobExecutionErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DescribeJobExecutionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -79,27 +93,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetPendingJobExecutionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetPendingJobExecutionsErrorKind::CertificateValidationException(
-                    inner,
-                ) => Error::CertificateValidationException(inner),
-                crate::error::GetPendingJobExecutionsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::GetPendingJobExecutionsErrorKind::ResourceNotFoundException(
-                    inner,
-                ) => Error::ResourceNotFoundException(inner),
-                crate::error::GetPendingJobExecutionsErrorKind::ServiceUnavailableException(
-                    inner,
-                ) => Error::ServiceUnavailableException(inner),
-                crate::error::GetPendingJobExecutionsErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::GetPendingJobExecutionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetPendingJobExecutionsError> for Error {
+    fn from(err: crate::error::GetPendingJobExecutionsError) -> Self {
+        match err.kind {
+            crate::error::GetPendingJobExecutionsErrorKind::CertificateValidationException(
+                inner,
+            ) => Error::CertificateValidationException(inner),
+            crate::error::GetPendingJobExecutionsErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::GetPendingJobExecutionsErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetPendingJobExecutionsErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::GetPendingJobExecutionsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::GetPendingJobExecutionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -112,15 +133,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartNextPendingJobExecutionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::StartNextPendingJobExecutionErrorKind::CertificateValidationException(inner) => Error::CertificateValidationException(inner),
-                crate::error::StartNextPendingJobExecutionErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-                crate::error::StartNextPendingJobExecutionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::StartNextPendingJobExecutionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::StartNextPendingJobExecutionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::StartNextPendingJobExecutionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::StartNextPendingJobExecutionError> for Error {
+    fn from(err: crate::error::StartNextPendingJobExecutionError) -> Self {
+        match err.kind {
+            crate::error::StartNextPendingJobExecutionErrorKind::CertificateValidationException(
+                inner,
+            ) => Error::CertificateValidationException(inner),
+            crate::error::StartNextPendingJobExecutionErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::StartNextPendingJobExecutionErrorKind::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::error::StartNextPendingJobExecutionErrorKind::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::error::StartNextPendingJobExecutionErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::StartNextPendingJobExecutionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -132,30 +172,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateJobExecutionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateJobExecutionErrorKind::CertificateValidationException(
-                    inner,
-                ) => Error::CertificateValidationException(inner),
-                crate::error::UpdateJobExecutionErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::UpdateJobExecutionErrorKind::InvalidStateTransitionException(
-                    inner,
-                ) => Error::InvalidStateTransitionException(inner),
-                crate::error::UpdateJobExecutionErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::UpdateJobExecutionErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::UpdateJobExecutionErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::UpdateJobExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateJobExecutionError> for Error {
+    fn from(err: crate::error::UpdateJobExecutionError) -> Self {
+        match err.kind {
+            crate::error::UpdateJobExecutionErrorKind::CertificateValidationException(inner) => {
+                Error::CertificateValidationException(inner)
+            }
+            crate::error::UpdateJobExecutionErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::UpdateJobExecutionErrorKind::InvalidStateTransitionException(inner) => {
+                Error::InvalidStateTransitionException(inner)
+            }
+            crate::error::UpdateJobExecutionErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::UpdateJobExecutionErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::UpdateJobExecutionErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::UpdateJobExecutionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

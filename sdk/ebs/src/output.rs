@@ -96,7 +96,7 @@ impl std::fmt::Debug for StartSnapshotOutput {
 pub mod start_snapshot_output {
 
     /// A builder for [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -241,6 +241,22 @@ pub mod start_snapshot_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("description", &self.description);
+            formatter.field("snapshot_id", &self.snapshot_id);
+            formatter.field("owner_id", &self.owner_id);
+            formatter.field("status", &self.status);
+            formatter.field("start_time", &self.start_time);
+            formatter.field("volume_size", &self.volume_size);
+            formatter.field("block_size", &self.block_size);
+            formatter.field("tags", &self.tags);
+            formatter.field("parent_snapshot_id", &self.parent_snapshot_id);
+            formatter.field("kms_key_arn", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl StartSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
@@ -251,7 +267,7 @@ impl StartSnapshotOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutSnapshotBlockOutput {
     /// <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
     #[doc(hidden)]
@@ -270,19 +286,11 @@ impl PutSnapshotBlockOutput {
         self.checksum_algorithm.as_ref()
     }
 }
-impl std::fmt::Debug for PutSnapshotBlockOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutSnapshotBlockOutput");
-        formatter.field("checksum", &self.checksum);
-        formatter.field("checksum_algorithm", &self.checksum_algorithm);
-        formatter.finish()
-    }
-}
 /// See [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
 pub mod put_snapshot_block_output {
 
     /// A builder for [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) checksum: std::option::Option<std::string::String>,
         pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
@@ -384,7 +392,7 @@ impl std::fmt::Debug for ListSnapshotBlocksOutput {
 pub mod list_snapshot_blocks_output {
 
     /// A builder for [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
         pub(crate) expiry_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -466,6 +474,17 @@ pub mod list_snapshot_blocks_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("blocks", &"*** Sensitive Data Redacted ***");
+            formatter.field("expiry_time", &self.expiry_time);
+            formatter.field("volume_size", &self.volume_size);
+            formatter.field("block_size", &self.block_size);
+            formatter.field("next_token", &self.next_token);
+            formatter.finish()
+        }
+    }
 }
 impl ListSnapshotBlocksOutput {
     /// Creates a new builder-style object to manufacture [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
@@ -476,7 +495,7 @@ impl ListSnapshotBlocksOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListChangedBlocksOutput {
     /// <p>An array of objects containing information about the changed blocks.</p>
     #[doc(hidden)]
@@ -516,22 +535,11 @@ impl ListChangedBlocksOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListChangedBlocksOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListChangedBlocksOutput");
-        formatter.field("changed_blocks", &self.changed_blocks);
-        formatter.field("expiry_time", &self.expiry_time);
-        formatter.field("volume_size", &self.volume_size);
-        formatter.field("block_size", &self.block_size);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
 pub mod list_changed_blocks_output {
 
     /// A builder for [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) changed_blocks: std::option::Option<std::vec::Vec<crate::model::ChangedBlock>>,
         pub(crate) expiry_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -668,7 +676,7 @@ impl std::fmt::Debug for GetSnapshotBlockOutput {
 pub mod get_snapshot_block_output {
 
     /// A builder for [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput).
-    #[derive(std::default::Default, std::fmt::Debug)]
+    #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) data_length: std::option::Option<i32>,
         pub(crate) block_data: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -732,6 +740,16 @@ pub mod get_snapshot_block_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("data_length", &self.data_length);
+            formatter.field("block_data", &"*** Sensitive Data Redacted ***");
+            formatter.field("checksum", &self.checksum);
+            formatter.field("checksum_algorithm", &self.checksum_algorithm);
+            formatter.finish()
+        }
+    }
 }
 impl GetSnapshotBlockOutput {
     /// Creates a new builder-style object to manufacture [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput).
@@ -742,7 +760,7 @@ impl GetSnapshotBlockOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteSnapshotOutput {
     /// <p>The status of the snapshot.</p>
     #[doc(hidden)]
@@ -754,18 +772,11 @@ impl CompleteSnapshotOutput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for CompleteSnapshotOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompleteSnapshotOutput");
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
 pub mod complete_snapshot_output {
 
     /// A builder for [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,
     }

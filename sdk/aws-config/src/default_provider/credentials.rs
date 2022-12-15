@@ -70,7 +70,7 @@ impl DefaultCredentialsChain {
     async fn credentials(&self) -> credentials::Result {
         self.0
             .provide_credentials()
-            .instrument(tracing::info_span!("provide_credentials", provider = %"default_chain"))
+            .instrument(tracing::debug_span!("provide_credentials", provider = %"default_chain"))
             .await
     }
 }
@@ -209,6 +209,14 @@ impl Builder {
     pub fn profile_name(mut self, name: &str) -> Self {
         self.profile_file_builder = self.profile_file_builder.profile_name(name);
         self.region_chain = self.region_chain.profile_name(name);
+        self
+    }
+
+    /// Override the IMDS client used for this provider
+    ///
+    /// When unset, the default IMDS client will be used.
+    pub fn imds_client(mut self, client: crate::imds::Client) -> Self {
+        self.imds_builder = self.imds_builder.imds_client(client);
         self
     }
 

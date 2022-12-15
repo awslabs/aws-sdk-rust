@@ -2,7 +2,7 @@
 
 /// <p>The field's information of a request that resulted in an exception. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The field name. </p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -75,6 +67,83 @@ impl ValidationExceptionField {
     }
 }
 
+/// When writing a match expression against `ValidationExceptionReason`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let validationexceptionreason = unimplemented!();
+/// match validationexceptionreason {
+///     ValidationExceptionReason::AccountsAlreadyAssociated => { /* ... */ },
+///     ValidationExceptionReason::AccountsNotAssociated => { /* ... */ },
+///     ValidationExceptionReason::CannotParse => { /* ... */ },
+///     ValidationExceptionReason::DuplicateAccount => { /* ... */ },
+///     ValidationExceptionReason::DuplicatePricingruleArns => { /* ... */ },
+///     ValidationExceptionReason::FieldValidationFailed => { /* ... */ },
+///     ValidationExceptionReason::IllegalAccounts => { /* ... */ },
+///     ValidationExceptionReason::IllegalBillingPeriod => { /* ... */ },
+///     ValidationExceptionReason::IllegalBillingPeriodRange => { /* ... */ },
+///     ValidationExceptionReason::IllegalChargeDetails => { /* ... */ },
+///     ValidationExceptionReason::IllegalCustomlineitem => { /* ... */ },
+///     ValidationExceptionReason::IllegalCustomlineitemModification => { /* ... */ },
+///     ValidationExceptionReason::IllegalCustomlineitemUpdate => { /* ... */ },
+///     ValidationExceptionReason::IllegalExpression => { /* ... */ },
+///     ValidationExceptionReason::IllegalPrimaryAccount => { /* ... */ },
+///     ValidationExceptionReason::IllegalResourceArns => { /* ... */ },
+///     ValidationExceptionReason::IllegalScope => { /* ... */ },
+///     ValidationExceptionReason::IllegalService => { /* ... */ },
+///     ValidationExceptionReason::IllegalUpdateChargeDetails => { /* ... */ },
+///     ValidationExceptionReason::InvalidArn => { /* ... */ },
+///     ValidationExceptionReason::InvalidBillingviewArn => { /* ... */ },
+///     ValidationExceptionReason::InvalidBillingGroupStatus => { /* ... */ },
+///     ValidationExceptionReason::InvalidTimeRange => { /* ... */ },
+///     ValidationExceptionReason::MismatchedBillinggroupArn => { /* ... */ },
+///     ValidationExceptionReason::MismatchedBillingviewArn => { /* ... */ },
+///     ValidationExceptionReason::MismatchedCustomlineitemArn => { /* ... */ },
+///     ValidationExceptionReason::MismatchedPricingplanArn => { /* ... */ },
+///     ValidationExceptionReason::MismatchedPricingruleArn => { /* ... */ },
+///     ValidationExceptionReason::MissingBillinggroup => { /* ... */ },
+///     ValidationExceptionReason::MissingCustomlineitem => { /* ... */ },
+///     ValidationExceptionReason::MissingLinkedAccountIds => { /* ... */ },
+///     ValidationExceptionReason::MissingPricingplan => { /* ... */ },
+///     ValidationExceptionReason::MissingPricingPlanArn => { /* ... */ },
+///     ValidationExceptionReason::MultipleLinkedAccountIds => { /* ... */ },
+///     ValidationExceptionReason::MultiplePricingPlanArn => { /* ... */ },
+///     ValidationExceptionReason::Other => { /* ... */ },
+///     ValidationExceptionReason::PricingrulesAlreadyAssociated => { /* ... */ },
+///     ValidationExceptionReason::PricingrulesNotAssociated => { /* ... */ },
+///     ValidationExceptionReason::PricingrulesNotExist => { /* ... */ },
+///     ValidationExceptionReason::PrimaryCannotDisassociate => { /* ... */ },
+///     ValidationExceptionReason::PrimaryNotAssociated => { /* ... */ },
+///     ValidationExceptionReason::TooManyAccountsInRequest => { /* ... */ },
+///     ValidationExceptionReason::TooManyCustomlineitemsInRequest => { /* ... */ },
+///     ValidationExceptionReason::UnknownOperation => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `validationexceptionreason` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ValidationExceptionReason::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ValidationExceptionReason::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ValidationExceptionReason::NewFeature` is defined.
+/// Specifically, when `validationexceptionreason` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -175,8 +244,8 @@ pub enum ValidationExceptionReason {
     TooManyCustomlineitemsInRequest,
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -237,7 +306,9 @@ impl std::convert::From<&str> for ValidationExceptionReason {
                 ValidationExceptionReason::TooManyCustomlineitemsInRequest
             }
             "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(other.to_owned()),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -308,11 +379,11 @@ impl ValidationExceptionReason {
                 "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST"
             }
             ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
-            ValidationExceptionReason::Unknown(s) => s.as_ref(),
+            ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNTS_ALREADY_ASSOCIATED",
             "ACCOUNTS_NOT_ASSOCIATED",
@@ -467,7 +538,7 @@ impl std::fmt::Debug for PricingRuleListElement {
 pub mod pricing_rule_list_element {
 
     /// A builder for [`PricingRuleListElement`](crate::model::PricingRuleListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -608,6 +679,25 @@ pub mod pricing_rule_list_element {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("arn", &self.arn);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("scope", &self.scope);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("modifier_percentage", &self.modifier_percentage);
+            formatter.field("service", &self.service);
+            formatter.field(
+                "associated_pricing_plan_count",
+                &self.associated_pricing_plan_count,
+            );
+            formatter.field("creation_time", &self.creation_time);
+            formatter.field("last_modified_time", &self.last_modified_time);
+            formatter.finish()
+        }
+    }
 }
 impl PricingRuleListElement {
     /// Creates a new builder-style object to manufacture [`PricingRuleListElement`](crate::model::PricingRuleListElement).
@@ -616,6 +706,41 @@ impl PricingRuleListElement {
     }
 }
 
+/// When writing a match expression against `PricingRuleType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let pricingruletype = unimplemented!();
+/// match pricingruletype {
+///     PricingRuleType::Discount => { /* ... */ },
+///     PricingRuleType::Markup => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `pricingruletype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PricingRuleType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PricingRuleType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PricingRuleType::NewFeature` is defined.
+/// Specifically, when `pricingruletype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PricingRuleType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -632,15 +757,15 @@ pub enum PricingRuleType {
     Discount,
     #[allow(missing_docs)] // documentation missing in model
     Markup,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PricingRuleType {
     fn from(s: &str) -> Self {
         match s {
             "DISCOUNT" => PricingRuleType::Discount,
             "MARKUP" => PricingRuleType::Markup,
-            other => PricingRuleType::Unknown(other.to_owned()),
+            other => PricingRuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -657,11 +782,11 @@ impl PricingRuleType {
         match self {
             PricingRuleType::Discount => "DISCOUNT",
             PricingRuleType::Markup => "MARKUP",
-            PricingRuleType::Unknown(s) => s.as_ref(),
+            PricingRuleType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISCOUNT", "MARKUP"]
     }
 }
@@ -671,6 +796,41 @@ impl AsRef<str> for PricingRuleType {
     }
 }
 
+/// When writing a match expression against `PricingRuleScope`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let pricingrulescope = unimplemented!();
+/// match pricingrulescope {
+///     PricingRuleScope::Global => { /* ... */ },
+///     PricingRuleScope::Service => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `pricingrulescope` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PricingRuleScope::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PricingRuleScope::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PricingRuleScope::NewFeature` is defined.
+/// Specifically, when `pricingrulescope` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PricingRuleScope::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -687,15 +847,15 @@ pub enum PricingRuleScope {
     Global,
     #[allow(missing_docs)] // documentation missing in model
     Service,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PricingRuleScope {
     fn from(s: &str) -> Self {
         match s {
             "GLOBAL" => PricingRuleScope::Global,
             "SERVICE" => PricingRuleScope::Service,
-            other => PricingRuleScope::Unknown(other.to_owned()),
+            other => PricingRuleScope::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -712,11 +872,11 @@ impl PricingRuleScope {
         match self {
             PricingRuleScope::Global => "GLOBAL",
             PricingRuleScope::Service => "SERVICE",
-            PricingRuleScope::Unknown(s) => s.as_ref(),
+            PricingRuleScope::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GLOBAL", "SERVICE"]
     }
 }
@@ -728,7 +888,7 @@ impl AsRef<str> for PricingRuleScope {
 
 /// <p> The filter that specifies criteria that the pricing rules returned by the <code>ListPricingRules</code> API will adhere to. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPricingRulesFilter {
     /// <p> A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response. </p>
     #[doc(hidden)]
@@ -740,18 +900,11 @@ impl ListPricingRulesFilter {
         self.arns.as_deref()
     }
 }
-impl std::fmt::Debug for ListPricingRulesFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPricingRulesFilter");
-        formatter.field("arns", &self.arns);
-        formatter.finish()
-    }
-}
 /// See [`ListPricingRulesFilter`](crate::model::ListPricingRulesFilter).
 pub mod list_pricing_rules_filter {
 
     /// A builder for [`ListPricingRulesFilter`](crate::model::ListPricingRulesFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -853,7 +1006,7 @@ impl std::fmt::Debug for PricingPlanListElement {
 pub mod pricing_plan_list_element {
 
     /// A builder for [`PricingPlanListElement`](crate::model::PricingPlanListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -935,6 +1088,18 @@ pub mod pricing_plan_list_element {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("arn", &self.arn);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("size", &self.size);
+            formatter.field("creation_time", &self.creation_time);
+            formatter.field("last_modified_time", &self.last_modified_time);
+            formatter.finish()
+        }
+    }
 }
 impl PricingPlanListElement {
     /// Creates a new builder-style object to manufacture [`PricingPlanListElement`](crate::model::PricingPlanListElement).
@@ -945,7 +1110,7 @@ impl PricingPlanListElement {
 
 /// <p>The filter that specifies the Amazon Resource Names (ARNs) of pricing plans, to retrieve pricing plan information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPricingPlansFilter {
     /// <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
     #[doc(hidden)]
@@ -957,18 +1122,11 @@ impl ListPricingPlansFilter {
         self.arns.as_deref()
     }
 }
-impl std::fmt::Debug for ListPricingPlansFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPricingPlansFilter");
-        formatter.field("arns", &self.arns);
-        formatter.finish()
-    }
-}
 /// See [`ListPricingPlansFilter`](crate::model::ListPricingPlansFilter).
 pub mod list_pricing_plans_filter {
 
     /// A builder for [`ListPricingPlansFilter`](crate::model::ListPricingPlansFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1007,7 +1165,7 @@ impl ListPricingPlansFilter {
 
 /// <p> A representation of a resource association for a custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemResponseElement {
     /// <p> The ARN of the associated resource. </p>
     #[doc(hidden)]
@@ -1026,20 +1184,11 @@ impl ListResourcesAssociatedToCustomLineItemResponseElement {
         self.relationship.as_ref()
     }
 }
-impl std::fmt::Debug for ListResourcesAssociatedToCustomLineItemResponseElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("ListResourcesAssociatedToCustomLineItemResponseElement");
-        formatter.field("arn", &self.arn);
-        formatter.field("relationship", &self.relationship);
-        formatter.finish()
-    }
-}
 /// See [`ListResourcesAssociatedToCustomLineItemResponseElement`](crate::model::ListResourcesAssociatedToCustomLineItemResponseElement).
 pub mod list_resources_associated_to_custom_line_item_response_element {
 
     /// A builder for [`ListResourcesAssociatedToCustomLineItemResponseElement`](crate::model::ListResourcesAssociatedToCustomLineItemResponseElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) relationship: std::option::Option<crate::model::CustomLineItemRelationship>,
@@ -1085,6 +1234,41 @@ impl ListResourcesAssociatedToCustomLineItemResponseElement {
     }
 }
 
+/// When writing a match expression against `CustomLineItemRelationship`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let customlineitemrelationship = unimplemented!();
+/// match customlineitemrelationship {
+///     CustomLineItemRelationship::Child => { /* ... */ },
+///     CustomLineItemRelationship::Parent => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `customlineitemrelationship` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CustomLineItemRelationship::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CustomLineItemRelationship::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CustomLineItemRelationship::NewFeature` is defined.
+/// Specifically, when `customlineitemrelationship` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CustomLineItemRelationship::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1101,15 +1285,17 @@ pub enum CustomLineItemRelationship {
     Child,
     #[allow(missing_docs)] // documentation missing in model
     Parent,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CustomLineItemRelationship {
     fn from(s: &str) -> Self {
         match s {
             "CHILD" => CustomLineItemRelationship::Child,
             "PARENT" => CustomLineItemRelationship::Parent,
-            other => CustomLineItemRelationship::Unknown(other.to_owned()),
+            other => CustomLineItemRelationship::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1126,11 +1312,11 @@ impl CustomLineItemRelationship {
         match self {
             CustomLineItemRelationship::Child => "CHILD",
             CustomLineItemRelationship::Parent => "PARENT",
-            CustomLineItemRelationship::Unknown(s) => s.as_ref(),
+            CustomLineItemRelationship::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CHILD", "PARENT"]
     }
 }
@@ -1142,7 +1328,7 @@ impl AsRef<str> for CustomLineItemRelationship {
 
 /// <p> A filter that specifies the type of resource associations that should be retrieved for a custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemFilter {
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
     #[doc(hidden)]
@@ -1154,18 +1340,11 @@ impl ListResourcesAssociatedToCustomLineItemFilter {
         self.relationship.as_ref()
     }
 }
-impl std::fmt::Debug for ListResourcesAssociatedToCustomLineItemFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourcesAssociatedToCustomLineItemFilter");
-        formatter.field("relationship", &self.relationship);
-        formatter.finish()
-    }
-}
 /// See [`ListResourcesAssociatedToCustomLineItemFilter`](crate::model::ListResourcesAssociatedToCustomLineItemFilter).
 pub mod list_resources_associated_to_custom_line_item_filter {
 
     /// A builder for [`ListResourcesAssociatedToCustomLineItemFilter`](crate::model::ListResourcesAssociatedToCustomLineItemFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relationship: std::option::Option<crate::model::CustomLineItemRelationship>,
     }
@@ -1201,7 +1380,7 @@ impl ListResourcesAssociatedToCustomLineItemFilter {
 
 /// <p> A resource disassociation result for a percentage custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateResourceResponseElement {
     /// <p> The resource ARN that was disassociated from the custom line item. </p>
     #[doc(hidden)]
@@ -1220,19 +1399,11 @@ impl DisassociateResourceResponseElement {
         self.error.as_ref()
     }
 }
-impl std::fmt::Debug for DisassociateResourceResponseElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateResourceResponseElement");
-        formatter.field("arn", &self.arn);
-        formatter.field("error", &self.error);
-        formatter.finish()
-    }
-}
 /// See [`DisassociateResourceResponseElement`](crate::model::DisassociateResourceResponseElement).
 pub mod disassociate_resource_response_element {
 
     /// A builder for [`DisassociateResourceResponseElement`](crate::model::DisassociateResourceResponseElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::AssociateResourceError>,
@@ -1279,7 +1450,7 @@ impl DisassociateResourceResponseElement {
 
 /// <p> A representation of a resource association error. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateResourceError {
     /// <p> The reason the resource association failed. </p>
     #[doc(hidden)]
@@ -1298,19 +1469,11 @@ impl AssociateResourceError {
         self.reason.as_ref()
     }
 }
-impl std::fmt::Debug for AssociateResourceError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateResourceError");
-        formatter.field("message", &self.message);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 /// See [`AssociateResourceError`](crate::model::AssociateResourceError).
 pub mod associate_resource_error {
 
     /// A builder for [`AssociateResourceError`](crate::model::AssociateResourceError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<crate::model::AssociateResourceErrorReason>,
@@ -1355,6 +1518,43 @@ impl AssociateResourceError {
     }
 }
 
+/// When writing a match expression against `AssociateResourceErrorReason`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let associateresourceerrorreason = unimplemented!();
+/// match associateresourceerrorreason {
+///     AssociateResourceErrorReason::IllegalCustomlineitem => { /* ... */ },
+///     AssociateResourceErrorReason::InternalServerException => { /* ... */ },
+///     AssociateResourceErrorReason::InvalidArn => { /* ... */ },
+///     AssociateResourceErrorReason::ServiceLimitExceeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `associateresourceerrorreason` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AssociateResourceErrorReason::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AssociateResourceErrorReason::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AssociateResourceErrorReason::NewFeature` is defined.
+/// Specifically, when `associateresourceerrorreason` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AssociateResourceErrorReason::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1375,8 +1575,8 @@ pub enum AssociateResourceErrorReason {
     InvalidArn,
     #[allow(missing_docs)] // documentation missing in model
     ServiceLimitExceeded,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AssociateResourceErrorReason {
     fn from(s: &str) -> Self {
@@ -1385,7 +1585,9 @@ impl std::convert::From<&str> for AssociateResourceErrorReason {
             "INTERNAL_SERVER_EXCEPTION" => AssociateResourceErrorReason::InternalServerException,
             "INVALID_ARN" => AssociateResourceErrorReason::InvalidArn,
             "SERVICE_LIMIT_EXCEEDED" => AssociateResourceErrorReason::ServiceLimitExceeded,
-            other => AssociateResourceErrorReason::Unknown(other.to_owned()),
+            other => AssociateResourceErrorReason::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1404,11 +1606,11 @@ impl AssociateResourceErrorReason {
             AssociateResourceErrorReason::InternalServerException => "INTERNAL_SERVER_EXCEPTION",
             AssociateResourceErrorReason::InvalidArn => "INVALID_ARN",
             AssociateResourceErrorReason::ServiceLimitExceeded => "SERVICE_LIMIT_EXCEEDED",
-            AssociateResourceErrorReason::Unknown(s) => s.as_ref(),
+            AssociateResourceErrorReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ILLEGAL_CUSTOMLINEITEM",
             "INTERNAL_SERVER_EXCEPTION",
@@ -1425,7 +1627,7 @@ impl AsRef<str> for AssociateResourceErrorReason {
 
 /// <p> The billing period range in which the custom line item request will be applied. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomLineItemBillingPeriodRange {
     /// <p> The inclusive start billing period that defines a billing period range where a custom line is applied. </p>
     #[doc(hidden)]
@@ -1444,25 +1646,11 @@ impl CustomLineItemBillingPeriodRange {
         self.exclusive_end_billing_period.as_deref()
     }
 }
-impl std::fmt::Debug for CustomLineItemBillingPeriodRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomLineItemBillingPeriodRange");
-        formatter.field(
-            "inclusive_start_billing_period",
-            &self.inclusive_start_billing_period,
-        );
-        formatter.field(
-            "exclusive_end_billing_period",
-            &self.exclusive_end_billing_period,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CustomLineItemBillingPeriodRange`](crate::model::CustomLineItemBillingPeriodRange).
 pub mod custom_line_item_billing_period_range {
 
     /// A builder for [`CustomLineItemBillingPeriodRange`](crate::model::CustomLineItemBillingPeriodRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inclusive_start_billing_period: std::option::Option<std::string::String>,
         pub(crate) exclusive_end_billing_period: std::option::Option<std::string::String>,
@@ -1518,7 +1706,7 @@ impl CustomLineItemBillingPeriodRange {
 
 /// <p> A resource association result for a percentage custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateResourceResponseElement {
     /// <p> The resource ARN that was associated to the custom line item. </p>
     #[doc(hidden)]
@@ -1537,19 +1725,11 @@ impl AssociateResourceResponseElement {
         self.error.as_ref()
     }
 }
-impl std::fmt::Debug for AssociateResourceResponseElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateResourceResponseElement");
-        formatter.field("arn", &self.arn);
-        formatter.field("error", &self.error);
-        formatter.finish()
-    }
-}
 /// See [`AssociateResourceResponseElement`](crate::model::AssociateResourceResponseElement).
 pub mod associate_resource_response_element {
 
     /// A builder for [`AssociateResourceResponseElement`](crate::model::AssociateResourceResponseElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::AssociateResourceError>,
@@ -1693,7 +1873,7 @@ impl std::fmt::Debug for CustomLineItemListElement {
 pub mod custom_line_item_list_element {
 
     /// A builder for [`CustomLineItemListElement`](crate::model::CustomLineItemListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1836,6 +2016,22 @@ pub mod custom_line_item_list_element {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("charge_details", &self.charge_details);
+            formatter.field("currency_code", &self.currency_code);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("product_code", &self.product_code);
+            formatter.field("billing_group_arn", &self.billing_group_arn);
+            formatter.field("creation_time", &self.creation_time);
+            formatter.field("last_modified_time", &self.last_modified_time);
+            formatter.field("association_size", &self.association_size);
+            formatter.finish()
+        }
+    }
 }
 impl CustomLineItemListElement {
     /// Creates a new builder-style object to manufacture [`CustomLineItemListElement`](crate::model::CustomLineItemListElement).
@@ -1844,6 +2040,41 @@ impl CustomLineItemListElement {
     }
 }
 
+/// When writing a match expression against `CurrencyCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let currencycode = unimplemented!();
+/// match currencycode {
+///     CurrencyCode::Cny => { /* ... */ },
+///     CurrencyCode::Usd => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `currencycode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CurrencyCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CurrencyCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CurrencyCode::NewFeature` is defined.
+/// Specifically, when `currencycode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CurrencyCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1860,15 +2091,15 @@ pub enum CurrencyCode {
     Cny,
     #[allow(missing_docs)] // documentation missing in model
     Usd,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CurrencyCode {
     fn from(s: &str) -> Self {
         match s {
             "CNY" => CurrencyCode::Cny,
             "USD" => CurrencyCode::Usd,
-            other => CurrencyCode::Unknown(other.to_owned()),
+            other => CurrencyCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1885,11 +2116,11 @@ impl CurrencyCode {
         match self {
             CurrencyCode::Cny => "CNY",
             CurrencyCode::Usd => "USD",
-            CurrencyCode::Unknown(s) => s.as_ref(),
+            CurrencyCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CNY", "USD"]
     }
 }
@@ -1901,7 +2132,7 @@ impl AsRef<str> for CurrencyCode {
 
 /// <p> A representation of the charge details of a custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomLineItemChargeDetails {
     /// <p> A <code>ListCustomLineItemFlatChargeDetails</code> that describes the charge details of a flat custom line item. </p>
     #[doc(hidden)]
@@ -1929,20 +2160,11 @@ impl ListCustomLineItemChargeDetails {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for ListCustomLineItemChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomLineItemChargeDetails");
-        formatter.field("flat", &self.flat);
-        formatter.field("percentage", &self.percentage);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`ListCustomLineItemChargeDetails`](crate::model::ListCustomLineItemChargeDetails).
 pub mod list_custom_line_item_charge_details {
 
     /// A builder for [`ListCustomLineItemChargeDetails`](crate::model::ListCustomLineItemChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flat: std::option::Option<crate::model::ListCustomLineItemFlatChargeDetails>,
         pub(crate) percentage:
@@ -2009,6 +2231,41 @@ impl ListCustomLineItemChargeDetails {
     }
 }
 
+/// When writing a match expression against `CustomLineItemType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let customlineitemtype = unimplemented!();
+/// match customlineitemtype {
+///     CustomLineItemType::Credit => { /* ... */ },
+///     CustomLineItemType::Fee => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `customlineitemtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CustomLineItemType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CustomLineItemType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CustomLineItemType::NewFeature` is defined.
+/// Specifically, when `customlineitemtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CustomLineItemType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2025,15 +2282,17 @@ pub enum CustomLineItemType {
     Credit,
     #[allow(missing_docs)] // documentation missing in model
     Fee,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CustomLineItemType {
     fn from(s: &str) -> Self {
         match s {
             "CREDIT" => CustomLineItemType::Credit,
             "FEE" => CustomLineItemType::Fee,
-            other => CustomLineItemType::Unknown(other.to_owned()),
+            other => {
+                CustomLineItemType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2050,11 +2309,11 @@ impl CustomLineItemType {
         match self {
             CustomLineItemType::Credit => "CREDIT",
             CustomLineItemType::Fee => "FEE",
-            CustomLineItemType::Unknown(s) => s.as_ref(),
+            CustomLineItemType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREDIT", "FEE"]
     }
 }
@@ -2066,7 +2325,7 @@ impl AsRef<str> for CustomLineItemType {
 
 /// <p> A representation of the charge details associated with a percentage custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
     #[doc(hidden)]
@@ -2078,18 +2337,11 @@ impl ListCustomLineItemPercentageChargeDetails {
         self.percentage_value
     }
 }
-impl std::fmt::Debug for ListCustomLineItemPercentageChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomLineItemPercentageChargeDetails");
-        formatter.field("percentage_value", &self.percentage_value);
-        formatter.finish()
-    }
-}
 /// See [`ListCustomLineItemPercentageChargeDetails`](crate::model::ListCustomLineItemPercentageChargeDetails).
 pub mod list_custom_line_item_percentage_charge_details {
 
     /// A builder for [`ListCustomLineItemPercentageChargeDetails`](crate::model::ListCustomLineItemPercentageChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percentage_value: std::option::Option<f64>,
     }
@@ -2121,7 +2373,7 @@ impl ListCustomLineItemPercentageChargeDetails {
 
 /// <p> A representation of the charge details associated with a flat custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomLineItemFlatChargeDetails {
     /// <p> The custom line item's fixed charge value in USD. </p>
     #[doc(hidden)]
@@ -2133,18 +2385,11 @@ impl ListCustomLineItemFlatChargeDetails {
         self.charge_value
     }
 }
-impl std::fmt::Debug for ListCustomLineItemFlatChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomLineItemFlatChargeDetails");
-        formatter.field("charge_value", &self.charge_value);
-        formatter.finish()
-    }
-}
 /// See [`ListCustomLineItemFlatChargeDetails`](crate::model::ListCustomLineItemFlatChargeDetails).
 pub mod list_custom_line_item_flat_charge_details {
 
     /// A builder for [`ListCustomLineItemFlatChargeDetails`](crate::model::ListCustomLineItemFlatChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) charge_value: std::option::Option<f64>,
     }
@@ -2176,7 +2421,7 @@ impl ListCustomLineItemFlatChargeDetails {
 
 /// <p> A filter that specifies the custom line items and billing groups to retrieve FFLI information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCustomLineItemsFilter {
     /// <p> A list of custom line items to retrieve information. </p>
     #[doc(hidden)]
@@ -2202,20 +2447,11 @@ impl ListCustomLineItemsFilter {
         self.arns.as_deref()
     }
 }
-impl std::fmt::Debug for ListCustomLineItemsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCustomLineItemsFilter");
-        formatter.field("names", &self.names);
-        formatter.field("billing_groups", &self.billing_groups);
-        formatter.field("arns", &self.arns);
-        formatter.finish()
-    }
-}
 /// See [`ListCustomLineItemsFilter`](crate::model::ListCustomLineItemsFilter).
 pub mod list_custom_line_items_filter {
 
     /// A builder for [`ListCustomLineItemsFilter`](crate::model::ListCustomLineItemsFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) billing_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2298,7 +2534,7 @@ impl ListCustomLineItemsFilter {
 
 /// <p> The charge details of a custom line item. It should contain only one of <code>Flat</code> or <code>Percentage</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomLineItemChargeDetails {
     /// <p> A <code>CustomLineItemFlatChargeDetails</code> that describes the charge details of a flat custom line item. </p>
     #[doc(hidden)]
@@ -2326,20 +2562,11 @@ impl CustomLineItemChargeDetails {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for CustomLineItemChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomLineItemChargeDetails");
-        formatter.field("flat", &self.flat);
-        formatter.field("percentage", &self.percentage);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`CustomLineItemChargeDetails`](crate::model::CustomLineItemChargeDetails).
 pub mod custom_line_item_charge_details {
 
     /// A builder for [`CustomLineItemChargeDetails`](crate::model::CustomLineItemChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flat: std::option::Option<crate::model::CustomLineItemFlatChargeDetails>,
         pub(crate) percentage:
@@ -2408,7 +2635,7 @@ impl CustomLineItemChargeDetails {
 
 /// <p> A representation of the charge details associated with a percentage custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
     #[doc(hidden)]
@@ -2427,19 +2654,11 @@ impl CustomLineItemPercentageChargeDetails {
         self.associated_values.as_deref()
     }
 }
-impl std::fmt::Debug for CustomLineItemPercentageChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomLineItemPercentageChargeDetails");
-        formatter.field("percentage_value", &self.percentage_value);
-        formatter.field("associated_values", &self.associated_values);
-        formatter.finish()
-    }
-}
 /// See [`CustomLineItemPercentageChargeDetails`](crate::model::CustomLineItemPercentageChargeDetails).
 pub mod custom_line_item_percentage_charge_details {
 
     /// A builder for [`CustomLineItemPercentageChargeDetails`](crate::model::CustomLineItemPercentageChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percentage_value: std::option::Option<f64>,
         pub(crate) associated_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2492,7 +2711,7 @@ impl CustomLineItemPercentageChargeDetails {
 
 /// <p> A representation of the charge details associated with a flat custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomLineItemFlatChargeDetails {
     /// <p> The custom line item's fixed charge value in USD. </p>
     #[doc(hidden)]
@@ -2504,18 +2723,11 @@ impl CustomLineItemFlatChargeDetails {
         self.charge_value
     }
 }
-impl std::fmt::Debug for CustomLineItemFlatChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomLineItemFlatChargeDetails");
-        formatter.field("charge_value", &self.charge_value);
-        formatter.finish()
-    }
-}
 /// See [`CustomLineItemFlatChargeDetails`](crate::model::CustomLineItemFlatChargeDetails).
 pub mod custom_line_item_flat_charge_details {
 
     /// A builder for [`CustomLineItemFlatChargeDetails`](crate::model::CustomLineItemFlatChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) charge_value: std::option::Option<f64>,
     }
@@ -2547,7 +2759,7 @@ impl CustomLineItemFlatChargeDetails {
 
 /// <p> A representation of the new charge details of a custom line item. This should contain only one of <code>Flat</code> or <code>Percentage</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCustomLineItemChargeDetails {
     /// <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new charge details of a flat custom line item. </p>
     #[doc(hidden)]
@@ -2570,19 +2782,11 @@ impl UpdateCustomLineItemChargeDetails {
         self.percentage.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateCustomLineItemChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCustomLineItemChargeDetails");
-        formatter.field("flat", &self.flat);
-        formatter.field("percentage", &self.percentage);
-        formatter.finish()
-    }
-}
 /// See [`UpdateCustomLineItemChargeDetails`](crate::model::UpdateCustomLineItemChargeDetails).
 pub mod update_custom_line_item_charge_details {
 
     /// A builder for [`UpdateCustomLineItemChargeDetails`](crate::model::UpdateCustomLineItemChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flat: std::option::Option<crate::model::UpdateCustomLineItemFlatChargeDetails>,
         pub(crate) percentage:
@@ -2636,7 +2840,7 @@ impl UpdateCustomLineItemChargeDetails {
 
 /// <p> A representation of the new charge details associated with a percentage custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's new percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
     #[doc(hidden)]
@@ -2648,18 +2852,11 @@ impl UpdateCustomLineItemPercentageChargeDetails {
         self.percentage_value
     }
 }
-impl std::fmt::Debug for UpdateCustomLineItemPercentageChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCustomLineItemPercentageChargeDetails");
-        formatter.field("percentage_value", &self.percentage_value);
-        formatter.finish()
-    }
-}
 /// See [`UpdateCustomLineItemPercentageChargeDetails`](crate::model::UpdateCustomLineItemPercentageChargeDetails).
 pub mod update_custom_line_item_percentage_charge_details {
 
     /// A builder for [`UpdateCustomLineItemPercentageChargeDetails`](crate::model::UpdateCustomLineItemPercentageChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percentage_value: std::option::Option<f64>,
     }
@@ -2691,7 +2888,7 @@ impl UpdateCustomLineItemPercentageChargeDetails {
 
 /// <p> A representation of the new charge details associated with a flat custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCustomLineItemFlatChargeDetails {
     /// <p> The custom line item's new fixed charge value in USD. </p>
     #[doc(hidden)]
@@ -2703,18 +2900,11 @@ impl UpdateCustomLineItemFlatChargeDetails {
         self.charge_value
     }
 }
-impl std::fmt::Debug for UpdateCustomLineItemFlatChargeDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCustomLineItemFlatChargeDetails");
-        formatter.field("charge_value", &self.charge_value);
-        formatter.finish()
-    }
-}
 /// See [`UpdateCustomLineItemFlatChargeDetails`](crate::model::UpdateCustomLineItemFlatChargeDetails).
 pub mod update_custom_line_item_flat_charge_details {
 
     /// A builder for [`UpdateCustomLineItemFlatChargeDetails`](crate::model::UpdateCustomLineItemFlatChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) charge_value: std::option::Option<f64>,
     }
@@ -2843,7 +3033,7 @@ impl std::fmt::Debug for BillingGroupListElement {
 pub mod billing_group_list_element {
 
     /// A builder for [`BillingGroupListElement`](crate::model::BillingGroupListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2988,6 +3178,22 @@ pub mod billing_group_list_element {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("arn", &self.arn);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("primary_account_id", &self.primary_account_id);
+            formatter.field("computation_preference", &self.computation_preference);
+            formatter.field("size", &self.size);
+            formatter.field("creation_time", &self.creation_time);
+            formatter.field("last_modified_time", &self.last_modified_time);
+            formatter.field("status", &self.status);
+            formatter.field("status_reason", &self.status_reason);
+            formatter.finish()
+        }
+    }
 }
 impl BillingGroupListElement {
     /// Creates a new builder-style object to manufacture [`BillingGroupListElement`](crate::model::BillingGroupListElement).
@@ -2996,6 +3202,41 @@ impl BillingGroupListElement {
     }
 }
 
+/// When writing a match expression against `BillingGroupStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let billinggroupstatus = unimplemented!();
+/// match billinggroupstatus {
+///     BillingGroupStatus::Active => { /* ... */ },
+///     BillingGroupStatus::PrimaryAccountMissing => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `billinggroupstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `BillingGroupStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `BillingGroupStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `BillingGroupStatus::NewFeature` is defined.
+/// Specifically, when `billinggroupstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `BillingGroupStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3012,15 +3253,17 @@ pub enum BillingGroupStatus {
     Active,
     #[allow(missing_docs)] // documentation missing in model
     PrimaryAccountMissing,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BillingGroupStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => BillingGroupStatus::Active,
             "PRIMARY_ACCOUNT_MISSING" => BillingGroupStatus::PrimaryAccountMissing,
-            other => BillingGroupStatus::Unknown(other.to_owned()),
+            other => {
+                BillingGroupStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -3037,11 +3280,11 @@ impl BillingGroupStatus {
         match self {
             BillingGroupStatus::Active => "ACTIVE",
             BillingGroupStatus::PrimaryAccountMissing => "PRIMARY_ACCOUNT_MISSING",
-            BillingGroupStatus::Unknown(s) => s.as_ref(),
+            BillingGroupStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "PRIMARY_ACCOUNT_MISSING"]
     }
 }
@@ -3053,7 +3296,7 @@ impl AsRef<str> for BillingGroupStatus {
 
 /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComputationPreference {
     /// <p> The Amazon Resource Name (ARN) of the pricing plan used to compute the Amazon Web Services charges for a billing group. </p>
     #[doc(hidden)]
@@ -3065,18 +3308,11 @@ impl ComputationPreference {
         self.pricing_plan_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ComputationPreference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComputationPreference");
-        formatter.field("pricing_plan_arn", &self.pricing_plan_arn);
-        formatter.finish()
-    }
-}
 /// See [`ComputationPreference`](crate::model::ComputationPreference).
 pub mod computation_preference {
 
     /// A builder for [`ComputationPreference`](crate::model::ComputationPreference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pricing_plan_arn: std::option::Option<std::string::String>,
     }
@@ -3111,7 +3347,7 @@ impl ComputationPreference {
 
 /// <p>The filter that specifies the billing groups and pricing plans to retrieve billing group information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBillingGroupsFilter {
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information. </p>
     #[doc(hidden)]
@@ -3130,19 +3366,11 @@ impl ListBillingGroupsFilter {
         self.pricing_plan.as_deref()
     }
 }
-impl std::fmt::Debug for ListBillingGroupsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBillingGroupsFilter");
-        formatter.field("arns", &self.arns);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.finish()
-    }
-}
 /// See [`ListBillingGroupsFilter`](crate::model::ListBillingGroupsFilter).
 pub mod list_billing_groups_filter {
 
     /// A builder for [`ListBillingGroupsFilter`](crate::model::ListBillingGroupsFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) pricing_plan: std::option::Option<std::string::String>,
@@ -3195,7 +3423,7 @@ impl ListBillingGroupsFilter {
 
 /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountGrouping {
     /// <p> The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group. </p>
     #[doc(hidden)]
@@ -3207,18 +3435,11 @@ impl AccountGrouping {
         self.linked_account_ids.as_deref()
     }
 }
-impl std::fmt::Debug for AccountGrouping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountGrouping");
-        formatter.field("linked_account_ids", &self.linked_account_ids);
-        formatter.finish()
-    }
-}
 /// See [`AccountGrouping`](crate::model::AccountGrouping).
 pub mod account_grouping {
 
     /// A builder for [`AccountGrouping`](crate::model::AccountGrouping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) linked_account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -3259,7 +3480,7 @@ impl AccountGrouping {
 
 /// <p>A summary report of actual Amazon Web Services charges and calculated Amazon Web Services charges, based on the associated pricing plan of a billing group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BillingGroupCostReportElement {
     /// <p>The Amazon Resource Name (ARN) of a billing group. </p>
     #[doc(hidden)]
@@ -3306,23 +3527,11 @@ impl BillingGroupCostReportElement {
         self.currency.as_deref()
     }
 }
-impl std::fmt::Debug for BillingGroupCostReportElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BillingGroupCostReportElement");
-        formatter.field("arn", &self.arn);
-        formatter.field("aws_cost", &self.aws_cost);
-        formatter.field("proforma_cost", &self.proforma_cost);
-        formatter.field("margin", &self.margin);
-        formatter.field("margin_percentage", &self.margin_percentage);
-        formatter.field("currency", &self.currency);
-        formatter.finish()
-    }
-}
 /// See [`BillingGroupCostReportElement`](crate::model::BillingGroupCostReportElement).
 pub mod billing_group_cost_report_element {
 
     /// A builder for [`BillingGroupCostReportElement`](crate::model::BillingGroupCostReportElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) aws_cost: std::option::Option<std::string::String>,
@@ -3420,7 +3629,7 @@ impl BillingGroupCostReportElement {
 
 /// <p>The filter used to retrieve specific <code>BillingGroupCostReportElements</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBillingGroupCostReportsFilter {
     /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports. </p>
     #[doc(hidden)]
@@ -3432,18 +3641,11 @@ impl ListBillingGroupCostReportsFilter {
         self.billing_group_arns.as_deref()
     }
 }
-impl std::fmt::Debug for ListBillingGroupCostReportsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBillingGroupCostReportsFilter");
-        formatter.field("billing_group_arns", &self.billing_group_arns);
-        formatter.finish()
-    }
-}
 /// See [`ListBillingGroupCostReportsFilter`](crate::model::ListBillingGroupCostReportsFilter).
 pub mod list_billing_group_cost_reports_filter {
 
     /// A builder for [`ListBillingGroupCostReportsFilter`](crate::model::ListBillingGroupCostReportsFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -3532,7 +3734,7 @@ impl std::fmt::Debug for AccountAssociationsListElement {
 pub mod account_associations_list_element {
 
     /// A builder for [`AccountAssociationsListElement`](crate::model::AccountAssociationsListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) billing_group_arn: std::option::Option<std::string::String>,
@@ -3596,6 +3798,16 @@ pub mod account_associations_list_element {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("account_id", &self.account_id);
+            formatter.field("billing_group_arn", &self.billing_group_arn);
+            formatter.field("account_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("account_email", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl AccountAssociationsListElement {
     /// Creates a new builder-style object to manufacture [`AccountAssociationsListElement`](crate::model::AccountAssociationsListElement).
@@ -3609,7 +3821,7 @@ impl AccountAssociationsListElement {
 /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
 /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccountAssociationsFilter {
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
@@ -3632,19 +3844,11 @@ impl ListAccountAssociationsFilter {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListAccountAssociationsFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccountAssociationsFilter");
-        formatter.field("association", &self.association);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 /// See [`ListAccountAssociationsFilter`](crate::model::ListAccountAssociationsFilter).
 pub mod list_account_associations_filter {
 
     /// A builder for [`ListAccountAssociationsFilter`](crate::model::ListAccountAssociationsFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,

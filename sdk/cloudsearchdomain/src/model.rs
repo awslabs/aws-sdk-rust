@@ -2,7 +2,7 @@
 
 /// <p>A warning returned by the document service when an issue is discovered while processing an upload request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentServiceWarning {
     /// <p>The description for a warning returned by the document service.</p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl DocumentServiceWarning {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for DocumentServiceWarning {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentServiceWarning");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 /// See [`DocumentServiceWarning`](crate::model::DocumentServiceWarning).
 pub mod document_service_warning {
 
     /// A builder for [`DocumentServiceWarning`](crate::model::DocumentServiceWarning).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -55,6 +48,41 @@ impl DocumentServiceWarning {
     }
 }
 
+/// When writing a match expression against `ContentType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let contenttype = unimplemented!();
+/// match contenttype {
+///     ContentType::ApplicationJson => { /* ... */ },
+///     ContentType::ApplicationXml => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `contenttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ContentType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ContentType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ContentType::NewFeature` is defined.
+/// Specifically, when `contenttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ContentType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -71,15 +99,15 @@ pub enum ContentType {
     ApplicationJson,
     #[allow(missing_docs)] // documentation missing in model
     ApplicationXml,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ContentType {
     fn from(s: &str) -> Self {
         match s {
             "application/json" => ContentType::ApplicationJson,
             "application/xml" => ContentType::ApplicationXml,
-            other => ContentType::Unknown(other.to_owned()),
+            other => ContentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -96,11 +124,11 @@ impl ContentType {
         match self {
             ContentType::ApplicationJson => "application/json",
             ContentType::ApplicationXml => "application/xml",
-            ContentType::Unknown(s) => s.as_ref(),
+            ContentType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["application/json", "application/xml"]
     }
 }
@@ -112,7 +140,7 @@ impl AsRef<str> for ContentType {
 
 /// <p>Container for the suggestion information returned in a <code>SuggestResponse</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuggestModel {
     /// <p>The query string specified in the suggest request.</p>
     #[doc(hidden)]
@@ -138,20 +166,11 @@ impl SuggestModel {
         self.suggestions.as_deref()
     }
 }
-impl std::fmt::Debug for SuggestModel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuggestModel");
-        formatter.field("query", &self.query);
-        formatter.field("found", &self.found);
-        formatter.field("suggestions", &self.suggestions);
-        formatter.finish()
-    }
-}
 /// See [`SuggestModel`](crate::model::SuggestModel).
 pub mod suggest_model {
 
     /// A builder for [`SuggestModel`](crate::model::SuggestModel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query: std::option::Option<std::string::String>,
         pub(crate) found: std::option::Option<i64>,
@@ -216,7 +235,7 @@ impl SuggestModel {
 
 /// <p>An autocomplete suggestion that matches the query string specified in a <code>SuggestRequest</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuggestionMatch {
     /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
     #[doc(hidden)]
@@ -242,20 +261,11 @@ impl SuggestionMatch {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for SuggestionMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuggestionMatch");
-        formatter.field("suggestion", &self.suggestion);
-        formatter.field("score", &self.score);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 /// See [`SuggestionMatch`](crate::model::SuggestionMatch).
 pub mod suggestion_match {
 
     /// A builder for [`SuggestionMatch`](crate::model::SuggestionMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suggestion: std::option::Option<std::string::String>,
         pub(crate) score: std::option::Option<i64>,
@@ -311,7 +321,7 @@ impl SuggestionMatch {
 
 /// <p>Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuggestStatus {
     /// <p>How long it took to process the request, in milliseconds.</p>
     #[doc(hidden)]
@@ -330,19 +340,11 @@ impl SuggestStatus {
         self.rid.as_deref()
     }
 }
-impl std::fmt::Debug for SuggestStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuggestStatus");
-        formatter.field("timems", &self.timems);
-        formatter.field("rid", &self.rid);
-        formatter.finish()
-    }
-}
 /// See [`SuggestStatus`](crate::model::SuggestStatus).
 pub mod suggest_status {
 
     /// A builder for [`SuggestStatus`](crate::model::SuggestStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timems: std::option::Option<i64>,
         pub(crate) rid: std::option::Option<std::string::String>,
@@ -386,7 +388,7 @@ impl SuggestStatus {
 
 /// <p>The statistics for a field calculated in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldStats {
     /// <p>The minimum value found in the specified field in the result set.</p>
     /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
@@ -453,25 +455,11 @@ impl FieldStats {
         self.stddev
     }
 }
-impl std::fmt::Debug for FieldStats {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldStats");
-        formatter.field("min", &self.min);
-        formatter.field("max", &self.max);
-        formatter.field("count", &self.count);
-        formatter.field("missing", &self.missing);
-        formatter.field("sum", &self.sum);
-        formatter.field("sum_of_squares", &self.sum_of_squares);
-        formatter.field("mean", &self.mean);
-        formatter.field("stddev", &self.stddev);
-        formatter.finish()
-    }
-}
 /// See [`FieldStats`](crate::model::FieldStats).
 pub mod field_stats {
 
     /// A builder for [`FieldStats`](crate::model::FieldStats).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min: std::option::Option<std::string::String>,
         pub(crate) max: std::option::Option<std::string::String>,
@@ -593,7 +581,7 @@ impl FieldStats {
 
 /// <p>A container for the calculated facet values and counts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BucketInfo {
     /// <p>A list of the calculated facet values and counts.</p>
     #[doc(hidden)]
@@ -605,18 +593,11 @@ impl BucketInfo {
         self.buckets.as_deref()
     }
 }
-impl std::fmt::Debug for BucketInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BucketInfo");
-        formatter.field("buckets", &self.buckets);
-        formatter.finish()
-    }
-}
 /// See [`BucketInfo`](crate::model::BucketInfo).
 pub mod bucket_info {
 
     /// A builder for [`BucketInfo`](crate::model::BucketInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
     }
@@ -657,7 +638,7 @@ impl BucketInfo {
 
 /// <p>A container for facet information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Bucket {
     /// <p>The facet value being counted.</p>
     #[doc(hidden)]
@@ -676,19 +657,11 @@ impl Bucket {
         self.count
     }
 }
-impl std::fmt::Debug for Bucket {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Bucket");
-        formatter.field("value", &self.value);
-        formatter.field("count", &self.count);
-        formatter.finish()
-    }
-}
 /// See [`Bucket`](crate::model::Bucket).
 pub mod bucket {
 
     /// A builder for [`Bucket`](crate::model::Bucket).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) count: std::option::Option<i64>,
@@ -732,7 +705,7 @@ impl Bucket {
 
 /// <p>The collection of documents that match the search request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Hits {
     /// <p>The total number of documents that match the search request.</p>
     #[doc(hidden)]
@@ -765,21 +738,11 @@ impl Hits {
         self.hit.as_deref()
     }
 }
-impl std::fmt::Debug for Hits {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Hits");
-        formatter.field("found", &self.found);
-        formatter.field("start", &self.start);
-        formatter.field("cursor", &self.cursor);
-        formatter.field("hit", &self.hit);
-        formatter.finish()
-    }
-}
 /// See [`Hits`](crate::model::Hits).
 pub mod hits {
 
     /// A builder for [`Hits`](crate::model::Hits).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) found: std::option::Option<i64>,
         pub(crate) start: std::option::Option<i64>,
@@ -856,7 +819,7 @@ impl Hits {
 
 /// <p>Information about a document that matches the search request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Hit {
     /// <p>The document ID of a document that matches the search request.</p>
     #[doc(hidden)]
@@ -903,21 +866,11 @@ impl Hit {
         self.highlights.as_ref()
     }
 }
-impl std::fmt::Debug for Hit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Hit");
-        formatter.field("id", &self.id);
-        formatter.field("fields", &self.fields);
-        formatter.field("exprs", &self.exprs);
-        formatter.field("highlights", &self.highlights);
-        formatter.finish()
-    }
-}
 /// See [`Hit`](crate::model::Hit).
 pub mod hit {
 
     /// A builder for [`Hit`](crate::model::Hit).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) fields: std::option::Option<
@@ -1036,7 +989,7 @@ impl Hit {
 
 /// <p>Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchStatus {
     /// <p>How long it took to process the request, in milliseconds.</p>
     #[doc(hidden)]
@@ -1055,19 +1008,11 @@ impl SearchStatus {
         self.rid.as_deref()
     }
 }
-impl std::fmt::Debug for SearchStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchStatus");
-        formatter.field("timems", &self.timems);
-        formatter.field("rid", &self.rid);
-        formatter.finish()
-    }
-}
 /// See [`SearchStatus`](crate::model::SearchStatus).
 pub mod search_status {
 
     /// A builder for [`SearchStatus`](crate::model::SearchStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timems: std::option::Option<i64>,
         pub(crate) rid: std::option::Option<std::string::String>,
@@ -1109,6 +1054,43 @@ impl SearchStatus {
     }
 }
 
+/// When writing a match expression against `QueryParser`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let queryparser = unimplemented!();
+/// match queryparser {
+///     QueryParser::Dismax => { /* ... */ },
+///     QueryParser::Lucene => { /* ... */ },
+///     QueryParser::Simple => { /* ... */ },
+///     QueryParser::Structured => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `queryparser` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `QueryParser::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `QueryParser::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `QueryParser::NewFeature` is defined.
+/// Specifically, when `queryparser` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `QueryParser::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1129,8 +1111,8 @@ pub enum QueryParser {
     Simple,
     #[allow(missing_docs)] // documentation missing in model
     Structured,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for QueryParser {
     fn from(s: &str) -> Self {
@@ -1139,7 +1121,7 @@ impl std::convert::From<&str> for QueryParser {
             "lucene" => QueryParser::Lucene,
             "simple" => QueryParser::Simple,
             "structured" => QueryParser::Structured,
-            other => QueryParser::Unknown(other.to_owned()),
+            other => QueryParser::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1158,11 +1140,11 @@ impl QueryParser {
             QueryParser::Lucene => "lucene",
             QueryParser::Simple => "simple",
             QueryParser::Structured => "structured",
-            QueryParser::Unknown(s) => s.as_ref(),
+            QueryParser::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["dismax", "lucene", "simple", "structured"]
     }
 }

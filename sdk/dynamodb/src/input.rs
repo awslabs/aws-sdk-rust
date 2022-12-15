@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_execute_statement_input {
 
     /// A builder for [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statements:
             std::option::Option<std::vec::Vec<crate::model::BatchStatementRequest>>,
@@ -61,8 +61,10 @@ pub mod batch_execute_statement_input {
         /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchExecuteStatementInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::BatchExecuteStatementInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::BatchExecuteStatementInput {
                 statements: self.statements,
                 return_consumed_capacity: self.return_consumed_capacity,
@@ -83,13 +85,13 @@ impl BatchExecuteStatementInput {
             crate::operation::BatchExecuteStatement,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchExecuteStatementInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -97,8 +99,10 @@ impl BatchExecuteStatementInput {
             fn update_http_builder(
                 input: &crate::input::BatchExecuteStatementInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -189,7 +193,7 @@ impl BatchExecuteStatementInput {
 pub mod batch_get_item_input {
 
     /// A builder for [`BatchGetItemInput`](crate::input::BatchGetItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_items: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>,
@@ -300,7 +304,7 @@ pub mod batch_get_item_input {
         /// Consumes the builder and constructs a [`BatchGetItemInput`](crate::input::BatchGetItemInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchGetItemInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::BatchGetItemInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::BatchGetItemInput {
                 request_items: self.request_items,
@@ -322,13 +326,13 @@ impl BatchGetItemInput {
             crate::operation::BatchGetItem,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchGetItemInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -336,8 +340,10 @@ impl BatchGetItemInput {
             fn update_http_builder(
                 input: &crate::input::BatchGetItemInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -426,7 +432,7 @@ impl BatchGetItemInput {
 pub mod batch_write_item_input {
 
     /// A builder for [`BatchWriteItemInput`](crate::input::BatchWriteItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_items: std::option::Option<
             std::collections::HashMap<
@@ -533,7 +539,7 @@ pub mod batch_write_item_input {
         /// Consumes the builder and constructs a [`BatchWriteItemInput`](crate::input::BatchWriteItemInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchWriteItemInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::BatchWriteItemInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::BatchWriteItemInput {
                 request_items: self.request_items,
@@ -556,13 +562,13 @@ impl BatchWriteItemInput {
             crate::operation::BatchWriteItem,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchWriteItemInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -570,8 +576,10 @@ impl BatchWriteItemInput {
             fn update_http_builder(
                 input: &crate::input::BatchWriteItemInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -660,7 +668,7 @@ impl BatchWriteItemInput {
 pub mod create_backup_input {
 
     /// A builder for [`CreateBackupInput`](crate::input::CreateBackupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) backup_name: std::option::Option<std::string::String>,
@@ -689,7 +697,7 @@ pub mod create_backup_input {
         /// Consumes the builder and constructs a [`CreateBackupInput`](crate::input::CreateBackupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateBackupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateBackupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateBackupInput {
                 table_name: self.table_name,
@@ -711,13 +719,13 @@ impl CreateBackupInput {
             crate::operation::CreateBackup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateBackupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -725,8 +733,10 @@ impl CreateBackupInput {
             fn update_http_builder(
                 input: &crate::input::CreateBackupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -815,7 +825,7 @@ impl CreateBackupInput {
 pub mod create_global_table_input {
 
     /// A builder for [`CreateGlobalTableInput`](crate::input::CreateGlobalTableInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_table_name: std::option::Option<std::string::String>,
         pub(crate) replication_group: std::option::Option<std::vec::Vec<crate::model::Replica>>,
@@ -856,8 +866,10 @@ pub mod create_global_table_input {
         /// Consumes the builder and constructs a [`CreateGlobalTableInput`](crate::input::CreateGlobalTableInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateGlobalTableInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateGlobalTableInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateGlobalTableInput {
                 global_table_name: self.global_table_name,
                 replication_group: self.replication_group,
@@ -878,13 +890,13 @@ impl CreateGlobalTableInput {
             crate::operation::CreateGlobalTable,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateGlobalTableInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -892,8 +904,10 @@ impl CreateGlobalTableInput {
             fn update_http_builder(
                 input: &crate::input::CreateGlobalTableInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -982,7 +996,7 @@ impl CreateGlobalTableInput {
 pub mod create_table_input {
 
     /// A builder for [`CreateTableInput`](crate::input::CreateTableInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_definitions:
             std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
@@ -1301,7 +1315,7 @@ pub mod create_table_input {
         /// Consumes the builder and constructs a [`CreateTableInput`](crate::input::CreateTableInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTableInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateTableInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateTableInput {
                 attribute_definitions: self.attribute_definitions,
@@ -1332,13 +1346,13 @@ impl CreateTableInput {
             crate::operation::CreateTable,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateTableInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1346,8 +1360,10 @@ impl CreateTableInput {
             fn update_http_builder(
                 input: &crate::input::CreateTableInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1436,7 +1452,7 @@ impl CreateTableInput {
 pub mod delete_backup_input {
 
     /// A builder for [`DeleteBackupInput`](crate::input::DeleteBackupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_arn: std::option::Option<std::string::String>,
     }
@@ -1454,7 +1470,7 @@ pub mod delete_backup_input {
         /// Consumes the builder and constructs a [`DeleteBackupInput`](crate::input::DeleteBackupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBackupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteBackupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteBackupInput {
                 backup_arn: self.backup_arn,
@@ -1475,13 +1491,13 @@ impl DeleteBackupInput {
             crate::operation::DeleteBackup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBackupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1489,8 +1505,10 @@ impl DeleteBackupInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBackupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1579,7 +1597,7 @@ impl DeleteBackupInput {
 pub mod delete_item_input {
 
     /// A builder for [`DeleteItemInput`](crate::input::DeleteItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<
@@ -1884,7 +1902,8 @@ pub mod delete_item_input {
         /// Consumes the builder and constructs a [`DeleteItemInput`](crate::input::DeleteItemInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteItemInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::DeleteItemInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::DeleteItemInput {
                 table_name: self.table_name,
                 key: self.key,
@@ -1913,13 +1932,13 @@ impl DeleteItemInput {
             crate::operation::DeleteItem,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteItemInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1927,8 +1946,10 @@ impl DeleteItemInput {
             fn update_http_builder(
                 input: &crate::input::DeleteItemInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2017,7 +2038,7 @@ impl DeleteItemInput {
 pub mod delete_table_input {
 
     /// A builder for [`DeleteTableInput`](crate::input::DeleteTableInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
     }
@@ -2035,7 +2056,7 @@ pub mod delete_table_input {
         /// Consumes the builder and constructs a [`DeleteTableInput`](crate::input::DeleteTableInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTableInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteTableInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteTableInput {
                 table_name: self.table_name,
@@ -2056,13 +2077,13 @@ impl DeleteTableInput {
             crate::operation::DeleteTable,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteTableInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2070,8 +2091,10 @@ impl DeleteTableInput {
             fn update_http_builder(
                 input: &crate::input::DeleteTableInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2160,7 +2183,7 @@ impl DeleteTableInput {
 pub mod describe_backup_input {
 
     /// A builder for [`DescribeBackupInput`](crate::input::DescribeBackupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_arn: std::option::Option<std::string::String>,
     }
@@ -2178,7 +2201,7 @@ pub mod describe_backup_input {
         /// Consumes the builder and constructs a [`DescribeBackupInput`](crate::input::DescribeBackupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeBackupInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeBackupInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeBackupInput {
                 backup_arn: self.backup_arn,
@@ -2199,13 +2222,13 @@ impl DescribeBackupInput {
             crate::operation::DescribeBackup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeBackupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2213,8 +2236,10 @@ impl DescribeBackupInput {
             fn update_http_builder(
                 input: &crate::input::DescribeBackupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2303,7 +2328,7 @@ impl DescribeBackupInput {
 pub mod describe_continuous_backups_input {
 
     /// A builder for [`DescribeContinuousBackupsInput`](crate::input::DescribeContinuousBackupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
     }
@@ -2323,7 +2348,7 @@ pub mod describe_continuous_backups_input {
             self,
         ) -> Result<
             crate::input::DescribeContinuousBackupsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeContinuousBackupsInput {
                 table_name: self.table_name,
@@ -2344,13 +2369,13 @@ impl DescribeContinuousBackupsInput {
             crate::operation::DescribeContinuousBackups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeContinuousBackupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2358,8 +2383,10 @@ impl DescribeContinuousBackupsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeContinuousBackupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2450,7 +2477,7 @@ impl DescribeContinuousBackupsInput {
 pub mod describe_contributor_insights_input {
 
     /// A builder for [`DescribeContributorInsightsInput`](crate::input::DescribeContributorInsightsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -2481,7 +2508,7 @@ pub mod describe_contributor_insights_input {
             self,
         ) -> Result<
             crate::input::DescribeContributorInsightsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeContributorInsightsInput {
                 table_name: self.table_name,
@@ -2503,13 +2530,13 @@ impl DescribeContributorInsightsInput {
             crate::operation::DescribeContributorInsights,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeContributorInsightsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2517,8 +2544,10 @@ impl DescribeContributorInsightsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeContributorInsightsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2606,14 +2635,16 @@ impl DescribeContributorInsightsInput {
 pub mod describe_endpoints_input {
 
     /// A builder for [`DescribeEndpointsInput`](crate::input::DescribeEndpointsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeEndpointsInput`](crate::input::DescribeEndpointsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeEndpointsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeEndpointsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeEndpointsInput {})
         }
     }
@@ -2631,13 +2662,13 @@ impl DescribeEndpointsInput {
             crate::operation::DescribeEndpoints,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeEndpointsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2645,8 +2676,10 @@ impl DescribeEndpointsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeEndpointsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2728,7 +2761,7 @@ impl DescribeEndpointsInput {
 pub mod describe_export_input {
 
     /// A builder for [`DescribeExportInput`](crate::input::DescribeExportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_arn: std::option::Option<std::string::String>,
     }
@@ -2746,7 +2779,7 @@ pub mod describe_export_input {
         /// Consumes the builder and constructs a [`DescribeExportInput`](crate::input::DescribeExportInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeExportInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeExportInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeExportInput {
                 export_arn: self.export_arn,
@@ -2767,13 +2800,13 @@ impl DescribeExportInput {
             crate::operation::DescribeExport,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeExportInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2781,8 +2814,10 @@ impl DescribeExportInput {
             fn update_http_builder(
                 input: &crate::input::DescribeExportInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2871,7 +2906,7 @@ impl DescribeExportInput {
 pub mod describe_global_table_input {
 
     /// A builder for [`DescribeGlobalTableInput`](crate::input::DescribeGlobalTableInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_table_name: std::option::Option<std::string::String>,
     }
@@ -2892,8 +2927,10 @@ pub mod describe_global_table_input {
         /// Consumes the builder and constructs a [`DescribeGlobalTableInput`](crate::input::DescribeGlobalTableInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeGlobalTableInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeGlobalTableInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeGlobalTableInput {
                 global_table_name: self.global_table_name,
             })
@@ -2913,13 +2950,13 @@ impl DescribeGlobalTableInput {
             crate::operation::DescribeGlobalTable,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeGlobalTableInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2927,8 +2964,10 @@ impl DescribeGlobalTableInput {
             fn update_http_builder(
                 input: &crate::input::DescribeGlobalTableInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3017,7 +3056,7 @@ impl DescribeGlobalTableInput {
 pub mod describe_global_table_settings_input {
 
     /// A builder for [`DescribeGlobalTableSettingsInput`](crate::input::DescribeGlobalTableSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_table_name: std::option::Option<std::string::String>,
     }
@@ -3040,7 +3079,7 @@ pub mod describe_global_table_settings_input {
             self,
         ) -> Result<
             crate::input::DescribeGlobalTableSettingsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeGlobalTableSettingsInput {
                 global_table_name: self.global_table_name,
@@ -3061,13 +3100,13 @@ impl DescribeGlobalTableSettingsInput {
             crate::operation::DescribeGlobalTableSettings,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeGlobalTableSettingsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3075,8 +3114,10 @@ impl DescribeGlobalTableSettingsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeGlobalTableSettingsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3164,7 +3205,7 @@ impl DescribeGlobalTableSettingsInput {
 pub mod describe_import_input {
 
     /// A builder for [`DescribeImportInput`](crate::input::DescribeImportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_arn: std::option::Option<std::string::String>,
     }
@@ -3182,7 +3223,7 @@ pub mod describe_import_input {
         /// Consumes the builder and constructs a [`DescribeImportInput`](crate::input::DescribeImportInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeImportInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeImportInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeImportInput {
                 import_arn: self.import_arn,
@@ -3203,13 +3244,13 @@ impl DescribeImportInput {
             crate::operation::DescribeImport,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeImportInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3217,8 +3258,10 @@ impl DescribeImportInput {
             fn update_http_builder(
                 input: &crate::input::DescribeImportInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3307,7 +3350,7 @@ impl DescribeImportInput {
 pub mod describe_kinesis_streaming_destination_input {
 
     /// A builder for [`DescribeKinesisStreamingDestinationInput`](crate::input::DescribeKinesisStreamingDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
     }
@@ -3327,7 +3370,7 @@ pub mod describe_kinesis_streaming_destination_input {
             self,
         ) -> Result<
             crate::input::DescribeKinesisStreamingDestinationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeKinesisStreamingDestinationInput {
                 table_name: self.table_name,
@@ -3348,13 +3391,13 @@ impl DescribeKinesisStreamingDestinationInput {
             crate::operation::DescribeKinesisStreamingDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeKinesisStreamingDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3362,8 +3405,10 @@ impl DescribeKinesisStreamingDestinationInput {
             fn update_http_builder(
                 input: &crate::input::DescribeKinesisStreamingDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3451,13 +3496,13 @@ impl DescribeKinesisStreamingDestinationInput {
 pub mod describe_limits_input {
 
     /// A builder for [`DescribeLimitsInput`](crate::input::DescribeLimitsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeLimitsInput`](crate::input::DescribeLimitsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLimitsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeLimitsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeLimitsInput {})
         }
@@ -3476,13 +3521,13 @@ impl DescribeLimitsInput {
             crate::operation::DescribeLimits,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLimitsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3490,8 +3535,10 @@ impl DescribeLimitsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLimitsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3573,7 +3620,7 @@ impl DescribeLimitsInput {
 pub mod describe_table_input {
 
     /// A builder for [`DescribeTableInput`](crate::input::DescribeTableInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
     }
@@ -3591,7 +3638,7 @@ pub mod describe_table_input {
         /// Consumes the builder and constructs a [`DescribeTableInput`](crate::input::DescribeTableInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeTableInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeTableInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeTableInput {
                 table_name: self.table_name,
@@ -3612,13 +3659,13 @@ impl DescribeTableInput {
             crate::operation::DescribeTable,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeTableInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3626,8 +3673,10 @@ impl DescribeTableInput {
             fn update_http_builder(
                 input: &crate::input::DescribeTableInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3716,7 +3765,7 @@ impl DescribeTableInput {
 pub mod describe_table_replica_auto_scaling_input {
 
     /// A builder for [`DescribeTableReplicaAutoScalingInput`](crate::input::DescribeTableReplicaAutoScalingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
     }
@@ -3736,7 +3785,7 @@ pub mod describe_table_replica_auto_scaling_input {
             self,
         ) -> Result<
             crate::input::DescribeTableReplicaAutoScalingInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeTableReplicaAutoScalingInput {
                 table_name: self.table_name,
@@ -3757,13 +3806,13 @@ impl DescribeTableReplicaAutoScalingInput {
             crate::operation::DescribeTableReplicaAutoScaling,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeTableReplicaAutoScalingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3771,8 +3820,10 @@ impl DescribeTableReplicaAutoScalingInput {
             fn update_http_builder(
                 input: &crate::input::DescribeTableReplicaAutoScalingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3860,7 +3911,7 @@ impl DescribeTableReplicaAutoScalingInput {
 pub mod describe_time_to_live_input {
 
     /// A builder for [`DescribeTimeToLiveInput`](crate::input::DescribeTimeToLiveInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
     }
@@ -3878,8 +3929,10 @@ pub mod describe_time_to_live_input {
         /// Consumes the builder and constructs a [`DescribeTimeToLiveInput`](crate::input::DescribeTimeToLiveInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeTimeToLiveInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeTimeToLiveInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeTimeToLiveInput {
                 table_name: self.table_name,
             })
@@ -3899,13 +3952,13 @@ impl DescribeTimeToLiveInput {
             crate::operation::DescribeTimeToLive,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeTimeToLiveInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3913,8 +3966,10 @@ impl DescribeTimeToLiveInput {
             fn update_http_builder(
                 input: &crate::input::DescribeTimeToLiveInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4003,7 +4058,7 @@ impl DescribeTimeToLiveInput {
 pub mod disable_kinesis_streaming_destination_input {
 
     /// A builder for [`DisableKinesisStreamingDestinationInput`](crate::input::DisableKinesisStreamingDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -4034,7 +4089,7 @@ pub mod disable_kinesis_streaming_destination_input {
             self,
         ) -> Result<
             crate::input::DisableKinesisStreamingDestinationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisableKinesisStreamingDestinationInput {
                 table_name: self.table_name,
@@ -4056,13 +4111,13 @@ impl DisableKinesisStreamingDestinationInput {
             crate::operation::DisableKinesisStreamingDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisableKinesisStreamingDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4070,8 +4125,10 @@ impl DisableKinesisStreamingDestinationInput {
             fn update_http_builder(
                 input: &crate::input::DisableKinesisStreamingDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4159,7 +4216,7 @@ impl DisableKinesisStreamingDestinationInput {
 pub mod enable_kinesis_streaming_destination_input {
 
     /// A builder for [`EnableKinesisStreamingDestinationInput`](crate::input::EnableKinesisStreamingDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -4190,7 +4247,7 @@ pub mod enable_kinesis_streaming_destination_input {
             self,
         ) -> Result<
             crate::input::EnableKinesisStreamingDestinationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::EnableKinesisStreamingDestinationInput {
                 table_name: self.table_name,
@@ -4212,13 +4269,13 @@ impl EnableKinesisStreamingDestinationInput {
             crate::operation::EnableKinesisStreamingDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::EnableKinesisStreamingDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4226,8 +4283,10 @@ impl EnableKinesisStreamingDestinationInput {
             fn update_http_builder(
                 input: &crate::input::EnableKinesisStreamingDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4315,7 +4374,7 @@ impl EnableKinesisStreamingDestinationInput {
 pub mod execute_statement_input {
 
     /// A builder for [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statement: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
@@ -4414,8 +4473,10 @@ pub mod execute_statement_input {
         /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ExecuteStatementInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ExecuteStatementInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ExecuteStatementInput {
                 statement: self.statement,
                 parameters: self.parameters,
@@ -4440,13 +4501,13 @@ impl ExecuteStatementInput {
             crate::operation::ExecuteStatement,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ExecuteStatementInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4454,8 +4515,10 @@ impl ExecuteStatementInput {
             fn update_http_builder(
                 input: &crate::input::ExecuteStatementInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4544,7 +4607,7 @@ impl ExecuteStatementInput {
 pub mod execute_transaction_input {
 
     /// A builder for [`ExecuteTransactionInput`](crate::input::ExecuteTransactionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transact_statements:
             std::option::Option<std::vec::Vec<crate::model::ParameterizedStatement>>,
@@ -4604,8 +4667,10 @@ pub mod execute_transaction_input {
         /// Consumes the builder and constructs a [`ExecuteTransactionInput`](crate::input::ExecuteTransactionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ExecuteTransactionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ExecuteTransactionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ExecuteTransactionInput {
                 transact_statements: self.transact_statements,
                 client_request_token: self.client_request_token,
@@ -4627,7 +4692,7 @@ impl ExecuteTransactionInput {
             crate::operation::ExecuteTransaction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -4636,7 +4701,7 @@ impl ExecuteTransactionInput {
             fn uri_base(
                 _input: &crate::input::ExecuteTransactionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4644,8 +4709,10 @@ impl ExecuteTransactionInput {
             fn update_http_builder(
                 input: &crate::input::ExecuteTransactionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4734,7 +4801,7 @@ impl ExecuteTransactionInput {
 pub mod export_table_to_point_in_time_input {
 
     /// A builder for [`ExportTableToPointInTimeInput`](crate::input::ExportTableToPointInTimeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_arn: std::option::Option<std::string::String>,
         pub(crate) export_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4869,7 +4936,7 @@ pub mod export_table_to_point_in_time_input {
             self,
         ) -> Result<
             crate::input::ExportTableToPointInTimeInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ExportTableToPointInTimeInput {
                 table_arn: self.table_arn,
@@ -4898,7 +4965,7 @@ impl ExportTableToPointInTimeInput {
             crate::operation::ExportTableToPointInTime,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -4907,7 +4974,7 @@ impl ExportTableToPointInTimeInput {
             fn uri_base(
                 _input: &crate::input::ExportTableToPointInTimeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4915,8 +4982,10 @@ impl ExportTableToPointInTimeInput {
             fn update_http_builder(
                 input: &crate::input::ExportTableToPointInTimeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5004,7 +5073,7 @@ impl ExportTableToPointInTimeInput {
 pub mod get_item_input {
 
     /// A builder for [`GetItemInput`](crate::input::GetItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<
@@ -5197,7 +5266,8 @@ pub mod get_item_input {
         /// Consumes the builder and constructs a [`GetItemInput`](crate::input::GetItemInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetItemInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetItemInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetItemInput {
                 table_name: self.table_name,
                 key: self.key,
@@ -5223,13 +5293,13 @@ impl GetItemInput {
             crate::operation::GetItem,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetItemInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5237,8 +5307,10 @@ impl GetItemInput {
             fn update_http_builder(
                 input: &crate::input::GetItemInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5324,7 +5396,7 @@ impl GetItemInput {
 pub mod import_table_input {
 
     /// A builder for [`ImportTableInput`](crate::input::ImportTableInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) s3_bucket_source: std::option::Option<crate::model::S3BucketSource>,
@@ -5420,7 +5492,7 @@ pub mod import_table_input {
         /// Consumes the builder and constructs a [`ImportTableInput`](crate::input::ImportTableInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ImportTableInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ImportTableInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ImportTableInput {
                 client_token: self.client_token,
@@ -5446,7 +5518,7 @@ impl ImportTableInput {
             crate::operation::ImportTable,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -5455,7 +5527,7 @@ impl ImportTableInput {
             fn uri_base(
                 _input: &crate::input::ImportTableInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5463,8 +5535,10 @@ impl ImportTableInput {
             fn update_http_builder(
                 input: &crate::input::ImportTableInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5553,7 +5627,7 @@ impl ImportTableInput {
 pub mod list_backups_input {
 
     /// A builder for [`ListBackupsInput`](crate::input::ListBackupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -5650,7 +5724,7 @@ pub mod list_backups_input {
         /// Consumes the builder and constructs a [`ListBackupsInput`](crate::input::ListBackupsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListBackupsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListBackupsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListBackupsInput {
                 table_name: self.table_name,
@@ -5676,13 +5750,13 @@ impl ListBackupsInput {
             crate::operation::ListBackups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListBackupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5690,8 +5764,10 @@ impl ListBackupsInput {
             fn update_http_builder(
                 input: &crate::input::ListBackupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5780,7 +5856,7 @@ impl ListBackupsInput {
 pub mod list_contributor_insights_input {
 
     /// A builder for [`ListContributorInsightsInput`](crate::input::ListContributorInsightsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5822,7 +5898,7 @@ pub mod list_contributor_insights_input {
             self,
         ) -> Result<
             crate::input::ListContributorInsightsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListContributorInsightsInput {
                 table_name: self.table_name,
@@ -5845,13 +5921,13 @@ impl ListContributorInsightsInput {
             crate::operation::ListContributorInsights,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListContributorInsightsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5859,8 +5935,10 @@ impl ListContributorInsightsInput {
             fn update_http_builder(
                 input: &crate::input::ListContributorInsightsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5951,7 +6029,7 @@ impl ListContributorInsightsInput {
 pub mod list_exports_input {
 
     /// A builder for [`ListExportsInput`](crate::input::ListExportsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5991,7 +6069,7 @@ pub mod list_exports_input {
         /// Consumes the builder and constructs a [`ListExportsInput`](crate::input::ListExportsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListExportsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListExportsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListExportsInput {
                 table_arn: self.table_arn,
@@ -6014,13 +6092,13 @@ impl ListExportsInput {
             crate::operation::ListExports,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListExportsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6028,8 +6106,10 @@ impl ListExportsInput {
             fn update_http_builder(
                 input: &crate::input::ListExportsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6118,7 +6198,7 @@ impl ListExportsInput {
 pub mod list_global_tables_input {
 
     /// A builder for [`ListGlobalTablesInput`](crate::input::ListGlobalTablesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exclusive_start_global_table_name: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -6166,8 +6246,10 @@ pub mod list_global_tables_input {
         /// Consumes the builder and constructs a [`ListGlobalTablesInput`](crate::input::ListGlobalTablesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListGlobalTablesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListGlobalTablesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListGlobalTablesInput {
                 exclusive_start_global_table_name: self.exclusive_start_global_table_name,
                 limit: self.limit,
@@ -6189,13 +6271,13 @@ impl ListGlobalTablesInput {
             crate::operation::ListGlobalTables,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListGlobalTablesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6203,8 +6285,10 @@ impl ListGlobalTablesInput {
             fn update_http_builder(
                 input: &crate::input::ListGlobalTablesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6293,7 +6377,7 @@ impl ListGlobalTablesInput {
 pub mod list_imports_input {
 
     /// A builder for [`ListImportsInput`](crate::input::ListImportsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_arn: std::option::Option<std::string::String>,
         pub(crate) page_size: std::option::Option<i32>,
@@ -6333,7 +6417,7 @@ pub mod list_imports_input {
         /// Consumes the builder and constructs a [`ListImportsInput`](crate::input::ListImportsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListImportsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListImportsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListImportsInput {
                 table_arn: self.table_arn,
@@ -6356,13 +6440,13 @@ impl ListImportsInput {
             crate::operation::ListImports,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListImportsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6370,8 +6454,10 @@ impl ListImportsInput {
             fn update_http_builder(
                 input: &crate::input::ListImportsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6460,7 +6546,7 @@ impl ListImportsInput {
 pub mod list_tables_input {
 
     /// A builder for [`ListTablesInput`](crate::input::ListTablesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exclusive_start_table_name: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -6492,7 +6578,8 @@ pub mod list_tables_input {
         /// Consumes the builder and constructs a [`ListTablesInput`](crate::input::ListTablesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTablesInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListTablesInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListTablesInput {
                 exclusive_start_table_name: self.exclusive_start_table_name,
                 limit: self.limit,
@@ -6513,13 +6600,13 @@ impl ListTablesInput {
             crate::operation::ListTables,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTablesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6527,8 +6614,10 @@ impl ListTablesInput {
             fn update_http_builder(
                 input: &crate::input::ListTablesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6617,7 +6706,7 @@ impl ListTablesInput {
 pub mod list_tags_of_resource_input {
 
     /// A builder for [`ListTagsOfResourceInput`](crate::input::ListTagsOfResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6646,8 +6735,10 @@ pub mod list_tags_of_resource_input {
         /// Consumes the builder and constructs a [`ListTagsOfResourceInput`](crate::input::ListTagsOfResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsOfResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsOfResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsOfResourceInput {
                 resource_arn: self.resource_arn,
                 next_token: self.next_token,
@@ -6668,13 +6759,13 @@ impl ListTagsOfResourceInput {
             crate::operation::ListTagsOfResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsOfResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6682,8 +6773,10 @@ impl ListTagsOfResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsOfResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6772,7 +6865,7 @@ impl ListTagsOfResourceInput {
 pub mod put_item_input {
 
     /// A builder for [`PutItemInput`](crate::input::PutItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) item: std::option::Option<
@@ -7087,7 +7180,8 @@ pub mod put_item_input {
         /// Consumes the builder and constructs a [`PutItemInput`](crate::input::PutItemInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutItemInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::PutItemInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::PutItemInput {
                 table_name: self.table_name,
                 item: self.item,
@@ -7116,13 +7210,13 @@ impl PutItemInput {
             crate::operation::PutItem,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutItemInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7130,8 +7224,10 @@ impl PutItemInput {
             fn update_http_builder(
                 input: &crate::input::PutItemInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7217,7 +7313,7 @@ impl PutItemInput {
 pub mod query_input {
 
     /// A builder for [`QueryInput`](crate::input::QueryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -7680,7 +7776,8 @@ pub mod query_input {
         /// Consumes the builder and constructs a [`QueryInput`](crate::input::QueryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::QueryInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::QueryInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::QueryInput {
                 table_name: self.table_name,
                 index_name: self.index_name,
@@ -7716,13 +7813,13 @@ impl QueryInput {
             crate::operation::Query,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::QueryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7730,8 +7827,10 @@ impl QueryInput {
             fn update_http_builder(
                 input: &crate::input::QueryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7817,7 +7916,7 @@ impl QueryInput {
 pub mod restore_table_from_backup_input {
 
     /// A builder for [`RestoreTableFromBackupInput`](crate::input::RestoreTableFromBackupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_table_name: std::option::Option<std::string::String>,
         pub(crate) backup_arn: std::option::Option<std::string::String>,
@@ -7943,8 +8042,10 @@ pub mod restore_table_from_backup_input {
         /// Consumes the builder and constructs a [`RestoreTableFromBackupInput`](crate::input::RestoreTableFromBackupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RestoreTableFromBackupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::RestoreTableFromBackupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::RestoreTableFromBackupInput {
                 target_table_name: self.target_table_name,
                 backup_arn: self.backup_arn,
@@ -7970,13 +8071,13 @@ impl RestoreTableFromBackupInput {
             crate::operation::RestoreTableFromBackup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RestoreTableFromBackupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7984,8 +8085,10 @@ impl RestoreTableFromBackupInput {
             fn update_http_builder(
                 input: &crate::input::RestoreTableFromBackupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8076,7 +8179,7 @@ impl RestoreTableFromBackupInput {
 pub mod restore_table_to_point_in_time_input {
 
     /// A builder for [`RestoreTableToPointInTimeInput`](crate::input::RestoreTableToPointInTimeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_table_arn: std::option::Option<std::string::String>,
         pub(crate) source_table_name: std::option::Option<std::string::String>,
@@ -8246,7 +8349,7 @@ pub mod restore_table_to_point_in_time_input {
             self,
         ) -> Result<
             crate::input::RestoreTableToPointInTimeInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RestoreTableToPointInTimeInput {
                 source_table_arn: self.source_table_arn,
@@ -8276,13 +8379,13 @@ impl RestoreTableToPointInTimeInput {
             crate::operation::RestoreTableToPointInTime,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RestoreTableToPointInTimeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8290,8 +8393,10 @@ impl RestoreTableToPointInTimeInput {
             fn update_http_builder(
                 input: &crate::input::RestoreTableToPointInTimeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8379,7 +8484,7 @@ impl RestoreTableToPointInTimeInput {
 pub mod scan_input {
 
     /// A builder for [`ScanInput`](crate::input::ScanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -8775,7 +8880,8 @@ pub mod scan_input {
         /// Consumes the builder and constructs a [`ScanInput`](crate::input::ScanInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ScanInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ScanInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ScanInput {
                 table_name: self.table_name,
                 index_name: self.index_name,
@@ -8810,13 +8916,13 @@ impl ScanInput {
             crate::operation::Scan,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ScanInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8824,8 +8930,10 @@ impl ScanInput {
             fn update_http_builder(
                 input: &crate::input::ScanInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8910,7 +9018,7 @@ impl ScanInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8948,7 +9056,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -8970,13 +9078,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8984,8 +9092,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9074,7 +9184,7 @@ impl TagResourceInput {
 pub mod transact_get_items_input {
 
     /// A builder for [`TransactGetItemsInput`](crate::input::TransactGetItemsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transact_items:
             std::option::Option<std::vec::Vec<crate::model::TransactGetItem>>,
@@ -9120,8 +9230,10 @@ pub mod transact_get_items_input {
         /// Consumes the builder and constructs a [`TransactGetItemsInput`](crate::input::TransactGetItemsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TransactGetItemsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::TransactGetItemsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::TransactGetItemsInput {
                 transact_items: self.transact_items,
                 return_consumed_capacity: self.return_consumed_capacity,
@@ -9142,13 +9254,13 @@ impl TransactGetItemsInput {
             crate::operation::TransactGetItems,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TransactGetItemsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9156,8 +9268,10 @@ impl TransactGetItemsInput {
             fn update_http_builder(
                 input: &crate::input::TransactGetItemsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9246,7 +9360,7 @@ impl TransactGetItemsInput {
 pub mod transact_write_items_input {
 
     /// A builder for [`TransactWriteItemsInput`](crate::input::TransactWriteItemsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transact_items:
             std::option::Option<std::vec::Vec<crate::model::TransactWriteItem>>,
@@ -9340,8 +9454,10 @@ pub mod transact_write_items_input {
         /// Consumes the builder and constructs a [`TransactWriteItemsInput`](crate::input::TransactWriteItemsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TransactWriteItemsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::TransactWriteItemsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::TransactWriteItemsInput {
                 transact_items: self.transact_items,
                 return_consumed_capacity: self.return_consumed_capacity,
@@ -9364,7 +9480,7 @@ impl TransactWriteItemsInput {
             crate::operation::TransactWriteItems,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -9373,7 +9489,7 @@ impl TransactWriteItemsInput {
             fn uri_base(
                 _input: &crate::input::TransactWriteItemsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9381,8 +9497,10 @@ impl TransactWriteItemsInput {
             fn update_http_builder(
                 input: &crate::input::TransactWriteItemsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9471,7 +9589,7 @@ impl TransactWriteItemsInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9509,7 +9627,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -9531,13 +9649,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9545,8 +9663,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9635,7 +9755,7 @@ impl UntagResourceInput {
 pub mod update_continuous_backups_input {
 
     /// A builder for [`UpdateContinuousBackupsInput`](crate::input::UpdateContinuousBackupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) point_in_time_recovery_specification:
@@ -9673,7 +9793,7 @@ pub mod update_continuous_backups_input {
             self,
         ) -> Result<
             crate::input::UpdateContinuousBackupsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateContinuousBackupsInput {
                 table_name: self.table_name,
@@ -9695,13 +9815,13 @@ impl UpdateContinuousBackupsInput {
             crate::operation::UpdateContinuousBackups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateContinuousBackupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9709,8 +9829,10 @@ impl UpdateContinuousBackupsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateContinuousBackupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9801,7 +9923,7 @@ impl UpdateContinuousBackupsInput {
 pub mod update_contributor_insights_input {
 
     /// A builder for [`UpdateContributorInsightsInput`](crate::input::UpdateContributorInsightsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -9850,7 +9972,7 @@ pub mod update_contributor_insights_input {
             self,
         ) -> Result<
             crate::input::UpdateContributorInsightsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateContributorInsightsInput {
                 table_name: self.table_name,
@@ -9873,13 +9995,13 @@ impl UpdateContributorInsightsInput {
             crate::operation::UpdateContributorInsights,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateContributorInsightsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9887,8 +10009,10 @@ impl UpdateContributorInsightsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateContributorInsightsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9979,7 +10103,7 @@ impl UpdateContributorInsightsInput {
 pub mod update_global_table_input {
 
     /// A builder for [`UpdateGlobalTableInput`](crate::input::UpdateGlobalTableInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_table_name: std::option::Option<std::string::String>,
         pub(crate) replica_updates: std::option::Option<std::vec::Vec<crate::model::ReplicaUpdate>>,
@@ -10020,8 +10144,10 @@ pub mod update_global_table_input {
         /// Consumes the builder and constructs a [`UpdateGlobalTableInput`](crate::input::UpdateGlobalTableInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateGlobalTableInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateGlobalTableInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateGlobalTableInput {
                 global_table_name: self.global_table_name,
                 replica_updates: self.replica_updates,
@@ -10042,13 +10168,13 @@ impl UpdateGlobalTableInput {
             crate::operation::UpdateGlobalTable,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateGlobalTableInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10056,8 +10182,10 @@ impl UpdateGlobalTableInput {
             fn update_http_builder(
                 input: &crate::input::UpdateGlobalTableInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10146,7 +10274,7 @@ impl UpdateGlobalTableInput {
 pub mod update_global_table_settings_input {
 
     /// A builder for [`UpdateGlobalTableSettingsInput`](crate::input::UpdateGlobalTableSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_table_name: std::option::Option<std::string::String>,
         pub(crate) global_table_billing_mode: std::option::Option<crate::model::BillingMode>,
@@ -10276,7 +10404,7 @@ pub mod update_global_table_settings_input {
             self,
         ) -> Result<
             crate::input::UpdateGlobalTableSettingsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateGlobalTableSettingsInput {
                 global_table_name: self.global_table_name,
@@ -10305,13 +10433,13 @@ impl UpdateGlobalTableSettingsInput {
             crate::operation::UpdateGlobalTableSettings,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateGlobalTableSettingsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10319,8 +10447,10 @@ impl UpdateGlobalTableSettingsInput {
             fn update_http_builder(
                 input: &crate::input::UpdateGlobalTableSettingsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10411,7 +10541,7 @@ impl UpdateGlobalTableSettingsInput {
 pub mod update_item_input {
 
     /// A builder for [`UpdateItemInput`](crate::input::UpdateItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<
@@ -10810,7 +10940,8 @@ pub mod update_item_input {
         /// Consumes the builder and constructs a [`UpdateItemInput`](crate::input::UpdateItemInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateItemInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::UpdateItemInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::UpdateItemInput {
                 table_name: self.table_name,
                 key: self.key,
@@ -10841,13 +10972,13 @@ impl UpdateItemInput {
             crate::operation::UpdateItem,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateItemInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -10855,8 +10986,10 @@ impl UpdateItemInput {
             fn update_http_builder(
                 input: &crate::input::UpdateItemInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10945,7 +11078,7 @@ impl UpdateItemInput {
 pub mod update_table_input {
 
     /// A builder for [`UpdateTableInput`](crate::input::UpdateTableInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_definitions:
             std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
@@ -11132,7 +11265,7 @@ pub mod update_table_input {
         /// Consumes the builder and constructs a [`UpdateTableInput`](crate::input::UpdateTableInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateTableInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateTableInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateTableInput {
                 attribute_definitions: self.attribute_definitions,
@@ -11161,13 +11294,13 @@ impl UpdateTableInput {
             crate::operation::UpdateTable,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateTableInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -11175,8 +11308,10 @@ impl UpdateTableInput {
             fn update_http_builder(
                 input: &crate::input::UpdateTableInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -11265,7 +11400,7 @@ impl UpdateTableInput {
 pub mod update_table_replica_auto_scaling_input {
 
     /// A builder for [`UpdateTableReplicaAutoScalingInput`](crate::input::UpdateTableReplicaAutoScalingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_secondary_index_updates:
             std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexAutoScalingUpdate>>,
@@ -11350,7 +11485,7 @@ pub mod update_table_replica_auto_scaling_input {
             self,
         ) -> Result<
             crate::input::UpdateTableReplicaAutoScalingInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateTableReplicaAutoScalingInput {
                 global_secondary_index_updates: self.global_secondary_index_updates,
@@ -11375,13 +11510,13 @@ impl UpdateTableReplicaAutoScalingInput {
             crate::operation::UpdateTableReplicaAutoScaling,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateTableReplicaAutoScalingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -11389,8 +11524,10 @@ impl UpdateTableReplicaAutoScalingInput {
             fn update_http_builder(
                 input: &crate::input::UpdateTableReplicaAutoScalingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -11478,7 +11615,7 @@ impl UpdateTableReplicaAutoScalingInput {
 pub mod update_time_to_live_input {
 
     /// A builder for [`UpdateTimeToLiveInput`](crate::input::UpdateTimeToLiveInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) time_to_live_specification:
@@ -11514,8 +11651,10 @@ pub mod update_time_to_live_input {
         /// Consumes the builder and constructs a [`UpdateTimeToLiveInput`](crate::input::UpdateTimeToLiveInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateTimeToLiveInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateTimeToLiveInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateTimeToLiveInput {
                 table_name: self.table_name,
                 time_to_live_specification: self.time_to_live_specification,
@@ -11536,13 +11675,13 @@ impl UpdateTimeToLiveInput {
             crate::operation::UpdateTimeToLive,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateTimeToLiveInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -11550,8 +11689,10 @@ impl UpdateTimeToLiveInput {
             fn update_http_builder(
                 input: &crate::input::UpdateTimeToLiveInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -11638,7 +11779,7 @@ impl UpdateTimeToLiveInput {
 
 /// <p>Represents the input of an <code>UpdateTimeToLive</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTimeToLiveInput {
     /// <p>The name of the table to be configured.</p>
     #[doc(hidden)]
@@ -11659,21 +11800,10 @@ impl UpdateTimeToLiveInput {
         self.time_to_live_specification.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTimeToLiveInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTimeToLiveInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field(
-            "time_to_live_specification",
-            &self.time_to_live_specification,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTableReplicaAutoScalingInput {
     /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to be updated.</p>
     #[doc(hidden)]
@@ -11714,26 +11844,10 @@ impl UpdateTableReplicaAutoScalingInput {
         self.replica_updates.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTableReplicaAutoScalingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTableReplicaAutoScalingInput");
-        formatter.field(
-            "global_secondary_index_updates",
-            &self.global_secondary_index_updates,
-        );
-        formatter.field("table_name", &self.table_name);
-        formatter.field(
-            "provisioned_write_capacity_auto_scaling_update",
-            &self.provisioned_write_capacity_auto_scaling_update,
-        );
-        formatter.field("replica_updates", &self.replica_updates);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of an <code>UpdateTable</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
     #[doc(hidden)]
@@ -11839,28 +11953,10 @@ impl UpdateTableInput {
         self.table_class.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTableInput");
-        formatter.field("attribute_definitions", &self.attribute_definitions);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("billing_mode", &self.billing_mode);
-        formatter.field("provisioned_throughput", &self.provisioned_throughput);
-        formatter.field(
-            "global_secondary_index_updates",
-            &self.global_secondary_index_updates,
-        );
-        formatter.field("stream_specification", &self.stream_specification);
-        formatter.field("sse_specification", &self.sse_specification);
-        formatter.field("replica_updates", &self.replica_updates);
-        formatter.field("table_class", &self.table_class);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of an <code>UpdateItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateItemInput {
     /// <p>The name of the table containing the item to update.</p>
     #[doc(hidden)]
@@ -12128,37 +12224,10 @@ impl UpdateItemInput {
         self.expression_attribute_values.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateItemInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("key", &self.key);
-        formatter.field("attribute_updates", &self.attribute_updates);
-        formatter.field("expected", &self.expected);
-        formatter.field("conditional_operator", &self.conditional_operator);
-        formatter.field("return_values", &self.return_values);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field(
-            "return_item_collection_metrics",
-            &self.return_item_collection_metrics,
-        );
-        formatter.field("update_expression", &self.update_expression);
-        formatter.field("condition_expression", &self.condition_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.field(
-            "expression_attribute_values",
-            &self.expression_attribute_values,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGlobalTableSettingsInput {
     /// <p>The name of the global table</p>
     #[doc(hidden)]
@@ -12225,31 +12294,10 @@ impl UpdateGlobalTableSettingsInput {
         self.replica_settings_update.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGlobalTableSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGlobalTableSettingsInput");
-        formatter.field("global_table_name", &self.global_table_name);
-        formatter.field("global_table_billing_mode", &self.global_table_billing_mode);
-        formatter.field(
-            "global_table_provisioned_write_capacity_units",
-            &self.global_table_provisioned_write_capacity_units,
-        );
-        formatter.field(
-            "global_table_provisioned_write_capacity_auto_scaling_settings_update",
-            &self.global_table_provisioned_write_capacity_auto_scaling_settings_update,
-        );
-        formatter.field(
-            "global_table_global_secondary_index_settings_update",
-            &self.global_table_global_secondary_index_settings_update,
-        );
-        formatter.field("replica_settings_update", &self.replica_settings_update);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGlobalTableInput {
     /// <p>The global table name.</p>
     #[doc(hidden)]
@@ -12268,18 +12316,10 @@ impl UpdateGlobalTableInput {
         self.replica_updates.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGlobalTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGlobalTableInput");
-        formatter.field("global_table_name", &self.global_table_name);
-        formatter.field("replica_updates", &self.replica_updates);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContributorInsightsInput {
     /// <p>The name of the table.</p>
     #[doc(hidden)]
@@ -12307,22 +12347,10 @@ impl UpdateContributorInsightsInput {
         self.contributor_insights_action.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateContributorInsightsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContributorInsightsInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("index_name", &self.index_name);
-        formatter.field(
-            "contributor_insights_action",
-            &self.contributor_insights_action,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContinuousBackupsInput {
     /// <p>The name of the table.</p>
     #[doc(hidden)]
@@ -12344,21 +12372,10 @@ impl UpdateContinuousBackupsInput {
         self.point_in_time_recovery_specification.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateContinuousBackupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContinuousBackupsInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field(
-            "point_in_time_recovery_specification",
-            &self.point_in_time_recovery_specification,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -12377,18 +12394,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransactWriteItemsInput {
     /// <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
     #[doc(hidden)]
@@ -12442,23 +12451,10 @@ impl TransactWriteItemsInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for TransactWriteItemsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransactWriteItemsInput");
-        formatter.field("transact_items", &self.transact_items);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field(
-            "return_item_collection_metrics",
-            &self.return_item_collection_metrics,
-        );
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransactGetItemsInput {
     /// <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
     #[doc(hidden)]
@@ -12479,18 +12475,10 @@ impl TransactGetItemsInput {
         self.return_consumed_capacity.as_ref()
     }
 }
-impl std::fmt::Debug for TransactGetItemsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransactGetItemsInput");
-        formatter.field("transact_items", &self.transact_items);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -12509,18 +12497,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>Scan</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScanInput {
     /// <p>The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
     #[doc(hidden)]
@@ -12780,38 +12760,10 @@ impl ScanInput {
         self.consistent_read
     }
 }
-impl std::fmt::Debug for ScanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScanInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("index_name", &self.index_name);
-        formatter.field("attributes_to_get", &self.attributes_to_get);
-        formatter.field("limit", &self.limit);
-        formatter.field("select", &self.select);
-        formatter.field("scan_filter", &self.scan_filter);
-        formatter.field("conditional_operator", &self.conditional_operator);
-        formatter.field("exclusive_start_key", &self.exclusive_start_key);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field("total_segments", &self.total_segments);
-        formatter.field("segment", &self.segment);
-        formatter.field("projection_expression", &self.projection_expression);
-        formatter.field("filter_expression", &self.filter_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.field(
-            "expression_attribute_values",
-            &self.expression_attribute_values,
-        );
-        formatter.field("consistent_read", &self.consistent_read);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreTableToPointInTimeInput {
     /// <p>The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -12896,41 +12848,10 @@ impl RestoreTableToPointInTimeInput {
         self.sse_specification_override.as_ref()
     }
 }
-impl std::fmt::Debug for RestoreTableToPointInTimeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreTableToPointInTimeInput");
-        formatter.field("source_table_arn", &self.source_table_arn);
-        formatter.field("source_table_name", &self.source_table_name);
-        formatter.field("target_table_name", &self.target_table_name);
-        formatter.field(
-            "use_latest_restorable_time",
-            &self.use_latest_restorable_time,
-        );
-        formatter.field("restore_date_time", &self.restore_date_time);
-        formatter.field("billing_mode_override", &self.billing_mode_override);
-        formatter.field(
-            "global_secondary_index_override",
-            &self.global_secondary_index_override,
-        );
-        formatter.field(
-            "local_secondary_index_override",
-            &self.local_secondary_index_override,
-        );
-        formatter.field(
-            "provisioned_throughput_override",
-            &self.provisioned_throughput_override,
-        );
-        formatter.field(
-            "sse_specification_override",
-            &self.sse_specification_override,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreTableFromBackupInput {
     /// <p>The name of the new table to which the backup must be restored.</p>
     #[doc(hidden)]
@@ -12994,35 +12915,10 @@ impl RestoreTableFromBackupInput {
         self.sse_specification_override.as_ref()
     }
 }
-impl std::fmt::Debug for RestoreTableFromBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreTableFromBackupInput");
-        formatter.field("target_table_name", &self.target_table_name);
-        formatter.field("backup_arn", &self.backup_arn);
-        formatter.field("billing_mode_override", &self.billing_mode_override);
-        formatter.field(
-            "global_secondary_index_override",
-            &self.global_secondary_index_override,
-        );
-        formatter.field(
-            "local_secondary_index_override",
-            &self.local_secondary_index_override,
-        );
-        formatter.field(
-            "provisioned_throughput_override",
-            &self.provisioned_throughput_override,
-        );
-        formatter.field(
-            "sse_specification_override",
-            &self.sse_specification_override,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>Query</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryInput {
     /// <p>The name of the table containing the requested items.</p>
     #[doc(hidden)]
@@ -13330,39 +13226,10 @@ impl QueryInput {
         self.expression_attribute_values.as_ref()
     }
 }
-impl std::fmt::Debug for QueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("index_name", &self.index_name);
-        formatter.field("select", &self.select);
-        formatter.field("attributes_to_get", &self.attributes_to_get);
-        formatter.field("limit", &self.limit);
-        formatter.field("consistent_read", &self.consistent_read);
-        formatter.field("key_conditions", &self.key_conditions);
-        formatter.field("query_filter", &self.query_filter);
-        formatter.field("conditional_operator", &self.conditional_operator);
-        formatter.field("scan_index_forward", &self.scan_index_forward);
-        formatter.field("exclusive_start_key", &self.exclusive_start_key);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field("projection_expression", &self.projection_expression);
-        formatter.field("filter_expression", &self.filter_expression);
-        formatter.field("key_condition_expression", &self.key_condition_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.field(
-            "expression_attribute_values",
-            &self.expression_attribute_values,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>PutItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutItemInput {
     /// <p>The name of the table to contain the item.</p>
     #[doc(hidden)]
@@ -13568,35 +13435,10 @@ impl PutItemInput {
         self.expression_attribute_values.as_ref()
     }
 }
-impl std::fmt::Debug for PutItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutItemInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("item", &self.item);
-        formatter.field("expected", &self.expected);
-        formatter.field("return_values", &self.return_values);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field(
-            "return_item_collection_metrics",
-            &self.return_item_collection_metrics,
-        );
-        formatter.field("conditional_operator", &self.conditional_operator);
-        formatter.field("condition_expression", &self.condition_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.field(
-            "expression_attribute_values",
-            &self.expression_attribute_values,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsOfResourceInput {
     /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -13615,18 +13457,10 @@ impl ListTagsOfResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsOfResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsOfResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>ListTables</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTablesInput {
     /// <p>The first table name that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of results.</p>
     #[doc(hidden)]
@@ -13645,21 +13479,10 @@ impl ListTablesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListTablesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTablesInput");
-        formatter.field(
-            "exclusive_start_table_name",
-            &self.exclusive_start_table_name,
-        );
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImportsInput {
     /// <p> The Amazon Resource Name (ARN) associated with the table that was imported to. </p>
     #[doc(hidden)]
@@ -13685,19 +13508,10 @@ impl ListImportsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListImportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImportsInput");
-        formatter.field("table_arn", &self.table_arn);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGlobalTablesInput {
     /// <p>The first global table name that this operation will evaluate.</p>
     #[doc(hidden)]
@@ -13725,22 +13539,10 @@ impl ListGlobalTablesInput {
         self.region_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListGlobalTablesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGlobalTablesInput");
-        formatter.field(
-            "exclusive_start_global_table_name",
-            &self.exclusive_start_global_table_name,
-        );
-        formatter.field("limit", &self.limit);
-        formatter.field("region_name", &self.region_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExportsInput {
     /// <p>The Amazon Resource Name (ARN) associated with the exported table.</p>
     #[doc(hidden)]
@@ -13766,19 +13568,10 @@ impl ListExportsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListExportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExportsInput");
-        formatter.field("table_arn", &self.table_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContributorInsightsInput {
     /// <p>The name of the table.</p>
     #[doc(hidden)]
@@ -13804,19 +13597,10 @@ impl ListContributorInsightsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListContributorInsightsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListContributorInsightsInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBackupsInput {
     /// <p>The backups from the table specified by <code>TableName</code> are listed. </p>
     #[doc(hidden)]
@@ -13875,25 +13659,10 @@ impl ListBackupsInput {
         self.backup_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListBackupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBackupsInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("limit", &self.limit);
-        formatter.field("time_range_lower_bound", &self.time_range_lower_bound);
-        formatter.field("time_range_upper_bound", &self.time_range_upper_bound);
-        formatter.field(
-            "exclusive_start_backup_arn",
-            &self.exclusive_start_backup_arn,
-        );
-        formatter.field("backup_type", &self.backup_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportTableInput {
     /// <p>Providing a <code>ClientToken</code> makes the call to <code>ImportTableInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
     /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
@@ -13948,22 +13717,10 @@ impl ImportTableInput {
         self.table_creation_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for ImportTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportTableInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("s3_bucket_source", &self.s3_bucket_source);
-        formatter.field("input_format", &self.input_format);
-        formatter.field("input_format_options", &self.input_format_options);
-        formatter.field("input_compression_type", &self.input_compression_type);
-        formatter.field("table_creation_parameters", &self.table_creation_parameters);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetItemInput {
     /// <p>The name of the table containing the requested item.</p>
     #[doc(hidden)]
@@ -14085,26 +13842,10 @@ impl GetItemInput {
         self.expression_attribute_names.as_ref()
     }
 }
-impl std::fmt::Debug for GetItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetItemInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("key", &self.key);
-        formatter.field("attributes_to_get", &self.attributes_to_get);
-        formatter.field("consistent_read", &self.consistent_read);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field("projection_expression", &self.projection_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportTableToPointInTimeInput {
     /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
     #[doc(hidden)]
@@ -14184,25 +13925,10 @@ impl ExportTableToPointInTimeInput {
         self.export_format.as_ref()
     }
 }
-impl std::fmt::Debug for ExportTableToPointInTimeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportTableToPointInTimeInput");
-        formatter.field("table_arn", &self.table_arn);
-        formatter.field("export_time", &self.export_time);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_bucket_owner", &self.s3_bucket_owner);
-        formatter.field("s3_prefix", &self.s3_prefix);
-        formatter.field("s3_sse_algorithm", &self.s3_sse_algorithm);
-        formatter.field("s3_sse_kms_key_id", &self.s3_sse_kms_key_id);
-        formatter.field("export_format", &self.export_format);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteTransactionInput {
     /// <p>The list of PartiQL statements representing the transaction to run.</p>
     #[doc(hidden)]
@@ -14233,19 +13959,10 @@ impl ExecuteTransactionInput {
         self.return_consumed_capacity.as_ref()
     }
 }
-impl std::fmt::Debug for ExecuteTransactionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteTransactionInput");
-        formatter.field("transact_statements", &self.transact_statements);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteStatementInput {
     /// <p>The PartiQL statement representing the operation to run.</p>
     #[doc(hidden)]
@@ -14304,22 +14021,10 @@ impl ExecuteStatementInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ExecuteStatementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteStatementInput");
-        formatter.field("statement", &self.statement);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("consistent_read", &self.consistent_read);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableKinesisStreamingDestinationInput {
     /// <p>The name of the DynamoDB table.</p>
     #[doc(hidden)]
@@ -14338,18 +14043,10 @@ impl EnableKinesisStreamingDestinationInput {
         self.stream_arn.as_deref()
     }
 }
-impl std::fmt::Debug for EnableKinesisStreamingDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableKinesisStreamingDestinationInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableKinesisStreamingDestinationInput {
     /// <p>The name of the DynamoDB table.</p>
     #[doc(hidden)]
@@ -14368,18 +14065,10 @@ impl DisableKinesisStreamingDestinationInput {
         self.stream_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisableKinesisStreamingDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableKinesisStreamingDestinationInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTimeToLiveInput {
     /// <p>The name of the table to be described.</p>
     #[doc(hidden)]
@@ -14391,17 +14080,10 @@ impl DescribeTimeToLiveInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTimeToLiveInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTimeToLiveInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTableReplicaAutoScalingInput {
     /// <p>The name of the table.</p>
     #[doc(hidden)]
@@ -14413,17 +14095,10 @@ impl DescribeTableReplicaAutoScalingInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTableReplicaAutoScalingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTableReplicaAutoScalingInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DescribeTable</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTableInput {
     /// <p>The name of the table to describe.</p>
     #[doc(hidden)]
@@ -14435,28 +14110,15 @@ impl DescribeTableInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTableInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DescribeLimits</code> operation. Has no content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLimitsInput {}
-impl std::fmt::Debug for DescribeLimitsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLimitsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeKinesisStreamingDestinationInput {
     /// <p>The name of the table being described.</p>
     #[doc(hidden)]
@@ -14468,17 +14130,10 @@ impl DescribeKinesisStreamingDestinationInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeKinesisStreamingDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeKinesisStreamingDestinationInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeImportInput {
     /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
     #[doc(hidden)]
@@ -14490,17 +14145,10 @@ impl DescribeImportInput {
         self.import_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeImportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeImportInput");
-        formatter.field("import_arn", &self.import_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGlobalTableSettingsInput {
     /// <p>The name of the global table to describe.</p>
     #[doc(hidden)]
@@ -14512,17 +14160,10 @@ impl DescribeGlobalTableSettingsInput {
         self.global_table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGlobalTableSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGlobalTableSettingsInput");
-        formatter.field("global_table_name", &self.global_table_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGlobalTableInput {
     /// <p>The name of the global table.</p>
     #[doc(hidden)]
@@ -14534,17 +14175,10 @@ impl DescribeGlobalTableInput {
         self.global_table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGlobalTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGlobalTableInput");
-        formatter.field("global_table_name", &self.global_table_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExportInput {
     /// <p>The Amazon Resource Name (ARN) associated with the export.</p>
     #[doc(hidden)]
@@ -14556,28 +14190,15 @@ impl DescribeExportInput {
         self.export_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeExportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeExportInput");
-        formatter.field("export_arn", &self.export_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEndpointsInput {}
-impl std::fmt::Debug for DescribeEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEndpointsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeContributorInsightsInput {
     /// <p>The name of the table to describe.</p>
     #[doc(hidden)]
@@ -14596,18 +14217,10 @@ impl DescribeContributorInsightsInput {
         self.index_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeContributorInsightsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeContributorInsightsInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("index_name", &self.index_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeContinuousBackupsInput {
     /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
     #[doc(hidden)]
@@ -14619,17 +14232,10 @@ impl DescribeContinuousBackupsInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeContinuousBackupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeContinuousBackupsInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBackupInput {
     /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
     #[doc(hidden)]
@@ -14641,17 +14247,10 @@ impl DescribeBackupInput {
         self.backup_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBackupInput");
-        formatter.field("backup_arn", &self.backup_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DeleteTable</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTableInput {
     /// <p>The name of the table to delete.</p>
     #[doc(hidden)]
@@ -14663,17 +14262,10 @@ impl DeleteTableInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTableInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DeleteItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteItemInput {
     /// <p>The name of the table from which to delete the item.</p>
     #[doc(hidden)]
@@ -14869,35 +14461,10 @@ impl DeleteItemInput {
         self.expression_attribute_values.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteItemInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("key", &self.key);
-        formatter.field("expected", &self.expected);
-        formatter.field("conditional_operator", &self.conditional_operator);
-        formatter.field("return_values", &self.return_values);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field(
-            "return_item_collection_metrics",
-            &self.return_item_collection_metrics,
-        );
-        formatter.field("condition_expression", &self.condition_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.field(
-            "expression_attribute_values",
-            &self.expression_attribute_values,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackupInput {
     /// <p>The ARN associated with the backup.</p>
     #[doc(hidden)]
@@ -14909,17 +14476,10 @@ impl DeleteBackupInput {
         self.backup_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackupInput");
-        formatter.field("backup_arn", &self.backup_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>CreateTable</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
     #[doc(hidden)]
@@ -15134,27 +14694,10 @@ impl CreateTableInput {
         self.table_class.as_ref()
     }
 }
-impl std::fmt::Debug for CreateTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTableInput");
-        formatter.field("attribute_definitions", &self.attribute_definitions);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("key_schema", &self.key_schema);
-        formatter.field("local_secondary_indexes", &self.local_secondary_indexes);
-        formatter.field("global_secondary_indexes", &self.global_secondary_indexes);
-        formatter.field("billing_mode", &self.billing_mode);
-        formatter.field("provisioned_throughput", &self.provisioned_throughput);
-        formatter.field("stream_specification", &self.stream_specification);
-        formatter.field("sse_specification", &self.sse_specification);
-        formatter.field("tags", &self.tags);
-        formatter.field("table_class", &self.table_class);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGlobalTableInput {
     /// <p>The global table name.</p>
     #[doc(hidden)]
@@ -15173,18 +14716,10 @@ impl CreateGlobalTableInput {
         self.replication_group.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGlobalTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGlobalTableInput");
-        formatter.field("global_table_name", &self.global_table_name);
-        formatter.field("replication_group", &self.replication_group);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackupInput {
     /// <p>The name of the table.</p>
     #[doc(hidden)]
@@ -15203,18 +14738,10 @@ impl CreateBackupInput {
         self.backup_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackupInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("backup_name", &self.backup_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>BatchWriteItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchWriteItemInput {
     /// <p>A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:</p>
     /// <ul>
@@ -15281,22 +14808,10 @@ impl BatchWriteItemInput {
         self.return_item_collection_metrics.as_ref()
     }
 }
-impl std::fmt::Debug for BatchWriteItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchWriteItemInput");
-        formatter.field("request_items", &self.request_items);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field(
-            "return_item_collection_metrics",
-            &self.return_item_collection_metrics,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>BatchGetItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetItemInput {
     /// <p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request.</p>
     /// <p>Each element in the map of items to retrieve consists of the following:</p>
@@ -15381,18 +14896,10 @@ impl BatchGetItemInput {
         self.return_consumed_capacity.as_ref()
     }
 }
-impl std::fmt::Debug for BatchGetItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetItemInput");
-        formatter.field("request_items", &self.request_items);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchExecuteStatementInput {
     /// <p>The list of PartiQL statements representing the batch to run.</p>
     #[doc(hidden)]
@@ -15421,13 +14928,5 @@ impl BatchExecuteStatementInput {
         &self,
     ) -> std::option::Option<&crate::model::ReturnConsumedCapacity> {
         self.return_consumed_capacity.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchExecuteStatementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchExecuteStatementInput");
-        formatter.field("statements", &self.statements);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.finish()
     }
 }

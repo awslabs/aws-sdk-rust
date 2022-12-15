@@ -2,7 +2,7 @@
 
 /// <p> <code>UpdateUserResponse</code> returns the user name and identifier for the request to update a user's properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserOutput {
     /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl UpdateUserOutput {
         self.user_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserOutput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("user_name", &self.user_name);
-        formatter.finish()
-    }
-}
 /// See [`UpdateUserOutput`](crate::output::UpdateUserOutput).
 pub mod update_user_output {
 
     /// A builder for [`UpdateUserOutput`](crate::output::UpdateUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -77,7 +69,7 @@ impl UpdateUserOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServerOutput {
     /// <p>A system-assigned unique identifier for a server that the user account is assigned to.</p>
     #[doc(hidden)]
@@ -89,18 +81,11 @@ impl UpdateServerOutput {
         self.server_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServerOutput");
-        formatter.field("server_id", &self.server_id);
-        formatter.finish()
-    }
-}
 /// See [`UpdateServerOutput`](crate::output::UpdateServerOutput).
 pub mod update_server_output {
 
     /// A builder for [`UpdateServerOutput`](crate::output::UpdateServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
     }
@@ -132,7 +117,7 @@ impl UpdateServerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProfileOutput {
     /// <p>Returns the identifier for the profile that's being updated.</p>
     #[doc(hidden)]
@@ -144,18 +129,11 @@ impl UpdateProfileOutput {
         self.profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProfileOutput");
-        formatter.field("profile_id", &self.profile_id);
-        formatter.finish()
-    }
-}
 /// See [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
 pub mod update_profile_output {
 
     /// A builder for [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_id: std::option::Option<std::string::String>,
     }
@@ -187,7 +165,7 @@ impl UpdateProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateHostKeyOutput {
     /// <p>Returns the server ID for the server that contains the updated host key.</p>
     #[doc(hidden)]
@@ -206,19 +184,11 @@ impl UpdateHostKeyOutput {
         self.host_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateHostKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateHostKeyOutput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("host_key_id", &self.host_key_id);
-        formatter.finish()
-    }
-}
 /// See [`UpdateHostKeyOutput`](crate::output::UpdateHostKeyOutput).
 pub mod update_host_key_output {
 
     /// A builder for [`UpdateHostKeyOutput`](crate::output::UpdateHostKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
         pub(crate) host_key_id: std::option::Option<std::string::String>,
@@ -262,7 +232,7 @@ impl UpdateHostKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConnectorOutput {
     /// <p>Returns the identifier of the connector object that you are updating.</p>
     #[doc(hidden)]
@@ -274,18 +244,11 @@ impl UpdateConnectorOutput {
         self.connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateConnectorOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConnectorOutput");
-        formatter.field("connector_id", &self.connector_id);
-        formatter.finish()
-    }
-}
 /// See [`UpdateConnectorOutput`](crate::output::UpdateConnectorOutput).
 pub mod update_connector_output {
 
     /// A builder for [`UpdateConnectorOutput`](crate::output::UpdateConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_id: std::option::Option<std::string::String>,
     }
@@ -317,7 +280,7 @@ impl UpdateConnectorOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCertificateOutput {
     /// <p>Returns the identifier of the certificate object that you are updating.</p>
     #[doc(hidden)]
@@ -329,18 +292,11 @@ impl UpdateCertificateOutput {
         self.certificate_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCertificateOutput");
-        formatter.field("certificate_id", &self.certificate_id);
-        formatter.finish()
-    }
-}
 /// See [`UpdateCertificateOutput`](crate::output::UpdateCertificateOutput).
 pub mod update_certificate_output {
 
     /// A builder for [`UpdateCertificateOutput`](crate::output::UpdateCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_id: std::option::Option<std::string::String>,
     }
@@ -375,7 +331,7 @@ impl UpdateCertificateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAgreementOutput {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     #[doc(hidden)]
@@ -387,18 +343,11 @@ impl UpdateAgreementOutput {
         self.agreement_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAgreementOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAgreementOutput");
-        formatter.field("agreement_id", &self.agreement_id);
-        formatter.finish()
-    }
-}
 /// See [`UpdateAgreementOutput`](crate::output::UpdateAgreementOutput).
 pub mod update_agreement_output {
 
     /// A builder for [`UpdateAgreementOutput`](crate::output::UpdateAgreementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agreement_id: std::option::Option<std::string::String>,
     }
@@ -430,7 +379,7 @@ impl UpdateAgreementOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccessOutput {
     /// <p>The ID of the server that the user is attached to.</p>
     #[doc(hidden)]
@@ -449,19 +398,11 @@ impl UpdateAccessOutput {
         self.external_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAccessOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccessOutput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("external_id", &self.external_id);
-        formatter.finish()
-    }
-}
 /// See [`UpdateAccessOutput`](crate::output::UpdateAccessOutput).
 pub mod update_access_output {
 
     /// A builder for [`UpdateAccessOutput`](crate::output::UpdateAccessOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
         pub(crate) external_id: std::option::Option<std::string::String>,
@@ -505,19 +446,13 @@ impl UpdateAccessOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -535,7 +470,7 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestIdentityProviderOutput {
     /// <p>The response that is returned from your API Gateway.</p>
     #[doc(hidden)]
@@ -572,21 +507,11 @@ impl TestIdentityProviderOutput {
         self.url.as_deref()
     }
 }
-impl std::fmt::Debug for TestIdentityProviderOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestIdentityProviderOutput");
-        formatter.field("response", &self.response);
-        formatter.field("status_code", &self.status_code);
-        formatter.field("message", &self.message);
-        formatter.field("url", &self.url);
-        formatter.finish()
-    }
-}
 /// See [`TestIdentityProviderOutput`](crate::output::TestIdentityProviderOutput).
 pub mod test_identity_provider_output {
 
     /// A builder for [`TestIdentityProviderOutput`](crate::output::TestIdentityProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) response: std::option::Option<std::string::String>,
         pub(crate) status_code: std::option::Option<i32>,
@@ -658,19 +583,13 @@ impl TestIdentityProviderOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -688,19 +607,13 @@ impl TagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopServerOutput {}
-impl std::fmt::Debug for StopServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopServerOutput");
-        formatter.finish()
-    }
-}
 /// See [`StopServerOutput`](crate::output::StopServerOutput).
 pub mod stop_server_output {
 
     /// A builder for [`StopServerOutput`](crate::output::StopServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopServerOutput`](crate::output::StopServerOutput).
@@ -718,19 +631,13 @@ impl StopServerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartServerOutput {}
-impl std::fmt::Debug for StartServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartServerOutput");
-        formatter.finish()
-    }
-}
 /// See [`StartServerOutput`](crate::output::StartServerOutput).
 pub mod start_server_output {
 
     /// A builder for [`StartServerOutput`](crate::output::StartServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StartServerOutput`](crate::output::StartServerOutput).
@@ -748,7 +655,7 @@ impl StartServerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartFileTransferOutput {
     /// <p>Returns the unique identifier for this file transfer. </p>
     #[doc(hidden)]
@@ -760,18 +667,11 @@ impl StartFileTransferOutput {
         self.transfer_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartFileTransferOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartFileTransferOutput");
-        formatter.field("transfer_id", &self.transfer_id);
-        formatter.finish()
-    }
-}
 /// See [`StartFileTransferOutput`](crate::output::StartFileTransferOutput).
 pub mod start_file_transfer_output {
 
     /// A builder for [`StartFileTransferOutput`](crate::output::StartFileTransferOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transfer_id: std::option::Option<std::string::String>,
     }
@@ -803,19 +703,13 @@ impl StartFileTransferOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendWorkflowStepStateOutput {}
-impl std::fmt::Debug for SendWorkflowStepStateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendWorkflowStepStateOutput");
-        formatter.finish()
-    }
-}
 /// See [`SendWorkflowStepStateOutput`](crate::output::SendWorkflowStepStateOutput).
 pub mod send_workflow_step_state_output {
 
     /// A builder for [`SendWorkflowStepStateOutput`](crate::output::SendWorkflowStepStateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SendWorkflowStepStateOutput`](crate::output::SendWorkflowStepStateOutput).
@@ -833,7 +727,7 @@ impl SendWorkflowStepStateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkflowsOutput {
     /// <p> <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
     #[doc(hidden)]
@@ -852,19 +746,11 @@ impl ListWorkflowsOutput {
         self.workflows.as_deref()
     }
 }
-impl std::fmt::Debug for ListWorkflowsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkflowsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("workflows", &self.workflows);
-        formatter.finish()
-    }
-}
 /// See [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
 pub mod list_workflows_output {
 
     /// A builder for [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) workflows: std::option::Option<std::vec::Vec<crate::model::ListedWorkflow>>,
@@ -917,7 +803,7 @@ impl ListWorkflowsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUsersOutput {
     /// <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
     #[doc(hidden)]
@@ -943,20 +829,11 @@ impl ListUsersOutput {
         self.users.as_deref()
     }
 }
-impl std::fmt::Debug for ListUsersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUsersOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("server_id", &self.server_id);
-        formatter.field("users", &self.users);
-        formatter.finish()
-    }
-}
 /// See [`ListUsersOutput`](crate::output::ListUsersOutput).
 pub mod list_users_output {
 
     /// A builder for [`ListUsersOutput`](crate::output::ListUsersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) server_id: std::option::Option<std::string::String>,
@@ -1021,7 +898,7 @@ impl ListUsersOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>The ARN you specified to list the tags of.</p>
     #[doc(hidden)]
@@ -1047,20 +924,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("arn", &self.arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1125,7 +993,7 @@ impl ListTagsForResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServersOutput {
     /// <p>When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing additional servers.</p>
     #[doc(hidden)]
@@ -1144,19 +1012,11 @@ impl ListServersOutput {
         self.servers.as_deref()
     }
 }
-impl std::fmt::Debug for ListServersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServersOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("servers", &self.servers);
-        formatter.finish()
-    }
-}
 /// See [`ListServersOutput`](crate::output::ListServersOutput).
 pub mod list_servers_output {
 
     /// A builder for [`ListServersOutput`](crate::output::ListServersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) servers: std::option::Option<std::vec::Vec<crate::model::ListedServer>>,
@@ -1209,7 +1069,7 @@ impl ListServersOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSecurityPoliciesOutput {
     /// <p>When you can get additional results from the <code>ListSecurityPolicies</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing security policies.</p>
     #[doc(hidden)]
@@ -1228,19 +1088,11 @@ impl ListSecurityPoliciesOutput {
         self.security_policy_names.as_deref()
     }
 }
-impl std::fmt::Debug for ListSecurityPoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSecurityPoliciesOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("security_policy_names", &self.security_policy_names);
-        formatter.finish()
-    }
-}
 /// See [`ListSecurityPoliciesOutput`](crate::output::ListSecurityPoliciesOutput).
 pub mod list_security_policies_output {
 
     /// A builder for [`ListSecurityPoliciesOutput`](crate::output::ListSecurityPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) security_policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1293,7 +1145,7 @@ impl ListSecurityPoliciesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfilesOutput {
     /// <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
     #[doc(hidden)]
@@ -1312,19 +1164,11 @@ impl ListProfilesOutput {
         self.profiles.as_deref()
     }
 }
-impl std::fmt::Debug for ListProfilesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfilesOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("profiles", &self.profiles);
-        formatter.finish()
-    }
-}
 /// See [`ListProfilesOutput`](crate::output::ListProfilesOutput).
 pub mod list_profiles_output {
 
     /// A builder for [`ListProfilesOutput`](crate::output::ListProfilesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) profiles: std::option::Option<std::vec::Vec<crate::model::ListedProfile>>,
@@ -1377,7 +1221,7 @@ impl ListProfilesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListHostKeysOutput {
     /// <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
     #[doc(hidden)]
@@ -1403,20 +1247,11 @@ impl ListHostKeysOutput {
         self.host_keys.as_deref()
     }
 }
-impl std::fmt::Debug for ListHostKeysOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHostKeysOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("server_id", &self.server_id);
-        formatter.field("host_keys", &self.host_keys);
-        formatter.finish()
-    }
-}
 /// See [`ListHostKeysOutput`](crate::output::ListHostKeysOutput).
 pub mod list_host_keys_output {
 
     /// A builder for [`ListHostKeysOutput`](crate::output::ListHostKeysOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) server_id: std::option::Option<std::string::String>,
@@ -1481,7 +1316,7 @@ impl ListHostKeysOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExecutionsOutput {
     /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
     #[doc(hidden)]
@@ -1519,20 +1354,11 @@ impl ListExecutionsOutput {
         self.executions.as_deref()
     }
 }
-impl std::fmt::Debug for ListExecutionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExecutionsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("executions", &self.executions);
-        formatter.finish()
-    }
-}
 /// See [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
 pub mod list_executions_output {
 
     /// A builder for [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -1609,7 +1435,7 @@ impl ListExecutionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConnectorsOutput {
     /// <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
     #[doc(hidden)]
@@ -1628,19 +1454,11 @@ impl ListConnectorsOutput {
         self.connectors.as_deref()
     }
 }
-impl std::fmt::Debug for ListConnectorsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConnectorsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("connectors", &self.connectors);
-        formatter.finish()
-    }
-}
 /// See [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
 pub mod list_connectors_output {
 
     /// A builder for [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) connectors: std::option::Option<std::vec::Vec<crate::model::ListedConnector>>,
@@ -1693,7 +1511,7 @@ impl ListConnectorsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCertificatesOutput {
     /// <p>Returns the next token, which you can use to list the next certificate.</p>
     #[doc(hidden)]
@@ -1712,19 +1530,11 @@ impl ListCertificatesOutput {
         self.certificates.as_deref()
     }
 }
-impl std::fmt::Debug for ListCertificatesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCertificatesOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("certificates", &self.certificates);
-        formatter.finish()
-    }
-}
 /// See [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
 pub mod list_certificates_output {
 
     /// A builder for [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) certificates:
@@ -1778,7 +1588,7 @@ impl ListCertificatesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAgreementsOutput {
     /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
     #[doc(hidden)]
@@ -1797,19 +1607,11 @@ impl ListAgreementsOutput {
         self.agreements.as_deref()
     }
 }
-impl std::fmt::Debug for ListAgreementsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAgreementsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("agreements", &self.agreements);
-        formatter.finish()
-    }
-}
 /// See [`ListAgreementsOutput`](crate::output::ListAgreementsOutput).
 pub mod list_agreements_output {
 
     /// A builder for [`ListAgreementsOutput`](crate::output::ListAgreementsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) agreements: std::option::Option<std::vec::Vec<crate::model::ListedAgreement>>,
@@ -1862,7 +1664,7 @@ impl ListAgreementsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAccessesOutput {
     /// <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
     #[doc(hidden)]
@@ -1888,20 +1690,11 @@ impl ListAccessesOutput {
         self.accesses.as_deref()
     }
 }
-impl std::fmt::Debug for ListAccessesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAccessesOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("server_id", &self.server_id);
-        formatter.field("accesses", &self.accesses);
-        formatter.finish()
-    }
-}
 /// See [`ListAccessesOutput`](crate::output::ListAccessesOutput).
 pub mod list_accesses_output {
 
     /// A builder for [`ListAccessesOutput`](crate::output::ListAccessesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) server_id: std::option::Option<std::string::String>,
@@ -1966,7 +1759,7 @@ impl ListAccessesOutput {
 
 /// <p>Identifies the user, the server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associated with.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportSshPublicKeyOutput {
     /// <p>A system-assigned unique identifier for a server.</p>
     #[doc(hidden)]
@@ -1992,20 +1785,11 @@ impl ImportSshPublicKeyOutput {
         self.user_name.as_deref()
     }
 }
-impl std::fmt::Debug for ImportSshPublicKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportSshPublicKeyOutput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("ssh_public_key_id", &self.ssh_public_key_id);
-        formatter.field("user_name", &self.user_name);
-        formatter.finish()
-    }
-}
 /// See [`ImportSshPublicKeyOutput`](crate::output::ImportSshPublicKeyOutput).
 pub mod import_ssh_public_key_output {
 
     /// A builder for [`ImportSshPublicKeyOutput`](crate::output::ImportSshPublicKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
         pub(crate) ssh_public_key_id: std::option::Option<std::string::String>,
@@ -2064,7 +1848,7 @@ impl ImportSshPublicKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportHostKeyOutput {
     /// <p>Returns the server ID that contains the imported key.</p>
     #[doc(hidden)]
@@ -2083,19 +1867,11 @@ impl ImportHostKeyOutput {
         self.host_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for ImportHostKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportHostKeyOutput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("host_key_id", &self.host_key_id);
-        formatter.finish()
-    }
-}
 /// See [`ImportHostKeyOutput`](crate::output::ImportHostKeyOutput).
 pub mod import_host_key_output {
 
     /// A builder for [`ImportHostKeyOutput`](crate::output::ImportHostKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
         pub(crate) host_key_id: std::option::Option<std::string::String>,
@@ -2139,7 +1915,7 @@ impl ImportHostKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportCertificateOutput {
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     #[doc(hidden)]
@@ -2151,18 +1927,11 @@ impl ImportCertificateOutput {
         self.certificate_id.as_deref()
     }
 }
-impl std::fmt::Debug for ImportCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportCertificateOutput");
-        formatter.field("certificate_id", &self.certificate_id);
-        formatter.finish()
-    }
-}
 /// See [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
 pub mod import_certificate_output {
 
     /// A builder for [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_id: std::option::Option<std::string::String>,
     }
@@ -2197,7 +1966,7 @@ impl ImportCertificateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkflowOutput {
     /// <p>The structure that contains the details of the workflow.</p>
     #[doc(hidden)]
@@ -2209,18 +1978,11 @@ impl DescribeWorkflowOutput {
         self.workflow.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeWorkflowOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkflowOutput");
-        formatter.field("workflow", &self.workflow);
-        formatter.finish()
-    }
-}
 /// See [`DescribeWorkflowOutput`](crate::output::DescribeWorkflowOutput).
 pub mod describe_workflow_output {
 
     /// A builder for [`DescribeWorkflowOutput`](crate::output::DescribeWorkflowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow: std::option::Option<crate::model::DescribedWorkflow>,
     }
@@ -2255,7 +2017,7 @@ impl DescribeWorkflowOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeUserOutput {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     #[doc(hidden)]
@@ -2274,19 +2036,11 @@ impl DescribeUserOutput {
         self.user.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeUserOutput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("user", &self.user);
-        formatter.finish()
-    }
-}
 /// See [`DescribeUserOutput`](crate::output::DescribeUserOutput).
 pub mod describe_user_output {
 
     /// A builder for [`DescribeUserOutput`](crate::output::DescribeUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
         pub(crate) user: std::option::Option<crate::model::DescribedUser>,
@@ -2330,7 +2084,7 @@ impl DescribeUserOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServerOutput {
     /// <p>An array containing the properties of a server with the <code>ServerID</code> you specified.</p>
     #[doc(hidden)]
@@ -2342,18 +2096,11 @@ impl DescribeServerOutput {
         self.server.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServerOutput");
-        formatter.field("server", &self.server);
-        formatter.finish()
-    }
-}
 /// See [`DescribeServerOutput`](crate::output::DescribeServerOutput).
 pub mod describe_server_output {
 
     /// A builder for [`DescribeServerOutput`](crate::output::DescribeServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server: std::option::Option<crate::model::DescribedServer>,
     }
@@ -2388,7 +2135,7 @@ impl DescribeServerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSecurityPolicyOutput {
     /// <p>An array containing the properties of the security policy.</p>
     #[doc(hidden)]
@@ -2400,18 +2147,11 @@ impl DescribeSecurityPolicyOutput {
         self.security_policy.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeSecurityPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSecurityPolicyOutput");
-        formatter.field("security_policy", &self.security_policy);
-        formatter.finish()
-    }
-}
 /// See [`DescribeSecurityPolicyOutput`](crate::output::DescribeSecurityPolicyOutput).
 pub mod describe_security_policy_output {
 
     /// A builder for [`DescribeSecurityPolicyOutput`](crate::output::DescribeSecurityPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_policy: std::option::Option<crate::model::DescribedSecurityPolicy>,
     }
@@ -2446,7 +2186,7 @@ impl DescribeSecurityPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProfileOutput {
     /// <p>The details of the specified profile, returned as an object.</p>
     #[doc(hidden)]
@@ -2458,18 +2198,11 @@ impl DescribeProfileOutput {
         self.profile.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProfileOutput");
-        formatter.field("profile", &self.profile);
-        formatter.finish()
-    }
-}
 /// See [`DescribeProfileOutput`](crate::output::DescribeProfileOutput).
 pub mod describe_profile_output {
 
     /// A builder for [`DescribeProfileOutput`](crate::output::DescribeProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile: std::option::Option<crate::model::DescribedProfile>,
     }
@@ -2504,7 +2237,7 @@ impl DescribeProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeHostKeyOutput {
     /// <p>Returns the details for the specified host key.</p>
     #[doc(hidden)]
@@ -2516,18 +2249,11 @@ impl DescribeHostKeyOutput {
         self.host_key.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeHostKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeHostKeyOutput");
-        formatter.field("host_key", &self.host_key);
-        formatter.finish()
-    }
-}
 /// See [`DescribeHostKeyOutput`](crate::output::DescribeHostKeyOutput).
 pub mod describe_host_key_output {
 
     /// A builder for [`DescribeHostKeyOutput`](crate::output::DescribeHostKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host_key: std::option::Option<crate::model::DescribedHostKey>,
     }
@@ -2562,7 +2288,7 @@ impl DescribeHostKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExecutionOutput {
     /// <p>A unique identifier for the workflow.</p>
     #[doc(hidden)]
@@ -2581,19 +2307,11 @@ impl DescribeExecutionOutput {
         self.execution.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeExecutionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeExecutionOutput");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("execution", &self.execution);
-        formatter.finish()
-    }
-}
 /// See [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
 pub mod describe_execution_output {
 
     /// A builder for [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) execution: std::option::Option<crate::model::DescribedExecution>,
@@ -2640,7 +2358,7 @@ impl DescribeExecutionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeConnectorOutput {
     /// <p>The structure that contains the details of the connector.</p>
     #[doc(hidden)]
@@ -2652,18 +2370,11 @@ impl DescribeConnectorOutput {
         self.connector.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeConnectorOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeConnectorOutput");
-        formatter.field("connector", &self.connector);
-        formatter.finish()
-    }
-}
 /// See [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
 pub mod describe_connector_output {
 
     /// A builder for [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector: std::option::Option<crate::model::DescribedConnector>,
     }
@@ -2698,7 +2409,7 @@ impl DescribeConnectorOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCertificateOutput {
     /// <p>The details for the specified certificate, returned as an object.</p>
     #[doc(hidden)]
@@ -2710,18 +2421,11 @@ impl DescribeCertificateOutput {
         self.certificate.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCertificateOutput");
-        formatter.field("certificate", &self.certificate);
-        formatter.finish()
-    }
-}
 /// See [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
 pub mod describe_certificate_output {
 
     /// A builder for [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate: std::option::Option<crate::model::DescribedCertificate>,
     }
@@ -2756,7 +2460,7 @@ impl DescribeCertificateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAgreementOutput {
     /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
     #[doc(hidden)]
@@ -2768,18 +2472,11 @@ impl DescribeAgreementOutput {
         self.agreement.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeAgreementOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAgreementOutput");
-        formatter.field("agreement", &self.agreement);
-        formatter.finish()
-    }
-}
 /// See [`DescribeAgreementOutput`](crate::output::DescribeAgreementOutput).
 pub mod describe_agreement_output {
 
     /// A builder for [`DescribeAgreementOutput`](crate::output::DescribeAgreementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agreement: std::option::Option<crate::model::DescribedAgreement>,
     }
@@ -2814,7 +2511,7 @@ impl DescribeAgreementOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccessOutput {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
     #[doc(hidden)]
@@ -2833,19 +2530,11 @@ impl DescribeAccessOutput {
         self.access.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeAccessOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccessOutput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("access", &self.access);
-        formatter.finish()
-    }
-}
 /// See [`DescribeAccessOutput`](crate::output::DescribeAccessOutput).
 pub mod describe_access_output {
 
     /// A builder for [`DescribeAccessOutput`](crate::output::DescribeAccessOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
         pub(crate) access: std::option::Option<crate::model::DescribedAccess>,
@@ -2892,19 +2581,13 @@ impl DescribeAccessOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkflowOutput {}
-impl std::fmt::Debug for DeleteWorkflowOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkflowOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
 pub mod delete_workflow_output {
 
     /// A builder for [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
@@ -2922,19 +2605,13 @@ impl DeleteWorkflowOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserOutput {}
-impl std::fmt::Debug for DeleteUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteUserOutput`](crate::output::DeleteUserOutput).
 pub mod delete_user_output {
 
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserOutput`](crate::output::DeleteUserOutput).
@@ -2952,19 +2629,13 @@ impl DeleteUserOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSshPublicKeyOutput {}
-impl std::fmt::Debug for DeleteSshPublicKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSshPublicKeyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput).
 pub mod delete_ssh_public_key_output {
 
     /// A builder for [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput).
@@ -2982,19 +2653,13 @@ impl DeleteSshPublicKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServerOutput {}
-impl std::fmt::Debug for DeleteServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServerOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteServerOutput`](crate::output::DeleteServerOutput).
 pub mod delete_server_output {
 
     /// A builder for [`DeleteServerOutput`](crate::output::DeleteServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteServerOutput`](crate::output::DeleteServerOutput).
@@ -3012,19 +2677,13 @@ impl DeleteServerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProfileOutput {}
-impl std::fmt::Debug for DeleteProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProfileOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
 pub mod delete_profile_output {
 
     /// A builder for [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
@@ -3042,19 +2701,13 @@ impl DeleteProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHostKeyOutput {}
-impl std::fmt::Debug for DeleteHostKeyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteHostKeyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteHostKeyOutput`](crate::output::DeleteHostKeyOutput).
 pub mod delete_host_key_output {
 
     /// A builder for [`DeleteHostKeyOutput`](crate::output::DeleteHostKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteHostKeyOutput`](crate::output::DeleteHostKeyOutput).
@@ -3072,19 +2725,13 @@ impl DeleteHostKeyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConnectorOutput {}
-impl std::fmt::Debug for DeleteConnectorOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConnectorOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput).
 pub mod delete_connector_output {
 
     /// A builder for [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput).
@@ -3102,19 +2749,13 @@ impl DeleteConnectorOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCertificateOutput {}
-impl std::fmt::Debug for DeleteCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCertificateOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
 pub mod delete_certificate_output {
 
     /// A builder for [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
@@ -3132,19 +2773,13 @@ impl DeleteCertificateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAgreementOutput {}
-impl std::fmt::Debug for DeleteAgreementOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAgreementOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteAgreementOutput`](crate::output::DeleteAgreementOutput).
 pub mod delete_agreement_output {
 
     /// A builder for [`DeleteAgreementOutput`](crate::output::DeleteAgreementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAgreementOutput`](crate::output::DeleteAgreementOutput).
@@ -3162,19 +2797,13 @@ impl DeleteAgreementOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccessOutput {}
-impl std::fmt::Debug for DeleteAccessOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccessOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteAccessOutput`](crate::output::DeleteAccessOutput).
 pub mod delete_access_output {
 
     /// A builder for [`DeleteAccessOutput`](crate::output::DeleteAccessOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccessOutput`](crate::output::DeleteAccessOutput).
@@ -3192,7 +2821,7 @@ impl DeleteAccessOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkflowOutput {
     /// <p>A unique identifier for the workflow.</p>
     #[doc(hidden)]
@@ -3204,18 +2833,11 @@ impl CreateWorkflowOutput {
         self.workflow_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWorkflowOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorkflowOutput");
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput).
 pub mod create_workflow_output {
 
     /// A builder for [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
     }
@@ -3247,7 +2869,7 @@ impl CreateWorkflowOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserOutput {
     /// <p>The ID of the server that the user is attached to.</p>
     #[doc(hidden)]
@@ -3266,19 +2888,11 @@ impl CreateUserOutput {
         self.user_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateUserOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateUserOutput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("user_name", &self.user_name);
-        formatter.finish()
-    }
-}
 /// See [`CreateUserOutput`](crate::output::CreateUserOutput).
 pub mod create_user_output {
 
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -3322,7 +2936,7 @@ impl CreateUserOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateServerOutput {
     /// <p>The service-assigned ID of the server that is created.</p>
     #[doc(hidden)]
@@ -3334,18 +2948,11 @@ impl CreateServerOutput {
         self.server_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateServerOutput");
-        formatter.field("server_id", &self.server_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateServerOutput`](crate::output::CreateServerOutput).
 pub mod create_server_output {
 
     /// A builder for [`CreateServerOutput`](crate::output::CreateServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
     }
@@ -3377,7 +2984,7 @@ impl CreateServerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProfileOutput {
     /// <p>The unique identifier for the AS2 profile, returned after the API call succeeds.</p>
     #[doc(hidden)]
@@ -3389,18 +2996,11 @@ impl CreateProfileOutput {
         self.profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProfileOutput");
-        formatter.field("profile_id", &self.profile_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateProfileOutput`](crate::output::CreateProfileOutput).
 pub mod create_profile_output {
 
     /// A builder for [`CreateProfileOutput`](crate::output::CreateProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_id: std::option::Option<std::string::String>,
     }
@@ -3432,7 +3032,7 @@ impl CreateProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConnectorOutput {
     /// <p>The unique identifier for the connector, returned after the API call succeeds.</p>
     #[doc(hidden)]
@@ -3444,18 +3044,11 @@ impl CreateConnectorOutput {
         self.connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateConnectorOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConnectorOutput");
-        formatter.field("connector_id", &self.connector_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateConnectorOutput`](crate::output::CreateConnectorOutput).
 pub mod create_connector_output {
 
     /// A builder for [`CreateConnectorOutput`](crate::output::CreateConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_id: std::option::Option<std::string::String>,
     }
@@ -3487,7 +3080,7 @@ impl CreateConnectorOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAgreementOutput {
     /// <p>The unique identifier for the agreement. Use this ID for deleting, or updating an agreement, as well as in any other API calls that require that you specify the agreement ID.</p>
     #[doc(hidden)]
@@ -3499,18 +3092,11 @@ impl CreateAgreementOutput {
         self.agreement_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAgreementOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAgreementOutput");
-        formatter.field("agreement_id", &self.agreement_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateAgreementOutput`](crate::output::CreateAgreementOutput).
 pub mod create_agreement_output {
 
     /// A builder for [`CreateAgreementOutput`](crate::output::CreateAgreementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agreement_id: std::option::Option<std::string::String>,
     }
@@ -3542,7 +3128,7 @@ impl CreateAgreementOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccessOutput {
     /// <p>The ID of the server that the user is attached to.</p>
     #[doc(hidden)]
@@ -3561,19 +3147,11 @@ impl CreateAccessOutput {
         self.external_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAccessOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccessOutput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("external_id", &self.external_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateAccessOutput`](crate::output::CreateAccessOutput).
 pub mod create_access_output {
 
     /// A builder for [`CreateAccessOutput`](crate::output::CreateAccessOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
         pub(crate) external_id: std::option::Option<std::string::String>,

@@ -2,22 +2,15 @@
 
 /// <p>An internal server error occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerError {
     /// <p>An internal server error occurred.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InternalServerError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InternalServerError {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -25,7 +18,9 @@ impl std::fmt::Display for InternalServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerError")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -35,7 +30,7 @@ impl std::error::Error for InternalServerError {}
 pub mod internal_server_error {
 
     /// A builder for [`InternalServerError`](crate::error::InternalServerError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -67,22 +62,15 @@ impl InternalServerError {
 
 /// <p>The requested <code>caseId</code> couldn't be located.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaseIdNotFound {
     /// <p>The requested <code>CaseId</code> could not be located.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CaseIdNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaseIdNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CaseIdNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -90,7 +78,9 @@ impl std::fmt::Display for CaseIdNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CaseIdNotFound")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -100,7 +90,7 @@ impl std::error::Error for CaseIdNotFound {}
 pub mod case_id_not_found {
 
     /// A builder for [`CaseIdNotFound`](crate::error::CaseIdNotFound).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -132,22 +122,15 @@ impl CaseIdNotFound {
 
 /// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAttachmentLimitExceeded {
     /// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DescribeAttachmentLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAttachmentLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DescribeAttachmentLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -155,7 +138,9 @@ impl std::fmt::Display for DescribeAttachmentLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DescribeAttachmentLimitExceeded")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -165,7 +150,7 @@ impl std::error::Error for DescribeAttachmentLimitExceeded {}
 pub mod describe_attachment_limit_exceeded {
 
     /// A builder for [`DescribeAttachmentLimitExceeded`](crate::error::DescribeAttachmentLimitExceeded).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -197,22 +182,15 @@ impl DescribeAttachmentLimitExceeded {
 
 /// <p>An attachment with the specified ID could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentIdNotFound {
     /// <p>An attachment with the specified ID could not be found.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AttachmentIdNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentIdNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl AttachmentIdNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -220,7 +198,9 @@ impl std::fmt::Display for AttachmentIdNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AttachmentIdNotFound")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -230,7 +210,7 @@ impl std::error::Error for AttachmentIdNotFound {}
 pub mod attachment_id_not_found {
 
     /// A builder for [`AttachmentIdNotFound`](crate::error::AttachmentIdNotFound).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -262,22 +242,15 @@ impl AttachmentIdNotFound {
 
 /// <p>The case creation limit for the account has been exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaseCreationLimitExceeded {
     /// <p>An error message that indicates that you have exceeded the number of cases you can have open.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CaseCreationLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaseCreationLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CaseCreationLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -285,7 +258,9 @@ impl std::fmt::Display for CaseCreationLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CaseCreationLimitExceeded")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -295,7 +270,7 @@ impl std::error::Error for CaseCreationLimitExceeded {}
 pub mod case_creation_limit_exceeded {
 
     /// A builder for [`CaseCreationLimitExceeded`](crate::error::CaseCreationLimitExceeded).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -327,22 +302,15 @@ impl CaseCreationLimitExceeded {
 
 /// <p>An attachment set with the specified ID could not be found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentSetIdNotFound {
     /// <p>An attachment set with the specified ID could not be found.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AttachmentSetIdNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentSetIdNotFound");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl AttachmentSetIdNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -350,7 +318,9 @@ impl std::fmt::Display for AttachmentSetIdNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AttachmentSetIdNotFound")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -360,7 +330,7 @@ impl std::error::Error for AttachmentSetIdNotFound {}
 pub mod attachment_set_id_not_found {
 
     /// A builder for [`AttachmentSetIdNotFound`](crate::error::AttachmentSetIdNotFound).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -392,22 +362,15 @@ impl AttachmentSetIdNotFound {
 
 /// <p>The expiration time of the attachment set has passed. The set expires 1 hour after it is created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentSetExpired {
     /// <p>The expiration time of the attachment set has passed. The set expires one hour after it is created.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AttachmentSetExpired {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentSetExpired");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl AttachmentSetExpired {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -415,7 +378,9 @@ impl std::fmt::Display for AttachmentSetExpired {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AttachmentSetExpired")?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -425,7 +390,7 @@ impl std::error::Error for AttachmentSetExpired {}
 pub mod attachment_set_expired {
 
     /// A builder for [`AttachmentSetExpired`](crate::error::AttachmentSetExpired).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -457,22 +422,15 @@ impl AttachmentSetExpired {
 
 /// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentSetSizeLimitExceeded {
     /// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AttachmentSetSizeLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentSetSizeLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl AttachmentSetSizeLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -480,7 +438,9 @@ impl std::fmt::Display for AttachmentSetSizeLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AttachmentSetSizeLimitExceeded")?;
         if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+            {
+                write!(f, ": {}", inner_8)?;
+            }
         }
         Ok(())
     }
@@ -490,7 +450,7 @@ impl std::error::Error for AttachmentSetSizeLimitExceeded {}
 pub mod attachment_set_size_limit_exceeded {
 
     /// A builder for [`AttachmentSetSizeLimitExceeded`](crate::error::AttachmentSetSizeLimitExceeded).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -522,22 +482,15 @@ impl AttachmentSetSizeLimitExceeded {
 
 /// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachmentLimitExceeded {
     /// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AttachmentLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachmentLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl AttachmentLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -545,7 +498,9 @@ impl std::fmt::Display for AttachmentLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AttachmentLimitExceeded")?;
         if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+            {
+                write!(f, ": {}", inner_9)?;
+            }
         }
         Ok(())
     }
@@ -555,7 +510,7 @@ impl std::error::Error for AttachmentLimitExceeded {}
 pub mod attachment_limit_exceeded {
 
     /// A builder for [`AttachmentLimitExceeded`](crate::error::AttachmentLimitExceeded).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -594,6 +549,14 @@ pub struct AddAttachmentsToSetError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AddAttachmentsToSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddAttachmentsToSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AddAttachmentsToSet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -608,8 +571,15 @@ pub enum AddAttachmentsToSetErrorKind {
     AttachmentSetSizeLimitExceeded(crate::error::AttachmentSetSizeLimitExceeded),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddAttachmentsToSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -640,7 +610,7 @@ impl AddAttachmentsToSetError {
     /// Creates the `AddAttachmentsToSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddAttachmentsToSetErrorKind::Unhandled(err.into()),
+            kind: AddAttachmentsToSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -649,7 +619,7 @@ impl AddAttachmentsToSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddAttachmentsToSetErrorKind::Unhandled(err.into()),
+            kind: AddAttachmentsToSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -717,7 +687,7 @@ impl std::error::Error for AddAttachmentsToSetError {
             AddAttachmentsToSetErrorKind::AttachmentSetIdNotFound(_inner) => Some(_inner),
             AddAttachmentsToSetErrorKind::AttachmentSetSizeLimitExceeded(_inner) => Some(_inner),
             AddAttachmentsToSetErrorKind::InternalServerError(_inner) => Some(_inner),
-            AddAttachmentsToSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddAttachmentsToSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -731,6 +701,14 @@ pub struct AddCommunicationToCaseError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AddCommunicationToCaseError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddCommunicationToCaseErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AddCommunicationToCase` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -743,8 +721,15 @@ pub enum AddCommunicationToCaseErrorKind {
     CaseIdNotFound(crate::error::CaseIdNotFound),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddCommunicationToCaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -774,7 +759,9 @@ impl AddCommunicationToCaseError {
     /// Creates the `AddCommunicationToCaseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddCommunicationToCaseErrorKind::Unhandled(err.into()),
+            kind: AddCommunicationToCaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -783,7 +770,9 @@ impl AddCommunicationToCaseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddCommunicationToCaseErrorKind::Unhandled(err.into()),
+            kind: AddCommunicationToCaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -843,7 +832,7 @@ impl std::error::Error for AddCommunicationToCaseError {
             AddCommunicationToCaseErrorKind::AttachmentSetIdNotFound(_inner) => Some(_inner),
             AddCommunicationToCaseErrorKind::CaseIdNotFound(_inner) => Some(_inner),
             AddCommunicationToCaseErrorKind::InternalServerError(_inner) => Some(_inner),
-            AddCommunicationToCaseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddCommunicationToCaseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -857,6 +846,14 @@ pub struct CreateCaseError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateCaseError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateCaseErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateCase` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -869,8 +866,15 @@ pub enum CreateCaseErrorKind {
     CaseCreationLimitExceeded(crate::error::CaseCreationLimitExceeded),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -900,7 +904,7 @@ impl CreateCaseError {
     /// Creates the `CreateCaseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCaseErrorKind::Unhandled(err.into()),
+            kind: CreateCaseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -909,7 +913,7 @@ impl CreateCaseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCaseErrorKind::Unhandled(err.into()),
+            kind: CreateCaseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -960,7 +964,7 @@ impl std::error::Error for CreateCaseError {
             CreateCaseErrorKind::AttachmentSetIdNotFound(_inner) => Some(_inner),
             CreateCaseErrorKind::CaseCreationLimitExceeded(_inner) => Some(_inner),
             CreateCaseErrorKind::InternalServerError(_inner) => Some(_inner),
-            CreateCaseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCaseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -974,6 +978,14 @@ pub struct DescribeAttachmentError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeAttachmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeAttachment` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -984,8 +996,15 @@ pub enum DescribeAttachmentErrorKind {
     DescribeAttachmentLimitExceeded(crate::error::DescribeAttachmentLimitExceeded),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAttachmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1014,7 +1033,7 @@ impl DescribeAttachmentError {
     /// Creates the `DescribeAttachmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAttachmentErrorKind::Unhandled(err.into()),
+            kind: DescribeAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1023,7 +1042,7 @@ impl DescribeAttachmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAttachmentErrorKind::Unhandled(err.into()),
+            kind: DescribeAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1075,7 +1094,7 @@ impl std::error::Error for DescribeAttachmentError {
             DescribeAttachmentErrorKind::AttachmentIdNotFound(_inner) => Some(_inner),
             DescribeAttachmentErrorKind::DescribeAttachmentLimitExceeded(_inner) => Some(_inner),
             DescribeAttachmentErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeAttachmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAttachmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1089,6 +1108,14 @@ pub struct DescribeCasesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeCasesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeCasesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeCases` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1097,8 +1124,15 @@ pub enum DescribeCasesErrorKind {
     CaseIdNotFound(crate::error::CaseIdNotFound),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCasesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1126,7 +1160,7 @@ impl DescribeCasesError {
     /// Creates the `DescribeCasesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCasesErrorKind::Unhandled(err.into()),
+            kind: DescribeCasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1135,7 +1169,7 @@ impl DescribeCasesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCasesErrorKind::Unhandled(err.into()),
+            kind: DescribeCasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1173,7 +1207,7 @@ impl std::error::Error for DescribeCasesError {
         match &self.kind {
             DescribeCasesErrorKind::CaseIdNotFound(_inner) => Some(_inner),
             DescribeCasesErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeCasesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCasesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1187,6 +1221,14 @@ pub struct DescribeCommunicationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeCommunicationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeCommunicationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeCommunications` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1195,8 +1237,15 @@ pub enum DescribeCommunicationsErrorKind {
     CaseIdNotFound(crate::error::CaseIdNotFound),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCommunicationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1224,7 +1273,9 @@ impl DescribeCommunicationsError {
     /// Creates the `DescribeCommunicationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCommunicationsErrorKind::Unhandled(err.into()),
+            kind: DescribeCommunicationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1233,7 +1284,9 @@ impl DescribeCommunicationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCommunicationsErrorKind::Unhandled(err.into()),
+            kind: DescribeCommunicationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1277,7 +1330,7 @@ impl std::error::Error for DescribeCommunicationsError {
         match &self.kind {
             DescribeCommunicationsErrorKind::CaseIdNotFound(_inner) => Some(_inner),
             DescribeCommunicationsErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeCommunicationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCommunicationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1291,14 +1344,29 @@ pub struct DescribeServicesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeServicesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeServicesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeServices` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeServicesErrorKind {
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeServicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1325,7 +1393,7 @@ impl DescribeServicesError {
     /// Creates the `DescribeServicesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeServicesErrorKind::Unhandled(err.into()),
+            kind: DescribeServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1334,7 +1402,7 @@ impl DescribeServicesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeServicesErrorKind::Unhandled(err.into()),
+            kind: DescribeServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1370,7 +1438,7 @@ impl std::error::Error for DescribeServicesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeServicesErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeServicesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeServicesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1384,14 +1452,29 @@ pub struct DescribeSeverityLevelsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeSeverityLevelsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeSeverityLevelsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeSeverityLevels` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSeverityLevelsErrorKind {
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSeverityLevelsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1418,7 +1501,9 @@ impl DescribeSeverityLevelsError {
     /// Creates the `DescribeSeverityLevelsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSeverityLevelsErrorKind::Unhandled(err.into()),
+            kind: DescribeSeverityLevelsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1427,7 +1512,9 @@ impl DescribeSeverityLevelsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSeverityLevelsErrorKind::Unhandled(err.into()),
+            kind: DescribeSeverityLevelsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1463,7 +1550,7 @@ impl std::error::Error for DescribeSeverityLevelsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeSeverityLevelsErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeSeverityLevelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSeverityLevelsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1477,14 +1564,33 @@ pub struct DescribeTrustedAdvisorCheckRefreshStatusesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeTrustedAdvisorCheckRefreshStatusesError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeTrustedAdvisorCheckRefreshStatusesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeTrustedAdvisorCheckRefreshStatuses` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTrustedAdvisorCheckRefreshStatusesErrorKind {
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTrustedAdvisorCheckRefreshStatusesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1516,7 +1622,9 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesError {
     /// Creates the `DescribeTrustedAdvisorCheckRefreshStatusesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTrustedAdvisorCheckRefreshStatusesErrorKind::Unhandled(err.into()),
+            kind: DescribeTrustedAdvisorCheckRefreshStatusesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1525,7 +1633,9 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTrustedAdvisorCheckRefreshStatusesErrorKind::Unhandled(err.into()),
+            kind: DescribeTrustedAdvisorCheckRefreshStatusesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1563,9 +1673,7 @@ impl std::error::Error for DescribeTrustedAdvisorCheckRefreshStatusesError {
             DescribeTrustedAdvisorCheckRefreshStatusesErrorKind::InternalServerError(_inner) => {
                 Some(_inner)
             }
-            DescribeTrustedAdvisorCheckRefreshStatusesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeTrustedAdvisorCheckRefreshStatusesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1579,14 +1687,31 @@ pub struct DescribeTrustedAdvisorCheckResultError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeTrustedAdvisorCheckResultError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeTrustedAdvisorCheckResultErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeTrustedAdvisorCheckResult` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTrustedAdvisorCheckResultErrorKind {
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTrustedAdvisorCheckResultError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1618,7 +1743,9 @@ impl DescribeTrustedAdvisorCheckResultError {
     /// Creates the `DescribeTrustedAdvisorCheckResultError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTrustedAdvisorCheckResultErrorKind::Unhandled(err.into()),
+            kind: DescribeTrustedAdvisorCheckResultErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1627,7 +1754,9 @@ impl DescribeTrustedAdvisorCheckResultError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTrustedAdvisorCheckResultErrorKind::Unhandled(err.into()),
+            kind: DescribeTrustedAdvisorCheckResultErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1663,7 +1792,7 @@ impl std::error::Error for DescribeTrustedAdvisorCheckResultError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeTrustedAdvisorCheckResultErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeTrustedAdvisorCheckResultErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTrustedAdvisorCheckResultErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1677,14 +1806,31 @@ pub struct DescribeTrustedAdvisorChecksError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeTrustedAdvisorChecksError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeTrustedAdvisorChecksErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeTrustedAdvisorChecks` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTrustedAdvisorChecksErrorKind {
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTrustedAdvisorChecksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1711,7 +1857,9 @@ impl DescribeTrustedAdvisorChecksError {
     /// Creates the `DescribeTrustedAdvisorChecksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTrustedAdvisorChecksErrorKind::Unhandled(err.into()),
+            kind: DescribeTrustedAdvisorChecksErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1720,7 +1868,9 @@ impl DescribeTrustedAdvisorChecksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTrustedAdvisorChecksErrorKind::Unhandled(err.into()),
+            kind: DescribeTrustedAdvisorChecksErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1756,7 +1906,7 @@ impl std::error::Error for DescribeTrustedAdvisorChecksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeTrustedAdvisorChecksErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeTrustedAdvisorChecksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTrustedAdvisorChecksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1770,14 +1920,31 @@ pub struct DescribeTrustedAdvisorCheckSummariesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeTrustedAdvisorCheckSummariesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeTrustedAdvisorCheckSummariesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeTrustedAdvisorCheckSummaries` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTrustedAdvisorCheckSummariesErrorKind {
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTrustedAdvisorCheckSummariesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1809,7 +1976,9 @@ impl DescribeTrustedAdvisorCheckSummariesError {
     /// Creates the `DescribeTrustedAdvisorCheckSummariesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTrustedAdvisorCheckSummariesErrorKind::Unhandled(err.into()),
+            kind: DescribeTrustedAdvisorCheckSummariesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1818,7 +1987,9 @@ impl DescribeTrustedAdvisorCheckSummariesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTrustedAdvisorCheckSummariesErrorKind::Unhandled(err.into()),
+            kind: DescribeTrustedAdvisorCheckSummariesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1856,9 +2027,7 @@ impl std::error::Error for DescribeTrustedAdvisorCheckSummariesError {
             DescribeTrustedAdvisorCheckSummariesErrorKind::InternalServerError(_inner) => {
                 Some(_inner)
             }
-            DescribeTrustedAdvisorCheckSummariesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeTrustedAdvisorCheckSummariesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1872,14 +2041,31 @@ pub struct RefreshTrustedAdvisorCheckError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RefreshTrustedAdvisorCheckError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RefreshTrustedAdvisorCheckErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RefreshTrustedAdvisorCheck` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RefreshTrustedAdvisorCheckErrorKind {
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RefreshTrustedAdvisorCheckError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1906,7 +2092,9 @@ impl RefreshTrustedAdvisorCheckError {
     /// Creates the `RefreshTrustedAdvisorCheckError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RefreshTrustedAdvisorCheckErrorKind::Unhandled(err.into()),
+            kind: RefreshTrustedAdvisorCheckErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1915,7 +2103,9 @@ impl RefreshTrustedAdvisorCheckError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RefreshTrustedAdvisorCheckErrorKind::Unhandled(err.into()),
+            kind: RefreshTrustedAdvisorCheckErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1951,7 +2141,7 @@ impl std::error::Error for RefreshTrustedAdvisorCheckError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             RefreshTrustedAdvisorCheckErrorKind::InternalServerError(_inner) => Some(_inner),
-            RefreshTrustedAdvisorCheckErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RefreshTrustedAdvisorCheckErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1965,6 +2155,14 @@ pub struct ResolveCaseError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ResolveCaseError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ResolveCaseErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ResolveCase` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1973,8 +2171,15 @@ pub enum ResolveCaseErrorKind {
     CaseIdNotFound(crate::error::CaseIdNotFound),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ResolveCaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2002,7 +2207,7 @@ impl ResolveCaseError {
     /// Creates the `ResolveCaseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ResolveCaseErrorKind::Unhandled(err.into()),
+            kind: ResolveCaseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2011,7 +2216,7 @@ impl ResolveCaseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ResolveCaseErrorKind::Unhandled(err.into()),
+            kind: ResolveCaseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2049,7 +2254,35 @@ impl std::error::Error for ResolveCaseError {
         match &self.kind {
             ResolveCaseErrorKind::CaseIdNotFound(_inner) => Some(_inner),
             ResolveCaseErrorKind::InternalServerError(_inner) => Some(_inner),
-            ResolveCaseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ResolveCaseErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

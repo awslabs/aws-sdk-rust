@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_add_draft_app_version_resource_mappings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AddDraftAppVersionResourceMappingsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.app_arn {
         object.key("appArn").string(var_1.as_str());
     }
@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_add_draft_app_version_resource_mappings_i
         let mut array_3 = object.key("resourceMappings").start_array();
         for item_4 in var_2 {
             {
+                #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_resource_mapping(
                     &mut object_5,
@@ -26,7 +27,7 @@ pub fn serialize_structure_crate_input_add_draft_app_version_resource_mappings_i
 pub fn serialize_structure_crate_input_create_app_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateAppInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_6) = &input.assessment_schedule {
         object.key("assessmentSchedule").string(var_6.as_str());
     }
@@ -43,10 +44,11 @@ pub fn serialize_structure_crate_input_create_app_input(
         object.key("policyArn").string(var_10.as_str());
     }
     if let Some(var_11) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_12 = object.key("tags").start_object();
         for (key_13, value_14) in var_11 {
             {
-                object_12.key(key_13).string(value_14.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
         object_12.finish();
@@ -57,7 +59,7 @@ pub fn serialize_structure_crate_input_create_app_input(
 pub fn serialize_structure_crate_input_create_recommendation_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateRecommendationTemplateInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.assessment_arn {
         object.key("assessmentArn").string(var_15.as_str());
     }
@@ -92,10 +94,11 @@ pub fn serialize_structure_crate_input_create_recommendation_template_input(
         array_24.finish();
     }
     if let Some(var_26) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_27 = object.key("tags").start_object();
         for (key_28, value_29) in var_26 {
             {
-                object_27.key(key_28).string(value_29.as_str());
+                object_27.key(key_28.as_str()).string(value_29.as_str());
             }
         }
         object_27.finish();
@@ -106,7 +109,7 @@ pub fn serialize_structure_crate_input_create_recommendation_template_input(
 pub fn serialize_structure_crate_input_create_resiliency_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateResiliencyPolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_30) = &input.client_token {
         object.key("clientToken").string(var_30.as_str());
     }
@@ -114,9 +117,11 @@ pub fn serialize_structure_crate_input_create_resiliency_policy_input(
         object.key("dataLocationConstraint").string(var_31.as_str());
     }
     if let Some(var_32) = &input.policy {
+        #[allow(unused_mut)]
         let mut object_33 = object.key("policy").start_object();
         for (key_34, value_35) in var_32 {
             {
+                #[allow(unused_mut)]
                 let mut object_36 = object_33.key(key_34.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_failure_policy(
                     &mut object_36,
@@ -134,10 +139,11 @@ pub fn serialize_structure_crate_input_create_resiliency_policy_input(
         object.key("policyName").string(var_38.as_str());
     }
     if let Some(var_39) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_40 = object.key("tags").start_object();
         for (key_41, value_42) in var_39 {
             {
-                object_40.key(key_41).string(value_42.as_str());
+                object_40.key(key_41.as_str()).string(value_42.as_str());
             }
         }
         object_40.finish();
@@ -151,7 +157,7 @@ pub fn serialize_structure_crate_input_create_resiliency_policy_input(
 pub fn serialize_structure_crate_input_delete_app_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteAppInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_44) = &input.app_arn {
         object.key("appArn").string(var_44.as_str());
     }
@@ -167,7 +173,7 @@ pub fn serialize_structure_crate_input_delete_app_input(
 pub fn serialize_structure_crate_input_delete_app_assessment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteAppAssessmentInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_47) = &input.assessment_arn {
         object.key("assessmentArn").string(var_47.as_str());
     }
@@ -180,7 +186,7 @@ pub fn serialize_structure_crate_input_delete_app_assessment_input(
 pub fn serialize_structure_crate_input_delete_recommendation_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteRecommendationTemplateInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_49) = &input.client_token {
         object.key("clientToken").string(var_49.as_str());
     }
@@ -195,7 +201,7 @@ pub fn serialize_structure_crate_input_delete_recommendation_template_input(
 pub fn serialize_structure_crate_input_delete_resiliency_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteResiliencyPolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_51) = &input.client_token {
         object.key("clientToken").string(var_51.as_str());
     }
@@ -208,7 +214,7 @@ pub fn serialize_structure_crate_input_delete_resiliency_policy_input(
 pub fn serialize_structure_crate_input_describe_app_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeAppInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_53) = &input.app_arn {
         object.key("appArn").string(var_53.as_str());
     }
@@ -218,7 +224,7 @@ pub fn serialize_structure_crate_input_describe_app_input(
 pub fn serialize_structure_crate_input_describe_app_assessment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeAppAssessmentInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_54) = &input.assessment_arn {
         object.key("assessmentArn").string(var_54.as_str());
     }
@@ -228,7 +234,7 @@ pub fn serialize_structure_crate_input_describe_app_assessment_input(
 pub fn serialize_structure_crate_input_describe_app_version_resources_resolution_status_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeAppVersionResourcesResolutionStatusInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_55) = &input.app_arn {
         object.key("appArn").string(var_55.as_str());
     }
@@ -244,7 +250,7 @@ pub fn serialize_structure_crate_input_describe_app_version_resources_resolution
 pub fn serialize_structure_crate_input_describe_app_version_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeAppVersionTemplateInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_58) = &input.app_arn {
         object.key("appArn").string(var_58.as_str());
     }
@@ -257,7 +263,7 @@ pub fn serialize_structure_crate_input_describe_app_version_template_input(
 pub fn serialize_structure_crate_input_describe_draft_app_version_resources_import_status_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeDraftAppVersionResourcesImportStatusInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_60) = &input.app_arn {
         object.key("appArn").string(var_60.as_str());
     }
@@ -267,7 +273,7 @@ pub fn serialize_structure_crate_input_describe_draft_app_version_resources_impo
 pub fn serialize_structure_crate_input_describe_resiliency_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeResiliencyPolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_61) = &input.policy_arn {
         object.key("policyArn").string(var_61.as_str());
     }
@@ -277,7 +283,7 @@ pub fn serialize_structure_crate_input_describe_resiliency_policy_input(
 pub fn serialize_structure_crate_input_import_resources_to_draft_app_version_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ImportResourcesToDraftAppVersionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_62) = &input.app_arn {
         object.key("appArn").string(var_62.as_str());
     }
@@ -294,6 +300,7 @@ pub fn serialize_structure_crate_input_import_resources_to_draft_app_version_inp
         let mut array_67 = object.key("terraformSources").start_array();
         for item_68 in var_66 {
             {
+                #[allow(unused_mut)]
                 let mut object_69 = array_67.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_terraform_source(
                     &mut object_69,
@@ -310,7 +317,7 @@ pub fn serialize_structure_crate_input_import_resources_to_draft_app_version_inp
 pub fn serialize_structure_crate_input_list_alarm_recommendations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListAlarmRecommendationsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_70) = &input.assessment_arn {
         object.key("assessmentArn").string(var_70.as_str());
     }
@@ -329,7 +336,7 @@ pub fn serialize_structure_crate_input_list_alarm_recommendations_input(
 pub fn serialize_structure_crate_input_list_app_component_compliances_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListAppComponentCompliancesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_73) = &input.assessment_arn {
         object.key("assessmentArn").string(var_73.as_str());
     }
@@ -348,7 +355,7 @@ pub fn serialize_structure_crate_input_list_app_component_compliances_input(
 pub fn serialize_structure_crate_input_list_app_component_recommendations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListAppComponentRecommendationsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_76) = &input.assessment_arn {
         object.key("assessmentArn").string(var_76.as_str());
     }
@@ -367,7 +374,7 @@ pub fn serialize_structure_crate_input_list_app_component_recommendations_input(
 pub fn serialize_structure_crate_input_list_app_version_resource_mappings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListAppVersionResourceMappingsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_79) = &input.app_arn {
         object.key("appArn").string(var_79.as_str());
     }
@@ -389,7 +396,7 @@ pub fn serialize_structure_crate_input_list_app_version_resource_mappings_input(
 pub fn serialize_structure_crate_input_list_app_version_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListAppVersionResourcesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_83) = &input.app_arn {
         object.key("appArn").string(var_83.as_str());
     }
@@ -414,7 +421,7 @@ pub fn serialize_structure_crate_input_list_app_version_resources_input(
 pub fn serialize_structure_crate_input_list_app_versions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListAppVersionsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_88) = &input.app_arn {
         object.key("appArn").string(var_88.as_str());
     }
@@ -433,7 +440,7 @@ pub fn serialize_structure_crate_input_list_app_versions_input(
 pub fn serialize_structure_crate_input_list_sop_recommendations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListSopRecommendationsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_91) = &input.assessment_arn {
         object.key("assessmentArn").string(var_91.as_str());
     }
@@ -452,7 +459,7 @@ pub fn serialize_structure_crate_input_list_sop_recommendations_input(
 pub fn serialize_structure_crate_input_list_test_recommendations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTestRecommendationsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_94) = &input.assessment_arn {
         object.key("assessmentArn").string(var_94.as_str());
     }
@@ -471,7 +478,7 @@ pub fn serialize_structure_crate_input_list_test_recommendations_input(
 pub fn serialize_structure_crate_input_list_unsupported_app_version_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListUnsupportedAppVersionResourcesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_97) = &input.app_arn {
         object.key("appArn").string(var_97.as_str());
     }
@@ -496,7 +503,7 @@ pub fn serialize_structure_crate_input_list_unsupported_app_version_resources_in
 pub fn serialize_structure_crate_input_publish_app_version_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PublishAppVersionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_102) = &input.app_arn {
         object.key("appArn").string(var_102.as_str());
     }
@@ -506,7 +513,7 @@ pub fn serialize_structure_crate_input_publish_app_version_input(
 pub fn serialize_structure_crate_input_put_draft_app_version_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutDraftAppVersionTemplateInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_103) = &input.app_arn {
         object.key("appArn").string(var_103.as_str());
     }
@@ -519,7 +526,7 @@ pub fn serialize_structure_crate_input_put_draft_app_version_template_input(
 pub fn serialize_structure_crate_input_remove_draft_app_version_resource_mappings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RemoveDraftAppVersionResourceMappingsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_105) = &input.app_arn {
         object.key("appArn").string(var_105.as_str());
     }
@@ -574,7 +581,7 @@ pub fn serialize_structure_crate_input_remove_draft_app_version_resource_mapping
 pub fn serialize_structure_crate_input_resolve_app_version_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ResolveAppVersionResourcesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_121) = &input.app_arn {
         object.key("appArn").string(var_121.as_str());
     }
@@ -587,7 +594,7 @@ pub fn serialize_structure_crate_input_resolve_app_version_resources_input(
 pub fn serialize_structure_crate_input_start_app_assessment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartAppAssessmentInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_123) = &input.app_arn {
         object.key("appArn").string(var_123.as_str());
     }
@@ -601,10 +608,11 @@ pub fn serialize_structure_crate_input_start_app_assessment_input(
         object.key("clientToken").string(var_126.as_str());
     }
     if let Some(var_127) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_128 = object.key("tags").start_object();
         for (key_129, value_130) in var_127 {
             {
-                object_128.key(key_129).string(value_130.as_str());
+                object_128.key(key_129.as_str()).string(value_130.as_str());
             }
         }
         object_128.finish();
@@ -615,12 +623,13 @@ pub fn serialize_structure_crate_input_start_app_assessment_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_131) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_132 = object.key("tags").start_object();
         for (key_133, value_134) in var_131 {
             {
-                object_132.key(key_133).string(value_134.as_str());
+                object_132.key(key_133.as_str()).string(value_134.as_str());
             }
         }
         object_132.finish();
@@ -631,7 +640,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_app_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAppInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_135) = &input.app_arn {
         object.key("appArn").string(var_135.as_str());
     }
@@ -653,16 +662,18 @@ pub fn serialize_structure_crate_input_update_app_input(
 pub fn serialize_structure_crate_input_update_resiliency_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateResiliencyPolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_140) = &input.data_location_constraint {
         object
             .key("dataLocationConstraint")
             .string(var_140.as_str());
     }
     if let Some(var_141) = &input.policy {
+        #[allow(unused_mut)]
         let mut object_142 = object.key("policy").start_object();
         for (key_143, value_144) in var_141 {
             {
+                #[allow(unused_mut)]
                 let mut object_145 = object_142.key(key_143.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_failure_policy(
                     &mut object_145,
@@ -691,7 +702,7 @@ pub fn serialize_structure_crate_input_update_resiliency_policy_input(
 pub fn serialize_structure_crate_model_resource_mapping(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResourceMapping,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_150) = &input.resource_name {
         object.key("resourceName").string(var_150.as_str());
     }
@@ -708,6 +719,7 @@ pub fn serialize_structure_crate_model_resource_mapping(
         object.key("mappingType").string(var_154.as_str());
     }
     if let Some(var_155) = &input.physical_resource_id {
+        #[allow(unused_mut)]
         let mut object_156 = object.key("physicalResourceId").start_object();
         crate::json_ser::serialize_structure_crate_model_physical_resource_id(
             &mut object_156,
@@ -724,7 +736,7 @@ pub fn serialize_structure_crate_model_resource_mapping(
 pub fn serialize_structure_crate_model_failure_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FailurePolicy,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object.key("rtoInSecs").number(
             #[allow(clippy::useless_conversion)]
@@ -743,7 +755,7 @@ pub fn serialize_structure_crate_model_failure_policy(
 pub fn serialize_structure_crate_model_terraform_source(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TerraformSource,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_158) = &input.s3_state_file_url {
         object.key("s3StateFileUrl").string(var_158.as_str());
     }
@@ -753,7 +765,7 @@ pub fn serialize_structure_crate_model_terraform_source(
 pub fn serialize_structure_crate_model_physical_resource_id(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PhysicalResourceId,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_159) = &input.identifier {
         object.key("identifier").string(var_159.as_str());
     }

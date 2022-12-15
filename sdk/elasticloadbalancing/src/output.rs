@@ -2,19 +2,13 @@
 
 /// <p>Contains the output of SetLoadBalancePoliciesOfListener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetLoadBalancerPoliciesOfListenerOutput {}
-impl std::fmt::Debug for SetLoadBalancerPoliciesOfListenerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetLoadBalancerPoliciesOfListenerOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetLoadBalancerPoliciesOfListenerOutput`](crate::output::SetLoadBalancerPoliciesOfListenerOutput).
 pub mod set_load_balancer_policies_of_listener_output {
 
     /// A builder for [`SetLoadBalancerPoliciesOfListenerOutput`](crate::output::SetLoadBalancerPoliciesOfListenerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetLoadBalancerPoliciesOfListenerOutput`](crate::output::SetLoadBalancerPoliciesOfListenerOutput).
@@ -32,19 +26,13 @@ impl SetLoadBalancerPoliciesOfListenerOutput {
 
 /// <p>Contains the output of SetLoadBalancerPoliciesForBackendServer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetLoadBalancerPoliciesForBackendServerOutput {}
-impl std::fmt::Debug for SetLoadBalancerPoliciesForBackendServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetLoadBalancerPoliciesForBackendServerOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::output::SetLoadBalancerPoliciesForBackendServerOutput).
 pub mod set_load_balancer_policies_for_backend_server_output {
 
     /// A builder for [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::output::SetLoadBalancerPoliciesForBackendServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::output::SetLoadBalancerPoliciesForBackendServerOutput).
@@ -63,19 +51,13 @@ impl SetLoadBalancerPoliciesForBackendServerOutput {
 
 /// <p>Contains the output of SetLoadBalancerListenerSSLCertificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetLoadBalancerListenerSslCertificateOutput {}
-impl std::fmt::Debug for SetLoadBalancerListenerSslCertificateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetLoadBalancerListenerSslCertificateOutput");
-        formatter.finish()
-    }
-}
 /// See [`SetLoadBalancerListenerSslCertificateOutput`](crate::output::SetLoadBalancerListenerSslCertificateOutput).
 pub mod set_load_balancer_listener_ssl_certificate_output {
 
     /// A builder for [`SetLoadBalancerListenerSslCertificateOutput`](crate::output::SetLoadBalancerListenerSslCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetLoadBalancerListenerSslCertificateOutput`](crate::output::SetLoadBalancerListenerSslCertificateOutput).
@@ -93,19 +75,13 @@ impl SetLoadBalancerListenerSslCertificateOutput {
 
 /// <p>Contains the output of RemoveTags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsOutput {}
-impl std::fmt::Debug for RemoveTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsOutput");
-        formatter.finish()
-    }
-}
 /// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
 
     /// A builder for [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
@@ -123,7 +99,7 @@ impl RemoveTagsOutput {
 
 /// <p>Contains the output of RegisterInstancesWithLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterInstancesWithLoadBalancerOutput {
     /// <p>The updated list of instances for the load balancer.</p>
     #[doc(hidden)]
@@ -135,18 +111,11 @@ impl RegisterInstancesWithLoadBalancerOutput {
         self.instances.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterInstancesWithLoadBalancerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterInstancesWithLoadBalancerOutput");
-        formatter.field("instances", &self.instances);
-        formatter.finish()
-    }
-}
 /// See [`RegisterInstancesWithLoadBalancerOutput`](crate::output::RegisterInstancesWithLoadBalancerOutput).
 pub mod register_instances_with_load_balancer_output {
 
     /// A builder for [`RegisterInstancesWithLoadBalancerOutput`](crate::output::RegisterInstancesWithLoadBalancerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     }
@@ -187,7 +156,7 @@ impl RegisterInstancesWithLoadBalancerOutput {
 
 /// <p>Contains the output of ModifyLoadBalancerAttributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyLoadBalancerAttributesOutput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
@@ -208,19 +177,11 @@ impl ModifyLoadBalancerAttributesOutput {
         self.load_balancer_attributes.as_ref()
     }
 }
-impl std::fmt::Debug for ModifyLoadBalancerAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyLoadBalancerAttributesOutput");
-        formatter.field("load_balancer_name", &self.load_balancer_name);
-        formatter.field("load_balancer_attributes", &self.load_balancer_attributes);
-        formatter.finish()
-    }
-}
 /// See [`ModifyLoadBalancerAttributesOutput`](crate::output::ModifyLoadBalancerAttributesOutput).
 pub mod modify_load_balancer_attributes_output {
 
     /// A builder for [`ModifyLoadBalancerAttributesOutput`](crate::output::ModifyLoadBalancerAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) load_balancer_attributes:
@@ -274,7 +235,7 @@ impl ModifyLoadBalancerAttributesOutput {
 
 /// <p>Contains the output of EnableAvailabilityZonesForLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableAvailabilityZonesForLoadBalancerOutput {
     /// <p>The updated list of Availability Zones for the load balancer.</p>
     #[doc(hidden)]
@@ -286,18 +247,11 @@ impl EnableAvailabilityZonesForLoadBalancerOutput {
         self.availability_zones.as_deref()
     }
 }
-impl std::fmt::Debug for EnableAvailabilityZonesForLoadBalancerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableAvailabilityZonesForLoadBalancerOutput");
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.finish()
-    }
-}
 /// See [`EnableAvailabilityZonesForLoadBalancerOutput`](crate::output::EnableAvailabilityZonesForLoadBalancerOutput).
 pub mod enable_availability_zones_for_load_balancer_output {
 
     /// A builder for [`EnableAvailabilityZonesForLoadBalancerOutput`](crate::output::EnableAvailabilityZonesForLoadBalancerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -338,7 +292,7 @@ impl EnableAvailabilityZonesForLoadBalancerOutput {
 
 /// <p>Contains the output for DisableAvailabilityZonesForLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableAvailabilityZonesForLoadBalancerOutput {
     /// <p>The remaining Availability Zones for the load balancer.</p>
     #[doc(hidden)]
@@ -350,18 +304,11 @@ impl DisableAvailabilityZonesForLoadBalancerOutput {
         self.availability_zones.as_deref()
     }
 }
-impl std::fmt::Debug for DisableAvailabilityZonesForLoadBalancerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableAvailabilityZonesForLoadBalancerOutput");
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.finish()
-    }
-}
 /// See [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::output::DisableAvailabilityZonesForLoadBalancerOutput).
 pub mod disable_availability_zones_for_load_balancer_output {
 
     /// A builder for [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::output::DisableAvailabilityZonesForLoadBalancerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -403,7 +350,7 @@ impl DisableAvailabilityZonesForLoadBalancerOutput {
 
 /// <p>Contains the output of DetachLoadBalancerFromSubnets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachLoadBalancerFromSubnetsOutput {
     /// <p>The IDs of the remaining subnets for the load balancer.</p>
     #[doc(hidden)]
@@ -415,18 +362,11 @@ impl DetachLoadBalancerFromSubnetsOutput {
         self.subnets.as_deref()
     }
 }
-impl std::fmt::Debug for DetachLoadBalancerFromSubnetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachLoadBalancerFromSubnetsOutput");
-        formatter.field("subnets", &self.subnets);
-        formatter.finish()
-    }
-}
 /// See [`DetachLoadBalancerFromSubnetsOutput`](crate::output::DetachLoadBalancerFromSubnetsOutput).
 pub mod detach_load_balancer_from_subnets_output {
 
     /// A builder for [`DetachLoadBalancerFromSubnetsOutput`](crate::output::DetachLoadBalancerFromSubnetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -467,7 +407,7 @@ impl DetachLoadBalancerFromSubnetsOutput {
 
 /// <p>Contains the output for DescribeTags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTagsOutput {
     /// <p>Information about the tags.</p>
     #[doc(hidden)]
@@ -479,18 +419,11 @@ impl DescribeTagsOutput {
         self.tag_descriptions.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTagsOutput");
-        formatter.field("tag_descriptions", &self.tag_descriptions);
-        formatter.finish()
-    }
-}
 /// See [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
 pub mod describe_tags_output {
 
     /// A builder for [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_descriptions:
             std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
@@ -532,7 +465,7 @@ impl DescribeTagsOutput {
 
 /// <p>Contains the parameters for DescribeLoadBalancers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoadBalancersOutput {
     /// <p>Information about the load balancers.</p>
     #[doc(hidden)]
@@ -554,22 +487,11 @@ impl DescribeLoadBalancersOutput {
         self.next_marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLoadBalancersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoadBalancersOutput");
-        formatter.field(
-            "load_balancer_descriptions",
-            &self.load_balancer_descriptions,
-        );
-        formatter.field("next_marker", &self.next_marker);
-        formatter.finish()
-    }
-}
 /// See [`DescribeLoadBalancersOutput`](crate::output::DescribeLoadBalancersOutput).
 pub mod describe_load_balancers_output {
 
     /// A builder for [`DescribeLoadBalancersOutput`](crate::output::DescribeLoadBalancersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_descriptions:
             std::option::Option<std::vec::Vec<crate::model::LoadBalancerDescription>>,
@@ -626,7 +548,7 @@ impl DescribeLoadBalancersOutput {
 
 /// <p>Contains the output of DescribeLoadBalancerPolicyTypes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoadBalancerPolicyTypesOutput {
     /// <p>Information about the policy types.</p>
     #[doc(hidden)]
@@ -641,18 +563,11 @@ impl DescribeLoadBalancerPolicyTypesOutput {
         self.policy_type_descriptions.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLoadBalancerPolicyTypesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoadBalancerPolicyTypesOutput");
-        formatter.field("policy_type_descriptions", &self.policy_type_descriptions);
-        formatter.finish()
-    }
-}
 /// See [`DescribeLoadBalancerPolicyTypesOutput`](crate::output::DescribeLoadBalancerPolicyTypesOutput).
 pub mod describe_load_balancer_policy_types_output {
 
     /// A builder for [`DescribeLoadBalancerPolicyTypesOutput`](crate::output::DescribeLoadBalancerPolicyTypesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_type_descriptions:
             std::option::Option<std::vec::Vec<crate::model::PolicyTypeDescription>>,
@@ -697,7 +612,7 @@ impl DescribeLoadBalancerPolicyTypesOutput {
 
 /// <p>Contains the output of DescribeLoadBalancerPolicies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoadBalancerPoliciesOutput {
     /// <p>Information about the policies.</p>
     #[doc(hidden)]
@@ -709,18 +624,11 @@ impl DescribeLoadBalancerPoliciesOutput {
         self.policy_descriptions.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLoadBalancerPoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoadBalancerPoliciesOutput");
-        formatter.field("policy_descriptions", &self.policy_descriptions);
-        formatter.finish()
-    }
-}
 /// See [`DescribeLoadBalancerPoliciesOutput`](crate::output::DescribeLoadBalancerPoliciesOutput).
 pub mod describe_load_balancer_policies_output {
 
     /// A builder for [`DescribeLoadBalancerPoliciesOutput`](crate::output::DescribeLoadBalancerPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_descriptions:
             std::option::Option<std::vec::Vec<crate::model::PolicyDescription>>,
@@ -762,7 +670,7 @@ impl DescribeLoadBalancerPoliciesOutput {
 
 /// <p>Contains the output of DescribeLoadBalancerAttributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoadBalancerAttributesOutput {
     /// <p>Information about the load balancer attributes.</p>
     #[doc(hidden)]
@@ -776,18 +684,11 @@ impl DescribeLoadBalancerAttributesOutput {
         self.load_balancer_attributes.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeLoadBalancerAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoadBalancerAttributesOutput");
-        formatter.field("load_balancer_attributes", &self.load_balancer_attributes);
-        formatter.finish()
-    }
-}
 /// See [`DescribeLoadBalancerAttributesOutput`](crate::output::DescribeLoadBalancerAttributesOutput).
 pub mod describe_load_balancer_attributes_output {
 
     /// A builder for [`DescribeLoadBalancerAttributesOutput`](crate::output::DescribeLoadBalancerAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_attributes:
             std::option::Option<crate::model::LoadBalancerAttributes>,
@@ -826,7 +727,7 @@ impl DescribeLoadBalancerAttributesOutput {
 
 /// <p>Contains the output for DescribeInstanceHealth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstanceHealthOutput {
     /// <p>Information about the health of the instances.</p>
     #[doc(hidden)]
@@ -838,18 +739,11 @@ impl DescribeInstanceHealthOutput {
         self.instance_states.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInstanceHealthOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstanceHealthOutput");
-        formatter.field("instance_states", &self.instance_states);
-        formatter.finish()
-    }
-}
 /// See [`DescribeInstanceHealthOutput`](crate::output::DescribeInstanceHealthOutput).
 pub mod describe_instance_health_output {
 
     /// A builder for [`DescribeInstanceHealthOutput`](crate::output::DescribeInstanceHealthOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_states: std::option::Option<std::vec::Vec<crate::model::InstanceState>>,
     }
@@ -890,7 +784,7 @@ impl DescribeInstanceHealthOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountLimitsOutput {
     /// <p>Information about the limits.</p>
     #[doc(hidden)]
@@ -909,19 +803,11 @@ impl DescribeAccountLimitsOutput {
         self.next_marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAccountLimitsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountLimitsOutput");
-        formatter.field("limits", &self.limits);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.finish()
-    }
-}
 /// See [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
 pub mod describe_account_limits_output {
 
     /// A builder for [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limits: std::option::Option<std::vec::Vec<crate::model::Limit>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -974,7 +860,7 @@ impl DescribeAccountLimitsOutput {
 
 /// <p>Contains the output of DeregisterInstancesFromLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterInstancesFromLoadBalancerOutput {
     /// <p>The remaining instances registered with the load balancer.</p>
     #[doc(hidden)]
@@ -986,18 +872,11 @@ impl DeregisterInstancesFromLoadBalancerOutput {
         self.instances.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterInstancesFromLoadBalancerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterInstancesFromLoadBalancerOutput");
-        formatter.field("instances", &self.instances);
-        formatter.finish()
-    }
-}
 /// See [`DeregisterInstancesFromLoadBalancerOutput`](crate::output::DeregisterInstancesFromLoadBalancerOutput).
 pub mod deregister_instances_from_load_balancer_output {
 
     /// A builder for [`DeregisterInstancesFromLoadBalancerOutput`](crate::output::DeregisterInstancesFromLoadBalancerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     }
@@ -1038,19 +917,13 @@ impl DeregisterInstancesFromLoadBalancerOutput {
 
 /// <p>Contains the output of DeleteLoadBalancerPolicy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoadBalancerPolicyOutput {}
-impl std::fmt::Debug for DeleteLoadBalancerPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLoadBalancerPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteLoadBalancerPolicyOutput`](crate::output::DeleteLoadBalancerPolicyOutput).
 pub mod delete_load_balancer_policy_output {
 
     /// A builder for [`DeleteLoadBalancerPolicyOutput`](crate::output::DeleteLoadBalancerPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLoadBalancerPolicyOutput`](crate::output::DeleteLoadBalancerPolicyOutput).
@@ -1068,19 +941,13 @@ impl DeleteLoadBalancerPolicyOutput {
 
 /// <p>Contains the output of DeleteLoadBalancerListeners.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoadBalancerListenersOutput {}
-impl std::fmt::Debug for DeleteLoadBalancerListenersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLoadBalancerListenersOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteLoadBalancerListenersOutput`](crate::output::DeleteLoadBalancerListenersOutput).
 pub mod delete_load_balancer_listeners_output {
 
     /// A builder for [`DeleteLoadBalancerListenersOutput`](crate::output::DeleteLoadBalancerListenersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLoadBalancerListenersOutput`](crate::output::DeleteLoadBalancerListenersOutput).
@@ -1098,19 +965,13 @@ impl DeleteLoadBalancerListenersOutput {
 
 /// <p>Contains the output of DeleteLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoadBalancerOutput {}
-impl std::fmt::Debug for DeleteLoadBalancerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLoadBalancerOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
 pub mod delete_load_balancer_output {
 
     /// A builder for [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
@@ -1128,19 +989,13 @@ impl DeleteLoadBalancerOutput {
 
 /// <p>Contains the output of CreateLoadBalancerPolicy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLoadBalancerPolicyOutput {}
-impl std::fmt::Debug for CreateLoadBalancerPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLoadBalancerPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateLoadBalancerPolicyOutput`](crate::output::CreateLoadBalancerPolicyOutput).
 pub mod create_load_balancer_policy_output {
 
     /// A builder for [`CreateLoadBalancerPolicyOutput`](crate::output::CreateLoadBalancerPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateLoadBalancerPolicyOutput`](crate::output::CreateLoadBalancerPolicyOutput).
@@ -1158,19 +1013,13 @@ impl CreateLoadBalancerPolicyOutput {
 
 /// <p>Contains the parameters for CreateLoadBalancerListener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLoadBalancerListenersOutput {}
-impl std::fmt::Debug for CreateLoadBalancerListenersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLoadBalancerListenersOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateLoadBalancerListenersOutput`](crate::output::CreateLoadBalancerListenersOutput).
 pub mod create_load_balancer_listeners_output {
 
     /// A builder for [`CreateLoadBalancerListenersOutput`](crate::output::CreateLoadBalancerListenersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateLoadBalancerListenersOutput`](crate::output::CreateLoadBalancerListenersOutput).
@@ -1188,7 +1037,7 @@ impl CreateLoadBalancerListenersOutput {
 
 /// <p>Contains the output for CreateLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLoadBalancerOutput {
     /// <p>The DNS name of the load balancer.</p>
     #[doc(hidden)]
@@ -1200,18 +1049,11 @@ impl CreateLoadBalancerOutput {
         self.dns_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLoadBalancerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLoadBalancerOutput");
-        formatter.field("dns_name", &self.dns_name);
-        formatter.finish()
-    }
-}
 /// See [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
 pub mod create_load_balancer_output {
 
     /// A builder for [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_name: std::option::Option<std::string::String>,
     }
@@ -1243,19 +1085,13 @@ impl CreateLoadBalancerOutput {
 
 /// <p>Contains the output for CreateLBCookieStickinessPolicy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLbCookieStickinessPolicyOutput {}
-impl std::fmt::Debug for CreateLbCookieStickinessPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLbCookieStickinessPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateLbCookieStickinessPolicyOutput`](crate::output::CreateLbCookieStickinessPolicyOutput).
 pub mod create_lb_cookie_stickiness_policy_output {
 
     /// A builder for [`CreateLbCookieStickinessPolicyOutput`](crate::output::CreateLbCookieStickinessPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateLbCookieStickinessPolicyOutput`](crate::output::CreateLbCookieStickinessPolicyOutput).
@@ -1273,19 +1109,13 @@ impl CreateLbCookieStickinessPolicyOutput {
 
 /// <p>Contains the output for CreateAppCookieStickinessPolicy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAppCookieStickinessPolicyOutput {}
-impl std::fmt::Debug for CreateAppCookieStickinessPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAppCookieStickinessPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateAppCookieStickinessPolicyOutput`](crate::output::CreateAppCookieStickinessPolicyOutput).
 pub mod create_app_cookie_stickiness_policy_output {
 
     /// A builder for [`CreateAppCookieStickinessPolicyOutput`](crate::output::CreateAppCookieStickinessPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateAppCookieStickinessPolicyOutput`](crate::output::CreateAppCookieStickinessPolicyOutput).
@@ -1303,7 +1133,7 @@ impl CreateAppCookieStickinessPolicyOutput {
 
 /// <p>Contains the output of ConfigureHealthCheck.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigureHealthCheckOutput {
     /// <p>The updated health check.</p>
     #[doc(hidden)]
@@ -1315,18 +1145,11 @@ impl ConfigureHealthCheckOutput {
         self.health_check.as_ref()
     }
 }
-impl std::fmt::Debug for ConfigureHealthCheckOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigureHealthCheckOutput");
-        formatter.field("health_check", &self.health_check);
-        formatter.finish()
-    }
-}
 /// See [`ConfigureHealthCheckOutput`](crate::output::ConfigureHealthCheckOutput).
 pub mod configure_health_check_output {
 
     /// A builder for [`ConfigureHealthCheckOutput`](crate::output::ConfigureHealthCheckOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_check: std::option::Option<crate::model::HealthCheck>,
     }
@@ -1361,7 +1184,7 @@ impl ConfigureHealthCheckOutput {
 
 /// <p>Contains the output of AttachLoadBalancerToSubnets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachLoadBalancerToSubnetsOutput {
     /// <p>The IDs of the subnets attached to the load balancer.</p>
     #[doc(hidden)]
@@ -1373,18 +1196,11 @@ impl AttachLoadBalancerToSubnetsOutput {
         self.subnets.as_deref()
     }
 }
-impl std::fmt::Debug for AttachLoadBalancerToSubnetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachLoadBalancerToSubnetsOutput");
-        formatter.field("subnets", &self.subnets);
-        formatter.finish()
-    }
-}
 /// See [`AttachLoadBalancerToSubnetsOutput`](crate::output::AttachLoadBalancerToSubnetsOutput).
 pub mod attach_load_balancer_to_subnets_output {
 
     /// A builder for [`AttachLoadBalancerToSubnetsOutput`](crate::output::AttachLoadBalancerToSubnetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1425,7 +1241,7 @@ impl AttachLoadBalancerToSubnetsOutput {
 
 /// <p>Contains the output of ApplySecurityGroupsToLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplySecurityGroupsToLoadBalancerOutput {
     /// <p>The IDs of the security groups associated with the load balancer.</p>
     #[doc(hidden)]
@@ -1437,18 +1253,11 @@ impl ApplySecurityGroupsToLoadBalancerOutput {
         self.security_groups.as_deref()
     }
 }
-impl std::fmt::Debug for ApplySecurityGroupsToLoadBalancerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplySecurityGroupsToLoadBalancerOutput");
-        formatter.field("security_groups", &self.security_groups);
-        formatter.finish()
-    }
-}
 /// See [`ApplySecurityGroupsToLoadBalancerOutput`](crate::output::ApplySecurityGroupsToLoadBalancerOutput).
 pub mod apply_security_groups_to_load_balancer_output {
 
     /// A builder for [`ApplySecurityGroupsToLoadBalancerOutput`](crate::output::ApplySecurityGroupsToLoadBalancerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1489,19 +1298,13 @@ impl ApplySecurityGroupsToLoadBalancerOutput {
 
 /// <p>Contains the output of AddTags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsOutput {}
-impl std::fmt::Debug for AddTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
 
     /// A builder for [`AddTagsOutput`](crate::output::AddTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsOutput`](crate::output::AddTagsOutput).

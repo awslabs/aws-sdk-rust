@@ -12,25 +12,41 @@ use aws_smithy_types::DateTime;
 use std::error::Error as StdError;
 use std::fmt;
 
-/// Conversion error
-#[non_exhaustive]
 #[derive(Debug)]
-pub enum Error {
+enum ErrorKind {
     /// Conversion failed because the value being converted is out of range for its destination
-    #[non_exhaustive]
     OutOfRange(Box<dyn StdError + Send + Sync + 'static>),
 }
 
-impl StdError for Error {}
+/// Conversion error
+#[derive(Debug)]
+pub struct Error {
+    kind: ErrorKind,
+}
+
+impl Error {
+    fn out_of_range(source: impl Into<Box<dyn StdError + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ErrorKind::OutOfRange(source.into()),
+        }
+    }
+}
+
+impl StdError for Error {
+    fn source(&self) -> Option<&(dyn StdError + 'static)> {
+        match &self.kind {
+            ErrorKind::OutOfRange(source) => Some(source.as_ref() as _),
+        }
+    }
+}
 
 impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        match self {
-            Self::OutOfRange(cause) => {
+        match self.kind {
+            ErrorKind::OutOfRange(_) => {
                 write!(
                     f,
-                    "conversion failed because the value is out of range for its destination: {}",
-                    cause
+                    "conversion failed because the value is out of range for its destination",
                 )
             }
         }
@@ -81,7 +97,7 @@ Then import [`DateTimeExt`] to use the conversions:
 use aws_smithy_types_convert::date_time::DateTimeExt;
 use chrono::{Utc};
 
-let chrono_date_time: chrono::DateTime<Utc> = DateTime::from_secs(5).to_chrono_utc();
+let chrono_date_time: chrono::DateTime<Utc> = DateTime::from_secs(5).to_chrono_utc().unwrap();
 let date_time: DateTime = DateTime::from_chrono_utc(chrono_date_time);
 ```
 "##
@@ -89,7 +105,7 @@ let date_time: DateTime = DateTime::from_chrono_utc(chrono_date_time);
 pub trait DateTimeExt {
     /// Converts a [`DateTime`] to a [`chrono::DateTime`] with timezone UTC.
     #[cfg(feature = "convert-chrono")]
-    fn to_chrono_utc(&self) -> chrono::DateTime<chrono::Utc>;
+    fn to_chrono_utc(&self) -> Result<chrono::DateTime<chrono::Utc>, Error>;
 
     /// Converts a [`chrono::DateTime`] with timezone UTC to a [`DateTime`].
     #[cfg(feature = "convert-chrono")]
@@ -101,7 +117,7 @@ pub trait DateTimeExt {
 
     /// Converts a [`DateTime`] to a [`time::OffsetDateTime`].
     ///
-    /// Returns an [`Error::OutOfRange`] if the time is after
+    /// Returns an [`Error`] if the time is after
     /// `9999-12-31T23:59:59.999Z` or before `-9999-01-01T00:00:00.000Z`.
     #[cfg(feature = "convert-time")]
     fn to_time(&self) -> Result<time::OffsetDateTime, Error>;
@@ -113,11 +129,15 @@ pub trait DateTimeExt {
 
 impl DateTimeExt for DateTime {
     #[cfg(feature = "convert-chrono")]
-    fn to_chrono_utc(&self) -> chrono::DateTime<chrono::Utc> {
-        chrono::DateTime::<chrono::Utc>::from_utc(
-            chrono::NaiveDateTime::from_timestamp(self.secs(), self.subsec_nanos()),
-            chrono::Utc,
-        )
+    fn to_chrono_utc(&self) -> Result<chrono::DateTime<chrono::Utc>, Error> {
+        match chrono::NaiveDateTime::from_timestamp_opt(self.secs(), self.subsec_nanos()) {
+            None => Err(Error::out_of_range(format!(
+                "out-of-range seconds {} or invalid nanoseconds {}",
+                self.secs(),
+                self.subsec_nanos()
+            ))),
+            Some(dt) => Ok(chrono::DateTime::<chrono::Utc>::from_utc(dt, chrono::Utc)),
+        }
     }
 
     #[cfg(feature = "convert-chrono")]
@@ -132,8 +152,9 @@ impl DateTimeExt for DateTime {
 
     #[cfg(feature = "convert-time")]
     fn to_time(&self) -> Result<time::OffsetDateTime, Error> {
-        time::OffsetDateTime::from_unix_timestamp_nanos(self.as_nanos())
-            .map_err(|err| Error::OutOfRange(err.into()))
+        time::OffsetDateTime::from_unix_timestamp_nanos(self.as_nanos()).map_err(|err| Error {
+            kind: ErrorKind::OutOfRange(err.into()),
+        })
     }
 
     #[cfg(feature = "convert-time")]
@@ -147,27 +168,38 @@ impl DateTimeExt for DateTime {
 mod test {
     use super::DateTimeExt;
     use aws_smithy_types::date_time::{DateTime, Format};
+    use chrono::Timelike;
 
     #[cfg(feature = "convert-time")]
-    use super::Error;
+    use super::{Error, ErrorKind};
 
     #[test]
     #[cfg(feature = "convert-chrono")]
     fn from_chrono() {
         use chrono::{FixedOffset, TimeZone, Utc};
 
-        let chrono = Utc.ymd(2039, 7, 8).and_hms_nano(9, 3, 11, 123_000_000);
+        let chrono = Utc
+            .with_ymd_and_hms(2039, 7, 8, 9, 3, 11)
+            .unwrap()
+            .with_nanosecond(123_000_000)
+            .unwrap();
         let expected = DateTime::from_str("2039-07-08T09:03:11.123Z", Format::DateTime).unwrap();
         assert_eq!(expected, DateTime::from_chrono_utc(chrono));
 
-        let chrono = Utc.ymd(1000, 7, 8).and_hms_nano(9, 3, 11, 456_000_000);
+        let chrono = Utc
+            .with_ymd_and_hms(1000, 7, 8, 9, 3, 11)
+            .unwrap()
+            .with_nanosecond(456_000_000)
+            .unwrap();
         let expected = DateTime::from_str("1000-07-08T09:03:11.456Z", Format::DateTime).unwrap();
         assert_eq!(expected, DateTime::from_chrono_utc(chrono));
 
-        let chrono =
-            FixedOffset::west(2 * 3600)
-                .ymd(2039, 7, 8)
-                .and_hms_nano(9, 3, 11, 123_000_000);
+        let chrono = FixedOffset::west_opt(2 * 3600)
+            .unwrap()
+            .with_ymd_and_hms(2039, 7, 8, 9, 3, 11)
+            .unwrap()
+            .with_nanosecond(123_000_000)
+            .unwrap();
         let expected = DateTime::from_str("2039-07-08T11:03:11.123Z", Format::DateTime).unwrap();
         assert_eq!(expected, DateTime::from_chrono_fixed(chrono));
     }
@@ -178,12 +210,20 @@ mod test {
         use chrono::{TimeZone, Utc};
 
         let date_time = DateTime::from_str("2039-07-08T09:03:11.123Z", Format::DateTime).unwrap();
-        let expected = Utc.ymd(2039, 7, 8).and_hms_nano(9, 3, 11, 123_000_000);
-        assert_eq!(expected, date_time.to_chrono_utc());
+        let expected = Utc
+            .with_ymd_and_hms(2039, 7, 8, 9, 3, 11)
+            .unwrap()
+            .with_nanosecond(123_000_000)
+            .unwrap();
+        assert_eq!(expected, date_time.to_chrono_utc().unwrap());
 
         let date_time = DateTime::from_str("1000-07-08T09:03:11.456Z", Format::DateTime).unwrap();
-        let expected = Utc.ymd(1000, 7, 8).and_hms_nano(9, 3, 11, 456_000_000);
-        assert_eq!(expected, date_time.to_chrono_utc());
+        let expected = Utc
+            .with_ymd_and_hms(1000, 7, 8, 9, 3, 11)
+            .unwrap()
+            .with_nanosecond(456_000_000)
+            .unwrap();
+        assert_eq!(expected, date_time.to_chrono_utc().unwrap());
     }
 
     #[test]
@@ -230,8 +270,18 @@ mod test {
         assert_eq!(expected, date_time.to_time().unwrap());
 
         let date_time = DateTime::from_secs_and_nanos(i64::MAX, 0);
-        assert!(matches!(date_time.to_time(), Err(Error::OutOfRange(_))));
+        assert!(matches!(
+            date_time.to_time(),
+            Err(Error {
+                kind: ErrorKind::OutOfRange(_)
+            })
+        ));
         let date_time = DateTime::from_secs_and_nanos(i64::MIN, 0);
-        assert!(matches!(date_time.to_time(), Err(Error::OutOfRange(_))));
+        assert!(matches!(
+            date_time.to_time(),
+            Err(Error {
+                kind: ErrorKind::OutOfRange(_)
+            })
+        ));
     }
 }

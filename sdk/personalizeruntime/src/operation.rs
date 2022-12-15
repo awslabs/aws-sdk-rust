@@ -5,7 +5,7 @@
 /// [`get_personalized_ranking`](crate::client::Client::get_personalized_ranking).
 ///
 /// See [`crate::client::fluent_builders::GetPersonalizedRanking`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPersonalizedRanking {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPersonalizedRanking {
 /// [`get_recommendations`](crate::client::Client::get_recommendations).
 ///
 /// See [`crate::client::fluent_builders::GetRecommendations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRecommendations {
     _private: (),
 }

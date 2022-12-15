@@ -2,7 +2,7 @@
 
 /// <p>(Discontinued) Includes details about the failed S3 resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedS3Resource {
     /// <p>(Discontinued) The failed S3 resources.</p>
     #[doc(hidden)]
@@ -28,20 +28,11 @@ impl FailedS3Resource {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for FailedS3Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedS3Resource");
-        formatter.field("failed_item", &self.failed_item);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
-    }
-}
 /// See [`FailedS3Resource`](crate::model::FailedS3Resource).
 pub mod failed_s3_resource {
 
     /// A builder for [`FailedS3Resource`](crate::model::FailedS3Resource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_item: std::option::Option<crate::model::S3Resource>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -103,7 +94,7 @@ impl FailedS3Resource {
 
 /// <p>(Discontinued) Contains information about the S3 resource. This data type is used as a request parameter in the <code>DisassociateS3Resources</code> action and can be used as a response parameter in the <code>AssociateS3Resources</code> and <code>UpdateS3Resources</code> actions. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Resource {
     /// <p>(Discontinued) The name of the S3 bucket.</p>
     #[doc(hidden)]
@@ -122,19 +113,11 @@ impl S3Resource {
         self.prefix.as_deref()
     }
 }
-impl std::fmt::Debug for S3Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Resource");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
-    }
-}
 /// See [`S3Resource`](crate::model::S3Resource).
 pub mod s3_resource {
 
     /// A builder for [`S3Resource`](crate::model::S3Resource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -178,7 +161,7 @@ impl S3Resource {
 
 /// <p>(Discontinued) The S3 resources whose classification types you want to update. This data type is used as a request parameter in the <code>UpdateS3Resources</code> action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ResourceClassificationUpdate {
     /// <p>(Discontinued) The name of the S3 bucket whose classification types you want to update.</p>
     #[doc(hidden)]
@@ -206,23 +189,11 @@ impl S3ResourceClassificationUpdate {
         self.classification_type_update.as_ref()
     }
 }
-impl std::fmt::Debug for S3ResourceClassificationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ResourceClassificationUpdate");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("prefix", &self.prefix);
-        formatter.field(
-            "classification_type_update",
-            &self.classification_type_update,
-        );
-        formatter.finish()
-    }
-}
 /// See [`S3ResourceClassificationUpdate`](crate::model::S3ResourceClassificationUpdate).
 pub mod s3_resource_classification_update {
 
     /// A builder for [`S3ResourceClassificationUpdate`](crate::model::S3ResourceClassificationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -285,7 +256,7 @@ impl S3ResourceClassificationUpdate {
 
 /// <p>(Discontinued) The classification type that Amazon Macie Classic applies to the associated S3 resources. At least one of the classification types (<code>oneTime</code> or <code>continuous</code>) must be specified. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClassificationTypeUpdate {
     /// <p>(Discontinued) A one-time classification of all of the existing objects in a specified S3 bucket. </p>
     #[doc(hidden)]
@@ -304,19 +275,11 @@ impl ClassificationTypeUpdate {
         self.continuous.as_ref()
     }
 }
-impl std::fmt::Debug for ClassificationTypeUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClassificationTypeUpdate");
-        formatter.field("one_time", &self.one_time);
-        formatter.field("continuous", &self.continuous);
-        formatter.finish()
-    }
-}
 /// See [`ClassificationTypeUpdate`](crate::model::ClassificationTypeUpdate).
 pub mod classification_type_update {
 
     /// A builder for [`ClassificationTypeUpdate`](crate::model::ClassificationTypeUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) one_time: std::option::Option<crate::model::S3OneTimeClassificationType>,
         pub(crate) continuous: std::option::Option<crate::model::S3ContinuousClassificationType>,
@@ -364,6 +327,40 @@ impl ClassificationTypeUpdate {
     }
 }
 
+/// When writing a match expression against `S3ContinuousClassificationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let s3continuousclassificationtype = unimplemented!();
+/// match s3continuousclassificationtype {
+///     S3ContinuousClassificationType::Full => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `s3continuousclassificationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `S3ContinuousClassificationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `S3ContinuousClassificationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `S3ContinuousClassificationType::NewFeature` is defined.
+/// Specifically, when `s3continuousclassificationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `S3ContinuousClassificationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -378,14 +375,16 @@ impl ClassificationTypeUpdate {
 pub enum S3ContinuousClassificationType {
     #[allow(missing_docs)] // documentation missing in model
     Full,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for S3ContinuousClassificationType {
     fn from(s: &str) -> Self {
         match s {
             "FULL" => S3ContinuousClassificationType::Full,
-            other => S3ContinuousClassificationType::Unknown(other.to_owned()),
+            other => S3ContinuousClassificationType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -401,11 +400,11 @@ impl S3ContinuousClassificationType {
     pub fn as_str(&self) -> &str {
         match self {
             S3ContinuousClassificationType::Full => "FULL",
-            S3ContinuousClassificationType::Unknown(s) => s.as_ref(),
+            S3ContinuousClassificationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL"]
     }
 }
@@ -415,6 +414,41 @@ impl AsRef<str> for S3ContinuousClassificationType {
     }
 }
 
+/// When writing a match expression against `S3OneTimeClassificationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let s3onetimeclassificationtype = unimplemented!();
+/// match s3onetimeclassificationtype {
+///     S3OneTimeClassificationType::Full => { /* ... */ },
+///     S3OneTimeClassificationType::None => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `s3onetimeclassificationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `S3OneTimeClassificationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `S3OneTimeClassificationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `S3OneTimeClassificationType::NewFeature` is defined.
+/// Specifically, when `s3onetimeclassificationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `S3OneTimeClassificationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -431,15 +465,17 @@ pub enum S3OneTimeClassificationType {
     Full,
     #[allow(missing_docs)] // documentation missing in model
     None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for S3OneTimeClassificationType {
     fn from(s: &str) -> Self {
         match s {
             "FULL" => S3OneTimeClassificationType::Full,
             "NONE" => S3OneTimeClassificationType::None,
-            other => S3OneTimeClassificationType::Unknown(other.to_owned()),
+            other => S3OneTimeClassificationType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -456,11 +492,11 @@ impl S3OneTimeClassificationType {
         match self {
             S3OneTimeClassificationType::Full => "FULL",
             S3OneTimeClassificationType::None => "NONE",
-            S3OneTimeClassificationType::Unknown(s) => s.as_ref(),
+            S3OneTimeClassificationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL", "NONE"]
     }
 }
@@ -472,7 +508,7 @@ impl AsRef<str> for S3OneTimeClassificationType {
 
 /// <p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification. This data type is used as a request parameter in the <code>AssociateS3Resources</code> action and a response parameter in the <code>ListS3Resources</code> action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ResourceClassification {
     /// <p>(Discontinued) The name of the S3 bucket that you want to associate with Amazon Macie Classic.</p>
     #[doc(hidden)]
@@ -498,20 +534,11 @@ impl S3ResourceClassification {
         self.classification_type.as_ref()
     }
 }
-impl std::fmt::Debug for S3ResourceClassification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ResourceClassification");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("prefix", &self.prefix);
-        formatter.field("classification_type", &self.classification_type);
-        formatter.finish()
-    }
-}
 /// See [`S3ResourceClassification`](crate::model::S3ResourceClassification).
 pub mod s3_resource_classification {
 
     /// A builder for [`S3ResourceClassification`](crate::model::S3ResourceClassification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -570,7 +597,7 @@ impl S3ResourceClassification {
 
 /// <p>(Discontinued) The classification type that Amazon Macie Classic applies to the associated S3 resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClassificationType {
     /// <p>(Discontinued) A one-time classification of all of the existing objects in a specified S3 bucket. </p>
     #[doc(hidden)]
@@ -589,19 +616,11 @@ impl ClassificationType {
         self.continuous.as_ref()
     }
 }
-impl std::fmt::Debug for ClassificationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClassificationType");
-        formatter.field("one_time", &self.one_time);
-        formatter.field("continuous", &self.continuous);
-        formatter.finish()
-    }
-}
 /// See [`ClassificationType`](crate::model::ClassificationType).
 pub mod classification_type {
 
     /// A builder for [`ClassificationType`](crate::model::ClassificationType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) one_time: std::option::Option<crate::model::S3OneTimeClassificationType>,
         pub(crate) continuous: std::option::Option<crate::model::S3ContinuousClassificationType>,
@@ -651,7 +670,7 @@ impl ClassificationType {
 
 /// <p>(Discontinued) Contains information about the Amazon Macie Classic member account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemberAccount {
     /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account.</p>
     #[doc(hidden)]
@@ -663,18 +682,11 @@ impl MemberAccount {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for MemberAccount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemberAccount");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 /// See [`MemberAccount`](crate::model::MemberAccount).
 pub mod member_account {
 
     /// A builder for [`MemberAccount`](crate::model::MemberAccount).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }

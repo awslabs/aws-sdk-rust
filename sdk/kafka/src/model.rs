@@ -2,7 +2,7 @@
 
 /// <p>Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionInfo {
     /// <p>The data-volume encryption details.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl EncryptionInfo {
         self.encryption_in_transit.as_ref()
     }
 }
-impl std::fmt::Debug for EncryptionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionInfo");
-        formatter.field("encryption_at_rest", &self.encryption_at_rest);
-        formatter.field("encryption_in_transit", &self.encryption_in_transit);
-        formatter.finish()
-    }
-}
 /// See [`EncryptionInfo`](crate::model::EncryptionInfo).
 pub mod encryption_info {
 
     /// A builder for [`EncryptionInfo`](crate::model::EncryptionInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_at_rest: std::option::Option<crate::model::EncryptionAtRest>,
         pub(crate) encryption_in_transit: std::option::Option<crate::model::EncryptionInTransit>,
@@ -83,7 +75,7 @@ impl EncryptionInfo {
 
 /// <p>The settings for encrypting data in transit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionInTransit {
     /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
     /// <p> TLS means that client-broker communication is enabled with TLS only.</p>
@@ -112,19 +104,11 @@ impl EncryptionInTransit {
         self.in_cluster
     }
 }
-impl std::fmt::Debug for EncryptionInTransit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionInTransit");
-        formatter.field("client_broker", &self.client_broker);
-        formatter.field("in_cluster", &self.in_cluster);
-        formatter.finish()
-    }
-}
 /// See [`EncryptionInTransit`](crate::model::EncryptionInTransit).
 pub mod encryption_in_transit {
 
     /// A builder for [`EncryptionInTransit`](crate::model::EncryptionInTransit).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_broker: std::option::Option<crate::model::ClientBroker>,
         pub(crate) in_cluster: std::option::Option<bool>,
@@ -179,6 +163,42 @@ impl EncryptionInTransit {
     }
 }
 
+/// When writing a match expression against `ClientBroker`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let clientbroker = unimplemented!();
+/// match clientbroker {
+///     ClientBroker::Plaintext => { /* ... */ },
+///     ClientBroker::Tls => { /* ... */ },
+///     ClientBroker::TlsPlaintext => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `clientbroker` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ClientBroker::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ClientBroker::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ClientBroker::NewFeature` is defined.
+/// Specifically, when `clientbroker` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ClientBroker::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>Client-broker encryption in transit setting.</p>
 #[non_exhaustive]
 #[derive(
@@ -197,8 +217,8 @@ pub enum ClientBroker {
     Tls,
     #[allow(missing_docs)] // documentation missing in model
     TlsPlaintext,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ClientBroker {
     fn from(s: &str) -> Self {
@@ -206,7 +226,7 @@ impl std::convert::From<&str> for ClientBroker {
             "PLAINTEXT" => ClientBroker::Plaintext,
             "TLS" => ClientBroker::Tls,
             "TLS_PLAINTEXT" => ClientBroker::TlsPlaintext,
-            other => ClientBroker::Unknown(other.to_owned()),
+            other => ClientBroker::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -224,11 +244,11 @@ impl ClientBroker {
             ClientBroker::Plaintext => "PLAINTEXT",
             ClientBroker::Tls => "TLS",
             ClientBroker::TlsPlaintext => "TLS_PLAINTEXT",
-            ClientBroker::Unknown(s) => s.as_ref(),
+            ClientBroker::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PLAINTEXT", "TLS", "TLS_PLAINTEXT"]
     }
 }
@@ -240,7 +260,7 @@ impl AsRef<str> for ClientBroker {
 
 /// <p>The data-volume encryption details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionAtRest {
     /// <p>The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you and uses it.</p>
     #[doc(hidden)]
@@ -252,18 +272,11 @@ impl EncryptionAtRest {
         self.data_volume_kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for EncryptionAtRest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionAtRest");
-        formatter.field("data_volume_kms_key_id", &self.data_volume_kms_key_id);
-        formatter.finish()
-    }
-}
 /// See [`EncryptionAtRest`](crate::model::EncryptionAtRest).
 pub mod encryption_at_rest {
 
     /// A builder for [`EncryptionAtRest`](crate::model::EncryptionAtRest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_volume_kms_key_id: std::option::Option<std::string::String>,
     }
@@ -298,7 +311,7 @@ impl EncryptionAtRest {
 
 /// <p>Includes all client authentication information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClientAuthentication {
     /// <p>Details for ClientAuthentication using SASL.</p>
     #[doc(hidden)]
@@ -324,20 +337,11 @@ impl ClientAuthentication {
         self.unauthenticated.as_ref()
     }
 }
-impl std::fmt::Debug for ClientAuthentication {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClientAuthentication");
-        formatter.field("sasl", &self.sasl);
-        formatter.field("tls", &self.tls);
-        formatter.field("unauthenticated", &self.unauthenticated);
-        formatter.finish()
-    }
-}
 /// See [`ClientAuthentication`](crate::model::ClientAuthentication).
 pub mod client_authentication {
 
     /// A builder for [`ClientAuthentication`](crate::model::ClientAuthentication).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sasl: std::option::Option<crate::model::Sasl>,
         pub(crate) tls: std::option::Option<crate::model::Tls>,
@@ -396,7 +400,7 @@ impl ClientAuthentication {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Unauthenticated {
     /// <p>Specifies whether you want to turn on or turn off unauthenticated traffic to your cluster.</p>
     #[doc(hidden)]
@@ -408,18 +412,11 @@ impl Unauthenticated {
         self.enabled
     }
 }
-impl std::fmt::Debug for Unauthenticated {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Unauthenticated");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 /// See [`Unauthenticated`](crate::model::Unauthenticated).
 pub mod unauthenticated {
 
     /// A builder for [`Unauthenticated`](crate::model::Unauthenticated).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
     }
@@ -451,7 +448,7 @@ impl Unauthenticated {
 
 /// <p>Details for client authentication using TLS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tls {
     /// <p>List of ACM Certificate Authority ARNs.</p>
     #[doc(hidden)]
@@ -470,22 +467,11 @@ impl Tls {
         self.enabled
     }
 }
-impl std::fmt::Debug for Tls {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tls");
-        formatter.field(
-            "certificate_authority_arn_list",
-            &self.certificate_authority_arn_list,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 /// See [`Tls`](crate::model::Tls).
 pub mod tls {
 
     /// A builder for [`Tls`](crate::model::Tls).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn_list:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -542,7 +528,7 @@ impl Tls {
 
 /// <p>Details for client authentication using SASL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Sasl {
     /// <p>Details for SASL/SCRAM client authentication.</p>
     #[doc(hidden)]
@@ -561,19 +547,11 @@ impl Sasl {
         self.iam.as_ref()
     }
 }
-impl std::fmt::Debug for Sasl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Sasl");
-        formatter.field("scram", &self.scram);
-        formatter.field("iam", &self.iam);
-        formatter.finish()
-    }
-}
 /// See [`Sasl`](crate::model::Sasl).
 pub mod sasl {
 
     /// A builder for [`Sasl`](crate::model::Sasl).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scram: std::option::Option<crate::model::Scram>,
         pub(crate) iam: std::option::Option<crate::model::Iam>,
@@ -617,7 +595,7 @@ impl Sasl {
 
 /// <p>Details for IAM access control.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Iam {
     /// <p>Indicates whether IAM access control is enabled.</p>
     #[doc(hidden)]
@@ -629,18 +607,11 @@ impl Iam {
         self.enabled
     }
 }
-impl std::fmt::Debug for Iam {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Iam");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 /// See [`Iam`](crate::model::Iam).
 pub mod iam {
 
     /// A builder for [`Iam`](crate::model::Iam).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
     }
@@ -672,7 +643,7 @@ impl Iam {
 
 /// <p>Details for SASL/SCRAM client authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scram {
     /// <p>SASL/SCRAM authentication is enabled or not.</p>
     #[doc(hidden)]
@@ -684,18 +655,11 @@ impl Scram {
         self.enabled
     }
 }
-impl std::fmt::Debug for Scram {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scram");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 /// See [`Scram`](crate::model::Scram).
 pub mod scram {
 
     /// A builder for [`Scram`](crate::model::Scram).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
     }
@@ -727,7 +691,7 @@ impl Scram {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingInfo {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -739,18 +703,11 @@ impl LoggingInfo {
         self.broker_logs.as_ref()
     }
 }
-impl std::fmt::Debug for LoggingInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingInfo");
-        formatter.field("broker_logs", &self.broker_logs);
-        formatter.finish()
-    }
-}
 /// See [`LoggingInfo`](crate::model::LoggingInfo).
 pub mod logging_info {
 
     /// A builder for [`LoggingInfo`](crate::model::LoggingInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_logs: std::option::Option<crate::model::BrokerLogs>,
     }
@@ -785,7 +742,7 @@ impl LoggingInfo {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerLogs {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -811,20 +768,11 @@ impl BrokerLogs {
         self.s3.as_ref()
     }
 }
-impl std::fmt::Debug for BrokerLogs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerLogs");
-        formatter.field("cloud_watch_logs", &self.cloud_watch_logs);
-        formatter.field("firehose", &self.firehose);
-        formatter.field("s3", &self.s3);
-        formatter.finish()
-    }
-}
 /// See [`BrokerLogs`](crate::model::BrokerLogs).
 pub mod broker_logs {
 
     /// A builder for [`BrokerLogs`](crate::model::BrokerLogs).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogs>,
         pub(crate) firehose: std::option::Option<crate::model::Firehose>,
@@ -883,7 +831,7 @@ impl BrokerLogs {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3 {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -909,20 +857,11 @@ impl S3 {
         self.prefix.as_deref()
     }
 }
-impl std::fmt::Debug for S3 {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
-    }
-}
 /// See [`S3`](crate::model::S3).
 pub mod s3 {
 
     /// A builder for [`S3`](crate::model::S3).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -978,7 +917,7 @@ impl S3 {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Firehose {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -997,19 +936,11 @@ impl Firehose {
         self.enabled
     }
 }
-impl std::fmt::Debug for Firehose {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Firehose");
-        formatter.field("delivery_stream", &self.delivery_stream);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 /// See [`Firehose`](crate::model::Firehose).
 pub mod firehose {
 
     /// A builder for [`Firehose`](crate::model::Firehose).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -1056,7 +987,7 @@ impl Firehose {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLogs {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1075,19 +1006,11 @@ impl CloudWatchLogs {
         self.log_group.as_deref()
     }
 }
-impl std::fmt::Debug for CloudWatchLogs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLogs");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("log_group", &self.log_group);
-        formatter.finish()
-    }
-}
 /// See [`CloudWatchLogs`](crate::model::CloudWatchLogs).
 pub mod cloud_watch_logs {
 
     /// A builder for [`CloudWatchLogs`](crate::model::CloudWatchLogs).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) log_group: std::option::Option<std::string::String>,
@@ -1131,7 +1054,7 @@ impl CloudWatchLogs {
 
 /// <p>JMX and Node monitoring for the MSK cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenMonitoringInfo {
     /// <p>Prometheus settings.</p>
     #[doc(hidden)]
@@ -1143,18 +1066,11 @@ impl OpenMonitoringInfo {
         self.prometheus.as_ref()
     }
 }
-impl std::fmt::Debug for OpenMonitoringInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenMonitoringInfo");
-        formatter.field("prometheus", &self.prometheus);
-        formatter.finish()
-    }
-}
 /// See [`OpenMonitoringInfo`](crate::model::OpenMonitoringInfo).
 pub mod open_monitoring_info {
 
     /// A builder for [`OpenMonitoringInfo`](crate::model::OpenMonitoringInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prometheus: std::option::Option<crate::model::PrometheusInfo>,
     }
@@ -1189,7 +1105,7 @@ impl OpenMonitoringInfo {
 
 /// <p>Prometheus settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrometheusInfo {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     #[doc(hidden)]
@@ -1208,19 +1124,11 @@ impl PrometheusInfo {
         self.node_exporter.as_ref()
     }
 }
-impl std::fmt::Debug for PrometheusInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrometheusInfo");
-        formatter.field("jmx_exporter", &self.jmx_exporter);
-        formatter.field("node_exporter", &self.node_exporter);
-        formatter.finish()
-    }
-}
 /// See [`PrometheusInfo`](crate::model::PrometheusInfo).
 pub mod prometheus_info {
 
     /// A builder for [`PrometheusInfo`](crate::model::PrometheusInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jmx_exporter: std::option::Option<crate::model::JmxExporterInfo>,
         pub(crate) node_exporter: std::option::Option<crate::model::NodeExporterInfo>,
@@ -1270,7 +1178,7 @@ impl PrometheusInfo {
 
 /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeExporterInfo {
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     #[doc(hidden)]
@@ -1282,18 +1190,11 @@ impl NodeExporterInfo {
         self.enabled_in_broker
     }
 }
-impl std::fmt::Debug for NodeExporterInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeExporterInfo");
-        formatter.field("enabled_in_broker", &self.enabled_in_broker);
-        formatter.finish()
-    }
-}
 /// See [`NodeExporterInfo`](crate::model::NodeExporterInfo).
 pub mod node_exporter_info {
 
     /// A builder for [`NodeExporterInfo`](crate::model::NodeExporterInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled_in_broker: std::option::Option<bool>,
     }
@@ -1325,7 +1226,7 @@ impl NodeExporterInfo {
 
 /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JmxExporterInfo {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     #[doc(hidden)]
@@ -1337,18 +1238,11 @@ impl JmxExporterInfo {
         self.enabled_in_broker
     }
 }
-impl std::fmt::Debug for JmxExporterInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JmxExporterInfo");
-        formatter.field("enabled_in_broker", &self.enabled_in_broker);
-        formatter.finish()
-    }
-}
 /// See [`JmxExporterInfo`](crate::model::JmxExporterInfo).
 pub mod jmx_exporter_info {
 
     /// A builder for [`JmxExporterInfo`](crate::model::JmxExporterInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled_in_broker: std::option::Option<bool>,
     }
@@ -1378,6 +1272,43 @@ impl JmxExporterInfo {
     }
 }
 
+/// When writing a match expression against `EnhancedMonitoring`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let enhancedmonitoring = unimplemented!();
+/// match enhancedmonitoring {
+///     EnhancedMonitoring::Default => { /* ... */ },
+///     EnhancedMonitoring::PerBroker => { /* ... */ },
+///     EnhancedMonitoring::PerTopicPerBroker => { /* ... */ },
+///     EnhancedMonitoring::PerTopicPerPartition => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `enhancedmonitoring` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EnhancedMonitoring::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EnhancedMonitoring::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EnhancedMonitoring::NewFeature` is defined.
+/// Specifically, when `enhancedmonitoring` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EnhancedMonitoring::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>Specifies which metrics are gathered for the MSK cluster. This property has the following possible values: DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics associated with each of these levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 #[non_exhaustive]
 #[derive(
@@ -1398,8 +1329,8 @@ pub enum EnhancedMonitoring {
     PerTopicPerBroker,
     #[allow(missing_docs)] // documentation missing in model
     PerTopicPerPartition,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EnhancedMonitoring {
     fn from(s: &str) -> Self {
@@ -1408,7 +1339,9 @@ impl std::convert::From<&str> for EnhancedMonitoring {
             "PER_BROKER" => EnhancedMonitoring::PerBroker,
             "PER_TOPIC_PER_BROKER" => EnhancedMonitoring::PerTopicPerBroker,
             "PER_TOPIC_PER_PARTITION" => EnhancedMonitoring::PerTopicPerPartition,
-            other => EnhancedMonitoring::Unknown(other.to_owned()),
+            other => {
+                EnhancedMonitoring::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -1427,11 +1360,11 @@ impl EnhancedMonitoring {
             EnhancedMonitoring::PerBroker => "PER_BROKER",
             EnhancedMonitoring::PerTopicPerBroker => "PER_TOPIC_PER_BROKER",
             EnhancedMonitoring::PerTopicPerPartition => "PER_TOPIC_PER_PARTITION",
-            EnhancedMonitoring::Unknown(s) => s.as_ref(),
+            EnhancedMonitoring::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEFAULT",
             "PER_BROKER",
@@ -1448,7 +1381,7 @@ impl AsRef<str> for EnhancedMonitoring {
 
 /// <p>Information about the broker access configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectivityInfo {
     /// <p>Public access control for brokers.</p>
     #[doc(hidden)]
@@ -1460,18 +1393,11 @@ impl ConnectivityInfo {
         self.public_access.as_ref()
     }
 }
-impl std::fmt::Debug for ConnectivityInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectivityInfo");
-        formatter.field("public_access", &self.public_access);
-        formatter.finish()
-    }
-}
 /// See [`ConnectivityInfo`](crate::model::ConnectivityInfo).
 pub mod connectivity_info {
 
     /// A builder for [`ConnectivityInfo`](crate::model::ConnectivityInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_access: std::option::Option<crate::model::PublicAccess>,
     }
@@ -1506,7 +1432,7 @@ impl ConnectivityInfo {
 
 /// Public access control for brokers.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicAccess {
     /// <p>The value DISABLED indicates that public access is turned off. SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
     #[doc(hidden)]
@@ -1518,18 +1444,11 @@ impl PublicAccess {
         self.r#type.as_deref()
     }
 }
-impl std::fmt::Debug for PublicAccess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicAccess");
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`PublicAccess`](crate::model::PublicAccess).
 pub mod public_access {
 
     /// A builder for [`PublicAccess`](crate::model::PublicAccess).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
     }
@@ -1561,7 +1480,7 @@ impl PublicAccess {
 
 /// <p>Describes a configuration revision.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationRevision {
     /// <p>The time when the configuration revision was created.</p>
     #[doc(hidden)]
@@ -1587,20 +1506,11 @@ impl ConfigurationRevision {
         self.revision
     }
 }
-impl std::fmt::Debug for ConfigurationRevision {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationRevision");
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("description", &self.description);
-        formatter.field("revision", &self.revision);
-        formatter.finish()
-    }
-}
 /// See [`ConfigurationRevision`](crate::model::ConfigurationRevision).
 pub mod configuration_revision {
 
     /// A builder for [`ConfigurationRevision`](crate::model::ConfigurationRevision).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1659,7 +1569,7 @@ impl ConfigurationRevision {
 
 /// <p>Specifies the configuration to use for the brokers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationInfo {
     /// <p>ARN of the configuration to use.</p>
     #[doc(hidden)]
@@ -1678,19 +1588,11 @@ impl ConfigurationInfo {
         self.revision
     }
 }
-impl std::fmt::Debug for ConfigurationInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationInfo");
-        formatter.field("arn", &self.arn);
-        formatter.field("revision", &self.revision);
-        formatter.finish()
-    }
-}
 /// See [`ConfigurationInfo`](crate::model::ConfigurationInfo).
 pub mod configuration_info {
 
     /// A builder for [`ConfigurationInfo`](crate::model::ConfigurationInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) revision: std::option::Option<i64>,
@@ -1734,7 +1636,7 @@ impl ConfigurationInfo {
 
 /// <p>Specifies the EBS volume upgrade information. The broker identifier must be set to the keyword ALL. This means the changes apply to all the brokers in the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerEbsVolumeInfo {
     /// <p>The ID of the broker to update.</p>
     #[doc(hidden)]
@@ -1762,20 +1664,11 @@ impl BrokerEbsVolumeInfo {
         self.volume_size_gb
     }
 }
-impl std::fmt::Debug for BrokerEbsVolumeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerEbsVolumeInfo");
-        formatter.field("kafka_broker_node_id", &self.kafka_broker_node_id);
-        formatter.field("provisioned_throughput", &self.provisioned_throughput);
-        formatter.field("volume_size_gb", &self.volume_size_gb);
-        formatter.finish()
-    }
-}
 /// See [`BrokerEbsVolumeInfo`](crate::model::BrokerEbsVolumeInfo).
 pub mod broker_ebs_volume_info {
 
     /// A builder for [`BrokerEbsVolumeInfo`](crate::model::BrokerEbsVolumeInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kafka_broker_node_id: std::option::Option<std::string::String>,
         pub(crate) provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
@@ -1840,7 +1733,7 @@ impl BrokerEbsVolumeInfo {
 
 /// Contains information about provisioned throughput for EBS storage volumes attached to kafka broker nodes.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionedThroughput {
     /// Provisioned throughput is enabled or not.
     #[doc(hidden)]
@@ -1859,19 +1752,11 @@ impl ProvisionedThroughput {
         self.volume_throughput
     }
 }
-impl std::fmt::Debug for ProvisionedThroughput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedThroughput");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("volume_throughput", &self.volume_throughput);
-        formatter.finish()
-    }
-}
 /// See [`ProvisionedThroughput`](crate::model::ProvisionedThroughput).
 pub mod provisioned_throughput {
 
     /// A builder for [`ProvisionedThroughput`](crate::model::ProvisionedThroughput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) volume_throughput: std::option::Option<i32>,
@@ -1915,7 +1800,7 @@ impl ProvisionedThroughput {
 
 /// <p>The node information object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeInfo {
     /// <p>The start time.</p>
     #[doc(hidden)]
@@ -1962,23 +1847,11 @@ impl NodeInfo {
         self.zookeeper_node_info.as_ref()
     }
 }
-impl std::fmt::Debug for NodeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeInfo");
-        formatter.field("added_to_cluster_time", &self.added_to_cluster_time);
-        formatter.field("broker_node_info", &self.broker_node_info);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("node_arn", &self.node_arn);
-        formatter.field("node_type", &self.node_type);
-        formatter.field("zookeeper_node_info", &self.zookeeper_node_info);
-        formatter.finish()
-    }
-}
 /// See [`NodeInfo`](crate::model::NodeInfo).
 pub mod node_info {
 
     /// A builder for [`NodeInfo`](crate::model::NodeInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) added_to_cluster_time: std::option::Option<std::string::String>,
         pub(crate) broker_node_info: std::option::Option<crate::model::BrokerNodeInfo>,
@@ -2082,7 +1955,7 @@ impl NodeInfo {
 
 /// <p>Zookeeper node information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ZookeeperNodeInfo {
     /// <p>The attached elastic network interface of the broker.</p>
     #[doc(hidden)]
@@ -2122,22 +1995,11 @@ impl ZookeeperNodeInfo {
         self.zookeeper_version.as_deref()
     }
 }
-impl std::fmt::Debug for ZookeeperNodeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ZookeeperNodeInfo");
-        formatter.field("attached_eni_id", &self.attached_eni_id);
-        formatter.field("client_vpc_ip_address", &self.client_vpc_ip_address);
-        formatter.field("endpoints", &self.endpoints);
-        formatter.field("zookeeper_id", &self.zookeeper_id);
-        formatter.field("zookeeper_version", &self.zookeeper_version);
-        formatter.finish()
-    }
-}
 /// See [`ZookeeperNodeInfo`](crate::model::ZookeeperNodeInfo).
 pub mod zookeeper_node_info {
 
     /// A builder for [`ZookeeperNodeInfo`](crate::model::ZookeeperNodeInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_eni_id: std::option::Option<std::string::String>,
         pub(crate) client_vpc_ip_address: std::option::Option<std::string::String>,
@@ -2233,6 +2095,40 @@ impl ZookeeperNodeInfo {
     }
 }
 
+/// When writing a match expression against `NodeType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let nodetype = unimplemented!();
+/// match nodetype {
+///     NodeType::Broker => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `nodetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `NodeType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `NodeType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `NodeType::NewFeature` is defined.
+/// Specifically, when `nodetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `NodeType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The broker or Zookeeper node.</p>
 #[non_exhaustive]
 #[derive(
@@ -2247,14 +2143,14 @@ impl ZookeeperNodeInfo {
 pub enum NodeType {
     #[allow(missing_docs)] // documentation missing in model
     Broker,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for NodeType {
     fn from(s: &str) -> Self {
         match s {
             "BROKER" => NodeType::Broker,
-            other => NodeType::Unknown(other.to_owned()),
+            other => NodeType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2270,11 +2166,11 @@ impl NodeType {
     pub fn as_str(&self) -> &str {
         match self {
             NodeType::Broker => "BROKER",
-            NodeType::Unknown(s) => s.as_ref(),
+            NodeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BROKER"]
     }
 }
@@ -2286,7 +2182,7 @@ impl AsRef<str> for NodeType {
 
 /// <p>BrokerNodeInfo</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerNodeInfo {
     /// <p>The attached elastic network interface of the broker.</p>
     #[doc(hidden)]
@@ -2335,26 +2231,11 @@ impl BrokerNodeInfo {
         self.endpoints.as_deref()
     }
 }
-impl std::fmt::Debug for BrokerNodeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerNodeInfo");
-        formatter.field("attached_eni_id", &self.attached_eni_id);
-        formatter.field("broker_id", &self.broker_id);
-        formatter.field("client_subnet", &self.client_subnet);
-        formatter.field("client_vpc_ip_address", &self.client_vpc_ip_address);
-        formatter.field(
-            "current_broker_software_info",
-            &self.current_broker_software_info,
-        );
-        formatter.field("endpoints", &self.endpoints);
-        formatter.finish()
-    }
-}
 /// See [`BrokerNodeInfo`](crate::model::BrokerNodeInfo).
 pub mod broker_node_info {
 
     /// A builder for [`BrokerNodeInfo`](crate::model::BrokerNodeInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_eni_id: std::option::Option<std::string::String>,
         pub(crate) broker_id: std::option::Option<f64>,
@@ -2471,7 +2352,7 @@ impl BrokerNodeInfo {
 
 /// <p>Information about the current software installed on the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerSoftwareInfo {
     /// <p>The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this preview release.</p>
     #[doc(hidden)]
@@ -2497,20 +2378,11 @@ impl BrokerSoftwareInfo {
         self.kafka_version.as_deref()
     }
 }
-impl std::fmt::Debug for BrokerSoftwareInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerSoftwareInfo");
-        formatter.field("configuration_arn", &self.configuration_arn);
-        formatter.field("configuration_revision", &self.configuration_revision);
-        formatter.field("kafka_version", &self.kafka_version);
-        formatter.finish()
-    }
-}
 /// See [`BrokerSoftwareInfo`](crate::model::BrokerSoftwareInfo).
 pub mod broker_software_info {
 
     /// A builder for [`BrokerSoftwareInfo`](crate::model::BrokerSoftwareInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_arn: std::option::Option<std::string::String>,
         pub(crate) configuration_revision: std::option::Option<i64>,
@@ -2572,7 +2444,7 @@ impl BrokerSoftwareInfo {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KafkaVersion {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2591,19 +2463,11 @@ impl KafkaVersion {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for KafkaVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KafkaVersion");
-        formatter.field("version", &self.version);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 /// See [`KafkaVersion`](crate::model::KafkaVersion).
 pub mod kafka_version {
 
     /// A builder for [`KafkaVersion`](crate::model::KafkaVersion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::KafkaVersionStatus>,
@@ -2648,6 +2512,41 @@ impl KafkaVersion {
     }
 }
 
+/// When writing a match expression against `KafkaVersionStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let kafkaversionstatus = unimplemented!();
+/// match kafkaversionstatus {
+///     KafkaVersionStatus::Active => { /* ... */ },
+///     KafkaVersionStatus::Deprecated => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `kafkaversionstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `KafkaVersionStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `KafkaVersionStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `KafkaVersionStatus::NewFeature` is defined.
+/// Specifically, when `kafkaversionstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `KafkaVersionStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2664,15 +2563,17 @@ pub enum KafkaVersionStatus {
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Deprecated,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for KafkaVersionStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => KafkaVersionStatus::Active,
             "DEPRECATED" => KafkaVersionStatus::Deprecated,
-            other => KafkaVersionStatus::Unknown(other.to_owned()),
+            other => {
+                KafkaVersionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2689,11 +2590,11 @@ impl KafkaVersionStatus {
         match self {
             KafkaVersionStatus::Active => "ACTIVE",
             KafkaVersionStatus::Deprecated => "DEPRECATED",
-            KafkaVersionStatus::Unknown(s) => s.as_ref(),
+            KafkaVersionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DEPRECATED"]
     }
 }
@@ -2705,7 +2606,7 @@ impl AsRef<str> for KafkaVersionStatus {
 
 /// <p>Represents an MSK Configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Configuration {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     #[doc(hidden)]
@@ -2759,24 +2660,11 @@ impl Configuration {
         self.state.as_ref()
     }
 }
-impl std::fmt::Debug for Configuration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Configuration");
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("description", &self.description);
-        formatter.field("kafka_versions", &self.kafka_versions);
-        formatter.field("latest_revision", &self.latest_revision);
-        formatter.field("name", &self.name);
-        formatter.field("state", &self.state);
-        formatter.finish()
-    }
-}
 /// See [`Configuration`](crate::model::Configuration).
 pub mod configuration {
 
     /// A builder for [`Configuration`](crate::model::Configuration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2896,6 +2784,42 @@ impl Configuration {
     }
 }
 
+/// When writing a match expression against `ConfigurationState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let configurationstate = unimplemented!();
+/// match configurationstate {
+///     ConfigurationState::Active => { /* ... */ },
+///     ConfigurationState::DeleteFailed => { /* ... */ },
+///     ConfigurationState::Deleting => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `configurationstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ConfigurationState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ConfigurationState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ConfigurationState::NewFeature` is defined.
+/// Specifically, when `configurationstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ConfigurationState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The state of a configuration.</p>
 #[non_exhaustive]
 #[derive(
@@ -2914,8 +2838,8 @@ pub enum ConfigurationState {
     DeleteFailed,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ConfigurationState {
     fn from(s: &str) -> Self {
@@ -2923,7 +2847,9 @@ impl std::convert::From<&str> for ConfigurationState {
             "ACTIVE" => ConfigurationState::Active,
             "DELETE_FAILED" => ConfigurationState::DeleteFailed,
             "DELETING" => ConfigurationState::Deleting,
-            other => ConfigurationState::Unknown(other.to_owned()),
+            other => {
+                ConfigurationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2941,11 +2867,11 @@ impl ConfigurationState {
             ConfigurationState::Active => "ACTIVE",
             ConfigurationState::DeleteFailed => "DELETE_FAILED",
             ConfigurationState::Deleting => "DELETING",
-            ConfigurationState::Unknown(s) => s.as_ref(),
+            ConfigurationState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETE_FAILED", "DELETING"]
     }
 }
@@ -2957,7 +2883,7 @@ impl AsRef<str> for ConfigurationState {
 
 /// <p>Returns information about a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies a cluster operation.</p>
     #[doc(hidden)]
@@ -3043,28 +2969,11 @@ impl Cluster {
         self.serverless.as_ref()
     }
 }
-impl std::fmt::Debug for Cluster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cluster");
-        formatter.field("active_operation_arn", &self.active_operation_arn);
-        formatter.field("cluster_type", &self.cluster_type);
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("current_version", &self.current_version);
-        formatter.field("state", &self.state);
-        formatter.field("state_info", &self.state_info);
-        formatter.field("tags", &self.tags);
-        formatter.field("provisioned", &self.provisioned);
-        formatter.field("serverless", &self.serverless);
-        formatter.finish()
-    }
-}
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
 
     /// A builder for [`Cluster`](crate::model::Cluster).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_operation_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_type: std::option::Option<crate::model::ClusterType>,
@@ -3254,7 +3163,7 @@ impl Cluster {
 
 /// <p>Serverless cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Serverless {
     /// <p>The configuration of the Amazon VPCs for the cluster.</p>
     #[doc(hidden)]
@@ -3275,19 +3184,11 @@ impl Serverless {
         self.client_authentication.as_ref()
     }
 }
-impl std::fmt::Debug for Serverless {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Serverless");
-        formatter.field("vpc_configs", &self.vpc_configs);
-        formatter.field("client_authentication", &self.client_authentication);
-        formatter.finish()
-    }
-}
 /// See [`Serverless`](crate::model::Serverless).
 pub mod serverless {
 
     /// A builder for [`Serverless`](crate::model::Serverless).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_configs: std::option::Option<std::vec::Vec<crate::model::VpcConfig>>,
         pub(crate) client_authentication:
@@ -3347,7 +3248,7 @@ impl Serverless {
 
 /// <p>Includes all client authentication information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerlessClientAuthentication {
     /// <p>Details for ClientAuthentication using SASL.</p>
     #[doc(hidden)]
@@ -3359,18 +3260,11 @@ impl ServerlessClientAuthentication {
         self.sasl.as_ref()
     }
 }
-impl std::fmt::Debug for ServerlessClientAuthentication {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerlessClientAuthentication");
-        formatter.field("sasl", &self.sasl);
-        formatter.finish()
-    }
-}
 /// See [`ServerlessClientAuthentication`](crate::model::ServerlessClientAuthentication).
 pub mod serverless_client_authentication {
 
     /// A builder for [`ServerlessClientAuthentication`](crate::model::ServerlessClientAuthentication).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sasl: std::option::Option<crate::model::ServerlessSasl>,
     }
@@ -3403,7 +3297,7 @@ impl ServerlessClientAuthentication {
 
 /// <p>Details for client authentication using SASL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerlessSasl {
     /// <p>Indicates whether IAM access control is enabled.</p>
     #[doc(hidden)]
@@ -3415,18 +3309,11 @@ impl ServerlessSasl {
         self.iam.as_ref()
     }
 }
-impl std::fmt::Debug for ServerlessSasl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerlessSasl");
-        formatter.field("iam", &self.iam);
-        formatter.finish()
-    }
-}
 /// See [`ServerlessSasl`](crate::model::ServerlessSasl).
 pub mod serverless_sasl {
 
     /// A builder for [`ServerlessSasl`](crate::model::ServerlessSasl).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iam: std::option::Option<crate::model::Iam>,
     }
@@ -3456,7 +3343,7 @@ impl ServerlessSasl {
 
 /// <p>The configuration of the Amazon VPCs for the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>The IDs of the subnets associated with the cluster.</p>
     #[doc(hidden)]
@@ -3475,19 +3362,11 @@ impl VpcConfig {
         self.security_group_ids.as_deref()
     }
 }
-impl std::fmt::Debug for VpcConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfig");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
-    }
-}
 /// See [`VpcConfig`](crate::model::VpcConfig).
 pub mod vpc_config {
 
     /// A builder for [`VpcConfig`](crate::model::VpcConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3549,7 +3428,7 @@ impl VpcConfig {
 
 /// <p>Provisioned cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Provisioned {
     /// <p>Information about the brokers.</p>
     #[doc(hidden)]
@@ -3630,33 +3509,11 @@ impl Provisioned {
         self.zookeeper_connect_string_tls.as_deref()
     }
 }
-impl std::fmt::Debug for Provisioned {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Provisioned");
-        formatter.field("broker_node_group_info", &self.broker_node_group_info);
-        formatter.field(
-            "current_broker_software_info",
-            &self.current_broker_software_info,
-        );
-        formatter.field("client_authentication", &self.client_authentication);
-        formatter.field("encryption_info", &self.encryption_info);
-        formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
-        formatter.field("open_monitoring", &self.open_monitoring);
-        formatter.field("logging_info", &self.logging_info);
-        formatter.field("number_of_broker_nodes", &self.number_of_broker_nodes);
-        formatter.field("zookeeper_connect_string", &self.zookeeper_connect_string);
-        formatter.field(
-            "zookeeper_connect_string_tls",
-            &self.zookeeper_connect_string_tls,
-        );
-        formatter.finish()
-    }
-}
 /// See [`Provisioned`](crate::model::Provisioned).
 pub mod provisioned {
 
     /// A builder for [`Provisioned`](crate::model::Provisioned).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_node_group_info: std::option::Option<crate::model::BrokerNodeGroupInfo>,
         pub(crate) current_broker_software_info:
@@ -3830,7 +3687,7 @@ impl Provisioned {
 
 /// <p>Describes the setup to be used for Apache Kafka broker nodes in the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerNodeGroupInfo {
     /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
     /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
@@ -3881,23 +3738,11 @@ impl BrokerNodeGroupInfo {
         self.connectivity_info.as_ref()
     }
 }
-impl std::fmt::Debug for BrokerNodeGroupInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerNodeGroupInfo");
-        formatter.field("broker_az_distribution", &self.broker_az_distribution);
-        formatter.field("client_subnets", &self.client_subnets);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("storage_info", &self.storage_info);
-        formatter.field("connectivity_info", &self.connectivity_info);
-        formatter.finish()
-    }
-}
 /// See [`BrokerNodeGroupInfo`](crate::model::BrokerNodeGroupInfo).
 pub mod broker_node_group_info {
 
     /// A builder for [`BrokerNodeGroupInfo`](crate::model::BrokerNodeGroupInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_az_distribution: std::option::Option<crate::model::BrokerAzDistribution>,
         pub(crate) client_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4021,7 +3866,7 @@ impl BrokerNodeGroupInfo {
 
 /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageInfo {
     /// <p>EBS volume information.</p>
     #[doc(hidden)]
@@ -4033,18 +3878,11 @@ impl StorageInfo {
         self.ebs_storage_info.as_ref()
     }
 }
-impl std::fmt::Debug for StorageInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageInfo");
-        formatter.field("ebs_storage_info", &self.ebs_storage_info);
-        formatter.finish()
-    }
-}
 /// See [`StorageInfo`](crate::model::StorageInfo).
 pub mod storage_info {
 
     /// A builder for [`StorageInfo`](crate::model::StorageInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ebs_storage_info: std::option::Option<crate::model::EbsStorageInfo>,
     }
@@ -4079,7 +3917,7 @@ impl StorageInfo {
 
 /// <p>Contains information about the EBS storage volumes attached to Apache Kafka broker nodes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbsStorageInfo {
     /// EBS volume provisioned throughput information.
     #[doc(hidden)]
@@ -4100,19 +3938,11 @@ impl EbsStorageInfo {
         self.volume_size
     }
 }
-impl std::fmt::Debug for EbsStorageInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbsStorageInfo");
-        formatter.field("provisioned_throughput", &self.provisioned_throughput);
-        formatter.field("volume_size", &self.volume_size);
-        formatter.finish()
-    }
-}
 /// See [`EbsStorageInfo`](crate::model::EbsStorageInfo).
 pub mod ebs_storage_info {
 
     /// A builder for [`EbsStorageInfo`](crate::model::EbsStorageInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
         pub(crate) volume_size: std::option::Option<i32>,
@@ -4160,6 +3990,40 @@ impl EbsStorageInfo {
     }
 }
 
+/// When writing a match expression against `BrokerAzDistribution`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let brokerazdistribution = unimplemented!();
+/// match brokerazdistribution {
+///     BrokerAzDistribution::Default => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `brokerazdistribution` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `BrokerAzDistribution::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `BrokerAzDistribution::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `BrokerAzDistribution::NewFeature` is defined.
+/// Specifically, when `brokerazdistribution` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `BrokerAzDistribution::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
 /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
 #[non_exhaustive]
@@ -4175,14 +4039,16 @@ impl EbsStorageInfo {
 pub enum BrokerAzDistribution {
     #[allow(missing_docs)] // documentation missing in model
     Default,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BrokerAzDistribution {
     fn from(s: &str) -> Self {
         match s {
             "DEFAULT" => BrokerAzDistribution::Default,
-            other => BrokerAzDistribution::Unknown(other.to_owned()),
+            other => {
+                BrokerAzDistribution::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -4198,11 +4064,11 @@ impl BrokerAzDistribution {
     pub fn as_str(&self) -> &str {
         match self {
             BrokerAzDistribution::Default => "DEFAULT",
-            BrokerAzDistribution::Unknown(s) => s.as_ref(),
+            BrokerAzDistribution::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT"]
     }
 }
@@ -4214,7 +4080,7 @@ impl AsRef<str> for BrokerAzDistribution {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StateInfo {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -4233,19 +4099,11 @@ impl StateInfo {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for StateInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StateInfo");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 /// See [`StateInfo`](crate::model::StateInfo).
 pub mod state_info {
 
     /// A builder for [`StateInfo`](crate::model::StateInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4287,6 +4145,47 @@ impl StateInfo {
     }
 }
 
+/// When writing a match expression against `ClusterState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let clusterstate = unimplemented!();
+/// match clusterstate {
+///     ClusterState::Active => { /* ... */ },
+///     ClusterState::Creating => { /* ... */ },
+///     ClusterState::Deleting => { /* ... */ },
+///     ClusterState::Failed => { /* ... */ },
+///     ClusterState::Healing => { /* ... */ },
+///     ClusterState::Maintenance => { /* ... */ },
+///     ClusterState::RebootingBroker => { /* ... */ },
+///     ClusterState::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `clusterstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ClusterState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ClusterState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ClusterState::NewFeature` is defined.
+/// Specifically, when `clusterstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ClusterState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The state of the Apache Kafka cluster.</p>
 #[non_exhaustive]
 #[derive(
@@ -4315,8 +4214,8 @@ pub enum ClusterState {
     RebootingBroker,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ClusterState {
     fn from(s: &str) -> Self {
@@ -4329,7 +4228,7 @@ impl std::convert::From<&str> for ClusterState {
             "MAINTENANCE" => ClusterState::Maintenance,
             "REBOOTING_BROKER" => ClusterState::RebootingBroker,
             "UPDATING" => ClusterState::Updating,
-            other => ClusterState::Unknown(other.to_owned()),
+            other => ClusterState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -4352,11 +4251,11 @@ impl ClusterState {
             ClusterState::Maintenance => "MAINTENANCE",
             ClusterState::RebootingBroker => "REBOOTING_BROKER",
             ClusterState::Updating => "UPDATING",
-            ClusterState::Unknown(s) => s.as_ref(),
+            ClusterState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATING",
@@ -4375,6 +4274,41 @@ impl AsRef<str> for ClusterState {
     }
 }
 
+/// When writing a match expression against `ClusterType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let clustertype = unimplemented!();
+/// match clustertype {
+///     ClusterType::Provisioned => { /* ... */ },
+///     ClusterType::Serverless => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `clustertype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ClusterType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ClusterType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ClusterType::NewFeature` is defined.
+/// Specifically, when `clustertype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ClusterType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The type of cluster.</p>
 #[non_exhaustive]
 #[derive(
@@ -4391,15 +4325,15 @@ pub enum ClusterType {
     Provisioned,
     #[allow(missing_docs)] // documentation missing in model
     Serverless,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ClusterType {
     fn from(s: &str) -> Self {
         match s {
             "PROVISIONED" => ClusterType::Provisioned,
             "SERVERLESS" => ClusterType::Serverless,
-            other => ClusterType::Unknown(other.to_owned()),
+            other => ClusterType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -4416,11 +4350,11 @@ impl ClusterType {
         match self {
             ClusterType::Provisioned => "PROVISIONED",
             ClusterType::Serverless => "SERVERLESS",
-            ClusterType::Unknown(s) => s.as_ref(),
+            ClusterType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PROVISIONED", "SERVERLESS"]
     }
 }
@@ -4432,7 +4366,7 @@ impl AsRef<str> for ClusterType {
 
 /// <p>Returns information about a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterInfo {
     /// <p>Arn of active cluster operation.</p>
     #[doc(hidden)]
@@ -4573,41 +4507,11 @@ impl ClusterInfo {
         self.zookeeper_connect_string_tls.as_deref()
     }
 }
-impl std::fmt::Debug for ClusterInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterInfo");
-        formatter.field("active_operation_arn", &self.active_operation_arn);
-        formatter.field("broker_node_group_info", &self.broker_node_group_info);
-        formatter.field("client_authentication", &self.client_authentication);
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field(
-            "current_broker_software_info",
-            &self.current_broker_software_info,
-        );
-        formatter.field("current_version", &self.current_version);
-        formatter.field("encryption_info", &self.encryption_info);
-        formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
-        formatter.field("open_monitoring", &self.open_monitoring);
-        formatter.field("logging_info", &self.logging_info);
-        formatter.field("number_of_broker_nodes", &self.number_of_broker_nodes);
-        formatter.field("state", &self.state);
-        formatter.field("state_info", &self.state_info);
-        formatter.field("tags", &self.tags);
-        formatter.field("zookeeper_connect_string", &self.zookeeper_connect_string);
-        formatter.field(
-            "zookeeper_connect_string_tls",
-            &self.zookeeper_connect_string_tls,
-        );
-        formatter.finish()
-    }
-}
 /// See [`ClusterInfo`](crate::model::ClusterInfo).
 pub mod cluster_info {
 
     /// A builder for [`ClusterInfo`](crate::model::ClusterInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_operation_arn: std::option::Option<std::string::String>,
         pub(crate) broker_node_group_info: std::option::Option<crate::model::BrokerNodeGroupInfo>,
@@ -4906,7 +4810,7 @@ impl ClusterInfo {
 
 /// <p>JMX and Node monitoring for the MSK cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenMonitoring {
     /// <p>Prometheus settings.</p>
     #[doc(hidden)]
@@ -4918,18 +4822,11 @@ impl OpenMonitoring {
         self.prometheus.as_ref()
     }
 }
-impl std::fmt::Debug for OpenMonitoring {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenMonitoring");
-        formatter.field("prometheus", &self.prometheus);
-        formatter.finish()
-    }
-}
 /// See [`OpenMonitoring`](crate::model::OpenMonitoring).
 pub mod open_monitoring {
 
     /// A builder for [`OpenMonitoring`](crate::model::OpenMonitoring).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prometheus: std::option::Option<crate::model::Prometheus>,
     }
@@ -4964,7 +4861,7 @@ impl OpenMonitoring {
 
 /// <p>Prometheus settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Prometheus {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     #[doc(hidden)]
@@ -4983,19 +4880,11 @@ impl Prometheus {
         self.node_exporter.as_ref()
     }
 }
-impl std::fmt::Debug for Prometheus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Prometheus");
-        formatter.field("jmx_exporter", &self.jmx_exporter);
-        formatter.field("node_exporter", &self.node_exporter);
-        formatter.finish()
-    }
-}
 /// See [`Prometheus`](crate::model::Prometheus).
 pub mod prometheus {
 
     /// A builder for [`Prometheus`](crate::model::Prometheus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jmx_exporter: std::option::Option<crate::model::JmxExporter>,
         pub(crate) node_exporter: std::option::Option<crate::model::NodeExporter>,
@@ -5045,7 +4934,7 @@ impl Prometheus {
 
 /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeExporter {
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     #[doc(hidden)]
@@ -5057,18 +4946,11 @@ impl NodeExporter {
         self.enabled_in_broker
     }
 }
-impl std::fmt::Debug for NodeExporter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeExporter");
-        formatter.field("enabled_in_broker", &self.enabled_in_broker);
-        formatter.finish()
-    }
-}
 /// See [`NodeExporter`](crate::model::NodeExporter).
 pub mod node_exporter {
 
     /// A builder for [`NodeExporter`](crate::model::NodeExporter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled_in_broker: std::option::Option<bool>,
     }
@@ -5100,7 +4982,7 @@ impl NodeExporter {
 
 /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JmxExporter {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     #[doc(hidden)]
@@ -5112,18 +4994,11 @@ impl JmxExporter {
         self.enabled_in_broker
     }
 }
-impl std::fmt::Debug for JmxExporter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JmxExporter");
-        formatter.field("enabled_in_broker", &self.enabled_in_broker);
-        formatter.finish()
-    }
-}
 /// See [`JmxExporter`](crate::model::JmxExporter).
 pub mod jmx_exporter {
 
     /// A builder for [`JmxExporter`](crate::model::JmxExporter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled_in_broker: std::option::Option<bool>,
     }
@@ -5155,7 +5030,7 @@ impl JmxExporter {
 
 /// <p>Returns information about a cluster operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterOperationInfo {
     /// <p>The ID of the API request that triggered this operation.</p>
     #[doc(hidden)]
@@ -5237,28 +5112,11 @@ impl ClusterOperationInfo {
         self.target_cluster_info.as_ref()
     }
 }
-impl std::fmt::Debug for ClusterOperationInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterOperationInfo");
-        formatter.field("client_request_id", &self.client_request_id);
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("error_info", &self.error_info);
-        formatter.field("operation_arn", &self.operation_arn);
-        formatter.field("operation_state", &self.operation_state);
-        formatter.field("operation_steps", &self.operation_steps);
-        formatter.field("operation_type", &self.operation_type);
-        formatter.field("source_cluster_info", &self.source_cluster_info);
-        formatter.field("target_cluster_info", &self.target_cluster_info);
-        formatter.finish()
-    }
-}
 /// See [`ClusterOperationInfo`](crate::model::ClusterOperationInfo).
 pub mod cluster_operation_info {
 
     /// A builder for [`ClusterOperationInfo`](crate::model::ClusterOperationInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_id: std::option::Option<std::string::String>,
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -5447,7 +5305,7 @@ impl ClusterOperationInfo {
 
 /// <p>Information about cluster attributes that can be updated via update APIs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MutableClusterInfo {
     /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
     #[doc(hidden)]
@@ -5534,28 +5392,11 @@ impl MutableClusterInfo {
         self.connectivity_info.as_ref()
     }
 }
-impl std::fmt::Debug for MutableClusterInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MutableClusterInfo");
-        formatter.field("broker_ebs_volume_info", &self.broker_ebs_volume_info);
-        formatter.field("configuration_info", &self.configuration_info);
-        formatter.field("number_of_broker_nodes", &self.number_of_broker_nodes);
-        formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
-        formatter.field("open_monitoring", &self.open_monitoring);
-        formatter.field("kafka_version", &self.kafka_version);
-        formatter.field("logging_info", &self.logging_info);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("client_authentication", &self.client_authentication);
-        formatter.field("encryption_info", &self.encryption_info);
-        formatter.field("connectivity_info", &self.connectivity_info);
-        formatter.finish()
-    }
-}
 /// See [`MutableClusterInfo`](crate::model::MutableClusterInfo).
 pub mod mutable_cluster_info {
 
     /// A builder for [`MutableClusterInfo`](crate::model::MutableClusterInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_ebs_volume_info:
             std::option::Option<std::vec::Vec<crate::model::BrokerEbsVolumeInfo>>,
@@ -5744,7 +5585,7 @@ impl MutableClusterInfo {
 
 /// <p>Step taken during a cluster operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterOperationStep {
     /// <p>Information about the step and its status.</p>
     #[doc(hidden)]
@@ -5763,19 +5604,11 @@ impl ClusterOperationStep {
         self.step_name.as_deref()
     }
 }
-impl std::fmt::Debug for ClusterOperationStep {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterOperationStep");
-        formatter.field("step_info", &self.step_info);
-        formatter.field("step_name", &self.step_name);
-        formatter.finish()
-    }
-}
 /// See [`ClusterOperationStep`](crate::model::ClusterOperationStep).
 pub mod cluster_operation_step {
 
     /// A builder for [`ClusterOperationStep`](crate::model::ClusterOperationStep).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) step_info: std::option::Option<crate::model::ClusterOperationStepInfo>,
         pub(crate) step_name: std::option::Option<std::string::String>,
@@ -5822,7 +5655,7 @@ impl ClusterOperationStep {
 
 /// <p>State information about the operation step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterOperationStepInfo {
     /// <p>The steps current status.</p>
     #[doc(hidden)]
@@ -5834,18 +5667,11 @@ impl ClusterOperationStepInfo {
         self.step_status.as_deref()
     }
 }
-impl std::fmt::Debug for ClusterOperationStepInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterOperationStepInfo");
-        formatter.field("step_status", &self.step_status);
-        formatter.finish()
-    }
-}
 /// See [`ClusterOperationStepInfo`](crate::model::ClusterOperationStepInfo).
 pub mod cluster_operation_step_info {
 
     /// A builder for [`ClusterOperationStepInfo`](crate::model::ClusterOperationStepInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) step_status: std::option::Option<std::string::String>,
     }
@@ -5877,7 +5703,7 @@ impl ClusterOperationStepInfo {
 
 /// <p>Returns information about an error state of the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorInfo {
     /// <p>A number describing the error programmatically.</p>
     #[doc(hidden)]
@@ -5896,19 +5722,11 @@ impl ErrorInfo {
         self.error_string.as_deref()
     }
 }
-impl std::fmt::Debug for ErrorInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorInfo");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_string", &self.error_string);
-        formatter.finish()
-    }
-}
 /// See [`ErrorInfo`](crate::model::ErrorInfo).
 pub mod error_info {
 
     /// A builder for [`ErrorInfo`](crate::model::ErrorInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_string: std::option::Option<std::string::String>,
@@ -5952,7 +5770,7 @@ impl ErrorInfo {
 
 /// <p>Contains source Apache Kafka versions and compatible target Apache Kafka versions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompatibleKafkaVersion {
     /// <p>An Apache Kafka version.</p>
     #[doc(hidden)]
@@ -5971,19 +5789,11 @@ impl CompatibleKafkaVersion {
         self.target_versions.as_deref()
     }
 }
-impl std::fmt::Debug for CompatibleKafkaVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompatibleKafkaVersion");
-        formatter.field("source_version", &self.source_version);
-        formatter.field("target_versions", &self.target_versions);
-        formatter.finish()
-    }
-}
 /// See [`CompatibleKafkaVersion`](crate::model::CompatibleKafkaVersion).
 pub mod compatible_kafka_version {
 
     /// A builder for [`CompatibleKafkaVersion`](crate::model::CompatibleKafkaVersion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_version: std::option::Option<std::string::String>,
         pub(crate) target_versions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6039,7 +5849,7 @@ impl CompatibleKafkaVersion {
 
 /// <p>Serverless cluster request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerlessRequest {
     /// <p>The configuration of the Amazon VPCs for the cluster.</p>
     #[doc(hidden)]
@@ -6060,19 +5870,11 @@ impl ServerlessRequest {
         self.client_authentication.as_ref()
     }
 }
-impl std::fmt::Debug for ServerlessRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerlessRequest");
-        formatter.field("vpc_configs", &self.vpc_configs);
-        formatter.field("client_authentication", &self.client_authentication);
-        formatter.finish()
-    }
-}
 /// See [`ServerlessRequest`](crate::model::ServerlessRequest).
 pub mod serverless_request {
 
     /// A builder for [`ServerlessRequest`](crate::model::ServerlessRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_configs: std::option::Option<std::vec::Vec<crate::model::VpcConfig>>,
         pub(crate) client_authentication:
@@ -6132,7 +5934,7 @@ impl ServerlessRequest {
 
 /// <p>Provisioned cluster request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionedRequest {
     /// <p>Information about the brokers.</p>
     #[doc(hidden)]
@@ -6204,26 +6006,11 @@ impl ProvisionedRequest {
         self.number_of_broker_nodes
     }
 }
-impl std::fmt::Debug for ProvisionedRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedRequest");
-        formatter.field("broker_node_group_info", &self.broker_node_group_info);
-        formatter.field("client_authentication", &self.client_authentication);
-        formatter.field("configuration_info", &self.configuration_info);
-        formatter.field("encryption_info", &self.encryption_info);
-        formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
-        formatter.field("open_monitoring", &self.open_monitoring);
-        formatter.field("kafka_version", &self.kafka_version);
-        formatter.field("logging_info", &self.logging_info);
-        formatter.field("number_of_broker_nodes", &self.number_of_broker_nodes);
-        formatter.finish()
-    }
-}
 /// See [`ProvisionedRequest`](crate::model::ProvisionedRequest).
 pub mod provisioned_request {
 
     /// A builder for [`ProvisionedRequest`](crate::model::ProvisionedRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_node_group_info: std::option::Option<crate::model::BrokerNodeGroupInfo>,
         pub(crate) client_authentication: std::option::Option<crate::model::ClientAuthentication>,
@@ -6375,7 +6162,7 @@ impl ProvisionedRequest {
 
 /// <p>Error info for scram secret associate/disassociate failure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnprocessedScramSecret {
     /// <p>Error code for associate/disassociate failure.</p>
     #[doc(hidden)]
@@ -6401,20 +6188,11 @@ impl UnprocessedScramSecret {
         self.secret_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UnprocessedScramSecret {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessedScramSecret");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.finish()
-    }
-}
 /// See [`UnprocessedScramSecret`](crate::model::UnprocessedScramSecret).
 pub mod unprocessed_scram_secret {
 
     /// A builder for [`UnprocessedScramSecret`](crate::model::UnprocessedScramSecret).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,

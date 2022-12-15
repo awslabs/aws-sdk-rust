@@ -5,7 +5,7 @@
 /// [`create_member`](crate::client::Client::create_member).
 ///
 /// See [`crate::client::fluent_builders::CreateMember`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMember {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMember {
 /// [`create_network`](crate::client::Client::create_network).
 ///
 /// See [`crate::client::fluent_builders::CreateNetwork`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateNetwork {
     _private: (),
 }
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetwork {
 /// [`create_node`](crate::client::Client::create_node).
 ///
 /// See [`crate::client::fluent_builders::CreateNode`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateNode {
     _private: (),
 }
@@ -101,7 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNode {
 /// [`create_proposal`](crate::client::Client::create_proposal).
 ///
 /// See [`crate::client::fluent_builders::CreateProposal`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateProposal {
     _private: (),
 }
@@ -133,7 +133,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProposal {
 /// [`delete_member`](crate::client::Client::delete_member).
 ///
 /// See [`crate::client::fluent_builders::DeleteMember`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMember {
     _private: (),
 }
@@ -165,7 +165,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMember {
 /// [`delete_node`](crate::client::Client::delete_node).
 ///
 /// See [`crate::client::fluent_builders::DeleteNode`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteNode {
     _private: (),
 }
@@ -197,7 +197,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNode {
 /// [`get_member`](crate::client::Client::get_member).
 ///
 /// See [`crate::client::fluent_builders::GetMember`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMember {
     _private: (),
 }
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMember {
 /// [`get_network`](crate::client::Client::get_network).
 ///
 /// See [`crate::client::fluent_builders::GetNetwork`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetNetwork {
     _private: (),
 }
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNetwork {
 /// [`get_node`](crate::client::Client::get_node).
 ///
 /// See [`crate::client::fluent_builders::GetNode`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetNode {
     _private: (),
 }
@@ -291,7 +291,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNode {
 /// [`get_proposal`](crate::client::Client::get_proposal).
 ///
 /// See [`crate::client::fluent_builders::GetProposal`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetProposal {
     _private: (),
 }
@@ -323,7 +323,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProposal {
 /// [`list_invitations`](crate::client::Client::list_invitations).
 ///
 /// See [`crate::client::fluent_builders::ListInvitations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListInvitations {
     _private: (),
 }
@@ -357,7 +357,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInvitations {
 /// [`list_members`](crate::client::Client::list_members).
 ///
 /// See [`crate::client::fluent_builders::ListMembers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMembers {
     _private: (),
 }
@@ -389,7 +389,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMembers {
 /// [`list_networks`](crate::client::Client::list_networks).
 ///
 /// See [`crate::client::fluent_builders::ListNetworks`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListNetworks {
     _private: (),
 }
@@ -421,7 +421,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNetworks {
 /// [`list_nodes`](crate::client::Client::list_nodes).
 ///
 /// See [`crate::client::fluent_builders::ListNodes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListNodes {
     _private: (),
 }
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNodes {
 /// [`list_proposals`](crate::client::Client::list_proposals).
 ///
 /// See [`crate::client::fluent_builders::ListProposals`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProposals {
     _private: (),
 }
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProposals {
 /// [`list_proposal_votes`](crate::client::Client::list_proposal_votes).
 ///
 /// See [`crate::client::fluent_builders::ListProposalVotes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProposalVotes {
     _private: (),
 }
@@ -518,7 +518,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProposalVotes {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -552,7 +552,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`reject_invitation`](crate::client::Client::reject_invitation).
 ///
 /// See [`crate::client::fluent_builders::RejectInvitation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RejectInvitation {
     _private: (),
 }
@@ -586,7 +586,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectInvitation {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -618,7 +618,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -650,7 +650,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_member`](crate::client::Client::update_member).
 ///
 /// See [`crate::client::fluent_builders::UpdateMember`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateMember {
     _private: (),
 }
@@ -682,7 +682,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMember {
 /// [`update_node`](crate::client::Client::update_node).
 ///
 /// See [`crate::client::fluent_builders::UpdateNode`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateNode {
     _private: (),
 }
@@ -714,7 +714,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNode {
 /// [`vote_on_proposal`](crate::client::Client::vote_on_proposal).
 ///
 /// See [`crate::client::fluent_builders::VoteOnProposal`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct VoteOnProposal {
     _private: (),
 }

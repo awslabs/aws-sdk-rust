@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_repository_input {
 
     /// A builder for [`AssociateRepositoryInput`](crate::input::AssociateRepositoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository: std::option::Option<crate::model::Repository>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -98,8 +98,10 @@ pub mod associate_repository_input {
         /// Consumes the builder and constructs a [`AssociateRepositoryInput`](crate::input::AssociateRepositoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AssociateRepositoryInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AssociateRepositoryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AssociateRepositoryInput {
                 repository: self.repository,
                 client_request_token: self.client_request_token,
@@ -122,7 +124,7 @@ impl AssociateRepositoryInput {
             crate::operation::AssociateRepository,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -131,7 +133,7 @@ impl AssociateRepositoryInput {
             fn uri_base(
                 _input: &crate::input::AssociateRepositoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/associations").expect("formatting should succeed");
                 Ok(())
             }
@@ -139,8 +141,10 @@ impl AssociateRepositoryInput {
             fn update_http_builder(
                 input: &crate::input::AssociateRepositoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -224,7 +228,7 @@ impl AssociateRepositoryInput {
 pub mod create_code_review_input {
 
     /// A builder for [`CreateCodeReviewInput`](crate::input::CreateCodeReviewInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) repository_association_arn: std::option::Option<std::string::String>,
@@ -286,8 +290,10 @@ pub mod create_code_review_input {
         /// Consumes the builder and constructs a [`CreateCodeReviewInput`](crate::input::CreateCodeReviewInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateCodeReviewInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateCodeReviewInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateCodeReviewInput {
                 name: self.name,
                 repository_association_arn: self.repository_association_arn,
@@ -310,7 +316,7 @@ impl CreateCodeReviewInput {
             crate::operation::CreateCodeReview,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -319,7 +325,7 @@ impl CreateCodeReviewInput {
             fn uri_base(
                 _input: &crate::input::CreateCodeReviewInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/codereviews").expect("formatting should succeed");
                 Ok(())
             }
@@ -327,8 +333,10 @@ impl CreateCodeReviewInput {
             fn update_http_builder(
                 input: &crate::input::CreateCodeReviewInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -412,7 +420,7 @@ impl CreateCodeReviewInput {
 pub mod describe_code_review_input {
 
     /// A builder for [`DescribeCodeReviewInput`](crate::input::DescribeCodeReviewInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_review_arn: std::option::Option<std::string::String>,
     }
@@ -433,8 +441,10 @@ pub mod describe_code_review_input {
         /// Consumes the builder and constructs a [`DescribeCodeReviewInput`](crate::input::DescribeCodeReviewInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeCodeReviewInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeCodeReviewInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeCodeReviewInput {
                 code_review_arn: self.code_review_arn,
             })
@@ -454,26 +464,31 @@ impl DescribeCodeReviewInput {
             crate::operation::DescribeCodeReview,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeCodeReviewInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.code_review_arn;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "code_review_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let code_review_arn = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "code_review_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let code_review_arn = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if code_review_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "code_review_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "code_review_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -487,8 +502,10 @@ impl DescribeCodeReviewInput {
             fn update_http_builder(
                 input: &crate::input::DescribeCodeReviewInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -558,7 +575,7 @@ impl DescribeCodeReviewInput {
 pub mod describe_recommendation_feedback_input {
 
     /// A builder for [`DescribeRecommendationFeedbackInput`](crate::input::DescribeRecommendationFeedbackInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_review_arn: std::option::Option<std::string::String>,
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
@@ -608,7 +625,7 @@ pub mod describe_recommendation_feedback_input {
             self,
         ) -> Result<
             crate::input::DescribeRecommendationFeedbackInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeRecommendationFeedbackInput {
                 code_review_arn: self.code_review_arn,
@@ -631,26 +648,31 @@ impl DescribeRecommendationFeedbackInput {
             crate::operation::DescribeRecommendationFeedback,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeRecommendationFeedbackInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.code_review_arn;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "code_review_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let code_review_arn = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "code_review_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let code_review_arn = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if code_review_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "code_review_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "code_review_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -663,16 +685,31 @@ impl DescribeRecommendationFeedbackInput {
             fn uri_query(
                 _input: &crate::input::DescribeRecommendationFeedbackInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_3) = &_input.recommendation_id {
-                    query.push_kv(
-                        "RecommendationId",
-                        &aws_smithy_http::query::fmt_string(&inner_3),
+                let inner_3 = &_input.recommendation_id;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "recommendation_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_3.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "recommendation_id",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "RecommendationId",
+                    &aws_smithy_http::query::fmt_string(&inner_3),
+                );
                 if let Some(inner_4) = &_input.user_id {
-                    query.push_kv("UserId", &aws_smithy_http::query::fmt_string(&inner_4));
+                    {
+                        query.push_kv("UserId", &aws_smithy_http::query::fmt_string(&inner_4));
+                    }
                 }
                 Ok(())
             }
@@ -680,8 +717,10 @@ impl DescribeRecommendationFeedbackInput {
             fn update_http_builder(
                 input: &crate::input::DescribeRecommendationFeedbackInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -752,7 +791,7 @@ impl DescribeRecommendationFeedbackInput {
 pub mod describe_repository_association_input {
 
     /// A builder for [`DescribeRepositoryAssociationInput`](crate::input::DescribeRepositoryAssociationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_arn: std::option::Option<std::string::String>,
     }
@@ -775,7 +814,7 @@ pub mod describe_repository_association_input {
             self,
         ) -> Result<
             crate::input::DescribeRepositoryAssociationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeRepositoryAssociationInput {
                 association_arn: self.association_arn,
@@ -796,26 +835,31 @@ impl DescribeRepositoryAssociationInput {
             crate::operation::DescribeRepositoryAssociation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeRepositoryAssociationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.association_arn;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "association_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let association_arn = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "association_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let association_arn = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if association_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "association_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "association_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -829,8 +873,10 @@ impl DescribeRepositoryAssociationInput {
             fn update_http_builder(
                 input: &crate::input::DescribeRepositoryAssociationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -900,7 +946,7 @@ impl DescribeRepositoryAssociationInput {
 pub mod disassociate_repository_input {
 
     /// A builder for [`DisassociateRepositoryInput`](crate::input::DisassociateRepositoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_arn: std::option::Option<std::string::String>,
     }
@@ -921,8 +967,10 @@ pub mod disassociate_repository_input {
         /// Consumes the builder and constructs a [`DisassociateRepositoryInput`](crate::input::DisassociateRepositoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisassociateRepositoryInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DisassociateRepositoryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DisassociateRepositoryInput {
                 association_arn: self.association_arn,
             })
@@ -942,26 +990,31 @@ impl DisassociateRepositoryInput {
             crate::operation::DisassociateRepository,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateRepositoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.association_arn;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "association_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let association_arn = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "association_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let association_arn = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if association_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "association_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "association_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -975,8 +1028,10 @@ impl DisassociateRepositoryInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateRepositoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1046,7 +1101,7 @@ impl DisassociateRepositoryInput {
 pub mod list_code_reviews_input {
 
     /// A builder for [`ListCodeReviewsInput`](crate::input::ListCodeReviewsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider_types: std::option::Option<std::vec::Vec<crate::model::ProviderType>>,
         pub(crate) states: std::option::Option<std::vec::Vec<crate::model::JobState>>,
@@ -1160,7 +1215,7 @@ pub mod list_code_reviews_input {
         /// Consumes the builder and constructs a [`ListCodeReviewsInput`](crate::input::ListCodeReviewsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListCodeReviewsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListCodeReviewsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListCodeReviewsInput {
                 provider_types: self.provider_types,
@@ -1186,53 +1241,68 @@ impl ListCodeReviewsInput {
             crate::operation::ListCodeReviews,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListCodeReviewsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/codereviews").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListCodeReviewsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_7) = &_input.provider_types {
-                    for inner_8 in inner_7 {
-                        query.push_kv(
-                            "ProviderTypes",
-                            &aws_smithy_http::query::fmt_string(&inner_8),
-                        );
+                    {
+                        for inner_8 in inner_7 {
+                            query.push_kv(
+                                "ProviderTypes",
+                                &aws_smithy_http::query::fmt_string(&inner_8),
+                            );
+                        }
                     }
                 }
                 if let Some(inner_9) = &_input.states {
-                    for inner_10 in inner_9 {
-                        query.push_kv("States", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        for inner_10 in inner_9 {
+                            query.push_kv("States", &aws_smithy_http::query::fmt_string(&inner_10));
+                        }
                     }
                 }
                 if let Some(inner_11) = &_input.repository_names {
-                    for inner_12 in inner_11 {
+                    {
+                        for inner_12 in inner_11 {
+                            query.push_kv(
+                                "RepositoryNames",
+                                &aws_smithy_http::query::fmt_string(&inner_12),
+                            );
+                        }
+                    }
+                }
+                let inner_13 = &_input.r#type;
+                let inner_13 = inner_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "r#type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv("Type", &aws_smithy_http::query::fmt_string(&inner_13));
+                if let Some(inner_14) = &_input.max_results {
+                    if *inner_14 != 0 {
                         query.push_kv(
-                            "RepositoryNames",
-                            &aws_smithy_http::query::fmt_string(&inner_12),
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
                         );
                     }
                 }
-                if let Some(inner_13) = &_input.r#type {
-                    query.push_kv("Type", &aws_smithy_http::query::fmt_string(&inner_13));
-                }
-                if let Some(inner_14) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
-                    );
-                }
                 if let Some(inner_15) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_15));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_15));
+                    }
                 }
                 Ok(())
             }
@@ -1240,8 +1310,10 @@ impl ListCodeReviewsInput {
             fn update_http_builder(
                 input: &crate::input::ListCodeReviewsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1312,7 +1384,7 @@ impl ListCodeReviewsInput {
 pub mod list_recommendation_feedback_input {
 
     /// A builder for [`ListRecommendationFeedbackInput`](crate::input::ListRecommendationFeedbackInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1399,7 +1471,7 @@ pub mod list_recommendation_feedback_input {
             self,
         ) -> Result<
             crate::input::ListRecommendationFeedbackInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListRecommendationFeedbackInput {
                 next_token: self.next_token,
@@ -1424,26 +1496,31 @@ impl ListRecommendationFeedbackInput {
             crate::operation::ListRecommendationFeedback,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRecommendationFeedbackInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_16 = &_input.code_review_arn;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "code_review_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let code_review_arn = aws_smithy_http::label::fmt_string(input_16, false);
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "code_review_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let code_review_arn = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if code_review_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "code_review_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "code_review_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1456,28 +1533,37 @@ impl ListRecommendationFeedbackInput {
             fn uri_query(
                 _input: &crate::input::ListRecommendationFeedbackInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_17) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_17));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_17));
+                    }
                 }
                 if let Some(inner_18) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
-                    );
+                    if *inner_18 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_19) = &_input.user_ids {
-                    for inner_20 in inner_19 {
-                        query.push_kv("UserIds", &aws_smithy_http::query::fmt_string(&inner_20));
+                    {
+                        for inner_20 in inner_19 {
+                            query
+                                .push_kv("UserIds", &aws_smithy_http::query::fmt_string(&inner_20));
+                        }
                     }
                 }
                 if let Some(inner_21) = &_input.recommendation_ids {
-                    for inner_22 in inner_21 {
-                        query.push_kv(
-                            "RecommendationIds",
-                            &aws_smithy_http::query::fmt_string(&inner_22),
-                        );
+                    {
+                        for inner_22 in inner_21 {
+                            query.push_kv(
+                                "RecommendationIds",
+                                &aws_smithy_http::query::fmt_string(&inner_22),
+                            );
+                        }
                     }
                 }
                 Ok(())
@@ -1486,8 +1572,10 @@ impl ListRecommendationFeedbackInput {
             fn update_http_builder(
                 input: &crate::input::ListRecommendationFeedbackInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1558,7 +1646,7 @@ impl ListRecommendationFeedbackInput {
 pub mod list_recommendations_input {
 
     /// A builder for [`ListRecommendationsInput`](crate::input::ListRecommendationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1601,8 +1689,10 @@ pub mod list_recommendations_input {
         /// Consumes the builder and constructs a [`ListRecommendationsInput`](crate::input::ListRecommendationsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRecommendationsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListRecommendationsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListRecommendationsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -1624,26 +1714,31 @@ impl ListRecommendationsInput {
             crate::operation::ListRecommendations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRecommendationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_23 = &_input.code_review_arn;
-                let input_23 = input_23.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "code_review_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let code_review_arn = aws_smithy_http::label::fmt_string(input_23, false);
+                let input_23 = input_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "code_review_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let code_review_arn = aws_smithy_http::label::fmt_string(
+                    input_23,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if code_review_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "code_review_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "code_review_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1656,16 +1751,20 @@ impl ListRecommendationsInput {
             fn uri_query(
                 _input: &crate::input::ListRecommendationsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_24) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_24));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_24));
+                    }
                 }
                 if let Some(inner_25) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_25).encode(),
-                    );
+                    if *inner_25 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_25).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1673,8 +1772,10 @@ impl ListRecommendationsInput {
             fn update_http_builder(
                 input: &crate::input::ListRecommendationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1745,7 +1846,7 @@ impl ListRecommendationsInput {
 pub mod list_repository_associations_input {
 
     /// A builder for [`ListRepositoryAssociationsInput`](crate::input::ListRepositoryAssociationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider_types: std::option::Option<std::vec::Vec<crate::model::ProviderType>>,
         pub(crate) states:
@@ -1889,7 +1990,7 @@ pub mod list_repository_associations_input {
             self,
         ) -> Result<
             crate::input::ListRepositoryAssociationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListRepositoryAssociationsInput {
                 provider_types: self.provider_types,
@@ -1915,52 +2016,64 @@ impl ListRepositoryAssociationsInput {
             crate::operation::ListRepositoryAssociations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRepositoryAssociationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/associations").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListRepositoryAssociationsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_26) = &_input.provider_types {
-                    for inner_27 in inner_26 {
-                        query.push_kv(
-                            "ProviderType",
-                            &aws_smithy_http::query::fmt_string(&inner_27),
-                        );
+                    {
+                        for inner_27 in inner_26 {
+                            query.push_kv(
+                                "ProviderType",
+                                &aws_smithy_http::query::fmt_string(&inner_27),
+                            );
+                        }
                     }
                 }
                 if let Some(inner_28) = &_input.states {
-                    for inner_29 in inner_28 {
-                        query.push_kv("State", &aws_smithy_http::query::fmt_string(&inner_29));
+                    {
+                        for inner_29 in inner_28 {
+                            query.push_kv("State", &aws_smithy_http::query::fmt_string(&inner_29));
+                        }
                     }
                 }
                 if let Some(inner_30) = &_input.names {
-                    for inner_31 in inner_30 {
-                        query.push_kv("Name", &aws_smithy_http::query::fmt_string(&inner_31));
+                    {
+                        for inner_31 in inner_30 {
+                            query.push_kv("Name", &aws_smithy_http::query::fmt_string(&inner_31));
+                        }
                     }
                 }
                 if let Some(inner_32) = &_input.owners {
-                    for inner_33 in inner_32 {
-                        query.push_kv("Owner", &aws_smithy_http::query::fmt_string(&inner_33));
+                    {
+                        for inner_33 in inner_32 {
+                            query.push_kv("Owner", &aws_smithy_http::query::fmt_string(&inner_33));
+                        }
                     }
                 }
                 if let Some(inner_34) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_34).encode(),
-                    );
+                    if *inner_34 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_34).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_35) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+                    }
                 }
                 Ok(())
             }
@@ -1968,8 +2081,10 @@ impl ListRepositoryAssociationsInput {
             fn update_http_builder(
                 input: &crate::input::ListRepositoryAssociationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2040,7 +2155,7 @@ impl ListRepositoryAssociationsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2058,8 +2173,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -2079,26 +2196,31 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_36 = &_input.resource_arn;
-                let input_36 = input_36.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_36, false);
+                let input_36 = input_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_36,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -2108,8 +2230,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2179,7 +2303,7 @@ impl ListTagsForResourceInput {
 pub mod put_recommendation_feedback_input {
 
     /// A builder for [`PutRecommendationFeedbackInput`](crate::input::PutRecommendationFeedbackInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_review_arn: std::option::Option<std::string::String>,
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
@@ -2236,7 +2360,7 @@ pub mod put_recommendation_feedback_input {
             self,
         ) -> Result<
             crate::input::PutRecommendationFeedbackInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutRecommendationFeedbackInput {
                 code_review_arn: self.code_review_arn,
@@ -2259,13 +2383,13 @@ impl PutRecommendationFeedbackInput {
             crate::operation::PutRecommendationFeedback,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutRecommendationFeedbackInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/feedback").expect("formatting should succeed");
                 Ok(())
             }
@@ -2273,8 +2397,10 @@ impl PutRecommendationFeedbackInput {
             fn update_http_builder(
                 input: &crate::input::PutRecommendationFeedbackInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -2360,7 +2486,7 @@ impl PutRecommendationFeedbackInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -2414,7 +2540,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2436,26 +2562,31 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_37 = &_input.resource_arn;
-                let input_37 = input_37.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_37, false);
+                let input_37 = input_37.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_37,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -2465,8 +2596,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2550,7 +2683,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2588,7 +2721,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2610,26 +2743,31 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_38 = &_input.resource_arn;
-                let input_38 = input_38.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_38, false);
+                let input_38 = input_38.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_38,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -2638,12 +2776,17 @@ impl UntagResourceInput {
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_39) = &_input.tag_keys {
-                    for inner_40 in inner_39 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_40));
-                    }
+                let inner_39 = &_input.tag_keys;
+                let inner_39 = inner_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_40 in inner_39 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_40));
                 }
                 Ok(())
             }
@@ -2651,8 +2794,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2721,7 +2866,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     #[doc(hidden)]
@@ -2740,18 +2885,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     #[doc(hidden)]
@@ -2782,18 +2919,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecommendationFeedbackInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     #[doc(hidden)]
@@ -2819,19 +2948,10 @@ impl PutRecommendationFeedbackInput {
         self.reactions.as_deref()
     }
 }
-impl std::fmt::Debug for PutRecommendationFeedbackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRecommendationFeedbackInput");
-        formatter.field("code_review_arn", &self.code_review_arn);
-        formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("reactions", &self.reactions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     #[doc(hidden)]
@@ -2843,17 +2963,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRepositoryAssociationsInput {
     /// <p>List of provider types to use as a filter.</p>
     #[doc(hidden)]
@@ -2932,22 +3045,10 @@ impl ListRepositoryAssociationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRepositoryAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRepositoryAssociationsInput");
-        formatter.field("provider_types", &self.provider_types);
-        formatter.field("states", &self.states);
-        formatter.field("names", &self.names);
-        formatter.field("owners", &self.owners);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecommendationsInput {
     /// <p>Pagination token.</p>
     #[doc(hidden)]
@@ -2973,19 +3074,10 @@ impl ListRecommendationsInput {
         self.code_review_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRecommendationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("code_review_arn", &self.code_review_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRecommendationFeedbackInput {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     #[doc(hidden)]
@@ -3027,21 +3119,10 @@ impl ListRecommendationFeedbackInput {
         self.recommendation_ids.as_deref()
     }
 }
-impl std::fmt::Debug for ListRecommendationFeedbackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRecommendationFeedbackInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("code_review_arn", &self.code_review_arn);
-        formatter.field("user_ids", &self.user_ids);
-        formatter.field("recommendation_ids", &self.recommendation_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCodeReviewsInput {
     /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
     #[doc(hidden)]
@@ -3102,22 +3183,10 @@ impl ListCodeReviewsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCodeReviewsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCodeReviewsInput");
-        formatter.field("provider_types", &self.provider_types);
-        formatter.field("states", &self.states);
-        formatter.field("repository_names", &self.repository_names);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateRepositoryInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     #[doc(hidden)]
@@ -3129,17 +3198,10 @@ impl DisassociateRepositoryInput {
         self.association_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateRepositoryInput");
-        formatter.field("association_arn", &self.association_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRepositoryAssociationInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     #[doc(hidden)]
@@ -3151,17 +3213,10 @@ impl DescribeRepositoryAssociationInput {
         self.association_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRepositoryAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRepositoryAssociationInput");
-        formatter.field("association_arn", &self.association_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRecommendationFeedbackInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     #[doc(hidden)]
@@ -3189,19 +3244,10 @@ impl DescribeRecommendationFeedbackInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRecommendationFeedbackInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRecommendationFeedbackInput");
-        formatter.field("code_review_arn", &self.code_review_arn);
-        formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCodeReviewInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     #[doc(hidden)]
@@ -3213,17 +3259,10 @@ impl DescribeCodeReviewInput {
         self.code_review_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCodeReviewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCodeReviewInput");
-        formatter.field("code_review_arn", &self.code_review_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCodeReviewInput {
     /// <p>The name of the code review. The name of each code review in your Amazon Web Services account must be unique.</p>
     #[doc(hidden)]
@@ -3258,23 +3297,10 @@ impl CreateCodeReviewInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCodeReviewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCodeReviewInput");
-        formatter.field("name", &self.name);
-        formatter.field(
-            "repository_association_arn",
-            &self.repository_association_arn,
-        );
-        formatter.field("r#type", &self.r#type);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateRepositoryInput {
     /// <p>The repository to associate.</p>
     #[doc(hidden)]
@@ -3325,15 +3351,5 @@ impl AssociateRepositoryInput {
     /// </ul>
     pub fn kms_key_details(&self) -> std::option::Option<&crate::model::KmsKeyDetails> {
         self.kms_key_details.as_ref()
-    }
-}
-impl std::fmt::Debug for AssociateRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateRepositoryInput");
-        formatter.field("repository", &self.repository);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("tags", &self.tags);
-        formatter.field("kms_key_details", &self.kms_key_details);
-        formatter.finish()
     }
 }

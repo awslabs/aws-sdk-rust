@@ -2,6 +2,6 @@
   "name": "imds-disabled",
   "docs": "when IMDS is disabled by an environment variable, it shouldn't be used as part of the default chain",
   "result": {
-    "ErrorContains": "The credential provider was not enabled"
+    "ErrorContains": "the credential provider was not enabled"
   }
 }

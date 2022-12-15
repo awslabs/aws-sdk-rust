@@ -2,7 +2,7 @@
 
 /// <p>Provides additional information about an error that was returned by the service. See the <code>errorCode</code> and <code>errorDetails</code> members for more information about the error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageGatewayError {
     /// <p>Additional information about the error.</p>
     #[doc(hidden)]
@@ -25,19 +25,11 @@ impl StorageGatewayError {
         self.error_details.as_ref()
     }
 }
-impl std::fmt::Debug for StorageGatewayError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageGatewayError");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_details", &self.error_details);
-        formatter.finish()
-    }
-}
 /// See [`StorageGatewayError`](crate::model::StorageGatewayError).
 pub mod storage_gateway_error {
 
     /// A builder for [`StorageGatewayError`](crate::model::StorageGatewayError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
         pub(crate) error_details: std::option::Option<
@@ -99,6 +91,101 @@ impl StorageGatewayError {
     }
 }
 
+/// When writing a match expression against `ErrorCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let errorcode = unimplemented!();
+/// match errorcode {
+///     ErrorCode::ActivationKeyExpired => { /* ... */ },
+///     ErrorCode::ActivationKeyInvalid => { /* ... */ },
+///     ErrorCode::ActivationKeyNotFound => { /* ... */ },
+///     ErrorCode::AuthenticationFailure => { /* ... */ },
+///     ErrorCode::BandwidthThrottleScheduleNotFound => { /* ... */ },
+///     ErrorCode::Blocked => { /* ... */ },
+///     ErrorCode::CannotExportSnapshot => { /* ... */ },
+///     ErrorCode::ChapCredentialNotFound => { /* ... */ },
+///     ErrorCode::DiskAlreadyAllocated => { /* ... */ },
+///     ErrorCode::DiskDoesNotExist => { /* ... */ },
+///     ErrorCode::DiskSizeGreaterThanVolumeMaxSize => { /* ... */ },
+///     ErrorCode::DiskSizeLessThanVolumeSize => { /* ... */ },
+///     ErrorCode::DiskSizeNotGigAligned => { /* ... */ },
+///     ErrorCode::DuplicateCertificateInfo => { /* ... */ },
+///     ErrorCode::DuplicateSchedule => { /* ... */ },
+///     ErrorCode::EndpointNotFound => { /* ... */ },
+///     ErrorCode::GatewayInternalError => { /* ... */ },
+///     ErrorCode::GatewayNotConnected => { /* ... */ },
+///     ErrorCode::GatewayNotFound => { /* ... */ },
+///     ErrorCode::GatewayProxyNetworkConnectionBusy => { /* ... */ },
+///     ErrorCode::IamNotSupported => { /* ... */ },
+///     ErrorCode::InitiatorInvalid => { /* ... */ },
+///     ErrorCode::InitiatorNotFound => { /* ... */ },
+///     ErrorCode::InternalError => { /* ... */ },
+///     ErrorCode::InvalidEndpoint => { /* ... */ },
+///     ErrorCode::InvalidGateway => { /* ... */ },
+///     ErrorCode::InvalidParameters => { /* ... */ },
+///     ErrorCode::InvalidSchedule => { /* ... */ },
+///     ErrorCode::JoinDomainInProgress => { /* ... */ },
+///     ErrorCode::LocalStorageLimitExceeded => { /* ... */ },
+///     ErrorCode::LunAlreadyAllocated => { /* ... */ },
+///     ErrorCode::LunInvalid => { /* ... */ },
+///     ErrorCode::MaximumContentLengthExceeded => { /* ... */ },
+///     ErrorCode::MaximumTapeCartridgeCountExceeded => { /* ... */ },
+///     ErrorCode::MaximumVolumeCountExceeded => { /* ... */ },
+///     ErrorCode::NetworkConfigurationChanged => { /* ... */ },
+///     ErrorCode::NoDisksAvailable => { /* ... */ },
+///     ErrorCode::NotImplemented => { /* ... */ },
+///     ErrorCode::NotSupported => { /* ... */ },
+///     ErrorCode::OperationAborted => { /* ... */ },
+///     ErrorCode::OutdatedGateway => { /* ... */ },
+///     ErrorCode::ParametersNotImplemented => { /* ... */ },
+///     ErrorCode::RegionInvalid => { /* ... */ },
+///     ErrorCode::RequestTimeout => { /* ... */ },
+///     ErrorCode::ServiceUnavailable => { /* ... */ },
+///     ErrorCode::SnapshotDeleted => { /* ... */ },
+///     ErrorCode::SnapshotIdInvalid => { /* ... */ },
+///     ErrorCode::SnapshotInProgress => { /* ... */ },
+///     ErrorCode::SnapshotNotFound => { /* ... */ },
+///     ErrorCode::SnapshotScheduleNotFound => { /* ... */ },
+///     ErrorCode::StagingAreaFull => { /* ... */ },
+///     ErrorCode::StorageFailure => { /* ... */ },
+///     ErrorCode::TapeCartridgeNotFound => { /* ... */ },
+///     ErrorCode::TargetAlreadyExists => { /* ... */ },
+///     ErrorCode::TargetInvalid => { /* ... */ },
+///     ErrorCode::TargetNotFound => { /* ... */ },
+///     ErrorCode::UnauthorizedOperation => { /* ... */ },
+///     ErrorCode::VolumeAlreadyExists => { /* ... */ },
+///     ErrorCode::VolumeIdInvalid => { /* ... */ },
+///     ErrorCode::VolumeInUse => { /* ... */ },
+///     ErrorCode::VolumeNotFound => { /* ... */ },
+///     ErrorCode::VolumeNotReady => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `errorcode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ErrorCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ErrorCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ErrorCode::NewFeature` is defined.
+/// Specifically, when `errorcode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -235,8 +322,8 @@ pub enum ErrorCode {
     VolumeNotFound,
     #[allow(missing_docs)] // documentation missing in model
     VolumeNotReady,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
@@ -303,7 +390,7 @@ impl std::convert::From<&str> for ErrorCode {
             "VolumeInUse" => ErrorCode::VolumeInUse,
             "VolumeNotFound" => ErrorCode::VolumeNotFound,
             "VolumeNotReady" => ErrorCode::VolumeNotReady,
-            other => ErrorCode::Unknown(other.to_owned()),
+            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -380,11 +467,11 @@ impl ErrorCode {
             ErrorCode::VolumeInUse => "VolumeInUse",
             ErrorCode::VolumeNotFound => "VolumeNotFound",
             ErrorCode::VolumeNotReady => "VolumeNotReady",
-            ErrorCode::Unknown(s) => s.as_ref(),
+            ErrorCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ActivationKeyExpired",
             "ActivationKeyInvalid",
@@ -459,7 +546,7 @@ impl AsRef<str> for ErrorCode {
 
 /// <p>A key-value pair that helps you manage, filter, and search for your resource. Allowed characters: letters, white space, and numbers, representable in UTF-8, and the following characters: + - = . _ : /.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>Tag key. The key can't start with aws:.</p>
     #[doc(hidden)]
@@ -478,19 +565,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -532,6 +611,42 @@ impl Tag {
     }
 }
 
+/// When writing a match expression against `SmbSecurityStrategy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let smbsecuritystrategy = unimplemented!();
+/// match smbsecuritystrategy {
+///     SmbSecurityStrategy::ClientSpecified => { /* ... */ },
+///     SmbSecurityStrategy::MandatoryEncryption => { /* ... */ },
+///     SmbSecurityStrategy::MandatorySigning => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `smbsecuritystrategy` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SmbSecurityStrategy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SmbSecurityStrategy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SmbSecurityStrategy::NewFeature` is defined.
+/// Specifically, when `smbsecuritystrategy` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SmbSecurityStrategy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -550,8 +665,8 @@ pub enum SmbSecurityStrategy {
     MandatoryEncryption,
     #[allow(missing_docs)] // documentation missing in model
     MandatorySigning,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SmbSecurityStrategy {
     fn from(s: &str) -> Self {
@@ -559,7 +674,9 @@ impl std::convert::From<&str> for SmbSecurityStrategy {
             "ClientSpecified" => SmbSecurityStrategy::ClientSpecified,
             "MandatoryEncryption" => SmbSecurityStrategy::MandatoryEncryption,
             "MandatorySigning" => SmbSecurityStrategy::MandatorySigning,
-            other => SmbSecurityStrategy::Unknown(other.to_owned()),
+            other => {
+                SmbSecurityStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -577,11 +694,11 @@ impl SmbSecurityStrategy {
             SmbSecurityStrategy::ClientSpecified => "ClientSpecified",
             SmbSecurityStrategy::MandatoryEncryption => "MandatoryEncryption",
             SmbSecurityStrategy::MandatorySigning => "MandatorySigning",
-            SmbSecurityStrategy::Unknown(s) => s.as_ref(),
+            SmbSecurityStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ClientSpecified", "MandatoryEncryption", "MandatorySigning"]
     }
 }
@@ -593,7 +710,7 @@ impl AsRef<str> for SmbSecurityStrategy {
 
 /// <p>A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmbLocalGroups {
     /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p>
     /// <p>Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to force-close files that are open and locked.</p>
@@ -607,18 +724,11 @@ impl SmbLocalGroups {
         self.gateway_admins.as_deref()
     }
 }
-impl std::fmt::Debug for SmbLocalGroups {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmbLocalGroups");
-        formatter.field("gateway_admins", &self.gateway_admins);
-        formatter.finish()
-    }
-}
 /// See [`SmbLocalGroups`](crate::model::SmbLocalGroups).
 pub mod smb_local_groups {
 
     /// A builder for [`SmbLocalGroups`](crate::model::SmbLocalGroups).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_admins: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -661,7 +771,7 @@ impl SmbLocalGroups {
 
 /// <p>The refresh cache information for the file share or FSx file systems.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CacheAttributes {
     /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p>
     /// <p>Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
@@ -675,21 +785,11 @@ impl CacheAttributes {
         self.cache_stale_timeout_in_seconds
     }
 }
-impl std::fmt::Debug for CacheAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CacheAttributes");
-        formatter.field(
-            "cache_stale_timeout_in_seconds",
-            &self.cache_stale_timeout_in_seconds,
-        );
-        formatter.finish()
-    }
-}
 /// See [`CacheAttributes`](crate::model::CacheAttributes).
 pub mod cache_attributes {
 
     /// A builder for [`CacheAttributes`](crate::model::CacheAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_stale_timeout_in_seconds: std::option::Option<i32>,
     }
@@ -724,6 +824,41 @@ impl CacheAttributes {
     }
 }
 
+/// When writing a match expression against `CaseSensitivity`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let casesensitivity = unimplemented!();
+/// match casesensitivity {
+///     CaseSensitivity::CaseSensitive => { /* ... */ },
+///     CaseSensitivity::ClientSpecified => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `casesensitivity` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CaseSensitivity::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CaseSensitivity::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CaseSensitivity::NewFeature` is defined.
+/// Specifically, when `casesensitivity` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CaseSensitivity::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -740,15 +875,15 @@ pub enum CaseSensitivity {
     CaseSensitive,
     #[allow(missing_docs)] // documentation missing in model
     ClientSpecified,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CaseSensitivity {
     fn from(s: &str) -> Self {
         match s {
             "CaseSensitive" => CaseSensitivity::CaseSensitive,
             "ClientSpecified" => CaseSensitivity::ClientSpecified,
-            other => CaseSensitivity::Unknown(other.to_owned()),
+            other => CaseSensitivity::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -765,11 +900,11 @@ impl CaseSensitivity {
         match self {
             CaseSensitivity::CaseSensitive => "CaseSensitive",
             CaseSensitivity::ClientSpecified => "ClientSpecified",
-            CaseSensitivity::Unknown(s) => s.as_ref(),
+            CaseSensitivity::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CaseSensitive", "ClientSpecified"]
     }
 }
@@ -779,6 +914,46 @@ impl AsRef<str> for CaseSensitivity {
     }
 }
 
+/// When writing a match expression against `ObjectAcl`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let objectacl = unimplemented!();
+/// match objectacl {
+///     ObjectAcl::AuthenticatedRead => { /* ... */ },
+///     ObjectAcl::AwsExecRead => { /* ... */ },
+///     ObjectAcl::BucketOwnerFullControl => { /* ... */ },
+///     ObjectAcl::BucketOwnerRead => { /* ... */ },
+///     ObjectAcl::Private => { /* ... */ },
+///     ObjectAcl::PublicRead => { /* ... */ },
+///     ObjectAcl::PublicReadWrite => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `objectacl` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ObjectAcl::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ObjectAcl::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ObjectAcl::NewFeature` is defined.
+/// Specifically, when `objectacl` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ObjectAcl::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
 /// that an S3 File Gateway puts objects into. The default value is
 /// <code>private</code>.</p>
@@ -807,8 +982,8 @@ pub enum ObjectAcl {
     PublicRead,
     #[allow(missing_docs)] // documentation missing in model
     PublicReadWrite,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ObjectAcl {
     fn from(s: &str) -> Self {
@@ -820,7 +995,7 @@ impl std::convert::From<&str> for ObjectAcl {
             "private" => ObjectAcl::Private,
             "public-read" => ObjectAcl::PublicRead,
             "public-read-write" => ObjectAcl::PublicReadWrite,
-            other => ObjectAcl::Unknown(other.to_owned()),
+            other => ObjectAcl::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -842,11 +1017,11 @@ impl ObjectAcl {
             ObjectAcl::Private => "private",
             ObjectAcl::PublicRead => "public-read",
             ObjectAcl::PublicReadWrite => "public-read-write",
-            ObjectAcl::Unknown(s) => s.as_ref(),
+            ObjectAcl::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "authenticated-read",
             "aws-exec-read",
@@ -866,7 +1041,7 @@ impl AsRef<str> for ObjectAcl {
 
 /// <p>Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for S3 File Gateways.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NfsFileShareDefaults {
     /// <p>The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode inside the file share. The default value is <code>0666</code>.</p>
     #[doc(hidden)]
@@ -899,21 +1074,11 @@ impl NfsFileShareDefaults {
         self.owner_id
     }
 }
-impl std::fmt::Debug for NfsFileShareDefaults {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NfsFileShareDefaults");
-        formatter.field("file_mode", &self.file_mode);
-        formatter.field("directory_mode", &self.directory_mode);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("owner_id", &self.owner_id);
-        formatter.finish()
-    }
-}
 /// See [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults).
 pub mod nfs_file_share_defaults {
 
     /// A builder for [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_mode: std::option::Option<std::string::String>,
         pub(crate) directory_mode: std::option::Option<std::string::String>,
@@ -982,6 +1147,42 @@ impl NfsFileShareDefaults {
     }
 }
 
+/// When writing a match expression against `GatewayCapacity`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let gatewaycapacity = unimplemented!();
+/// match gatewaycapacity {
+///     GatewayCapacity::Large => { /* ... */ },
+///     GatewayCapacity::Medium => { /* ... */ },
+///     GatewayCapacity::Small => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `gatewaycapacity` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `GatewayCapacity::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `GatewayCapacity::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `GatewayCapacity::NewFeature` is defined.
+/// Specifically, when `gatewaycapacity` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `GatewayCapacity::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1000,8 +1201,8 @@ pub enum GatewayCapacity {
     Medium,
     #[allow(missing_docs)] // documentation missing in model
     Small,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for GatewayCapacity {
     fn from(s: &str) -> Self {
@@ -1009,7 +1210,7 @@ impl std::convert::From<&str> for GatewayCapacity {
             "Large" => GatewayCapacity::Large,
             "Medium" => GatewayCapacity::Medium,
             "Small" => GatewayCapacity::Small,
-            other => GatewayCapacity::Unknown(other.to_owned()),
+            other => GatewayCapacity::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1027,11 +1228,11 @@ impl GatewayCapacity {
             GatewayCapacity::Large => "Large",
             GatewayCapacity::Medium => "Medium",
             GatewayCapacity::Small => "Small",
-            GatewayCapacity::Unknown(s) => s.as_ref(),
+            GatewayCapacity::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Large", "Medium", "Small"]
     }
 }
@@ -1043,7 +1244,7 @@ impl AsRef<str> for GatewayCapacity {
 
 /// <p> Describes a bandwidth rate limit interval for a gateway. A bandwidth rate limit schedule consists of one or more bandwidth rate limit intervals. A bandwidth rate limit interval defines a period of time on one or more days of the week, during which bandwidth rate limits are specified for uploading, downloading, or both. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BandwidthRateLimitInterval {
     /// <p> The hour of the day to start the bandwidth rate limit interval. </p>
     #[doc(hidden)]
@@ -1101,30 +1302,11 @@ impl BandwidthRateLimitInterval {
         self.average_download_rate_limit_in_bits_per_sec
     }
 }
-impl std::fmt::Debug for BandwidthRateLimitInterval {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BandwidthRateLimitInterval");
-        formatter.field("start_hour_of_day", &self.start_hour_of_day);
-        formatter.field("start_minute_of_hour", &self.start_minute_of_hour);
-        formatter.field("end_hour_of_day", &self.end_hour_of_day);
-        formatter.field("end_minute_of_hour", &self.end_minute_of_hour);
-        formatter.field("days_of_week", &self.days_of_week);
-        formatter.field(
-            "average_upload_rate_limit_in_bits_per_sec",
-            &self.average_upload_rate_limit_in_bits_per_sec,
-        );
-        formatter.field(
-            "average_download_rate_limit_in_bits_per_sec",
-            &self.average_download_rate_limit_in_bits_per_sec,
-        );
-        formatter.finish()
-    }
-}
 /// See [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
 pub mod bandwidth_rate_limit_interval {
 
     /// A builder for [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_hour_of_day: std::option::Option<i32>,
         pub(crate) start_minute_of_hour: std::option::Option<i32>,
@@ -1246,7 +1428,7 @@ impl BandwidthRateLimitInterval {
 
 /// <p>An automatic tape creation policy consists of automatic tape creation rules where each rule defines when and how to create new tapes. For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating Tapes Automatically</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutomaticTapeCreationRule {
     /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
     /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
@@ -1290,22 +1472,11 @@ impl AutomaticTapeCreationRule {
         self.worm
     }
 }
-impl std::fmt::Debug for AutomaticTapeCreationRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutomaticTapeCreationRule");
-        formatter.field("tape_barcode_prefix", &self.tape_barcode_prefix);
-        formatter.field("pool_id", &self.pool_id);
-        formatter.field("tape_size_in_bytes", &self.tape_size_in_bytes);
-        formatter.field("minimum_num_tapes", &self.minimum_num_tapes);
-        formatter.field("worm", &self.worm);
-        formatter.finish()
-    }
-}
 /// See [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule).
 pub mod automatic_tape_creation_rule {
 
     /// A builder for [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_barcode_prefix: std::option::Option<std::string::String>,
         pub(crate) pool_id: std::option::Option<std::string::String>,
@@ -1392,7 +1563,7 @@ impl AutomaticTapeCreationRule {
 
 /// <p>Describes a storage volume object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VolumeInfo {
     /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
     /// <p> <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code> </p>
@@ -1456,24 +1627,11 @@ impl VolumeInfo {
         self.volume_attachment_status.as_deref()
     }
 }
-impl std::fmt::Debug for VolumeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VolumeInfo");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("volume_id", &self.volume_id);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("volume_size_in_bytes", &self.volume_size_in_bytes);
-        formatter.field("volume_attachment_status", &self.volume_attachment_status);
-        formatter.finish()
-    }
-}
 /// See [`VolumeInfo`](crate::model::VolumeInfo).
 pub mod volume_info {
 
     /// A builder for [`VolumeInfo`](crate::model::VolumeInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
         pub(crate) volume_id: std::option::Option<std::string::String>,
@@ -1590,7 +1748,7 @@ impl VolumeInfo {
 
 /// <p>Describes a storage volume recovery point object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VolumeRecoveryPointInfo {
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
     #[doc(hidden)]
@@ -1627,24 +1785,11 @@ impl VolumeRecoveryPointInfo {
         self.volume_recovery_point_time.as_deref()
     }
 }
-impl std::fmt::Debug for VolumeRecoveryPointInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VolumeRecoveryPointInfo");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("volume_size_in_bytes", &self.volume_size_in_bytes);
-        formatter.field("volume_usage_in_bytes", &self.volume_usage_in_bytes);
-        formatter.field(
-            "volume_recovery_point_time",
-            &self.volume_recovery_point_time,
-        );
-        formatter.finish()
-    }
-}
 /// See [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo).
 pub mod volume_recovery_point_info {
 
     /// A builder for [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
         pub(crate) volume_size_in_bytes: std::option::Option<i64>,
@@ -1719,7 +1864,7 @@ impl VolumeRecoveryPointInfo {
 
 /// <p>Describes a virtual tape.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TapeInfo {
     /// <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
     #[doc(hidden)]
@@ -1780,25 +1925,11 @@ impl TapeInfo {
         self.pool_entry_date.as_ref()
     }
 }
-impl std::fmt::Debug for TapeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TapeInfo");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.field("tape_barcode", &self.tape_barcode);
-        formatter.field("tape_size_in_bytes", &self.tape_size_in_bytes);
-        formatter.field("tape_status", &self.tape_status);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("pool_id", &self.pool_id);
-        formatter.field("retention_start_date", &self.retention_start_date);
-        formatter.field("pool_entry_date", &self.pool_entry_date);
-        formatter.finish()
-    }
-}
 /// See [`TapeInfo`](crate::model::TapeInfo).
 pub mod tape_info {
 
     /// A builder for [`TapeInfo`](crate::model::TapeInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
         pub(crate) tape_barcode: std::option::Option<std::string::String>,
@@ -1920,7 +2051,7 @@ impl TapeInfo {
 
 /// <p>Describes a custom tape pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PoolInfo {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the <code>ListTapePools</code> operation to return a list of custom tape pools for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -1967,26 +2098,11 @@ impl PoolInfo {
         self.pool_status.as_ref()
     }
 }
-impl std::fmt::Debug for PoolInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PoolInfo");
-        formatter.field("pool_arn", &self.pool_arn);
-        formatter.field("pool_name", &self.pool_name);
-        formatter.field("storage_class", &self.storage_class);
-        formatter.field("retention_lock_type", &self.retention_lock_type);
-        formatter.field(
-            "retention_lock_time_in_days",
-            &self.retention_lock_time_in_days,
-        );
-        formatter.field("pool_status", &self.pool_status);
-        formatter.finish()
-    }
-}
 /// See [`PoolInfo`](crate::model::PoolInfo).
 pub mod pool_info {
 
     /// A builder for [`PoolInfo`](crate::model::PoolInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_arn: std::option::Option<std::string::String>,
         pub(crate) pool_name: std::option::Option<std::string::String>,
@@ -2085,6 +2201,41 @@ impl PoolInfo {
     }
 }
 
+/// When writing a match expression against `PoolStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let poolstatus = unimplemented!();
+/// match poolstatus {
+///     PoolStatus::Active => { /* ... */ },
+///     PoolStatus::Deleted => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `poolstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PoolStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PoolStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PoolStatus::NewFeature` is defined.
+/// Specifically, when `poolstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PoolStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2101,15 +2252,15 @@ pub enum PoolStatus {
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PoolStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => PoolStatus::Active,
             "DELETED" => PoolStatus::Deleted,
-            other => PoolStatus::Unknown(other.to_owned()),
+            other => PoolStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2126,11 +2277,11 @@ impl PoolStatus {
         match self {
             PoolStatus::Active => "ACTIVE",
             PoolStatus::Deleted => "DELETED",
-            PoolStatus::Unknown(s) => s.as_ref(),
+            PoolStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED"]
     }
 }
@@ -2140,6 +2291,42 @@ impl AsRef<str> for PoolStatus {
     }
 }
 
+/// When writing a match expression against `RetentionLockType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let retentionlocktype = unimplemented!();
+/// match retentionlocktype {
+///     RetentionLockType::Compliance => { /* ... */ },
+///     RetentionLockType::Governance => { /* ... */ },
+///     RetentionLockType::None => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `retentionlocktype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RetentionLockType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RetentionLockType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RetentionLockType::NewFeature` is defined.
+/// Specifically, when `retentionlocktype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RetentionLockType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2158,8 +2345,8 @@ pub enum RetentionLockType {
     Governance,
     #[allow(missing_docs)] // documentation missing in model
     None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RetentionLockType {
     fn from(s: &str) -> Self {
@@ -2167,7 +2354,9 @@ impl std::convert::From<&str> for RetentionLockType {
             "COMPLIANCE" => RetentionLockType::Compliance,
             "GOVERNANCE" => RetentionLockType::Governance,
             "NONE" => RetentionLockType::None,
-            other => RetentionLockType::Unknown(other.to_owned()),
+            other => {
+                RetentionLockType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2185,11 +2374,11 @@ impl RetentionLockType {
             RetentionLockType::Compliance => "COMPLIANCE",
             RetentionLockType::Governance => "GOVERNANCE",
             RetentionLockType::None => "NONE",
-            RetentionLockType::Unknown(s) => s.as_ref(),
+            RetentionLockType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLIANCE", "GOVERNANCE", "NONE"]
     }
 }
@@ -2199,6 +2388,41 @@ impl AsRef<str> for RetentionLockType {
     }
 }
 
+/// When writing a match expression against `TapeStorageClass`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let tapestorageclass = unimplemented!();
+/// match tapestorageclass {
+///     TapeStorageClass::DeepArchive => { /* ... */ },
+///     TapeStorageClass::Glacier => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `tapestorageclass` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TapeStorageClass::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TapeStorageClass::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TapeStorageClass::NewFeature` is defined.
+/// Specifically, when `tapestorageclass` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TapeStorageClass::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2215,15 +2439,15 @@ pub enum TapeStorageClass {
     DeepArchive,
     #[allow(missing_docs)] // documentation missing in model
     Glacier,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TapeStorageClass {
     fn from(s: &str) -> Self {
         match s {
             "DEEP_ARCHIVE" => TapeStorageClass::DeepArchive,
             "GLACIER" => TapeStorageClass::Glacier,
-            other => TapeStorageClass::Unknown(other.to_owned()),
+            other => TapeStorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2240,11 +2464,11 @@ impl TapeStorageClass {
         match self {
             TapeStorageClass::DeepArchive => "DEEP_ARCHIVE",
             TapeStorageClass::Glacier => "GLACIER",
-            TapeStorageClass::Unknown(s) => s.as_ref(),
+            TapeStorageClass::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEEP_ARCHIVE", "GLACIER"]
     }
 }
@@ -2256,7 +2480,7 @@ impl AsRef<str> for TapeStorageClass {
 
 /// <p>Represents a gateway's local disk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Disk {
     /// <p>The unique device ID or other distinguishing data that identifies a local disk.</p>
     #[doc(hidden)]
@@ -2319,25 +2543,11 @@ impl Disk {
         self.disk_attribute_list.as_deref()
     }
 }
-impl std::fmt::Debug for Disk {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Disk");
-        formatter.field("disk_id", &self.disk_id);
-        formatter.field("disk_path", &self.disk_path);
-        formatter.field("disk_node", &self.disk_node);
-        formatter.field("disk_status", &self.disk_status);
-        formatter.field("disk_size_in_bytes", &self.disk_size_in_bytes);
-        formatter.field("disk_allocation_type", &self.disk_allocation_type);
-        formatter.field("disk_allocation_resource", &self.disk_allocation_resource);
-        formatter.field("disk_attribute_list", &self.disk_attribute_list);
-        formatter.finish()
-    }
-}
 /// See [`Disk`](crate::model::Disk).
 pub mod disk {
 
     /// A builder for [`Disk`](crate::model::Disk).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disk_id: std::option::Option<std::string::String>,
         pub(crate) disk_path: std::option::Option<std::string::String>,
@@ -2470,7 +2680,7 @@ impl Disk {
 
 /// <p>Describes a gateway object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayInfo {
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
     #[doc(hidden)]
@@ -2540,26 +2750,11 @@ impl GatewayInfo {
         self.host_environment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GatewayInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayInfo");
-        formatter.field("gateway_id", &self.gateway_id);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("gateway_type", &self.gateway_type);
-        formatter.field("gateway_operational_state", &self.gateway_operational_state);
-        formatter.field("gateway_name", &self.gateway_name);
-        formatter.field("ec2_instance_id", &self.ec2_instance_id);
-        formatter.field("ec2_instance_region", &self.ec2_instance_region);
-        formatter.field("host_environment", &self.host_environment);
-        formatter.field("host_environment_id", &self.host_environment_id);
-        formatter.finish()
-    }
-}
 /// See [`GatewayInfo`](crate::model::GatewayInfo).
 pub mod gateway_info {
 
     /// A builder for [`GatewayInfo`](crate::model::GatewayInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_id: std::option::Option<std::string::String>,
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -2702,6 +2897,45 @@ impl GatewayInfo {
     }
 }
 
+/// When writing a match expression against `HostEnvironment`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let hostenvironment = unimplemented!();
+/// match hostenvironment {
+///     HostEnvironment::Ec2 => { /* ... */ },
+///     HostEnvironment::HyperV => { /* ... */ },
+///     HostEnvironment::Kvm => { /* ... */ },
+///     HostEnvironment::Other => { /* ... */ },
+///     HostEnvironment::Snowball => { /* ... */ },
+///     HostEnvironment::Vmware => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `hostenvironment` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HostEnvironment::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HostEnvironment::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HostEnvironment::NewFeature` is defined.
+/// Specifically, when `hostenvironment` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HostEnvironment::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2726,8 +2960,8 @@ pub enum HostEnvironment {
     Snowball,
     #[allow(missing_docs)] // documentation missing in model
     Vmware,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HostEnvironment {
     fn from(s: &str) -> Self {
@@ -2738,7 +2972,7 @@ impl std::convert::From<&str> for HostEnvironment {
             "OTHER" => HostEnvironment::Other,
             "SNOWBALL" => HostEnvironment::Snowball,
             "VMWARE" => HostEnvironment::Vmware,
-            other => HostEnvironment::Unknown(other.to_owned()),
+            other => HostEnvironment::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2759,11 +2993,11 @@ impl HostEnvironment {
             HostEnvironment::Other => "OTHER",
             HostEnvironment::Snowball => "SNOWBALL",
             HostEnvironment::Vmware => "VMWARE",
-            HostEnvironment::Unknown(s) => s.as_ref(),
+            HostEnvironment::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EC2", "HYPER-V", "KVM", "OTHER", "SNOWBALL", "VMWARE"]
     }
 }
@@ -2775,7 +3009,7 @@ impl AsRef<str> for HostEnvironment {
 
 /// <p>Gets the summary returned by <code>ListFileSystemAssociation</code>, which is a summary of a created file system association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemAssociationSummary {
     /// <p>The ID of the file system association.</p>
     #[doc(hidden)]
@@ -2808,30 +3042,11 @@ impl FileSystemAssociationSummary {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for FileSystemAssociationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemAssociationSummary");
-        formatter.field(
-            "file_system_association_id",
-            &self.file_system_association_id,
-        );
-        formatter.field(
-            "file_system_association_arn",
-            &self.file_system_association_arn,
-        );
-        formatter.field(
-            "file_system_association_status",
-            &self.file_system_association_status,
-        );
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary).
 pub mod file_system_association_summary {
 
     /// A builder for [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_association_id: std::option::Option<std::string::String>,
         pub(crate) file_system_association_arn: std::option::Option<std::string::String>,
@@ -2914,7 +3129,7 @@ impl FileSystemAssociationSummary {
 
 /// <p>Describes a file share. Only supported S3 File Gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileShareInfo {
     /// <p>The type of the file share.</p>
     #[doc(hidden)]
@@ -2956,22 +3171,11 @@ impl FileShareInfo {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for FileShareInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileShareInfo");
-        formatter.field("file_share_type", &self.file_share_type);
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.field("file_share_id", &self.file_share_id);
-        formatter.field("file_share_status", &self.file_share_status);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`FileShareInfo`](crate::model::FileShareInfo).
 pub mod file_share_info {
 
     /// A builder for [`FileShareInfo`](crate::model::FileShareInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_type: std::option::Option<crate::model::FileShareType>,
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
@@ -3063,6 +3267,41 @@ impl FileShareInfo {
     }
 }
 
+/// When writing a match expression against `FileShareType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let filesharetype = unimplemented!();
+/// match filesharetype {
+///     FileShareType::Nfs => { /* ... */ },
+///     FileShareType::Smb => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `filesharetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FileShareType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FileShareType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FileShareType::NewFeature` is defined.
+/// Specifically, when `filesharetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FileShareType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The type of the file share.</p>
 #[non_exhaustive]
 #[derive(
@@ -3079,15 +3318,15 @@ pub enum FileShareType {
     Nfs,
     #[allow(missing_docs)] // documentation missing in model
     Smb,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FileShareType {
     fn from(s: &str) -> Self {
         match s {
             "NFS" => FileShareType::Nfs,
             "SMB" => FileShareType::Smb,
-            other => FileShareType::Unknown(other.to_owned()),
+            other => FileShareType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -3104,11 +3343,11 @@ impl FileShareType {
         match self {
             FileShareType::Nfs => "NFS",
             FileShareType::Smb => "SMB",
-            FileShareType::Unknown(s) => s.as_ref(),
+            FileShareType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NFS", "SMB"]
     }
 }
@@ -3120,7 +3359,7 @@ impl AsRef<str> for FileShareType {
 
 /// <p>Information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutomaticTapeCreationPolicyInfo {
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
     #[doc(hidden)]
@@ -3142,22 +3381,11 @@ impl AutomaticTapeCreationPolicyInfo {
         self.gateway_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AutomaticTapeCreationPolicyInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutomaticTapeCreationPolicyInfo");
-        formatter.field(
-            "automatic_tape_creation_rules",
-            &self.automatic_tape_creation_rules,
-        );
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.finish()
-    }
-}
 /// See [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo).
 pub mod automatic_tape_creation_policy_info {
 
     /// A builder for [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_tape_creation_rules:
             std::option::Option<std::vec::Vec<crate::model::AutomaticTapeCreationRule>>,
@@ -3212,6 +3440,46 @@ impl AutomaticTapeCreationPolicyInfo {
     }
 }
 
+/// When writing a match expression against `ActiveDirectoryStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let activedirectorystatus = unimplemented!();
+/// match activedirectorystatus {
+///     ActiveDirectoryStatus::AccessDenied => { /* ... */ },
+///     ActiveDirectoryStatus::Detached => { /* ... */ },
+///     ActiveDirectoryStatus::Joined => { /* ... */ },
+///     ActiveDirectoryStatus::Joining => { /* ... */ },
+///     ActiveDirectoryStatus::NetworkError => { /* ... */ },
+///     ActiveDirectoryStatus::Timeout => { /* ... */ },
+///     ActiveDirectoryStatus::UnknownError => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `activedirectorystatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ActiveDirectoryStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ActiveDirectoryStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ActiveDirectoryStatus::NewFeature` is defined.
+/// Specifically, when `activedirectorystatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ActiveDirectoryStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3238,8 +3506,8 @@ pub enum ActiveDirectoryStatus {
     Timeout,
     #[allow(missing_docs)] // documentation missing in model
     UnknownError,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ActiveDirectoryStatus {
     fn from(s: &str) -> Self {
@@ -3251,7 +3519,9 @@ impl std::convert::From<&str> for ActiveDirectoryStatus {
             "NETWORK_ERROR" => ActiveDirectoryStatus::NetworkError,
             "TIMEOUT" => ActiveDirectoryStatus::Timeout,
             "UNKNOWN_ERROR" => ActiveDirectoryStatus::UnknownError,
-            other => ActiveDirectoryStatus::Unknown(other.to_owned()),
+            other => {
+                ActiveDirectoryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -3273,11 +3543,11 @@ impl ActiveDirectoryStatus {
             ActiveDirectoryStatus::NetworkError => "NETWORK_ERROR",
             ActiveDirectoryStatus::Timeout => "TIMEOUT",
             ActiveDirectoryStatus::UnknownError => "UNKNOWN_ERROR",
-            ActiveDirectoryStatus::Unknown(s) => s.as_ref(),
+            ActiveDirectoryStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "DETACHED",
@@ -3297,7 +3567,7 @@ impl AsRef<str> for ActiveDirectoryStatus {
 
 /// <p>Represents a device object associated with a tape gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VtlDevice {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).</p>
     #[doc(hidden)]
@@ -3339,25 +3609,11 @@ impl VtlDevice {
         self.devicei_scsi_attributes.as_ref()
     }
 }
-impl std::fmt::Debug for VtlDevice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VtlDevice");
-        formatter.field("vtl_device_arn", &self.vtl_device_arn);
-        formatter.field("vtl_device_type", &self.vtl_device_type);
-        formatter.field("vtl_device_vendor", &self.vtl_device_vendor);
-        formatter.field(
-            "vtl_device_product_identifier",
-            &self.vtl_device_product_identifier,
-        );
-        formatter.field("devicei_scsi_attributes", &self.devicei_scsi_attributes);
-        formatter.finish()
-    }
-}
 /// See [`VtlDevice`](crate::model::VtlDevice).
 pub mod vtl_device {
 
     /// A builder for [`VtlDevice`](crate::model::VtlDevice).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vtl_device_arn: std::option::Option<std::string::String>,
         pub(crate) vtl_device_type: std::option::Option<std::string::String>,
@@ -3459,7 +3715,7 @@ impl VtlDevice {
 
 /// <p>Lists iSCSI information about a VTL device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceiScsiAttributes {
     /// <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI qualified name(iqn) of a tape drive or media changer target.</p>
     #[doc(hidden)]
@@ -3492,21 +3748,11 @@ impl DeviceiScsiAttributes {
         self.chap_enabled
     }
 }
-impl std::fmt::Debug for DeviceiScsiAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceiScsiAttributes");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("network_interface_id", &self.network_interface_id);
-        formatter.field("network_interface_port", &self.network_interface_port);
-        formatter.field("chap_enabled", &self.chap_enabled);
-        formatter.finish()
-    }
-}
 /// See [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes).
 pub mod devicei_scsi_attributes {
 
     /// A builder for [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) network_interface_id: std::option::Option<std::string::String>,
@@ -3577,7 +3823,7 @@ impl DeviceiScsiAttributes {
 
 /// <p>Describes a virtual tape object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tape {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
     #[doc(hidden)]
@@ -3679,30 +3925,11 @@ impl Tape {
         self.pool_entry_date.as_ref()
     }
 }
-impl std::fmt::Debug for Tape {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tape");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.field("tape_barcode", &self.tape_barcode);
-        formatter.field("tape_created_date", &self.tape_created_date);
-        formatter.field("tape_size_in_bytes", &self.tape_size_in_bytes);
-        formatter.field("tape_status", &self.tape_status);
-        formatter.field("vtl_device", &self.vtl_device);
-        formatter.field("progress", &self.progress);
-        formatter.field("tape_used_in_bytes", &self.tape_used_in_bytes);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("pool_id", &self.pool_id);
-        formatter.field("worm", &self.worm);
-        formatter.field("retention_start_date", &self.retention_start_date);
-        formatter.field("pool_entry_date", &self.pool_entry_date);
-        formatter.finish()
-    }
-}
 /// See [`Tape`](crate::model::Tape).
 pub mod tape {
 
     /// A builder for [`Tape`](crate::model::Tape).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
         pub(crate) tape_barcode: std::option::Option<std::string::String>,
@@ -3893,7 +4120,7 @@ impl Tape {
 
 /// <p>Describes a recovery point.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TapeRecoveryPointInfo {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
     #[doc(hidden)]
@@ -3928,21 +4155,11 @@ impl TapeRecoveryPointInfo {
         self.tape_status.as_deref()
     }
 }
-impl std::fmt::Debug for TapeRecoveryPointInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TapeRecoveryPointInfo");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.field("tape_recovery_point_time", &self.tape_recovery_point_time);
-        formatter.field("tape_size_in_bytes", &self.tape_size_in_bytes);
-        formatter.field("tape_status", &self.tape_status);
-        formatter.finish()
-    }
-}
 /// See [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo).
 pub mod tape_recovery_point_info {
 
     /// A builder for [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
         pub(crate) tape_recovery_point_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4015,7 +4232,7 @@ impl TapeRecoveryPointInfo {
 
 /// <p>Represents a virtual tape that is archived in the virtual tape shelf (VTS).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TapeArchive {
     /// <p>The Amazon Resource Name (ARN) of an archived virtual tape.</p>
     #[doc(hidden)]
@@ -4121,30 +4338,11 @@ impl TapeArchive {
         self.pool_entry_date.as_ref()
     }
 }
-impl std::fmt::Debug for TapeArchive {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TapeArchive");
-        formatter.field("tape_arn", &self.tape_arn);
-        formatter.field("tape_barcode", &self.tape_barcode);
-        formatter.field("tape_created_date", &self.tape_created_date);
-        formatter.field("tape_size_in_bytes", &self.tape_size_in_bytes);
-        formatter.field("completion_time", &self.completion_time);
-        formatter.field("retrieved_to", &self.retrieved_to);
-        formatter.field("tape_status", &self.tape_status);
-        formatter.field("tape_used_in_bytes", &self.tape_used_in_bytes);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("pool_id", &self.pool_id);
-        formatter.field("worm", &self.worm);
-        formatter.field("retention_start_date", &self.retention_start_date);
-        formatter.field("pool_entry_date", &self.pool_entry_date);
-        formatter.finish()
-    }
-}
 /// See [`TapeArchive`](crate::model::TapeArchive).
 pub mod tape_archive {
 
     /// A builder for [`TapeArchive`](crate::model::TapeArchive).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
         pub(crate) tape_barcode: std::option::Option<std::string::String>,
@@ -4342,7 +4540,7 @@ impl TapeArchive {
 
 /// <p>Describes an iSCSI stored volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorediScsiVolume {
     /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
     #[doc(hidden)]
@@ -4462,32 +4660,11 @@ impl StorediScsiVolume {
         self.target_name.as_deref()
     }
 }
-impl std::fmt::Debug for StorediScsiVolume {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorediScsiVolume");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("volume_id", &self.volume_id);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("volume_status", &self.volume_status);
-        formatter.field("volume_attachment_status", &self.volume_attachment_status);
-        formatter.field("volume_size_in_bytes", &self.volume_size_in_bytes);
-        formatter.field("volume_progress", &self.volume_progress);
-        formatter.field("volume_disk_id", &self.volume_disk_id);
-        formatter.field("source_snapshot_id", &self.source_snapshot_id);
-        formatter.field("preserved_existing_data", &self.preserved_existing_data);
-        formatter.field("volumei_scsi_attributes", &self.volumei_scsi_attributes);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("volume_used_in_bytes", &self.volume_used_in_bytes);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("target_name", &self.target_name);
-        formatter.finish()
-    }
-}
 /// See [`StorediScsiVolume`](crate::model::StorediScsiVolume).
 pub mod storedi_scsi_volume {
 
     /// A builder for [`StorediScsiVolume`](crate::model::StorediScsiVolume).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
         pub(crate) volume_id: std::option::Option<std::string::String>,
@@ -4717,7 +4894,7 @@ impl StorediScsiVolume {
 
 /// <p>Lists iSCSI information about a volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VolumeiScsiAttributes {
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
     #[doc(hidden)]
@@ -4757,22 +4934,11 @@ impl VolumeiScsiAttributes {
         self.chap_enabled
     }
 }
-impl std::fmt::Debug for VolumeiScsiAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VolumeiScsiAttributes");
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("network_interface_id", &self.network_interface_id);
-        formatter.field("network_interface_port", &self.network_interface_port);
-        formatter.field("lun_number", &self.lun_number);
-        formatter.field("chap_enabled", &self.chap_enabled);
-        formatter.finish()
-    }
-}
 /// See [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes).
 pub mod volumei_scsi_attributes {
 
     /// A builder for [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) network_interface_id: std::option::Option<std::string::String>,
@@ -4855,7 +5021,7 @@ impl VolumeiScsiAttributes {
 
 /// <p>The Windows file permissions and ownership information assigned, by default, to native S3 objects when S3 File Gateway discovers them in S3 buckets. This operation is only supported for S3 File Gateways.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmbFileShareInfo {
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
     #[doc(hidden)]
@@ -5131,46 +5297,11 @@ impl SmbFileShareInfo {
         self.oplocks_enabled
     }
 }
-impl std::fmt::Debug for SmbFileShareInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmbFileShareInfo");
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.field("file_share_id", &self.file_share_id);
-        formatter.field("file_share_status", &self.file_share_status);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("kms_encrypted", &self.kms_encrypted);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("path", &self.path);
-        formatter.field("role", &self.role);
-        formatter.field("location_arn", &self.location_arn);
-        formatter.field("default_storage_class", &self.default_storage_class);
-        formatter.field("object_acl", &self.object_acl);
-        formatter.field("read_only", &self.read_only);
-        formatter.field("guess_mime_type_enabled", &self.guess_mime_type_enabled);
-        formatter.field("requester_pays", &self.requester_pays);
-        formatter.field("smbacl_enabled", &self.smbacl_enabled);
-        formatter.field("access_based_enumeration", &self.access_based_enumeration);
-        formatter.field("admin_user_list", &self.admin_user_list);
-        formatter.field("valid_user_list", &self.valid_user_list);
-        formatter.field("invalid_user_list", &self.invalid_user_list);
-        formatter.field("audit_destination_arn", &self.audit_destination_arn);
-        formatter.field("authentication", &self.authentication);
-        formatter.field("case_sensitivity", &self.case_sensitivity);
-        formatter.field("tags", &self.tags);
-        formatter.field("file_share_name", &self.file_share_name);
-        formatter.field("cache_attributes", &self.cache_attributes);
-        formatter.field("notification_policy", &self.notification_policy);
-        formatter.field("vpc_endpoint_dns_name", &self.vpc_endpoint_dns_name);
-        formatter.field("bucket_region", &self.bucket_region);
-        formatter.field("oplocks_enabled", &self.oplocks_enabled);
-        formatter.finish()
-    }
-}
 /// See [`SmbFileShareInfo`](crate::model::SmbFileShareInfo).
 pub mod smb_file_share_info {
 
     /// A builder for [`SmbFileShareInfo`](crate::model::SmbFileShareInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
         pub(crate) file_share_id: std::option::Option<std::string::String>,
@@ -5681,7 +5812,7 @@ impl SmbFileShareInfo {
 
 /// <p>The Unix file permissions and ownership information assigned, by default, to native S3 objects when an S3 File Gateway discovers them in S3 buckets. This operation is only supported in S3 File Gateways.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NfsFileShareInfo {
     /// <p>Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for S3 File Gateways.</p>
     #[doc(hidden)]
@@ -5924,41 +6055,11 @@ impl NfsFileShareInfo {
         self.audit_destination_arn.as_deref()
     }
 }
-impl std::fmt::Debug for NfsFileShareInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NfsFileShareInfo");
-        formatter.field("nfs_file_share_defaults", &self.nfs_file_share_defaults);
-        formatter.field("file_share_arn", &self.file_share_arn);
-        formatter.field("file_share_id", &self.file_share_id);
-        formatter.field("file_share_status", &self.file_share_status);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("kms_encrypted", &self.kms_encrypted);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("path", &self.path);
-        formatter.field("role", &self.role);
-        formatter.field("location_arn", &self.location_arn);
-        formatter.field("default_storage_class", &self.default_storage_class);
-        formatter.field("object_acl", &self.object_acl);
-        formatter.field("client_list", &self.client_list);
-        formatter.field("squash", &self.squash);
-        formatter.field("read_only", &self.read_only);
-        formatter.field("guess_mime_type_enabled", &self.guess_mime_type_enabled);
-        formatter.field("requester_pays", &self.requester_pays);
-        formatter.field("tags", &self.tags);
-        formatter.field("file_share_name", &self.file_share_name);
-        formatter.field("cache_attributes", &self.cache_attributes);
-        formatter.field("notification_policy", &self.notification_policy);
-        formatter.field("vpc_endpoint_dns_name", &self.vpc_endpoint_dns_name);
-        formatter.field("bucket_region", &self.bucket_region);
-        formatter.field("audit_destination_arn", &self.audit_destination_arn);
-        formatter.finish()
-    }
-}
 /// See [`NfsFileShareInfo`](crate::model::NfsFileShareInfo).
 pub mod nfs_file_share_info {
 
     /// A builder for [`NfsFileShareInfo`](crate::model::NfsFileShareInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nfs_file_share_defaults: std::option::Option<crate::model::NfsFileShareDefaults>,
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
@@ -6391,7 +6492,7 @@ impl NfsFileShareInfo {
 
 /// <p>Describes a gateway's network interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The Internet Protocol version 4 (IPv4) address of the interface.</p>
     #[doc(hidden)]
@@ -6421,20 +6522,11 @@ impl NetworkInterface {
         self.ipv6_address.as_deref()
     }
 }
-impl std::fmt::Debug for NetworkInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkInterface");
-        formatter.field("ipv4_address", &self.ipv4_address);
-        formatter.field("mac_address", &self.mac_address);
-        formatter.field("ipv6_address", &self.ipv6_address);
-        formatter.finish()
-    }
-}
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
 
     /// A builder for [`NetworkInterface`](crate::model::NetworkInterface).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ipv4_address: std::option::Option<std::string::String>,
         pub(crate) mac_address: std::option::Option<std::string::String>,
@@ -6494,7 +6586,7 @@ impl NetworkInterface {
 
 /// <p>Describes the object returned by <code>DescribeFileSystemAssociations</code> that describes a created file system association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemAssociationInfo {
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
     #[doc(hidden)]
@@ -6572,38 +6664,11 @@ impl FileSystemAssociationInfo {
         self.file_system_association_status_details.as_deref()
     }
 }
-impl std::fmt::Debug for FileSystemAssociationInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemAssociationInfo");
-        formatter.field(
-            "file_system_association_arn",
-            &self.file_system_association_arn,
-        );
-        formatter.field("location_arn", &self.location_arn);
-        formatter.field(
-            "file_system_association_status",
-            &self.file_system_association_status,
-        );
-        formatter.field("audit_destination_arn", &self.audit_destination_arn);
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("cache_attributes", &self.cache_attributes);
-        formatter.field(
-            "endpoint_network_configuration",
-            &self.endpoint_network_configuration,
-        );
-        formatter.field(
-            "file_system_association_status_details",
-            &self.file_system_association_status_details,
-        );
-        formatter.finish()
-    }
-}
 /// See [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo).
 pub mod file_system_association_info {
 
     /// A builder for [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_association_arn: std::option::Option<std::string::String>,
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -6786,7 +6851,7 @@ impl FileSystemAssociationInfo {
 
 /// <p>Detailed information on file system association status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileSystemAssociationStatusDetail {
     /// <p>The error code for a given file system association status.</p>
     #[doc(hidden)]
@@ -6798,18 +6863,11 @@ impl FileSystemAssociationStatusDetail {
         self.error_code.as_deref()
     }
 }
-impl std::fmt::Debug for FileSystemAssociationStatusDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemAssociationStatusDetail");
-        formatter.field("error_code", &self.error_code);
-        formatter.finish()
-    }
-}
 /// See [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail).
 pub mod file_system_association_status_detail {
 
     /// A builder for [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
     }
@@ -6841,7 +6899,7 @@ impl FileSystemAssociationStatusDetail {
 
 /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndpointNetworkConfiguration {
     /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
@@ -6857,18 +6915,11 @@ impl EndpointNetworkConfiguration {
         self.ip_addresses.as_deref()
     }
 }
-impl std::fmt::Debug for EndpointNetworkConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EndpointNetworkConfiguration");
-        formatter.field("ip_addresses", &self.ip_addresses);
-        formatter.finish()
-    }
-}
 /// See [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration).
 pub mod endpoint_network_configuration {
 
     /// A builder for [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -6968,7 +7019,7 @@ impl std::fmt::Debug for ChapInfo {
 pub mod chap_info {
 
     /// A builder for [`ChapInfo`](crate::model::ChapInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) secret_to_authenticate_initiator: std::option::Option<std::string::String>,
@@ -7043,6 +7094,22 @@ pub mod chap_info {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("target_arn", &self.target_arn);
+            formatter.field(
+                "secret_to_authenticate_initiator",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("initiator_name", &self.initiator_name);
+            formatter.field(
+                "secret_to_authenticate_target",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.finish()
+        }
+    }
 }
 impl ChapInfo {
     /// Creates a new builder-style object to manufacture [`ChapInfo`](crate::model::ChapInfo).
@@ -7053,7 +7120,7 @@ impl ChapInfo {
 
 /// <p>Describes an iSCSI cached volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachediScsiVolume {
     /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
     #[doc(hidden)]
@@ -7159,30 +7226,11 @@ impl CachediScsiVolume {
         self.target_name.as_deref()
     }
 }
-impl std::fmt::Debug for CachediScsiVolume {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachediScsiVolume");
-        formatter.field("volume_arn", &self.volume_arn);
-        formatter.field("volume_id", &self.volume_id);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("volume_status", &self.volume_status);
-        formatter.field("volume_attachment_status", &self.volume_attachment_status);
-        formatter.field("volume_size_in_bytes", &self.volume_size_in_bytes);
-        formatter.field("volume_progress", &self.volume_progress);
-        formatter.field("source_snapshot_id", &self.source_snapshot_id);
-        formatter.field("volumei_scsi_attributes", &self.volumei_scsi_attributes);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("volume_used_in_bytes", &self.volume_used_in_bytes);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("target_name", &self.target_name);
-        formatter.finish()
-    }
-}
 /// See [`CachediScsiVolume`](crate::model::CachediScsiVolume).
 pub mod cachedi_scsi_volume {
 
     /// A builder for [`CachediScsiVolume`](crate::model::CachediScsiVolume).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
         pub(crate) volume_id: std::option::Option<std::string::String>,
@@ -7383,6 +7431,42 @@ impl CachediScsiVolume {
     }
 }
 
+/// When writing a match expression against `AvailabilityMonitorTestStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let availabilitymonitorteststatus = unimplemented!();
+/// match availabilitymonitorteststatus {
+///     AvailabilityMonitorTestStatus::Complete => { /* ... */ },
+///     AvailabilityMonitorTestStatus::Failed => { /* ... */ },
+///     AvailabilityMonitorTestStatus::Pending => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `availabilitymonitorteststatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AvailabilityMonitorTestStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AvailabilityMonitorTestStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AvailabilityMonitorTestStatus::NewFeature` is defined.
+/// Specifically, when `availabilitymonitorteststatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AvailabilityMonitorTestStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7401,8 +7485,8 @@ pub enum AvailabilityMonitorTestStatus {
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AvailabilityMonitorTestStatus {
     fn from(s: &str) -> Self {
@@ -7410,7 +7494,9 @@ impl std::convert::From<&str> for AvailabilityMonitorTestStatus {
             "COMPLETE" => AvailabilityMonitorTestStatus::Complete,
             "FAILED" => AvailabilityMonitorTestStatus::Failed,
             "PENDING" => AvailabilityMonitorTestStatus::Pending,
-            other => AvailabilityMonitorTestStatus::Unknown(other.to_owned()),
+            other => AvailabilityMonitorTestStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -7428,11 +7514,11 @@ impl AvailabilityMonitorTestStatus {
             AvailabilityMonitorTestStatus::Complete => "COMPLETE",
             AvailabilityMonitorTestStatus::Failed => "FAILED",
             AvailabilityMonitorTestStatus::Pending => "PENDING",
-            AvailabilityMonitorTestStatus::Unknown(s) => s.as_ref(),
+            AvailabilityMonitorTestStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "FAILED", "PENDING"]
     }
 }

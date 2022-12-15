@@ -2,7 +2,7 @@
 
 /// <p>Selects whether or not the state machine's AWS X-Ray tracing is enabled. Default is <code>false</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TracingConfiguration {
     /// <p>When set to <code>true</code>, AWS X-Ray tracing is enabled.</p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl TracingConfiguration {
         self.enabled
     }
 }
-impl std::fmt::Debug for TracingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TracingConfiguration");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
-    }
-}
 /// See [`TracingConfiguration`](crate::model::TracingConfiguration).
 pub mod tracing_configuration {
 
     /// A builder for [`TracingConfiguration`](crate::model::TracingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
     }
@@ -57,7 +50,7 @@ impl TracingConfiguration {
 
 /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>Defines which category of execution history events are logged.</p>
     #[doc(hidden)]
@@ -83,20 +76,11 @@ impl LoggingConfiguration {
         self.destinations.as_deref()
     }
 }
-impl std::fmt::Debug for LoggingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingConfiguration");
-        formatter.field("level", &self.level);
-        formatter.field("include_execution_data", &self.include_execution_data);
-        formatter.field("destinations", &self.destinations);
-        formatter.finish()
-    }
-}
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
 pub mod logging_configuration {
 
     /// A builder for [`LoggingConfiguration`](crate::model::LoggingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) level: std::option::Option<crate::model::LogLevel>,
         pub(crate) include_execution_data: std::option::Option<bool>,
@@ -161,7 +145,7 @@ impl LoggingConfiguration {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogDestination {
     /// <p>An object describing a CloudWatch log group. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a> in the AWS CloudFormation User Guide.</p>
     #[doc(hidden)]
@@ -175,21 +159,11 @@ impl LogDestination {
         self.cloud_watch_logs_log_group.as_ref()
     }
 }
-impl std::fmt::Debug for LogDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogDestination");
-        formatter.field(
-            "cloud_watch_logs_log_group",
-            &self.cloud_watch_logs_log_group,
-        );
-        formatter.finish()
-    }
-}
 /// See [`LogDestination`](crate::model::LogDestination).
 pub mod log_destination {
 
     /// A builder for [`LogDestination`](crate::model::LogDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_log_group:
             std::option::Option<crate::model::CloudWatchLogsLogGroup>,
@@ -228,7 +202,7 @@ impl LogDestination {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLogsLogGroup {
     /// <p>The ARN of the the CloudWatch log group to which you want your logs emitted to. The ARN must end with <code>:*</code> </p>
     #[doc(hidden)]
@@ -240,18 +214,11 @@ impl CloudWatchLogsLogGroup {
         self.log_group_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CloudWatchLogsLogGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLogsLogGroup");
-        formatter.field("log_group_arn", &self.log_group_arn);
-        formatter.finish()
-    }
-}
 /// See [`CloudWatchLogsLogGroup`](crate::model::CloudWatchLogsLogGroup).
 pub mod cloud_watch_logs_log_group {
 
     /// A builder for [`CloudWatchLogsLogGroup`](crate::model::CloudWatchLogsLogGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_arn: std::option::Option<std::string::String>,
     }
@@ -284,6 +251,43 @@ impl CloudWatchLogsLogGroup {
     }
 }
 
+/// When writing a match expression against `LogLevel`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let loglevel = unimplemented!();
+/// match loglevel {
+///     LogLevel::All => { /* ... */ },
+///     LogLevel::Error => { /* ... */ },
+///     LogLevel::Fatal => { /* ... */ },
+///     LogLevel::Off => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `loglevel` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LogLevel::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LogLevel::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LogLevel::NewFeature` is defined.
+/// Specifically, when `loglevel` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LogLevel::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -304,8 +308,8 @@ pub enum LogLevel {
     Fatal,
     #[allow(missing_docs)] // documentation missing in model
     Off,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LogLevel {
     fn from(s: &str) -> Self {
@@ -314,7 +318,7 @@ impl std::convert::From<&str> for LogLevel {
             "ERROR" => LogLevel::Error,
             "FATAL" => LogLevel::Fatal,
             "OFF" => LogLevel::Off,
-            other => LogLevel::Unknown(other.to_owned()),
+            other => LogLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -333,11 +337,11 @@ impl LogLevel {
             LogLevel::Error => "ERROR",
             LogLevel::Fatal => "FATAL",
             LogLevel::Off => "OFF",
-            LogLevel::Unknown(s) => s.as_ref(),
+            LogLevel::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "ERROR", "FATAL", "OFF"]
     }
 }
@@ -351,7 +355,7 @@ impl AsRef<str> for LogLevel {
 /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
 /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of a tag.</p>
     #[doc(hidden)]
@@ -370,19 +374,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -426,7 +422,7 @@ impl Tag {
 
 /// <p>An object that describes workflow billing details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BillingDetails {
     /// <p>Billed memory consumption of your workflow, in MB.</p>
     #[doc(hidden)]
@@ -445,22 +441,11 @@ impl BillingDetails {
         self.billed_duration_in_milliseconds
     }
 }
-impl std::fmt::Debug for BillingDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BillingDetails");
-        formatter.field("billed_memory_used_in_mb", &self.billed_memory_used_in_mb);
-        formatter.field(
-            "billed_duration_in_milliseconds",
-            &self.billed_duration_in_milliseconds,
-        );
-        formatter.finish()
-    }
-}
 /// See [`BillingDetails`](crate::model::BillingDetails).
 pub mod billing_details {
 
     /// A builder for [`BillingDetails`](crate::model::BillingDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billed_memory_used_in_mb: std::option::Option<i64>,
         pub(crate) billed_duration_in_milliseconds: std::option::Option<i64>,
@@ -509,7 +494,7 @@ impl BillingDetails {
 
 /// <p>Provides details about execution input or output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchEventsExecutionDataDetails {
     /// <p>Indicates whether input or output was included in the response. Always <code>true</code> for API calls. </p>
     #[doc(hidden)]
@@ -521,18 +506,11 @@ impl CloudWatchEventsExecutionDataDetails {
         self.included
     }
 }
-impl std::fmt::Debug for CloudWatchEventsExecutionDataDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchEventsExecutionDataDetails");
-        formatter.field("included", &self.included);
-        formatter.finish()
-    }
-}
 /// See [`CloudWatchEventsExecutionDataDetails`](crate::model::CloudWatchEventsExecutionDataDetails).
 pub mod cloud_watch_events_execution_data_details {
 
     /// A builder for [`CloudWatchEventsExecutionDataDetails`](crate::model::CloudWatchEventsExecutionDataDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) included: std::option::Option<bool>,
     }
@@ -562,6 +540,42 @@ impl CloudWatchEventsExecutionDataDetails {
     }
 }
 
+/// When writing a match expression against `SyncExecutionStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let syncexecutionstatus = unimplemented!();
+/// match syncexecutionstatus {
+///     SyncExecutionStatus::Failed => { /* ... */ },
+///     SyncExecutionStatus::Succeeded => { /* ... */ },
+///     SyncExecutionStatus::TimedOut => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `syncexecutionstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SyncExecutionStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SyncExecutionStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SyncExecutionStatus::NewFeature` is defined.
+/// Specifically, when `syncexecutionstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SyncExecutionStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -580,8 +594,8 @@ pub enum SyncExecutionStatus {
     Succeeded,
     #[allow(missing_docs)] // documentation missing in model
     TimedOut,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SyncExecutionStatus {
     fn from(s: &str) -> Self {
@@ -589,7 +603,9 @@ impl std::convert::From<&str> for SyncExecutionStatus {
             "FAILED" => SyncExecutionStatus::Failed,
             "SUCCEEDED" => SyncExecutionStatus::Succeeded,
             "TIMED_OUT" => SyncExecutionStatus::TimedOut,
-            other => SyncExecutionStatus::Unknown(other.to_owned()),
+            other => {
+                SyncExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -607,11 +623,11 @@ impl SyncExecutionStatus {
             SyncExecutionStatus::Failed => "FAILED",
             SyncExecutionStatus::Succeeded => "SUCCEEDED",
             SyncExecutionStatus::TimedOut => "TIMED_OUT",
-            SyncExecutionStatus::Unknown(s) => s.as_ref(),
+            SyncExecutionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "SUCCEEDED", "TIMED_OUT"]
     }
 }
@@ -623,7 +639,7 @@ impl AsRef<str> for SyncExecutionStatus {
 
 /// <p>Contains details about the state machine.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StateMachineListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
     #[doc(hidden)]
@@ -674,21 +690,11 @@ impl StateMachineListItem {
         self.creation_date.as_ref()
     }
 }
-impl std::fmt::Debug for StateMachineListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StateMachineListItem");
-        formatter.field("state_machine_arn", &self.state_machine_arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
-    }
-}
 /// See [`StateMachineListItem`](crate::model::StateMachineListItem).
 pub mod state_machine_list_item {
 
     /// A builder for [`StateMachineListItem`](crate::model::StateMachineListItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -781,6 +787,41 @@ impl StateMachineListItem {
     }
 }
 
+/// When writing a match expression against `StateMachineType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let statemachinetype = unimplemented!();
+/// match statemachinetype {
+///     StateMachineType::Express => { /* ... */ },
+///     StateMachineType::Standard => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `statemachinetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StateMachineType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StateMachineType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StateMachineType::NewFeature` is defined.
+/// Specifically, when `statemachinetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StateMachineType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -797,15 +838,15 @@ pub enum StateMachineType {
     Express,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StateMachineType {
     fn from(s: &str) -> Self {
         match s {
             "EXPRESS" => StateMachineType::Express,
             "STANDARD" => StateMachineType::Standard,
-            other => StateMachineType::Unknown(other.to_owned()),
+            other => StateMachineType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -822,11 +863,11 @@ impl StateMachineType {
         match self {
             StateMachineType::Express => "EXPRESS",
             StateMachineType::Standard => "STANDARD",
-            StateMachineType::Unknown(s) => s.as_ref(),
+            StateMachineType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXPRESS", "STANDARD"]
     }
 }
@@ -838,7 +879,7 @@ impl AsRef<str> for StateMachineType {
 
 /// <p>Contains details about an execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutionListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     #[doc(hidden)]
@@ -903,23 +944,11 @@ impl ExecutionListItem {
         self.stop_date.as_ref()
     }
 }
-impl std::fmt::Debug for ExecutionListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutionListItem");
-        formatter.field("execution_arn", &self.execution_arn);
-        formatter.field("state_machine_arn", &self.state_machine_arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("stop_date", &self.stop_date);
-        formatter.finish()
-    }
-}
 /// See [`ExecutionListItem`](crate::model::ExecutionListItem).
 pub mod execution_list_item {
 
     /// A builder for [`ExecutionListItem`](crate::model::ExecutionListItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_arn: std::option::Option<std::string::String>,
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
@@ -1042,6 +1071,44 @@ impl ExecutionListItem {
     }
 }
 
+/// When writing a match expression against `ExecutionStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let executionstatus = unimplemented!();
+/// match executionstatus {
+///     ExecutionStatus::Aborted => { /* ... */ },
+///     ExecutionStatus::Failed => { /* ... */ },
+///     ExecutionStatus::Running => { /* ... */ },
+///     ExecutionStatus::Succeeded => { /* ... */ },
+///     ExecutionStatus::TimedOut => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `executionstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ExecutionStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ExecutionStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ExecutionStatus::NewFeature` is defined.
+/// Specifically, when `executionstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ExecutionStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1064,8 +1131,8 @@ pub enum ExecutionStatus {
     Succeeded,
     #[allow(missing_docs)] // documentation missing in model
     TimedOut,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ExecutionStatus {
     fn from(s: &str) -> Self {
@@ -1075,7 +1142,7 @@ impl std::convert::From<&str> for ExecutionStatus {
             "RUNNING" => ExecutionStatus::Running,
             "SUCCEEDED" => ExecutionStatus::Succeeded,
             "TIMED_OUT" => ExecutionStatus::TimedOut,
-            other => ExecutionStatus::Unknown(other.to_owned()),
+            other => ExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1095,11 +1162,11 @@ impl ExecutionStatus {
             ExecutionStatus::Running => "RUNNING",
             ExecutionStatus::Succeeded => "SUCCEEDED",
             ExecutionStatus::TimedOut => "TIMED_OUT",
-            ExecutionStatus::Unknown(s) => s.as_ref(),
+            ExecutionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ABORTED", "FAILED", "RUNNING", "SUCCEEDED", "TIMED_OUT"]
     }
 }
@@ -1111,7 +1178,7 @@ impl AsRef<str> for ExecutionStatus {
 
 /// <p>Contains details about an activity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
     #[doc(hidden)]
@@ -1155,20 +1222,11 @@ impl ActivityListItem {
         self.creation_date.as_ref()
     }
 }
-impl std::fmt::Debug for ActivityListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityListItem");
-        formatter.field("activity_arn", &self.activity_arn);
-        formatter.field("name", &self.name);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
-    }
-}
 /// See [`ActivityListItem`](crate::model::ActivityListItem).
 pub mod activity_list_item {
 
     /// A builder for [`ActivityListItem`](crate::model::ActivityListItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1245,7 +1303,7 @@ impl ActivityListItem {
 
 /// <p>Contains details about the events of an execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HistoryEvent {
     /// <p>The date and time the event occurred.</p>
     #[doc(hidden)]
@@ -1590,146 +1648,11 @@ impl HistoryEvent {
         self.state_exited_event_details.as_ref()
     }
 }
-impl std::fmt::Debug for HistoryEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HistoryEvent");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("id", &self.id);
-        formatter.field("previous_event_id", &self.previous_event_id);
-        formatter.field(
-            "activity_failed_event_details",
-            &self.activity_failed_event_details,
-        );
-        formatter.field(
-            "activity_schedule_failed_event_details",
-            &self.activity_schedule_failed_event_details,
-        );
-        formatter.field(
-            "activity_scheduled_event_details",
-            &self.activity_scheduled_event_details,
-        );
-        formatter.field(
-            "activity_started_event_details",
-            &self.activity_started_event_details,
-        );
-        formatter.field(
-            "activity_succeeded_event_details",
-            &self.activity_succeeded_event_details,
-        );
-        formatter.field(
-            "activity_timed_out_event_details",
-            &self.activity_timed_out_event_details,
-        );
-        formatter.field("task_failed_event_details", &self.task_failed_event_details);
-        formatter.field(
-            "task_scheduled_event_details",
-            &self.task_scheduled_event_details,
-        );
-        formatter.field(
-            "task_start_failed_event_details",
-            &self.task_start_failed_event_details,
-        );
-        formatter.field(
-            "task_started_event_details",
-            &self.task_started_event_details,
-        );
-        formatter.field(
-            "task_submit_failed_event_details",
-            &self.task_submit_failed_event_details,
-        );
-        formatter.field(
-            "task_submitted_event_details",
-            &self.task_submitted_event_details,
-        );
-        formatter.field(
-            "task_succeeded_event_details",
-            &self.task_succeeded_event_details,
-        );
-        formatter.field(
-            "task_timed_out_event_details",
-            &self.task_timed_out_event_details,
-        );
-        formatter.field(
-            "execution_failed_event_details",
-            &self.execution_failed_event_details,
-        );
-        formatter.field(
-            "execution_started_event_details",
-            &self.execution_started_event_details,
-        );
-        formatter.field(
-            "execution_succeeded_event_details",
-            &self.execution_succeeded_event_details,
-        );
-        formatter.field(
-            "execution_aborted_event_details",
-            &self.execution_aborted_event_details,
-        );
-        formatter.field(
-            "execution_timed_out_event_details",
-            &self.execution_timed_out_event_details,
-        );
-        formatter.field(
-            "map_state_started_event_details",
-            &self.map_state_started_event_details,
-        );
-        formatter.field(
-            "map_iteration_started_event_details",
-            &self.map_iteration_started_event_details,
-        );
-        formatter.field(
-            "map_iteration_succeeded_event_details",
-            &self.map_iteration_succeeded_event_details,
-        );
-        formatter.field(
-            "map_iteration_failed_event_details",
-            &self.map_iteration_failed_event_details,
-        );
-        formatter.field(
-            "map_iteration_aborted_event_details",
-            &self.map_iteration_aborted_event_details,
-        );
-        formatter.field(
-            "lambda_function_failed_event_details",
-            &self.lambda_function_failed_event_details,
-        );
-        formatter.field(
-            "lambda_function_schedule_failed_event_details",
-            &self.lambda_function_schedule_failed_event_details,
-        );
-        formatter.field(
-            "lambda_function_scheduled_event_details",
-            &self.lambda_function_scheduled_event_details,
-        );
-        formatter.field(
-            "lambda_function_start_failed_event_details",
-            &self.lambda_function_start_failed_event_details,
-        );
-        formatter.field(
-            "lambda_function_succeeded_event_details",
-            &self.lambda_function_succeeded_event_details,
-        );
-        formatter.field(
-            "lambda_function_timed_out_event_details",
-            &self.lambda_function_timed_out_event_details,
-        );
-        formatter.field(
-            "state_entered_event_details",
-            &self.state_entered_event_details,
-        );
-        formatter.field(
-            "state_exited_event_details",
-            &self.state_exited_event_details,
-        );
-        formatter.finish()
-    }
-}
 /// See [`HistoryEvent`](crate::model::HistoryEvent).
 pub mod history_event {
 
     /// A builder for [`HistoryEvent`](crate::model::HistoryEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) r#type: std::option::Option<crate::model::HistoryEventType>,
@@ -2475,7 +2398,7 @@ impl std::fmt::Debug for StateExitedEventDetails {
 pub mod state_exited_event_details {
 
     /// A builder for [`StateExitedEventDetails`](crate::model::StateExitedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) output: std::option::Option<std::string::String>,
@@ -2546,6 +2469,15 @@ pub mod state_exited_event_details {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("output", &"*** Sensitive Data Redacted ***");
+            formatter.field("output_details", &self.output_details);
+            formatter.finish()
+        }
+    }
 }
 impl StateExitedEventDetails {
     /// Creates a new builder-style object to manufacture [`StateExitedEventDetails`](crate::model::StateExitedEventDetails).
@@ -2556,7 +2488,7 @@ impl StateExitedEventDetails {
 
 /// <p>Provides details about input or output in an execution history event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HistoryEventExecutionDataDetails {
     /// <p>Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.</p>
     #[doc(hidden)]
@@ -2568,18 +2500,11 @@ impl HistoryEventExecutionDataDetails {
         self.truncated
     }
 }
-impl std::fmt::Debug for HistoryEventExecutionDataDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HistoryEventExecutionDataDetails");
-        formatter.field("truncated", &self.truncated);
-        formatter.finish()
-    }
-}
 /// See [`HistoryEventExecutionDataDetails`](crate::model::HistoryEventExecutionDataDetails).
 pub mod history_event_execution_data_details {
 
     /// A builder for [`HistoryEventExecutionDataDetails`](crate::model::HistoryEventExecutionDataDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) truncated: std::option::Option<bool>,
     }
@@ -2652,7 +2577,7 @@ impl std::fmt::Debug for StateEnteredEventDetails {
 pub mod state_entered_event_details {
 
     /// A builder for [`StateEnteredEventDetails`](crate::model::StateEnteredEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) input: std::option::Option<std::string::String>,
@@ -2705,6 +2630,15 @@ pub mod state_entered_event_details {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("input", &"*** Sensitive Data Redacted ***");
+            formatter.field("input_details", &self.input_details);
+            formatter.finish()
+        }
+    }
 }
 impl StateEnteredEventDetails {
     /// Creates a new builder-style object to manufacture [`StateEnteredEventDetails`](crate::model::StateEnteredEventDetails).
@@ -2746,7 +2680,7 @@ impl std::fmt::Debug for LambdaFunctionTimedOutEventDetails {
 pub mod lambda_function_timed_out_event_details {
 
     /// A builder for [`LambdaFunctionTimedOutEventDetails`](crate::model::LambdaFunctionTimedOutEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -2778,6 +2712,14 @@ pub mod lambda_function_timed_out_event_details {
                 error: self.error,
                 cause: self.cause,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2823,7 +2765,7 @@ impl std::fmt::Debug for LambdaFunctionSucceededEventDetails {
 pub mod lambda_function_succeeded_event_details {
 
     /// A builder for [`LambdaFunctionSucceededEventDetails`](crate::model::LambdaFunctionSucceededEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) output: std::option::Option<std::string::String>,
         pub(crate) output_details:
@@ -2862,6 +2804,14 @@ pub mod lambda_function_succeeded_event_details {
                 output: self.output,
                 output_details: self.output_details,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("output", &"*** Sensitive Data Redacted ***");
+            formatter.field("output_details", &self.output_details);
+            formatter.finish()
         }
     }
 }
@@ -2905,7 +2855,7 @@ impl std::fmt::Debug for LambdaFunctionStartFailedEventDetails {
 pub mod lambda_function_start_failed_event_details {
 
     /// A builder for [`LambdaFunctionStartFailedEventDetails`](crate::model::LambdaFunctionStartFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -2937,6 +2887,14 @@ pub mod lambda_function_start_failed_event_details {
                 error: self.error,
                 cause: self.cause,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2998,7 +2956,7 @@ impl std::fmt::Debug for LambdaFunctionScheduledEventDetails {
 pub mod lambda_function_scheduled_event_details {
 
     /// A builder for [`LambdaFunctionScheduledEventDetails`](crate::model::LambdaFunctionScheduledEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
         pub(crate) input: std::option::Option<std::string::String>,
@@ -3063,6 +3021,16 @@ pub mod lambda_function_scheduled_event_details {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource", &self.resource);
+            formatter.field("input", &"*** Sensitive Data Redacted ***");
+            formatter.field("input_details", &self.input_details);
+            formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
+            formatter.finish()
+        }
+    }
 }
 impl LambdaFunctionScheduledEventDetails {
     /// Creates a new builder-style object to manufacture [`LambdaFunctionScheduledEventDetails`](crate::model::LambdaFunctionScheduledEventDetails).
@@ -3104,7 +3072,7 @@ impl std::fmt::Debug for LambdaFunctionScheduleFailedEventDetails {
 pub mod lambda_function_schedule_failed_event_details {
 
     /// A builder for [`LambdaFunctionScheduleFailedEventDetails`](crate::model::LambdaFunctionScheduleFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -3136,6 +3104,14 @@ pub mod lambda_function_schedule_failed_event_details {
                 error: self.error,
                 cause: self.cause,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3179,7 +3155,7 @@ impl std::fmt::Debug for LambdaFunctionFailedEventDetails {
 pub mod lambda_function_failed_event_details {
 
     /// A builder for [`LambdaFunctionFailedEventDetails`](crate::model::LambdaFunctionFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -3213,6 +3189,14 @@ pub mod lambda_function_failed_event_details {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl LambdaFunctionFailedEventDetails {
     /// Creates a new builder-style object to manufacture [`LambdaFunctionFailedEventDetails`](crate::model::LambdaFunctionFailedEventDetails).
@@ -3223,7 +3207,7 @@ impl LambdaFunctionFailedEventDetails {
 
 /// <p>Contains details about an iteration of a Map state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MapIterationEventDetails {
     /// <p>The name of the iteration’s parent Map state.</p>
     #[doc(hidden)]
@@ -3242,19 +3226,11 @@ impl MapIterationEventDetails {
         self.index
     }
 }
-impl std::fmt::Debug for MapIterationEventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MapIterationEventDetails");
-        formatter.field("name", &self.name);
-        formatter.field("index", &self.index);
-        formatter.finish()
-    }
-}
 /// See [`MapIterationEventDetails`](crate::model::MapIterationEventDetails).
 pub mod map_iteration_event_details {
 
     /// A builder for [`MapIterationEventDetails`](crate::model::MapIterationEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) index: std::option::Option<i32>,
@@ -3298,7 +3274,7 @@ impl MapIterationEventDetails {
 
 /// <p>Details about a Map state that was started.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MapStateStartedEventDetails {
     /// <p>The size of the array for Map state iterations.</p>
     #[doc(hidden)]
@@ -3310,18 +3286,11 @@ impl MapStateStartedEventDetails {
         self.length
     }
 }
-impl std::fmt::Debug for MapStateStartedEventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MapStateStartedEventDetails");
-        formatter.field("length", &self.length);
-        formatter.finish()
-    }
-}
 /// See [`MapStateStartedEventDetails`](crate::model::MapStateStartedEventDetails).
 pub mod map_state_started_event_details {
 
     /// A builder for [`MapStateStartedEventDetails`](crate::model::MapStateStartedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) length: std::option::Option<i32>,
     }
@@ -3384,7 +3353,7 @@ impl std::fmt::Debug for ExecutionTimedOutEventDetails {
 pub mod execution_timed_out_event_details {
 
     /// A builder for [`ExecutionTimedOutEventDetails`](crate::model::ExecutionTimedOutEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -3416,6 +3385,14 @@ pub mod execution_timed_out_event_details {
                 error: self.error,
                 cause: self.cause,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3459,7 +3436,7 @@ impl std::fmt::Debug for ExecutionAbortedEventDetails {
 pub mod execution_aborted_event_details {
 
     /// A builder for [`ExecutionAbortedEventDetails`](crate::model::ExecutionAbortedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -3491,6 +3468,14 @@ pub mod execution_aborted_event_details {
                 error: self.error,
                 cause: self.cause,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3536,7 +3521,7 @@ impl std::fmt::Debug for ExecutionSucceededEventDetails {
 pub mod execution_succeeded_event_details {
 
     /// A builder for [`ExecutionSucceededEventDetails`](crate::model::ExecutionSucceededEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) output: std::option::Option<std::string::String>,
         pub(crate) output_details:
@@ -3575,6 +3560,14 @@ pub mod execution_succeeded_event_details {
                 output: self.output,
                 output_details: self.output_details,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("output", &"*** Sensitive Data Redacted ***");
+            formatter.field("output_details", &self.output_details);
+            formatter.finish()
         }
     }
 }
@@ -3628,7 +3621,7 @@ impl std::fmt::Debug for ExecutionStartedEventDetails {
 pub mod execution_started_event_details {
 
     /// A builder for [`ExecutionStartedEventDetails`](crate::model::ExecutionStartedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) input: std::option::Option<std::string::String>,
         pub(crate) input_details:
@@ -3681,6 +3674,15 @@ pub mod execution_started_event_details {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("input", &"*** Sensitive Data Redacted ***");
+            formatter.field("input_details", &self.input_details);
+            formatter.field("role_arn", &self.role_arn);
+            formatter.finish()
+        }
+    }
 }
 impl ExecutionStartedEventDetails {
     /// Creates a new builder-style object to manufacture [`ExecutionStartedEventDetails`](crate::model::ExecutionStartedEventDetails).
@@ -3722,7 +3724,7 @@ impl std::fmt::Debug for ExecutionFailedEventDetails {
 pub mod execution_failed_event_details {
 
     /// A builder for [`ExecutionFailedEventDetails`](crate::model::ExecutionFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -3754,6 +3756,14 @@ pub mod execution_failed_event_details {
                 error: self.error,
                 cause: self.cause,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3813,7 +3823,7 @@ impl std::fmt::Debug for TaskTimedOutEventDetails {
 pub mod task_timed_out_event_details {
 
     /// A builder for [`TaskTimedOutEventDetails`](crate::model::TaskTimedOutEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -3872,6 +3882,16 @@ pub mod task_timed_out_event_details {
                 error: self.error,
                 cause: self.cause,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_type", &self.resource_type);
+            formatter.field("resource", &self.resource);
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3933,7 +3953,7 @@ impl std::fmt::Debug for TaskSucceededEventDetails {
 pub mod task_succeeded_event_details {
 
     /// A builder for [`TaskSucceededEventDetails`](crate::model::TaskSucceededEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -4001,6 +4021,16 @@ pub mod task_succeeded_event_details {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_type", &self.resource_type);
+            formatter.field("resource", &self.resource);
+            formatter.field("output", &"*** Sensitive Data Redacted ***");
+            formatter.field("output_details", &self.output_details);
+            formatter.finish()
+        }
+    }
 }
 impl TaskSucceededEventDetails {
     /// Creates a new builder-style object to manufacture [`TaskSucceededEventDetails`](crate::model::TaskSucceededEventDetails).
@@ -4060,7 +4090,7 @@ impl std::fmt::Debug for TaskSubmittedEventDetails {
 pub mod task_submitted_event_details {
 
     /// A builder for [`TaskSubmittedEventDetails`](crate::model::TaskSubmittedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -4128,6 +4158,16 @@ pub mod task_submitted_event_details {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_type", &self.resource_type);
+            formatter.field("resource", &self.resource);
+            formatter.field("output", &"*** Sensitive Data Redacted ***");
+            formatter.field("output_details", &self.output_details);
+            formatter.finish()
+        }
+    }
 }
 impl TaskSubmittedEventDetails {
     /// Creates a new builder-style object to manufacture [`TaskSubmittedEventDetails`](crate::model::TaskSubmittedEventDetails).
@@ -4185,7 +4225,7 @@ impl std::fmt::Debug for TaskSubmitFailedEventDetails {
 pub mod task_submit_failed_event_details {
 
     /// A builder for [`TaskSubmitFailedEventDetails`](crate::model::TaskSubmitFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -4246,6 +4286,16 @@ pub mod task_submit_failed_event_details {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_type", &self.resource_type);
+            formatter.field("resource", &self.resource);
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl TaskSubmitFailedEventDetails {
     /// Creates a new builder-style object to manufacture [`TaskSubmitFailedEventDetails`](crate::model::TaskSubmitFailedEventDetails).
@@ -4256,7 +4306,7 @@ impl TaskSubmitFailedEventDetails {
 
 /// <p>Contains details about the start of a task during an execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TaskStartedEventDetails {
     /// <p>The action of the resource called by a task state.</p>
     #[doc(hidden)]
@@ -4275,19 +4325,11 @@ impl TaskStartedEventDetails {
         self.resource.as_deref()
     }
 }
-impl std::fmt::Debug for TaskStartedEventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskStartedEventDetails");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource", &self.resource);
-        formatter.finish()
-    }
-}
 /// See [`TaskStartedEventDetails`](crate::model::TaskStartedEventDetails).
 pub mod task_started_event_details {
 
     /// A builder for [`TaskStartedEventDetails`](crate::model::TaskStartedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -4381,7 +4423,7 @@ impl std::fmt::Debug for TaskStartFailedEventDetails {
 pub mod task_start_failed_event_details {
 
     /// A builder for [`TaskStartFailedEventDetails`](crate::model::TaskStartFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -4440,6 +4482,16 @@ pub mod task_start_failed_event_details {
                 error: self.error,
                 cause: self.cause,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_type", &self.resource_type);
+            formatter.field("resource", &self.resource);
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -4515,7 +4567,7 @@ impl std::fmt::Debug for TaskScheduledEventDetails {
 pub mod task_scheduled_event_details {
 
     /// A builder for [`TaskScheduledEventDetails`](crate::model::TaskScheduledEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -4600,6 +4652,18 @@ pub mod task_scheduled_event_details {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_type", &self.resource_type);
+            formatter.field("resource", &self.resource);
+            formatter.field("region", &self.region);
+            formatter.field("parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
+            formatter.field("heartbeat_in_seconds", &self.heartbeat_in_seconds);
+            formatter.finish()
+        }
+    }
 }
 impl TaskScheduledEventDetails {
     /// Creates a new builder-style object to manufacture [`TaskScheduledEventDetails`](crate::model::TaskScheduledEventDetails).
@@ -4657,7 +4721,7 @@ impl std::fmt::Debug for TaskFailedEventDetails {
 pub mod task_failed_event_details {
 
     /// A builder for [`TaskFailedEventDetails`](crate::model::TaskFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -4718,6 +4782,16 @@ pub mod task_failed_event_details {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_type", &self.resource_type);
+            formatter.field("resource", &self.resource);
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl TaskFailedEventDetails {
     /// Creates a new builder-style object to manufacture [`TaskFailedEventDetails`](crate::model::TaskFailedEventDetails).
@@ -4759,7 +4833,7 @@ impl std::fmt::Debug for ActivityTimedOutEventDetails {
 pub mod activity_timed_out_event_details {
 
     /// A builder for [`ActivityTimedOutEventDetails`](crate::model::ActivityTimedOutEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -4791,6 +4865,14 @@ pub mod activity_timed_out_event_details {
                 error: self.error,
                 cause: self.cause,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -4836,7 +4918,7 @@ impl std::fmt::Debug for ActivitySucceededEventDetails {
 pub mod activity_succeeded_event_details {
 
     /// A builder for [`ActivitySucceededEventDetails`](crate::model::ActivitySucceededEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) output: std::option::Option<std::string::String>,
         pub(crate) output_details:
@@ -4877,6 +4959,14 @@ pub mod activity_succeeded_event_details {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("output", &"*** Sensitive Data Redacted ***");
+            formatter.field("output_details", &self.output_details);
+            formatter.finish()
+        }
+    }
 }
 impl ActivitySucceededEventDetails {
     /// Creates a new builder-style object to manufacture [`ActivitySucceededEventDetails`](crate::model::ActivitySucceededEventDetails).
@@ -4887,7 +4977,7 @@ impl ActivitySucceededEventDetails {
 
 /// <p>Contains details about the start of an activity during an execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivityStartedEventDetails {
     /// <p>The name of the worker that the task is assigned to. These names are provided by the workers when calling <code>GetActivityTask</code>.</p>
     #[doc(hidden)]
@@ -4899,18 +4989,11 @@ impl ActivityStartedEventDetails {
         self.worker_name.as_deref()
     }
 }
-impl std::fmt::Debug for ActivityStartedEventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActivityStartedEventDetails");
-        formatter.field("worker_name", &self.worker_name);
-        formatter.finish()
-    }
-}
 /// See [`ActivityStartedEventDetails`](crate::model::ActivityStartedEventDetails).
 pub mod activity_started_event_details {
 
     /// A builder for [`ActivityStartedEventDetails`](crate::model::ActivityStartedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) worker_name: std::option::Option<std::string::String>,
     }
@@ -4999,7 +5082,7 @@ impl std::fmt::Debug for ActivityScheduledEventDetails {
 pub mod activity_scheduled_event_details {
 
     /// A builder for [`ActivityScheduledEventDetails`](crate::model::ActivityScheduledEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
         pub(crate) input: std::option::Option<std::string::String>,
@@ -5076,6 +5159,17 @@ pub mod activity_scheduled_event_details {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource", &self.resource);
+            formatter.field("input", &"*** Sensitive Data Redacted ***");
+            formatter.field("input_details", &self.input_details);
+            formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
+            formatter.field("heartbeat_in_seconds", &self.heartbeat_in_seconds);
+            formatter.finish()
+        }
+    }
 }
 impl ActivityScheduledEventDetails {
     /// Creates a new builder-style object to manufacture [`ActivityScheduledEventDetails`](crate::model::ActivityScheduledEventDetails).
@@ -5117,7 +5211,7 @@ impl std::fmt::Debug for ActivityScheduleFailedEventDetails {
 pub mod activity_schedule_failed_event_details {
 
     /// A builder for [`ActivityScheduleFailedEventDetails`](crate::model::ActivityScheduleFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -5149,6 +5243,14 @@ pub mod activity_schedule_failed_event_details {
                 error: self.error,
                 cause: self.cause,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -5192,7 +5294,7 @@ impl std::fmt::Debug for ActivityFailedEventDetails {
 pub mod activity_failed_event_details {
 
     /// A builder for [`ActivityFailedEventDetails`](crate::model::ActivityFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -5226,6 +5328,14 @@ pub mod activity_failed_event_details {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("error", &"*** Sensitive Data Redacted ***");
+            formatter.field("cause", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ActivityFailedEventDetails {
     /// Creates a new builder-style object to manufacture [`ActivityFailedEventDetails`](crate::model::ActivityFailedEventDetails).
@@ -5234,6 +5344,94 @@ impl ActivityFailedEventDetails {
     }
 }
 
+/// When writing a match expression against `HistoryEventType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let historyeventtype = unimplemented!();
+/// match historyeventtype {
+///     HistoryEventType::ActivityFailed => { /* ... */ },
+///     HistoryEventType::ActivityScheduleFailed => { /* ... */ },
+///     HistoryEventType::ActivityScheduled => { /* ... */ },
+///     HistoryEventType::ActivityStarted => { /* ... */ },
+///     HistoryEventType::ActivitySucceeded => { /* ... */ },
+///     HistoryEventType::ActivityTimedOut => { /* ... */ },
+///     HistoryEventType::ChoiceStateEntered => { /* ... */ },
+///     HistoryEventType::ChoiceStateExited => { /* ... */ },
+///     HistoryEventType::ExecutionAborted => { /* ... */ },
+///     HistoryEventType::ExecutionFailed => { /* ... */ },
+///     HistoryEventType::ExecutionStarted => { /* ... */ },
+///     HistoryEventType::ExecutionSucceeded => { /* ... */ },
+///     HistoryEventType::ExecutionTimedOut => { /* ... */ },
+///     HistoryEventType::FailStateEntered => { /* ... */ },
+///     HistoryEventType::LambdaFunctionFailed => { /* ... */ },
+///     HistoryEventType::LambdaFunctionScheduleFailed => { /* ... */ },
+///     HistoryEventType::LambdaFunctionScheduled => { /* ... */ },
+///     HistoryEventType::LambdaFunctionStartFailed => { /* ... */ },
+///     HistoryEventType::LambdaFunctionStarted => { /* ... */ },
+///     HistoryEventType::LambdaFunctionSucceeded => { /* ... */ },
+///     HistoryEventType::LambdaFunctionTimedOut => { /* ... */ },
+///     HistoryEventType::MapIterationAborted => { /* ... */ },
+///     HistoryEventType::MapIterationFailed => { /* ... */ },
+///     HistoryEventType::MapIterationStarted => { /* ... */ },
+///     HistoryEventType::MapIterationSucceeded => { /* ... */ },
+///     HistoryEventType::MapStateAborted => { /* ... */ },
+///     HistoryEventType::MapStateEntered => { /* ... */ },
+///     HistoryEventType::MapStateExited => { /* ... */ },
+///     HistoryEventType::MapStateFailed => { /* ... */ },
+///     HistoryEventType::MapStateStarted => { /* ... */ },
+///     HistoryEventType::MapStateSucceeded => { /* ... */ },
+///     HistoryEventType::ParallelStateAborted => { /* ... */ },
+///     HistoryEventType::ParallelStateEntered => { /* ... */ },
+///     HistoryEventType::ParallelStateExited => { /* ... */ },
+///     HistoryEventType::ParallelStateFailed => { /* ... */ },
+///     HistoryEventType::ParallelStateStarted => { /* ... */ },
+///     HistoryEventType::ParallelStateSucceeded => { /* ... */ },
+///     HistoryEventType::PassStateEntered => { /* ... */ },
+///     HistoryEventType::PassStateExited => { /* ... */ },
+///     HistoryEventType::SucceedStateEntered => { /* ... */ },
+///     HistoryEventType::SucceedStateExited => { /* ... */ },
+///     HistoryEventType::TaskFailed => { /* ... */ },
+///     HistoryEventType::TaskScheduled => { /* ... */ },
+///     HistoryEventType::TaskStartFailed => { /* ... */ },
+///     HistoryEventType::TaskStarted => { /* ... */ },
+///     HistoryEventType::TaskStateAborted => { /* ... */ },
+///     HistoryEventType::TaskStateEntered => { /* ... */ },
+///     HistoryEventType::TaskStateExited => { /* ... */ },
+///     HistoryEventType::TaskSubmitFailed => { /* ... */ },
+///     HistoryEventType::TaskSubmitted => { /* ... */ },
+///     HistoryEventType::TaskSucceeded => { /* ... */ },
+///     HistoryEventType::TaskTimedOut => { /* ... */ },
+///     HistoryEventType::WaitStateAborted => { /* ... */ },
+///     HistoryEventType::WaitStateEntered => { /* ... */ },
+///     HistoryEventType::WaitStateExited => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `historyeventtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HistoryEventType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HistoryEventType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HistoryEventType::NewFeature` is defined.
+/// Specifically, when `historyeventtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HistoryEventType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5356,8 +5554,8 @@ pub enum HistoryEventType {
     WaitStateEntered,
     #[allow(missing_docs)] // documentation missing in model
     WaitStateExited,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HistoryEventType {
     fn from(s: &str) -> Self {
@@ -5417,7 +5615,7 @@ impl std::convert::From<&str> for HistoryEventType {
             "WaitStateAborted" => HistoryEventType::WaitStateAborted,
             "WaitStateEntered" => HistoryEventType::WaitStateEntered,
             "WaitStateExited" => HistoryEventType::WaitStateExited,
-            other => HistoryEventType::Unknown(other.to_owned()),
+            other => HistoryEventType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -5487,11 +5685,11 @@ impl HistoryEventType {
             HistoryEventType::WaitStateAborted => "WaitStateAborted",
             HistoryEventType::WaitStateEntered => "WaitStateEntered",
             HistoryEventType::WaitStateExited => "WaitStateExited",
-            HistoryEventType::Unknown(s) => s.as_ref(),
+            HistoryEventType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ActivityFailed",
             "ActivityScheduleFailed",
@@ -5557,6 +5755,41 @@ impl AsRef<str> for HistoryEventType {
     }
 }
 
+/// When writing a match expression against `StateMachineStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let statemachinestatus = unimplemented!();
+/// match statemachinestatus {
+///     StateMachineStatus::Active => { /* ... */ },
+///     StateMachineStatus::Deleting => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `statemachinestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StateMachineStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StateMachineStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StateMachineStatus::NewFeature` is defined.
+/// Specifically, when `statemachinestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StateMachineStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5573,15 +5806,17 @@ pub enum StateMachineStatus {
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StateMachineStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => StateMachineStatus::Active,
             "DELETING" => StateMachineStatus::Deleting,
-            other => StateMachineStatus::Unknown(other.to_owned()),
+            other => {
+                StateMachineStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -5598,11 +5833,11 @@ impl StateMachineStatus {
         match self {
             StateMachineStatus::Active => "ACTIVE",
             StateMachineStatus::Deleting => "DELETING",
-            StateMachineStatus::Unknown(s) => s.as_ref(),
+            StateMachineStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING"]
     }
 }

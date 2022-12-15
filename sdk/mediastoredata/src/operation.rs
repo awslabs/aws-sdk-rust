@@ -5,7 +5,7 @@
 /// [`delete_object`](crate::client::Client::delete_object).
 ///
 /// See [`crate::client::fluent_builders::DeleteObject`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteObject {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObject {
 /// [`describe_object`](crate::client::Client::describe_object).
 ///
 /// See [`crate::client::fluent_builders::DescribeObject`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeObject {
     _private: (),
 }
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeObject {
 /// [`get_object`](crate::client::Client::get_object).
 ///
 /// See [`crate::client::fluent_builders::GetObject`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObject {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetObject {
 /// [`list_items`](crate::client::Client::list_items).
 ///
 /// See [`crate::client::fluent_builders::ListItems`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListItems {
     _private: (),
 }
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListItems {
 /// [`put_object`](crate::client::Client::put_object).
 ///
 /// See [`crate::client::fluent_builders::PutObject`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutObject {
     _private: (),
 }

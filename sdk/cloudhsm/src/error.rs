@@ -2,7 +2,7 @@
 
 /// <p>Indicates that one or more of the request parameters are not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRequestException {
     /// <p>Additional information about the error.</p>
     #[doc(hidden)]
@@ -17,17 +17,9 @@ impl InvalidRequestException {
         self.retryable
     }
 }
-impl std::fmt::Debug for InvalidRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRequestException");
-        formatter.field("message", &self.message);
-        formatter.field("retryable", &self.retryable);
-        formatter.finish()
-    }
-}
 impl InvalidRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -35,7 +27,9 @@ impl std::fmt::Display for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRequestException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -45,7 +39,7 @@ impl std::error::Error for InvalidRequestException {}
 pub mod invalid_request_exception {
 
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) retryable: std::option::Option<bool>,
@@ -89,7 +83,7 @@ impl InvalidRequestException {
 
 /// <p>Indicates that an exception occurred in the AWS CloudHSM service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudHsmServiceException {
     /// <p>Additional information about the error.</p>
     #[doc(hidden)]
@@ -104,17 +98,9 @@ impl CloudHsmServiceException {
         self.retryable
     }
 }
-impl std::fmt::Debug for CloudHsmServiceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudHsmServiceException");
-        formatter.field("message", &self.message);
-        formatter.field("retryable", &self.retryable);
-        formatter.finish()
-    }
-}
 impl CloudHsmServiceException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -122,7 +108,9 @@ impl std::fmt::Display for CloudHsmServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmServiceException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -132,7 +120,7 @@ impl std::error::Error for CloudHsmServiceException {}
 pub mod cloud_hsm_service_exception {
 
     /// A builder for [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) retryable: std::option::Option<bool>,
@@ -176,7 +164,7 @@ impl CloudHsmServiceException {
 
 /// <p>Indicates that an internal error occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudHsmInternalException {
     /// <p>Additional information about the error.</p>
     #[doc(hidden)]
@@ -191,17 +179,9 @@ impl CloudHsmInternalException {
         self.retryable
     }
 }
-impl std::fmt::Debug for CloudHsmInternalException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudHsmInternalException");
-        formatter.field("message", &self.message);
-        formatter.field("retryable", &self.retryable);
-        formatter.finish()
-    }
-}
 impl CloudHsmInternalException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -209,7 +189,9 @@ impl std::fmt::Display for CloudHsmInternalException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmInternalException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -219,7 +201,7 @@ impl std::error::Error for CloudHsmInternalException {}
 pub mod cloud_hsm_internal_exception {
 
     /// A builder for [`CloudHsmInternalException`](crate::error::CloudHsmInternalException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) retryable: std::option::Option<bool>,
@@ -270,6 +252,14 @@ pub struct AddTagsToResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AddTagsToResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddTagsToResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AddTagsToResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -280,8 +270,15 @@ pub enum AddTagsToResourceErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddTagsToResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -310,7 +307,7 @@ impl AddTagsToResourceError {
     /// Creates the `AddTagsToResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddTagsToResourceErrorKind::Unhandled(err.into()),
+            kind: AddTagsToResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -319,7 +316,7 @@ impl AddTagsToResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddTagsToResourceErrorKind::Unhandled(err.into()),
+            kind: AddTagsToResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -371,7 +368,7 @@ impl std::error::Error for AddTagsToResourceError {
             AddTagsToResourceErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             AddTagsToResourceErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             AddTagsToResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddTagsToResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -385,6 +382,14 @@ pub struct CreateHapgError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateHapgError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateHapgErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateHapg` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -395,8 +400,15 @@ pub enum CreateHapgErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateHapgError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -425,7 +437,7 @@ impl CreateHapgError {
     /// Creates the `CreateHapgError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateHapgErrorKind::Unhandled(err.into()),
+            kind: CreateHapgErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -434,7 +446,7 @@ impl CreateHapgError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateHapgErrorKind::Unhandled(err.into()),
+            kind: CreateHapgErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -480,7 +492,7 @@ impl std::error::Error for CreateHapgError {
             CreateHapgErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             CreateHapgErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             CreateHapgErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CreateHapgErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateHapgErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -494,6 +506,14 @@ pub struct CreateHsmError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateHsmError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateHsmErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateHsm` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -504,8 +524,15 @@ pub enum CreateHsmErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateHsmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -534,7 +561,7 @@ impl CreateHsmError {
     /// Creates the `CreateHsmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateHsmErrorKind::Unhandled(err.into()),
+            kind: CreateHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -543,7 +570,7 @@ impl CreateHsmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateHsmErrorKind::Unhandled(err.into()),
+            kind: CreateHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -586,7 +613,7 @@ impl std::error::Error for CreateHsmError {
             CreateHsmErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             CreateHsmErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             CreateHsmErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CreateHsmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateHsmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -600,6 +627,14 @@ pub struct CreateLunaClientError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateLunaClientError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateLunaClientErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateLunaClient` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -610,8 +645,15 @@ pub enum CreateLunaClientErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLunaClientError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -640,7 +682,7 @@ impl CreateLunaClientError {
     /// Creates the `CreateLunaClientError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLunaClientErrorKind::Unhandled(err.into()),
+            kind: CreateLunaClientErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -649,7 +691,7 @@ impl CreateLunaClientError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLunaClientErrorKind::Unhandled(err.into()),
+            kind: CreateLunaClientErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -701,7 +743,7 @@ impl std::error::Error for CreateLunaClientError {
             CreateLunaClientErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             CreateLunaClientErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             CreateLunaClientErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CreateLunaClientErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLunaClientErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -715,6 +757,14 @@ pub struct DeleteHapgError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteHapgError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteHapgErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteHapg` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -725,8 +775,15 @@ pub enum DeleteHapgErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteHapgError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -755,7 +812,7 @@ impl DeleteHapgError {
     /// Creates the `DeleteHapgError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteHapgErrorKind::Unhandled(err.into()),
+            kind: DeleteHapgErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -764,7 +821,7 @@ impl DeleteHapgError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteHapgErrorKind::Unhandled(err.into()),
+            kind: DeleteHapgErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -810,7 +867,7 @@ impl std::error::Error for DeleteHapgError {
             DeleteHapgErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             DeleteHapgErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             DeleteHapgErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DeleteHapgErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteHapgErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -824,6 +881,14 @@ pub struct DeleteHsmError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteHsmError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteHsmErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteHsm` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -834,8 +899,15 @@ pub enum DeleteHsmErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteHsmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -864,7 +936,7 @@ impl DeleteHsmError {
     /// Creates the `DeleteHsmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteHsmErrorKind::Unhandled(err.into()),
+            kind: DeleteHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -873,7 +945,7 @@ impl DeleteHsmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteHsmErrorKind::Unhandled(err.into()),
+            kind: DeleteHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -916,7 +988,7 @@ impl std::error::Error for DeleteHsmError {
             DeleteHsmErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             DeleteHsmErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             DeleteHsmErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DeleteHsmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteHsmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -930,6 +1002,14 @@ pub struct DeleteLunaClientError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteLunaClientError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteLunaClientErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteLunaClient` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -940,8 +1020,15 @@ pub enum DeleteLunaClientErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLunaClientError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -970,7 +1057,7 @@ impl DeleteLunaClientError {
     /// Creates the `DeleteLunaClientError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLunaClientErrorKind::Unhandled(err.into()),
+            kind: DeleteLunaClientErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -979,7 +1066,7 @@ impl DeleteLunaClientError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLunaClientErrorKind::Unhandled(err.into()),
+            kind: DeleteLunaClientErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1031,7 +1118,7 @@ impl std::error::Error for DeleteLunaClientError {
             DeleteLunaClientErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             DeleteLunaClientErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             DeleteLunaClientErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DeleteLunaClientErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLunaClientErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1045,6 +1132,14 @@ pub struct DescribeHapgError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeHapgError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeHapgErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeHapg` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1055,8 +1150,15 @@ pub enum DescribeHapgErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeHapgError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1085,7 +1187,7 @@ impl DescribeHapgError {
     /// Creates the `DescribeHapgError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeHapgErrorKind::Unhandled(err.into()),
+            kind: DescribeHapgErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1094,7 +1196,7 @@ impl DescribeHapgError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeHapgErrorKind::Unhandled(err.into()),
+            kind: DescribeHapgErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1146,7 +1248,7 @@ impl std::error::Error for DescribeHapgError {
             DescribeHapgErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             DescribeHapgErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             DescribeHapgErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeHapgErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeHapgErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1160,6 +1262,14 @@ pub struct DescribeHsmError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeHsmError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeHsmErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeHsm` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1170,8 +1280,15 @@ pub enum DescribeHsmErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeHsmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1200,7 +1317,7 @@ impl DescribeHsmError {
     /// Creates the `DescribeHsmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeHsmErrorKind::Unhandled(err.into()),
+            kind: DescribeHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1209,7 +1326,7 @@ impl DescribeHsmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeHsmErrorKind::Unhandled(err.into()),
+            kind: DescribeHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1258,7 +1375,7 @@ impl std::error::Error for DescribeHsmError {
             DescribeHsmErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             DescribeHsmErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             DescribeHsmErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeHsmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeHsmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1272,6 +1389,14 @@ pub struct DescribeLunaClientError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeLunaClientError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeLunaClientErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeLunaClient` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1282,8 +1407,15 @@ pub enum DescribeLunaClientErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLunaClientError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1312,7 +1444,7 @@ impl DescribeLunaClientError {
     /// Creates the `DescribeLunaClientError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLunaClientErrorKind::Unhandled(err.into()),
+            kind: DescribeLunaClientErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1321,7 +1453,7 @@ impl DescribeLunaClientError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLunaClientErrorKind::Unhandled(err.into()),
+            kind: DescribeLunaClientErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1373,7 +1505,7 @@ impl std::error::Error for DescribeLunaClientError {
             DescribeLunaClientErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             DescribeLunaClientErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             DescribeLunaClientErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeLunaClientErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLunaClientErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1387,6 +1519,14 @@ pub struct GetConfigError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetConfigError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetConfigErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetConfig` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1397,8 +1537,15 @@ pub enum GetConfigErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1427,7 +1574,7 @@ impl GetConfigError {
     /// Creates the `GetConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetConfigErrorKind::Unhandled(err.into()),
+            kind: GetConfigErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1436,7 +1583,7 @@ impl GetConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetConfigErrorKind::Unhandled(err.into()),
+            kind: GetConfigErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1479,7 +1626,7 @@ impl std::error::Error for GetConfigError {
             GetConfigErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             GetConfigErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             GetConfigErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            GetConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1493,6 +1640,14 @@ pub struct ListAvailableZonesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListAvailableZonesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAvailableZonesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListAvailableZones` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1503,8 +1658,15 @@ pub enum ListAvailableZonesErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAvailableZonesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1533,7 +1695,7 @@ impl ListAvailableZonesError {
     /// Creates the `ListAvailableZonesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAvailableZonesErrorKind::Unhandled(err.into()),
+            kind: ListAvailableZonesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1542,7 +1704,7 @@ impl ListAvailableZonesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAvailableZonesErrorKind::Unhandled(err.into()),
+            kind: ListAvailableZonesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1594,7 +1756,7 @@ impl std::error::Error for ListAvailableZonesError {
             ListAvailableZonesErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             ListAvailableZonesErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             ListAvailableZonesErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            ListAvailableZonesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAvailableZonesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1608,6 +1770,14 @@ pub struct ListHapgsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListHapgsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListHapgsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListHapgs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1618,8 +1788,15 @@ pub enum ListHapgsErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListHapgsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1648,7 +1825,7 @@ impl ListHapgsError {
     /// Creates the `ListHapgsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListHapgsErrorKind::Unhandled(err.into()),
+            kind: ListHapgsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1657,7 +1834,7 @@ impl ListHapgsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListHapgsErrorKind::Unhandled(err.into()),
+            kind: ListHapgsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1700,7 +1877,7 @@ impl std::error::Error for ListHapgsError {
             ListHapgsErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             ListHapgsErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             ListHapgsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            ListHapgsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListHapgsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1714,6 +1891,14 @@ pub struct ListHsmsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListHsmsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListHsmsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListHsms` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1724,8 +1909,15 @@ pub enum ListHsmsErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListHsmsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1754,7 +1946,7 @@ impl ListHsmsError {
     /// Creates the `ListHsmsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListHsmsErrorKind::Unhandled(err.into()),
+            kind: ListHsmsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1763,7 +1955,7 @@ impl ListHsmsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListHsmsErrorKind::Unhandled(err.into()),
+            kind: ListHsmsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1806,7 +1998,7 @@ impl std::error::Error for ListHsmsError {
             ListHsmsErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             ListHsmsErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             ListHsmsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            ListHsmsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListHsmsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1820,6 +2012,14 @@ pub struct ListLunaClientsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListLunaClientsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListLunaClientsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListLunaClients` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1830,8 +2030,15 @@ pub enum ListLunaClientsErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLunaClientsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1860,7 +2067,7 @@ impl ListLunaClientsError {
     /// Creates the `ListLunaClientsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLunaClientsErrorKind::Unhandled(err.into()),
+            kind: ListLunaClientsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1869,7 +2076,7 @@ impl ListLunaClientsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLunaClientsErrorKind::Unhandled(err.into()),
+            kind: ListLunaClientsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1921,7 +2128,7 @@ impl std::error::Error for ListLunaClientsError {
             ListLunaClientsErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             ListLunaClientsErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             ListLunaClientsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            ListLunaClientsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLunaClientsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1935,6 +2142,14 @@ pub struct ListTagsForResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListTagsForResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1945,8 +2160,15 @@ pub enum ListTagsForResourceErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1975,7 +2197,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1984,7 +2206,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2036,7 +2258,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2050,6 +2272,14 @@ pub struct ModifyHapgError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyHapgError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyHapgErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyHapg` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2060,8 +2290,15 @@ pub enum ModifyHapgErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyHapgError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2090,7 +2327,7 @@ impl ModifyHapgError {
     /// Creates the `ModifyHapgError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyHapgErrorKind::Unhandled(err.into()),
+            kind: ModifyHapgErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2099,7 +2336,7 @@ impl ModifyHapgError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyHapgErrorKind::Unhandled(err.into()),
+            kind: ModifyHapgErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2145,7 +2382,7 @@ impl std::error::Error for ModifyHapgError {
             ModifyHapgErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             ModifyHapgErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             ModifyHapgErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            ModifyHapgErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyHapgErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2159,6 +2396,14 @@ pub struct ModifyHsmError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyHsmError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyHsmErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyHsm` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2169,8 +2414,15 @@ pub enum ModifyHsmErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyHsmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2199,7 +2451,7 @@ impl ModifyHsmError {
     /// Creates the `ModifyHsmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyHsmErrorKind::Unhandled(err.into()),
+            kind: ModifyHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2208,7 +2460,7 @@ impl ModifyHsmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyHsmErrorKind::Unhandled(err.into()),
+            kind: ModifyHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2251,7 +2503,7 @@ impl std::error::Error for ModifyHsmError {
             ModifyHsmErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             ModifyHsmErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             ModifyHsmErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            ModifyHsmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyHsmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2265,14 +2517,29 @@ pub struct ModifyLunaClientError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyLunaClientError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyLunaClientErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyLunaClient` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyLunaClientErrorKind {
     /// <p>Indicates that an exception occurred in the AWS CloudHSM service.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyLunaClientError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2299,7 +2566,7 @@ impl ModifyLunaClientError {
     /// Creates the `ModifyLunaClientError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyLunaClientErrorKind::Unhandled(err.into()),
+            kind: ModifyLunaClientErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2308,7 +2575,7 @@ impl ModifyLunaClientError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyLunaClientErrorKind::Unhandled(err.into()),
+            kind: ModifyLunaClientErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2344,7 +2611,7 @@ impl std::error::Error for ModifyLunaClientError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ModifyLunaClientErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            ModifyLunaClientErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyLunaClientErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2358,6 +2625,14 @@ pub struct RemoveTagsFromResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RemoveTagsFromResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RemoveTagsFromResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RemoveTagsFromResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2368,8 +2643,15 @@ pub enum RemoveTagsFromResourceErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveTagsFromResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2398,7 +2680,9 @@ impl RemoveTagsFromResourceError {
     /// Creates the `RemoveTagsFromResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveTagsFromResourceErrorKind::Unhandled(err.into()),
+            kind: RemoveTagsFromResourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2407,7 +2691,9 @@ impl RemoveTagsFromResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveTagsFromResourceErrorKind::Unhandled(err.into()),
+            kind: RemoveTagsFromResourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2459,7 +2745,35 @@ impl std::error::Error for RemoveTagsFromResourceError {
             RemoveTagsFromResourceErrorKind::CloudHsmInternalException(_inner) => Some(_inner),
             RemoveTagsFromResourceErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             RemoveTagsFromResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            RemoveTagsFromResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveTagsFromResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

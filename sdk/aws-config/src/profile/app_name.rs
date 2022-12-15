@@ -7,6 +7,7 @@
 
 use super::profile_file::ProfileFiles;
 use crate::provider_config::ProviderConfig;
+use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::app_name::AppName;
 use aws_types::os_shim_internal::{Env, Fs};
 
@@ -63,7 +64,9 @@ impl ProfileFileAppNameProvider {
     pub async fn app_name(&self) -> Option<AppName> {
         let profile = super::parser::load(&self.fs, &self.env, &self.profile_files)
             .await
-            .map_err(|err| tracing::warn!(err = %err, "failed to parse profile"))
+            .map_err(
+                |err| tracing::warn!(err = %DisplayErrorContext(&err), "failed to parse profile"),
+            )
             .ok()?;
         let selected_profile_name = self
             .profile_override

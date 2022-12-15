@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_execute_statement_input {
 
     /// A builder for [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -120,8 +120,10 @@ pub mod batch_execute_statement_input {
         /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchExecuteStatementInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::BatchExecuteStatementInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::BatchExecuteStatementInput {
                 resource_arn: self.resource_arn,
                 secret_arn: self.secret_arn,
@@ -147,13 +149,13 @@ impl BatchExecuteStatementInput {
             crate::operation::BatchExecuteStatement,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchExecuteStatementInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/BatchExecute").expect("formatting should succeed");
                 Ok(())
             }
@@ -161,8 +163,10 @@ impl BatchExecuteStatementInput {
             fn update_http_builder(
                 input: &crate::input::BatchExecuteStatementInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -248,7 +252,7 @@ impl BatchExecuteStatementInput {
 pub mod begin_transaction_input {
 
     /// A builder for [`BeginTransactionInput`](crate::input::BeginTransactionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -299,8 +303,10 @@ pub mod begin_transaction_input {
         /// Consumes the builder and constructs a [`BeginTransactionInput`](crate::input::BeginTransactionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::BeginTransactionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::BeginTransactionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::BeginTransactionInput {
                 resource_arn: self.resource_arn,
                 secret_arn: self.secret_arn,
@@ -323,13 +329,13 @@ impl BeginTransactionInput {
             crate::operation::BeginTransaction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BeginTransactionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/BeginTransaction").expect("formatting should succeed");
                 Ok(())
             }
@@ -337,8 +343,10 @@ impl BeginTransactionInput {
             fn update_http_builder(
                 input: &crate::input::BeginTransactionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -422,7 +430,7 @@ impl BeginTransactionInput {
 pub mod commit_transaction_input {
 
     /// A builder for [`CommitTransactionInput`](crate::input::CommitTransactionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -465,8 +473,10 @@ pub mod commit_transaction_input {
         /// Consumes the builder and constructs a [`CommitTransactionInput`](crate::input::CommitTransactionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CommitTransactionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CommitTransactionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CommitTransactionInput {
                 resource_arn: self.resource_arn,
                 secret_arn: self.secret_arn,
@@ -488,13 +498,13 @@ impl CommitTransactionInput {
             crate::operation::CommitTransaction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CommitTransactionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/CommitTransaction").expect("formatting should succeed");
                 Ok(())
             }
@@ -502,8 +512,10 @@ impl CommitTransactionInput {
             fn update_http_builder(
                 input: &crate::input::CommitTransactionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -587,7 +599,7 @@ impl CommitTransactionInput {
 pub mod execute_sql_input {
 
     /// A builder for [`ExecuteSqlInput`](crate::input::ExecuteSqlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_or_instance_arn: std::option::Option<std::string::String>,
         pub(crate) aws_secret_store_arn: std::option::Option<std::string::String>,
@@ -662,7 +674,8 @@ pub mod execute_sql_input {
         /// Consumes the builder and constructs a [`ExecuteSqlInput`](crate::input::ExecuteSqlInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ExecuteSqlInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ExecuteSqlInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ExecuteSqlInput {
                 db_cluster_or_instance_arn: self.db_cluster_or_instance_arn,
                 aws_secret_store_arn: self.aws_secret_store_arn,
@@ -686,13 +699,13 @@ impl ExecuteSqlInput {
             crate::operation::ExecuteSql,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ExecuteSqlInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ExecuteSql").expect("formatting should succeed");
                 Ok(())
             }
@@ -700,8 +713,10 @@ impl ExecuteSqlInput {
             fn update_http_builder(
                 input: &crate::input::ExecuteSqlInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -785,7 +800,7 @@ impl ExecuteSqlInput {
 pub mod execute_statement_input {
 
     /// A builder for [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -949,8 +964,10 @@ pub mod execute_statement_input {
         /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ExecuteStatementInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ExecuteStatementInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ExecuteStatementInput {
                 resource_arn: self.resource_arn,
                 secret_arn: self.secret_arn,
@@ -980,13 +997,13 @@ impl ExecuteStatementInput {
             crate::operation::ExecuteStatement,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ExecuteStatementInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/Execute").expect("formatting should succeed");
                 Ok(())
             }
@@ -994,8 +1011,10 @@ impl ExecuteStatementInput {
             fn update_http_builder(
                 input: &crate::input::ExecuteStatementInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1079,7 +1098,7 @@ impl ExecuteStatementInput {
 pub mod rollback_transaction_input {
 
     /// A builder for [`RollbackTransactionInput`](crate::input::RollbackTransactionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -1122,8 +1141,10 @@ pub mod rollback_transaction_input {
         /// Consumes the builder and constructs a [`RollbackTransactionInput`](crate::input::RollbackTransactionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RollbackTransactionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::RollbackTransactionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::RollbackTransactionInput {
                 resource_arn: self.resource_arn,
                 secret_arn: self.secret_arn,
@@ -1145,13 +1166,13 @@ impl RollbackTransactionInput {
             crate::operation::RollbackTransaction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RollbackTransactionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/RollbackTransaction").expect("formatting should succeed");
                 Ok(())
             }
@@ -1159,8 +1180,10 @@ impl RollbackTransactionInput {
             fn update_http_builder(
                 input: &crate::input::RollbackTransactionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1242,7 +1265,7 @@ impl RollbackTransactionInput {
 
 /// <p>The request parameters represent the input of a request to perform a rollback of a transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RollbackTransactionInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     #[doc(hidden)]
@@ -1268,19 +1291,10 @@ impl RollbackTransactionInput {
         self.transaction_id.as_deref()
     }
 }
-impl std::fmt::Debug for RollbackTransactionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RollbackTransactionInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request parameters represent the input of a request to run a SQL statement against a database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     #[doc(hidden)]
@@ -1380,27 +1394,10 @@ impl ExecuteStatementInput {
         self.format_records_as.as_ref()
     }
 }
-impl std::fmt::Debug for ExecuteStatementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteStatementInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("sql", &self.sql);
-        formatter.field("database", &self.database);
-        formatter.field("schema", &self.schema);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.field("include_result_metadata", &self.include_result_metadata);
-        formatter.field("continue_after_timeout", &self.continue_after_timeout);
-        formatter.field("result_set_options", &self.result_set_options);
-        formatter.field("format_records_as", &self.format_records_as);
-        formatter.finish()
-    }
-}
 
 /// <p>The request parameters represent the input of a request to run one or more SQL statements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteSqlInput {
     /// <p>The ARN of the Aurora Serverless DB cluster.</p>
     #[doc(hidden)]
@@ -1444,24 +1441,10 @@ impl ExecuteSqlInput {
         self.schema.as_deref()
     }
 }
-impl std::fmt::Debug for ExecuteSqlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteSqlInput");
-        formatter.field(
-            "db_cluster_or_instance_arn",
-            &self.db_cluster_or_instance_arn,
-        );
-        formatter.field("aws_secret_store_arn", &self.aws_secret_store_arn);
-        formatter.field("sql_statements", &self.sql_statements);
-        formatter.field("database", &self.database);
-        formatter.field("schema", &self.schema);
-        formatter.finish()
-    }
-}
 
 /// <p>The request parameters represent the input of a commit transaction request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitTransactionInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     #[doc(hidden)]
@@ -1487,19 +1470,10 @@ impl CommitTransactionInput {
         self.transaction_id.as_deref()
     }
 }
-impl std::fmt::Debug for CommitTransactionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitTransactionInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request parameters represent the input of a request to start a SQL transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BeginTransactionInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     #[doc(hidden)]
@@ -1532,20 +1506,10 @@ impl BeginTransactionInput {
         self.schema.as_deref()
     }
 }
-impl std::fmt::Debug for BeginTransactionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BeginTransactionInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("database", &self.database);
-        formatter.field("schema", &self.schema);
-        formatter.finish()
-    }
-}
 
 /// <p>The request parameters represent the input of a SQL statement over an array of data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchExecuteStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     #[doc(hidden)]
@@ -1618,18 +1582,5 @@ impl BatchExecuteStatementInput {
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
     pub fn transaction_id(&self) -> std::option::Option<&str> {
         self.transaction_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchExecuteStatementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchExecuteStatementInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("sql", &self.sql);
-        formatter.field("database", &self.database);
-        formatter.field("schema", &self.schema);
-        formatter.field("parameter_sets", &self.parameter_sets);
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.finish()
     }
 }

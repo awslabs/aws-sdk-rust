@@ -10,5 +10,5 @@ pub(super) fn percent_encode_query(value: &str) -> String {
 }
 
 pub(super) fn percent_encode_path(value: &str) -> String {
-    label::fmt_string(value, true)
+    label::fmt_string(value, label::EncodingStrategy::Greedy)
 }

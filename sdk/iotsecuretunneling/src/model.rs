@@ -2,7 +2,7 @@
 
 /// <p>An arbitary key/value pair used to add searchable metadata to secure tunnel resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -77,7 +69,7 @@ impl Tag {
 
 /// <p>The destination configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DestinationConfig {
     /// <p>The name of the IoT thing to which you want to connect.</p>
     #[doc(hidden)]
@@ -96,19 +88,11 @@ impl DestinationConfig {
         self.services.as_deref()
     }
 }
-impl std::fmt::Debug for DestinationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DestinationConfig");
-        formatter.field("thing_name", &self.thing_name);
-        formatter.field("services", &self.services);
-        formatter.finish()
-    }
-}
 /// See [`DestinationConfig`](crate::model::DestinationConfig).
 pub mod destination_config {
 
     /// A builder for [`DestinationConfig`](crate::model::DestinationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
         pub(crate) services: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -159,6 +143,42 @@ impl DestinationConfig {
     }
 }
 
+/// When writing a match expression against `ClientMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let clientmode = unimplemented!();
+/// match clientmode {
+///     ClientMode::All => { /* ... */ },
+///     ClientMode::Destination => { /* ... */ },
+///     ClientMode::Source => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `clientmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ClientMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ClientMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ClientMode::NewFeature` is defined.
+/// Specifically, when `clientmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ClientMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -177,8 +197,8 @@ pub enum ClientMode {
     Destination,
     #[allow(missing_docs)] // documentation missing in model
     Source,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ClientMode {
     fn from(s: &str) -> Self {
@@ -186,7 +206,7 @@ impl std::convert::From<&str> for ClientMode {
             "ALL" => ClientMode::All,
             "DESTINATION" => ClientMode::Destination,
             "SOURCE" => ClientMode::Source,
-            other => ClientMode::Unknown(other.to_owned()),
+            other => ClientMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -204,11 +224,11 @@ impl ClientMode {
             ClientMode::All => "ALL",
             ClientMode::Destination => "DESTINATION",
             ClientMode::Source => "SOURCE",
-            ClientMode::Unknown(s) => s.as_ref(),
+            ClientMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "DESTINATION", "SOURCE"]
     }
 }
@@ -220,7 +240,7 @@ impl AsRef<str> for ClientMode {
 
 /// <p>Tunnel timeout configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeoutConfig {
     /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes) </p>
     #[doc(hidden)]
@@ -232,21 +252,11 @@ impl TimeoutConfig {
         self.max_lifetime_timeout_minutes
     }
 }
-impl std::fmt::Debug for TimeoutConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeoutConfig");
-        formatter.field(
-            "max_lifetime_timeout_minutes",
-            &self.max_lifetime_timeout_minutes,
-        );
-        formatter.finish()
-    }
-}
 /// See [`TimeoutConfig`](crate::model::TimeoutConfig).
 pub mod timeout_config {
 
     /// A builder for [`TimeoutConfig`](crate::model::TimeoutConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_lifetime_timeout_minutes: std::option::Option<i32>,
     }
@@ -278,7 +288,7 @@ impl TimeoutConfig {
 
 /// <p>Information about the tunnel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TunnelSummary {
     /// <p>The unique alpha-numeric identifier for the tunnel.</p>
     #[doc(hidden)]
@@ -325,23 +335,11 @@ impl TunnelSummary {
         self.last_updated_at.as_ref()
     }
 }
-impl std::fmt::Debug for TunnelSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TunnelSummary");
-        formatter.field("tunnel_id", &self.tunnel_id);
-        formatter.field("tunnel_arn", &self.tunnel_arn);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
-    }
-}
 /// See [`TunnelSummary`](crate::model::TunnelSummary).
 pub mod tunnel_summary {
 
     /// A builder for [`TunnelSummary`](crate::model::TunnelSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel_id: std::option::Option<std::string::String>,
         pub(crate) tunnel_arn: std::option::Option<std::string::String>,
@@ -440,6 +438,41 @@ impl TunnelSummary {
     }
 }
 
+/// When writing a match expression against `TunnelStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let tunnelstatus = unimplemented!();
+/// match tunnelstatus {
+///     TunnelStatus::Closed => { /* ... */ },
+///     TunnelStatus::Open => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `tunnelstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TunnelStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TunnelStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TunnelStatus::NewFeature` is defined.
+/// Specifically, when `tunnelstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TunnelStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -456,15 +489,15 @@ pub enum TunnelStatus {
     Closed,
     #[allow(missing_docs)] // documentation missing in model
     Open,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TunnelStatus {
     fn from(s: &str) -> Self {
         match s {
             "CLOSED" => TunnelStatus::Closed,
             "OPEN" => TunnelStatus::Open,
-            other => TunnelStatus::Unknown(other.to_owned()),
+            other => TunnelStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -481,11 +514,11 @@ impl TunnelStatus {
         match self {
             TunnelStatus::Closed => "CLOSED",
             TunnelStatus::Open => "OPEN",
-            TunnelStatus::Unknown(s) => s.as_ref(),
+            TunnelStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOSED", "OPEN"]
     }
 }
@@ -497,7 +530,7 @@ impl AsRef<str> for TunnelStatus {
 
 /// <p>A connection between a source computer and a destination device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tunnel {
     /// <p>A unique alpha-numeric ID that identifies a tunnel.</p>
     #[doc(hidden)]
@@ -581,31 +614,11 @@ impl Tunnel {
         self.last_updated_at.as_ref()
     }
 }
-impl std::fmt::Debug for Tunnel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tunnel");
-        formatter.field("tunnel_id", &self.tunnel_id);
-        formatter.field("tunnel_arn", &self.tunnel_arn);
-        formatter.field("status", &self.status);
-        formatter.field("source_connection_state", &self.source_connection_state);
-        formatter.field(
-            "destination_connection_state",
-            &self.destination_connection_state,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("destination_config", &self.destination_config);
-        formatter.field("timeout_config", &self.timeout_config);
-        formatter.field("tags", &self.tags);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
-    }
-}
 /// See [`Tunnel`](crate::model::Tunnel).
 pub mod tunnel {
 
     /// A builder for [`Tunnel`](crate::model::Tunnel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel_id: std::option::Option<std::string::String>,
         pub(crate) tunnel_arn: std::option::Option<std::string::String>,
@@ -790,7 +803,7 @@ impl Tunnel {
 
 /// <p>The state of a connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionState {
     /// <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and <code>DISCONNECTED</code>.</p>
     #[doc(hidden)]
@@ -809,19 +822,11 @@ impl ConnectionState {
         self.last_updated_at.as_ref()
     }
 }
-impl std::fmt::Debug for ConnectionState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionState");
-        formatter.field("status", &self.status);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
-    }
-}
 /// See [`ConnectionState`](crate::model::ConnectionState).
 pub mod connection_state {
 
     /// A builder for [`ConnectionState`](crate::model::ConnectionState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ConnectionStatus>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -869,6 +874,41 @@ impl ConnectionState {
     }
 }
 
+/// When writing a match expression against `ConnectionStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let connectionstatus = unimplemented!();
+/// match connectionstatus {
+///     ConnectionStatus::Connected => { /* ... */ },
+///     ConnectionStatus::Disconnected => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `connectionstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ConnectionStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ConnectionStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ConnectionStatus::NewFeature` is defined.
+/// Specifically, when `connectionstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ConnectionStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -885,15 +925,15 @@ pub enum ConnectionStatus {
     Connected,
     #[allow(missing_docs)] // documentation missing in model
     Disconnected,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ConnectionStatus {
     fn from(s: &str) -> Self {
         match s {
             "CONNECTED" => ConnectionStatus::Connected,
             "DISCONNECTED" => ConnectionStatus::Disconnected,
-            other => ConnectionStatus::Unknown(other.to_owned()),
+            other => ConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -910,11 +950,11 @@ impl ConnectionStatus {
         match self {
             ConnectionStatus::Connected => "CONNECTED",
             ConnectionStatus::Disconnected => "DISCONNECTED",
-            ConnectionStatus::Unknown(s) => s.as_ref(),
+            ConnectionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONNECTED", "DISCONNECTED"]
     }
 }

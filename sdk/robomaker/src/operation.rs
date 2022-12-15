@@ -5,7 +5,7 @@
 /// [`batch_delete_worlds`](crate::client::Client::batch_delete_worlds).
 ///
 /// See [`crate::client::fluent_builders::BatchDeleteWorlds`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDeleteWorlds {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteWorlds {
 /// [`batch_describe_simulation_job`](crate::client::Client::batch_describe_simulation_job).
 ///
 /// See [`crate::client::fluent_builders::BatchDescribeSimulationJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDescribeSimulationJob {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDescribeSimulationJ
 /// [`cancel_deployment_job`](crate::client::Client::cancel_deployment_job).
 ///
 /// See [`crate::client::fluent_builders::CancelDeploymentJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelDeploymentJob {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelDeploymentJob {
 /// [`cancel_simulation_job`](crate::client::Client::cancel_simulation_job).
 ///
 /// See [`crate::client::fluent_builders::CancelSimulationJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelSimulationJob {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelSimulationJob {
 /// [`cancel_simulation_job_batch`](crate::client::Client::cancel_simulation_job_batch).
 ///
 /// See [`crate::client::fluent_builders::CancelSimulationJobBatch`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelSimulationJobBatch {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelSimulationJobBatch
 /// [`cancel_world_export_job`](crate::client::Client::cancel_world_export_job).
 ///
 /// See [`crate::client::fluent_builders::CancelWorldExportJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelWorldExportJob {
     _private: (),
 }
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelWorldExportJob {
 /// [`cancel_world_generation_job`](crate::client::Client::cancel_world_generation_job).
 ///
 /// See [`crate::client::fluent_builders::CancelWorldGenerationJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelWorldGenerationJob {
     _private: (),
 }
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelWorldGenerationJob
 /// [`create_deployment_job`](crate::client::Client::create_deployment_job).
 ///
 /// See [`crate::client::fluent_builders::CreateDeploymentJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDeploymentJob {
     _private: (),
 }
@@ -277,7 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDeploymentJob {
 /// [`create_fleet`](crate::client::Client::create_fleet).
 ///
 /// See [`crate::client::fluent_builders::CreateFleet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateFleet {
     _private: (),
 }
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFleet {
 /// [`create_robot`](crate::client::Client::create_robot).
 ///
 /// See [`crate::client::fluent_builders::CreateRobot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRobot {
     _private: (),
 }
@@ -341,7 +341,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRobot {
 /// [`create_robot_application`](crate::client::Client::create_robot_application).
 ///
 /// See [`crate::client::fluent_builders::CreateRobotApplication`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRobotApplication {
     _private: (),
 }
@@ -375,7 +375,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRobotApplication {
 /// [`create_robot_application_version`](crate::client::Client::create_robot_application_version).
 ///
 /// See [`crate::client::fluent_builders::CreateRobotApplicationVersion`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRobotApplicationVersion {
     _private: (),
 }
@@ -409,7 +409,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRobotApplicationVe
 /// [`create_simulation_application`](crate::client::Client::create_simulation_application).
 ///
 /// See [`crate::client::fluent_builders::CreateSimulationApplication`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSimulationApplication {
     _private: (),
 }
@@ -443,7 +443,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSimulationApplicat
 /// [`create_simulation_application_version`](crate::client::Client::create_simulation_application_version).
 ///
 /// See [`crate::client::fluent_builders::CreateSimulationApplicationVersion`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSimulationApplicationVersion {
     _private: (),
 }
@@ -477,7 +477,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSimulationApplicat
 /// [`create_simulation_job`](crate::client::Client::create_simulation_job).
 ///
 /// See [`crate::client::fluent_builders::CreateSimulationJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSimulationJob {
     _private: (),
 }
@@ -511,7 +511,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSimulationJob {
 /// [`create_world_export_job`](crate::client::Client::create_world_export_job).
 ///
 /// See [`crate::client::fluent_builders::CreateWorldExportJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorldExportJob {
     _private: (),
 }
@@ -545,7 +545,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorldExportJob {
 /// [`create_world_generation_job`](crate::client::Client::create_world_generation_job).
 ///
 /// See [`crate::client::fluent_builders::CreateWorldGenerationJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorldGenerationJob {
     _private: (),
 }
@@ -579,7 +579,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorldGenerationJob
 /// [`create_world_template`](crate::client::Client::create_world_template).
 ///
 /// See [`crate::client::fluent_builders::CreateWorldTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorldTemplate {
     _private: (),
 }
@@ -613,7 +613,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorldTemplate {
 /// [`delete_fleet`](crate::client::Client::delete_fleet).
 ///
 /// See [`crate::client::fluent_builders::DeleteFleet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFleet {
     _private: (),
 }
@@ -645,7 +645,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFleet {
 /// [`delete_robot`](crate::client::Client::delete_robot).
 ///
 /// See [`crate::client::fluent_builders::DeleteRobot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRobot {
     _private: (),
 }
@@ -677,7 +677,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRobot {
 /// [`delete_robot_application`](crate::client::Client::delete_robot_application).
 ///
 /// See [`crate::client::fluent_builders::DeleteRobotApplication`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRobotApplication {
     _private: (),
 }
@@ -711,7 +711,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRobotApplication {
 /// [`delete_simulation_application`](crate::client::Client::delete_simulation_application).
 ///
 /// See [`crate::client::fluent_builders::DeleteSimulationApplication`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSimulationApplication {
     _private: (),
 }
@@ -745,7 +745,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSimulationApplicat
 /// [`delete_world_template`](crate::client::Client::delete_world_template).
 ///
 /// See [`crate::client::fluent_builders::DeleteWorldTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWorldTemplate {
     _private: (),
 }
@@ -779,7 +779,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorldTemplate {
 /// [`deregister_robot`](crate::client::Client::deregister_robot).
 ///
 /// See [`crate::client::fluent_builders::DeregisterRobot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeregisterRobot {
     _private: (),
 }
@@ -813,7 +813,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterRobot {
 /// [`describe_deployment_job`](crate::client::Client::describe_deployment_job).
 ///
 /// See [`crate::client::fluent_builders::DescribeDeploymentJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDeploymentJob {
     _private: (),
 }
@@ -847,7 +847,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDeploymentJob {
 /// [`describe_fleet`](crate::client::Client::describe_fleet).
 ///
 /// See [`crate::client::fluent_builders::DescribeFleet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFleet {
     _private: (),
 }
@@ -879,7 +879,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFleet {
 /// [`describe_robot`](crate::client::Client::describe_robot).
 ///
 /// See [`crate::client::fluent_builders::DescribeRobot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRobot {
     _private: (),
 }
@@ -911,7 +911,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRobot {
 /// [`describe_robot_application`](crate::client::Client::describe_robot_application).
 ///
 /// See [`crate::client::fluent_builders::DescribeRobotApplication`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRobotApplication {
     _private: (),
 }
@@ -945,7 +945,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRobotApplication
 /// [`describe_simulation_application`](crate::client::Client::describe_simulation_application).
 ///
 /// See [`crate::client::fluent_builders::DescribeSimulationApplication`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSimulationApplication {
     _private: (),
 }
@@ -979,7 +979,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSimulationApplic
 /// [`describe_simulation_job`](crate::client::Client::describe_simulation_job).
 ///
 /// See [`crate::client::fluent_builders::DescribeSimulationJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSimulationJob {
     _private: (),
 }
@@ -1013,7 +1013,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSimulationJob {
 /// [`describe_simulation_job_batch`](crate::client::Client::describe_simulation_job_batch).
 ///
 /// See [`crate::client::fluent_builders::DescribeSimulationJobBatch`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSimulationJobBatch {
     _private: (),
 }
@@ -1047,7 +1047,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSimulationJobBat
 /// [`describe_world`](crate::client::Client::describe_world).
 ///
 /// See [`crate::client::fluent_builders::DescribeWorld`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeWorld {
     _private: (),
 }
@@ -1079,7 +1079,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorld {
 /// [`describe_world_export_job`](crate::client::Client::describe_world_export_job).
 ///
 /// See [`crate::client::fluent_builders::DescribeWorldExportJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeWorldExportJob {
     _private: (),
 }
@@ -1113,7 +1113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorldExportJob {
 /// [`describe_world_generation_job`](crate::client::Client::describe_world_generation_job).
 ///
 /// See [`crate::client::fluent_builders::DescribeWorldGenerationJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeWorldGenerationJob {
     _private: (),
 }
@@ -1147,7 +1147,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorldGenerationJ
 /// [`describe_world_template`](crate::client::Client::describe_world_template).
 ///
 /// See [`crate::client::fluent_builders::DescribeWorldTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeWorldTemplate {
     _private: (),
 }
@@ -1181,7 +1181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorldTemplate {
 /// [`get_world_template_body`](crate::client::Client::get_world_template_body).
 ///
 /// See [`crate::client::fluent_builders::GetWorldTemplateBody`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWorldTemplateBody {
     _private: (),
 }
@@ -1215,7 +1215,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorldTemplateBody {
 /// [`list_deployment_jobs`](crate::client::Client::list_deployment_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListDeploymentJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDeploymentJobs {
     _private: (),
 }
@@ -1249,7 +1249,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeploymentJobs {
 /// [`list_fleets`](crate::client::Client::list_fleets).
 ///
 /// See [`crate::client::fluent_builders::ListFleets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFleets {
     _private: (),
 }
@@ -1281,7 +1281,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFleets {
 /// [`list_robot_applications`](crate::client::Client::list_robot_applications).
 ///
 /// See [`crate::client::fluent_builders::ListRobotApplications`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRobotApplications {
     _private: (),
 }
@@ -1315,7 +1315,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRobotApplications {
 /// [`list_robots`](crate::client::Client::list_robots).
 ///
 /// See [`crate::client::fluent_builders::ListRobots`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRobots {
     _private: (),
 }
@@ -1347,7 +1347,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRobots {
 /// [`list_simulation_applications`](crate::client::Client::list_simulation_applications).
 ///
 /// See [`crate::client::fluent_builders::ListSimulationApplications`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSimulationApplications {
     _private: (),
 }
@@ -1381,7 +1381,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSimulationApplicatio
 /// [`list_simulation_job_batches`](crate::client::Client::list_simulation_job_batches).
 ///
 /// See [`crate::client::fluent_builders::ListSimulationJobBatches`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSimulationJobBatches {
     _private: (),
 }
@@ -1415,7 +1415,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSimulationJobBatches
 /// [`list_simulation_jobs`](crate::client::Client::list_simulation_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListSimulationJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSimulationJobs {
     _private: (),
 }
@@ -1449,7 +1449,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSimulationJobs {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -1483,7 +1483,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_world_export_jobs`](crate::client::Client::list_world_export_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListWorldExportJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorldExportJobs {
     _private: (),
 }
@@ -1517,7 +1517,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorldExportJobs {
 /// [`list_world_generation_jobs`](crate::client::Client::list_world_generation_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListWorldGenerationJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorldGenerationJobs {
     _private: (),
 }
@@ -1551,7 +1551,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorldGenerationJobs 
 /// [`list_worlds`](crate::client::Client::list_worlds).
 ///
 /// See [`crate::client::fluent_builders::ListWorlds`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorlds {
     _private: (),
 }
@@ -1583,7 +1583,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorlds {
 /// [`list_world_templates`](crate::client::Client::list_world_templates).
 ///
 /// See [`crate::client::fluent_builders::ListWorldTemplates`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorldTemplates {
     _private: (),
 }
@@ -1617,7 +1617,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorldTemplates {
 /// [`register_robot`](crate::client::Client::register_robot).
 ///
 /// See [`crate::client::fluent_builders::RegisterRobot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterRobot {
     _private: (),
 }
@@ -1649,7 +1649,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterRobot {
 /// [`restart_simulation_job`](crate::client::Client::restart_simulation_job).
 ///
 /// See [`crate::client::fluent_builders::RestartSimulationJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RestartSimulationJob {
     _private: (),
 }
@@ -1683,7 +1683,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestartSimulationJob {
 /// [`start_simulation_job_batch`](crate::client::Client::start_simulation_job_batch).
 ///
 /// See [`crate::client::fluent_builders::StartSimulationJobBatch`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartSimulationJobBatch {
     _private: (),
 }
@@ -1717,7 +1717,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSimulationJobBatch 
 /// [`sync_deployment_job`](crate::client::Client::sync_deployment_job).
 ///
 /// See [`crate::client::fluent_builders::SyncDeploymentJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SyncDeploymentJob {
     _private: (),
 }
@@ -1751,7 +1751,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SyncDeploymentJob {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1783,7 +1783,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1815,7 +1815,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_robot_application`](crate::client::Client::update_robot_application).
 ///
 /// See [`crate::client::fluent_builders::UpdateRobotApplication`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRobotApplication {
     _private: (),
 }
@@ -1849,7 +1849,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRobotApplication {
 /// [`update_simulation_application`](crate::client::Client::update_simulation_application).
 ///
 /// See [`crate::client::fluent_builders::UpdateSimulationApplication`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSimulationApplication {
     _private: (),
 }
@@ -1883,7 +1883,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSimulationApplicat
 /// [`update_world_template`](crate::client::Client::update_world_template).
 ///
 /// See [`crate::client::fluent_builders::UpdateWorldTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateWorldTemplate {
     _private: (),
 }

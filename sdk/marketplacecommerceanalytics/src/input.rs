@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod generate_data_set_input {
 
     /// A builder for [`GenerateDataSetInput`](crate::input::GenerateDataSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_type: std::option::Option<crate::model::DataSetType>,
         pub(crate) data_set_publication_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -182,7 +182,7 @@ pub mod generate_data_set_input {
         /// Consumes the builder and constructs a [`GenerateDataSetInput`](crate::input::GenerateDataSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GenerateDataSetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GenerateDataSetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GenerateDataSetInput {
                 data_set_type: self.data_set_type,
@@ -209,13 +209,13 @@ impl GenerateDataSetInput {
             crate::operation::GenerateDataSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GenerateDataSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -223,8 +223,10 @@ impl GenerateDataSetInput {
             fn update_http_builder(
                 input: &crate::input::GenerateDataSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -313,7 +315,7 @@ impl GenerateDataSetInput {
 pub mod start_support_data_export_input {
 
     /// A builder for [`StartSupportDataExportInput`](crate::input::StartSupportDataExportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_type: std::option::Option<crate::model::SupportDataSetType>,
         pub(crate) from_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -444,8 +446,10 @@ pub mod start_support_data_export_input {
         /// Consumes the builder and constructs a [`StartSupportDataExportInput`](crate::input::StartSupportDataExportInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartSupportDataExportInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartSupportDataExportInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartSupportDataExportInput {
                 data_set_type: self.data_set_type,
                 from_date: self.from_date,
@@ -471,13 +475,13 @@ impl StartSupportDataExportInput {
             crate::operation::StartSupportDataExport,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartSupportDataExportInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -485,8 +489,10 @@ impl StartSupportDataExportInput {
             fn update_http_builder(
                 input: &crate::input::StartSupportDataExportInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -575,7 +581,7 @@ impl StartSupportDataExportInput {
 
 /// Container for the parameters to the StartSupportDataExport operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSupportDataExportInput {
     /// <p> Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p>
     /// <p> </p>
@@ -645,26 +651,10 @@ impl StartSupportDataExportInput {
         self.customer_defined_values.as_ref()
     }
 }
-impl std::fmt::Debug for StartSupportDataExportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSupportDataExportInput");
-        formatter.field("data_set_type", &self.data_set_type);
-        formatter.field("from_date", &self.from_date);
-        formatter.field("role_name_arn", &self.role_name_arn);
-        formatter.field(
-            "destination_s3_bucket_name",
-            &self.destination_s3_bucket_name,
-        );
-        formatter.field("destination_s3_prefix", &self.destination_s3_prefix);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("customer_defined_values", &self.customer_defined_values);
-        formatter.finish()
-    }
-}
 
 /// Container for the parameters to the GenerateDataSet operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateDataSetInput {
     /// <p>The desired data set type.</p>
     /// <p> </p>
@@ -778,21 +768,5 @@ impl GenerateDataSetInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.customer_defined_values.as_ref()
-    }
-}
-impl std::fmt::Debug for GenerateDataSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateDataSetInput");
-        formatter.field("data_set_type", &self.data_set_type);
-        formatter.field("data_set_publication_date", &self.data_set_publication_date);
-        formatter.field("role_name_arn", &self.role_name_arn);
-        formatter.field(
-            "destination_s3_bucket_name",
-            &self.destination_s3_bucket_name,
-        );
-        formatter.field("destination_s3_prefix", &self.destination_s3_prefix);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("customer_defined_values", &self.customer_defined_values);
-        formatter.finish()
     }
 }

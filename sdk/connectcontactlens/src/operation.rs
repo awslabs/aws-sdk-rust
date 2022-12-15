@@ -5,7 +5,7 @@
 /// [`list_realtime_contact_analysis_segments`](crate::client::Client::list_realtime_contact_analysis_segments).
 ///
 /// See [`crate::client::fluent_builders::ListRealtimeContactAnalysisSegments`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRealtimeContactAnalysisSegments {
     _private: (),
 }

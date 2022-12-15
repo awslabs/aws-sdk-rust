@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod delete_report_definition_input {
 
     /// A builder for [`DeleteReportDefinitionInput`](crate::input::DeleteReportDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_name: std::option::Option<std::string::String>,
     }
@@ -23,8 +23,10 @@ pub mod delete_report_definition_input {
         /// Consumes the builder and constructs a [`DeleteReportDefinitionInput`](crate::input::DeleteReportDefinitionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteReportDefinitionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteReportDefinitionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteReportDefinitionInput {
                 report_name: self.report_name,
             })
@@ -44,13 +46,13 @@ impl DeleteReportDefinitionInput {
             crate::operation::DeleteReportDefinition,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteReportDefinitionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -58,8 +60,10 @@ impl DeleteReportDefinitionInput {
             fn update_http_builder(
                 input: &crate::input::DeleteReportDefinitionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -150,7 +154,7 @@ impl DeleteReportDefinitionInput {
 pub mod describe_report_definitions_input {
 
     /// A builder for [`DescribeReportDefinitionsInput`](crate::input::DescribeReportDefinitionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -181,7 +185,7 @@ pub mod describe_report_definitions_input {
             self,
         ) -> Result<
             crate::input::DescribeReportDefinitionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeReportDefinitionsInput {
                 max_results: self.max_results,
@@ -203,13 +207,13 @@ impl DescribeReportDefinitionsInput {
             crate::operation::DescribeReportDefinitions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeReportDefinitionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -217,8 +221,10 @@ impl DescribeReportDefinitionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeReportDefinitionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -309,7 +315,7 @@ impl DescribeReportDefinitionsInput {
 pub mod modify_report_definition_input {
 
     /// A builder for [`ModifyReportDefinitionInput`](crate::input::ModifyReportDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_name: std::option::Option<std::string::String>,
         pub(crate) report_definition: std::option::Option<crate::model::ReportDefinition>,
@@ -341,8 +347,10 @@ pub mod modify_report_definition_input {
         /// Consumes the builder and constructs a [`ModifyReportDefinitionInput`](crate::input::ModifyReportDefinitionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ModifyReportDefinitionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ModifyReportDefinitionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ModifyReportDefinitionInput {
                 report_name: self.report_name,
                 report_definition: self.report_definition,
@@ -363,13 +371,13 @@ impl ModifyReportDefinitionInput {
             crate::operation::ModifyReportDefinition,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ModifyReportDefinitionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -377,8 +385,10 @@ impl ModifyReportDefinitionInput {
             fn update_http_builder(
                 input: &crate::input::ModifyReportDefinitionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -469,7 +479,7 @@ impl ModifyReportDefinitionInput {
 pub mod put_report_definition_input {
 
     /// A builder for [`PutReportDefinitionInput`](crate::input::PutReportDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_definition: std::option::Option<crate::model::ReportDefinition>,
     }
@@ -490,8 +500,10 @@ pub mod put_report_definition_input {
         /// Consumes the builder and constructs a [`PutReportDefinitionInput`](crate::input::PutReportDefinitionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutReportDefinitionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutReportDefinitionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutReportDefinitionInput {
                 report_definition: self.report_definition,
             })
@@ -511,13 +523,13 @@ impl PutReportDefinitionInput {
             crate::operation::PutReportDefinition,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutReportDefinitionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -525,8 +537,10 @@ impl PutReportDefinitionInput {
             fn update_http_builder(
                 input: &crate::input::PutReportDefinitionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -613,7 +627,7 @@ impl PutReportDefinitionInput {
 
 /// <p>Creates a Cost and Usage Report.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutReportDefinitionInput {
     /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
     #[doc(hidden)]
@@ -625,17 +639,10 @@ impl PutReportDefinitionInput {
         self.report_definition.as_ref()
     }
 }
-impl std::fmt::Debug for PutReportDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutReportDefinitionInput");
-        formatter.field("report_definition", &self.report_definition);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyReportDefinitionInput {
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
     #[doc(hidden)]
@@ -654,18 +661,10 @@ impl ModifyReportDefinitionInput {
         self.report_definition.as_ref()
     }
 }
-impl std::fmt::Debug for ModifyReportDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyReportDefinitionInput");
-        formatter.field("report_name", &self.report_name);
-        formatter.field("report_definition", &self.report_definition);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests a list of AWS Cost and Usage reports owned by the account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReportDefinitionsInput {
     /// <p>The maximum number of results that AWS returns for the operation.</p>
     #[doc(hidden)]
@@ -684,18 +683,10 @@ impl DescribeReportDefinitionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReportDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReportDefinitionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Deletes the specified report.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReportDefinitionInput {
     /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
     #[doc(hidden)]
@@ -705,12 +696,5 @@ impl DeleteReportDefinitionInput {
     /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
     pub fn report_name(&self) -> std::option::Option<&str> {
         self.report_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteReportDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReportDefinitionInput");
-        formatter.field("report_name", &self.report_name);
-        formatter.finish()
     }
 }

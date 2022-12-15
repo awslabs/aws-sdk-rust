@@ -77,8 +77,15 @@ pub enum Error {
     ValidationException(crate::error::ValidationException),
     /// <p>The specified webhook was entered in an invalid format or cannot be found.</p>
     WebhookNotFoundException(crate::error::WebhookNotFoundException),
-    /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -129,19 +136,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AcknowledgeJobError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AcknowledgeJobErrorKind::InvalidNonceException(inner) => {
-                    Error::InvalidNonceException(inner)
-                }
-                crate::error::AcknowledgeJobErrorKind::JobNotFoundException(inner) => {
-                    Error::JobNotFoundException(inner)
-                }
-                crate::error::AcknowledgeJobErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::AcknowledgeJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AcknowledgeJobError> for Error {
+    fn from(err: crate::error::AcknowledgeJobError) -> Self {
+        match err.kind {
+            crate::error::AcknowledgeJobErrorKind::InvalidNonceException(inner) => {
+                Error::InvalidNonceException(inner)
+            }
+            crate::error::AcknowledgeJobErrorKind::JobNotFoundException(inner) => {
+                Error::JobNotFoundException(inner)
+            }
+            crate::error::AcknowledgeJobErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::AcknowledgeJobErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -154,24 +170,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::AcknowledgeThirdPartyJobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AcknowledgeThirdPartyJobErrorKind::InvalidClientTokenException(
-                    inner,
-                ) => Error::InvalidClientTokenException(inner),
-                crate::error::AcknowledgeThirdPartyJobErrorKind::InvalidNonceException(inner) => {
-                    Error::InvalidNonceException(inner)
-                }
-                crate::error::AcknowledgeThirdPartyJobErrorKind::JobNotFoundException(inner) => {
-                    Error::JobNotFoundException(inner)
-                }
-                crate::error::AcknowledgeThirdPartyJobErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::AcknowledgeThirdPartyJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AcknowledgeThirdPartyJobError> for Error {
+    fn from(err: crate::error::AcknowledgeThirdPartyJobError) -> Self {
+        match err.kind {
+            crate::error::AcknowledgeThirdPartyJobErrorKind::InvalidClientTokenException(inner) => {
+                Error::InvalidClientTokenException(inner)
+            }
+            crate::error::AcknowledgeThirdPartyJobErrorKind::InvalidNonceException(inner) => {
+                Error::InvalidNonceException(inner)
+            }
+            crate::error::AcknowledgeThirdPartyJobErrorKind::JobNotFoundException(inner) => {
+                Error::JobNotFoundException(inner)
+            }
+            crate::error::AcknowledgeThirdPartyJobErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::AcknowledgeThirdPartyJobErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -184,27 +207,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateCustomActionTypeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateCustomActionTypeErrorKind::ConcurrentModificationException(
-                    inner,
-                ) => Error::ConcurrentModificationException(inner),
-                crate::error::CreateCustomActionTypeErrorKind::InvalidTagsException(inner) => {
-                    Error::InvalidTagsException(inner)
-                }
-                crate::error::CreateCustomActionTypeErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateCustomActionTypeErrorKind::TooManyTagsException(inner) => {
-                    Error::TooManyTagsException(inner)
-                }
-                crate::error::CreateCustomActionTypeErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::CreateCustomActionTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateCustomActionTypeError> for Error {
+    fn from(err: crate::error::CreateCustomActionTypeError) -> Self {
+        match err.kind {
+            crate::error::CreateCustomActionTypeErrorKind::ConcurrentModificationException(
+                inner,
+            ) => Error::ConcurrentModificationException(inner),
+            crate::error::CreateCustomActionTypeErrorKind::InvalidTagsException(inner) => {
+                Error::InvalidTagsException(inner)
+            }
+            crate::error::CreateCustomActionTypeErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::CreateCustomActionTypeErrorKind::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
+            }
+            crate::error::CreateCustomActionTypeErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::CreateCustomActionTypeErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -214,40 +244,49 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreatePipelineError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreatePipelineErrorKind::ConcurrentModificationException(inner) => {
-                    Error::ConcurrentModificationException(inner)
-                }
-                crate::error::CreatePipelineErrorKind::InvalidActionDeclarationException(inner) => {
-                    Error::InvalidActionDeclarationException(inner)
-                }
-                crate::error::CreatePipelineErrorKind::InvalidBlockerDeclarationException(
-                    inner,
-                ) => Error::InvalidBlockerDeclarationException(inner),
-                crate::error::CreatePipelineErrorKind::InvalidStageDeclarationException(inner) => {
-                    Error::InvalidStageDeclarationException(inner)
-                }
-                crate::error::CreatePipelineErrorKind::InvalidStructureException(inner) => {
-                    Error::InvalidStructureException(inner)
-                }
-                crate::error::CreatePipelineErrorKind::InvalidTagsException(inner) => {
-                    Error::InvalidTagsException(inner)
-                }
-                crate::error::CreatePipelineErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreatePipelineErrorKind::PipelineNameInUseException(inner) => {
-                    Error::PipelineNameInUseException(inner)
-                }
-                crate::error::CreatePipelineErrorKind::TooManyTagsException(inner) => {
-                    Error::TooManyTagsException(inner)
-                }
-                crate::error::CreatePipelineErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::CreatePipelineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreatePipelineError> for Error {
+    fn from(err: crate::error::CreatePipelineError) -> Self {
+        match err.kind {
+            crate::error::CreatePipelineErrorKind::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::error::CreatePipelineErrorKind::InvalidActionDeclarationException(inner) => {
+                Error::InvalidActionDeclarationException(inner)
+            }
+            crate::error::CreatePipelineErrorKind::InvalidBlockerDeclarationException(inner) => {
+                Error::InvalidBlockerDeclarationException(inner)
+            }
+            crate::error::CreatePipelineErrorKind::InvalidStageDeclarationException(inner) => {
+                Error::InvalidStageDeclarationException(inner)
+            }
+            crate::error::CreatePipelineErrorKind::InvalidStructureException(inner) => {
+                Error::InvalidStructureException(inner)
+            }
+            crate::error::CreatePipelineErrorKind::InvalidTagsException(inner) => {
+                Error::InvalidTagsException(inner)
+            }
+            crate::error::CreatePipelineErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::CreatePipelineErrorKind::PipelineNameInUseException(inner) => {
+                Error::PipelineNameInUseException(inner)
+            }
+            crate::error::CreatePipelineErrorKind::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
+            }
+            crate::error::CreatePipelineErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::CreatePipelineErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -260,18 +299,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteCustomActionTypeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteCustomActionTypeErrorKind::ConcurrentModificationException(
-                    inner,
-                ) => Error::ConcurrentModificationException(inner),
-                crate::error::DeleteCustomActionTypeErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::DeleteCustomActionTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteCustomActionTypeError> for Error {
+    fn from(err: crate::error::DeleteCustomActionTypeError) -> Self {
+        match err.kind {
+            crate::error::DeleteCustomActionTypeErrorKind::ConcurrentModificationException(
+                inner,
+            ) => Error::ConcurrentModificationException(inner),
+            crate::error::DeleteCustomActionTypeErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::DeleteCustomActionTypeErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -281,16 +327,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeletePipelineError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeletePipelineErrorKind::ConcurrentModificationException(inner) => {
-                    Error::ConcurrentModificationException(inner)
-                }
-                crate::error::DeletePipelineErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::DeletePipelineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeletePipelineError> for Error {
+    fn from(err: crate::error::DeletePipelineError) -> Self {
+        match err.kind {
+            crate::error::DeletePipelineErrorKind::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::error::DeletePipelineErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::DeletePipelineErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -300,16 +355,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteWebhookError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteWebhookErrorKind::ConcurrentModificationException(inner) => {
-                    Error::ConcurrentModificationException(inner)
-                }
-                crate::error::DeleteWebhookErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::DeleteWebhookErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteWebhookError> for Error {
+    fn from(err: crate::error::DeleteWebhookError) -> Self {
+        match err.kind {
+            crate::error::DeleteWebhookErrorKind::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::error::DeleteWebhookErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::DeleteWebhookErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -326,12 +390,25 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DeregisterWebhookWithThirdPartyErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DeregisterWebhookWithThirdPartyErrorKind::WebhookNotFoundException(inner) => Error::WebhookNotFoundException(inner),
-                crate::error::DeregisterWebhookWithThirdPartyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeregisterWebhookWithThirdPartyError> for Error {
+    fn from(err: crate::error::DeregisterWebhookWithThirdPartyError) -> Self {
+        match err.kind {
+            crate::error::DeregisterWebhookWithThirdPartyErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::DeregisterWebhookWithThirdPartyErrorKind::WebhookNotFoundException(
+                inner,
+            ) => Error::WebhookNotFoundException(inner),
+            crate::error::DeregisterWebhookWithThirdPartyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -344,21 +421,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DisableStageTransitionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DisableStageTransitionErrorKind::PipelineNotFoundException(inner) => {
-                    Error::PipelineNotFoundException(inner)
-                }
-                crate::error::DisableStageTransitionErrorKind::StageNotFoundException(inner) => {
-                    Error::StageNotFoundException(inner)
-                }
-                crate::error::DisableStageTransitionErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::DisableStageTransitionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DisableStageTransitionError> for Error {
+    fn from(err: crate::error::DisableStageTransitionError) -> Self {
+        match err.kind {
+            crate::error::DisableStageTransitionErrorKind::PipelineNotFoundException(inner) => {
+                Error::PipelineNotFoundException(inner)
+            }
+            crate::error::DisableStageTransitionErrorKind::StageNotFoundException(inner) => {
+                Error::StageNotFoundException(inner)
+            }
+            crate::error::DisableStageTransitionErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::DisableStageTransitionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -371,21 +455,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::EnableStageTransitionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::EnableStageTransitionErrorKind::PipelineNotFoundException(inner) => {
-                    Error::PipelineNotFoundException(inner)
-                }
-                crate::error::EnableStageTransitionErrorKind::StageNotFoundException(inner) => {
-                    Error::StageNotFoundException(inner)
-                }
-                crate::error::EnableStageTransitionErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::EnableStageTransitionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::EnableStageTransitionError> for Error {
+    fn from(err: crate::error::EnableStageTransitionError) -> Self {
+        match err.kind {
+            crate::error::EnableStageTransitionErrorKind::PipelineNotFoundException(inner) => {
+                Error::PipelineNotFoundException(inner)
+            }
+            crate::error::EnableStageTransitionErrorKind::StageNotFoundException(inner) => {
+                Error::StageNotFoundException(inner)
+            }
+            crate::error::EnableStageTransitionErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::EnableStageTransitionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -395,16 +486,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetActionTypeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetActionTypeErrorKind::ActionTypeNotFoundException(inner) => {
-                    Error::ActionTypeNotFoundException(inner)
-                }
-                crate::error::GetActionTypeErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::GetActionTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetActionTypeError> for Error {
+    fn from(err: crate::error::GetActionTypeError) -> Self {
+        match err.kind {
+            crate::error::GetActionTypeErrorKind::ActionTypeNotFoundException(inner) => {
+                Error::ActionTypeNotFoundException(inner)
+            }
+            crate::error::GetActionTypeErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::GetActionTypeErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -414,16 +514,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetJobDetailsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetJobDetailsErrorKind::JobNotFoundException(inner) => {
-                    Error::JobNotFoundException(inner)
-                }
-                crate::error::GetJobDetailsErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::GetJobDetailsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetJobDetailsError> for Error {
+    fn from(err: crate::error::GetJobDetailsError) -> Self {
+        match err.kind {
+            crate::error::GetJobDetailsErrorKind::JobNotFoundException(inner) => {
+                Error::JobNotFoundException(inner)
+            }
+            crate::error::GetJobDetailsErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::GetJobDetailsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -433,19 +542,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPipelineError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetPipelineErrorKind::PipelineNotFoundException(inner) => {
-                    Error::PipelineNotFoundException(inner)
-                }
-                crate::error::GetPipelineErrorKind::PipelineVersionNotFoundException(inner) => {
-                    Error::PipelineVersionNotFoundException(inner)
-                }
-                crate::error::GetPipelineErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::GetPipelineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetPipelineError> for Error {
+    fn from(err: crate::error::GetPipelineError) -> Self {
+        match err.kind {
+            crate::error::GetPipelineErrorKind::PipelineNotFoundException(inner) => {
+                Error::PipelineNotFoundException(inner)
+            }
+            crate::error::GetPipelineErrorKind::PipelineVersionNotFoundException(inner) => {
+                Error::PipelineVersionNotFoundException(inner)
+            }
+            crate::error::GetPipelineErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::GetPipelineErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -458,21 +576,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetPipelineExecutionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetPipelineExecutionErrorKind::PipelineExecutionNotFoundException(
-                    inner,
-                ) => Error::PipelineExecutionNotFoundException(inner),
-                crate::error::GetPipelineExecutionErrorKind::PipelineNotFoundException(inner) => {
-                    Error::PipelineNotFoundException(inner)
-                }
-                crate::error::GetPipelineExecutionErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::GetPipelineExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetPipelineExecutionError> for Error {
+    fn from(err: crate::error::GetPipelineExecutionError) -> Self {
+        match err.kind {
+            crate::error::GetPipelineExecutionErrorKind::PipelineExecutionNotFoundException(
+                inner,
+            ) => Error::PipelineExecutionNotFoundException(inner),
+            crate::error::GetPipelineExecutionErrorKind::PipelineNotFoundException(inner) => {
+                Error::PipelineNotFoundException(inner)
+            }
+            crate::error::GetPipelineExecutionErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::GetPipelineExecutionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -484,18 +609,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetPipelineStateError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetPipelineStateErrorKind::PipelineNotFoundException(inner) => {
-                    Error::PipelineNotFoundException(inner)
-                }
-                crate::error::GetPipelineStateErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::GetPipelineStateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetPipelineStateError> for Error {
+    fn from(err: crate::error::GetPipelineStateError) -> Self {
+        match err.kind {
+            crate::error::GetPipelineStateErrorKind::PipelineNotFoundException(inner) => {
+                Error::PipelineNotFoundException(inner)
+            }
+            crate::error::GetPipelineStateErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::GetPipelineStateErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -508,24 +640,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetThirdPartyJobDetailsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetThirdPartyJobDetailsErrorKind::InvalidClientTokenException(
-                    inner,
-                ) => Error::InvalidClientTokenException(inner),
-                crate::error::GetThirdPartyJobDetailsErrorKind::InvalidJobException(inner) => {
-                    Error::InvalidJobException(inner)
-                }
-                crate::error::GetThirdPartyJobDetailsErrorKind::JobNotFoundException(inner) => {
-                    Error::JobNotFoundException(inner)
-                }
-                crate::error::GetThirdPartyJobDetailsErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::GetThirdPartyJobDetailsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetThirdPartyJobDetailsError> for Error {
+    fn from(err: crate::error::GetThirdPartyJobDetailsError) -> Self {
+        match err.kind {
+            crate::error::GetThirdPartyJobDetailsErrorKind::InvalidClientTokenException(inner) => {
+                Error::InvalidClientTokenException(inner)
+            }
+            crate::error::GetThirdPartyJobDetailsErrorKind::InvalidJobException(inner) => {
+                Error::InvalidJobException(inner)
+            }
+            crate::error::GetThirdPartyJobDetailsErrorKind::JobNotFoundException(inner) => {
+                Error::JobNotFoundException(inner)
+            }
+            crate::error::GetThirdPartyJobDetailsErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::GetThirdPartyJobDetailsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -538,24 +677,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListActionExecutionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListActionExecutionsErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
-                }
-                crate::error::ListActionExecutionsErrorKind::PipelineExecutionNotFoundException(
-                    inner,
-                ) => Error::PipelineExecutionNotFoundException(inner),
-                crate::error::ListActionExecutionsErrorKind::PipelineNotFoundException(inner) => {
-                    Error::PipelineNotFoundException(inner)
-                }
-                crate::error::ListActionExecutionsErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListActionExecutionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListActionExecutionsError> for Error {
+    fn from(err: crate::error::ListActionExecutionsError) -> Self {
+        match err.kind {
+            crate::error::ListActionExecutionsErrorKind::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::ListActionExecutionsErrorKind::PipelineExecutionNotFoundException(
+                inner,
+            ) => Error::PipelineExecutionNotFoundException(inner),
+            crate::error::ListActionExecutionsErrorKind::PipelineNotFoundException(inner) => {
+                Error::PipelineNotFoundException(inner)
+            }
+            crate::error::ListActionExecutionsErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::ListActionExecutionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -565,16 +711,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListActionTypesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListActionTypesErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
-                }
-                crate::error::ListActionTypesErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListActionTypesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListActionTypesError> for Error {
+    fn from(err: crate::error::ListActionTypesError) -> Self {
+        match err.kind {
+            crate::error::ListActionTypesErrorKind::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::ListActionTypesErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::ListActionTypesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -587,21 +742,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListPipelineExecutionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListPipelineExecutionsErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
-                }
-                crate::error::ListPipelineExecutionsErrorKind::PipelineNotFoundException(inner) => {
-                    Error::PipelineNotFoundException(inner)
-                }
-                crate::error::ListPipelineExecutionsErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListPipelineExecutionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListPipelineExecutionsError> for Error {
+    fn from(err: crate::error::ListPipelineExecutionsError) -> Self {
+        match err.kind {
+            crate::error::ListPipelineExecutionsErrorKind::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::ListPipelineExecutionsErrorKind::PipelineNotFoundException(inner) => {
+                Error::PipelineNotFoundException(inner)
+            }
+            crate::error::ListPipelineExecutionsErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::ListPipelineExecutionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -611,16 +773,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPipelinesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListPipelinesErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
-                }
-                crate::error::ListPipelinesErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListPipelinesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListPipelinesError> for Error {
+    fn from(err: crate::error::ListPipelinesError) -> Self {
+        match err.kind {
+            crate::error::ListPipelinesErrorKind::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::ListPipelinesErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::ListPipelinesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -632,24 +803,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForResourceErrorKind::InvalidArnException(inner) => {
-                    Error::InvalidArnException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListTagsForResourceError> for Error {
+    fn from(err: crate::error::ListTagsForResourceError) -> Self {
+        match err.kind {
+            crate::error::ListTagsForResourceErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -659,16 +837,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListWebhooksError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListWebhooksErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
-                }
-                crate::error::ListWebhooksErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListWebhooksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListWebhooksError> for Error {
+    fn from(err: crate::error::ListWebhooksError) -> Self {
+        match err.kind {
+            crate::error::ListWebhooksErrorKind::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::ListWebhooksErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::ListWebhooksErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -678,16 +865,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PollForJobsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PollForJobsErrorKind::ActionTypeNotFoundException(inner) => {
-                    Error::ActionTypeNotFoundException(inner)
-                }
-                crate::error::PollForJobsErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::PollForJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PollForJobsError> for Error {
+    fn from(err: crate::error::PollForJobsError) -> Self {
+        match err.kind {
+            crate::error::PollForJobsErrorKind::ActionTypeNotFoundException(inner) => {
+                Error::ActionTypeNotFoundException(inner)
+            }
+            crate::error::PollForJobsErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::PollForJobsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -700,18 +896,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PollForThirdPartyJobsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PollForThirdPartyJobsErrorKind::ActionTypeNotFoundException(
-                    inner,
-                ) => Error::ActionTypeNotFoundException(inner),
-                crate::error::PollForThirdPartyJobsErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::PollForThirdPartyJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PollForThirdPartyJobsError> for Error {
+    fn from(err: crate::error::PollForThirdPartyJobsError) -> Self {
+        match err.kind {
+            crate::error::PollForThirdPartyJobsErrorKind::ActionTypeNotFoundException(inner) => {
+                Error::ActionTypeNotFoundException(inner)
+            }
+            crate::error::PollForThirdPartyJobsErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::PollForThirdPartyJobsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -723,24 +926,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutActionRevisionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutActionRevisionErrorKind::ActionNotFoundException(inner) => {
-                    Error::ActionNotFoundException(inner)
-                }
-                crate::error::PutActionRevisionErrorKind::PipelineNotFoundException(inner) => {
-                    Error::PipelineNotFoundException(inner)
-                }
-                crate::error::PutActionRevisionErrorKind::StageNotFoundException(inner) => {
-                    Error::StageNotFoundException(inner)
-                }
-                crate::error::PutActionRevisionErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::PutActionRevisionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutActionRevisionError> for Error {
+    fn from(err: crate::error::PutActionRevisionError) -> Self {
+        match err.kind {
+            crate::error::PutActionRevisionErrorKind::ActionNotFoundException(inner) => {
+                Error::ActionNotFoundException(inner)
+            }
+            crate::error::PutActionRevisionErrorKind::PipelineNotFoundException(inner) => {
+                Error::PipelineNotFoundException(inner)
+            }
+            crate::error::PutActionRevisionErrorKind::StageNotFoundException(inner) => {
+                Error::StageNotFoundException(inner)
+            }
+            crate::error::PutActionRevisionErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::PutActionRevisionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -752,30 +962,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutApprovalResultError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutApprovalResultErrorKind::ActionNotFoundException(inner) => {
-                    Error::ActionNotFoundException(inner)
-                }
-                crate::error::PutApprovalResultErrorKind::ApprovalAlreadyCompletedException(
-                    inner,
-                ) => Error::ApprovalAlreadyCompletedException(inner),
-                crate::error::PutApprovalResultErrorKind::InvalidApprovalTokenException(inner) => {
-                    Error::InvalidApprovalTokenException(inner)
-                }
-                crate::error::PutApprovalResultErrorKind::PipelineNotFoundException(inner) => {
-                    Error::PipelineNotFoundException(inner)
-                }
-                crate::error::PutApprovalResultErrorKind::StageNotFoundException(inner) => {
-                    Error::StageNotFoundException(inner)
-                }
-                crate::error::PutApprovalResultErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::PutApprovalResultErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutApprovalResultError> for Error {
+    fn from(err: crate::error::PutApprovalResultError) -> Self {
+        match err.kind {
+            crate::error::PutApprovalResultErrorKind::ActionNotFoundException(inner) => {
+                Error::ActionNotFoundException(inner)
+            }
+            crate::error::PutApprovalResultErrorKind::ApprovalAlreadyCompletedException(inner) => {
+                Error::ApprovalAlreadyCompletedException(inner)
+            }
+            crate::error::PutApprovalResultErrorKind::InvalidApprovalTokenException(inner) => {
+                Error::InvalidApprovalTokenException(inner)
+            }
+            crate::error::PutApprovalResultErrorKind::PipelineNotFoundException(inner) => {
+                Error::PipelineNotFoundException(inner)
+            }
+            crate::error::PutApprovalResultErrorKind::StageNotFoundException(inner) => {
+                Error::StageNotFoundException(inner)
+            }
+            crate::error::PutApprovalResultErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::PutApprovalResultErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -787,21 +1004,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutJobFailureResultError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutJobFailureResultErrorKind::InvalidJobStateException(inner) => {
-                    Error::InvalidJobStateException(inner)
-                }
-                crate::error::PutJobFailureResultErrorKind::JobNotFoundException(inner) => {
-                    Error::JobNotFoundException(inner)
-                }
-                crate::error::PutJobFailureResultErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::PutJobFailureResultErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutJobFailureResultError> for Error {
+    fn from(err: crate::error::PutJobFailureResultError) -> Self {
+        match err.kind {
+            crate::error::PutJobFailureResultErrorKind::InvalidJobStateException(inner) => {
+                Error::InvalidJobStateException(inner)
+            }
+            crate::error::PutJobFailureResultErrorKind::JobNotFoundException(inner) => {
+                Error::JobNotFoundException(inner)
+            }
+            crate::error::PutJobFailureResultErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::PutJobFailureResultErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -813,14 +1037,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutJobSuccessResultError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::PutJobSuccessResultErrorKind::InvalidJobStateException(inner) => Error::InvalidJobStateException(inner),
-                crate::error::PutJobSuccessResultErrorKind::JobNotFoundException(inner) => Error::JobNotFoundException(inner),
-                crate::error::PutJobSuccessResultErrorKind::OutputVariablesSizeExceededException(inner) => Error::OutputVariablesSizeExceededException(inner),
-                crate::error::PutJobSuccessResultErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PutJobSuccessResultErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutJobSuccessResultError> for Error {
+    fn from(err: crate::error::PutJobSuccessResultError) -> Self {
+        match err.kind {
+            crate::error::PutJobSuccessResultErrorKind::InvalidJobStateException(inner) => {
+                Error::InvalidJobStateException(inner)
+            }
+            crate::error::PutJobSuccessResultErrorKind::JobNotFoundException(inner) => {
+                Error::JobNotFoundException(inner)
+            }
+            crate::error::PutJobSuccessResultErrorKind::OutputVariablesSizeExceededException(
+                inner,
+            ) => Error::OutputVariablesSizeExceededException(inner),
+            crate::error::PutJobSuccessResultErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::PutJobSuccessResultErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -833,14 +1074,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutThirdPartyJobFailureResultError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::PutThirdPartyJobFailureResultErrorKind::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
-                crate::error::PutThirdPartyJobFailureResultErrorKind::InvalidJobStateException(inner) => Error::InvalidJobStateException(inner),
-                crate::error::PutThirdPartyJobFailureResultErrorKind::JobNotFoundException(inner) => Error::JobNotFoundException(inner),
-                crate::error::PutThirdPartyJobFailureResultErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PutThirdPartyJobFailureResultErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutThirdPartyJobFailureResultError> for Error {
+    fn from(err: crate::error::PutThirdPartyJobFailureResultError) -> Self {
+        match err.kind {
+            crate::error::PutThirdPartyJobFailureResultErrorKind::InvalidClientTokenException(
+                inner,
+            ) => Error::InvalidClientTokenException(inner),
+            crate::error::PutThirdPartyJobFailureResultErrorKind::InvalidJobStateException(
+                inner,
+            ) => Error::InvalidJobStateException(inner),
+            crate::error::PutThirdPartyJobFailureResultErrorKind::JobNotFoundException(inner) => {
+                Error::JobNotFoundException(inner)
+            }
+            crate::error::PutThirdPartyJobFailureResultErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::PutThirdPartyJobFailureResultErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -853,14 +1111,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutThirdPartyJobSuccessResultError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::PutThirdPartyJobSuccessResultErrorKind::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
-                crate::error::PutThirdPartyJobSuccessResultErrorKind::InvalidJobStateException(inner) => Error::InvalidJobStateException(inner),
-                crate::error::PutThirdPartyJobSuccessResultErrorKind::JobNotFoundException(inner) => Error::JobNotFoundException(inner),
-                crate::error::PutThirdPartyJobSuccessResultErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PutThirdPartyJobSuccessResultErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutThirdPartyJobSuccessResultError> for Error {
+    fn from(err: crate::error::PutThirdPartyJobSuccessResultError) -> Self {
+        match err.kind {
+            crate::error::PutThirdPartyJobSuccessResultErrorKind::InvalidClientTokenException(
+                inner,
+            ) => Error::InvalidClientTokenException(inner),
+            crate::error::PutThirdPartyJobSuccessResultErrorKind::InvalidJobStateException(
+                inner,
+            ) => Error::InvalidJobStateException(inner),
+            crate::error::PutThirdPartyJobSuccessResultErrorKind::JobNotFoundException(inner) => {
+                Error::JobNotFoundException(inner)
+            }
+            crate::error::PutThirdPartyJobSuccessResultErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::PutThirdPartyJobSuccessResultErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -870,18 +1145,43 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PutWebhookError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::PutWebhookErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-                crate::error::PutWebhookErrorKind::InvalidTagsException(inner) => Error::InvalidTagsException(inner),
-                crate::error::PutWebhookErrorKind::InvalidWebhookAuthenticationParametersException(inner) => Error::InvalidWebhookAuthenticationParametersException(inner),
-                crate::error::PutWebhookErrorKind::InvalidWebhookFilterPatternException(inner) => Error::InvalidWebhookFilterPatternException(inner),
-                crate::error::PutWebhookErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-                crate::error::PutWebhookErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-                crate::error::PutWebhookErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-                crate::error::PutWebhookErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PutWebhookErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutWebhookError> for Error {
+    fn from(err: crate::error::PutWebhookError) -> Self {
+        match err.kind {
+            crate::error::PutWebhookErrorKind::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::error::PutWebhookErrorKind::InvalidTagsException(inner) => {
+                Error::InvalidTagsException(inner)
+            }
+            crate::error::PutWebhookErrorKind::InvalidWebhookAuthenticationParametersException(
+                inner,
+            ) => Error::InvalidWebhookAuthenticationParametersException(inner),
+            crate::error::PutWebhookErrorKind::InvalidWebhookFilterPatternException(inner) => {
+                Error::InvalidWebhookFilterPatternException(inner)
+            }
+            crate::error::PutWebhookErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::PutWebhookErrorKind::PipelineNotFoundException(inner) => {
+                Error::PipelineNotFoundException(inner)
+            }
+            crate::error::PutWebhookErrorKind::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
+            }
+            crate::error::PutWebhookErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::PutWebhookErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -894,18 +1194,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RegisterWebhookWithThirdPartyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RegisterWebhookWithThirdPartyErrorKind::ValidationException(
-                    inner,
-                ) => Error::ValidationException(inner),
-                crate::error::RegisterWebhookWithThirdPartyErrorKind::WebhookNotFoundException(
-                    inner,
-                ) => Error::WebhookNotFoundException(inner),
-                crate::error::RegisterWebhookWithThirdPartyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RegisterWebhookWithThirdPartyError> for Error {
+    fn from(err: crate::error::RegisterWebhookWithThirdPartyError) -> Self {
+        match err.kind {
+            crate::error::RegisterWebhookWithThirdPartyErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::RegisterWebhookWithThirdPartyErrorKind::WebhookNotFoundException(
+                inner,
+            ) => Error::WebhookNotFoundException(inner),
+            crate::error::RegisterWebhookWithThirdPartyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -917,30 +1224,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RetryStageExecutionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RetryStageExecutionErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
-                }
-                crate::error::RetryStageExecutionErrorKind::NotLatestPipelineExecutionException(
-                    inner,
-                ) => Error::NotLatestPipelineExecutionException(inner),
-                crate::error::RetryStageExecutionErrorKind::PipelineNotFoundException(inner) => {
-                    Error::PipelineNotFoundException(inner)
-                }
-                crate::error::RetryStageExecutionErrorKind::StageNotFoundException(inner) => {
-                    Error::StageNotFoundException(inner)
-                }
-                crate::error::RetryStageExecutionErrorKind::StageNotRetryableException(inner) => {
-                    Error::StageNotRetryableException(inner)
-                }
-                crate::error::RetryStageExecutionErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::RetryStageExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RetryStageExecutionError> for Error {
+    fn from(err: crate::error::RetryStageExecutionError) -> Self {
+        match err.kind {
+            crate::error::RetryStageExecutionErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::RetryStageExecutionErrorKind::NotLatestPipelineExecutionException(
+                inner,
+            ) => Error::NotLatestPipelineExecutionException(inner),
+            crate::error::RetryStageExecutionErrorKind::PipelineNotFoundException(inner) => {
+                Error::PipelineNotFoundException(inner)
+            }
+            crate::error::RetryStageExecutionErrorKind::StageNotFoundException(inner) => {
+                Error::StageNotFoundException(inner)
+            }
+            crate::error::RetryStageExecutionErrorKind::StageNotRetryableException(inner) => {
+                Error::StageNotRetryableException(inner)
+            }
+            crate::error::RetryStageExecutionErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::RetryStageExecutionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -953,21 +1267,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartPipelineExecutionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StartPipelineExecutionErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
-                }
-                crate::error::StartPipelineExecutionErrorKind::PipelineNotFoundException(inner) => {
-                    Error::PipelineNotFoundException(inner)
-                }
-                crate::error::StartPipelineExecutionErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::StartPipelineExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::StartPipelineExecutionError> for Error {
+    fn from(err: crate::error::StartPipelineExecutionError) -> Self {
+        match err.kind {
+            crate::error::StartPipelineExecutionErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::StartPipelineExecutionErrorKind::PipelineNotFoundException(inner) => {
+                Error::PipelineNotFoundException(inner)
+            }
+            crate::error::StartPipelineExecutionErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::StartPipelineExecutionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -980,15 +1301,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StopPipelineExecutionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::StopPipelineExecutionErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-                crate::error::StopPipelineExecutionErrorKind::DuplicatedStopRequestException(inner) => Error::DuplicatedStopRequestException(inner),
-                crate::error::StopPipelineExecutionErrorKind::PipelineExecutionNotStoppableException(inner) => Error::PipelineExecutionNotStoppableException(inner),
-                crate::error::StopPipelineExecutionErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-                crate::error::StopPipelineExecutionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::StopPipelineExecutionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::StopPipelineExecutionError> for Error {
+    fn from(err: crate::error::StopPipelineExecutionError) -> Self {
+        match err.kind {
+            crate::error::StopPipelineExecutionErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::StopPipelineExecutionErrorKind::DuplicatedStopRequestException(inner) => Error::DuplicatedStopRequestException(inner),
+            crate::error::StopPipelineExecutionErrorKind::PipelineExecutionNotStoppableException(inner) => Error::PipelineExecutionNotStoppableException(inner),
+            crate::error::StopPipelineExecutionErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::error::StopPipelineExecutionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::StopPipelineExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -998,28 +1326,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::ConcurrentModificationException(inner) => {
-                    Error::ConcurrentModificationException(inner)
-                }
-                crate::error::TagResourceErrorKind::InvalidArnException(inner) => {
-                    Error::InvalidArnException(inner)
-                }
-                crate::error::TagResourceErrorKind::InvalidTagsException(inner) => {
-                    Error::InvalidTagsException(inner)
-                }
-                crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
-                    Error::TooManyTagsException(inner)
-                }
-                crate::error::TagResourceErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::TagResourceError> for Error {
+    fn from(err: crate::error::TagResourceError) -> Self {
+        match err.kind {
+            crate::error::TagResourceErrorKind::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::error::TagResourceErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::TagResourceErrorKind::InvalidTagsException(inner) => {
+                Error::InvalidTagsException(inner)
+            }
+            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
+            }
+            crate::error::TagResourceErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1029,25 +1366,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::ConcurrentModificationException(inner) => {
-                    Error::ConcurrentModificationException(inner)
-                }
-                crate::error::UntagResourceErrorKind::InvalidArnException(inner) => {
-                    Error::InvalidArnException(inner)
-                }
-                crate::error::UntagResourceErrorKind::InvalidTagsException(inner) => {
-                    Error::InvalidTagsException(inner)
-                }
-                crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::UntagResourceErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UntagResourceError> for Error {
+    fn from(err: crate::error::UntagResourceError) -> Self {
+        match err.kind {
+            crate::error::UntagResourceErrorKind::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::error::UntagResourceErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::UntagResourceErrorKind::InvalidTagsException(inner) => {
+                Error::InvalidTagsException(inner)
+            }
+            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::UntagResourceErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1059,21 +1405,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateActionTypeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateActionTypeErrorKind::ActionTypeNotFoundException(inner) => {
-                    Error::ActionTypeNotFoundException(inner)
-                }
-                crate::error::UpdateActionTypeErrorKind::RequestFailedException(inner) => {
-                    Error::RequestFailedException(inner)
-                }
-                crate::error::UpdateActionTypeErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::UpdateActionTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateActionTypeError> for Error {
+    fn from(err: crate::error::UpdateActionTypeError) -> Self {
+        match err.kind {
+            crate::error::UpdateActionTypeErrorKind::ActionTypeNotFoundException(inner) => {
+                Error::ActionTypeNotFoundException(inner)
+            }
+            crate::error::UpdateActionTypeErrorKind::RequestFailedException(inner) => {
+                Error::RequestFailedException(inner)
+            }
+            crate::error::UpdateActionTypeErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::UpdateActionTypeErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1083,28 +1436,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdatePipelineError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdatePipelineErrorKind::InvalidActionDeclarationException(inner) => {
-                    Error::InvalidActionDeclarationException(inner)
-                }
-                crate::error::UpdatePipelineErrorKind::InvalidBlockerDeclarationException(
-                    inner,
-                ) => Error::InvalidBlockerDeclarationException(inner),
-                crate::error::UpdatePipelineErrorKind::InvalidStageDeclarationException(inner) => {
-                    Error::InvalidStageDeclarationException(inner)
-                }
-                crate::error::UpdatePipelineErrorKind::InvalidStructureException(inner) => {
-                    Error::InvalidStructureException(inner)
-                }
-                crate::error::UpdatePipelineErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::UpdatePipelineErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::UpdatePipelineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdatePipelineError> for Error {
+    fn from(err: crate::error::UpdatePipelineError) -> Self {
+        match err.kind {
+            crate::error::UpdatePipelineErrorKind::InvalidActionDeclarationException(inner) => {
+                Error::InvalidActionDeclarationException(inner)
+            }
+            crate::error::UpdatePipelineErrorKind::InvalidBlockerDeclarationException(inner) => {
+                Error::InvalidBlockerDeclarationException(inner)
+            }
+            crate::error::UpdatePipelineErrorKind::InvalidStageDeclarationException(inner) => {
+                Error::InvalidStageDeclarationException(inner)
+            }
+            crate::error::UpdatePipelineErrorKind::InvalidStructureException(inner) => {
+                Error::InvalidStructureException(inner)
+            }
+            crate::error::UpdatePipelineErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::UpdatePipelineErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::UpdatePipelineErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

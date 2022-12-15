@@ -2,6 +2,6 @@
   "name": "imds-token-fail",
   "docs": "attempts to acquire an IMDS token, but a 403 is returned",
   "result": {
-    "ErrorContains": "Request forbidden: IMDS is disabled"
+    "ErrorContains": "request forbidden: IMDS is disabled"
   }
 }

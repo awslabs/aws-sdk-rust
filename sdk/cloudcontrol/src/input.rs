@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod cancel_resource_request_input {
 
     /// A builder for [`CancelResourceRequestInput`](crate::input::CancelResourceRequestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_token: std::option::Option<std::string::String>,
     }
@@ -26,8 +26,10 @@ pub mod cancel_resource_request_input {
         /// Consumes the builder and constructs a [`CancelResourceRequestInput`](crate::input::CancelResourceRequestInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelResourceRequestInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CancelResourceRequestInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CancelResourceRequestInput {
                 request_token: self.request_token,
             })
@@ -47,13 +49,13 @@ impl CancelResourceRequestInput {
             crate::operation::CancelResourceRequest,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CancelResourceRequestInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -61,8 +63,10 @@ impl CancelResourceRequestInput {
             fn update_http_builder(
                 input: &crate::input::CancelResourceRequestInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -153,7 +157,7 @@ impl CancelResourceRequestInput {
 pub mod create_resource_input {
 
     /// A builder for [`CreateResourceInput`](crate::input::CreateResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
         pub(crate) type_version_id: std::option::Option<std::string::String>,
@@ -249,7 +253,7 @@ pub mod create_resource_input {
         /// Consumes the builder and constructs a [`CreateResourceInput`](crate::input::CreateResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateResourceInput {
                 type_name: self.type_name,
@@ -258,6 +262,17 @@ pub mod create_resource_input {
                 client_token: self.client_token,
                 desired_state: self.desired_state,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("type_name", &self.type_name);
+            formatter.field("type_version_id", &self.type_version_id);
+            formatter.field("role_arn", &self.role_arn);
+            formatter.field("client_token", &self.client_token);
+            formatter.field("desired_state", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -274,7 +289,7 @@ impl CreateResourceInput {
             crate::operation::CreateResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -283,7 +298,7 @@ impl CreateResourceInput {
             fn uri_base(
                 _input: &crate::input::CreateResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -291,8 +306,10 @@ impl CreateResourceInput {
             fn update_http_builder(
                 input: &crate::input::CreateResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -381,7 +398,7 @@ impl CreateResourceInput {
 pub mod delete_resource_input {
 
     /// A builder for [`DeleteResourceInput`](crate::input::DeleteResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
         pub(crate) type_version_id: std::option::Option<std::string::String>,
@@ -462,7 +479,7 @@ pub mod delete_resource_input {
         /// Consumes the builder and constructs a [`DeleteResourceInput`](crate::input::DeleteResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteResourceInput {
                 type_name: self.type_name,
@@ -487,7 +504,7 @@ impl DeleteResourceInput {
             crate::operation::DeleteResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -496,7 +513,7 @@ impl DeleteResourceInput {
             fn uri_base(
                 _input: &crate::input::DeleteResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -504,8 +521,10 @@ impl DeleteResourceInput {
             fn update_http_builder(
                 input: &crate::input::DeleteResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -594,7 +613,7 @@ impl DeleteResourceInput {
 pub mod get_resource_input {
 
     /// A builder for [`GetResourceInput`](crate::input::GetResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
         pub(crate) type_version_id: std::option::Option<std::string::String>,
@@ -658,7 +677,7 @@ pub mod get_resource_input {
         /// Consumes the builder and constructs a [`GetResourceInput`](crate::input::GetResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetResourceInput {
                 type_name: self.type_name,
@@ -682,13 +701,13 @@ impl GetResourceInput {
             crate::operation::GetResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -696,8 +715,10 @@ impl GetResourceInput {
             fn update_http_builder(
                 input: &crate::input::GetResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -786,7 +807,7 @@ impl GetResourceInput {
 pub mod get_resource_request_status_input {
 
     /// A builder for [`GetResourceRequestStatusInput`](crate::input::GetResourceRequestStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_token: std::option::Option<std::string::String>,
     }
@@ -811,7 +832,7 @@ pub mod get_resource_request_status_input {
             self,
         ) -> Result<
             crate::input::GetResourceRequestStatusInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetResourceRequestStatusInput {
                 request_token: self.request_token,
@@ -832,13 +853,13 @@ impl GetResourceRequestStatusInput {
             crate::operation::GetResourceRequestStatus,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourceRequestStatusInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -846,8 +867,10 @@ impl GetResourceRequestStatusInput {
             fn update_http_builder(
                 input: &crate::input::GetResourceRequestStatusInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -938,7 +961,7 @@ impl GetResourceRequestStatusInput {
 pub mod list_resource_requests_input {
 
     /// A builder for [`ListResourceRequestsInput`](crate::input::ListResourceRequestsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -987,8 +1010,10 @@ pub mod list_resource_requests_input {
         /// Consumes the builder and constructs a [`ListResourceRequestsInput`](crate::input::ListResourceRequestsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListResourceRequestsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListResourceRequestsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListResourceRequestsInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -1010,13 +1035,13 @@ impl ListResourceRequestsInput {
             crate::operation::ListResourceRequests,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListResourceRequestsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1024,8 +1049,10 @@ impl ListResourceRequestsInput {
             fn update_http_builder(
                 input: &crate::input::ListResourceRequestsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1116,7 +1143,7 @@ impl ListResourceRequestsInput {
 pub mod list_resources_input {
 
     /// A builder for [`ListResourcesInput`](crate::input::ListResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
         pub(crate) type_version_id: std::option::Option<std::string::String>,
@@ -1199,7 +1226,7 @@ pub mod list_resources_input {
         /// Consumes the builder and constructs a [`ListResourcesInput`](crate::input::ListResourcesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListResourcesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListResourcesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListResourcesInput {
                 type_name: self.type_name,
@@ -1209,6 +1236,18 @@ pub mod list_resources_input {
                 max_results: self.max_results,
                 resource_model: self.resource_model,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("type_name", &self.type_name);
+            formatter.field("type_version_id", &self.type_version_id);
+            formatter.field("role_arn", &self.role_arn);
+            formatter.field("next_token", &self.next_token);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("resource_model", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1225,13 +1264,13 @@ impl ListResourcesInput {
             crate::operation::ListResources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListResourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1239,8 +1278,10 @@ impl ListResourcesInput {
             fn update_http_builder(
                 input: &crate::input::ListResourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1329,7 +1370,7 @@ impl ListResourcesInput {
 pub mod update_resource_input {
 
     /// A builder for [`UpdateResourceInput`](crate::input::UpdateResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
         pub(crate) type_version_id: std::option::Option<std::string::String>,
@@ -1424,7 +1465,7 @@ pub mod update_resource_input {
         /// Consumes the builder and constructs a [`UpdateResourceInput`](crate::input::UpdateResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateResourceInput {
                 type_name: self.type_name,
@@ -1434,6 +1475,18 @@ pub mod update_resource_input {
                 identifier: self.identifier,
                 patch_document: self.patch_document,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("type_name", &self.type_name);
+            formatter.field("type_version_id", &self.type_version_id);
+            formatter.field("role_arn", &self.role_arn);
+            formatter.field("client_token", &self.client_token);
+            formatter.field("identifier", &self.identifier);
+            formatter.field("patch_document", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1450,7 +1503,7 @@ impl UpdateResourceInput {
             crate::operation::UpdateResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1459,7 +1512,7 @@ impl UpdateResourceInput {
             fn uri_base(
                 _input: &crate::input::UpdateResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1467,8 +1520,10 @@ impl UpdateResourceInput {
             fn update_http_builder(
                 input: &crate::input::UpdateResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1699,7 +1754,7 @@ impl std::fmt::Debug for ListResourcesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceRequestsInput {
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     /// <p>The default is <code>20</code>.</p>
@@ -1730,22 +1785,10 @@ impl ListResourceRequestsInput {
         self.resource_request_status_filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListResourceRequestsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceRequestsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field(
-            "resource_request_status_filter",
-            &self.resource_request_status_filter,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceRequestStatusInput {
     /// <p>A unique token used to track the progress of the resource operation request.</p>
     /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
@@ -1759,17 +1802,10 @@ impl GetResourceRequestStatusInput {
         self.request_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceRequestStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceRequestStatusInput");
-        formatter.field("request_token", &self.request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceInput {
     /// <p>The name of the resource type.</p>
     #[doc(hidden)]
@@ -1812,20 +1848,10 @@ impl GetResourceInput {
         self.identifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceInput");
-        formatter.field("type_name", &self.type_name);
-        formatter.field("type_version_id", &self.type_version_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceInput {
     /// <p>The name of the resource type.</p>
     #[doc(hidden)]
@@ -1879,17 +1905,6 @@ impl DeleteResourceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourceInput");
-        formatter.field("type_name", &self.type_name);
-        formatter.field("type_version_id", &self.type_version_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
     }
 }
 
@@ -1977,7 +1992,7 @@ impl std::fmt::Debug for CreateResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelResourceRequestInput {
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
     #[doc(hidden)]
@@ -1987,12 +2002,5 @@ impl CancelResourceRequestInput {
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
     pub fn request_token(&self) -> std::option::Option<&str> {
         self.request_token.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelResourceRequestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelResourceRequestInput");
-        formatter.field("request_token", &self.request_token);
-        formatter.finish()
     }
 }

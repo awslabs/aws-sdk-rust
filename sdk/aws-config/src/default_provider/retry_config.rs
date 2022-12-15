@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_types::retry::RetryConfig;
-
 use crate::environment::retry_config::EnvironmentVariableRetryConfigProvider;
 use crate::profile;
 use crate::provider_config::ProviderConfig;
+use aws_smithy_types::error::display::DisplayErrorContext;
+use aws_smithy_types::retry::RetryConfig;
 
 /// Default RetryConfig Provider chain
 ///
@@ -90,11 +90,11 @@ impl Builder {
         // We match this instead of unwrapping so we can print the error with the `Display` impl instead of the `Debug` impl that unwrap uses
         let builder_from_env = match self.env_provider.retry_config_builder() {
             Ok(retry_config_builder) => retry_config_builder,
-            Err(err) => panic!("{}", err),
+            Err(err) => panic!("{}", DisplayErrorContext(&err)),
         };
         let builder_from_profile = match self.profile_file.build().retry_config_builder().await {
             Ok(retry_config_builder) => retry_config_builder,
-            Err(err) => panic!("{}", err),
+            Err(err) => panic!("{}", DisplayErrorContext(&err)),
         };
 
         builder_from_env

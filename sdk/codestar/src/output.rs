@@ -64,7 +64,7 @@ impl std::fmt::Debug for UpdateUserProfileOutput {
 pub mod update_user_profile_output {
 
     /// A builder for [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -158,6 +158,18 @@ pub mod update_user_profile_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_arn", &self.user_arn);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("ssh_public_key", &self.ssh_public_key);
+            formatter.field("created_timestamp", &self.created_timestamp);
+            formatter.field("last_modified_timestamp", &self.last_modified_timestamp);
+            formatter.finish()
+        }
+    }
 }
 impl UpdateUserProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput).
@@ -168,7 +180,7 @@ impl UpdateUserProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTeamMemberOutput {
     /// <p>The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.</p>
     #[doc(hidden)]
@@ -194,20 +206,11 @@ impl UpdateTeamMemberOutput {
         self.remote_access_allowed
     }
 }
-impl std::fmt::Debug for UpdateTeamMemberOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTeamMemberOutput");
-        formatter.field("user_arn", &self.user_arn);
-        formatter.field("project_role", &self.project_role);
-        formatter.field("remote_access_allowed", &self.remote_access_allowed);
-        formatter.finish()
-    }
-}
 /// See [`UpdateTeamMemberOutput`](crate::output::UpdateTeamMemberOutput).
 pub mod update_team_member_output {
 
     /// A builder for [`UpdateTeamMemberOutput`](crate::output::UpdateTeamMemberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) project_role: std::option::Option<std::string::String>,
@@ -263,19 +266,13 @@ impl UpdateTeamMemberOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProjectOutput {}
-impl std::fmt::Debug for UpdateProjectOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProjectOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
 pub mod update_project_output {
 
     /// A builder for [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
@@ -293,19 +290,13 @@ impl UpdateProjectOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagProjectOutput {}
-impl std::fmt::Debug for UntagProjectOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagProjectOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagProjectOutput`](crate::output::UntagProjectOutput).
 pub mod untag_project_output {
 
     /// A builder for [`UntagProjectOutput`](crate::output::UntagProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagProjectOutput`](crate::output::UntagProjectOutput).
@@ -323,7 +314,7 @@ impl UntagProjectOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagProjectOutput {
     /// <p>The tags for the project.</p>
     #[doc(hidden)]
@@ -339,18 +330,11 @@ impl TagProjectOutput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagProjectOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagProjectOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`TagProjectOutput`](crate::output::TagProjectOutput).
 pub mod tag_project_output {
 
     /// A builder for [`TagProjectOutput`](crate::output::TagProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -397,7 +381,7 @@ impl TagProjectOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListUserProfilesOutput {
     /// <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
     #[doc(hidden)]
@@ -416,19 +400,11 @@ impl ListUserProfilesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListUserProfilesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListUserProfilesOutput");
-        formatter.field("user_profiles", &self.user_profiles);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput).
 pub mod list_user_profiles_output {
 
     /// A builder for [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_profiles:
             std::option::Option<std::vec::Vec<crate::model::UserProfileSummary>>,
@@ -482,7 +458,7 @@ impl ListUserProfilesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTeamMembersOutput {
     /// <p>A list of team member objects for the project.</p>
     #[doc(hidden)]
@@ -501,19 +477,11 @@ impl ListTeamMembersOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTeamMembersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTeamMembersOutput");
-        formatter.field("team_members", &self.team_members);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListTeamMembersOutput`](crate::output::ListTeamMembersOutput).
 pub mod list_team_members_output {
 
     /// A builder for [`ListTeamMembersOutput`](crate::output::ListTeamMembersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_members: std::option::Option<std::vec::Vec<crate::model::TeamMember>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -566,7 +534,7 @@ impl ListTeamMembersOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForProjectOutput {
     /// <p>The tags for the project.</p>
     #[doc(hidden)]
@@ -589,19 +557,11 @@ impl ListTagsForProjectOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForProjectOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForProjectOutput");
-        formatter.field("tags", &self.tags);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsForProjectOutput`](crate::output::ListTagsForProjectOutput).
 pub mod list_tags_for_project_output {
 
     /// A builder for [`ListTagsForProjectOutput`](crate::output::ListTagsForProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -662,7 +622,7 @@ impl ListTagsForProjectOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourcesOutput {
     /// <p>An array of resources associated with the project. </p>
     #[doc(hidden)]
@@ -681,19 +641,11 @@ impl ListResourcesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListResourcesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourcesOutput");
-        formatter.field("resources", &self.resources);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListResourcesOutput`](crate::output::ListResourcesOutput).
 pub mod list_resources_output {
 
     /// A builder for [`ListResourcesOutput`](crate::output::ListResourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -746,7 +698,7 @@ impl ListResourcesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProjectsOutput {
     /// <p>A list of projects.</p>
     #[doc(hidden)]
@@ -765,19 +717,11 @@ impl ListProjectsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListProjectsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProjectsOutput");
-        formatter.field("projects", &self.projects);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListProjectsOutput`](crate::output::ListProjectsOutput).
 pub mod list_projects_output {
 
     /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) projects: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -830,19 +774,13 @@ impl ListProjectsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateTeamMemberOutput {}
-impl std::fmt::Debug for DisassociateTeamMemberOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateTeamMemberOutput");
-        formatter.finish()
-    }
-}
 /// See [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput).
 pub mod disassociate_team_member_output {
 
     /// A builder for [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput).
@@ -923,7 +861,7 @@ impl std::fmt::Debug for DescribeUserProfileOutput {
 pub mod describe_user_profile_output {
 
     /// A builder for [`DescribeUserProfileOutput`](crate::output::DescribeUserProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -1015,6 +953,18 @@ pub mod describe_user_profile_output {
                 created_timestamp: self.created_timestamp,
                 last_modified_timestamp: self.last_modified_timestamp,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_arn", &self.user_arn);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("ssh_public_key", &self.ssh_public_key);
+            formatter.field("created_timestamp", &self.created_timestamp);
+            formatter.field("last_modified_timestamp", &self.last_modified_timestamp);
+            formatter.finish()
         }
     }
 }
@@ -1114,7 +1064,7 @@ impl std::fmt::Debug for DescribeProjectOutput {
 pub mod describe_project_output {
 
     /// A builder for [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1244,6 +1194,21 @@ pub mod describe_project_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("id", &self.id);
+            formatter.field("arn", &self.arn);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_request_token", &self.client_request_token);
+            formatter.field("created_time_stamp", &self.created_time_stamp);
+            formatter.field("stack_id", &self.stack_id);
+            formatter.field("project_template_id", &self.project_template_id);
+            formatter.field("status", &self.status);
+            formatter.finish()
+        }
+    }
 }
 impl DescribeProjectOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
@@ -1254,7 +1219,7 @@ impl DescribeProjectOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
     #[doc(hidden)]
@@ -1266,18 +1231,11 @@ impl DeleteUserProfileOutput {
         self.user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteUserProfileOutput");
-        formatter.field("user_arn", &self.user_arn);
-        formatter.finish()
-    }
-}
 /// See [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput).
 pub mod delete_user_profile_output {
 
     /// A builder for [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
     }
@@ -1309,7 +1267,7 @@ impl DeleteUserProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProjectOutput {
     /// <p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.</p>
     #[doc(hidden)]
@@ -1328,19 +1286,11 @@ impl DeleteProjectOutput {
         self.project_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProjectOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProjectOutput");
-        formatter.field("stack_id", &self.stack_id);
-        formatter.field("project_arn", &self.project_arn);
-        formatter.finish()
-    }
-}
 /// See [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
 pub mod delete_project_output {
 
     /// A builder for [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
         pub(crate) project_arn: std::option::Option<std::string::String>,
@@ -1447,7 +1397,7 @@ impl std::fmt::Debug for CreateUserProfileOutput {
 pub mod create_user_profile_output {
 
     /// A builder for [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -1541,6 +1491,18 @@ pub mod create_user_profile_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_arn", &self.user_arn);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("ssh_public_key", &self.ssh_public_key);
+            formatter.field("created_timestamp", &self.created_timestamp);
+            formatter.field("last_modified_timestamp", &self.last_modified_timestamp);
+            formatter.finish()
+        }
+    }
 }
 impl CreateUserProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput).
@@ -1551,7 +1513,7 @@ impl CreateUserProfileOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProjectOutput {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
@@ -1584,21 +1546,11 @@ impl CreateProjectOutput {
         self.project_template_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateProjectOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProjectOutput");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("project_template_id", &self.project_template_id);
-        formatter.finish()
-    }
-}
 /// See [`CreateProjectOutput`](crate::output::CreateProjectOutput).
 pub mod create_project_output {
 
     /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1672,7 +1624,7 @@ impl CreateProjectOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateTeamMemberOutput {
     /// <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
     #[doc(hidden)]
@@ -1684,18 +1636,11 @@ impl AssociateTeamMemberOutput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateTeamMemberOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateTeamMemberOutput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 /// See [`AssociateTeamMemberOutput`](crate::output::AssociateTeamMemberOutput).
 pub mod associate_team_member_output {
 
     /// A builder for [`AssociateTeamMemberOutput`](crate::output::AssociateTeamMemberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod accept_resource_share_invitation_input {
 
     /// A builder for [`AcceptResourceShareInvitationInput`](crate::input::AcceptResourceShareInvitationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_invitation_arn: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -44,7 +44,7 @@ pub mod accept_resource_share_invitation_input {
             self,
         ) -> Result<
             crate::input::AcceptResourceShareInvitationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AcceptResourceShareInvitationInput {
                 resource_share_invitation_arn: self.resource_share_invitation_arn,
@@ -66,13 +66,13 @@ impl AcceptResourceShareInvitationInput {
             crate::operation::AcceptResourceShareInvitation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AcceptResourceShareInvitationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/acceptresourceshareinvitation")
                     .expect("formatting should succeed");
                 Ok(())
@@ -81,8 +81,10 @@ impl AcceptResourceShareInvitationInput {
             fn update_http_builder(
                 input: &crate::input::AcceptResourceShareInvitationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -165,7 +167,7 @@ impl AcceptResourceShareInvitationInput {
 pub mod associate_resource_share_input {
 
     /// A builder for [`AssociateResourceShareInput`](crate::input::AssociateResourceShareInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -261,8 +263,10 @@ pub mod associate_resource_share_input {
         /// Consumes the builder and constructs a [`AssociateResourceShareInput`](crate::input::AssociateResourceShareInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AssociateResourceShareInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AssociateResourceShareInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AssociateResourceShareInput {
                 resource_share_arn: self.resource_share_arn,
                 resource_arns: self.resource_arns,
@@ -285,13 +289,13 @@ impl AssociateResourceShareInput {
             crate::operation::AssociateResourceShare,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateResourceShareInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/associateresourceshare").expect("formatting should succeed");
                 Ok(())
             }
@@ -299,8 +303,10 @@ impl AssociateResourceShareInput {
             fn update_http_builder(
                 input: &crate::input::AssociateResourceShareInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -386,7 +392,7 @@ impl AssociateResourceShareInput {
 pub mod associate_resource_share_permission_input {
 
     /// A builder for [`AssociateResourceSharePermissionInput`](crate::input::AssociateResourceSharePermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
         pub(crate) permission_arn: std::option::Option<std::string::String>,
@@ -462,7 +468,7 @@ pub mod associate_resource_share_permission_input {
             self,
         ) -> Result<
             crate::input::AssociateResourceSharePermissionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateResourceSharePermissionInput {
                 resource_share_arn: self.resource_share_arn,
@@ -487,13 +493,13 @@ impl AssociateResourceSharePermissionInput {
             crate::operation::AssociateResourceSharePermission,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateResourceSharePermissionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/associateresourcesharepermission")
                     .expect("formatting should succeed");
                 Ok(())
@@ -502,8 +508,10 @@ impl AssociateResourceSharePermissionInput {
             fn update_http_builder(
                 input: &crate::input::AssociateResourceSharePermissionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -586,7 +594,7 @@ impl AssociateResourceSharePermissionInput {
 pub mod create_resource_share_input {
 
     /// A builder for [`CreateResourceShareInput`](crate::input::CreateResourceShareInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -728,8 +736,10 @@ pub mod create_resource_share_input {
         /// Consumes the builder and constructs a [`CreateResourceShareInput`](crate::input::CreateResourceShareInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateResourceShareInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateResourceShareInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateResourceShareInput {
                 name: self.name,
                 resource_arns: self.resource_arns,
@@ -755,13 +765,13 @@ impl CreateResourceShareInput {
             crate::operation::CreateResourceShare,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateResourceShareInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/createresourceshare").expect("formatting should succeed");
                 Ok(())
             }
@@ -769,8 +779,10 @@ impl CreateResourceShareInput {
             fn update_http_builder(
                 input: &crate::input::CreateResourceShareInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -854,7 +866,7 @@ impl CreateResourceShareInput {
 pub mod delete_resource_share_input {
 
     /// A builder for [`DeleteResourceShareInput`](crate::input::DeleteResourceShareInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -888,8 +900,10 @@ pub mod delete_resource_share_input {
         /// Consumes the builder and constructs a [`DeleteResourceShareInput`](crate::input::DeleteResourceShareInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteResourceShareInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteResourceShareInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteResourceShareInput {
                 resource_share_arn: self.resource_share_arn,
                 client_token: self.client_token,
@@ -910,29 +924,44 @@ impl DeleteResourceShareInput {
             crate::operation::DeleteResourceShare,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteResourceShareInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/deleteresourceshare").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DeleteResourceShareInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_1) = &_input.resource_share_arn {
-                    query.push_kv(
-                        "resourceShareArn",
-                        &aws_smithy_http::query::fmt_string(&inner_1),
+                let inner_1 = &_input.resource_share_arn;
+                let inner_1 = inner_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_share_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_1.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_share_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceShareArn",
+                    &aws_smithy_http::query::fmt_string(&inner_1),
+                );
                 if let Some(inner_2) = &_input.client_token {
-                    query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_2));
+                    {
+                        query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_2));
+                    }
                 }
                 Ok(())
             }
@@ -940,8 +969,10 @@ impl DeleteResourceShareInput {
             fn update_http_builder(
                 input: &crate::input::DeleteResourceShareInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1012,7 +1043,7 @@ impl DeleteResourceShareInput {
 pub mod disassociate_resource_share_input {
 
     /// A builder for [`DisassociateResourceShareInput`](crate::input::DisassociateResourceShareInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1108,7 +1139,7 @@ pub mod disassociate_resource_share_input {
             self,
         ) -> Result<
             crate::input::DisassociateResourceShareInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateResourceShareInput {
                 resource_share_arn: self.resource_share_arn,
@@ -1132,13 +1163,13 @@ impl DisassociateResourceShareInput {
             crate::operation::DisassociateResourceShare,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateResourceShareInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/disassociateresourceshare").expect("formatting should succeed");
                 Ok(())
             }
@@ -1146,8 +1177,10 @@ impl DisassociateResourceShareInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateResourceShareInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1233,7 +1266,7 @@ impl DisassociateResourceShareInput {
 pub mod disassociate_resource_share_permission_input {
 
     /// A builder for [`DisassociateResourceSharePermissionInput`](crate::input::DisassociateResourceSharePermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
         pub(crate) permission_arn: std::option::Option<std::string::String>,
@@ -1283,7 +1316,7 @@ pub mod disassociate_resource_share_permission_input {
             self,
         ) -> Result<
             crate::input::DisassociateResourceSharePermissionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateResourceSharePermissionInput {
                 resource_share_arn: self.resource_share_arn,
@@ -1306,13 +1339,13 @@ impl DisassociateResourceSharePermissionInput {
             crate::operation::DisassociateResourceSharePermission,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateResourceSharePermissionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/disassociateresourcesharepermission")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1321,8 +1354,10 @@ impl DisassociateResourceSharePermissionInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateResourceSharePermissionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1405,7 +1440,7 @@ impl DisassociateResourceSharePermissionInput {
 pub mod enable_sharing_with_aws_organization_input {
 
     /// A builder for [`EnableSharingWithAwsOrganizationInput`](crate::input::EnableSharingWithAwsOrganizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`EnableSharingWithAwsOrganizationInput`](crate::input::EnableSharingWithAwsOrganizationInput).
@@ -1413,7 +1448,7 @@ pub mod enable_sharing_with_aws_organization_input {
             self,
         ) -> Result<
             crate::input::EnableSharingWithAwsOrganizationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::EnableSharingWithAwsOrganizationInput {})
         }
@@ -1432,13 +1467,13 @@ impl EnableSharingWithAwsOrganizationInput {
             crate::operation::EnableSharingWithAwsOrganization,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::EnableSharingWithAwsOrganizationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/enablesharingwithawsorganization")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1447,8 +1482,10 @@ impl EnableSharingWithAwsOrganizationInput {
             fn update_http_builder(
                 input: &crate::input::EnableSharingWithAwsOrganizationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1518,7 +1555,7 @@ impl EnableSharingWithAwsOrganizationInput {
 pub mod get_permission_input {
 
     /// A builder for [`GetPermissionInput`](crate::input::GetPermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission_arn: std::option::Option<std::string::String>,
         pub(crate) permission_version: std::option::Option<i32>,
@@ -1550,7 +1587,7 @@ pub mod get_permission_input {
         /// Consumes the builder and constructs a [`GetPermissionInput`](crate::input::GetPermissionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPermissionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetPermissionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetPermissionInput {
                 permission_arn: self.permission_arn,
@@ -1572,13 +1609,13 @@ impl GetPermissionInput {
             crate::operation::GetPermission,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPermissionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getpermission").expect("formatting should succeed");
                 Ok(())
             }
@@ -1586,8 +1623,10 @@ impl GetPermissionInput {
             fn update_http_builder(
                 input: &crate::input::GetPermissionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1671,7 +1710,7 @@ impl GetPermissionInput {
 pub mod get_resource_policies_input {
 
     /// A builder for [`GetResourcePoliciesInput`](crate::input::GetResourcePoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) principal: std::option::Option<std::string::String>,
@@ -1731,8 +1770,10 @@ pub mod get_resource_policies_input {
         /// Consumes the builder and constructs a [`GetResourcePoliciesInput`](crate::input::GetResourcePoliciesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetResourcePoliciesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetResourcePoliciesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetResourcePoliciesInput {
                 resource_arns: self.resource_arns,
                 principal: self.principal,
@@ -1755,13 +1796,13 @@ impl GetResourcePoliciesInput {
             crate::operation::GetResourcePolicies,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourcePoliciesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getresourcepolicies").expect("formatting should succeed");
                 Ok(())
             }
@@ -1769,8 +1810,10 @@ impl GetResourcePoliciesInput {
             fn update_http_builder(
                 input: &crate::input::GetResourcePoliciesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1854,7 +1897,7 @@ impl GetResourcePoliciesInput {
 pub mod get_resource_share_associations_input {
 
     /// A builder for [`GetResourceShareAssociationsInput`](crate::input::GetResourceShareAssociationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_type:
             std::option::Option<crate::model::ResourceShareAssociationType>,
@@ -1975,7 +2018,7 @@ pub mod get_resource_share_associations_input {
             self,
         ) -> Result<
             crate::input::GetResourceShareAssociationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetResourceShareAssociationsInput {
                 association_type: self.association_type,
@@ -2002,13 +2045,13 @@ impl GetResourceShareAssociationsInput {
             crate::operation::GetResourceShareAssociations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourceShareAssociationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getresourceshareassociations").expect("formatting should succeed");
                 Ok(())
             }
@@ -2016,8 +2059,10 @@ impl GetResourceShareAssociationsInput {
             fn update_http_builder(
                 input: &crate::input::GetResourceShareAssociationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2100,7 +2145,7 @@ impl GetResourceShareAssociationsInput {
 pub mod get_resource_share_invitations_input {
 
     /// A builder for [`GetResourceShareInvitationsInput`](crate::input::GetResourceShareInvitationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_invitation_arns:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2175,7 +2220,7 @@ pub mod get_resource_share_invitations_input {
             self,
         ) -> Result<
             crate::input::GetResourceShareInvitationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetResourceShareInvitationsInput {
                 resource_share_invitation_arns: self.resource_share_invitation_arns,
@@ -2199,13 +2244,13 @@ impl GetResourceShareInvitationsInput {
             crate::operation::GetResourceShareInvitations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourceShareInvitationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getresourceshareinvitations").expect("formatting should succeed");
                 Ok(())
             }
@@ -2213,8 +2258,10 @@ impl GetResourceShareInvitationsInput {
             fn update_http_builder(
                 input: &crate::input::GetResourceShareInvitationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2297,7 +2344,7 @@ impl GetResourceShareInvitationsInput {
 pub mod get_resource_shares_input {
 
     /// A builder for [`GetResourceSharesInput`](crate::input::GetResourceSharesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) resource_share_status: std::option::Option<crate::model::ResourceShareStatus>,
@@ -2427,8 +2474,10 @@ pub mod get_resource_shares_input {
         /// Consumes the builder and constructs a [`GetResourceSharesInput`](crate::input::GetResourceSharesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetResourceSharesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetResourceSharesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetResourceSharesInput {
                 resource_share_arns: self.resource_share_arns,
                 resource_share_status: self.resource_share_status,
@@ -2455,13 +2504,13 @@ impl GetResourceSharesInput {
             crate::operation::GetResourceShares,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourceSharesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getresourceshares").expect("formatting should succeed");
                 Ok(())
             }
@@ -2469,8 +2518,10 @@ impl GetResourceSharesInput {
             fn update_http_builder(
                 input: &crate::input::GetResourceSharesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2554,7 +2605,7 @@ impl GetResourceSharesInput {
 pub mod list_pending_invitation_resources_input {
 
     /// A builder for [`ListPendingInvitationResourcesInput`](crate::input::ListPendingInvitationResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_invitation_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2632,7 +2683,7 @@ pub mod list_pending_invitation_resources_input {
             self,
         ) -> Result<
             crate::input::ListPendingInvitationResourcesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListPendingInvitationResourcesInput {
                 resource_share_invitation_arn: self.resource_share_invitation_arn,
@@ -2656,13 +2707,13 @@ impl ListPendingInvitationResourcesInput {
             crate::operation::ListPendingInvitationResources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPendingInvitationResourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listpendinginvitationresources")
                     .expect("formatting should succeed");
                 Ok(())
@@ -2671,8 +2722,10 @@ impl ListPendingInvitationResourcesInput {
             fn update_http_builder(
                 input: &crate::input::ListPendingInvitationResourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2755,7 +2808,7 @@ impl ListPendingInvitationResourcesInput {
 pub mod list_permissions_input {
 
     /// A builder for [`ListPermissionsInput`](crate::input::ListPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2798,7 +2851,7 @@ pub mod list_permissions_input {
         /// Consumes the builder and constructs a [`ListPermissionsInput`](crate::input::ListPermissionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPermissionsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListPermissionsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListPermissionsInput {
                 resource_type: self.resource_type,
@@ -2821,13 +2874,13 @@ impl ListPermissionsInput {
             crate::operation::ListPermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listpermissions").expect("formatting should succeed");
                 Ok(())
             }
@@ -2835,8 +2888,10 @@ impl ListPermissionsInput {
             fn update_http_builder(
                 input: &crate::input::ListPermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2920,7 +2975,7 @@ impl ListPermissionsInput {
 pub mod list_permission_versions_input {
 
     /// A builder for [`ListPermissionVersionsInput`](crate::input::ListPermissionVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2963,8 +3018,10 @@ pub mod list_permission_versions_input {
         /// Consumes the builder and constructs a [`ListPermissionVersionsInput`](crate::input::ListPermissionVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPermissionVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListPermissionVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListPermissionVersionsInput {
                 permission_arn: self.permission_arn,
                 next_token: self.next_token,
@@ -2986,13 +3043,13 @@ impl ListPermissionVersionsInput {
             crate::operation::ListPermissionVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPermissionVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listpermissionversions").expect("formatting should succeed");
                 Ok(())
             }
@@ -3000,8 +3057,10 @@ impl ListPermissionVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListPermissionVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3087,7 +3146,7 @@ impl ListPermissionVersionsInput {
 pub mod list_principals_input {
 
     /// A builder for [`ListPrincipalsInput`](crate::input::ListPrincipalsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_owner: std::option::Option<crate::model::ResourceOwner>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3225,7 +3284,7 @@ pub mod list_principals_input {
         /// Consumes the builder and constructs a [`ListPrincipalsInput`](crate::input::ListPrincipalsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPrincipalsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListPrincipalsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListPrincipalsInput {
                 resource_owner: self.resource_owner,
@@ -3252,13 +3311,13 @@ impl ListPrincipalsInput {
             crate::operation::ListPrincipals,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPrincipalsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listprincipals").expect("formatting should succeed");
                 Ok(())
             }
@@ -3266,8 +3325,10 @@ impl ListPrincipalsInput {
             fn update_http_builder(
                 input: &crate::input::ListPrincipalsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3351,7 +3412,7 @@ impl ListPrincipalsInput {
 pub mod list_resources_input {
 
     /// A builder for [`ListResourcesInput`](crate::input::ListResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_owner: std::option::Option<crate::model::ResourceOwner>,
         pub(crate) principal: std::option::Option<std::string::String>,
@@ -3499,7 +3560,7 @@ pub mod list_resources_input {
         /// Consumes the builder and constructs a [`ListResourcesInput`](crate::input::ListResourcesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListResourcesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListResourcesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListResourcesInput {
                 resource_owner: self.resource_owner,
@@ -3527,13 +3588,13 @@ impl ListResourcesInput {
             crate::operation::ListResources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListResourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listresources").expect("formatting should succeed");
                 Ok(())
             }
@@ -3541,8 +3602,10 @@ impl ListResourcesInput {
             fn update_http_builder(
                 input: &crate::input::ListResourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3626,7 +3689,7 @@ impl ListResourcesInput {
 pub mod list_resource_share_permissions_input {
 
     /// A builder for [`ListResourceSharePermissionsInput`](crate::input::ListResourceSharePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3671,7 +3734,7 @@ pub mod list_resource_share_permissions_input {
             self,
         ) -> Result<
             crate::input::ListResourceSharePermissionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListResourceSharePermissionsInput {
                 resource_share_arn: self.resource_share_arn,
@@ -3694,13 +3757,13 @@ impl ListResourceSharePermissionsInput {
             crate::operation::ListResourceSharePermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListResourceSharePermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listresourcesharepermissions").expect("formatting should succeed");
                 Ok(())
             }
@@ -3708,8 +3771,10 @@ impl ListResourceSharePermissionsInput {
             fn update_http_builder(
                 input: &crate::input::ListResourceSharePermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3792,7 +3857,7 @@ impl ListResourceSharePermissionsInput {
 pub mod list_resource_types_input {
 
     /// A builder for [`ListResourceTypesInput`](crate::input::ListResourceTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3851,8 +3916,10 @@ pub mod list_resource_types_input {
         /// Consumes the builder and constructs a [`ListResourceTypesInput`](crate::input::ListResourceTypesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListResourceTypesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListResourceTypesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListResourceTypesInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -3874,13 +3941,13 @@ impl ListResourceTypesInput {
             crate::operation::ListResourceTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListResourceTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listresourcetypes").expect("formatting should succeed");
                 Ok(())
             }
@@ -3888,8 +3955,10 @@ impl ListResourceTypesInput {
             fn update_http_builder(
                 input: &crate::input::ListResourceTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3973,7 +4042,7 @@ impl ListResourceTypesInput {
 pub mod promote_resource_share_created_from_policy_input {
 
     /// A builder for [`PromoteResourceShareCreatedFromPolicyInput`](crate::input::PromoteResourceShareCreatedFromPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
     }
@@ -3996,7 +4065,7 @@ pub mod promote_resource_share_created_from_policy_input {
             self,
         ) -> Result<
             crate::input::PromoteResourceShareCreatedFromPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PromoteResourceShareCreatedFromPolicyInput {
                 resource_share_arn: self.resource_share_arn,
@@ -4017,13 +4086,13 @@ impl PromoteResourceShareCreatedFromPolicyInput {
             crate::operation::PromoteResourceShareCreatedFromPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PromoteResourceShareCreatedFromPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/promoteresourcesharecreatedfrompolicy")
                     .expect("formatting should succeed");
                 Ok(())
@@ -4031,22 +4100,37 @@ impl PromoteResourceShareCreatedFromPolicyInput {
             fn uri_query(
                 _input: &crate::input::PromoteResourceShareCreatedFromPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_3) = &_input.resource_share_arn {
-                    query.push_kv(
-                        "resourceShareArn",
-                        &aws_smithy_http::query::fmt_string(&inner_3),
+                let inner_3 = &_input.resource_share_arn;
+                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_share_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_3.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_share_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceShareArn",
+                    &aws_smithy_http::query::fmt_string(&inner_3),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::PromoteResourceShareCreatedFromPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4117,7 +4201,7 @@ impl PromoteResourceShareCreatedFromPolicyInput {
 pub mod reject_resource_share_invitation_input {
 
     /// A builder for [`RejectResourceShareInvitationInput`](crate::input::RejectResourceShareInvitationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_invitation_arn: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -4156,7 +4240,7 @@ pub mod reject_resource_share_invitation_input {
             self,
         ) -> Result<
             crate::input::RejectResourceShareInvitationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RejectResourceShareInvitationInput {
                 resource_share_invitation_arn: self.resource_share_invitation_arn,
@@ -4178,13 +4262,13 @@ impl RejectResourceShareInvitationInput {
             crate::operation::RejectResourceShareInvitation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RejectResourceShareInvitationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/rejectresourceshareinvitation")
                     .expect("formatting should succeed");
                 Ok(())
@@ -4193,8 +4277,10 @@ impl RejectResourceShareInvitationInput {
             fn update_http_builder(
                 input: &crate::input::RejectResourceShareInvitationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4277,7 +4363,7 @@ impl RejectResourceShareInvitationInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4318,7 +4404,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_share_arn: self.resource_share_arn,
@@ -4340,13 +4426,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tagresource").expect("formatting should succeed");
                 Ok(())
             }
@@ -4354,8 +4440,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4439,7 +4527,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4480,7 +4568,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_share_arn: self.resource_share_arn,
@@ -4502,13 +4590,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/untagresource").expect("formatting should succeed");
                 Ok(())
             }
@@ -4516,8 +4604,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4601,7 +4691,7 @@ impl UntagResourceInput {
 pub mod update_resource_share_input {
 
     /// A builder for [`UpdateResourceShareInput`](crate::input::UpdateResourceShareInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4657,8 +4747,10 @@ pub mod update_resource_share_input {
         /// Consumes the builder and constructs a [`UpdateResourceShareInput`](crate::input::UpdateResourceShareInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateResourceShareInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateResourceShareInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateResourceShareInput {
                 resource_share_arn: self.resource_share_arn,
                 name: self.name,
@@ -4681,13 +4773,13 @@ impl UpdateResourceShareInput {
             crate::operation::UpdateResourceShare,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateResourceShareInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/updateresourceshare").expect("formatting should succeed");
                 Ok(())
             }
@@ -4695,8 +4787,10 @@ impl UpdateResourceShareInput {
             fn update_http_builder(
                 input: &crate::input::UpdateResourceShareInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4778,7 +4872,7 @@ impl UpdateResourceShareInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceShareInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
     #[doc(hidden)]
@@ -4813,20 +4907,10 @@ impl UpdateResourceShareInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateResourceShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourceShareInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("name", &self.name);
-        formatter.field("allow_external_principals", &self.allow_external_principals);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share.</p>
     #[doc(hidden)]
@@ -4845,18 +4929,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
     #[doc(hidden)]
@@ -4875,18 +4951,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectResourceShareInvitationInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
     #[doc(hidden)]
@@ -4907,21 +4975,10 @@ impl RejectResourceShareInvitationInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for RejectResourceShareInvitationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectResourceShareInvitationInput");
-        formatter.field(
-            "resource_share_invitation_arn",
-            &self.resource_share_invitation_arn,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PromoteResourceShareCreatedFromPolicyInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to promote.</p>
     #[doc(hidden)]
@@ -4933,17 +4990,10 @@ impl PromoteResourceShareCreatedFromPolicyInput {
         self.resource_share_arn.as_deref()
     }
 }
-impl std::fmt::Debug for PromoteResourceShareCreatedFromPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PromoteResourceShareCreatedFromPolicyInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceTypesInput {
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     #[doc(hidden)]
@@ -4983,19 +5033,10 @@ impl ListResourceTypesInput {
         self.resource_region_scope.as_ref()
     }
 }
-impl std::fmt::Debug for ListResourceTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceTypesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("resource_region_scope", &self.resource_region_scope);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceSharePermissionsInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.</p>
     #[doc(hidden)]
@@ -5021,19 +5062,10 @@ impl ListResourceSharePermissionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListResourceSharePermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceSharePermissionsInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourcesInput {
     /// <p>Specifies that you want to list only the resource shares that match the following:</p>
     /// <ul>
@@ -5118,24 +5150,10 @@ impl ListResourcesInput {
         self.resource_region_scope.as_ref()
     }
 }
-impl std::fmt::Debug for ListResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourcesInput");
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("principal", &self.principal);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("resource_share_arns", &self.resource_share_arns);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("resource_region_scope", &self.resource_region_scope);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPrincipalsInput {
     /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
     /// <ul>
@@ -5219,23 +5237,10 @@ impl ListPrincipalsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPrincipalsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPrincipalsInput");
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("principals", &self.principals);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("resource_share_arns", &self.resource_share_arns);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPermissionVersionsInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the <code>permissionVersion</code> parameter on the <code>AssociateResourceSharePermission</code> operation to specify a non-default version to attach.</p>
     #[doc(hidden)]
@@ -5261,19 +5266,10 @@ impl ListPermissionVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPermissionVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPermissionVersionsInput");
-        formatter.field("permission_arn", &self.permission_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPermissionsInput {
     /// <p>Specifies that you want to list permissions for only the specified resource type. For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
     #[doc(hidden)]
@@ -5299,19 +5295,10 @@ impl ListPermissionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPermissionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPermissionsInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPendingInvitationResourcesInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation. You can use <code>GetResourceShareInvitations</code> to find the ARN of the invitation.</p>
     #[doc(hidden)]
@@ -5358,23 +5345,10 @@ impl ListPendingInvitationResourcesInput {
         self.resource_region_scope.as_ref()
     }
 }
-impl std::fmt::Debug for ListPendingInvitationResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPendingInvitationResourcesInput");
-        formatter.field(
-            "resource_share_invitation_arn",
-            &self.resource_share_invitation_arn,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("resource_region_scope", &self.resource_region_scope);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceSharesInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
     #[doc(hidden)]
@@ -5443,24 +5417,10 @@ impl GetResourceSharesInput {
         self.permission_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceSharesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceSharesInput");
-        formatter.field("resource_share_arns", &self.resource_share_arns);
-        formatter.field("resource_share_status", &self.resource_share_status);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("name", &self.name);
-        formatter.field("tag_filters", &self.tag_filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("permission_arn", &self.permission_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceShareInvitationsInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
     #[doc(hidden)]
@@ -5493,23 +5453,10 @@ impl GetResourceShareInvitationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetResourceShareInvitationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceShareInvitationsInput");
-        formatter.field(
-            "resource_share_invitation_arns",
-            &self.resource_share_invitation_arns,
-        );
-        formatter.field("resource_share_arns", &self.resource_share_arns);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceShareAssociationsInput {
     /// <p>Specifies whether you want to retrieve the associations that involve a specified resource or principal.</p>
     /// <ul>
@@ -5579,23 +5526,10 @@ impl GetResourceShareAssociationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetResourceShareAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceShareAssociationsInput");
-        formatter.field("association_type", &self.association_type);
-        formatter.field("resource_share_arns", &self.resource_share_arns);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("principal", &self.principal);
-        formatter.field("association_status", &self.association_status);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourcePoliciesInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources whose policies you want to retrieve.</p>
     #[doc(hidden)]
@@ -5628,20 +5562,10 @@ impl GetResourcePoliciesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetResourcePoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourcePoliciesInput");
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("principal", &self.principal);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPermissionInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
     #[doc(hidden)]
@@ -5660,29 +5584,15 @@ impl GetPermissionInput {
         self.permission_version
     }
 }
-impl std::fmt::Debug for GetPermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPermissionInput");
-        formatter.field("permission_arn", &self.permission_arn);
-        formatter.field("permission_version", &self.permission_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableSharingWithAwsOrganizationInput {}
-impl std::fmt::Debug for EnableSharingWithAwsOrganizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableSharingWithAwsOrganizationInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateResourceSharePermissionInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share from which you want to disassociate a permission.</p>
     #[doc(hidden)]
@@ -5710,19 +5620,10 @@ impl DisassociateResourceSharePermissionInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateResourceSharePermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateResourceSharePermissionInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("permission_arn", &self.permission_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateResourceShareInput {
     /// <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove resources from.</p>
     #[doc(hidden)]
@@ -5777,20 +5678,10 @@ impl DisassociateResourceShareInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateResourceShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateResourceShareInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("principals", &self.principals);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceShareInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to delete.</p>
     #[doc(hidden)]
@@ -5811,18 +5702,10 @@ impl DeleteResourceShareInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteResourceShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourceShareInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateResourceShareInput {
     /// <p>Specifies the name of the resource share.</p>
     #[doc(hidden)]
@@ -5898,23 +5781,10 @@ impl CreateResourceShareInput {
         self.permission_arns.as_deref()
     }
 }
-impl std::fmt::Debug for CreateResourceShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateResourceShareInput");
-        formatter.field("name", &self.name);
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("principals", &self.principals);
-        formatter.field("tags", &self.tags);
-        formatter.field("allow_external_principals", &self.allow_external_principals);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("permission_arns", &self.permission_arns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateResourceSharePermissionInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to which you want to add or replace permissions.</p>
     #[doc(hidden)]
@@ -5960,21 +5830,10 @@ impl AssociateResourceSharePermissionInput {
         self.permission_version
     }
 }
-impl std::fmt::Debug for AssociateResourceSharePermissionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateResourceSharePermissionInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("permission_arn", &self.permission_arn);
-        formatter.field("replace", &self.replace);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("permission_version", &self.permission_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateResourceShareInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add principals or resources to.</p>
     #[doc(hidden)]
@@ -6031,20 +5890,10 @@ impl AssociateResourceShareInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateResourceShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateResourceShareInput");
-        formatter.field("resource_share_arn", &self.resource_share_arn);
-        formatter.field("resource_arns", &self.resource_arns);
-        formatter.field("principals", &self.principals);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptResourceShareInvitationInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to accept.</p>
     #[doc(hidden)]
@@ -6063,16 +5912,5 @@ impl AcceptResourceShareInvitationInput {
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-}
-impl std::fmt::Debug for AcceptResourceShareInvitationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptResourceShareInvitationInput");
-        formatter.field(
-            "resource_share_invitation_arn",
-            &self.resource_share_invitation_arn,
-        );
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
     }
 }

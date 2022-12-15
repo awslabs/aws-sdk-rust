@@ -2,7 +2,7 @@
 
 /// <p>A collection of tags associated with a container. Each tag consists of a key:value pair, which can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
     #[doc(hidden)]
@@ -21,19 +21,11 @@ impl Tag {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -78,7 +70,7 @@ impl Tag {
 /// <p>The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for.</p>
 /// <p>To view examples of how to construct a metric policy for your use case, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html">Example Metric Policies</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricPolicy {
     /// <p>A setting to enable or disable metrics at the container level.</p>
     #[doc(hidden)]
@@ -99,19 +91,11 @@ impl MetricPolicy {
         self.metric_policy_rules.as_deref()
     }
 }
-impl std::fmt::Debug for MetricPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricPolicy");
-        formatter.field("container_level_metrics", &self.container_level_metrics);
-        formatter.field("metric_policy_rules", &self.metric_policy_rules);
-        formatter.finish()
-    }
-}
 /// See [`MetricPolicy`](crate::model::MetricPolicy).
 pub mod metric_policy {
 
     /// A builder for [`MetricPolicy`](crate::model::MetricPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_level_metrics:
             std::option::Option<crate::model::ContainerLevelMetrics>,
@@ -172,7 +156,7 @@ impl MetricPolicy {
 
 /// <p>A setting that enables metrics at the object level. Each rule contains an object group and an object group name. If the policy includes the MetricPolicyRules parameter, you must include at least one rule. Each metric policy can include up to five rules by default. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricPolicyRule {
     /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
     #[doc(hidden)]
@@ -191,19 +175,11 @@ impl MetricPolicyRule {
         self.object_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for MetricPolicyRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricPolicyRule");
-        formatter.field("object_group", &self.object_group);
-        formatter.field("object_group_name", &self.object_group_name);
-        formatter.finish()
-    }
-}
 /// See [`MetricPolicyRule`](crate::model::MetricPolicyRule).
 pub mod metric_policy_rule {
 
     /// A builder for [`MetricPolicyRule`](crate::model::MetricPolicyRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_group: std::option::Option<std::string::String>,
         pub(crate) object_group_name: std::option::Option<std::string::String>,
@@ -248,6 +224,41 @@ impl MetricPolicyRule {
     }
 }
 
+/// When writing a match expression against `ContainerLevelMetrics`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let containerlevelmetrics = unimplemented!();
+/// match containerlevelmetrics {
+///     ContainerLevelMetrics::Disabled => { /* ... */ },
+///     ContainerLevelMetrics::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `containerlevelmetrics` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ContainerLevelMetrics::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ContainerLevelMetrics::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ContainerLevelMetrics::NewFeature` is defined.
+/// Specifically, when `containerlevelmetrics` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ContainerLevelMetrics::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -264,15 +275,17 @@ pub enum ContainerLevelMetrics {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ContainerLevelMetrics {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => ContainerLevelMetrics::Disabled,
             "ENABLED" => ContainerLevelMetrics::Enabled,
-            other => ContainerLevelMetrics::Unknown(other.to_owned()),
+            other => {
+                ContainerLevelMetrics::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -289,11 +302,11 @@ impl ContainerLevelMetrics {
         match self {
             ContainerLevelMetrics::Disabled => "DISABLED",
             ContainerLevelMetrics::Enabled => "ENABLED",
-            ContainerLevelMetrics::Unknown(s) => s.as_ref(),
+            ContainerLevelMetrics::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -305,7 +318,7 @@ impl AsRef<str> for ContainerLevelMetrics {
 
 /// <p>A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CorsRule {
     /// <p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
     /// <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>
@@ -355,22 +368,11 @@ impl CorsRule {
         self.expose_headers.as_deref()
     }
 }
-impl std::fmt::Debug for CorsRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CorsRule");
-        formatter.field("allowed_origins", &self.allowed_origins);
-        formatter.field("allowed_methods", &self.allowed_methods);
-        formatter.field("allowed_headers", &self.allowed_headers);
-        formatter.field("max_age_seconds", &self.max_age_seconds);
-        formatter.field("expose_headers", &self.expose_headers);
-        formatter.finish()
-    }
-}
 /// See [`CorsRule`](crate::model::CorsRule).
 pub mod cors_rule {
 
     /// A builder for [`CorsRule`](crate::model::CorsRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allowed_origins: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) allowed_methods: std::option::Option<std::vec::Vec<crate::model::MethodName>>,
@@ -494,6 +496,43 @@ impl CorsRule {
     }
 }
 
+/// When writing a match expression against `MethodName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let methodname = unimplemented!();
+/// match methodname {
+///     MethodName::Delete => { /* ... */ },
+///     MethodName::Get => { /* ... */ },
+///     MethodName::Head => { /* ... */ },
+///     MethodName::Put => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `methodname` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `MethodName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `MethodName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `MethodName::NewFeature` is defined.
+/// Specifically, when `methodname` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `MethodName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -514,8 +553,8 @@ pub enum MethodName {
     Head,
     #[allow(missing_docs)] // documentation missing in model
     Put,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MethodName {
     fn from(s: &str) -> Self {
@@ -524,7 +563,7 @@ impl std::convert::From<&str> for MethodName {
             "GET" => MethodName::Get,
             "HEAD" => MethodName::Head,
             "PUT" => MethodName::Put,
-            other => MethodName::Unknown(other.to_owned()),
+            other => MethodName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -543,11 +582,11 @@ impl MethodName {
             MethodName::Get => "GET",
             MethodName::Head => "HEAD",
             MethodName::Put => "PUT",
-            MethodName::Unknown(s) => s.as_ref(),
+            MethodName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETE", "GET", "HEAD", "PUT"]
     }
 }
@@ -559,7 +598,7 @@ impl AsRef<str> for MethodName {
 
 /// <p>This section describes operations that you can perform on an AWS Elemental MediaStore container.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Container {
     /// <p>The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.</p>
     #[doc(hidden)]
@@ -624,23 +663,11 @@ impl Container {
         self.access_logging_enabled
     }
 }
-impl std::fmt::Debug for Container {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Container");
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("access_logging_enabled", &self.access_logging_enabled);
-        formatter.finish()
-    }
-}
 /// See [`Container`](crate::model::Container).
 pub mod container {
 
     /// A builder for [`Container`](crate::model::Container).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -754,6 +781,42 @@ impl Container {
     }
 }
 
+/// When writing a match expression against `ContainerStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let containerstatus = unimplemented!();
+/// match containerstatus {
+///     ContainerStatus::Active => { /* ... */ },
+///     ContainerStatus::Creating => { /* ... */ },
+///     ContainerStatus::Deleting => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `containerstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ContainerStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ContainerStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ContainerStatus::NewFeature` is defined.
+/// Specifically, when `containerstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ContainerStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -772,8 +835,8 @@ pub enum ContainerStatus {
     Creating,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ContainerStatus {
     fn from(s: &str) -> Self {
@@ -781,7 +844,7 @@ impl std::convert::From<&str> for ContainerStatus {
             "ACTIVE" => ContainerStatus::Active,
             "CREATING" => ContainerStatus::Creating,
             "DELETING" => ContainerStatus::Deleting,
-            other => ContainerStatus::Unknown(other.to_owned()),
+            other => ContainerStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -799,11 +862,11 @@ impl ContainerStatus {
             ContainerStatus::Active => "ACTIVE",
             ContainerStatus::Creating => "CREATING",
             ContainerStatus::Deleting => "DELETING",
-            ContainerStatus::Unknown(s) => s.as_ref(),
+            ContainerStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING"]
     }
 }

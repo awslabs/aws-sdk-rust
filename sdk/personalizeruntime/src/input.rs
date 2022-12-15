@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod get_personalized_ranking_input {
 
     /// A builder for [`GetPersonalizedRankingInput`](crate::input::GetPersonalizedRankingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_arn: std::option::Option<std::string::String>,
         pub(crate) input_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -125,8 +125,10 @@ pub mod get_personalized_ranking_input {
         /// Consumes the builder and constructs a [`GetPersonalizedRankingInput`](crate::input::GetPersonalizedRankingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPersonalizedRankingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetPersonalizedRankingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetPersonalizedRankingInput {
                 campaign_arn: self.campaign_arn,
                 input_list: self.input_list,
@@ -151,13 +153,13 @@ impl GetPersonalizedRankingInput {
             crate::operation::GetPersonalizedRanking,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPersonalizedRankingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/personalize-ranking").expect("formatting should succeed");
                 Ok(())
             }
@@ -165,8 +167,10 @@ impl GetPersonalizedRankingInput {
             fn update_http_builder(
                 input: &crate::input::GetPersonalizedRankingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -252,7 +256,7 @@ impl GetPersonalizedRankingInput {
 pub mod get_recommendations_input {
 
     /// A builder for [`GetRecommendationsInput`](crate::input::GetRecommendationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_arn: std::option::Option<std::string::String>,
         pub(crate) item_id: std::option::Option<std::string::String>,
@@ -414,8 +418,10 @@ pub mod get_recommendations_input {
         /// Consumes the builder and constructs a [`GetRecommendationsInput`](crate::input::GetRecommendationsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRecommendationsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetRecommendationsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetRecommendationsInput {
                 campaign_arn: self.campaign_arn,
                 item_id: self.item_id,
@@ -443,13 +449,13 @@ impl GetRecommendationsInput {
             crate::operation::GetRecommendations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRecommendationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/recommendations").expect("formatting should succeed");
                 Ok(())
             }
@@ -457,8 +463,10 @@ impl GetRecommendationsInput {
             fn update_http_builder(
                 input: &crate::input::GetRecommendationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -540,7 +548,7 @@ impl GetRecommendationsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.</p>
     #[doc(hidden)]
@@ -626,25 +634,10 @@ impl GetRecommendationsInput {
         self.promotions.as_deref()
     }
 }
-impl std::fmt::Debug for GetRecommendationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecommendationsInput");
-        formatter.field("campaign_arn", &self.campaign_arn);
-        formatter.field("item_id", &self.item_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("num_results", &self.num_results);
-        formatter.field("context", &self.context);
-        formatter.field("filter_arn", &self.filter_arn);
-        formatter.field("filter_values", &self.filter_values);
-        formatter.field("recommender_arn", &self.recommender_arn);
-        formatter.field("promotions", &self.promotions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPersonalizedRankingInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.</p>
     #[doc(hidden)]
@@ -701,17 +694,5 @@ impl GetPersonalizedRankingInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.filter_values.as_ref()
-    }
-}
-impl std::fmt::Debug for GetPersonalizedRankingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPersonalizedRankingInput");
-        formatter.field("campaign_arn", &self.campaign_arn);
-        formatter.field("input_list", &self.input_list);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("context", &self.context);
-        formatter.field("filter_arn", &self.filter_arn);
-        formatter.field("filter_values", &self.filter_values);
-        formatter.finish()
     }
 }

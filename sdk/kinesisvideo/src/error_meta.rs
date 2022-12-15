@@ -32,8 +32,15 @@ pub enum Error {
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
     /// <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
-    /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -65,16 +72,23 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateSignalingChannelError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::CreateSignalingChannelErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-                crate::error::CreateSignalingChannelErrorKind::AccountChannelLimitExceededException(inner) => Error::AccountChannelLimitExceededException(inner),
-                crate::error::CreateSignalingChannelErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
-                crate::error::CreateSignalingChannelErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::CreateSignalingChannelErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-                crate::error::CreateSignalingChannelErrorKind::TagsPerResourceExceededLimitException(inner) => Error::TagsPerResourceExceededLimitException(inner),
-                crate::error::CreateSignalingChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateSignalingChannelError> for Error {
+    fn from(err: crate::error::CreateSignalingChannelError) -> Self {
+        match err.kind {
+            crate::error::CreateSignalingChannelErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateSignalingChannelErrorKind::AccountChannelLimitExceededException(inner) => Error::AccountChannelLimitExceededException(inner),
+            crate::error::CreateSignalingChannelErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::error::CreateSignalingChannelErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::CreateSignalingChannelErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::CreateSignalingChannelErrorKind::TagsPerResourceExceededLimitException(inner) => Error::TagsPerResourceExceededLimitException(inner),
+            crate::error::CreateSignalingChannelErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -84,31 +98,40 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateStreamError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateStreamErrorKind::AccountStreamLimitExceededException(inner) => {
-                    Error::AccountStreamLimitExceededException(inner)
-                }
-                crate::error::CreateStreamErrorKind::ClientLimitExceededException(inner) => {
-                    Error::ClientLimitExceededException(inner)
-                }
-                crate::error::CreateStreamErrorKind::DeviceStreamLimitExceededException(inner) => {
-                    Error::DeviceStreamLimitExceededException(inner)
-                }
-                crate::error::CreateStreamErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::CreateStreamErrorKind::InvalidDeviceException(inner) => {
-                    Error::InvalidDeviceException(inner)
-                }
-                crate::error::CreateStreamErrorKind::ResourceInUseException(inner) => {
-                    Error::ResourceInUseException(inner)
-                }
-                crate::error::CreateStreamErrorKind::TagsPerResourceExceededLimitException(
-                    inner,
-                ) => Error::TagsPerResourceExceededLimitException(inner),
-                crate::error::CreateStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateStreamError> for Error {
+    fn from(err: crate::error::CreateStreamError) -> Self {
+        match err.kind {
+            crate::error::CreateStreamErrorKind::AccountStreamLimitExceededException(inner) => {
+                Error::AccountStreamLimitExceededException(inner)
+            }
+            crate::error::CreateStreamErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::CreateStreamErrorKind::DeviceStreamLimitExceededException(inner) => {
+                Error::DeviceStreamLimitExceededException(inner)
+            }
+            crate::error::CreateStreamErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::CreateStreamErrorKind::InvalidDeviceException(inner) => {
+                Error::InvalidDeviceException(inner)
+            }
+            crate::error::CreateStreamErrorKind::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::error::CreateStreamErrorKind::TagsPerResourceExceededLimitException(inner) => {
+                Error::TagsPerResourceExceededLimitException(inner)
+            }
+            crate::error::CreateStreamErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -121,30 +144,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteSignalingChannelError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteSignalingChannelErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
-                }
-                crate::error::DeleteSignalingChannelErrorKind::ClientLimitExceededException(
-                    inner,
-                ) => Error::ClientLimitExceededException(inner),
-                crate::error::DeleteSignalingChannelErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::DeleteSignalingChannelErrorKind::ResourceInUseException(inner) => {
-                    Error::ResourceInUseException(inner)
-                }
-                crate::error::DeleteSignalingChannelErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::DeleteSignalingChannelErrorKind::VersionMismatchException(inner) => {
-                    Error::VersionMismatchException(inner)
-                }
-                crate::error::DeleteSignalingChannelErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteSignalingChannelError> for Error {
+    fn from(err: crate::error::DeleteSignalingChannelError) -> Self {
+        match err.kind {
+            crate::error::DeleteSignalingChannelErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::DeleteSignalingChannelErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::DeleteSignalingChannelErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::DeleteSignalingChannelErrorKind::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::error::DeleteSignalingChannelErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DeleteSignalingChannelErrorKind::VersionMismatchException(inner) => {
+                Error::VersionMismatchException(inner)
+            }
+            crate::error::DeleteSignalingChannelErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -154,28 +184,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteStreamError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteStreamErrorKind::ClientLimitExceededException(inner) => {
-                    Error::ClientLimitExceededException(inner)
-                }
-                crate::error::DeleteStreamErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::DeleteStreamErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::DeleteStreamErrorKind::ResourceInUseException(inner) => {
-                    Error::ResourceInUseException(inner)
-                }
-                crate::error::DeleteStreamErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::DeleteStreamErrorKind::VersionMismatchException(inner) => {
-                    Error::VersionMismatchException(inner)
-                }
-                crate::error::DeleteStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteStreamError> for Error {
+    fn from(err: crate::error::DeleteStreamError) -> Self {
+        match err.kind {
+            crate::error::DeleteStreamErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::DeleteStreamErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::DeleteStreamErrorKind::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::error::DeleteStreamErrorKind::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::error::DeleteStreamErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DeleteStreamErrorKind::VersionMismatchException(inner) => {
+                Error::VersionMismatchException(inner)
+            }
+            crate::error::DeleteStreamErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -196,14 +235,21 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DescribeImageGenerationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-                crate::error::DescribeImageGenerationConfigurationErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
-                crate::error::DescribeImageGenerationConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::DescribeImageGenerationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DescribeImageGenerationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeImageGenerationConfigurationError> for Error {
+    fn from(err: crate::error::DescribeImageGenerationConfigurationError) -> Self {
+        match err.kind {
+            crate::error::DescribeImageGenerationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DescribeImageGenerationConfigurationErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::error::DescribeImageGenerationConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DescribeImageGenerationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeImageGenerationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -220,14 +266,21 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DescribeNotificationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-                crate::error::DescribeNotificationConfigurationErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
-                crate::error::DescribeNotificationConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::DescribeNotificationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DescribeNotificationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeNotificationConfigurationError> for Error {
+    fn from(err: crate::error::DescribeNotificationConfigurationError) -> Self {
+        match err.kind {
+            crate::error::DescribeNotificationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DescribeNotificationConfigurationErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::error::DescribeNotificationConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DescribeNotificationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeNotificationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -240,24 +293,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeSignalingChannelError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeSignalingChannelErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
-                }
-                crate::error::DescribeSignalingChannelErrorKind::ClientLimitExceededException(
-                    inner,
-                ) => Error::ClientLimitExceededException(inner),
-                crate::error::DescribeSignalingChannelErrorKind::InvalidArgumentException(
-                    inner,
-                ) => Error::InvalidArgumentException(inner),
-                crate::error::DescribeSignalingChannelErrorKind::ResourceNotFoundException(
-                    inner,
-                ) => Error::ResourceNotFoundException(inner),
-                crate::error::DescribeSignalingChannelErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeSignalingChannelError> for Error {
+    fn from(err: crate::error::DescribeSignalingChannelError) -> Self {
+        match err.kind {
+            crate::error::DescribeSignalingChannelErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::DescribeSignalingChannelErrorKind::ClientLimitExceededException(
+                inner,
+            ) => Error::ClientLimitExceededException(inner),
+            crate::error::DescribeSignalingChannelErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::DescribeSignalingChannelErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DescribeSignalingChannelErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -267,22 +327,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeStreamError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeStreamErrorKind::ClientLimitExceededException(inner) => {
-                    Error::ClientLimitExceededException(inner)
-                }
-                crate::error::DescribeStreamErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::DescribeStreamErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::DescribeStreamErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::DescribeStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeStreamError> for Error {
+    fn from(err: crate::error::DescribeStreamError) -> Self {
+        match err.kind {
+            crate::error::DescribeStreamErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::DescribeStreamErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::DescribeStreamErrorKind::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::error::DescribeStreamErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DescribeStreamErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -292,22 +361,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDataEndpointError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDataEndpointErrorKind::ClientLimitExceededException(inner) => {
-                    Error::ClientLimitExceededException(inner)
-                }
-                crate::error::GetDataEndpointErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::GetDataEndpointErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::GetDataEndpointErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::GetDataEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetDataEndpointError> for Error {
+    fn from(err: crate::error::GetDataEndpointError) -> Self {
+        match err.kind {
+            crate::error::GetDataEndpointErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::GetDataEndpointErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::GetDataEndpointErrorKind::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::error::GetDataEndpointErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetDataEndpointErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -320,15 +398,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetSignalingChannelEndpointError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::GetSignalingChannelEndpointErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-                crate::error::GetSignalingChannelEndpointErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
-                crate::error::GetSignalingChannelEndpointErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::GetSignalingChannelEndpointErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-                crate::error::GetSignalingChannelEndpointErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::GetSignalingChannelEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetSignalingChannelEndpointError> for Error {
+    fn from(err: crate::error::GetSignalingChannelEndpointError) -> Self {
+        match err.kind {
+            crate::error::GetSignalingChannelEndpointErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::GetSignalingChannelEndpointErrorKind::ClientLimitExceededException(
+                inner,
+            ) => Error::ClientLimitExceededException(inner),
+            crate::error::GetSignalingChannelEndpointErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::GetSignalingChannelEndpointErrorKind::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::error::GetSignalingChannelEndpointErrorKind::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::error::GetSignalingChannelEndpointErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -341,21 +438,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListSignalingChannelsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListSignalingChannelsErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
-                }
-                crate::error::ListSignalingChannelsErrorKind::ClientLimitExceededException(
-                    inner,
-                ) => Error::ClientLimitExceededException(inner),
-                crate::error::ListSignalingChannelsErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::ListSignalingChannelsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListSignalingChannelsError> for Error {
+    fn from(err: crate::error::ListSignalingChannelsError) -> Self {
+        match err.kind {
+            crate::error::ListSignalingChannelsErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::ListSignalingChannelsErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::ListSignalingChannelsErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::ListSignalingChannelsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -365,16 +469,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListStreamsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListStreamsErrorKind::ClientLimitExceededException(inner) => {
-                    Error::ClientLimitExceededException(inner)
-                }
-                crate::error::ListStreamsErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::ListStreamsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListStreamsError> for Error {
+    fn from(err: crate::error::ListStreamsError) -> Self {
+        match err.kind {
+            crate::error::ListStreamsErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::ListStreamsErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::ListStreamsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -386,24 +499,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::ClientLimitExceededException(inner) => {
-                    Error::ClientLimitExceededException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListTagsForResourceError> for Error {
+    fn from(err: crate::error::ListTagsForResourceError) -> Self {
+        match err.kind {
+            crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -415,27 +535,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForStreamError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForStreamErrorKind::ClientLimitExceededException(inner) => {
-                    Error::ClientLimitExceededException(inner)
-                }
-                crate::error::ListTagsForStreamErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::ListTagsForStreamErrorKind::InvalidResourceFormatException(inner) => {
-                    Error::InvalidResourceFormatException(inner)
-                }
-                crate::error::ListTagsForStreamErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::ListTagsForStreamErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::ListTagsForStreamErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListTagsForStreamError> for Error {
+    fn from(err: crate::error::ListTagsForStreamError) -> Self {
+        match err.kind {
+            crate::error::ListTagsForStreamErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::ListTagsForStreamErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::ListTagsForStreamErrorKind::InvalidResourceFormatException(inner) => {
+                Error::InvalidResourceFormatException(inner)
+            }
+            crate::error::ListTagsForStreamErrorKind::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::error::ListTagsForStreamErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::ListTagsForStreamErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -445,25 +572,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
-                }
-                crate::error::TagResourceErrorKind::ClientLimitExceededException(inner) => {
-                    Error::ClientLimitExceededException(inner)
-                }
-                crate::error::TagResourceErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::TagResourceErrorKind::TagsPerResourceExceededLimitException(
-                    inner,
-                ) => Error::TagsPerResourceExceededLimitException(inner),
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::TagResourceError> for Error {
+    fn from(err: crate::error::TagResourceError) -> Self {
+        match err.kind {
+            crate::error::TagResourceErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::TagResourceErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::TagResourceErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::TagResourceErrorKind::TagsPerResourceExceededLimitException(inner) => {
+                Error::TagsPerResourceExceededLimitException(inner)
+            }
+            crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -473,28 +609,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagStreamError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagStreamErrorKind::ClientLimitExceededException(inner) => {
-                    Error::ClientLimitExceededException(inner)
-                }
-                crate::error::TagStreamErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::TagStreamErrorKind::InvalidResourceFormatException(inner) => {
-                    Error::InvalidResourceFormatException(inner)
-                }
-                crate::error::TagStreamErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::TagStreamErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::TagStreamErrorKind::TagsPerResourceExceededLimitException(inner) => {
-                    Error::TagsPerResourceExceededLimitException(inner)
-                }
-                crate::error::TagStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::TagStreamError> for Error {
+    fn from(err: crate::error::TagStreamError) -> Self {
+        match err.kind {
+            crate::error::TagStreamErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::TagStreamErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::TagStreamErrorKind::InvalidResourceFormatException(inner) => {
+                Error::InvalidResourceFormatException(inner)
+            }
+            crate::error::TagStreamErrorKind::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::error::TagStreamErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::TagStreamErrorKind::TagsPerResourceExceededLimitException(inner) => {
+                Error::TagsPerResourceExceededLimitException(inner)
+            }
+            crate::error::TagStreamErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -504,22 +649,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
-                }
-                crate::error::UntagResourceErrorKind::ClientLimitExceededException(inner) => {
-                    Error::ClientLimitExceededException(inner)
-                }
-                crate::error::UntagResourceErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UntagResourceError> for Error {
+    fn from(err: crate::error::UntagResourceError) -> Self {
+        match err.kind {
+            crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::UntagResourceErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::UntagResourceErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -529,25 +683,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagStreamError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagStreamErrorKind::ClientLimitExceededException(inner) => {
-                    Error::ClientLimitExceededException(inner)
-                }
-                crate::error::UntagStreamErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::UntagStreamErrorKind::InvalidResourceFormatException(inner) => {
-                    Error::InvalidResourceFormatException(inner)
-                }
-                crate::error::UntagStreamErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::UntagStreamErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::UntagStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UntagStreamError> for Error {
+    fn from(err: crate::error::UntagStreamError) -> Self {
+        match err.kind {
+            crate::error::UntagStreamErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::UntagStreamErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::UntagStreamErrorKind::InvalidResourceFormatException(inner) => {
+                Error::InvalidResourceFormatException(inner)
+            }
+            crate::error::UntagStreamErrorKind::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::error::UntagStreamErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::UntagStreamErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -559,30 +722,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateDataRetentionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateDataRetentionErrorKind::ClientLimitExceededException(inner) => {
-                    Error::ClientLimitExceededException(inner)
-                }
-                crate::error::UpdateDataRetentionErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::UpdateDataRetentionErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::UpdateDataRetentionErrorKind::ResourceInUseException(inner) => {
-                    Error::ResourceInUseException(inner)
-                }
-                crate::error::UpdateDataRetentionErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::UpdateDataRetentionErrorKind::VersionMismatchException(inner) => {
-                    Error::VersionMismatchException(inner)
-                }
-                crate::error::UpdateDataRetentionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateDataRetentionError> for Error {
+    fn from(err: crate::error::UpdateDataRetentionError) -> Self {
+        match err.kind {
+            crate::error::UpdateDataRetentionErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::UpdateDataRetentionErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::UpdateDataRetentionErrorKind::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::error::UpdateDataRetentionErrorKind::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::error::UpdateDataRetentionErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::UpdateDataRetentionErrorKind::VersionMismatchException(inner) => {
+                Error::VersionMismatchException(inner)
+            }
+            crate::error::UpdateDataRetentionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -600,16 +770,23 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::UpdateImageGenerationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-                crate::error::UpdateImageGenerationConfigurationErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
-                crate::error::UpdateImageGenerationConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::UpdateImageGenerationConfigurationErrorKind::NoDataRetentionException(inner) => Error::NoDataRetentionException(inner),
-                crate::error::UpdateImageGenerationConfigurationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-                crate::error::UpdateImageGenerationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::UpdateImageGenerationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateImageGenerationConfigurationError> for Error {
+    fn from(err: crate::error::UpdateImageGenerationConfigurationError) -> Self {
+        match err.kind {
+            crate::error::UpdateImageGenerationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UpdateImageGenerationConfigurationErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::error::UpdateImageGenerationConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::UpdateImageGenerationConfigurationErrorKind::NoDataRetentionException(inner) => Error::NoDataRetentionException(inner),
+            crate::error::UpdateImageGenerationConfigurationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::UpdateImageGenerationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateImageGenerationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -626,16 +803,23 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::UpdateNotificationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-                crate::error::UpdateNotificationConfigurationErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
-                crate::error::UpdateNotificationConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::UpdateNotificationConfigurationErrorKind::NoDataRetentionException(inner) => Error::NoDataRetentionException(inner),
-                crate::error::UpdateNotificationConfigurationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-                crate::error::UpdateNotificationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::UpdateNotificationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateNotificationConfigurationError> for Error {
+    fn from(err: crate::error::UpdateNotificationConfigurationError) -> Self {
+        match err.kind {
+            crate::error::UpdateNotificationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UpdateNotificationConfigurationErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::error::UpdateNotificationConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::UpdateNotificationConfigurationErrorKind::NoDataRetentionException(inner) => Error::NoDataRetentionException(inner),
+            crate::error::UpdateNotificationConfigurationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::UpdateNotificationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateNotificationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -648,30 +832,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateSignalingChannelError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateSignalingChannelErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
-                }
-                crate::error::UpdateSignalingChannelErrorKind::ClientLimitExceededException(
-                    inner,
-                ) => Error::ClientLimitExceededException(inner),
-                crate::error::UpdateSignalingChannelErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::UpdateSignalingChannelErrorKind::ResourceInUseException(inner) => {
-                    Error::ResourceInUseException(inner)
-                }
-                crate::error::UpdateSignalingChannelErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::UpdateSignalingChannelErrorKind::VersionMismatchException(inner) => {
-                    Error::VersionMismatchException(inner)
-                }
-                crate::error::UpdateSignalingChannelErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateSignalingChannelError> for Error {
+    fn from(err: crate::error::UpdateSignalingChannelError) -> Self {
+        match err.kind {
+            crate::error::UpdateSignalingChannelErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::UpdateSignalingChannelErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::UpdateSignalingChannelErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::UpdateSignalingChannelErrorKind::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::error::UpdateSignalingChannelErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::UpdateSignalingChannelErrorKind::VersionMismatchException(inner) => {
+                Error::VersionMismatchException(inner)
+            }
+            crate::error::UpdateSignalingChannelErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -681,28 +872,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateStreamError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateStreamErrorKind::ClientLimitExceededException(inner) => {
-                    Error::ClientLimitExceededException(inner)
-                }
-                crate::error::UpdateStreamErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::UpdateStreamErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::UpdateStreamErrorKind::ResourceInUseException(inner) => {
-                    Error::ResourceInUseException(inner)
-                }
-                crate::error::UpdateStreamErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::UpdateStreamErrorKind::VersionMismatchException(inner) => {
-                    Error::VersionMismatchException(inner)
-                }
-                crate::error::UpdateStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
-            _ => Error::Unhandled(err.into()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateStreamError> for Error {
+    fn from(err: crate::error::UpdateStreamError) -> Self {
+        match err.kind {
+            crate::error::UpdateStreamErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::UpdateStreamErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::UpdateStreamErrorKind::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::error::UpdateStreamErrorKind::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::error::UpdateStreamErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::UpdateStreamErrorKind::VersionMismatchException(inner) => {
+                Error::VersionMismatchException(inner)
+            }
+            crate::error::UpdateStreamErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_token_input {
 
     /// A builder for [`CreateTokenInput`](crate::input::CreateTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) client_secret: std::option::Option<std::string::String>,
@@ -121,7 +121,7 @@ pub mod create_token_input {
         /// Consumes the builder and constructs a [`CreateTokenInput`](crate::input::CreateTokenInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTokenInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateTokenInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateTokenInput {
                 client_id: self.client_id,
@@ -149,13 +149,13 @@ impl CreateTokenInput {
             crate::operation::CreateToken,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateTokenInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/token").expect("formatting should succeed");
                 Ok(())
             }
@@ -163,8 +163,10 @@ impl CreateTokenInput {
             fn update_http_builder(
                 input: &crate::input::CreateTokenInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -249,7 +251,7 @@ impl CreateTokenInput {
 pub mod register_client_input {
 
     /// A builder for [`RegisterClientInput`](crate::input::RegisterClientInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_name: std::option::Option<std::string::String>,
         pub(crate) client_type: std::option::Option<std::string::String>,
@@ -298,7 +300,7 @@ pub mod register_client_input {
         /// Consumes the builder and constructs a [`RegisterClientInput`](crate::input::RegisterClientInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RegisterClientInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::RegisterClientInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::RegisterClientInput {
                 client_name: self.client_name,
@@ -321,13 +323,13 @@ impl RegisterClientInput {
             crate::operation::RegisterClient,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RegisterClientInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/client/register").expect("formatting should succeed");
                 Ok(())
             }
@@ -335,8 +337,10 @@ impl RegisterClientInput {
             fn update_http_builder(
                 input: &crate::input::RegisterClientInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -421,7 +425,7 @@ impl RegisterClientInput {
 pub mod start_device_authorization_input {
 
     /// A builder for [`StartDeviceAuthorizationInput`](crate::input::StartDeviceAuthorizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) client_secret: std::option::Option<std::string::String>,
@@ -466,7 +470,7 @@ pub mod start_device_authorization_input {
             self,
         ) -> Result<
             crate::input::StartDeviceAuthorizationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StartDeviceAuthorizationInput {
                 client_id: self.client_id,
@@ -489,13 +493,13 @@ impl StartDeviceAuthorizationInput {
             crate::operation::StartDeviceAuthorization,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartDeviceAuthorizationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/device_authorization").expect("formatting should succeed");
                 Ok(())
             }
@@ -503,8 +507,10 @@ impl StartDeviceAuthorizationInput {
             fn update_http_builder(
                 input: &crate::input::StartDeviceAuthorizationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -589,7 +595,7 @@ impl StartDeviceAuthorizationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDeviceAuthorizationInput {
     /// <p>The unique identifier string for the client that is registered with IAM Identity Center. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
     #[doc(hidden)]
@@ -615,19 +621,10 @@ impl StartDeviceAuthorizationInput {
         self.start_url.as_deref()
     }
 }
-impl std::fmt::Debug for StartDeviceAuthorizationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDeviceAuthorizationInput");
-        formatter.field("client_id", &self.client_id);
-        formatter.field("client_secret", &self.client_secret);
-        formatter.field("start_url", &self.start_url);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterClientInput {
     /// <p>The friendly name of the client.</p>
     #[doc(hidden)]
@@ -653,19 +650,10 @@ impl RegisterClientInput {
         self.scopes.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterClientInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterClientInput");
-        formatter.field("client_name", &self.client_name);
-        formatter.field("client_type", &self.client_type);
-        formatter.field("scopes", &self.scopes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTokenInput {
     /// <p>The unique identifier string for each client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
     #[doc(hidden)]
@@ -730,19 +718,5 @@ impl CreateTokenInput {
     /// <p>The location of the application that will receive the authorization code. Users authorize the service to send the request to this location.</p>
     pub fn redirect_uri(&self) -> std::option::Option<&str> {
         self.redirect_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTokenInput");
-        formatter.field("client_id", &self.client_id);
-        formatter.field("client_secret", &self.client_secret);
-        formatter.field("grant_type", &self.grant_type);
-        formatter.field("device_code", &self.device_code);
-        formatter.field("code", &self.code);
-        formatter.field("refresh_token", &self.refresh_token);
-        formatter.field("scope", &self.scope);
-        formatter.field("redirect_uri", &self.redirect_uri);
-        formatter.finish()
     }
 }

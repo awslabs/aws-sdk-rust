@@ -12,11 +12,10 @@ jobs:
     name: Audit Latest Dependencies
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions-rs/toolchain@v1
+      - uses: actions/checkout@v3
+      - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: ${{ env.rust_version }}
-          default: true
       - name: install cargo audit
         run: cargo install cargo-audit
       - name: Run audit
@@ -27,11 +26,10 @@ jobs:
     name: Audit Minimal Versions
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions-rs/toolchain@v1
+      - uses: actions/checkout@v3
+      - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: ${{ env.rust_version }}
-          default: true
       - name: install cargo audit
         run: cargo install cargo-audit
       - name: Run audit

@@ -2,22 +2,15 @@
 
 /// <p>A repository name is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryNameRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RepositoryNameRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryNameRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl RepositoryNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -25,7 +18,9 @@ impl std::fmt::Display for RepositoryNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryNameRequiredException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -35,7 +30,7 @@ impl std::error::Error for RepositoryNameRequiredException {}
 pub mod repository_name_required_exception {
 
     /// A builder for [`RepositoryNameRequiredException`](crate::error::RepositoryNameRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -67,22 +62,15 @@ impl RepositoryNameRequiredException {
 
 /// <p>The specified repository name already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryNameExistsException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RepositoryNameExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryNameExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl RepositoryNameExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -90,7 +78,9 @@ impl std::fmt::Display for RepositoryNameExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryNameExistsException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -100,7 +90,7 @@ impl std::error::Error for RepositoryNameExistsException {}
 pub mod repository_name_exists_exception {
 
     /// A builder for [`RepositoryNameExistsException`](crate::error::RepositoryNameExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -132,22 +122,15 @@ impl RepositoryNameExistsException {
 
 /// <p>The specified repository does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RepositoryDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl RepositoryDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -155,7 +138,9 @@ impl std::fmt::Display for RepositoryDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryDoesNotExistException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -165,7 +150,7 @@ impl std::error::Error for RepositoryDoesNotExistException {}
 pub mod repository_does_not_exist_exception {
 
     /// A builder for [`RepositoryDoesNotExistException`](crate::error::RepositoryDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -199,22 +184,15 @@ impl RepositoryDoesNotExistException {
 /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRepositoryNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidRepositoryNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRepositoryNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidRepositoryNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -222,7 +200,9 @@ impl std::fmt::Display for InvalidRepositoryNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRepositoryNameException")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -232,7 +212,7 @@ impl std::error::Error for InvalidRepositoryNameException {}
 pub mod invalid_repository_name_exception {
 
     /// A builder for [`InvalidRepositoryNameException`](crate::error::InvalidRepositoryNameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -264,22 +244,15 @@ impl InvalidRepositoryNameException {
 
 /// <p>The specified repository description is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRepositoryDescriptionException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidRepositoryDescriptionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRepositoryDescriptionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidRepositoryDescriptionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -287,7 +260,9 @@ impl std::fmt::Display for InvalidRepositoryDescriptionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRepositoryDescriptionException")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -297,7 +272,7 @@ impl std::error::Error for InvalidRepositoryDescriptionException {}
 pub mod invalid_repository_description_exception {
 
     /// A builder for [`InvalidRepositoryDescriptionException`](crate::error::InvalidRepositoryDescriptionException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -329,22 +304,15 @@ impl InvalidRepositoryDescriptionException {
 
 /// <p>The encryption key is not available.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionKeyUnavailableException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EncryptionKeyUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionKeyUnavailableException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl EncryptionKeyUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -352,7 +320,9 @@ impl std::fmt::Display for EncryptionKeyUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EncryptionKeyUnavailableException")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -362,7 +332,7 @@ impl std::error::Error for EncryptionKeyUnavailableException {}
 pub mod encryption_key_unavailable_exception {
 
     /// A builder for [`EncryptionKeyUnavailableException`](crate::error::EncryptionKeyUnavailableException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -394,22 +364,15 @@ impl EncryptionKeyUnavailableException {
 
 /// <p>No encryption key was found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionKeyNotFoundException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EncryptionKeyNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionKeyNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl EncryptionKeyNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -417,7 +380,9 @@ impl std::fmt::Display for EncryptionKeyNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EncryptionKeyNotFoundException")?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -427,7 +392,7 @@ impl std::error::Error for EncryptionKeyNotFoundException {}
 pub mod encryption_key_not_found_exception {
 
     /// A builder for [`EncryptionKeyNotFoundException`](crate::error::EncryptionKeyNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -459,22 +424,15 @@ impl EncryptionKeyNotFoundException {
 
 /// <p>The encryption key is disabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionKeyDisabledException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EncryptionKeyDisabledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionKeyDisabledException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl EncryptionKeyDisabledException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -482,7 +440,9 @@ impl std::fmt::Display for EncryptionKeyDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EncryptionKeyDisabledException")?;
         if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+            {
+                write!(f, ": {}", inner_8)?;
+            }
         }
         Ok(())
     }
@@ -492,7 +452,7 @@ impl std::error::Error for EncryptionKeyDisabledException {}
 pub mod encryption_key_disabled_exception {
 
     /// A builder for [`EncryptionKeyDisabledException`](crate::error::EncryptionKeyDisabledException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -524,22 +484,15 @@ impl EncryptionKeyDisabledException {
 
 /// <p>An encryption key could not be accessed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionKeyAccessDeniedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EncryptionKeyAccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionKeyAccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl EncryptionKeyAccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -547,7 +500,9 @@ impl std::fmt::Display for EncryptionKeyAccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EncryptionKeyAccessDeniedException")?;
         if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+            {
+                write!(f, ": {}", inner_9)?;
+            }
         }
         Ok(())
     }
@@ -557,7 +512,7 @@ impl std::error::Error for EncryptionKeyAccessDeniedException {}
 pub mod encryption_key_access_denied_exception {
 
     /// A builder for [`EncryptionKeyAccessDeniedException`](crate::error::EncryptionKeyAccessDeniedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -589,22 +544,15 @@ impl EncryptionKeyAccessDeniedException {
 
 /// <p>An encryption integrity check failed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionIntegrityChecksFailedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EncryptionIntegrityChecksFailedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionIntegrityChecksFailedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl EncryptionIntegrityChecksFailedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -612,7 +560,9 @@ impl std::fmt::Display for EncryptionIntegrityChecksFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EncryptionIntegrityChecksFailedException")?;
         if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+            {
+                write!(f, ": {}", inner_10)?;
+            }
         }
         Ok(())
     }
@@ -622,7 +572,7 @@ impl std::error::Error for EncryptionIntegrityChecksFailedException {}
 pub mod encryption_integrity_checks_failed_exception {
 
     /// A builder for [`EncryptionIntegrityChecksFailedException`](crate::error::EncryptionIntegrityChecksFailedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -654,22 +604,15 @@ impl EncryptionIntegrityChecksFailedException {
 
 /// <p>A pull request title is required. It cannot be empty or null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TitleRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TitleRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TitleRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TitleRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -677,7 +620,9 @@ impl std::fmt::Display for TitleRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TitleRequiredException")?;
         if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+            {
+                write!(f, ": {}", inner_11)?;
+            }
         }
         Ok(())
     }
@@ -687,7 +632,7 @@ impl std::error::Error for TitleRequiredException {}
 pub mod title_required_exception {
 
     /// A builder for [`TitleRequiredException`](crate::error::TitleRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -719,22 +664,15 @@ impl TitleRequiredException {
 
 /// <p>A pull request ID is required, but none was provided.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestIdRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PullRequestIdRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestIdRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl PullRequestIdRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -742,7 +680,9 @@ impl std::fmt::Display for PullRequestIdRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PullRequestIdRequiredException")?;
         if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+            {
+                write!(f, ": {}", inner_12)?;
+            }
         }
         Ok(())
     }
@@ -752,7 +692,7 @@ impl std::error::Error for PullRequestIdRequiredException {}
 pub mod pull_request_id_required_exception {
 
     /// A builder for [`PullRequestIdRequiredException`](crate::error::PullRequestIdRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -784,22 +724,15 @@ impl PullRequestIdRequiredException {
 
 /// <p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PullRequestDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl PullRequestDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -807,7 +740,9 @@ impl std::fmt::Display for PullRequestDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PullRequestDoesNotExistException")?;
         if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+            {
+                write!(f, ": {}", inner_13)?;
+            }
         }
         Ok(())
     }
@@ -817,7 +752,7 @@ impl std::error::Error for PullRequestDoesNotExistException {}
 pub mod pull_request_does_not_exist_exception {
 
     /// A builder for [`PullRequestDoesNotExistException`](crate::error::PullRequestDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -849,22 +784,15 @@ impl PullRequestDoesNotExistException {
 
 /// <p>The pull request status cannot be updated because it is already closed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestAlreadyClosedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PullRequestAlreadyClosedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestAlreadyClosedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl PullRequestAlreadyClosedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -872,7 +800,9 @@ impl std::fmt::Display for PullRequestAlreadyClosedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PullRequestAlreadyClosedException")?;
         if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+            {
+                write!(f, ": {}", inner_14)?;
+            }
         }
         Ok(())
     }
@@ -882,7 +812,7 @@ impl std::error::Error for PullRequestAlreadyClosedException {}
 pub mod pull_request_already_closed_exception {
 
     /// A builder for [`PullRequestAlreadyClosedException`](crate::error::PullRequestAlreadyClosedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -914,22 +844,15 @@ impl PullRequestAlreadyClosedException {
 
 /// <p>The title of the pull request is not valid. Pull request titles cannot exceed 100 characters in length.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTitleException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidTitleException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTitleException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidTitleException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -937,7 +860,9 @@ impl std::fmt::Display for InvalidTitleException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTitleException")?;
         if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+            {
+                write!(f, ": {}", inner_15)?;
+            }
         }
         Ok(())
     }
@@ -947,7 +872,7 @@ impl std::error::Error for InvalidTitleException {}
 pub mod invalid_title_exception {
 
     /// A builder for [`InvalidTitleException`](crate::error::InvalidTitleException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -979,22 +904,15 @@ impl InvalidTitleException {
 
 /// <p>The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request is in the specified repository, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPullRequestIdException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidPullRequestIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPullRequestIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidPullRequestIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1002,7 +920,9 @@ impl std::fmt::Display for InvalidPullRequestIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPullRequestIdException")?;
         if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+            {
+                write!(f, ": {}", inner_16)?;
+            }
         }
         Ok(())
     }
@@ -1012,7 +932,7 @@ impl std::error::Error for InvalidPullRequestIdException {}
 pub mod invalid_pull_request_id_exception {
 
     /// A builder for [`InvalidPullRequestIdException`](crate::error::InvalidPullRequestIdException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1044,22 +964,15 @@ impl InvalidPullRequestIdException {
 
 /// <p>A pull request status is required, but none was provided.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestStatusRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PullRequestStatusRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestStatusRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl PullRequestStatusRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1067,7 +980,9 @@ impl std::fmt::Display for PullRequestStatusRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PullRequestStatusRequiredException")?;
         if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+            {
+                write!(f, ": {}", inner_17)?;
+            }
         }
         Ok(())
     }
@@ -1077,7 +992,7 @@ impl std::error::Error for PullRequestStatusRequiredException {}
 pub mod pull_request_status_required_exception {
 
     /// A builder for [`PullRequestStatusRequiredException`](crate::error::PullRequestStatusRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1109,22 +1024,15 @@ impl PullRequestStatusRequiredException {
 
 /// <p>The pull request status update is not valid. The only valid update is from <code>OPEN</code> to <code>CLOSED</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPullRequestStatusUpdateException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidPullRequestStatusUpdateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPullRequestStatusUpdateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidPullRequestStatusUpdateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1132,7 +1040,9 @@ impl std::fmt::Display for InvalidPullRequestStatusUpdateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPullRequestStatusUpdateException")?;
         if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+            {
+                write!(f, ": {}", inner_18)?;
+            }
         }
         Ok(())
     }
@@ -1142,7 +1052,7 @@ impl std::error::Error for InvalidPullRequestStatusUpdateException {}
 pub mod invalid_pull_request_status_update_exception {
 
     /// A builder for [`InvalidPullRequestStatusUpdateException`](crate::error::InvalidPullRequestStatusUpdateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1174,22 +1084,15 @@ impl InvalidPullRequestStatusUpdateException {
 
 /// <p>The pull request status is not valid. The only valid values are <code>OPEN</code> and <code>CLOSED</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPullRequestStatusException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidPullRequestStatusException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPullRequestStatusException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidPullRequestStatusException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1197,7 +1100,9 @@ impl std::fmt::Display for InvalidPullRequestStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPullRequestStatusException")?;
         if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+            {
+                write!(f, ": {}", inner_19)?;
+            }
         }
         Ok(())
     }
@@ -1207,7 +1112,7 @@ impl std::error::Error for InvalidPullRequestStatusException {}
 pub mod invalid_pull_request_status_exception {
 
     /// A builder for [`InvalidPullRequestStatusException`](crate::error::InvalidPullRequestStatusException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1239,22 +1144,15 @@ impl InvalidPullRequestStatusException {
 
 /// <p>The pull request description is not valid. Descriptions cannot be more than 1,000 characters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDescriptionException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDescriptionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDescriptionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidDescriptionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1262,7 +1160,9 @@ impl std::fmt::Display for InvalidDescriptionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDescriptionException")?;
         if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+            {
+                write!(f, ": {}", inner_20)?;
+            }
         }
         Ok(())
     }
@@ -1272,7 +1172,7 @@ impl std::error::Error for InvalidDescriptionException {}
 pub mod invalid_description_exception {
 
     /// A builder for [`InvalidDescriptionException`](crate::error::InvalidDescriptionException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1304,22 +1204,15 @@ impl InvalidDescriptionException {
 
 /// <p>The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to retrieve the current revision ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevisionNotCurrentException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RevisionNotCurrentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevisionNotCurrentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl RevisionNotCurrentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1327,7 +1220,9 @@ impl std::fmt::Display for RevisionNotCurrentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RevisionNotCurrentException")?;
         if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+            {
+                write!(f, ": {}", inner_21)?;
+            }
         }
         Ok(())
     }
@@ -1337,7 +1232,7 @@ impl std::error::Error for RevisionNotCurrentException {}
 pub mod revision_not_current_exception {
 
     /// A builder for [`RevisionNotCurrentException`](crate::error::RevisionNotCurrentException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1369,22 +1264,15 @@ impl RevisionNotCurrentException {
 
 /// <p>A revision ID is required, but was not provided.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevisionIdRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RevisionIdRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevisionIdRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl RevisionIdRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1392,7 +1280,9 @@ impl std::fmt::Display for RevisionIdRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RevisionIdRequiredException")?;
         if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+            {
+                write!(f, ": {}", inner_22)?;
+            }
         }
         Ok(())
     }
@@ -1402,7 +1292,7 @@ impl std::error::Error for RevisionIdRequiredException {}
 pub mod revision_id_required_exception {
 
     /// A builder for [`RevisionIdRequiredException`](crate::error::RevisionIdRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1434,22 +1324,15 @@ impl RevisionIdRequiredException {
 
 /// <p>The approval cannot be applied because the user approving the pull request matches the user who created the pull request. You cannot approve a pull request that you created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestCannotBeApprovedByAuthorException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PullRequestCannotBeApprovedByAuthorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestCannotBeApprovedByAuthorException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl PullRequestCannotBeApprovedByAuthorException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1457,7 +1340,9 @@ impl std::fmt::Display for PullRequestCannotBeApprovedByAuthorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PullRequestCannotBeApprovedByAuthorException")?;
         if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+            {
+                write!(f, ": {}", inner_23)?;
+            }
         }
         Ok(())
     }
@@ -1467,7 +1352,7 @@ impl std::error::Error for PullRequestCannotBeApprovedByAuthorException {}
 pub mod pull_request_cannot_be_approved_by_author_exception {
 
     /// A builder for [`PullRequestCannotBeApprovedByAuthorException`](crate::error::PullRequestCannotBeApprovedByAuthorException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1499,22 +1384,15 @@ impl PullRequestCannotBeApprovedByAuthorException {
 
 /// <p>The number of approvals required for the approval rule exceeds the maximum number allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumNumberOfApprovalsExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MaximumNumberOfApprovalsExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumNumberOfApprovalsExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl MaximumNumberOfApprovalsExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1522,7 +1400,9 @@ impl std::fmt::Display for MaximumNumberOfApprovalsExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumNumberOfApprovalsExceededException")?;
         if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+            {
+                write!(f, ": {}", inner_24)?;
+            }
         }
         Ok(())
     }
@@ -1532,7 +1412,7 @@ impl std::error::Error for MaximumNumberOfApprovalsExceededException {}
 pub mod maximum_number_of_approvals_exceeded_exception {
 
     /// A builder for [`MaximumNumberOfApprovalsExceededException`](crate::error::MaximumNumberOfApprovalsExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1564,22 +1444,15 @@ impl MaximumNumberOfApprovalsExceededException {
 
 /// <p>The revision ID is not valid. Use GetPullRequest to determine the value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRevisionIdException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidRevisionIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRevisionIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidRevisionIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1587,7 +1460,9 @@ impl std::fmt::Display for InvalidRevisionIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRevisionIdException")?;
         if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+            {
+                write!(f, ": {}", inner_25)?;
+            }
         }
         Ok(())
     }
@@ -1597,7 +1472,7 @@ impl std::error::Error for InvalidRevisionIdException {}
 pub mod invalid_revision_id_exception {
 
     /// A builder for [`InvalidRevisionIdException`](crate::error::InvalidRevisionIdException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1629,22 +1504,15 @@ impl InvalidRevisionIdException {
 
 /// <p>The state for the approval is not valid. Valid values include APPROVE and REVOKE. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidApprovalStateException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidApprovalStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidApprovalStateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidApprovalStateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1652,7 +1520,9 @@ impl std::fmt::Display for InvalidApprovalStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidApprovalStateException")?;
         if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+            {
+                write!(f, ": {}", inner_26)?;
+            }
         }
         Ok(())
     }
@@ -1662,7 +1532,7 @@ impl std::error::Error for InvalidApprovalStateException {}
 pub mod invalid_approval_state_exception {
 
     /// A builder for [`InvalidApprovalStateException`](crate::error::InvalidApprovalStateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1694,22 +1564,15 @@ impl InvalidApprovalStateException {
 
 /// <p>An approval state is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalStateRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ApprovalStateRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalStateRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ApprovalStateRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1717,7 +1580,9 @@ impl std::fmt::Display for ApprovalStateRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalStateRequiredException")?;
         if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+            {
+                write!(f, ": {}", inner_27)?;
+            }
         }
         Ok(())
     }
@@ -1727,7 +1592,7 @@ impl std::error::Error for ApprovalStateRequiredException {}
 pub mod approval_state_required_exception {
 
     /// A builder for [`ApprovalStateRequiredException`](crate::error::ApprovalStateRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1759,22 +1624,15 @@ impl ApprovalStateRequiredException {
 
 /// <p>The SHA-256 hash signature for the rule content is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRuleContentSha256Exception {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidRuleContentSha256Exception {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRuleContentSha256Exception");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidRuleContentSha256Exception {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1782,7 +1640,9 @@ impl std::fmt::Display for InvalidRuleContentSha256Exception {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRuleContentSha256Exception")?;
         if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+            {
+                write!(f, ": {}", inner_28)?;
+            }
         }
         Ok(())
     }
@@ -1792,7 +1652,7 @@ impl std::error::Error for InvalidRuleContentSha256Exception {}
 pub mod invalid_rule_content_sha256_exception {
 
     /// A builder for [`InvalidRuleContentSha256Exception`](crate::error::InvalidRuleContentSha256Exception).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1824,22 +1684,15 @@ impl InvalidRuleContentSha256Exception {
 
 /// <p>The name for the approval rule is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidApprovalRuleNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidApprovalRuleNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidApprovalRuleNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidApprovalRuleNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1847,7 +1700,9 @@ impl std::fmt::Display for InvalidApprovalRuleNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidApprovalRuleNameException")?;
         if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+            {
+                write!(f, ": {}", inner_29)?;
+            }
         }
         Ok(())
     }
@@ -1857,7 +1712,7 @@ impl std::error::Error for InvalidApprovalRuleNameException {}
 pub mod invalid_approval_rule_name_exception {
 
     /// A builder for [`InvalidApprovalRuleNameException`](crate::error::InvalidApprovalRuleNameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1889,22 +1744,15 @@ impl InvalidApprovalRuleNameException {
 
 /// <p>The content for the approval rule is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidApprovalRuleContentException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidApprovalRuleContentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidApprovalRuleContentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidApprovalRuleContentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1912,7 +1760,9 @@ impl std::fmt::Display for InvalidApprovalRuleContentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidApprovalRuleContentException")?;
         if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+            {
+                write!(f, ": {}", inner_30)?;
+            }
         }
         Ok(())
     }
@@ -1922,7 +1772,7 @@ impl std::error::Error for InvalidApprovalRuleContentException {}
 pub mod invalid_approval_rule_content_exception {
 
     /// A builder for [`InvalidApprovalRuleContentException`](crate::error::InvalidApprovalRuleContentException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1954,22 +1804,15 @@ impl InvalidApprovalRuleContentException {
 
 /// <p>The approval rule cannot be modified for the pull request because it was created by an approval rule template and applied to the pull request automatically.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CannotModifyApprovalRuleFromTemplateException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CannotModifyApprovalRuleFromTemplateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CannotModifyApprovalRuleFromTemplateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CannotModifyApprovalRuleFromTemplateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -1977,7 +1820,9 @@ impl std::fmt::Display for CannotModifyApprovalRuleFromTemplateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CannotModifyApprovalRuleFromTemplateException")?;
         if let Some(inner_31) = &self.message {
-            write!(f, ": {}", inner_31)?;
+            {
+                write!(f, ": {}", inner_31)?;
+            }
         }
         Ok(())
     }
@@ -1987,7 +1832,7 @@ impl std::error::Error for CannotModifyApprovalRuleFromTemplateException {}
 pub mod cannot_modify_approval_rule_from_template_exception {
 
     /// A builder for [`CannotModifyApprovalRuleFromTemplateException`](crate::error::CannotModifyApprovalRuleFromTemplateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2019,22 +1864,15 @@ impl CannotModifyApprovalRuleFromTemplateException {
 
 /// <p>An approval rule name is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleNameRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ApprovalRuleNameRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleNameRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ApprovalRuleNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2042,7 +1880,9 @@ impl std::fmt::Display for ApprovalRuleNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleNameRequiredException")?;
         if let Some(inner_32) = &self.message {
-            write!(f, ": {}", inner_32)?;
+            {
+                write!(f, ": {}", inner_32)?;
+            }
         }
         Ok(())
     }
@@ -2052,7 +1892,7 @@ impl std::error::Error for ApprovalRuleNameRequiredException {}
 pub mod approval_rule_name_required_exception {
 
     /// A builder for [`ApprovalRuleNameRequiredException`](crate::error::ApprovalRuleNameRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2084,22 +1924,15 @@ impl ApprovalRuleNameRequiredException {
 
 /// <p>The specified approval rule does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ApprovalRuleDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ApprovalRuleDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2107,7 +1940,9 @@ impl std::fmt::Display for ApprovalRuleDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleDoesNotExistException")?;
         if let Some(inner_33) = &self.message {
-            write!(f, ": {}", inner_33)?;
+            {
+                write!(f, ": {}", inner_33)?;
+            }
         }
         Ok(())
     }
@@ -2117,7 +1952,7 @@ impl std::error::Error for ApprovalRuleDoesNotExistException {}
 pub mod approval_rule_does_not_exist_exception {
 
     /// A builder for [`ApprovalRuleDoesNotExistException`](crate::error::ApprovalRuleDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2149,22 +1984,15 @@ impl ApprovalRuleDoesNotExistException {
 
 /// <p>The content for the approval rule is empty. You must provide some content for an approval rule. The content cannot be null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleContentRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ApprovalRuleContentRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleContentRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ApprovalRuleContentRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2172,7 +2000,9 @@ impl std::fmt::Display for ApprovalRuleContentRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleContentRequiredException")?;
         if let Some(inner_34) = &self.message {
-            write!(f, ": {}", inner_34)?;
+            {
+                write!(f, ": {}", inner_34)?;
+            }
         }
         Ok(())
     }
@@ -2182,7 +2012,7 @@ impl std::error::Error for ApprovalRuleContentRequiredException {}
 pub mod approval_rule_content_required_exception {
 
     /// A builder for [`ApprovalRuleContentRequiredException`](crate::error::ApprovalRuleContentRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2214,22 +2044,15 @@ impl ApprovalRuleContentRequiredException {
 
 /// <p>The specified reference name is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidBranchNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidBranchNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidBranchNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidBranchNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2237,7 +2060,9 @@ impl std::fmt::Display for InvalidBranchNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidBranchNameException")?;
         if let Some(inner_35) = &self.message {
-            write!(f, ": {}", inner_35)?;
+            {
+                write!(f, ": {}", inner_35)?;
+            }
         }
         Ok(())
     }
@@ -2247,7 +2072,7 @@ impl std::error::Error for InvalidBranchNameException {}
 pub mod invalid_branch_name_exception {
 
     /// A builder for [`InvalidBranchNameException`](crate::error::InvalidBranchNameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2279,22 +2104,15 @@ impl InvalidBranchNameException {
 
 /// <p>A branch name is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BranchNameRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BranchNameRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BranchNameRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl BranchNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2302,7 +2120,9 @@ impl std::fmt::Display for BranchNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BranchNameRequiredException")?;
         if let Some(inner_36) = &self.message {
-            write!(f, ": {}", inner_36)?;
+            {
+                write!(f, ": {}", inner_36)?;
+            }
         }
         Ok(())
     }
@@ -2312,7 +2132,7 @@ impl std::error::Error for BranchNameRequiredException {}
 pub mod branch_name_required_exception {
 
     /// A builder for [`BranchNameRequiredException`](crate::error::BranchNameRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2344,22 +2164,15 @@ impl BranchNameRequiredException {
 
 /// <p>The specified branch does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BranchDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BranchDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BranchDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl BranchDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2367,7 +2180,9 @@ impl std::fmt::Display for BranchDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BranchDoesNotExistException")?;
         if let Some(inner_37) = &self.message {
-            write!(f, ": {}", inner_37)?;
+            {
+                write!(f, ": {}", inner_37)?;
+            }
         }
         Ok(())
     }
@@ -2377,7 +2192,7 @@ impl std::error::Error for BranchDoesNotExistException {}
 pub mod branch_does_not_exist_exception {
 
     /// A builder for [`BranchDoesNotExistException`](crate::error::BranchDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2409,22 +2224,15 @@ impl BranchDoesNotExistException {
 
 /// <p>The comment ID is not in a valid format. Make sure that you have provided the full comment ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidCommentIdException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidCommentIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCommentIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidCommentIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2432,7 +2240,9 @@ impl std::fmt::Display for InvalidCommentIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCommentIdException")?;
         if let Some(inner_38) = &self.message {
-            write!(f, ": {}", inner_38)?;
+            {
+                write!(f, ": {}", inner_38)?;
+            }
         }
         Ok(())
     }
@@ -2442,7 +2252,7 @@ impl std::error::Error for InvalidCommentIdException {}
 pub mod invalid_comment_id_exception {
 
     /// A builder for [`InvalidCommentIdException`](crate::error::InvalidCommentIdException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2474,22 +2284,15 @@ impl InvalidCommentIdException {
 
 /// <p>You cannot modify or delete this comment. Only comment authors can modify or delete their comments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentNotCreatedByCallerException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CommentNotCreatedByCallerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentNotCreatedByCallerException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CommentNotCreatedByCallerException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2497,7 +2300,9 @@ impl std::fmt::Display for CommentNotCreatedByCallerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommentNotCreatedByCallerException")?;
         if let Some(inner_39) = &self.message {
-            write!(f, ": {}", inner_39)?;
+            {
+                write!(f, ": {}", inner_39)?;
+            }
         }
         Ok(())
     }
@@ -2507,7 +2312,7 @@ impl std::error::Error for CommentNotCreatedByCallerException {}
 pub mod comment_not_created_by_caller_exception {
 
     /// A builder for [`CommentNotCreatedByCallerException`](crate::error::CommentNotCreatedByCallerException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2539,22 +2344,15 @@ impl CommentNotCreatedByCallerException {
 
 /// <p>The comment ID is missing or null. A comment ID is required.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentIdRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CommentIdRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentIdRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CommentIdRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2562,7 +2360,9 @@ impl std::fmt::Display for CommentIdRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommentIdRequiredException")?;
         if let Some(inner_40) = &self.message {
-            write!(f, ": {}", inner_40)?;
+            {
+                write!(f, ": {}", inner_40)?;
+            }
         }
         Ok(())
     }
@@ -2572,7 +2372,7 @@ impl std::error::Error for CommentIdRequiredException {}
 pub mod comment_id_required_exception {
 
     /// A builder for [`CommentIdRequiredException`](crate::error::CommentIdRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2604,22 +2404,15 @@ impl CommentIdRequiredException {
 
 /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CommentDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CommentDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2627,7 +2420,9 @@ impl std::fmt::Display for CommentDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommentDoesNotExistException")?;
         if let Some(inner_41) = &self.message {
-            write!(f, ": {}", inner_41)?;
+            {
+                write!(f, ": {}", inner_41)?;
+            }
         }
         Ok(())
     }
@@ -2637,7 +2432,7 @@ impl std::error::Error for CommentDoesNotExistException {}
 pub mod comment_does_not_exist_exception {
 
     /// A builder for [`CommentDoesNotExistException`](crate::error::CommentDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2669,22 +2464,15 @@ impl CommentDoesNotExistException {
 
 /// <p>This comment has already been deleted. You cannot edit or delete a deleted comment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentDeletedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CommentDeletedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentDeletedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CommentDeletedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2692,7 +2480,9 @@ impl std::fmt::Display for CommentDeletedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommentDeletedException")?;
         if let Some(inner_42) = &self.message {
-            write!(f, ": {}", inner_42)?;
+            {
+                write!(f, ": {}", inner_42)?;
+            }
         }
         Ok(())
     }
@@ -2702,7 +2492,7 @@ impl std::error::Error for CommentDeletedException {}
 pub mod comment_deleted_exception {
 
     /// A builder for [`CommentDeletedException`](crate::error::CommentDeletedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2734,22 +2524,15 @@ impl CommentDeletedException {
 
 /// <p>The comment is too large. Comments are limited to 1,000 characters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentContentSizeLimitExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CommentContentSizeLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentContentSizeLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CommentContentSizeLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2757,7 +2540,9 @@ impl std::fmt::Display for CommentContentSizeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommentContentSizeLimitExceededException")?;
         if let Some(inner_43) = &self.message {
-            write!(f, ": {}", inner_43)?;
+            {
+                write!(f, ": {}", inner_43)?;
+            }
         }
         Ok(())
     }
@@ -2767,7 +2552,7 @@ impl std::error::Error for CommentContentSizeLimitExceededException {}
 pub mod comment_content_size_limit_exceeded_exception {
 
     /// A builder for [`CommentContentSizeLimitExceededException`](crate::error::CommentContentSizeLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2799,22 +2584,15 @@ impl CommentContentSizeLimitExceededException {
 
 /// <p>The comment is empty. You must provide some content for a comment. The content cannot be null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentContentRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CommentContentRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentContentRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CommentContentRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2822,7 +2600,9 @@ impl std::fmt::Display for CommentContentRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommentContentRequiredException")?;
         if let Some(inner_44) = &self.message {
-            write!(f, ": {}", inner_44)?;
+            {
+                write!(f, ": {}", inner_44)?;
+            }
         }
         Ok(())
     }
@@ -2832,7 +2612,7 @@ impl std::error::Error for CommentContentRequiredException {}
 pub mod comment_content_required_exception {
 
     /// A builder for [`CommentContentRequiredException`](crate::error::CommentContentRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2864,22 +2644,15 @@ impl CommentContentRequiredException {
 
 /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidApprovalRuleTemplateNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidApprovalRuleTemplateNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidApprovalRuleTemplateNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidApprovalRuleTemplateNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2887,7 +2660,9 @@ impl std::fmt::Display for InvalidApprovalRuleTemplateNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidApprovalRuleTemplateNameException")?;
         if let Some(inner_45) = &self.message {
-            write!(f, ": {}", inner_45)?;
+            {
+                write!(f, ": {}", inner_45)?;
+            }
         }
         Ok(())
     }
@@ -2897,7 +2672,7 @@ impl std::error::Error for InvalidApprovalRuleTemplateNameException {}
 pub mod invalid_approval_rule_template_name_exception {
 
     /// A builder for [`InvalidApprovalRuleTemplateNameException`](crate::error::InvalidApprovalRuleTemplateNameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2929,22 +2704,15 @@ impl InvalidApprovalRuleTemplateNameException {
 
 /// <p>An approval rule template name is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleTemplateNameRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ApprovalRuleTemplateNameRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleTemplateNameRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ApprovalRuleTemplateNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -2952,7 +2720,9 @@ impl std::fmt::Display for ApprovalRuleTemplateNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleTemplateNameRequiredException")?;
         if let Some(inner_46) = &self.message {
-            write!(f, ": {}", inner_46)?;
+            {
+                write!(f, ": {}", inner_46)?;
+            }
         }
         Ok(())
     }
@@ -2962,7 +2732,7 @@ impl std::error::Error for ApprovalRuleTemplateNameRequiredException {}
 pub mod approval_rule_template_name_required_exception {
 
     /// A builder for [`ApprovalRuleTemplateNameRequiredException`](crate::error::ApprovalRuleTemplateNameRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2994,22 +2764,15 @@ impl ApprovalRuleTemplateNameRequiredException {
 
 /// <p>You cannot create an approval rule template with that name because a template with that name already exists in this AWS Region for your AWS account. Approval rule template names must be unique.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleTemplateNameAlreadyExistsException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ApprovalRuleTemplateNameAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleTemplateNameAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ApprovalRuleTemplateNameAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3017,7 +2780,9 @@ impl std::fmt::Display for ApprovalRuleTemplateNameAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleTemplateNameAlreadyExistsException")?;
         if let Some(inner_47) = &self.message {
-            write!(f, ": {}", inner_47)?;
+            {
+                write!(f, ": {}", inner_47)?;
+            }
         }
         Ok(())
     }
@@ -3027,7 +2792,7 @@ impl std::error::Error for ApprovalRuleTemplateNameAlreadyExistsException {}
 pub mod approval_rule_template_name_already_exists_exception {
 
     /// A builder for [`ApprovalRuleTemplateNameAlreadyExistsException`](crate::error::ApprovalRuleTemplateNameAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3060,22 +2825,15 @@ impl ApprovalRuleTemplateNameAlreadyExistsException {
 
 /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template was created, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleTemplateDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ApprovalRuleTemplateDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleTemplateDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ApprovalRuleTemplateDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3083,7 +2841,9 @@ impl std::fmt::Display for ApprovalRuleTemplateDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleTemplateDoesNotExistException")?;
         if let Some(inner_48) = &self.message {
-            write!(f, ": {}", inner_48)?;
+            {
+                write!(f, ": {}", inner_48)?;
+            }
         }
         Ok(())
     }
@@ -3093,7 +2853,7 @@ impl std::error::Error for ApprovalRuleTemplateDoesNotExistException {}
 pub mod approval_rule_template_does_not_exist_exception {
 
     /// A builder for [`ApprovalRuleTemplateDoesNotExistException`](crate::error::ApprovalRuleTemplateDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3125,22 +2885,15 @@ impl ApprovalRuleTemplateDoesNotExistException {
 
 /// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidApprovalRuleTemplateDescriptionException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidApprovalRuleTemplateDescriptionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidApprovalRuleTemplateDescriptionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidApprovalRuleTemplateDescriptionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3148,7 +2901,9 @@ impl std::fmt::Display for InvalidApprovalRuleTemplateDescriptionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidApprovalRuleTemplateDescriptionException")?;
         if let Some(inner_49) = &self.message {
-            write!(f, ": {}", inner_49)?;
+            {
+                write!(f, ": {}", inner_49)?;
+            }
         }
         Ok(())
     }
@@ -3158,7 +2913,7 @@ impl std::error::Error for InvalidApprovalRuleTemplateDescriptionException {}
 pub mod invalid_approval_rule_template_description_exception {
 
     /// A builder for [`InvalidApprovalRuleTemplateDescriptionException`](crate::error::InvalidApprovalRuleTemplateDescriptionException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3191,22 +2946,15 @@ impl InvalidApprovalRuleTemplateDescriptionException {
 
 /// <p>The content of the approval rule template is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidApprovalRuleTemplateContentException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidApprovalRuleTemplateContentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidApprovalRuleTemplateContentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidApprovalRuleTemplateContentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3214,7 +2962,9 @@ impl std::fmt::Display for InvalidApprovalRuleTemplateContentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidApprovalRuleTemplateContentException")?;
         if let Some(inner_50) = &self.message {
-            write!(f, ": {}", inner_50)?;
+            {
+                write!(f, ": {}", inner_50)?;
+            }
         }
         Ok(())
     }
@@ -3224,7 +2974,7 @@ impl std::error::Error for InvalidApprovalRuleTemplateContentException {}
 pub mod invalid_approval_rule_template_content_exception {
 
     /// A builder for [`InvalidApprovalRuleTemplateContentException`](crate::error::InvalidApprovalRuleTemplateContentException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3256,22 +3006,15 @@ impl InvalidApprovalRuleTemplateContentException {
 
 /// <p>The content for the approval rule template is empty. You must provide some content for an approval rule template. The content cannot be null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleTemplateContentRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ApprovalRuleTemplateContentRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleTemplateContentRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ApprovalRuleTemplateContentRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3279,7 +3022,9 @@ impl std::fmt::Display for ApprovalRuleTemplateContentRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleTemplateContentRequiredException")?;
         if let Some(inner_51) = &self.message {
-            write!(f, ": {}", inner_51)?;
+            {
+                write!(f, ": {}", inner_51)?;
+            }
         }
         Ok(())
     }
@@ -3289,7 +3034,7 @@ impl std::error::Error for ApprovalRuleTemplateContentRequiredException {}
 pub mod approval_rule_template_content_required_exception {
 
     /// A builder for [`ApprovalRuleTemplateContentRequiredException`](crate::error::ApprovalRuleTemplateContentRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3321,22 +3066,15 @@ impl ApprovalRuleTemplateContentRequiredException {
 
 /// <p>The maximum number of tags for an AWS CodeCommit resource has been exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTagsException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TooManyTagsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTagsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TooManyTagsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3344,7 +3082,9 @@ impl std::fmt::Display for TooManyTagsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTagsException")?;
         if let Some(inner_52) = &self.message {
-            write!(f, ": {}", inner_52)?;
+            {
+                write!(f, ": {}", inner_52)?;
+            }
         }
         Ok(())
     }
@@ -3354,7 +3094,7 @@ impl std::error::Error for TooManyTagsException {}
 pub mod too_many_tags_exception {
 
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3386,22 +3126,15 @@ impl TooManyTagsException {
 
 /// <p>The tag policy is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagPolicyException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TagPolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagPolicyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TagPolicyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3409,7 +3142,9 @@ impl std::fmt::Display for TagPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagPolicyException")?;
         if let Some(inner_53) = &self.message {
-            write!(f, ": {}", inner_53)?;
+            {
+                write!(f, ": {}", inner_53)?;
+            }
         }
         Ok(())
     }
@@ -3419,7 +3154,7 @@ impl std::error::Error for TagPolicyException {}
 pub mod tag_policy_exception {
 
     /// A builder for [`TagPolicyException`](crate::error::TagPolicyException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3451,22 +3186,15 @@ impl TagPolicyException {
 
 /// <p>A list of tag keys is required. The list cannot be empty or null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagKeysListRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TagKeysListRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagKeysListRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TagKeysListRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3474,7 +3202,9 @@ impl std::fmt::Display for TagKeysListRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagKeysListRequiredException")?;
         if let Some(inner_54) = &self.message {
-            write!(f, ": {}", inner_54)?;
+            {
+                write!(f, ": {}", inner_54)?;
+            }
         }
         Ok(())
     }
@@ -3484,7 +3214,7 @@ impl std::error::Error for TagKeysListRequiredException {}
 pub mod tag_keys_list_required_exception {
 
     /// A builder for [`TagKeysListRequiredException`](crate::error::TagKeysListRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3516,22 +3246,15 @@ impl TagKeysListRequiredException {
 
 /// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceArnRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceArnRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceArnRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ResourceArnRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3539,7 +3262,9 @@ impl std::fmt::Display for ResourceArnRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceArnRequiredException")?;
         if let Some(inner_55) = &self.message {
-            write!(f, ": {}", inner_55)?;
+            {
+                write!(f, ": {}", inner_55)?;
+            }
         }
         Ok(())
     }
@@ -3549,7 +3274,7 @@ impl std::error::Error for ResourceArnRequiredException {}
 pub mod resource_arn_required_exception {
 
     /// A builder for [`ResourceArnRequiredException`](crate::error::ResourceArnRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3581,22 +3306,15 @@ impl ResourceArnRequiredException {
 
 /// <p>The list of tags is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTagKeysListException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidTagKeysListException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTagKeysListException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidTagKeysListException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3604,7 +3322,9 @@ impl std::fmt::Display for InvalidTagKeysListException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTagKeysListException")?;
         if let Some(inner_56) = &self.message {
-            write!(f, ": {}", inner_56)?;
+            {
+                write!(f, ": {}", inner_56)?;
+            }
         }
         Ok(())
     }
@@ -3614,7 +3334,7 @@ impl std::error::Error for InvalidTagKeysListException {}
 pub mod invalid_tag_keys_list_exception {
 
     /// A builder for [`InvalidTagKeysListException`](crate::error::InvalidTagKeysListException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3646,22 +3366,15 @@ impl InvalidTagKeysListException {
 
 /// <p>The specified tag is not valid. Key names cannot be prefixed with aws:.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSystemTagUsageException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidSystemTagUsageException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSystemTagUsageException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidSystemTagUsageException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3669,7 +3382,9 @@ impl std::fmt::Display for InvalidSystemTagUsageException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSystemTagUsageException")?;
         if let Some(inner_57) = &self.message {
-            write!(f, ": {}", inner_57)?;
+            {
+                write!(f, ": {}", inner_57)?;
+            }
         }
         Ok(())
     }
@@ -3679,7 +3394,7 @@ impl std::error::Error for InvalidSystemTagUsageException {}
 pub mod invalid_system_tag_usage_exception {
 
     /// A builder for [`InvalidSystemTagUsageException`](crate::error::InvalidSystemTagUsageException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3711,22 +3426,15 @@ impl InvalidSystemTagUsageException {
 
 /// <p>The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidResourceArnException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidResourceArnException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidResourceArnException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidResourceArnException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3734,7 +3442,9 @@ impl std::fmt::Display for InvalidResourceArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidResourceArnException")?;
         if let Some(inner_58) = &self.message {
-            write!(f, ": {}", inner_58)?;
+            {
+                write!(f, ": {}", inner_58)?;
+            }
         }
         Ok(())
     }
@@ -3744,7 +3454,7 @@ impl std::error::Error for InvalidResourceArnException {}
 pub mod invalid_resource_arn_exception {
 
     /// A builder for [`InvalidResourceArnException`](crate::error::InvalidResourceArnException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3776,22 +3486,15 @@ impl InvalidResourceArnException {
 
 /// <p>The list of triggers for the repository is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryTriggersListRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RepositoryTriggersListRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryTriggersListRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl RepositoryTriggersListRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3799,7 +3502,9 @@ impl std::fmt::Display for RepositoryTriggersListRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryTriggersListRequiredException")?;
         if let Some(inner_59) = &self.message {
-            write!(f, ": {}", inner_59)?;
+            {
+                write!(f, ": {}", inner_59)?;
+            }
         }
         Ok(())
     }
@@ -3809,7 +3514,7 @@ impl std::error::Error for RepositoryTriggersListRequiredException {}
 pub mod repository_triggers_list_required_exception {
 
     /// A builder for [`RepositoryTriggersListRequiredException`](crate::error::RepositoryTriggersListRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3841,22 +3546,15 @@ impl RepositoryTriggersListRequiredException {
 
 /// <p>A name for the trigger is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryTriggerNameRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RepositoryTriggerNameRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryTriggerNameRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl RepositoryTriggerNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3864,7 +3562,9 @@ impl std::fmt::Display for RepositoryTriggerNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryTriggerNameRequiredException")?;
         if let Some(inner_60) = &self.message {
-            write!(f, ": {}", inner_60)?;
+            {
+                write!(f, ": {}", inner_60)?;
+            }
         }
         Ok(())
     }
@@ -3874,7 +3574,7 @@ impl std::error::Error for RepositoryTriggerNameRequiredException {}
 pub mod repository_trigger_name_required_exception {
 
     /// A builder for [`RepositoryTriggerNameRequiredException`](crate::error::RepositoryTriggerNameRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3906,22 +3606,15 @@ impl RepositoryTriggerNameRequiredException {
 
 /// <p>At least one event for the trigger is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryTriggerEventsListRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RepositoryTriggerEventsListRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryTriggerEventsListRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl RepositoryTriggerEventsListRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3929,7 +3622,9 @@ impl std::fmt::Display for RepositoryTriggerEventsListRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryTriggerEventsListRequiredException")?;
         if let Some(inner_61) = &self.message {
-            write!(f, ": {}", inner_61)?;
+            {
+                write!(f, ": {}", inner_61)?;
+            }
         }
         Ok(())
     }
@@ -3939,7 +3634,7 @@ impl std::error::Error for RepositoryTriggerEventsListRequiredException {}
 pub mod repository_trigger_events_list_required_exception {
 
     /// A builder for [`RepositoryTriggerEventsListRequiredException`](crate::error::RepositoryTriggerEventsListRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3971,22 +3666,15 @@ impl RepositoryTriggerEventsListRequiredException {
 
 /// <p>A destination ARN for the target service for the trigger is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryTriggerDestinationArnRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RepositoryTriggerDestinationArnRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryTriggerDestinationArnRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl RepositoryTriggerDestinationArnRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -3994,7 +3682,9 @@ impl std::fmt::Display for RepositoryTriggerDestinationArnRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryTriggerDestinationArnRequiredException")?;
         if let Some(inner_62) = &self.message {
-            write!(f, ": {}", inner_62)?;
+            {
+                write!(f, ": {}", inner_62)?;
+            }
         }
         Ok(())
     }
@@ -4004,7 +3694,7 @@ impl std::error::Error for RepositoryTriggerDestinationArnRequiredException {}
 pub mod repository_trigger_destination_arn_required_exception {
 
     /// A builder for [`RepositoryTriggerDestinationArnRequiredException`](crate::error::RepositoryTriggerDestinationArnRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4037,22 +3727,15 @@ impl RepositoryTriggerDestinationArnRequiredException {
 
 /// <p>At least one branch name is required, but was not specified in the trigger configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryTriggerBranchNameListRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RepositoryTriggerBranchNameListRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryTriggerBranchNameListRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl RepositoryTriggerBranchNameListRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4060,7 +3743,9 @@ impl std::fmt::Display for RepositoryTriggerBranchNameListRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryTriggerBranchNameListRequiredException")?;
         if let Some(inner_63) = &self.message {
-            write!(f, ": {}", inner_63)?;
+            {
+                write!(f, ": {}", inner_63)?;
+            }
         }
         Ok(())
     }
@@ -4070,7 +3755,7 @@ impl std::error::Error for RepositoryTriggerBranchNameListRequiredException {}
 pub mod repository_trigger_branch_name_list_required_exception {
 
     /// A builder for [`RepositoryTriggerBranchNameListRequiredException`](crate::error::RepositoryTriggerBranchNameListRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4103,22 +3788,15 @@ impl RepositoryTriggerBranchNameListRequiredException {
 
 /// <p>The number of triggers allowed for the repository was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumRepositoryTriggersExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MaximumRepositoryTriggersExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumRepositoryTriggersExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl MaximumRepositoryTriggersExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4126,7 +3804,9 @@ impl std::fmt::Display for MaximumRepositoryTriggersExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumRepositoryTriggersExceededException")?;
         if let Some(inner_64) = &self.message {
-            write!(f, ": {}", inner_64)?;
+            {
+                write!(f, ": {}", inner_64)?;
+            }
         }
         Ok(())
     }
@@ -4136,7 +3816,7 @@ impl std::error::Error for MaximumRepositoryTriggersExceededException {}
 pub mod maximum_repository_triggers_exceeded_exception {
 
     /// A builder for [`MaximumRepositoryTriggersExceededException`](crate::error::MaximumRepositoryTriggersExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4168,22 +3848,15 @@ impl MaximumRepositoryTriggersExceededException {
 
 /// <p>The number of branches for the trigger was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumBranchesExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MaximumBranchesExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumBranchesExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl MaximumBranchesExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4191,7 +3864,9 @@ impl std::fmt::Display for MaximumBranchesExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumBranchesExceededException")?;
         if let Some(inner_65) = &self.message {
-            write!(f, ": {}", inner_65)?;
+            {
+                write!(f, ": {}", inner_65)?;
+            }
         }
         Ok(())
     }
@@ -4201,7 +3876,7 @@ impl std::error::Error for MaximumBranchesExceededException {}
 pub mod maximum_branches_exceeded_exception {
 
     /// A builder for [`MaximumBranchesExceededException`](crate::error::MaximumBranchesExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4233,22 +3908,15 @@ impl MaximumBranchesExceededException {
 
 /// <p>The AWS Region for the trigger target does not match the AWS Region for the repository. Triggers must be created in the same Region as the target for the trigger.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRepositoryTriggerRegionException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidRepositoryTriggerRegionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRepositoryTriggerRegionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidRepositoryTriggerRegionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4256,7 +3924,9 @@ impl std::fmt::Display for InvalidRepositoryTriggerRegionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRepositoryTriggerRegionException")?;
         if let Some(inner_66) = &self.message {
-            write!(f, ": {}", inner_66)?;
+            {
+                write!(f, ": {}", inner_66)?;
+            }
         }
         Ok(())
     }
@@ -4266,7 +3936,7 @@ impl std::error::Error for InvalidRepositoryTriggerRegionException {}
 pub mod invalid_repository_trigger_region_exception {
 
     /// A builder for [`InvalidRepositoryTriggerRegionException`](crate::error::InvalidRepositoryTriggerRegionException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4298,22 +3968,15 @@ impl InvalidRepositoryTriggerRegionException {
 
 /// <p>The name of the trigger is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRepositoryTriggerNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidRepositoryTriggerNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRepositoryTriggerNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidRepositoryTriggerNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4321,7 +3984,9 @@ impl std::fmt::Display for InvalidRepositoryTriggerNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRepositoryTriggerNameException")?;
         if let Some(inner_67) = &self.message {
-            write!(f, ": {}", inner_67)?;
+            {
+                write!(f, ": {}", inner_67)?;
+            }
         }
         Ok(())
     }
@@ -4331,7 +3996,7 @@ impl std::error::Error for InvalidRepositoryTriggerNameException {}
 pub mod invalid_repository_trigger_name_exception {
 
     /// A builder for [`InvalidRepositoryTriggerNameException`](crate::error::InvalidRepositoryTriggerNameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4363,22 +4028,15 @@ impl InvalidRepositoryTriggerNameException {
 
 /// <p>One or more events specified for the trigger is not valid. Check to make sure that all events specified match the requirements for allowed events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRepositoryTriggerEventsException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidRepositoryTriggerEventsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRepositoryTriggerEventsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidRepositoryTriggerEventsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4386,7 +4044,9 @@ impl std::fmt::Display for InvalidRepositoryTriggerEventsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRepositoryTriggerEventsException")?;
         if let Some(inner_68) = &self.message {
-            write!(f, ": {}", inner_68)?;
+            {
+                write!(f, ": {}", inner_68)?;
+            }
         }
         Ok(())
     }
@@ -4396,7 +4056,7 @@ impl std::error::Error for InvalidRepositoryTriggerEventsException {}
 pub mod invalid_repository_trigger_events_exception {
 
     /// A builder for [`InvalidRepositoryTriggerEventsException`](crate::error::InvalidRepositoryTriggerEventsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4428,22 +4088,15 @@ impl InvalidRepositoryTriggerEventsException {
 
 /// <p>The Amazon Resource Name (ARN) for the trigger is not valid for the specified destination. The most common reason for this error is that the ARN does not meet the requirements for the service type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRepositoryTriggerDestinationArnException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidRepositoryTriggerDestinationArnException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRepositoryTriggerDestinationArnException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidRepositoryTriggerDestinationArnException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4451,7 +4104,9 @@ impl std::fmt::Display for InvalidRepositoryTriggerDestinationArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRepositoryTriggerDestinationArnException")?;
         if let Some(inner_69) = &self.message {
-            write!(f, ": {}", inner_69)?;
+            {
+                write!(f, ": {}", inner_69)?;
+            }
         }
         Ok(())
     }
@@ -4461,7 +4116,7 @@ impl std::error::Error for InvalidRepositoryTriggerDestinationArnException {}
 pub mod invalid_repository_trigger_destination_arn_exception {
 
     /// A builder for [`InvalidRepositoryTriggerDestinationArnException`](crate::error::InvalidRepositoryTriggerDestinationArnException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4494,22 +4149,15 @@ impl InvalidRepositoryTriggerDestinationArnException {
 
 /// <p>The custom data provided for the trigger is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRepositoryTriggerCustomDataException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidRepositoryTriggerCustomDataException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRepositoryTriggerCustomDataException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidRepositoryTriggerCustomDataException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4517,7 +4165,9 @@ impl std::fmt::Display for InvalidRepositoryTriggerCustomDataException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRepositoryTriggerCustomDataException")?;
         if let Some(inner_70) = &self.message {
-            write!(f, ": {}", inner_70)?;
+            {
+                write!(f, ": {}", inner_70)?;
+            }
         }
         Ok(())
     }
@@ -4527,7 +4177,7 @@ impl std::error::Error for InvalidRepositoryTriggerCustomDataException {}
 pub mod invalid_repository_trigger_custom_data_exception {
 
     /// A builder for [`InvalidRepositoryTriggerCustomDataException`](crate::error::InvalidRepositoryTriggerCustomDataException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4559,22 +4209,15 @@ impl InvalidRepositoryTriggerCustomDataException {
 
 /// <p>One or more branch names specified for the trigger is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRepositoryTriggerBranchNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidRepositoryTriggerBranchNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRepositoryTriggerBranchNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidRepositoryTriggerBranchNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4582,7 +4225,9 @@ impl std::fmt::Display for InvalidRepositoryTriggerBranchNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRepositoryTriggerBranchNameException")?;
         if let Some(inner_71) = &self.message {
-            write!(f, ": {}", inner_71)?;
+            {
+                write!(f, ": {}", inner_71)?;
+            }
         }
         Ok(())
     }
@@ -4592,7 +4237,7 @@ impl std::error::Error for InvalidRepositoryTriggerBranchNameException {}
 pub mod invalid_repository_trigger_branch_name_exception {
 
     /// A builder for [`InvalidRepositoryTriggerBranchNameException`](crate::error::InvalidRepositoryTriggerBranchNameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4624,22 +4269,15 @@ impl InvalidRepositoryTriggerBranchNameException {
 
 /// <p>A map of tags is required.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagsMapRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TagsMapRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagsMapRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TagsMapRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4647,7 +4285,9 @@ impl std::fmt::Display for TagsMapRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagsMapRequiredException")?;
         if let Some(inner_72) = &self.message {
-            write!(f, ": {}", inner_72)?;
+            {
+                write!(f, ": {}", inner_72)?;
+            }
         }
         Ok(())
     }
@@ -4657,7 +4297,7 @@ impl std::error::Error for TagsMapRequiredException {}
 pub mod tags_map_required_exception {
 
     /// A builder for [`TagsMapRequiredException`](crate::error::TagsMapRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4689,22 +4329,15 @@ impl TagsMapRequiredException {
 
 /// <p>The map of tags is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTagsMapException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidTagsMapException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTagsMapException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidTagsMapException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4712,7 +4345,9 @@ impl std::fmt::Display for InvalidTagsMapException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTagsMapException")?;
         if let Some(inner_73) = &self.message {
-            write!(f, ": {}", inner_73)?;
+            {
+                write!(f, ": {}", inner_73)?;
+            }
         }
         Ok(())
     }
@@ -4722,7 +4357,7 @@ impl std::error::Error for InvalidTagsMapException {}
 pub mod invalid_tags_map_exception {
 
     /// A builder for [`InvalidTagsMapException`](crate::error::InvalidTagsMapException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4754,22 +4389,15 @@ impl InvalidTagsMapException {
 
 /// <p>The file was not added or updated because the content of the file is exactly the same as the content of that file in the repository and branch that you specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SameFileContentException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SameFileContentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SameFileContentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SameFileContentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4777,7 +4405,9 @@ impl std::fmt::Display for SameFileContentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SameFileContentException")?;
         if let Some(inner_74) = &self.message {
-            write!(f, ": {}", inner_74)?;
+            {
+                write!(f, ": {}", inner_74)?;
+            }
         }
         Ok(())
     }
@@ -4787,7 +4417,7 @@ impl std::error::Error for SameFileContentException {}
 pub mod same_file_content_exception {
 
     /// A builder for [`SameFileContentException`](crate::error::SameFileContentException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4819,22 +4449,15 @@ impl SameFileContentException {
 
 /// <p>The folderPath for a location cannot be null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PathRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PathRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PathRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl PathRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4842,7 +4465,9 @@ impl std::fmt::Display for PathRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PathRequiredException")?;
         if let Some(inner_75) = &self.message {
-            write!(f, ": {}", inner_75)?;
+            {
+                write!(f, ": {}", inner_75)?;
+            }
         }
         Ok(())
     }
@@ -4852,7 +4477,7 @@ impl std::error::Error for PathRequiredException {}
 pub mod path_required_exception {
 
     /// A builder for [`PathRequiredException`](crate::error::PathRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4884,22 +4509,15 @@ impl PathRequiredException {
 
 /// <p>A parent commit ID is required. To view the full commit ID of a branch in a repository, use <code>GetBranch</code> or a Git command (for example, git pull or git log).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParentCommitIdRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ParentCommitIdRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParentCommitIdRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ParentCommitIdRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4907,7 +4525,9 @@ impl std::fmt::Display for ParentCommitIdRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ParentCommitIdRequiredException")?;
         if let Some(inner_76) = &self.message {
-            write!(f, ": {}", inner_76)?;
+            {
+                write!(f, ": {}", inner_76)?;
+            }
         }
         Ok(())
     }
@@ -4917,7 +4537,7 @@ impl std::error::Error for ParentCommitIdRequiredException {}
 pub mod parent_commit_id_required_exception {
 
     /// A builder for [`ParentCommitIdRequiredException`](crate::error::ParentCommitIdRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4949,22 +4569,15 @@ impl ParentCommitIdRequiredException {
 
 /// <p>The file could not be added because the provided parent commit ID is not the current tip of the specified branch. To view the full commit ID of the current head of the branch, use <code>GetBranch</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParentCommitIdOutdatedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ParentCommitIdOutdatedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParentCommitIdOutdatedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ParentCommitIdOutdatedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -4972,7 +4585,9 @@ impl std::fmt::Display for ParentCommitIdOutdatedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ParentCommitIdOutdatedException")?;
         if let Some(inner_77) = &self.message {
-            write!(f, ": {}", inner_77)?;
+            {
+                write!(f, ": {}", inner_77)?;
+            }
         }
         Ok(())
     }
@@ -4982,7 +4597,7 @@ impl std::error::Error for ParentCommitIdOutdatedException {}
 pub mod parent_commit_id_outdated_exception {
 
     /// A builder for [`ParentCommitIdOutdatedException`](crate::error::ParentCommitIdOutdatedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5014,22 +4629,15 @@ impl ParentCommitIdOutdatedException {
 
 /// <p>The parent commit ID is not valid because it does not exist. The specified parent commit ID does not exist in the specified branch of the repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParentCommitDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ParentCommitDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParentCommitDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ParentCommitDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5037,7 +4645,9 @@ impl std::fmt::Display for ParentCommitDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ParentCommitDoesNotExistException")?;
         if let Some(inner_78) = &self.message {
-            write!(f, ": {}", inner_78)?;
+            {
+                write!(f, ": {}", inner_78)?;
+            }
         }
         Ok(())
     }
@@ -5047,7 +4657,7 @@ impl std::error::Error for ParentCommitDoesNotExistException {}
 pub mod parent_commit_does_not_exist_exception {
 
     /// A builder for [`ParentCommitDoesNotExistException`](crate::error::ParentCommitDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5079,22 +4689,15 @@ impl ParentCommitDoesNotExistException {
 
 /// <p>The user name is not valid because it has exceeded the character limit for author names. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NameLengthExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NameLengthExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NameLengthExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl NameLengthExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5102,7 +4705,9 @@ impl std::fmt::Display for NameLengthExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NameLengthExceededException")?;
         if let Some(inner_79) = &self.message {
-            write!(f, ": {}", inner_79)?;
+            {
+                write!(f, ": {}", inner_79)?;
+            }
         }
         Ok(())
     }
@@ -5112,7 +4717,7 @@ impl std::error::Error for NameLengthExceededException {}
 pub mod name_length_exceeded_exception {
 
     /// A builder for [`NameLengthExceededException`](crate::error::NameLengthExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5144,22 +4749,15 @@ impl NameLengthExceededException {
 
 /// <p>The specified path is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPathException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidPathException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPathException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidPathException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5167,7 +4765,9 @@ impl std::fmt::Display for InvalidPathException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPathException")?;
         if let Some(inner_80) = &self.message {
-            write!(f, ": {}", inner_80)?;
+            {
+                write!(f, ": {}", inner_80)?;
+            }
         }
         Ok(())
     }
@@ -5177,7 +4777,7 @@ impl std::error::Error for InvalidPathException {}
 pub mod invalid_path_exception {
 
     /// A builder for [`InvalidPathException`](crate::error::InvalidPathException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5209,22 +4809,15 @@ impl InvalidPathException {
 
 /// <p>The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for the branch of the repository where you want to add or update a file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParentCommitIdException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidParentCommitIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParentCommitIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidParentCommitIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5232,7 +4825,9 @@ impl std::fmt::Display for InvalidParentCommitIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParentCommitIdException")?;
         if let Some(inner_81) = &self.message {
-            write!(f, ": {}", inner_81)?;
+            {
+                write!(f, ": {}", inner_81)?;
+            }
         }
         Ok(())
     }
@@ -5242,7 +4837,7 @@ impl std::error::Error for InvalidParentCommitIdException {}
 pub mod invalid_parent_commit_id_exception {
 
     /// A builder for [`InvalidParentCommitIdException`](crate::error::InvalidParentCommitIdException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5274,22 +4869,15 @@ impl InvalidParentCommitIdException {
 
 /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidFileModeException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidFileModeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidFileModeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidFileModeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5297,7 +4885,9 @@ impl std::fmt::Display for InvalidFileModeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidFileModeException")?;
         if let Some(inner_82) = &self.message {
-            write!(f, ": {}", inner_82)?;
+            {
+                write!(f, ": {}", inner_82)?;
+            }
         }
         Ok(())
     }
@@ -5307,7 +4897,7 @@ impl std::error::Error for InvalidFileModeException {}
 pub mod invalid_file_mode_exception {
 
     /// A builder for [`InvalidFileModeException`](crate::error::InvalidFileModeException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5339,22 +4929,15 @@ impl InvalidFileModeException {
 
 /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidEmailException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidEmailException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidEmailException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidEmailException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5362,7 +4945,9 @@ impl std::fmt::Display for InvalidEmailException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEmailException")?;
         if let Some(inner_83) = &self.message {
-            write!(f, ": {}", inner_83)?;
+            {
+                write!(f, ": {}", inner_83)?;
+            }
         }
         Ok(())
     }
@@ -5372,7 +4957,7 @@ impl std::error::Error for InvalidEmailException {}
 pub mod invalid_email_exception {
 
     /// A builder for [`InvalidEmailException`](crate::error::InvalidEmailException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5404,22 +4989,15 @@ impl InvalidEmailException {
 
 /// <p>The specified deletion parameter is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDeletionParameterException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDeletionParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDeletionParameterException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidDeletionParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5427,7 +5005,9 @@ impl std::fmt::Display for InvalidDeletionParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDeletionParameterException")?;
         if let Some(inner_84) = &self.message {
-            write!(f, ": {}", inner_84)?;
+            {
+                write!(f, ": {}", inner_84)?;
+            }
         }
         Ok(())
     }
@@ -5437,7 +5017,7 @@ impl std::error::Error for InvalidDeletionParameterException {}
 pub mod invalid_deletion_parameter_exception {
 
     /// A builder for [`InvalidDeletionParameterException`](crate::error::InvalidDeletionParameterException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5469,22 +5049,15 @@ impl InvalidDeletionParameterException {
 
 /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FolderContentSizeLimitExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for FolderContentSizeLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FolderContentSizeLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl FolderContentSizeLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5492,7 +5065,9 @@ impl std::fmt::Display for FolderContentSizeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FolderContentSizeLimitExceededException")?;
         if let Some(inner_85) = &self.message {
-            write!(f, ": {}", inner_85)?;
+            {
+                write!(f, ": {}", inner_85)?;
+            }
         }
         Ok(())
     }
@@ -5502,7 +5077,7 @@ impl std::error::Error for FolderContentSizeLimitExceededException {}
 pub mod folder_content_size_limit_exceeded_exception {
 
     /// A builder for [`FolderContentSizeLimitExceededException`](crate::error::FolderContentSizeLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5534,22 +5109,15 @@ impl FolderContentSizeLimitExceededException {
 
 /// <p>The commit cannot be created because a specified file path points to a submodule. Verify that the destination files have valid file paths that do not point to a submodule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilePathConflictsWithSubmodulePathException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for FilePathConflictsWithSubmodulePathException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilePathConflictsWithSubmodulePathException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl FilePathConflictsWithSubmodulePathException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5557,7 +5125,9 @@ impl std::fmt::Display for FilePathConflictsWithSubmodulePathException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FilePathConflictsWithSubmodulePathException")?;
         if let Some(inner_86) = &self.message {
-            write!(f, ": {}", inner_86)?;
+            {
+                write!(f, ": {}", inner_86)?;
+            }
         }
         Ok(())
     }
@@ -5567,7 +5137,7 @@ impl std::error::Error for FilePathConflictsWithSubmodulePathException {}
 pub mod file_path_conflicts_with_submodule_path_exception {
 
     /// A builder for [`FilePathConflictsWithSubmodulePathException`](crate::error::FilePathConflictsWithSubmodulePathException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5599,22 +5169,15 @@ impl FilePathConflictsWithSubmodulePathException {
 
 /// <p>A file cannot be added to the repository because the specified file name has the same name as a directory in this repository. Either provide another name for the file, or add the file in a directory that does not match the file name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileNameConflictsWithDirectoryNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for FileNameConflictsWithDirectoryNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileNameConflictsWithDirectoryNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl FileNameConflictsWithDirectoryNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5622,7 +5185,9 @@ impl std::fmt::Display for FileNameConflictsWithDirectoryNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileNameConflictsWithDirectoryNameException")?;
         if let Some(inner_87) = &self.message {
-            write!(f, ": {}", inner_87)?;
+            {
+                write!(f, ": {}", inner_87)?;
+            }
         }
         Ok(())
     }
@@ -5632,7 +5197,7 @@ impl std::error::Error for FileNameConflictsWithDirectoryNameException {}
 pub mod file_name_conflicts_with_directory_name_exception {
 
     /// A builder for [`FileNameConflictsWithDirectoryNameException`](crate::error::FileNameConflictsWithDirectoryNameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5664,22 +5229,15 @@ impl FileNameConflictsWithDirectoryNameException {
 
 /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileContentSizeLimitExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for FileContentSizeLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileContentSizeLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl FileContentSizeLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5687,7 +5245,9 @@ impl std::fmt::Display for FileContentSizeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileContentSizeLimitExceededException")?;
         if let Some(inner_88) = &self.message {
-            write!(f, ": {}", inner_88)?;
+            {
+                write!(f, ": {}", inner_88)?;
+            }
         }
         Ok(())
     }
@@ -5697,7 +5257,7 @@ impl std::error::Error for FileContentSizeLimitExceededException {}
 pub mod file_content_size_limit_exceeded_exception {
 
     /// A builder for [`FileContentSizeLimitExceededException`](crate::error::FileContentSizeLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5729,22 +5289,15 @@ impl FileContentSizeLimitExceededException {
 
 /// <p>The file cannot be added because it is empty. Empty files cannot be added to the repository with this API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileContentRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for FileContentRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileContentRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl FileContentRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5752,7 +5305,9 @@ impl std::fmt::Display for FileContentRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileContentRequiredException")?;
         if let Some(inner_89) = &self.message {
-            write!(f, ": {}", inner_89)?;
+            {
+                write!(f, ": {}", inner_89)?;
+            }
         }
         Ok(())
     }
@@ -5762,7 +5317,7 @@ impl std::error::Error for FileContentRequiredException {}
 pub mod file_content_required_exception {
 
     /// A builder for [`FileContentRequiredException`](crate::error::FileContentRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5794,22 +5349,15 @@ impl FileContentRequiredException {
 
 /// <p>A file cannot be added to the repository because the specified path name has the same name as a file that already exists in this repository. Either provide a different name for the file, or specify a different path for the file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectoryNameConflictsWithFileNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DirectoryNameConflictsWithFileNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectoryNameConflictsWithFileNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DirectoryNameConflictsWithFileNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5817,7 +5365,9 @@ impl std::fmt::Display for DirectoryNameConflictsWithFileNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DirectoryNameConflictsWithFileNameException")?;
         if let Some(inner_90) = &self.message {
-            write!(f, ": {}", inner_90)?;
+            {
+                write!(f, ": {}", inner_90)?;
+            }
         }
         Ok(())
     }
@@ -5827,7 +5377,7 @@ impl std::error::Error for DirectoryNameConflictsWithFileNameException {}
 pub mod directory_name_conflicts_with_file_name_exception {
 
     /// A builder for [`DirectoryNameConflictsWithFileNameException`](crate::error::DirectoryNameConflictsWithFileNameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5859,22 +5409,15 @@ impl DirectoryNameConflictsWithFileNameException {
 
 /// <p>The commit message is too long. Provide a shorter string. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitMessageLengthExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CommitMessageLengthExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitMessageLengthExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CommitMessageLengthExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5882,7 +5425,9 @@ impl std::fmt::Display for CommitMessageLengthExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommitMessageLengthExceededException")?;
         if let Some(inner_91) = &self.message {
-            write!(f, ": {}", inner_91)?;
+            {
+                write!(f, ": {}", inner_91)?;
+            }
         }
         Ok(())
     }
@@ -5892,7 +5437,7 @@ impl std::error::Error for CommitMessageLengthExceededException {}
 pub mod commit_message_length_exceeded_exception {
 
     /// A builder for [`CommitMessageLengthExceededException`](crate::error::CommitMessageLengthExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5924,22 +5469,15 @@ impl CommitMessageLengthExceededException {
 
 /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a branch in the repository. For a list of valid branch names, use <code>ListBranches</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BranchNameIsTagNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BranchNameIsTagNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BranchNameIsTagNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl BranchNameIsTagNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -5947,7 +5485,9 @@ impl std::fmt::Display for BranchNameIsTagNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BranchNameIsTagNameException")?;
         if let Some(inner_92) = &self.message {
-            write!(f, ": {}", inner_92)?;
+            {
+                write!(f, ": {}", inner_92)?;
+            }
         }
         Ok(())
     }
@@ -5957,7 +5497,7 @@ impl std::error::Error for BranchNameIsTagNameException {}
 pub mod branch_name_is_tag_name_exception {
 
     /// A builder for [`BranchNameIsTagNameException`](crate::error::BranchNameIsTagNameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5989,22 +5529,15 @@ impl BranchNameIsTagNameException {
 
 /// <p>A reaction value is required. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReactionValueRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReactionValueRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReactionValueRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ReactionValueRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6012,7 +5545,9 @@ impl std::fmt::Display for ReactionValueRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReactionValueRequiredException")?;
         if let Some(inner_93) = &self.message {
-            write!(f, ": {}", inner_93)?;
+            {
+                write!(f, ": {}", inner_93)?;
+            }
         }
         Ok(())
     }
@@ -6022,7 +5557,7 @@ impl std::error::Error for ReactionValueRequiredException {}
 pub mod reaction_value_required_exception {
 
     /// A builder for [`ReactionValueRequiredException`](crate::error::ReactionValueRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -6054,22 +5589,15 @@ impl ReactionValueRequiredException {
 
 /// <p>The number of reactions has been exceeded. Reactions are limited to one reaction per user for each individual comment ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReactionLimitExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReactionLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReactionLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ReactionLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6077,7 +5605,9 @@ impl std::fmt::Display for ReactionLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReactionLimitExceededException")?;
         if let Some(inner_94) = &self.message {
-            write!(f, ": {}", inner_94)?;
+            {
+                write!(f, ": {}", inner_94)?;
+            }
         }
         Ok(())
     }
@@ -6087,7 +5617,7 @@ impl std::error::Error for ReactionLimitExceededException {}
 pub mod reaction_limit_exceeded_exception {
 
     /// A builder for [`ReactionLimitExceededException`](crate::error::ReactionLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -6119,22 +5649,15 @@ impl ReactionLimitExceededException {
 
 /// <p>The value of the reaction is not valid. For more information, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidReactionValueException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidReactionValueException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidReactionValueException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidReactionValueException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6142,7 +5665,9 @@ impl std::fmt::Display for InvalidReactionValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidReactionValueException")?;
         if let Some(inner_95) = &self.message {
-            write!(f, ": {}", inner_95)?;
+            {
+                write!(f, ": {}", inner_95)?;
+            }
         }
         Ok(())
     }
@@ -6152,7 +5677,7 @@ impl std::error::Error for InvalidReactionValueException {}
 pub mod invalid_reaction_value_exception {
 
     /// A builder for [`InvalidReactionValueException`](crate::error::InvalidReactionValueException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -6184,22 +5709,15 @@ impl InvalidReactionValueException {
 
 /// <p>The client request token is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidClientRequestTokenException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidClientRequestTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidClientRequestTokenException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidClientRequestTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6207,7 +5725,9 @@ impl std::fmt::Display for InvalidClientRequestTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidClientRequestTokenException")?;
         if let Some(inner_96) = &self.message {
-            write!(f, ": {}", inner_96)?;
+            {
+                write!(f, ": {}", inner_96)?;
+            }
         }
         Ok(())
     }
@@ -6217,7 +5737,7 @@ impl std::error::Error for InvalidClientRequestTokenException {}
 pub mod invalid_client_request_token_exception {
 
     /// A builder for [`InvalidClientRequestTokenException`](crate::error::InvalidClientRequestTokenException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -6249,22 +5769,15 @@ impl InvalidClientRequestTokenException {
 
 /// <p>The client request token is not valid. Either the token is not in a valid format, or the token has been used in a previous request and cannot be reused.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdempotencyParameterMismatchException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for IdempotencyParameterMismatchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdempotencyParameterMismatchException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl IdempotencyParameterMismatchException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6272,7 +5785,9 @@ impl std::fmt::Display for IdempotencyParameterMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IdempotencyParameterMismatchException")?;
         if let Some(inner_97) = &self.message {
-            write!(f, ": {}", inner_97)?;
+            {
+                write!(f, ": {}", inner_97)?;
+            }
         }
         Ok(())
     }
@@ -6282,7 +5797,7 @@ impl std::error::Error for IdempotencyParameterMismatchException {}
 pub mod idempotency_parameter_mismatch_exception {
 
     /// A builder for [`IdempotencyParameterMismatchException`](crate::error::IdempotencyParameterMismatchException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -6314,22 +5829,15 @@ impl IdempotencyParameterMismatchException {
 
 /// <p>A client request token is required. A client request token is an unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClientRequestTokenRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ClientRequestTokenRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClientRequestTokenRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ClientRequestTokenRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6337,7 +5845,9 @@ impl std::fmt::Display for ClientRequestTokenRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClientRequestTokenRequiredException")?;
         if let Some(inner_98) = &self.message {
-            write!(f, ": {}", inner_98)?;
+            {
+                write!(f, ": {}", inner_98)?;
+            }
         }
         Ok(())
     }
@@ -6347,7 +5857,7 @@ impl std::error::Error for ClientRequestTokenRequiredException {}
 pub mod client_request_token_required_exception {
 
     /// A builder for [`ClientRequestTokenRequiredException`](crate::error::ClientRequestTokenRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -6379,22 +5889,15 @@ impl ClientRequestTokenRequiredException {
 
 /// <p>The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify the correct repository name for the pull request ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryNotAssociatedWithPullRequestException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RepositoryNotAssociatedWithPullRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryNotAssociatedWithPullRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl RepositoryNotAssociatedWithPullRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6402,7 +5905,9 @@ impl std::fmt::Display for RepositoryNotAssociatedWithPullRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryNotAssociatedWithPullRequestException")?;
         if let Some(inner_99) = &self.message {
-            write!(f, ": {}", inner_99)?;
+            {
+                write!(f, ": {}", inner_99)?;
+            }
         }
         Ok(())
     }
@@ -6412,7 +5917,7 @@ impl std::error::Error for RepositoryNotAssociatedWithPullRequestException {}
 pub mod repository_not_associated_with_pull_request_exception {
 
     /// A builder for [`RepositoryNotAssociatedWithPullRequestException`](crate::error::RepositoryNotAssociatedWithPullRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -6445,22 +5950,15 @@ impl RepositoryNotAssociatedWithPullRequestException {
 
 /// <p>The specified path does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PathDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PathDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PathDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl PathDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6468,7 +5966,9 @@ impl std::fmt::Display for PathDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PathDoesNotExistException")?;
         if let Some(inner_100) = &self.message {
-            write!(f, ": {}", inner_100)?;
+            {
+                write!(f, ": {}", inner_100)?;
+            }
         }
         Ok(())
     }
@@ -6478,7 +5978,7 @@ impl std::error::Error for PathDoesNotExistException {}
 pub mod path_does_not_exist_exception {
 
     /// A builder for [`PathDoesNotExistException`](crate::error::PathDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -6510,22 +6010,15 @@ impl PathDoesNotExistException {
 
 /// <p>Either the enum is not in a valid format, or the specified file version enum is not valid in respect to the current file version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRelativeFileVersionEnumException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidRelativeFileVersionEnumException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRelativeFileVersionEnumException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidRelativeFileVersionEnumException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6533,7 +6026,9 @@ impl std::fmt::Display for InvalidRelativeFileVersionEnumException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRelativeFileVersionEnumException")?;
         if let Some(inner_101) = &self.message {
-            write!(f, ": {}", inner_101)?;
+            {
+                write!(f, ": {}", inner_101)?;
+            }
         }
         Ok(())
     }
@@ -6543,7 +6038,7 @@ impl std::error::Error for InvalidRelativeFileVersionEnumException {}
 pub mod invalid_relative_file_version_enum_exception {
 
     /// A builder for [`InvalidRelativeFileVersionEnumException`](crate::error::InvalidRelativeFileVersionEnumException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -6575,22 +6070,15 @@ impl InvalidRelativeFileVersionEnumException {
 
 /// <p>The position is not valid. Make sure that the line number exists in the version of the file you want to comment on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidFilePositionException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidFilePositionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidFilePositionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidFilePositionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6598,7 +6086,9 @@ impl std::fmt::Display for InvalidFilePositionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidFilePositionException")?;
         if let Some(inner_102) = &self.message {
-            write!(f, ": {}", inner_102)?;
+            {
+                write!(f, ": {}", inner_102)?;
+            }
         }
         Ok(())
     }
@@ -6608,7 +6098,7 @@ impl std::error::Error for InvalidFilePositionException {}
 pub mod invalid_file_position_exception {
 
     /// A builder for [`InvalidFilePositionException`](crate::error::InvalidFilePositionException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -6640,22 +6130,15 @@ impl InvalidFilePositionException {
 
 /// <p>The location of the file is not valid. Make sure that you include the file name and extension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidFileLocationException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidFileLocationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidFileLocationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidFileLocationException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6663,7 +6146,9 @@ impl std::fmt::Display for InvalidFileLocationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidFileLocationException")?;
         if let Some(inner_103) = &self.message {
-            write!(f, ": {}", inner_103)?;
+            {
+                write!(f, ": {}", inner_103)?;
+            }
         }
         Ok(())
     }
@@ -6673,7 +6158,7 @@ impl std::error::Error for InvalidFileLocationException {}
 pub mod invalid_file_location_exception {
 
     /// A builder for [`InvalidFileLocationException`](crate::error::InvalidFileLocationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -6705,22 +6190,15 @@ impl InvalidFileLocationException {
 
 /// <p>The specified commit ID is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidCommitIdException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidCommitIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCommitIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidCommitIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6728,7 +6206,9 @@ impl std::fmt::Display for InvalidCommitIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCommitIdException")?;
         if let Some(inner_104) = &self.message {
-            write!(f, ": {}", inner_104)?;
+            {
+                write!(f, ": {}", inner_104)?;
+            }
         }
         Ok(())
     }
@@ -6738,7 +6218,7 @@ impl std::error::Error for InvalidCommitIdException {}
 pub mod invalid_commit_id_exception {
 
     /// A builder for [`InvalidCommitIdException`](crate::error::InvalidCommitIdException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -6770,22 +6250,15 @@ impl InvalidCommitIdException {
 
 /// <p>A commit ID was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitIdRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CommitIdRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitIdRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CommitIdRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6793,7 +6266,9 @@ impl std::fmt::Display for CommitIdRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommitIdRequiredException")?;
         if let Some(inner_105) = &self.message {
-            write!(f, ": {}", inner_105)?;
+            {
+                write!(f, ": {}", inner_105)?;
+            }
         }
         Ok(())
     }
@@ -6803,7 +6278,7 @@ impl std::error::Error for CommitIdRequiredException {}
 pub mod commit_id_required_exception {
 
     /// A builder for [`CommitIdRequiredException`](crate::error::CommitIdRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -6835,22 +6310,15 @@ impl CommitIdRequiredException {
 
 /// <p>The specified commit does not exist or no commit was specified, and the specified repository has no default branch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CommitDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CommitDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6858,7 +6326,9 @@ impl std::fmt::Display for CommitDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommitDoesNotExistException")?;
         if let Some(inner_106) = &self.message {
-            write!(f, ": {}", inner_106)?;
+            {
+                write!(f, ": {}", inner_106)?;
+            }
         }
         Ok(())
     }
@@ -6868,7 +6338,7 @@ impl std::error::Error for CommitDoesNotExistException {}
 pub mod commit_does_not_exist_exception {
 
     /// A builder for [`CommitDoesNotExistException`](crate::error::CommitDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -6900,22 +6370,15 @@ impl CommitDoesNotExistException {
 
 /// <p>The before commit ID and the after commit ID are the same, which is not valid. The before commit ID and the after commit ID must be different commit IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BeforeCommitIdAndAfterCommitIdAreSameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BeforeCommitIdAndAfterCommitIdAreSameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BeforeCommitIdAndAfterCommitIdAreSameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl BeforeCommitIdAndAfterCommitIdAreSameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6923,7 +6386,9 @@ impl std::fmt::Display for BeforeCommitIdAndAfterCommitIdAreSameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BeforeCommitIdAndAfterCommitIdAreSameException")?;
         if let Some(inner_107) = &self.message {
-            write!(f, ": {}", inner_107)?;
+            {
+                write!(f, ": {}", inner_107)?;
+            }
         }
         Ok(())
     }
@@ -6933,7 +6398,7 @@ impl std::error::Error for BeforeCommitIdAndAfterCommitIdAreSameException {}
 pub mod before_commit_id_and_after_commit_id_are_same_exception {
 
     /// A builder for [`BeforeCommitIdAndAfterCommitIdAreSameException`](crate::error::BeforeCommitIdAndAfterCommitIdAreSameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -6966,22 +6431,15 @@ impl BeforeCommitIdAndAfterCommitIdAreSameException {
 
 /// <p>An override status is required, but no value was provided. Valid values include OVERRIDE and REVOKE.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OverrideStatusRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for OverrideStatusRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OverrideStatusRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl OverrideStatusRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -6989,7 +6447,9 @@ impl std::fmt::Display for OverrideStatusRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OverrideStatusRequiredException")?;
         if let Some(inner_108) = &self.message {
-            write!(f, ": {}", inner_108)?;
+            {
+                write!(f, ": {}", inner_108)?;
+            }
         }
         Ok(())
     }
@@ -6999,7 +6459,7 @@ impl std::error::Error for OverrideStatusRequiredException {}
 pub mod override_status_required_exception {
 
     /// A builder for [`OverrideStatusRequiredException`](crate::error::OverrideStatusRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -7031,22 +6491,15 @@ impl OverrideStatusRequiredException {
 
 /// <p>The pull request has already had its approval rules set to override.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OverrideAlreadySetException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for OverrideAlreadySetException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OverrideAlreadySetException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl OverrideAlreadySetException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7054,7 +6507,9 @@ impl std::fmt::Display for OverrideAlreadySetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OverrideAlreadySetException")?;
         if let Some(inner_109) = &self.message {
-            write!(f, ": {}", inner_109)?;
+            {
+                write!(f, ": {}", inner_109)?;
+            }
         }
         Ok(())
     }
@@ -7064,7 +6519,7 @@ impl std::error::Error for OverrideAlreadySetException {}
 pub mod override_already_set_exception {
 
     /// A builder for [`OverrideAlreadySetException`](crate::error::OverrideAlreadySetException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -7096,22 +6551,15 @@ impl OverrideAlreadySetException {
 
 /// <p>The override status is not valid. Valid statuses are OVERRIDE and REVOKE.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOverrideStatusException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidOverrideStatusException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOverrideStatusException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidOverrideStatusException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7119,7 +6567,9 @@ impl std::fmt::Display for InvalidOverrideStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOverrideStatusException")?;
         if let Some(inner_110) = &self.message {
-            write!(f, ": {}", inner_110)?;
+            {
+                write!(f, ": {}", inner_110)?;
+            }
         }
         Ok(())
     }
@@ -7129,7 +6579,7 @@ impl std::error::Error for InvalidOverrideStatusException {}
 pub mod invalid_override_status_exception {
 
     /// A builder for [`InvalidOverrideStatusException`](crate::error::InvalidOverrideStatusException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -7161,22 +6611,15 @@ impl InvalidOverrideStatusException {
 
 /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TipsDivergenceExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TipsDivergenceExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TipsDivergenceExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TipsDivergenceExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7184,7 +6627,9 @@ impl std::fmt::Display for TipsDivergenceExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TipsDivergenceExceededException")?;
         if let Some(inner_111) = &self.message {
-            write!(f, ": {}", inner_111)?;
+            {
+                write!(f, ": {}", inner_111)?;
+            }
         }
         Ok(())
     }
@@ -7194,7 +6639,7 @@ impl std::error::Error for TipsDivergenceExceededException {}
 pub mod tips_divergence_exceeded_exception {
 
     /// A builder for [`TipsDivergenceExceededException`](crate::error::TipsDivergenceExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -7226,22 +6671,15 @@ impl TipsDivergenceExceededException {
 
 /// <p>The tip of the source branch in the destination repository does not match the tip of the source branch specified in your request. The pull request might have been updated. Make sure that you have the latest changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TipOfSourceReferenceIsDifferentException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TipOfSourceReferenceIsDifferentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TipOfSourceReferenceIsDifferentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TipOfSourceReferenceIsDifferentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7249,7 +6687,9 @@ impl std::fmt::Display for TipOfSourceReferenceIsDifferentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TipOfSourceReferenceIsDifferentException")?;
         if let Some(inner_112) = &self.message {
-            write!(f, ": {}", inner_112)?;
+            {
+                write!(f, ": {}", inner_112)?;
+            }
         }
         Ok(())
     }
@@ -7259,7 +6699,7 @@ impl std::error::Error for TipOfSourceReferenceIsDifferentException {}
 pub mod tip_of_source_reference_is_different_exception {
 
     /// A builder for [`TipOfSourceReferenceIsDifferentException`](crate::error::TipOfSourceReferenceIsDifferentException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -7291,22 +6731,15 @@ impl TipOfSourceReferenceIsDifferentException {
 
 /// <p>A replacement type is required.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplacementTypeRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReplacementTypeRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplacementTypeRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ReplacementTypeRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7314,7 +6747,9 @@ impl std::fmt::Display for ReplacementTypeRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReplacementTypeRequiredException")?;
         if let Some(inner_113) = &self.message {
-            write!(f, ": {}", inner_113)?;
+            {
+                write!(f, ": {}", inner_113)?;
+            }
         }
         Ok(())
     }
@@ -7324,7 +6759,7 @@ impl std::error::Error for ReplacementTypeRequiredException {}
 pub mod replacement_type_required_exception {
 
     /// A builder for [`ReplacementTypeRequiredException`](crate::error::ReplacementTypeRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -7356,22 +6791,15 @@ impl ReplacementTypeRequiredException {
 
 /// <p>USE_NEW_CONTENT was specified, but no replacement content has been provided.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplacementContentRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReplacementContentRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplacementContentRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ReplacementContentRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7379,7 +6807,9 @@ impl std::fmt::Display for ReplacementContentRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReplacementContentRequiredException")?;
         if let Some(inner_114) = &self.message {
-            write!(f, ": {}", inner_114)?;
+            {
+                write!(f, ": {}", inner_114)?;
+            }
         }
         Ok(())
     }
@@ -7389,7 +6819,7 @@ impl std::error::Error for ReplacementContentRequiredException {}
 pub mod replacement_content_required_exception {
 
     /// A builder for [`ReplacementContentRequiredException`](crate::error::ReplacementContentRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -7421,22 +6851,15 @@ impl ReplacementContentRequiredException {
 
 /// <p>The pull request cannot be merged because one or more approval rules applied to the pull request have conditions that have not been met.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestApprovalRulesNotSatisfiedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PullRequestApprovalRulesNotSatisfiedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestApprovalRulesNotSatisfiedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl PullRequestApprovalRulesNotSatisfiedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7444,7 +6867,9 @@ impl std::fmt::Display for PullRequestApprovalRulesNotSatisfiedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PullRequestApprovalRulesNotSatisfiedException")?;
         if let Some(inner_115) = &self.message {
-            write!(f, ": {}", inner_115)?;
+            {
+                write!(f, ": {}", inner_115)?;
+            }
         }
         Ok(())
     }
@@ -7454,7 +6879,7 @@ impl std::error::Error for PullRequestApprovalRulesNotSatisfiedException {}
 pub mod pull_request_approval_rules_not_satisfied_exception {
 
     /// A builder for [`PullRequestApprovalRulesNotSatisfiedException`](crate::error::PullRequestApprovalRulesNotSatisfiedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -7486,22 +6911,15 @@ impl PullRequestApprovalRulesNotSatisfiedException {
 
 /// <p>More than one conflict resolution entries exists for the conflict. A conflict can have only one conflict resolution entry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultipleConflictResolutionEntriesException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MultipleConflictResolutionEntriesException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultipleConflictResolutionEntriesException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl MultipleConflictResolutionEntriesException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7509,7 +6927,9 @@ impl std::fmt::Display for MultipleConflictResolutionEntriesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MultipleConflictResolutionEntriesException")?;
         if let Some(inner_116) = &self.message {
-            write!(f, ": {}", inner_116)?;
+            {
+                write!(f, ": {}", inner_116)?;
+            }
         }
         Ok(())
     }
@@ -7519,7 +6939,7 @@ impl std::error::Error for MultipleConflictResolutionEntriesException {}
 pub mod multiple_conflict_resolution_entries_exception {
 
     /// A builder for [`MultipleConflictResolutionEntriesException`](crate::error::MultipleConflictResolutionEntriesException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -7551,22 +6971,15 @@ impl MultipleConflictResolutionEntriesException {
 
 /// <p>The number of items to compare between the source or destination branches and the merge base has exceeded the maximum allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumItemsToCompareExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MaximumItemsToCompareExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumItemsToCompareExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl MaximumItemsToCompareExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7574,7 +6987,9 @@ impl std::fmt::Display for MaximumItemsToCompareExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumItemsToCompareExceededException")?;
         if let Some(inner_117) = &self.message {
-            write!(f, ": {}", inner_117)?;
+            {
+                write!(f, ": {}", inner_117)?;
+            }
         }
         Ok(())
     }
@@ -7584,7 +6999,7 @@ impl std::error::Error for MaximumItemsToCompareExceededException {}
 pub mod maximum_items_to_compare_exceeded_exception {
 
     /// A builder for [`MaximumItemsToCompareExceededException`](crate::error::MaximumItemsToCompareExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -7616,22 +7031,15 @@ impl MaximumItemsToCompareExceededException {
 
 /// <p>The number of files to load exceeds the allowed limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumFileContentToLoadExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MaximumFileContentToLoadExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumFileContentToLoadExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl MaximumFileContentToLoadExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7639,7 +7047,9 @@ impl std::fmt::Display for MaximumFileContentToLoadExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumFileContentToLoadExceededException")?;
         if let Some(inner_118) = &self.message {
-            write!(f, ": {}", inner_118)?;
+            {
+                write!(f, ": {}", inner_118)?;
+            }
         }
         Ok(())
     }
@@ -7649,7 +7059,7 @@ impl std::error::Error for MaximumFileContentToLoadExceededException {}
 pub mod maximum_file_content_to_load_exceeded_exception {
 
     /// A builder for [`MaximumFileContentToLoadExceededException`](crate::error::MaximumFileContentToLoadExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -7681,22 +7091,15 @@ impl MaximumFileContentToLoadExceededException {
 
 /// <p>The number of allowed conflict resolution entries was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumConflictResolutionEntriesExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MaximumConflictResolutionEntriesExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumConflictResolutionEntriesExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl MaximumConflictResolutionEntriesExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7704,7 +7107,9 @@ impl std::fmt::Display for MaximumConflictResolutionEntriesExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumConflictResolutionEntriesExceededException")?;
         if let Some(inner_119) = &self.message {
-            write!(f, ": {}", inner_119)?;
+            {
+                write!(f, ": {}", inner_119)?;
+            }
         }
         Ok(())
     }
@@ -7714,7 +7119,7 @@ impl std::error::Error for MaximumConflictResolutionEntriesExceededException {}
 pub mod maximum_conflict_resolution_entries_exceeded_exception {
 
     /// A builder for [`MaximumConflictResolutionEntriesExceededException`](crate::error::MaximumConflictResolutionEntriesExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -7747,22 +7152,15 @@ impl MaximumConflictResolutionEntriesExceededException {
 
 /// <p>The pull request cannot be merged automatically into the destination branch. You must manually merge the branches and resolve any conflicts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManualMergeRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ManualMergeRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManualMergeRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ManualMergeRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7770,7 +7168,9 @@ impl std::fmt::Display for ManualMergeRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ManualMergeRequiredException")?;
         if let Some(inner_120) = &self.message {
-            write!(f, ": {}", inner_120)?;
+            {
+                write!(f, ": {}", inner_120)?;
+            }
         }
         Ok(())
     }
@@ -7780,7 +7180,7 @@ impl std::error::Error for ManualMergeRequiredException {}
 pub mod manual_merge_required_exception {
 
     /// A builder for [`ManualMergeRequiredException`](crate::error::ManualMergeRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -7812,22 +7212,15 @@ impl ManualMergeRequiredException {
 
 /// <p>Automerge was specified for resolving the conflict, but the specified replacement type is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidReplacementTypeException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidReplacementTypeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidReplacementTypeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidReplacementTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7835,7 +7228,9 @@ impl std::fmt::Display for InvalidReplacementTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidReplacementTypeException")?;
         if let Some(inner_121) = &self.message {
-            write!(f, ": {}", inner_121)?;
+            {
+                write!(f, ": {}", inner_121)?;
+            }
         }
         Ok(())
     }
@@ -7845,7 +7240,7 @@ impl std::error::Error for InvalidReplacementTypeException {}
 pub mod invalid_replacement_type_exception {
 
     /// A builder for [`InvalidReplacementTypeException`](crate::error::InvalidReplacementTypeException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -7877,22 +7272,15 @@ impl InvalidReplacementTypeException {
 
 /// <p>Automerge was specified for resolving the conflict, but the replacement type is not valid or content is missing. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidReplacementContentException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidReplacementContentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidReplacementContentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidReplacementContentException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7900,7 +7288,9 @@ impl std::fmt::Display for InvalidReplacementContentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidReplacementContentException")?;
         if let Some(inner_122) = &self.message {
-            write!(f, ": {}", inner_122)?;
+            {
+                write!(f, ": {}", inner_122)?;
+            }
         }
         Ok(())
     }
@@ -7910,7 +7300,7 @@ impl std::error::Error for InvalidReplacementContentException {}
 pub mod invalid_replacement_content_exception {
 
     /// A builder for [`InvalidReplacementContentException`](crate::error::InvalidReplacementContentException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -7942,22 +7332,15 @@ impl InvalidReplacementContentException {
 
 /// <p>The specified conflict resolution strategy is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidConflictResolutionStrategyException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidConflictResolutionStrategyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidConflictResolutionStrategyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidConflictResolutionStrategyException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -7965,7 +7348,9 @@ impl std::fmt::Display for InvalidConflictResolutionStrategyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidConflictResolutionStrategyException")?;
         if let Some(inner_123) = &self.message {
-            write!(f, ": {}", inner_123)?;
+            {
+                write!(f, ": {}", inner_123)?;
+            }
         }
         Ok(())
     }
@@ -7975,7 +7360,7 @@ impl std::error::Error for InvalidConflictResolutionStrategyException {}
 pub mod invalid_conflict_resolution_strategy_exception {
 
     /// A builder for [`InvalidConflictResolutionStrategyException`](crate::error::InvalidConflictResolutionStrategyException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -8007,22 +7392,15 @@ impl InvalidConflictResolutionStrategyException {
 
 /// <p>The specified conflict resolution list is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidConflictResolutionException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidConflictResolutionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidConflictResolutionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidConflictResolutionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8030,7 +7408,9 @@ impl std::fmt::Display for InvalidConflictResolutionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidConflictResolutionException")?;
         if let Some(inner_124) = &self.message {
-            write!(f, ": {}", inner_124)?;
+            {
+                write!(f, ": {}", inner_124)?;
+            }
         }
         Ok(())
     }
@@ -8040,7 +7420,7 @@ impl std::error::Error for InvalidConflictResolutionException {}
 pub mod invalid_conflict_resolution_exception {
 
     /// A builder for [`InvalidConflictResolutionException`](crate::error::InvalidConflictResolutionException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -8072,22 +7452,15 @@ impl InvalidConflictResolutionException {
 
 /// <p>The specified conflict detail level is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidConflictDetailLevelException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidConflictDetailLevelException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidConflictDetailLevelException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidConflictDetailLevelException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8095,7 +7468,9 @@ impl std::fmt::Display for InvalidConflictDetailLevelException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidConflictDetailLevelException")?;
         if let Some(inner_125) = &self.message {
-            write!(f, ": {}", inner_125)?;
+            {
+                write!(f, ": {}", inner_125)?;
+            }
         }
         Ok(())
     }
@@ -8105,7 +7480,7 @@ impl std::error::Error for InvalidConflictDetailLevelException {}
 pub mod invalid_conflict_detail_level_exception {
 
     /// A builder for [`InvalidConflictDetailLevelException`](crate::error::InvalidConflictDetailLevelException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -8137,22 +7512,15 @@ impl InvalidConflictDetailLevelException {
 
 /// <p>The merge cannot be completed because the target branch has been modified. Another user might have modified the target branch while the merge was in progress. Wait a few minutes, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConcurrentReferenceUpdateException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ConcurrentReferenceUpdateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentReferenceUpdateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ConcurrentReferenceUpdateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8160,7 +7528,9 @@ impl std::fmt::Display for ConcurrentReferenceUpdateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentReferenceUpdateException")?;
         if let Some(inner_126) = &self.message {
-            write!(f, ": {}", inner_126)?;
+            {
+                write!(f, ": {}", inner_126)?;
+            }
         }
         Ok(())
     }
@@ -8170,7 +7540,7 @@ impl std::error::Error for ConcurrentReferenceUpdateException {}
 pub mod concurrent_reference_update_exception {
 
     /// A builder for [`ConcurrentReferenceUpdateException`](crate::error::ConcurrentReferenceUpdateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -8202,22 +7572,15 @@ impl ConcurrentReferenceUpdateException {
 
 /// <p>The specified reference does not exist. You must provide a full commit ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferenceDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReferenceDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferenceDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ReferenceDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8225,7 +7588,9 @@ impl std::fmt::Display for ReferenceDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReferenceDoesNotExistException")?;
         if let Some(inner_127) = &self.message {
-            write!(f, ": {}", inner_127)?;
+            {
+                write!(f, ": {}", inner_127)?;
+            }
         }
         Ok(())
     }
@@ -8235,7 +7600,7 @@ impl std::error::Error for ReferenceDoesNotExistException {}
 pub mod reference_does_not_exist_exception {
 
     /// A builder for [`ReferenceDoesNotExistException`](crate::error::ReferenceDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -8267,22 +7632,15 @@ impl ReferenceDoesNotExistException {
 
 /// <p>The specified target branch is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTargetBranchException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidTargetBranchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTargetBranchException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidTargetBranchException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8290,7 +7648,9 @@ impl std::fmt::Display for InvalidTargetBranchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTargetBranchException")?;
         if let Some(inner_128) = &self.message {
-            write!(f, ": {}", inner_128)?;
+            {
+                write!(f, ": {}", inner_128)?;
+            }
         }
         Ok(())
     }
@@ -8300,7 +7660,7 @@ impl std::error::Error for InvalidTargetBranchException {}
 pub mod invalid_target_branch_exception {
 
     /// A builder for [`InvalidTargetBranchException`](crate::error::InvalidTargetBranchException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -8332,22 +7692,15 @@ impl InvalidTargetBranchException {
 
 /// <p>The specified commit is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidCommitException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidCommitException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCommitException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidCommitException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8355,7 +7708,9 @@ impl std::fmt::Display for InvalidCommitException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCommitException")?;
         if let Some(inner_129) = &self.message {
-            write!(f, ": {}", inner_129)?;
+            {
+                write!(f, ": {}", inner_129)?;
+            }
         }
         Ok(())
     }
@@ -8365,7 +7720,7 @@ impl std::error::Error for InvalidCommitException {}
 pub mod invalid_commit_exception {
 
     /// A builder for [`InvalidCommitException`](crate::error::InvalidCommitException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -8397,22 +7752,15 @@ impl InvalidCommitException {
 
 /// <p>The commit cannot be created because no file mode has been specified. A file mode is required to update mode permissions for a file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileModeRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for FileModeRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileModeRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl FileModeRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8420,7 +7768,9 @@ impl std::fmt::Display for FileModeRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileModeRequiredException")?;
         if let Some(inner_130) = &self.message {
-            write!(f, ": {}", inner_130)?;
+            {
+                write!(f, ": {}", inner_130)?;
+            }
         }
         Ok(())
     }
@@ -8430,7 +7780,7 @@ impl std::error::Error for FileModeRequiredException {}
 pub mod file_mode_required_exception {
 
     /// A builder for [`FileModeRequiredException`](crate::error::FileModeRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -8462,22 +7812,15 @@ impl FileModeRequiredException {
 
 /// <p>A commit was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CommitRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CommitRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8485,7 +7828,9 @@ impl std::fmt::Display for CommitRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommitRequiredException")?;
         if let Some(inner_131) = &self.message {
-            write!(f, ": {}", inner_131)?;
+            {
+                write!(f, ": {}", inner_131)?;
+            }
         }
         Ok(())
     }
@@ -8495,7 +7840,7 @@ impl std::error::Error for CommitRequiredException {}
 pub mod commit_required_exception {
 
     /// A builder for [`CommitRequiredException`](crate::error::CommitRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -8527,22 +7872,15 @@ impl CommitRequiredException {
 
 /// <p>The specified number of maximum results is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidMaxResultsException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidMaxResultsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidMaxResultsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidMaxResultsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8550,7 +7888,9 @@ impl std::fmt::Display for InvalidMaxResultsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMaxResultsException")?;
         if let Some(inner_132) = &self.message {
-            write!(f, ": {}", inner_132)?;
+            {
+                write!(f, ": {}", inner_132)?;
+            }
         }
         Ok(())
     }
@@ -8560,7 +7900,7 @@ impl std::error::Error for InvalidMaxResultsException {}
 pub mod invalid_max_results_exception {
 
     /// A builder for [`InvalidMaxResultsException`](crate::error::InvalidMaxResultsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -8592,22 +7932,15 @@ impl InvalidMaxResultsException {
 
 /// <p>The specified continuation token is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidContinuationTokenException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidContinuationTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidContinuationTokenException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidContinuationTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8615,7 +7948,9 @@ impl std::fmt::Display for InvalidContinuationTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidContinuationTokenException")?;
         if let Some(inner_133) = &self.message {
-            write!(f, ": {}", inner_133)?;
+            {
+                write!(f, ": {}", inner_133)?;
+            }
         }
         Ok(())
     }
@@ -8625,7 +7960,7 @@ impl std::error::Error for InvalidContinuationTokenException {}
 pub mod invalid_continuation_token_exception {
 
     /// A builder for [`InvalidContinuationTokenException`](crate::error::InvalidContinuationTokenException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -8657,22 +7992,15 @@ impl InvalidContinuationTokenException {
 
 /// <p>The specified sort by value is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSortByException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidSortByException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSortByException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidSortByException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8680,7 +8008,9 @@ impl std::fmt::Display for InvalidSortByException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSortByException")?;
         if let Some(inner_134) = &self.message {
-            write!(f, ": {}", inner_134)?;
+            {
+                write!(f, ": {}", inner_134)?;
+            }
         }
         Ok(())
     }
@@ -8690,7 +8020,7 @@ impl std::error::Error for InvalidSortByException {}
 pub mod invalid_sort_by_exception {
 
     /// A builder for [`InvalidSortByException`](crate::error::InvalidSortByException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -8722,22 +8052,15 @@ impl InvalidSortByException {
 
 /// <p>The specified sort order is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOrderException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidOrderException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOrderException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidOrderException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8745,7 +8068,9 @@ impl std::fmt::Display for InvalidOrderException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOrderException")?;
         if let Some(inner_135) = &self.message {
-            write!(f, ": {}", inner_135)?;
+            {
+                write!(f, ": {}", inner_135)?;
+            }
         }
         Ok(())
     }
@@ -8755,7 +8080,7 @@ impl std::error::Error for InvalidOrderException {}
 pub mod invalid_order_exception {
 
     /// A builder for [`InvalidOrderException`](crate::error::InvalidOrderException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -8787,22 +8112,15 @@ impl InvalidOrderException {
 
 /// <p>The Amazon Resource Name (ARN) is not valid. Make sure that you have provided the full ARN for the author of the pull request, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidAuthorArnException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidAuthorArnException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidAuthorArnException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidAuthorArnException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8810,7 +8128,9 @@ impl std::fmt::Display for InvalidAuthorArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAuthorArnException")?;
         if let Some(inner_136) = &self.message {
-            write!(f, ": {}", inner_136)?;
+            {
+                write!(f, ": {}", inner_136)?;
+            }
         }
         Ok(())
     }
@@ -8820,7 +8140,7 @@ impl std::error::Error for InvalidAuthorArnException {}
 pub mod invalid_author_arn_exception {
 
     /// A builder for [`InvalidAuthorArnException`](crate::error::InvalidAuthorArnException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -8852,22 +8172,15 @@ impl InvalidAuthorArnException {
 
 /// <p>The specified Amazon Resource Name (ARN) does not exist in the AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AuthorDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl AuthorDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8875,7 +8188,9 @@ impl std::fmt::Display for AuthorDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorDoesNotExistException")?;
         if let Some(inner_137) = &self.message {
-            write!(f, ": {}", inner_137)?;
+            {
+                write!(f, ": {}", inner_137)?;
+            }
         }
         Ok(())
     }
@@ -8885,7 +8200,7 @@ impl std::error::Error for AuthorDoesNotExistException {}
 pub mod author_does_not_exist_exception {
 
     /// A builder for [`AuthorDoesNotExistException`](crate::error::AuthorDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -8917,22 +8232,15 @@ impl AuthorDoesNotExistException {
 
 /// <p>A merge option or stategy is required, and none was provided.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeOptionRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MergeOptionRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeOptionRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl MergeOptionRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -8940,7 +8248,9 @@ impl std::fmt::Display for MergeOptionRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MergeOptionRequiredException")?;
         if let Some(inner_138) = &self.message {
-            write!(f, ": {}", inner_138)?;
+            {
+                write!(f, ": {}", inner_138)?;
+            }
         }
         Ok(())
     }
@@ -8950,7 +8260,7 @@ impl std::error::Error for MergeOptionRequiredException {}
 pub mod merge_option_required_exception {
 
     /// A builder for [`MergeOptionRequiredException`](crate::error::MergeOptionRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -8982,22 +8292,15 @@ impl MergeOptionRequiredException {
 
 /// <p>The source commit specifier is not valid. You must provide a valid branch name, tag, or full commit ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSourceCommitSpecifierException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidSourceCommitSpecifierException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSourceCommitSpecifierException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidSourceCommitSpecifierException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9005,7 +8308,9 @@ impl std::fmt::Display for InvalidSourceCommitSpecifierException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSourceCommitSpecifierException")?;
         if let Some(inner_139) = &self.message {
-            write!(f, ": {}", inner_139)?;
+            {
+                write!(f, ": {}", inner_139)?;
+            }
         }
         Ok(())
     }
@@ -9015,7 +8320,7 @@ impl std::error::Error for InvalidSourceCommitSpecifierException {}
 pub mod invalid_source_commit_specifier_exception {
 
     /// A builder for [`InvalidSourceCommitSpecifierException`](crate::error::InvalidSourceCommitSpecifierException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -9047,22 +8352,15 @@ impl InvalidSourceCommitSpecifierException {
 
 /// <p>The specified merge option is not valid for this operation. Not all merge strategies are supported for all operations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidMergeOptionException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidMergeOptionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidMergeOptionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidMergeOptionException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9070,7 +8368,9 @@ impl std::fmt::Display for InvalidMergeOptionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMergeOptionException")?;
         if let Some(inner_140) = &self.message {
-            write!(f, ": {}", inner_140)?;
+            {
+                write!(f, ": {}", inner_140)?;
+            }
         }
         Ok(())
     }
@@ -9080,7 +8380,7 @@ impl std::error::Error for InvalidMergeOptionException {}
 pub mod invalid_merge_option_exception {
 
     /// A builder for [`InvalidMergeOptionException`](crate::error::InvalidMergeOptionException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -9112,22 +8412,15 @@ impl InvalidMergeOptionException {
 
 /// <p>The specified value for the number of conflict files to return is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidMaxConflictFilesException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidMaxConflictFilesException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidMaxConflictFilesException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidMaxConflictFilesException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9135,7 +8428,9 @@ impl std::fmt::Display for InvalidMaxConflictFilesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMaxConflictFilesException")?;
         if let Some(inner_141) = &self.message {
-            write!(f, ": {}", inner_141)?;
+            {
+                write!(f, ": {}", inner_141)?;
+            }
         }
         Ok(())
     }
@@ -9145,7 +8440,7 @@ impl std::error::Error for InvalidMaxConflictFilesException {}
 pub mod invalid_max_conflict_files_exception {
 
     /// A builder for [`InvalidMaxConflictFilesException`](crate::error::InvalidMaxConflictFilesException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -9177,22 +8472,15 @@ impl InvalidMaxConflictFilesException {
 
 /// <p>The destination commit specifier is not valid. You must provide a valid branch name, tag, or full commit ID. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDestinationCommitSpecifierException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDestinationCommitSpecifierException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDestinationCommitSpecifierException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidDestinationCommitSpecifierException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9200,7 +8488,9 @@ impl std::fmt::Display for InvalidDestinationCommitSpecifierException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDestinationCommitSpecifierException")?;
         if let Some(inner_142) = &self.message {
-            write!(f, ": {}", inner_142)?;
+            {
+                write!(f, ": {}", inner_142)?;
+            }
         }
         Ok(())
     }
@@ -9210,7 +8500,7 @@ impl std::error::Error for InvalidDestinationCommitSpecifierException {}
 pub mod invalid_destination_commit_specifier_exception {
 
     /// A builder for [`InvalidDestinationCommitSpecifierException`](crate::error::InvalidDestinationCommitSpecifierException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -9242,22 +8532,15 @@ impl InvalidDestinationCommitSpecifierException {
 
 /// <p>The specified folder does not exist. Either the folder name is not correct, or you did not enter the full path to the folder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FolderDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for FolderDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FolderDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl FolderDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9265,7 +8548,9 @@ impl std::fmt::Display for FolderDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FolderDoesNotExistException")?;
         if let Some(inner_143) = &self.message {
-            write!(f, ": {}", inner_143)?;
+            {
+                write!(f, ": {}", inner_143)?;
+            }
         }
         Ok(())
     }
@@ -9275,7 +8560,7 @@ impl std::error::Error for FolderDoesNotExistException {}
 pub mod folder_does_not_exist_exception {
 
     /// A builder for [`FolderDoesNotExistException`](crate::error::FolderDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -9307,22 +8592,15 @@ impl FolderDoesNotExistException {
 
 /// <p>The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileTooLargeException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for FileTooLargeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileTooLargeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl FileTooLargeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9330,7 +8608,9 @@ impl std::fmt::Display for FileTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileTooLargeException")?;
         if let Some(inner_144) = &self.message {
-            write!(f, ": {}", inner_144)?;
+            {
+                write!(f, ": {}", inner_144)?;
+            }
         }
         Ok(())
     }
@@ -9340,7 +8620,7 @@ impl std::error::Error for FileTooLargeException {}
 pub mod file_too_large_exception {
 
     /// A builder for [`FileTooLargeException`](crate::error::FileTooLargeException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -9372,22 +8652,15 @@ impl FileTooLargeException {
 
 /// <p>The specified file does not exist. Verify that you have used the correct file name, full path, and extension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for FileDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl FileDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9395,7 +8668,9 @@ impl std::fmt::Display for FileDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileDoesNotExistException")?;
         if let Some(inner_145) = &self.message {
-            write!(f, ": {}", inner_145)?;
+            {
+                write!(f, ": {}", inner_145)?;
+            }
         }
         Ok(())
     }
@@ -9405,7 +8680,7 @@ impl std::error::Error for FileDoesNotExistException {}
 pub mod file_does_not_exist_exception {
 
     /// A builder for [`FileDoesNotExistException`](crate::error::FileDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -9437,22 +8712,15 @@ impl FileDoesNotExistException {
 
 /// <p>The specified commit ID does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitIdDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CommitIdDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitIdDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CommitIdDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9460,7 +8728,9 @@ impl std::fmt::Display for CommitIdDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommitIdDoesNotExistException")?;
         if let Some(inner_146) = &self.message {
-            write!(f, ": {}", inner_146)?;
+            {
+                write!(f, ": {}", inner_146)?;
+            }
         }
         Ok(())
     }
@@ -9470,7 +8740,7 @@ impl std::error::Error for CommitIdDoesNotExistException {}
 pub mod commit_id_does_not_exist_exception {
 
     /// A builder for [`CommitIdDoesNotExistException`](crate::error::CommitIdDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -9502,22 +8772,15 @@ impl CommitIdDoesNotExistException {
 
 /// <p>The Amazon Resource Name (ARN) of the user or identity is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidReactionUserArnException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidReactionUserArnException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidReactionUserArnException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidReactionUserArnException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9525,7 +8788,9 @@ impl std::fmt::Display for InvalidReactionUserArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidReactionUserArnException")?;
         if let Some(inner_147) = &self.message {
-            write!(f, ": {}", inner_147)?;
+            {
+                write!(f, ": {}", inner_147)?;
+            }
         }
         Ok(())
     }
@@ -9535,7 +8800,7 @@ impl std::error::Error for InvalidReactionUserArnException {}
 pub mod invalid_reaction_user_arn_exception {
 
     /// A builder for [`InvalidReactionUserArnException`](crate::error::InvalidReactionUserArnException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -9567,22 +8832,15 @@ impl InvalidReactionUserArnException {
 
 /// <p>The specified blob is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidBlobIdException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidBlobIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidBlobIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidBlobIdException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9590,7 +8848,9 @@ impl std::fmt::Display for InvalidBlobIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidBlobIdException")?;
         if let Some(inner_148) = &self.message {
-            write!(f, ": {}", inner_148)?;
+            {
+                write!(f, ": {}", inner_148)?;
+            }
         }
         Ok(())
     }
@@ -9600,7 +8860,7 @@ impl std::error::Error for InvalidBlobIdException {}
 pub mod invalid_blob_id_exception {
 
     /// A builder for [`InvalidBlobIdException`](crate::error::InvalidBlobIdException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -9632,22 +8892,15 @@ impl InvalidBlobIdException {
 
 /// <p>A blob ID is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlobIdRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BlobIdRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlobIdRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl BlobIdRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9655,7 +8908,9 @@ impl std::fmt::Display for BlobIdRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BlobIdRequiredException")?;
         if let Some(inner_149) = &self.message {
-            write!(f, ": {}", inner_149)?;
+            {
+                write!(f, ": {}", inner_149)?;
+            }
         }
         Ok(())
     }
@@ -9665,7 +8920,7 @@ impl std::error::Error for BlobIdRequiredException {}
 pub mod blob_id_required_exception {
 
     /// A builder for [`BlobIdRequiredException`](crate::error::BlobIdRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -9697,22 +8952,15 @@ impl BlobIdRequiredException {
 
 /// <p>The specified blob does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlobIdDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BlobIdDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlobIdDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl BlobIdDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9720,7 +8968,9 @@ impl std::fmt::Display for BlobIdDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BlobIdDoesNotExistException")?;
         if let Some(inner_150) = &self.message {
-            write!(f, ": {}", inner_150)?;
+            {
+                write!(f, ": {}", inner_150)?;
+            }
         }
         Ok(())
     }
@@ -9730,7 +8980,7 @@ impl std::error::Error for BlobIdDoesNotExistException {}
 pub mod blob_id_does_not_exist_exception {
 
     /// A builder for [`BlobIdDoesNotExistException`](crate::error::BlobIdDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -9762,22 +9012,15 @@ impl BlobIdDoesNotExistException {
 
 /// <p>The pull request event type is not valid. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPullRequestEventTypeException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidPullRequestEventTypeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPullRequestEventTypeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidPullRequestEventTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9785,7 +9028,9 @@ impl std::fmt::Display for InvalidPullRequestEventTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPullRequestEventTypeException")?;
         if let Some(inner_151) = &self.message {
-            write!(f, ": {}", inner_151)?;
+            {
+                write!(f, ": {}", inner_151)?;
+            }
         }
         Ok(())
     }
@@ -9795,7 +9040,7 @@ impl std::error::Error for InvalidPullRequestEventTypeException {}
 pub mod invalid_pull_request_event_type_exception {
 
     /// A builder for [`InvalidPullRequestEventTypeException`](crate::error::InvalidPullRequestEventTypeException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -9827,22 +9072,15 @@ impl InvalidPullRequestEventTypeException {
 
 /// <p>The Amazon Resource Name (ARN) is not valid. Make sure that you have provided the full ARN for the user who initiated the change for the pull request, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidActorArnException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidActorArnException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidActorArnException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidActorArnException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9850,7 +9088,9 @@ impl std::fmt::Display for InvalidActorArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidActorArnException")?;
         if let Some(inner_152) = &self.message {
-            write!(f, ": {}", inner_152)?;
+            {
+                write!(f, ": {}", inner_152)?;
+            }
         }
         Ok(())
     }
@@ -9860,7 +9100,7 @@ impl std::error::Error for InvalidActorArnException {}
 pub mod invalid_actor_arn_exception {
 
     /// A builder for [`InvalidActorArnException`](crate::error::InvalidActorArnException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -9892,22 +9132,15 @@ impl InvalidActorArnException {
 
 /// <p>The specified Amazon Resource Name (ARN) does not exist in the AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActorDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ActorDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActorDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ActorDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9915,7 +9148,9 @@ impl std::fmt::Display for ActorDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ActorDoesNotExistException")?;
         if let Some(inner_153) = &self.message {
-            write!(f, ": {}", inner_153)?;
+            {
+                write!(f, ": {}", inner_153)?;
+            }
         }
         Ok(())
     }
@@ -9925,7 +9160,7 @@ impl std::error::Error for ActorDoesNotExistException {}
 pub mod actor_does_not_exist_exception {
 
     /// A builder for [`ActorDoesNotExistException`](crate::error::ActorDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -9957,22 +9192,15 @@ impl ActorDoesNotExistException {
 
 /// <p>The specified value for the number of merge hunks to return is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidMaxMergeHunksException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidMaxMergeHunksException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidMaxMergeHunksException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidMaxMergeHunksException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -9980,7 +9208,9 @@ impl std::fmt::Display for InvalidMaxMergeHunksException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMaxMergeHunksException")?;
         if let Some(inner_154) = &self.message {
-            write!(f, ": {}", inner_154)?;
+            {
+                write!(f, ": {}", inner_154)?;
+            }
         }
         Ok(())
     }
@@ -9990,7 +9220,7 @@ impl std::error::Error for InvalidMaxMergeHunksException {}
 pub mod invalid_max_merge_hunks_exception {
 
     /// A builder for [`InvalidMaxMergeHunksException`](crate::error::InvalidMaxMergeHunksException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -10022,22 +9252,15 @@ impl InvalidMaxMergeHunksException {
 
 /// <p>The approval rule cannot be deleted from the pull request because it was created by an approval rule template and applied to the pull request automatically.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CannotDeleteApprovalRuleFromTemplateException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CannotDeleteApprovalRuleFromTemplateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CannotDeleteApprovalRuleFromTemplateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CannotDeleteApprovalRuleFromTemplateException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10045,7 +9268,9 @@ impl std::fmt::Display for CannotDeleteApprovalRuleFromTemplateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CannotDeleteApprovalRuleFromTemplateException")?;
         if let Some(inner_155) = &self.message {
-            write!(f, ": {}", inner_155)?;
+            {
+                write!(f, ": {}", inner_155)?;
+            }
         }
         Ok(())
     }
@@ -10055,7 +9280,7 @@ impl std::error::Error for CannotDeleteApprovalRuleFromTemplateException {}
 pub mod cannot_delete_approval_rule_from_template_exception {
 
     /// A builder for [`CannotDeleteApprovalRuleFromTemplateException`](crate::error::CannotDeleteApprovalRuleFromTemplateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -10087,22 +9312,15 @@ impl CannotDeleteApprovalRuleFromTemplateException {
 
 /// <p>The specified branch is the default branch for the repository, and cannot be deleted. To delete this branch, you must first set another branch as the default branch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultBranchCannotBeDeletedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DefaultBranchCannotBeDeletedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultBranchCannotBeDeletedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl DefaultBranchCannotBeDeletedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10110,7 +9328,9 @@ impl std::fmt::Display for DefaultBranchCannotBeDeletedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DefaultBranchCannotBeDeletedException")?;
         if let Some(inner_156) = &self.message {
-            write!(f, ": {}", inner_156)?;
+            {
+                write!(f, ": {}", inner_156)?;
+            }
         }
         Ok(())
     }
@@ -10120,7 +9340,7 @@ impl std::error::Error for DefaultBranchCannotBeDeletedException {}
 pub mod default_branch_cannot_be_deleted_exception {
 
     /// A builder for [`DefaultBranchCannotBeDeletedException`](crate::error::DefaultBranchCannotBeDeletedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -10152,22 +9372,15 @@ impl DefaultBranchCannotBeDeletedException {
 
 /// <p>The approval rule template is associated with one or more repositories. You cannot delete a template that is associated with a repository. Remove all associations, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleTemplateInUseException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ApprovalRuleTemplateInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleTemplateInUseException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ApprovalRuleTemplateInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10175,7 +9388,9 @@ impl std::fmt::Display for ApprovalRuleTemplateInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleTemplateInUseException")?;
         if let Some(inner_157) = &self.message {
-            write!(f, ": {}", inner_157)?;
+            {
+                write!(f, ": {}", inner_157)?;
+            }
         }
         Ok(())
     }
@@ -10185,7 +9400,7 @@ impl std::error::Error for ApprovalRuleTemplateInUseException {}
 pub mod approval_rule_template_in_use_exception {
 
     /// A builder for [`ApprovalRuleTemplateInUseException`](crate::error::ApprovalRuleTemplateInUseException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -10217,22 +9432,15 @@ impl ApprovalRuleTemplateInUseException {
 
 /// <p>A repository resource limit was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryLimitExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RepositoryLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl RepositoryLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10240,7 +9448,9 @@ impl std::fmt::Display for RepositoryLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryLimitExceededException")?;
         if let Some(inner_158) = &self.message {
-            write!(f, ": {}", inner_158)?;
+            {
+                write!(f, ": {}", inner_158)?;
+            }
         }
         Ok(())
     }
@@ -10250,7 +9460,7 @@ impl std::error::Error for RepositoryLimitExceededException {}
 pub mod repository_limit_exceeded_exception {
 
     /// A builder for [`RepositoryLimitExceededException`](crate::error::RepositoryLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -10282,22 +9492,15 @@ impl RepositoryLimitExceededException {
 
 /// <p>The approval rule cannot be added. The pull request has the maximum number of approval rules associated with it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NumberOfRulesExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NumberOfRulesExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NumberOfRulesExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl NumberOfRulesExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10305,7 +9508,9 @@ impl std::fmt::Display for NumberOfRulesExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NumberOfRulesExceededException")?;
         if let Some(inner_159) = &self.message {
-            write!(f, ": {}", inner_159)?;
+            {
+                write!(f, ": {}", inner_159)?;
+            }
         }
         Ok(())
     }
@@ -10315,7 +9520,7 @@ impl std::error::Error for NumberOfRulesExceededException {}
 pub mod number_of_rules_exceeded_exception {
 
     /// A builder for [`NumberOfRulesExceededException`](crate::error::NumberOfRulesExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -10347,22 +9552,15 @@ impl NumberOfRulesExceededException {
 
 /// <p>An approval rule with that name already exists. Approval rule names must be unique within the scope of a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleNameAlreadyExistsException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ApprovalRuleNameAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleNameAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ApprovalRuleNameAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10370,7 +9568,9 @@ impl std::fmt::Display for ApprovalRuleNameAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleNameAlreadyExistsException")?;
         if let Some(inner_160) = &self.message {
-            write!(f, ": {}", inner_160)?;
+            {
+                write!(f, ": {}", inner_160)?;
+            }
         }
         Ok(())
     }
@@ -10380,7 +9580,7 @@ impl std::error::Error for ApprovalRuleNameAlreadyExistsException {}
 pub mod approval_rule_name_already_exists_exception {
 
     /// A builder for [`ApprovalRuleNameAlreadyExistsException`](crate::error::ApprovalRuleNameAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -10412,22 +9612,15 @@ impl ApprovalRuleNameAlreadyExistsException {
 
 /// <p>An array of target objects is required. It cannot be empty or null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetsRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TargetsRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetsRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TargetsRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10435,7 +9628,9 @@ impl std::fmt::Display for TargetsRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TargetsRequiredException")?;
         if let Some(inner_161) = &self.message {
-            write!(f, ": {}", inner_161)?;
+            {
+                write!(f, ": {}", inner_161)?;
+            }
         }
         Ok(())
     }
@@ -10445,7 +9640,7 @@ impl std::error::Error for TargetsRequiredException {}
 pub mod targets_required_exception {
 
     /// A builder for [`TargetsRequiredException`](crate::error::TargetsRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -10477,22 +9672,15 @@ impl TargetsRequiredException {
 
 /// <p>A pull request target is required. It cannot be empty or null. A pull request target must contain the full values for the repository name, source branch, and destination branch for the pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TargetRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl TargetRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10500,7 +9688,9 @@ impl std::fmt::Display for TargetRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TargetRequiredException")?;
         if let Some(inner_162) = &self.message {
-            write!(f, ": {}", inner_162)?;
+            {
+                write!(f, ": {}", inner_162)?;
+            }
         }
         Ok(())
     }
@@ -10510,7 +9700,7 @@ impl std::error::Error for TargetRequiredException {}
 pub mod target_required_exception {
 
     /// A builder for [`TargetRequiredException`](crate::error::TargetRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -10542,22 +9732,15 @@ impl TargetRequiredException {
 
 /// <p>The source branch and destination branch for the pull request are the same. You must specify different branches for the source and destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceAndDestinationAreSameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SourceAndDestinationAreSameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceAndDestinationAreSameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SourceAndDestinationAreSameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10565,7 +9748,9 @@ impl std::fmt::Display for SourceAndDestinationAreSameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SourceAndDestinationAreSameException")?;
         if let Some(inner_163) = &self.message {
-            write!(f, ": {}", inner_163)?;
+            {
+                write!(f, ": {}", inner_163)?;
+            }
         }
         Ok(())
     }
@@ -10575,7 +9760,7 @@ impl std::error::Error for SourceAndDestinationAreSameException {}
 pub mod source_and_destination_are_same_exception {
 
     /// A builder for [`SourceAndDestinationAreSameException`](crate::error::SourceAndDestinationAreSameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -10607,22 +9792,15 @@ impl SourceAndDestinationAreSameException {
 
 /// <p>The specified reference is not a supported type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferenceTypeNotSupportedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReferenceTypeNotSupportedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferenceTypeNotSupportedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ReferenceTypeNotSupportedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10630,7 +9808,9 @@ impl std::fmt::Display for ReferenceTypeNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReferenceTypeNotSupportedException")?;
         if let Some(inner_164) = &self.message {
-            write!(f, ": {}", inner_164)?;
+            {
+                write!(f, ": {}", inner_164)?;
+            }
         }
         Ok(())
     }
@@ -10640,7 +9820,7 @@ impl std::error::Error for ReferenceTypeNotSupportedException {}
 pub mod reference_type_not_supported_exception {
 
     /// A builder for [`ReferenceTypeNotSupportedException`](crate::error::ReferenceTypeNotSupportedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -10672,22 +9852,15 @@ impl ReferenceTypeNotSupportedException {
 
 /// <p>A reference name is required, but none was provided.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferenceNameRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReferenceNameRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferenceNameRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl ReferenceNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10695,7 +9868,9 @@ impl std::fmt::Display for ReferenceNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReferenceNameRequiredException")?;
         if let Some(inner_165) = &self.message {
-            write!(f, ": {}", inner_165)?;
+            {
+                write!(f, ": {}", inner_165)?;
+            }
         }
         Ok(())
     }
@@ -10705,7 +9880,7 @@ impl std::error::Error for ReferenceNameRequiredException {}
 pub mod reference_name_required_exception {
 
     /// A builder for [`ReferenceNameRequiredException`](crate::error::ReferenceNameRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -10737,22 +9912,15 @@ impl ReferenceNameRequiredException {
 
 /// <p>You cannot include more than one repository in a pull request. Make sure you have specified only one repository name in your request, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultipleRepositoriesInPullRequestException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MultipleRepositoriesInPullRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultipleRepositoriesInPullRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl MultipleRepositoriesInPullRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10760,7 +9928,9 @@ impl std::fmt::Display for MultipleRepositoriesInPullRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MultipleRepositoriesInPullRequestException")?;
         if let Some(inner_166) = &self.message {
-            write!(f, ": {}", inner_166)?;
+            {
+                write!(f, ": {}", inner_166)?;
+            }
         }
         Ok(())
     }
@@ -10770,7 +9940,7 @@ impl std::error::Error for MultipleRepositoriesInPullRequestException {}
 pub mod multiple_repositories_in_pull_request_exception {
 
     /// A builder for [`MultipleRepositoriesInPullRequestException`](crate::error::MultipleRepositoriesInPullRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -10802,22 +9972,15 @@ impl MultipleRepositoriesInPullRequestException {
 
 /// <p>You cannot create the pull request because the repository has too many open pull requests. The maximum number of open pull requests for a repository is 1,000. Close one or more open pull requests, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumOpenPullRequestsExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MaximumOpenPullRequestsExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumOpenPullRequestsExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl MaximumOpenPullRequestsExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10825,7 +9988,9 @@ impl std::fmt::Display for MaximumOpenPullRequestsExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumOpenPullRequestsExceededException")?;
         if let Some(inner_167) = &self.message {
-            write!(f, ": {}", inner_167)?;
+            {
+                write!(f, ": {}", inner_167)?;
+            }
         }
         Ok(())
     }
@@ -10835,7 +10000,7 @@ impl std::error::Error for MaximumOpenPullRequestsExceededException {}
 pub mod maximum_open_pull_requests_exceeded_exception {
 
     /// A builder for [`MaximumOpenPullRequestsExceededException`](crate::error::MaximumOpenPullRequestsExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -10867,22 +10032,15 @@ impl MaximumOpenPullRequestsExceededException {
 
 /// <p>The targets for the pull request is not valid or not in a valid format. Targets are a list of target objects. Each target object must contain the full values for the repository name, source branch, and destination branch for a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTargetsException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidTargetsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTargetsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidTargetsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10890,7 +10048,9 @@ impl std::fmt::Display for InvalidTargetsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTargetsException")?;
         if let Some(inner_168) = &self.message {
-            write!(f, ": {}", inner_168)?;
+            {
+                write!(f, ": {}", inner_168)?;
+            }
         }
         Ok(())
     }
@@ -10900,7 +10060,7 @@ impl std::error::Error for InvalidTargetsException {}
 pub mod invalid_targets_exception {
 
     /// A builder for [`InvalidTargetsException`](crate::error::InvalidTargetsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -10932,22 +10092,15 @@ impl InvalidTargetsException {
 
 /// <p>The target for the pull request is not valid. A target must contain the full values for the repository name, source branch, and destination branch for the pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTargetException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidTargetException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTargetException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidTargetException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -10955,7 +10108,9 @@ impl std::fmt::Display for InvalidTargetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTargetException")?;
         if let Some(inner_169) = &self.message {
-            write!(f, ": {}", inner_169)?;
+            {
+                write!(f, ": {}", inner_169)?;
+            }
         }
         Ok(())
     }
@@ -10965,7 +10120,7 @@ impl std::error::Error for InvalidTargetException {}
 pub mod invalid_target_exception {
 
     /// A builder for [`InvalidTargetException`](crate::error::InvalidTargetException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -10997,22 +10152,15 @@ impl InvalidTargetException {
 
 /// <p>The specified reference name format is not valid. Reference names must conform to the Git references format (for example, refs/heads/master). For more information, see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals - Git References</a> or consult your Git documentation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidReferenceNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidReferenceNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidReferenceNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl InvalidReferenceNameException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11020,7 +10168,9 @@ impl std::fmt::Display for InvalidReferenceNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidReferenceNameException")?;
         if let Some(inner_170) = &self.message {
-            write!(f, ": {}", inner_170)?;
+            {
+                write!(f, ": {}", inner_170)?;
+            }
         }
         Ok(())
     }
@@ -11030,7 +10180,7 @@ impl std::error::Error for InvalidReferenceNameException {}
 pub mod invalid_reference_name_exception {
 
     /// A builder for [`InvalidReferenceNameException`](crate::error::InvalidReferenceNameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -11062,22 +10212,15 @@ impl InvalidReferenceNameException {
 
 /// <p>The commit cannot be created because no source files or file content have been specified for the commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceFileOrContentRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SourceFileOrContentRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceFileOrContentRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SourceFileOrContentRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11085,7 +10228,9 @@ impl std::fmt::Display for SourceFileOrContentRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SourceFileOrContentRequiredException")?;
         if let Some(inner_171) = &self.message {
-            write!(f, ": {}", inner_171)?;
+            {
+                write!(f, ": {}", inner_171)?;
+            }
         }
         Ok(())
     }
@@ -11095,7 +10240,7 @@ impl std::error::Error for SourceFileOrContentRequiredException {}
 pub mod source_file_or_content_required_exception {
 
     /// A builder for [`SourceFileOrContentRequiredException`](crate::error::SourceFileOrContentRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -11127,22 +10272,15 @@ impl SourceFileOrContentRequiredException {
 
 /// <p>The commit cannot be created because one or more changes in this commit duplicate actions in the same file path. For example, you cannot make the same delete request to the same file in the same file path twice, or make a delete request and a move request to the same file as part of the same commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamePathRequestException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SamePathRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamePathRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl SamePathRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11150,7 +10288,9 @@ impl std::fmt::Display for SamePathRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SamePathRequestException")?;
         if let Some(inner_172) = &self.message {
-            write!(f, ": {}", inner_172)?;
+            {
+                write!(f, ": {}", inner_172)?;
+            }
         }
         Ok(())
     }
@@ -11160,7 +10300,7 @@ impl std::error::Error for SamePathRequestException {}
 pub mod same_path_request_exception {
 
     /// A builder for [`SamePathRequestException`](crate::error::SamePathRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -11192,22 +10332,15 @@ impl SamePathRequestException {
 
 /// <p>The commit cannot be created because one of the changes specifies copying or moving a .gitkeep file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestrictedSourceFileException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RestrictedSourceFileException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestrictedSourceFileException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl RestrictedSourceFileException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11215,7 +10348,9 @@ impl std::fmt::Display for RestrictedSourceFileException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RestrictedSourceFileException")?;
         if let Some(inner_173) = &self.message {
-            write!(f, ": {}", inner_173)?;
+            {
+                write!(f, ": {}", inner_173)?;
+            }
         }
         Ok(())
     }
@@ -11225,7 +10360,7 @@ impl std::error::Error for RestrictedSourceFileException {}
 pub mod restricted_source_file_exception {
 
     /// A builder for [`RestrictedSourceFileException`](crate::error::RestrictedSourceFileException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -11257,22 +10392,15 @@ impl RestrictedSourceFileException {
 
 /// <p>The commit cannot be created because one or more files specified in the commit reference both a file and a folder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFileEntryConflictException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PutFileEntryConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutFileEntryConflictException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl PutFileEntryConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11280,7 +10408,9 @@ impl std::fmt::Display for PutFileEntryConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PutFileEntryConflictException")?;
         if let Some(inner_174) = &self.message {
-            write!(f, ": {}", inner_174)?;
+            {
+                write!(f, ": {}", inner_174)?;
+            }
         }
         Ok(())
     }
@@ -11290,7 +10420,7 @@ impl std::error::Error for PutFileEntryConflictException {}
 pub mod put_file_entry_conflict_exception {
 
     /// A builder for [`PutFileEntryConflictException`](crate::error::PutFileEntryConflictException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -11322,22 +10452,15 @@ impl PutFileEntryConflictException {
 
 /// <p>The commit cannot be created because no changes will be made to the repository as a result of this commit. A commit must contain at least one change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoChangeException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NoChangeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoChangeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl NoChangeException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11345,7 +10468,9 @@ impl std::fmt::Display for NoChangeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoChangeException")?;
         if let Some(inner_175) = &self.message {
-            write!(f, ": {}", inner_175)?;
+            {
+                write!(f, ": {}", inner_175)?;
+            }
         }
         Ok(())
     }
@@ -11355,7 +10480,7 @@ impl std::error::Error for NoChangeException {}
 pub mod no_change_exception {
 
     /// A builder for [`NoChangeException`](crate::error::NoChangeException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -11387,22 +10512,15 @@ impl NoChangeException {
 
 /// <p>The number of specified files to change as part of this commit exceeds the maximum number of files that can be changed in a single commit. Consider using a Git client for these changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumFileEntriesExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MaximumFileEntriesExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumFileEntriesExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl MaximumFileEntriesExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11410,7 +10528,9 @@ impl std::fmt::Display for MaximumFileEntriesExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumFileEntriesExceededException")?;
         if let Some(inner_176) = &self.message {
-            write!(f, ": {}", inner_176)?;
+            {
+                write!(f, ": {}", inner_176)?;
+            }
         }
         Ok(())
     }
@@ -11420,7 +10540,7 @@ impl std::error::Error for MaximumFileEntriesExceededException {}
 pub mod maximum_file_entries_exceeded_exception {
 
     /// A builder for [`MaximumFileEntriesExceededException`](crate::error::MaximumFileEntriesExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -11452,22 +10572,15 @@ impl MaximumFileEntriesExceededException {
 
 /// <p>The commit cannot be created because no files have been specified as added, updated, or changed (PutFile or DeleteFile) for the commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileEntryRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for FileEntryRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileEntryRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl FileEntryRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11475,7 +10588,9 @@ impl std::fmt::Display for FileEntryRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileEntryRequiredException")?;
         if let Some(inner_177) = &self.message {
-            write!(f, ": {}", inner_177)?;
+            {
+                write!(f, ": {}", inner_177)?;
+            }
         }
         Ok(())
     }
@@ -11485,7 +10600,7 @@ impl std::error::Error for FileEntryRequiredException {}
 pub mod file_entry_required_exception {
 
     /// A builder for [`FileEntryRequiredException`](crate::error::FileEntryRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -11517,22 +10632,15 @@ impl FileEntryRequiredException {
 
 /// <p>The commit cannot be created because both a source file and file content have been specified for the same file. You cannot provide both. Either specify a source file or provide the file content directly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileContentAndSourceFileSpecifiedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for FileContentAndSourceFileSpecifiedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileContentAndSourceFileSpecifiedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl FileContentAndSourceFileSpecifiedException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11540,7 +10648,9 @@ impl std::fmt::Display for FileContentAndSourceFileSpecifiedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileContentAndSourceFileSpecifiedException")?;
         if let Some(inner_178) = &self.message {
-            write!(f, ": {}", inner_178)?;
+            {
+                write!(f, ": {}", inner_178)?;
+            }
         }
         Ok(())
     }
@@ -11550,7 +10660,7 @@ impl std::error::Error for FileContentAndSourceFileSpecifiedException {}
 pub mod file_content_and_source_file_specified_exception {
 
     /// A builder for [`FileContentAndSourceFileSpecifiedException`](crate::error::FileContentAndSourceFileSpecifiedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -11582,22 +10692,15 @@ impl FileContentAndSourceFileSpecifiedException {
 
 /// <p>Cannot create the branch with the specified name because the commit conflicts with an existing branch with the same name. Branch names must be unique.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BranchNameExistsException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BranchNameExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BranchNameExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl BranchNameExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11605,7 +10708,9 @@ impl std::fmt::Display for BranchNameExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BranchNameExistsException")?;
         if let Some(inner_179) = &self.message {
-            write!(f, ": {}", inner_179)?;
+            {
+                write!(f, ": {}", inner_179)?;
+            }
         }
         Ok(())
     }
@@ -11615,7 +10720,7 @@ impl std::error::Error for BranchNameExistsException {}
 pub mod branch_name_exists_exception {
 
     /// A builder for [`BranchNameExistsException`](crate::error::BranchNameExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -11647,22 +10752,15 @@ impl BranchNameExistsException {
 
 /// <p>The maximum number of approval rule templates has been exceeded for this AWS Region. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NumberOfRuleTemplatesExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NumberOfRuleTemplatesExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NumberOfRuleTemplatesExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl NumberOfRuleTemplatesExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11670,7 +10768,9 @@ impl std::fmt::Display for NumberOfRuleTemplatesExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NumberOfRuleTemplatesExceededException")?;
         if let Some(inner_180) = &self.message {
-            write!(f, ": {}", inner_180)?;
+            {
+                write!(f, ": {}", inner_180)?;
+            }
         }
         Ok(())
     }
@@ -11680,7 +10780,7 @@ impl std::error::Error for NumberOfRuleTemplatesExceededException {}
 pub mod number_of_rule_templates_exceeded_exception {
 
     /// A builder for [`NumberOfRuleTemplatesExceededException`](crate::error::NumberOfRuleTemplatesExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -11712,22 +10812,15 @@ impl NumberOfRuleTemplatesExceededException {
 
 /// <p>At least one repository name object is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryNamesRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RepositoryNamesRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryNamesRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl RepositoryNamesRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11735,7 +10828,9 @@ impl std::fmt::Display for RepositoryNamesRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryNamesRequiredException")?;
         if let Some(inner_181) = &self.message {
-            write!(f, ": {}", inner_181)?;
+            {
+                write!(f, ": {}", inner_181)?;
+            }
         }
         Ok(())
     }
@@ -11745,7 +10840,7 @@ impl std::error::Error for RepositoryNamesRequiredException {}
 pub mod repository_names_required_exception {
 
     /// A builder for [`RepositoryNamesRequiredException`](crate::error::RepositoryNamesRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -11777,22 +10872,15 @@ impl RepositoryNamesRequiredException {
 
 /// <p>The maximum number of allowed repository names was exceeded. Currently, this number is 100.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumRepositoryNamesExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MaximumRepositoryNamesExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumRepositoryNamesExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl MaximumRepositoryNamesExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11800,7 +10888,9 @@ impl std::fmt::Display for MaximumRepositoryNamesExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumRepositoryNamesExceededException")?;
         if let Some(inner_182) = &self.message {
-            write!(f, ": {}", inner_182)?;
+            {
+                write!(f, ": {}", inner_182)?;
+            }
         }
         Ok(())
     }
@@ -11810,7 +10900,7 @@ impl std::error::Error for MaximumRepositoryNamesExceededException {}
 pub mod maximum_repository_names_exceeded_exception {
 
     /// A builder for [`MaximumRepositoryNamesExceededException`](crate::error::MaximumRepositoryNamesExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -11842,22 +10932,15 @@ impl MaximumRepositoryNamesExceededException {
 
 /// <p>A list of commit IDs is required, but was either not specified or the list was empty.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitIdsListRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CommitIdsListRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitIdsListRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CommitIdsListRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11865,7 +10948,9 @@ impl std::fmt::Display for CommitIdsListRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommitIdsListRequiredException")?;
         if let Some(inner_183) = &self.message {
-            write!(f, ": {}", inner_183)?;
+            {
+                write!(f, ": {}", inner_183)?;
+            }
         }
         Ok(())
     }
@@ -11875,7 +10960,7 @@ impl std::error::Error for CommitIdsListRequiredException {}
 pub mod commit_ids_list_required_exception {
 
     /// A builder for [`CommitIdsListRequiredException`](crate::error::CommitIdsListRequiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -11907,22 +10992,15 @@ impl CommitIdsListRequiredException {
 
 /// <p>The maximum number of allowed commit IDs in a batch request is 100. Verify that your batch requests contains no more than 100 commit IDs, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitIdsLimitExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CommitIdsLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitIdsLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl CommitIdsLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11930,7 +11008,9 @@ impl std::fmt::Display for CommitIdsLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommitIdsLimitExceededException")?;
         if let Some(inner_184) = &self.message {
-            write!(f, ": {}", inner_184)?;
+            {
+                write!(f, ": {}", inner_184)?;
+            }
         }
         Ok(())
     }
@@ -11940,7 +11020,7 @@ impl std::error::Error for CommitIdsLimitExceededException {}
 pub mod commit_ids_limit_exceeded_exception {
 
     /// A builder for [`CommitIdsLimitExceededException`](crate::error::CommitIdsLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -11972,22 +11052,15 @@ impl CommitIdsLimitExceededException {
 
 /// <p>The maximum number of approval rule templates for a repository has been exceeded. You cannot associate more than 25 approval rule templates with a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumRuleTemplatesAssociatedWithRepositoryException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for MaximumRuleTemplatesAssociatedWithRepositoryException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumRuleTemplatesAssociatedWithRepositoryException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
 impl MaximumRuleTemplatesAssociatedWithRepositoryException {
     /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -11995,7 +11068,9 @@ impl std::fmt::Display for MaximumRuleTemplatesAssociatedWithRepositoryException
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumRuleTemplatesAssociatedWithRepositoryException")?;
         if let Some(inner_185) = &self.message {
-            write!(f, ": {}", inner_185)?;
+            {
+                write!(f, ": {}", inner_185)?;
+            }
         }
         Ok(())
     }
@@ -12005,7 +11080,7 @@ impl std::error::Error for MaximumRuleTemplatesAssociatedWithRepositoryException
 pub mod maximum_rule_templates_associated_with_repository_exception {
 
     /// A builder for [`MaximumRuleTemplatesAssociatedWithRepositoryException`](crate::error::MaximumRuleTemplatesAssociatedWithRepositoryException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -12045,6 +11120,18 @@ pub struct AssociateApprovalRuleTemplateWithRepositoryError {
     pub kind: AssociateApprovalRuleTemplateWithRepositoryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for AssociateApprovalRuleTemplateWithRepositoryError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateApprovalRuleTemplateWithRepositoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `AssociateApprovalRuleTemplateWithRepository` operation.
 #[non_exhaustive]
@@ -12086,8 +11173,15 @@ pub enum AssociateApprovalRuleTemplateWithRepositoryErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateApprovalRuleTemplateWithRepositoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12156,7 +11250,9 @@ impl AssociateApprovalRuleTemplateWithRepositoryError {
     /// Creates the `AssociateApprovalRuleTemplateWithRepositoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateApprovalRuleTemplateWithRepositoryErrorKind::Unhandled(err.into()),
+            kind: AssociateApprovalRuleTemplateWithRepositoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -12165,7 +11261,9 @@ impl AssociateApprovalRuleTemplateWithRepositoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateApprovalRuleTemplateWithRepositoryErrorKind::Unhandled(err.into()),
+            kind: AssociateApprovalRuleTemplateWithRepositoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -12302,7 +11400,7 @@ impl std::error::Error for AssociateApprovalRuleTemplateWithRepositoryError {
             Some(_inner)
             ,
             AssociateApprovalRuleTemplateWithRepositoryErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -12316,6 +11414,18 @@ pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesError {
     pub kind: BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for BatchAssociateApprovalRuleTemplateWithRepositoriesError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `BatchAssociateApprovalRuleTemplateWithRepositories` operation.
 #[non_exhaustive]
@@ -12349,8 +11459,15 @@ pub enum BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind {
     MaximumRepositoryNamesExceededException(crate::error::MaximumRepositoryNamesExceededException),
     /// <p>At least one repository name object is required, but was not specified.</p>
     RepositoryNamesRequiredException(crate::error::RepositoryNamesRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchAssociateApprovalRuleTemplateWithRepositoriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12414,7 +11531,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
             kind: BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::Unhandled(
-                err.into(),
+                crate::error::Unhandled::new(err.into()),
             ),
             meta: Default::default(),
         }
@@ -12425,7 +11542,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
         Self {
             meta: err.clone(),
             kind: BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::Unhandled(
-                err.into(),
+                crate::error::Unhandled::new(err.into()),
             ),
         }
     }
@@ -12525,7 +11642,7 @@ impl std::error::Error for BatchAssociateApprovalRuleTemplateWithRepositoriesErr
             Some(_inner)
             ,
             BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -12539,6 +11656,16 @@ pub struct BatchDescribeMergeConflictsError {
     pub kind: BatchDescribeMergeConflictsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for BatchDescribeMergeConflictsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchDescribeMergeConflictsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `BatchDescribeMergeConflicts` operation.
 #[non_exhaustive]
@@ -12594,8 +11721,15 @@ pub enum BatchDescribeMergeConflictsErrorKind {
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDescribeMergeConflictsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12680,7 +11814,9 @@ impl BatchDescribeMergeConflictsError {
     /// Creates the `BatchDescribeMergeConflictsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDescribeMergeConflictsErrorKind::Unhandled(err.into()),
+            kind: BatchDescribeMergeConflictsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12689,7 +11825,9 @@ impl BatchDescribeMergeConflictsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDescribeMergeConflictsErrorKind::Unhandled(err.into()),
+            kind: BatchDescribeMergeConflictsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12923,7 +12061,7 @@ impl std::error::Error for BatchDescribeMergeConflictsError {
             BatchDescribeMergeConflictsErrorKind::TipsDivergenceExceededException(_inner) => {
                 Some(_inner)
             }
-            BatchDescribeMergeConflictsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDescribeMergeConflictsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12936,6 +12074,18 @@ pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
     pub kind: BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for BatchDisassociateApprovalRuleTemplateFromRepositoriesError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `BatchDisassociateApprovalRuleTemplateFromRepositories` operation.
 #[non_exhaustive]
@@ -12969,8 +12119,15 @@ pub enum BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind {
     MaximumRepositoryNamesExceededException(crate::error::MaximumRepositoryNamesExceededException),
     /// <p>At least one repository name object is required, but was not specified.</p>
     RepositoryNamesRequiredException(crate::error::RepositoryNamesRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13034,7 +12191,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
             kind: BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::Unhandled(
-                err.into(),
+                crate::error::Unhandled::new(err.into()),
             ),
             meta: Default::default(),
         }
@@ -13045,7 +12202,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
         Self {
             meta: err.clone(),
             kind: BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::Unhandled(
-                err.into(),
+                crate::error::Unhandled::new(err.into()),
             ),
         }
     }
@@ -13145,7 +12302,7 @@ impl std::error::Error for BatchDisassociateApprovalRuleTemplateFromRepositories
             Some(_inner)
             ,
             BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -13159,6 +12316,14 @@ pub struct BatchGetCommitsError {
     pub kind: BatchGetCommitsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for BatchGetCommitsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchGetCommitsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `BatchGetCommits` operation.
 #[non_exhaustive]
@@ -13188,8 +12353,15 @@ pub enum BatchGetCommitsErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetCommitsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13227,7 +12399,7 @@ impl BatchGetCommitsError {
     /// Creates the `BatchGetCommitsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchGetCommitsErrorKind::Unhandled(err.into()),
+            kind: BatchGetCommitsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13236,7 +12408,7 @@ impl BatchGetCommitsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchGetCommitsErrorKind::Unhandled(err.into()),
+            kind: BatchGetCommitsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13346,7 +12518,7 @@ impl std::error::Error for BatchGetCommitsError {
             BatchGetCommitsErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             BatchGetCommitsErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             BatchGetCommitsErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            BatchGetCommitsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchGetCommitsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13359,6 +12531,14 @@ pub struct BatchGetRepositoriesError {
     pub kind: BatchGetRepositoriesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for BatchGetRepositoriesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchGetRepositoriesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `BatchGetRepositories` operation.
 #[non_exhaustive]
@@ -13384,8 +12564,15 @@ pub enum BatchGetRepositoriesErrorKind {
     MaximumRepositoryNamesExceededException(crate::error::MaximumRepositoryNamesExceededException),
     /// <p>At least one repository name object is required, but was not specified.</p>
     RepositoryNamesRequiredException(crate::error::RepositoryNamesRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetRepositoriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13429,7 +12616,9 @@ impl BatchGetRepositoriesError {
     /// Creates the `BatchGetRepositoriesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchGetRepositoriesErrorKind::Unhandled(err.into()),
+            kind: BatchGetRepositoriesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -13438,7 +12627,9 @@ impl BatchGetRepositoriesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchGetRepositoriesErrorKind::Unhandled(err.into()),
+            kind: BatchGetRepositoriesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13538,7 +12729,7 @@ impl std::error::Error for BatchGetRepositoriesError {
                 Some(_inner)
             }
             BatchGetRepositoriesErrorKind::RepositoryNamesRequiredException(_inner) => Some(_inner),
-            BatchGetRepositoriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchGetRepositoriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13551,6 +12742,16 @@ pub struct CreateApprovalRuleTemplateError {
     pub kind: CreateApprovalRuleTemplateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateApprovalRuleTemplateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateApprovalRuleTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateApprovalRuleTemplate` operation.
 #[non_exhaustive]
@@ -13582,8 +12783,15 @@ pub enum CreateApprovalRuleTemplateErrorKind {
     ),
     /// <p>The maximum number of approval rule templates has been exceeded for this AWS Region. </p>
     NumberOfRuleTemplatesExceededException(crate::error::NumberOfRuleTemplatesExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateApprovalRuleTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13632,7 +12840,9 @@ impl CreateApprovalRuleTemplateError {
     /// Creates the `CreateApprovalRuleTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateApprovalRuleTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateApprovalRuleTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -13641,7 +12851,9 @@ impl CreateApprovalRuleTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateApprovalRuleTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateApprovalRuleTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13740,7 +12952,7 @@ impl std::error::Error for CreateApprovalRuleTemplateError {
             Some(_inner)
             ,
             CreateApprovalRuleTemplateErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -13754,6 +12966,14 @@ pub struct CreateBranchError {
     pub kind: CreateBranchErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateBranchError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateBranchErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateBranch` operation.
 #[non_exhaustive]
@@ -13791,8 +13011,15 @@ pub enum CreateBranchErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBranchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13834,7 +13061,7 @@ impl CreateBranchError {
     /// Creates the `CreateBranchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateBranchErrorKind::Unhandled(err.into()),
+            kind: CreateBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13843,7 +13070,7 @@ impl CreateBranchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateBranchErrorKind::Unhandled(err.into()),
+            kind: CreateBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13983,7 +13210,7 @@ impl std::error::Error for CreateBranchError {
             CreateBranchErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             CreateBranchErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             CreateBranchErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            CreateBranchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateBranchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13996,6 +13223,14 @@ pub struct CreateCommitError {
     pub kind: CreateCommitErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateCommitError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateCommitErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateCommit` operation.
 #[non_exhaustive]
@@ -14089,8 +13324,15 @@ pub enum CreateCommitErrorKind {
     SamePathRequestException(crate::error::SamePathRequestException),
     /// <p>The commit cannot be created because no source files or file content have been specified for the commit.</p>
     SourceFileOrContentRequiredException(crate::error::SourceFileOrContentRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCommitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14164,7 +13406,7 @@ impl CreateCommitError {
     /// Creates the `CreateCommitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCommitErrorKind::Unhandled(err.into()),
+            kind: CreateCommitErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14173,7 +13415,7 @@ impl CreateCommitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCommitErrorKind::Unhandled(err.into()),
+            kind: CreateCommitErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14501,7 +13743,7 @@ impl std::error::Error for CreateCommitError {
             CreateCommitErrorKind::RestrictedSourceFileException(_inner) => Some(_inner),
             CreateCommitErrorKind::SamePathRequestException(_inner) => Some(_inner),
             CreateCommitErrorKind::SourceFileOrContentRequiredException(_inner) => Some(_inner),
-            CreateCommitErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCommitErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14514,6 +13756,14 @@ pub struct CreatePullRequestError {
     pub kind: CreatePullRequestErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreatePullRequestError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreatePullRequestErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreatePullRequest` operation.
 #[non_exhaustive]
@@ -14577,8 +13827,15 @@ pub enum CreatePullRequestErrorKind {
     TargetsRequiredException(crate::error::TargetsRequiredException),
     /// <p>A pull request title is required. It cannot be empty or null.</p>
     TitleRequiredException(crate::error::TitleRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePullRequestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14641,7 +13898,7 @@ impl CreatePullRequestError {
     /// Creates the `CreatePullRequestError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePullRequestErrorKind::Unhandled(err.into()),
+            kind: CreatePullRequestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14650,7 +13907,7 @@ impl CreatePullRequestError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePullRequestErrorKind::Unhandled(err.into()),
+            kind: CreatePullRequestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14888,7 +14145,7 @@ impl std::error::Error for CreatePullRequestError {
             CreatePullRequestErrorKind::TargetRequiredException(_inner) => Some(_inner),
             CreatePullRequestErrorKind::TargetsRequiredException(_inner) => Some(_inner),
             CreatePullRequestErrorKind::TitleRequiredException(_inner) => Some(_inner),
-            CreatePullRequestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePullRequestErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14901,6 +14158,16 @@ pub struct CreatePullRequestApprovalRuleError {
     pub kind: CreatePullRequestApprovalRuleErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreatePullRequestApprovalRuleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreatePullRequestApprovalRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreatePullRequestApprovalRule` operation.
 #[non_exhaustive]
@@ -14938,8 +14205,15 @@ pub enum CreatePullRequestApprovalRuleErrorKind {
     PullRequestDoesNotExistException(crate::error::PullRequestDoesNotExistException),
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePullRequestApprovalRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15013,7 +14287,9 @@ impl CreatePullRequestApprovalRuleError {
     /// Creates the `CreatePullRequestApprovalRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePullRequestApprovalRuleErrorKind::Unhandled(err.into()),
+            kind: CreatePullRequestApprovalRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -15022,7 +14298,9 @@ impl CreatePullRequestApprovalRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePullRequestApprovalRuleErrorKind::Unhandled(err.into()),
+            kind: CreatePullRequestApprovalRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -15200,7 +14478,7 @@ impl std::error::Error for CreatePullRequestApprovalRuleError {
             CreatePullRequestApprovalRuleErrorKind::PullRequestIdRequiredException(_inner) => {
                 Some(_inner)
             }
-            CreatePullRequestApprovalRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePullRequestApprovalRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15213,6 +14491,14 @@ pub struct CreateRepositoryError {
     pub kind: CreateRepositoryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateRepositoryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateRepositoryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateRepository` operation.
 #[non_exhaustive]
@@ -15250,8 +14536,15 @@ pub enum CreateRepositoryErrorKind {
     TagPolicyException(crate::error::TagPolicyException),
     /// <p>The maximum number of tags for an AWS CodeCommit resource has been exceeded.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRepositoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15295,7 +14588,7 @@ impl CreateRepositoryError {
     /// Creates the `CreateRepositoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRepositoryErrorKind::Unhandled(err.into()),
+            kind: CreateRepositoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15304,7 +14597,7 @@ impl CreateRepositoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRepositoryErrorKind::Unhandled(err.into()),
+            kind: CreateRepositoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15445,7 +14738,7 @@ impl std::error::Error for CreateRepositoryError {
             CreateRepositoryErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
             CreateRepositoryErrorKind::TagPolicyException(_inner) => Some(_inner),
             CreateRepositoryErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateRepositoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRepositoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15458,6 +14751,16 @@ pub struct CreateUnreferencedMergeCommitError {
     pub kind: CreateUnreferencedMergeCommitErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateUnreferencedMergeCommitError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateUnreferencedMergeCommitErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateUnreferencedMergeCommit` operation.
 #[non_exhaustive]
@@ -15547,8 +14850,15 @@ pub enum CreateUnreferencedMergeCommitErrorKind {
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateUnreferencedMergeCommitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15687,7 +14997,9 @@ impl CreateUnreferencedMergeCommitError {
     /// Creates the `CreateUnreferencedMergeCommitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateUnreferencedMergeCommitErrorKind::Unhandled(err.into()),
+            kind: CreateUnreferencedMergeCommitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -15696,7 +15008,9 @@ impl CreateUnreferencedMergeCommitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateUnreferencedMergeCommitErrorKind::Unhandled(err.into()),
+            kind: CreateUnreferencedMergeCommitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -16082,7 +15396,7 @@ impl std::error::Error for CreateUnreferencedMergeCommitError {
             Some(_inner)
             ,
             CreateUnreferencedMergeCommitErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -16096,6 +15410,16 @@ pub struct DeleteApprovalRuleTemplateError {
     pub kind: DeleteApprovalRuleTemplateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteApprovalRuleTemplateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteApprovalRuleTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteApprovalRuleTemplate` operation.
 #[non_exhaustive]
@@ -16111,8 +15435,15 @@ pub enum DeleteApprovalRuleTemplateErrorKind {
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteApprovalRuleTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16147,7 +15478,9 @@ impl DeleteApprovalRuleTemplateError {
     /// Creates the `DeleteApprovalRuleTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteApprovalRuleTemplateErrorKind::Unhandled(err.into()),
+            kind: DeleteApprovalRuleTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -16156,7 +15489,9 @@ impl DeleteApprovalRuleTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteApprovalRuleTemplateErrorKind::Unhandled(err.into()),
+            kind: DeleteApprovalRuleTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -16214,7 +15549,7 @@ impl std::error::Error for DeleteApprovalRuleTemplateError {
             DeleteApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException(
                 _inner,
             ) => Some(_inner),
-            DeleteApprovalRuleTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteApprovalRuleTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16227,6 +15562,14 @@ pub struct DeleteBranchError {
     pub kind: DeleteBranchErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteBranchError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteBranchErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteBranch` operation.
 #[non_exhaustive]
@@ -16258,8 +15601,15 @@ pub enum DeleteBranchErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBranchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16298,7 +15648,7 @@ impl DeleteBranchError {
     /// Creates the `DeleteBranchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteBranchErrorKind::Unhandled(err.into()),
+            kind: DeleteBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -16307,7 +15657,7 @@ impl DeleteBranchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteBranchErrorKind::Unhandled(err.into()),
+            kind: DeleteBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -16423,7 +15773,7 @@ impl std::error::Error for DeleteBranchError {
             DeleteBranchErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             DeleteBranchErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             DeleteBranchErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            DeleteBranchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteBranchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16437,6 +15787,14 @@ pub struct DeleteCommentContentError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteCommentContentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteCommentContentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteCommentContent` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -16449,8 +15807,15 @@ pub enum DeleteCommentContentErrorKind {
     CommentIdRequiredException(crate::error::CommentIdRequiredException),
     /// <p>The comment ID is not in a valid format. Make sure that you have provided the full comment ID.</p>
     InvalidCommentIdException(crate::error::InvalidCommentIdException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCommentContentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16480,7 +15845,9 @@ impl DeleteCommentContentError {
     /// Creates the `DeleteCommentContentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCommentContentErrorKind::Unhandled(err.into()),
+            kind: DeleteCommentContentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -16489,7 +15856,9 @@ impl DeleteCommentContentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCommentContentErrorKind::Unhandled(err.into()),
+            kind: DeleteCommentContentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -16549,7 +15918,7 @@ impl std::error::Error for DeleteCommentContentError {
             DeleteCommentContentErrorKind::CommentDoesNotExistException(_inner) => Some(_inner),
             DeleteCommentContentErrorKind::CommentIdRequiredException(_inner) => Some(_inner),
             DeleteCommentContentErrorKind::InvalidCommentIdException(_inner) => Some(_inner),
-            DeleteCommentContentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCommentContentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16562,6 +15931,14 @@ pub struct DeleteFileError {
     pub kind: DeleteFileErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteFileError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteFileErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteFile` operation.
 #[non_exhaustive]
@@ -16615,8 +15992,15 @@ pub enum DeleteFileErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16664,7 +16048,7 @@ impl DeleteFileError {
     /// Creates the `DeleteFileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFileErrorKind::Unhandled(err.into()),
+            kind: DeleteFileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -16673,7 +16057,7 @@ impl DeleteFileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFileErrorKind::Unhandled(err.into()),
+            kind: DeleteFileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -16868,7 +16252,7 @@ impl std::error::Error for DeleteFileError {
             DeleteFileErrorKind::PathRequiredException(_inner) => Some(_inner),
             DeleteFileErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             DeleteFileErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            DeleteFileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16881,6 +16265,16 @@ pub struct DeletePullRequestApprovalRuleError {
     pub kind: DeletePullRequestApprovalRuleErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeletePullRequestApprovalRuleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeletePullRequestApprovalRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeletePullRequestApprovalRule` operation.
 #[non_exhaustive]
@@ -16914,8 +16308,15 @@ pub enum DeletePullRequestApprovalRuleErrorKind {
     PullRequestDoesNotExistException(crate::error::PullRequestDoesNotExistException),
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePullRequestApprovalRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16982,7 +16383,9 @@ impl DeletePullRequestApprovalRuleError {
     /// Creates the `DeletePullRequestApprovalRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePullRequestApprovalRuleErrorKind::Unhandled(err.into()),
+            kind: DeletePullRequestApprovalRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -16991,7 +16394,9 @@ impl DeletePullRequestApprovalRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePullRequestApprovalRuleErrorKind::Unhandled(err.into()),
+            kind: DeletePullRequestApprovalRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -17142,7 +16547,7 @@ impl std::error::Error for DeletePullRequestApprovalRuleError {
             Some(_inner)
             ,
             DeletePullRequestApprovalRuleErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -17156,6 +16561,14 @@ pub struct DeleteRepositoryError {
     pub kind: DeleteRepositoryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteRepositoryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteRepositoryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteRepository` operation.
 #[non_exhaustive]
@@ -17179,8 +16592,15 @@ pub enum DeleteRepositoryErrorKind {
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRepositoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17215,7 +16635,7 @@ impl DeleteRepositoryError {
     /// Creates the `DeleteRepositoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRepositoryErrorKind::Unhandled(err.into()),
+            kind: DeleteRepositoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -17224,7 +16644,7 @@ impl DeleteRepositoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRepositoryErrorKind::Unhandled(err.into()),
+            kind: DeleteRepositoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -17310,7 +16730,7 @@ impl std::error::Error for DeleteRepositoryError {
             DeleteRepositoryErrorKind::EncryptionKeyUnavailableException(_inner) => Some(_inner),
             DeleteRepositoryErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             DeleteRepositoryErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            DeleteRepositoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRepositoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17323,6 +16743,14 @@ pub struct DescribeMergeConflictsError {
     pub kind: DescribeMergeConflictsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeMergeConflictsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeMergeConflictsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeMergeConflicts` operation.
 #[non_exhaustive]
@@ -17382,8 +16810,15 @@ pub enum DescribeMergeConflictsErrorKind {
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeMergeConflictsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17460,7 +16895,9 @@ impl DescribeMergeConflictsError {
     /// Creates the `DescribeMergeConflictsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeMergeConflictsErrorKind::Unhandled(err.into()),
+            kind: DescribeMergeConflictsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -17469,7 +16906,9 @@ impl DescribeMergeConflictsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeMergeConflictsErrorKind::Unhandled(err.into()),
+            kind: DescribeMergeConflictsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -17703,7 +17142,7 @@ impl std::error::Error for DescribeMergeConflictsError {
             DescribeMergeConflictsErrorKind::TipsDivergenceExceededException(_inner) => {
                 Some(_inner)
             }
-            DescribeMergeConflictsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeMergeConflictsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17716,6 +17155,16 @@ pub struct DescribePullRequestEventsError {
     pub kind: DescribePullRequestEventsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribePullRequestEventsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribePullRequestEventsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribePullRequestEvents` operation.
 #[non_exhaustive]
@@ -17749,8 +17198,15 @@ pub enum DescribePullRequestEventsErrorKind {
     PullRequestDoesNotExistException(crate::error::PullRequestDoesNotExistException),
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribePullRequestEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17809,7 +17265,9 @@ impl DescribePullRequestEventsError {
     /// Creates the `DescribePullRequestEventsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribePullRequestEventsErrorKind::Unhandled(err.into()),
+            kind: DescribePullRequestEventsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -17818,7 +17276,9 @@ impl DescribePullRequestEventsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribePullRequestEventsErrorKind::Unhandled(err.into()),
+            kind: DescribePullRequestEventsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -17970,7 +17430,7 @@ impl std::error::Error for DescribePullRequestEventsError {
             DescribePullRequestEventsErrorKind::PullRequestIdRequiredException(_inner) => {
                 Some(_inner)
             }
-            DescribePullRequestEventsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribePullRequestEventsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17983,6 +17443,18 @@ pub struct DisassociateApprovalRuleTemplateFromRepositoryError {
     pub kind: DisassociateApprovalRuleTemplateFromRepositoryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for DisassociateApprovalRuleTemplateFromRepositoryError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateApprovalRuleTemplateFromRepositoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DisassociateApprovalRuleTemplateFromRepository` operation.
 #[non_exhaustive]
@@ -18020,8 +17492,15 @@ pub enum DisassociateApprovalRuleTemplateFromRepositoryErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateApprovalRuleTemplateFromRepositoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18087,7 +17566,9 @@ impl DisassociateApprovalRuleTemplateFromRepositoryError {
     /// Creates the `DisassociateApprovalRuleTemplateFromRepositoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateApprovalRuleTemplateFromRepositoryErrorKind::Unhandled(err.into()),
+            kind: DisassociateApprovalRuleTemplateFromRepositoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -18096,7 +17577,9 @@ impl DisassociateApprovalRuleTemplateFromRepositoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateApprovalRuleTemplateFromRepositoryErrorKind::Unhandled(err.into()),
+            kind: DisassociateApprovalRuleTemplateFromRepositoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -18217,7 +17700,7 @@ impl std::error::Error for DisassociateApprovalRuleTemplateFromRepositoryError {
             Some(_inner)
             ,
             DisassociateApprovalRuleTemplateFromRepositoryErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -18231,6 +17714,16 @@ pub struct EvaluatePullRequestApprovalRulesError {
     pub kind: EvaluatePullRequestApprovalRulesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for EvaluatePullRequestApprovalRulesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: EvaluatePullRequestApprovalRulesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `EvaluatePullRequestApprovalRules` operation.
 #[non_exhaustive]
@@ -18260,8 +17753,15 @@ pub enum EvaluatePullRequestApprovalRulesErrorKind {
     RevisionIdRequiredException(crate::error::RevisionIdRequiredException),
     /// <p>The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to retrieve the current revision ID.</p>
     RevisionNotCurrentException(crate::error::RevisionNotCurrentException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EvaluatePullRequestApprovalRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18323,7 +17823,9 @@ impl EvaluatePullRequestApprovalRulesError {
     /// Creates the `EvaluatePullRequestApprovalRulesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EvaluatePullRequestApprovalRulesErrorKind::Unhandled(err.into()),
+            kind: EvaluatePullRequestApprovalRulesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -18332,7 +17834,9 @@ impl EvaluatePullRequestApprovalRulesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EvaluatePullRequestApprovalRulesErrorKind::Unhandled(err.into()),
+            kind: EvaluatePullRequestApprovalRulesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -18470,7 +17974,7 @@ impl std::error::Error for EvaluatePullRequestApprovalRulesError {
             EvaluatePullRequestApprovalRulesErrorKind::RevisionNotCurrentException(_inner) => {
                 Some(_inner)
             }
-            EvaluatePullRequestApprovalRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EvaluatePullRequestApprovalRulesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18483,6 +17987,14 @@ pub struct GetApprovalRuleTemplateError {
     pub kind: GetApprovalRuleTemplateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetApprovalRuleTemplateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetApprovalRuleTemplateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetApprovalRuleTemplate` operation.
 #[non_exhaustive]
@@ -18500,8 +18012,15 @@ pub enum GetApprovalRuleTemplateErrorKind {
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetApprovalRuleTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18536,7 +18055,9 @@ impl GetApprovalRuleTemplateError {
     /// Creates the `GetApprovalRuleTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetApprovalRuleTemplateErrorKind::Unhandled(err.into()),
+            kind: GetApprovalRuleTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -18545,7 +18066,9 @@ impl GetApprovalRuleTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetApprovalRuleTemplateErrorKind::Unhandled(err.into()),
+            kind: GetApprovalRuleTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -18603,7 +18126,7 @@ impl std::error::Error for GetApprovalRuleTemplateError {
             GetApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException(_inner) => {
                 Some(_inner)
             }
-            GetApprovalRuleTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetApprovalRuleTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18616,6 +18139,14 @@ pub struct GetBlobError {
     pub kind: GetBlobErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetBlobError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetBlobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetBlob` operation.
 #[non_exhaustive]
@@ -18649,8 +18180,15 @@ pub enum GetBlobErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBlobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18688,7 +18226,7 @@ impl GetBlobError {
     /// Creates the `GetBlobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBlobErrorKind::Unhandled(err.into()),
+            kind: GetBlobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -18697,7 +18235,7 @@ impl GetBlobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBlobErrorKind::Unhandled(err.into()),
+            kind: GetBlobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -18809,7 +18347,7 @@ impl std::error::Error for GetBlobError {
             GetBlobErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             GetBlobErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetBlobErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetBlobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBlobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18822,6 +18360,14 @@ pub struct GetBranchError {
     pub kind: GetBranchErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetBranchError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetBranchErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetBranch` operation.
 #[non_exhaustive]
@@ -18853,8 +18399,15 @@ pub enum GetBranchErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBranchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18891,7 +18444,7 @@ impl GetBranchError {
     /// Creates the `GetBranchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBranchErrorKind::Unhandled(err.into()),
+            kind: GetBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -18900,7 +18453,7 @@ impl GetBranchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBranchErrorKind::Unhandled(err.into()),
+            kind: GetBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -19016,7 +18569,7 @@ impl std::error::Error for GetBranchError {
             GetBranchErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             GetBranchErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetBranchErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetBranchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBranchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19029,6 +18582,14 @@ pub struct GetCommentError {
     pub kind: GetCommentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetCommentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetCommentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetComment` operation.
 #[non_exhaustive]
@@ -19054,8 +18615,15 @@ pub enum GetCommentErrorKind {
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
     /// <p>The comment ID is not in a valid format. Make sure that you have provided the full comment ID.</p>
     InvalidCommentIdException(crate::error::InvalidCommentIdException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCommentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19090,7 +18658,7 @@ impl GetCommentError {
     /// Creates the `GetCommentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCommentErrorKind::Unhandled(err.into()),
+            kind: GetCommentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -19099,7 +18667,7 @@ impl GetCommentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCommentErrorKind::Unhandled(err.into()),
+            kind: GetCommentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -19196,7 +18764,7 @@ impl std::error::Error for GetCommentError {
             GetCommentErrorKind::EncryptionKeyNotFoundException(_inner) => Some(_inner),
             GetCommentErrorKind::EncryptionKeyUnavailableException(_inner) => Some(_inner),
             GetCommentErrorKind::InvalidCommentIdException(_inner) => Some(_inner),
-            GetCommentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCommentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19209,6 +18777,14 @@ pub struct GetCommentReactionsError {
     pub kind: GetCommentReactionsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetCommentReactionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetCommentReactionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetCommentReactions` operation.
 #[non_exhaustive]
@@ -19228,8 +18804,15 @@ pub enum GetCommentReactionsErrorKind {
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
     /// <p>The Amazon Resource Name (ARN) of the user or identity is not valid.</p>
     InvalidReactionUserArnException(crate::error::InvalidReactionUserArnException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCommentReactionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19264,7 +18847,7 @@ impl GetCommentReactionsError {
     /// Creates the `GetCommentReactionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCommentReactionsErrorKind::Unhandled(err.into()),
+            kind: GetCommentReactionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -19273,7 +18856,7 @@ impl GetCommentReactionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCommentReactionsErrorKind::Unhandled(err.into()),
+            kind: GetCommentReactionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -19357,7 +18940,7 @@ impl std::error::Error for GetCommentReactionsError {
             GetCommentReactionsErrorKind::InvalidContinuationTokenException(_inner) => Some(_inner),
             GetCommentReactionsErrorKind::InvalidMaxResultsException(_inner) => Some(_inner),
             GetCommentReactionsErrorKind::InvalidReactionUserArnException(_inner) => Some(_inner),
-            GetCommentReactionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCommentReactionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19370,6 +18953,16 @@ pub struct GetCommentsForComparedCommitError {
     pub kind: GetCommentsForComparedCommitErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetCommentsForComparedCommitError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetCommentsForComparedCommitErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetCommentsForComparedCommit` operation.
 #[non_exhaustive]
@@ -19405,8 +18998,15 @@ pub enum GetCommentsForComparedCommitErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCommentsForComparedCommitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19471,7 +19071,9 @@ impl GetCommentsForComparedCommitError {
     /// Creates the `GetCommentsForComparedCommitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCommentsForComparedCommitErrorKind::Unhandled(err.into()),
+            kind: GetCommentsForComparedCommitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -19480,7 +19082,9 @@ impl GetCommentsForComparedCommitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCommentsForComparedCommitErrorKind::Unhandled(err.into()),
+            kind: GetCommentsForComparedCommitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -19636,7 +19240,7 @@ impl std::error::Error for GetCommentsForComparedCommitError {
             GetCommentsForComparedCommitErrorKind::RepositoryNameRequiredException(_inner) => {
                 Some(_inner)
             }
-            GetCommentsForComparedCommitErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCommentsForComparedCommitErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19649,6 +19253,16 @@ pub struct GetCommentsForPullRequestError {
     pub kind: GetCommentsForPullRequestErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetCommentsForPullRequestError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetCommentsForPullRequestErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetCommentsForPullRequest` operation.
 #[non_exhaustive]
@@ -19694,8 +19308,15 @@ pub enum GetCommentsForPullRequestErrorKind {
     RepositoryNotAssociatedWithPullRequestException(
         crate::error::RepositoryNotAssociatedWithPullRequestException,
     ),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCommentsForPullRequestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19766,7 +19387,9 @@ impl GetCommentsForPullRequestError {
     /// Creates the `GetCommentsForPullRequestError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCommentsForPullRequestErrorKind::Unhandled(err.into()),
+            kind: GetCommentsForPullRequestErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -19775,7 +19398,9 @@ impl GetCommentsForPullRequestError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCommentsForPullRequestErrorKind::Unhandled(err.into()),
+            kind: GetCommentsForPullRequestErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -19965,7 +19590,7 @@ impl std::error::Error for GetCommentsForPullRequestError {
             GetCommentsForPullRequestErrorKind::RepositoryNotAssociatedWithPullRequestException(
                 _inner,
             ) => Some(_inner),
-            GetCommentsForPullRequestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCommentsForPullRequestErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19978,6 +19603,14 @@ pub struct GetCommitError {
     pub kind: GetCommitErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetCommitError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetCommitErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetCommit` operation.
 #[non_exhaustive]
@@ -20009,8 +19642,15 @@ pub enum GetCommitErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCommitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20047,7 +19687,7 @@ impl GetCommitError {
     /// Creates the `GetCommitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCommitErrorKind::Unhandled(err.into()),
+            kind: GetCommitErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -20056,7 +19696,7 @@ impl GetCommitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCommitErrorKind::Unhandled(err.into()),
+            kind: GetCommitErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -20166,7 +19806,7 @@ impl std::error::Error for GetCommitError {
             GetCommitErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             GetCommitErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetCommitErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetCommitErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCommitErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20179,6 +19819,14 @@ pub struct GetDifferencesError {
     pub kind: GetDifferencesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDifferencesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDifferencesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetDifferences` operation.
 #[non_exhaustive]
@@ -20220,8 +19868,15 @@ pub enum GetDifferencesErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDifferencesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20265,7 +19920,7 @@ impl GetDifferencesError {
     /// Creates the `GetDifferencesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDifferencesErrorKind::Unhandled(err.into()),
+            kind: GetDifferencesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -20274,7 +19929,7 @@ impl GetDifferencesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDifferencesErrorKind::Unhandled(err.into()),
+            kind: GetDifferencesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -20429,7 +20084,7 @@ impl std::error::Error for GetDifferencesError {
             GetDifferencesErrorKind::PathDoesNotExistException(_inner) => Some(_inner),
             GetDifferencesErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetDifferencesErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetDifferencesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDifferencesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20442,6 +20097,14 @@ pub struct GetFileError {
     pub kind: GetFileErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetFileError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetFileErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetFile` operation.
 #[non_exhaustive]
@@ -20479,8 +20142,15 @@ pub enum GetFileErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20520,7 +20190,7 @@ impl GetFileError {
     /// Creates the `GetFileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFileErrorKind::Unhandled(err.into()),
+            kind: GetFileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -20529,7 +20199,7 @@ impl GetFileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFileErrorKind::Unhandled(err.into()),
+            kind: GetFileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -20651,7 +20321,7 @@ impl std::error::Error for GetFileError {
             GetFileErrorKind::PathRequiredException(_inner) => Some(_inner),
             GetFileErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetFileErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetFileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20664,6 +20334,14 @@ pub struct GetFolderError {
     pub kind: GetFolderErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetFolderError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetFolderErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetFolder` operation.
 #[non_exhaustive]
@@ -20699,8 +20377,15 @@ pub enum GetFolderErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFolderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20739,7 +20424,7 @@ impl GetFolderError {
     /// Creates the `GetFolderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFolderErrorKind::Unhandled(err.into()),
+            kind: GetFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -20748,7 +20433,7 @@ impl GetFolderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFolderErrorKind::Unhandled(err.into()),
+            kind: GetFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -20871,7 +20556,7 @@ impl std::error::Error for GetFolderError {
             GetFolderErrorKind::PathRequiredException(_inner) => Some(_inner),
             GetFolderErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetFolderErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetFolderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFolderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20884,6 +20569,14 @@ pub struct GetMergeCommitError {
     pub kind: GetMergeCommitErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetMergeCommitError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetMergeCommitErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetMergeCommit` operation.
 #[non_exhaustive]
@@ -20921,8 +20614,15 @@ pub enum GetMergeCommitErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMergeCommitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20965,7 +20665,7 @@ impl GetMergeCommitError {
     /// Creates the `GetMergeCommitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMergeCommitErrorKind::Unhandled(err.into()),
+            kind: GetMergeCommitErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -20974,7 +20674,7 @@ impl GetMergeCommitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMergeCommitErrorKind::Unhandled(err.into()),
+            kind: GetMergeCommitErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -21110,7 +20810,7 @@ impl std::error::Error for GetMergeCommitError {
             GetMergeCommitErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             GetMergeCommitErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetMergeCommitErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetMergeCommitErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMergeCommitErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -21123,6 +20823,14 @@ pub struct GetMergeConflictsError {
     pub kind: GetMergeConflictsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetMergeConflictsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetMergeConflictsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetMergeConflicts` operation.
 #[non_exhaustive]
@@ -21182,8 +20890,15 @@ pub enum GetMergeConflictsErrorKind {
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMergeConflictsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21245,7 +20960,7 @@ impl GetMergeConflictsError {
     /// Creates the `GetMergeConflictsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMergeConflictsErrorKind::Unhandled(err.into()),
+            kind: GetMergeConflictsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -21254,7 +20969,7 @@ impl GetMergeConflictsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMergeConflictsErrorKind::Unhandled(err.into()),
+            kind: GetMergeConflictsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -21470,7 +21185,7 @@ impl std::error::Error for GetMergeConflictsError {
             GetMergeConflictsErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetMergeConflictsErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
             GetMergeConflictsErrorKind::TipsDivergenceExceededException(_inner) => Some(_inner),
-            GetMergeConflictsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMergeConflictsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -21483,6 +21198,14 @@ pub struct GetMergeOptionsError {
     pub kind: GetMergeOptionsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetMergeOptionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetMergeOptionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetMergeOptions` operation.
 #[non_exhaustive]
@@ -21528,8 +21251,15 @@ pub enum GetMergeOptionsErrorKind {
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMergeOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21579,7 +21309,7 @@ impl GetMergeOptionsError {
     /// Creates the `GetMergeOptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMergeOptionsErrorKind::Unhandled(err.into()),
+            kind: GetMergeOptionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -21588,7 +21318,7 @@ impl GetMergeOptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMergeOptionsErrorKind::Unhandled(err.into()),
+            kind: GetMergeOptionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -21752,7 +21482,7 @@ impl std::error::Error for GetMergeOptionsError {
             GetMergeOptionsErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetMergeOptionsErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
             GetMergeOptionsErrorKind::TipsDivergenceExceededException(_inner) => Some(_inner),
-            GetMergeOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMergeOptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -21765,6 +21495,14 @@ pub struct GetPullRequestError {
     pub kind: GetPullRequestErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetPullRequestError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetPullRequestErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetPullRequest` operation.
 #[non_exhaustive]
@@ -21788,8 +21526,15 @@ pub enum GetPullRequestErrorKind {
     PullRequestDoesNotExistException(crate::error::PullRequestDoesNotExistException),
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPullRequestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21825,7 +21570,7 @@ impl GetPullRequestError {
     /// Creates the `GetPullRequestError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPullRequestErrorKind::Unhandled(err.into()),
+            kind: GetPullRequestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -21834,7 +21579,7 @@ impl GetPullRequestError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPullRequestErrorKind::Unhandled(err.into()),
+            kind: GetPullRequestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -21928,7 +21673,7 @@ impl std::error::Error for GetPullRequestError {
             GetPullRequestErrorKind::InvalidPullRequestIdException(_inner) => Some(_inner),
             GetPullRequestErrorKind::PullRequestDoesNotExistException(_inner) => Some(_inner),
             GetPullRequestErrorKind::PullRequestIdRequiredException(_inner) => Some(_inner),
-            GetPullRequestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPullRequestErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -21941,6 +21686,16 @@ pub struct GetPullRequestApprovalStatesError {
     pub kind: GetPullRequestApprovalStatesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetPullRequestApprovalStatesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetPullRequestApprovalStatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetPullRequestApprovalStates` operation.
 #[non_exhaustive]
@@ -21968,8 +21723,15 @@ pub enum GetPullRequestApprovalStatesErrorKind {
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
     /// <p>A revision ID is required, but was not provided.</p>
     RevisionIdRequiredException(crate::error::RevisionIdRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPullRequestApprovalStatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22025,7 +21787,9 @@ impl GetPullRequestApprovalStatesError {
     /// Creates the `GetPullRequestApprovalStatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPullRequestApprovalStatesErrorKind::Unhandled(err.into()),
+            kind: GetPullRequestApprovalStatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -22034,7 +21798,9 @@ impl GetPullRequestApprovalStatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPullRequestApprovalStatesErrorKind::Unhandled(err.into()),
+            kind: GetPullRequestApprovalStatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -22162,7 +21928,7 @@ impl std::error::Error for GetPullRequestApprovalStatesError {
             GetPullRequestApprovalStatesErrorKind::RevisionIdRequiredException(_inner) => {
                 Some(_inner)
             }
-            GetPullRequestApprovalStatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPullRequestApprovalStatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22175,6 +21941,16 @@ pub struct GetPullRequestOverrideStateError {
     pub kind: GetPullRequestOverrideStateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetPullRequestOverrideStateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetPullRequestOverrideStateErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetPullRequestOverrideState` operation.
 #[non_exhaustive]
@@ -22202,8 +21978,15 @@ pub enum GetPullRequestOverrideStateErrorKind {
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
     /// <p>A revision ID is required, but was not provided.</p>
     RevisionIdRequiredException(crate::error::RevisionIdRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPullRequestOverrideStateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22259,7 +22042,9 @@ impl GetPullRequestOverrideStateError {
     /// Creates the `GetPullRequestOverrideStateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPullRequestOverrideStateErrorKind::Unhandled(err.into()),
+            kind: GetPullRequestOverrideStateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -22268,7 +22053,9 @@ impl GetPullRequestOverrideStateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPullRequestOverrideStateErrorKind::Unhandled(err.into()),
+            kind: GetPullRequestOverrideStateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -22396,7 +22183,7 @@ impl std::error::Error for GetPullRequestOverrideStateError {
             GetPullRequestOverrideStateErrorKind::RevisionIdRequiredException(_inner) => {
                 Some(_inner)
             }
-            GetPullRequestOverrideStateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPullRequestOverrideStateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22409,6 +22196,14 @@ pub struct GetRepositoryError {
     pub kind: GetRepositoryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRepositoryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRepositoryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRepository` operation.
 #[non_exhaustive]
@@ -22434,8 +22229,15 @@ pub enum GetRepositoryErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRepositoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22471,7 +22273,7 @@ impl GetRepositoryError {
     /// Creates the `GetRepositoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRepositoryErrorKind::Unhandled(err.into()),
+            kind: GetRepositoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -22480,7 +22282,7 @@ impl GetRepositoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRepositoryErrorKind::Unhandled(err.into()),
+            kind: GetRepositoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -22574,7 +22376,7 @@ impl std::error::Error for GetRepositoryError {
             GetRepositoryErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             GetRepositoryErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetRepositoryErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetRepositoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRepositoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22587,6 +22389,14 @@ pub struct GetRepositoryTriggersError {
     pub kind: GetRepositoryTriggersErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRepositoryTriggersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRepositoryTriggersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRepositoryTriggers` operation.
 #[non_exhaustive]
@@ -22612,8 +22422,15 @@ pub enum GetRepositoryTriggersErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRepositoryTriggersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22657,7 +22474,9 @@ impl GetRepositoryTriggersError {
     /// Creates the `GetRepositoryTriggersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRepositoryTriggersErrorKind::Unhandled(err.into()),
+            kind: GetRepositoryTriggersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -22666,7 +22485,9 @@ impl GetRepositoryTriggersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRepositoryTriggersErrorKind::Unhandled(err.into()),
+            kind: GetRepositoryTriggersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -22764,7 +22585,7 @@ impl std::error::Error for GetRepositoryTriggersError {
             GetRepositoryTriggersErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             GetRepositoryTriggersErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetRepositoryTriggersErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetRepositoryTriggersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRepositoryTriggersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22778,6 +22599,16 @@ pub struct ListApprovalRuleTemplatesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListApprovalRuleTemplatesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListApprovalRuleTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListApprovalRuleTemplates` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -22786,8 +22617,15 @@ pub enum ListApprovalRuleTemplatesErrorKind {
     InvalidContinuationTokenException(crate::error::InvalidContinuationTokenException),
     /// <p>The specified number of maximum results is not valid.</p>
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListApprovalRuleTemplatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22817,7 +22655,9 @@ impl ListApprovalRuleTemplatesError {
     /// Creates the `ListApprovalRuleTemplatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListApprovalRuleTemplatesErrorKind::Unhandled(err.into()),
+            kind: ListApprovalRuleTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -22826,7 +22666,9 @@ impl ListApprovalRuleTemplatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListApprovalRuleTemplatesErrorKind::Unhandled(err.into()),
+            kind: ListApprovalRuleTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -22872,7 +22714,7 @@ impl std::error::Error for ListApprovalRuleTemplatesError {
                 Some(_inner)
             }
             ListApprovalRuleTemplatesErrorKind::InvalidMaxResultsException(_inner) => Some(_inner),
-            ListApprovalRuleTemplatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListApprovalRuleTemplatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22885,6 +22727,18 @@ pub struct ListAssociatedApprovalRuleTemplatesForRepositoryError {
     pub kind: ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for ListAssociatedApprovalRuleTemplatesForRepositoryError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListAssociatedApprovalRuleTemplatesForRepository` operation.
 #[non_exhaustive]
@@ -22914,8 +22768,15 @@ pub enum ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAssociatedApprovalRuleTemplatesForRepositoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22978,7 +22839,9 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryError {
     /// Creates the `ListAssociatedApprovalRuleTemplatesForRepositoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::Unhandled(err.into()),
+            kind: ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -22987,7 +22850,9 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::Unhandled(err.into()),
+            kind: ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -23091,7 +22956,7 @@ impl std::error::Error for ListAssociatedApprovalRuleTemplatesForRepositoryError
             Some(_inner)
             ,
             ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -23105,6 +22970,14 @@ pub struct ListBranchesError {
     pub kind: ListBranchesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListBranchesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListBranchesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListBranches` operation.
 #[non_exhaustive]
@@ -23132,8 +23005,15 @@ pub enum ListBranchesErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListBranchesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23170,7 +23050,7 @@ impl ListBranchesError {
     /// Creates the `ListBranchesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListBranchesErrorKind::Unhandled(err.into()),
+            kind: ListBranchesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -23179,7 +23059,7 @@ impl ListBranchesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListBranchesErrorKind::Unhandled(err.into()),
+            kind: ListBranchesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -23279,7 +23159,7 @@ impl std::error::Error for ListBranchesError {
             ListBranchesErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             ListBranchesErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             ListBranchesErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            ListBranchesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListBranchesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -23292,6 +23172,14 @@ pub struct ListPullRequestsError {
     pub kind: ListPullRequestsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListPullRequestsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListPullRequestsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListPullRequests` operation.
 #[non_exhaustive]
@@ -23327,8 +23215,15 @@ pub enum ListPullRequestsErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPullRequestsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23369,7 +23264,7 @@ impl ListPullRequestsError {
     /// Creates the `ListPullRequestsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPullRequestsErrorKind::Unhandled(err.into()),
+            kind: ListPullRequestsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -23378,7 +23273,7 @@ impl ListPullRequestsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPullRequestsErrorKind::Unhandled(err.into()),
+            kind: ListPullRequestsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -23512,7 +23407,7 @@ impl std::error::Error for ListPullRequestsError {
             ListPullRequestsErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             ListPullRequestsErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             ListPullRequestsErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            ListPullRequestsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPullRequestsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -23526,6 +23421,14 @@ pub struct ListRepositoriesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListRepositoriesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListRepositoriesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListRepositories` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -23536,8 +23439,15 @@ pub enum ListRepositoriesErrorKind {
     InvalidOrderException(crate::error::InvalidOrderException),
     /// <p>The specified sort by value is not valid.</p>
     InvalidSortByException(crate::error::InvalidSortByException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRepositoriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23566,7 +23476,7 @@ impl ListRepositoriesError {
     /// Creates the `ListRepositoriesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRepositoriesErrorKind::Unhandled(err.into()),
+            kind: ListRepositoriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -23575,7 +23485,7 @@ impl ListRepositoriesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRepositoriesErrorKind::Unhandled(err.into()),
+            kind: ListRepositoriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -23627,7 +23537,7 @@ impl std::error::Error for ListRepositoriesError {
             ListRepositoriesErrorKind::InvalidContinuationTokenException(_inner) => Some(_inner),
             ListRepositoriesErrorKind::InvalidOrderException(_inner) => Some(_inner),
             ListRepositoriesErrorKind::InvalidSortByException(_inner) => Some(_inner),
-            ListRepositoriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListRepositoriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -23640,6 +23550,18 @@ pub struct ListRepositoriesForApprovalRuleTemplateError {
     pub kind: ListRepositoriesForApprovalRuleTemplateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for ListRepositoriesForApprovalRuleTemplateError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListRepositoriesForApprovalRuleTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListRepositoriesForApprovalRuleTemplate` operation.
 #[non_exhaustive]
@@ -23673,8 +23595,15 @@ pub enum ListRepositoriesForApprovalRuleTemplateErrorKind {
     InvalidContinuationTokenException(crate::error::InvalidContinuationTokenException),
     /// <p>The specified number of maximum results is not valid.</p>
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRepositoriesForApprovalRuleTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23735,7 +23664,9 @@ impl ListRepositoriesForApprovalRuleTemplateError {
     /// Creates the `ListRepositoriesForApprovalRuleTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRepositoriesForApprovalRuleTemplateErrorKind::Unhandled(err.into()),
+            kind: ListRepositoriesForApprovalRuleTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -23744,7 +23675,9 @@ impl ListRepositoriesForApprovalRuleTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRepositoriesForApprovalRuleTemplateErrorKind::Unhandled(err.into()),
+            kind: ListRepositoriesForApprovalRuleTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -23861,7 +23794,7 @@ impl std::error::Error for ListRepositoriesForApprovalRuleTemplateError {
             Some(_inner)
             ,
             ListRepositoriesForApprovalRuleTemplateErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -23875,6 +23808,14 @@ pub struct ListTagsForResourceError {
     pub kind: ListTagsForResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListTagsForResource` operation.
 #[non_exhaustive]
@@ -23890,8 +23831,15 @@ pub enum ListTagsForResourceErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
     ResourceArnRequiredException(crate::error::ResourceArnRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23921,7 +23869,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -23930,7 +23878,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -23990,7 +23938,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InvalidResourceArnException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceArnRequiredException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -24003,6 +23951,16 @@ pub struct MergeBranchesByFastForwardError {
     pub kind: MergeBranchesByFastForwardErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for MergeBranchesByFastForwardError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: MergeBranchesByFastForwardErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `MergeBranchesByFastForward` operation.
 #[non_exhaustive]
@@ -24050,8 +24008,15 @@ pub enum MergeBranchesByFastForwardErrorKind {
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for MergeBranchesByFastForwardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24130,7 +24095,9 @@ impl MergeBranchesByFastForwardError {
     /// Creates the `MergeBranchesByFastForwardError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: MergeBranchesByFastForwardErrorKind::Unhandled(err.into()),
+            kind: MergeBranchesByFastForwardErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -24139,7 +24106,9 @@ impl MergeBranchesByFastForwardError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: MergeBranchesByFastForwardErrorKind::Unhandled(err.into()),
+            kind: MergeBranchesByFastForwardErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -24351,7 +24320,7 @@ impl std::error::Error for MergeBranchesByFastForwardError {
             MergeBranchesByFastForwardErrorKind::TipsDivergenceExceededException(_inner) => {
                 Some(_inner)
             }
-            MergeBranchesByFastForwardErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            MergeBranchesByFastForwardErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -24364,6 +24333,14 @@ pub struct MergeBranchesBySquashError {
     pub kind: MergeBranchesBySquashErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for MergeBranchesBySquashError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: MergeBranchesBySquashErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `MergeBranchesBySquash` operation.
 #[non_exhaustive]
@@ -24459,8 +24436,15 @@ pub enum MergeBranchesBySquashErrorKind {
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for MergeBranchesBySquashError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24567,7 +24551,9 @@ impl MergeBranchesBySquashError {
     /// Creates the `MergeBranchesBySquashError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: MergeBranchesBySquashErrorKind::Unhandled(err.into()),
+            kind: MergeBranchesBySquashErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -24576,7 +24562,9 @@ impl MergeBranchesBySquashError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: MergeBranchesBySquashErrorKind::Unhandled(err.into()),
+            kind: MergeBranchesBySquashErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -24950,7 +24938,7 @@ impl std::error::Error for MergeBranchesBySquashError {
             MergeBranchesBySquashErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             MergeBranchesBySquashErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
             MergeBranchesBySquashErrorKind::TipsDivergenceExceededException(_inner) => Some(_inner),
-            MergeBranchesBySquashErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            MergeBranchesBySquashErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -24963,6 +24951,14 @@ pub struct MergeBranchesByThreeWayError {
     pub kind: MergeBranchesByThreeWayErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for MergeBranchesByThreeWayError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: MergeBranchesByThreeWayErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `MergeBranchesByThreeWay` operation.
 #[non_exhaustive]
@@ -25058,8 +25054,15 @@ pub enum MergeBranchesByThreeWayErrorKind {
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for MergeBranchesByThreeWayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25172,7 +25175,9 @@ impl MergeBranchesByThreeWayError {
     /// Creates the `MergeBranchesByThreeWayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: MergeBranchesByThreeWayErrorKind::Unhandled(err.into()),
+            kind: MergeBranchesByThreeWayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -25181,7 +25186,9 @@ impl MergeBranchesByThreeWayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: MergeBranchesByThreeWayErrorKind::Unhandled(err.into()),
+            kind: MergeBranchesByThreeWayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -25569,7 +25576,7 @@ impl std::error::Error for MergeBranchesByThreeWayError {
             MergeBranchesByThreeWayErrorKind::TipsDivergenceExceededException(_inner) => {
                 Some(_inner)
             }
-            MergeBranchesByThreeWayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            MergeBranchesByThreeWayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -25582,6 +25589,16 @@ pub struct MergePullRequestByFastForwardError {
     pub kind: MergePullRequestByFastForwardErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for MergePullRequestByFastForwardError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: MergePullRequestByFastForwardErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `MergePullRequestByFastForward` operation.
 #[non_exhaustive]
@@ -25635,8 +25652,15 @@ pub enum MergePullRequestByFastForwardErrorKind {
     TipOfSourceReferenceIsDifferentException(
         crate::error::TipOfSourceReferenceIsDifferentException,
     ),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for MergePullRequestByFastForwardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25724,7 +25748,9 @@ impl MergePullRequestByFastForwardError {
     /// Creates the `MergePullRequestByFastForwardError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: MergePullRequestByFastForwardErrorKind::Unhandled(err.into()),
+            kind: MergePullRequestByFastForwardErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -25733,7 +25759,9 @@ impl MergePullRequestByFastForwardError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: MergePullRequestByFastForwardErrorKind::Unhandled(err.into()),
+            kind: MergePullRequestByFastForwardErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -25956,7 +25984,7 @@ impl std::error::Error for MergePullRequestByFastForwardError {
             Some(_inner)
             ,
             MergePullRequestByFastForwardErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -25970,6 +25998,16 @@ pub struct MergePullRequestBySquashError {
     pub kind: MergePullRequestBySquashErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for MergePullRequestBySquashError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: MergePullRequestBySquashErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `MergePullRequestBySquash` operation.
 #[non_exhaustive]
@@ -26069,8 +26107,15 @@ pub enum MergePullRequestBySquashErrorKind {
     ),
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for MergePullRequestBySquashError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26212,7 +26257,9 @@ impl MergePullRequestBySquashError {
     /// Creates the `MergePullRequestBySquashError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: MergePullRequestBySquashErrorKind::Unhandled(err.into()),
+            kind: MergePullRequestBySquashErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -26221,7 +26268,9 @@ impl MergePullRequestBySquashError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: MergePullRequestBySquashErrorKind::Unhandled(err.into()),
+            kind: MergePullRequestBySquashErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -26630,7 +26679,7 @@ impl std::error::Error for MergePullRequestBySquashError {
             Some(_inner)
             ,
             MergePullRequestBySquashErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -26644,6 +26693,16 @@ pub struct MergePullRequestByThreeWayError {
     pub kind: MergePullRequestByThreeWayErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for MergePullRequestByThreeWayError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: MergePullRequestByThreeWayErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `MergePullRequestByThreeWay` operation.
 #[non_exhaustive]
@@ -26743,8 +26802,15 @@ pub enum MergePullRequestByThreeWayErrorKind {
     ),
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for MergePullRequestByThreeWayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26886,7 +26952,9 @@ impl MergePullRequestByThreeWayError {
     /// Creates the `MergePullRequestByThreeWayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: MergePullRequestByThreeWayErrorKind::Unhandled(err.into()),
+            kind: MergePullRequestByThreeWayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -26895,7 +26963,9 @@ impl MergePullRequestByThreeWayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: MergePullRequestByThreeWayErrorKind::Unhandled(err.into()),
+            kind: MergePullRequestByThreeWayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -27306,7 +27376,7 @@ impl std::error::Error for MergePullRequestByThreeWayError {
             Some(_inner)
             ,
             MergePullRequestByThreeWayErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -27320,6 +27390,16 @@ pub struct OverridePullRequestApprovalRulesError {
     pub kind: OverridePullRequestApprovalRulesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for OverridePullRequestApprovalRulesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: OverridePullRequestApprovalRulesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `OverridePullRequestApprovalRules` operation.
 #[non_exhaustive]
@@ -27357,8 +27437,15 @@ pub enum OverridePullRequestApprovalRulesErrorKind {
     RevisionIdRequiredException(crate::error::RevisionIdRequiredException),
     /// <p>The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to retrieve the current revision ID.</p>
     RevisionNotCurrentException(crate::error::RevisionNotCurrentException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for OverridePullRequestApprovalRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27432,7 +27519,9 @@ impl OverridePullRequestApprovalRulesError {
     /// Creates the `OverridePullRequestApprovalRulesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: OverridePullRequestApprovalRulesErrorKind::Unhandled(err.into()),
+            kind: OverridePullRequestApprovalRulesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -27441,7 +27530,9 @@ impl OverridePullRequestApprovalRulesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: OverridePullRequestApprovalRulesErrorKind::Unhandled(err.into()),
+            kind: OverridePullRequestApprovalRulesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -27619,7 +27710,7 @@ impl std::error::Error for OverridePullRequestApprovalRulesError {
             OverridePullRequestApprovalRulesErrorKind::RevisionNotCurrentException(_inner) => {
                 Some(_inner)
             }
-            OverridePullRequestApprovalRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            OverridePullRequestApprovalRulesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -27632,6 +27723,16 @@ pub struct PostCommentForComparedCommitError {
     pub kind: PostCommentForComparedCommitErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PostCommentForComparedCommitError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PostCommentForComparedCommitErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PostCommentForComparedCommit` operation.
 #[non_exhaustive]
@@ -27691,8 +27792,15 @@ pub enum PostCommentForComparedCommitErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PostCommentForComparedCommitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27789,7 +27897,9 @@ impl PostCommentForComparedCommitError {
     /// Creates the `PostCommentForComparedCommitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PostCommentForComparedCommitErrorKind::Unhandled(err.into()),
+            kind: PostCommentForComparedCommitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -27798,7 +27908,9 @@ impl PostCommentForComparedCommitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PostCommentForComparedCommitErrorKind::Unhandled(err.into()),
+            kind: PostCommentForComparedCommitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -28059,7 +28171,7 @@ impl std::error::Error for PostCommentForComparedCommitError {
             Some(_inner)
             ,
             PostCommentForComparedCommitErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -28073,6 +28185,16 @@ pub struct PostCommentForPullRequestError {
     pub kind: PostCommentForPullRequestErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PostCommentForPullRequestError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PostCommentForPullRequestErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PostCommentForPullRequest` operation.
 #[non_exhaustive]
@@ -28142,8 +28264,15 @@ pub enum PostCommentForPullRequestErrorKind {
     RepositoryNotAssociatedWithPullRequestException(
         crate::error::RepositoryNotAssociatedWithPullRequestException,
     ),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PostCommentForPullRequestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28240,7 +28369,9 @@ impl PostCommentForPullRequestError {
     /// Creates the `PostCommentForPullRequestError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PostCommentForPullRequestErrorKind::Unhandled(err.into()),
+            kind: PostCommentForPullRequestErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -28249,7 +28380,9 @@ impl PostCommentForPullRequestError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PostCommentForPullRequestErrorKind::Unhandled(err.into()),
+            kind: PostCommentForPullRequestErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -28535,7 +28668,7 @@ impl std::error::Error for PostCommentForPullRequestError {
             PostCommentForPullRequestErrorKind::RepositoryNotAssociatedWithPullRequestException(
                 _inner,
             ) => Some(_inner),
-            PostCommentForPullRequestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PostCommentForPullRequestErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -28548,6 +28681,14 @@ pub struct PostCommentReplyError {
     pub kind: PostCommentReplyErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PostCommentReplyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PostCommentReplyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PostCommentReply` operation.
 #[non_exhaustive]
@@ -28571,8 +28712,15 @@ pub enum PostCommentReplyErrorKind {
     InvalidClientRequestTokenException(crate::error::InvalidClientRequestTokenException),
     /// <p>The comment ID is not in a valid format. Make sure that you have provided the full comment ID.</p>
     InvalidCommentIdException(crate::error::InvalidCommentIdException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PostCommentReplyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28610,7 +28758,7 @@ impl PostCommentReplyError {
     /// Creates the `PostCommentReplyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PostCommentReplyErrorKind::Unhandled(err.into()),
+            kind: PostCommentReplyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -28619,7 +28767,7 @@ impl PostCommentReplyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PostCommentReplyErrorKind::Unhandled(err.into()),
+            kind: PostCommentReplyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -28715,7 +28863,7 @@ impl std::error::Error for PostCommentReplyError {
             }
             PostCommentReplyErrorKind::InvalidClientRequestTokenException(_inner) => Some(_inner),
             PostCommentReplyErrorKind::InvalidCommentIdException(_inner) => Some(_inner),
-            PostCommentReplyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PostCommentReplyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -28728,6 +28876,14 @@ pub struct PutCommentReactionError {
     pub kind: PutCommentReactionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutCommentReactionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutCommentReactionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutCommentReaction` operation.
 #[non_exhaustive]
@@ -28747,8 +28903,15 @@ pub enum PutCommentReactionErrorKind {
     ReactionLimitExceededException(crate::error::ReactionLimitExceededException),
     /// <p>A reaction value is required. </p>
     ReactionValueRequiredException(crate::error::ReactionValueRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutCommentReactionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28781,7 +28944,7 @@ impl PutCommentReactionError {
     /// Creates the `PutCommentReactionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutCommentReactionErrorKind::Unhandled(err.into()),
+            kind: PutCommentReactionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -28790,7 +28953,7 @@ impl PutCommentReactionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutCommentReactionErrorKind::Unhandled(err.into()),
+            kind: PutCommentReactionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -28874,7 +29037,7 @@ impl std::error::Error for PutCommentReactionError {
             PutCommentReactionErrorKind::InvalidReactionValueException(_inner) => Some(_inner),
             PutCommentReactionErrorKind::ReactionLimitExceededException(_inner) => Some(_inner),
             PutCommentReactionErrorKind::ReactionValueRequiredException(_inner) => Some(_inner),
-            PutCommentReactionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutCommentReactionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -28887,6 +29050,14 @@ pub struct PutFileError {
     pub kind: PutFileErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutFileError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutFileErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutFile` operation.
 #[non_exhaustive]
@@ -28962,8 +29133,15 @@ pub enum PutFileErrorKind {
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// <p>The file was not added or updated because the content of the file is exactly the same as the content of that file in the repository and branch that you specified.</p>
     SameFileContentException(crate::error::SameFileContentException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutFileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29019,7 +29197,7 @@ impl PutFileError {
     /// Creates the `PutFileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutFileErrorKind::Unhandled(err.into()),
+            kind: PutFileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -29028,7 +29206,7 @@ impl PutFileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutFileErrorKind::Unhandled(err.into()),
+            kind: PutFileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -29269,7 +29447,7 @@ impl std::error::Error for PutFileError {
             PutFileErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             PutFileErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
             PutFileErrorKind::SameFileContentException(_inner) => Some(_inner),
-            PutFileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutFileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -29282,6 +29460,14 @@ pub struct PutRepositoryTriggersError {
     pub kind: PutRepositoryTriggersErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutRepositoryTriggersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutRepositoryTriggersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutRepositoryTriggers` operation.
 #[non_exhaustive]
@@ -29347,8 +29533,15 @@ pub enum PutRepositoryTriggersErrorKind {
     RepositoryTriggerNameRequiredException(crate::error::RepositoryTriggerNameRequiredException),
     /// <p>The list of triggers for the repository is required, but was not specified.</p>
     RepositoryTriggersListRequiredException(crate::error::RepositoryTriggersListRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutRepositoryTriggersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29431,7 +29624,9 @@ impl PutRepositoryTriggersError {
     /// Creates the `PutRepositoryTriggersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutRepositoryTriggersErrorKind::Unhandled(err.into()),
+            kind: PutRepositoryTriggersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -29440,7 +29635,9 @@ impl PutRepositoryTriggersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutRepositoryTriggersErrorKind::Unhandled(err.into()),
+            kind: PutRepositoryTriggersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -29668,7 +29865,7 @@ impl std::error::Error for PutRepositoryTriggersError {
             PutRepositoryTriggersErrorKind::RepositoryTriggersListRequiredException(_inner) => {
                 Some(_inner)
             }
-            PutRepositoryTriggersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutRepositoryTriggersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -29681,6 +29878,14 @@ pub struct TagResourceError {
     pub kind: TagResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `TagResource` operation.
 #[non_exhaustive]
@@ -29706,8 +29911,15 @@ pub enum TagResourceErrorKind {
     TagsMapRequiredException(crate::error::TagsMapRequiredException),
     /// <p>The maximum number of tags for an AWS CodeCommit resource has been exceeded.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29742,7 +29954,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -29751,7 +29963,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -29842,7 +30054,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::TagPolicyException(_inner) => Some(_inner),
             TagResourceErrorKind::TagsMapRequiredException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -29855,6 +30067,14 @@ pub struct TestRepositoryTriggersError {
     pub kind: TestRepositoryTriggersErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for TestRepositoryTriggersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TestRepositoryTriggersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `TestRepositoryTriggers` operation.
 #[non_exhaustive]
@@ -29920,8 +30140,15 @@ pub enum TestRepositoryTriggersErrorKind {
     RepositoryTriggerNameRequiredException(crate::error::RepositoryTriggerNameRequiredException),
     /// <p>The list of triggers for the repository is required, but was not specified.</p>
     RepositoryTriggersListRequiredException(crate::error::RepositoryTriggersListRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TestRepositoryTriggersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30010,7 +30237,9 @@ impl TestRepositoryTriggersError {
     /// Creates the `TestRepositoryTriggersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TestRepositoryTriggersErrorKind::Unhandled(err.into()),
+            kind: TestRepositoryTriggersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -30019,7 +30248,9 @@ impl TestRepositoryTriggersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TestRepositoryTriggersErrorKind::Unhandled(err.into()),
+            kind: TestRepositoryTriggersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -30251,7 +30482,7 @@ impl std::error::Error for TestRepositoryTriggersError {
             TestRepositoryTriggersErrorKind::RepositoryTriggersListRequiredException(_inner) => {
                 Some(_inner)
             }
-            TestRepositoryTriggersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TestRepositoryTriggersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -30264,6 +30495,14 @@ pub struct UntagResourceError {
     pub kind: UntagResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UntagResource` operation.
 #[non_exhaustive]
@@ -30289,8 +30528,15 @@ pub enum UntagResourceErrorKind {
     TagPolicyException(crate::error::TagPolicyException),
     /// <p>The maximum number of tags for an AWS CodeCommit resource has been exceeded.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30325,7 +30571,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -30334,7 +30580,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -30428,7 +30674,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::TagKeysListRequiredException(_inner) => Some(_inner),
             UntagResourceErrorKind::TagPolicyException(_inner) => Some(_inner),
             UntagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -30441,6 +30687,16 @@ pub struct UpdateApprovalRuleTemplateContentError {
     pub kind: UpdateApprovalRuleTemplateContentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateApprovalRuleTemplateContentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateApprovalRuleTemplateContentErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateApprovalRuleTemplateContent` operation.
 #[non_exhaustive]
@@ -30468,8 +30724,15 @@ pub enum UpdateApprovalRuleTemplateContentErrorKind {
     ),
     /// <p>The SHA-256 hash signature for the rule content is not valid.</p>
     InvalidRuleContentSha256Exception(crate::error::InvalidRuleContentSha256Exception),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateApprovalRuleTemplateContentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30518,7 +30781,9 @@ impl UpdateApprovalRuleTemplateContentError {
     /// Creates the `UpdateApprovalRuleTemplateContentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateApprovalRuleTemplateContentErrorKind::Unhandled(err.into()),
+            kind: UpdateApprovalRuleTemplateContentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -30527,7 +30792,9 @@ impl UpdateApprovalRuleTemplateContentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateApprovalRuleTemplateContentErrorKind::Unhandled(err.into()),
+            kind: UpdateApprovalRuleTemplateContentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -30619,7 +30886,7 @@ impl std::error::Error for UpdateApprovalRuleTemplateContentError {
             Some(_inner)
             ,
             UpdateApprovalRuleTemplateContentErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -30633,6 +30900,16 @@ pub struct UpdateApprovalRuleTemplateDescriptionError {
     pub kind: UpdateApprovalRuleTemplateDescriptionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateApprovalRuleTemplateDescriptionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateApprovalRuleTemplateDescriptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateApprovalRuleTemplateDescription` operation.
 #[non_exhaustive]
@@ -30654,8 +30931,15 @@ pub enum UpdateApprovalRuleTemplateDescriptionErrorKind {
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateApprovalRuleTemplateDescriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30698,7 +30982,9 @@ impl UpdateApprovalRuleTemplateDescriptionError {
     /// Creates the `UpdateApprovalRuleTemplateDescriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateApprovalRuleTemplateDescriptionErrorKind::Unhandled(err.into()),
+            kind: UpdateApprovalRuleTemplateDescriptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -30707,7 +30993,9 @@ impl UpdateApprovalRuleTemplateDescriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateApprovalRuleTemplateDescriptionErrorKind::Unhandled(err.into()),
+            kind: UpdateApprovalRuleTemplateDescriptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -30764,7 +31052,7 @@ impl std::error::Error for UpdateApprovalRuleTemplateDescriptionError {
             Some(_inner)
             ,
             UpdateApprovalRuleTemplateDescriptionErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -30778,6 +31066,16 @@ pub struct UpdateApprovalRuleTemplateNameError {
     pub kind: UpdateApprovalRuleTemplateNameErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateApprovalRuleTemplateNameError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateApprovalRuleTemplateNameErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateApprovalRuleTemplateName` operation.
 #[non_exhaustive]
@@ -30799,8 +31097,15 @@ pub enum UpdateApprovalRuleTemplateNameErrorKind {
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateApprovalRuleTemplateNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30843,7 +31148,9 @@ impl UpdateApprovalRuleTemplateNameError {
     /// Creates the `UpdateApprovalRuleTemplateNameError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateApprovalRuleTemplateNameErrorKind::Unhandled(err.into()),
+            kind: UpdateApprovalRuleTemplateNameErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -30852,7 +31159,9 @@ impl UpdateApprovalRuleTemplateNameError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateApprovalRuleTemplateNameErrorKind::Unhandled(err.into()),
+            kind: UpdateApprovalRuleTemplateNameErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -30923,7 +31232,7 @@ impl std::error::Error for UpdateApprovalRuleTemplateNameError {
             Some(_inner)
             ,
             UpdateApprovalRuleTemplateNameErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -30937,6 +31246,14 @@ pub struct UpdateCommentError {
     pub kind: UpdateCommentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateCommentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateCommentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateComment` operation.
 #[non_exhaustive]
@@ -30958,8 +31275,15 @@ pub enum UpdateCommentErrorKind {
     CommentNotCreatedByCallerException(crate::error::CommentNotCreatedByCallerException),
     /// <p>The comment ID is not in a valid format. Make sure that you have provided the full comment ID.</p>
     InvalidCommentIdException(crate::error::InvalidCommentIdException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCommentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30994,7 +31318,7 @@ impl UpdateCommentError {
     /// Creates the `UpdateCommentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCommentErrorKind::Unhandled(err.into()),
+            kind: UpdateCommentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -31003,7 +31327,7 @@ impl UpdateCommentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCommentErrorKind::Unhandled(err.into()),
+            kind: UpdateCommentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -31089,7 +31413,7 @@ impl std::error::Error for UpdateCommentError {
             UpdateCommentErrorKind::CommentIdRequiredException(_inner) => Some(_inner),
             UpdateCommentErrorKind::CommentNotCreatedByCallerException(_inner) => Some(_inner),
             UpdateCommentErrorKind::InvalidCommentIdException(_inner) => Some(_inner),
-            UpdateCommentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateCommentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -31102,6 +31426,14 @@ pub struct UpdateDefaultBranchError {
     pub kind: UpdateDefaultBranchErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateDefaultBranchError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateDefaultBranchErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateDefaultBranch` operation.
 #[non_exhaustive]
@@ -31133,8 +31465,15 @@ pub enum UpdateDefaultBranchErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDefaultBranchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31177,7 +31516,7 @@ impl UpdateDefaultBranchError {
     /// Creates the `UpdateDefaultBranchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDefaultBranchErrorKind::Unhandled(err.into()),
+            kind: UpdateDefaultBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -31186,7 +31525,7 @@ impl UpdateDefaultBranchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDefaultBranchErrorKind::Unhandled(err.into()),
+            kind: UpdateDefaultBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -31306,7 +31645,7 @@ impl std::error::Error for UpdateDefaultBranchError {
             UpdateDefaultBranchErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             UpdateDefaultBranchErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             UpdateDefaultBranchErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            UpdateDefaultBranchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDefaultBranchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -31319,6 +31658,16 @@ pub struct UpdatePullRequestApprovalRuleContentError {
     pub kind: UpdatePullRequestApprovalRuleContentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdatePullRequestApprovalRuleContentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdatePullRequestApprovalRuleContentErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdatePullRequestApprovalRuleContent` operation.
 #[non_exhaustive]
@@ -31360,8 +31709,15 @@ pub enum UpdatePullRequestApprovalRuleContentErrorKind {
     PullRequestDoesNotExistException(crate::error::PullRequestDoesNotExistException),
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePullRequestApprovalRuleContentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31440,7 +31796,9 @@ impl UpdatePullRequestApprovalRuleContentError {
     /// Creates the `UpdatePullRequestApprovalRuleContentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePullRequestApprovalRuleContentErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestApprovalRuleContentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -31449,7 +31807,9 @@ impl UpdatePullRequestApprovalRuleContentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePullRequestApprovalRuleContentErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestApprovalRuleContentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -31637,7 +31997,7 @@ impl std::error::Error for UpdatePullRequestApprovalRuleContentError {
             Some(_inner)
             ,
             UpdatePullRequestApprovalRuleContentErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -31651,6 +32011,16 @@ pub struct UpdatePullRequestApprovalStateError {
     pub kind: UpdatePullRequestApprovalStateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdatePullRequestApprovalStateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdatePullRequestApprovalStateErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdatePullRequestApprovalState` operation.
 #[non_exhaustive]
@@ -31694,8 +32064,15 @@ pub enum UpdatePullRequestApprovalStateErrorKind {
     RevisionIdRequiredException(crate::error::RevisionIdRequiredException),
     /// <p>The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to retrieve the current revision ID.</p>
     RevisionNotCurrentException(crate::error::RevisionNotCurrentException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePullRequestApprovalStateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31774,7 +32151,9 @@ impl UpdatePullRequestApprovalStateError {
     /// Creates the `UpdatePullRequestApprovalStateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePullRequestApprovalStateErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestApprovalStateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -31783,7 +32162,9 @@ impl UpdatePullRequestApprovalStateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePullRequestApprovalStateErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestApprovalStateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -31974,7 +32355,7 @@ impl std::error::Error for UpdatePullRequestApprovalStateError {
             Some(_inner)
             ,
             UpdatePullRequestApprovalStateErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -31988,6 +32369,16 @@ pub struct UpdatePullRequestDescriptionError {
     pub kind: UpdatePullRequestDescriptionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdatePullRequestDescriptionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdatePullRequestDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdatePullRequestDescription` operation.
 #[non_exhaustive]
@@ -32003,8 +32394,15 @@ pub enum UpdatePullRequestDescriptionErrorKind {
     PullRequestDoesNotExistException(crate::error::PullRequestDoesNotExistException),
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePullRequestDescriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32045,7 +32443,9 @@ impl UpdatePullRequestDescriptionError {
     /// Creates the `UpdatePullRequestDescriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePullRequestDescriptionErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -32054,7 +32454,9 @@ impl UpdatePullRequestDescriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePullRequestDescriptionErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -32132,7 +32534,7 @@ impl std::error::Error for UpdatePullRequestDescriptionError {
             UpdatePullRequestDescriptionErrorKind::PullRequestIdRequiredException(_inner) => {
                 Some(_inner)
             }
-            UpdatePullRequestDescriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePullRequestDescriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -32145,6 +32547,14 @@ pub struct UpdatePullRequestStatusError {
     pub kind: UpdatePullRequestStatusErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdatePullRequestStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdatePullRequestStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdatePullRequestStatus` operation.
 #[non_exhaustive]
@@ -32174,8 +32584,15 @@ pub enum UpdatePullRequestStatusErrorKind {
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
     /// <p>A pull request status is required, but none was provided.</p>
     PullRequestStatusRequiredException(crate::error::PullRequestStatusRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePullRequestStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32234,7 +32651,9 @@ impl UpdatePullRequestStatusError {
     /// Creates the `UpdatePullRequestStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePullRequestStatusErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -32243,7 +32662,9 @@ impl UpdatePullRequestStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePullRequestStatusErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -32379,7 +32800,7 @@ impl std::error::Error for UpdatePullRequestStatusError {
             UpdatePullRequestStatusErrorKind::PullRequestStatusRequiredException(_inner) => {
                 Some(_inner)
             }
-            UpdatePullRequestStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePullRequestStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -32392,6 +32813,14 @@ pub struct UpdatePullRequestTitleError {
     pub kind: UpdatePullRequestTitleErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdatePullRequestTitleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdatePullRequestTitleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdatePullRequestTitle` operation.
 #[non_exhaustive]
@@ -32409,8 +32838,15 @@ pub enum UpdatePullRequestTitleErrorKind {
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
     /// <p>A pull request title is required. It cannot be empty or null.</p>
     TitleRequiredException(crate::error::TitleRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePullRequestTitleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32448,7 +32884,9 @@ impl UpdatePullRequestTitleError {
     /// Creates the `UpdatePullRequestTitleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePullRequestTitleErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestTitleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -32457,7 +32895,9 @@ impl UpdatePullRequestTitleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePullRequestTitleErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestTitleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -32537,7 +32977,7 @@ impl std::error::Error for UpdatePullRequestTitleError {
             }
             UpdatePullRequestTitleErrorKind::PullRequestIdRequiredException(_inner) => Some(_inner),
             UpdatePullRequestTitleErrorKind::TitleRequiredException(_inner) => Some(_inner),
-            UpdatePullRequestTitleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePullRequestTitleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -32550,6 +32990,16 @@ pub struct UpdateRepositoryDescriptionError {
     pub kind: UpdateRepositoryDescriptionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateRepositoryDescriptionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateRepositoryDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateRepositoryDescription` operation.
 #[non_exhaustive]
@@ -32577,8 +33027,15 @@ pub enum UpdateRepositoryDescriptionErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRepositoryDescriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32631,7 +33088,9 @@ impl UpdateRepositoryDescriptionError {
     /// Creates the `UpdateRepositoryDescriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRepositoryDescriptionErrorKind::Unhandled(err.into()),
+            kind: UpdateRepositoryDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -32640,7 +33099,9 @@ impl UpdateRepositoryDescriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRepositoryDescriptionErrorKind::Unhandled(err.into()),
+            kind: UpdateRepositoryDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -32758,7 +33219,7 @@ impl std::error::Error for UpdateRepositoryDescriptionError {
             UpdateRepositoryDescriptionErrorKind::RepositoryNameRequiredException(_inner) => {
                 Some(_inner)
             }
-            UpdateRepositoryDescriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRepositoryDescriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -32771,6 +33232,14 @@ pub struct UpdateRepositoryNameError {
     pub kind: UpdateRepositoryNameErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateRepositoryNameError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateRepositoryNameErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateRepositoryName` operation.
 #[non_exhaustive]
@@ -32786,8 +33255,15 @@ pub enum UpdateRepositoryNameErrorKind {
     RepositoryNameExistsException(crate::error::RepositoryNameExistsException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRepositoryNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32817,7 +33293,9 @@ impl UpdateRepositoryNameError {
     /// Creates the `UpdateRepositoryNameError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRepositoryNameErrorKind::Unhandled(err.into()),
+            kind: UpdateRepositoryNameErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -32826,7 +33304,9 @@ impl UpdateRepositoryNameError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRepositoryNameErrorKind::Unhandled(err.into()),
+            kind: UpdateRepositoryNameErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -32886,7 +33366,35 @@ impl std::error::Error for UpdateRepositoryNameError {
             UpdateRepositoryNameErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             UpdateRepositoryNameErrorKind::RepositoryNameExistsException(_inner) => Some(_inner),
             UpdateRepositoryNameErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            UpdateRepositoryNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRepositoryNameErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

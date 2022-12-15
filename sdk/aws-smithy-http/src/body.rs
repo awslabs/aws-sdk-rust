@@ -13,9 +13,6 @@ use std::pin::Pin;
 use std::sync::Arc;
 use std::task::{Context, Poll};
 
-use crate::callback::BodyCallback;
-use crate::header::append_merge_header_maps;
-
 pub type Error = Box<dyn StdError + Send + Sync>;
 
 pin_project! {
@@ -25,8 +22,8 @@ pin_project! {
     /// For handling responses, the type of the body will be controlled
     /// by the HTTP stack.
     ///
-    /// TODO(naming): Consider renaming to simply `Body`, although I'm concerned about naming headaches
-    /// between hyper::Body and our Body
+    // TODO(naming): Consider renaming to simply `Body`, although I'm concerned about naming headaches
+    // between hyper::Body and our Body
     pub struct SdkBody {
         #[pin]
         inner: Inner,
@@ -35,9 +32,6 @@ pin_project! {
         // In the event of retry, this function will be called to generate a new body. See
         // [`try_clone()`](SdkBody::try_clone)
         rebuild: Option<Arc<dyn (Fn() -> Inner) + Send + Sync>>,
-        // A list of callbacks that will be called at various points of this `SdkBody`'s lifecycle
-        #[pin]
-        callbacks: Vec<Box<dyn BodyCallback>>,
     }
 }
 
@@ -96,7 +90,6 @@ impl SdkBody {
         Self {
             inner: Inner::Dyn { inner: body },
             rebuild: None,
-            callbacks: Vec::new(),
         }
     }
 
@@ -113,7 +106,6 @@ impl SdkBody {
         SdkBody {
             inner: initial.inner,
             rebuild: Some(Arc::new(move || f().inner)),
-            callbacks: Vec::new(),
         }
     }
 
@@ -121,7 +113,6 @@ impl SdkBody {
         Self {
             inner: Inner::Taken,
             rebuild: None,
-            callbacks: Vec::new(),
         }
     }
 
@@ -129,7 +120,6 @@ impl SdkBody {
         Self {
             inner: Inner::Once { inner: None },
             rebuild: Some(Arc::new(|| Inner::Once { inner: None })),
-            callbacks: Vec::new(),
         }
     }
 
@@ -137,8 +127,8 @@ impl SdkBody {
         self: Pin<&mut Self>,
         cx: &mut Context<'_>,
     ) -> Poll<Option<Result<Bytes, Error>>> {
-        let mut this = self.project();
-        let polling_result = match this.inner.project() {
+        let this = self.project();
+        match this.inner.project() {
             InnerProj::Once { ref mut inner } => {
                 let data = inner.take();
                 match data {
@@ -152,29 +142,7 @@ impl SdkBody {
             InnerProj::Taken => {
                 Poll::Ready(Some(Err("A `Taken` body should never be polled".into())))
             }
-        };
-
-        match &polling_result {
-            // When we get some bytes back from polling, pass those bytes to each callback in turn
-            Poll::Ready(Some(Ok(bytes))) => {
-                for callback in this.callbacks.iter_mut() {
-                    // Callbacks can run into errors when reading bytes. They'll be surfaced here
-                    callback.update(bytes)?;
-                }
-            }
-            // When we're done polling for bytes, run each callback's `trailers()` method. If any calls to
-            // `trailers()` return an error, propagate that error up. Otherwise, continue.
-            Poll::Ready(None) => {
-                for callback_result in this.callbacks.iter().map(BodyCallback::trailers) {
-                    if let Err(e) = callback_result {
-                        return Poll::Ready(Some(Err(e)));
-                    }
-                }
-            }
-            _ => (),
         }
-
-        polling_result
     }
 
     /// If possible, return a reference to this body as `&[u8]`
@@ -192,23 +160,15 @@ impl SdkBody {
     pub fn try_clone(&self) -> Option<Self> {
         self.rebuild.as_ref().map(|rebuild| {
             let next = rebuild();
-            let callbacks = self.callbacks.iter().map(BodyCallback::make_new).collect();
-
             Self {
                 inner: next,
                 rebuild: self.rebuild.clone(),
-                callbacks,
             }
         })
     }
 
     pub fn content_length(&self) -> Option<u64> {
         http_body::Body::size_hint(self).exact()
-    }
-
-    pub fn with_callback(&mut self, callback: Box<dyn BodyCallback>) -> &mut Self {
-        self.callbacks.push(callback);
-        self
     }
 
     pub fn map(self, f: impl Fn(SdkBody) -> SdkBody + Sync + Send + 'static) -> SdkBody {
@@ -235,7 +195,6 @@ impl From<Bytes> for SdkBody {
             rebuild: Some(Arc::new(move || Inner::Once {
                 inner: Some(bytes.clone()),
             })),
-            callbacks: Vec::new(),
         }
     }
 }
@@ -245,7 +204,6 @@ impl From<hyper::Body> for SdkBody {
         SdkBody {
             inner: Inner::Streaming { inner: body },
             rebuild: None,
-            callbacks: Vec::new(),
         }
     }
 }
@@ -283,30 +241,7 @@ impl http_body::Body for SdkBody {
         self: Pin<&mut Self>,
         _cx: &mut Context<'_>,
     ) -> Poll<Result<Option<HeaderMap<HeaderValue>>, Self::Error>> {
-        let mut header_map = None;
-        // Iterate over all callbacks, checking each for any `HeaderMap`s
-        for callback in &self.callbacks {
-            match callback.trailers() {
-                // If this is the first `HeaderMap` we've encountered, save it
-                Ok(Some(right_header_map)) if header_map.is_none() => {
-                    header_map = Some(right_header_map);
-                }
-                // If this is **not** the first `HeaderMap` we've encountered, merge it
-                Ok(Some(right_header_map)) if header_map.is_some() => {
-                    header_map = Some(append_merge_header_maps(
-                        header_map.unwrap(),
-                        right_header_map,
-                    ));
-                }
-                // Early return if a callback encountered an error.
-                Err(e) => {
-                    return Poll::Ready(Err(e));
-                }
-                // Otherwise, continue on to the next iteration of the loop.
-                _ => continue,
-            }
-        }
-        Poll::Ready(Ok(header_map))
+        Poll::Ready(Ok(None))
     }
 
     fn is_end_stream(&self) -> bool {

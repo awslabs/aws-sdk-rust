@@ -5,7 +5,7 @@
 /// [`create_gateway_route`](crate::client::Client::create_gateway_route).
 ///
 /// See [`crate::client::fluent_builders::CreateGatewayRoute`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateGatewayRoute {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGatewayRoute {
 /// [`create_mesh`](crate::client::Client::create_mesh).
 ///
 /// See [`crate::client::fluent_builders::CreateMesh`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMesh {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMesh {
 /// [`create_route`](crate::client::Client::create_route).
 ///
 /// See [`crate::client::fluent_builders::CreateRoute`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRoute {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRoute {
 /// [`create_virtual_gateway`](crate::client::Client::create_virtual_gateway).
 ///
 /// See [`crate::client::fluent_builders::CreateVirtualGateway`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVirtualGateway {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualGateway {
 /// [`create_virtual_node`](crate::client::Client::create_virtual_node).
 ///
 /// See [`crate::client::fluent_builders::CreateVirtualNode`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVirtualNode {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualNode {
 /// [`create_virtual_router`](crate::client::Client::create_virtual_router).
 ///
 /// See [`crate::client::fluent_builders::CreateVirtualRouter`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVirtualRouter {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualRouter {
 /// [`create_virtual_service`](crate::client::Client::create_virtual_service).
 ///
 /// See [`crate::client::fluent_builders::CreateVirtualService`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVirtualService {
     _private: (),
 }
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualService {
 /// [`delete_gateway_route`](crate::client::Client::delete_gateway_route).
 ///
 /// See [`crate::client::fluent_builders::DeleteGatewayRoute`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteGatewayRoute {
     _private: (),
 }
@@ -273,7 +273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGatewayRoute {
 /// [`delete_mesh`](crate::client::Client::delete_mesh).
 ///
 /// See [`crate::client::fluent_builders::DeleteMesh`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMesh {
     _private: (),
 }
@@ -305,7 +305,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMesh {
 /// [`delete_route`](crate::client::Client::delete_route).
 ///
 /// See [`crate::client::fluent_builders::DeleteRoute`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRoute {
     _private: (),
 }
@@ -337,7 +337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRoute {
 /// [`delete_virtual_gateway`](crate::client::Client::delete_virtual_gateway).
 ///
 /// See [`crate::client::fluent_builders::DeleteVirtualGateway`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVirtualGateway {
     _private: (),
 }
@@ -371,7 +371,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualGateway {
 /// [`delete_virtual_node`](crate::client::Client::delete_virtual_node).
 ///
 /// See [`crate::client::fluent_builders::DeleteVirtualNode`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVirtualNode {
     _private: (),
 }
@@ -405,7 +405,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualNode {
 /// [`delete_virtual_router`](crate::client::Client::delete_virtual_router).
 ///
 /// See [`crate::client::fluent_builders::DeleteVirtualRouter`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVirtualRouter {
     _private: (),
 }
@@ -439,7 +439,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualRouter {
 /// [`delete_virtual_service`](crate::client::Client::delete_virtual_service).
 ///
 /// See [`crate::client::fluent_builders::DeleteVirtualService`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVirtualService {
     _private: (),
 }
@@ -473,7 +473,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualService {
 /// [`describe_gateway_route`](crate::client::Client::describe_gateway_route).
 ///
 /// See [`crate::client::fluent_builders::DescribeGatewayRoute`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeGatewayRoute {
     _private: (),
 }
@@ -507,7 +507,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGatewayRoute {
 /// [`describe_mesh`](crate::client::Client::describe_mesh).
 ///
 /// See [`crate::client::fluent_builders::DescribeMesh`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMesh {
     _private: (),
 }
@@ -539,7 +539,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMesh {
 /// [`describe_route`](crate::client::Client::describe_route).
 ///
 /// See [`crate::client::fluent_builders::DescribeRoute`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRoute {
     _private: (),
 }
@@ -571,7 +571,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRoute {
 /// [`describe_virtual_gateway`](crate::client::Client::describe_virtual_gateway).
 ///
 /// See [`crate::client::fluent_builders::DescribeVirtualGateway`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeVirtualGateway {
     _private: (),
 }
@@ -605,7 +605,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualGateway {
 /// [`describe_virtual_node`](crate::client::Client::describe_virtual_node).
 ///
 /// See [`crate::client::fluent_builders::DescribeVirtualNode`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeVirtualNode {
     _private: (),
 }
@@ -639,7 +639,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualNode {
 /// [`describe_virtual_router`](crate::client::Client::describe_virtual_router).
 ///
 /// See [`crate::client::fluent_builders::DescribeVirtualRouter`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeVirtualRouter {
     _private: (),
 }
@@ -673,7 +673,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualRouter {
 /// [`describe_virtual_service`](crate::client::Client::describe_virtual_service).
 ///
 /// See [`crate::client::fluent_builders::DescribeVirtualService`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeVirtualService {
     _private: (),
 }
@@ -707,7 +707,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualService {
 /// [`list_gateway_routes`](crate::client::Client::list_gateway_routes).
 ///
 /// See [`crate::client::fluent_builders::ListGatewayRoutes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGatewayRoutes {
     _private: (),
 }
@@ -741,7 +741,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGatewayRoutes {
 /// [`list_meshes`](crate::client::Client::list_meshes).
 ///
 /// See [`crate::client::fluent_builders::ListMeshes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMeshes {
     _private: (),
 }
@@ -773,7 +773,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMeshes {
 /// [`list_routes`](crate::client::Client::list_routes).
 ///
 /// See [`crate::client::fluent_builders::ListRoutes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRoutes {
     _private: (),
 }
@@ -805,7 +805,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRoutes {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -839,7 +839,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_virtual_gateways`](crate::client::Client::list_virtual_gateways).
 ///
 /// See [`crate::client::fluent_builders::ListVirtualGateways`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVirtualGateways {
     _private: (),
 }
@@ -873,7 +873,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualGateways {
 /// [`list_virtual_nodes`](crate::client::Client::list_virtual_nodes).
 ///
 /// See [`crate::client::fluent_builders::ListVirtualNodes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVirtualNodes {
     _private: (),
 }
@@ -907,7 +907,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualNodes {
 /// [`list_virtual_routers`](crate::client::Client::list_virtual_routers).
 ///
 /// See [`crate::client::fluent_builders::ListVirtualRouters`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVirtualRouters {
     _private: (),
 }
@@ -941,7 +941,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualRouters {
 /// [`list_virtual_services`](crate::client::Client::list_virtual_services).
 ///
 /// See [`crate::client::fluent_builders::ListVirtualServices`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVirtualServices {
     _private: (),
 }
@@ -975,7 +975,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualServices {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1007,7 +1007,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1039,7 +1039,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_gateway_route`](crate::client::Client::update_gateway_route).
 ///
 /// See [`crate::client::fluent_builders::UpdateGatewayRoute`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateGatewayRoute {
     _private: (),
 }
@@ -1073,7 +1073,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGatewayRoute {
 /// [`update_mesh`](crate::client::Client::update_mesh).
 ///
 /// See [`crate::client::fluent_builders::UpdateMesh`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateMesh {
     _private: (),
 }
@@ -1105,7 +1105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMesh {
 /// [`update_route`](crate::client::Client::update_route).
 ///
 /// See [`crate::client::fluent_builders::UpdateRoute`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRoute {
     _private: (),
 }
@@ -1137,7 +1137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoute {
 /// [`update_virtual_gateway`](crate::client::Client::update_virtual_gateway).
 ///
 /// See [`crate::client::fluent_builders::UpdateVirtualGateway`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVirtualGateway {
     _private: (),
 }
@@ -1171,7 +1171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualGateway {
 /// [`update_virtual_node`](crate::client::Client::update_virtual_node).
 ///
 /// See [`crate::client::fluent_builders::UpdateVirtualNode`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVirtualNode {
     _private: (),
 }
@@ -1205,7 +1205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualNode {
 /// [`update_virtual_router`](crate::client::Client::update_virtual_router).
 ///
 /// See [`crate::client::fluent_builders::UpdateVirtualRouter`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVirtualRouter {
     _private: (),
 }
@@ -1239,7 +1239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualRouter {
 /// [`update_virtual_service`](crate::client::Client::update_virtual_service).
 ///
 /// See [`crate::client::fluent_builders::UpdateVirtualService`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVirtualService {
     _private: (),
 }

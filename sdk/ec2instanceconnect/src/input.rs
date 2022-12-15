@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod send_serial_console_ssh_public_key_input {
 
     /// A builder for [`SendSerialConsoleSshPublicKeyInput`](crate::input::SendSerialConsoleSshPublicKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) serial_port: std::option::Option<i32>,
@@ -52,7 +52,7 @@ pub mod send_serial_console_ssh_public_key_input {
             self,
         ) -> Result<
             crate::input::SendSerialConsoleSshPublicKeyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::SendSerialConsoleSshPublicKeyInput {
                 instance_id: self.instance_id,
@@ -75,13 +75,13 @@ impl SendSerialConsoleSshPublicKeyInput {
             crate::operation::SendSerialConsoleSSHPublicKey,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendSerialConsoleSshPublicKeyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -89,8 +89,10 @@ impl SendSerialConsoleSshPublicKeyInput {
             fn update_http_builder(
                 input: &crate::input::SendSerialConsoleSshPublicKeyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -178,7 +180,7 @@ impl SendSerialConsoleSshPublicKeyInput {
 pub mod send_ssh_public_key_input {
 
     /// A builder for [`SendSshPublicKeyInput`](crate::input::SendSshPublicKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) instance_os_user: std::option::Option<std::string::String>,
@@ -238,8 +240,10 @@ pub mod send_ssh_public_key_input {
         /// Consumes the builder and constructs a [`SendSshPublicKeyInput`](crate::input::SendSshPublicKeyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendSshPublicKeyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SendSshPublicKeyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SendSshPublicKeyInput {
                 instance_id: self.instance_id,
                 instance_os_user: self.instance_os_user,
@@ -262,13 +266,13 @@ impl SendSshPublicKeyInput {
             crate::operation::SendSSHPublicKey,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendSshPublicKeyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -276,8 +280,10 @@ impl SendSshPublicKeyInput {
             fn update_http_builder(
                 input: &crate::input::SendSshPublicKeyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -364,7 +370,7 @@ impl SendSshPublicKeyInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendSshPublicKeyInput {
     /// <p>The ID of the EC2 instance.</p>
     #[doc(hidden)]
@@ -397,20 +403,10 @@ impl SendSshPublicKeyInput {
         self.availability_zone.as_deref()
     }
 }
-impl std::fmt::Debug for SendSshPublicKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendSshPublicKeyInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("instance_os_user", &self.instance_os_user);
-        formatter.field("ssh_public_key", &self.ssh_public_key);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendSerialConsoleSshPublicKeyInput {
     /// <p>The ID of the EC2 instance.</p>
     #[doc(hidden)]
@@ -436,14 +432,5 @@ impl SendSerialConsoleSshPublicKeyInput {
     /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn ssh_public_key(&self) -> std::option::Option<&str> {
         self.ssh_public_key.as_deref()
-    }
-}
-impl std::fmt::Debug for SendSerialConsoleSshPublicKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendSerialConsoleSshPublicKeyInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("serial_port", &self.serial_port);
-        formatter.field("ssh_public_key", &self.ssh_public_key);
-        formatter.finish()
     }
 }

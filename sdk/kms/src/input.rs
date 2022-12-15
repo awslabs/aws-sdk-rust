@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod cancel_key_deletion_input {
 
     /// A builder for [`CancelKeyDeletionInput`](crate::input::CancelKeyDeletionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
@@ -37,8 +37,10 @@ pub mod cancel_key_deletion_input {
         /// Consumes the builder and constructs a [`CancelKeyDeletionInput`](crate::input::CancelKeyDeletionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelKeyDeletionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CancelKeyDeletionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CancelKeyDeletionInput {
                 key_id: self.key_id,
             })
@@ -58,13 +60,13 @@ impl CancelKeyDeletionInput {
             crate::operation::CancelKeyDeletion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CancelKeyDeletionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -72,8 +74,10 @@ impl CancelKeyDeletionInput {
             fn update_http_builder(
                 input: &crate::input::CancelKeyDeletionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -162,7 +166,7 @@ impl CancelKeyDeletionInput {
 pub mod connect_custom_key_store_input {
 
     /// A builder for [`ConnectCustomKeyStoreInput`](crate::input::ConnectCustomKeyStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
     }
@@ -183,8 +187,10 @@ pub mod connect_custom_key_store_input {
         /// Consumes the builder and constructs a [`ConnectCustomKeyStoreInput`](crate::input::ConnectCustomKeyStoreInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ConnectCustomKeyStoreInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ConnectCustomKeyStoreInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ConnectCustomKeyStoreInput {
                 custom_key_store_id: self.custom_key_store_id,
             })
@@ -204,13 +210,13 @@ impl ConnectCustomKeyStoreInput {
             crate::operation::ConnectCustomKeyStore,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ConnectCustomKeyStoreInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -218,8 +224,10 @@ impl ConnectCustomKeyStoreInput {
             fn update_http_builder(
                 input: &crate::input::ConnectCustomKeyStoreInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -310,7 +318,7 @@ impl ConnectCustomKeyStoreInput {
 pub mod create_alias_input {
 
     /// A builder for [`CreateAliasInput`](crate::input::CreateAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_name: std::option::Option<std::string::String>,
         pub(crate) target_key_id: std::option::Option<std::string::String>,
@@ -362,7 +370,7 @@ pub mod create_alias_input {
         /// Consumes the builder and constructs a [`CreateAliasInput`](crate::input::CreateAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAliasInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateAliasInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateAliasInput {
                 alias_name: self.alias_name,
@@ -384,13 +392,13 @@ impl CreateAliasInput {
             crate::operation::CreateAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -398,8 +406,10 @@ impl CreateAliasInput {
             fn update_http_builder(
                 input: &crate::input::CreateAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -488,7 +498,7 @@ impl CreateAliasInput {
 pub mod create_custom_key_store_input {
 
     /// A builder for [`CreateCustomKeyStoreInput`](crate::input::CreateCustomKeyStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) custom_key_store_name: std::option::Option<std::string::String>,
         pub(crate) cloud_hsm_cluster_id: std::option::Option<std::string::String>,
@@ -555,14 +565,26 @@ pub mod create_custom_key_store_input {
         /// Consumes the builder and constructs a [`CreateCustomKeyStoreInput`](crate::input::CreateCustomKeyStoreInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateCustomKeyStoreInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateCustomKeyStoreInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateCustomKeyStoreInput {
                 custom_key_store_name: self.custom_key_store_name,
                 cloud_hsm_cluster_id: self.cloud_hsm_cluster_id,
                 trust_anchor_certificate: self.trust_anchor_certificate,
                 key_store_password: self.key_store_password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("custom_key_store_name", &self.custom_key_store_name);
+            formatter.field("cloud_hsm_cluster_id", &self.cloud_hsm_cluster_id);
+            formatter.field("trust_anchor_certificate", &self.trust_anchor_certificate);
+            formatter.field("key_store_password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -579,13 +601,13 @@ impl CreateCustomKeyStoreInput {
             crate::operation::CreateCustomKeyStore,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateCustomKeyStoreInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -593,8 +615,10 @@ impl CreateCustomKeyStoreInput {
             fn update_http_builder(
                 input: &crate::input::CreateCustomKeyStoreInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -685,7 +709,7 @@ impl CreateCustomKeyStoreInput {
 pub mod create_grant_input {
 
     /// A builder for [`CreateGrantInput`](crate::input::CreateGrantInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) grantee_principal: std::option::Option<std::string::String>,
@@ -834,7 +858,7 @@ pub mod create_grant_input {
         /// Consumes the builder and constructs a [`CreateGrantInput`](crate::input::CreateGrantInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateGrantInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateGrantInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateGrantInput {
                 key_id: self.key_id,
@@ -861,13 +885,13 @@ impl CreateGrantInput {
             crate::operation::CreateGrant,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateGrantInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -875,8 +899,10 @@ impl CreateGrantInput {
             fn update_http_builder(
                 input: &crate::input::CreateGrantInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -965,7 +991,7 @@ impl CreateGrantInput {
 pub mod create_key_input {
 
     /// A builder for [`CreateKeyInput`](crate::input::CreateKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1273,7 +1299,8 @@ pub mod create_key_input {
         /// Consumes the builder and constructs a [`CreateKeyInput`](crate::input::CreateKeyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateKeyInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::CreateKeyInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::CreateKeyInput {
                 policy: self.policy,
                 description: self.description,
@@ -1304,13 +1331,13 @@ impl CreateKeyInput {
             crate::operation::CreateKey,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateKeyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1318,8 +1345,10 @@ impl CreateKeyInput {
             fn update_http_builder(
                 input: &crate::input::CreateKeyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1406,7 +1435,7 @@ impl CreateKeyInput {
 pub mod decrypt_input {
 
     /// A builder for [`DecryptInput`](crate::input::DecryptInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) encryption_context: std::option::Option<
@@ -1533,7 +1562,8 @@ pub mod decrypt_input {
         /// Consumes the builder and constructs a [`DecryptInput`](crate::input::DecryptInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DecryptInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::DecryptInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::DecryptInput {
                 ciphertext_blob: self.ciphertext_blob,
                 encryption_context: self.encryption_context,
@@ -1557,13 +1587,13 @@ impl DecryptInput {
             crate::operation::Decrypt,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DecryptInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1571,8 +1601,10 @@ impl DecryptInput {
             fn update_http_builder(
                 input: &crate::input::DecryptInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1656,7 +1688,7 @@ impl DecryptInput {
 pub mod delete_alias_input {
 
     /// A builder for [`DeleteAliasInput`](crate::input::DeleteAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
@@ -1674,7 +1706,7 @@ pub mod delete_alias_input {
         /// Consumes the builder and constructs a [`DeleteAliasInput`](crate::input::DeleteAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAliasInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteAliasInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteAliasInput {
                 alias_name: self.alias_name,
@@ -1695,13 +1727,13 @@ impl DeleteAliasInput {
             crate::operation::DeleteAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1709,8 +1741,10 @@ impl DeleteAliasInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1799,7 +1833,7 @@ impl DeleteAliasInput {
 pub mod delete_custom_key_store_input {
 
     /// A builder for [`DeleteCustomKeyStoreInput`](crate::input::DeleteCustomKeyStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
     }
@@ -1820,8 +1854,10 @@ pub mod delete_custom_key_store_input {
         /// Consumes the builder and constructs a [`DeleteCustomKeyStoreInput`](crate::input::DeleteCustomKeyStoreInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteCustomKeyStoreInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteCustomKeyStoreInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteCustomKeyStoreInput {
                 custom_key_store_id: self.custom_key_store_id,
             })
@@ -1841,13 +1877,13 @@ impl DeleteCustomKeyStoreInput {
             crate::operation::DeleteCustomKeyStore,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteCustomKeyStoreInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1855,8 +1891,10 @@ impl DeleteCustomKeyStoreInput {
             fn update_http_builder(
                 input: &crate::input::DeleteCustomKeyStoreInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1947,7 +1985,7 @@ impl DeleteCustomKeyStoreInput {
 pub mod delete_imported_key_material_input {
 
     /// A builder for [`DeleteImportedKeyMaterialInput`](crate::input::DeleteImportedKeyMaterialInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
@@ -1981,7 +2019,7 @@ pub mod delete_imported_key_material_input {
             self,
         ) -> Result<
             crate::input::DeleteImportedKeyMaterialInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteImportedKeyMaterialInput {
                 key_id: self.key_id,
@@ -2002,13 +2040,13 @@ impl DeleteImportedKeyMaterialInput {
             crate::operation::DeleteImportedKeyMaterial,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteImportedKeyMaterialInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2016,8 +2054,10 @@ impl DeleteImportedKeyMaterialInput {
             fn update_http_builder(
                 input: &crate::input::DeleteImportedKeyMaterialInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2108,7 +2148,7 @@ impl DeleteImportedKeyMaterialInput {
 pub mod describe_custom_key_stores_input {
 
     /// A builder for [`DescribeCustomKeyStoresInput`](crate::input::DescribeCustomKeyStoresInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
         pub(crate) custom_key_store_name: std::option::Option<std::string::String>,
@@ -2171,7 +2211,7 @@ pub mod describe_custom_key_stores_input {
             self,
         ) -> Result<
             crate::input::DescribeCustomKeyStoresInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeCustomKeyStoresInput {
                 custom_key_store_id: self.custom_key_store_id,
@@ -2195,13 +2235,13 @@ impl DescribeCustomKeyStoresInput {
             crate::operation::DescribeCustomKeyStores,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeCustomKeyStoresInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2209,8 +2249,10 @@ impl DescribeCustomKeyStoresInput {
             fn update_http_builder(
                 input: &crate::input::DescribeCustomKeyStoresInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2301,7 +2343,7 @@ impl DescribeCustomKeyStoresInput {
 pub mod describe_key_input {
 
     /// A builder for [`DescribeKeyInput`](crate::input::DescribeKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2361,7 +2403,7 @@ pub mod describe_key_input {
         /// Consumes the builder and constructs a [`DescribeKeyInput`](crate::input::DescribeKeyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeKeyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeKeyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeKeyInput {
                 key_id: self.key_id,
@@ -2383,13 +2425,13 @@ impl DescribeKeyInput {
             crate::operation::DescribeKey,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeKeyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2397,8 +2439,10 @@ impl DescribeKeyInput {
             fn update_http_builder(
                 input: &crate::input::DescribeKeyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2487,7 +2531,7 @@ impl DescribeKeyInput {
 pub mod disable_key_input {
 
     /// A builder for [`DisableKeyInput`](crate::input::DisableKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
@@ -2519,7 +2563,8 @@ pub mod disable_key_input {
         /// Consumes the builder and constructs a [`DisableKeyInput`](crate::input::DisableKeyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisableKeyInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::DisableKeyInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::DisableKeyInput {
                 key_id: self.key_id,
             })
@@ -2539,13 +2584,13 @@ impl DisableKeyInput {
             crate::operation::DisableKey,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisableKeyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2553,8 +2598,10 @@ impl DisableKeyInput {
             fn update_http_builder(
                 input: &crate::input::DisableKeyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2643,7 +2690,7 @@ impl DisableKeyInput {
 pub mod disable_key_rotation_input {
 
     /// A builder for [`DisableKeyRotationInput`](crate::input::DisableKeyRotationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
@@ -2675,8 +2722,10 @@ pub mod disable_key_rotation_input {
         /// Consumes the builder and constructs a [`DisableKeyRotationInput`](crate::input::DisableKeyRotationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisableKeyRotationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DisableKeyRotationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DisableKeyRotationInput {
                 key_id: self.key_id,
             })
@@ -2696,13 +2745,13 @@ impl DisableKeyRotationInput {
             crate::operation::DisableKeyRotation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisableKeyRotationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2710,8 +2759,10 @@ impl DisableKeyRotationInput {
             fn update_http_builder(
                 input: &crate::input::DisableKeyRotationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2800,7 +2851,7 @@ impl DisableKeyRotationInput {
 pub mod disconnect_custom_key_store_input {
 
     /// A builder for [`DisconnectCustomKeyStoreInput`](crate::input::DisconnectCustomKeyStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
     }
@@ -2823,7 +2874,7 @@ pub mod disconnect_custom_key_store_input {
             self,
         ) -> Result<
             crate::input::DisconnectCustomKeyStoreInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisconnectCustomKeyStoreInput {
                 custom_key_store_id: self.custom_key_store_id,
@@ -2844,13 +2895,13 @@ impl DisconnectCustomKeyStoreInput {
             crate::operation::DisconnectCustomKeyStore,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisconnectCustomKeyStoreInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2858,8 +2909,10 @@ impl DisconnectCustomKeyStoreInput {
             fn update_http_builder(
                 input: &crate::input::DisconnectCustomKeyStoreInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2950,7 +3003,7 @@ impl DisconnectCustomKeyStoreInput {
 pub mod enable_key_input {
 
     /// A builder for [`EnableKeyInput`](crate::input::EnableKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
@@ -2982,7 +3035,8 @@ pub mod enable_key_input {
         /// Consumes the builder and constructs a [`EnableKeyInput`](crate::input::EnableKeyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::EnableKeyInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::EnableKeyInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::EnableKeyInput {
                 key_id: self.key_id,
             })
@@ -3002,13 +3056,13 @@ impl EnableKeyInput {
             crate::operation::EnableKey,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::EnableKeyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3016,8 +3070,10 @@ impl EnableKeyInput {
             fn update_http_builder(
                 input: &crate::input::EnableKeyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3104,7 +3160,7 @@ impl EnableKeyInput {
 pub mod enable_key_rotation_input {
 
     /// A builder for [`EnableKeyRotationInput`](crate::input::EnableKeyRotationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
@@ -3136,8 +3192,10 @@ pub mod enable_key_rotation_input {
         /// Consumes the builder and constructs a [`EnableKeyRotationInput`](crate::input::EnableKeyRotationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::EnableKeyRotationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::EnableKeyRotationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::EnableKeyRotationInput {
                 key_id: self.key_id,
             })
@@ -3157,13 +3215,13 @@ impl EnableKeyRotationInput {
             crate::operation::EnableKeyRotation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::EnableKeyRotationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3171,8 +3229,10 @@ impl EnableKeyRotationInput {
             fn update_http_builder(
                 input: &crate::input::EnableKeyRotationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3261,7 +3321,7 @@ impl EnableKeyRotationInput {
 pub mod encrypt_input {
 
     /// A builder for [`EncryptInput`](crate::input::EncryptInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) plaintext: std::option::Option<aws_smithy_types::Blob>,
@@ -3381,7 +3441,8 @@ pub mod encrypt_input {
         /// Consumes the builder and constructs a [`EncryptInput`](crate::input::EncryptInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::EncryptInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::EncryptInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::EncryptInput {
                 key_id: self.key_id,
                 plaintext: self.plaintext,
@@ -3389,6 +3450,17 @@ pub mod encrypt_input {
                 grant_tokens: self.grant_tokens,
                 encryption_algorithm: self.encryption_algorithm,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("key_id", &self.key_id);
+            formatter.field("plaintext", &"*** Sensitive Data Redacted ***");
+            formatter.field("encryption_context", &self.encryption_context);
+            formatter.field("grant_tokens", &self.grant_tokens);
+            formatter.field("encryption_algorithm", &self.encryption_algorithm);
+            formatter.finish()
         }
     }
 }
@@ -3405,13 +3477,13 @@ impl EncryptInput {
             crate::operation::Encrypt,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::EncryptInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3419,8 +3491,10 @@ impl EncryptInput {
             fn update_http_builder(
                 input: &crate::input::EncryptInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3504,7 +3578,7 @@ impl EncryptInput {
 pub mod generate_data_key_input {
 
     /// A builder for [`GenerateDataKeyInput`](crate::input::GenerateDataKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) encryption_context: std::option::Option<
@@ -3623,7 +3697,7 @@ pub mod generate_data_key_input {
         /// Consumes the builder and constructs a [`GenerateDataKeyInput`](crate::input::GenerateDataKeyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GenerateDataKeyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GenerateDataKeyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GenerateDataKeyInput {
                 key_id: self.key_id,
@@ -3648,13 +3722,13 @@ impl GenerateDataKeyInput {
             crate::operation::GenerateDataKey,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GenerateDataKeyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3662,8 +3736,10 @@ impl GenerateDataKeyInput {
             fn update_http_builder(
                 input: &crate::input::GenerateDataKeyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3752,7 +3828,7 @@ impl GenerateDataKeyInput {
 pub mod generate_data_key_pair_input {
 
     /// A builder for [`GenerateDataKeyPairInput`](crate::input::GenerateDataKeyPairInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_context: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -3858,8 +3934,10 @@ pub mod generate_data_key_pair_input {
         /// Consumes the builder and constructs a [`GenerateDataKeyPairInput`](crate::input::GenerateDataKeyPairInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GenerateDataKeyPairInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GenerateDataKeyPairInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GenerateDataKeyPairInput {
                 encryption_context: self.encryption_context,
                 key_id: self.key_id,
@@ -3882,13 +3960,13 @@ impl GenerateDataKeyPairInput {
             crate::operation::GenerateDataKeyPair,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GenerateDataKeyPairInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3896,8 +3974,10 @@ impl GenerateDataKeyPairInput {
             fn update_http_builder(
                 input: &crate::input::GenerateDataKeyPairInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3988,7 +4068,7 @@ impl GenerateDataKeyPairInput {
 pub mod generate_data_key_pair_without_plaintext_input {
 
     /// A builder for [`GenerateDataKeyPairWithoutPlaintextInput`](crate::input::GenerateDataKeyPairWithoutPlaintextInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_context: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -4096,7 +4176,7 @@ pub mod generate_data_key_pair_without_plaintext_input {
             self,
         ) -> Result<
             crate::input::GenerateDataKeyPairWithoutPlaintextInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GenerateDataKeyPairWithoutPlaintextInput {
                 encryption_context: self.encryption_context,
@@ -4120,13 +4200,13 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
             crate::operation::GenerateDataKeyPairWithoutPlaintext,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GenerateDataKeyPairWithoutPlaintextInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4134,8 +4214,10 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
             fn update_http_builder(
                 input: &crate::input::GenerateDataKeyPairWithoutPlaintextInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4223,7 +4305,7 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
 pub mod generate_data_key_without_plaintext_input {
 
     /// A builder for [`GenerateDataKeyWithoutPlaintextInput`](crate::input::GenerateDataKeyWithoutPlaintextInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) encryption_context: std::option::Option<
@@ -4340,7 +4422,7 @@ pub mod generate_data_key_without_plaintext_input {
             self,
         ) -> Result<
             crate::input::GenerateDataKeyWithoutPlaintextInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GenerateDataKeyWithoutPlaintextInput {
                 key_id: self.key_id,
@@ -4365,13 +4447,13 @@ impl GenerateDataKeyWithoutPlaintextInput {
             crate::operation::GenerateDataKeyWithoutPlaintext,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GenerateDataKeyWithoutPlaintextInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4379,8 +4461,10 @@ impl GenerateDataKeyWithoutPlaintextInput {
             fn update_http_builder(
                 input: &crate::input::GenerateDataKeyWithoutPlaintextInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4468,7 +4552,7 @@ impl GenerateDataKeyWithoutPlaintextInput {
 pub mod generate_mac_input {
 
     /// A builder for [`GenerateMacInput`](crate::input::GenerateMacInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) message: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -4539,7 +4623,7 @@ pub mod generate_mac_input {
         /// Consumes the builder and constructs a [`GenerateMacInput`](crate::input::GenerateMacInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GenerateMacInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GenerateMacInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GenerateMacInput {
                 message: self.message,
@@ -4547,6 +4631,16 @@ pub mod generate_mac_input {
                 mac_algorithm: self.mac_algorithm,
                 grant_tokens: self.grant_tokens,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("message", &"*** Sensitive Data Redacted ***");
+            formatter.field("key_id", &self.key_id);
+            formatter.field("mac_algorithm", &self.mac_algorithm);
+            formatter.field("grant_tokens", &self.grant_tokens);
+            formatter.finish()
         }
     }
 }
@@ -4563,13 +4657,13 @@ impl GenerateMacInput {
             crate::operation::GenerateMac,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GenerateMacInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4577,8 +4671,10 @@ impl GenerateMacInput {
             fn update_http_builder(
                 input: &crate::input::GenerateMacInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4667,7 +4763,7 @@ impl GenerateMacInput {
 pub mod generate_random_input {
 
     /// A builder for [`GenerateRandomInput`](crate::input::GenerateRandomInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) number_of_bytes: std::option::Option<i32>,
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
@@ -4699,7 +4795,7 @@ pub mod generate_random_input {
         /// Consumes the builder and constructs a [`GenerateRandomInput`](crate::input::GenerateRandomInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GenerateRandomInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GenerateRandomInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GenerateRandomInput {
                 number_of_bytes: self.number_of_bytes,
@@ -4721,13 +4817,13 @@ impl GenerateRandomInput {
             crate::operation::GenerateRandom,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GenerateRandomInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4735,8 +4831,10 @@ impl GenerateRandomInput {
             fn update_http_builder(
                 input: &crate::input::GenerateRandomInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4825,7 +4923,7 @@ impl GenerateRandomInput {
 pub mod get_key_policy_input {
 
     /// A builder for [`GetKeyPolicyInput`](crate::input::GetKeyPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -4868,7 +4966,7 @@ pub mod get_key_policy_input {
         /// Consumes the builder and constructs a [`GetKeyPolicyInput`](crate::input::GetKeyPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetKeyPolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetKeyPolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetKeyPolicyInput {
                 key_id: self.key_id,
@@ -4890,13 +4988,13 @@ impl GetKeyPolicyInput {
             crate::operation::GetKeyPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetKeyPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4904,8 +5002,10 @@ impl GetKeyPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetKeyPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4994,7 +5094,7 @@ impl GetKeyPolicyInput {
 pub mod get_key_rotation_status_input {
 
     /// A builder for [`GetKeyRotationStatusInput`](crate::input::GetKeyRotationStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
@@ -5026,8 +5126,10 @@ pub mod get_key_rotation_status_input {
         /// Consumes the builder and constructs a [`GetKeyRotationStatusInput`](crate::input::GetKeyRotationStatusInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetKeyRotationStatusInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetKeyRotationStatusInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetKeyRotationStatusInput {
                 key_id: self.key_id,
             })
@@ -5047,13 +5149,13 @@ impl GetKeyRotationStatusInput {
             crate::operation::GetKeyRotationStatus,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetKeyRotationStatusInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5061,8 +5163,10 @@ impl GetKeyRotationStatusInput {
             fn update_http_builder(
                 input: &crate::input::GetKeyRotationStatusInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5153,7 +5257,7 @@ impl GetKeyRotationStatusInput {
 pub mod get_parameters_for_import_input {
 
     /// A builder for [`GetParametersForImportInput`](crate::input::GetParametersForImportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) wrapping_algorithm: std::option::Option<crate::model::AlgorithmSpec>,
@@ -5213,8 +5317,10 @@ pub mod get_parameters_for_import_input {
         /// Consumes the builder and constructs a [`GetParametersForImportInput`](crate::input::GetParametersForImportInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetParametersForImportInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetParametersForImportInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetParametersForImportInput {
                 key_id: self.key_id,
                 wrapping_algorithm: self.wrapping_algorithm,
@@ -5236,13 +5342,13 @@ impl GetParametersForImportInput {
             crate::operation::GetParametersForImport,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetParametersForImportInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5250,8 +5356,10 @@ impl GetParametersForImportInput {
             fn update_http_builder(
                 input: &crate::input::GetParametersForImportInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5342,7 +5450,7 @@ impl GetParametersForImportInput {
 pub mod get_public_key_input {
 
     /// A builder for [`GetPublicKeyInput`](crate::input::GetPublicKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5400,7 +5508,7 @@ pub mod get_public_key_input {
         /// Consumes the builder and constructs a [`GetPublicKeyInput`](crate::input::GetPublicKeyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPublicKeyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetPublicKeyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetPublicKeyInput {
                 key_id: self.key_id,
@@ -5422,13 +5530,13 @@ impl GetPublicKeyInput {
             crate::operation::GetPublicKey,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPublicKeyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5436,8 +5544,10 @@ impl GetPublicKeyInput {
             fn update_http_builder(
                 input: &crate::input::GetPublicKeyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5526,7 +5636,7 @@ impl GetPublicKeyInput {
 pub mod import_key_material_input {
 
     /// A builder for [`ImportKeyMaterialInput`](crate::input::ImportKeyMaterialInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) import_token: std::option::Option<aws_smithy_types::Blob>,
@@ -5614,8 +5724,10 @@ pub mod import_key_material_input {
         /// Consumes the builder and constructs a [`ImportKeyMaterialInput`](crate::input::ImportKeyMaterialInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ImportKeyMaterialInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ImportKeyMaterialInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ImportKeyMaterialInput {
                 key_id: self.key_id,
                 import_token: self.import_token,
@@ -5639,13 +5751,13 @@ impl ImportKeyMaterialInput {
             crate::operation::ImportKeyMaterial,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ImportKeyMaterialInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5653,8 +5765,10 @@ impl ImportKeyMaterialInput {
             fn update_http_builder(
                 input: &crate::input::ImportKeyMaterialInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5743,7 +5857,7 @@ impl ImportKeyMaterialInput {
 pub mod list_aliases_input {
 
     /// A builder for [`ListAliasesInput`](crate::input::ListAliasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -5801,7 +5915,7 @@ pub mod list_aliases_input {
         /// Consumes the builder and constructs a [`ListAliasesInput`](crate::input::ListAliasesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAliasesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListAliasesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListAliasesInput {
                 key_id: self.key_id,
@@ -5824,13 +5938,13 @@ impl ListAliasesInput {
             crate::operation::ListAliases,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAliasesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5838,8 +5952,10 @@ impl ListAliasesInput {
             fn update_http_builder(
                 input: &crate::input::ListAliasesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5928,7 +6044,7 @@ impl ListAliasesInput {
 pub mod list_grants_input {
 
     /// A builder for [`ListGrantsInput`](crate::input::ListGrantsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -6009,7 +6125,8 @@ pub mod list_grants_input {
         /// Consumes the builder and constructs a [`ListGrantsInput`](crate::input::ListGrantsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListGrantsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListGrantsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListGrantsInput {
                 limit: self.limit,
                 marker: self.marker,
@@ -6033,13 +6150,13 @@ impl ListGrantsInput {
             crate::operation::ListGrants,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListGrantsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6047,8 +6164,10 @@ impl ListGrantsInput {
             fn update_http_builder(
                 input: &crate::input::ListGrantsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6137,7 +6256,7 @@ impl ListGrantsInput {
 pub mod list_key_policies_input {
 
     /// A builder for [`ListKeyPoliciesInput`](crate::input::ListKeyPoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -6195,7 +6314,7 @@ pub mod list_key_policies_input {
         /// Consumes the builder and constructs a [`ListKeyPoliciesInput`](crate::input::ListKeyPoliciesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListKeyPoliciesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListKeyPoliciesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListKeyPoliciesInput {
                 key_id: self.key_id,
@@ -6218,13 +6337,13 @@ impl ListKeyPoliciesInput {
             crate::operation::ListKeyPolicies,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListKeyPoliciesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6232,8 +6351,10 @@ impl ListKeyPoliciesInput {
             fn update_http_builder(
                 input: &crate::input::ListKeyPoliciesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6322,7 +6443,7 @@ impl ListKeyPoliciesInput {
 pub mod list_keys_input {
 
     /// A builder for [`ListKeysInput`](crate::input::ListKeysInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -6353,7 +6474,8 @@ pub mod list_keys_input {
         /// Consumes the builder and constructs a [`ListKeysInput`](crate::input::ListKeysInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListKeysInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListKeysInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListKeysInput {
                 limit: self.limit,
                 marker: self.marker,
@@ -6374,13 +6496,13 @@ impl ListKeysInput {
             crate::operation::ListKeys,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListKeysInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6388,8 +6510,10 @@ impl ListKeysInput {
             fn update_http_builder(
                 input: &crate::input::ListKeysInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6473,7 +6597,7 @@ impl ListKeysInput {
 pub mod list_resource_tags_input {
 
     /// A builder for [`ListResourceTagsInput`](crate::input::ListResourceTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -6531,8 +6655,10 @@ pub mod list_resource_tags_input {
         /// Consumes the builder and constructs a [`ListResourceTagsInput`](crate::input::ListResourceTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListResourceTagsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListResourceTagsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListResourceTagsInput {
                 key_id: self.key_id,
                 limit: self.limit,
@@ -6554,13 +6680,13 @@ impl ListResourceTagsInput {
             crate::operation::ListResourceTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListResourceTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6568,8 +6694,10 @@ impl ListResourceTagsInput {
             fn update_http_builder(
                 input: &crate::input::ListResourceTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6658,7 +6786,7 @@ impl ListResourceTagsInput {
 pub mod list_retirable_grants_input {
 
     /// A builder for [`ListRetirableGrantsInput`](crate::input::ListRetirableGrantsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -6705,8 +6833,10 @@ pub mod list_retirable_grants_input {
         /// Consumes the builder and constructs a [`ListRetirableGrantsInput`](crate::input::ListRetirableGrantsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRetirableGrantsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListRetirableGrantsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListRetirableGrantsInput {
                 limit: self.limit,
                 marker: self.marker,
@@ -6728,13 +6858,13 @@ impl ListRetirableGrantsInput {
             crate::operation::ListRetirableGrants,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRetirableGrantsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6742,8 +6872,10 @@ impl ListRetirableGrantsInput {
             fn update_http_builder(
                 input: &crate::input::ListRetirableGrantsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6832,7 +6964,7 @@ impl ListRetirableGrantsInput {
 pub mod put_key_policy_input {
 
     /// A builder for [`PutKeyPolicyInput`](crate::input::PutKeyPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -6934,7 +7066,7 @@ pub mod put_key_policy_input {
         /// Consumes the builder and constructs a [`PutKeyPolicyInput`](crate::input::PutKeyPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutKeyPolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutKeyPolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutKeyPolicyInput {
                 key_id: self.key_id,
@@ -6960,13 +7092,13 @@ impl PutKeyPolicyInput {
             crate::operation::PutKeyPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutKeyPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6974,8 +7106,10 @@ impl PutKeyPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutKeyPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7064,7 +7198,7 @@ impl PutKeyPolicyInput {
 pub mod re_encrypt_input {
 
     /// A builder for [`ReEncryptInput`](crate::input::ReEncryptInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) source_encryption_context: std::option::Option<
@@ -7283,7 +7417,8 @@ pub mod re_encrypt_input {
         /// Consumes the builder and constructs a [`ReEncryptInput`](crate::input::ReEncryptInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ReEncryptInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ReEncryptInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ReEncryptInput {
                 ciphertext_blob: self.ciphertext_blob,
                 source_encryption_context: self.source_encryption_context,
@@ -7310,13 +7445,13 @@ impl ReEncryptInput {
             crate::operation::ReEncrypt,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ReEncryptInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7324,8 +7459,10 @@ impl ReEncryptInput {
             fn update_http_builder(
                 input: &crate::input::ReEncryptInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7412,7 +7549,7 @@ impl ReEncryptInput {
 pub mod replicate_key_input {
 
     /// A builder for [`ReplicateKeyInput`](crate::input::ReplicateKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) replica_region: std::option::Option<std::string::String>,
@@ -7572,7 +7709,7 @@ pub mod replicate_key_input {
         /// Consumes the builder and constructs a [`ReplicateKeyInput`](crate::input::ReplicateKeyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ReplicateKeyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ReplicateKeyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ReplicateKeyInput {
                 key_id: self.key_id,
@@ -7600,13 +7737,13 @@ impl ReplicateKeyInput {
             crate::operation::ReplicateKey,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ReplicateKeyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7614,8 +7751,10 @@ impl ReplicateKeyInput {
             fn update_http_builder(
                 input: &crate::input::ReplicateKeyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7704,7 +7843,7 @@ impl ReplicateKeyInput {
 pub mod retire_grant_input {
 
     /// A builder for [`RetireGrantInput`](crate::input::RetireGrantInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_token: std::option::Option<std::string::String>,
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -7754,7 +7893,7 @@ pub mod retire_grant_input {
         /// Consumes the builder and constructs a [`RetireGrantInput`](crate::input::RetireGrantInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RetireGrantInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::RetireGrantInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::RetireGrantInput {
                 grant_token: self.grant_token,
@@ -7777,13 +7916,13 @@ impl RetireGrantInput {
             crate::operation::RetireGrant,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RetireGrantInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7791,8 +7930,10 @@ impl RetireGrantInput {
             fn update_http_builder(
                 input: &crate::input::RetireGrantInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7881,7 +8022,7 @@ impl RetireGrantInput {
 pub mod revoke_grant_input {
 
     /// A builder for [`RevokeGrantInput`](crate::input::RevokeGrantInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) grant_id: std::option::Option<std::string::String>,
@@ -7924,7 +8065,7 @@ pub mod revoke_grant_input {
         /// Consumes the builder and constructs a [`RevokeGrantInput`](crate::input::RevokeGrantInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RevokeGrantInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::RevokeGrantInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::RevokeGrantInput {
                 key_id: self.key_id,
@@ -7946,13 +8087,13 @@ impl RevokeGrantInput {
             crate::operation::RevokeGrant,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RevokeGrantInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7960,8 +8101,10 @@ impl RevokeGrantInput {
             fn update_http_builder(
                 input: &crate::input::RevokeGrantInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8050,7 +8193,7 @@ impl RevokeGrantInput {
 pub mod schedule_key_deletion_input {
 
     /// A builder for [`ScheduleKeyDeletionInput`](crate::input::ScheduleKeyDeletionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) pending_window_in_days: std::option::Option<i32>,
@@ -8097,8 +8240,10 @@ pub mod schedule_key_deletion_input {
         /// Consumes the builder and constructs a [`ScheduleKeyDeletionInput`](crate::input::ScheduleKeyDeletionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ScheduleKeyDeletionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ScheduleKeyDeletionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ScheduleKeyDeletionInput {
                 key_id: self.key_id,
                 pending_window_in_days: self.pending_window_in_days,
@@ -8119,13 +8264,13 @@ impl ScheduleKeyDeletionInput {
             crate::operation::ScheduleKeyDeletion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ScheduleKeyDeletionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8133,8 +8278,10 @@ impl ScheduleKeyDeletionInput {
             fn update_http_builder(
                 input: &crate::input::ScheduleKeyDeletionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8223,7 +8370,7 @@ impl ScheduleKeyDeletionInput {
 pub mod sign_input {
 
     /// A builder for [`SignInput`](crate::input::SignInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<aws_smithy_types::Blob>,
@@ -8324,7 +8471,8 @@ pub mod sign_input {
         /// Consumes the builder and constructs a [`SignInput`](crate::input::SignInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SignInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::SignInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::SignInput {
                 key_id: self.key_id,
                 message: self.message,
@@ -8332,6 +8480,17 @@ pub mod sign_input {
                 grant_tokens: self.grant_tokens,
                 signing_algorithm: self.signing_algorithm,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("key_id", &self.key_id);
+            formatter.field("message", &"*** Sensitive Data Redacted ***");
+            formatter.field("message_type", &self.message_type);
+            formatter.field("grant_tokens", &self.grant_tokens);
+            formatter.field("signing_algorithm", &self.signing_algorithm);
+            formatter.finish()
         }
     }
 }
@@ -8348,13 +8507,13 @@ impl SignInput {
             crate::operation::Sign,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SignInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8362,8 +8521,10 @@ impl SignInput {
             fn update_http_builder(
                 input: &crate::input::SignInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8446,7 +8607,7 @@ impl SignInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8502,7 +8663,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 key_id: self.key_id,
@@ -8524,13 +8685,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8538,8 +8699,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8628,7 +8791,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8680,7 +8843,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 key_id: self.key_id,
@@ -8702,13 +8865,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8716,8 +8879,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8806,7 +8971,7 @@ impl UntagResourceInput {
 pub mod update_alias_input {
 
     /// A builder for [`UpdateAliasInput`](crate::input::UpdateAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_name: std::option::Option<std::string::String>,
         pub(crate) target_key_id: std::option::Option<std::string::String>,
@@ -8856,7 +9021,7 @@ pub mod update_alias_input {
         /// Consumes the builder and constructs a [`UpdateAliasInput`](crate::input::UpdateAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAliasInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateAliasInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateAliasInput {
                 alias_name: self.alias_name,
@@ -8878,13 +9043,13 @@ impl UpdateAliasInput {
             crate::operation::UpdateAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8892,8 +9057,10 @@ impl UpdateAliasInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8982,7 +9149,7 @@ impl UpdateAliasInput {
 pub mod update_custom_key_store_input {
 
     /// A builder for [`UpdateCustomKeyStoreInput`](crate::input::UpdateCustomKeyStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
         pub(crate) new_custom_key_store_name: std::option::Option<std::string::String>,
@@ -9049,14 +9216,26 @@ pub mod update_custom_key_store_input {
         /// Consumes the builder and constructs a [`UpdateCustomKeyStoreInput`](crate::input::UpdateCustomKeyStoreInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateCustomKeyStoreInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateCustomKeyStoreInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateCustomKeyStoreInput {
                 custom_key_store_id: self.custom_key_store_id,
                 new_custom_key_store_name: self.new_custom_key_store_name,
                 key_store_password: self.key_store_password,
                 cloud_hsm_cluster_id: self.cloud_hsm_cluster_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("custom_key_store_id", &self.custom_key_store_id);
+            formatter.field("new_custom_key_store_name", &self.new_custom_key_store_name);
+            formatter.field("key_store_password", &"*** Sensitive Data Redacted ***");
+            formatter.field("cloud_hsm_cluster_id", &self.cloud_hsm_cluster_id);
+            formatter.finish()
         }
     }
 }
@@ -9073,13 +9252,13 @@ impl UpdateCustomKeyStoreInput {
             crate::operation::UpdateCustomKeyStore,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateCustomKeyStoreInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9087,8 +9266,10 @@ impl UpdateCustomKeyStoreInput {
             fn update_http_builder(
                 input: &crate::input::UpdateCustomKeyStoreInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9179,7 +9360,7 @@ impl UpdateCustomKeyStoreInput {
 pub mod update_key_description_input {
 
     /// A builder for [`UpdateKeyDescriptionInput`](crate::input::UpdateKeyDescriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -9222,8 +9403,10 @@ pub mod update_key_description_input {
         /// Consumes the builder and constructs a [`UpdateKeyDescriptionInput`](crate::input::UpdateKeyDescriptionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateKeyDescriptionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateKeyDescriptionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateKeyDescriptionInput {
                 key_id: self.key_id,
                 description: self.description,
@@ -9244,13 +9427,13 @@ impl UpdateKeyDescriptionInput {
             crate::operation::UpdateKeyDescription,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateKeyDescriptionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9258,8 +9441,10 @@ impl UpdateKeyDescriptionInput {
             fn update_http_builder(
                 input: &crate::input::UpdateKeyDescriptionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9350,7 +9535,7 @@ impl UpdateKeyDescriptionInput {
 pub mod update_primary_region_input {
 
     /// A builder for [`UpdatePrimaryRegionInput`](crate::input::UpdatePrimaryRegionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) primary_region: std::option::Option<std::string::String>,
@@ -9398,8 +9583,10 @@ pub mod update_primary_region_input {
         /// Consumes the builder and constructs a [`UpdatePrimaryRegionInput`](crate::input::UpdatePrimaryRegionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdatePrimaryRegionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdatePrimaryRegionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdatePrimaryRegionInput {
                 key_id: self.key_id,
                 primary_region: self.primary_region,
@@ -9420,13 +9607,13 @@ impl UpdatePrimaryRegionInput {
             crate::operation::UpdatePrimaryRegion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdatePrimaryRegionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9434,8 +9621,10 @@ impl UpdatePrimaryRegionInput {
             fn update_http_builder(
                 input: &crate::input::UpdatePrimaryRegionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9524,7 +9713,7 @@ impl UpdatePrimaryRegionInput {
 pub mod verify_input {
 
     /// A builder for [`VerifyInput`](crate::input::VerifyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<aws_smithy_types::Blob>,
@@ -9638,7 +9827,8 @@ pub mod verify_input {
         /// Consumes the builder and constructs a [`VerifyInput`](crate::input::VerifyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::VerifyInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::VerifyInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::VerifyInput {
                 key_id: self.key_id,
                 message: self.message,
@@ -9647,6 +9837,18 @@ pub mod verify_input {
                 signing_algorithm: self.signing_algorithm,
                 grant_tokens: self.grant_tokens,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("key_id", &self.key_id);
+            formatter.field("message", &"*** Sensitive Data Redacted ***");
+            formatter.field("message_type", &self.message_type);
+            formatter.field("signature", &self.signature);
+            formatter.field("signing_algorithm", &self.signing_algorithm);
+            formatter.field("grant_tokens", &self.grant_tokens);
+            formatter.finish()
         }
     }
 }
@@ -9663,13 +9865,13 @@ impl VerifyInput {
             crate::operation::Verify,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::VerifyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9677,8 +9879,10 @@ impl VerifyInput {
             fn update_http_builder(
                 input: &crate::input::VerifyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9762,7 +9966,7 @@ impl VerifyInput {
 pub mod verify_mac_input {
 
     /// A builder for [`VerifyMacInput`](crate::input::VerifyMacInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) message: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -9842,7 +10046,8 @@ pub mod verify_mac_input {
         /// Consumes the builder and constructs a [`VerifyMacInput`](crate::input::VerifyMacInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::VerifyMacInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::VerifyMacInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::VerifyMacInput {
                 message: self.message,
                 key_id: self.key_id,
@@ -9850,6 +10055,17 @@ pub mod verify_mac_input {
                 mac: self.mac,
                 grant_tokens: self.grant_tokens,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("message", &"*** Sensitive Data Redacted ***");
+            formatter.field("key_id", &self.key_id);
+            formatter.field("mac_algorithm", &self.mac_algorithm);
+            formatter.field("mac", &self.mac);
+            formatter.field("grant_tokens", &self.grant_tokens);
+            formatter.finish()
         }
     }
 }
@@ -9866,13 +10082,13 @@ impl VerifyMacInput {
             crate::operation::VerifyMac,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::VerifyMacInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -9880,8 +10096,10 @@ impl VerifyMacInput {
             fn update_http_builder(
                 input: &crate::input::VerifyMacInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -10114,7 +10332,7 @@ impl std::fmt::Debug for VerifyInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePrimaryRegionInput {
     /// <p>Identifies the current primary key. When the operation completes, this KMS key will be a replica key.</p>
     /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
@@ -10149,18 +10367,10 @@ impl UpdatePrimaryRegionInput {
         self.primary_region.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePrimaryRegionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePrimaryRegionInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("primary_region", &self.primary_region);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateKeyDescriptionInput {
     /// <p>Updates the description of the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -10191,14 +10401,6 @@ impl UpdateKeyDescriptionInput {
     /// <p>New description for the KMS key.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateKeyDescriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateKeyDescriptionInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 
@@ -10254,7 +10456,7 @@ impl std::fmt::Debug for UpdateCustomKeyStoreInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAliasInput {
     /// <p>Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name.</p>
     #[doc(hidden)]
@@ -10291,18 +10493,10 @@ impl UpdateAliasInput {
         self.target_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAliasInput");
-        formatter.field("alias_name", &self.alias_name);
-        formatter.field("target_key_id", &self.target_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>Identifies the KMS key from which you are removing tags.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -10335,18 +10529,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>Identifies a customer managed key in the account and Region.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -10381,14 +10567,6 @@ impl TagResourceInput {
     /// <p>You cannot have more than one tag on a KMS key with the same tag key. If you specify an existing tag key with a different tag value, KMS replaces the current tag value with the specified one.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 
@@ -10472,7 +10650,7 @@ impl std::fmt::Debug for SignInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleKeyDeletionInput {
     /// <p>The unique identifier of the KMS key to delete.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -10509,18 +10687,10 @@ impl ScheduleKeyDeletionInput {
         self.pending_window_in_days
     }
 }
-impl std::fmt::Debug for ScheduleKeyDeletionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleKeyDeletionInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("pending_window_in_days", &self.pending_window_in_days);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevokeGrantInput {
     /// <p>A unique identifier for the KMS key associated with the grant. To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN.</p>
@@ -10553,18 +10723,10 @@ impl RevokeGrantInput {
         self.grant_id.as_deref()
     }
 }
-impl std::fmt::Debug for RevokeGrantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevokeGrantInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("grant_id", &self.grant_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetireGrantInput {
     /// <p>Identifies the grant to be retired. You can use a grant token to identify a new grant even before it has achieved eventual consistency.</p>
     /// <p>Only the <code>CreateGrant</code> operation returns a grant token. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -10600,19 +10762,10 @@ impl RetireGrantInput {
         self.grant_id.as_deref()
     }
 }
-impl std::fmt::Debug for RetireGrantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetireGrantInput");
-        formatter.field("grant_token", &self.grant_token);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("grant_id", &self.grant_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplicateKeyInput {
     /// <p>Identifies the multi-Region primary key that is being replicated. To determine whether a KMS key is a multi-Region primary key, use the <code>DescribeKey</code> operation to check the value of the <code>MultiRegionKeyType</code> property.</p>
     /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
@@ -10731,25 +10884,10 @@ impl ReplicateKeyInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for ReplicateKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicateKeyInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("replica_region", &self.replica_region);
-        formatter.field("policy", &self.policy);
-        formatter.field(
-            "bypass_policy_lockout_safety_check",
-            &self.bypass_policy_lockout_safety_check,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReEncryptInput {
     /// <p>Ciphertext of the data to reencrypt.</p>
     #[doc(hidden)]
@@ -10881,33 +11019,10 @@ impl ReEncryptInput {
         self.grant_tokens.as_deref()
     }
 }
-impl std::fmt::Debug for ReEncryptInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReEncryptInput");
-        formatter.field("ciphertext_blob", &self.ciphertext_blob);
-        formatter.field("source_encryption_context", &self.source_encryption_context);
-        formatter.field("source_key_id", &self.source_key_id);
-        formatter.field("destination_key_id", &self.destination_key_id);
-        formatter.field(
-            "destination_encryption_context",
-            &self.destination_encryption_context,
-        );
-        formatter.field(
-            "source_encryption_algorithm",
-            &self.source_encryption_algorithm,
-        );
-        formatter.field(
-            "destination_encryption_algorithm",
-            &self.destination_encryption_algorithm,
-        );
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutKeyPolicyInput {
     /// <p>Sets the key policy on the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -10988,23 +11103,10 @@ impl PutKeyPolicyInput {
         self.bypass_policy_lockout_safety_check
     }
 }
-impl std::fmt::Debug for PutKeyPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutKeyPolicyInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy", &self.policy);
-        formatter.field(
-            "bypass_policy_lockout_safety_check",
-            &self.bypass_policy_lockout_safety_check,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRetirableGrantsInput {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>
@@ -11034,19 +11136,10 @@ impl ListRetirableGrantsInput {
         self.retiring_principal.as_deref()
     }
 }
-impl std::fmt::Debug for ListRetirableGrantsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRetirableGrantsInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.field("retiring_principal", &self.retiring_principal);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceTagsInput {
     /// <p>Gets tags on the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -11090,19 +11183,10 @@ impl ListResourceTagsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListResourceTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceTagsInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListKeysInput {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
@@ -11123,18 +11207,10 @@ impl ListKeysInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListKeysInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListKeyPoliciesInput {
     /// <p>Gets the names of key policies for the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -11178,19 +11254,10 @@ impl ListKeyPoliciesInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListKeyPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListKeyPoliciesInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGrantsInput {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>
@@ -11246,21 +11313,10 @@ impl ListGrantsInput {
         self.grantee_principal.as_deref()
     }
 }
-impl std::fmt::Debug for ListGrantsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGrantsInput");
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("grant_id", &self.grant_id);
-        formatter.field("grantee_principal", &self.grantee_principal);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAliasesInput {
     /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your Amazon Web Services account. </p>
     /// <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account and Region.</p>
@@ -11304,19 +11360,10 @@ impl ListAliasesInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListAliasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAliasesInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportKeyMaterialInput {
     /// <p>The identifier of the symmetric encryption KMS key that receives the imported key material. This must be the same KMS key specified in the <code>KeyID</code> parameter of the corresponding <code>GetParametersForImport</code> request. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>. You cannot perform this operation on an asymmetric KMS key, an HMAC KMS key, a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -11370,21 +11417,10 @@ impl ImportKeyMaterialInput {
         self.expiration_model.as_ref()
     }
 }
-impl std::fmt::Debug for ImportKeyMaterialInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportKeyMaterialInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("import_token", &self.import_token);
-        formatter.field("encrypted_key_material", &self.encrypted_key_material);
-        formatter.field("valid_to", &self.valid_to);
-        formatter.field("expiration_model", &self.expiration_model);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPublicKeyInput {
     /// <p>Identifies the asymmetric KMS key that includes the public key.</p>
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
@@ -11423,18 +11459,10 @@ impl GetPublicKeyInput {
         self.grant_tokens.as_deref()
     }
 }
-impl std::fmt::Debug for GetPublicKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPublicKeyInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetParametersForImportInput {
     /// <p>The identifier of the symmetric encryption KMS key into which you will import key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -11474,19 +11502,10 @@ impl GetParametersForImportInput {
         self.wrapping_key_spec.as_ref()
     }
 }
-impl std::fmt::Debug for GetParametersForImportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetParametersForImportInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("wrapping_algorithm", &self.wrapping_algorithm);
-        formatter.field("wrapping_key_spec", &self.wrapping_key_spec);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetKeyRotationStatusInput {
     /// <p>Gets the rotation status for the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN.</p>
@@ -11512,17 +11531,10 @@ impl GetKeyRotationStatusInput {
         self.key_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetKeyRotationStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetKeyRotationStatusInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetKeyPolicyInput {
     /// <p>Gets the key policy for the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -11555,18 +11567,10 @@ impl GetKeyPolicyInput {
         self.policy_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetKeyPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetKeyPolicyInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateRandomInput {
     /// <p>The length of the random byte string. This parameter is required.</p>
     #[doc(hidden)]
@@ -11583,14 +11587,6 @@ impl GenerateRandomInput {
     /// <p>Generates the random byte string in the CloudHSM cluster that is associated with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     pub fn custom_key_store_id(&self) -> std::option::Option<&str> {
         self.custom_key_store_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GenerateRandomInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateRandomInput");
-        formatter.field("number_of_bytes", &self.number_of_bytes);
-        formatter.field("custom_key_store_id", &self.custom_key_store_id);
-        formatter.finish()
     }
 }
 
@@ -11650,7 +11646,7 @@ impl std::fmt::Debug for GenerateMacInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateDataKeyWithoutPlaintextInput {
     /// <p>Specifies the symmetric encryption KMS key that encrypts the data key. You cannot specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and origin of your KMS key, use the <code>DescribeKey</code> operation.</p>
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
@@ -11718,21 +11714,10 @@ impl GenerateDataKeyWithoutPlaintextInput {
         self.grant_tokens.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateDataKeyWithoutPlaintextInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateDataKeyWithoutPlaintextInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("encryption_context", &self.encryption_context);
-        formatter.field("key_spec", &self.key_spec);
-        formatter.field("number_of_bytes", &self.number_of_bytes);
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateDataKeyPairWithoutPlaintextInput {
     /// <p>Specifies the encryption context that will be used when encrypting the private key in the data key pair.</p>
     /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is supported only on operations with symmetric encryption KMS keys. On operations with symmetric encryption KMS keys, an encryption context is optional, but it is strongly recommended.</p>
@@ -11795,20 +11780,10 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
         self.grant_tokens.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateDataKeyPairWithoutPlaintextInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateDataKeyPairWithoutPlaintextInput");
-        formatter.field("encryption_context", &self.encryption_context);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("key_pair_spec", &self.key_pair_spec);
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateDataKeyPairInput {
     /// <p>Specifies the encryption context that will be used when encrypting the private key in the data key pair.</p>
     /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is supported only on operations with symmetric encryption KMS keys. On operations with symmetric encryption KMS keys, an encryption context is optional, but it is strongly recommended.</p>
@@ -11871,20 +11846,10 @@ impl GenerateDataKeyPairInput {
         self.grant_tokens.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateDataKeyPairInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateDataKeyPairInput");
-        formatter.field("encryption_context", &self.encryption_context);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("key_pair_spec", &self.key_pair_spec);
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateDataKeyInput {
     /// <p>Specifies the symmetric encryption KMS key that encrypts the data key. You cannot specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and origin of your KMS key, use the <code>DescribeKey</code> operation.</p>
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
@@ -11954,17 +11919,6 @@ impl GenerateDataKeyInput {
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn grant_tokens(&self) -> std::option::Option<&[std::string::String]> {
         self.grant_tokens.as_deref()
-    }
-}
-impl std::fmt::Debug for GenerateDataKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateDataKeyInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("encryption_context", &self.encryption_context);
-        formatter.field("number_of_bytes", &self.number_of_bytes);
-        formatter.field("key_spec", &self.key_spec);
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.finish()
     }
 }
 
@@ -12056,7 +12010,7 @@ impl std::fmt::Debug for EncryptInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableKeyRotationInput {
     /// <p>Identifies a symmetric encryption KMS key. You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. The key rotation status of these KMS keys is always <code>false</code>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region keys</a>, set the property on the primary key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -12082,17 +12036,10 @@ impl EnableKeyRotationInput {
         self.key_id.as_deref()
     }
 }
-impl std::fmt::Debug for EnableKeyRotationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableKeyRotationInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableKeyInput {
     /// <p>Identifies the KMS key to enable.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -12118,17 +12065,10 @@ impl EnableKeyInput {
         self.key_id.as_deref()
     }
 }
-impl std::fmt::Debug for EnableKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableKeyInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisconnectCustomKeyStoreInput {
     /// <p>Enter the ID of the custom key store you want to disconnect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     #[doc(hidden)]
@@ -12140,17 +12080,10 @@ impl DisconnectCustomKeyStoreInput {
         self.custom_key_store_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisconnectCustomKeyStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisconnectCustomKeyStoreInput");
-        formatter.field("custom_key_store_id", &self.custom_key_store_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableKeyRotationInput {
     /// <p>Identifies a symmetric encryption KMS key. You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -12176,17 +12109,10 @@ impl DisableKeyRotationInput {
         self.key_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisableKeyRotationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableKeyRotationInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableKeyInput {
     /// <p>Identifies the KMS key to disable.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -12212,17 +12138,10 @@ impl DisableKeyInput {
         self.key_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisableKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableKeyInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeKeyInput {
     /// <p>Describes the specified KMS key. </p>
     /// <p>If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html##aws-managed-cmk">Amazon Web Services managed key</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response.</p>
@@ -12263,18 +12182,10 @@ impl DescribeKeyInput {
         self.grant_tokens.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeKeyInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCustomKeyStoresInput {
     /// <p>Gets only information about the specified custom key store. Enter the key store ID.</p>
     /// <p>By default, this operation gets information about all custom key stores in the account and Region. To limit the output to a particular custom key store, you can use either the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not both.</p>
@@ -12311,20 +12222,10 @@ impl DescribeCustomKeyStoresInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCustomKeyStoresInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCustomKeyStoresInput");
-        formatter.field("custom_key_store_id", &self.custom_key_store_id);
-        formatter.field("custom_key_store_name", &self.custom_key_store_name);
-        formatter.field("limit", &self.limit);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteImportedKeyMaterialInput {
     /// <p>Identifies the KMS key from which you are deleting imported key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -12350,17 +12251,10 @@ impl DeleteImportedKeyMaterialInput {
         self.key_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteImportedKeyMaterialInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteImportedKeyMaterialInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomKeyStoreInput {
     /// <p>Enter the ID of the custom key store you want to delete. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     #[doc(hidden)]
@@ -12372,17 +12266,10 @@ impl DeleteCustomKeyStoreInput {
         self.custom_key_store_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCustomKeyStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCustomKeyStoreInput");
-        formatter.field("custom_key_store_id", &self.custom_key_store_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAliasInput {
     /// <p>The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>.</p>
     #[doc(hidden)]
@@ -12394,17 +12281,10 @@ impl DeleteAliasInput {
         self.alias_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAliasInput");
-        formatter.field("alias_name", &self.alias_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecryptInput {
     /// <p>Ciphertext to be decrypted. The blob includes metadata.</p>
     #[doc(hidden)]
@@ -12480,21 +12360,10 @@ impl DecryptInput {
         self.encryption_algorithm.as_ref()
     }
 }
-impl std::fmt::Debug for DecryptInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecryptInput");
-        formatter.field("ciphertext_blob", &self.ciphertext_blob);
-        formatter.field("encryption_context", &self.encryption_context);
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("encryption_algorithm", &self.encryption_algorithm);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateKeyInput {
     /// <p>The key policy to attach to the KMS key. If you do not specify a key policy, KMS attaches a default key policy to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>If you provide a key policy, it must meet the following criteria:</p>
@@ -12733,29 +12602,10 @@ impl CreateKeyInput {
         self.multi_region
     }
 }
-impl std::fmt::Debug for CreateKeyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateKeyInput");
-        formatter.field("policy", &self.policy);
-        formatter.field("description", &self.description);
-        formatter.field("key_usage", &self.key_usage);
-        formatter.field("customer_master_key_spec", &self.customer_master_key_spec);
-        formatter.field("key_spec", &self.key_spec);
-        formatter.field("origin", &self.origin);
-        formatter.field("custom_key_store_id", &self.custom_key_store_id);
-        formatter.field(
-            "bypass_policy_lockout_safety_check",
-            &self.bypass_policy_lockout_safety_check,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("multi_region", &self.multi_region);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGrantInput {
     /// <p>Identifies the KMS key for the grant. The grant gives principals permission to use this KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN.</p>
@@ -12847,19 +12697,6 @@ impl CreateGrantInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGrantInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGrantInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.field("grantee_principal", &self.grantee_principal);
-        formatter.field("retiring_principal", &self.retiring_principal);
-        formatter.field("operations", &self.operations);
-        formatter.field("constraints", &self.constraints);
-        formatter.field("grant_tokens", &self.grant_tokens);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -12913,7 +12750,7 @@ impl std::fmt::Debug for CreateCustomKeyStoreInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAliasInput {
     /// <p>Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>. </p>
     /// <p>The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</p>
@@ -12952,18 +12789,10 @@ impl CreateAliasInput {
         self.target_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAliasInput");
-        formatter.field("alias_name", &self.alias_name);
-        formatter.field("target_key_id", &self.target_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectCustomKeyStoreInput {
     /// <p>Enter the key store ID of the custom key store that you want to connect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     #[doc(hidden)]
@@ -12975,17 +12804,10 @@ impl ConnectCustomKeyStoreInput {
         self.custom_key_store_id.as_deref()
     }
 }
-impl std::fmt::Debug for ConnectCustomKeyStoreInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectCustomKeyStoreInput");
-        formatter.field("custom_key_store_id", &self.custom_key_store_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelKeyDeletionInput {
     /// <p>Identifies the KMS key whose deletion is being canceled.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -13009,12 +12831,5 @@ impl CancelKeyDeletionInput {
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelKeyDeletionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelKeyDeletionInput");
-        formatter.field("key_id", &self.key_id);
-        formatter.finish()
     }
 }

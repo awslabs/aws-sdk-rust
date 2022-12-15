@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_aws_account_with_partner_account_input {
 
     /// A builder for [`AssociateAwsAccountWithPartnerAccountInput`](crate::input::AssociateAwsAccountWithPartnerAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sidewalk: std::option::Option<crate::model::SidewalkAccountInfo>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -62,7 +62,7 @@ pub mod associate_aws_account_with_partner_account_input {
             self,
         ) -> Result<
             crate::input::AssociateAwsAccountWithPartnerAccountInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateAwsAccountWithPartnerAccountInput {
                 sidewalk: self.sidewalk,
@@ -85,7 +85,7 @@ impl AssociateAwsAccountWithPartnerAccountInput {
             crate::operation::AssociateAwsAccountWithPartnerAccount,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -94,7 +94,7 @@ impl AssociateAwsAccountWithPartnerAccountInput {
             fn uri_base(
                 _input: &crate::input::AssociateAwsAccountWithPartnerAccountInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/partner-accounts").expect("formatting should succeed");
                 Ok(())
             }
@@ -102,8 +102,10 @@ impl AssociateAwsAccountWithPartnerAccountInput {
             fn update_http_builder(
                 input: &crate::input::AssociateAwsAccountWithPartnerAccountInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -186,7 +188,7 @@ impl AssociateAwsAccountWithPartnerAccountInput {
 pub mod associate_multicast_group_with_fuota_task_input {
 
     /// A builder for [`AssociateMulticastGroupWithFuotaTaskInput`](crate::input::AssociateMulticastGroupWithFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) multicast_group_id: std::option::Option<std::string::String>,
@@ -220,7 +222,7 @@ pub mod associate_multicast_group_with_fuota_task_input {
             self,
         ) -> Result<
             crate::input::AssociateMulticastGroupWithFuotaTaskInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateMulticastGroupWithFuotaTaskInput {
                 id: self.id,
@@ -242,26 +244,31 @@ impl AssociateMulticastGroupWithFuotaTaskInput {
             crate::operation::AssociateMulticastGroupWithFuotaTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateMulticastGroupWithFuotaTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/fuota-tasks/{Id}/multicast-group", Id = id)
                     .expect("formatting should succeed");
@@ -271,8 +278,10 @@ impl AssociateMulticastGroupWithFuotaTaskInput {
             fn update_http_builder(
                 input: &crate::input::AssociateMulticastGroupWithFuotaTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -355,7 +364,7 @@ impl AssociateMulticastGroupWithFuotaTaskInput {
 pub mod associate_wireless_device_with_fuota_task_input {
 
     /// A builder for [`AssociateWirelessDeviceWithFuotaTaskInput`](crate::input::AssociateWirelessDeviceWithFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) wireless_device_id: std::option::Option<std::string::String>,
@@ -389,7 +398,7 @@ pub mod associate_wireless_device_with_fuota_task_input {
             self,
         ) -> Result<
             crate::input::AssociateWirelessDeviceWithFuotaTaskInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateWirelessDeviceWithFuotaTaskInput {
                 id: self.id,
@@ -411,26 +420,31 @@ impl AssociateWirelessDeviceWithFuotaTaskInput {
             crate::operation::AssociateWirelessDeviceWithFuotaTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateWirelessDeviceWithFuotaTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.id;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/fuota-tasks/{Id}/wireless-device", Id = id)
                     .expect("formatting should succeed");
@@ -440,8 +454,10 @@ impl AssociateWirelessDeviceWithFuotaTaskInput {
             fn update_http_builder(
                 input: &crate::input::AssociateWirelessDeviceWithFuotaTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -524,7 +540,7 @@ impl AssociateWirelessDeviceWithFuotaTaskInput {
 pub mod associate_wireless_device_with_multicast_group_input {
 
     /// A builder for [`AssociateWirelessDeviceWithMulticastGroupInput`](crate::input::AssociateWirelessDeviceWithMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) wireless_device_id: std::option::Option<std::string::String>,
@@ -558,7 +574,7 @@ pub mod associate_wireless_device_with_multicast_group_input {
             self,
         ) -> Result<
             crate::input::AssociateWirelessDeviceWithMulticastGroupInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::AssociateWirelessDeviceWithMulticastGroupInput {
@@ -582,26 +598,31 @@ impl AssociateWirelessDeviceWithMulticastGroupInput {
             crate::operation::AssociateWirelessDeviceWithMulticastGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateWirelessDeviceWithMulticastGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.id;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/multicast-groups/{Id}/wireless-device", Id = id)
                     .expect("formatting should succeed");
@@ -611,8 +632,10 @@ impl AssociateWirelessDeviceWithMulticastGroupInput {
             fn update_http_builder(
                 input: &crate::input::AssociateWirelessDeviceWithMulticastGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -696,7 +719,7 @@ impl AssociateWirelessDeviceWithMulticastGroupInput {
 pub mod associate_wireless_device_with_thing_input {
 
     /// A builder for [`AssociateWirelessDeviceWithThingInput`](crate::input::AssociateWirelessDeviceWithThingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) thing_arn: std::option::Option<std::string::String>,
@@ -727,7 +750,7 @@ pub mod associate_wireless_device_with_thing_input {
             self,
         ) -> Result<
             crate::input::AssociateWirelessDeviceWithThingInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateWirelessDeviceWithThingInput {
                 id: self.id,
@@ -749,26 +772,31 @@ impl AssociateWirelessDeviceWithThingInput {
             crate::operation::AssociateWirelessDeviceWithThing,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateWirelessDeviceWithThingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.id;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-devices/{Id}/thing", Id = id)
                     .expect("formatting should succeed");
@@ -778,8 +806,10 @@ impl AssociateWirelessDeviceWithThingInput {
             fn update_http_builder(
                 input: &crate::input::AssociateWirelessDeviceWithThingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -862,7 +892,7 @@ impl AssociateWirelessDeviceWithThingInput {
 pub mod associate_wireless_gateway_with_certificate_input {
 
     /// A builder for [`AssociateWirelessGatewayWithCertificateInput`](crate::input::AssociateWirelessGatewayWithCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) iot_certificate_id: std::option::Option<std::string::String>,
@@ -896,7 +926,7 @@ pub mod associate_wireless_gateway_with_certificate_input {
             self,
         ) -> Result<
             crate::input::AssociateWirelessGatewayWithCertificateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateWirelessGatewayWithCertificateInput {
                 id: self.id,
@@ -918,26 +948,31 @@ impl AssociateWirelessGatewayWithCertificateInput {
             crate::operation::AssociateWirelessGatewayWithCertificate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateWirelessGatewayWithCertificateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.id;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-gateways/{Id}/certificate", Id = id)
                     .expect("formatting should succeed");
@@ -947,8 +982,10 @@ impl AssociateWirelessGatewayWithCertificateInput {
             fn update_http_builder(
                 input: &crate::input::AssociateWirelessGatewayWithCertificateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -1031,7 +1068,7 @@ impl AssociateWirelessGatewayWithCertificateInput {
 pub mod associate_wireless_gateway_with_thing_input {
 
     /// A builder for [`AssociateWirelessGatewayWithThingInput`](crate::input::AssociateWirelessGatewayWithThingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) thing_arn: std::option::Option<std::string::String>,
@@ -1062,7 +1099,7 @@ pub mod associate_wireless_gateway_with_thing_input {
             self,
         ) -> Result<
             crate::input::AssociateWirelessGatewayWithThingInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateWirelessGatewayWithThingInput {
                 id: self.id,
@@ -1084,26 +1121,31 @@ impl AssociateWirelessGatewayWithThingInput {
             crate::operation::AssociateWirelessGatewayWithThing,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateWirelessGatewayWithThingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.id;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-gateways/{Id}/thing", Id = id)
                     .expect("formatting should succeed");
@@ -1113,8 +1155,10 @@ impl AssociateWirelessGatewayWithThingInput {
             fn update_http_builder(
                 input: &crate::input::AssociateWirelessGatewayWithThingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -1197,7 +1241,7 @@ impl AssociateWirelessGatewayWithThingInput {
 pub mod cancel_multicast_group_session_input {
 
     /// A builder for [`CancelMulticastGroupSessionInput`](crate::input::CancelMulticastGroupSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1217,7 +1261,7 @@ pub mod cancel_multicast_group_session_input {
             self,
         ) -> Result<
             crate::input::CancelMulticastGroupSessionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CancelMulticastGroupSessionInput { id: self.id })
         }
@@ -1236,26 +1280,31 @@ impl CancelMulticastGroupSessionInput {
             crate::operation::CancelMulticastGroupSession,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CancelMulticastGroupSessionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.id;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/multicast-groups/{Id}/session", Id = id)
                     .expect("formatting should succeed");
@@ -1265,8 +1314,10 @@ impl CancelMulticastGroupSessionInput {
             fn update_http_builder(
                 input: &crate::input::CancelMulticastGroupSessionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1336,7 +1387,7 @@ impl CancelMulticastGroupSessionInput {
 pub mod create_destination_input {
 
     /// A builder for [`CreateDestinationInput`](crate::input::CreateDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) expression_type: std::option::Option<crate::model::ExpressionType>,
@@ -1435,8 +1486,10 @@ pub mod create_destination_input {
         /// Consumes the builder and constructs a [`CreateDestinationInput`](crate::input::CreateDestinationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDestinationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateDestinationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateDestinationInput {
                 name: self.name,
                 expression_type: self.expression_type,
@@ -1462,7 +1515,7 @@ impl CreateDestinationInput {
             crate::operation::CreateDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -1471,7 +1524,7 @@ impl CreateDestinationInput {
             fn uri_base(
                 _input: &crate::input::CreateDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/destinations").expect("formatting should succeed");
                 Ok(())
             }
@@ -1479,8 +1532,10 @@ impl CreateDestinationInput {
             fn update_http_builder(
                 input: &crate::input::CreateDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1564,7 +1619,7 @@ impl CreateDestinationInput {
 pub mod create_device_profile_input {
 
     /// A builder for [`CreateDeviceProfileInput`](crate::input::CreateDeviceProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanDeviceProfile>,
@@ -1630,8 +1685,10 @@ pub mod create_device_profile_input {
         /// Consumes the builder and constructs a [`CreateDeviceProfileInput`](crate::input::CreateDeviceProfileInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDeviceProfileInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateDeviceProfileInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateDeviceProfileInput {
                 name: self.name,
                 lo_ra_wan: self.lo_ra_wan,
@@ -1654,7 +1711,7 @@ impl CreateDeviceProfileInput {
             crate::operation::CreateDeviceProfile,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -1663,7 +1720,7 @@ impl CreateDeviceProfileInput {
             fn uri_base(
                 _input: &crate::input::CreateDeviceProfileInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/device-profiles").expect("formatting should succeed");
                 Ok(())
             }
@@ -1671,8 +1728,10 @@ impl CreateDeviceProfileInput {
             fn update_http_builder(
                 input: &crate::input::CreateDeviceProfileInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1756,7 +1815,7 @@ impl CreateDeviceProfileInput {
 pub mod create_fuota_task_input {
 
     /// A builder for [`CreateFuotaTaskInput`](crate::input::CreateFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1861,7 +1920,7 @@ pub mod create_fuota_task_input {
         /// Consumes the builder and constructs a [`CreateFuotaTaskInput`](crate::input::CreateFuotaTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateFuotaTaskInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateFuotaTaskInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateFuotaTaskInput {
                 name: self.name,
@@ -1888,7 +1947,7 @@ impl CreateFuotaTaskInput {
             crate::operation::CreateFuotaTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -1897,7 +1956,7 @@ impl CreateFuotaTaskInput {
             fn uri_base(
                 _input: &crate::input::CreateFuotaTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/fuota-tasks").expect("formatting should succeed");
                 Ok(())
             }
@@ -1905,8 +1964,10 @@ impl CreateFuotaTaskInput {
             fn update_http_builder(
                 input: &crate::input::CreateFuotaTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1990,7 +2051,7 @@ impl CreateFuotaTaskInput {
 pub mod create_multicast_group_input {
 
     /// A builder for [`CreateMulticastGroupInput`](crate::input::CreateMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2067,8 +2128,10 @@ pub mod create_multicast_group_input {
         /// Consumes the builder and constructs a [`CreateMulticastGroupInput`](crate::input::CreateMulticastGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateMulticastGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateMulticastGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateMulticastGroupInput {
                 name: self.name,
                 description: self.description,
@@ -2092,7 +2155,7 @@ impl CreateMulticastGroupInput {
             crate::operation::CreateMulticastGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -2101,7 +2164,7 @@ impl CreateMulticastGroupInput {
             fn uri_base(
                 _input: &crate::input::CreateMulticastGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/multicast-groups").expect("formatting should succeed");
                 Ok(())
             }
@@ -2109,8 +2172,10 @@ impl CreateMulticastGroupInput {
             fn update_http_builder(
                 input: &crate::input::CreateMulticastGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2196,7 +2261,7 @@ impl CreateMulticastGroupInput {
 pub mod create_network_analyzer_configuration_input {
 
     /// A builder for [`CreateNetworkAnalyzerConfigurationInput`](crate::input::CreateNetworkAnalyzerConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) trace_content: std::option::Option<crate::model::TraceContent>,
@@ -2315,7 +2380,7 @@ pub mod create_network_analyzer_configuration_input {
             self,
         ) -> Result<
             crate::input::CreateNetworkAnalyzerConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateNetworkAnalyzerConfigurationInput {
                 name: self.name,
@@ -2342,7 +2407,7 @@ impl CreateNetworkAnalyzerConfigurationInput {
             crate::operation::CreateNetworkAnalyzerConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -2351,7 +2416,7 @@ impl CreateNetworkAnalyzerConfigurationInput {
             fn uri_base(
                 _input: &crate::input::CreateNetworkAnalyzerConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/network-analyzer-configurations")
                     .expect("formatting should succeed");
                 Ok(())
@@ -2360,8 +2425,10 @@ impl CreateNetworkAnalyzerConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::CreateNetworkAnalyzerConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2444,7 +2511,7 @@ impl CreateNetworkAnalyzerConfigurationInput {
 pub mod create_service_profile_input {
 
     /// A builder for [`CreateServiceProfileInput`](crate::input::CreateServiceProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanServiceProfile>,
@@ -2510,8 +2577,10 @@ pub mod create_service_profile_input {
         /// Consumes the builder and constructs a [`CreateServiceProfileInput`](crate::input::CreateServiceProfileInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateServiceProfileInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateServiceProfileInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateServiceProfileInput {
                 name: self.name,
                 lo_ra_wan: self.lo_ra_wan,
@@ -2534,7 +2603,7 @@ impl CreateServiceProfileInput {
             crate::operation::CreateServiceProfile,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -2543,7 +2612,7 @@ impl CreateServiceProfileInput {
             fn uri_base(
                 _input: &crate::input::CreateServiceProfileInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/service-profiles").expect("formatting should succeed");
                 Ok(())
             }
@@ -2551,8 +2620,10 @@ impl CreateServiceProfileInput {
             fn update_http_builder(
                 input: &crate::input::CreateServiceProfileInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2638,7 +2709,7 @@ impl CreateServiceProfileInput {
 pub mod create_wireless_device_input {
 
     /// A builder for [`CreateWirelessDeviceInput`](crate::input::CreateWirelessDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::WirelessDeviceType>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2743,8 +2814,10 @@ pub mod create_wireless_device_input {
         /// Consumes the builder and constructs a [`CreateWirelessDeviceInput`](crate::input::CreateWirelessDeviceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateWirelessDeviceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateWirelessDeviceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateWirelessDeviceInput {
                 r#type: self.r#type,
                 name: self.name,
@@ -2770,7 +2843,7 @@ impl CreateWirelessDeviceInput {
             crate::operation::CreateWirelessDevice,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -2779,7 +2852,7 @@ impl CreateWirelessDeviceInput {
             fn uri_base(
                 _input: &crate::input::CreateWirelessDeviceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/wireless-devices").expect("formatting should succeed");
                 Ok(())
             }
@@ -2787,8 +2860,10 @@ impl CreateWirelessDeviceInput {
             fn update_http_builder(
                 input: &crate::input::CreateWirelessDeviceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2874,7 +2949,7 @@ impl CreateWirelessDeviceInput {
 pub mod create_wireless_gateway_input {
 
     /// A builder for [`CreateWirelessGatewayInput`](crate::input::CreateWirelessGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2951,8 +3026,10 @@ pub mod create_wireless_gateway_input {
         /// Consumes the builder and constructs a [`CreateWirelessGatewayInput`](crate::input::CreateWirelessGatewayInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateWirelessGatewayInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateWirelessGatewayInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateWirelessGatewayInput {
                 name: self.name,
                 description: self.description,
@@ -2976,7 +3053,7 @@ impl CreateWirelessGatewayInput {
             crate::operation::CreateWirelessGateway,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -2985,7 +3062,7 @@ impl CreateWirelessGatewayInput {
             fn uri_base(
                 _input: &crate::input::CreateWirelessGatewayInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/wireless-gateways").expect("formatting should succeed");
                 Ok(())
             }
@@ -2993,8 +3070,10 @@ impl CreateWirelessGatewayInput {
             fn update_http_builder(
                 input: &crate::input::CreateWirelessGatewayInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3080,7 +3159,7 @@ impl CreateWirelessGatewayInput {
 pub mod create_wireless_gateway_task_input {
 
     /// A builder for [`CreateWirelessGatewayTaskInput`](crate::input::CreateWirelessGatewayTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) wireless_gateway_task_definition_id: std::option::Option<std::string::String>,
@@ -3117,7 +3196,7 @@ pub mod create_wireless_gateway_task_input {
             self,
         ) -> Result<
             crate::input::CreateWirelessGatewayTaskInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateWirelessGatewayTaskInput {
                 id: self.id,
@@ -3139,26 +3218,31 @@ impl CreateWirelessGatewayTaskInput {
             crate::operation::CreateWirelessGatewayTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateWirelessGatewayTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_8 = &_input.id;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_8, false);
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-gateways/{Id}/tasks", Id = id)
                     .expect("formatting should succeed");
@@ -3168,8 +3252,10 @@ impl CreateWirelessGatewayTaskInput {
             fn update_http_builder(
                 input: &crate::input::CreateWirelessGatewayTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3255,7 +3341,7 @@ impl CreateWirelessGatewayTaskInput {
 pub mod create_wireless_gateway_task_definition_input {
 
     /// A builder for [`CreateWirelessGatewayTaskDefinitionInput`](crate::input::CreateWirelessGatewayTaskDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_create_tasks: std::option::Option<bool>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3334,7 +3420,7 @@ pub mod create_wireless_gateway_task_definition_input {
             self,
         ) -> Result<
             crate::input::CreateWirelessGatewayTaskDefinitionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateWirelessGatewayTaskDefinitionInput {
                 auto_create_tasks: self.auto_create_tasks.unwrap_or_default(),
@@ -3359,7 +3445,7 @@ impl CreateWirelessGatewayTaskDefinitionInput {
             crate::operation::CreateWirelessGatewayTaskDefinition,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -3368,7 +3454,7 @@ impl CreateWirelessGatewayTaskDefinitionInput {
             fn uri_base(
                 _input: &crate::input::CreateWirelessGatewayTaskDefinitionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/wireless-gateway-task-definitions")
                     .expect("formatting should succeed");
                 Ok(())
@@ -3377,8 +3463,10 @@ impl CreateWirelessGatewayTaskDefinitionInput {
             fn update_http_builder(
                 input: &crate::input::CreateWirelessGatewayTaskDefinitionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3461,7 +3549,7 @@ impl CreateWirelessGatewayTaskDefinitionInput {
 pub mod delete_destination_input {
 
     /// A builder for [`DeleteDestinationInput`](crate::input::DeleteDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -3479,8 +3567,10 @@ pub mod delete_destination_input {
         /// Consumes the builder and constructs a [`DeleteDestinationInput`](crate::input::DeleteDestinationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDestinationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteDestinationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteDestinationInput { name: self.name })
         }
     }
@@ -3498,26 +3588,31 @@ impl DeleteDestinationInput {
             crate::operation::DeleteDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.name;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_9, false);
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/destinations/{Name}", Name = name)
                     .expect("formatting should succeed");
@@ -3527,8 +3622,10 @@ impl DeleteDestinationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -3598,7 +3695,7 @@ impl DeleteDestinationInput {
 pub mod delete_device_profile_input {
 
     /// A builder for [`DeleteDeviceProfileInput`](crate::input::DeleteDeviceProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -3616,8 +3713,10 @@ pub mod delete_device_profile_input {
         /// Consumes the builder and constructs a [`DeleteDeviceProfileInput`](crate::input::DeleteDeviceProfileInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDeviceProfileInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteDeviceProfileInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteDeviceProfileInput { id: self.id })
         }
     }
@@ -3635,26 +3734,31 @@ impl DeleteDeviceProfileInput {
             crate::operation::DeleteDeviceProfile,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDeviceProfileInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.id;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_10, false);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/device-profiles/{Id}", Id = id)
                     .expect("formatting should succeed");
@@ -3664,8 +3768,10 @@ impl DeleteDeviceProfileInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDeviceProfileInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -3735,7 +3841,7 @@ impl DeleteDeviceProfileInput {
 pub mod delete_fuota_task_input {
 
     /// A builder for [`DeleteFuotaTaskInput`](crate::input::DeleteFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -3753,7 +3859,7 @@ pub mod delete_fuota_task_input {
         /// Consumes the builder and constructs a [`DeleteFuotaTaskInput`](crate::input::DeleteFuotaTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteFuotaTaskInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteFuotaTaskInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteFuotaTaskInput { id: self.id })
         }
@@ -3772,26 +3878,31 @@ impl DeleteFuotaTaskInput {
             crate::operation::DeleteFuotaTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteFuotaTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.id;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_11, false);
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_11,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/fuota-tasks/{Id}", Id = id).expect("formatting should succeed");
                 Ok(())
@@ -3800,8 +3911,10 @@ impl DeleteFuotaTaskInput {
             fn update_http_builder(
                 input: &crate::input::DeleteFuotaTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -3871,7 +3984,7 @@ impl DeleteFuotaTaskInput {
 pub mod delete_multicast_group_input {
 
     /// A builder for [`DeleteMulticastGroupInput`](crate::input::DeleteMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -3889,8 +4002,10 @@ pub mod delete_multicast_group_input {
         /// Consumes the builder and constructs a [`DeleteMulticastGroupInput`](crate::input::DeleteMulticastGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteMulticastGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteMulticastGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteMulticastGroupInput { id: self.id })
         }
     }
@@ -3908,26 +4023,31 @@ impl DeleteMulticastGroupInput {
             crate::operation::DeleteMulticastGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteMulticastGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_12 = &_input.id;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_12, false);
+                let input_12 = input_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_12,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/multicast-groups/{Id}", Id = id)
                     .expect("formatting should succeed");
@@ -3937,8 +4057,10 @@ impl DeleteMulticastGroupInput {
             fn update_http_builder(
                 input: &crate::input::DeleteMulticastGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -4008,7 +4130,7 @@ impl DeleteMulticastGroupInput {
 pub mod delete_network_analyzer_configuration_input {
 
     /// A builder for [`DeleteNetworkAnalyzerConfigurationInput`](crate::input::DeleteNetworkAnalyzerConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_name: std::option::Option<std::string::String>,
     }
@@ -4031,7 +4153,7 @@ pub mod delete_network_analyzer_configuration_input {
             self,
         ) -> Result<
             crate::input::DeleteNetworkAnalyzerConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteNetworkAnalyzerConfigurationInput {
                 configuration_name: self.configuration_name,
@@ -4052,26 +4174,31 @@ impl DeleteNetworkAnalyzerConfigurationInput {
             crate::operation::DeleteNetworkAnalyzerConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteNetworkAnalyzerConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.configuration_name;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let configuration_name = aws_smithy_http::label::fmt_string(input_13, false);
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "configuration_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let configuration_name = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if configuration_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "configuration_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4085,8 +4212,10 @@ impl DeleteNetworkAnalyzerConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteNetworkAnalyzerConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -4156,7 +4285,7 @@ impl DeleteNetworkAnalyzerConfigurationInput {
 pub mod delete_queued_messages_input {
 
     /// A builder for [`DeleteQueuedMessagesInput`](crate::input::DeleteQueuedMessagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -4199,8 +4328,10 @@ pub mod delete_queued_messages_input {
         /// Consumes the builder and constructs a [`DeleteQueuedMessagesInput`](crate::input::DeleteQueuedMessagesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteQueuedMessagesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteQueuedMessagesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteQueuedMessagesInput {
                 id: self.id,
                 message_id: self.message_id,
@@ -4222,26 +4353,31 @@ impl DeleteQueuedMessagesInput {
             crate::operation::DeleteQueuedMessages,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteQueuedMessagesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.id;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_14, false);
+                let input_14 = input_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_14,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-devices/{Id}/data", Id = id)
                     .expect("formatting should succeed");
@@ -4250,16 +4386,31 @@ impl DeleteQueuedMessagesInput {
             fn uri_query(
                 _input: &crate::input::DeleteQueuedMessagesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_15) = &_input.message_id {
-                    query.push_kv("messageId", &aws_smithy_http::query::fmt_string(&inner_15));
-                }
-                if let Some(inner_16) = &_input.wireless_device_type {
-                    query.push_kv(
-                        "WirelessDeviceType",
-                        &aws_smithy_http::query::fmt_string(&inner_16),
+                let inner_15 = &_input.message_id;
+                let inner_15 = inner_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "message_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_15.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "message_id",
+                            "cannot be empty or unset",
+                        ),
                     );
+                }
+                query.push_kv("messageId", &aws_smithy_http::query::fmt_string(&inner_15));
+                if let Some(inner_16) = &_input.wireless_device_type {
+                    {
+                        query.push_kv(
+                            "WirelessDeviceType",
+                            &aws_smithy_http::query::fmt_string(&inner_16),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4267,8 +4418,10 @@ impl DeleteQueuedMessagesInput {
             fn update_http_builder(
                 input: &crate::input::DeleteQueuedMessagesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4339,7 +4492,7 @@ impl DeleteQueuedMessagesInput {
 pub mod delete_service_profile_input {
 
     /// A builder for [`DeleteServiceProfileInput`](crate::input::DeleteServiceProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -4357,8 +4510,10 @@ pub mod delete_service_profile_input {
         /// Consumes the builder and constructs a [`DeleteServiceProfileInput`](crate::input::DeleteServiceProfileInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteServiceProfileInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteServiceProfileInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteServiceProfileInput { id: self.id })
         }
     }
@@ -4376,26 +4531,31 @@ impl DeleteServiceProfileInput {
             crate::operation::DeleteServiceProfile,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteServiceProfileInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_17 = &_input.id;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_17, false);
+                let input_17 = input_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/service-profiles/{Id}", Id = id)
                     .expect("formatting should succeed");
@@ -4405,8 +4565,10 @@ impl DeleteServiceProfileInput {
             fn update_http_builder(
                 input: &crate::input::DeleteServiceProfileInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -4476,7 +4638,7 @@ impl DeleteServiceProfileInput {
 pub mod delete_wireless_device_input {
 
     /// A builder for [`DeleteWirelessDeviceInput`](crate::input::DeleteWirelessDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -4494,8 +4656,10 @@ pub mod delete_wireless_device_input {
         /// Consumes the builder and constructs a [`DeleteWirelessDeviceInput`](crate::input::DeleteWirelessDeviceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteWirelessDeviceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteWirelessDeviceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteWirelessDeviceInput { id: self.id })
         }
     }
@@ -4513,26 +4677,31 @@ impl DeleteWirelessDeviceInput {
             crate::operation::DeleteWirelessDevice,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteWirelessDeviceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_18 = &_input.id;
-                let input_18 = input_18.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_18, false);
+                let input_18 = input_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_18,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-devices/{Id}", Id = id)
                     .expect("formatting should succeed");
@@ -4542,8 +4711,10 @@ impl DeleteWirelessDeviceInput {
             fn update_http_builder(
                 input: &crate::input::DeleteWirelessDeviceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -4613,7 +4784,7 @@ impl DeleteWirelessDeviceInput {
 pub mod delete_wireless_gateway_input {
 
     /// A builder for [`DeleteWirelessGatewayInput`](crate::input::DeleteWirelessGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -4631,8 +4802,10 @@ pub mod delete_wireless_gateway_input {
         /// Consumes the builder and constructs a [`DeleteWirelessGatewayInput`](crate::input::DeleteWirelessGatewayInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteWirelessGatewayInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteWirelessGatewayInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteWirelessGatewayInput { id: self.id })
         }
     }
@@ -4650,26 +4823,31 @@ impl DeleteWirelessGatewayInput {
             crate::operation::DeleteWirelessGateway,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteWirelessGatewayInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_19 = &_input.id;
-                let input_19 = input_19.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_19, false);
+                let input_19 = input_19.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_19,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-gateways/{Id}", Id = id)
                     .expect("formatting should succeed");
@@ -4679,8 +4857,10 @@ impl DeleteWirelessGatewayInput {
             fn update_http_builder(
                 input: &crate::input::DeleteWirelessGatewayInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -4750,7 +4930,7 @@ impl DeleteWirelessGatewayInput {
 pub mod delete_wireless_gateway_task_input {
 
     /// A builder for [`DeleteWirelessGatewayTaskInput`](crate::input::DeleteWirelessGatewayTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -4770,7 +4950,7 @@ pub mod delete_wireless_gateway_task_input {
             self,
         ) -> Result<
             crate::input::DeleteWirelessGatewayTaskInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteWirelessGatewayTaskInput { id: self.id })
         }
@@ -4789,26 +4969,31 @@ impl DeleteWirelessGatewayTaskInput {
             crate::operation::DeleteWirelessGatewayTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteWirelessGatewayTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_20 = &_input.id;
-                let input_20 = input_20.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_20, false);
+                let input_20 = input_20.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_20,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-gateways/{Id}/tasks", Id = id)
                     .expect("formatting should succeed");
@@ -4818,8 +5003,10 @@ impl DeleteWirelessGatewayTaskInput {
             fn update_http_builder(
                 input: &crate::input::DeleteWirelessGatewayTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -4889,7 +5076,7 @@ impl DeleteWirelessGatewayTaskInput {
 pub mod delete_wireless_gateway_task_definition_input {
 
     /// A builder for [`DeleteWirelessGatewayTaskDefinitionInput`](crate::input::DeleteWirelessGatewayTaskDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -4909,7 +5096,7 @@ pub mod delete_wireless_gateway_task_definition_input {
             self,
         ) -> Result<
             crate::input::DeleteWirelessGatewayTaskDefinitionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteWirelessGatewayTaskDefinitionInput { id: self.id })
         }
@@ -4928,26 +5115,31 @@ impl DeleteWirelessGatewayTaskDefinitionInput {
             crate::operation::DeleteWirelessGatewayTaskDefinition,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteWirelessGatewayTaskDefinitionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_21 = &_input.id;
-                let input_21 = input_21.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_21, false);
+                let input_21 = input_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_21,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-gateway-task-definitions/{Id}", Id = id)
                     .expect("formatting should succeed");
@@ -4957,8 +5149,10 @@ impl DeleteWirelessGatewayTaskDefinitionInput {
             fn update_http_builder(
                 input: &crate::input::DeleteWirelessGatewayTaskDefinitionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -5028,7 +5222,7 @@ impl DeleteWirelessGatewayTaskDefinitionInput {
 pub mod disassociate_aws_account_from_partner_account_input {
 
     /// A builder for [`DisassociateAwsAccountFromPartnerAccountInput`](crate::input::DisassociateAwsAccountFromPartnerAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) partner_account_id: std::option::Option<std::string::String>,
         pub(crate) partner_type: std::option::Option<crate::model::PartnerType>,
@@ -5065,7 +5259,7 @@ pub mod disassociate_aws_account_from_partner_account_input {
             self,
         ) -> Result<
             crate::input::DisassociateAwsAccountFromPartnerAccountInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::DisassociateAwsAccountFromPartnerAccountInput {
@@ -5089,26 +5283,31 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
             crate::operation::DisassociateAwsAccountFromPartnerAccount,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateAwsAccountFromPartnerAccountInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_22 = &_input.partner_account_id;
-                let input_22 = input_22.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "partner_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let partner_account_id = aws_smithy_http::label::fmt_string(input_22, false);
+                let input_22 = input_22.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "partner_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let partner_account_id = aws_smithy_http::label::fmt_string(
+                    input_22,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if partner_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "partner_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "partner_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5121,22 +5320,29 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
             fn uri_query(
                 _input: &crate::input::DisassociateAwsAccountFromPartnerAccountInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_23) = &_input.partner_type {
-                    query.push_kv(
-                        "partnerType",
-                        &aws_smithy_http::query::fmt_string(&inner_23),
-                    );
-                }
+                let inner_23 = &_input.partner_type;
+                let inner_23 = inner_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "partner_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "partnerType",
+                    &aws_smithy_http::query::fmt_string(&inner_23),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::DisassociateAwsAccountFromPartnerAccountInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5207,7 +5413,7 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
 pub mod disassociate_multicast_group_from_fuota_task_input {
 
     /// A builder for [`DisassociateMulticastGroupFromFuotaTaskInput`](crate::input::DisassociateMulticastGroupFromFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) multicast_group_id: std::option::Option<std::string::String>,
@@ -5241,7 +5447,7 @@ pub mod disassociate_multicast_group_from_fuota_task_input {
             self,
         ) -> Result<
             crate::input::DisassociateMulticastGroupFromFuotaTaskInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateMulticastGroupFromFuotaTaskInput {
                 id: self.id,
@@ -5263,40 +5469,50 @@ impl DisassociateMulticastGroupFromFuotaTaskInput {
             crate::operation::DisassociateMulticastGroupFromFuotaTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateMulticastGroupFromFuotaTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_24 = &_input.id;
-                let input_24 = input_24.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_24, false);
+                let input_24 = input_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_24,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_25 = &_input.multicast_group_id;
-                let input_25 = input_25.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "multicast_group_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let multicast_group_id = aws_smithy_http::label::fmt_string(input_25, false);
+                let input_25 = input_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "multicast_group_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let multicast_group_id = aws_smithy_http::label::fmt_string(
+                    input_25,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if multicast_group_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "multicast_group_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "multicast_group_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5311,8 +5527,10 @@ impl DisassociateMulticastGroupFromFuotaTaskInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateMulticastGroupFromFuotaTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -5382,7 +5600,7 @@ impl DisassociateMulticastGroupFromFuotaTaskInput {
 pub mod disassociate_wireless_device_from_fuota_task_input {
 
     /// A builder for [`DisassociateWirelessDeviceFromFuotaTaskInput`](crate::input::DisassociateWirelessDeviceFromFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) wireless_device_id: std::option::Option<std::string::String>,
@@ -5416,7 +5634,7 @@ pub mod disassociate_wireless_device_from_fuota_task_input {
             self,
         ) -> Result<
             crate::input::DisassociateWirelessDeviceFromFuotaTaskInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateWirelessDeviceFromFuotaTaskInput {
                 id: self.id,
@@ -5438,40 +5656,50 @@ impl DisassociateWirelessDeviceFromFuotaTaskInput {
             crate::operation::DisassociateWirelessDeviceFromFuotaTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateWirelessDeviceFromFuotaTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_26 = &_input.id;
-                let input_26 = input_26.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_26, false);
+                let input_26 = input_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_26,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_27 = &_input.wireless_device_id;
-                let input_27 = input_27.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "wireless_device_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let wireless_device_id = aws_smithy_http::label::fmt_string(input_27, false);
+                let input_27 = input_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "wireless_device_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let wireless_device_id = aws_smithy_http::label::fmt_string(
+                    input_27,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if wireless_device_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "wireless_device_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "wireless_device_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5486,8 +5714,10 @@ impl DisassociateWirelessDeviceFromFuotaTaskInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateWirelessDeviceFromFuotaTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -5557,7 +5787,7 @@ impl DisassociateWirelessDeviceFromFuotaTaskInput {
 pub mod disassociate_wireless_device_from_multicast_group_input {
 
     /// A builder for [`DisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::DisassociateWirelessDeviceFromMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) wireless_device_id: std::option::Option<std::string::String>,
@@ -5591,7 +5821,7 @@ pub mod disassociate_wireless_device_from_multicast_group_input {
             self,
         ) -> Result<
             crate::input::DisassociateWirelessDeviceFromMulticastGroupInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::DisassociateWirelessDeviceFromMulticastGroupInput {
@@ -5615,40 +5845,50 @@ impl DisassociateWirelessDeviceFromMulticastGroupInput {
             crate::operation::DisassociateWirelessDeviceFromMulticastGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateWirelessDeviceFromMulticastGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_28 = &_input.id;
-                let input_28 = input_28.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_28, false);
+                let input_28 = input_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_28,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_29 = &_input.wireless_device_id;
-                let input_29 = input_29.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "wireless_device_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let wireless_device_id = aws_smithy_http::label::fmt_string(input_29, false);
+                let input_29 = input_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "wireless_device_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let wireless_device_id = aws_smithy_http::label::fmt_string(
+                    input_29,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if wireless_device_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "wireless_device_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "wireless_device_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5663,8 +5903,10 @@ impl DisassociateWirelessDeviceFromMulticastGroupInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateWirelessDeviceFromMulticastGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -5735,7 +5977,7 @@ impl DisassociateWirelessDeviceFromMulticastGroupInput {
 pub mod disassociate_wireless_device_from_thing_input {
 
     /// A builder for [`DisassociateWirelessDeviceFromThingInput`](crate::input::DisassociateWirelessDeviceFromThingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -5755,7 +5997,7 @@ pub mod disassociate_wireless_device_from_thing_input {
             self,
         ) -> Result<
             crate::input::DisassociateWirelessDeviceFromThingInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateWirelessDeviceFromThingInput { id: self.id })
         }
@@ -5774,26 +6016,31 @@ impl DisassociateWirelessDeviceFromThingInput {
             crate::operation::DisassociateWirelessDeviceFromThing,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateWirelessDeviceFromThingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_30 = &_input.id;
-                let input_30 = input_30.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_30, false);
+                let input_30 = input_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_30,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-devices/{Id}/thing", Id = id)
                     .expect("formatting should succeed");
@@ -5803,8 +6050,10 @@ impl DisassociateWirelessDeviceFromThingInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateWirelessDeviceFromThingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -5874,7 +6123,7 @@ impl DisassociateWirelessDeviceFromThingInput {
 pub mod disassociate_wireless_gateway_from_certificate_input {
 
     /// A builder for [`DisassociateWirelessGatewayFromCertificateInput`](crate::input::DisassociateWirelessGatewayFromCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -5894,7 +6143,7 @@ pub mod disassociate_wireless_gateway_from_certificate_input {
             self,
         ) -> Result<
             crate::input::DisassociateWirelessGatewayFromCertificateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateWirelessGatewayFromCertificateInput { id: self.id })
         }
@@ -5913,26 +6162,31 @@ impl DisassociateWirelessGatewayFromCertificateInput {
             crate::operation::DisassociateWirelessGatewayFromCertificate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateWirelessGatewayFromCertificateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_31 = &_input.id;
-                let input_31 = input_31.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_31, false);
+                let input_31 = input_31.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_31,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-gateways/{Id}/certificate", Id = id)
                     .expect("formatting should succeed");
@@ -5942,8 +6196,10 @@ impl DisassociateWirelessGatewayFromCertificateInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateWirelessGatewayFromCertificateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -6014,7 +6270,7 @@ impl DisassociateWirelessGatewayFromCertificateInput {
 pub mod disassociate_wireless_gateway_from_thing_input {
 
     /// A builder for [`DisassociateWirelessGatewayFromThingInput`](crate::input::DisassociateWirelessGatewayFromThingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -6034,7 +6290,7 @@ pub mod disassociate_wireless_gateway_from_thing_input {
             self,
         ) -> Result<
             crate::input::DisassociateWirelessGatewayFromThingInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateWirelessGatewayFromThingInput { id: self.id })
         }
@@ -6053,26 +6309,31 @@ impl DisassociateWirelessGatewayFromThingInput {
             crate::operation::DisassociateWirelessGatewayFromThing,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateWirelessGatewayFromThingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_32 = &_input.id;
-                let input_32 = input_32.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_32, false);
+                let input_32 = input_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_32,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-gateways/{Id}/thing", Id = id)
                     .expect("formatting should succeed");
@@ -6082,8 +6343,10 @@ impl DisassociateWirelessGatewayFromThingInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateWirelessGatewayFromThingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -6153,7 +6416,7 @@ impl DisassociateWirelessGatewayFromThingInput {
 pub mod get_destination_input {
 
     /// A builder for [`GetDestinationInput`](crate::input::GetDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -6171,7 +6434,7 @@ pub mod get_destination_input {
         /// Consumes the builder and constructs a [`GetDestinationInput`](crate::input::GetDestinationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDestinationInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetDestinationInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetDestinationInput { name: self.name })
         }
@@ -6190,26 +6453,31 @@ impl GetDestinationInput {
             crate::operation::GetDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_33 = &_input.name;
-                let input_33 = input_33.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_33, false);
+                let input_33 = input_33.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_33,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/destinations/{Name}", Name = name)
                     .expect("formatting should succeed");
@@ -6219,8 +6487,10 @@ impl GetDestinationInput {
             fn update_http_builder(
                 input: &crate::input::GetDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -6290,7 +6560,7 @@ impl GetDestinationInput {
 pub mod get_device_profile_input {
 
     /// A builder for [`GetDeviceProfileInput`](crate::input::GetDeviceProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -6308,8 +6578,10 @@ pub mod get_device_profile_input {
         /// Consumes the builder and constructs a [`GetDeviceProfileInput`](crate::input::GetDeviceProfileInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDeviceProfileInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetDeviceProfileInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetDeviceProfileInput { id: self.id })
         }
     }
@@ -6327,26 +6599,31 @@ impl GetDeviceProfileInput {
             crate::operation::GetDeviceProfile,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDeviceProfileInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_34 = &_input.id;
-                let input_34 = input_34.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_34, false);
+                let input_34 = input_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_34,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/device-profiles/{Id}", Id = id)
                     .expect("formatting should succeed");
@@ -6356,8 +6633,10 @@ impl GetDeviceProfileInput {
             fn update_http_builder(
                 input: &crate::input::GetDeviceProfileInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -6427,7 +6706,7 @@ impl GetDeviceProfileInput {
 pub mod get_event_configuration_by_resource_types_input {
 
     /// A builder for [`GetEventConfigurationByResourceTypesInput`](crate::input::GetEventConfigurationByResourceTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetEventConfigurationByResourceTypesInput`](crate::input::GetEventConfigurationByResourceTypesInput).
@@ -6435,7 +6714,7 @@ pub mod get_event_configuration_by_resource_types_input {
             self,
         ) -> Result<
             crate::input::GetEventConfigurationByResourceTypesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetEventConfigurationByResourceTypesInput {})
         }
@@ -6454,13 +6733,13 @@ impl GetEventConfigurationByResourceTypesInput {
             crate::operation::GetEventConfigurationByResourceTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetEventConfigurationByResourceTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/event-configurations-resource-types")
                     .expect("formatting should succeed");
                 Ok(())
@@ -6469,8 +6748,10 @@ impl GetEventConfigurationByResourceTypesInput {
             fn update_http_builder(
                 input: &crate::input::GetEventConfigurationByResourceTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -6540,7 +6821,7 @@ impl GetEventConfigurationByResourceTypesInput {
 pub mod get_fuota_task_input {
 
     /// A builder for [`GetFuotaTaskInput`](crate::input::GetFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -6558,7 +6839,7 @@ pub mod get_fuota_task_input {
         /// Consumes the builder and constructs a [`GetFuotaTaskInput`](crate::input::GetFuotaTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetFuotaTaskInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetFuotaTaskInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetFuotaTaskInput { id: self.id })
         }
@@ -6577,26 +6858,31 @@ impl GetFuotaTaskInput {
             crate::operation::GetFuotaTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetFuotaTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_35 = &_input.id;
-                let input_35 = input_35.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_35, false);
+                let input_35 = input_35.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_35,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/fuota-tasks/{Id}", Id = id).expect("formatting should succeed");
                 Ok(())
@@ -6605,8 +6891,10 @@ impl GetFuotaTaskInput {
             fn update_http_builder(
                 input: &crate::input::GetFuotaTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -6676,7 +6964,7 @@ impl GetFuotaTaskInput {
 pub mod get_log_levels_by_resource_types_input {
 
     /// A builder for [`GetLogLevelsByResourceTypesInput`](crate::input::GetLogLevelsByResourceTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetLogLevelsByResourceTypesInput`](crate::input::GetLogLevelsByResourceTypesInput).
@@ -6684,7 +6972,7 @@ pub mod get_log_levels_by_resource_types_input {
             self,
         ) -> Result<
             crate::input::GetLogLevelsByResourceTypesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetLogLevelsByResourceTypesInput {})
         }
@@ -6703,13 +6991,13 @@ impl GetLogLevelsByResourceTypesInput {
             crate::operation::GetLogLevelsByResourceTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLogLevelsByResourceTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/log-levels").expect("formatting should succeed");
                 Ok(())
             }
@@ -6717,8 +7005,10 @@ impl GetLogLevelsByResourceTypesInput {
             fn update_http_builder(
                 input: &crate::input::GetLogLevelsByResourceTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -6788,7 +7078,7 @@ impl GetLogLevelsByResourceTypesInput {
 pub mod get_multicast_group_input {
 
     /// A builder for [`GetMulticastGroupInput`](crate::input::GetMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -6806,8 +7096,10 @@ pub mod get_multicast_group_input {
         /// Consumes the builder and constructs a [`GetMulticastGroupInput`](crate::input::GetMulticastGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetMulticastGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetMulticastGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetMulticastGroupInput { id: self.id })
         }
     }
@@ -6825,26 +7117,31 @@ impl GetMulticastGroupInput {
             crate::operation::GetMulticastGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetMulticastGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_36 = &_input.id;
-                let input_36 = input_36.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_36, false);
+                let input_36 = input_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_36,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/multicast-groups/{Id}", Id = id)
                     .expect("formatting should succeed");
@@ -6854,8 +7151,10 @@ impl GetMulticastGroupInput {
             fn update_http_builder(
                 input: &crate::input::GetMulticastGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -6925,7 +7224,7 @@ impl GetMulticastGroupInput {
 pub mod get_multicast_group_session_input {
 
     /// A builder for [`GetMulticastGroupSessionInput`](crate::input::GetMulticastGroupSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -6945,7 +7244,7 @@ pub mod get_multicast_group_session_input {
             self,
         ) -> Result<
             crate::input::GetMulticastGroupSessionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetMulticastGroupSessionInput { id: self.id })
         }
@@ -6964,26 +7263,31 @@ impl GetMulticastGroupSessionInput {
             crate::operation::GetMulticastGroupSession,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetMulticastGroupSessionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_37 = &_input.id;
-                let input_37 = input_37.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_37, false);
+                let input_37 = input_37.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_37,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/multicast-groups/{Id}/session", Id = id)
                     .expect("formatting should succeed");
@@ -6993,8 +7297,10 @@ impl GetMulticastGroupSessionInput {
             fn update_http_builder(
                 input: &crate::input::GetMulticastGroupSessionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -7064,7 +7370,7 @@ impl GetMulticastGroupSessionInput {
 pub mod get_network_analyzer_configuration_input {
 
     /// A builder for [`GetNetworkAnalyzerConfigurationInput`](crate::input::GetNetworkAnalyzerConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_name: std::option::Option<std::string::String>,
     }
@@ -7087,7 +7393,7 @@ pub mod get_network_analyzer_configuration_input {
             self,
         ) -> Result<
             crate::input::GetNetworkAnalyzerConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetNetworkAnalyzerConfigurationInput {
                 configuration_name: self.configuration_name,
@@ -7108,26 +7414,31 @@ impl GetNetworkAnalyzerConfigurationInput {
             crate::operation::GetNetworkAnalyzerConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetNetworkAnalyzerConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_38 = &_input.configuration_name;
-                let input_38 = input_38.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let configuration_name = aws_smithy_http::label::fmt_string(input_38, false);
+                let input_38 = input_38.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "configuration_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let configuration_name = aws_smithy_http::label::fmt_string(
+                    input_38,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if configuration_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "configuration_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7141,8 +7452,10 @@ impl GetNetworkAnalyzerConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::GetNetworkAnalyzerConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -7212,7 +7525,7 @@ impl GetNetworkAnalyzerConfigurationInput {
 pub mod get_partner_account_input {
 
     /// A builder for [`GetPartnerAccountInput`](crate::input::GetPartnerAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) partner_account_id: std::option::Option<std::string::String>,
         pub(crate) partner_type: std::option::Option<crate::model::PartnerType>,
@@ -7247,8 +7560,10 @@ pub mod get_partner_account_input {
         /// Consumes the builder and constructs a [`GetPartnerAccountInput`](crate::input::GetPartnerAccountInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPartnerAccountInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetPartnerAccountInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetPartnerAccountInput {
                 partner_account_id: self.partner_account_id,
                 partner_type: self.partner_type,
@@ -7269,26 +7584,31 @@ impl GetPartnerAccountInput {
             crate::operation::GetPartnerAccount,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPartnerAccountInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_39 = &_input.partner_account_id;
-                let input_39 = input_39.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "partner_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let partner_account_id = aws_smithy_http::label::fmt_string(input_39, false);
+                let input_39 = input_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "partner_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let partner_account_id = aws_smithy_http::label::fmt_string(
+                    input_39,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if partner_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "partner_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "partner_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7301,22 +7621,29 @@ impl GetPartnerAccountInput {
             fn uri_query(
                 _input: &crate::input::GetPartnerAccountInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_40) = &_input.partner_type {
-                    query.push_kv(
-                        "partnerType",
-                        &aws_smithy_http::query::fmt_string(&inner_40),
-                    );
-                }
+                let inner_40 = &_input.partner_type;
+                let inner_40 = inner_40.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "partner_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "partnerType",
+                    &aws_smithy_http::query::fmt_string(&inner_40),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetPartnerAccountInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7387,7 +7714,7 @@ impl GetPartnerAccountInput {
 pub mod get_position_input {
 
     /// A builder for [`GetPositionInput`](crate::input::GetPositionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::PositionResourceType>,
@@ -7422,7 +7749,7 @@ pub mod get_position_input {
         /// Consumes the builder and constructs a [`GetPositionInput`](crate::input::GetPositionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPositionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetPositionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetPositionInput {
                 resource_identifier: self.resource_identifier,
@@ -7444,26 +7771,31 @@ impl GetPositionInput {
             crate::operation::GetPosition,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPositionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_41 = &_input.resource_identifier;
-                let input_41 = input_41.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_identifier",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_identifier = aws_smithy_http::label::fmt_string(input_41, false);
+                let input_41 = input_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_identifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_identifier = aws_smithy_http::label::fmt_string(
+                    input_41,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_identifier.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_identifier",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_identifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7476,22 +7808,29 @@ impl GetPositionInput {
             fn uri_query(
                 _input: &crate::input::GetPositionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_42) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_42),
-                    );
-                }
+                let inner_42 = &_input.resource_type;
+                let inner_42 = inner_42.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_42),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetPositionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7562,7 +7901,7 @@ impl GetPositionInput {
 pub mod get_position_configuration_input {
 
     /// A builder for [`GetPositionConfigurationInput`](crate::input::GetPositionConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::PositionResourceType>,
@@ -7599,7 +7938,7 @@ pub mod get_position_configuration_input {
             self,
         ) -> Result<
             crate::input::GetPositionConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetPositionConfigurationInput {
                 resource_identifier: self.resource_identifier,
@@ -7621,26 +7960,31 @@ impl GetPositionConfigurationInput {
             crate::operation::GetPositionConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPositionConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_43 = &_input.resource_identifier;
-                let input_43 = input_43.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_identifier",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_identifier = aws_smithy_http::label::fmt_string(input_43, false);
+                let input_43 = input_43.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_identifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_identifier = aws_smithy_http::label::fmt_string(
+                    input_43,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_identifier.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_identifier",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_identifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7653,22 +7997,29 @@ impl GetPositionConfigurationInput {
             fn uri_query(
                 _input: &crate::input::GetPositionConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_44) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_44),
-                    );
-                }
+                let inner_44 = &_input.resource_type;
+                let inner_44 = inner_44.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_44),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetPositionConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7739,7 +8090,7 @@ impl GetPositionConfigurationInput {
 pub mod get_resource_event_configuration_input {
 
     /// A builder for [`GetResourceEventConfigurationInput`](crate::input::GetResourceEventConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) identifier_type: std::option::Option<crate::model::IdentifierType>,
@@ -7787,7 +8138,7 @@ pub mod get_resource_event_configuration_input {
             self,
         ) -> Result<
             crate::input::GetResourceEventConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetResourceEventConfigurationInput {
                 identifier: self.identifier,
@@ -7810,26 +8161,31 @@ impl GetResourceEventConfigurationInput {
             crate::operation::GetResourceEventConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourceEventConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_45 = &_input.identifier;
-                let input_45 = input_45.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "identifier",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let identifier = aws_smithy_http::label::fmt_string(input_45, false);
+                let input_45 = input_45.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "identifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let identifier = aws_smithy_http::label::fmt_string(
+                    input_45,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if identifier.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "identifier",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "identifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7842,19 +8198,26 @@ impl GetResourceEventConfigurationInput {
             fn uri_query(
                 _input: &crate::input::GetResourceEventConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_46) = &_input.identifier_type {
-                    query.push_kv(
-                        "identifierType",
-                        &aws_smithy_http::query::fmt_string(&inner_46),
-                    );
-                }
+                let inner_46 = &_input.identifier_type;
+                let inner_46 = inner_46.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "identifier_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "identifierType",
+                    &aws_smithy_http::query::fmt_string(&inner_46),
+                );
                 if let Some(inner_47) = &_input.partner_type {
-                    query.push_kv(
-                        "partnerType",
-                        &aws_smithy_http::query::fmt_string(&inner_47),
-                    );
+                    {
+                        query.push_kv(
+                            "partnerType",
+                            &aws_smithy_http::query::fmt_string(&inner_47),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7862,8 +8225,10 @@ impl GetResourceEventConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::GetResourceEventConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7934,7 +8299,7 @@ impl GetResourceEventConfigurationInput {
 pub mod get_resource_log_level_input {
 
     /// A builder for [`GetResourceLogLevelInput`](crate::input::GetResourceLogLevelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -7969,8 +8334,10 @@ pub mod get_resource_log_level_input {
         /// Consumes the builder and constructs a [`GetResourceLogLevelInput`](crate::input::GetResourceLogLevelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetResourceLogLevelInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetResourceLogLevelInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetResourceLogLevelInput {
                 resource_identifier: self.resource_identifier,
                 resource_type: self.resource_type,
@@ -7991,26 +8358,31 @@ impl GetResourceLogLevelInput {
             crate::operation::GetResourceLogLevel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourceLogLevelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_48 = &_input.resource_identifier;
-                let input_48 = input_48.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_identifier",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_identifier = aws_smithy_http::label::fmt_string(input_48, false);
+                let input_48 = input_48.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_identifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_identifier = aws_smithy_http::label::fmt_string(
+                    input_48,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_identifier.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_identifier",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_identifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -8023,22 +8395,37 @@ impl GetResourceLogLevelInput {
             fn uri_query(
                 _input: &crate::input::GetResourceLogLevelInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_49) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_49),
+                let inner_49 = &_input.resource_type;
+                let inner_49 = inner_49.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_49.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_type",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_49),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetResourceLogLevelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8109,7 +8496,7 @@ impl GetResourceLogLevelInput {
 pub mod get_service_endpoint_input {
 
     /// A builder for [`GetServiceEndpointInput`](crate::input::GetServiceEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::WirelessGatewayServiceType>,
     }
@@ -8130,8 +8517,10 @@ pub mod get_service_endpoint_input {
         /// Consumes the builder and constructs a [`GetServiceEndpointInput`](crate::input::GetServiceEndpointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetServiceEndpointInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetServiceEndpointInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetServiceEndpointInput {
                 service_type: self.service_type,
             })
@@ -8151,26 +8540,28 @@ impl GetServiceEndpointInput {
             crate::operation::GetServiceEndpoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetServiceEndpointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/service-endpoint").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetServiceEndpointInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_50) = &_input.service_type {
-                    query.push_kv(
-                        "serviceType",
-                        &aws_smithy_http::query::fmt_string(&inner_50),
-                    );
+                    {
+                        query.push_kv(
+                            "serviceType",
+                            &aws_smithy_http::query::fmt_string(&inner_50),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8178,8 +8569,10 @@ impl GetServiceEndpointInput {
             fn update_http_builder(
                 input: &crate::input::GetServiceEndpointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8250,7 +8643,7 @@ impl GetServiceEndpointInput {
 pub mod get_service_profile_input {
 
     /// A builder for [`GetServiceProfileInput`](crate::input::GetServiceProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -8268,8 +8661,10 @@ pub mod get_service_profile_input {
         /// Consumes the builder and constructs a [`GetServiceProfileInput`](crate::input::GetServiceProfileInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetServiceProfileInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetServiceProfileInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetServiceProfileInput { id: self.id })
         }
     }
@@ -8287,26 +8682,31 @@ impl GetServiceProfileInput {
             crate::operation::GetServiceProfile,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetServiceProfileInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_51 = &_input.id;
-                let input_51 = input_51.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_51, false);
+                let input_51 = input_51.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_51,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/service-profiles/{Id}", Id = id)
                     .expect("formatting should succeed");
@@ -8316,8 +8716,10 @@ impl GetServiceProfileInput {
             fn update_http_builder(
                 input: &crate::input::GetServiceProfileInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -8387,7 +8789,7 @@ impl GetServiceProfileInput {
 pub mod get_wireless_device_input {
 
     /// A builder for [`GetWirelessDeviceInput`](crate::input::GetWirelessDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) identifier_type: std::option::Option<crate::model::WirelessDeviceIdType>,
@@ -8419,8 +8821,10 @@ pub mod get_wireless_device_input {
         /// Consumes the builder and constructs a [`GetWirelessDeviceInput`](crate::input::GetWirelessDeviceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetWirelessDeviceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetWirelessDeviceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetWirelessDeviceInput {
                 identifier: self.identifier,
                 identifier_type: self.identifier_type,
@@ -8441,26 +8845,31 @@ impl GetWirelessDeviceInput {
             crate::operation::GetWirelessDevice,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetWirelessDeviceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_52 = &_input.identifier;
-                let input_52 = input_52.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "identifier",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let identifier = aws_smithy_http::label::fmt_string(input_52, false);
+                let input_52 = input_52.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "identifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let identifier = aws_smithy_http::label::fmt_string(
+                    input_52,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if identifier.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "identifier",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "identifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -8473,22 +8882,29 @@ impl GetWirelessDeviceInput {
             fn uri_query(
                 _input: &crate::input::GetWirelessDeviceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_53) = &_input.identifier_type {
-                    query.push_kv(
-                        "identifierType",
-                        &aws_smithy_http::query::fmt_string(&inner_53),
-                    );
-                }
+                let inner_53 = &_input.identifier_type;
+                let inner_53 = inner_53.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "identifier_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "identifierType",
+                    &aws_smithy_http::query::fmt_string(&inner_53),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetWirelessDeviceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8559,7 +8975,7 @@ impl GetWirelessDeviceInput {
 pub mod get_wireless_device_statistics_input {
 
     /// A builder for [`GetWirelessDeviceStatisticsInput`](crate::input::GetWirelessDeviceStatisticsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_device_id: std::option::Option<std::string::String>,
     }
@@ -8582,7 +8998,7 @@ pub mod get_wireless_device_statistics_input {
             self,
         ) -> Result<
             crate::input::GetWirelessDeviceStatisticsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetWirelessDeviceStatisticsInput {
                 wireless_device_id: self.wireless_device_id,
@@ -8603,26 +9019,31 @@ impl GetWirelessDeviceStatisticsInput {
             crate::operation::GetWirelessDeviceStatistics,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetWirelessDeviceStatisticsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_54 = &_input.wireless_device_id;
-                let input_54 = input_54.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "wireless_device_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let wireless_device_id = aws_smithy_http::label::fmt_string(input_54, false);
+                let input_54 = input_54.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "wireless_device_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let wireless_device_id = aws_smithy_http::label::fmt_string(
+                    input_54,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if wireless_device_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "wireless_device_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "wireless_device_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -8636,8 +9057,10 @@ impl GetWirelessDeviceStatisticsInput {
             fn update_http_builder(
                 input: &crate::input::GetWirelessDeviceStatisticsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -8707,7 +9130,7 @@ impl GetWirelessDeviceStatisticsInput {
 pub mod get_wireless_gateway_input {
 
     /// A builder for [`GetWirelessGatewayInput`](crate::input::GetWirelessGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) identifier_type: std::option::Option<crate::model::WirelessGatewayIdType>,
@@ -8739,8 +9162,10 @@ pub mod get_wireless_gateway_input {
         /// Consumes the builder and constructs a [`GetWirelessGatewayInput`](crate::input::GetWirelessGatewayInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetWirelessGatewayInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetWirelessGatewayInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetWirelessGatewayInput {
                 identifier: self.identifier,
                 identifier_type: self.identifier_type,
@@ -8761,26 +9186,31 @@ impl GetWirelessGatewayInput {
             crate::operation::GetWirelessGateway,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetWirelessGatewayInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_55 = &_input.identifier;
-                let input_55 = input_55.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "identifier",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let identifier = aws_smithy_http::label::fmt_string(input_55, false);
+                let input_55 = input_55.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "identifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let identifier = aws_smithy_http::label::fmt_string(
+                    input_55,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if identifier.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "identifier",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "identifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -8793,22 +9223,29 @@ impl GetWirelessGatewayInput {
             fn uri_query(
                 _input: &crate::input::GetWirelessGatewayInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_56) = &_input.identifier_type {
-                    query.push_kv(
-                        "identifierType",
-                        &aws_smithy_http::query::fmt_string(&inner_56),
-                    );
-                }
+                let inner_56 = &_input.identifier_type;
+                let inner_56 = inner_56.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "identifier_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "identifierType",
+                    &aws_smithy_http::query::fmt_string(&inner_56),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::GetWirelessGatewayInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8879,7 +9316,7 @@ impl GetWirelessGatewayInput {
 pub mod get_wireless_gateway_certificate_input {
 
     /// A builder for [`GetWirelessGatewayCertificateInput`](crate::input::GetWirelessGatewayCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -8899,7 +9336,7 @@ pub mod get_wireless_gateway_certificate_input {
             self,
         ) -> Result<
             crate::input::GetWirelessGatewayCertificateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetWirelessGatewayCertificateInput { id: self.id })
         }
@@ -8918,26 +9355,31 @@ impl GetWirelessGatewayCertificateInput {
             crate::operation::GetWirelessGatewayCertificate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetWirelessGatewayCertificateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_57 = &_input.id;
-                let input_57 = input_57.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_57, false);
+                let input_57 = input_57.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_57,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-gateways/{Id}/certificate", Id = id)
                     .expect("formatting should succeed");
@@ -8947,8 +9389,10 @@ impl GetWirelessGatewayCertificateInput {
             fn update_http_builder(
                 input: &crate::input::GetWirelessGatewayCertificateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -9018,7 +9462,7 @@ impl GetWirelessGatewayCertificateInput {
 pub mod get_wireless_gateway_firmware_information_input {
 
     /// A builder for [`GetWirelessGatewayFirmwareInformationInput`](crate::input::GetWirelessGatewayFirmwareInformationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -9038,7 +9482,7 @@ pub mod get_wireless_gateway_firmware_information_input {
             self,
         ) -> Result<
             crate::input::GetWirelessGatewayFirmwareInformationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetWirelessGatewayFirmwareInformationInput { id: self.id })
         }
@@ -9057,26 +9501,31 @@ impl GetWirelessGatewayFirmwareInformationInput {
             crate::operation::GetWirelessGatewayFirmwareInformation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetWirelessGatewayFirmwareInformationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_58 = &_input.id;
-                let input_58 = input_58.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_58, false);
+                let input_58 = input_58.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_58,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -9090,8 +9539,10 @@ impl GetWirelessGatewayFirmwareInformationInput {
             fn update_http_builder(
                 input: &crate::input::GetWirelessGatewayFirmwareInformationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -9161,7 +9612,7 @@ impl GetWirelessGatewayFirmwareInformationInput {
 pub mod get_wireless_gateway_statistics_input {
 
     /// A builder for [`GetWirelessGatewayStatisticsInput`](crate::input::GetWirelessGatewayStatisticsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_gateway_id: std::option::Option<std::string::String>,
     }
@@ -9184,7 +9635,7 @@ pub mod get_wireless_gateway_statistics_input {
             self,
         ) -> Result<
             crate::input::GetWirelessGatewayStatisticsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetWirelessGatewayStatisticsInput {
                 wireless_gateway_id: self.wireless_gateway_id,
@@ -9205,26 +9656,31 @@ impl GetWirelessGatewayStatisticsInput {
             crate::operation::GetWirelessGatewayStatistics,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetWirelessGatewayStatisticsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_59 = &_input.wireless_gateway_id;
-                let input_59 = input_59.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "wireless_gateway_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let wireless_gateway_id = aws_smithy_http::label::fmt_string(input_59, false);
+                let input_59 = input_59.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "wireless_gateway_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let wireless_gateway_id = aws_smithy_http::label::fmt_string(
+                    input_59,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if wireless_gateway_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "wireless_gateway_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "wireless_gateway_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -9238,8 +9694,10 @@ impl GetWirelessGatewayStatisticsInput {
             fn update_http_builder(
                 input: &crate::input::GetWirelessGatewayStatisticsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -9309,7 +9767,7 @@ impl GetWirelessGatewayStatisticsInput {
 pub mod get_wireless_gateway_task_input {
 
     /// A builder for [`GetWirelessGatewayTaskInput`](crate::input::GetWirelessGatewayTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -9327,8 +9785,10 @@ pub mod get_wireless_gateway_task_input {
         /// Consumes the builder and constructs a [`GetWirelessGatewayTaskInput`](crate::input::GetWirelessGatewayTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetWirelessGatewayTaskInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetWirelessGatewayTaskInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetWirelessGatewayTaskInput { id: self.id })
         }
     }
@@ -9346,26 +9806,31 @@ impl GetWirelessGatewayTaskInput {
             crate::operation::GetWirelessGatewayTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetWirelessGatewayTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_60 = &_input.id;
-                let input_60 = input_60.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_60, false);
+                let input_60 = input_60.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_60,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-gateways/{Id}/tasks", Id = id)
                     .expect("formatting should succeed");
@@ -9375,8 +9840,10 @@ impl GetWirelessGatewayTaskInput {
             fn update_http_builder(
                 input: &crate::input::GetWirelessGatewayTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -9446,7 +9913,7 @@ impl GetWirelessGatewayTaskInput {
 pub mod get_wireless_gateway_task_definition_input {
 
     /// A builder for [`GetWirelessGatewayTaskDefinitionInput`](crate::input::GetWirelessGatewayTaskDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -9466,7 +9933,7 @@ pub mod get_wireless_gateway_task_definition_input {
             self,
         ) -> Result<
             crate::input::GetWirelessGatewayTaskDefinitionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetWirelessGatewayTaskDefinitionInput { id: self.id })
         }
@@ -9485,26 +9952,31 @@ impl GetWirelessGatewayTaskDefinitionInput {
             crate::operation::GetWirelessGatewayTaskDefinition,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetWirelessGatewayTaskDefinitionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_61 = &_input.id;
-                let input_61 = input_61.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_61, false);
+                let input_61 = input_61.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_61,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-gateway-task-definitions/{Id}", Id = id)
                     .expect("formatting should succeed");
@@ -9514,8 +9986,10 @@ impl GetWirelessGatewayTaskDefinitionInput {
             fn update_http_builder(
                 input: &crate::input::GetWirelessGatewayTaskDefinitionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -9585,7 +10059,7 @@ impl GetWirelessGatewayTaskDefinitionInput {
 pub mod list_destinations_input {
 
     /// A builder for [`ListDestinationsInput`](crate::input::ListDestinationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9614,8 +10088,10 @@ pub mod list_destinations_input {
         /// Consumes the builder and constructs a [`ListDestinationsInput`](crate::input::ListDestinationsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDestinationsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListDestinationsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListDestinationsInput {
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
@@ -9636,20 +10112,20 @@ impl ListDestinationsInput {
             crate::operation::ListDestinations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDestinationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/destinations").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListDestinationsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -9658,7 +10134,9 @@ impl ListDestinationsInput {
                     );
                 }
                 if let Some(inner_62) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_62));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_62));
+                    }
                 }
                 Ok(())
             }
@@ -9666,8 +10144,10 @@ impl ListDestinationsInput {
             fn update_http_builder(
                 input: &crate::input::ListDestinationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -9738,7 +10218,7 @@ impl ListDestinationsInput {
 pub mod list_device_profiles_input {
 
     /// A builder for [`ListDeviceProfilesInput`](crate::input::ListDeviceProfilesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -9767,8 +10247,10 @@ pub mod list_device_profiles_input {
         /// Consumes the builder and constructs a [`ListDeviceProfilesInput`](crate::input::ListDeviceProfilesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDeviceProfilesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListDeviceProfilesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListDeviceProfilesInput {
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
@@ -9789,23 +10271,25 @@ impl ListDeviceProfilesInput {
             crate::operation::ListDeviceProfiles,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDeviceProfilesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/device-profiles").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListDeviceProfilesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_63) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_63));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_63));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -9819,8 +10303,10 @@ impl ListDeviceProfilesInput {
             fn update_http_builder(
                 input: &crate::input::ListDeviceProfilesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -9891,7 +10377,7 @@ impl ListDeviceProfilesInput {
 pub mod list_event_configurations_input {
 
     /// A builder for [`ListEventConfigurationsInput`](crate::input::ListEventConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::EventNotificationResourceType>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -9936,7 +10422,7 @@ pub mod list_event_configurations_input {
             self,
         ) -> Result<
             crate::input::ListEventConfigurationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListEventConfigurationsInput {
                 resource_type: self.resource_type,
@@ -9959,27 +10445,32 @@ impl ListEventConfigurationsInput {
             crate::operation::ListEventConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListEventConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/event-configurations").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListEventConfigurationsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_64) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_64),
-                    );
-                }
+                let inner_64 = &_input.resource_type;
+                let inner_64 = inner_64.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_64),
+                );
                 if _input.max_results != 0 {
                     query.push_kv(
                         "maxResults",
@@ -9987,7 +10478,9 @@ impl ListEventConfigurationsInput {
                     );
                 }
                 if let Some(inner_65) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_65));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_65));
+                    }
                 }
                 Ok(())
             }
@@ -9995,8 +10488,10 @@ impl ListEventConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::ListEventConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10067,7 +10562,7 @@ impl ListEventConfigurationsInput {
 pub mod list_fuota_tasks_input {
 
     /// A builder for [`ListFuotaTasksInput`](crate::input::ListFuotaTasksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -10096,7 +10591,7 @@ pub mod list_fuota_tasks_input {
         /// Consumes the builder and constructs a [`ListFuotaTasksInput`](crate::input::ListFuotaTasksInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListFuotaTasksInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListFuotaTasksInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListFuotaTasksInput {
                 next_token: self.next_token,
@@ -10118,23 +10613,25 @@ impl ListFuotaTasksInput {
             crate::operation::ListFuotaTasks,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListFuotaTasksInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/fuota-tasks").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListFuotaTasksInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_66) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_66));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_66));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -10148,8 +10645,10 @@ impl ListFuotaTasksInput {
             fn update_http_builder(
                 input: &crate::input::ListFuotaTasksInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10220,7 +10719,7 @@ impl ListFuotaTasksInput {
 pub mod list_multicast_groups_input {
 
     /// A builder for [`ListMulticastGroupsInput`](crate::input::ListMulticastGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -10249,8 +10748,10 @@ pub mod list_multicast_groups_input {
         /// Consumes the builder and constructs a [`ListMulticastGroupsInput`](crate::input::ListMulticastGroupsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListMulticastGroupsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListMulticastGroupsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListMulticastGroupsInput {
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
@@ -10271,23 +10772,25 @@ impl ListMulticastGroupsInput {
             crate::operation::ListMulticastGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListMulticastGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/multicast-groups").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListMulticastGroupsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_67) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_67));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_67));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -10301,8 +10804,10 @@ impl ListMulticastGroupsInput {
             fn update_http_builder(
                 input: &crate::input::ListMulticastGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10373,7 +10878,7 @@ impl ListMulticastGroupsInput {
 pub mod list_multicast_groups_by_fuota_task_input {
 
     /// A builder for [`ListMulticastGroupsByFuotaTaskInput`](crate::input::ListMulticastGroupsByFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -10415,7 +10920,7 @@ pub mod list_multicast_groups_by_fuota_task_input {
             self,
         ) -> Result<
             crate::input::ListMulticastGroupsByFuotaTaskInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListMulticastGroupsByFuotaTaskInput {
                 id: self.id,
@@ -10438,26 +10943,31 @@ impl ListMulticastGroupsByFuotaTaskInput {
             crate::operation::ListMulticastGroupsByFuotaTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListMulticastGroupsByFuotaTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_68 = &_input.id;
-                let input_68 = input_68.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_68, false);
+                let input_68 = input_68.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_68,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/fuota-tasks/{Id}/multicast-groups", Id = id)
                     .expect("formatting should succeed");
@@ -10466,10 +10976,12 @@ impl ListMulticastGroupsByFuotaTaskInput {
             fn uri_query(
                 _input: &crate::input::ListMulticastGroupsByFuotaTaskInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_69) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_69));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_69));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -10483,8 +10995,10 @@ impl ListMulticastGroupsByFuotaTaskInput {
             fn update_http_builder(
                 input: &crate::input::ListMulticastGroupsByFuotaTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10555,7 +11069,7 @@ impl ListMulticastGroupsByFuotaTaskInput {
 pub mod list_network_analyzer_configurations_input {
 
     /// A builder for [`ListNetworkAnalyzerConfigurationsInput`](crate::input::ListNetworkAnalyzerConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -10586,7 +11100,7 @@ pub mod list_network_analyzer_configurations_input {
             self,
         ) -> Result<
             crate::input::ListNetworkAnalyzerConfigurationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListNetworkAnalyzerConfigurationsInput {
                 max_results: self.max_results.unwrap_or_default(),
@@ -10608,13 +11122,13 @@ impl ListNetworkAnalyzerConfigurationsInput {
             crate::operation::ListNetworkAnalyzerConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListNetworkAnalyzerConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/network-analyzer-configurations")
                     .expect("formatting should succeed");
                 Ok(())
@@ -10622,7 +11136,7 @@ impl ListNetworkAnalyzerConfigurationsInput {
             fn uri_query(
                 _input: &crate::input::ListNetworkAnalyzerConfigurationsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -10631,7 +11145,9 @@ impl ListNetworkAnalyzerConfigurationsInput {
                     );
                 }
                 if let Some(inner_70) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_70));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_70));
+                    }
                 }
                 Ok(())
             }
@@ -10639,8 +11155,10 @@ impl ListNetworkAnalyzerConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::ListNetworkAnalyzerConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10711,7 +11229,7 @@ impl ListNetworkAnalyzerConfigurationsInput {
 pub mod list_partner_accounts_input {
 
     /// A builder for [`ListPartnerAccountsInput`](crate::input::ListPartnerAccountsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -10740,8 +11258,10 @@ pub mod list_partner_accounts_input {
         /// Consumes the builder and constructs a [`ListPartnerAccountsInput`](crate::input::ListPartnerAccountsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPartnerAccountsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListPartnerAccountsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListPartnerAccountsInput {
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
@@ -10762,23 +11282,25 @@ impl ListPartnerAccountsInput {
             crate::operation::ListPartnerAccounts,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPartnerAccountsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/partner-accounts").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListPartnerAccountsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_71) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_71));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_71));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -10792,8 +11314,10 @@ impl ListPartnerAccountsInput {
             fn update_http_builder(
                 input: &crate::input::ListPartnerAccountsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -10864,7 +11388,7 @@ impl ListPartnerAccountsInput {
 pub mod list_position_configurations_input {
 
     /// A builder for [`ListPositionConfigurationsInput`](crate::input::ListPositionConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::PositionResourceType>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -10909,7 +11433,7 @@ pub mod list_position_configurations_input {
             self,
         ) -> Result<
             crate::input::ListPositionConfigurationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListPositionConfigurationsInput {
                 resource_type: self.resource_type,
@@ -10932,26 +11456,28 @@ impl ListPositionConfigurationsInput {
             crate::operation::ListPositionConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPositionConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/position-configurations").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListPositionConfigurationsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_72) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_72),
-                    );
+                    {
+                        query.push_kv(
+                            "resourceType",
+                            &aws_smithy_http::query::fmt_string(&inner_72),
+                        );
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -10960,7 +11486,9 @@ impl ListPositionConfigurationsInput {
                     );
                 }
                 if let Some(inner_73) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_73));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_73));
+                    }
                 }
                 Ok(())
             }
@@ -10968,8 +11496,10 @@ impl ListPositionConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::ListPositionConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -11040,7 +11570,7 @@ impl ListPositionConfigurationsInput {
 pub mod list_queued_messages_input {
 
     /// A builder for [`ListQueuedMessagesInput`](crate::input::ListQueuedMessagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -11094,8 +11624,10 @@ pub mod list_queued_messages_input {
         /// Consumes the builder and constructs a [`ListQueuedMessagesInput`](crate::input::ListQueuedMessagesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListQueuedMessagesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListQueuedMessagesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListQueuedMessagesInput {
                 id: self.id,
                 next_token: self.next_token,
@@ -11118,26 +11650,31 @@ impl ListQueuedMessagesInput {
             crate::operation::ListQueuedMessages,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListQueuedMessagesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_74 = &_input.id;
-                let input_74 = input_74.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_74, false);
+                let input_74 = input_74.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_74,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-devices/{Id}/data", Id = id)
                     .expect("formatting should succeed");
@@ -11146,10 +11683,12 @@ impl ListQueuedMessagesInput {
             fn uri_query(
                 _input: &crate::input::ListQueuedMessagesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_75) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_75));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_75));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -11158,10 +11697,12 @@ impl ListQueuedMessagesInput {
                     );
                 }
                 if let Some(inner_76) = &_input.wireless_device_type {
-                    query.push_kv(
-                        "WirelessDeviceType",
-                        &aws_smithy_http::query::fmt_string(&inner_76),
-                    );
+                    {
+                        query.push_kv(
+                            "WirelessDeviceType",
+                            &aws_smithy_http::query::fmt_string(&inner_76),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -11169,8 +11710,10 @@ impl ListQueuedMessagesInput {
             fn update_http_builder(
                 input: &crate::input::ListQueuedMessagesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -11241,7 +11784,7 @@ impl ListQueuedMessagesInput {
 pub mod list_service_profiles_input {
 
     /// A builder for [`ListServiceProfilesInput`](crate::input::ListServiceProfilesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -11270,8 +11813,10 @@ pub mod list_service_profiles_input {
         /// Consumes the builder and constructs a [`ListServiceProfilesInput`](crate::input::ListServiceProfilesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListServiceProfilesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListServiceProfilesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListServiceProfilesInput {
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
@@ -11292,23 +11837,25 @@ impl ListServiceProfilesInput {
             crate::operation::ListServiceProfiles,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListServiceProfilesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/service-profiles").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListServiceProfilesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_77) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_77));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_77));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -11322,8 +11869,10 @@ impl ListServiceProfilesInput {
             fn update_http_builder(
                 input: &crate::input::ListServiceProfilesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -11394,7 +11943,7 @@ impl ListServiceProfilesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -11412,8 +11961,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -11433,35 +11984,50 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListTagsForResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_78) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_78),
+                let inner_78 = &_input.resource_arn;
+                let inner_78 = inner_78.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_78.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_78),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -11532,7 +12098,7 @@ impl ListTagsForResourceInput {
 pub mod list_wireless_devices_input {
 
     /// A builder for [`ListWirelessDevicesInput`](crate::input::ListWirelessDevicesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -11645,8 +12211,10 @@ pub mod list_wireless_devices_input {
         /// Consumes the builder and constructs a [`ListWirelessDevicesInput`](crate::input::ListWirelessDevicesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListWirelessDevicesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListWirelessDevicesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListWirelessDevicesInput {
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
@@ -11673,20 +12241,20 @@ impl ListWirelessDevicesInput {
             crate::operation::ListWirelessDevices,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListWirelessDevicesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/wireless-devices").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListWirelessDevicesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -11695,43 +12263,57 @@ impl ListWirelessDevicesInput {
                     );
                 }
                 if let Some(inner_79) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_79));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_79));
+                    }
                 }
                 if let Some(inner_80) = &_input.destination_name {
-                    query.push_kv(
-                        "destinationName",
-                        &aws_smithy_http::query::fmt_string(&inner_80),
-                    );
+                    {
+                        query.push_kv(
+                            "destinationName",
+                            &aws_smithy_http::query::fmt_string(&inner_80),
+                        );
+                    }
                 }
                 if let Some(inner_81) = &_input.device_profile_id {
-                    query.push_kv(
-                        "deviceProfileId",
-                        &aws_smithy_http::query::fmt_string(&inner_81),
-                    );
+                    {
+                        query.push_kv(
+                            "deviceProfileId",
+                            &aws_smithy_http::query::fmt_string(&inner_81),
+                        );
+                    }
                 }
                 if let Some(inner_82) = &_input.service_profile_id {
-                    query.push_kv(
-                        "serviceProfileId",
-                        &aws_smithy_http::query::fmt_string(&inner_82),
-                    );
+                    {
+                        query.push_kv(
+                            "serviceProfileId",
+                            &aws_smithy_http::query::fmt_string(&inner_82),
+                        );
+                    }
                 }
                 if let Some(inner_83) = &_input.wireless_device_type {
-                    query.push_kv(
-                        "wirelessDeviceType",
-                        &aws_smithy_http::query::fmt_string(&inner_83),
-                    );
+                    {
+                        query.push_kv(
+                            "wirelessDeviceType",
+                            &aws_smithy_http::query::fmt_string(&inner_83),
+                        );
+                    }
                 }
                 if let Some(inner_84) = &_input.fuota_task_id {
-                    query.push_kv(
-                        "fuotaTaskId",
-                        &aws_smithy_http::query::fmt_string(&inner_84),
-                    );
+                    {
+                        query.push_kv(
+                            "fuotaTaskId",
+                            &aws_smithy_http::query::fmt_string(&inner_84),
+                        );
+                    }
                 }
                 if let Some(inner_85) = &_input.multicast_group_id {
-                    query.push_kv(
-                        "multicastGroupId",
-                        &aws_smithy_http::query::fmt_string(&inner_85),
-                    );
+                    {
+                        query.push_kv(
+                            "multicastGroupId",
+                            &aws_smithy_http::query::fmt_string(&inner_85),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -11739,8 +12321,10 @@ impl ListWirelessDevicesInput {
             fn update_http_builder(
                 input: &crate::input::ListWirelessDevicesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -11811,7 +12395,7 @@ impl ListWirelessDevicesInput {
 pub mod list_wireless_gateways_input {
 
     /// A builder for [`ListWirelessGatewaysInput`](crate::input::ListWirelessGatewaysInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -11840,8 +12424,10 @@ pub mod list_wireless_gateways_input {
         /// Consumes the builder and constructs a [`ListWirelessGatewaysInput`](crate::input::ListWirelessGatewaysInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListWirelessGatewaysInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListWirelessGatewaysInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListWirelessGatewaysInput {
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
@@ -11862,23 +12448,25 @@ impl ListWirelessGatewaysInput {
             crate::operation::ListWirelessGateways,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListWirelessGatewaysInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/wireless-gateways").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListWirelessGatewaysInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_86) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_86));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_86));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -11892,8 +12480,10 @@ impl ListWirelessGatewaysInput {
             fn update_http_builder(
                 input: &crate::input::ListWirelessGatewaysInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -11964,7 +12554,7 @@ impl ListWirelessGatewaysInput {
 pub mod list_wireless_gateway_task_definitions_input {
 
     /// A builder for [`ListWirelessGatewayTaskDefinitionsInput`](crate::input::ListWirelessGatewayTaskDefinitionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -12013,7 +12603,7 @@ pub mod list_wireless_gateway_task_definitions_input {
             self,
         ) -> Result<
             crate::input::ListWirelessGatewayTaskDefinitionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListWirelessGatewayTaskDefinitionsInput {
                 max_results: self.max_results.unwrap_or_default(),
@@ -12036,13 +12626,13 @@ impl ListWirelessGatewayTaskDefinitionsInput {
             crate::operation::ListWirelessGatewayTaskDefinitions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListWirelessGatewayTaskDefinitionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/wireless-gateway-task-definitions")
                     .expect("formatting should succeed");
                 Ok(())
@@ -12050,7 +12640,7 @@ impl ListWirelessGatewayTaskDefinitionsInput {
             fn uri_query(
                 _input: &crate::input::ListWirelessGatewayTaskDefinitionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -12059,13 +12649,17 @@ impl ListWirelessGatewayTaskDefinitionsInput {
                     );
                 }
                 if let Some(inner_87) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_87));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_87));
+                    }
                 }
                 if let Some(inner_88) = &_input.task_definition_type {
-                    query.push_kv(
-                        "taskDefinitionType",
-                        &aws_smithy_http::query::fmt_string(&inner_88),
-                    );
+                    {
+                        query.push_kv(
+                            "taskDefinitionType",
+                            &aws_smithy_http::query::fmt_string(&inner_88),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -12073,8 +12667,10 @@ impl ListWirelessGatewayTaskDefinitionsInput {
             fn update_http_builder(
                 input: &crate::input::ListWirelessGatewayTaskDefinitionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -12145,7 +12741,7 @@ impl ListWirelessGatewayTaskDefinitionsInput {
 pub mod put_position_configuration_input {
 
     /// A builder for [`PutPositionConfigurationInput`](crate::input::PutPositionConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::PositionResourceType>,
@@ -12207,7 +12803,7 @@ pub mod put_position_configuration_input {
             self,
         ) -> Result<
             crate::input::PutPositionConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutPositionConfigurationInput {
                 resource_identifier: self.resource_identifier,
@@ -12231,26 +12827,31 @@ impl PutPositionConfigurationInput {
             crate::operation::PutPositionConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutPositionConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_89 = &_input.resource_identifier;
-                let input_89 = input_89.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_identifier",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_identifier = aws_smithy_http::label::fmt_string(input_89, false);
+                let input_89 = input_89.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_identifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_identifier = aws_smithy_http::label::fmt_string(
+                    input_89,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_identifier.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_identifier",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_identifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -12263,22 +12864,29 @@ impl PutPositionConfigurationInput {
             fn uri_query(
                 _input: &crate::input::PutPositionConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_90) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_90),
-                    );
-                }
+                let inner_90 = &_input.resource_type;
+                let inner_90 = inner_90.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_90),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::PutPositionConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -12365,7 +12973,7 @@ impl PutPositionConfigurationInput {
 pub mod put_resource_log_level_input {
 
     /// A builder for [`PutResourceLogLevelInput`](crate::input::PutResourceLogLevelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -12411,8 +13019,10 @@ pub mod put_resource_log_level_input {
         /// Consumes the builder and constructs a [`PutResourceLogLevelInput`](crate::input::PutResourceLogLevelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutResourceLogLevelInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutResourceLogLevelInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutResourceLogLevelInput {
                 resource_identifier: self.resource_identifier,
                 resource_type: self.resource_type,
@@ -12434,26 +13044,31 @@ impl PutResourceLogLevelInput {
             crate::operation::PutResourceLogLevel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutResourceLogLevelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_91 = &_input.resource_identifier;
-                let input_91 = input_91.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_identifier",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_identifier = aws_smithy_http::label::fmt_string(input_91, false);
+                let input_91 = input_91.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_identifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_identifier = aws_smithy_http::label::fmt_string(
+                    input_91,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_identifier.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_identifier",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_identifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -12466,22 +13081,37 @@ impl PutResourceLogLevelInput {
             fn uri_query(
                 _input: &crate::input::PutResourceLogLevelInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_92) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_92),
+                let inner_92 = &_input.resource_type;
+                let inner_92 = inner_92.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_92.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_type",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_92),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::PutResourceLogLevelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -12568,7 +13198,7 @@ impl PutResourceLogLevelInput {
 pub mod reset_all_resource_log_levels_input {
 
     /// A builder for [`ResetAllResourceLogLevelsInput`](crate::input::ResetAllResourceLogLevelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ResetAllResourceLogLevelsInput`](crate::input::ResetAllResourceLogLevelsInput).
@@ -12576,7 +13206,7 @@ pub mod reset_all_resource_log_levels_input {
             self,
         ) -> Result<
             crate::input::ResetAllResourceLogLevelsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ResetAllResourceLogLevelsInput {})
         }
@@ -12595,13 +13225,13 @@ impl ResetAllResourceLogLevelsInput {
             crate::operation::ResetAllResourceLogLevels,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ResetAllResourceLogLevelsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/log-levels").expect("formatting should succeed");
                 Ok(())
             }
@@ -12609,8 +13239,10 @@ impl ResetAllResourceLogLevelsInput {
             fn update_http_builder(
                 input: &crate::input::ResetAllResourceLogLevelsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -12680,7 +13312,7 @@ impl ResetAllResourceLogLevelsInput {
 pub mod reset_resource_log_level_input {
 
     /// A builder for [`ResetResourceLogLevelInput`](crate::input::ResetResourceLogLevelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -12715,8 +13347,10 @@ pub mod reset_resource_log_level_input {
         /// Consumes the builder and constructs a [`ResetResourceLogLevelInput`](crate::input::ResetResourceLogLevelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ResetResourceLogLevelInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ResetResourceLogLevelInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ResetResourceLogLevelInput {
                 resource_identifier: self.resource_identifier,
                 resource_type: self.resource_type,
@@ -12737,26 +13371,31 @@ impl ResetResourceLogLevelInput {
             crate::operation::ResetResourceLogLevel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ResetResourceLogLevelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_93 = &_input.resource_identifier;
-                let input_93 = input_93.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_identifier",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_identifier = aws_smithy_http::label::fmt_string(input_93, false);
+                let input_93 = input_93.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_identifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_identifier = aws_smithy_http::label::fmt_string(
+                    input_93,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_identifier.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_identifier",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_identifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -12769,22 +13408,37 @@ impl ResetResourceLogLevelInput {
             fn uri_query(
                 _input: &crate::input::ResetResourceLogLevelInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_94) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_94),
+                let inner_94 = &_input.resource_type;
+                let inner_94 = inner_94.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_94.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_type",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_94),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ResetResourceLogLevelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -12855,7 +13509,7 @@ impl ResetResourceLogLevelInput {
 pub mod send_data_to_multicast_group_input {
 
     /// A builder for [`SendDataToMulticastGroupInput`](crate::input::SendDataToMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) payload_data: std::option::Option<std::string::String>,
@@ -12900,7 +13554,7 @@ pub mod send_data_to_multicast_group_input {
             self,
         ) -> Result<
             crate::input::SendDataToMulticastGroupInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::SendDataToMulticastGroupInput {
                 id: self.id,
@@ -12923,26 +13577,31 @@ impl SendDataToMulticastGroupInput {
             crate::operation::SendDataToMulticastGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendDataToMulticastGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_95 = &_input.id;
-                let input_95 = input_95.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_95, false);
+                let input_95 = input_95.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_95,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/multicast-groups/{Id}/data", Id = id)
                     .expect("formatting should succeed");
@@ -12952,8 +13611,10 @@ impl SendDataToMulticastGroupInput {
             fn update_http_builder(
                 input: &crate::input::SendDataToMulticastGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -13039,7 +13700,7 @@ impl SendDataToMulticastGroupInput {
 pub mod send_data_to_wireless_device_input {
 
     /// A builder for [`SendDataToWirelessDeviceInput`](crate::input::SendDataToWirelessDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) transmit_mode: std::option::Option<i32>,
@@ -13095,7 +13756,7 @@ pub mod send_data_to_wireless_device_input {
             self,
         ) -> Result<
             crate::input::SendDataToWirelessDeviceInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::SendDataToWirelessDeviceInput {
                 id: self.id,
@@ -13119,26 +13780,31 @@ impl SendDataToWirelessDeviceInput {
             crate::operation::SendDataToWirelessDevice,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendDataToWirelessDeviceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_96 = &_input.id;
-                let input_96 = input_96.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_96, false);
+                let input_96 = input_96.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_96,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-devices/{Id}/data", Id = id)
                     .expect("formatting should succeed");
@@ -13148,8 +13814,10 @@ impl SendDataToWirelessDeviceInput {
             fn update_http_builder(
                 input: &crate::input::SendDataToWirelessDeviceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -13235,7 +13903,7 @@ impl SendDataToWirelessDeviceInput {
 pub mod start_bulk_associate_wireless_device_with_multicast_group_input {
 
     /// A builder for [`StartBulkAssociateWirelessDeviceWithMulticastGroupInput`](crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) query_string: std::option::Option<std::string::String>,
@@ -13286,7 +13954,7 @@ pub mod start_bulk_associate_wireless_device_with_multicast_group_input {
             self,
         ) -> Result<
             crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
@@ -13311,26 +13979,31 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
             crate::operation::StartBulkAssociateWirelessDeviceWithMulticastGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_97 = &_input.id;
-                let input_97 = input_97.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_97, false);
+                let input_97 = input_97.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_97,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/multicast-groups/{Id}/bulk", Id = id)
                     .expect("formatting should succeed");
@@ -13340,8 +14013,10 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
             fn update_http_builder(
                 input: &crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
@@ -13426,7 +14101,7 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
 pub mod start_bulk_disassociate_wireless_device_from_multicast_group_input {
 
     /// A builder for [`StartBulkDisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) query_string: std::option::Option<std::string::String>,
@@ -13477,7 +14152,7 @@ pub mod start_bulk_disassociate_wireless_device_from_multicast_group_input {
             self,
         ) -> Result<
             crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
@@ -13502,26 +14177,31 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
             crate::operation::StartBulkDisassociateWirelessDeviceFromMulticastGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_98 = &_input.id;
-                let input_98 = input_98.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_98, false);
+                let input_98 = input_98.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_98,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/multicast-groups/{Id}/bulk", Id = id)
                     .expect("formatting should succeed");
@@ -13531,8 +14211,10 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
             fn update_http_builder(
                 input: &crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -13617,7 +14299,7 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
 pub mod start_fuota_task_input {
 
     /// A builder for [`StartFuotaTaskInput`](crate::input::StartFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanStartFuotaTask>,
@@ -13649,7 +14331,7 @@ pub mod start_fuota_task_input {
         /// Consumes the builder and constructs a [`StartFuotaTaskInput`](crate::input::StartFuotaTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartFuotaTaskInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::StartFuotaTaskInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::StartFuotaTaskInput {
                 id: self.id,
@@ -13671,26 +14353,31 @@ impl StartFuotaTaskInput {
             crate::operation::StartFuotaTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartFuotaTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_99 = &_input.id;
-                let input_99 = input_99.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_99, false);
+                let input_99 = input_99.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_99,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/fuota-tasks/{Id}", Id = id).expect("formatting should succeed");
                 Ok(())
@@ -13699,8 +14386,10 @@ impl StartFuotaTaskInput {
             fn update_http_builder(
                 input: &crate::input::StartFuotaTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -13784,7 +14473,7 @@ impl StartFuotaTaskInput {
 pub mod start_multicast_group_session_input {
 
     /// A builder for [`StartMulticastGroupSessionInput`](crate::input::StartMulticastGroupSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastSession>,
@@ -13818,7 +14507,7 @@ pub mod start_multicast_group_session_input {
             self,
         ) -> Result<
             crate::input::StartMulticastGroupSessionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StartMulticastGroupSessionInput {
                 id: self.id,
@@ -13840,26 +14529,31 @@ impl StartMulticastGroupSessionInput {
             crate::operation::StartMulticastGroupSession,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartMulticastGroupSessionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_100 = &_input.id;
-                let input_100 = input_100.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_100, false);
+                let input_100 = input_100.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_100,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/multicast-groups/{Id}/session", Id = id)
                     .expect("formatting should succeed");
@@ -13869,8 +14563,10 @@ impl StartMulticastGroupSessionInput {
             fn update_http_builder(
                 input: &crate::input::StartMulticastGroupSessionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -13953,7 +14649,7 @@ impl StartMulticastGroupSessionInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -13991,7 +14687,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -14013,35 +14709,50 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::TagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_101) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_101),
+                let inner_101 = &_input.resource_arn;
+                let inner_101 = inner_101.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_101.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_101),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -14126,7 +14837,7 @@ impl TagResourceInput {
 pub mod test_wireless_device_input {
 
     /// A builder for [`TestWirelessDeviceInput`](crate::input::TestWirelessDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -14144,8 +14855,10 @@ pub mod test_wireless_device_input {
         /// Consumes the builder and constructs a [`TestWirelessDeviceInput`](crate::input::TestWirelessDeviceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TestWirelessDeviceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::TestWirelessDeviceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::TestWirelessDeviceInput { id: self.id })
         }
     }
@@ -14163,26 +14876,31 @@ impl TestWirelessDeviceInput {
             crate::operation::TestWirelessDevice,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TestWirelessDeviceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_102 = &_input.id;
-                let input_102 = input_102.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_102, false);
+                let input_102 = input_102.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_102,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-devices/{Id}/test", Id = id)
                     .expect("formatting should succeed");
@@ -14192,8 +14910,10 @@ impl TestWirelessDeviceInput {
             fn update_http_builder(
                 input: &crate::input::TestWirelessDeviceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -14263,7 +14983,7 @@ impl TestWirelessDeviceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14301,7 +15021,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -14323,31 +15043,49 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_103) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_103),
+                let inner_103 = &_input.resource_arn;
+                let inner_103 = inner_103.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_103.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_104) = &_input.tag_keys {
-                    for inner_105 in inner_104 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_105));
-                    }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_103),
+                );
+                let inner_104 = &_input.tag_keys;
+                let inner_104 = inner_104.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_105 in inner_104 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_105));
                 }
                 Ok(())
             }
@@ -14355,8 +15093,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -14427,7 +15167,7 @@ impl UntagResourceInput {
 pub mod update_destination_input {
 
     /// A builder for [`UpdateDestinationInput`](crate::input::UpdateDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) expression_type: std::option::Option<crate::model::ExpressionType>,
@@ -14492,8 +15232,10 @@ pub mod update_destination_input {
         /// Consumes the builder and constructs a [`UpdateDestinationInput`](crate::input::UpdateDestinationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateDestinationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateDestinationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateDestinationInput {
                 name: self.name,
                 expression_type: self.expression_type,
@@ -14517,26 +15259,31 @@ impl UpdateDestinationInput {
             crate::operation::UpdateDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_106 = &_input.name;
-                let input_106 = input_106.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let name = aws_smithy_http::label::fmt_string(input_106, false);
+                let input_106 = input_106.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let name = aws_smithy_http::label::fmt_string(
+                    input_106,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/destinations/{Name}", Name = name)
                     .expect("formatting should succeed");
@@ -14546,8 +15293,10 @@ impl UpdateDestinationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
@@ -14631,7 +15380,7 @@ impl UpdateDestinationInput {
 pub mod update_event_configuration_by_resource_types_input {
 
     /// A builder for [`UpdateEventConfigurationByResourceTypesInput`](crate::input::UpdateEventConfigurationByResourceTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_registration_state: std::option::Option<
             crate::model::DeviceRegistrationStateResourceTypeEventConfiguration,
@@ -14733,7 +15482,7 @@ pub mod update_event_configuration_by_resource_types_input {
             self,
         ) -> Result<
             crate::input::UpdateEventConfigurationByResourceTypesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateEventConfigurationByResourceTypesInput {
                 device_registration_state: self.device_registration_state,
@@ -14758,13 +15507,13 @@ impl UpdateEventConfigurationByResourceTypesInput {
             crate::operation::UpdateEventConfigurationByResourceTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateEventConfigurationByResourceTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/event-configurations-resource-types")
                     .expect("formatting should succeed");
                 Ok(())
@@ -14773,8 +15522,10 @@ impl UpdateEventConfigurationByResourceTypesInput {
             fn update_http_builder(
                 input: &crate::input::UpdateEventConfigurationByResourceTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
@@ -14857,7 +15608,7 @@ impl UpdateEventConfigurationByResourceTypesInput {
 pub mod update_fuota_task_input {
 
     /// A builder for [`UpdateFuotaTaskInput`](crate::input::UpdateFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -14939,7 +15690,7 @@ pub mod update_fuota_task_input {
         /// Consumes the builder and constructs a [`UpdateFuotaTaskInput`](crate::input::UpdateFuotaTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateFuotaTaskInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateFuotaTaskInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateFuotaTaskInput {
                 id: self.id,
@@ -14965,26 +15716,31 @@ impl UpdateFuotaTaskInput {
             crate::operation::UpdateFuotaTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateFuotaTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_107 = &_input.id;
-                let input_107 = input_107.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_107, false);
+                let input_107 = input_107.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_107,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/fuota-tasks/{Id}", Id = id).expect("formatting should succeed");
                 Ok(())
@@ -14993,8 +15749,10 @@ impl UpdateFuotaTaskInput {
             fn update_http_builder(
                 input: &crate::input::UpdateFuotaTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
@@ -15078,7 +15836,7 @@ impl UpdateFuotaTaskInput {
 pub mod update_log_levels_by_resource_types_input {
 
     /// A builder for [`UpdateLogLevelsByResourceTypesInput`](crate::input::UpdateLogLevelsByResourceTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_log_level: std::option::Option<crate::model::LogLevel>,
         pub(crate) wireless_device_log_options:
@@ -15149,7 +15907,7 @@ pub mod update_log_levels_by_resource_types_input {
             self,
         ) -> Result<
             crate::input::UpdateLogLevelsByResourceTypesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateLogLevelsByResourceTypesInput {
                 default_log_level: self.default_log_level,
@@ -15172,13 +15930,13 @@ impl UpdateLogLevelsByResourceTypesInput {
             crate::operation::UpdateLogLevelsByResourceTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateLogLevelsByResourceTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/log-levels").expect("formatting should succeed");
                 Ok(())
             }
@@ -15186,8 +15944,10 @@ impl UpdateLogLevelsByResourceTypesInput {
             fn update_http_builder(
                 input: &crate::input::UpdateLogLevelsByResourceTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -15270,7 +16030,7 @@ impl UpdateLogLevelsByResourceTypesInput {
 pub mod update_multicast_group_input {
 
     /// A builder for [`UpdateMulticastGroupInput`](crate::input::UpdateMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -15324,8 +16084,10 @@ pub mod update_multicast_group_input {
         /// Consumes the builder and constructs a [`UpdateMulticastGroupInput`](crate::input::UpdateMulticastGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateMulticastGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateMulticastGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateMulticastGroupInput {
                 id: self.id,
                 name: self.name,
@@ -15348,26 +16110,31 @@ impl UpdateMulticastGroupInput {
             crate::operation::UpdateMulticastGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateMulticastGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_108 = &_input.id;
-                let input_108 = input_108.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_108, false);
+                let input_108 = input_108.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_108,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/multicast-groups/{Id}", Id = id)
                     .expect("formatting should succeed");
@@ -15377,8 +16144,10 @@ impl UpdateMulticastGroupInput {
             fn update_http_builder(
                 input: &crate::input::UpdateMulticastGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
@@ -15464,7 +16233,7 @@ impl UpdateMulticastGroupInput {
 pub mod update_network_analyzer_configuration_input {
 
     /// A builder for [`UpdateNetworkAnalyzerConfigurationInput`](crate::input::UpdateNetworkAnalyzerConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_name: std::option::Option<std::string::String>,
         pub(crate) trace_content: std::option::Option<crate::model::TraceContent>,
@@ -15598,7 +16367,7 @@ pub mod update_network_analyzer_configuration_input {
             self,
         ) -> Result<
             crate::input::UpdateNetworkAnalyzerConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateNetworkAnalyzerConfigurationInput {
                 configuration_name: self.configuration_name,
@@ -15625,26 +16394,31 @@ impl UpdateNetworkAnalyzerConfigurationInput {
             crate::operation::UpdateNetworkAnalyzerConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateNetworkAnalyzerConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_109 = &_input.configuration_name;
-                let input_109 = input_109.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let configuration_name = aws_smithy_http::label::fmt_string(input_109, false);
+                let input_109 = input_109.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "configuration_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let configuration_name = aws_smithy_http::label::fmt_string(
+                    input_109,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if configuration_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "configuration_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -15658,8 +16432,10 @@ impl UpdateNetworkAnalyzerConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateNetworkAnalyzerConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
@@ -15742,7 +16518,7 @@ impl UpdateNetworkAnalyzerConfigurationInput {
 pub mod update_partner_account_input {
 
     /// A builder for [`UpdatePartnerAccountInput`](crate::input::UpdatePartnerAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sidewalk: std::option::Option<crate::model::SidewalkUpdateAccount>,
         pub(crate) partner_account_id: std::option::Option<std::string::String>,
@@ -15791,8 +16567,10 @@ pub mod update_partner_account_input {
         /// Consumes the builder and constructs a [`UpdatePartnerAccountInput`](crate::input::UpdatePartnerAccountInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdatePartnerAccountInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdatePartnerAccountInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdatePartnerAccountInput {
                 sidewalk: self.sidewalk,
                 partner_account_id: self.partner_account_id,
@@ -15814,26 +16592,31 @@ impl UpdatePartnerAccountInput {
             crate::operation::UpdatePartnerAccount,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdatePartnerAccountInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_110 = &_input.partner_account_id;
-                let input_110 = input_110.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "partner_account_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let partner_account_id = aws_smithy_http::label::fmt_string(input_110, false);
+                let input_110 = input_110.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "partner_account_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let partner_account_id = aws_smithy_http::label::fmt_string(
+                    input_110,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if partner_account_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "partner_account_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "partner_account_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -15846,22 +16629,29 @@ impl UpdatePartnerAccountInput {
             fn uri_query(
                 _input: &crate::input::UpdatePartnerAccountInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_111) = &_input.partner_type {
-                    query.push_kv(
-                        "partnerType",
-                        &aws_smithy_http::query::fmt_string(&inner_111),
-                    );
-                }
+                let inner_111 = &_input.partner_type;
+                let inner_111 = inner_111.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "partner_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "partnerType",
+                    &aws_smithy_http::query::fmt_string(&inner_111),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::UpdatePartnerAccountInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -15948,7 +16738,7 @@ impl UpdatePartnerAccountInput {
 pub mod update_position_input {
 
     /// A builder for [`UpdatePositionInput`](crate::input::UpdatePositionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::PositionResourceType>,
@@ -16000,7 +16790,7 @@ pub mod update_position_input {
         /// Consumes the builder and constructs a [`UpdatePositionInput`](crate::input::UpdatePositionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdatePositionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdatePositionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdatePositionInput {
                 resource_identifier: self.resource_identifier,
@@ -16023,26 +16813,31 @@ impl UpdatePositionInput {
             crate::operation::UpdatePosition,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdatePositionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_112 = &_input.resource_identifier;
-                let input_112 = input_112.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_identifier",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let resource_identifier = aws_smithy_http::label::fmt_string(input_112, false);
+                let input_112 = input_112.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_identifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let resource_identifier = aws_smithy_http::label::fmt_string(
+                    input_112,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_identifier.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_identifier",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_identifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -16055,22 +16850,29 @@ impl UpdatePositionInput {
             fn uri_query(
                 _input: &crate::input::UpdatePositionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_113) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_113),
-                    );
-                }
+                let inner_113 = &_input.resource_type;
+                let inner_113 = inner_113.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_113),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::UpdatePositionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -16155,7 +16957,7 @@ impl UpdatePositionInput {
 pub mod update_resource_event_configuration_input {
 
     /// A builder for [`UpdateResourceEventConfigurationInput`](crate::input::UpdateResourceEventConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) identifier_type: std::option::Option<crate::model::IdentifierType>,
@@ -16285,7 +17087,7 @@ pub mod update_resource_event_configuration_input {
             self,
         ) -> Result<
             crate::input::UpdateResourceEventConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateResourceEventConfigurationInput {
                 identifier: self.identifier,
@@ -16313,26 +17115,31 @@ impl UpdateResourceEventConfigurationInput {
             crate::operation::UpdateResourceEventConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateResourceEventConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_114 = &_input.identifier;
-                let input_114 = input_114.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "identifier",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let identifier = aws_smithy_http::label::fmt_string(input_114, false);
+                let input_114 = input_114.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "identifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let identifier = aws_smithy_http::label::fmt_string(
+                    input_114,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if identifier.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "identifier",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "identifier",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -16345,19 +17152,26 @@ impl UpdateResourceEventConfigurationInput {
             fn uri_query(
                 _input: &crate::input::UpdateResourceEventConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_115) = &_input.identifier_type {
-                    query.push_kv(
-                        "identifierType",
-                        &aws_smithy_http::query::fmt_string(&inner_115),
-                    );
-                }
+                let inner_115 = &_input.identifier_type;
+                let inner_115 = inner_115.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "identifier_type",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                query.push_kv(
+                    "identifierType",
+                    &aws_smithy_http::query::fmt_string(&inner_115),
+                );
                 if let Some(inner_116) = &_input.partner_type {
-                    query.push_kv(
-                        "partnerType",
-                        &aws_smithy_http::query::fmt_string(&inner_116),
-                    );
+                    {
+                        query.push_kv(
+                            "partnerType",
+                            &aws_smithy_http::query::fmt_string(&inner_116),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -16365,8 +17179,10 @@ impl UpdateResourceEventConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateResourceEventConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -16450,7 +17266,7 @@ impl UpdateResourceEventConfigurationInput {
 pub mod update_wireless_device_input {
 
     /// A builder for [`UpdateWirelessDeviceInput`](crate::input::UpdateWirelessDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) destination_name: std::option::Option<std::string::String>,
@@ -16518,8 +17334,10 @@ pub mod update_wireless_device_input {
         /// Consumes the builder and constructs a [`UpdateWirelessDeviceInput`](crate::input::UpdateWirelessDeviceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateWirelessDeviceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateWirelessDeviceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateWirelessDeviceInput {
                 id: self.id,
                 destination_name: self.destination_name,
@@ -16543,26 +17361,31 @@ impl UpdateWirelessDeviceInput {
             crate::operation::UpdateWirelessDevice,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateWirelessDeviceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_117 = &_input.id;
-                let input_117 = input_117.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_117, false);
+                let input_117 = input_117.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_117,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-devices/{Id}", Id = id)
                     .expect("formatting should succeed");
@@ -16572,8 +17395,10 @@ impl UpdateWirelessDeviceInput {
             fn update_http_builder(
                 input: &crate::input::UpdateWirelessDeviceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
@@ -16659,7 +17484,7 @@ impl UpdateWirelessDeviceInput {
 pub mod update_wireless_gateway_input {
 
     /// A builder for [`UpdateWirelessGatewayInput`](crate::input::UpdateWirelessGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -16740,8 +17565,10 @@ pub mod update_wireless_gateway_input {
         /// Consumes the builder and constructs a [`UpdateWirelessGatewayInput`](crate::input::UpdateWirelessGatewayInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateWirelessGatewayInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateWirelessGatewayInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateWirelessGatewayInput {
                 id: self.id,
                 name: self.name,
@@ -16765,26 +17592,31 @@ impl UpdateWirelessGatewayInput {
             crate::operation::UpdateWirelessGateway,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateWirelessGatewayInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_118 = &_input.id;
-                let input_118 = input_118.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let id = aws_smithy_http::label::fmt_string(input_118, false);
+                let input_118 = input_118.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_118,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/wireless-gateways/{Id}", Id = id)
                     .expect("formatting should succeed");
@@ -16794,8 +17626,10 @@ impl UpdateWirelessGatewayInput {
             fn update_http_builder(
                 input: &crate::input::UpdateWirelessGatewayInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
@@ -16879,7 +17713,7 @@ impl UpdateWirelessGatewayInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWirelessGatewayInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -16919,21 +17753,10 @@ impl UpdateWirelessGatewayInput {
         self.net_id_filters.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateWirelessGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWirelessGatewayInput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("join_eui_filters", &self.join_eui_filters);
-        formatter.field("net_id_filters", &self.net_id_filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWirelessDeviceInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -16973,21 +17796,10 @@ impl UpdateWirelessDeviceInput {
         self.lo_ra_wan.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateWirelessDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWirelessDeviceInput");
-        formatter.field("id", &self.id);
-        formatter.field("destination_name", &self.destination_name);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateResourceEventConfigurationInput {
     /// <p>Resource identifier to opt in for event messaging.</p>
     #[doc(hidden)]
@@ -17056,24 +17868,10 @@ impl UpdateResourceEventConfigurationInput {
         self.message_delivery_status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateResourceEventConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateResourceEventConfigurationInput");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("identifier_type", &self.identifier_type);
-        formatter.field("partner_type", &self.partner_type);
-        formatter.field("device_registration_state", &self.device_registration_state);
-        formatter.field("proximity", &self.proximity);
-        formatter.field("join", &self.join);
-        formatter.field("connection_status", &self.connection_status);
-        formatter.field("message_delivery_status", &self.message_delivery_status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePositionInput {
     /// <p>Resource identifier of the resource for which position is updated.</p>
     #[doc(hidden)]
@@ -17099,19 +17897,10 @@ impl UpdatePositionInput {
         self.position.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePositionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePositionInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("position", &self.position);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePartnerAccountInput {
     /// <p>The Sidewalk account credentials.</p>
     #[doc(hidden)]
@@ -17137,19 +17926,10 @@ impl UpdatePartnerAccountInput {
         self.partner_type.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePartnerAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePartnerAccountInput");
-        formatter.field("sidewalk", &self.sidewalk);
-        formatter.field("partner_account_id", &self.partner_account_id);
-        formatter.field("partner_type", &self.partner_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
     #[doc(hidden)]
@@ -17203,29 +17983,10 @@ impl UpdateNetworkAnalyzerConfigurationInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateNetworkAnalyzerConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateNetworkAnalyzerConfigurationInput");
-        formatter.field("configuration_name", &self.configuration_name);
-        formatter.field("trace_content", &self.trace_content);
-        formatter.field("wireless_devices_to_add", &self.wireless_devices_to_add);
-        formatter.field(
-            "wireless_devices_to_remove",
-            &self.wireless_devices_to_remove,
-        );
-        formatter.field("wireless_gateways_to_add", &self.wireless_gateways_to_add);
-        formatter.field(
-            "wireless_gateways_to_remove",
-            &self.wireless_gateways_to_remove,
-        );
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -17258,20 +18019,10 @@ impl UpdateMulticastGroupInput {
         self.lo_ra_wan.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMulticastGroupInput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLogLevelsByResourceTypesInput {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     #[doc(hidden)]
@@ -17303,25 +18054,10 @@ impl UpdateLogLevelsByResourceTypesInput {
         self.wireless_gateway_log_options.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLogLevelsByResourceTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLogLevelsByResourceTypesInput");
-        formatter.field("default_log_level", &self.default_log_level);
-        formatter.field(
-            "wireless_device_log_options",
-            &self.wireless_device_log_options,
-        );
-        formatter.field(
-            "wireless_gateway_log_options",
-            &self.wireless_gateway_log_options,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -17368,22 +18104,10 @@ impl UpdateFuotaTaskInput {
         self.firmware_update_role.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("firmware_update_image", &self.firmware_update_image);
-        formatter.field("firmware_update_role", &self.firmware_update_role);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEventConfigurationByResourceTypesInput {
     /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
     #[doc(hidden)]
@@ -17436,21 +18160,10 @@ impl UpdateEventConfigurationByResourceTypesInput {
         self.message_delivery_status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateEventConfigurationByResourceTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateEventConfigurationByResourceTypesInput");
-        formatter.field("device_registration_state", &self.device_registration_state);
-        formatter.field("proximity", &self.proximity);
-        formatter.field("join", &self.join);
-        formatter.field("connection_status", &self.connection_status);
-        formatter.field("message_delivery_status", &self.message_delivery_status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDestinationInput {
     /// <p>The new name of the resource.</p>
     #[doc(hidden)]
@@ -17490,21 +18203,10 @@ impl UpdateDestinationInput {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDestinationInput");
-        formatter.field("name", &self.name);
-        formatter.field("expression_type", &self.expression_type);
-        formatter.field("expression", &self.expression);
-        formatter.field("description", &self.description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource to remove tags from.</p>
     #[doc(hidden)]
@@ -17523,18 +18225,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestWirelessDeviceInput {
     /// <p>The ID of the wireless device to test.</p>
     #[doc(hidden)]
@@ -17546,17 +18240,10 @@ impl TestWirelessDeviceInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for TestWirelessDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestWirelessDeviceInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource to add tags to.</p>
     #[doc(hidden)]
@@ -17575,18 +18262,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMulticastGroupSessionInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -17605,18 +18284,10 @@ impl StartMulticastGroupSessionInput {
         self.lo_ra_wan.as_ref()
     }
 }
-impl std::fmt::Debug for StartMulticastGroupSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMulticastGroupSessionInput");
-        formatter.field("id", &self.id);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -17635,18 +18306,10 @@ impl StartFuotaTaskInput {
         self.lo_ra_wan.as_ref()
     }
 }
-impl std::fmt::Debug for StartFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -17672,20 +18335,10 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("StartBulkDisassociateWirelessDeviceFromMulticastGroupInput");
-        formatter.field("id", &self.id);
-        formatter.field("query_string", &self.query_string);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -17711,20 +18364,10 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("StartBulkAssociateWirelessDeviceWithMulticastGroupInput");
-        formatter.field("id", &self.id);
-        formatter.field("query_string", &self.query_string);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendDataToWirelessDeviceInput {
     /// <p>The ID of the wireless device to receive the data.</p>
     #[doc(hidden)]
@@ -17757,20 +18400,10 @@ impl SendDataToWirelessDeviceInput {
         self.wireless_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for SendDataToWirelessDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendDataToWirelessDeviceInput");
-        formatter.field("id", &self.id);
-        formatter.field("transmit_mode", &self.transmit_mode);
-        formatter.field("payload_data", &self.payload_data);
-        formatter.field("wireless_metadata", &self.wireless_metadata);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendDataToMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -17798,19 +18431,10 @@ impl SendDataToMulticastGroupInput {
         self.wireless_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for SendDataToMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendDataToMulticastGroupInput");
-        formatter.field("id", &self.id);
-        formatter.field("payload_data", &self.payload_data);
-        formatter.field("wireless_metadata", &self.wireless_metadata);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetResourceLogLevelInput {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     #[doc(hidden)]
@@ -17829,29 +18453,15 @@ impl ResetResourceLogLevelInput {
         self.resource_type.as_deref()
     }
 }
-impl std::fmt::Debug for ResetResourceLogLevelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetResourceLogLevelInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetAllResourceLogLevelsInput {}
-impl std::fmt::Debug for ResetAllResourceLogLevelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetAllResourceLogLevelsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourceLogLevelInput {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     #[doc(hidden)]
@@ -17877,19 +18487,10 @@ impl PutResourceLogLevelInput {
         self.log_level.as_ref()
     }
 }
-impl std::fmt::Debug for PutResourceLogLevelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutResourceLogLevelInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("log_level", &self.log_level);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPositionConfigurationInput {
     /// <p>Resource identifier used to update the position configuration.</p>
     #[doc(hidden)]
@@ -17922,20 +18523,10 @@ impl PutPositionConfigurationInput {
         self.destination.as_deref()
     }
 }
-impl std::fmt::Debug for PutPositionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPositionConfigurationInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("solvers", &self.solvers);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWirelessGatewayTaskDefinitionsInput {
     /// <p>The maximum number of results to return in this operation.</p>
     #[doc(hidden)]
@@ -17963,19 +18554,10 @@ impl ListWirelessGatewayTaskDefinitionsInput {
         self.task_definition_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListWirelessGatewayTaskDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWirelessGatewayTaskDefinitionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("task_definition_type", &self.task_definition_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWirelessGatewaysInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
@@ -17994,18 +18576,10 @@ impl ListWirelessGatewaysInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListWirelessGatewaysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWirelessGatewaysInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWirelessDevicesInput {
     /// <p>The maximum number of results to return in this operation.</p>
     #[doc(hidden)]
@@ -18066,24 +18640,10 @@ impl ListWirelessDevicesInput {
         self.multicast_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListWirelessDevicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWirelessDevicesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("destination_name", &self.destination_name);
-        formatter.field("device_profile_id", &self.device_profile_id);
-        formatter.field("service_profile_id", &self.service_profile_id);
-        formatter.field("wireless_device_type", &self.wireless_device_type);
-        formatter.field("fuota_task_id", &self.fuota_task_id);
-        formatter.field("multicast_group_id", &self.multicast_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource for which you want to list tags.</p>
     #[doc(hidden)]
@@ -18095,17 +18655,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServiceProfilesInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
@@ -18124,18 +18677,10 @@ impl ListServiceProfilesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListServiceProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServiceProfilesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListQueuedMessagesInput {
     /// <p>The ID of a given wireless device which the downlink message packets are being sent.</p>
     #[doc(hidden)]
@@ -18168,20 +18713,10 @@ impl ListQueuedMessagesInput {
         self.wireless_device_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListQueuedMessagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListQueuedMessagesInput");
-        formatter.field("id", &self.id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("wireless_device_type", &self.wireless_device_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPositionConfigurationsInput {
     /// <p>Resource type for which position configurations are listed.</p>
     #[doc(hidden)]
@@ -18207,19 +18742,10 @@ impl ListPositionConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPositionConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPositionConfigurationsInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPartnerAccountsInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
@@ -18238,18 +18764,10 @@ impl ListPartnerAccountsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPartnerAccountsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPartnerAccountsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNetworkAnalyzerConfigurationsInput {
     /// <p>The maximum number of results to return in this operation.</p>
     #[doc(hidden)]
@@ -18268,18 +18786,10 @@ impl ListNetworkAnalyzerConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListNetworkAnalyzerConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNetworkAnalyzerConfigurationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMulticastGroupsByFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -18305,19 +18815,10 @@ impl ListMulticastGroupsByFuotaTaskInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMulticastGroupsByFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMulticastGroupsByFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMulticastGroupsInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
@@ -18336,18 +18837,10 @@ impl ListMulticastGroupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMulticastGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMulticastGroupsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFuotaTasksInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
@@ -18366,18 +18859,10 @@ impl ListFuotaTasksInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFuotaTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFuotaTasksInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventConfigurationsInput {
     /// <p>Resource type to filter event configurations.</p>
     #[doc(hidden)]
@@ -18405,19 +18890,10 @@ impl ListEventConfigurationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListEventConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventConfigurationsInput");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeviceProfilesInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
@@ -18436,18 +18912,10 @@ impl ListDeviceProfilesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDeviceProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeviceProfilesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDestinationsInput {
     /// <p>The maximum number of results to return in this operation.</p>
     #[doc(hidden)]
@@ -18466,18 +18934,10 @@ impl ListDestinationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDestinationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDestinationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWirelessGatewayTaskDefinitionInput {
     /// <p>The ID of the resource to get.</p>
     #[doc(hidden)]
@@ -18489,17 +18949,10 @@ impl GetWirelessGatewayTaskDefinitionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWirelessGatewayTaskDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWirelessGatewayTaskDefinitionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWirelessGatewayTaskInput {
     /// <p>The ID of the resource to get.</p>
     #[doc(hidden)]
@@ -18511,17 +18964,10 @@ impl GetWirelessGatewayTaskInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWirelessGatewayTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWirelessGatewayTaskInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWirelessGatewayStatisticsInput {
     /// <p>The ID of the wireless gateway for which to get the data.</p>
     #[doc(hidden)]
@@ -18533,17 +18979,10 @@ impl GetWirelessGatewayStatisticsInput {
         self.wireless_gateway_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWirelessGatewayStatisticsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWirelessGatewayStatisticsInput");
-        formatter.field("wireless_gateway_id", &self.wireless_gateway_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWirelessGatewayFirmwareInformationInput {
     /// <p>The ID of the resource to get.</p>
     #[doc(hidden)]
@@ -18555,17 +18994,10 @@ impl GetWirelessGatewayFirmwareInformationInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWirelessGatewayFirmwareInformationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWirelessGatewayFirmwareInformationInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWirelessGatewayCertificateInput {
     /// <p>The ID of the resource to get.</p>
     #[doc(hidden)]
@@ -18577,17 +19009,10 @@ impl GetWirelessGatewayCertificateInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWirelessGatewayCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWirelessGatewayCertificateInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWirelessGatewayInput {
     /// <p>The identifier of the wireless gateway to get.</p>
     #[doc(hidden)]
@@ -18606,18 +19031,10 @@ impl GetWirelessGatewayInput {
         self.identifier_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetWirelessGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWirelessGatewayInput");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("identifier_type", &self.identifier_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWirelessDeviceStatisticsInput {
     /// <p>The ID of the wireless device for which to get the data.</p>
     #[doc(hidden)]
@@ -18629,17 +19046,10 @@ impl GetWirelessDeviceStatisticsInput {
         self.wireless_device_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWirelessDeviceStatisticsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWirelessDeviceStatisticsInput");
-        formatter.field("wireless_device_id", &self.wireless_device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWirelessDeviceInput {
     /// <p>The identifier of the wireless device to get.</p>
     #[doc(hidden)]
@@ -18658,18 +19068,10 @@ impl GetWirelessDeviceInput {
         self.identifier_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetWirelessDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWirelessDeviceInput");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("identifier_type", &self.identifier_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceProfileInput {
     /// <p>The ID of the resource to get.</p>
     #[doc(hidden)]
@@ -18681,17 +19083,10 @@ impl GetServiceProfileInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetServiceProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceProfileInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServiceEndpointInput {
     /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
     #[doc(hidden)]
@@ -18703,17 +19098,10 @@ impl GetServiceEndpointInput {
         self.service_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetServiceEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServiceEndpointInput");
-        formatter.field("service_type", &self.service_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceLogLevelInput {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     #[doc(hidden)]
@@ -18732,18 +19120,10 @@ impl GetResourceLogLevelInput {
         self.resource_type.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceLogLevelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceLogLevelInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceEventConfigurationInput {
     /// <p>Resource identifier to opt in for event messaging.</p>
     #[doc(hidden)]
@@ -18769,19 +19149,10 @@ impl GetResourceEventConfigurationInput {
         self.partner_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetResourceEventConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceEventConfigurationInput");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("identifier_type", &self.identifier_type);
-        formatter.field("partner_type", &self.partner_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPositionConfigurationInput {
     /// <p>Resource identifier used in a position configuration.</p>
     #[doc(hidden)]
@@ -18800,18 +19171,10 @@ impl GetPositionConfigurationInput {
         self.resource_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetPositionConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPositionConfigurationInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPositionInput {
     /// <p>Resource identifier used to retrieve the position information.</p>
     #[doc(hidden)]
@@ -18830,18 +19193,10 @@ impl GetPositionInput {
         self.resource_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetPositionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPositionInput");
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPartnerAccountInput {
     /// <p>The partner account ID to disassociate from the AWS account.</p>
     #[doc(hidden)]
@@ -18860,18 +19215,10 @@ impl GetPartnerAccountInput {
         self.partner_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetPartnerAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPartnerAccountInput");
-        formatter.field("partner_account_id", &self.partner_account_id);
-        formatter.field("partner_type", &self.partner_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
     #[doc(hidden)]
@@ -18883,17 +19230,10 @@ impl GetNetworkAnalyzerConfigurationInput {
         self.configuration_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetNetworkAnalyzerConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNetworkAnalyzerConfigurationInput");
-        formatter.field("configuration_name", &self.configuration_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMulticastGroupSessionInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -18905,17 +19245,10 @@ impl GetMulticastGroupSessionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMulticastGroupSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMulticastGroupSessionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -18927,28 +19260,15 @@ impl GetMulticastGroupInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMulticastGroupInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLogLevelsByResourceTypesInput {}
-impl std::fmt::Debug for GetLogLevelsByResourceTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLogLevelsByResourceTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -18960,28 +19280,15 @@ impl GetFuotaTaskInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEventConfigurationByResourceTypesInput {}
-impl std::fmt::Debug for GetEventConfigurationByResourceTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEventConfigurationByResourceTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDeviceProfileInput {
     /// <p>The ID of the resource to get.</p>
     #[doc(hidden)]
@@ -18993,17 +19300,10 @@ impl GetDeviceProfileInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDeviceProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDeviceProfileInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDestinationInput {
     /// <p>The name of the resource to get.</p>
     #[doc(hidden)]
@@ -19015,17 +19315,10 @@ impl GetDestinationInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDestinationInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateWirelessGatewayFromThingInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -19037,17 +19330,10 @@ impl DisassociateWirelessGatewayFromThingInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateWirelessGatewayFromThingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateWirelessGatewayFromThingInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateWirelessGatewayFromCertificateInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -19059,17 +19345,10 @@ impl DisassociateWirelessGatewayFromCertificateInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateWirelessGatewayFromCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateWirelessGatewayFromCertificateInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateWirelessDeviceFromThingInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -19081,17 +19360,10 @@ impl DisassociateWirelessDeviceFromThingInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateWirelessDeviceFromThingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateWirelessDeviceFromThingInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateWirelessDeviceFromMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -19110,18 +19382,10 @@ impl DisassociateWirelessDeviceFromMulticastGroupInput {
         self.wireless_device_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateWirelessDeviceFromMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateWirelessDeviceFromMulticastGroupInput");
-        formatter.field("id", &self.id);
-        formatter.field("wireless_device_id", &self.wireless_device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateWirelessDeviceFromFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -19140,18 +19404,10 @@ impl DisassociateWirelessDeviceFromFuotaTaskInput {
         self.wireless_device_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateWirelessDeviceFromFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateWirelessDeviceFromFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.field("wireless_device_id", &self.wireless_device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateMulticastGroupFromFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -19170,18 +19426,10 @@ impl DisassociateMulticastGroupFromFuotaTaskInput {
         self.multicast_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateMulticastGroupFromFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateMulticastGroupFromFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.field("multicast_group_id", &self.multicast_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateAwsAccountFromPartnerAccountInput {
     /// <p>The partner account ID to disassociate from the AWS account.</p>
     #[doc(hidden)]
@@ -19200,18 +19448,10 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
         self.partner_type.as_ref()
     }
 }
-impl std::fmt::Debug for DisassociateAwsAccountFromPartnerAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateAwsAccountFromPartnerAccountInput");
-        formatter.field("partner_account_id", &self.partner_account_id);
-        formatter.field("partner_type", &self.partner_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWirelessGatewayTaskDefinitionInput {
     /// <p>The ID of the resource to delete.</p>
     #[doc(hidden)]
@@ -19223,17 +19463,10 @@ impl DeleteWirelessGatewayTaskDefinitionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWirelessGatewayTaskDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWirelessGatewayTaskDefinitionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWirelessGatewayTaskInput {
     /// <p>The ID of the resource to delete.</p>
     #[doc(hidden)]
@@ -19245,17 +19478,10 @@ impl DeleteWirelessGatewayTaskInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWirelessGatewayTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWirelessGatewayTaskInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWirelessGatewayInput {
     /// <p>The ID of the resource to delete.</p>
     #[doc(hidden)]
@@ -19267,17 +19493,10 @@ impl DeleteWirelessGatewayInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWirelessGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWirelessGatewayInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWirelessDeviceInput {
     /// <p>The ID of the resource to delete.</p>
     #[doc(hidden)]
@@ -19289,17 +19508,10 @@ impl DeleteWirelessDeviceInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWirelessDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWirelessDeviceInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServiceProfileInput {
     /// <p>The ID of the resource to delete.</p>
     #[doc(hidden)]
@@ -19311,17 +19523,10 @@ impl DeleteServiceProfileInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteServiceProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServiceProfileInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteQueuedMessagesInput {
     /// <p>The ID of a given wireless device for which downlink messages will be deleted.</p>
     #[doc(hidden)]
@@ -19347,19 +19552,10 @@ impl DeleteQueuedMessagesInput {
         self.wireless_device_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteQueuedMessagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteQueuedMessagesInput");
-        formatter.field("id", &self.id);
-        formatter.field("message_id", &self.message_id);
-        formatter.field("wireless_device_type", &self.wireless_device_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
     #[doc(hidden)]
@@ -19371,17 +19567,10 @@ impl DeleteNetworkAnalyzerConfigurationInput {
         self.configuration_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteNetworkAnalyzerConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNetworkAnalyzerConfigurationInput");
-        formatter.field("configuration_name", &self.configuration_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -19393,17 +19582,10 @@ impl DeleteMulticastGroupInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMulticastGroupInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -19415,17 +19597,10 @@ impl DeleteFuotaTaskInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDeviceProfileInput {
     /// <p>The ID of the resource to delete.</p>
     #[doc(hidden)]
@@ -19437,17 +19612,10 @@ impl DeleteDeviceProfileInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDeviceProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDeviceProfileInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDestinationInput {
     /// <p>The name of the resource to delete.</p>
     #[doc(hidden)]
@@ -19459,17 +19627,10 @@ impl DeleteDestinationInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDestinationInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWirelessGatewayTaskDefinitionInput {
     /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
     #[doc(hidden)]
@@ -19509,21 +19670,10 @@ impl CreateWirelessGatewayTaskDefinitionInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWirelessGatewayTaskDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWirelessGatewayTaskDefinitionInput");
-        formatter.field("auto_create_tasks", &self.auto_create_tasks);
-        formatter.field("name", &self.name);
-        formatter.field("update", &self.update);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWirelessGatewayTaskInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -19542,21 +19692,10 @@ impl CreateWirelessGatewayTaskInput {
         self.wireless_gateway_task_definition_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWirelessGatewayTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWirelessGatewayTaskInput");
-        formatter.field("id", &self.id);
-        formatter.field(
-            "wireless_gateway_task_definition_id",
-            &self.wireless_gateway_task_definition_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWirelessGatewayInput {
     /// <p>The name of the new resource.</p>
     #[doc(hidden)]
@@ -19596,21 +19735,10 @@ impl CreateWirelessGatewayInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWirelessGatewayInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWirelessGatewayInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWirelessDeviceInput {
     /// <p>The wireless device type.</p>
     #[doc(hidden)]
@@ -19664,23 +19792,10 @@ impl CreateWirelessDeviceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWirelessDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWirelessDeviceInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("destination_name", &self.destination_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateServiceProfileInput {
     /// <p>The name of the new resource.</p>
     #[doc(hidden)]
@@ -19713,20 +19828,10 @@ impl CreateServiceProfileInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateServiceProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateServiceProfileInput");
-        formatter.field("name", &self.name);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
     #[doc(hidden)]
@@ -19780,23 +19885,10 @@ impl CreateNetworkAnalyzerConfigurationInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateNetworkAnalyzerConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateNetworkAnalyzerConfigurationInput");
-        formatter.field("name", &self.name);
-        formatter.field("trace_content", &self.trace_content);
-        formatter.field("wireless_devices", &self.wireless_devices);
-        formatter.field("wireless_gateways", &self.wireless_gateways);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMulticastGroupInput {
     /// <p>The name of the multicast group.</p>
     #[doc(hidden)]
@@ -19836,21 +19928,10 @@ impl CreateMulticastGroupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMulticastGroupInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFuotaTaskInput {
     /// <p>The name of a FUOTA task.</p>
     #[doc(hidden)]
@@ -19904,23 +19985,10 @@ impl CreateFuotaTaskInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFuotaTaskInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("firmware_update_image", &self.firmware_update_image);
-        formatter.field("firmware_update_role", &self.firmware_update_role);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeviceProfileInput {
     /// <p>The name of the new resource.</p>
     #[doc(hidden)]
@@ -19953,20 +20021,10 @@ impl CreateDeviceProfileInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDeviceProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeviceProfileInput");
-        formatter.field("name", &self.name);
-        formatter.field("lo_ra_wan", &self.lo_ra_wan);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDestinationInput {
     /// <p>The name of the new resource.</p>
     #[doc(hidden)]
@@ -20020,23 +20078,10 @@ impl CreateDestinationInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDestinationInput");
-        formatter.field("name", &self.name);
-        formatter.field("expression_type", &self.expression_type);
-        formatter.field("expression", &self.expression);
-        formatter.field("description", &self.description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelMulticastGroupSessionInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -20048,17 +20093,10 @@ impl CancelMulticastGroupSessionInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelMulticastGroupSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelMulticastGroupSessionInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateWirelessGatewayWithThingInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -20077,18 +20115,10 @@ impl AssociateWirelessGatewayWithThingInput {
         self.thing_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateWirelessGatewayWithThingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateWirelessGatewayWithThingInput");
-        formatter.field("id", &self.id);
-        formatter.field("thing_arn", &self.thing_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateWirelessGatewayWithCertificateInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -20107,18 +20137,10 @@ impl AssociateWirelessGatewayWithCertificateInput {
         self.iot_certificate_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateWirelessGatewayWithCertificateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateWirelessGatewayWithCertificateInput");
-        formatter.field("id", &self.id);
-        formatter.field("iot_certificate_id", &self.iot_certificate_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateWirelessDeviceWithThingInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
@@ -20137,18 +20159,10 @@ impl AssociateWirelessDeviceWithThingInput {
         self.thing_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateWirelessDeviceWithThingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateWirelessDeviceWithThingInput");
-        formatter.field("id", &self.id);
-        formatter.field("thing_arn", &self.thing_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateWirelessDeviceWithMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
@@ -20167,18 +20181,10 @@ impl AssociateWirelessDeviceWithMulticastGroupInput {
         self.wireless_device_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateWirelessDeviceWithMulticastGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateWirelessDeviceWithMulticastGroupInput");
-        formatter.field("id", &self.id);
-        formatter.field("wireless_device_id", &self.wireless_device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateWirelessDeviceWithFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -20197,18 +20203,10 @@ impl AssociateWirelessDeviceWithFuotaTaskInput {
         self.wireless_device_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateWirelessDeviceWithFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateWirelessDeviceWithFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.field("wireless_device_id", &self.wireless_device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateMulticastGroupWithFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
@@ -20227,18 +20225,10 @@ impl AssociateMulticastGroupWithFuotaTaskInput {
         self.multicast_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateMulticastGroupWithFuotaTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateMulticastGroupWithFuotaTaskInput");
-        formatter.field("id", &self.id);
-        formatter.field("multicast_group_id", &self.multicast_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateAwsAccountWithPartnerAccountInput {
     /// <p>The Sidewalk account credentials.</p>
     #[doc(hidden)]
@@ -20262,14 +20252,5 @@ impl AssociateAwsAccountWithPartnerAccountInput {
     /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateAwsAccountWithPartnerAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateAwsAccountWithPartnerAccountInput");
-        formatter.field("sidewalk", &self.sidewalk);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

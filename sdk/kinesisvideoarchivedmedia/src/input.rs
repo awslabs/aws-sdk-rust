@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod get_clip_input {
 
     /// A builder for [`GetClipInput`](crate::input::GetClipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -52,7 +52,8 @@ pub mod get_clip_input {
         /// Consumes the builder and constructs a [`GetClipInput`](crate::input::GetClipInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetClipInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetClipInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetClipInput {
                 stream_name: self.stream_name,
                 stream_arn: self.stream_arn,
@@ -74,13 +75,13 @@ impl GetClipInput {
             crate::operation::GetClip,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetClipInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getClip").expect("formatting should succeed");
                 Ok(())
             }
@@ -88,8 +89,10 @@ impl GetClipInput {
             fn update_http_builder(
                 input: &crate::input::GetClipInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -171,7 +174,7 @@ impl GetClipInput {
 pub mod get_dash_streaming_session_url_input {
 
     /// A builder for [`GetDashStreamingSessionUrlInput`](crate::input::GetDashStreamingSessionUrlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -333,7 +336,7 @@ pub mod get_dash_streaming_session_url_input {
             self,
         ) -> Result<
             crate::input::GetDashStreamingSessionUrlInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetDashStreamingSessionUrlInput {
                 stream_name: self.stream_name,
@@ -361,13 +364,13 @@ impl GetDashStreamingSessionUrlInput {
             crate::operation::GetDASHStreamingSessionURL,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDashStreamingSessionUrlInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getDASHStreamingSessionURL").expect("formatting should succeed");
                 Ok(())
             }
@@ -375,8 +378,10 @@ impl GetDashStreamingSessionUrlInput {
             fn update_http_builder(
                 input: &crate::input::GetDashStreamingSessionUrlInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -459,7 +464,7 @@ impl GetDashStreamingSessionUrlInput {
 pub mod get_hls_streaming_session_url_input {
 
     /// A builder for [`GetHlsStreamingSessionUrlInput`](crate::input::GetHlsStreamingSessionUrlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -647,7 +652,7 @@ pub mod get_hls_streaming_session_url_input {
             self,
         ) -> Result<
             crate::input::GetHlsStreamingSessionUrlInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetHlsStreamingSessionUrlInput {
                 stream_name: self.stream_name,
@@ -676,13 +681,13 @@ impl GetHlsStreamingSessionUrlInput {
             crate::operation::GetHLSStreamingSessionURL,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetHlsStreamingSessionUrlInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getHLSStreamingSessionURL").expect("formatting should succeed");
                 Ok(())
             }
@@ -690,8 +695,10 @@ impl GetHlsStreamingSessionUrlInput {
             fn update_http_builder(
                 input: &crate::input::GetHlsStreamingSessionUrlInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -774,7 +781,7 @@ impl GetHlsStreamingSessionUrlInput {
 pub mod get_images_input {
 
     /// A builder for [`GetImagesInput`](crate::input::GetImagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -947,7 +954,8 @@ pub mod get_images_input {
         /// Consumes the builder and constructs a [`GetImagesInput`](crate::input::GetImagesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetImagesInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetImagesInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetImagesInput {
                 stream_name: self.stream_name,
                 stream_arn: self.stream_arn,
@@ -978,13 +986,13 @@ impl GetImagesInput {
             crate::operation::GetImages,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetImagesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getImages").expect("formatting should succeed");
                 Ok(())
             }
@@ -992,8 +1000,10 @@ impl GetImagesInput {
             fn update_http_builder(
                 input: &crate::input::GetImagesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1075,7 +1085,7 @@ impl GetImagesInput {
 pub mod get_media_for_fragment_list_input {
 
     /// A builder for [`GetMediaForFragmentListInput`](crate::input::GetMediaForFragmentListInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -1126,7 +1136,7 @@ pub mod get_media_for_fragment_list_input {
             self,
         ) -> Result<
             crate::input::GetMediaForFragmentListInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetMediaForFragmentListInput {
                 stream_name: self.stream_name,
@@ -1149,13 +1159,13 @@ impl GetMediaForFragmentListInput {
             crate::operation::GetMediaForFragmentList,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetMediaForFragmentListInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getMediaForFragmentList").expect("formatting should succeed");
                 Ok(())
             }
@@ -1163,8 +1173,10 @@ impl GetMediaForFragmentListInput {
             fn update_http_builder(
                 input: &crate::input::GetMediaForFragmentListInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1250,7 +1262,7 @@ impl GetMediaForFragmentListInput {
 pub mod list_fragments_input {
 
     /// A builder for [`ListFragmentsInput`](crate::input::ListFragmentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -1315,7 +1327,7 @@ pub mod list_fragments_input {
         /// Consumes the builder and constructs a [`ListFragmentsInput`](crate::input::ListFragmentsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListFragmentsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListFragmentsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListFragmentsInput {
                 stream_name: self.stream_name,
@@ -1340,13 +1352,13 @@ impl ListFragmentsInput {
             crate::operation::ListFragments,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListFragmentsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listFragments").expect("formatting should succeed");
                 Ok(())
             }
@@ -1354,8 +1366,10 @@ impl ListFragmentsInput {
             fn update_http_builder(
                 input: &crate::input::ListFragmentsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1437,7 +1451,7 @@ impl ListFragmentsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFragmentsInput {
     /// <p>The name of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
     #[doc(hidden)]
@@ -1477,21 +1491,10 @@ impl ListFragmentsInput {
         self.fragment_selector.as_ref()
     }
 }
-impl std::fmt::Debug for ListFragmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFragmentsInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("fragment_selector", &self.fragment_selector);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMediaForFragmentListInput {
     /// <p>The name of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
     #[doc(hidden)]
@@ -1517,19 +1520,10 @@ impl GetMediaForFragmentListInput {
         self.fragments.as_deref()
     }
 }
-impl std::fmt::Debug for GetMediaForFragmentListInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMediaForFragmentListInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("fragments", &self.fragments);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImagesInput {
     /// <p>The name of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     #[doc(hidden)]
@@ -1632,28 +1626,10 @@ impl GetImagesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetImagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetImagesInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("image_selector_type", &self.image_selector_type);
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.field("end_timestamp", &self.end_timestamp);
-        formatter.field("sampling_interval", &self.sampling_interval);
-        formatter.field("format", &self.format);
-        formatter.field("format_config", &self.format_config);
-        formatter.field("width_pixels", &self.width_pixels);
-        formatter.field("height_pixels", &self.height_pixels);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetHlsStreamingSessionUrlInput {
     /// <p>The name of the stream for which to retrieve the HLS master playlist URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
@@ -1781,31 +1757,10 @@ impl GetHlsStreamingSessionUrlInput {
         self.max_media_playlist_fragment_results
     }
 }
-impl std::fmt::Debug for GetHlsStreamingSessionUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetHlsStreamingSessionUrlInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("playback_mode", &self.playback_mode);
-        formatter.field("hls_fragment_selector", &self.hls_fragment_selector);
-        formatter.field("container_format", &self.container_format);
-        formatter.field("discontinuity_mode", &self.discontinuity_mode);
-        formatter.field(
-            "display_fragment_timestamp",
-            &self.display_fragment_timestamp,
-        );
-        formatter.field("expires", &self.expires);
-        formatter.field(
-            "max_media_playlist_fragment_results",
-            &self.max_media_playlist_fragment_results,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDashStreamingSessionUrlInput {
     /// <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
@@ -1914,30 +1869,10 @@ impl GetDashStreamingSessionUrlInput {
         self.max_manifest_fragment_results
     }
 }
-impl std::fmt::Debug for GetDashStreamingSessionUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDashStreamingSessionUrlInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("playback_mode", &self.playback_mode);
-        formatter.field(
-            "display_fragment_timestamp",
-            &self.display_fragment_timestamp,
-        );
-        formatter.field("display_fragment_number", &self.display_fragment_number);
-        formatter.field("dash_fragment_selector", &self.dash_fragment_selector);
-        formatter.field("expires", &self.expires);
-        formatter.field(
-            "max_manifest_fragment_results",
-            &self.max_manifest_fragment_results,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetClipInput {
     /// <p>The name of the stream for which to retrieve the media clip. </p>
     /// <p>You must specify either the StreamName or the StreamARN. </p>
@@ -1967,14 +1902,5 @@ impl GetClipInput {
         &self,
     ) -> std::option::Option<&crate::model::ClipFragmentSelector> {
         self.clip_fragment_selector.as_ref()
-    }
-}
-impl std::fmt::Debug for GetClipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetClipInput");
-        formatter.field("stream_name", &self.stream_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.field("clip_fragment_selector", &self.clip_fragment_selector);
-        formatter.finish()
     }
 }

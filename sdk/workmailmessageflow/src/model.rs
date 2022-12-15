@@ -13,7 +13,7 @@
 /// <li> <p>Certain unique headers can only appear once. Check the returned error message for more information.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RawMessageContent {
     /// <p>The S3 reference of an email message.</p>
     #[doc(hidden)]
@@ -25,18 +25,11 @@ impl RawMessageContent {
         self.s3_reference.as_ref()
     }
 }
-impl std::fmt::Debug for RawMessageContent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RawMessageContent");
-        formatter.field("s3_reference", &self.s3_reference);
-        formatter.finish()
-    }
-}
 /// See [`RawMessageContent`](crate::model::RawMessageContent).
 pub mod raw_message_content {
 
     /// A builder for [`RawMessageContent`](crate::model::RawMessageContent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_reference: std::option::Option<crate::model::S3Reference>,
     }
@@ -73,7 +66,7 @@ impl RawMessageContent {
 /// <p>The region for the S3 bucket containing the S3 object must match the region used for WorkMail operations. Also, for WorkMail to process an S3 object, it must have permission to access that object. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html"> Updating message content with AWS Lambda</a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Reference {
     /// <p>The S3 bucket name.</p>
     #[doc(hidden)]
@@ -99,20 +92,11 @@ impl S3Reference {
         self.object_version.as_deref()
     }
 }
-impl std::fmt::Debug for S3Reference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Reference");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.field("object_version", &self.object_version);
-        formatter.finish()
-    }
-}
 /// See [`S3Reference`](crate::model::S3Reference).
 pub mod s3_reference {
 
     /// A builder for [`S3Reference`](crate::model::S3Reference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_notification_rule_input {
 
     /// A builder for [`CreateNotificationRuleInput`](crate::input::CreateNotificationRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) event_type_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -148,8 +148,10 @@ pub mod create_notification_rule_input {
         /// Consumes the builder and constructs a [`CreateNotificationRuleInput`](crate::input::CreateNotificationRuleInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateNotificationRuleInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateNotificationRuleInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateNotificationRuleInput {
                 name: self.name,
                 event_type_ids: self.event_type_ids,
@@ -160,6 +162,20 @@ pub mod create_notification_rule_input {
                 tags: self.tags,
                 status: self.status,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("event_type_ids", &self.event_type_ids);
+            formatter.field("resource", &self.resource);
+            formatter.field("targets", &self.targets);
+            formatter.field("detail_type", &self.detail_type);
+            formatter.field("client_request_token", &self.client_request_token);
+            formatter.field("tags", &self.tags);
+            formatter.field("status", &self.status);
+            formatter.finish()
         }
     }
 }
@@ -176,7 +192,7 @@ impl CreateNotificationRuleInput {
             crate::operation::CreateNotificationRule,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -185,7 +201,7 @@ impl CreateNotificationRuleInput {
             fn uri_base(
                 _input: &crate::input::CreateNotificationRuleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/createNotificationRule").expect("formatting should succeed");
                 Ok(())
             }
@@ -193,8 +209,10 @@ impl CreateNotificationRuleInput {
             fn update_http_builder(
                 input: &crate::input::CreateNotificationRuleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -280,7 +298,7 @@ impl CreateNotificationRuleInput {
 pub mod delete_notification_rule_input {
 
     /// A builder for [`DeleteNotificationRuleInput`](crate::input::DeleteNotificationRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -298,8 +316,10 @@ pub mod delete_notification_rule_input {
         /// Consumes the builder and constructs a [`DeleteNotificationRuleInput`](crate::input::DeleteNotificationRuleInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteNotificationRuleInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteNotificationRuleInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteNotificationRuleInput { arn: self.arn })
         }
     }
@@ -317,13 +337,13 @@ impl DeleteNotificationRuleInput {
             crate::operation::DeleteNotificationRule,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteNotificationRuleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/deleteNotificationRule").expect("formatting should succeed");
                 Ok(())
             }
@@ -331,8 +351,10 @@ impl DeleteNotificationRuleInput {
             fn update_http_builder(
                 input: &crate::input::DeleteNotificationRuleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -418,7 +440,7 @@ impl DeleteNotificationRuleInput {
 pub mod delete_target_input {
 
     /// A builder for [`DeleteTargetInput`](crate::input::DeleteTargetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) target_address: std::option::Option<std::string::String>,
         pub(crate) force_unsubscribe_all: std::option::Option<bool>,
@@ -450,12 +472,20 @@ pub mod delete_target_input {
         /// Consumes the builder and constructs a [`DeleteTargetInput`](crate::input::DeleteTargetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTargetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteTargetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteTargetInput {
                 target_address: self.target_address,
                 force_unsubscribe_all: self.force_unsubscribe_all.unwrap_or_default(),
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("target_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("force_unsubscribe_all", &self.force_unsubscribe_all);
+            formatter.finish()
         }
     }
 }
@@ -472,13 +502,13 @@ impl DeleteTargetInput {
             crate::operation::DeleteTarget,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteTargetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/deleteTarget").expect("formatting should succeed");
                 Ok(())
             }
@@ -486,8 +516,10 @@ impl DeleteTargetInput {
             fn update_http_builder(
                 input: &crate::input::DeleteTargetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -571,7 +603,7 @@ impl DeleteTargetInput {
 pub mod describe_notification_rule_input {
 
     /// A builder for [`DescribeNotificationRuleInput`](crate::input::DescribeNotificationRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -591,7 +623,7 @@ pub mod describe_notification_rule_input {
             self,
         ) -> Result<
             crate::input::DescribeNotificationRuleInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeNotificationRuleInput { arn: self.arn })
         }
@@ -610,13 +642,13 @@ impl DescribeNotificationRuleInput {
             crate::operation::DescribeNotificationRule,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeNotificationRuleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/describeNotificationRule").expect("formatting should succeed");
                 Ok(())
             }
@@ -624,8 +656,10 @@ impl DescribeNotificationRuleInput {
             fn update_http_builder(
                 input: &crate::input::DescribeNotificationRuleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -711,7 +745,7 @@ impl DescribeNotificationRuleInput {
 pub mod list_event_types_input {
 
     /// A builder for [`ListEventTypesInput`](crate::input::ListEventTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::ListEventTypesFilter>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -760,7 +794,7 @@ pub mod list_event_types_input {
         /// Consumes the builder and constructs a [`ListEventTypesInput`](crate::input::ListEventTypesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListEventTypesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListEventTypesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListEventTypesInput {
                 filters: self.filters,
@@ -783,13 +817,13 @@ impl ListEventTypesInput {
             crate::operation::ListEventTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListEventTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listEventTypes").expect("formatting should succeed");
                 Ok(())
             }
@@ -797,8 +831,10 @@ impl ListEventTypesInput {
             fn update_http_builder(
                 input: &crate::input::ListEventTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -882,7 +918,7 @@ impl ListEventTypesInput {
 pub mod list_notification_rules_input {
 
     /// A builder for [`ListNotificationRulesInput`](crate::input::ListNotificationRulesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters:
             std::option::Option<std::vec::Vec<crate::model::ListNotificationRulesFilter>>,
@@ -936,8 +972,10 @@ pub mod list_notification_rules_input {
         /// Consumes the builder and constructs a [`ListNotificationRulesInput`](crate::input::ListNotificationRulesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListNotificationRulesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListNotificationRulesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListNotificationRulesInput {
                 filters: self.filters,
                 next_token: self.next_token,
@@ -959,13 +997,13 @@ impl ListNotificationRulesInput {
             crate::operation::ListNotificationRules,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListNotificationRulesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listNotificationRules").expect("formatting should succeed");
                 Ok(())
             }
@@ -973,8 +1011,10 @@ impl ListNotificationRulesInput {
             fn update_http_builder(
                 input: &crate::input::ListNotificationRulesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1060,7 +1100,7 @@ impl ListNotificationRulesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -1078,8 +1118,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput { arn: self.arn })
         }
     }
@@ -1097,13 +1139,13 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listTagsForResource").expect("formatting should succeed");
                 Ok(())
             }
@@ -1111,8 +1153,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1198,7 +1242,7 @@ impl ListTagsForResourceInput {
 pub mod list_targets_input {
 
     /// A builder for [`ListTargetsInput`](crate::input::ListTargetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::ListTargetsFilter>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1251,7 +1295,7 @@ pub mod list_targets_input {
         /// Consumes the builder and constructs a [`ListTargetsInput`](crate::input::ListTargetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTargetsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListTargetsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListTargetsInput {
                 filters: self.filters,
@@ -1274,13 +1318,13 @@ impl ListTargetsInput {
             crate::operation::ListTargets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTargetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listTargets").expect("formatting should succeed");
                 Ok(())
             }
@@ -1288,8 +1332,10 @@ impl ListTargetsInput {
             fn update_http_builder(
                 input: &crate::input::ListTargetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1373,7 +1419,7 @@ impl ListTargetsInput {
 pub mod subscribe_input {
 
     /// A builder for [`SubscribeInput`](crate::input::SubscribeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) target: std::option::Option<crate::model::Target>,
@@ -1416,7 +1462,8 @@ pub mod subscribe_input {
         /// Consumes the builder and constructs a [`SubscribeInput`](crate::input::SubscribeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SubscribeInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::SubscribeInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::SubscribeInput {
                 arn: self.arn,
                 target: self.target,
@@ -1438,13 +1485,13 @@ impl SubscribeInput {
             crate::operation::Subscribe,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SubscribeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/subscribe").expect("formatting should succeed");
                 Ok(())
             }
@@ -1452,8 +1499,10 @@ impl SubscribeInput {
             fn update_http_builder(
                 input: &crate::input::SubscribeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1535,7 +1584,7 @@ impl SubscribeInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -1581,7 +1630,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 arn: self.arn,
@@ -1603,13 +1652,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tagResource").expect("formatting should succeed");
                 Ok(())
             }
@@ -1617,8 +1666,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1702,7 +1753,7 @@ impl TagResourceInput {
 pub mod unsubscribe_input {
 
     /// A builder for [`UnsubscribeInput`](crate::input::UnsubscribeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) target_address: std::option::Option<std::string::String>,
@@ -1734,12 +1785,20 @@ pub mod unsubscribe_input {
         /// Consumes the builder and constructs a [`UnsubscribeInput`](crate::input::UnsubscribeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UnsubscribeInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UnsubscribeInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UnsubscribeInput {
                 arn: self.arn,
                 target_address: self.target_address,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("target_address", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1756,13 +1815,13 @@ impl UnsubscribeInput {
             crate::operation::Unsubscribe,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UnsubscribeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/unsubscribe").expect("formatting should succeed");
                 Ok(())
             }
@@ -1770,8 +1829,10 @@ impl UnsubscribeInput {
             fn update_http_builder(
                 input: &crate::input::UnsubscribeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1855,7 +1916,7 @@ impl UnsubscribeInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1893,7 +1954,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 arn: self.arn,
@@ -1915,26 +1976,31 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.arn;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let arn = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let arn = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/untagResource/{Arn}", Arn = arn)
                     .expect("formatting should succeed");
@@ -1943,12 +2009,17 @@ impl UntagResourceInput {
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_2) = &_input.tag_keys {
-                    for inner_3 in inner_2 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_3));
-                    }
+                let inner_2 = &_input.tag_keys;
+                let inner_2 = inner_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_3 in inner_2 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_3));
                 }
                 Ok(())
             }
@@ -1956,8 +2027,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2028,7 +2101,7 @@ impl UntagResourceInput {
 pub mod update_notification_rule_input {
 
     /// A builder for [`UpdateNotificationRuleInput`](crate::input::UpdateNotificationRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2125,8 +2198,10 @@ pub mod update_notification_rule_input {
         /// Consumes the builder and constructs a [`UpdateNotificationRuleInput`](crate::input::UpdateNotificationRuleInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateNotificationRuleInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateNotificationRuleInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateNotificationRuleInput {
                 arn: self.arn,
                 name: self.name,
@@ -2135,6 +2210,18 @@ pub mod update_notification_rule_input {
                 targets: self.targets,
                 detail_type: self.detail_type,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("arn", &self.arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("status", &self.status);
+            formatter.field("event_type_ids", &self.event_type_ids);
+            formatter.field("targets", &self.targets);
+            formatter.field("detail_type", &self.detail_type);
+            formatter.finish()
         }
     }
 }
@@ -2151,13 +2238,13 @@ impl UpdateNotificationRuleInput {
             crate::operation::UpdateNotificationRule,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateNotificationRuleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/updateNotificationRule").expect("formatting should succeed");
                 Ok(())
             }
@@ -2165,8 +2252,10 @@ impl UpdateNotificationRuleInput {
             fn update_http_builder(
                 input: &crate::input::UpdateNotificationRuleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2312,7 +2401,7 @@ impl std::fmt::Debug for UpdateNotificationRuleInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule from which to remove the tags.</p>
     #[doc(hidden)]
@@ -2329,14 +2418,6 @@ impl UntagResourceInput {
     /// <p>The key names of the tags to remove.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
-    }
-}
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
     }
 }
 
@@ -2372,7 +2453,7 @@ impl std::fmt::Debug for UnsubscribeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule to tag.</p>
     #[doc(hidden)]
@@ -2395,18 +2476,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubscribeInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
     #[doc(hidden)]
@@ -2432,19 +2505,10 @@ impl SubscribeInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for SubscribeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubscribeInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("target", &self.target);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTargetsInput {
     /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
@@ -2474,19 +2538,10 @@ impl ListTargetsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTargetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTargetsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the notification rule.</p>
     #[doc(hidden)]
@@ -2498,17 +2553,10 @@ impl ListTagsForResourceInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNotificationRulesInput {
     /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
@@ -2538,19 +2586,10 @@ impl ListNotificationRulesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListNotificationRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNotificationRulesInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEventTypesInput {
     /// <p>The filters to use to return information by service or resource type.</p>
     #[doc(hidden)]
@@ -2576,19 +2615,10 @@ impl ListEventTypesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListEventTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEventTypesInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeNotificationRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     #[doc(hidden)]
@@ -2598,13 +2628,6 @@ impl DescribeNotificationRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeNotificationRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeNotificationRuleInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 
@@ -2640,7 +2663,7 @@ impl std::fmt::Debug for DeleteTargetInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNotificationRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>
     #[doc(hidden)]
@@ -2650,13 +2673,6 @@ impl DeleteNotificationRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteNotificationRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNotificationRuleInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 

@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_batch_execute_statement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchExecuteStatementInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.database {
         object.key("database").string(var_1.as_str());
     }
@@ -13,6 +13,7 @@ pub fn serialize_structure_crate_input_batch_execute_statement_input(
                 let mut array_5 = array_3.value().start_array();
                 for item_6 in item_4 {
                     {
+                        #[allow(unused_mut)]
                         let mut object_7 = array_5.value().start_object();
                         crate::json_ser::serialize_structure_crate_model_sql_parameter(
                             &mut object_7,
@@ -47,7 +48,7 @@ pub fn serialize_structure_crate_input_batch_execute_statement_input(
 pub fn serialize_structure_crate_input_begin_transaction_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BeginTransactionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_13) = &input.database {
         object.key("database").string(var_13.as_str());
     }
@@ -66,7 +67,7 @@ pub fn serialize_structure_crate_input_begin_transaction_input(
 pub fn serialize_structure_crate_input_commit_transaction_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CommitTransactionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_17) = &input.resource_arn {
         object.key("resourceArn").string(var_17.as_str());
     }
@@ -82,7 +83,7 @@ pub fn serialize_structure_crate_input_commit_transaction_input(
 pub fn serialize_structure_crate_input_execute_sql_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ExecuteSqlInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_20) = &input.aws_secret_store_arn {
         object.key("awsSecretStoreArn").string(var_20.as_str());
     }
@@ -104,7 +105,7 @@ pub fn serialize_structure_crate_input_execute_sql_input(
 pub fn serialize_structure_crate_input_execute_statement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ExecuteStatementInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.continue_after_timeout {
         object
             .key("continueAfterTimeout")
@@ -125,6 +126,7 @@ pub fn serialize_structure_crate_input_execute_statement_input(
         let mut array_28 = object.key("parameters").start_array();
         for item_29 in var_27 {
             {
+                #[allow(unused_mut)]
                 let mut object_30 = array_28.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sql_parameter(
                     &mut object_30,
@@ -139,6 +141,7 @@ pub fn serialize_structure_crate_input_execute_statement_input(
         object.key("resourceArn").string(var_31.as_str());
     }
     if let Some(var_32) = &input.result_set_options {
+        #[allow(unused_mut)]
         let mut object_33 = object.key("resultSetOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_result_set_options(
             &mut object_33,
@@ -164,7 +167,7 @@ pub fn serialize_structure_crate_input_execute_statement_input(
 pub fn serialize_structure_crate_input_rollback_transaction_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RollbackTransactionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_38) = &input.resource_arn {
         object.key("resourceArn").string(var_38.as_str());
     }
@@ -180,11 +183,12 @@ pub fn serialize_structure_crate_input_rollback_transaction_input(
 pub fn serialize_structure_crate_model_sql_parameter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SqlParameter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_41) = &input.name {
         object.key("name").string(var_41.as_str());
     }
     if let Some(var_42) = &input.value {
+        #[allow(unused_mut)]
         let mut object_43 = object.key("value").start_object();
         crate::json_ser::serialize_union_crate_model_field(&mut object_43, var_42)?;
         object_43.finish();
@@ -198,7 +202,7 @@ pub fn serialize_structure_crate_model_sql_parameter(
 pub fn serialize_structure_crate_model_result_set_options(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResultSetOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_45) = &input.decimal_return_type {
         object.key("decimalReturnType").string(var_45.as_str());
     }
@@ -211,7 +215,7 @@ pub fn serialize_structure_crate_model_result_set_options(
 pub fn serialize_union_crate_model_field(
     object_43: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Field,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::Field::IsNull(inner) => {
             object_43.key("isNull").boolean(*inner);
@@ -240,12 +244,15 @@ pub fn serialize_union_crate_model_field(
                 .string_unchecked(&aws_smithy_types::base64::encode(inner));
         }
         crate::model::Field::ArrayValue(inner) => {
+            #[allow(unused_mut)]
             let mut object_47 = object_43.key("arrayValue").start_object();
             crate::json_ser::serialize_union_crate_model_array_value(&mut object_47, inner)?;
             object_47.finish();
         }
         crate::model::Field::Unknown => {
-            return Err(aws_smithy_http::operation::SerializationError::unknown_variant("Field"))
+            return Err(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant("Field"),
+            )
         }
     }
     Ok(())
@@ -254,7 +261,7 @@ pub fn serialize_union_crate_model_field(
 pub fn serialize_union_crate_model_array_value(
     object_47: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ArrayValue,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::ArrayValue::BooleanValues(inner) => {
             let mut array_48 = object_47.key("booleanValues").start_array();
@@ -302,6 +309,7 @@ pub fn serialize_union_crate_model_array_value(
             let mut array_56 = object_47.key("arrayValues").start_array();
             for item_57 in inner {
                 {
+                    #[allow(unused_mut)]
                     let mut object_58 = array_56.value().start_object();
                     crate::json_ser::serialize_union_crate_model_array_value(
                         &mut object_58,
@@ -314,7 +322,9 @@ pub fn serialize_union_crate_model_array_value(
         }
         crate::model::ArrayValue::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant("ArrayValue"),
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                    "ArrayValue",
+                ),
             )
         }
     }

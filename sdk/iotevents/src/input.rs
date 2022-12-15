@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_alarm_model_input {
 
     /// A builder for [`CreateAlarmModelInput`](crate::input::CreateAlarmModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
         pub(crate) alarm_model_description: std::option::Option<std::string::String>,
@@ -151,8 +151,10 @@ pub mod create_alarm_model_input {
         /// Consumes the builder and constructs a [`CreateAlarmModelInput`](crate::input::CreateAlarmModelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAlarmModelInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateAlarmModelInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateAlarmModelInput {
                 alarm_model_name: self.alarm_model_name,
                 alarm_model_description: self.alarm_model_description,
@@ -181,13 +183,13 @@ impl CreateAlarmModelInput {
             crate::operation::CreateAlarmModel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateAlarmModelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/alarm-models").expect("formatting should succeed");
                 Ok(())
             }
@@ -195,8 +197,10 @@ impl CreateAlarmModelInput {
             fn update_http_builder(
                 input: &crate::input::CreateAlarmModelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -280,7 +284,7 @@ impl CreateAlarmModelInput {
 pub mod create_detector_model_input {
 
     /// A builder for [`CreateDetectorModelInput`](crate::input::CreateDetectorModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
         pub(crate) detector_model_definition:
@@ -389,8 +393,10 @@ pub mod create_detector_model_input {
         /// Consumes the builder and constructs a [`CreateDetectorModelInput`](crate::input::CreateDetectorModelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDetectorModelInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateDetectorModelInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateDetectorModelInput {
                 detector_model_name: self.detector_model_name,
                 detector_model_definition: self.detector_model_definition,
@@ -416,13 +422,13 @@ impl CreateDetectorModelInput {
             crate::operation::CreateDetectorModel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateDetectorModelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/detector-models").expect("formatting should succeed");
                 Ok(())
             }
@@ -430,8 +436,10 @@ impl CreateDetectorModelInput {
             fn update_http_builder(
                 input: &crate::input::CreateDetectorModelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -515,7 +523,7 @@ impl CreateDetectorModelInput {
 pub mod create_input_input {
 
     /// A builder for [`CreateInputInput`](crate::input::CreateInputInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_name: std::option::Option<std::string::String>,
         pub(crate) input_description: std::option::Option<std::string::String>,
@@ -581,7 +589,7 @@ pub mod create_input_input {
         /// Consumes the builder and constructs a [`CreateInputInput`](crate::input::CreateInputInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateInputInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateInputInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateInputInput {
                 input_name: self.input_name,
@@ -605,13 +613,13 @@ impl CreateInputInput {
             crate::operation::CreateInput,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateInputInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/inputs").expect("formatting should succeed");
                 Ok(())
             }
@@ -619,8 +627,10 @@ impl CreateInputInput {
             fn update_http_builder(
                 input: &crate::input::CreateInputInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -704,7 +714,7 @@ impl CreateInputInput {
 pub mod delete_alarm_model_input {
 
     /// A builder for [`DeleteAlarmModelInput`](crate::input::DeleteAlarmModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
     }
@@ -725,8 +735,10 @@ pub mod delete_alarm_model_input {
         /// Consumes the builder and constructs a [`DeleteAlarmModelInput`](crate::input::DeleteAlarmModelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAlarmModelInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteAlarmModelInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteAlarmModelInput {
                 alarm_model_name: self.alarm_model_name,
             })
@@ -746,26 +758,31 @@ impl DeleteAlarmModelInput {
             crate::operation::DeleteAlarmModel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAlarmModelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.alarm_model_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alarm_model_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let alarm_model_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alarm_model_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let alarm_model_name = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if alarm_model_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alarm_model_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alarm_model_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -779,8 +796,10 @@ impl DeleteAlarmModelInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAlarmModelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -850,7 +869,7 @@ impl DeleteAlarmModelInput {
 pub mod delete_detector_model_input {
 
     /// A builder for [`DeleteDetectorModelInput`](crate::input::DeleteDetectorModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
     }
@@ -871,8 +890,10 @@ pub mod delete_detector_model_input {
         /// Consumes the builder and constructs a [`DeleteDetectorModelInput`](crate::input::DeleteDetectorModelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDetectorModelInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteDetectorModelInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteDetectorModelInput {
                 detector_model_name: self.detector_model_name,
             })
@@ -892,26 +913,31 @@ impl DeleteDetectorModelInput {
             crate::operation::DeleteDetectorModel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDetectorModelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.detector_model_name;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "detector_model_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let detector_model_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "detector_model_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let detector_model_name = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if detector_model_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "detector_model_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "detector_model_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -925,8 +951,10 @@ impl DeleteDetectorModelInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDetectorModelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -996,7 +1024,7 @@ impl DeleteDetectorModelInput {
 pub mod delete_input_input {
 
     /// A builder for [`DeleteInputInput`](crate::input::DeleteInputInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_name: std::option::Option<std::string::String>,
     }
@@ -1014,7 +1042,7 @@ pub mod delete_input_input {
         /// Consumes the builder and constructs a [`DeleteInputInput`](crate::input::DeleteInputInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteInputInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteInputInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteInputInput {
                 input_name: self.input_name,
@@ -1035,26 +1063,31 @@ impl DeleteInputInput {
             crate::operation::DeleteInput,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteInputInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.input_name;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "input_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let input_name = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "input_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let input_name = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if input_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "input_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "input_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/inputs/{inputName}", inputName = input_name)
                     .expect("formatting should succeed");
@@ -1064,8 +1097,10 @@ impl DeleteInputInput {
             fn update_http_builder(
                 input: &crate::input::DeleteInputInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1135,7 +1170,7 @@ impl DeleteInputInput {
 pub mod describe_alarm_model_input {
 
     /// A builder for [`DescribeAlarmModelInput`](crate::input::DescribeAlarmModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
         pub(crate) alarm_model_version: std::option::Option<std::string::String>,
@@ -1170,8 +1205,10 @@ pub mod describe_alarm_model_input {
         /// Consumes the builder and constructs a [`DescribeAlarmModelInput`](crate::input::DescribeAlarmModelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeAlarmModelInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeAlarmModelInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeAlarmModelInput {
                 alarm_model_name: self.alarm_model_name,
                 alarm_model_version: self.alarm_model_version,
@@ -1192,26 +1229,31 @@ impl DescribeAlarmModelInput {
             crate::operation::DescribeAlarmModel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAlarmModelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.alarm_model_name;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alarm_model_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let alarm_model_name = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alarm_model_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let alarm_model_name = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if alarm_model_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alarm_model_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alarm_model_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1224,10 +1266,12 @@ impl DescribeAlarmModelInput {
             fn uri_query(
                 _input: &crate::input::DescribeAlarmModelInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_5) = &_input.alarm_model_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_5));
+                    {
+                        query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_5));
+                    }
                 }
                 Ok(())
             }
@@ -1235,8 +1279,10 @@ impl DescribeAlarmModelInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAlarmModelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1307,7 +1353,7 @@ impl DescribeAlarmModelInput {
 pub mod describe_detector_model_input {
 
     /// A builder for [`DescribeDetectorModelInput`](crate::input::DescribeDetectorModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
         pub(crate) detector_model_version: std::option::Option<std::string::String>,
@@ -1342,8 +1388,10 @@ pub mod describe_detector_model_input {
         /// Consumes the builder and constructs a [`DescribeDetectorModelInput`](crate::input::DescribeDetectorModelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDetectorModelInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeDetectorModelInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeDetectorModelInput {
                 detector_model_name: self.detector_model_name,
                 detector_model_version: self.detector_model_version,
@@ -1364,26 +1412,31 @@ impl DescribeDetectorModelInput {
             crate::operation::DescribeDetectorModel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDetectorModelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.detector_model_name;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "detector_model_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let detector_model_name = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "detector_model_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let detector_model_name = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if detector_model_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "detector_model_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "detector_model_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1396,10 +1449,12 @@ impl DescribeDetectorModelInput {
             fn uri_query(
                 _input: &crate::input::DescribeDetectorModelInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_7) = &_input.detector_model_version {
-                    query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_7));
+                    {
+                        query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_7));
+                    }
                 }
                 Ok(())
             }
@@ -1407,8 +1462,10 @@ impl DescribeDetectorModelInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDetectorModelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1479,7 +1536,7 @@ impl DescribeDetectorModelInput {
 pub mod describe_detector_model_analysis_input {
 
     /// A builder for [`DescribeDetectorModelAnalysisInput`](crate::input::DescribeDetectorModelAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_id: std::option::Option<std::string::String>,
     }
@@ -1499,7 +1556,7 @@ pub mod describe_detector_model_analysis_input {
             self,
         ) -> Result<
             crate::input::DescribeDetectorModelAnalysisInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeDetectorModelAnalysisInput {
                 analysis_id: self.analysis_id,
@@ -1520,26 +1577,31 @@ impl DescribeDetectorModelAnalysisInput {
             crate::operation::DescribeDetectorModelAnalysis,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDetectorModelAnalysisInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_8 = &_input.analysis_id;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let analysis_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "analysis_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let analysis_id = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if analysis_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "analysis_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1553,8 +1615,10 @@ impl DescribeDetectorModelAnalysisInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDetectorModelAnalysisInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1624,7 +1688,7 @@ impl DescribeDetectorModelAnalysisInput {
 pub mod describe_input_input {
 
     /// A builder for [`DescribeInputInput`](crate::input::DescribeInputInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_name: std::option::Option<std::string::String>,
     }
@@ -1642,7 +1706,7 @@ pub mod describe_input_input {
         /// Consumes the builder and constructs a [`DescribeInputInput`](crate::input::DescribeInputInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeInputInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeInputInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeInputInput {
                 input_name: self.input_name,
@@ -1663,26 +1727,31 @@ impl DescribeInputInput {
             crate::operation::DescribeInput,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeInputInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.input_name;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "input_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let input_name = aws_smithy_http::label::fmt_string(input_9, false);
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "input_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let input_name = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if input_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "input_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "input_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/inputs/{inputName}", inputName = input_name)
                     .expect("formatting should succeed");
@@ -1692,8 +1761,10 @@ impl DescribeInputInput {
             fn update_http_builder(
                 input: &crate::input::DescribeInputInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1763,14 +1834,16 @@ impl DescribeInputInput {
 pub mod describe_logging_options_input {
 
     /// A builder for [`DescribeLoggingOptionsInput`](crate::input::DescribeLoggingOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeLoggingOptionsInput`](crate::input::DescribeLoggingOptionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLoggingOptionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeLoggingOptionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeLoggingOptionsInput {})
         }
     }
@@ -1788,13 +1861,13 @@ impl DescribeLoggingOptionsInput {
             crate::operation::DescribeLoggingOptions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeLoggingOptionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/logging").expect("formatting should succeed");
                 Ok(())
             }
@@ -1802,8 +1875,10 @@ impl DescribeLoggingOptionsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeLoggingOptionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1873,7 +1948,7 @@ impl DescribeLoggingOptionsInput {
 pub mod get_detector_model_analysis_results_input {
 
     /// A builder for [`GetDetectorModelAnalysisResultsInput`](crate::input::GetDetectorModelAnalysisResultsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1915,7 +1990,7 @@ pub mod get_detector_model_analysis_results_input {
             self,
         ) -> Result<
             crate::input::GetDetectorModelAnalysisResultsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetDetectorModelAnalysisResultsInput {
                 analysis_id: self.analysis_id,
@@ -1938,26 +2013,31 @@ impl GetDetectorModelAnalysisResultsInput {
             crate::operation::GetDetectorModelAnalysisResults,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDetectorModelAnalysisResultsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.analysis_id;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let analysis_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "analysis_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let analysis_id = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if analysis_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "analysis_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "analysis_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1970,16 +2050,20 @@ impl GetDetectorModelAnalysisResultsInput {
             fn uri_query(
                 _input: &crate::input::GetDetectorModelAnalysisResultsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_11) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_11));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_11));
+                    }
                 }
                 if let Some(inner_12) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
-                    );
+                    if *inner_12 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1987,8 +2071,10 @@ impl GetDetectorModelAnalysisResultsInput {
             fn update_http_builder(
                 input: &crate::input::GetDetectorModelAnalysisResultsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2059,7 +2145,7 @@ impl GetDetectorModelAnalysisResultsInput {
 pub mod list_alarm_models_input {
 
     /// A builder for [`ListAlarmModelsInput`](crate::input::ListAlarmModelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2088,7 +2174,7 @@ pub mod list_alarm_models_input {
         /// Consumes the builder and constructs a [`ListAlarmModelsInput`](crate::input::ListAlarmModelsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAlarmModelsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListAlarmModelsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListAlarmModelsInput {
                 next_token: self.next_token,
@@ -2110,29 +2196,33 @@ impl ListAlarmModelsInput {
             crate::operation::ListAlarmModels,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAlarmModelsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/alarm-models").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListAlarmModelsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_13) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                    }
                 }
                 if let Some(inner_14) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
-                    );
+                    if *inner_14 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2140,8 +2230,10 @@ impl ListAlarmModelsInput {
             fn update_http_builder(
                 input: &crate::input::ListAlarmModelsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2212,7 +2304,7 @@ impl ListAlarmModelsInput {
 pub mod list_alarm_model_versions_input {
 
     /// A builder for [`ListAlarmModelVersionsInput`](crate::input::ListAlarmModelVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2255,8 +2347,10 @@ pub mod list_alarm_model_versions_input {
         /// Consumes the builder and constructs a [`ListAlarmModelVersionsInput`](crate::input::ListAlarmModelVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAlarmModelVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListAlarmModelVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListAlarmModelVersionsInput {
                 alarm_model_name: self.alarm_model_name,
                 next_token: self.next_token,
@@ -2278,26 +2372,31 @@ impl ListAlarmModelVersionsInput {
             crate::operation::ListAlarmModelVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAlarmModelVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_15 = &_input.alarm_model_name;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alarm_model_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let alarm_model_name = aws_smithy_http::label::fmt_string(input_15, false);
+                let input_15 = input_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alarm_model_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let alarm_model_name = aws_smithy_http::label::fmt_string(
+                    input_15,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if alarm_model_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alarm_model_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alarm_model_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2310,16 +2409,20 @@ impl ListAlarmModelVersionsInput {
             fn uri_query(
                 _input: &crate::input::ListAlarmModelVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_16) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_16));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_16));
+                    }
                 }
                 if let Some(inner_17) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_17).encode(),
-                    );
+                    if *inner_17 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_17).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2327,8 +2430,10 @@ impl ListAlarmModelVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListAlarmModelVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2399,7 +2504,7 @@ impl ListAlarmModelVersionsInput {
 pub mod list_detector_models_input {
 
     /// A builder for [`ListDetectorModelsInput`](crate::input::ListDetectorModelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2428,8 +2533,10 @@ pub mod list_detector_models_input {
         /// Consumes the builder and constructs a [`ListDetectorModelsInput`](crate::input::ListDetectorModelsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDetectorModelsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListDetectorModelsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListDetectorModelsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -2450,29 +2557,33 @@ impl ListDetectorModelsInput {
             crate::operation::ListDetectorModels,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDetectorModelsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/detector-models").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListDetectorModelsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_18));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_18));
+                    }
                 }
                 if let Some(inner_19) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_19).encode(),
-                    );
+                    if *inner_19 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_19).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2480,8 +2591,10 @@ impl ListDetectorModelsInput {
             fn update_http_builder(
                 input: &crate::input::ListDetectorModelsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2552,7 +2665,7 @@ impl ListDetectorModelsInput {
 pub mod list_detector_model_versions_input {
 
     /// A builder for [`ListDetectorModelVersionsInput`](crate::input::ListDetectorModelVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2597,7 +2710,7 @@ pub mod list_detector_model_versions_input {
             self,
         ) -> Result<
             crate::input::ListDetectorModelVersionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListDetectorModelVersionsInput {
                 detector_model_name: self.detector_model_name,
@@ -2620,26 +2733,31 @@ impl ListDetectorModelVersionsInput {
             crate::operation::ListDetectorModelVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDetectorModelVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_20 = &_input.detector_model_name;
-                let input_20 = input_20.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "detector_model_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let detector_model_name = aws_smithy_http::label::fmt_string(input_20, false);
+                let input_20 = input_20.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "detector_model_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let detector_model_name = aws_smithy_http::label::fmt_string(
+                    input_20,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if detector_model_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "detector_model_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "detector_model_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2652,16 +2770,20 @@ impl ListDetectorModelVersionsInput {
             fn uri_query(
                 _input: &crate::input::ListDetectorModelVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_21) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_21));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_21));
+                    }
                 }
                 if let Some(inner_22) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
-                    );
+                    if *inner_22 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2669,8 +2791,10 @@ impl ListDetectorModelVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListDetectorModelVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2741,7 +2865,7 @@ impl ListDetectorModelVersionsInput {
 pub mod list_input_routings_input {
 
     /// A builder for [`ListInputRoutingsInput`](crate::input::ListInputRoutingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_identifier: std::option::Option<crate::model::InputIdentifier>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2784,8 +2908,10 @@ pub mod list_input_routings_input {
         /// Consumes the builder and constructs a [`ListInputRoutingsInput`](crate::input::ListInputRoutingsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListInputRoutingsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListInputRoutingsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListInputRoutingsInput {
                 input_identifier: self.input_identifier,
                 max_results: self.max_results,
@@ -2807,13 +2933,13 @@ impl ListInputRoutingsInput {
             crate::operation::ListInputRoutings,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListInputRoutingsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/input-routings").expect("formatting should succeed");
                 Ok(())
             }
@@ -2821,8 +2947,10 @@ impl ListInputRoutingsInput {
             fn update_http_builder(
                 input: &crate::input::ListInputRoutingsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2906,7 +3034,7 @@ impl ListInputRoutingsInput {
 pub mod list_inputs_input {
 
     /// A builder for [`ListInputsInput`](crate::input::ListInputsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2935,7 +3063,8 @@ pub mod list_inputs_input {
         /// Consumes the builder and constructs a [`ListInputsInput`](crate::input::ListInputsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListInputsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListInputsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListInputsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -2956,29 +3085,33 @@ impl ListInputsInput {
             crate::operation::ListInputs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListInputsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/inputs").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListInputsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_23) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
+                    }
                 }
                 if let Some(inner_24) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_24).encode(),
-                    );
+                    if *inner_24 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_24).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2986,8 +3119,10 @@ impl ListInputsInput {
             fn update_http_builder(
                 input: &crate::input::ListInputsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3058,7 +3193,7 @@ impl ListInputsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3076,8 +3211,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -3097,35 +3234,50 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListTagsForResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_25) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_25),
+                let inner_25 = &_input.resource_arn;
+                let inner_25 = inner_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_25.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_25),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3196,7 +3348,7 @@ impl ListTagsForResourceInput {
 pub mod put_logging_options_input {
 
     /// A builder for [`PutLoggingOptionsInput`](crate::input::PutLoggingOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_options: std::option::Option<crate::model::LoggingOptions>,
     }
@@ -3217,8 +3369,10 @@ pub mod put_logging_options_input {
         /// Consumes the builder and constructs a [`PutLoggingOptionsInput`](crate::input::PutLoggingOptionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutLoggingOptionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutLoggingOptionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutLoggingOptionsInput {
                 logging_options: self.logging_options,
             })
@@ -3238,13 +3392,13 @@ impl PutLoggingOptionsInput {
             crate::operation::PutLoggingOptions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutLoggingOptionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/logging").expect("formatting should succeed");
                 Ok(())
             }
@@ -3252,8 +3406,10 @@ impl PutLoggingOptionsInput {
             fn update_http_builder(
                 input: &crate::input::PutLoggingOptionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -3337,7 +3493,7 @@ impl PutLoggingOptionsInput {
 pub mod start_detector_model_analysis_input {
 
     /// A builder for [`StartDetectorModelAnalysisInput`](crate::input::StartDetectorModelAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_definition:
             std::option::Option<crate::model::DetectorModelDefinition>,
@@ -3364,7 +3520,7 @@ pub mod start_detector_model_analysis_input {
             self,
         ) -> Result<
             crate::input::StartDetectorModelAnalysisInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StartDetectorModelAnalysisInput {
                 detector_model_definition: self.detector_model_definition,
@@ -3385,13 +3541,13 @@ impl StartDetectorModelAnalysisInput {
             crate::operation::StartDetectorModelAnalysis,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartDetectorModelAnalysisInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/analysis/detector-models").expect("formatting should succeed");
                 Ok(())
             }
@@ -3399,8 +3555,10 @@ impl StartDetectorModelAnalysisInput {
             fn update_http_builder(
                 input: &crate::input::StartDetectorModelAnalysisInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3483,7 +3641,7 @@ impl StartDetectorModelAnalysisInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3521,7 +3679,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -3543,35 +3701,50 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::TagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_26) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_26),
+                let inner_26 = &_input.resource_arn;
+                let inner_26 = inner_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_26.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_26),
+                );
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3656,7 +3829,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3694,7 +3867,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -3716,31 +3889,49 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_27) = &_input.resource_arn {
-                    query.push_kv(
-                        "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_27),
+                let inner_27 = &_input.resource_arn;
+                let inner_27 = inner_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_27.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
                     );
                 }
-                if let Some(inner_28) = &_input.tag_keys {
-                    for inner_29 in inner_28 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_29));
-                    }
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_27),
+                );
+                let inner_28 = &_input.tag_keys;
+                let inner_28 = inner_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "tag_keys",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                for inner_29 in inner_28 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_29));
                 }
                 Ok(())
             }
@@ -3748,8 +3939,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3820,7 +4013,7 @@ impl UntagResourceInput {
 pub mod update_alarm_model_input {
 
     /// A builder for [`UpdateAlarmModelInput`](crate::input::UpdateAlarmModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
         pub(crate) alarm_model_description: std::option::Option<std::string::String>,
@@ -3933,8 +4126,10 @@ pub mod update_alarm_model_input {
         /// Consumes the builder and constructs a [`UpdateAlarmModelInput`](crate::input::UpdateAlarmModelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAlarmModelInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateAlarmModelInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateAlarmModelInput {
                 alarm_model_name: self.alarm_model_name,
                 alarm_model_description: self.alarm_model_description,
@@ -3961,26 +4156,31 @@ impl UpdateAlarmModelInput {
             crate::operation::UpdateAlarmModel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateAlarmModelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_30 = &_input.alarm_model_name;
-                let input_30 = input_30.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alarm_model_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let alarm_model_name = aws_smithy_http::label::fmt_string(input_30, false);
+                let input_30 = input_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "alarm_model_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let alarm_model_name = aws_smithy_http::label::fmt_string(
+                    input_30,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if alarm_model_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "alarm_model_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "alarm_model_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3994,8 +4194,10 @@ impl UpdateAlarmModelInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAlarmModelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4079,7 +4281,7 @@ impl UpdateAlarmModelInput {
 pub mod update_detector_model_input {
 
     /// A builder for [`UpdateDetectorModelInput`](crate::input::UpdateDetectorModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
         pub(crate) detector_model_definition:
@@ -4157,8 +4359,10 @@ pub mod update_detector_model_input {
         /// Consumes the builder and constructs a [`UpdateDetectorModelInput`](crate::input::UpdateDetectorModelInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateDetectorModelInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateDetectorModelInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateDetectorModelInput {
                 detector_model_name: self.detector_model_name,
                 detector_model_definition: self.detector_model_definition,
@@ -4182,26 +4386,31 @@ impl UpdateDetectorModelInput {
             crate::operation::UpdateDetectorModel,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateDetectorModelInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_31 = &_input.detector_model_name;
-                let input_31 = input_31.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "detector_model_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let detector_model_name = aws_smithy_http::label::fmt_string(input_31, false);
+                let input_31 = input_31.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "detector_model_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let detector_model_name = aws_smithy_http::label::fmt_string(
+                    input_31,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if detector_model_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "detector_model_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "detector_model_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4215,8 +4424,10 @@ impl UpdateDetectorModelInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDetectorModelInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4300,7 +4511,7 @@ impl UpdateDetectorModelInput {
 pub mod update_input_input {
 
     /// A builder for [`UpdateInputInput`](crate::input::UpdateInputInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_name: std::option::Option<std::string::String>,
         pub(crate) input_description: std::option::Option<std::string::String>,
@@ -4346,7 +4557,7 @@ pub mod update_input_input {
         /// Consumes the builder and constructs a [`UpdateInputInput`](crate::input::UpdateInputInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateInputInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateInputInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateInputInput {
                 input_name: self.input_name,
@@ -4369,26 +4580,31 @@ impl UpdateInputInput {
             crate::operation::UpdateInput,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateInputInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_32 = &_input.input_name;
-                let input_32 = input_32.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "input_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let input_name = aws_smithy_http::label::fmt_string(input_32, false);
+                let input_32 = input_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "input_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let input_name = aws_smithy_http::label::fmt_string(
+                    input_32,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if input_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "input_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "input_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/inputs/{inputName}", inputName = input_name)
                     .expect("formatting should succeed");
@@ -4398,8 +4614,10 @@ impl UpdateInputInput {
             fn update_http_builder(
                 input: &crate::input::UpdateInputInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -4481,7 +4699,7 @@ impl UpdateInputInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInputInput {
     /// <p>The name of the input you want to update.</p>
     #[doc(hidden)]
@@ -4507,19 +4725,10 @@ impl UpdateInputInput {
         self.input_definition.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateInputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateInputInput");
-        formatter.field("input_name", &self.input_name);
-        formatter.field("input_description", &self.input_description);
-        formatter.field("input_definition", &self.input_definition);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDetectorModelInput {
     /// <p>The name of the detector model that is updated.</p>
     #[doc(hidden)]
@@ -4561,24 +4770,10 @@ impl UpdateDetectorModelInput {
         self.evaluation_method.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDetectorModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDetectorModelInput");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("detector_model_definition", &self.detector_model_definition);
-        formatter.field(
-            "detector_model_description",
-            &self.detector_model_description,
-        );
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("evaluation_method", &self.evaluation_method);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAlarmModelInput {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
@@ -4639,24 +4834,10 @@ impl UpdateAlarmModelInput {
         self.alarm_capabilities.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAlarmModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAlarmModelInput");
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("alarm_model_description", &self.alarm_model_description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("severity", &self.severity);
-        formatter.field("alarm_rule", &self.alarm_rule);
-        formatter.field("alarm_notification", &self.alarm_notification);
-        formatter.field("alarm_event_actions", &self.alarm_event_actions);
-        formatter.field("alarm_capabilities", &self.alarm_capabilities);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -4675,18 +4856,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -4705,18 +4878,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDetectorModelAnalysisInput {
     /// <p>Information that defines how a detector operates.</p>
     #[doc(hidden)]
@@ -4730,17 +4895,10 @@ impl StartDetectorModelAnalysisInput {
         self.detector_model_definition.as_ref()
     }
 }
-impl std::fmt::Debug for StartDetectorModelAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDetectorModelAnalysisInput");
-        formatter.field("detector_model_definition", &self.detector_model_definition);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLoggingOptionsInput {
     /// <p>The new values of the AWS IoT Events logging options.</p>
     #[doc(hidden)]
@@ -4752,17 +4910,10 @@ impl PutLoggingOptionsInput {
         self.logging_options.as_ref()
     }
 }
-impl std::fmt::Debug for PutLoggingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLoggingOptionsInput");
-        formatter.field("logging_options", &self.logging_options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -4774,17 +4925,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInputsInput {
     /// <p>The token that you can use to return the next set of results.</p>
     #[doc(hidden)]
@@ -4803,18 +4947,10 @@ impl ListInputsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListInputsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInputsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInputRoutingsInput {
     /// <p> The identifer of the routed input. </p>
     #[doc(hidden)]
@@ -4840,19 +4976,10 @@ impl ListInputRoutingsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListInputRoutingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInputRoutingsInput");
-        formatter.field("input_identifier", &self.input_identifier);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDetectorModelVersionsInput {
     /// <p>The name of the detector model whose versions are returned.</p>
     #[doc(hidden)]
@@ -4878,19 +5005,10 @@ impl ListDetectorModelVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDetectorModelVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDetectorModelVersionsInput");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDetectorModelsInput {
     /// <p>The token that you can use to return the next set of results.</p>
     #[doc(hidden)]
@@ -4909,18 +5027,10 @@ impl ListDetectorModelsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDetectorModelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDetectorModelsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAlarmModelVersionsInput {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
@@ -4946,19 +5056,10 @@ impl ListAlarmModelVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAlarmModelVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAlarmModelVersionsInput");
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAlarmModelsInput {
     /// <p>The token that you can use to return the next set of results.</p>
     #[doc(hidden)]
@@ -4977,18 +5078,10 @@ impl ListAlarmModelsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAlarmModelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAlarmModelsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDetectorModelAnalysisResultsInput {
     /// <p>The ID of the analysis result that you want to retrieve.</p>
     #[doc(hidden)]
@@ -5014,30 +5107,15 @@ impl GetDetectorModelAnalysisResultsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetDetectorModelAnalysisResultsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDetectorModelAnalysisResultsInput");
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoggingOptionsInput {}
-impl std::fmt::Debug for DescribeLoggingOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoggingOptionsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInputInput {
     /// <p>The name of the input.</p>
     #[doc(hidden)]
@@ -5049,17 +5127,10 @@ impl DescribeInputInput {
         self.input_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInputInput");
-        formatter.field("input_name", &self.input_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDetectorModelAnalysisInput {
     /// <p>The ID of the analysis result that you want to retrieve.</p>
     #[doc(hidden)]
@@ -5071,17 +5142,10 @@ impl DescribeDetectorModelAnalysisInput {
         self.analysis_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDetectorModelAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDetectorModelAnalysisInput");
-        formatter.field("analysis_id", &self.analysis_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDetectorModelInput {
     /// <p>The name of the detector model.</p>
     #[doc(hidden)]
@@ -5100,18 +5164,10 @@ impl DescribeDetectorModelInput {
         self.detector_model_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDetectorModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDetectorModelInput");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("detector_model_version", &self.detector_model_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAlarmModelInput {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
@@ -5130,18 +5186,10 @@ impl DescribeAlarmModelInput {
         self.alarm_model_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAlarmModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAlarmModelInput");
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("alarm_model_version", &self.alarm_model_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInputInput {
     /// <p>The name of the input to delete.</p>
     #[doc(hidden)]
@@ -5153,17 +5201,10 @@ impl DeleteInputInput {
         self.input_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteInputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInputInput");
-        formatter.field("input_name", &self.input_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDetectorModelInput {
     /// <p>The name of the detector model to be deleted.</p>
     #[doc(hidden)]
@@ -5175,17 +5216,10 @@ impl DeleteDetectorModelInput {
         self.detector_model_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDetectorModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDetectorModelInput");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAlarmModelInput {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
@@ -5197,17 +5231,10 @@ impl DeleteAlarmModelInput {
         self.alarm_model_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAlarmModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAlarmModelInput");
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateInputInput {
     /// <p>The name you want to give to the input.</p>
     #[doc(hidden)]
@@ -5240,20 +5267,10 @@ impl CreateInputInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateInputInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateInputInput");
-        formatter.field("input_name", &self.input_name);
-        formatter.field("input_description", &self.input_description);
-        formatter.field("input_definition", &self.input_definition);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDetectorModelInput {
     /// <p>The name of the detector model.</p>
     #[doc(hidden)]
@@ -5309,26 +5326,10 @@ impl CreateDetectorModelInput {
         self.evaluation_method.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDetectorModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDetectorModelInput");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("detector_model_definition", &self.detector_model_definition);
-        formatter.field(
-            "detector_model_description",
-            &self.detector_model_description,
-        );
-        formatter.field("key", &self.key);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("evaluation_method", &self.evaluation_method);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAlarmModelInput {
     /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
     #[doc(hidden)]
@@ -5403,21 +5404,5 @@ impl CreateAlarmModelInput {
     /// <p>Contains the configuration information of alarm state changes.</p>
     pub fn alarm_capabilities(&self) -> std::option::Option<&crate::model::AlarmCapabilities> {
         self.alarm_capabilities.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateAlarmModelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAlarmModelInput");
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("alarm_model_description", &self.alarm_model_description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("key", &self.key);
-        formatter.field("severity", &self.severity);
-        formatter.field("alarm_rule", &self.alarm_rule);
-        formatter.field("alarm_notification", &self.alarm_notification);
-        formatter.field("alarm_event_actions", &self.alarm_event_actions);
-        formatter.field("alarm_capabilities", &self.alarm_capabilities);
-        formatter.finish()
     }
 }

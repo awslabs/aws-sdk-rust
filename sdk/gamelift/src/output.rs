@@ -2,7 +2,7 @@
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidateMatchmakingRuleSetOutput {
     /// <p>A response indicating whether the rule set is valid.</p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl ValidateMatchmakingRuleSetOutput {
         self.valid
     }
 }
-impl std::fmt::Debug for ValidateMatchmakingRuleSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidateMatchmakingRuleSetOutput");
-        formatter.field("valid", &self.valid);
-        formatter.finish()
-    }
-}
 /// See [`ValidateMatchmakingRuleSetOutput`](crate::output::ValidateMatchmakingRuleSetOutput).
 pub mod validate_matchmaking_rule_set_output {
 
     /// A builder for [`ValidateMatchmakingRuleSetOutput`](crate::output::ValidateMatchmakingRuleSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) valid: std::option::Option<bool>,
     }
@@ -55,7 +48,7 @@ impl ValidateMatchmakingRuleSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateScriptOutput {
     /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
     #[doc(hidden)]
@@ -67,18 +60,11 @@ impl UpdateScriptOutput {
         self.script.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateScriptOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateScriptOutput");
-        formatter.field("script", &self.script);
-        formatter.finish()
-    }
-}
 /// See [`UpdateScriptOutput`](crate::output::UpdateScriptOutput).
 pub mod update_script_output {
 
     /// A builder for [`UpdateScriptOutput`](crate::output::UpdateScriptOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) script: std::option::Option<crate::model::Script>,
     }
@@ -110,7 +96,7 @@ impl UpdateScriptOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRuntimeConfigurationOutput {
     /// <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown. </p>
     #[doc(hidden)]
@@ -124,18 +110,11 @@ impl UpdateRuntimeConfigurationOutput {
         self.runtime_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateRuntimeConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRuntimeConfigurationOutput");
-        formatter.field("runtime_configuration", &self.runtime_configuration);
-        formatter.finish()
-    }
-}
 /// See [`UpdateRuntimeConfigurationOutput`](crate::output::UpdateRuntimeConfigurationOutput).
 pub mod update_runtime_configuration_output {
 
     /// A builder for [`UpdateRuntimeConfigurationOutput`](crate::output::UpdateRuntimeConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) runtime_configuration: std::option::Option<crate::model::RuntimeConfiguration>,
     }
@@ -170,7 +149,7 @@ impl UpdateRuntimeConfigurationOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMatchmakingConfigurationOutput {
     /// <p>The updated matchmaking configuration.</p>
     #[doc(hidden)]
@@ -182,18 +161,11 @@ impl UpdateMatchmakingConfigurationOutput {
         self.configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateMatchmakingConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMatchmakingConfigurationOutput");
-        formatter.field("configuration", &self.configuration);
-        formatter.finish()
-    }
-}
 /// See [`UpdateMatchmakingConfigurationOutput`](crate::output::UpdateMatchmakingConfigurationOutput).
 pub mod update_matchmaking_configuration_output {
 
     /// A builder for [`UpdateMatchmakingConfigurationOutput`](crate::output::UpdateMatchmakingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration: std::option::Option<crate::model::MatchmakingConfiguration>,
     }
@@ -228,7 +200,7 @@ impl UpdateMatchmakingConfigurationOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGameSessionQueueOutput {
     /// <p>An object that describes the newly updated game session queue.</p>
     #[doc(hidden)]
@@ -240,18 +212,11 @@ impl UpdateGameSessionQueueOutput {
         self.game_session_queue.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateGameSessionQueueOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGameSessionQueueOutput");
-        formatter.field("game_session_queue", &self.game_session_queue);
-        formatter.finish()
-    }
-}
 /// See [`UpdateGameSessionQueueOutput`](crate::output::UpdateGameSessionQueueOutput).
 pub mod update_game_session_queue_output {
 
     /// A builder for [`UpdateGameSessionQueueOutput`](crate::output::UpdateGameSessionQueueOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_session_queue: std::option::Option<crate::model::GameSessionQueue>,
     }
@@ -286,7 +251,7 @@ impl UpdateGameSessionQueueOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGameSessionOutput {
     /// <p>The updated game session properties.</p>
     #[doc(hidden)]
@@ -298,18 +263,11 @@ impl UpdateGameSessionOutput {
         self.game_session.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateGameSessionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGameSessionOutput");
-        formatter.field("game_session", &self.game_session);
-        formatter.finish()
-    }
-}
 /// See [`UpdateGameSessionOutput`](crate::output::UpdateGameSessionOutput).
 pub mod update_game_session_output {
 
     /// A builder for [`UpdateGameSessionOutput`](crate::output::UpdateGameSessionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_session: std::option::Option<crate::model::GameSession>,
     }
@@ -344,7 +302,7 @@ impl UpdateGameSessionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGameServerGroupOutput {
     /// <p>An object that describes the game server group resource with updated properties. </p>
     #[doc(hidden)]
@@ -356,18 +314,11 @@ impl UpdateGameServerGroupOutput {
         self.game_server_group.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateGameServerGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGameServerGroupOutput");
-        formatter.field("game_server_group", &self.game_server_group);
-        formatter.finish()
-    }
-}
 /// See [`UpdateGameServerGroupOutput`](crate::output::UpdateGameServerGroupOutput).
 pub mod update_game_server_group_output {
 
     /// A builder for [`UpdateGameServerGroupOutput`](crate::output::UpdateGameServerGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_server_group: std::option::Option<crate::model::GameServerGroup>,
     }
@@ -402,7 +353,7 @@ impl UpdateGameServerGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGameServerOutput {
     /// <p>Object that describes the newly updated game server.</p>
     #[doc(hidden)]
@@ -414,18 +365,11 @@ impl UpdateGameServerOutput {
         self.game_server.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateGameServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGameServerOutput");
-        formatter.field("game_server", &self.game_server);
-        formatter.finish()
-    }
-}
 /// See [`UpdateGameServerOutput`](crate::output::UpdateGameServerOutput).
 pub mod update_game_server_output {
 
     /// A builder for [`UpdateGameServerOutput`](crate::output::UpdateGameServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_server: std::option::Option<crate::model::GameServer>,
     }
@@ -460,7 +404,7 @@ impl UpdateGameServerOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFleetPortSettingsOutput {
     /// <p>A unique identifier for the fleet that was updated.</p>
     #[doc(hidden)]
@@ -472,18 +416,11 @@ impl UpdateFleetPortSettingsOutput {
         self.fleet_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFleetPortSettingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFleetPortSettingsOutput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.finish()
-    }
-}
 /// See [`UpdateFleetPortSettingsOutput`](crate::output::UpdateFleetPortSettingsOutput).
 pub mod update_fleet_port_settings_output {
 
     /// A builder for [`UpdateFleetPortSettingsOutput`](crate::output::UpdateFleetPortSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
     }
@@ -515,7 +452,7 @@ impl UpdateFleetPortSettingsOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFleetCapacityOutput {
     /// <p>A unique identifier for the fleet that was updated.</p>
     #[doc(hidden)]
@@ -547,20 +484,11 @@ impl UpdateFleetCapacityOutput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFleetCapacityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFleetCapacityOutput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 /// See [`UpdateFleetCapacityOutput`](crate::output::UpdateFleetCapacityOutput).
 pub mod update_fleet_capacity_output {
 
     /// A builder for [`UpdateFleetCapacityOutput`](crate::output::UpdateFleetCapacityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -622,7 +550,7 @@ impl UpdateFleetCapacityOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFleetAttributesOutput {
     /// <p>A unique identifier for the fleet that was updated.</p>
     #[doc(hidden)]
@@ -634,18 +562,11 @@ impl UpdateFleetAttributesOutput {
         self.fleet_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFleetAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFleetAttributesOutput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.finish()
-    }
-}
 /// See [`UpdateFleetAttributesOutput`](crate::output::UpdateFleetAttributesOutput).
 pub mod update_fleet_attributes_output {
 
     /// A builder for [`UpdateFleetAttributesOutput`](crate::output::UpdateFleetAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
     }
@@ -677,7 +598,7 @@ impl UpdateFleetAttributesOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBuildOutput {
     /// <p>The updated build resource.</p>
     ///
@@ -693,18 +614,11 @@ impl UpdateBuildOutput {
         self.build_value.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateBuildOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBuildOutput");
-        formatter.field("build_value", &self.build_value);
-        formatter.finish()
-    }
-}
 /// See [`UpdateBuildOutput`](crate::output::UpdateBuildOutput).
 pub mod update_build_output {
 
     /// A builder for [`UpdateBuildOutput`](crate::output::UpdateBuildOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) build_value: std::option::Option<crate::model::Build>,
     }
@@ -736,7 +650,7 @@ impl UpdateBuildOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAliasOutput {
     /// <p>The updated alias resource.</p>
     #[doc(hidden)]
@@ -748,18 +662,11 @@ impl UpdateAliasOutput {
         self.alias.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAliasOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAliasOutput");
-        formatter.field("alias", &self.alias);
-        formatter.finish()
-    }
-}
 /// See [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
 pub mod update_alias_output {
 
     /// A builder for [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias: std::option::Option<crate::model::Alias>,
     }
@@ -789,19 +696,13 @@ impl UpdateAliasOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -819,19 +720,13 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -849,7 +744,7 @@ impl TagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuspendGameServerGroupOutput {
     /// <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the suspended activity.</p>
     #[doc(hidden)]
@@ -861,18 +756,11 @@ impl SuspendGameServerGroupOutput {
         self.game_server_group.as_ref()
     }
 }
-impl std::fmt::Debug for SuspendGameServerGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuspendGameServerGroupOutput");
-        formatter.field("game_server_group", &self.game_server_group);
-        formatter.finish()
-    }
-}
 /// See [`SuspendGameServerGroupOutput`](crate::output::SuspendGameServerGroupOutput).
 pub mod suspend_game_server_group_output {
 
     /// A builder for [`SuspendGameServerGroupOutput`](crate::output::SuspendGameServerGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_server_group: std::option::Option<crate::model::GameServerGroup>,
     }
@@ -907,19 +795,13 @@ impl SuspendGameServerGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopMatchmakingOutput {}
-impl std::fmt::Debug for StopMatchmakingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopMatchmakingOutput");
-        formatter.finish()
-    }
-}
 /// See [`StopMatchmakingOutput`](crate::output::StopMatchmakingOutput).
 pub mod stop_matchmaking_output {
 
     /// A builder for [`StopMatchmakingOutput`](crate::output::StopMatchmakingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopMatchmakingOutput`](crate::output::StopMatchmakingOutput).
@@ -937,7 +819,7 @@ impl StopMatchmakingOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopGameSessionPlacementOutput {
     /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
     #[doc(hidden)]
@@ -951,18 +833,11 @@ impl StopGameSessionPlacementOutput {
         self.game_session_placement.as_ref()
     }
 }
-impl std::fmt::Debug for StopGameSessionPlacementOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopGameSessionPlacementOutput");
-        formatter.field("game_session_placement", &self.game_session_placement);
-        formatter.finish()
-    }
-}
 /// See [`StopGameSessionPlacementOutput`](crate::output::StopGameSessionPlacementOutput).
 pub mod stop_game_session_placement_output {
 
     /// A builder for [`StopGameSessionPlacementOutput`](crate::output::StopGameSessionPlacementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_session_placement: std::option::Option<crate::model::GameSessionPlacement>,
     }
@@ -997,7 +872,7 @@ impl StopGameSessionPlacementOutput {
 
 /// <p>Represents the input for a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopFleetActionsOutput {
     /// <p>A unique identifier for the fleet to stop actions on.</p>
     #[doc(hidden)]
@@ -1022,19 +897,11 @@ impl StopFleetActionsOutput {
         self.fleet_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StopFleetActionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopFleetActionsOutput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.finish()
-    }
-}
 /// See [`StopFleetActionsOutput`](crate::output::StopFleetActionsOutput).
 pub mod stop_fleet_actions_output {
 
     /// A builder for [`StopFleetActionsOutput`](crate::output::StopFleetActionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -1084,7 +951,7 @@ impl StopFleetActionsOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMatchmakingOutput {
     /// <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
     #[doc(hidden)]
@@ -1096,18 +963,11 @@ impl StartMatchmakingOutput {
         self.matchmaking_ticket.as_ref()
     }
 }
-impl std::fmt::Debug for StartMatchmakingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMatchmakingOutput");
-        formatter.field("matchmaking_ticket", &self.matchmaking_ticket);
-        formatter.finish()
-    }
-}
 /// See [`StartMatchmakingOutput`](crate::output::StartMatchmakingOutput).
 pub mod start_matchmaking_output {
 
     /// A builder for [`StartMatchmakingOutput`](crate::output::StartMatchmakingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) matchmaking_ticket: std::option::Option<crate::model::MatchmakingTicket>,
     }
@@ -1142,7 +1002,7 @@ impl StartMatchmakingOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMatchBackfillOutput {
     /// <p>Ticket representing the backfill matchmaking request. This object includes the information in the request, ticket status, and match results as generated during the matchmaking process.</p>
     #[doc(hidden)]
@@ -1154,18 +1014,11 @@ impl StartMatchBackfillOutput {
         self.matchmaking_ticket.as_ref()
     }
 }
-impl std::fmt::Debug for StartMatchBackfillOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMatchBackfillOutput");
-        formatter.field("matchmaking_ticket", &self.matchmaking_ticket);
-        formatter.finish()
-    }
-}
 /// See [`StartMatchBackfillOutput`](crate::output::StartMatchBackfillOutput).
 pub mod start_match_backfill_output {
 
     /// A builder for [`StartMatchBackfillOutput`](crate::output::StartMatchBackfillOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) matchmaking_ticket: std::option::Option<crate::model::MatchmakingTicket>,
     }
@@ -1200,7 +1053,7 @@ impl StartMatchBackfillOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartGameSessionPlacementOutput {
     /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status. </p>
     #[doc(hidden)]
@@ -1214,18 +1067,11 @@ impl StartGameSessionPlacementOutput {
         self.game_session_placement.as_ref()
     }
 }
-impl std::fmt::Debug for StartGameSessionPlacementOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartGameSessionPlacementOutput");
-        formatter.field("game_session_placement", &self.game_session_placement);
-        formatter.finish()
-    }
-}
 /// See [`StartGameSessionPlacementOutput`](crate::output::StartGameSessionPlacementOutput).
 pub mod start_game_session_placement_output {
 
     /// A builder for [`StartGameSessionPlacementOutput`](crate::output::StartGameSessionPlacementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_session_placement: std::option::Option<crate::model::GameSessionPlacement>,
     }
@@ -1260,7 +1106,7 @@ impl StartGameSessionPlacementOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartFleetActionsOutput {
     /// <p>A unique identifier for the fleet to restart actions on.</p>
     #[doc(hidden)]
@@ -1285,19 +1131,11 @@ impl StartFleetActionsOutput {
         self.fleet_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StartFleetActionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartFleetActionsOutput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.finish()
-    }
-}
 /// See [`StartFleetActionsOutput`](crate::output::StartFleetActionsOutput).
 pub mod start_fleet_actions_output {
 
     /// A builder for [`StartFleetActionsOutput`](crate::output::StartFleetActionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -1347,7 +1185,7 @@ impl StartFleetActionsOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchGameSessionsOutput {
     /// <p>A collection of objects containing game session properties for each session that matches the request.</p>
     #[doc(hidden)]
@@ -1366,19 +1204,11 @@ impl SearchGameSessionsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for SearchGameSessionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchGameSessionsOutput");
-        formatter.field("game_sessions", &self.game_sessions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`SearchGameSessionsOutput`](crate::output::SearchGameSessionsOutput).
 pub mod search_game_sessions_output {
 
     /// A builder for [`SearchGameSessionsOutput`](crate::output::SearchGameSessionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_sessions: std::option::Option<std::vec::Vec<crate::model::GameSession>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1431,7 +1261,7 @@ impl SearchGameSessionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResumeGameServerGroupOutput {
     /// <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the resumed activity.</p>
     #[doc(hidden)]
@@ -1443,18 +1273,11 @@ impl ResumeGameServerGroupOutput {
         self.game_server_group.as_ref()
     }
 }
-impl std::fmt::Debug for ResumeGameServerGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResumeGameServerGroupOutput");
-        formatter.field("game_server_group", &self.game_server_group);
-        formatter.finish()
-    }
-}
 /// See [`ResumeGameServerGroupOutput`](crate::output::ResumeGameServerGroupOutput).
 pub mod resume_game_server_group_output {
 
     /// A builder for [`ResumeGameServerGroupOutput`](crate::output::ResumeGameServerGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_server_group: std::option::Option<crate::model::GameServerGroup>,
     }
@@ -1489,7 +1312,7 @@ impl ResumeGameServerGroupOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResolveAliasOutput {
     /// <p>The fleet identifier that the alias is pointing to.</p>
     #[doc(hidden)]
@@ -1508,19 +1331,11 @@ impl ResolveAliasOutput {
         self.fleet_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ResolveAliasOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResolveAliasOutput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.finish()
-    }
-}
 /// See [`ResolveAliasOutput`](crate::output::ResolveAliasOutput).
 pub mod resolve_alias_output {
 
     /// A builder for [`ResolveAliasOutput`](crate::output::ResolveAliasOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -1595,7 +1410,7 @@ impl std::fmt::Debug for RequestUploadCredentialsOutput {
 pub mod request_upload_credentials_output {
 
     /// A builder for [`RequestUploadCredentialsOutput`](crate::output::RequestUploadCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) upload_credentials: std::option::Option<crate::model::AwsCredentials>,
         pub(crate) storage_location: std::option::Option<crate::model::S3Location>,
@@ -1635,6 +1450,14 @@ pub mod request_upload_credentials_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("upload_credentials", &"*** Sensitive Data Redacted ***");
+            formatter.field("storage_location", &self.storage_location);
+            formatter.finish()
+        }
+    }
 }
 impl RequestUploadCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`RequestUploadCredentialsOutput`](crate::output::RequestUploadCredentialsOutput).
@@ -1645,7 +1468,7 @@ impl RequestUploadCredentialsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterGameServerOutput {
     /// <p>Object that describes the newly registered game server.</p>
     #[doc(hidden)]
@@ -1657,18 +1480,11 @@ impl RegisterGameServerOutput {
         self.game_server.as_ref()
     }
 }
-impl std::fmt::Debug for RegisterGameServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterGameServerOutput");
-        formatter.field("game_server", &self.game_server);
-        formatter.finish()
-    }
-}
 /// See [`RegisterGameServerOutput`](crate::output::RegisterGameServerOutput).
 pub mod register_game_server_output {
 
     /// A builder for [`RegisterGameServerOutput`](crate::output::RegisterGameServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_server: std::option::Option<crate::model::GameServer>,
     }
@@ -1703,7 +1519,7 @@ impl RegisterGameServerOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutScalingPolicyOutput {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
     #[doc(hidden)]
@@ -1715,18 +1531,11 @@ impl PutScalingPolicyOutput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for PutScalingPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutScalingPolicyOutput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 /// See [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
 pub mod put_scaling_policy_output {
 
     /// A builder for [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -1756,7 +1565,7 @@ impl PutScalingPolicyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p> The collection of tags that have been assigned to the specified resource. </p>
     #[doc(hidden)]
@@ -1768,18 +1577,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -1818,7 +1620,7 @@ impl ListTagsForResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListScriptsOutput {
     /// <p>A set of properties describing the requested script.</p>
     #[doc(hidden)]
@@ -1837,19 +1639,11 @@ impl ListScriptsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListScriptsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListScriptsOutput");
-        formatter.field("scripts", &self.scripts);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListScriptsOutput`](crate::output::ListScriptsOutput).
 pub mod list_scripts_output {
 
     /// A builder for [`ListScriptsOutput`](crate::output::ListScriptsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scripts: std::option::Option<std::vec::Vec<crate::model::Script>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1902,7 +1696,7 @@ impl ListScriptsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGameServersOutput {
     /// <p>A collection of game server objects that match the request.</p>
     #[doc(hidden)]
@@ -1921,19 +1715,11 @@ impl ListGameServersOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGameServersOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGameServersOutput");
-        formatter.field("game_servers", &self.game_servers);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListGameServersOutput`](crate::output::ListGameServersOutput).
 pub mod list_game_servers_output {
 
     /// A builder for [`ListGameServersOutput`](crate::output::ListGameServersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_servers: std::option::Option<std::vec::Vec<crate::model::GameServer>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1986,7 +1772,7 @@ impl ListGameServersOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGameServerGroupsOutput {
     /// <p>A collection of game server group objects that match the request.</p>
     #[doc(hidden)]
@@ -2005,19 +1791,11 @@ impl ListGameServerGroupsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGameServerGroupsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGameServerGroupsOutput");
-        formatter.field("game_server_groups", &self.game_server_groups);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListGameServerGroupsOutput`](crate::output::ListGameServerGroupsOutput).
 pub mod list_game_server_groups_output {
 
     /// A builder for [`ListGameServerGroupsOutput`](crate::output::ListGameServerGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_server_groups:
             std::option::Option<std::vec::Vec<crate::model::GameServerGroup>>,
@@ -2071,7 +1849,7 @@ impl ListGameServerGroupsOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFleetsOutput {
     /// <p>A set of fleet IDs that match the list request. You can retrieve additional information about all returned fleets by passing this result set to a <code>DescribeFleetAttributes</code>, <code>DescribeFleetCapacity</code>, or <code>DescribeFleetUtilization</code> call.</p>
     #[doc(hidden)]
@@ -2090,19 +1868,11 @@ impl ListFleetsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFleetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFleetsOutput");
-        formatter.field("fleet_ids", &self.fleet_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListFleetsOutput`](crate::output::ListFleetsOutput).
 pub mod list_fleets_output {
 
     /// A builder for [`ListFleetsOutput`](crate::output::ListFleetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2155,7 +1925,7 @@ impl ListFleetsOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBuildsOutput {
     /// <p>A collection of build resources that match the request.</p>
     #[doc(hidden)]
@@ -2174,19 +1944,11 @@ impl ListBuildsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBuildsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBuildsOutput");
-        formatter.field("builds", &self.builds);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListBuildsOutput`](crate::output::ListBuildsOutput).
 pub mod list_builds_output {
 
     /// A builder for [`ListBuildsOutput`](crate::output::ListBuildsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) builds: std::option::Option<std::vec::Vec<crate::model::Build>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2239,7 +2001,7 @@ impl ListBuildsOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAliasesOutput {
     /// <p>A collection of alias resources that match the request parameters.</p>
     #[doc(hidden)]
@@ -2258,19 +2020,11 @@ impl ListAliasesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAliasesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAliasesOutput");
-        formatter.field("aliases", &self.aliases);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`ListAliasesOutput`](crate::output::ListAliasesOutput).
 pub mod list_aliases_output {
 
     /// A builder for [`ListAliasesOutput`](crate::output::ListAliasesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2323,7 +2077,7 @@ impl ListAliasesOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInstanceAccessOutput {
     /// <p>The connection information for a fleet instance, including IP address and access credentials.</p>
     #[doc(hidden)]
@@ -2335,18 +2089,11 @@ impl GetInstanceAccessOutput {
         self.instance_access.as_ref()
     }
 }
-impl std::fmt::Debug for GetInstanceAccessOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInstanceAccessOutput");
-        formatter.field("instance_access", &self.instance_access);
-        formatter.finish()
-    }
-}
 /// See [`GetInstanceAccessOutput`](crate::output::GetInstanceAccessOutput).
 pub mod get_instance_access_output {
 
     /// A builder for [`GetInstanceAccessOutput`](crate::output::GetInstanceAccessOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_access: std::option::Option<crate::model::InstanceAccess>,
     }
@@ -2381,7 +2128,7 @@ impl GetInstanceAccessOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGameSessionLogUrlOutput {
     /// <p>Location of the requested game session logs, available for download. This URL is valid for 15 minutes, after which S3 will reject any download request using this URL. You can request a new URL any time within the 14-day period that the logs are retained.</p>
     #[doc(hidden)]
@@ -2393,18 +2140,11 @@ impl GetGameSessionLogUrlOutput {
         self.pre_signed_url.as_deref()
     }
 }
-impl std::fmt::Debug for GetGameSessionLogUrlOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGameSessionLogUrlOutput");
-        formatter.field("pre_signed_url", &self.pre_signed_url);
-        formatter.finish()
-    }
-}
 /// See [`GetGameSessionLogUrlOutput`](crate::output::GetGameSessionLogUrlOutput).
 pub mod get_game_session_log_url_output {
 
     /// A builder for [`GetGameSessionLogUrlOutput`](crate::output::GetGameSessionLogUrlOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pre_signed_url: std::option::Option<std::string::String>,
     }
@@ -2439,7 +2179,7 @@ impl GetGameSessionLogUrlOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVpcPeeringConnectionsOutput {
     /// <p>A collection of VPC peering connection records that match the request.</p>
     #[doc(hidden)]
@@ -2454,18 +2194,11 @@ impl DescribeVpcPeeringConnectionsOutput {
         self.vpc_peering_connections.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVpcPeeringConnectionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVpcPeeringConnectionsOutput");
-        formatter.field("vpc_peering_connections", &self.vpc_peering_connections);
-        formatter.finish()
-    }
-}
 /// See [`DescribeVpcPeeringConnectionsOutput`](crate::output::DescribeVpcPeeringConnectionsOutput).
 pub mod describe_vpc_peering_connections_output {
 
     /// A builder for [`DescribeVpcPeeringConnectionsOutput`](crate::output::DescribeVpcPeeringConnectionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_peering_connections:
             std::option::Option<std::vec::Vec<crate::model::VpcPeeringConnection>>,
@@ -2510,7 +2243,7 @@ impl DescribeVpcPeeringConnectionsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVpcPeeringAuthorizationsOutput {
     /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -2525,21 +2258,11 @@ impl DescribeVpcPeeringAuthorizationsOutput {
         self.vpc_peering_authorizations.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVpcPeeringAuthorizationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVpcPeeringAuthorizationsOutput");
-        formatter.field(
-            "vpc_peering_authorizations",
-            &self.vpc_peering_authorizations,
-        );
-        formatter.finish()
-    }
-}
 /// See [`DescribeVpcPeeringAuthorizationsOutput`](crate::output::DescribeVpcPeeringAuthorizationsOutput).
 pub mod describe_vpc_peering_authorizations_output {
 
     /// A builder for [`DescribeVpcPeeringAuthorizationsOutput`](crate::output::DescribeVpcPeeringAuthorizationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_peering_authorizations:
             std::option::Option<std::vec::Vec<crate::model::VpcPeeringAuthorization>>,
@@ -2584,7 +2307,7 @@ impl DescribeVpcPeeringAuthorizationsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScriptOutput {
     /// <p>A set of properties describing the requested script.</p>
     #[doc(hidden)]
@@ -2596,18 +2319,11 @@ impl DescribeScriptOutput {
         self.script.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeScriptOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScriptOutput");
-        formatter.field("script", &self.script);
-        formatter.finish()
-    }
-}
 /// See [`DescribeScriptOutput`](crate::output::DescribeScriptOutput).
 pub mod describe_script_output {
 
     /// A builder for [`DescribeScriptOutput`](crate::output::DescribeScriptOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) script: std::option::Option<crate::model::Script>,
     }
@@ -2639,7 +2355,7 @@ impl DescribeScriptOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScalingPoliciesOutput {
     /// <p>A collection of objects containing the scaling policies matching the request.</p>
     #[doc(hidden)]
@@ -2658,19 +2374,11 @@ impl DescribeScalingPoliciesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScalingPoliciesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScalingPoliciesOutput");
-        formatter.field("scaling_policies", &self.scaling_policies);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput).
 pub mod describe_scaling_policies_output {
 
     /// A builder for [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_policies:
             std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
@@ -2724,7 +2432,7 @@ impl DescribeScalingPoliciesOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRuntimeConfigurationOutput {
     /// <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
     #[doc(hidden)]
@@ -2738,18 +2446,11 @@ impl DescribeRuntimeConfigurationOutput {
         self.runtime_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeRuntimeConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRuntimeConfigurationOutput");
-        formatter.field("runtime_configuration", &self.runtime_configuration);
-        formatter.finish()
-    }
-}
 /// See [`DescribeRuntimeConfigurationOutput`](crate::output::DescribeRuntimeConfigurationOutput).
 pub mod describe_runtime_configuration_output {
 
     /// A builder for [`DescribeRuntimeConfigurationOutput`](crate::output::DescribeRuntimeConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) runtime_configuration: std::option::Option<crate::model::RuntimeConfiguration>,
     }
@@ -2784,7 +2485,7 @@ impl DescribeRuntimeConfigurationOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePlayerSessionsOutput {
     /// <p>A collection of objects containing properties for each player session that matches the request.</p>
     #[doc(hidden)]
@@ -2803,19 +2504,11 @@ impl DescribePlayerSessionsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePlayerSessionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePlayerSessionsOutput");
-        formatter.field("player_sessions", &self.player_sessions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribePlayerSessionsOutput`](crate::output::DescribePlayerSessionsOutput).
 pub mod describe_player_sessions_output {
 
     /// A builder for [`DescribePlayerSessionsOutput`](crate::output::DescribePlayerSessionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) player_sessions: std::option::Option<std::vec::Vec<crate::model::PlayerSession>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2868,7 +2561,7 @@ impl DescribePlayerSessionsOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMatchmakingRuleSetsOutput {
     /// <p>A collection of requested matchmaking rule set objects. </p>
     #[doc(hidden)]
@@ -2887,19 +2580,11 @@ impl DescribeMatchmakingRuleSetsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMatchmakingRuleSetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMatchmakingRuleSetsOutput");
-        formatter.field("rule_sets", &self.rule_sets);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeMatchmakingRuleSetsOutput`](crate::output::DescribeMatchmakingRuleSetsOutput).
 pub mod describe_matchmaking_rule_sets_output {
 
     /// A builder for [`DescribeMatchmakingRuleSetsOutput`](crate::output::DescribeMatchmakingRuleSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_sets: std::option::Option<std::vec::Vec<crate::model::MatchmakingRuleSet>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2952,7 +2637,7 @@ impl DescribeMatchmakingRuleSetsOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMatchmakingConfigurationsOutput {
     /// <p>A collection of requested matchmaking configurations.</p>
     #[doc(hidden)]
@@ -2971,19 +2656,11 @@ impl DescribeMatchmakingConfigurationsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMatchmakingConfigurationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMatchmakingConfigurationsOutput");
-        formatter.field("configurations", &self.configurations);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeMatchmakingConfigurationsOutput`](crate::output::DescribeMatchmakingConfigurationsOutput).
 pub mod describe_matchmaking_configurations_output {
 
     /// A builder for [`DescribeMatchmakingConfigurationsOutput`](crate::output::DescribeMatchmakingConfigurationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configurations:
             std::option::Option<std::vec::Vec<crate::model::MatchmakingConfiguration>>,
@@ -3037,7 +2714,7 @@ impl DescribeMatchmakingConfigurationsOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMatchmakingOutput {
     /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
     #[doc(hidden)]
@@ -3049,18 +2726,11 @@ impl DescribeMatchmakingOutput {
         self.ticket_list.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMatchmakingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMatchmakingOutput");
-        formatter.field("ticket_list", &self.ticket_list);
-        formatter.finish()
-    }
-}
 /// See [`DescribeMatchmakingOutput`](crate::output::DescribeMatchmakingOutput).
 pub mod describe_matchmaking_output {
 
     /// A builder for [`DescribeMatchmakingOutput`](crate::output::DescribeMatchmakingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ticket_list: std::option::Option<std::vec::Vec<crate::model::MatchmakingTicket>>,
     }
@@ -3101,7 +2771,7 @@ impl DescribeMatchmakingOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstancesOutput {
     /// <p>A collection of objects containing properties for each instance returned.</p>
     #[doc(hidden)]
@@ -3120,19 +2790,11 @@ impl DescribeInstancesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInstancesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstancesOutput");
-        formatter.field("instances", &self.instances);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeInstancesOutput`](crate::output::DescribeInstancesOutput).
 pub mod describe_instances_output {
 
     /// A builder for [`DescribeInstancesOutput`](crate::output::DescribeInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3185,7 +2847,7 @@ impl DescribeInstancesOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGameSessionsOutput {
     /// <p>A collection of properties for each game session that matches the request.</p>
     #[doc(hidden)]
@@ -3204,19 +2866,11 @@ impl DescribeGameSessionsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGameSessionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGameSessionsOutput");
-        formatter.field("game_sessions", &self.game_sessions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeGameSessionsOutput`](crate::output::DescribeGameSessionsOutput).
 pub mod describe_game_sessions_output {
 
     /// A builder for [`DescribeGameSessionsOutput`](crate::output::DescribeGameSessionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_sessions: std::option::Option<std::vec::Vec<crate::model::GameSession>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3269,7 +2923,7 @@ impl DescribeGameSessionsOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGameSessionQueuesOutput {
     /// <p>A collection of objects that describe the requested game session queues.</p>
     #[doc(hidden)]
@@ -3288,19 +2942,11 @@ impl DescribeGameSessionQueuesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGameSessionQueuesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGameSessionQueuesOutput");
-        formatter.field("game_session_queues", &self.game_session_queues);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeGameSessionQueuesOutput`](crate::output::DescribeGameSessionQueuesOutput).
 pub mod describe_game_session_queues_output {
 
     /// A builder for [`DescribeGameSessionQueuesOutput`](crate::output::DescribeGameSessionQueuesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_session_queues:
             std::option::Option<std::vec::Vec<crate::model::GameSessionQueue>>,
@@ -3354,7 +3000,7 @@ impl DescribeGameSessionQueuesOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGameSessionPlacementOutput {
     /// <p>Object that describes the requested game session placement.</p>
     #[doc(hidden)]
@@ -3368,18 +3014,11 @@ impl DescribeGameSessionPlacementOutput {
         self.game_session_placement.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeGameSessionPlacementOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGameSessionPlacementOutput");
-        formatter.field("game_session_placement", &self.game_session_placement);
-        formatter.finish()
-    }
-}
 /// See [`DescribeGameSessionPlacementOutput`](crate::output::DescribeGameSessionPlacementOutput).
 pub mod describe_game_session_placement_output {
 
     /// A builder for [`DescribeGameSessionPlacementOutput`](crate::output::DescribeGameSessionPlacementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_session_placement: std::option::Option<crate::model::GameSessionPlacement>,
     }
@@ -3414,7 +3053,7 @@ impl DescribeGameSessionPlacementOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGameSessionDetailsOutput {
     /// <p>A collection of properties for each game session that matches the request.</p>
     #[doc(hidden)]
@@ -3433,19 +3072,11 @@ impl DescribeGameSessionDetailsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGameSessionDetailsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGameSessionDetailsOutput");
-        formatter.field("game_session_details", &self.game_session_details);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeGameSessionDetailsOutput`](crate::output::DescribeGameSessionDetailsOutput).
 pub mod describe_game_session_details_output {
 
     /// A builder for [`DescribeGameSessionDetailsOutput`](crate::output::DescribeGameSessionDetailsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_session_details:
             std::option::Option<std::vec::Vec<crate::model::GameSessionDetail>>,
@@ -3499,7 +3130,7 @@ impl DescribeGameSessionDetailsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGameServerInstancesOutput {
     /// <p> The collection of requested game server instances. </p>
     #[doc(hidden)]
@@ -3520,19 +3151,11 @@ impl DescribeGameServerInstancesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGameServerInstancesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGameServerInstancesOutput");
-        formatter.field("game_server_instances", &self.game_server_instances);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeGameServerInstancesOutput`](crate::output::DescribeGameServerInstancesOutput).
 pub mod describe_game_server_instances_output {
 
     /// A builder for [`DescribeGameServerInstancesOutput`](crate::output::DescribeGameServerInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_server_instances:
             std::option::Option<std::vec::Vec<crate::model::GameServerInstance>>,
@@ -3586,7 +3209,7 @@ impl DescribeGameServerInstancesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGameServerGroupOutput {
     /// <p>An object with the property settings for the requested game server group resource. </p>
     #[doc(hidden)]
@@ -3598,18 +3221,11 @@ impl DescribeGameServerGroupOutput {
         self.game_server_group.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeGameServerGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGameServerGroupOutput");
-        formatter.field("game_server_group", &self.game_server_group);
-        formatter.finish()
-    }
-}
 /// See [`DescribeGameServerGroupOutput`](crate::output::DescribeGameServerGroupOutput).
 pub mod describe_game_server_group_output {
 
     /// A builder for [`DescribeGameServerGroupOutput`](crate::output::DescribeGameServerGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_server_group: std::option::Option<crate::model::GameServerGroup>,
     }
@@ -3644,7 +3260,7 @@ impl DescribeGameServerGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGameServerOutput {
     /// <p>Object that describes the requested game server.</p>
     #[doc(hidden)]
@@ -3656,18 +3272,11 @@ impl DescribeGameServerOutput {
         self.game_server.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeGameServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGameServerOutput");
-        formatter.field("game_server", &self.game_server);
-        formatter.finish()
-    }
-}
 /// See [`DescribeGameServerOutput`](crate::output::DescribeGameServerOutput).
 pub mod describe_game_server_output {
 
     /// A builder for [`DescribeGameServerOutput`](crate::output::DescribeGameServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_server: std::option::Option<crate::model::GameServer>,
     }
@@ -3702,7 +3311,7 @@ impl DescribeGameServerOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetUtilizationOutput {
     /// <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
     #[doc(hidden)]
@@ -3721,19 +3330,11 @@ impl DescribeFleetUtilizationOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetUtilizationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetUtilizationOutput");
-        formatter.field("fleet_utilization", &self.fleet_utilization);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeFleetUtilizationOutput`](crate::output::DescribeFleetUtilizationOutput).
 pub mod describe_fleet_utilization_output {
 
     /// A builder for [`DescribeFleetUtilizationOutput`](crate::output::DescribeFleetUtilizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_utilization:
             std::option::Option<std::vec::Vec<crate::model::FleetUtilization>>,
@@ -3787,7 +3388,7 @@ impl DescribeFleetUtilizationOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetPortSettingsOutput {
     /// <p>A unique identifier for the fleet that was requested. </p>
     #[doc(hidden)]
@@ -3833,22 +3434,11 @@ impl DescribeFleetPortSettingsOutput {
         self.location.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetPortSettingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetPortSettingsOutput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("inbound_permissions", &self.inbound_permissions);
-        formatter.field("update_status", &self.update_status);
-        formatter.field("location", &self.location);
-        formatter.finish()
-    }
-}
 /// See [`DescribeFleetPortSettingsOutput`](crate::output::DescribeFleetPortSettingsOutput).
 pub mod describe_fleet_port_settings_output {
 
     /// A builder for [`DescribeFleetPortSettingsOutput`](crate::output::DescribeFleetPortSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -3947,7 +3537,7 @@ impl DescribeFleetPortSettingsOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetLocationUtilizationOutput {
     /// <p>Utilization information for the requested fleet location. Utilization objects are returned only for fleets and locations that currently exist.</p>
     #[doc(hidden)]
@@ -3959,18 +3549,11 @@ impl DescribeFleetLocationUtilizationOutput {
         self.fleet_utilization.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeFleetLocationUtilizationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetLocationUtilizationOutput");
-        formatter.field("fleet_utilization", &self.fleet_utilization);
-        formatter.finish()
-    }
-}
 /// See [`DescribeFleetLocationUtilizationOutput`](crate::output::DescribeFleetLocationUtilizationOutput).
 pub mod describe_fleet_location_utilization_output {
 
     /// A builder for [`DescribeFleetLocationUtilizationOutput`](crate::output::DescribeFleetLocationUtilizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_utilization: std::option::Option<crate::model::FleetUtilization>,
     }
@@ -4005,7 +3588,7 @@ impl DescribeFleetLocationUtilizationOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetLocationCapacityOutput {
     /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist.</p>
     #[doc(hidden)]
@@ -4017,18 +3600,11 @@ impl DescribeFleetLocationCapacityOutput {
         self.fleet_capacity.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeFleetLocationCapacityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetLocationCapacityOutput");
-        formatter.field("fleet_capacity", &self.fleet_capacity);
-        formatter.finish()
-    }
-}
 /// See [`DescribeFleetLocationCapacityOutput`](crate::output::DescribeFleetLocationCapacityOutput).
 pub mod describe_fleet_location_capacity_output {
 
     /// A builder for [`DescribeFleetLocationCapacityOutput`](crate::output::DescribeFleetLocationCapacityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_capacity: std::option::Option<crate::model::FleetCapacity>,
     }
@@ -4063,7 +3639,7 @@ impl DescribeFleetLocationCapacityOutput {
 
 /// <p>Represents the returned data in response to a request operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetLocationAttributesOutput {
     /// <p>A unique identifier for the fleet that location attributes were requested for.</p>
     #[doc(hidden)]
@@ -4102,21 +3678,11 @@ impl DescribeFleetLocationAttributesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetLocationAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetLocationAttributesOutput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("location_attributes", &self.location_attributes);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeFleetLocationAttributesOutput`](crate::output::DescribeFleetLocationAttributesOutput).
 pub mod describe_fleet_location_attributes_output {
 
     /// A builder for [`DescribeFleetLocationAttributesOutput`](crate::output::DescribeFleetLocationAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -4200,7 +3766,7 @@ impl DescribeFleetLocationAttributesOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetEventsOutput {
     /// <p>A collection of objects containing event log entries for the specified fleet.</p>
     #[doc(hidden)]
@@ -4219,19 +3785,11 @@ impl DescribeFleetEventsOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetEventsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetEventsOutput");
-        formatter.field("events", &self.events);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeFleetEventsOutput`](crate::output::DescribeFleetEventsOutput).
 pub mod describe_fleet_events_output {
 
     /// A builder for [`DescribeFleetEventsOutput`](crate::output::DescribeFleetEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4284,7 +3842,7 @@ impl DescribeFleetEventsOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetCapacityOutput {
     /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist.</p>
     #[doc(hidden)]
@@ -4303,19 +3861,11 @@ impl DescribeFleetCapacityOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetCapacityOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetCapacityOutput");
-        formatter.field("fleet_capacity", &self.fleet_capacity);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeFleetCapacityOutput`](crate::output::DescribeFleetCapacityOutput).
 pub mod describe_fleet_capacity_output {
 
     /// A builder for [`DescribeFleetCapacityOutput`](crate::output::DescribeFleetCapacityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_capacity: std::option::Option<std::vec::Vec<crate::model::FleetCapacity>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4368,7 +3918,7 @@ impl DescribeFleetCapacityOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetAttributesOutput {
     /// <p>A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned only for fleets that currently exist.</p>
     #[doc(hidden)]
@@ -4387,19 +3937,11 @@ impl DescribeFleetAttributesOutput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetAttributesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetAttributesOutput");
-        formatter.field("fleet_attributes", &self.fleet_attributes);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 /// See [`DescribeFleetAttributesOutput`](crate::output::DescribeFleetAttributesOutput).
 pub mod describe_fleet_attributes_output {
 
     /// A builder for [`DescribeFleetAttributesOutput`](crate::output::DescribeFleetAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_attributes:
             std::option::Option<std::vec::Vec<crate::model::FleetAttributes>>,
@@ -4453,7 +3995,7 @@ impl DescribeFleetAttributesOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEc2InstanceLimitsOutput {
     /// <p>The maximum number of instances for the specified instance type.</p>
     #[doc(hidden)]
@@ -4465,18 +4007,11 @@ impl DescribeEc2InstanceLimitsOutput {
         self.ec2_instance_limits.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeEc2InstanceLimitsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEc2InstanceLimitsOutput");
-        formatter.field("ec2_instance_limits", &self.ec2_instance_limits);
-        formatter.finish()
-    }
-}
 /// See [`DescribeEc2InstanceLimitsOutput`](crate::output::DescribeEc2InstanceLimitsOutput).
 pub mod describe_ec2_instance_limits_output {
 
     /// A builder for [`DescribeEc2InstanceLimitsOutput`](crate::output::DescribeEc2InstanceLimitsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ec2_instance_limits:
             std::option::Option<std::vec::Vec<crate::model::Ec2InstanceLimit>>,
@@ -4518,7 +4053,7 @@ impl DescribeEc2InstanceLimitsOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBuildOutput {
     /// <p>Set of properties describing the requested build.</p>
     ///
@@ -4534,18 +4069,11 @@ impl DescribeBuildOutput {
         self.build_value.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeBuildOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBuildOutput");
-        formatter.field("build_value", &self.build_value);
-        formatter.finish()
-    }
-}
 /// See [`DescribeBuildOutput`](crate::output::DescribeBuildOutput).
 pub mod describe_build_output {
 
     /// A builder for [`DescribeBuildOutput`](crate::output::DescribeBuildOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) build_value: std::option::Option<crate::model::Build>,
     }
@@ -4577,7 +4105,7 @@ impl DescribeBuildOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAliasOutput {
     /// <p>The requested alias resource.</p>
     #[doc(hidden)]
@@ -4589,18 +4117,11 @@ impl DescribeAliasOutput {
         self.alias.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeAliasOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAliasOutput");
-        formatter.field("alias", &self.alias);
-        formatter.finish()
-    }
-}
 /// See [`DescribeAliasOutput`](crate::output::DescribeAliasOutput).
 pub mod describe_alias_output {
 
     /// A builder for [`DescribeAliasOutput`](crate::output::DescribeAliasOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias: std::option::Option<crate::model::Alias>,
     }
@@ -4630,19 +4151,13 @@ impl DescribeAliasOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterGameServerOutput {}
-impl std::fmt::Debug for DeregisterGameServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterGameServerOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeregisterGameServerOutput`](crate::output::DeregisterGameServerOutput).
 pub mod deregister_game_server_output {
 
     /// A builder for [`DeregisterGameServerOutput`](crate::output::DeregisterGameServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterGameServerOutput`](crate::output::DeregisterGameServerOutput).
@@ -4660,19 +4175,13 @@ impl DeregisterGameServerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVpcPeeringConnectionOutput {}
-impl std::fmt::Debug for DeleteVpcPeeringConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVpcPeeringConnectionOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteVpcPeeringConnectionOutput`](crate::output::DeleteVpcPeeringConnectionOutput).
 pub mod delete_vpc_peering_connection_output {
 
     /// A builder for [`DeleteVpcPeeringConnectionOutput`](crate::output::DeleteVpcPeeringConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVpcPeeringConnectionOutput`](crate::output::DeleteVpcPeeringConnectionOutput).
@@ -4690,19 +4199,13 @@ impl DeleteVpcPeeringConnectionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVpcPeeringAuthorizationOutput {}
-impl std::fmt::Debug for DeleteVpcPeeringAuthorizationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVpcPeeringAuthorizationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteVpcPeeringAuthorizationOutput`](crate::output::DeleteVpcPeeringAuthorizationOutput).
 pub mod delete_vpc_peering_authorization_output {
 
     /// A builder for [`DeleteVpcPeeringAuthorizationOutput`](crate::output::DeleteVpcPeeringAuthorizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVpcPeeringAuthorizationOutput`](crate::output::DeleteVpcPeeringAuthorizationOutput).
@@ -4720,19 +4223,13 @@ impl DeleteVpcPeeringAuthorizationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScriptOutput {}
-impl std::fmt::Debug for DeleteScriptOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteScriptOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteScriptOutput`](crate::output::DeleteScriptOutput).
 pub mod delete_script_output {
 
     /// A builder for [`DeleteScriptOutput`](crate::output::DeleteScriptOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteScriptOutput`](crate::output::DeleteScriptOutput).
@@ -4750,19 +4247,13 @@ impl DeleteScriptOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScalingPolicyOutput {}
-impl std::fmt::Debug for DeleteScalingPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteScalingPolicyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
 pub mod delete_scaling_policy_output {
 
     /// A builder for [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
@@ -4780,19 +4271,13 @@ impl DeleteScalingPolicyOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMatchmakingRuleSetOutput {}
-impl std::fmt::Debug for DeleteMatchmakingRuleSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMatchmakingRuleSetOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteMatchmakingRuleSetOutput`](crate::output::DeleteMatchmakingRuleSetOutput).
 pub mod delete_matchmaking_rule_set_output {
 
     /// A builder for [`DeleteMatchmakingRuleSetOutput`](crate::output::DeleteMatchmakingRuleSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMatchmakingRuleSetOutput`](crate::output::DeleteMatchmakingRuleSetOutput).
@@ -4810,19 +4295,13 @@ impl DeleteMatchmakingRuleSetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMatchmakingConfigurationOutput {}
-impl std::fmt::Debug for DeleteMatchmakingConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMatchmakingConfigurationOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteMatchmakingConfigurationOutput`](crate::output::DeleteMatchmakingConfigurationOutput).
 pub mod delete_matchmaking_configuration_output {
 
     /// A builder for [`DeleteMatchmakingConfigurationOutput`](crate::output::DeleteMatchmakingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMatchmakingConfigurationOutput`](crate::output::DeleteMatchmakingConfigurationOutput).
@@ -4840,19 +4319,13 @@ impl DeleteMatchmakingConfigurationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGameSessionQueueOutput {}
-impl std::fmt::Debug for DeleteGameSessionQueueOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGameSessionQueueOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteGameSessionQueueOutput`](crate::output::DeleteGameSessionQueueOutput).
 pub mod delete_game_session_queue_output {
 
     /// A builder for [`DeleteGameSessionQueueOutput`](crate::output::DeleteGameSessionQueueOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteGameSessionQueueOutput`](crate::output::DeleteGameSessionQueueOutput).
@@ -4870,7 +4343,7 @@ impl DeleteGameSessionQueueOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGameServerGroupOutput {
     /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
     #[doc(hidden)]
@@ -4882,18 +4355,11 @@ impl DeleteGameServerGroupOutput {
         self.game_server_group.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteGameServerGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGameServerGroupOutput");
-        formatter.field("game_server_group", &self.game_server_group);
-        formatter.finish()
-    }
-}
 /// See [`DeleteGameServerGroupOutput`](crate::output::DeleteGameServerGroupOutput).
 pub mod delete_game_server_group_output {
 
     /// A builder for [`DeleteGameServerGroupOutput`](crate::output::DeleteGameServerGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_server_group: std::option::Option<crate::model::GameServerGroup>,
     }
@@ -4928,7 +4394,7 @@ impl DeleteGameServerGroupOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFleetLocationsOutput {
     /// <p>A unique identifier for the fleet that location attributes are being deleted for.</p>
     #[doc(hidden)]
@@ -4960,20 +4426,11 @@ impl DeleteFleetLocationsOutput {
         self.location_states.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFleetLocationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFleetLocationsOutput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("location_states", &self.location_states);
-        formatter.finish()
-    }
-}
 /// See [`DeleteFleetLocationsOutput`](crate::output::DeleteFleetLocationsOutput).
 pub mod delete_fleet_locations_output {
 
     /// A builder for [`DeleteFleetLocationsOutput`](crate::output::DeleteFleetLocationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -5044,19 +4501,13 @@ impl DeleteFleetLocationsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFleetOutput {}
-impl std::fmt::Debug for DeleteFleetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFleetOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
 pub mod delete_fleet_output {
 
     /// A builder for [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
@@ -5074,19 +4525,13 @@ impl DeleteFleetOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBuildOutput {}
-impl std::fmt::Debug for DeleteBuildOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBuildOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteBuildOutput`](crate::output::DeleteBuildOutput).
 pub mod delete_build_output {
 
     /// A builder for [`DeleteBuildOutput`](crate::output::DeleteBuildOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBuildOutput`](crate::output::DeleteBuildOutput).
@@ -5104,19 +4549,13 @@ impl DeleteBuildOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAliasOutput {}
-impl std::fmt::Debug for DeleteAliasOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAliasOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
 pub mod delete_alias_output {
 
     /// A builder for [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
@@ -5134,19 +4573,13 @@ impl DeleteAliasOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVpcPeeringConnectionOutput {}
-impl std::fmt::Debug for CreateVpcPeeringConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVpcPeeringConnectionOutput");
-        formatter.finish()
-    }
-}
 /// See [`CreateVpcPeeringConnectionOutput`](crate::output::CreateVpcPeeringConnectionOutput).
 pub mod create_vpc_peering_connection_output {
 
     /// A builder for [`CreateVpcPeeringConnectionOutput`](crate::output::CreateVpcPeeringConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateVpcPeeringConnectionOutput`](crate::output::CreateVpcPeeringConnectionOutput).
@@ -5164,7 +4597,7 @@ impl CreateVpcPeeringConnectionOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVpcPeeringAuthorizationOutput {
     /// <p>Details on the requested VPC peering authorization, including expiration.</p>
     #[doc(hidden)]
@@ -5178,18 +4611,11 @@ impl CreateVpcPeeringAuthorizationOutput {
         self.vpc_peering_authorization.as_ref()
     }
 }
-impl std::fmt::Debug for CreateVpcPeeringAuthorizationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVpcPeeringAuthorizationOutput");
-        formatter.field("vpc_peering_authorization", &self.vpc_peering_authorization);
-        formatter.finish()
-    }
-}
 /// See [`CreateVpcPeeringAuthorizationOutput`](crate::output::CreateVpcPeeringAuthorizationOutput).
 pub mod create_vpc_peering_authorization_output {
 
     /// A builder for [`CreateVpcPeeringAuthorizationOutput`](crate::output::CreateVpcPeeringAuthorizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_peering_authorization:
             std::option::Option<crate::model::VpcPeeringAuthorization>,
@@ -5228,7 +4654,7 @@ impl CreateVpcPeeringAuthorizationOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateScriptOutput {
     /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
     #[doc(hidden)]
@@ -5240,18 +4666,11 @@ impl CreateScriptOutput {
         self.script.as_ref()
     }
 }
-impl std::fmt::Debug for CreateScriptOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateScriptOutput");
-        formatter.field("script", &self.script);
-        formatter.finish()
-    }
-}
 /// See [`CreateScriptOutput`](crate::output::CreateScriptOutput).
 pub mod create_script_output {
 
     /// A builder for [`CreateScriptOutput`](crate::output::CreateScriptOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) script: std::option::Option<crate::model::Script>,
     }
@@ -5283,7 +4702,7 @@ impl CreateScriptOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePlayerSessionsOutput {
     /// <p>A collection of player session objects created for the added players.</p>
     #[doc(hidden)]
@@ -5295,18 +4714,11 @@ impl CreatePlayerSessionsOutput {
         self.player_sessions.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePlayerSessionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePlayerSessionsOutput");
-        formatter.field("player_sessions", &self.player_sessions);
-        formatter.finish()
-    }
-}
 /// See [`CreatePlayerSessionsOutput`](crate::output::CreatePlayerSessionsOutput).
 pub mod create_player_sessions_output {
 
     /// A builder for [`CreatePlayerSessionsOutput`](crate::output::CreatePlayerSessionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) player_sessions: std::option::Option<std::vec::Vec<crate::model::PlayerSession>>,
     }
@@ -5347,7 +4759,7 @@ impl CreatePlayerSessionsOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePlayerSessionOutput {
     /// <p>Object that describes the newly created player session record.</p>
     #[doc(hidden)]
@@ -5359,18 +4771,11 @@ impl CreatePlayerSessionOutput {
         self.player_session.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePlayerSessionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePlayerSessionOutput");
-        formatter.field("player_session", &self.player_session);
-        formatter.finish()
-    }
-}
 /// See [`CreatePlayerSessionOutput`](crate::output::CreatePlayerSessionOutput).
 pub mod create_player_session_output {
 
     /// A builder for [`CreatePlayerSessionOutput`](crate::output::CreatePlayerSessionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) player_session: std::option::Option<crate::model::PlayerSession>,
     }
@@ -5405,7 +4810,7 @@ impl CreatePlayerSessionOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMatchmakingRuleSetOutput {
     /// <p>The newly created matchmaking rule set.</p>
     #[doc(hidden)]
@@ -5417,18 +4822,11 @@ impl CreateMatchmakingRuleSetOutput {
         self.rule_set.as_ref()
     }
 }
-impl std::fmt::Debug for CreateMatchmakingRuleSetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMatchmakingRuleSetOutput");
-        formatter.field("rule_set", &self.rule_set);
-        formatter.finish()
-    }
-}
 /// See [`CreateMatchmakingRuleSetOutput`](crate::output::CreateMatchmakingRuleSetOutput).
 pub mod create_matchmaking_rule_set_output {
 
     /// A builder for [`CreateMatchmakingRuleSetOutput`](crate::output::CreateMatchmakingRuleSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set: std::option::Option<crate::model::MatchmakingRuleSet>,
     }
@@ -5463,7 +4861,7 @@ impl CreateMatchmakingRuleSetOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMatchmakingConfigurationOutput {
     /// <p>Object that describes the newly created matchmaking configuration.</p>
     #[doc(hidden)]
@@ -5475,18 +4873,11 @@ impl CreateMatchmakingConfigurationOutput {
         self.configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateMatchmakingConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMatchmakingConfigurationOutput");
-        formatter.field("configuration", &self.configuration);
-        formatter.finish()
-    }
-}
 /// See [`CreateMatchmakingConfigurationOutput`](crate::output::CreateMatchmakingConfigurationOutput).
 pub mod create_matchmaking_configuration_output {
 
     /// A builder for [`CreateMatchmakingConfigurationOutput`](crate::output::CreateMatchmakingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration: std::option::Option<crate::model::MatchmakingConfiguration>,
     }
@@ -5521,7 +4912,7 @@ impl CreateMatchmakingConfigurationOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGameSessionQueueOutput {
     /// <p>An object that describes the newly created game session queue.</p>
     #[doc(hidden)]
@@ -5533,18 +4924,11 @@ impl CreateGameSessionQueueOutput {
         self.game_session_queue.as_ref()
     }
 }
-impl std::fmt::Debug for CreateGameSessionQueueOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGameSessionQueueOutput");
-        formatter.field("game_session_queue", &self.game_session_queue);
-        formatter.finish()
-    }
-}
 /// See [`CreateGameSessionQueueOutput`](crate::output::CreateGameSessionQueueOutput).
 pub mod create_game_session_queue_output {
 
     /// A builder for [`CreateGameSessionQueueOutput`](crate::output::CreateGameSessionQueueOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_session_queue: std::option::Option<crate::model::GameSessionQueue>,
     }
@@ -5579,7 +4963,7 @@ impl CreateGameSessionQueueOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGameSessionOutput {
     /// <p>Object that describes the newly created game session record.</p>
     #[doc(hidden)]
@@ -5591,18 +4975,11 @@ impl CreateGameSessionOutput {
         self.game_session.as_ref()
     }
 }
-impl std::fmt::Debug for CreateGameSessionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGameSessionOutput");
-        formatter.field("game_session", &self.game_session);
-        formatter.finish()
-    }
-}
 /// See [`CreateGameSessionOutput`](crate::output::CreateGameSessionOutput).
 pub mod create_game_session_output {
 
     /// A builder for [`CreateGameSessionOutput`](crate::output::CreateGameSessionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_session: std::option::Option<crate::model::GameSession>,
     }
@@ -5637,7 +5014,7 @@ impl CreateGameSessionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGameServerGroupOutput {
     /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
     #[doc(hidden)]
@@ -5649,18 +5026,11 @@ impl CreateGameServerGroupOutput {
         self.game_server_group.as_ref()
     }
 }
-impl std::fmt::Debug for CreateGameServerGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGameServerGroupOutput");
-        formatter.field("game_server_group", &self.game_server_group);
-        formatter.finish()
-    }
-}
 /// See [`CreateGameServerGroupOutput`](crate::output::CreateGameServerGroupOutput).
 pub mod create_game_server_group_output {
 
     /// A builder for [`CreateGameServerGroupOutput`](crate::output::CreateGameServerGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_server_group: std::option::Option<crate::model::GameServerGroup>,
     }
@@ -5695,7 +5065,7 @@ impl CreateGameServerGroupOutput {
 
 /// <p>Represents the returned data in response to a request operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFleetLocationsOutput {
     /// <p>A unique identifier for the fleet that was updated with new locations.</p>
     #[doc(hidden)]
@@ -5727,20 +5097,11 @@ impl CreateFleetLocationsOutput {
         self.location_states.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFleetLocationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFleetLocationsOutput");
-        formatter.field("fleet_id", &self.fleet_id);
-        formatter.field("fleet_arn", &self.fleet_arn);
-        formatter.field("location_states", &self.location_states);
-        formatter.finish()
-    }
-}
 /// See [`CreateFleetLocationsOutput`](crate::output::CreateFleetLocationsOutput).
 pub mod create_fleet_locations_output {
 
     /// A builder for [`CreateFleetLocationsOutput`](crate::output::CreateFleetLocationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -5811,7 +5172,7 @@ impl CreateFleetLocationsOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFleetOutput {
     /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation. </p>
     #[doc(hidden)]
@@ -5830,19 +5191,11 @@ impl CreateFleetOutput {
         self.location_states.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFleetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFleetOutput");
-        formatter.field("fleet_attributes", &self.fleet_attributes);
-        formatter.field("location_states", &self.location_states);
-        formatter.finish()
-    }
-}
 /// See [`CreateFleetOutput`](crate::output::CreateFleetOutput).
 pub mod create_fleet_output {
 
     /// A builder for [`CreateFleetOutput`](crate::output::CreateFleetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_attributes: std::option::Option<crate::model::FleetAttributes>,
         pub(crate) location_states: std::option::Option<std::vec::Vec<crate::model::LocationState>>,
@@ -5941,7 +5294,7 @@ impl std::fmt::Debug for CreateBuildOutput {
 pub mod create_build_output {
 
     /// A builder for [`CreateBuildOutput`](crate::output::CreateBuildOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) build_value: std::option::Option<crate::model::Build>,
         pub(crate) upload_credentials: std::option::Option<crate::model::AwsCredentials>,
@@ -5993,6 +5346,15 @@ pub mod create_build_output {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("build_value", &self.build_value);
+            formatter.field("upload_credentials", &"*** Sensitive Data Redacted ***");
+            formatter.field("storage_location", &self.storage_location);
+            formatter.finish()
+        }
+    }
 }
 impl CreateBuildOutput {
     /// Creates a new builder-style object to manufacture [`CreateBuildOutput`](crate::output::CreateBuildOutput).
@@ -6003,7 +5365,7 @@ impl CreateBuildOutput {
 
 /// <p>Represents the returned data in response to a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAliasOutput {
     /// <p>The newly created alias resource.</p>
     #[doc(hidden)]
@@ -6015,18 +5377,11 @@ impl CreateAliasOutput {
         self.alias.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAliasOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAliasOutput");
-        formatter.field("alias", &self.alias);
-        formatter.finish()
-    }
-}
 /// See [`CreateAliasOutput`](crate::output::CreateAliasOutput).
 pub mod create_alias_output {
 
     /// A builder for [`CreateAliasOutput`](crate::output::CreateAliasOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias: std::option::Option<crate::model::Alias>,
     }
@@ -6056,7 +5411,7 @@ impl CreateAliasOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClaimGameServerOutput {
     /// <p>Object that describes the newly claimed game server.</p>
     #[doc(hidden)]
@@ -6068,18 +5423,11 @@ impl ClaimGameServerOutput {
         self.game_server.as_ref()
     }
 }
-impl std::fmt::Debug for ClaimGameServerOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClaimGameServerOutput");
-        formatter.field("game_server", &self.game_server);
-        formatter.finish()
-    }
-}
 /// See [`ClaimGameServerOutput`](crate::output::ClaimGameServerOutput).
 pub mod claim_game_server_output {
 
     /// A builder for [`ClaimGameServerOutput`](crate::output::ClaimGameServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_server: std::option::Option<crate::model::GameServer>,
     }
@@ -6114,19 +5462,13 @@ impl ClaimGameServerOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptMatchOutput {}
-impl std::fmt::Debug for AcceptMatchOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptMatchOutput");
-        formatter.finish()
-    }
-}
 /// See [`AcceptMatchOutput`](crate::output::AcceptMatchOutput).
 pub mod accept_match_output {
 
     /// A builder for [`AcceptMatchOutput`](crate::output::AcceptMatchOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AcceptMatchOutput`](crate::output::AcceptMatchOutput).

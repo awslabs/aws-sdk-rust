@@ -27,7 +27,7 @@ pub fn parse_copy_backup_to_region_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CopyBackupToRegionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -45,7 +45,7 @@ pub fn parse_copy_backup_to_region_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CopyBackupToRegionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -63,7 +63,7 @@ pub fn parse_copy_backup_to_region_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CopyBackupToRegionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -81,7 +81,7 @@ pub fn parse_copy_backup_to_region_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CopyBackupToRegionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -98,7 +98,7 @@ pub fn parse_copy_backup_to_region_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CopyBackupToRegionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -115,7 +115,7 @@ pub fn parse_copy_backup_to_region_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CopyBackupToRegionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -170,7 +170,7 @@ pub fn parse_create_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -188,7 +188,7 @@ pub fn parse_create_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -206,7 +206,7 @@ pub fn parse_create_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -224,7 +224,7 @@ pub fn parse_create_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -241,7 +241,7 @@ pub fn parse_create_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -258,7 +258,7 @@ pub fn parse_create_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -310,7 +310,7 @@ pub fn parse_create_hsm_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -328,7 +328,7 @@ pub fn parse_create_hsm_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -346,7 +346,7 @@ pub fn parse_create_hsm_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -364,7 +364,7 @@ pub fn parse_create_hsm_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -381,7 +381,7 @@ pub fn parse_create_hsm_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -433,7 +433,7 @@ pub fn parse_delete_backup_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBackupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -451,7 +451,7 @@ pub fn parse_delete_backup_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBackupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -469,7 +469,7 @@ pub fn parse_delete_backup_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBackupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -487,7 +487,7 @@ pub fn parse_delete_backup_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBackupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -504,7 +504,7 @@ pub fn parse_delete_backup_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBackupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -556,7 +556,7 @@ pub fn parse_delete_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -574,7 +574,7 @@ pub fn parse_delete_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -592,7 +592,7 @@ pub fn parse_delete_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -610,7 +610,7 @@ pub fn parse_delete_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -627,7 +627,7 @@ pub fn parse_delete_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -644,7 +644,7 @@ pub fn parse_delete_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -696,7 +696,7 @@ pub fn parse_delete_hsm_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -714,7 +714,7 @@ pub fn parse_delete_hsm_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -732,7 +732,7 @@ pub fn parse_delete_hsm_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -750,7 +750,7 @@ pub fn parse_delete_hsm_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -767,7 +767,7 @@ pub fn parse_delete_hsm_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -819,7 +819,7 @@ pub fn parse_describe_backups_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBackupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -837,7 +837,7 @@ pub fn parse_describe_backups_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBackupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -855,7 +855,7 @@ pub fn parse_describe_backups_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBackupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -873,7 +873,7 @@ pub fn parse_describe_backups_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBackupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -890,7 +890,7 @@ pub fn parse_describe_backups_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBackupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -907,7 +907,7 @@ pub fn parse_describe_backups_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBackupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -960,7 +960,7 @@ pub fn parse_describe_clusters_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeClustersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -978,7 +978,7 @@ pub fn parse_describe_clusters_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeClustersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -996,7 +996,7 @@ pub fn parse_describe_clusters_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeClustersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1013,7 +1013,7 @@ pub fn parse_describe_clusters_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeClustersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1030,7 +1030,7 @@ pub fn parse_describe_clusters_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeClustersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1084,7 +1084,7 @@ pub fn parse_initialize_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitializeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1102,7 +1102,7 @@ pub fn parse_initialize_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitializeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1120,7 +1120,7 @@ pub fn parse_initialize_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitializeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1138,7 +1138,7 @@ pub fn parse_initialize_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitializeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1155,7 +1155,7 @@ pub fn parse_initialize_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitializeClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1208,7 +1208,7 @@ pub fn parse_list_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1226,7 +1226,7 @@ pub fn parse_list_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1244,7 +1244,7 @@ pub fn parse_list_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1262,7 +1262,7 @@ pub fn parse_list_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1279,7 +1279,7 @@ pub fn parse_list_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1296,7 +1296,7 @@ pub fn parse_list_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1355,7 +1355,7 @@ pub fn parse_modify_backup_attributes_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyBackupAttributesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1374,7 +1374,7 @@ pub fn parse_modify_backup_attributes_error(
                         output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyBackupAttributesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1393,7 +1393,7 @@ pub fn parse_modify_backup_attributes_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyBackupAttributesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1412,7 +1412,7 @@ pub fn parse_modify_backup_attributes_error(
                                 output = crate::json_deser::deser_structure_crate_error_cloud_hsm_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyBackupAttributesError::unhandled)?;
                                 output.build()
                             };
-                            if (&tmp.message).is_none() {
+                            if tmp.message.is_none() {
                                 tmp.message = _error_message;
                             }
                             tmp
@@ -1431,7 +1431,7 @@ pub fn parse_modify_backup_attributes_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyBackupAttributesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1486,7 +1486,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1504,7 +1504,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1522,7 +1522,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1540,7 +1540,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1557,7 +1557,7 @@ pub fn parse_modify_cluster_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1609,7 +1609,7 @@ pub fn parse_restore_backup_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreBackupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1627,7 +1627,7 @@ pub fn parse_restore_backup_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreBackupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1645,7 +1645,7 @@ pub fn parse_restore_backup_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreBackupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1663,7 +1663,7 @@ pub fn parse_restore_backup_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreBackupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1680,7 +1680,7 @@ pub fn parse_restore_backup_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreBackupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1732,7 +1732,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1750,7 +1750,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1768,7 +1768,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1786,7 +1786,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1803,7 +1803,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1820,7 +1820,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1867,7 +1867,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1885,7 +1885,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1903,7 +1903,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1921,7 +1921,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1938,7 +1938,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1955,7 +1955,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

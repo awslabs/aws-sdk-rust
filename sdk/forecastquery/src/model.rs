@@ -2,7 +2,7 @@
 
 /// <p>Provides information about a forecast. Returned as part of the <code>QueryForecast</code> response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Forecast {
     /// <p>The forecast.</p>
     /// <p>The <i>string</i> of the string-to-array map is one of the following values:</p>
@@ -34,18 +34,11 @@ impl Forecast {
         self.predictions.as_ref()
     }
 }
-impl std::fmt::Debug for Forecast {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Forecast");
-        formatter.field("predictions", &self.predictions);
-        formatter.finish()
-    }
-}
 /// See [`Forecast`](crate::model::Forecast).
 pub mod forecast {
 
     /// A builder for [`Forecast`](crate::model::Forecast).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predictions: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::DataPoint>>,
@@ -111,7 +104,7 @@ impl Forecast {
 
 /// <p>The forecast value for a specific date. Part of the <code>Forecast</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataPoint {
     /// <p>The timestamp of the specific forecast.</p>
     #[doc(hidden)]
@@ -130,19 +123,11 @@ impl DataPoint {
         self.value
     }
 }
-impl std::fmt::Debug for DataPoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataPoint");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`DataPoint`](crate::model::DataPoint).
 pub mod data_point {
 
     /// A builder for [`DataPoint`](crate::model::DataPoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<f64>,

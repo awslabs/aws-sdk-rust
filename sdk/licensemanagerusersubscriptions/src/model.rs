@@ -2,7 +2,7 @@
 
 /// <p>The summary of the user-based subscription products for a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProductUserSummary {
     /// <p>The user name from the identity provider of the user.</p>
     #[doc(hidden)]
@@ -63,25 +63,11 @@ impl ProductUserSummary {
         self.subscription_end_date.as_deref()
     }
 }
-impl std::fmt::Debug for ProductUserSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProductUserSummary");
-        formatter.field("username", &self.username);
-        formatter.field("product", &self.product);
-        formatter.field("identity_provider", &self.identity_provider);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("domain", &self.domain);
-        formatter.field("subscription_start_date", &self.subscription_start_date);
-        formatter.field("subscription_end_date", &self.subscription_end_date);
-        formatter.finish()
-    }
-}
 /// See [`ProductUserSummary`](crate::model::ProductUserSummary).
 pub mod product_user_summary {
 
     /// A builder for [`ProductUserSummary`](crate::model::ProductUserSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) product: std::option::Option<std::string::String>,
@@ -248,7 +234,7 @@ impl IdentityProvider {
 
 /// <p>Details about an Active Directory identity provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActiveDirectoryIdentityProvider {
     /// <p>The directory ID for an Active Directory identity provider.</p>
     #[doc(hidden)]
@@ -260,18 +246,11 @@ impl ActiveDirectoryIdentityProvider {
         self.directory_id.as_deref()
     }
 }
-impl std::fmt::Debug for ActiveDirectoryIdentityProvider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActiveDirectoryIdentityProvider");
-        formatter.field("directory_id", &self.directory_id);
-        formatter.finish()
-    }
-}
 /// See [`ActiveDirectoryIdentityProvider`](crate::model::ActiveDirectoryIdentityProvider).
 pub mod active_directory_identity_provider {
 
     /// A builder for [`ActiveDirectoryIdentityProvider`](crate::model::ActiveDirectoryIdentityProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
     }
@@ -303,7 +282,7 @@ impl ActiveDirectoryIdentityProvider {
 
 /// <p>Describes an identity provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentityProviderSummary {
     /// <p>An object that specifies details for the identity provider.</p>
     #[doc(hidden)]
@@ -336,21 +315,11 @@ impl IdentityProviderSummary {
         self.failure_message.as_deref()
     }
 }
-impl std::fmt::Debug for IdentityProviderSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentityProviderSummary");
-        formatter.field("identity_provider", &self.identity_provider);
-        formatter.field("product", &self.product);
-        formatter.field("status", &self.status);
-        formatter.field("failure_message", &self.failure_message);
-        formatter.finish()
-    }
-}
 /// See [`IdentityProviderSummary`](crate::model::IdentityProviderSummary).
 pub mod identity_provider_summary {
 
     /// A builder for [`IdentityProviderSummary`](crate::model::IdentityProviderSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProvider>,
         pub(crate) product: std::option::Option<std::string::String>,
@@ -424,7 +393,7 @@ impl IdentityProviderSummary {
 
 /// <p>Describes users of an EC2 instance providing user-based subscriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceUserSummary {
     /// <p>The user name from the identity provider for the user.</p>
     #[doc(hidden)]
@@ -485,25 +454,11 @@ impl InstanceUserSummary {
         self.disassociation_date.as_deref()
     }
 }
-impl std::fmt::Debug for InstanceUserSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceUserSummary");
-        formatter.field("username", &self.username);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("identity_provider", &self.identity_provider);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("domain", &self.domain);
-        formatter.field("association_date", &self.association_date);
-        formatter.field("disassociation_date", &self.disassociation_date);
-        formatter.finish()
-    }
-}
 /// See [`InstanceUserSummary`](crate::model::InstanceUserSummary).
 pub mod instance_user_summary {
 
     /// A builder for [`InstanceUserSummary`](crate::model::InstanceUserSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -631,7 +586,7 @@ impl InstanceUserSummary {
 
 /// <p>A filter name and value pair that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of an attribute to use as a filter.</p>
     #[doc(hidden)]
@@ -657,20 +612,11 @@ impl Filter {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("operation", &self.operation);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
@@ -726,7 +672,7 @@ impl Filter {
 
 /// <p>Describes an EC2 instance providing user-based subscriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceSummary {
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
     #[doc(hidden)]
@@ -766,22 +712,11 @@ impl InstanceSummary {
         self.status_message.as_deref()
     }
 }
-impl std::fmt::Debug for InstanceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceSummary");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("status", &self.status);
-        formatter.field("products", &self.products);
-        formatter.field("last_status_check_date", &self.last_status_check_date);
-        formatter.field("status_message", &self.status_message);
-        formatter.finish()
-    }
-}
 /// See [`InstanceSummary`](crate::model::InstanceSummary).
 pub mod instance_summary {
 
     /// A builder for [`InstanceSummary`](crate::model::InstanceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,

@@ -2,7 +2,7 @@
 
 /// <p>Points to an <code>S3Destination</code> object that contains information about your S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Destination {
     /// <p>The <code>S3Destination</code> object.</p>
     #[doc(hidden)]
@@ -14,18 +14,11 @@ impl Destination {
         self.s3.as_ref()
     }
 }
-impl std::fmt::Debug for Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Destination");
-        formatter.field("s3", &self.s3);
-        formatter.finish()
-    }
-}
 /// See [`Destination`](crate::model::Destination).
 pub mod destination {
 
     /// A builder for [`Destination`](crate::model::Destination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3Destination>,
     }
@@ -55,7 +48,7 @@ impl Destination {
 
 /// <p>The name and prefix of the S3 bucket where code signing saves your signed objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Destination {
     /// <p>Name of the S3 bucket.</p>
     #[doc(hidden)]
@@ -74,19 +67,11 @@ impl S3Destination {
         self.prefix.as_deref()
     }
 }
-impl std::fmt::Debug for S3Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Destination");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
-    }
-}
 /// See [`S3Destination`](crate::model::S3Destination).
 pub mod s3_destination {
 
     /// A builder for [`S3Destination`](crate::model::S3Destination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -130,7 +115,7 @@ impl S3Destination {
 
 /// <p>An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Source {
     /// <p>The <code>S3Source</code> object.</p>
     #[doc(hidden)]
@@ -142,18 +127,11 @@ impl Source {
         self.s3.as_ref()
     }
 }
-impl std::fmt::Debug for Source {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Source");
-        formatter.field("s3", &self.s3);
-        formatter.finish()
-    }
-}
 /// See [`Source`](crate::model::Source).
 pub mod source {
 
     /// A builder for [`Source`](crate::model::Source).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3Source>,
     }
@@ -183,7 +161,7 @@ impl Source {
 
 /// <p>Information about the S3 bucket where you saved your unsigned code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Source {
     /// <p>Name of the S3 bucket.</p>
     #[doc(hidden)]
@@ -209,20 +187,11 @@ impl S3Source {
         self.version.as_deref()
     }
 }
-impl std::fmt::Debug for S3Source {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Source");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("key", &self.key);
-        formatter.field("version", &self.version);
-        formatter.finish()
-    }
-}
 /// See [`S3Source`](crate::model::S3Source).
 pub mod s3_source {
 
     /// A builder for [`S3Source`](crate::model::S3Source).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -278,7 +247,7 @@ impl S3Source {
 
 /// <p>Any overrides that are applied to the signing configuration of a code signing platform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningPlatformOverrides {
     /// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
     #[doc(hidden)]
@@ -299,19 +268,11 @@ impl SigningPlatformOverrides {
         self.signing_image_format.as_ref()
     }
 }
-impl std::fmt::Debug for SigningPlatformOverrides {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningPlatformOverrides");
-        formatter.field("signing_configuration", &self.signing_configuration);
-        formatter.field("signing_image_format", &self.signing_image_format);
-        formatter.finish()
-    }
-}
 /// See [`SigningPlatformOverrides`](crate::model::SigningPlatformOverrides).
 pub mod signing_platform_overrides {
 
     /// A builder for [`SigningPlatformOverrides`](crate::model::SigningPlatformOverrides).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) signing_configuration:
             std::option::Option<crate::model::SigningConfigurationOverrides>,
@@ -363,6 +324,42 @@ impl SigningPlatformOverrides {
     }
 }
 
+/// When writing a match expression against `ImageFormat`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let imageformat = unimplemented!();
+/// match imageformat {
+///     ImageFormat::Json => { /* ... */ },
+///     ImageFormat::JsonDetached => { /* ... */ },
+///     ImageFormat::JsonEmbedded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `imageformat` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ImageFormat::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ImageFormat::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ImageFormat::NewFeature` is defined.
+/// Specifically, when `imageformat` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ImageFormat::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -381,8 +378,8 @@ pub enum ImageFormat {
     JsonDetached,
     #[allow(missing_docs)] // documentation missing in model
     JsonEmbedded,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ImageFormat {
     fn from(s: &str) -> Self {
@@ -390,7 +387,7 @@ impl std::convert::From<&str> for ImageFormat {
             "JSON" => ImageFormat::Json,
             "JSONDetached" => ImageFormat::JsonDetached,
             "JSONEmbedded" => ImageFormat::JsonEmbedded,
-            other => ImageFormat::Unknown(other.to_owned()),
+            other => ImageFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -408,11 +405,11 @@ impl ImageFormat {
             ImageFormat::Json => "JSON",
             ImageFormat::JsonDetached => "JSONDetached",
             ImageFormat::JsonEmbedded => "JSONEmbedded",
-            ImageFormat::Unknown(s) => s.as_ref(),
+            ImageFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JSON", "JSONDetached", "JSONEmbedded"]
     }
 }
@@ -424,7 +421,7 @@ impl AsRef<str> for ImageFormat {
 
 /// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningConfigurationOverrides {
     /// <p>A specified override of the default encryption algorithm that is used in a code signing job.</p>
     #[doc(hidden)]
@@ -443,19 +440,11 @@ impl SigningConfigurationOverrides {
         self.hash_algorithm.as_ref()
     }
 }
-impl std::fmt::Debug for SigningConfigurationOverrides {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningConfigurationOverrides");
-        formatter.field("encryption_algorithm", &self.encryption_algorithm);
-        formatter.field("hash_algorithm", &self.hash_algorithm);
-        formatter.finish()
-    }
-}
 /// See [`SigningConfigurationOverrides`](crate::model::SigningConfigurationOverrides).
 pub mod signing_configuration_overrides {
 
     /// A builder for [`SigningConfigurationOverrides`](crate::model::SigningConfigurationOverrides).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithm>,
         pub(crate) hash_algorithm: std::option::Option<crate::model::HashAlgorithm>,
@@ -503,6 +492,41 @@ impl SigningConfigurationOverrides {
     }
 }
 
+/// When writing a match expression against `HashAlgorithm`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let hashalgorithm = unimplemented!();
+/// match hashalgorithm {
+///     HashAlgorithm::Sha1 => { /* ... */ },
+///     HashAlgorithm::Sha256 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `hashalgorithm` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HashAlgorithm::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HashAlgorithm::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HashAlgorithm::NewFeature` is defined.
+/// Specifically, when `hashalgorithm` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HashAlgorithm::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -519,15 +543,15 @@ pub enum HashAlgorithm {
     Sha1,
     #[allow(missing_docs)] // documentation missing in model
     Sha256,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HashAlgorithm {
     fn from(s: &str) -> Self {
         match s {
             "SHA1" => HashAlgorithm::Sha1,
             "SHA256" => HashAlgorithm::Sha256,
-            other => HashAlgorithm::Unknown(other.to_owned()),
+            other => HashAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -544,11 +568,11 @@ impl HashAlgorithm {
         match self {
             HashAlgorithm::Sha1 => "SHA1",
             HashAlgorithm::Sha256 => "SHA256",
-            HashAlgorithm::Unknown(s) => s.as_ref(),
+            HashAlgorithm::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SHA1", "SHA256"]
     }
 }
@@ -558,6 +582,41 @@ impl AsRef<str> for HashAlgorithm {
     }
 }
 
+/// When writing a match expression against `EncryptionAlgorithm`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let encryptionalgorithm = unimplemented!();
+/// match encryptionalgorithm {
+///     EncryptionAlgorithm::Ecdsa => { /* ... */ },
+///     EncryptionAlgorithm::Rsa => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `encryptionalgorithm` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EncryptionAlgorithm::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EncryptionAlgorithm::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EncryptionAlgorithm::NewFeature` is defined.
+/// Specifically, when `encryptionalgorithm` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EncryptionAlgorithm::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -574,15 +633,17 @@ pub enum EncryptionAlgorithm {
     Ecdsa,
     #[allow(missing_docs)] // documentation missing in model
     Rsa,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EncryptionAlgorithm {
     fn from(s: &str) -> Self {
         match s {
             "ECDSA" => EncryptionAlgorithm::Ecdsa,
             "RSA" => EncryptionAlgorithm::Rsa,
-            other => EncryptionAlgorithm::Unknown(other.to_owned()),
+            other => {
+                EncryptionAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -599,11 +660,11 @@ impl EncryptionAlgorithm {
         match self {
             EncryptionAlgorithm::Ecdsa => "ECDSA",
             EncryptionAlgorithm::Rsa => "RSA",
-            EncryptionAlgorithm::Unknown(s) => s.as_ref(),
+            EncryptionAlgorithm::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ECDSA", "RSA"]
     }
 }
@@ -615,7 +676,7 @@ impl AsRef<str> for EncryptionAlgorithm {
 
 /// <p>The validity period for a signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignatureValidityPeriod {
     /// <p>The numerical value of the time unit for signature validity.</p>
     #[doc(hidden)]
@@ -634,19 +695,11 @@ impl SignatureValidityPeriod {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for SignatureValidityPeriod {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignatureValidityPeriod");
-        formatter.field("value", &self.value);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
 /// See [`SignatureValidityPeriod`](crate::model::SignatureValidityPeriod).
 pub mod signature_validity_period {
 
     /// A builder for [`SignatureValidityPeriod`](crate::model::SignatureValidityPeriod).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<i32>,
         pub(crate) r#type: std::option::Option<crate::model::ValidityType>,
@@ -688,6 +741,42 @@ impl SignatureValidityPeriod {
     }
 }
 
+/// When writing a match expression against `ValidityType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let validitytype = unimplemented!();
+/// match validitytype {
+///     ValidityType::Days => { /* ... */ },
+///     ValidityType::Months => { /* ... */ },
+///     ValidityType::Years => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `validitytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ValidityType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ValidityType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ValidityType::NewFeature` is defined.
+/// Specifically, when `validitytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ValidityType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -706,8 +795,8 @@ pub enum ValidityType {
     Months,
     #[allow(missing_docs)] // documentation missing in model
     Years,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ValidityType {
     fn from(s: &str) -> Self {
@@ -715,7 +804,7 @@ impl std::convert::From<&str> for ValidityType {
             "DAYS" => ValidityType::Days,
             "MONTHS" => ValidityType::Months,
             "YEARS" => ValidityType::Years,
-            other => ValidityType::Unknown(other.to_owned()),
+            other => ValidityType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -733,11 +822,11 @@ impl ValidityType {
             ValidityType::Days => "DAYS",
             ValidityType::Months => "MONTHS",
             ValidityType::Years => "YEARS",
-            ValidityType::Unknown(s) => s.as_ref(),
+            ValidityType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAYS", "MONTHS", "YEARS"]
     }
 }
@@ -749,7 +838,7 @@ impl AsRef<str> for ValidityType {
 
 /// <p>The ACM certificate that is used to sign your code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningMaterial {
     /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>
     #[doc(hidden)]
@@ -761,18 +850,11 @@ impl SigningMaterial {
         self.certificate_arn.as_deref()
     }
 }
-impl std::fmt::Debug for SigningMaterial {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningMaterial");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.finish()
-    }
-}
 /// See [`SigningMaterial`](crate::model::SigningMaterial).
 pub mod signing_material {
 
     /// A builder for [`SigningMaterial`](crate::model::SigningMaterial).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
@@ -807,7 +889,7 @@ impl SigningMaterial {
 
 /// <p>Contains information about the ACM certificates and code signing configuration parameters that can be used by a given code signing user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningProfile {
     /// <p>The name of the signing profile.</p>
     #[doc(hidden)]
@@ -899,28 +981,11 @@ impl SigningProfile {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for SigningProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningProfile");
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("profile_version", &self.profile_version);
-        formatter.field("profile_version_arn", &self.profile_version_arn);
-        formatter.field("signing_material", &self.signing_material);
-        formatter.field("signature_validity_period", &self.signature_validity_period);
-        formatter.field("platform_id", &self.platform_id);
-        formatter.field("platform_display_name", &self.platform_display_name);
-        formatter.field("signing_parameters", &self.signing_parameters);
-        formatter.field("status", &self.status);
-        formatter.field("arn", &self.arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 /// See [`SigningProfile`](crate::model::SigningProfile).
 pub mod signing_profile {
 
     /// A builder for [`SigningProfile`](crate::model::SigningProfile).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
         pub(crate) profile_version: std::option::Option<std::string::String>,
@@ -1126,6 +1191,42 @@ impl SigningProfile {
     }
 }
 
+/// When writing a match expression against `SigningProfileStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let signingprofilestatus = unimplemented!();
+/// match signingprofilestatus {
+///     SigningProfileStatus::Active => { /* ... */ },
+///     SigningProfileStatus::Canceled => { /* ... */ },
+///     SigningProfileStatus::Revoked => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `signingprofilestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SigningProfileStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SigningProfileStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SigningProfileStatus::NewFeature` is defined.
+/// Specifically, when `signingprofilestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SigningProfileStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1144,8 +1245,8 @@ pub enum SigningProfileStatus {
     Canceled,
     #[allow(missing_docs)] // documentation missing in model
     Revoked,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SigningProfileStatus {
     fn from(s: &str) -> Self {
@@ -1153,7 +1254,9 @@ impl std::convert::From<&str> for SigningProfileStatus {
             "Active" => SigningProfileStatus::Active,
             "Canceled" => SigningProfileStatus::Canceled,
             "Revoked" => SigningProfileStatus::Revoked,
-            other => SigningProfileStatus::Unknown(other.to_owned()),
+            other => {
+                SigningProfileStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -1171,11 +1274,11 @@ impl SigningProfileStatus {
             SigningProfileStatus::Active => "Active",
             SigningProfileStatus::Canceled => "Canceled",
             SigningProfileStatus::Revoked => "Revoked",
-            SigningProfileStatus::Unknown(s) => s.as_ref(),
+            SigningProfileStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "Canceled", "Revoked"]
     }
 }
@@ -1187,7 +1290,7 @@ impl AsRef<str> for SigningProfileStatus {
 
 /// <p>Contains information about the signing configurations and parameters that are used to perform a code signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningPlatform {
     /// <p>The ID of a code signing; platform.</p>
     #[doc(hidden)]
@@ -1257,26 +1360,11 @@ impl SigningPlatform {
         self.revocation_supported
     }
 }
-impl std::fmt::Debug for SigningPlatform {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningPlatform");
-        formatter.field("platform_id", &self.platform_id);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("partner", &self.partner);
-        formatter.field("target", &self.target);
-        formatter.field("category", &self.category);
-        formatter.field("signing_configuration", &self.signing_configuration);
-        formatter.field("signing_image_format", &self.signing_image_format);
-        formatter.field("max_size_in_mb", &self.max_size_in_mb);
-        formatter.field("revocation_supported", &self.revocation_supported);
-        formatter.finish()
-    }
-}
 /// See [`SigningPlatform`](crate::model::SigningPlatform).
 pub mod signing_platform {
 
     /// A builder for [`SigningPlatform`](crate::model::SigningPlatform).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_id: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -1410,7 +1498,7 @@ impl SigningPlatform {
 
 /// <p>The image format of a code signing platform or profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningImageFormat {
     /// <p>The supported formats of a code signing image.</p>
     #[doc(hidden)]
@@ -1429,19 +1517,11 @@ impl SigningImageFormat {
         self.default_format.as_ref()
     }
 }
-impl std::fmt::Debug for SigningImageFormat {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningImageFormat");
-        formatter.field("supported_formats", &self.supported_formats);
-        formatter.field("default_format", &self.default_format);
-        formatter.finish()
-    }
-}
 /// See [`SigningImageFormat`](crate::model::SigningImageFormat).
 pub mod signing_image_format {
 
     /// A builder for [`SigningImageFormat`](crate::model::SigningImageFormat).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) supported_formats: std::option::Option<std::vec::Vec<crate::model::ImageFormat>>,
         pub(crate) default_format: std::option::Option<crate::model::ImageFormat>,
@@ -1497,7 +1577,7 @@ impl SigningImageFormat {
 
 /// <p>The configuration of a code signing operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningConfiguration {
     /// <p>The encryption algorithm options that are available for a code signing job.</p>
     #[doc(hidden)]
@@ -1520,22 +1600,11 @@ impl SigningConfiguration {
         self.hash_algorithm_options.as_ref()
     }
 }
-impl std::fmt::Debug for SigningConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningConfiguration");
-        formatter.field(
-            "encryption_algorithm_options",
-            &self.encryption_algorithm_options,
-        );
-        formatter.field("hash_algorithm_options", &self.hash_algorithm_options);
-        formatter.finish()
-    }
-}
 /// See [`SigningConfiguration`](crate::model::SigningConfiguration).
 pub mod signing_configuration {
 
     /// A builder for [`SigningConfiguration`](crate::model::SigningConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_algorithm_options:
             std::option::Option<crate::model::EncryptionAlgorithmOptions>,
@@ -1589,7 +1658,7 @@ impl SigningConfiguration {
 
 /// <p>The hash algorithms that are available to a code signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HashAlgorithmOptions {
     /// <p>The set of accepted hash algorithms allowed in a code signing job.</p>
     #[doc(hidden)]
@@ -1608,19 +1677,11 @@ impl HashAlgorithmOptions {
         self.default_value.as_ref()
     }
 }
-impl std::fmt::Debug for HashAlgorithmOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HashAlgorithmOptions");
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.field("default_value", &self.default_value);
-        formatter.finish()
-    }
-}
 /// See [`HashAlgorithmOptions`](crate::model::HashAlgorithmOptions).
 pub mod hash_algorithm_options {
 
     /// A builder for [`HashAlgorithmOptions`](crate::model::HashAlgorithmOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allowed_values: std::option::Option<std::vec::Vec<crate::model::HashAlgorithm>>,
         pub(crate) default_value: std::option::Option<crate::model::HashAlgorithm>,
@@ -1676,7 +1737,7 @@ impl HashAlgorithmOptions {
 
 /// <p>The encryption algorithm options that are available to a code signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionAlgorithmOptions {
     /// <p>The set of accepted encryption algorithms that are allowed in a code signing job.</p>
     #[doc(hidden)]
@@ -1695,19 +1756,11 @@ impl EncryptionAlgorithmOptions {
         self.default_value.as_ref()
     }
 }
-impl std::fmt::Debug for EncryptionAlgorithmOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionAlgorithmOptions");
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.field("default_value", &self.default_value);
-        formatter.finish()
-    }
-}
 /// See [`EncryptionAlgorithmOptions`](crate::model::EncryptionAlgorithmOptions).
 pub mod encryption_algorithm_options {
 
     /// A builder for [`EncryptionAlgorithmOptions`](crate::model::EncryptionAlgorithmOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allowed_values:
             std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithm>>,
@@ -1762,6 +1815,40 @@ impl EncryptionAlgorithmOptions {
     }
 }
 
+/// When writing a match expression against `Category`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let category = unimplemented!();
+/// match category {
+///     Category::AwsIoT => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `category` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Category::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Category::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Category::NewFeature` is defined.
+/// Specifically, when `category` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Category::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1776,14 +1863,14 @@ impl EncryptionAlgorithmOptions {
 pub enum Category {
     #[allow(missing_docs)] // documentation missing in model
     AwsIoT,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Category {
     fn from(s: &str) -> Self {
         match s {
             "AWSIoT" => Category::AwsIoT,
-            other => Category::Unknown(other.to_owned()),
+            other => Category::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1799,11 +1886,11 @@ impl Category {
     pub fn as_str(&self) -> &str {
         match self {
             Category::AwsIoT => "AWSIoT",
-            Category::Unknown(s) => s.as_ref(),
+            Category::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWSIoT"]
     }
 }
@@ -1815,7 +1902,7 @@ impl AsRef<str> for Category {
 
 /// <p>Contains information about a signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningJob {
     /// <p>The ID of the signing job.</p>
     #[doc(hidden)]
@@ -1918,31 +2005,11 @@ impl SigningJob {
         self.job_invoker.as_deref()
     }
 }
-impl std::fmt::Debug for SigningJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningJob");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("source", &self.source);
-        formatter.field("signed_object", &self.signed_object);
-        formatter.field("signing_material", &self.signing_material);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("status", &self.status);
-        formatter.field("is_revoked", &self.is_revoked);
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("profile_version", &self.profile_version);
-        formatter.field("platform_id", &self.platform_id);
-        formatter.field("platform_display_name", &self.platform_display_name);
-        formatter.field("signature_expires_at", &self.signature_expires_at);
-        formatter.field("job_owner", &self.job_owner);
-        formatter.field("job_invoker", &self.job_invoker);
-        formatter.finish()
-    }
-}
 /// See [`SigningJob`](crate::model::SigningJob).
 pub mod signing_job {
 
     /// A builder for [`SigningJob`](crate::model::SigningJob).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) source: std::option::Option<crate::model::Source>,
@@ -2149,6 +2216,42 @@ impl SigningJob {
     }
 }
 
+/// When writing a match expression against `SigningStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let signingstatus = unimplemented!();
+/// match signingstatus {
+///     SigningStatus::Failed => { /* ... */ },
+///     SigningStatus::InProgress => { /* ... */ },
+///     SigningStatus::Succeeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `signingstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SigningStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SigningStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SigningStatus::NewFeature` is defined.
+/// Specifically, when `signingstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SigningStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2167,8 +2270,8 @@ pub enum SigningStatus {
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SigningStatus {
     fn from(s: &str) -> Self {
@@ -2176,7 +2279,7 @@ impl std::convert::From<&str> for SigningStatus {
             "Failed" => SigningStatus::Failed,
             "InProgress" => SigningStatus::InProgress,
             "Succeeded" => SigningStatus::Succeeded,
-            other => SigningStatus::Unknown(other.to_owned()),
+            other => SigningStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2194,11 +2297,11 @@ impl SigningStatus {
             SigningStatus::Failed => "Failed",
             SigningStatus::InProgress => "InProgress",
             SigningStatus::Succeeded => "Succeeded",
-            SigningStatus::Unknown(s) => s.as_ref(),
+            SigningStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Failed", "InProgress", "Succeeded"]
     }
 }
@@ -2210,7 +2313,7 @@ impl AsRef<str> for SigningStatus {
 
 /// <p>Points to an <code>S3SignedObject</code> object that contains information about your signed code image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignedObject {
     /// <p>The <code>S3SignedObject</code>.</p>
     #[doc(hidden)]
@@ -2222,18 +2325,11 @@ impl SignedObject {
         self.s3.as_ref()
     }
 }
-impl std::fmt::Debug for SignedObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignedObject");
-        formatter.field("s3", &self.s3);
-        formatter.finish()
-    }
-}
 /// See [`SignedObject`](crate::model::SignedObject).
 pub mod signed_object {
 
     /// A builder for [`SignedObject`](crate::model::SignedObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3SignedObject>,
     }
@@ -2263,7 +2359,7 @@ impl SignedObject {
 
 /// <p>The S3 bucket name and key where code signing saved your signed code image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3SignedObject {
     /// <p>Name of the S3 bucket.</p>
     #[doc(hidden)]
@@ -2282,19 +2378,11 @@ impl S3SignedObject {
         self.key.as_deref()
     }
 }
-impl std::fmt::Debug for S3SignedObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3SignedObject");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("key", &self.key);
-        formatter.finish()
-    }
-}
 /// See [`S3SignedObject`](crate::model::S3SignedObject).
 pub mod s3_signed_object {
 
     /// A builder for [`S3SignedObject`](crate::model::S3SignedObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -2338,7 +2426,7 @@ impl S3SignedObject {
 
 /// <p>A cross-account permission for a signing profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Permission {
     /// <p>An AWS Signer action permitted as part of cross-account permissions.</p>
     #[doc(hidden)]
@@ -2371,21 +2459,11 @@ impl Permission {
         self.profile_version.as_deref()
     }
 }
-impl std::fmt::Debug for Permission {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Permission");
-        formatter.field("action", &self.action);
-        formatter.field("principal", &self.principal);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.field("profile_version", &self.profile_version);
-        formatter.finish()
-    }
-}
 /// See [`Permission`](crate::model::Permission).
 pub mod permission {
 
     /// A builder for [`Permission`](crate::model::Permission).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<std::string::String>,
         pub(crate) principal: std::option::Option<std::string::String>,
@@ -2456,7 +2534,7 @@ impl Permission {
 
 /// <p>Revocation information for a signing profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningProfileRevocationRecord {
     /// <p>The time when revocation becomes effective.</p>
     #[doc(hidden)]
@@ -2482,20 +2560,11 @@ impl SigningProfileRevocationRecord {
         self.revoked_by.as_deref()
     }
 }
-impl std::fmt::Debug for SigningProfileRevocationRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningProfileRevocationRecord");
-        formatter.field("revocation_effective_from", &self.revocation_effective_from);
-        formatter.field("revoked_at", &self.revoked_at);
-        formatter.field("revoked_by", &self.revoked_by);
-        formatter.finish()
-    }
-}
 /// See [`SigningProfileRevocationRecord`](crate::model::SigningProfileRevocationRecord).
 pub mod signing_profile_revocation_record {
 
     /// A builder for [`SigningProfileRevocationRecord`](crate::model::SigningProfileRevocationRecord).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revocation_effective_from: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) revoked_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -2557,7 +2626,7 @@ impl SigningProfileRevocationRecord {
 
 /// <p>Revocation information for a signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningJobRevocationRecord {
     /// <p>A caller-supplied reason for revocation.</p>
     #[doc(hidden)]
@@ -2583,20 +2652,11 @@ impl SigningJobRevocationRecord {
         self.revoked_by.as_deref()
     }
 }
-impl std::fmt::Debug for SigningJobRevocationRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningJobRevocationRecord");
-        formatter.field("reason", &self.reason);
-        formatter.field("revoked_at", &self.revoked_at);
-        formatter.field("revoked_by", &self.revoked_by);
-        formatter.finish()
-    }
-}
 /// See [`SigningJobRevocationRecord`](crate::model::SigningJobRevocationRecord).
 pub mod signing_job_revocation_record {
 
     /// A builder for [`SigningJobRevocationRecord`](crate::model::SigningJobRevocationRecord).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,
         pub(crate) revoked_at: std::option::Option<aws_smithy_types::DateTime>,

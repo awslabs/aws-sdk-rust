@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_create_attendee_input {
 
     /// A builder for [`BatchCreateAttendeeInput`](crate::input::BatchCreateAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendees:
@@ -44,8 +44,10 @@ pub mod batch_create_attendee_input {
         /// Consumes the builder and constructs a [`BatchCreateAttendeeInput`](crate::input::BatchCreateAttendeeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchCreateAttendeeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::BatchCreateAttendeeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::BatchCreateAttendeeInput {
                 meeting_id: self.meeting_id,
                 attendees: self.attendees,
@@ -66,26 +68,31 @@ impl BatchCreateAttendeeInput {
             crate::operation::BatchCreateAttendee,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchCreateAttendeeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.meeting_id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let meeting_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "meeting_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let meeting_id = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "meeting_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -98,7 +105,7 @@ impl BatchCreateAttendeeInput {
             fn uri_query(
                 _input: &crate::input::BatchCreateAttendeeInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "batch-create");
                 Ok(())
@@ -107,8 +114,10 @@ impl BatchCreateAttendeeInput {
             fn update_http_builder(
                 input: &crate::input::BatchCreateAttendeeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -193,7 +202,7 @@ impl BatchCreateAttendeeInput {
 pub mod batch_update_attendee_capabilities_except_input {
 
     /// A builder for [`BatchUpdateAttendeeCapabilitiesExceptInput`](crate::input::BatchUpdateAttendeeCapabilitiesExceptInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) excluded_attendee_ids:
@@ -248,7 +257,7 @@ pub mod batch_update_attendee_capabilities_except_input {
             self,
         ) -> Result<
             crate::input::BatchUpdateAttendeeCapabilitiesExceptInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::BatchUpdateAttendeeCapabilitiesExceptInput {
                 meeting_id: self.meeting_id,
@@ -271,26 +280,31 @@ impl BatchUpdateAttendeeCapabilitiesExceptInput {
             crate::operation::BatchUpdateAttendeeCapabilitiesExcept,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchUpdateAttendeeCapabilitiesExceptInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.meeting_id;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let meeting_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "meeting_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let meeting_id = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "meeting_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -303,7 +317,7 @@ impl BatchUpdateAttendeeCapabilitiesExceptInput {
             fn uri_query(
                 _input: &crate::input::BatchUpdateAttendeeCapabilitiesExceptInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "batch-update-except");
                 Ok(())
@@ -312,8 +326,10 @@ impl BatchUpdateAttendeeCapabilitiesExceptInput {
             fn update_http_builder(
                 input: &crate::input::BatchUpdateAttendeeCapabilitiesExceptInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -397,7 +413,7 @@ impl BatchUpdateAttendeeCapabilitiesExceptInput {
 pub mod create_attendee_input {
 
     /// A builder for [`CreateAttendeeInput`](crate::input::CreateAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) external_user_id: std::option::Option<std::string::String>,
@@ -459,13 +475,22 @@ pub mod create_attendee_input {
         /// Consumes the builder and constructs a [`CreateAttendeeInput`](crate::input::CreateAttendeeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAttendeeInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateAttendeeInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateAttendeeInput {
                 meeting_id: self.meeting_id,
                 external_user_id: self.external_user_id,
                 capabilities: self.capabilities,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("meeting_id", &self.meeting_id);
+            formatter.field("external_user_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("capabilities", &self.capabilities);
+            formatter.finish()
         }
     }
 }
@@ -482,26 +507,31 @@ impl CreateAttendeeInput {
             crate::operation::CreateAttendee,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateAttendeeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.meeting_id;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let meeting_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "meeting_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let meeting_id = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "meeting_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -515,8 +545,10 @@ impl CreateAttendeeInput {
             fn update_http_builder(
                 input: &crate::input::CreateAttendeeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -600,7 +632,7 @@ impl CreateAttendeeInput {
 pub mod create_meeting_input {
 
     /// A builder for [`CreateMeetingInput`](crate::input::CreateMeetingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) media_region: std::option::Option<std::string::String>,
@@ -782,7 +814,7 @@ pub mod create_meeting_input {
         /// Consumes the builder and constructs a [`CreateMeetingInput`](crate::input::CreateMeetingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateMeetingInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateMeetingInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateMeetingInput {
                 client_request_token: self.client_request_token,
@@ -795,6 +827,24 @@ pub mod create_meeting_input {
                 tenant_ids: self.tenant_ids,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("media_region", &self.media_region);
+            formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("external_meeting_id", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "notifications_configuration",
+                &self.notifications_configuration,
+            );
+            formatter.field("meeting_features", &self.meeting_features);
+            formatter.field("primary_meeting_id", &self.primary_meeting_id);
+            formatter.field("tenant_ids", &self.tenant_ids);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -811,7 +861,7 @@ impl CreateMeetingInput {
             crate::operation::CreateMeeting,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -820,7 +870,7 @@ impl CreateMeetingInput {
             fn uri_base(
                 _input: &crate::input::CreateMeetingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/meetings").expect("formatting should succeed");
                 Ok(())
             }
@@ -828,8 +878,10 @@ impl CreateMeetingInput {
             fn update_http_builder(
                 input: &crate::input::CreateMeetingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -913,7 +965,7 @@ impl CreateMeetingInput {
 pub mod create_meeting_with_attendees_input {
 
     /// A builder for [`CreateMeetingWithAttendeesInput`](crate::input::CreateMeetingWithAttendeesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) media_region: std::option::Option<std::string::String>,
@@ -1090,7 +1142,7 @@ pub mod create_meeting_with_attendees_input {
             self,
         ) -> Result<
             crate::input::CreateMeetingWithAttendeesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateMeetingWithAttendeesInput {
                 client_request_token: self.client_request_token,
@@ -1104,6 +1156,25 @@ pub mod create_meeting_with_attendees_input {
                 tenant_ids: self.tenant_ids,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("media_region", &self.media_region);
+            formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("external_meeting_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("meeting_features", &self.meeting_features);
+            formatter.field(
+                "notifications_configuration",
+                &self.notifications_configuration,
+            );
+            formatter.field("attendees", &self.attendees);
+            formatter.field("primary_meeting_id", &self.primary_meeting_id);
+            formatter.field("tenant_ids", &self.tenant_ids);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -1120,7 +1191,7 @@ impl CreateMeetingWithAttendeesInput {
             crate::operation::CreateMeetingWithAttendees,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -1129,14 +1200,14 @@ impl CreateMeetingWithAttendeesInput {
             fn uri_base(
                 _input: &crate::input::CreateMeetingWithAttendeesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/meetings").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::CreateMeetingWithAttendeesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "create-attendees");
                 Ok(())
@@ -1145,8 +1216,10 @@ impl CreateMeetingWithAttendeesInput {
             fn update_http_builder(
                 input: &crate::input::CreateMeetingWithAttendeesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1230,7 +1303,7 @@ impl CreateMeetingWithAttendeesInput {
 pub mod delete_attendee_input {
 
     /// A builder for [`DeleteAttendeeInput`](crate::input::DeleteAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendee_id: std::option::Option<std::string::String>,
@@ -1259,7 +1332,7 @@ pub mod delete_attendee_input {
         /// Consumes the builder and constructs a [`DeleteAttendeeInput`](crate::input::DeleteAttendeeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAttendeeInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteAttendeeInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteAttendeeInput {
                 meeting_id: self.meeting_id,
@@ -1281,40 +1354,50 @@ impl DeleteAttendeeInput {
             crate::operation::DeleteAttendee,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAttendeeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.meeting_id;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let meeting_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "meeting_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let meeting_id = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "meeting_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_5 = &_input.attendee_id;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "attendee_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let attendee_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "attendee_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let attendee_id = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if attendee_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "attendee_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "attendee_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1329,8 +1412,10 @@ impl DeleteAttendeeInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAttendeeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1400,7 +1485,7 @@ impl DeleteAttendeeInput {
 pub mod delete_meeting_input {
 
     /// A builder for [`DeleteMeetingInput`](crate::input::DeleteMeetingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
     }
@@ -1418,7 +1503,7 @@ pub mod delete_meeting_input {
         /// Consumes the builder and constructs a [`DeleteMeetingInput`](crate::input::DeleteMeetingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteMeetingInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteMeetingInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteMeetingInput {
                 meeting_id: self.meeting_id,
@@ -1439,26 +1524,31 @@ impl DeleteMeetingInput {
             crate::operation::DeleteMeeting,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteMeetingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.meeting_id;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let meeting_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "meeting_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let meeting_id = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "meeting_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/meetings/{MeetingId}", MeetingId = meeting_id)
                     .expect("formatting should succeed");
@@ -1468,8 +1558,10 @@ impl DeleteMeetingInput {
             fn update_http_builder(
                 input: &crate::input::DeleteMeetingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1539,7 +1631,7 @@ impl DeleteMeetingInput {
 pub mod get_attendee_input {
 
     /// A builder for [`GetAttendeeInput`](crate::input::GetAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendee_id: std::option::Option<std::string::String>,
@@ -1568,7 +1660,7 @@ pub mod get_attendee_input {
         /// Consumes the builder and constructs a [`GetAttendeeInput`](crate::input::GetAttendeeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAttendeeInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetAttendeeInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetAttendeeInput {
                 meeting_id: self.meeting_id,
@@ -1590,40 +1682,50 @@ impl GetAttendeeInput {
             crate::operation::GetAttendee,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAttendeeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.meeting_id;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let meeting_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "meeting_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let meeting_id = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "meeting_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_8 = &_input.attendee_id;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "attendee_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let attendee_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "attendee_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let attendee_id = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if attendee_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "attendee_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "attendee_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1638,8 +1740,10 @@ impl GetAttendeeInput {
             fn update_http_builder(
                 input: &crate::input::GetAttendeeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1709,7 +1813,7 @@ impl GetAttendeeInput {
 pub mod get_meeting_input {
 
     /// A builder for [`GetMeetingInput`](crate::input::GetMeetingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
     }
@@ -1727,7 +1831,8 @@ pub mod get_meeting_input {
         /// Consumes the builder and constructs a [`GetMeetingInput`](crate::input::GetMeetingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetMeetingInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetMeetingInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetMeetingInput {
                 meeting_id: self.meeting_id,
             })
@@ -1747,26 +1852,31 @@ impl GetMeetingInput {
             crate::operation::GetMeeting,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetMeetingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.meeting_id;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let meeting_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "meeting_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let meeting_id = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "meeting_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/meetings/{MeetingId}", MeetingId = meeting_id)
                     .expect("formatting should succeed");
@@ -1776,8 +1886,10 @@ impl GetMeetingInput {
             fn update_http_builder(
                 input: &crate::input::GetMeetingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1847,7 +1959,7 @@ impl GetMeetingInput {
 pub mod list_attendees_input {
 
     /// A builder for [`ListAttendeesInput`](crate::input::ListAttendeesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1887,7 +1999,7 @@ pub mod list_attendees_input {
         /// Consumes the builder and constructs a [`ListAttendeesInput`](crate::input::ListAttendeesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAttendeesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListAttendeesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListAttendeesInput {
                 meeting_id: self.meeting_id,
@@ -1910,26 +2022,31 @@ impl ListAttendeesInput {
             crate::operation::ListAttendees,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAttendeesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.meeting_id;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let meeting_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "meeting_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let meeting_id = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "meeting_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1942,16 +2059,20 @@ impl ListAttendeesInput {
             fn uri_query(
                 _input: &crate::input::ListAttendeesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_11) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_11));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_11));
+                    }
                 }
                 if let Some(inner_12) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
-                    );
+                    if *inner_12 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1959,8 +2080,10 @@ impl ListAttendeesInput {
             fn update_http_builder(
                 input: &crate::input::ListAttendeesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2031,7 +2154,7 @@ impl ListAttendeesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2049,8 +2172,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -2070,32 +2195,47 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListTagsForResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_13) = &_input.resource_arn {
-                    query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_13));
+                let inner_13 = &_input.resource_arn;
+                let inner_13 = inner_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                if inner_13.is_empty() {
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
+                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_13));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2166,7 +2306,7 @@ impl ListTagsForResourceInput {
 pub mod start_meeting_transcription_input {
 
     /// A builder for [`StartMeetingTranscriptionInput`](crate::input::StartMeetingTranscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) transcription_configuration:
@@ -2204,7 +2344,7 @@ pub mod start_meeting_transcription_input {
             self,
         ) -> Result<
             crate::input::StartMeetingTranscriptionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StartMeetingTranscriptionInput {
                 meeting_id: self.meeting_id,
@@ -2226,26 +2366,31 @@ impl StartMeetingTranscriptionInput {
             crate::operation::StartMeetingTranscription,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartMeetingTranscriptionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.meeting_id;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let meeting_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let input_14 = input_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "meeting_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let meeting_id = aws_smithy_http::label::fmt_string(
+                    input_14,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "meeting_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2258,7 +2403,7 @@ impl StartMeetingTranscriptionInput {
             fn uri_query(
                 _input: &crate::input::StartMeetingTranscriptionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "start");
                 Ok(())
@@ -2267,8 +2412,10 @@ impl StartMeetingTranscriptionInput {
             fn update_http_builder(
                 input: &crate::input::StartMeetingTranscriptionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2355,7 +2502,7 @@ impl StartMeetingTranscriptionInput {
 pub mod stop_meeting_transcription_input {
 
     /// A builder for [`StopMeetingTranscriptionInput`](crate::input::StopMeetingTranscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
     }
@@ -2375,7 +2522,7 @@ pub mod stop_meeting_transcription_input {
             self,
         ) -> Result<
             crate::input::StopMeetingTranscriptionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StopMeetingTranscriptionInput {
                 meeting_id: self.meeting_id,
@@ -2396,26 +2543,31 @@ impl StopMeetingTranscriptionInput {
             crate::operation::StopMeetingTranscription,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StopMeetingTranscriptionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_15 = &_input.meeting_id;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let meeting_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let input_15 = input_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "meeting_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let meeting_id = aws_smithy_http::label::fmt_string(
+                    input_15,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "meeting_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2428,7 +2580,7 @@ impl StopMeetingTranscriptionInput {
             fn uri_query(
                 _input: &crate::input::StopMeetingTranscriptionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "stop");
                 Ok(())
@@ -2437,8 +2589,10 @@ impl StopMeetingTranscriptionInput {
             fn update_http_builder(
                 input: &crate::input::StopMeetingTranscriptionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2509,7 +2663,7 @@ impl StopMeetingTranscriptionInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2547,7 +2701,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2569,20 +2723,20 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::TagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "tag-resource");
                 Ok(())
@@ -2591,8 +2745,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2677,7 +2833,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2715,7 +2871,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2737,20 +2893,20 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "untag-resource");
                 Ok(())
@@ -2759,8 +2915,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2845,7 +3003,7 @@ impl UntagResourceInput {
 pub mod update_attendee_capabilities_input {
 
     /// A builder for [`UpdateAttendeeCapabilitiesInput`](crate::input::UpdateAttendeeCapabilitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendee_id: std::option::Option<std::string::String>,
@@ -2890,7 +3048,7 @@ pub mod update_attendee_capabilities_input {
             self,
         ) -> Result<
             crate::input::UpdateAttendeeCapabilitiesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateAttendeeCapabilitiesInput {
                 meeting_id: self.meeting_id,
@@ -2913,40 +3071,50 @@ impl UpdateAttendeeCapabilitiesInput {
             crate::operation::UpdateAttendeeCapabilities,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateAttendeeCapabilitiesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_16 = &_input.meeting_id;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let meeting_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "meeting_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let meeting_id = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if meeting_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "meeting_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "meeting_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_17 = &_input.attendee_id;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "attendee_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
-                let attendee_id = aws_smithy_http::label::fmt_string(input_17, false);
+                let input_17 = input_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "attendee_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let attendee_id = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if attendee_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "attendee_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "attendee_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2961,8 +3129,10 @@ impl UpdateAttendeeCapabilitiesInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAttendeeCapabilitiesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -3046,7 +3216,7 @@ impl UpdateAttendeeCapabilitiesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAttendeeCapabilitiesInput {
     /// <p>The ID of the meeting associated with the update request.</p>
     #[doc(hidden)]
@@ -3072,19 +3242,10 @@ impl UpdateAttendeeCapabilitiesInput {
         self.capabilities.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAttendeeCapabilitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAttendeeCapabilitiesInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("attendee_id", &self.attendee_id);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource that you're removing tags from.</p>
     #[doc(hidden)]
@@ -3103,18 +3264,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -3133,18 +3286,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting for which you stop transcription.</p>
     #[doc(hidden)]
@@ -3156,17 +3301,10 @@ impl StopMeetingTranscriptionInput {
         self.meeting_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopMeetingTranscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopMeetingTranscriptionInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting being transcribed.</p>
     #[doc(hidden)]
@@ -3187,21 +3325,10 @@ impl StartMeetingTranscriptionInput {
         self.transcription_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for StartMeetingTranscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMeetingTranscriptionInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field(
-            "transcription_configuration",
-            &self.transcription_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
@@ -3213,17 +3340,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAttendeesInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -3249,19 +3369,10 @@ impl ListAttendeesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAttendeesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAttendeesInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -3273,17 +3384,10 @@ impl GetMeetingInput {
         self.meeting_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMeetingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMeetingInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -3302,18 +3406,10 @@ impl GetAttendeeInput {
         self.attendee_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAttendeeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAttendeeInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("attendee_id", &self.attendee_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -3325,17 +3421,10 @@ impl DeleteMeetingInput {
         self.meeting_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMeetingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMeetingInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -3352,14 +3441,6 @@ impl DeleteAttendeeInput {
     /// <p>The Amazon Chime SDK attendee ID.</p>
     pub fn attendee_id(&self) -> std::option::Option<&str> {
         self.attendee_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteAttendeeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAttendeeInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("attendee_id", &self.attendee_id);
-        formatter.finish()
     }
 }
 
@@ -3649,7 +3730,7 @@ impl std::fmt::Debug for CreateAttendeeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateAttendeeCapabilitiesExceptInput {
     /// <p>The ID of the meeting associated with the update request.</p>
     #[doc(hidden)]
@@ -3675,19 +3756,10 @@ impl BatchUpdateAttendeeCapabilitiesExceptInput {
         self.capabilities.as_ref()
     }
 }
-impl std::fmt::Debug for BatchUpdateAttendeeCapabilitiesExceptInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateAttendeeCapabilitiesExceptInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("excluded_attendee_ids", &self.excluded_attendee_ids);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateAttendeeInput {
     /// <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
     #[doc(hidden)]
@@ -3704,13 +3776,5 @@ impl BatchCreateAttendeeInput {
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
     pub fn attendees(&self) -> std::option::Option<&[crate::model::CreateAttendeeRequestItem]> {
         self.attendees.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchCreateAttendeeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateAttendeeInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("attendees", &self.attendees);
-        formatter.finish()
     }
 }

@@ -5,20 +5,19 @@
 
 //! Test connectors that never return data
 
-use http::Uri;
-
-use aws_smithy_async::future::never::Never;
-
 use std::marker::PhantomData;
 use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::Arc;
-
 use std::task::{Context, Poll};
 
-use crate::erase::boxclone::BoxFuture;
+use http::Uri;
+use tower::BoxError;
+
+use aws_smithy_async::future::never::Never;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
-use tower::BoxError;
+
+use crate::erase::boxclone::BoxFuture;
 
 /// A service that will never return whatever it is you want
 ///
@@ -71,8 +70,8 @@ pub type NeverConnected = NeverService<Uri, stream::EmptyStream, BoxError>;
 pub(crate) mod stream {
     use std::io::Error;
     use std::pin::Pin;
-
     use std::task::{Context, Poll};
+
     use tokio::io::{AsyncRead, AsyncWrite, ReadBuf};
 
     /// A stream that will never return or accept any data

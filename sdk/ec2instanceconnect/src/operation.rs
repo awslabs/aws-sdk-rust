@@ -5,7 +5,7 @@
 /// [`send_serial_console_ssh_public_key`](crate::client::Client::send_serial_console_ssh_public_key).
 ///
 /// See [`crate::client::fluent_builders::SendSerialConsoleSSHPublicKey`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendSerialConsoleSSHPublicKey {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendSerialConsoleSSHPubl
 /// [`send_ssh_public_key`](crate::client::Client::send_ssh_public_key).
 ///
 /// See [`crate::client::fluent_builders::SendSSHPublicKey`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendSSHPublicKey {
     _private: (),
 }
